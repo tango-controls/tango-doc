@@ -1,0 +1,92 @@
+
+\chapter{Introduction}
+
+
+\section{Introduction to device server}
+
+Device servers were first developed at the European Synchrotron radiation
+Facility (ESRF\index{ESRF}) for controlling the 6 Gev synchrotron
+radiation source. This document is a Programmer's Manual on how to
+write TANGO device servers. It will not go into the details of the
+ESRF\index{ESRF}, nor its Control System nor any of the specific
+device servers in the Control System. The role of this document is
+to help programmers faced with the task of writing TANGO device servers.
+
+Device servers have been developed at the ESRF\index{ESRF} in order
+to solve the main task of Control Systems viz provide read and write
+access to all devices in a distributed system. The problem of distributed
+device access is only part of the problem however. The other part
+of the problem is providing a programming framework for a large number
+of devices programmed by a large number of programmers each having
+different levels of experience and style.
+
+Device servers have been written at the ESRF\index{ESRF} for a large
+variety of different devices. Devices vary from serial line devices
+to devices interfaced by field-bus to memory mapped VME cards or PC
+cards to entire data acquisition systems. The definition of a device
+depends very much on the user's requirements. In the simple case a
+device server can be used to hide the serial line protocol required
+to communicate with a device. For more complicated devices the device
+server can be used to hide the entire complexity of the device timing,
+configuration and acquisition cycle behind a set of high level commands.
+
+In this manual the process of how to write TANGO client (applications)
+and device servers will be treated. The manual has been organized
+as follows :
+\begin{itemize}
+\item A getting started chapter. 
+\item The TANGO device server model is treated in chapter 3 
+\item Generalities on the Tango Application Programmer Interfaces are given
+in chapter 4 
+\item Chapter 5 is an a programmer's guide for the Tango Application ToolKit
+(TangoATK). This is a Java toolkit to help Tango Java application
+developers. 
+\item How to write a TANGO device server is explained in chapter 6 
+\item Chapter 7 describes advanced Tango features 
+\end{itemize}
+Throughout this manual examples of source code will be given in order
+to illustrate what is meant. Most examples have been taken from the
+StepperMotor class - a simulation of a stepper motor which illustrates
+how a typical device server for a stepper motor at the ESRF functions.
+
+
+\section{Device server history}
+
+The concept of using device servers to access devices was first proposed
+at the ESRF in 1989. It has been successfully used as the heart of
+the ESRF\index{ESRF} Control System for the institute accelerator
+complex. This Control System has been named TACO\index{TACO}%
+\footnote{TACO stands for \textbf{T}elescope and \textbf{A}ccelerator \textbf{C}ontrolled
+with \textbf{O}bjects%
+}. Then, it has been decided to also used TACO to control devices in
+the beam-lines. Today, more than 30 instances of TACO are running
+at the ESRF. The main technologies used within TACO are the leading
+technologies of the 80's. The Sun Remote Procedure Call (RPC) is used
+to communicate over the network between device server and applications,
+OS-9 is used on the front-end computers, C is the reference language
+to write device servers and clients and the device server framework
+follows the MIT Widget model. In 1999, a renewal of the control system
+was started. In June 2002, Soleil\index{Soleil} and ESRF offically
+decide to collaborate to develop this renewal of the old TACO control
+system. Soleil is a French synchrotron radiation facility currently
+under construction in the Paris suburbs. See \cite{Soleil_home_page}
+to get all information about Soleil. In December 2003, Elettra\index{Elettra}
+joins the club. Elettra is an Italian synchrotron radiation facility
+located in Trieste. See \cite{Elettra_home_page} to get all information
+about Elettra. Then, beginning of 2005, ALBA\index{ALBA} also decided
+to join. ALBA is a Spanish synchrotron radiation facility located
+in Barcelona. See \cite{Alba_WEB} to get all information about ALBA.
+The new version of the Alba/Elettra/ESRF/Soleil control system is
+named TANGO%
+\footnote{TANGO stands for \textbf{TA}co \textbf{N}ext \textbf{G}eneration \textbf{O}bject%
+} and is based on the 21 century technologies :
+\begin{itemize}
+\item CORBA\index{CORBA}%
+\footnote{CORBA stands for \textbf{C}ommon \textbf{O}bject \textbf{R}equest
+\textbf{B}roker \textbf{A}rchitecture%
+} and ZMQ\index{ZMQ}\cite{ZMQ} to communicate between device server
+and clients 
+\item C++, Python and Java as reference programming languages 
+\item Linux and Windows as operating systems 
+\item Modern object oriented design patterns\end{itemize}
+
