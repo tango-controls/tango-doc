@@ -19,6 +19,7 @@
 \usepackage[unicode=true]
  {hyperref}
 \usepackage{breakurl}
+\usepackage{minted}
 
 \makeatletter
 
@@ -28,16 +29,6 @@
 \providecommand{\tabularnewline}{\\}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
-\newenvironment{lyxcode}
-{\par\begin{list}{}{
-\setlength{\rightmargin}{\leftmargin}
-\setlength{\listparindent}{0pt}% needed for AMS classes
-\raggedright
-\setlength{\itemsep}{0pt}
-\setlength{\parsep}{0pt}
-\normalfont\ttfamily}%
- \item[]}
-{\end{list}}
 \newenvironment{lyxlist}[1]
 {\begin{list}{}
 {\settowidth{\labelwidth}{#1}
