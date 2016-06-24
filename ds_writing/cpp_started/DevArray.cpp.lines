@@ -1,0 +1,20 @@
+     1	Tango::DevVarLongArray *DocDs::dev_array(const Tango::DevVarLongArray *argin)
+     2	{
+     3		//	POGO has generated a method core with argout allocation.
+     4		//	If you would like to use a static reference without copying,
+     5		//	See "TANGO Device Server Programmer's Manual"
+     6		//		(chapter x.x)
+     7		//------------------------------------------------------------
+     8		Tango::DevVarLongArray	*argout  = new Tango::DevVarLongArray();
+     9			
+    10		cout1 << "DocDs::dev_array(): entering... !" << endl;
+    11	
+    12		//	Add your own code to control device here
+    13	
+    14		long argin_length = argin->length();	
+    15		argout->length(argin_length);
+    16		for (int i = 0;i < argin_length;i++)
+    17			(*argout)[i] = (*argin)[i] * 2;
+    18	
+    19		return argout;
+    20	}

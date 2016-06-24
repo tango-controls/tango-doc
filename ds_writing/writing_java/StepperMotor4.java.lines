@@ -1,0 +1,18 @@
+     1	public void write_attr_hardware(Vector attr_list)
+     2	{
+     3		Util.out2.println("In write_attr_hardware for "+attr_list.size()+" attribute(s)");
+     4	
+     5		for (int i = 0;i < attr_list.size();i++)
+     6		{
+     7			int ind = ((Integer)(attr_list.elementAt(i))).intValue();
+     8			WAttribute att = dev_attr.get_w_attr_by_ind(ind);
+     9			String att_name = att.get_name();
+    10	
+    11			if (att_name.equals("SetPosition") == true)
+    12			{
+    13				attr_SetPosition_write = att.get_lg_write_value();
+    14				Util.out2.println("Attribute SetPosition value = "+attr_SetPosition_write);
+    15				position[0] = attr_SetPosition_write;
+    16			}
+    17		}
+    18	}

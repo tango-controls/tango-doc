@@ -1,0 +1,503 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass book
+\begin_preamble
+\usepackage{a4wide}
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding latin1
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 0
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 4
+\tocdepth 5
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+TANGO Java API
+\begin_inset CommandInset label
+LatexCommand label
+name "cha:TANGO-Java-API"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+\noun on
+This chapter documents the JAVA API for the TANGO database and device servers.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 0.3cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename picture/architecture.eps
+	width 80text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 0.3cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Subsection
+Description
+\end_layout
+
+\begin_layout Standard
+This chapter documents the high level interface for Java.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Remarks:
+\end_layout
+
+\begin_layout Standard
+This java api is based on 
+\emph on
+Jacorb
+\emph default
+ 
+\noun on
+ORB
+\noun default
+ implementation.
+ The 
+\emph on
+Jacorb
+\emph default
+ and 
+\emph on
+Tango
+\emph default
+ classes are both available in TangORB.jar file.
+\end_layout
+
+\begin_layout Subsection
+Basic Philosophy
+\end_layout
+
+\begin_layout Standard
+The basic philosophy is to have high level classes for the database, properties,
+ device, group and database object info.
+ Classes also exist for sending and receiving database or device values.
+\end_layout
+
+\begin_layout Standard
+All classes and data types are defined in 
+\emph on
+fr.esrf.TangoApi
+\emph default
+ package.
+ Group related classes are in a package called 
+\emph on
+fr.esrf.TangoApi.Group.
+
+\emph default
+ Event related classes are in a package called 
+\emph on
+fr.esrf.TangoApi.events
+\end_layout
+
+\begin_layout Subsection
+Classes
+\end_layout
+
+\begin_layout Subsubsection
+Data object classes
+\end_layout
+
+\begin_layout Description
+DeviceData: Obect used to send and receive data on device.
+\end_layout
+
+\begin_layout Description
+DbDatum: Object used to put or get properties on database.
+\end_layout
+
+\begin_layout Description
+DbDevInfo: Object used to read device information on database.
+\end_layout
+
+\begin_layout Description
+DbDevImportInfo: Object used to read imported device information on database.
+\end_layout
+
+\begin_layout Description
+DbDevExportInfo: Object used to read exported device information on database.
+\end_layout
+
+\begin_layout Subsubsection
+Asynchronous callback related classes
+\end_layout
+
+\begin_layout Description
+CallBack: Object called at asynchronous call reply
+\end_layout
+
+\begin_layout Description
+CmdDoneEvent: Object to pass asynchronous command reply data to a CallBack
+ object.
+\end_layout
+
+\begin_layout Description
+ReadAttrEvent: Object to pass asynchronous read_attribute reply data to
+ a CallBack object.
+\end_layout
+
+\begin_layout Description
+AttrWrittenEvent: Object to pass asynchronous write_attribute reply data
+ to a CallBack object.
+\end_layout
+
+\begin_layout Subsubsection
+Devices and Database access classes
+\end_layout
+
+\begin_layout Description
+DeviceProxy: Device access (aggregates DbDevice class).
+\end_layout
+
+\begin_layout Description
+Group: Multiple device access class
+\end_layout
+
+\begin_layout Description
+Database: Direct access to TANGO database.
+\end_layout
+
+\begin_layout Description
+DbClass: Class properties access to TANGO database.
+\end_layout
+
+\begin_layout Description
+DbServer: Server properties access to TANGO database.
+\end_layout
+
+\begin_layout Description
+DbDevice Device properties access to TANGO database.
+\end_layout
+
+\begin_layout Subsection
+Reporting errors
+\end_layout
+
+\begin_layout Standard
+For the device and database classes, most methods throw a 
+\emph on
+DevFailed
+\emph default
+ exception in case of error.
+ See 
+\emph on
+Writing a TANGO Device Server
+\emph default
+ chapter 
+\emph on
+Reporting Errors
+\emph default
+ (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Reporting-errors"
+
+\end_inset
+
+) , except those which specified.
+\end_layout
+
+\begin_layout Standard
+In opposite, for the data object classes, only the specified method throw
+ 
+\emph on
+DevFailed
+\emph default
+ exception in case of error.
+\end_layout
+
+\begin_layout Standard
+The reason field could be set to:
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+TangoApi_TANGO_HOST_NOT_SET
+\emph default
+ : The 
+\emph on
+TANGO_HOST
+\emph default
+ environment variable has not been set or has been set with a syntax error.
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+TangoApi_DATABASE_CONNECTION_FAILED
+\emph default
+ : The database server cannot be connected (bad 
+\emph on
+TANGO_HOST
+\emph default
+ or database server stopped).
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+TangoApi_CANNOT_IMPORT_DEVICE
+\emph default
+ : The device is exported but cannot be connected.
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+TangoApi_DEVICE_NOT_EXPORTED
+\emph default
+ : The device has not be exported.
+\end_layout
+
+\begin_layout Subsection
+Compiling a Java client
+\end_layout
+
+\begin_layout Subsubsection
+Supported java release
+\end_layout
+
+\begin_layout Standard
+Tango client written using Java language needs release 
+\series bold
+1.5.0
+\series default
+ (or above) of the Java environment.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Setting CLASSPATH and other environment variables
+\end_layout
+
+\begin_layout Standard
+To correctly compile a Java Tango client, the CLASSPATH
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+CLASSPATH
+\end_layout
+
+\end_inset
+
+ environment variable must be set to :
+\end_layout
+
+\begin_layout Itemize
+The jar file with all the Tango, TangoDs, TangoApi and Jacorb package
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+package
+\end_layout
+
+\end_inset
+
+ classes.
+ This file is named TangORB.jar
+\end_layout
+
+\begin_layout Itemize
+The jar file with all the JDK classes (not always necessary, could be implicit)
+\end_layout
+
+\begin_layout Itemize
+Your own package directory
+\end_layout
+
+\begin_layout Standard
+For UNIX like operating system, setting environment variable is done with
+ the 
+\emph on
+export
+\emph default
+ or 
+\emph on
+setenv
+\emph default
+ command depending on the shell used.
+ For Windows, setting environment variable is possible from the control
+ panel.
+\end_layout
+
+\begin_layout Standard
+The client/server timeout as been fixed by default to 3000 milliseconds
+ but it can be set to another value a startup using 
+\emph on
+TANGO_TIMEOUT
+\emph default
+ environement variable.
+\end_layout
+
+\begin_layout Standard
+eg : 
+\emph on
+java -DTANGO_HOST=hal:20000 -DTANGO_TIMEOUT=5000 mypackage.MyClient
+\end_layout
+
+\begin_layout Standard
+Will start 
+\emph on
+MyClient
+\emph default
+ class using the database server running on the host named 
+\emph on
+hal
+\emph default
+ on port 20000 with a command timeout of 5 seconds.
+\end_layout
+
+\begin_layout Section
+Reference manual
+\end_layout
+
+\begin_layout Standard
+The Tango Java API documentation is now managed using the Java tool javadoc
+ and is available online at
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset href
+LatexCommand href
+name "Tango Java API reference documentation"
+target "http://www.esrf.eu/computing/cs/tango/tango_doc/kernel_doc/tango_java_api/classes/index.html"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

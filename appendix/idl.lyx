@@ -1,0 +1,10380 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass book
+\begin_preamble
+\usepackage{a4wide}
+\usepackage{amstext}
+\def\reg{\setbox0\hbox{$\mathchar"20D$}%
+\hbox to 0pt{\hbox to \wd0{\hfill\,\rm R\hfill}\hss}%
+$\mathchar"20D$}
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding utf8x
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 0
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+The TANGO IDL file : Module Tango
+\end_layout
+
+\begin_layout Standard
+The fundamental idea of a device as a network object which has methods and
+ data has been retained for TANGO.
+ In TANGO objects are real C++/Java objects which can be instantiated and
+ accessed via their methods and data by the client as if they were local
+ objects.
+ This interface is defined in CORBA IDL.
+ The fundamental interface is Device.
+ All TANGO control objects will be of this type i.e.
+ they will implement and offer the Device interface.
+ Some wrapper classes group in an API will hide the calls to the Device
+ interface from the client so that the client will only see the wrapper
+ classes.
+ All CORBA details will be hidden from the client as far as possible.
+\end_layout
+
+\begin_layout Section
+Aliases
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+AttributeConfigList
+\end_layout
+
+\begin_layout Standard
+typedef sequence<AttributeConfig> AttributeConfigList;
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+AttributeConfigList_2
+\end_layout
+
+\begin_layout Standard
+typedef sequence<AttributeConfig_2> AttributeConfigList_2;
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+AttributeConfigList_3
+\end_layout
+
+\begin_layout Standard
+typedef sequence<AttributeConfig_3> AttributeConfigList_3;
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+AttributeConfigList_5
+\end_layout
+
+\begin_layout Standard
+typedef sequence<AttributeConfig_5> AttributeConfigList_5;
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+AttributeDimList
+\end_layout
+
+\begin_layout Standard
+typedef sequence<AttributeDim> AttributeDimList;
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+AttributeValueList
+\end_layout
+
+\begin_layout Standard
+typedef sequence<AttributeValue> AttributeValueList;
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+AttributeValueList_3
+\end_layout
+
+\begin_layout Standard
+typedef sequence<AttributeValue_3> AttributeValueList_3;
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+AttributeValueList_4
+\end_layout
+
+\begin_layout Standard
+typedef sequence<AttributeValue_4> AttributeValueList_4;
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+AttributeValueList_5
+\end_layout
+
+\begin_layout Standard
+typedef sequence<AttributeValue_5> AttributeValueList_5;
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+AttrQualityList
+\end_layout
+
+\begin_layout Standard
+typedef sequence<AttrQuality> AttrQualityList;
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+CppClntIdent
+\end_layout
+
+\begin_layout Standard
+typedef unsigned long CppClntIdent;
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+DevAttrHistoryList
+\end_layout
+
+\begin_layout Standard
+typedef sequence<DevAttrHistory> DevAttrHistoryList;
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+DevAttrHistoryList_3
+\end_layout
+
+\begin_layout Standard
+typedef sequence<DevAttrHistory_3> DevAttrHistoryList_3;
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+DevBoolean
+\end_layout
+
+\begin_layout Standard
+typedef boolean DevBoolean;
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+DevCmdHistoryList
+\end_layout
+
+\begin_layout Standard
+typedef sequence<DevCmdHistory> DevCmdHistoryList
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+DevCmdInfoList
+\end_layout
+
+\begin_layout Standard
+typedef sequence<DevCmdInfo> DevCmdInfoList;
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+DevCmdInfoList_2
+\end_layout
+
+\begin_layout Standard
+typedef sequence<DevCmdInfo_2> DevCmdInfoList_2;
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+DevDouble
+\end_layout
+
+\begin_layout Standard
+typedef double DevDouble;
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+DevErrorList
+\end_layout
+
+\begin_layout Standard
+typedef sequence<DevError> DevErrorList;
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+DevErrorListList
+\end_layout
+
+\begin_layout Standard
+typedef sequence<DevErrorList> DevErrorListList;
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+DevFloat
+\end_layout
+
+\begin_layout Standard
+typedef float DevFloat;
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+DevLong
+\end_layout
+
+\begin_layout Standard
+typedef long DevLong;
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+DevShort
+\end_layout
+
+\begin_layout Standard
+typedef short DevShort;
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+DevString
+\end_layout
+
+\begin_layout Standard
+typedef string DevString;
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+DevULong
+\end_layout
+
+\begin_layout Standard
+typedef unsigned long DevULong;
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+DevUShort
+\end_layout
+
+\begin_layout Standard
+typedef unsigned short DevUShort;
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+DevVarCharArray
+\end_layout
+
+\begin_layout Standard
+typedef sequence<octet> DevVarCharArray;
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+DevVarDoubleArray
+\end_layout
+
+\begin_layout Standard
+typedef sequence<double> DevVarDoubleArray;
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+DevVarEncodedArray
+\end_layout
+
+\begin_layout Standard
+typedef sequence<DevEncoded> DevVarEncodedArray;
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+DevVarFloatArray
+\end_layout
+
+\begin_layout Standard
+typedef sequence<float> DevVarFloatArray;
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+DevVarLongArray
+\end_layout
+
+\begin_layout Standard
+typedef sequence<long> DevVarLongArray;
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+DevVarPipeDataEltArray
+\end_layout
+
+\begin_layout Standard
+typedef sequence<DevPipeDataElt> DevVarPipeDataEltArray;
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+DevVarShortArray
+\end_layout
+
+\begin_layout Standard
+typedef sequence<short> DevVarShortArray;
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+DevVarStateArray
+\end_layout
+
+\begin_layout Standard
+typedef sequence<DevState> DevVarStateArray;
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+DevVarStringArray
+\end_layout
+
+\begin_layout Standard
+typedef sequence<string> DevVarStringArray;
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+DevVarULongArray
+\end_layout
+
+\begin_layout Standard
+typedef sequence<unsigned long> DevVarULongArray;
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+DevVarUShortArray
+\end_layout
+
+\begin_layout Standard
+typedef sequence<unsigned short> DevVarUShortArray;
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+EltInArrayList
+\end_layout
+
+\begin_layout Standard
+typedef sequence<EltInArray> EltInArrayList;
+\series bold
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+JavaUUID
+\end_layout
+
+\begin_layout Standard
+typedef unsigned long long JavaUUID[2];
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+PipeConfigList
+\end_layout
+
+\begin_layout Standard
+typedef sequence<PipeConfig> PipeConfigList;
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+NamedDevErrorList
+\end_layout
+
+\begin_layout Standard
+typedef sequence<NamedDevError> NamedDevErrorList;
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+TimeValList
+\end_layout
+
+\begin_layout Standard
+typedef sequence<TimeVal> TimeValList;
+\series bold
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Enums
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+AttrDataFormat
+\end_layout
+
+\begin_layout Standard
+enum AttrDataFormat
+\end_layout
+
+\begin_layout Standard
+{
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+SCALAR,
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+SPECTRUM,
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+IMAGE,
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+FMT_UNKNOWN
+\end_layout
+
+\begin_layout Standard
+};
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+AttributeDataType
+\end_layout
+
+\begin_layout Standard
+enum AttributeDataType
+\end_layout
+
+\begin_layout Standard
+{
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+ATT_BOOL,
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+ATT_SHORT,
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+ATT_LONG,
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+ATT_LONG64,
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+ATT_FLOAT,
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+ATT_DOUBLE,
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+ATT_UCHAR,
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+ATT_USHORT,
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+ATT_ULONG,
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+ATT_ULONG64,
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+ATT_STRING,
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+ATT_STATE,
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+DEVICE_STATE,
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+ATT_ENCODED,
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+ATT_NO_DATA
+\end_layout
+
+\begin_layout Standard
+};
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+AttrQuality
+\end_layout
+
+\begin_layout Standard
+enum AttrQuality
+\end_layout
+
+\begin_layout Standard
+{
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+ATTR_VALID,
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+ATTR_INVALID,
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+ATTR_ALARM,
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+ATTR_CHANGING,
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+ATTR_WARNING
+\end_layout
+
+\begin_layout Standard
+};
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+AttrWriteType
+\end_layout
+
+\begin_layout Standard
+enum AttrWriteType
+\end_layout
+
+\begin_layout Standard
+{
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+READ,
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+READ_WITH_WRITE,
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+WRITE,
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+READ_WRITE,
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+WT_UNKNOWN
+\end_layout
+
+\begin_layout Standard
+};
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+DispLevel
+\end_layout
+
+\begin_layout Standard
+enum DispLevel
+\end_layout
+
+\begin_layout Standard
+{
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+OPERATOR,
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+EXPERT,
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+DL_UNKNOWN
+\end_layout
+
+\begin_layout Standard
+};
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+DevSource
+\end_layout
+
+\begin_layout Standard
+enum DevSource
+\end_layout
+
+\begin_layout Standard
+{
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+DEV,
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+CACHE,
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+CACHE_DEV
+\end_layout
+
+\begin_layout Standard
+};
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+DevState
+\end_layout
+
+\begin_layout Standard
+enum DevState
+\end_layout
+
+\begin_layout Standard
+{
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+ON,
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+OFF,
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+CLOSE,
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+OPEN,
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+INSERT,
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+EXTRACT,
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+MOVING,
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+STANDBY,
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+FAULT,
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+INIT,
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+RUNNING,
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+ALARM,
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+DISABLE,
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+UNKNOWN
+\end_layout
+
+\begin_layout Standard
+};
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+ErrSeverity
+\end_layout
+
+\begin_layout Standard
+enum ErrSeverity
+\end_layout
+
+\begin_layout Standard
+{
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+WARN,
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+ERR,
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+PANIC
+\end_layout
+
+\begin_layout Standard
+};
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+LockerLanguage
+\end_layout
+
+\begin_layout Standard
+enum LockerLanguage
+\end_layout
+
+\begin_layout Standard
+{
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+CPP,
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+JAVA
+\end_layout
+
+\begin_layout Standard
+};
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+PipeWriteType
+\end_layout
+
+\begin_layout Standard
+enum PipeWriteType
+\end_layout
+
+\begin_layout Standard
+{
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+PIPE_READ,
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+PIPE_READ_WRITE,
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+PIPE_WT_UNKNOWN
+\end_layout
+
+\begin_layout Standard
+};
+\end_layout
+
+\begin_layout Section
+Structs
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+ArchiveEventProp
+\end_layout
+
+\begin_layout Standard
+struct ArchiveEventProp
+\end_layout
+
+\begin_layout Standard
+{
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string rel_change;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string abs_change;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string period;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+DevVarStringArray extensions;
+\end_layout
+
+\begin_layout Standard
+};
+\series bold
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+AttributeAlarm
+\end_layout
+
+\begin_layout Standard
+struct AttributeAlarm
+\end_layout
+
+\begin_layout Standard
+{
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string min_alarm;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string max_alarm;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string min_warning;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string max_warning;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string delta_t;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string delta_val;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+DevVarStringArray extensions;
+\end_layout
+
+\begin_layout Standard
+};
+\series bold
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+AttDataReady
+\end_layout
+
+\begin_layout Standard
+struct AttributeAlarm
+\end_layout
+
+\begin_layout Standard
+{
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string name;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+long data_type;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+long ctr;
+\end_layout
+
+\begin_layout Standard
+}
+\series bold
+;
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+AttributeConfig
+\end_layout
+
+\begin_layout Standard
+struct AttributeConfig
+\end_layout
+
+\begin_layout Standard
+{
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string name;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+AttrWriteType writable;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+AttrDataFormat data_format;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+long data_type;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+long max_dim_x;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+long max_dim_y;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string description;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string label;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string unit;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string standard_unit;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string display_unit;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string format;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string min_value;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string max_value;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string min_alarm;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string max_alarm;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string writable_attr_name;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+DevVarStringArray extensions;
+\end_layout
+
+\begin_layout Standard
+};
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+AttributeConfig_2
+\end_layout
+
+\begin_layout Standard
+struct AttributeConfig_2
+\end_layout
+
+\begin_layout Standard
+{
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string name;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+AttrWriteType writable;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+AttrDataFormat data_format;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+long data_type;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+long max_dim_x;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+long max_dim_y;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string description;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string label;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string unit;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string standard_unit;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string display_unit;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string format;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string min_value;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string max_value;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string min_alarm;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string max_alarm;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string writable_attr_name;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+DispLevel level;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+DevVarStringArray extensions;
+\end_layout
+
+\begin_layout Standard
+};
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+AttributeConfig_3
+\end_layout
+
+\begin_layout Standard
+struct AttributeConfig_3
+\end_layout
+
+\begin_layout Standard
+{
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string name;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+AttrWriteType writable;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+AttrDataFormat data_format;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+long data_type;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+long max_dim_x;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+long max_dim_y;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string description;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string label;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string unit;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string standard_unit;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string display_unit;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string format;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string min_value;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string max_value;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string writable_attr_name;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+DispLevel level;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+AttributeAlarm alarm;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+EventProperties event_prop;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+DevVarStringArray extensions;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+DevVarStringArray sys_extensions;
+\end_layout
+
+\begin_layout Standard
+};
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+AttributeConfig_5
+\end_layout
+
+\begin_layout Standard
+struct AttributeConfig_5
+\end_layout
+
+\begin_layout Standard
+{
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string name;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+AttrWriteType writable;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+AttrDataFormat data_format;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+long data_type;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+boolean memorized;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+boolean mem_init;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+long max_dim_x;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+long max_dim_y;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string description;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string label;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string unit;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string standard_unit;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string display_unit;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string format;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string min_value;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string max_value;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string writable_attr_name;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+DispLevel level;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string root_attr_name;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+DevVarStringArray enum_labels;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+AttributeAlarm att_alarm;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+EventProperties event_prop;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+DevVarStringArray extensions;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+DevVarStringArray sys_extensions;
+\end_layout
+
+\begin_layout Standard
+};
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+AttributeDim
+\end_layout
+
+\begin_layout Standard
+struct AttributeDim
+\end_layout
+
+\begin_layout Standard
+{
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+long dim_x;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+long dim_y;
+\end_layout
+
+\begin_layout Standard
+};
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+AttributeValue
+\end_layout
+
+\begin_layout Standard
+struct AttributeValue
+\end_layout
+
+\begin_layout Standard
+{
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+any value;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+AttrQuality quality;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+TimeVal time;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string name;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+long dim_x;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+long dim_y;
+\end_layout
+
+\begin_layout Standard
+};
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+AttributeValue_3
+\end_layout
+
+\begin_layout Standard
+struct AttributeValue_3
+\end_layout
+
+\begin_layout Standard
+{
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+any value;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+AttrQuality quality;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+TimeVal time;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string name;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+AttributeDim r_dim;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+AttributeDim w_dim;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+DevErrorList err_list;
+\end_layout
+
+\begin_layout Standard
+};
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+AttributeValue_4
+\end_layout
+
+\begin_layout Standard
+struct AttributeValue_4
+\end_layout
+
+\begin_layout Standard
+{
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+AttrValUnion value;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+AttrQuality quality;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+AttrDataFormat data_format;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+TimeVal time;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string name;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+AttributeDim r_dim;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+AttributeDim w_dim;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+DevErrorList err_list;
+\end_layout
+
+\begin_layout Standard
+};
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+AttributeValue_5
+\end_layout
+
+\begin_layout Standard
+struct AttributeValue_5
+\end_layout
+
+\begin_layout Standard
+{
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+AttrValUnion value;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+AttrQuality quality;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+AttrDataFormat data_format;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+long data_type;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+TimeVal time;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string name;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+AttributeDim r_dim;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+AttributeDim w_dim;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+DevErrorList err_list;
+\end_layout
+
+\begin_layout Standard
+};
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+ChangeEventProp
+\end_layout
+
+\begin_layout Standard
+struct ChangeEventProp
+\end_layout
+
+\begin_layout Standard
+{
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string rel_change;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string abs_change;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+DevVarStringArray extensions;
+\end_layout
+
+\begin_layout Standard
+};
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+DevAttrHistory
+\end_layout
+
+\begin_layout Standard
+struct DevAttrHistory
+\end_layout
+
+\begin_layout Standard
+{
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+boolean attr_failed;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+AttributeValue value;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+DevErrorList errors;
+\end_layout
+
+\begin_layout Standard
+};
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+DevAttrHistory_3
+\end_layout
+
+\begin_layout Standard
+struct DevAttrHistory_3
+\end_layout
+
+\begin_layout Standard
+{
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+boolean attr_failed;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+AttributeValue_3 value;
+\end_layout
+
+\begin_layout Standard
+};
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+DevAttrHistory_4
+\end_layout
+
+\begin_layout Standard
+struct DevAttrHistory_4
+\end_layout
+
+\begin_layout Standard
+{
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string name;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+TimeValList dates;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+any value;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+AttrQualityList quals;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+EltInArrayList quals_array;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+AttributeDimList r_dims;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+EltInArrayList r_dims_array;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+AttributeDimList w_dims;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+EltInArrayList w_dims_array;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+DevErrorListList errors;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+EltInArrayList errors_array;
+\end_layout
+
+\begin_layout Standard
+};
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+DevAttrHistory_5
+\end_layout
+
+\begin_layout Standard
+struct DevAttrHistory_5
+\end_layout
+
+\begin_layout Standard
+{
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string name;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+AttrDataFormat data_format;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+long data_type;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+TimeValList dates;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+any value;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+AttrQualityList quals;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+EltInArrayList quals_array;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+AttributeDimList r_dims;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+EltInArrayList r_dims_array;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+AttributeDimList w_dims;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+EltInArrayList w_dims_array;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+DevErrorListList errors;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+EltInArrayList errors_array;
+\end_layout
+
+\begin_layout Standard
+};
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+DevCmdHistory
+\end_layout
+
+\begin_layout Standard
+struct DevCmdHistory
+\end_layout
+
+\begin_layout Standard
+{
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+TimeVal time;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+boolean cmd_failed;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+any value;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+DevErrorList errors;
+\end_layout
+
+\begin_layout Standard
+};
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+DevCmdHistory_4
+\end_layout
+
+\begin_layout Standard
+struct DevCmdHistory_4
+\end_layout
+
+\begin_layout Standard
+{
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+TimeValList dates;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+any value;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+AttributeDimList dims;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+EltInArrayList dims_array;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+DevErrorListList errors;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+EltInArrayList errors_array;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+long cmd_type;
+\end_layout
+
+\begin_layout Standard
+};
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+DevCmdInfo
+\end_layout
+
+\begin_layout Standard
+struct DevCmdInfo
+\end_layout
+
+\begin_layout Standard
+{
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string cmd_name;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+long cmd_tag;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+long in_type;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+long out_type;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string in_type_desc;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string out_type_desc;
+\end_layout
+
+\begin_layout Standard
+};
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+DevCmdInfo_2
+\end_layout
+
+\begin_layout Standard
+struct DevCmdInfo_2
+\end_layout
+
+\begin_layout Standard
+{
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string cmd_name;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+DispLevel level;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+long cmd_tag;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+long in_type;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+long out_type;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string in_type_desc;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string out_type_desc;
+\end_layout
+
+\begin_layout Standard
+};
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+DevEncoded
+\end_layout
+
+\begin_layout Standard
+struct DevEncoded
+\end_layout
+
+\begin_layout Standard
+{
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+DevString encoded_format;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+DevVarCharArray encoded_data;
+\end_layout
+
+\begin_layout Standard
+};
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+DevError
+\end_layout
+
+\begin_layout Standard
+struct DevError
+\end_layout
+
+\begin_layout Standard
+{
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string reason;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+ErrSeverity severity;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string desc;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string origin;
+\end_layout
+
+\begin_layout Standard
+};
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+DevInfo
+\end_layout
+
+\begin_layout Standard
+struct DevInfo
+\end_layout
+
+\begin_layout Standard
+{
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string dev_class;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string server_id;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string server_host;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+long server_version;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string doc_url;
+\end_layout
+
+\begin_layout Standard
+};
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+DevInfo_3
+\end_layout
+
+\begin_layout Standard
+struct DevInfo_3
+\end_layout
+
+\begin_layout Standard
+{
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string dev_class;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string server_id;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string server_host;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+long server_version;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string doc_url;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string dev_type;
+\end_layout
+
+\begin_layout Standard
+};
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+DevIntrChange
+\end_layout
+
+\begin_layout Standard
+struct DevIntrChange
+\end_layout
+
+\begin_layout Standard
+{
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+boolean dev_started;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+DevCmdInfoList_2 cmds;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+AttributeConfigList_5 atts;
+\end_layout
+
+\begin_layout Standard
+};
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+DevPipeBlob
+\end_layout
+
+\begin_layout Standard
+struct DevPipeBlob
+\end_layout
+
+\begin_layout Standard
+{
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string name;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+DevVarPipeDataEltArray blob_data;
+\end_layout
+
+\begin_layout Standard
+};
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+DevPipeData
+\end_layout
+
+\begin_layout Standard
+struct DevPipeData
+\end_layout
+
+\begin_layout Standard
+{
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string name;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+TimeVal time;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+DevPipeBlob data_blob;
+\end_layout
+
+\begin_layout Standard
+};
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+DevPipeDataElt
+\end_layout
+
+\begin_layout Standard
+struct DevPipeDataElt
+\end_layout
+
+\begin_layout Standard
+{
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string name;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+AttrValUnion value;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+DevVarPipeDataEltArray inner_blob;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string inner_blob_name;
+\end_layout
+
+\begin_layout Standard
+};
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+DevVarDoubleStringArray
+\end_layout
+
+\begin_layout Standard
+struct DevVarDoubleStringArray
+\end_layout
+
+\begin_layout Standard
+{
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+DevVarDoubleArray dvalue;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+DevVarStringArray svalue;
+\end_layout
+
+\begin_layout Standard
+};
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+DevVarLongStringArray
+\end_layout
+
+\begin_layout Standard
+struct DevVarLongStringArray
+\end_layout
+
+\begin_layout Standard
+{
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+DevVarLongArray lvalue;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+DevVarStringArray svalue;
+\end_layout
+
+\begin_layout Standard
+};
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+EltInArray
+\end_layout
+
+\begin_layout Standard
+struct EltInArray
+\end_layout
+
+\begin_layout Standard
+{
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+long start;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+long nb_elt;
+\end_layout
+
+\begin_layout Standard
+};
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+EventProperties
+\end_layout
+
+\begin_layout Standard
+struct EventProperties
+\end_layout
+
+\begin_layout Standard
+{
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+ChangeEventProp ch_event;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+PeriodicEventProp per_event;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+ArchiveEventProp arch_event;
+\end_layout
+
+\begin_layout Standard
+};
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+JavaClntIdent
+\end_layout
+
+\begin_layout Standard
+struct JavaClntIdent
+\end_layout
+
+\begin_layout Standard
+{
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string MainClass;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+JavaUUID uuid;
+\end_layout
+
+\begin_layout Standard
+};
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+NamedDevError
+\end_layout
+
+\begin_layout Standard
+struct NamedDevError
+\end_layout
+
+\begin_layout Standard
+{
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string name;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+long index_in_call;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+DevErrorList err_list;
+\end_layout
+
+\begin_layout Standard
+};
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+PeriodicEventProp
+\end_layout
+
+\begin_layout Standard
+struct PeriodicEventProp
+\end_layout
+
+\begin_layout Standard
+{
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string period;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+DevVarStringArray extensions;
+\end_layout
+
+\begin_layout Standard
+};
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+PipeConfig
+\end_layout
+
+\begin_layout Standard
+struct PipeConfig
+\end_layout
+
+\begin_layout Standard
+{
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string name;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string description;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string label;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+DispLevel level;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+PipeWriteType writable;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+DevVarStringArray extensions;
+\end_layout
+
+\begin_layout Standard
+};
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+TimeV
+\series default
+a
+\series bold
+l
+\end_layout
+
+\begin_layout Standard
+struct TimeVal
+\end_layout
+
+\begin_layout Standard
+{
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+long tv_sec;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+long tv_usec;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+long tv_nsec;
+\end_layout
+
+\begin_layout Standard
+};
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+ZmqCallInfo
+\end_layout
+
+\begin_layout Standard
+struct ZmqCallInfo
+\end_layout
+
+\begin_layout Standard
+{
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+long version;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+unsigned long ctr;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+string method_name;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+DevVarCharArray oid;
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+boolean call_is_except;
+\end_layout
+
+\begin_layout Standard
+};
+\end_layout
+
+\begin_layout Section
+Unions
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+AttrValUnion
+\end_layout
+
+\begin_layout Standard
+union AttrValUnion switch (AttributeDataType)
+\end_layout
+
+\begin_layout Standard
+{
+\end_layout
+
+\begin_layout Standard
+case ATT_BOOL:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+DevVarBooleanArray bool_att_value;
+\end_layout
+
+\begin_layout Standard
+case ATT_SHORT:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+DevVarShortArray short_att_value;
+\end_layout
+
+\begin_layout Standard
+case ATT_LONG:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+DevVarLongArray long_att_value;
+\end_layout
+
+\begin_layout Standard
+case ATT_LONG64:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+DevVarLong64Array long64_att_value;
+\end_layout
+
+\begin_layout Standard
+case ATT_FLOAT:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+DevVarFloatArray float_att_value;
+\end_layout
+
+\begin_layout Standard
+case ATT_DOUBLE:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+DevVarDoubleArray double_att_value;
+\end_layout
+
+\begin_layout Standard
+case ATT_UCHAR
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+DevVarCharArray uchar_att_value;
+\end_layout
+
+\begin_layout Standard
+case ATT_USHORT:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+DevVarUShortArray ushort_att_value;
+\end_layout
+
+\begin_layout Standard
+case ATT_ULONG:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+DevVarULongArray ulong_att_value;
+\end_layout
+
+\begin_layout Standard
+case ATT_ULONG64:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+DevVarULong64Array ulong64_att_value;
+\end_layout
+
+\begin_layout Standard
+case ATT_STRING:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+DevVarStringArray string_att_value;
+\end_layout
+
+\begin_layout Standard
+case ATT_STATE:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+DevVarStateArray state_att_value;
+\end_layout
+
+\begin_layout Standard
+case DEVICE_STATE:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+DevState dev_state_att;
+\end_layout
+
+\begin_layout Standard
+case ATT_ENCODED:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+DevVarEncodedArray encoded_att_value;
+\end_layout
+
+\begin_layout Standard
+case ATT_NO_DATA:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+DevBoolean union_no_data;
+\end_layout
+
+\begin_layout Standard
+};
+\series bold
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+ClntIdent
+\end_layout
+
+\begin_layout Standard
+union ClntIdent switch (LockerLanguage)
+\end_layout
+
+\begin_layout Standard
+{
+\end_layout
+
+\begin_layout Standard
+case CPP:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+CppClntIdent cpp_clnt;
+\end_layout
+
+\begin_layout Standard
+case JAVA:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+JavaClntIdent java_clnt;
+\end_layout
+
+\begin_layout Standard
+};
+\end_layout
+
+\begin_layout Section
+Exceptions
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+DevFailed
+\end_layout
+
+\begin_layout Standard
+exception DevFailed
+\end_layout
+
+\begin_layout Standard
+{
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+DevErrorList errors;
+\end_layout
+
+\begin_layout Standard
+};
+\series bold
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+MultiDevFailed
+\end_layout
+
+\begin_layout Standard
+exception MultiDevFailed
+\end_layout
+
+\begin_layout Standard
+{
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+NamedDevErrorList errors;
+\end_layout
+
+\begin_layout Standard
+};
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Interface Tango::Device
+\end_layout
+
+\begin_layout Standard
+The fundamental interface for all TANGO objects.
+ Each Device is a network object which can be accessed locally or via network.
+ The network protocol on the wire will be IIOP.
+ The Device interface implements all the basic functions needed for doing
+ generic synchronous and asynchronous I/O on a device.
+ A Device object has data and actions.
+ Data are represented in the form of Attributes.
+ Actions are represented in the form of Commands.
+ The CORBA Device interface offers attributes and methods to access the
+ attributes and commands.
+ A client will either use these methods directly from C++ or Java or access
+ them via wrapper classes implemented in a API.
+ The Device interface describes only the remote network interface.
+ Implementation features like threads, command security, priority etc.
+ are dealt with in server side of the device server model.
+\end_layout
+
+\begin_layout Subsection
+Attributes
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+adm_name
+\end_layout
+
+\begin_layout Standard
+readonly attribute string adm_name;
+\end_layout
+
+\begin_layout Standard
+adm_name (readonly) - administrator device unique ascii identifier
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+description
+\end_layout
+
+\begin_layout Standard
+readonly attribute string description;
+\end_layout
+
+\begin_layout Standard
+description (readonly) - general description of device
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+name
+\end_layout
+
+\begin_layout Standard
+readonly attribute string name;
+\end_layout
+
+\begin_layout Standard
+name (readonly) - unique ascii identifier
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+state
+\end_layout
+
+\begin_layout Standard
+readonly attribute DevState state;
+\end_layout
+
+\begin_layout Standard
+state (readonly) - device state
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+status
+\end_layout
+
+\begin_layout Standard
+readonly attribute string status;
+\end_layout
+
+\begin_layout Standard
+status (readonly) - device state as ascii string
+\end_layout
+
+\begin_layout Subsection
+Operations
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+black_box
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+black-box
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+DevVarStringArray black_box(in long number)
+\end_layout
+
+\begin_layout Standard
+raises(DevFailed);
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+read list of last N commands executed by clients
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Parameters
+\emph default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+number -- of commands to return
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Returns
+\emph default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+list of command and clients
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+command_inout
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+command-inout
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+any command_inout(in string command, in any argin)
+\end_layout
+
+\begin_layout Standard
+raises(DevFailed);
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+execute a command on a device synchronously with no input parameter and
+ one one output parameter
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Parameters:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+command -- ascii string e.g.
+ "On"
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+argin -- command input parameter e.g.
+ float
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Returns
+\emph default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+command result.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+command_list_query
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+command-list-query
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+DevCmdInfoList command_list_query()
+\end_layout
+
+\begin_layout Standard
+raises(DevFailed);
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+query device to see what commands it supports
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Returns
+\emph default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+list of commands and their types
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+command_query
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+command-query
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+DevCmdInfo command_query(in string command)
+\end_layout
+
+\begin_layout Standard
+raises(DevFailed);
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+query device to see command argument
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Parameters
+\emph default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+command -- name
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Returns
+\emph default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+command and its types
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+get_attribute_config
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+get-attribute-config
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+AttributeConfigList get_attribute_config(in DevVarStringArray names)
+\end_layout
+
+\begin_layout Standard
+raises(DevFailed);
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+read the configuration for a variable list of attributes from a device
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Parameters
+\emph default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+name -- list of attribute names to read
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Returns
+\emph default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+list of attribute configurations read
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+info
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+info
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+DevInfo info()
+\end_layout
+
+\begin_layout Standard
+raises(DevFailed);
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+return general information about object e.g.
+ class, type, ...
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Returns
+\emph default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+device info
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+ping
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+ping
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+void ping()
+\end_layout
+
+\begin_layout Standard
+raises(DevFailed);
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ping a device to see if it alive
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+read_attributes
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+read-attributes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+AttributeValueList read_attributes(in DevVarStringArray names)
+\end_layout
+
+\begin_layout Standard
+raises(DevFailed);
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+read a variable list of attributes from a device
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Parameters
+\emph default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+name -- list of attribute names to read
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Returns
+\emph default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+list of attribute values read
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+set_attribute_config
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+set-attribute-config
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+void set_attribute_config(in AttributeConfigList new_conf)
+\end_layout
+
+\begin_layout Standard
+raises(DevFailed);
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+set the configuration for a variable list of attributes from the device
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Parameters
+\emph default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+new_conf -- list of attribute configuration to be set
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+write_attributes
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+write-attributes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+void write_attributes(in AttributeValueList values)
+\end_layout
+
+\begin_layout Standard
+raises(DevFailed);
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+write a variable list of attributes to a device
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Parameters
+\emph default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+values -- list of attribute values to write
+\end_layout
+
+\begin_layout Section
+Interface Tango::Device_2
+\end_layout
+
+\begin_layout Standard
+interface Device_2 inherits from Tango::Device
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The updated Tango device interface.
+ It inherits from Tango::Device and therefore supports all attribute/operation
+ defined in the Tango::Device interface.
+ Two CORBA operations have been modified to support more parameters (command_ino
+ut_2 and  read_attribute_2).
+ Three CORBA operations now retrun a different data type (command_list_query_2,
+ command_query_2 and get_attribute_config)
+\end_layout
+
+\begin_layout Subsection
+Operations
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+command_inout_2
+\end_layout
+
+\begin_layout Standard
+any command_inout_2(in string command, in any argin, in DevSource source)
+\end_layout
+
+\begin_layout Standard
+raises(DevFailed);
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+execute a command on a device synchronously with no input parameter and
+ one one output parameter
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Parameters:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+command -- ascii string e.g.
+ "On"
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+argin -- command input parameter
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+source -- data source
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Returns
+\emph default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+command result.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+command_inout_history_2
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+command-inout-history-2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+DevCmdHistoryList command_inout_history_2(in string command, in long n)
+\end_layout
+
+\begin_layout Standard
+raises(DevFailed);
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Get command result history from polling buffer.
+ Obviously, the command must be polled.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Parameters:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+command -- ascii string e.g.
+ "On"
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+n -- record number
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Returns
+\emph default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+list of command result (or exception parameters if the command failed).
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+command_list_query_2
+\end_layout
+
+\begin_layout Standard
+DevCmdInfoList_2 command_list_query_2()
+\end_layout
+
+\begin_layout Standard
+raises(DevFailed);
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+query device to see what commands it supports
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Returns
+\emph default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+list of commands and their types
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+command_query_2
+\end_layout
+
+\begin_layout Standard
+DevCmdInfo_2 command_query_2(in string command)
+\end_layout
+
+\begin_layout Standard
+raises(DevFailed);
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+query device to see command argument
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Parameters
+\emph default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+command -- name
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Returns
+\emph default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+command and its types
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+get_attribute_config_2
+\end_layout
+
+\begin_layout Standard
+AttributeConfigList_2 get_attribute_config_2(in DevVarStringArray names)
+\end_layout
+
+\begin_layout Standard
+raises(DevFailed);
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+read the configuration for a variable list of attributes from a device
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Parameters
+\emph default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+name -- list of attribute names to read
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Returns
+\emph default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+list of attribute configurations read
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+read_attributes_2
+\end_layout
+
+\begin_layout Standard
+AttributeValueList read_attributes_2(in DevVarStringArray names, in DevSource
+ source)
+\end_layout
+
+\begin_layout Standard
+raises(DevFailed)
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+read a variable list of attributes from a device
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Parameters
+\emph default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+name -- list of attribute names to read
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Returns
+\emph default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+list of attribute values read 
+\series bold
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+read_attribute_history_2
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+read-attribute-history-2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+DevAttrHistoryList read_attributes_history_2(in string name, in long n)
+\end_layout
+
+\begin_layout Standard
+raises(DevFailed)
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Get attribute value history from polling buffer.
+ Obviously, the attribute must be polled.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Parameters
+\emph default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+name -- Attribute name to read history
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+n -- Record number
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Returns
+\emph default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+list of attribute value (or exception parameters if the attribute failed).
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Interface Tango::Device_3
+\end_layout
+
+\begin_layout Standard
+interface Device_3 inherits from Tango::Device_2
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The updated Tango device interface for Tango release 5.
+ It inherits from Tango::Device_2 and therefore supports all attribute/operation
+ defined in the Tango::Device_2 interface.
+ Six CORBA operations now return a different data type (read_attributes_3,
+ write_attributes_3, read_attribute_history_3, info_3, get_attribute_config_3
+ and set_attribute_config_3)
+\end_layout
+
+\begin_layout Subsection
+Operations
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+read_attributes_3
+\end_layout
+
+\begin_layout Standard
+AttributeValueList_3 read_attributes_3(in DevVarStringArray names, in DevSource
+ source)
+\end_layout
+
+\begin_layout Standard
+raises(DevFailed);
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+read a variable list of attributes from a device
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Parameters
+\emph default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+name -- list of attribute names to read
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+source -- data source
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Returns
+\emph default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+list of attribute values read 
+\series bold
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+write_attributes_3
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+command-inout-history-2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+void write_attributes_3(in AttributeValueList values)
+\end_layout
+
+\begin_layout Standard
+raises(DevFailed, MultiDevFailed);
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+write a variable list of attributes to a device
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Parameters
+\emph default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+values -- list of attribute values to write
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+read_attribute_history_3
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+read-attribute-history-2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+DevAttrHistoryList_3 read_attributes_history_3(in string name, in long n)
+\end_layout
+
+\begin_layout Standard
+raises(DevFailed)
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Get attribute value history from polling buffer.
+ Obviously, the attribute must be polled.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Parameters
+\emph default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+name -- Attribute name to read history
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+n -- Record number
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Returns
+\emph default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+list of attribute value (or exception parameters if the attribute failed).
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+info_3
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+info
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+DevInfo_3 info()
+\end_layout
+
+\begin_layout Standard
+raises(DevFailed);
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+return general information about object e.g.
+ class, type, ...
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Returns
+\emph default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+device info
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+get_attribute_config_3
+\end_layout
+
+\begin_layout Standard
+AttributeConfigList_3 get_attribute_config_3(in DevVarStringArray names)
+\end_layout
+
+\begin_layout Standard
+raises(DevFailed);
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+read the configuration for a variable list of attributes from a device
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Parameters
+\emph default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+name -- list of attribute names to read
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Returns
+\emph default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+list of attribute configurations read
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+set_attribute_config_3
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+set-attribute-config
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+void set_attribute_config_3(in AttributeConfigList_3 new_conf)
+\end_layout
+
+\begin_layout Standard
+raises(DevFailed);
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+set the configuration for a variable list of attributes from the device
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Parameters
+\emph default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+new_conf -- list of attribute configuration to be set
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Interface Tango::Device_4
+\end_layout
+
+\begin_layout Standard
+interface Device_4 inherits from Tango::Device_3
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The updated Tango device interface for Tango release 7.
+ It inherits from Tango::Device_3 and therefore supports all attribute/operation
+ defined in the Tango::Device_3 interface.
+\end_layout
+
+\begin_layout Subsection
+Operations
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+read_attributes_4
+\end_layout
+
+\begin_layout Standard
+AttributeValueList_4 read_attributes_4(in DevVarStringArray names, in DevSource
+ source,in ClntIdent cl_ident)
+\end_layout
+
+\begin_layout Standard
+raises(DevFailed);
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+read a variable list of attributes from a device
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Parameters
+\emph default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+name -- list of attribute names to read
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+source -- data source
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+cl_ident -- client identificator
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Returns
+\emph default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+list of attribute values read 
+\series bold
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+write_attributes_4
+\end_layout
+
+\begin_layout Standard
+void write_attributes_3(in AttributeValueList_4 values, in ClniIdent cl_ident)
+\end_layout
+
+\begin_layout Standard
+raises(DevFailed, MultiDevFailed);
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+write a variable list of attributes to a device
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Parameters
+\emph default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+values -- list of attribute values to write
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+cl_ident -- client identificator
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+command_inout_4
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+command-inout-4
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+any command_inout_4(in string command, in any argin, in DevSource source,
+ In ClntIdent cl_ident)
+\end_layout
+
+\begin_layout Standard
+raises(DevFailed);
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Execute a command on a device synchronously with one input parameter and
+ one one output parameter
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Parameters:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+command -- ascii string e.g.
+ "On"
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+argin -- command input parameter
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+source -- data source
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+cl_ident -- client identificator
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Returns
+\emph default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+command result
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+read_attribute_history_4
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+read-attribute-history-4
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+DevAttrHistory_4 read_attributes_history_4(in string name, in long n)
+\end_layout
+
+\begin_layout Standard
+raises(DevFailed)
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Get attribute value history from polling buffer.
+ Obviously, the attribute must be polled.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Parameters
+\emph default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+name -- Attribute name to read history
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+n -- Record number
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Returns
+\emph default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+Attribute value (or exception parameters if the attribute failed) coded
+ in a structure.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+command_inout_history_4
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+command-inout-history-4
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+DevCmdHistory_4 command_inout_history_4(in string command, in long n)
+\end_layout
+
+\begin_layout Standard
+raises(DevFailed);
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Get command value history from polling buffer.
+ Obviously, the command must be polled.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Parameters:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+name -- Command name to read history
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+n -- Record number
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Returns
+\emph default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+Command value (or exception paramteters) coded in a structure
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+write_read_attribute_4
+\end_layout
+
+\begin_layout Standard
+AttributeValueList_4 write_read_attribute_4(in AttributeValueList_4 values,
+ in ClntIdent cl_ident)
+\end_layout
+
+\begin_layout Standard
+raises(DevFailed,MultiDevFailed);
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Write then read a variable list of attributes from a device
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Parameters
+\emph default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+values -- list of attribute values to write
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+cl_ident -- client identificator
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Returns
+\emph default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+list of attribute values read
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+set_attribute_config_4
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+set-attribute-config-4
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+void set_attribute_config_4(in AttributeConfigList_3 new_conf, in ClntIdent
+ cl_ident)
+\end_layout
+
+\begin_layout Standard
+raises(DevFailed);
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+set the configuration for a variable list of attributes from the device
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Parameters
+\emph default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+new_conf -- list of attribute configuration to be set
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+cl_ident -- client identificator
+\begin_inset Newline newline
+\end_inset
+
+Interface Tango::Device_4
+\end_layout
+
+\begin_layout Standard
+interface Device_4 inherits from Tango::Device_3
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The updated Tango device interface for Tango release 7.
+ It inherits from Tango::Device_3 and therefore supports all attribute/operation
+ defined in the Tango::Device_3 interface.
+\end_layout
+
+\begin_layout Section
+Interface Tango::Device_5
+\end_layout
+
+\begin_layout Standard
+interface Device_5 inherits from Tango::Device_4
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The updated Tango device interface for Tango release 9.
+ It inherits from Tango::Device_4 and therefore supports all attribute/operation
+ defined in the Tango::Device_4 interface.
+\end_layout
+
+\begin_layout Subsection
+operations
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+get_attribute_config_5
+\end_layout
+
+\begin_layout Standard
+AttributeConfigList_5 get_attribute_config_5(in DevVarStringArray names)
+\end_layout
+
+\begin_layout Standard
+raises(DevFailed);
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+read the configuration for a variable list of attributes from a device
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Parameters
+\emph default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+name -- list of attribute names to read
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Returns
+\emph default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+list of attribute configurations read
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+set_attribute_config_5
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+set-attribute-config-5
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+void set_attribute_config_5(in AttributeConfigList_5 new_conf, in ClntIdent
+ cl_ident)
+\end_layout
+
+\begin_layout Standard
+raises(DevFailed);
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+set the configuration for a variable list of attributes from the device
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Parameters
+\emph default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+new_conf -- list of attribute configuration to be set
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+cl_ident -- client identificator
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+read_attributes_5
+\end_layout
+
+\begin_layout Standard
+AttributeValueList_5 read_attributes_5(in DevVarStringArray names, in DevSource
+ source,in ClntIdent cl_ident)
+\end_layout
+
+\begin_layout Standard
+raises(DevFailed);
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+read a variable list of attributes from a device
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Parameters
+\emph default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+name -- list of attribute names to read
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+source -- data source
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+cl_ident -- client identificator
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Returns
+\emph default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+list of attribute values read
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+write_read_attributes_5
+\end_layout
+
+\begin_layout Standard
+AttributeValueList_5 write_read_attributes_5(in AttributeValueList_4 values,
+ in DevVarStringArray r_names, in ClntIdent cl_ident)
+\end_layout
+
+\begin_layout Standard
+raises(DevFailed,MultiDevFailed);
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Write then read a variable list of attributes from a device
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Parameters
+\emph default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+values -- list of attribute values to write
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+r_names -- list of attribute to read
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+cl_ident -- client identificator
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Returns
+\emph default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+list of attribute values read
+\series bold
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+read_attribute_history_5
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+read-attribute-history-5
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+DevAttrHistory_5 read_attributes_history_5(in string name, in long n)
+\end_layout
+
+\begin_layout Standard
+raises(DevFailed)
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Get attribute value history from polling buffer.
+ Obviously, the attribute must be polled.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Parameters
+\emph default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+name -- Attribute name to read history
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+n -- Record number
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Returns
+\emph default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+Attribute value (or exception parameters if the attribute failed) coded
+ in a structure.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+get_pipe_config_5
+\end_layout
+
+\begin_layout Standard
+PipeConfigList get_pipe_config_5(in DevVarStringArray names)
+\end_layout
+
+\begin_layout Standard
+raises(DevFailed);
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+read the configuration for a variable list of pipes from a device
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Parameters
+\emph default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+name -- list of pipe names to read
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Returns
+\emph default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+list of pipe configurations
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+set_pipe_config_5
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+set-pipe-config-5
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+void set_pipe_config_5(in PipeConfigList new_conf, in ClntIdent cl_ident)
+\end_layout
+
+\begin_layout Standard
+raises(DevFailed);
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+set the configuration for a variable list of pipes from the device
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Parameters
+\emph default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+new_conf -- list of pipe configuration to be set
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+cl_ident -- client identificator
+\series bold
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+read_pipe_5
+\end_layout
+
+\begin_layout Standard
+DevPipeData read_pipe_5(in string name, in ClntIdent cl_ident)
+\end_layout
+
+\begin_layout Standard
+raises(DevFailed);
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+read a pipe from a device
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Parameters
+\emph default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+name -- pipe name to read
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+cl_ident -- client identificator
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Returns
+\emph default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+Pipe value
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+write_pipe_5
+\end_layout
+
+\begin_layout Standard
+void write_pipe_5(in DevPipeData value, in ClniIdent cl_ident)
+\end_layout
+
+\begin_layout Standard
+raises(DevFailed);
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+write a pipe to a device
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Parameters
+\emph default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+value -- new pipe value to write
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+cl_ident -- client identificator
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+write_read_pipe_5
+\end_layout
+
+\begin_layout Standard
+DevPipeData write_read_pipe_5(in DevPipeData value, in ClntIdent cl_ident)
+\end_layout
+
+\begin_layout Standard
+raises(DevFailed);
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Write then read a pipe from a device
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Parameters
+\emph default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+value -- New pipe value to write
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+cl_ident -- client identificator
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Returns
+\emph default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+pipe values read
+\end_layout
+
+\end_body
+\end_document

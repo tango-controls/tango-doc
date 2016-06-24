@@ -1,0 +1,44 @@
+#
+#		Makefile to generate a Tango server
+#
+
+CC = c++
+BIN_DIR = ubuntu1104
+TANGO_HOME = /segfs/tango
+
+INCLUDE_DIRS = -I $(TANGO_HOME)/include/$(BIN_DIR) \
+	       -I .
+
+LIB_DIRS = -L $(TANGO_HOME)/lib/$(BIN_DIR)
+
+
+CXXFLAGS =  -D_REENTRANT -std=c++0x $(INCLUDE_DIRS)
+LFLAGS =  $(LIB_DIRS) -ltango \
+                      -llog4tango \
+                      -lomniORB4 \
+                      -lomniDynamic4 \
+                      -lCOS4 \
+                      -lomnithread \
+		      -lzmq \
+                      -lpthread
+
+
+SVC_OBJS = 	main.o \
+		ClassFactory.o \
+		SteppermotorClass.o \
+		Steppermotor.o \
+		SteppermotorStateMachine.o
+
+
+.SUFFIXES:	.o .cpp
+.cpp.o:
+	$(CC) $(CXXFLAGS) -c $<
+	
+			
+all: StepperMotor
+
+StepperMotor:	$(SVC_OBJS)
+	$(CC) $(SVC_OBJS) -o $(BIN_DIR)/StepperMotor $(LFLAGS)
+	
+clean:
+	rm -f *.o core

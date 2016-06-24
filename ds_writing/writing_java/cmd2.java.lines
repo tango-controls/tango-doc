@@ -1,0 +1,8 @@
+     1	public Any execute(DeviceImpl device,Any in_any) throws DevFailed
+     2	{
+     3		Util.out2.println("DevReadPositionCmd.execute(): arrived");
+     4	
+     5		int motor = extract_DevLong(in_any);
+     6	
+     7		return insert(((StepperMotor)(device)).dev_read_position(motor));
+     8	}
