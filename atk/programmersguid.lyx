@@ -523,875 +523,875 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 package examples;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 import javax.swing.JFrame;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 import javax.swing.JMenuItem;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 import javax.swing.JMenuBar;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 import javax.swing.JMenu;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 import java.awt.event.ActionListener;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 import java.awt.event.ActionEvent;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 import java.awt.BorderLayout;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 import fr.esrf.tangoatk.core.AttributeList;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 import fr.esrf.tangoatk.core.ConnectionException;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 import fr.esrf.tangoatk.core.CommandList;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 import fr.esrf.tangoatk.widget.util.ErrorHistory;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 import fr.esrf.tangoatk.widget.util.ATKGraphicsUtils;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 import fr.esrf.tangoatk.widget.attribute.ScalarListViewer;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 import fr.esrf.tangoatk.widget.command.CommandComboViewer;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 public class FirstApplication extends JFrame
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 JMenuBar menu;                    // So that our application looks
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                                   // halfway decent.
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 AttributeList attributes;         // The list that will contain our
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                                   // attributes
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 CommandList commands;             // The list that will contain our
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                                   // commands
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 ErrorHistory errorHistory;        // A window that displays errors
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 ScalarListViewer sListViewer;     // A viewer which knows how to
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                                   // display a list of scalar attributes.
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                                   // If you want to display other types
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                                   // than scalars, you'll have to wait
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                                   // for the next example.
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 CommandComboViewer commandViewer; // A viewer which knows how to display
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                                   // a combobox of commands and execute
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                                   // them.
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 String device;                    // The name of our device.
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 public FirstApplication()
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    // The swing stuff to create the menu bar and its pulldown menus
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    menu = new JMenuBar();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    JMenu fileMenu = new JMenu();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    fileMenu.setText("File");   
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    JMenu viewMenu = new JMenu();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    viewMenu.setText("View");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    JMenuItem quitItem = new JMenuItem();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    quitItem.setText("Quit");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    quitItem.addActionListener(new 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
       java.awt.event.ActionListener()
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
       {                 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
        public void
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
        actionPerformed(ActionEvent evt)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
        {quitItemActionPerformed(evt);}
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
       });
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    fileMenu.add(quitItem);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    JMenuItem errorHistItem = new JMenuItem();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    errorHistItem.setText("Error History");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    errorHistItem.addActionListener(new 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
            java.awt.event.ActionListener()
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
            {                 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
             public void 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
             actionPerformed(ActionEvent evt)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
             {errHistItemActionPerformed(evt);}
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
            });
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    viewMenu.add(errorHistItem);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    menu.add(fileMenu);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    menu.add(viewMenu);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    //
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    // Here we create ATK objects to handle attributes, commands and errors.
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    //
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    attributes = new AttributeList(); 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    commands = new CommandList();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    errorHistory = new ErrorHistory();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    device = "id14/eh3_mirror/1";
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    sListViewer = new ScalarListViewer();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    commandViewer = new CommandComboViewer();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 // 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 // A feature of the command and attribute list is that if you
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 // supply an errorlistener to these lists, they'll add that
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 // errorlistener to all subsequently created attributes or
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 // commands.
  So it is important to do this _before_ you
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 // start adding attributes or commands.
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    attributes.addErrorListener(errorHistory);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    commands.addErrorListener(errorHistory);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 // Sometimes we're out of luck and the device or the attributes
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 // are not available.
  In that case a ConnectionException is thrown.
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 // This is why we add the attributes in a try/catch
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    try
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 // Another feature of the attribute and command list is that they
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 // can add wildcard names, currently only `*' is supported.
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 // When using a wildcard, the lists will add all commands or
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 // attributes available on the device.
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    attributes.add(device + "/*");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    catch (ConnectionException ce)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
       System.out.println("Error fetching " + 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                          "attributes from " +
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                          device + " " + ce);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 // See the comments for attributelist
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    try
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
       commands.add(device + "/*");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    catch (ConnectionException ce)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
       System.out.println("Error fetching " +
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                          "commands from " +
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                          device + " " + ce);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 // Here we tell the scalarViewer what it's to show.
  The
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 // ScalarListViewer loops through the attribute-list and picks out
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 // the ones which are scalars and show them.
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    sListViewer.setModel(attributes);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 // This is where the CommandComboViewer is told what it's to
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 // show.
  It knows how to show and execute most commands.
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    commandViewer.setModel(commands);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 // add the menubar to the frame
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    setJMenuBar(menu);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 // Make the layout nice.
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    getContentPane().setLayout(new BorderLayout());
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    getContentPane().add(commandViewer, BorderLayout.NORTH);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    getContentPane().add(sListViewer, BorderLayout.SOUTH);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 // A third feature of the attributelist is that it knows how
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 // to refresh its attributes.
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    attributes.startRefresher();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 // JFrame stuff to make the thing show.
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    pack();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    ATKGraphicsUtils.centerFrameOnScreen(this); //ATK utility to center window
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    setVisible(true);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    public static void main(String [] args)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
       new FirstApplication();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    public void quitItemActionPerformed(ActionEvent evt)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
       System.exit(0);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    public void errHistItemActionPerformed(ActionEvent evt)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
       errorHistory.setVisible(true);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
@@ -1445,63 +1445,63 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 try
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 { 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     // a StringScalar attribute from the device one
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    attributes.add("jlp/test/1/att_cinq");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    // a NumberSpectrum attribute from the device one
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    attributes.add("jlp/test/1/att_spectrum");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    // a NumberImage attribute from the device two
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    attributes.add("sr/d-ipc/id25-1n/Image");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 catch (ConnectionException ce)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    System.out.println("Error fetching " + 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
        "attributes" + ce);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
@@ -1694,410 +1694,410 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 package examples;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 import javax.swing.JFrame;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 import javax.swing.JMenuItem;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 import javax.swing.JMenuBar;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 import javax.swing.JMenu;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 import java.awt.event.ActionListener;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 import java.awt.event.ActionEvent;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 import java.awt.BorderLayout;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 import java.awt.Color;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 import fr.esrf.tangoatk.core.AttributeList;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 import fr.esrf.tangoatk.core.ConnectionException;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 import fr.esrf.tangoatk.core.IStringScalar;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 import fr.esrf.tangoatk.core.INumberSpectrum;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 import fr.esrf.tangoatk.core.INumberImage;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 import fr.esrf.tangoatk.widget.util.ErrorHistory;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 import fr.esrf.tangoatk.widget.util.Gradient;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 import fr.esrf.tangoatk.widget.util.ATKGraphicsUtils;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 import fr.esrf.tangoatk.widget.attribute.NumberImageViewer;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 import fr.esrf.tangoatk.widget.attribute.NumberSpectrumViewer;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 import fr.esrf.tangoatk.widget.attribute.SimpleScalarViewer;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 public class SecondApplication extends JFrame
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      JMenuBar            menu;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      AttributeList       attributes;   // The list that will contain our
  attributes
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      ErrorHistory        errorHistory; // A window that displays errors
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      IStringScalar        ssAtt;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      INumberSpectrum      nsAtt;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      INumberImage         niAtt;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      public SecondApplication()
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         // Swing stuff to create the menu bar and its pulldown menus
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         menu = new JMenuBar();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         JMenu fileMenu = new JMenu();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         fileMenu.setText("File");   
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         JMenu viewMenu = new JMenu();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         viewMenu.setText("View");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         JMenuItem quitItem = new JMenuItem();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         quitItem.setText("Quit");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         quitItem.addActionListener(new java.awt.event.ActionListener()
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                                       {                 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                                        public void actionPerformed(ActionEvent
  evt)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                                        {quitItemActionPerformed(evt);}
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                                       });
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         fileMenu.add(quitItem);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         JMenuItem errorHistItem = new JMenuItem();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         errorHistItem.setText("Error History");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         errorHistItem.addActionListener(new java.awt.event.ActionListener()
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                 {                 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                  public void actionPerformed(ActionEvent evt)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                  {errHistItemActionPerformed(evt);}
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                 });
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         viewMenu.add(errorHistItem);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         menu.add(fileMenu);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         menu.add(viewMenu);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
       //
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
       // Here we create TangoATK objects to view attributes and errors.
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
       //
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         attributes = new AttributeList(); 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         errorHistory = new ErrorHistory();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
       //
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
       // We create a SimpleScalarViewer, a NumberSpectrumViewer and
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
       // a NumberImageViewer, since we already knew that we were
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
       // playing with a scalar attribute, a number spectrum attribute
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
       // and a number image attribute this time.
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
       //
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
       SimpleScalarViewer     ssViewer = new SimpleScalarViewer();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         NumberSpectrumViewer   nSpectViewer = new NumberSpectrumViewer();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         NumberImageViewer      nImageViewer = new NumberImageViewer();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         attributes.addErrorListener(errorHistory);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      //
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      // The attribute (and command) list has the feature of returning the
  last
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      // attribute that was added to it.
  Just remember that it is returned as an
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      // IEntity object, so you need to cast it into a more specific object,
  like
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      // IStringScalar, which is the interface which defines a string scalar
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      //
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
        try
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
            ssAtt = (IStringScalar) attributes.add("jlp/test/1/att_cinq");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
            nsAtt = (INumberSpectrum) attributes.add("jlp/test/1/att_spectrum");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
            niAtt = (INumberImage) attributes.add("sr/d-ipc/id25-1n/Image");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         catch (ConnectionException ce)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
            System.out.println("Error fetching one of the attributes  "+" "
  + ce);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
            System.out.println("Application Aborted.");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
            System.exit(0);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         }        
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         //
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         // Pay close attention to the following three lines!! This is how
  it's done!
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         // This is how it's always done! The setModel
 \begin_inset Index
 status collapsed
@@ -2111,230 +2111,230 @@ setModel
  method of any viewer takes care
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
        // of connecting the viewer to the attribute (model) it's in charge
  of displaying.
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
        // This is the way to tell each viewer what (which attribute) it
  has to show.
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
        // Note that we use a viewer adapted to each type of attribute
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
        //
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         ssViewer.setModel(ssAtt);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         nSpectViewer.setModel(nsAtt);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         nImageViewer.setModel(niAtt);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      //
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         nSpectViewer.setPreferredSize(new java.awt.Dimension(400, 300));
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         nImageViewer.setPreferredSize(new java.awt.Dimension(500, 300));
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         Gradient  g = new Gradient();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         g.buidColorGradient();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         g.setColorAt(0,Color.black);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         nImageViewer.setGradient(g);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         nImageViewer.setBestFit(true);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         //
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         // Add the viewers into the frame to show them
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         //
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         getContentPane().setLayout(new BorderLayout());
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         getContentPane().add(ssViewer, BorderLayout.SOUTH);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         getContentPane().add(nSpectViewer, BorderLayout.CENTER);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         getContentPane().add(nImageViewer, BorderLayout.EAST);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         //
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         // To have the attributes values refreshed we should start the
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         // attribute list's refresher.
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         //
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         attributes.startRefresher();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         //
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         // add the menubar to the frame
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         //
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         setJMenuBar(menu);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         //
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         // JFrame stuff to make the thing show.
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         //
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         pack();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         ATKGraphicsUtils.centerFrameOnScreen(this); //ATK utility to center
  window
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         setVisible(true);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      public static void main(String [] args)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         new SecondApplication();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      public void quitItemActionPerformed(ActionEvent evt)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         System.exit(0);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      public void errHistItemActionPerformed(ActionEvent evt)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         errorHistory.setVisible(true);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
@@ -2368,7 +2368,7 @@ This program (SeondApplication) should look something like this (depending
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
@@ -2635,542 +2635,542 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 package examples;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 import java.io.*;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 import java.util.*;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 import javax.swing.JFrame;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 import javax.swing.JMenuItem;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 import javax.swing.JMenuBar;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 import javax.swing.JMenu;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 import java.awt.event.ActionListener;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 import java.awt.event.ActionEvent;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 import java.awt.BorderLayout;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 import fr.esrf.tangoatk.widget.util.ErrorHistory;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 import fr.esrf.tangoatk.widget.util.ATKGraphicsUtils;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 import fr.esrf.tangoatk.widget.jdraw.SynopticFileViewer;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 import fr.esrf.tangoatk.widget.jdraw.TangoSynopticHandler;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 public class ThirdApplication extends JFrame
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      JMenuBar              menu;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      ErrorHistory          errorHistory;  // A window that displays errors
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      SynopticFileViewer    sfv;           // TangoATK generic synoptic viewer
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      public ThirdApplication()
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         // Swing stuff to create the menu bar and its pulldown menus
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         menu = new JMenuBar();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         JMenu fileMenu = new JMenu();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         fileMenu.setText("File");   
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         JMenu viewMenu = new JMenu();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         viewMenu.setText("View");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         JMenuItem quitItem = new JMenuItem();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         quitItem.setText("Quit");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         quitItem.addActionListener(new java.awt.event.ActionListener()
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                                       {                 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                                        public void actionPerformed(ActionEvent
  evt)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                                        {quitItemActionPerformed(evt);}
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                                       });
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         fileMenu.add(quitItem);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         JMenuItem errorHistItem = new JMenuItem();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         errorHistItem.setText("Error History");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         errorHistItem.addActionListener(new java.awt.event.ActionListener()
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                 {                 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                  public void actionPerformed(ActionEvent evt)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                  {errHistItemActionPerformed(evt);}
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                 });
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         viewMenu.add(errorHistItem);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         menu.add(fileMenu);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         menu.add(viewMenu);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         //
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         // Here we create TangoATK synoptic viewer and error window.
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         //
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         errorHistory = new ErrorHistory();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         sfv = new SynopticFileViewer();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         try
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
             sfv.setErrorWindow(errorHistory);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         catch (Exception setErrwExcept)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
             System.out.println("Cannot set Error History Window");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         //      
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         // Here we define the name of the synoptic file to show and the
  tooltip mode to use
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         //        
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         try
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         {     
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
           sfv.setJdrawFileName("/users/poncet/ATK_OLD/jdraw_files/id14.jdw");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
           sfv.setToolTipMode (TangoSynopticHandler.TOOL_TIP_NAME);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         catch (FileNotFoundException  fnfEx)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
            javax.swing.JOptionPane.showMessageDialog(
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
               null, "Cannot find the synoptic file : id14.jdw.
 \backslash
 n"
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                    + "Check the file name you entered;"
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                    + " Application will abort ...
 \backslash
 n"
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                    + fnfEx,
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                    "No such file",
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                    javax.swing.JOptionPane.ERROR_MESSAGE);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
            System.exit(-1);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         catch (IllegalArgumentException  illEx)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
            javax.swing.JOptionPane.showMessageDialog(
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
               null, "Cannot parse the synoptic file : id14.jdw.
 \backslash
 n"
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                    + "Check if the file is a Jdraw file."
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                    + " Application will abort ...
 \backslash
 n"
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                    + illEx,
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                    "Cannot parse the file",
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                    javax.swing.JOptionPane.ERROR_MESSAGE);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
            System.exit(-1);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         catch (MissingResourceException  mrEx)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
            javax.swing.JOptionPane.showMessageDialog(
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
               null, "Cannot parse the synoptic file : id14.jdw.
 \backslash
 n"
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                    + " Application will abort ...
 \backslash
 n"
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                    + mrEx,
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                    "Cannot parse the file",
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                    javax.swing.JOptionPane.ERROR_MESSAGE);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
            System.exit(-1);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         //
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         // Add the viewers into the frame to show them
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         //
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         getContentPane().setLayout(new BorderLayout());
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         getContentPane().add(sfv, BorderLayout.CENTER);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         //
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         // add the menubar to the frame
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         //
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         setJMenuBar(menu);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         //
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         // JFrame stuff to make the thing show.
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         //
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         pack();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         ATKGraphicsUtils.centerFrameOnScreen(this); //TangoATK utility to
  center window
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         setVisible(true);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      public static void main(String [] args)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         new ThirdApplication();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      public void quitItemActionPerformed(ActionEvent evt)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         System.exit(0);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      public void errHistItemActionPerformed(ActionEvent evt)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         errorHistory.setVisible(true);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \begin_inset CommandInset include
 LatexCommand input
 filename "line.tex"
@@ -3359,11 +3359,11 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 // this is the setModel of a SimpleScalarViewer
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
   public void setModel
 \begin_inset Index
 status collapsed
@@ -3377,165 +3377,165 @@ setModel
 (INumberScalar scalar) {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     clearModel();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     if (scalar != null) {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
       format = scalar.getProperty("format").getPresentation();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
       numberModel = scalar;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    // this is where the viewer connects itself to the 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    // model.
  After this the viewer will (hopefully) receive 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    // events through its numberScalarChange() method
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    numberModel.addNumberScalarListener(this);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
       
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         numberModel.getProperty("format").addPresentationListener(this);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
       numberModel.getProperty("unit").addPresentationListener(this);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
   }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 // Each time the model of this viewer (the numberscalar attribute) decides
  it is time, it 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 // calls the numberScalarChange method of all its registered listeners
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 // with a NumberScalarEvent object which contains the 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 // the new value of the numberscalar attribute.
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
   public void numberScalarChange(NumberScalarEvent evt) {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     String val;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     val = getDisplayString(evt);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     if (unitVisible) {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
       setText(val + " " + numberModel.getUnit());
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     } else {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
       setText(val);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
   }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
@@ -3667,35 +3667,35 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 // This is an example from DeviceFactory.
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 // We create a new Refresher with the name "device"
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 // We add ourself to it, and start the thread
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 Refresher refresher = new Refresher("device");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 refresher.addRefreshee(this).start();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
@@ -4339,15 +4339,15 @@ viewer
  results.
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 

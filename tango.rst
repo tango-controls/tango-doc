@@ -114,102 +114,56 @@ A C++ TANGO client
 The quickest way of getting started is by studying this example :
 
 .. code:: cpp
+  :number-lines:
 
-    \noindent /{*}~
-
-    \noindent ~{*}~example~of~a~client~using~the~TANGO~C++~api.
-
-    \noindent ~{*}/
-
-    \noindent \#include~<tango.h>
-
-    \noindent using~namespace~Tango;
-
-    \noindent int~main(unsigned~int~argc,~char~{*}{*}argv)
-
-    \noindent \{
-
-    ~~~~try
-
-    ~~~~\{
-
-
+    /* 
+     * example of a client using the TANGO C++ api.
+     */
+    #include <tango.h>
+    using namespace Tango;
+    int main(unsigned int argc, char **argv)
+    {
+        try
+        {
 
     //
-
-    //~create~a~connection~to~a~TANGO~device
-
+    // create a connection to a TANGO device
     //
-
-    ~
-
-    ~~~~~~~~DeviceProxy~{*}device~=~new~DeviceProxy(``sys/database/2'');
-
-    ~
-
+     
+            DeviceProxy *device = new DeviceProxy("sys/database/2");
+     
     //
-
-    //~Ping~the~device
-
+    // Ping the device
     //
-
-    ~
-
-    ~~~~~~~~device->ping();
-
-    ~
-
+     
+            device->ping();
+     
     //
-
-    //~Execute~a~command~on~the~device~and~extract~the~reply~as~a~string
-
+    // Execute a command on the device and extract the reply as a string
     //
-
-    ~
-
-    ~~~~~~~~string~db\_info;~
-
-    ~~~~~~~~DeviceData~cmd\_reply;
-
-    ~~~~~~~~cmd\_reply~=~device->command\_inout(``DbInfo'');
-
-    ~~~~~~~~cmd\_reply~>\textcompwordmark{}>~db\_info;
-
-    ~~~~~~~~cout~<\textcompwordmark{}<~``Command~reply~``~<\textcompwordmark{}<~db\_info~<\textcompwordmark{}<~endl;
-
-    ~
-
+     
+            string db_info; 
+            DeviceData cmd_reply;
+            cmd_reply = device->command_inout("DbInfo");
+            cmd_reply >> db_info;
+            cout << "Command reply " << db_info << endl;
+     
     //
-
-    //~Read~a~device~attribute~(string~data~type)
-
+    // Read a device attribute (string data type)
     //
-
-    ~
-
-    ~~~~~~~~string~spr;
-
-    ~~~~~~~~DeviceAttribute~att\_reply;
-
-    ~~~~~~~~att\_reply~=~device->read\_attribute(``StoredProcedureRelease'');
-
-    ~~~~~~~~att\_reply~>\textcompwordmark{}>~spr;
-
-    ~~~~~~~~cout~<\textcompwordmark{}<~``Database~device~stored~procedure~release:~``~<\textcompwordmark{}<~spr~<\textcompwordmark{}<~endl;
-
-    ~~~~\}
-
-    \noindent ~~~~catch~(DevFailed~\&e)
-
-    \noindent ~~~~\{
-
-    \noindent ~~~~~~~~Except::print\_exception(e);
-
-    \noindent ~~~~~~~~exit(-1);
-
-    \noindent ~~~~\}~
-
-    \noindent \}
+     
+            string spr;
+            DeviceAttribute att_reply;
+            att_reply = device->read_attribute("StoredProcedureRelease");
+            att_reply >> spr;
+            cout << "Database device stored procedure release: " << spr << endl;
+        }
+        catch (DevFailed &e)
+        {
+            Except::print_exception(e);
+            exit(-1);
+        } 
+    }
 
 Modify this example to fit your device server or client’s needs, compile
 it and link with the library -ltango. Forget about those painful early
@@ -271,26 +225,18 @@ the Tango::DevFloat type which is simply the double of the input value.
 The code for the method executed by this command is the following:
 
 .. code:: cpp
+  :number-lines:
 
-    ~~~~~1~~Tango::DevFloat~DocDs::dev\_simple(Tango::DevFloat~argin)
-
-    ~~~~~2~~\{
-
-    ~~~~~3~~~~~~~~~~Tango::DevFloat~argout~;
-
-    ~~~~~4~~~~~~~~~~DEBUG\_STREAM~<\textcompwordmark{}<~\textquotedbl{}DocDs::dev\_simple():~entering...~!\textquotedbl{}~<\textcompwordmark{}<~endl;
-
-    ~~~~~5~~
-
-    ~~~~~6~~~~~~~~~~//~~~~~~Add~your~own~code~to~control~device~here
-
-    ~~~~~7~~
-
-    ~~~~~8~~~~~~~~~~argout~=~argin~{*}~2;
-
-    ~~~~~9~~~~~~~~~~return~argout;
-
-    ~~~~10~~\}
+    Tango::DevFloat DocDs::dev_simple(Tango::DevFloat argin)
+    {
+            Tango::DevFloat argout ;
+            DEBUG_STREAM << "DocDs::dev_simple(): entering... !" << endl;
+    
+            //      Add your own code to control device here
+    
+            argout = argin * 2;
+            return argout;
+    }
 
 This method is fairly simple. The received data is passed to the method
 as its argument. It is
@@ -306,46 +252,28 @@ array is doubled. The code for the method executed by the command is the
 following :
 
 .. code:: cpp
+  :number-lines:
 
-    ~~~~~1~~Tango::DevVarLongArray~{*}DocDs::dev\_array(const~Tango::DevVarLongArray~{*}argin)
-
-    ~~~~~2~~\{
-
-    ~~~~~3~~~~~~~~~~//~~~~~~POGO~has~generated~a~method~core~with~argout~allocation.
-
-    ~~~~~4~~~~~~~~~~//~~~~~~If~you~would~like~to~use~a~static~reference~without~copying,
-
-    ~~~~~5~~~~~~~~~~//~~~~~~See~\textquotedbl{}TANGO~Device~Server~Programmer's~Manual\textquotedbl{}
-
-    ~~~~~6~~~~~~~~~~//~~~~~~~~~~~~~~(chapter~x.x)
-
-    ~~~~~7~~~~~~~~~~//-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-
-
-    ~~~~~8~~~~~~~~~~Tango::DevVarLongArray~~{*}argout~~=~new~Tango::DevVarLongArray();
-
-    ~~~~~9~~~~~~~~~~~~~~~~~~
-
-    ~~~~10~~~~~~~~~~DEBUG\_STREAM~<\textcompwordmark{}<~\textquotedbl{}DocDs::dev\_array():~entering...~!\textquotedbl{}~<\textcompwordmark{}<~endl;
-
-    ~~~~11~~
-
-    ~~~~12~~~~~~~~~~//~~~~~~Add~your~own~code~to~control~device~here
-
-    ~~~~13~~
-
-    ~~~~14~~~~~~~~~~long~argin\_length~=~argin->length();~~~~
-
-    ~~~~15~~~~~~~~~~argout->length(argin\_length);
-
-    ~~~~16~~~~~~~~~~for~(int~i~=~0;i~<~argin\_length;i++)
-
-    ~~~~17~~~~~~~~~~~~~~~~~~({*}argout){[}i{]}~=~({*}argin){[}i{]}~{*}~2;
-
-    ~~~~18~~
-
-    ~~~~19~~~~~~~~~~return~argout;
-
-    ~~~~20~~\}
+    Tango::DevVarLongArray *DocDs::dev_array(const Tango::DevVarLongArray *argin)
+    {
+            //      POGO has generated a method core with argout allocation.
+            //      If you would like to use a static reference without copying,
+            //      See "TANGO Device Server Programmer's Manual"
+            //              (chapter x.x)
+            //------------------------------------------------------------
+            Tango::DevVarLongArray  *argout  = new Tango::DevVarLongArray();
+                    
+            DEBUG_STREAM << "DocDs::dev_array(): entering... !" << endl;
+    
+            //      Add your own code to control device here
+    
+            long argin_length = argin->length();    
+            argout->length(argin_length);
+            for (int i = 0;i < argin_length;i++)
+                    (*argout)[i] = (*argin)[i] * 2;
+    
+            return argout;
+    }
 
 The argout data array is created at line 8. Its length is set at line 15
 from the input argument length. The array is populated at line 16,17 and
@@ -364,46 +292,28 @@ the content of the input string and returns a hard-coded string. The
 code for the method executed by the command is the following :
 
 .. code:: cpp
+  :number-lines:
 
-    ~~~~~1~~Tango::DevString~DocDs::dev\_string(Tango::DevString~argin)
-
-    ~~~~~2~~\{
-
-    ~~~~~3~~~~~~~~~~//~~~~~~POGO~has~generated~a~method~core~with~argout~allocation.
-
-    ~~~~~4~~~~~~~~~~//~~~~~~If~you~would~like~to~use~a~static~reference~without~copying,
-
-    ~~~~~5~~~~~~~~~~//~~~~~~See~\textquotedbl{}TANGO~Device~Server~Programmer's~Manual\textquotedbl{}
-
-    ~~~~~6~~~~~~~~~~//~~~~~~~~~~~~~~(chapter~x.x)
-
-    ~~~~~7~~~~~~~~~~//-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-
-
-    ~~~~~8~~~~~~~~~~Tango::DevString~~~~~~~~argout;
-
-    ~~~~~9~~~~~~~~~~DEBUG\_STREAM~<\textcompwordmark{}<~\textquotedbl{}DocDs::dev\_string():~entering...~!\textquotedbl{}~<\textcompwordmark{}<~endl;
-
-    ~~~~10~~
-
-    ~~~~11~~~~~~~~~~//~~~~~~Add~your~own~code~to~control~device~here
-
-    ~~~~12~~
-
-    ~~~~13~~~~~~~~~~cout~<\textcompwordmark{}<~\textquotedbl{}the~received~string~is~\textquotedbl{}~<\textcompwordmark{}<~argin~<\textcompwordmark{}<~endl;
-
-    ~~~~14~~~~~~~~~~
-
-    ~~~~15~~~~~~~~~~string~str(\textquotedbl{}Am~I~a~good~Tango~dancer~?\textquotedbl{});
-
-    ~~~~16~~~~~~~~~~argout~=~new~char{[}str.size()~+~1{]};
-
-    ~~~~17~~~~~~~~~~strcpy(argout,str.c\_str());
-
-    ~~~~18~~~~~~~~~~
-
-    ~~~~19~~~~~~~~~~return~argout;
-
-    ~~~~20~~\}
+    Tango::DevString DocDs::dev_string(Tango::DevString argin)
+    {
+            //      POGO has generated a method core with argout allocation.
+            //      If you would like to use a static reference without copying,
+            //      See "TANGO Device Server Programmer's Manual"
+            //              (chapter x.x)
+            //------------------------------------------------------------
+            Tango::DevString        argout;
+            DEBUG_STREAM << "DocDs::dev_string(): entering... !" << endl;
+    
+            //      Add your own code to control device here
+    
+            cout << "the received string is " << argin << endl;
+            
+            string str("Am I a good Tango dancer ?");
+            argout = new char[str.size() + 1];
+            strcpy(argout,str.c_str());
+            
+            return argout;
+    }
 
 The argout string is created at line 8. Internally, this method is using
 a standard C++ string. Memory for the returned data is allocated at line
@@ -421,46 +331,28 @@ This method does not receive input data but returns an array of strings
 this command is the following:
 
 .. code:: cpp
+  :number-lines:
 
-    ~~~~~1~~Tango::DevVarStringArray~{*}DocDs::dev\_str\_array()
-
-    ~~~~~2~~\{
-
-    ~~~~~3~~~~~~~~~~//~~~~~~POGO~has~generated~a~method~core~with~argout~allocation.
-
-    ~~~~~4~~~~~~~~~~//~~~~~~If~you~would~like~to~use~a~static~reference~without~copying,
-
-    ~~~~~5~~~~~~~~~~//~~~~~~See~\textquotedbl{}TANGO~Device~Server~Programmer's~Manual\textquotedbl{}
-
-    ~~~~~6~~~~~~~~~~//~~~~~~~~~~~~~~(chapter~x.x)
-
-    ~~~~~7~~~~~~~~~~//-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-
-
-    ~~~~~8~~~~~~~~~~Tango::DevVarStringArray~~~~~~~~{*}argout~~=~new~Tango::DevVarStringArray();
-
-    ~~~~~9~~
-
-    ~~~~10~~~~~~~~~~DEBUG\_STREAM~<\textcompwordmark{}<~\textquotedbl{}DocDs::dev\_str\_array():~entering...~!\textquotedbl{}~<\textcompwordmark{}<~endl;
-
-    ~~~~11~~
-
-    ~~~~12~~~~~~~~~~//~~~~~~Add~your~own~code~to~control~device~here
-
-    ~~~~13~~
-
-    ~~~~14~~~~~~~~~~argout->length(3);
-
-    ~~~~15~~~~~~~~~~({*}argout){[}0{]}~=~CORBA::string\_dup(\textquotedbl{}Rumba\textquotedbl{});
-
-    ~~~~16~~~~~~~~~~({*}argout){[}1{]}~=~CORBA::string\_dup(\textquotedbl{}Waltz\textquotedbl{});
-
-    ~~~~17~~~~~~~~~~string~str(\textquotedbl{}Jerck\textquotedbl{});
-
-    ~~~~18~~~~~~~~~~({*}argout){[}2{]}~=~CORBA::string\_dup(str.c\_str());
-
-    ~~~~19~~~~~~~~~~return~argout;
-
-    ~~~~20~~\}
+    Tango::DevVarStringArray *DocDs::dev_str_array()
+    {
+            //      POGO has generated a method core with argout allocation.
+            //      If you would like to use a static reference without copying,
+            //      See "TANGO Device Server Programmer's Manual"
+            //              (chapter x.x)
+            //------------------------------------------------------------
+            Tango::DevVarStringArray        *argout  = new Tango::DevVarStringArray();
+    
+            DEBUG_STREAM << "DocDs::dev_str_array(): entering... !" << endl;
+    
+            //      Add your own code to control device here
+    
+            argout->length(3);
+            (*argout)[0] = CORBA::string_dup("Rumba");
+            (*argout)[1] = CORBA::string_dup("Waltz");
+            string str("Jerck");
+            (*argout)[2] = CORBA::string_dup(str.c_str());
+            return argout;
+    }
 
 The argout data array is created at line 8. Its length is set at line
 14. The array is populated at line 15,16 and 18. The last array element
@@ -477,56 +369,33 @@ an array of double and an array of strings. The code for the method
 executed by this command is the following:
 
 .. code:: cpp
+  :number-lines:
 
-    ~~~~~1~~Tango::DevVarDoubleStringArray~{*}DocDs::dev\_struct()
-
-    ~~~~~2~~\{
-
-    ~~~~~3~~~~~~~~~~//~~~~~~POGO~has~generated~a~method~core~with~argout~allocation.
-
-    ~~~~~4~~~~~~~~~~//~~~~~~If~you~would~like~to~use~a~static~reference~without~copying,
-
-    ~~~~~5~~~~~~~~~~//~~~~~~See~\textquotedbl{}TANGO~Device~Server~Programmer's~Manual\textquotedbl{}
-
-    ~~~~~6~~~~~~~~~~//~~~~~~~~~~~~~~(chapter~x.x)
-
-    ~~~~~7~~~~~~~~~~//-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-
-
-    ~~~~~8~~~~~~~~~~Tango::DevVarDoubleStringArray~~{*}argout~~=~new~Tango::DevVarDoubleStringArray();
-
-    ~~~~~9~~
-
-    ~~~~10~~~~~~~~~~DEBUG\_STREAM~<\textcompwordmark{}<~\textquotedbl{}DocDs::dev\_struct():~entering...~!\textquotedbl{}~<\textcompwordmark{}<~endl;
-
-    ~~~~11~~~~~~~~~~
-
-    ~~~~12~~~~~~~~~~//~~~~~~Add~your~own~code~to~control~device~here
-
-    ~~~~13~~
-
-    ~~~~14~~~~~~~~~~argout->dvalue.length(3);
-
-    ~~~~15~~~~~~~~~~argout->dvalue{[}0{]}~=~0.0;
-
-    ~~~~16~~~~~~~~~~argout->dvalue{[}1{]}~=~11.11;
-
-    ~~~~17~~~~~~~~~~argout->dvalue{[}2{]}~=~22.22;
-
-    ~~~~18~~~~~~~~~~
-
-    ~~~~19~~~~~~~~~~argout->svalue.length(2);
-
-    ~~~~20~~~~~~~~~~argout->svalue{[}0{]}~=~CORBA::string\_dup(\textquotedbl{}Be~Bop\textquotedbl{});
-
-    ~~~~21~~~~~~~~~~string~str(\textquotedbl{}Smurf\textquotedbl{});
-
-    ~~~~22~~~~~~~~~~argout->svalue{[}1{]}~=~CORBA::string\_dup(str.c\_str());
-
-    ~~~~23~~~~~~~~~~
-
-    ~~~~24~~~~~~~~~~return~argout;
-
-    ~~~~25~~\}
+    Tango::DevVarDoubleStringArray *DocDs::dev_struct()
+    {
+            //      POGO has generated a method core with argout allocation.
+            //      If you would like to use a static reference without copying,
+            //      See "TANGO Device Server Programmer's Manual"
+            //              (chapter x.x)
+            //------------------------------------------------------------
+            Tango::DevVarDoubleStringArray  *argout  = new Tango::DevVarDoubleStringArray();
+    
+            DEBUG_STREAM << "DocDs::dev_struct(): entering... !" << endl;
+            
+            //      Add your own code to control device here
+    
+            argout->dvalue.length(3);
+            argout->dvalue[0] = 0.0;
+            argout->dvalue[1] = 11.11;
+            argout->dvalue[2] = 22.22;
+            
+            argout->svalue.length(2);
+            argout->svalue[0] = CORBA::string_dup("Be Bop");
+            string str("Smurf");
+            argout->svalue[1] = CORBA::string_dup(str.c_str());
+            
+            return argout;
+    }
 
 The argout data structure is created at line 8. The length of the double
 array in the output structure is set at line 14. The array is populated
@@ -547,22 +416,16 @@ to store attributes value. These data are (part of the class definition)
 :
 
 .. code:: cpp
+  :number-lines:
 
-    ~~~~~1~~
-
-    ~~~~~2~~
-
-    ~~~~~3~~protected~:~~~~~
-
-    ~~~~~4~~~~~~~~~~//~~~~~~Add~your~own~data~members~here
-
-    ~~~~~5~~~~~~~~~~//-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-
-
-    ~~~~~6~~~~~~~~~~Tango::DevString~~~~~~~~attr\_str\_array{[}5{]};
-
-    ~~~~~7~~~~~~~~~~Tango::DevLong~~~~~~~~~~attr\_rd;
-
-    ~~~~~8~~~~~~~~~~Tango::DevLong~~~~~~~~~~attr\_wr;
+    
+    
+    protected :     
+            //      Add your own data members here
+            //-----------------------------------------
+            Tango::DevString        attr_str_array[5];
+            Tango::DevLong          attr_rd;
+            Tango::DevLong          attr_wr;
 
 One data has been created for each attribute. As the StrAttr attribute
 is of type spectrum with a maximum X dimension of 5, an array of length
@@ -574,102 +437,56 @@ read method for each readable attribute and one write method for each
 writable attribute. The code for these methods is the following :
 
 .. code:: cpp
+  :number-lines:
 
-    1~void~DocDs::read\_attr\_hardware(vector<long>~\&attr\_list)
-
-    2~\{
-
-    3~~~~~DEBUG\_STREAM~<\textcompwordmark{}<~\textquotedbl{}DocDs::read\_attr\_hardware(vector<long>~\&attr\_list)~entering...~\textquotedbl{}<\textcompwordmark{}<~endl;
-
-    4~//~Add~your~own~code~here
-
-    5~
-
-    6~~~~~string~att\_name;
-
-    7~~~~~for~(long~i~=~0;i~<~attr\_list.size();i++)
-
-    8~~~~~\{
-
-    9~~~~~~~~~att\_name~=~dev\_attr->get\_attr\_by\_ind(attr\_list{[}i{]}).get\_name();
-
-    10~
-
-    11~~~~~~~~if~(att\_name~==~\textquotedbl{}LongRdAttr\textquotedbl{})
-
-    12~~~~~~~~\{
-
-    13~~~~~~~~~~~~attr\_rd~=~5;
-
-    14~~~~~~~~\}
-
-    15~~~~\}
-
-    16~\}
-
-    17~
-
-    18~void~DocDs::read\_LongRdAttr(Tango::Attribute~\&attr)
-
-    19~\{
-
-    20~~~~~DEBUG\_STREAM~<\textcompwordmark{}<~\textquotedbl{}DocDs::read\_LongRdAttr(Tango::Attribute~\&attr)~entering...~\textquotedbl{}<\textcompwordmark{}<~endl;
-
-    21~
-
-    22~~~~~attr.set\_value(\&attr\_rd);
-
-    23~\}
-
-    24~
-
-    25~void~DocDs::read\_LongWrAttr(Tango::Attribute~\&attr)
-
-    26~\{
-
-    27~~~~~DEBUG\_STREAM~<\textcompwordmark{}<~\textquotedbl{}DocDs::read\_LongWrAttr(Tango::Attribute~\&attr)~entering...~\textquotedbl{}<\textcompwordmark{}<~endl;
-
-    28~
-
-    29~~~~~attr.set\_value(\&attr\_wr);
-
-    30~\}
-
-    31~
-
-    32~void~DocDs::write\_LongWrAttr(Tango::WAttribute~\&attr)
-
-    33~\{
-
-    34~~~~~DEBUG\_STREAM~<\textcompwordmark{}<~\textquotedbl{}DocDs::write\_LongWrAttr(Tango::WAttribute~\&attr)~entering...~\textquotedbl{}<\textcompwordmark{}<~endl;
-
-    35~
-
-    36~~~~~attr.get\_write\_value(attr\_wr);
-
-    37~~~~~DEBUG\_STREAM~<\textcompwordmark{}<~\textquotedbl{}Value~to~be~written~=~\textquotedbl{}~<\textcompwordmark{}<~attr\_wr~<\textcompwordmark{}<~endl;
-
-    38~\}
-
-    39~
-
-    40~void~DocDs::read\_StrAttr(Tango::Attribute~\&attr)
-
-    41~\{
-
-    42~~~~~DEBUG\_STREAM~<\textcompwordmark{}<~\textquotedbl{}DocDs::read\_StrAttr(Tango::Attribute~\&attr)~entering...~\textquotedbl{}<\textcompwordmark{}<~endl;
-
-    43~
-
-    44~~~~~attr\_str\_array{[}0{]}~=~const\_cast<char~{*}>(\textquotedbl{}Rock\textquotedbl{});
-
-    45~~~~~attr\_str\_array{[}1{]}~=~const\_cast<char~{*}>(\textquotedbl{}Samba\textquotedbl{});
-
-    46~
-
-    47~~~~~attr\_set\_value(attr\_str\_array,~2);
-
-    48~\}
+   void DocDs::read_attr_hardware(vector<long> &attr_list)
+   {
+       DEBUG_STREAM << "DocDs::read_attr_hardware(vector<long> &attr_list) entering... "<< endl;
+   // Add your own code here
+   
+       string att_name;
+       for (long i = 0;i < attr_list.size();i++)
+       {
+           att_name = dev_attr->get_attr_by_ind(attr_list[i]).get_name();
+   
+          if (att_name == "LongRdAttr")
+          {
+              attr_rd = 5;
+          }
+      }
+   }
+   
+   void DocDs::read_LongRdAttr(Tango::Attribute &attr)
+   {
+       DEBUG_STREAM << "DocDs::read_LongRdAttr(Tango::Attribute &attr) entering... "<< endl;
+   
+       attr.set_value(&attr_rd);
+   }
+   
+   void DocDs::read_LongWrAttr(Tango::Attribute &attr)
+   {
+       DEBUG_STREAM << "DocDs::read_LongWrAttr(Tango::Attribute &attr) entering... "<< endl;
+   
+       attr.set_value(&attr_wr);
+   }
+   
+   void DocDs::write_LongWrAttr(Tango::WAttribute &attr)
+   {
+       DEBUG_STREAM << "DocDs::write_LongWrAttr(Tango::WAttribute &attr) entering... "<< endl;
+   
+       attr.get_write_value(attr_wr);
+       DEBUG_STREAM << "Value to be written = " << attr_wr << endl;
+   }
+   
+   void DocDs::read_StrAttr(Tango::Attribute &attr)
+   {
+       DEBUG_STREAM << "DocDs::read_StrAttr(Tango::Attribute &attr) entering... "<< endl;
+   
+       attr_str_array[0] = const_cast<char *>("Rock");
+       attr_str_array[1] = const_cast<char *>("Samba");
+   
+       attr_set_value(attr_str_array, 2);
+   }
 
 The *read\_attr\_hardware()* method is executed once when a client
 execute the read\_attributes CORBA request whatever the number of
@@ -1669,7 +1486,7 @@ you the most common use of these filters in the Tango world :
    $counter % 3 == 0
 
 -  To receive change event only if the relative change is greater than
-   20 % (positive and negative), the filter must be
+   % (positive and negative), the filter must be
 
    $delta\_change\_rel >= 20 or $delta\_change\_rel <= -20
 
@@ -1814,16 +1631,13 @@ client has to choose the event reception mode to use.
 **Push model**:
 
 .. code:: cpp
+  :number-lines:
 
-    int~DeviceProxy::subscribe\_event(~
-
-    ~~~~~~~~~~~~~const~string~\&attribute,~
-
-    ~~~~~~~~~~~~~Tango::EventType~event,~
-
-    ~~~~~~~~~~~~~Tango::CallBack~{*}callback,
-
-    ~~~~~~~~~~~~~bool~stateless~=~false);
+    int DeviceProxy::subscribe_event( 
+                 const string &attribute, 
+                 Tango::EventType event, 
+                 Tango::CallBack *callback,
+                 bool stateless = false);
 
 The client implements a callback method which is triggered when the
 event is received. Note that this callback method will be executed by a
@@ -1834,16 +1648,13 @@ parameter for event filtering is also available.
 **Pull model**:
 
 .. code:: cpp
+  :number-lines:
 
-    int~DeviceProxy::subscribe\_event(~
-
-    ~~~~~~~~~~~~~const~string~\&attribute,~
-
-    ~~~~~~~~~~~~~Tango::EventType~event,~
-
-    ~~~~~~~~~~~~~int~event\_queue\_size,
-
-    ~~~~~~~~~~~~~bool~stateless~=~false);
+    int DeviceProxy::subscribe_event( 
+                 const string &attribute, 
+                 Tango::EventType event, 
+                 int event_queue_size,
+                 bool stateless = false);
 
 The client chooses the size of the round robin event reception buffer.
 Arriving events will be buffered until the client uses
@@ -1878,144 +1689,97 @@ method. The CallBack class is the same class as the one proposed for the
 TANGO asynchronous call. This is as follows for events :
 
 .. code:: cpp
+  :number-lines:
 
-    class~MyCallback~:~public~Tango::CallBack
-
-    \{
-
-    ~~~.
-
-    ~~~.
-
-    ~~~.
-
-    ~~~virtual~push\_event(Tango::EventData~{*});
-
-    ~~~virtual~push\_event(Tango::AttrConfEventData~{*});
-
-    ~~~virtual~push\_event(Tango::DataReadyEventData~{*});
-
-    ~~~virtual~push\_event(Tango::DevIntrChangeEventData~{*});
-
-    ~~~virtual~push\_event(Tango::PipeEventData~{*});
-
-    \}
+    class MyCallback : public Tango::CallBack
+    {
+       .
+       .
+       .
+       virtual push_event(Tango::EventData *);
+       virtual push_event(Tango::AttrConfEventData *);
+       virtual push_event(Tango::DataReadyEventData *);
+       virtual push_event(Tango::DevIntrChangeEventData *);
+       virtual push_event(Tango::PipeEventData *);
+    }
 
 where EventData is defined as follows :
 
 .. code:: cpp
+  :number-lines:
 
-    class~EventData~
-
-    \{
-
-    ~~~DeviceProxy~~~~~~~{*}device;
-
-    ~~~string~~~~~~~~~~~~attr\_name;
-
-    ~~~string~~~~~~~~~~~~event;
-
-    ~~~DeviceAttribute~~~{*}attr\_value;
-
-    ~~~bool~~~~~~~~~~~~~~err;
-
-    ~~~DevErrorList~~~~~~errors;
-
-    \}
+    class EventData 
+    {
+       DeviceProxy       *device;
+       string            attr_name;
+       string            event;
+       DeviceAttribute   *attr_value;
+       bool              err;
+       DevErrorList      errors;
+    }
 
 AttrConfEventData is defined as follows :
 
 .. code:: cpp
+  :number-lines:
 
-    class~AttrConfEventData~
-
-    \{
-
-    ~~~DeviceProxy~~~~~~~{*}device;
-
-    ~~~string~~~~~~~~~~~~attr\_name;
-
-    ~~~string~~~~~~~~~~~~event;
-
-    ~~~AttributeInfoEx~~~{*}attr\_conf;
-
-    ~~~bool~~~~~~~~~~~~~~err;
-
-    ~~~DevErrorList~~~~~~errors;
-
-    \}
+    class AttrConfEventData 
+    {
+       DeviceProxy       *device;
+       string            attr_name;
+       string            event;
+       AttributeInfoEx   *attr_conf;
+       bool              err;
+       DevErrorList      errors;
+    }
 
 DataReadyEventData is defined as follows :
 
 .. code:: cpp
+  :number-lines:
 
-    class~DataReadyEventData~
-
-    \{
-
-    ~~~DeviceProxy~~~~~~~{*}device;
-
-    ~~~string~~~~~~~~~~~~attr\_name;
-
-    ~~~string~~~~~~~~~~~~event;
-
-    ~~~int~~~~~~~~~~~~~~~attr\_data\_type;
-
-    ~~~int~~~~~~~~~~~~~~~ctr;
-
-    ~~~bool~~~~~~~~~~~~~~err;
-
-    ~~~DevErrorList~~~~~~errors;
-
-    \}
+    class DataReadyEventData 
+    {
+       DeviceProxy       *device;
+       string            attr_name;
+       string            event;
+       int               attr_data_type;
+       int               ctr;
+       bool              err;
+       DevErrorList      errors;
+    }
 
 DevIntrChangeEventData is defined as follows :
 
 .. code:: cpp
+  :number-lines:
 
-    class~DevIntrChangeEventData~
-
-    \{
-
-    ~~~DeviceProxy~~~~~~~~~~~~device;
-
-    ~~~string~~~~~~~~~~~~~~~~~event;
-
-    ~~~string~~~~~~~~~~~~~~~~~device\_name;
-
-    ~~~CommandInfoList~~~~~~~~cmd\_list;
-
-    ~~~AttributeInfoListEx~~~~att\_list;
-
-    ~~~bool~~~~~~~~~~~~~~~~~~~dev\_started;
-
-    ~~~bool~~~~~~~~~~~~~~~~~~~err;
-
-    ~~~DevErrorList~~~~~~~~~~~errors;
-
-    \}
+    class DevIntrChangeEventData 
+    {
+       DeviceProxy            device;
+       string                 event;
+       string                 device_name;
+       CommandInfoList        cmd_list;
+       AttributeInfoListEx    att_list;
+       bool                   dev_started;
+       bool                   err;
+       DevErrorList           errors;
+    }
 
 and PipeEventData is defined as follows :
 
 .. code:: cpp
+  :number-lines:
 
-    class~PipeEventData~
-
-    \{
-
-    ~~~DeviceProxy~~~~~~~{*}device;
-
-    ~~~string~~~~~~~~~~~~pipe\_name;
-
-    ~~~string~~~~~~~~~~~~event;
-
-    ~~~DevicePipe~~~~~~~~{*}pipe\_value;
-
-    ~~~bool~~~~~~~~~~~~~~err;
-
-    ~~~DevErrorList~~~~~~errors;
-
-    \}
+    class PipeEventData 
+    {
+       DeviceProxy       *device;
+       string            pipe_name;
+       string            event;
+       DevicePipe        *pipe_value;
+       bool              err;
+       DevErrorList      errors;
+    }
 
 In push model, there are some cases (same callback used for events
 coming from different devices hosted in device server process running on
@@ -2030,8 +1794,9 @@ Unsubscribe a client from receiving the event specified by *event\_id*
 is done by calling the *DeviceProxy::unsubscribe\_event()* method :
 
 .. code:: cpp
+  :number-lines:
 
-    void~DeviceProxy::unsubscribe\_event(int~event\_id);
+    void DeviceProxy::unsubscribe_event(int event_id);
 
 Extract buffered event data
 '''''''''''''''''''''''''''
@@ -2042,72 +1807,51 @@ Two possibilities are available for data extraction. Either a callback
 method can be executed for every event in the buffer when using
 
 .. code:: cpp
+  :number-lines:
 
-    int~DeviceProxy::get\_events(~
-
-    ~~~~~~~~~~~~~int~event\_id,~
-
-    ~~~~~~~~~~~~~CallBack~{*}cb);
+    int DeviceProxy::get_events( 
+                 int event_id, 
+                 CallBack *cb);
 
 Or all the event data can be directly extracted as EventDataList,
 AttrConfEventDataList , DataReadyEventDataList,
 DevIntrChangeEventDataList or PipeEventDataList when using
 
 .. code:: cpp
+  :number-lines:
 
-    int~DeviceProxy::get\_events(~
+    int DeviceProxy::get_events( 
+                 int event_id, 
+                 EventDataList &event_list);
 
-    ~~~~~~~~~~~~~int~event\_id,~
+    int DeviceProxy::get_events( 
+                 int event_id, 
+                 AttrConfEventDataList &event_list);
 
-    ~~~~~~~~~~~~~EventDataList~\&event\_list);
+    int DeviceProxy::get_events( 
+                 int event_id, 
+                 DataReadyEventDataList &event_list);
 
+    int DeviceProxy::get_events( 
+                 int event_id, 
+                 DevIntrChangeEventDataList &event_list);
 
-
-    int~DeviceProxy::get\_events(~
-
-    ~~~~~~~~~~~~~int~event\_id,~
-
-    ~~~~~~~~~~~~~AttrConfEventDataList~\&event\_list);
-
-
-
-    int~DeviceProxy::get\_events(~
-
-    ~~~~~~~~~~~~~int~event\_id,~
-
-    ~~~~~~~~~~~~~DataReadyEventDataList~\&event\_list);
-
-
-
-    int~DeviceProxy::get\_events(~
-
-    ~~~~~~~~~~~~~int~event\_id,~
-
-    ~~~~~~~~~~~~~DevIntrChangeEventDataList~\&event\_list);
-
-
-
-    int~DeviceProxy::get\_events(~
-
-    ~~~~~~~~~~~~~int~event\_id,~
-
-    ~~~~~~~~~~~~~PipeEventDataList~\&event\_list);
+    int DeviceProxy::get_events( 
+                 int event_id, 
+                 PipeEventDataList &event_list);
 
 The event data lists are vectors of EventData, AttrConfEventData,
 DataReadyEventData or PipeEventData pointers with special destructor and
 clean-up methods to ease the memory handling.
 
 .. code:: cpp
+  :number-lines:
 
-    class~EventDataList:public~vector<EventData~{*}>
-
-    class~AttrConfEventDataList:public~vector<AttrConfEventData~{*}>
-
-    class~DataReadyEventDataList:public~vector<DataReadyEventData~{*}>
-
-    class~DevIntrChangeEventDataList:public~vector<DevIntrChangeEventData~{*}>
-
-    class~PipeEventDataList:public~vector<PipeEventData~{*}>
+    class EventDataList:public vector<EventData *>
+    class AttrConfEventDataList:public vector<AttrConfEventData *>
+    class DataReadyEventDataList:public vector<DataReadyEventData *>
+    class DevIntrChangeEventDataList:public vector<DevIntrChangeEventData *>
+    class PipeEventDataList:public vector<PipeEventData *>
 
 Example
 '''''''
@@ -2116,74 +1860,42 @@ Here is a typical code example of a client to register and receive
 events. First, you have to define a callback method as follows:
 
 .. code:: cpp
+  :number-lines:
 
-    class~DoubleEventCallBack~:~public~Tango::CallBack~
+    class DoubleEventCallBack : public Tango::CallBack 
+    {
+       void push_event(Tango::EventData*);
+    }; 
+     
 
-    \{
+    void DoubleEventCallBack::push_event(Tango::EventData *myevent)
+    {
+        Tango::DevVarDoubleArray *double_value;
+        try
+        {
+            cout << "DoubleEventCallBack::push_event(): called attribute " 
+                 << myevent->attr_name
+                 << " event "
+                 << myevent->event 
+                 << " (err="
+                 << myevent->err
+                 << ")" << endl;
+     
 
-    ~~~void~push\_event(Tango::EventData{*});
-
-    \};~
-
-    ~
-
-
-
-    void~DoubleEventCallBack::push\_event(Tango::EventData~{*}myevent)
-
-    \{
-
-    ~~~~Tango::DevVarDoubleArray~{*}double\_value;
-
-    ~~~~try
-
-    ~~~~\{
-
-    ~~~~~~~~cout~<\textcompwordmark{}<~\textquotedbl{}DoubleEventCallBack::push\_event():~called~attribute~\textquotedbl{}~
-
-    ~~~~~~~~~~~~~<\textcompwordmark{}<~myevent->attr\_name
-
-    ~~~~~~~~~~~~~<\textcompwordmark{}<~\textquotedbl{}~event~\textquotedbl{}
-
-    ~~~~~~~~~~~~~<\textcompwordmark{}<~myevent->event~
-
-    ~~~~~~~~~~~~~<\textcompwordmark{}<~\textquotedbl{}~(err=\textquotedbl{}
-
-    ~~~~~~~~~~~~~<\textcompwordmark{}<~myevent->err
-
-    ~~~~~~~~~~~~~<\textcompwordmark{}<~\textquotedbl{})\textquotedbl{}~<\textcompwordmark{}<~endl;
-
-    ~
-
-
-
-    ~~~~~~~~~if~(!myevent->err)
-
-    ~~~~~~~~~\{
-
-    ~~~~~~~~~~~~~{*}(myevent->attr\_value)~>\textcompwordmark{}>~double\_value;
-
-    ~~~~~~~~~~~~~cout~<\textcompwordmark{}<~\textquotedbl{}double~value~\textquotedbl{}
-
-    ~~~~~~~~~~~~~~~~~~<\textcompwordmark{}<~({*}double\_value){[}0{]}
-
-    ~~~~~~~~~~~~~~~~~~<\textcompwordmark{}<~endl;
-
-    ~~~~~~~~~~~~~delete~double\_value;
-
-    ~~~~~~~~~\}
-
-    ~~~~\}
-
-    ~~~~catch~(...)
-
-    ~~~~\{
-
-    ~~~~~~~~~cout~<\textcompwordmark{}<~\textquotedbl{}DoubleEventCallBack::push\_event():~could~not~extract~data~!\textbackslash{}n\textquotedbl{};
-
-    ~~~~\}
-
-    \}
+             if (!myevent->err)
+             {
+                 *(myevent->attr_value) >> double_value;
+                 cout << "double value "
+                      << (*double_value)[0]
+                      << endl;
+                 delete double_value;
+             }
+        }
+        catch (...)
+        {
+             cout << "DoubleEventCallBack::push_event(): could not extract data !\n";
+        }
+    }
 
 Then the main code must subscribe to the event and choose the push or
 the pull model for event reception.
@@ -2191,94 +1903,56 @@ the pull model for event reception.
 **Push model**:
 
 .. code:: cpp
+  :number-lines:
 
-    DoubleEventCallBack~{*}double\_callback~=~new~DoubleEventCallBack;~
+    DoubleEventCallBack *double_callback = new DoubleEventCallBack; 
+          
+    Tango::DeviceProxy *mydevice = new Tango::DeviceProxy("my/device/1");
+     
+    int event_id;
+    const string attr_name("current");
+    event_id = mydevice->subscribe_event(attr_name, 
+                             Tango::CHANGE_EVENT,
+                             double_callback);
+    cout << "event_client() id = " << event_id << endl;
 
-    ~~~~~~
+    // The callback methods are executed by the Tango event reception thread.
+    // The main thread is not concerned of event reception.
+    // Whatch out with synchronisation and data access in a multi threaded environment!
 
-    Tango::DeviceProxy~{*}mydevice~=~new~Tango::DeviceProxy(\textquotedbl{}my/device/1\textquotedbl{});
-
-    ~
-
-    int~event\_id;
-
-    const~string~attr\_name(\textquotedbl{}current\textquotedbl{});
-
-    event\_id~=~mydevice->subscribe\_event(attr\_name,~
-
-    ~~~~~~~~~~~~~~~~~~~~~~~~~Tango::CHANGE\_EVENT,
-
-    ~~~~~~~~~~~~~~~~~~~~~~~~~double\_callback);
-
-    cout~<\textcompwordmark{}<~\textquotedbl{}event\_client()~id~=~\textquotedbl{}~<\textcompwordmark{}<~event\_id~<\textcompwordmark{}<~endl;
-
-
-
-    //~The~callback~methods~are~executed~by~the~Tango~event~reception~thread.
-
-    //~The~main~thread~is~not~concerned~of~event~reception.
-
-    //~Whatch~out~with~synchronisation~and~data~access~in~a~multi~threaded~environment!
-
-
-
-    sleep(1000);~//~wait~for~events
-
-    ~
-
-    mydevice->unsubscribe\_event(event\_id);
+    sleep(1000); // wait for events
+     
+    mydevice->unsubscribe_event(event_id);
 
 **Pull model**:
 
 .. code:: cpp
+  :number-lines:
 
-    DoubleEventCallBack~{*}double\_callback~=~new~DoubleEventCallBack;
+    DoubleEventCallBack *double_callback = new DoubleEventCallBack;
+    int event_queue_size = 100; // keep the last 100 events
+          
+    Tango::DeviceProxy *mydevice = new Tango::DeviceProxy("my/device/1");
+     
+    int event_id;
+    const string attr_name("current");
+    event_id = mydevice->subscribe_event(attr_name, 
+                             Tango::CHANGE_EVENT,
+                             event_queue_size);
+    cout << "event_client() id = " << event_id << endl;
 
-    int~event\_queue\_size~=~100;~//~keep~the~last~100~events
+    // Check every 3 seconds whether new events have arrived and trigger the callback method 
+    // for the new events.
 
-    ~~~~~~
-
-    Tango::DeviceProxy~{*}mydevice~=~new~Tango::DeviceProxy(\textquotedbl{}my/device/1\textquotedbl{});
-
-    ~
-
-    int~event\_id;
-
-    const~string~attr\_name(\textquotedbl{}current\textquotedbl{});
-
-    event\_id~=~mydevice->subscribe\_event(attr\_name,~
-
-    ~~~~~~~~~~~~~~~~~~~~~~~~~Tango::CHANGE\_EVENT,
-
-    ~~~~~~~~~~~~~~~~~~~~~~~~~event\_queue\_size);
-
-    cout~<\textcompwordmark{}<~\textquotedbl{}event\_client()~id~=~\textquotedbl{}~<\textcompwordmark{}<~event\_id~<\textcompwordmark{}<~endl;
-
-
-
-    //~Check~every~3~seconds~whether~new~events~have~arrived~and~trigger~the~callback~method~
-
-    //~for~the~new~events.
-
-
-
-    for~(int~i=0;~i~<~100;~i++)
-
-    \{
-
-    ~~~~sleep~(3);~
-
-    ~~~~
-
-    ~~~~//~Read~the~stored~event~data~from~the~queue~and~call~the~callback~method~for~every~event.
-
-    ~~~~mydevice->get\_events(event\_id,~double\_callback);
-
-    \}
-
-    ~
-
-    event\_test->unsubscribe\_event(event\_id);
+    for (int i=0; i < 100; i++)
+    {
+        sleep (3); 
+        
+        // Read the stored event data from the queue and call the callback method for every event.
+        mydevice->get_events(event_id, double_callback);
+    }
+     
+    event_test->unsubscribe_event(event_id);
 
 Group
 -----
@@ -2316,141 +1990,79 @@ Reading the description of the problem, the device hierarchy becomes
 obvious. Our gauges group will have the following structure:
 
 .. code:: cpp
+  :number-lines:
 
-    ->~gauges
-
-    ~~|~~->~cell-01
-
-    ~~|~~~~~|->~inst-c01/vac-gauge/strange~
-
-    ~~|~~~~~|->~penning~
-
-    ~~|~~~~~|~~~|->~inst-c01/vac-gauge/penning-01~
-
-    ~~|~~~~~|~~~|->~inst-c01/vac-gauge/penning-02~
-
-    ~~|~~~~~|~~~|-~...~
-
-    ~~|~~~~~|~~~|->~inst-c01/vac-gauge/penning-xx~
-
-    ~~|~~~~~|->~pirani~
-
-    ~~|~~~~~~~~~|->~inst-c01/vac-gauge/pirani-01
-
-    ~~|~~~~~~~~~|->~...~
-
-    ~~|~~~~~~~~~|->~inst-c01/vac-gauge/pirani-xx~
-
-    ~~|~~->~cell-02
-
-    ~~|~~~~~|->~inst-c02/vac-gauge/strange~
-
-    ~~|~~~~~|->~penning~
-
-    ~~|~~~~~|~~~|->~inst-c02/vac-gauge/penning-01~
-
-    ~~|~~~~~|~~~|->~...~
-
-    ~~|~~~~~|~
-
-    ~~|~~~~~|->~pirani~
-
-    ~~|~~~~~|~~~|->~...~
-
-    ~~|~~->~cell-03~
-
-    ~~|~~~~~|->~...~
-
-    ~~|~~~~~~~~~|~->~...~
+    -> gauges
+      |  -> cell-01
+      |     |-> inst-c01/vac-gauge/strange 
+      |     |-> penning 
+      |     |   |-> inst-c01/vac-gauge/penning-01 
+      |     |   |-> inst-c01/vac-gauge/penning-02 
+      |     |   |- ... 
+      |     |   |-> inst-c01/vac-gauge/penning-xx 
+      |     |-> pirani 
+      |         |-> inst-c01/vac-gauge/pirani-01
+      |         |-> ... 
+      |         |-> inst-c01/vac-gauge/pirani-xx 
+      |  -> cell-02
+      |     |-> inst-c02/vac-gauge/strange 
+      |     |-> penning 
+      |     |   |-> inst-c02/vac-gauge/penning-01 
+      |     |   |-> ... 
+      |     | 
+      |     |-> pirani 
+      |     |   |-> ... 
+      |  -> cell-03 
+      |     |-> ... 
+      |         | -> ... 
 
 In the C++, such a hierarchy can be build as follows (basic version):
 
 .. code:: cpp
+  :number-lines:
 
-    //-~step0:~create~the~root~group~
+    //- step0: create the root group 
+    Tango::Group *gauges = new Tango::Group("gauges");
+     
 
-    Tango::Group~{*}gauges~=~new~Tango::Group(\textquotedbl{}gauges\textquotedbl{});
+    //- step1: create a group for the n-th cell
+    Tango::Group *cell = new Tango::Group("cell-01");
+     
 
-    ~
-
-
-
-    //-~step1:~create~a~group~for~the~n-th~cell
-
-    Tango::Group~{*}cell~=~new~Tango::Group(\textquotedbl{}cell-01\textquotedbl{});
-
-    ~
-
-
-
-    //-~step2:~make~the~cell~a~sub-group~of~the~root~group~
-
+    //- step2: make the cell a sub-group of the root group 
     gauges->add(cell);
+     
 
-    ~
+    //- step3: create a "penning" group 
+    Tango::Group *gauge_family = new Tango::Group("penning");
+     
 
+    //- step4: add all penning gauges located into the cell (note the wildcard)
+    gauge_family->add("inst-c01/vac-gauge/penning*");
+     
 
+    //- step5: add the penning gauges to the cell
+    cell->add(gauge_family);
+     
 
-    //-~step3:~create~a~\textquotedbl{}penning\textquotedbl{}~group~
+    //- step6: create a "pirani" group 
+    gauge_family = new Tango::Group("pirani");
+     
 
-    Tango::Group~{*}gauge\_family~=~new~Tango::Group(\textquotedbl{}penning\textquotedbl{});
+    //- step7: add all pirani gauges located into the cell (note the wildcard)
+    gauge_family->add("inst-c01/vac-gauge/pirani*");
+     
 
-    ~
+    //- step8: add the pirani gauges to the cell
+    cell->add(gauge_family);
+     
 
+    //- step9: add the "strange" gauge to the cell
+    cell->add("inst-c01/vac-gauge/strange");
+     
 
-
-    //-~step4:~add~all~penning~gauges~located~into~the~cell~(note~the~wildcard)
-
-    gauge\_family->add(\textquotedbl{}inst-c01/vac-gauge/penning{*}\textquotedbl{});
-
-    ~
-
-
-
-    //-~step5:~add~the~penning~gauges~to~the~cell
-
-    cell->add(gauge\_family);
-
-    ~
-
-
-
-    //-~step6:~create~a~\textquotedbl{}pirani\textquotedbl{}~group~
-
-    gauge\_family~=~new~Tango::Group(\textquotedbl{}pirani\textquotedbl{});
-
-    ~
-
-
-
-    //-~step7:~add~all~pirani~gauges~located~into~the~cell~(note~the~wildcard)
-
-    gauge\_family->add(\textquotedbl{}inst-c01/vac-gauge/pirani{*}\textquotedbl{});
-
-    ~
-
-
-
-    //-~step8:~add~the~pirani~gauges~to~the~cell
-
-    cell->add(gauge\_family);
-
-    ~
-
-
-
-    //-~step9:~add~the~\textquotedbl{}strange\textquotedbl{}~gauge~to~the~cell
-
-    cell->add(\textquotedbl{}inst-c01/vac-gauge/strange\textquotedbl{});
-
-    ~
-
-
-
-    //-~repeat~step~1~to~9~for~the~remaining~cells
-
-    cell~=~new~Tango::Group(\textquotedbl{}cell-02\textquotedbl{});
-
+    //- repeat step 1 to 9 for the remaining cells
+    cell = new Tango::Group("cell-02");
     ...
 
 **Important note**: There is no particular order to create the
@@ -2476,24 +2088,17 @@ instance, let’s ping the whole hierarchy to be sure that all devices are
 alive.
 
 .. code:: cpp
+  :number-lines:
 
-    //-~ping~the~whole~hierarchy~
-
-    if~(gauges->ping()~==~true)
-
-    \{
-
-    ~~~~std::cout~<\textcompwordmark{}<~\textquotedbl{}all~devices~alive\textquotedbl{}~<\textcompwordmark{}<~std::endl;
-
-    \}
-
+    //- ping the whole hierarchy 
+    if (gauges->ping() == true)
+    {
+        std::cout << "all devices alive" << std::endl;
+    }
     else
-
-    \{
-
-    ~~~~std::cout~<\textcompwordmark{}<~\textquotedbl{}at~least~one~dead/busy/locked/...~device\textquotedbl{}~<\textcompwordmark{}<~std::endl;
-
-    \}
+    {
+        std::cout << "at least one dead/busy/locked/... device" << std::endl;
+    }
 
 Forward or not forward?
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -2533,18 +2138,18 @@ were attached to the group. For instance, if g1 is a group containing
 three devices attached in the following order:
 
 .. code:: cpp
+  :number-lines:
 
-    g1->add(\textquotedbl{}my/device/01\textquotedbl{});
-
-    g1->add(\textquotedbl{}my/device/03\textquotedbl{});
-
-    g1->add(\textquotedbl{}my/device/02\textquotedbl{});
+    g1->add("my/device/01");
+    g1->add("my/device/03");
+    g1->add("my/device/02");
 
 the results of
 
 .. code:: cpp
+  :number-lines:
 
-    Tango::GroupCmdReplyList~crl~=~g1->command\_inout(\textquotedbl{}Status\textquotedbl{});
+    Tango::GroupCmdReplyList crl = g1->command_inout("Status");
 
 will be organized as follows:
 
@@ -2555,50 +2160,35 @@ will be organized as follows:
 Things get more complicated if sub-groups are added between devices.
 
 .. code:: cpp
+  :number-lines:
 
-    g2->add(\textquotedbl{}my/device/04\textquotedbl{});
+    g2->add("my/device/04");
+    g2->add("my/device/05");
+     
 
-    g2->add(\textquotedbl{}my/device/05\textquotedbl{});
+    g4->add("my/device/08");
+    g4->add("my/device/09");
+     
 
-    ~
-
-
-
-    g4->add(\textquotedbl{}my/device/08\textquotedbl{});
-
-    g4->add(\textquotedbl{}my/device/09\textquotedbl{});
-
-    ~
-
-
-
-    g3->add(\textquotedbl{}my/device/06\textquotedbl{});
-
+    g3->add("my/device/06");
     g3->add(g4);
+    g3->add("my/device/07");
+     
 
-    g3->add(\textquotedbl{}my/device/07\textquotedbl{});
-
-    ~
-
-
-
-    g1->add(\textquotedbl{}my/device/01\textquotedbl{});
-
+    g1->add("my/device/01");
     g1->add(g2);
-
-    g1->add(\textquotedbl{}my/device/03\textquotedbl{});
-
+    g1->add("my/device/03");
     g1->add(g3);
-
-    g1->add(\textquotedbl{}my/device/02\textquotedbl{});
+    g1->add("my/device/02");
 
 The result order in the Tango::GroupCmdReplyList depends on the value of
 the forward option. If set to *true*, the results will be organized as
 follows:
 
 .. code:: cpp
+  :number-lines:
 
-    Tango::GroupCmdReplyList~crl~=~g1->command\_inout(\textquotedbl{}Status\textquotedbl{},~true);
+    Tango::GroupCmdReplyList crl = g1->command_inout("Status", true);
 
 | *crl[0]* contains the status of my/device/01 which belongs to g1
 | *crl[1]* contains the status of my/device/04 which belongs to g1.g2
@@ -2613,8 +2203,9 @@ follows:
 If the forward option is set to *false*, the results are:
 
 .. code:: cpp
+  :number-lines:
 
-    Tango::GroupCmdReplyList~crl~=~g1->command\_inout(\textquotedbl{}Status\textquotedbl{},~false);~
+    Tango::GroupCmdReplyList crl = g1->command_inout("Status", false); 
 
 | *crl[0]* contains the status of my/device/01 which belongs to g
 | *crl[1]* contains the status of my/device/03 which belongs to g1
@@ -2634,8 +2225,9 @@ As an example, we execute the Status command on the whole hierarchy
 synchronously.
 
 .. code:: cpp
+  :number-lines:
 
-    Tango::GroupCmdReplyList~crl~=~gauges->command\_inout(\textquotedbl{}Status\textquotedbl{});
+    Tango::GroupCmdReplyList crl = gauges->command_inout("Status");
 
 As a first step in the results processing, it could be interesting to
 check value returned by the *has\_failed()* method of the
@@ -2644,22 +2236,16 @@ error occurred during the execution of the command (i.e. at least one
 device gave error).
 
 .. code:: cpp
+  :number-lines:
 
-    if~(crl.has\_failed())
-
-    \{
-
-    ~~~~cout~<\textcompwordmark{}<~\textquotedbl{}at~least~one~error~occurred\textquotedbl{}~<\textcompwordmark{}<~endl;
-
-    \}
-
+    if (crl.has_failed())
+    {
+        cout << "at least one error occurred" << endl;
+    }
     else
-
-    \{
-
-    ~~~~cout~<\textcompwordmark{}<~\textquotedbl{}no~error~\textquotedbl{}~<\textcompwordmark{}<~endl;
-
-    \}
+    {
+        cout << "no error " << endl;
+    }
 
 Now, we have to process each individual response in the list.
 
@@ -2685,231 +2271,124 @@ DevVarLongStringArray and DevVarDoubleStringArray types to std::vectors.
 Error and data handling C++ example:
 
 .. code:: cpp
+  :number-lines:
 
-    //-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-
-
-    //-~synch.~group~command~example~with~exception~enabled
-
-    //-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-
-
-    //-~enable~exceptions~and~save~current~mode
-
-    bool~last\_mode~=~GroupReply::enable\_exception(true);
-
-    //-~process~each~response~in~the~list~...
-
-    for~(int~r~=~0;~r~<~crl.size();~r++)
-
-    \{
-
-    //-~enter~a~try/catch~block
-
-    ~~~try
-
-    ~~~\{
-
-    //-~try~to~extract~the~data~from~the~r-th~reply
-
-    //-~suppose~data~contains~a~double
-
-    ~~~~~~~double~ans;
-
-    ~~~~~~~crl{[}r{]}~>\textcompwordmark{}>~ans;
-
-    ~~~~~~~cout~<\textcompwordmark{}<~crl{[}r{]}.dev\_name()
-
-    ~~~~~~~~~~~~<\textcompwordmark{}<~\textquotedbl{}::\textquotedbl{}
-
-    ~~~~~~~~~~~~<\textcompwordmark{}<~crl{[}r{]}.obj\_name()
-
-    ~~~~~~~~~~~~<\textcompwordmark{}<~\textquotedbl{}~returned~\textquotedbl{}
-
-    ~~~~~~~~~~~~<\textcompwordmark{}<~ans
-
-    ~~~~~~~~~~~~<\textcompwordmark{}<~endl;
-
-    ~~~~\}
-
-    ~~~~catch~(const~DevFailed\&~df)
-
-    ~~~~\{
-
-    //-~DevFailed~caught~while~trying~to~extract~the~data~from~reply
-
-    ~~~~~~for~(int~err~=~0;~err~<~df.errors.length();~err++)
-
-    ~~~~~~\{
-
-    ~~~~~~~~~~~cout~<\textcompwordmark{}<~\textquotedbl{}error:~\textquotedbl{}~<\textcompwordmark{}<~df.errors{[}err{]}.desc.in()~<\textcompwordmark{}<~endl;
-
-    ~~~~~~\}
-
-    //-~alternatively,~one~can~use~crl{[}r{]}.get\_err\_stack()~see~below
-
-    ~~~~\}
-
-    ~~~~catch~(...)
-
-    ~~~~\{
-
-    ~~~~~~~cout~<\textcompwordmark{}<~\textquotedbl{}unknown~exception~caught\textquotedbl{};
-
-    ~~~~\}
-
-    \}
-
-    //-~restore~last~exception~mode~(if~needed)
-
-    GroupReply::enable\_exception(last\_mode);
-
-    //-~Clear~the~response~list~(if~reused~later~in~the~code)
-
+    //-------------------------------------------------------
+    //- synch. group command example with exception enabled
+    //-------------------------------------------------------
+    //- enable exceptions and save current mode
+    bool last_mode = GroupReply::enable_exception(true);
+    //- process each response in the list ...
+    for (int r = 0; r < crl.size(); r++)
+    {
+    //- enter a try/catch block
+       try
+       {
+    //- try to extract the data from the r-th reply
+    //- suppose data contains a double
+           double ans;
+           crl[r] >> ans;
+           cout << crl[r].dev_name()
+                << "::"
+                << crl[r].obj_name()
+                << " returned "
+                << ans
+                << endl;
+        }
+        catch (const DevFailed& df)
+        {
+    //- DevFailed caught while trying to extract the data from reply
+          for (int err = 0; err < df.errors.length(); err++)
+          {
+               cout << "error: " << df.errors[err].desc.in() << endl;
+          }
+    //- alternatively, one can use crl[r].get_err_stack() see below
+        }
+        catch (...)
+        {
+           cout << "unknown exception caught";
+        }
+    }
+    //- restore last exception mode (if needed)
+    GroupReply::enable_exception(last_mode);
+    //- Clear the response list (if reused later in the code)
     crl.reset();
+     
 
-    ~
-
-
-
-    //-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-
-
-    //-~synch.~group~command~example~with~exception~disabled
-
-    //-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-
-
-    //-~disable~exceptions~and~save~current~mode~bool
-
-    last\_mode~=~GroupReply::enable\_exception(false);
-
-    //-~process~each~response~in~the~list~...
-
-    for~(int~r~=~0;~r~<~crl.size();~r++)
-
-    \{
-
-    //-~did~the~r-th~device~give~error?
-
-    ~~~~if~(crl{[}r{]}.has\_failed()~==~true)
-
-    ~~~~\{
-
-    //-~printout~error~description
-
-    ~~~~~~~cout~<\textcompwordmark{}<~\textquotedbl{}an~error~occurred~while~executing~\textquotedbl{}
-
-    ~~~~~~~~~~~~<\textcompwordmark{}<~crl{[}r{]}.obj\_name()
-
-    ~~~~~~~~~~~~<\textcompwordmark{}<~\textquotedbl{}~on~\textquotedbl{}~
-
-    ~~~~~~~~~~~~<\textcompwordmark{}<~crl{[}r{]}.dev\_name()~<\textcompwordmark{}<~endl;
-
-    //-~dump~error~stack
-
-    ~~~~~~~const~DevErrorList\&~el~=~crl{[}r{]}.get\_err\_stack();
-
-    ~~~~~~~for~(int~err~=~0;~err~<~el.size();~err++)
-
-    ~~~~~~~\{
-
-    ~~~~~~~~~~~cout~<\textcompwordmark{}<~el{[}err{]}.desc.in();
-
-    ~~~~~~~\}
-
-    ~~~~\}
-
-    ~~~~else
-
-    ~~~~\{
-
-    //-~no~error~(suppose~data~contains~a~double)
-
-    ~~~~~~~double~ans;
-
-    ~~~~~~~bool~result~=~crl{[}r{]}~>\textcompwordmark{}>~ans;
-
-    ~~~~~~~if~(result~==~false)
-
-    ~~~~~~~\{
-
-    ~~~~~~~~~~~cout~<\textcompwordmark{}<~\textquotedbl{}could~not~extract~double~from~\textquotedbl{}
-
-    ~~~~~~~~~~~~~~~~<\textcompwordmark{}<~crl{[}r{]}.dev\_name()
-
-    ~~~~~~~~~~~~~~~~<\textcompwordmark{}<~\textquotedbl{}~reply\textquotedbl{}
-
-    ~~~~~~~~~~~~~~~~<\textcompwordmark{}<~endl;
-
-    ~~~~~~~\}
-
-    ~~~~~~~else
-
-    ~~~~~~~\{
-
-    ~~~~~~~~~~~cout~<\textcompwordmark{}<~crl{[}r{]}.dev\_name()
-
-    ~~~~~~~~~~~~~~~~<\textcompwordmark{}<~\textquotedbl{}::\textquotedbl{}
-
-    ~~~~~~~~~~~~~~~~<\textcompwordmark{}<~crl{[}r{]}.obj\_name()
-
-    ~~~~~~~~~~~~~~~~<\textcompwordmark{}<~\textquotedbl{}~returned~\textquotedbl{}
-
-    ~~~~~~~~~~~~~~~~<\textcompwordmark{}<~ans
-
-    ~~~~~~~~~~~~~~~~<\textcompwordmark{}<~endl;
-
-    ~~~~~~~\}
-
-    ~~~~\}
-
-    \}
-
-    //-~restore~last~exception~mode~(if~needed)
-
-    GroupReply::enable\_exception(last\_mode);
-
-    //-~Clear~the~response~list~(if~reused~later~in~the~code)
-
+    //-------------------------------------------------------
+    //- synch. group command example with exception disabled
+    //-------------------------------------------------------
+    //- disable exceptions and save current mode bool
+    last_mode = GroupReply::enable_exception(false);
+    //- process each response in the list ...
+    for (int r = 0; r < crl.size(); r++)
+    {
+    //- did the r-th device give error?
+        if (crl[r].has_failed() == true)
+        {
+    //- printout error description
+           cout << "an error occurred while executing "
+                << crl[r].obj_name()
+                << " on " 
+                << crl[r].dev_name() << endl;
+    //- dump error stack
+           const DevErrorList& el = crl[r].get_err_stack();
+           for (int err = 0; err < el.size(); err++)
+           {
+               cout << el[err].desc.in();
+           }
+        }
+        else
+        {
+    //- no error (suppose data contains a double)
+           double ans;
+           bool result = crl[r] >> ans;
+           if (result == false)
+           {
+               cout << "could not extract double from "
+                    << crl[r].dev_name()
+                    << " reply"
+                    << endl;
+           }
+           else
+           {
+               cout << crl[r].dev_name()
+                    << "::"
+                    << crl[r].obj_name()
+                    << " returned "
+                    << ans
+                    << endl;
+           }
+        }
+    }
+    //- restore last exception mode (if needed)
+    GroupReply::enable_exception(last_mode);
+    //- Clear the response list (if reused later in the code)
     crl.reset();
 
 Now execute the same command asynchronously. C++ example:
 
 .. code:: cpp
+  :number-lines:
 
-    //-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-
-
-    //-~asynch.~group~command~example~(C++~example)
-
-    //-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-
-
-    long~request\_id~=~gauges->command\_inout\_asynch(\textquotedbl{}Status\textquotedbl{});
-
-    //-~do~some~work
-
-    do\_some\_work();
-
-    ~
-
-    ~
-
-    //-~get~results
-
-    crl~=~gauges->command\_inout\_reply(request\_id);
-
-    //-~process~responses~as~previously~describe~in~the~synch.~implementation
-
-    for~(int~r~=~0;~r~<~crl.size();~r++)
-
-    \{
-
-    //-~data~processing~and~error~handling~goes~here
-
-    //-~copy/paste~code~from~previous~example
-
-    .~.~.
-
-    \}
-
-    //-~clear~the~response~list~(if~reused~later~in~the~code)
-
+    //-------------------------------------------------------
+    //- asynch. group command example (C++ example)
+    //-------------------------------------------------------
+    long request_id = gauges->command_inout_asynch("Status");
+    //- do some work
+    do_some_work();
+     
+     
+    //- get results
+    crl = gauges->command_inout_reply(request_id);
+    //- process responses as previously describe in the synch. implementation
+    for (int r = 0; r < crl.size(); r++)
+    {
+    //- data processing and error handling goes here
+    //- copy/paste code from previous example
+    . . .
+    }
+    //- clear the response list (if reused later in the code)
     crl.reset();
 
 Case 2: a command, one argument[sub:Case-2] 
@@ -2921,20 +2400,15 @@ all devices in the group (or its sub-groups).
 In C++:
 
 .. code:: cpp
+  :number-lines:
 
-    //-~the~argument~value
-
-    double~d~=~0.1;
-
-    //-~insert~it~into~the~TANGO~generic~container~for~command:~DeviceData
-
-    Tango::DeviceData~dd;
-
-    dd~<\textcompwordmark{}<~d;
-
-    //-~execute~the~command:~Dev\_Void~SetDummyFactor~(Dev\_Double)
-
-    Tango::GroupCmdReplyList~crl~=~gauges->command\_inout(\textquotedbl{}SetDummyFactor\textquotedbl{},~dd);
+    //- the argument value
+    double d = 0.1;
+    //- insert it into the TANGO generic container for command: DeviceData
+    Tango::DeviceData dd;
+    dd << d;
+    //- execute the command: Dev_Void SetDummyFactor (Dev_Double)
+    Tango::GroupCmdReplyList crl = gauges->command_inout("SetDummyFactor", dd);
 
 Since the SetDummyFactor command does not return any value, the
 individual replies (i.e. the GroupCmdReply) do not contain any data.
@@ -2946,27 +2420,18 @@ since we never try to extract data from the replies.
 In C++ we should have something like:
 
 .. code:: cpp
+  :number-lines:
 
-    //-~no~need~to~process~the~results~if~no~error~occurred~(Dev\_Void~command)
-
-    if~(crl.has\_failed())
-
-    \{
-
-    //-~at~least~one~error~occurred
-
-    ~~~~for~(int~r~=~0;~r~<~crl.size();~r++)
-
-    ~~~~\{
-
-    //-~handle~errors~here~(see~previous~C++~examples)
-
-    ~~~~\}
-
-    \}
-
-    //-~clear~the~response~list~(if~reused~later~in~the~code)
-
+    //- no need to process the results if no error occurred (Dev_Void command)
+    if (crl.has_failed())
+    {
+    //- at least one error occurred
+        for (int r = 0; r < crl.size(); r++)
+        {
+    //- handle errors here (see previous C++ examples)
+        }
+    }
+    //- clear the response list (if reused later in the code)
     crl.reset();
 
 See case 1 for an example of asynchronous command.
@@ -3001,220 +2466,128 @@ be executed on group cell-01 (and its sub-groups) as follows:
 Remember, cell-01 has the following internal structure:
 
 .. code:: cpp
+  :number-lines:
 
-    ->~gauges
-
-    ~~~|~->~cell-01
-
-    ~~~|~~~~|->~inst-c01/vac-gauge/strange
-
-    ~~~|~~~~|->~penning
-
-    ~~~|~~~~|~~~|->~inst-c01/vac-gauge/penning-01
-
-    ~~~|~~~~|~~~|->~inst-c01/vac-gauge/penning-02
-
-    ~~~|~~~~|~~~|->~...
-
-    ~~~|~~~~|~~~|->~inst-c01/vac-gauge/penning-xx
-
-    ~~~|~~~~|->~pirani
-
-    ~~~|~~~~~~~~|->~inst-c01/vac-gauge/pirani-01
-
-    ~~~|~~~~~~~~|->~...
-
-    ~~~|~~~~~~~~|->~inst-c01/vac-gauge/pirani-xx
+    -> gauges
+       | -> cell-01
+       |    |-> inst-c01/vac-gauge/strange
+       |    |-> penning
+       |    |   |-> inst-c01/vac-gauge/penning-01
+       |    |   |-> inst-c01/vac-gauge/penning-02
+       |    |   |-> ...
+       |    |   |-> inst-c01/vac-gauge/penning-xx
+       |    |-> pirani
+       |        |-> inst-c01/vac-gauge/pirani-01
+       |        |-> ...
+       |        |-> inst-c01/vac-gauge/pirani-xx
 
 Passing a specific argument to each device in C++:
 
 .. code:: cpp
+  :number-lines:
 
-    //-~get~a~reference~to~the~target~group
-
-    Tango::Group~{*}g~=~gauges->get\_group(\textquotedbl{}cell-01\textquotedbl{});
-
-    //-~get~number~of~device~in~the~hierarchy~(starting~at~cell-01)
-
-    long~n\_dev~=~g->get\_size(true);
-
-    //-~Build~argin~list
-
-    std::vector<double>~argins(n\_dev);
-
-    //-~argument~for~inst-c01/vac-gauge/strange
-
-    argins{[}0{]}~=~0.0;
-
-    //-~argument~for~inst-c01/vac-gauge/penning-01
-
-    argins{[}1{]}~=~0.1;
-
-    //-~argument~for~inst-c01/vac-gauge/penning-02
-
-    argins{[}2{]}~=~0.2;
-
-    //-~argument~for~remaining~devices~in~cell-01.penning
-
-    .~.~.
-
-    //-~argument~for~devices~in~cell-01.pirani
-
-    .~.~.
-
-    //-~the~reply~list
-
-    Tango::GroupCmdReplyList~crl;
-
-    //-~enter~a~try/catch~block~(see~below)
-
+    //- get a reference to the target group
+    Tango::Group *g = gauges->get_group("cell-01");
+    //- get number of device in the hierarchy (starting at cell-01)
+    long n_dev = g->get_size(true);
+    //- Build argin list
+    std::vector<double> argins(n_dev);
+    //- argument for inst-c01/vac-gauge/strange
+    argins[0] = 0.0;
+    //- argument for inst-c01/vac-gauge/penning-01
+    argins[1] = 0.1;
+    //- argument for inst-c01/vac-gauge/penning-02
+    argins[2] = 0.2;
+    //- argument for remaining devices in cell-01.penning
+    . . .
+    //- argument for devices in cell-01.pirani
+    . . .
+    //- the reply list
+    Tango::GroupCmdReplyList crl;
+    //- enter a try/catch block (see below)
     try
-
-    \{
-
-    //-~execute~the~command
-
-    ~~~~crl~=~g->command\_inout(\textquotedbl{}SetDummyFactor\textquotedbl{},~argins,~true);
-
-    ~~~~if~(crl.has\_failed())
-
-    ~~~~\{
-
-    //-~error~handling~goes~here~(see~case~1)
-
-    ~~~~\}
-
-    \}
-
-    catch~(const~DevFailed\&~df)
-
-    \{
-
-    //-~see~below
-
-    \}
-
+    {
+    //- execute the command
+        crl = g->command_inout("SetDummyFactor", argins, true);
+        if (crl.has_failed())
+        {
+    //- error handling goes here (see case 1)
+        }
+    }
+    catch (const DevFailed& df)
+    {
+    //- see below
+    }
     crl.reset();
 
 If we want to execute the command locally on cell-01 (i.e. not on its
 sub-groups), we should write the following C++ code:
 
 .. code:: cpp
+  :number-lines:
 
-    //-~get~a~reference~to~the~target~group
-
-    Tango::Group~{*}g~=~gauges->get\_group(\textquotedbl{}cell-01\textquotedbl{});
-
-    //-~get~number~of~device~in~the~group~(starting~at~cell-01)
-
-    long~n\_dev~=~g->get\_size(false);
-
-    //-~Build~argin~list
-
-    std::vector<double>~argins(n\_dev);
-
-    //-~argins~for~inst-c01/vac-gauge/penning-01
-
-    argins{[}0{]}~=~0.1;
-
-    //-~argins~for~inst-c01/vac-gauge/penning-02
-
-    argins{[}1{]}~=~0.2;
-
-    //-~argins~for~remaining~devices~in~cell-01.penning
-
-    .~.~.
-
-    //-~the~reply~list
-
-    Tango::GroupCmdReplyList~crl;
-
-    //-~enter~a~try/catch~block~(see~below)
-
+    //- get a reference to the target group
+    Tango::Group *g = gauges->get_group("cell-01");
+    //- get number of device in the group (starting at cell-01)
+    long n_dev = g->get_size(false);
+    //- Build argin list
+    std::vector<double> argins(n_dev);
+    //- argins for inst-c01/vac-gauge/penning-01
+    argins[0] = 0.1;
+    //- argins for inst-c01/vac-gauge/penning-02
+    argins[1] = 0.2;
+    //- argins for remaining devices in cell-01.penning
+    . . .
+    //- the reply list
+    Tango::GroupCmdReplyList crl;
+    //- enter a try/catch block (see below)
     try
-
-    \{
-
-    //-~execute~the~command
-
-    ~~~~crl~=~g->command\_inout(\textquotedbl{}SetDummyFactor\textquotedbl{},~argins,~false);
-
-    ~~~~if~(crl.has\_failed())
-
-    ~~~~\{
-
-    //-~error~handling~goes~here~(see~case~1)
-
-    ~~~~\}
-
-    \}
-
-    catch~(const~DevFailed\&~df)
-
-    \{
-
-    //-~see~below
-
-    \}
-
+    {
+    //- execute the command
+        crl = g->command_inout("SetDummyFactor", argins, false);
+        if (crl.has_failed())
+        {
+    //- error handling goes here (see case 1)
+        }
+    }
+    catch (const DevFailed& df)
+    {
+    //- see below
+    }
     crl.reset();
 
 Note: if we want to execute the command locally on cell-01 (i.e. not on
 its sub-groups), we should write the following code:
 
 .. code:: cpp
+  :number-lines:
 
-    //-~get~a~reference~to~the~target~group
-
-    Group~g~=~gauges.get\_group(\textquotedbl{}cell-01\textquotedbl{});
-
-    //-~get~pre-build~arguments~list~for~the~group~(starting@cell-01)
-
-    DeviceData{[}{]}~argins~=~g.get\_command\_specific\_argument\_list(false);
-
-    //-~argins~for~inst-c01/vac-gauge/penning-01
-
-    argins{[}0{]}.insert(0.1);
-
-    //-~argins~for~inst-c01/vac-gauge/penning-02
-
-    argins{[}1{]}.insert(0.2);
-
-    //-~argins~for~remaining~devices~in~cell-01.penning
-
-    .~.~.
-
-    //-~the~reply~list~
-
-    GroupCmdReplyList~crl;
-
-    //-~enter~a~try/catch~block~(see~below)
-
+    //- get a reference to the target group
+    Group g = gauges.get_group("cell-01");
+    //- get pre-build arguments list for the group (starting@cell-01)
+    DeviceData[] argins = g.get_command_specific_argument_list(false);
+    //- argins for inst-c01/vac-gauge/penning-01
+    argins[0].insert(0.1);
+    //- argins for inst-c01/vac-gauge/penning-02
+    argins[1].insert(0.2);
+    //- argins for remaining devices in cell-01.penning
+    . . .
+    //- the reply list 
+    GroupCmdReplyList crl;
+    //- enter a try/catch block (see below)
     try
-
-    \{
-
-    //-~execute~the~command
-
-    ~~~~crl~=~g.command\_inout(\textquotedbl{}SetDummyFactor\textquotedbl{},~argins,~false,~false);
-
-    ~~~~if~(crl.has\_failed())
-
-    ~~~~\{
-
-    //-~error~handling~goes~here~(see~case~1)
-
-    ~~~~\}
-
-    \}
-
-    catch~(DevFailed~d)
-
-    \{
-
-    //-~see~below
-
-    \}
+    {
+    //- execute the command
+        crl = g.command_inout("SetDummyFactor", argins, false, false);
+        if (crl.has_failed())
+        {
+    //- error handling goes here (see case 1)
+        }
+    }
+    catch (DevFailed d)
+    {
+    //- see below
+    }
 
 This form of *command\_inout* (the one that accepts an array of value as
 its input argument), may throw an exception **before** executing the
@@ -3280,125 +2653,71 @@ Reading an attribute is very similar to executing a command.
 Reading an attribute in C++:
 
 .. code:: cpp
+  :number-lines:
 
-    //-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-
-
-    //-~synch.~read~\textquotedbl{}vacuum\textquotedbl{}~attribute~on~each~device~in~the~hierarchy
-
-    //-~with~exceptions~enabled~-~C++~example
-
-    //-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-
-
-    //-~enable~exceptions~and~save~current~mode
-
-    bool~last\_mode~=~GroupReply::enable\_exception(true);
-
-    //-~read~attribute
-
-    Tango::GroupAttrReplyList~arl~=~gauges->read\_attribute(\textquotedbl{}vacuum\textquotedbl{});
-
-    //-~for~each~response~in~the~list~...
-
-    for~(int~r~=~0;~r~<~arl.size();~r++)
-
-    \{
-
-    //-~enter~a~try/catch~block
-
-    ~~~try
-
-    ~~~\{
-
-    //-~try~to~extract~the~data~from~the~r-th~reply
-
-    //-~suppose~data~contains~a~double
-
-    ~~~~~~double~ans;
-
-    ~~~~~~arl{[}r{]}~>\textcompwordmark{}>~ans;
-
-    ~~~~~~cout~<\textcompwordmark{}<~arl{[}r{]}.dev\_name()
-
-    ~~~~~~~~~~~<\textcompwordmark{}<~\textquotedbl{}::\textquotedbl{}
-
-    ~~~~~~~~~~~<\textcompwordmark{}<~arl{[}r{]}.obj\_name()
-
-    ~~~~~~~~~~~<\textcompwordmark{}<~\textquotedbl{}~value~is~\textquotedbl{}
-
-    ~~~~~~~~~~~<\textcompwordmark{}<~ans~<\textcompwordmark{}<~endl;
-
-    ~~~\}
-
-    ~~~catch~(const~DevFailed\&~df)
-
-    ~~~\{
-
-    //-~DevFailed~caught~while~trying~to~extract~the~data~from~reply
-
-    ~~~~~~for~(int~err~=~0;~err~<~df.errors.length();~err++)
-
-    ~~~~~~\{
-
-    ~~~~~~~~~cout~<\textcompwordmark{}<~\textquotedbl{}error:~\textquotedbl{}~<\textcompwordmark{}<~df.errors{[}err{]}.desc.in()~<\textcompwordmark{}<~endl;
-
-    ~~~~~~\}
-
-    //-~alternatively,~one~can~use~arl{[}r{]}.get\_err\_stack()~see~below
-
-    ~~~\}
-
-    ~~~catch~(...)
-
-    ~~~\{
-
-    ~~~~~~cout~<\textcompwordmark{}<~\textquotedbl{}unknown~exception~caught\textquotedbl{};
-
-    ~~~\}
-
-    \}
-
-    //-~restore~last~exception~mode~(if~needed)
-
-    GroupReply::enable\_exception(last\_mode);
-
-    //-~clear~the~reply~list~(if~reused~later~in~the~code)
-
+    //-----------------------------------------------------------------
+    //- synch. read "vacuum" attribute on each device in the hierarchy
+    //- with exceptions enabled - C++ example
+    //-----------------------------------------------------------------
+    //- enable exceptions and save current mode
+    bool last_mode = GroupReply::enable_exception(true);
+    //- read attribute
+    Tango::GroupAttrReplyList arl = gauges->read_attribute("vacuum");
+    //- for each response in the list ...
+    for (int r = 0; r < arl.size(); r++)
+    {
+    //- enter a try/catch block
+       try
+       {
+    //- try to extract the data from the r-th reply
+    //- suppose data contains a double
+          double ans;
+          arl[r] >> ans;
+          cout << arl[r].dev_name()
+               << "::"
+               << arl[r].obj_name()
+               << " value is "
+               << ans << endl;
+       }
+       catch (const DevFailed& df)
+       {
+    //- DevFailed caught while trying to extract the data from reply
+          for (int err = 0; err < df.errors.length(); err++)
+          {
+             cout << "error: " << df.errors[err].desc.in() << endl;
+          }
+    //- alternatively, one can use arl[r].get_err_stack() see below
+       }
+       catch (...)
+       {
+          cout << "unknown exception caught";
+       }
+    }
+    //- restore last exception mode (if needed)
+    GroupReply::enable_exception(last_mode);
+    //- clear the reply list (if reused later in the code)
     arl.reset();
 
 In C++, an asynchronous version of the previous example could be:
 
 .. code:: cpp
+  :number-lines:
 
-    //-~read~the~attribute~asynchronously
-
-    long~request\_id~=~gauges->read\_attribute\_asynch(\textquotedbl{}vacuum\textquotedbl{});
-
-    //-~do~some~work
-
-    do\_some\_work();
-
-    ~
-
-    ~
-
-    //-~get~results
-
-    Tango::GroupAttrReplyList~arl~=~gauges->read\_attribute\_reply(request\_id);
-
-    //-~process~replies~as~previously~described~in~the~synch.~implementation
-
-    for~(int~r~=~0;~r~<~arl.size();~r++)
-
-    \{
-
-    //-~data~processing~and/or~error~handling~goes~here
-
+    //- read the attribute asynchronously
+    long request_id = gauges->read_attribute_asynch("vacuum");
+    //- do some work
+    do_some_work();
+     
+     
+    //- get results
+    Tango::GroupAttrReplyList arl = gauges->read_attribute_reply(request_id);
+    //- process replies as previously described in the synch. implementation
+    for (int r = 0; r < arl.size(); r++)
+    {
+    //- data processing and/or error handling goes here
     ...
-
-    \}
-
-    //-~clear~the~reply~list~(if~reused~later~in~the~code)
-
+    }
+    //- clear the reply list (if reused later in the code)
     arl.reset();
 
 Writing an attribute 
@@ -3439,110 +2758,64 @@ be disabled.
 Writing an attribute in C++:
 
 .. code:: cpp
+  :number-lines:
 
-    //-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-
-
-    //-~synch.~write~\textquotedbl{}dummy\textquotedbl{}~attribute~on~each~device~in~the~hierarchy
-
-    //-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-
-
-    //-~assume~each~device~support~a~\textquotedbl{}dummy\textquotedbl{}~writable~attribute
-
-    //-~insert~the~value~to~be~written~into~a~generic~container
-
-    Tango::DeviceAttribute~value(std::string(\textquotedbl{}dummy\textquotedbl{}),~3.14159);
-
-    //-~write~the~attribute
-
-    Tango::GroupReplyList~rl~=~gauges->write\_attribute(value);
-
-    //-~any~error?
-
-    if~(rl.has\_failed()~==~false)
-
-    \{
-
-    ~~~~cout~<\textcompwordmark{}<~\textquotedbl{}no~error\textquotedbl{}~<\textcompwordmark{}<~endl;
-
-    \}
-
+    //-----------------------------------------------------------------
+    //- synch. write "dummy" attribute on each device in the hierarchy
+    //-----------------------------------------------------------------
+    //- assume each device support a "dummy" writable attribute
+    //- insert the value to be written into a generic container
+    Tango::DeviceAttribute value(std::string("dummy"), 3.14159);
+    //- write the attribute
+    Tango::GroupReplyList rl = gauges->write_attribute(value);
+    //- any error?
+    if (rl.has_failed() == false)
+    {
+        cout << "no error" << endl;
+    }
     else
-
-    \{
-
-    ~~~~cout~<\textcompwordmark{}<~\textquotedbl{}at~least~one~error~occurred\textquotedbl{}~<\textcompwordmark{}<~endl;
-
-    //-~for~each~response~in~the~list~...
-
-    ~~~~for~(int~r~=~0;~r~<~rl.size();~r++)
-
-    ~~~~\{
-
-    //-~did~the~r-th~device~give~error?
-
-    ~~~~~~~if~(rl{[}r{]}.has\_failed()~==~true)
-
-    ~~~~~~~\{
-
-    //-~printout~error~description
-
-    ~~~~~~~~~~~cout~<\textcompwordmark{}<~\textquotedbl{}an~error~occurred~while~reading~\textquotedbl{}~
-
-    ~~~~~~~~~~~~~~~~<\textcompwordmark{}<~rl{[}r{]}.obj\_name()
-
-    ~~~~~~~~~~~~~~~~<\textcompwordmark{}<~\textquotedbl{}~on~\textquotedbl{}
-
-    ~~~~~~~~~~~~~~~~<\textcompwordmark{}<~rl{[}r{]}.dev\_name()
-
-    ~~~~~~~~~~~~~~~~<\textcompwordmark{}<~endl;
-
-    //-~dump~error~stack
-
-    ~~~~~~~~~~~const~DevErrorList\&~el~=~rl{[}r{]}.get\_err\_stack();
-
-    ~~~~~~~~~~~for~(int~err~=~0;~err~<~el.size();~err++)
-
-    ~~~~~~~~~~~\{
-
-    ~~~~~~~~~~~~~~cout~<\textcompwordmark{}<~el{[}err{]}.desc.in();
-
-    ~~~~~~~~~~~\}
-
-    ~~~~~~~~\}
-
-    ~~~~~\}
-
-    \}
-
-    //-~clear~the~reply~list~(if~reused~later~in~the~code)
-
+    {
+        cout << "at least one error occurred" << endl;
+    //- for each response in the list ...
+        for (int r = 0; r < rl.size(); r++)
+        {
+    //- did the r-th device give error?
+           if (rl[r].has_failed() == true)
+           {
+    //- printout error description
+               cout << "an error occurred while reading " 
+                    << rl[r].obj_name()
+                    << " on "
+                    << rl[r].dev_name()
+                    << endl;
+    //- dump error stack
+               const DevErrorList& el = rl[r].get_err_stack();
+               for (int err = 0; err < el.size(); err++)
+               {
+                  cout << el[err].desc.in();
+               }
+            }
+         }
+    }
+    //- clear the reply list (if reused later in the code)
     rl.reset();
 
 Here is a C++ asynchronous version:
 
 .. code:: cpp
+  :number-lines:
 
-    //-~insert~the~value~to~be~written~into~a~generic~container
-
-    Tango::DeviceAttribute~value(std::string(\textquotedbl{}dummy\textquotedbl{}),~3.14159);
-
-    //-~write~the~attribute~asynchronously
-
-    long~request\_id~=~gauges.write\_attribute\_asynch(value);
-
-    //-~do~some~work
-
-    do\_some\_work();
-
-    ~
-
-    ~
-
-    //-~get~results
-
-    Tango::GroupReplyList~rl~=~gauges->write\_attribute\_reply(request\_id);
-
-    //-~process~replies~as~previously~describe~in~the~synch.~implementation~...
+    //- insert the value to be written into a generic container
+    Tango::DeviceAttribute value(std::string("dummy"), 3.14159);
+    //- write the attribute asynchronously
+    long request_id = gauges.write_attribute_asynch(value);
+    //- do some work
+    do_some_work();
+     
+     
+    //- get results
+    Tango::GroupReplyList rl = gauges->write_attribute_reply(request_id);
+    //- process replies as previously describe in the synch. implementation ...
 
 Case 2: a specific value per device
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -3572,162 +2845,94 @@ written as follows on group cell-01 (and its sub-groups) as follows:
 Remember, cell-01 has the following internal structure:
 
 .. code:: cpp
+  :number-lines:
 
-    ->~gauges~
-
-    ~~~~|~->~cell-01
-
-    ~~~~|~~~~~|->~inst-c01/vac-gauge/strange
-
-    ~~~~|~~~~~|->~penning
-
-    ~~~~|~~~~~|~~~~|->~inst-c01/vac-gauge/penning-01
-
-    ~~~~|~~~~~|~~~~|->~inst-c01/vac-gauge/penning-02
-
-    ~~~~|~~~~~|~~~~|->~...
-
-    ~~~~|~~~~~|~~~~|->~inst-c01/vac-gauge/penning-xx
-
-    ~~~~|~~~~~|->~pirani
-
-    ~~~~|~~~~~~~~~~|->~inst-c01/vac-gauge/pirani-01
-
-    ~~~~|~~~~~~~~~~|->~...
-
-    ~~~~|~~~~~~~~~~|->~inst-c01/vac-gauge/pirani-xx
+    -> gauges 
+        | -> cell-01
+        |     |-> inst-c01/vac-gauge/strange
+        |     |-> penning
+        |     |    |-> inst-c01/vac-gauge/penning-01
+        |     |    |-> inst-c01/vac-gauge/penning-02
+        |     |    |-> ...
+        |     |    |-> inst-c01/vac-gauge/penning-xx
+        |     |-> pirani
+        |          |-> inst-c01/vac-gauge/pirani-01
+        |          |-> ...
+        |          |-> inst-c01/vac-gauge/pirani-xx
 
 C++ version:
 
 .. code:: cpp
+  :number-lines:
 
-    //-~get~a~reference~to~the~target~group
-
-    Tango::Group~{*}g~=~gauges->get\_group(\textquotedbl{}cell-01\textquotedbl{});
-
-    //-~get~number~of~device~in~the~hierarchy~(starting~at~cell-01)
-
-    long~n\_dev~=~g->get\_size(true);
-
-    //-~Build~value~list
-
-    std::vector<double>~values(n\_dev);
-
-    //-~value~for~inst-c01/vac-gauge/strange
-
-    values{[}0{]}~=~3.14159;
-
-    //-~value~for~inst-c01/vac-gauge/penning-01
-
-    values{[}1{]}~=~2~{*}~3.14159;
-
-    //-~value~for~inst-c01/vac-gauge/penning-02
-
-    values{[}2{]}~=~3~{*}~3.14159;
-
-    //-~value~for~remaining~devices~in~cell-01.penning
-
-    .~.~.
-
-    //-~value~for~devices~in~cell-01.pirani
-
-    .~.~.
-
-    //-~the~reply~list
-
-    Tango::GroupReplyList~rl;
-
-    //-~enter~a~try/catch~block~(see~below)
-
+    //- get a reference to the target group
+    Tango::Group *g = gauges->get_group("cell-01");
+    //- get number of device in the hierarchy (starting at cell-01)
+    long n_dev = g->get_size(true);
+    //- Build value list
+    std::vector<double> values(n_dev);
+    //- value for inst-c01/vac-gauge/strange
+    values[0] = 3.14159;
+    //- value for inst-c01/vac-gauge/penning-01
+    values[1] = 2 * 3.14159;
+    //- value for inst-c01/vac-gauge/penning-02
+    values[2] = 3 * 3.14159;
+    //- value for remaining devices in cell-01.penning
+    . . .
+    //- value for devices in cell-01.pirani
+    . . .
+    //- the reply list
+    Tango::GroupReplyList rl;
+    //- enter a try/catch block (see below)
     try
-
-    \{
-
-    //-~write~the~\textquotedbl{}dummy\textquotedbl{}~attribute
-
-    ~~~~rl~=~g->write\_attribute(\textquotedbl{}dummy\textquotedbl{},~values,~true);
-
-    ~~~~if~(rl.has\_failed())
-
-    ~~~~\{
-
-    //-~error~handling~(see~previous~cases)
-
-    ~~~~\}
-
-    \}
-
-    catch~(const~DevFailed\&~df)
-
-    \{
-
-    //-~see~below
-
-    \}
-
+    {
+    //- write the "dummy" attribute
+        rl = g->write_attribute("dummy", values, true);
+        if (rl.has_failed())
+        {
+    //- error handling (see previous cases)
+        }
+    }
+    catch (const DevFailed& df)
+    {
+    //- see below
+    }
     rl.reset();
 
 Note: if we want to execute the command locally on cell-01 (i.e. not on
 its sub-groups), we should write the following code
 
 .. code:: cpp
+  :number-lines:
 
-    //-~get~a~reference~to~the~target~group
-
-    Tango::Group~{*}g~=~gauges->get\_group(\textquotedbl{}cell-01\textquotedbl{});
-
-    //-~get~number~of~device~in~the~group
-
-    long~n\_dev~=~g->get\_size(false);
-
-    //-~Build~value~list
-
-    std::vector<double>~values(n\_dev);
-
-    //-~value~for~inst-c01/vac-gauge/penning-01
-
-    values{[}0{]}~=~2~{*}~3.14159;
-
-    //-~value~for~inst-c01/vac-gauge/penning-02
-
-    values{[}1{]}~=~3~{*}~3.14159;
-
-    //-~value~for~remaining~devices~in~cell-01.penning
-
-    .~.~.
-
-    //-~the~reply~list
-
-    Tango::GroupReplyList~rl;
-
-    //-~enter~a~try/catch~block~(see~below)
-
+    //- get a reference to the target group
+    Tango::Group *g = gauges->get_group("cell-01");
+    //- get number of device in the group
+    long n_dev = g->get_size(false);
+    //- Build value list
+    std::vector<double> values(n_dev);
+    //- value for inst-c01/vac-gauge/penning-01
+    values[0] = 2 * 3.14159;
+    //- value for inst-c01/vac-gauge/penning-02
+    values[1] = 3 * 3.14159;
+    //- value for remaining devices in cell-01.penning
+    . . .
+    //- the reply list
+    Tango::GroupReplyList rl;
+    //- enter a try/catch block (see below)
     try
-
-    \{
-
-    //-~write~the~\textquotedbl{}dummy\textquotedbl{}~attribute
-
-    ~~~rl~=~g->write\_attribute(\textquotedbl{}dummy\textquotedbl{},~values,~false);
-
-    ~~~if~(rl.has\_failed())
-
-    ~~~\{
-
-    //-~error~handling~(see~previous~cases)
-
-    ~~~\}
-
-    \}
-
-    catch~(const~DevFailed\&~df)
-
-    \{
-
-    //-~see~below
-
-    \}
-
+    {
+    //- write the "dummy" attribute
+       rl = g->write_attribute("dummy", values, false);
+       if (rl.has_failed())
+       {
+    //- error handling (see previous cases)
+       }
+    }
+    catch (const DevFailed& df)
+    {
+    //- see below
+    }
     rl.reset();
 
 This form of *write\_attribute()* (the one that accepts an array of
@@ -3809,24 +3014,17 @@ short. The code you need to extract these data is (Without error case
 treatment detailed in a next sub-chapter)
 
 .. code:: cpp
+  :number-lines:
 
-    1~DevicePipe~dp~=~mydev.read\_pipe(\textquotedbl{}MyPipe\textquotedbl{});
-
-    2~
-
-    3~DevLong~dl;~~
-
-    4~vector<double>~v\_db;~~
-
-    5~DevVarUShortArray~{*}dvush~=~new~DevVarUShortArray();
-
-    6~
-
-    7~dp~>\textcompwordmark{}>~dl~>\textcompwordmark{}>~v\_db~>\textcompwordmark{}>~dvush;
-
-    8
-
-    9~delete~dvush;
+   DevicePipe dp = mydev.read_pipe("MyPipe");
+   
+   DevLong dl;  
+   vector<double> v_db;  
+   DevVarUShortArray *dvush = new DevVarUShortArray();
+   
+   dp >> dl >> v_db >> dvush;
+  
+   delete dvush;
 
 The pipe is read at line 1. Pipe (or root blob) data extracttion is at
 line 7. As you can see, it is just a matter of chaining extraction
@@ -3848,24 +3046,17 @@ you can extract pipe data and retrieve data element name (same pipe then
 previously)
 
 .. code:: cpp
+  :number-lines:
 
-    1~DevicePipe~dp~=~mydev.read\_pipe(\textquotedbl{}MyPipe\textquotedbl{});
-
-    2~
-
-    3~DataElement<DevLong>~de\_dl;~~
-
-    4~DataElement<vector<double>~>~de\_v\_db;~~
-
-    5~DataElement<DevVarUShortArray~{*}>~de\_dvush(new~DevVarUShortArray());
-
-    6~
-
-    7~dp~>\textcompwordmark{}>~de\_dl~>\textcompwordmark{}>~de\_v\_db~>\textcompwordmark{}>~de\_dvush;
-
-    8
-
-    9~delete~de\_dvush.value;
+   DevicePipe dp = mydev.read_pipe("MyPipe");
+   
+   DataElement<DevLong> de_dl;  
+   DataElement<vector<double> > de_v_db;  
+   DataElement<DevVarUShortArray *> de_dvush(new DevVarUShortArray());
+   
+   dp >> de_dl >> de_v_db >> de_dvush;
+  
+   delete de_dvush.value;
 
 The extraction line (number 7) is similar to the previous case but local
 data are instances of DataElement class. This is template class and
@@ -3889,58 +3080,34 @@ also exist on the DevicePipe class for its root blob. Here is one
 example of how you use them:
 
 .. code:: cpp
+  :number-lines:
 
-    1~~DevicePipe~dp~=~mydev.read\_pipe(\textquotedbl{}MyPipe\textquotedbl{});
-
-    2
-
-    3~~size\_t~nb\_de~=~dp.get\_data\_elt\_nb();~~
-
-    4~~for~(size\_t~loop~=~0;loop~<~nb;loop++)
-
-    5~~\{~~~~~~
-
-    6~~~~~int~data\_type~=~dp.get\_data\_elt\_type(loop);~~~~~~
-
-    7~~~~~string~de\_name~=~dp.get\_data\_elt\_name(loop);~~~~~~
-
-    8~~~~~switch(data\_type)~~~~~~
-
-    9~~~~~\{~~~~~~~~~
-
-    10~~~~~~~~case~DEV\_LONG:~~~~~~~~~
-
-    11~~~~~~~~\{~~~~~~~~~~~~~
-
-    12~~~~~~~~~~~~DevLong~lg;~~~~~~~~~~~~~
-
-    13~~~~~~~~~~~~dp~>\textcompwordmark{}>~lg;~~~~~~~~~
-
-    14~~~~~~~~\}~~~~~~~~~
-
-    15~~~~~~~~break;
-
-    16~~~~~~~~
-
-    17~~~~~~~~case~DEVVAR\_DOUBLEARRAY:~~~~~~~~~
-
-    18~~~~~~~~\{~~~~~~~~~~~~~
-
-    19~~~~~~~~~~~~vector<double>~v\_db;~~~~~~~~~~~~~
-
-    20~~~~~~~~~~~~dp~>\textcompwordmark{}>~v\_db;~~~~~~~~~
-
-    21~~~~~~~~\}~~~~~~~~~
-
-    22~~~~~~~~break;~~~~~~~~~
-
-    23~~~~~~~~....~~~~~~
-
-    24~~~~\}~~
-
-    25~~~~...~~
-
-    26~\}
+    DevicePipe dp = mydev.read_pipe("MyPipe");
+  
+    size_t nb_de = dp.get_data_elt_nb();  
+    for (size_t loop = 0;loop < nb;loop++)
+    {      
+       int data_type = dp.get_data_elt_type(loop);      
+       string de_name = dp.get_data_elt_name(loop);      
+       switch(data_type)      
+       {         
+          case DEV_LONG:         
+          {             
+              DevLong lg;             
+              dp >> lg;         
+          }         
+          break;
+          
+          case DEVVAR_DOUBLEARRAY:         
+          {             
+              vector<double> v_db;             
+              dp >> v_db;         
+          }         
+          break;         
+          ....      
+      }  
+      ...  
+   }
 
 The number of data element in the pipe root blob is retrieve at line 3.
 Then a loop for each data element is coded. For each data element, its
@@ -3982,46 +3149,28 @@ have a look at a first example if you want to write a pipe with a Tango
 long, a vector of double and finally an array of unsigned short.
 
 .. code:: cpp
+  :number-lines:
 
-    1~~DevicePipe~dp(\textquotedbl{}MyPipe\textquotedbl{});
-
-    2~
-
-    3~~vector<string>~de\_names~\{\textquotedbl{}FirstDE\textquotedbl{},\textquotedbl{}SecondDE\textquotedbl{},\textquotedbl{}ThirdDE\textquotedbl{}\};
-
-    4~~db.set\_data\_elt\_names(de\_names);
-
-    5
-
-    6~~DevLong~dl~=~666;~~
-
-    7~~vector<double>~v\_db~\{1.11,2.22\};
-
-    8~~unsigned~short~{*}array~=~new~unsigned~short~{[}100{]};
-
-    9~~DevVarUShortArray~{*}dvush~=~create\_DevVarUShortArray(array,100);
-
-    10
-
-    11~try~~
-
-    12~\{~~~~~
-
-    12~~~~dp~<\textcompwordmark{}<~dl~<\textcompwordmark{}<~v\_db~<\textcompwordmark{}<~dvush;
-
-    13~~~~mydev.write\_pipe(dp);
-
-    14~\}
-
-    15~catch~(DevFailed~\&e)
-
-    16~\{~~~~~
-
-    17~~~~cout~<\textcompwordmark{}<~\textquotedbl{}DevicePipeBlob~insertion~failed\textquotedbl{}~<\textcompwordmark{}<~endl;~~~~~
-
-    18~~~~....~~
-
-    19~\}
+    DevicePipe dp("MyPipe");
+   
+    vector<string> de_names {"FirstDE","SecondDE","ThirdDE"};
+    db.set_data_elt_names(de_names);
+  
+    DevLong dl = 666;  
+    vector<double> v_db {1.11,2.22};
+    unsigned short *array = new unsigned short [100];
+    DevVarUShortArray *dvush = create_DevVarUShortArray(array,100);
+  
+   try  
+   {     
+      dp << dl << v_db << dvush;
+      mydev.write_pipe(dp);
+   }
+   catch (DevFailed &e)
+   {     
+      cout << "DevicePipeBlob insertion failed" << endl;     
+      ....  
+   }
 
 Insertion into the DevicePipe is done at line 12 with the insert
 operators. The main difference with extracting data from the pipe is at
@@ -4038,46 +3187,28 @@ data element. Here is the previous example modified to use DataElement
 class.
 
 .. code:: cpp
+  :number-lines:
 
-    1~~DevicePipe~dp(\textquotedbl{}MyPipe\textquotedbl{});
-
-    2
-
-    3~~DataElement<DevLong>~de\_dl(\textquotedbl{}FirstElt\textquotedbl{},666);~~
-
-    4~~vector<double>~~v\_db~\{1.11,2.22\};
-
-    5~~DataElement<vector<double>~>~de\_v\_db(\textquotedbl{}SecondElt,v\_db);
-
-    6
-
-    7~~unsigned~short~{*}array~=~new~unsigned~short~{[}100{]};
-
-    8~~DevVarUShortArray~{*}dvush~=~create\_DevVarUShortArray(array,100);
-
-    9~~DataElement<DevVarUShortArray~{*}>~de\_dvush(\textquotedbl{}ThirdDE\textquotedbl{},array);
-
-    10
-
-    11~try~~
-
-    12~\{~~~~~
-
-    12~~~~dp~<\textcompwordmark{}<~de\_dl~<\textcompwordmark{}<~de\_v\_db~<\textcompwordmark{}<~de\_dvush;
-
-    13~~~~mydev.write\_pipe(dp);
-
-    14~\}
-
-    15~catch~(DevFailed~\&e)
-
-    16~\{~~~~~
-
-    17~~~~cout~<\textcompwordmark{}<~\textquotedbl{}DevicePipeBlob~insertion~failed\textquotedbl{}~<\textcompwordmark{}<~endl;~~~~~
-
-    18~~~~....~~
-
-    19~\}
+    DevicePipe dp("MyPipe");
+  
+    DataElement<DevLong> de_dl("FirstElt",666);  
+    vector<double>  v_db {1.11,2.22};
+    DataElement<vector<double> > de_v_db("SecondElt,v_db);
+  
+    unsigned short *array = new unsigned short [100];
+    DevVarUShortArray *dvush = create_DevVarUShortArray(array,100);
+    DataElement<DevVarUShortArray *> de_dvush("ThirdDE",array);
+  
+   try  
+   {     
+      dp << de_dl << de_v_db << de_dvush;
+      mydev.write_pipe(dp);
+   }
+   catch (DevFailed &e)
+   {     
+      cout << "DevicePipeBlob insertion failed" << endl;     
+      ....  
+   }
 
 The population of the array used for the third pipe data element is not
 represented here. Finally, there is a third way to insert data into a
@@ -4088,32 +3219,21 @@ overwritten for the DevicePipe and DevicePipeBlob classes. Look at the
 following example:
 
 .. code:: cpp
+  :number-lines:
 
-    1~~DevicePipe~dp(\textquotedbl{}MyPipe\textquotedbl{});
-
-    2~
-
-    3~~vector<string>~de\_names~\{\textquotedbl{}FirstDE\textquotedbl{},\textquotedbl{}SecondDE\textquotedbl{},\textquotedbl{}ThirdDE\textquotedbl{}\};
-
-    4~~db.set\_data\_elt\_names(de\_names);
-
-    5
-
-    6~~DevLong~dl~=~666;~~
-
-    7~~vector<double>~v\_db~=~\{1.11,2.22\};
-
-    8~~unsigned~short~{*}array~=~new~unsigned~short~{[}100{]};
-
-    9~~DevVarUShortArray~{*}dvush~=~create\_DevVarUShortArray(array,100);
-
-    10
-
-    11~dp{[}\textquotedbl{}SecondDE\textquotedbl{}{]}~<\textcompwordmark{}<~v\_db;
-
-    12~dp{[}\textquotedbl{}FirstDE\textquotedbl{}{]}~<\textcompwordmark{}<~dl;
-
-    13~dp{[}\textquotedbl{}ThirdDE\textquotedbl{}{]}~<\textcompwordmark{}<~dvush;
+    DevicePipe dp("MyPipe");
+   
+    vector<string> de_names {"FirstDE","SecondDE","ThirdDE"};
+    db.set_data_elt_names(de_names);
+  
+    DevLong dl = 666;  
+    vector<double> v_db = {1.11,2.22};
+    unsigned short *array = new unsigned short [100];
+    DevVarUShortArray *dvush = create_DevVarUShortArray(array,100);
+  
+   dp["SecondDE"] << v_db;
+   dp["FirstDE"] << dl;
+   dp["ThirdDE"] << dvush;
 
 Insertion into the device pipe is now done at lines 11 to 13. The
 population of the array used for the third pipe data element is not
@@ -4186,7 +3306,8 @@ to re-build the network connection. With the
 *set\_transparency\_reconnection()* method of the DeviceProxy class, it
 is even possible not to have any exception thrown in case of
 communication error. The API will try to re-build the network connection
-as soon as it is detected as bad. This is the default mode.
+as soon as it is detected as bad. This is the default mode. See
+[sec:Reconnection-and-exception] for more details on this subject.
 
 Thread safety
 -------------
@@ -4372,434 +3493,222 @@ list mentioned above. It should be rather self-explanatory with the
 comments.
 
 .. code:: cpp
-
-    package~examples;
-
-    ~
-
-
-
-    import~javax.swing.JFrame;
-
-    import~javax.swing.JMenuItem;
-
-    import~javax.swing.JMenuBar;
-
-    import~javax.swing.JMenu;
-
-    ~
-
-
-
-    import~java.awt.event.ActionListener;
-
-    import~java.awt.event.ActionEvent;
-
-    import~java.awt.BorderLayout;
-
-    ~
-
-
-
-    import~fr.esrf.tangoatk.core.AttributeList;
-
-    import~fr.esrf.tangoatk.core.ConnectionException;
-
-    ~
-
-
-
-    import~fr.esrf.tangoatk.core.CommandList;
-
-    import~fr.esrf.tangoatk.widget.util.ErrorHistory;
-
-    import~fr.esrf.tangoatk.widget.util.ATKGraphicsUtils;
-
-    import~fr.esrf.tangoatk.widget.attribute.ScalarListViewer;
-
-    import~fr.esrf.tangoatk.widget.command.CommandComboViewer;
-
-    ~
-
-
-
-    public~class~FirstApplication~extends~JFrame
-
-    \{
-
-    JMenuBar~menu;~~~~~~~~~~~~~~~~~~~~//~So~that~our~application~looks
-
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//~halfway~decent.
-
-    AttributeList~attributes;~~~~~~~~~//~The~list~that~will~contain~our
-
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//~attributes
-
-    CommandList~commands;~~~~~~~~~~~~~//~The~list~that~will~contain~our
-
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//~commands
-
-    ErrorHistory~errorHistory;~~~~~~~~//~A~window~that~displays~errors
-
-    ScalarListViewer~sListViewer;~~~~~//~A~viewer~which~knows~how~to
-
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//~display~a~list~of~scalar~attributes.
-
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//~If~you~want~to~display~other~types
-
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//~than~scalars,~you'll~have~to~wait
-
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//~for~the~next~example.
-
-    CommandComboViewer~commandViewer;~//~A~viewer~which~knows~how~to~display
-
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//~a~combobox~of~commands~and~execute
-
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//~them.
-
-    String~device;~~~~~~~~~~~~~~~~~~~~//~The~name~of~our~device.
-
-    ~
-
-
-
-    public~FirstApplication()
-
-    \{
-
-    ~~~//~The~swing~stuff~to~create~the~menu~bar~and~its~pulldown~menus
-
-    ~~~menu~=~new~JMenuBar();
-
-    ~~~JMenu~fileMenu~=~new~JMenu();
-
-    ~~~fileMenu.setText(\textquotedbl{}File\textquotedbl{});~~~
-
-    ~~~JMenu~viewMenu~=~new~JMenu();
-
-    ~~~viewMenu.setText(\textquotedbl{}View\textquotedbl{});
-
-
-
-    ~~~JMenuItem~quitItem~=~new~JMenuItem();
-
-    ~~~quitItem.setText(\textquotedbl{}Quit\textquotedbl{});
-
-    ~~~quitItem.addActionListener(new~
-
-    ~~~~~~java.awt.event.ActionListener()
-
-    ~~~~~~\{~~~~~~~~~~~~~~~~~
-
-    ~~~~~~~public~void
-
-    ~~~~~~~actionPerformed(ActionEvent~evt)
-
-    ~~~~~~~\{quitItemActionPerformed(evt);\}
-
-    ~~~~~~\});
-
-    ~~~fileMenu.add(quitItem);
-
-
-
-    ~~~JMenuItem~errorHistItem~=~new~JMenuItem();
-
-    ~~~errorHistItem.setText(\textquotedbl{}Error~History\textquotedbl{});
-
-    ~~~errorHistItem.addActionListener(new~
-
-    ~~~~~~~~~~~java.awt.event.ActionListener()
-
-    ~~~~~~~~~~~\{~~~~~~~~~~~~~~~~~
-
-    ~~~~~~~~~~~~public~void~
-
-    ~~~~~~~~~~~~actionPerformed(ActionEvent~evt)
-
-    ~~~~~~~~~~~~\{errHistItemActionPerformed(evt);\}
-
-    ~~~~~~~~~~~\});
-
-    ~~~viewMenu.add(errorHistItem);
-
-    ~~~menu.add(fileMenu);
-
-    ~~~menu.add(viewMenu);
-
-
-
-    ~~~//
-
-    ~~~//~Here~we~create~ATK~objects~to~handle~attributes,~commands~and~errors.
-
-    ~~~//
-
-    ~~~attributes~=~new~AttributeList();~
-
-    ~~~commands~=~new~CommandList();
-
-    ~~~errorHistory~=~new~ErrorHistory();
-
-    ~~~device~=~\textquotedbl{}id14/eh3\_mirror/1\textquotedbl{};
-
-    ~~~sListViewer~=~new~ScalarListViewer();
-
-    ~~~commandViewer~=~new~CommandComboViewer();
-
-
-
-
-
-    //~
-
-    //~A~feature~of~the~command~and~attribute~list~is~that~if~you
-
-    //~supply~an~errorlistener~to~these~lists,~they'll~add~that
-
-    //~errorlistener~to~all~subsequently~created~attributes~or
-
-    //~commands.~So~it~is~important~to~do~this~\_before\_~you
-
-    //~start~adding~attributes~or~commands.
+  :number-lines:
+
+    package examples;
+     
+
+    import javax.swing.JFrame;
+    import javax.swing.JMenuItem;
+    import javax.swing.JMenuBar;
+    import javax.swing.JMenu;
+     
+
+    import java.awt.event.ActionListener;
+    import java.awt.event.ActionEvent;
+    import java.awt.BorderLayout;
+     
+
+    import fr.esrf.tangoatk.core.AttributeList;
+    import fr.esrf.tangoatk.core.ConnectionException;
+     
+
+    import fr.esrf.tangoatk.core.CommandList;
+    import fr.esrf.tangoatk.widget.util.ErrorHistory;
+    import fr.esrf.tangoatk.widget.util.ATKGraphicsUtils;
+    import fr.esrf.tangoatk.widget.attribute.ScalarListViewer;
+    import fr.esrf.tangoatk.widget.command.CommandComboViewer;
+     
+
+    public class FirstApplication extends JFrame
+    {
+    JMenuBar menu;                    // So that our application looks
+                                      // halfway decent.
+    AttributeList attributes;         // The list that will contain our
+                                      // attributes
+    CommandList commands;             // The list that will contain our
+                                      // commands
+    ErrorHistory errorHistory;        // A window that displays errors
+    ScalarListViewer sListViewer;     // A viewer which knows how to
+                                      // display a list of scalar attributes.
+                                      // If you want to display other types
+                                      // than scalars, you'll have to wait
+                                      // for the next example.
+    CommandComboViewer commandViewer; // A viewer which knows how to display
+                                      // a combobox of commands and execute
+                                      // them.
+    String device;                    // The name of our device.
+     
+
+    public FirstApplication()
+    {
+       // The swing stuff to create the menu bar and its pulldown menus
+       menu = new JMenuBar();
+       JMenu fileMenu = new JMenu();
+       fileMenu.setText("File");   
+       JMenu viewMenu = new JMenu();
+       viewMenu.setText("View");
+
+       JMenuItem quitItem = new JMenuItem();
+       quitItem.setText("Quit");
+       quitItem.addActionListener(new 
+          java.awt.event.ActionListener()
+          {                 
+           public void
+           actionPerformed(ActionEvent evt)
+           {quitItemActionPerformed(evt);}
+          });
+       fileMenu.add(quitItem);
+
+       JMenuItem errorHistItem = new JMenuItem();
+       errorHistItem.setText("Error History");
+       errorHistItem.addActionListener(new 
+               java.awt.event.ActionListener()
+               {                 
+                public void 
+                actionPerformed(ActionEvent evt)
+                {errHistItemActionPerformed(evt);}
+               });
+       viewMenu.add(errorHistItem);
+       menu.add(fileMenu);
+       menu.add(viewMenu);
+
+       //
+       // Here we create ATK objects to handle attributes, commands and errors.
+       //
+       attributes = new AttributeList(); 
+       commands = new CommandList();
+       errorHistory = new ErrorHistory();
+       device = "id14/eh3_mirror/1";
+       sListViewer = new ScalarListViewer();
+       commandViewer = new CommandComboViewer();
+
+
+    // 
+    // A feature of the command and attribute list is that if you
+    // supply an errorlistener to these lists, they'll add that
+    // errorlistener to all subsequently created attributes or
+    // commands. So it is important to do this _before_ you
+    // start adding attributes or commands.
+    //
+     
+       attributes.addErrorListener(errorHistory);
+       commands.addErrorListener(errorHistory);
+     
+    //
+    // Sometimes we're out of luck and the device or the attributes
+    // are not available. In that case a ConnectionException is thrown.
+    // This is why we add the attributes in a try/catch
+    //
+     
+       try
+       {
+     
+    //
+    // Another feature of the attribute and command list is that they
+    // can add wildcard names, currently only `*' is supported.
+    // When using a wildcard, the lists will add all commands or
+    // attributes available on the device.
+    //
+       attributes.add(device + "/*");
+       }
+       catch (ConnectionException ce)
+       {
+          System.out.println("Error fetching " + 
+                             "attributes from " +
+                             device + " " + ce);
+       }
+     
 
     //
+    // See the comments for attributelist
+    //
+     
 
-    ~
-
-    ~~~attributes.addErrorListener(errorHistory);
-
-    ~~~commands.addErrorListener(errorHistory);
-
-    ~
+       try
+       {
+          commands.add(device + "/*");
+       }
+       catch (ConnectionException ce)
+       {
+          System.out.println("Error fetching " +
+                             "commands from " +
+                             device + " " + ce);
+       }
+     
 
     //
-
-    //~Sometimes~we're~out~of~luck~and~the~device~or~the~attributes
-
-    //~are~not~available.~In~that~case~a~ConnectionException~is~thrown.
-
-    //~This~is~why~we~add~the~attributes~in~a~try/catch
-
+    // Here we tell the scalarViewer what it's to show. The
+    // ScalarListViewer loops through the attribute-list and picks out
+    // the ones which are scalars and show them.
     //
 
-    ~
-
-    ~~~try
-
-    ~~~\{
-
-    ~
+       sListViewer.setModel(attributes);
+     
 
     //
+    // This is where the CommandComboViewer is told what it's to
+    // show. It knows how to show and execute most commands.
+    //
+     
 
-    //~Another~feature~of~the~attribute~and~command~list~is~that~they
-
-    //~can~add~wildcard~names,~currently~only~`{*}'~is~supported.
-
-    //~When~using~a~wildcard,~the~lists~will~add~all~commands~or
-
-    //~attributes~available~on~the~device.
+       commandViewer.setModel(commands);
+     
 
     //
+    // add the menubar to the frame
+    //
+     
 
-    ~~~attributes.add(device~+~\textquotedbl{}/{*}\textquotedbl{});
-
-    ~~~\}
-
-    ~~~catch~(ConnectionException~ce)
-
-    ~~~\{
-
-    ~~~~~~System.out.println(\textquotedbl{}Error~fetching~\textquotedbl{}~+~
-
-    ~~~~~~~~~~~~~~~~~~~~~~~~~\textquotedbl{}attributes~from~\textquotedbl{}~+
-
-    ~~~~~~~~~~~~~~~~~~~~~~~~~device~+~\textquotedbl{}~\textquotedbl{}~+~ce);
-
-    ~~~\}
-
-    ~
-
-
+       setJMenuBar(menu);
+     
 
     //
+    // Make the layout nice.
+    //
+     
 
-    //~See~the~comments~for~attributelist
+       getContentPane().setLayout(new BorderLayout());
+       getContentPane().add(commandViewer, BorderLayout.NORTH);
+       getContentPane().add(sListViewer, BorderLayout.SOUTH);
+     
 
     //
+    // A third feature of the attributelist is that it knows how
+    // to refresh its attributes.
+    //
+     
 
-    ~
-
-
-
-    ~~~try
-
-    ~~~\{
-
-    ~~~~~~commands.add(device~+~\textquotedbl{}/{*}\textquotedbl{});
-
-    ~~~\}
-
-    ~~~catch~(ConnectionException~ce)
-
-    ~~~\{
-
-    ~~~~~~System.out.println(\textquotedbl{}Error~fetching~\textquotedbl{}~+
-
-    ~~~~~~~~~~~~~~~~~~~~~~~~~\textquotedbl{}commands~from~\textquotedbl{}~+
-
-    ~~~~~~~~~~~~~~~~~~~~~~~~~device~+~\textquotedbl{}~\textquotedbl{}~+~ce);
-
-    ~~~\}
-
-    ~
-
-
+       attributes.startRefresher();
+     
 
     //
-
-    //~Here~we~tell~the~scalarViewer~what~it's~to~show.~The
-
-    //~ScalarListViewer~loops~through~the~attribute-list~and~picks~out
-
-    //~the~ones~which~are~scalars~and~show~them.
-
+    // JFrame stuff to make the thing show.
     //
-
-
-
-    ~~~sListViewer.setModel(attributes);
-
-    ~
-
-
-
-    //
-
-    //~This~is~where~the~CommandComboViewer~is~told~what~it's~to
-
-    //~show.~It~knows~how~to~show~and~execute~most~commands.
-
-    //
-
-    ~
-
-
-
-    ~~~commandViewer.setModel(commands);
-
-    ~
-
-
-
-    //
-
-    //~add~the~menubar~to~the~frame
-
-    //
-
-    ~
-
-
-
-    ~~~setJMenuBar(menu);
-
-    ~
-
-
-
-    //
-
-    //~Make~the~layout~nice.
-
-    //
-
-    ~
-
-
-
-    ~~~getContentPane().setLayout(new~BorderLayout());
-
-    ~~~getContentPane().add(commandViewer,~BorderLayout.NORTH);
-
-    ~~~getContentPane().add(sListViewer,~BorderLayout.SOUTH);
-
-    ~
-
-
-
-    //
-
-    //~A~third~feature~of~the~attributelist~is~that~it~knows~how
-
-    //~to~refresh~its~attributes.
-
-    //
-
-    ~
-
-
-
-    ~~~attributes.startRefresher();
-
-    ~
-
-
-
-    //
-
-    //~JFrame~stuff~to~make~the~thing~show.
-
-    //
-
-    ~
-
-
-
-    ~~~pack();
-
-    ~~~ATKGraphicsUtils.centerFrameOnScreen(this);~//ATK~utility~to~center~window
-
-
-
-    ~~~setVisible(true);
-
-    ~~~\}
-
-    ~
-
-
-
-    ~~~public~static~void~main(String~{[}{]}~args)
-
-    ~~~\{
-
-    ~~~~~~new~FirstApplication();
-
-    ~~~\}
-
-
-
-    ~~~public~void~quitItemActionPerformed(ActionEvent~evt)
-
-    ~~~\{
-
-    ~~~~~~System.exit(0);
-
-    ~~~\}
-
-
-
-    ~~~public~void~errHistItemActionPerformed(ActionEvent~evt)
-
-    ~~~\{
-
-    ~~~~~~errorHistory.setVisible(true);
-
-    ~~~\}
-
-    \}
+     
+
+       pack();
+       ATKGraphicsUtils.centerFrameOnScreen(this); //ATK utility to center window
+
+       setVisible(true);
+       }
+     
+
+       public static void main(String [] args)
+       {
+          new FirstApplication();
+       }
+
+       public void quitItemActionPerformed(ActionEvent evt)
+       {
+          System.exit(0);
+       }
+
+       public void errHistItemActionPerformed(ActionEvent evt)
+       {
+          errorHistory.setVisible(true);
+       }
+    }
 
 The program should look something like this (depending on your platform
 and your device)
@@ -4815,34 +3724,22 @@ Multi device applications
   this:
 
 .. code:: cpp
+  :number-lines:
 
     try
-
-    \{~
-
-    ~~~~//~a~StringScalar~attribute~from~the~device~one
-
-    ~~~attributes.add(\textquotedbl{}jlp/test/1/att\_cinq\textquotedbl{});
-
-    ~~~//~a~NumberSpectrum~attribute~from~the~device~one
-
-    ~~~attributes.add(\textquotedbl{}jlp/test/1/att\_spectrum\textquotedbl{});
-
-    ~~~//~a~NumberImage~attribute~from~the~device~two
-
-    ~~~attributes.add(\textquotedbl{}sr/d-ipc/id25-1n/Image\textquotedbl{});
-
-    \}
-
-    catch~(ConnectionException~ce)
-
-    \{
-
-    ~~~System.out.println(\textquotedbl{}Error~fetching~\textquotedbl{}~+~
-
-    ~~~~~~~\textquotedbl{}attributes\textquotedbl{}~+~ce);
-
-    \}
+    { 
+        // a StringScalar attribute from the device one
+       attributes.add("jlp/test/1/att_cinq");
+       // a NumberSpectrum attribute from the device one
+       attributes.add("jlp/test/1/att_spectrum");
+       // a NumberImage attribute from the device two
+       attributes.add("sr/d-ipc/id25-1n/Image");
+    }
+    catch (ConnectionException ce)
+    {
+       System.out.println("Error fetching " + 
+           "attributes" + ce);
+    }
 
 The same goes for commands.
 
@@ -4880,316 +3777,167 @@ and not an attribute list viewer, it shows an implementation of the list
 mentioned above.
 
 .. code:: cpp
-
-    package~examples;
-
-    ~
-
-
-
-    import~javax.swing.JFrame;
-
-    import~javax.swing.JMenuItem;
-
-    import~javax.swing.JMenuBar;
-
-    import~javax.swing.JMenu;
-
-    ~
-
-
-
-    import~java.awt.event.ActionListener;
-
-    import~java.awt.event.ActionEvent;
-
-    import~java.awt.BorderLayout;
-
-    import~java.awt.Color;
-
-    ~
-
-
-
-    import~fr.esrf.tangoatk.core.AttributeList;
-
-    import~fr.esrf.tangoatk.core.ConnectionException;
-
-    ~
-
-    import~fr.esrf.tangoatk.core.IStringScalar;
-
-    import~fr.esrf.tangoatk.core.INumberSpectrum;
-
-    import~fr.esrf.tangoatk.core.INumberImage;
-
-    import~fr.esrf.tangoatk.widget.util.ErrorHistory;
-
-    import~fr.esrf.tangoatk.widget.util.Gradient;
-
-    import~fr.esrf.tangoatk.widget.util.ATKGraphicsUtils;
-
-    import~fr.esrf.tangoatk.widget.attribute.NumberImageViewer;
-
-    import~fr.esrf.tangoatk.widget.attribute.NumberSpectrumViewer;
-
-    import~fr.esrf.tangoatk.widget.attribute.SimpleScalarViewer;
-
-
-
-    public~class~SecondApplication~extends~JFrame
-
-    \{
-
-    ~~~~~JMenuBar~~~~~~~~~~~~menu;
-
-    ~~~~~AttributeList~~~~~~~attributes;~~~//~The~list~that~will~contain~our~attributes
-
-    ~~~~~ErrorHistory~~~~~~~~errorHistory;~//~A~window~that~displays~errors
-
-    ~~~~~IStringScalar~~~~~~~~ssAtt;
-
-    ~~~~~INumberSpectrum~~~~~~nsAtt;
-
-    ~~~~~INumberImage~~~~~~~~~niAtt;
-
-    ~~~~~public~SecondApplication()
-
-    ~~~~~\{
-
-    ~~~~~~~~//~Swing~stuff~to~create~the~menu~bar~and~its~pulldown~menus
-
-    ~~~~~~~~menu~=~new~JMenuBar();
-
-    ~~~~~~~~JMenu~fileMenu~=~new~JMenu();
-
-    ~~~~~~~~fileMenu.setText(\textquotedbl{}File\textquotedbl{});~~~
-
-    ~~~~~~~~JMenu~viewMenu~=~new~JMenu();
-
-    ~~~~~~~~viewMenu.setText(\textquotedbl{}View\textquotedbl{});
-
-    ~~~~~~~~JMenuItem~quitItem~=~new~JMenuItem();
-
-    ~~~~~~~~quitItem.setText(\textquotedbl{}Quit\textquotedbl{});
-
-    ~~~~~~~~quitItem.addActionListener(new~java.awt.event.ActionListener()
-
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\{~~~~~~~~~~~~~~~~~
-
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~public~void~actionPerformed(ActionEvent~evt)
-
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\{quitItemActionPerformed(evt);\}
-
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\});
-
-
-
-    ~~~~~~~~fileMenu.add(quitItem);
-
-    ~~~~~~~~JMenuItem~errorHistItem~=~new~JMenuItem();
-
-    ~~~~~~~~errorHistItem.setText(\textquotedbl{}Error~History\textquotedbl{});
-
-    ~~~~~~~~errorHistItem.addActionListener(new~java.awt.event.ActionListener()
-
-    ~~~~~~~~~~~~~~~~\{~~~~~~~~~~~~~~~~~
-
-    ~~~~~~~~~~~~~~~~~public~void~actionPerformed(ActionEvent~evt)
-
-    ~~~~~~~~~~~~~~~~~\{errHistItemActionPerformed(evt);\}
-
-    ~~~~~~~~~~~~~~~~\});
-
-    ~~~~~~~~viewMenu.add(errorHistItem);
-
-    ~~~~~~~~menu.add(fileMenu);
-
-    ~~~~~~~~menu.add(viewMenu);
-
-    ~~~~~~//
-
-    ~~~~~~//~Here~we~create~TangoATK~objects~to~view~attributes~and~errors.
-
-    ~~~~~~//
-
-    ~~~~~~~~attributes~=~new~AttributeList();~
-
-    ~~~~~~~~errorHistory~=~new~ErrorHistory();
-
-    ~~~~~~//
-
-    ~~~~~~//~We~create~a~SimpleScalarViewer,~a~NumberSpectrumViewer~and
-
-    ~~~~~~//~a~NumberImageViewer,~since~we~already~knew~that~we~were
-
-    ~~~~~~//~playing~with~a~scalar~attribute,~a~number~spectrum~attribute
-
-    ~~~~~~//~and~a~number~image~attribute~this~time.
-
-    ~~~~~~//
-
-    ~~~~~~SimpleScalarViewer~~~~~ssViewer~=~new~SimpleScalarViewer();
-
-    ~~~~~~~~NumberSpectrumViewer~~~nSpectViewer~=~new~NumberSpectrumViewer();
-
-    ~~~~~~~~NumberImageViewer~~~~~~nImageViewer~=~new~NumberImageViewer();
-
-    ~~~~~~~~attributes.addErrorListener(errorHistory);
-
-    ~~~~~//
-
-    ~~~~~//~The~attribute~(and~command)~list~has~the~feature~of~returning~the~last
-
-    ~~~~~//~attribute~that~was~added~to~it.~Just~remember~that~it~is~returned~as~an
-
-    ~~~~~//~IEntity~object,~so~you~need~to~cast~it~into~a~more~specific~object,~like
-
-    ~~~~~//~IStringScalar,~which~is~the~interface~which~defines~a~string~scalar
-
-    ~~~~~//
-
-    ~~~~~~~try
-
-    ~~~~~~~~\{
-
-
-
-    ~~~~~~~~~~~ssAtt~=~(IStringScalar)~attributes.add(\textquotedbl{}jlp/test/1/att\_cinq\textquotedbl{});
-
-    ~~~~~~~~~~~nsAtt~=~(INumberSpectrum)~attributes.add(\textquotedbl{}jlp/test/1/att\_spectrum\textquotedbl{});
-
-    ~~~~~~~~~~~niAtt~=~(INumberImage)~attributes.add(\textquotedbl{}sr/d-ipc/id25-1n/Image\textquotedbl{});
-
-    ~~~~~~~~\}
-
-    ~~~~~~~~catch~(ConnectionException~ce)
-
-    ~~~~~~~~\{
-
-    ~~~~~~~~~~~System.out.println(\textquotedbl{}Error~fetching~one~of~the~attributes~~\textquotedbl{}+\textquotedbl{}~\textquotedbl{}~+~ce);
-
-    ~~~~~~~~~~~System.out.println(\textquotedbl{}Application~Aborted.\textquotedbl{});
-
-    ~~~~~~~~~~~System.exit(0);
-
-    ~~~~~~~~\}~~~~~~~~
-
-    ~~~~~~~~//
-
-    ~~~~~~~~//~Pay~close~attention~to~the~following~three~lines!!~This~is~how~it's~done!
-
-    ~~~~~~~~//~This~is~how~it's~always~done!~The~setModel\index{setModel}~method~of~any~viewer~takes~care
-
-    ~~~~~~~//~of~connecting~the~viewer~to~the~attribute~(model)~it's~in~charge~of~displaying.
-
-    ~~~~~~~//~This~is~the~way~to~tell~each~viewer~what~(which~attribute)~it~has~to~show.
-
-    ~~~~~~~//~Note~that~we~use~a~viewer~adapted~to~each~type~of~attribute
-
-    ~~~~~~~//
-
-    ~~~~~~~~ssViewer.setModel(ssAtt);
-
-    ~~~~~~~~nSpectViewer.setModel(nsAtt);
-
-    ~~~~~~~~nImageViewer.setModel(niAtt);
-
-    ~~~~~//
-
-    ~~~~~~~~nSpectViewer.setPreferredSize(new~java.awt.Dimension(400,~300));
-
-    ~~~~~~~~nImageViewer.setPreferredSize(new~java.awt.Dimension(500,~300));
-
-    ~~~~~~~~Gradient~~g~=~new~Gradient();
-
-    ~~~~~~~~g.buidColorGradient();
-
-    ~~~~~~~~g.setColorAt(0,Color.black);
-
-    ~~~~~~~~nImageViewer.setGradient(g);
-
-    ~~~~~~~~nImageViewer.setBestFit(true);
-
-
-
-    ~~~~~~~~//
-
-    ~~~~~~~~//~Add~the~viewers~into~the~frame~to~show~them
-
-    ~~~~~~~~//
-
-    ~~~~~~~~getContentPane().setLayout(new~BorderLayout());
-
-    ~~~~~~~~getContentPane().add(ssViewer,~BorderLayout.SOUTH);
-
-    ~~~~~~~~getContentPane().add(nSpectViewer,~BorderLayout.CENTER);
-
-    ~~~~~~~~getContentPane().add(nImageViewer,~BorderLayout.EAST);
-
-    ~~~~~~~~//
-
-    ~~~~~~~~//~To~have~the~attributes~values~refreshed~we~should~start~the
-
-    ~~~~~~~~//~attribute~list's~refresher.
-
-    ~~~~~~~~//
-
-    ~~~~~~~~attributes.startRefresher();
-
-    ~~~~~~~~//
-
-    ~~~~~~~~//~add~the~menubar~to~the~frame
-
-    ~~~~~~~~//
-
-    ~~~~~~~~setJMenuBar(menu);
-
-    ~~~~~~~~//
-
-    ~~~~~~~~//~JFrame~stuff~to~make~the~thing~show.
-
-    ~~~~~~~~//
-
-    ~~~~~~~~pack();
-
-    ~~~~~~~~ATKGraphicsUtils.centerFrameOnScreen(this);~//ATK~utility~to~center~window
-
-    ~~~~~~~~setVisible(true);
-
-    ~~~~~\}
-
-    ~~~~~public~static~void~main(String~{[}{]}~args)
-
-    ~~~~~\{
-
-    ~~~~~~~~new~SecondApplication();
-
-    ~~~~~\}
-
-    ~~~~~public~void~quitItemActionPerformed(ActionEvent~evt)
-
-    ~~~~~\{
-
-    ~~~~~~~~System.exit(0);
-
-    ~~~~~\}
-
-    ~~~~~public~void~errHistItemActionPerformed(ActionEvent~evt)
-
-    ~~~~~\{
-
-    ~~~~~~~~errorHistory.setVisible(true);
-
-    ~~~~~\}
-
-    \}
+  :number-lines:
+
+    package examples;
+     
+
+    import javax.swing.JFrame;
+    import javax.swing.JMenuItem;
+    import javax.swing.JMenuBar;
+    import javax.swing.JMenu;
+     
+
+    import java.awt.event.ActionListener;
+    import java.awt.event.ActionEvent;
+    import java.awt.BorderLayout;
+    import java.awt.Color;
+     
+
+    import fr.esrf.tangoatk.core.AttributeList;
+    import fr.esrf.tangoatk.core.ConnectionException;
+     
+    import fr.esrf.tangoatk.core.IStringScalar;
+    import fr.esrf.tangoatk.core.INumberSpectrum;
+    import fr.esrf.tangoatk.core.INumberImage;
+    import fr.esrf.tangoatk.widget.util.ErrorHistory;
+    import fr.esrf.tangoatk.widget.util.Gradient;
+    import fr.esrf.tangoatk.widget.util.ATKGraphicsUtils;
+    import fr.esrf.tangoatk.widget.attribute.NumberImageViewer;
+    import fr.esrf.tangoatk.widget.attribute.NumberSpectrumViewer;
+    import fr.esrf.tangoatk.widget.attribute.SimpleScalarViewer;
+
+    public class SecondApplication extends JFrame
+    {
+         JMenuBar            menu;
+         AttributeList       attributes;   // The list that will contain our attributes
+         ErrorHistory        errorHistory; // A window that displays errors
+         IStringScalar        ssAtt;
+         INumberSpectrum      nsAtt;
+         INumberImage         niAtt;
+         public SecondApplication()
+         {
+            // Swing stuff to create the menu bar and its pulldown menus
+            menu = new JMenuBar();
+            JMenu fileMenu = new JMenu();
+            fileMenu.setText("File");   
+            JMenu viewMenu = new JMenu();
+            viewMenu.setText("View");
+            JMenuItem quitItem = new JMenuItem();
+            quitItem.setText("Quit");
+            quitItem.addActionListener(new java.awt.event.ActionListener()
+                                          {                 
+                                           public void actionPerformed(ActionEvent evt)
+                                           {quitItemActionPerformed(evt);}
+                                          });
+
+            fileMenu.add(quitItem);
+            JMenuItem errorHistItem = new JMenuItem();
+            errorHistItem.setText("Error History");
+            errorHistItem.addActionListener(new java.awt.event.ActionListener()
+                    {                 
+                     public void actionPerformed(ActionEvent evt)
+                     {errHistItemActionPerformed(evt);}
+                    });
+            viewMenu.add(errorHistItem);
+            menu.add(fileMenu);
+            menu.add(viewMenu);
+          //
+          // Here we create TangoATK objects to view attributes and errors.
+          //
+            attributes = new AttributeList(); 
+            errorHistory = new ErrorHistory();
+          //
+          // We create a SimpleScalarViewer, a NumberSpectrumViewer and
+          // a NumberImageViewer, since we already knew that we were
+          // playing with a scalar attribute, a number spectrum attribute
+          // and a number image attribute this time.
+          //
+          SimpleScalarViewer     ssViewer = new SimpleScalarViewer();
+            NumberSpectrumViewer   nSpectViewer = new NumberSpectrumViewer();
+            NumberImageViewer      nImageViewer = new NumberImageViewer();
+            attributes.addErrorListener(errorHistory);
+         //
+         // The attribute (and command) list has the feature of returning the last
+         // attribute that was added to it. Just remember that it is returned as an
+         // IEntity object, so you need to cast it into a more specific object, like
+         // IStringScalar, which is the interface which defines a string scalar
+         //
+           try
+            {
+
+               ssAtt = (IStringScalar) attributes.add("jlp/test/1/att_cinq");
+               nsAtt = (INumberSpectrum) attributes.add("jlp/test/1/att_spectrum");
+               niAtt = (INumberImage) attributes.add("sr/d-ipc/id25-1n/Image");
+            }
+            catch (ConnectionException ce)
+            {
+               System.out.println("Error fetching one of the attributes  "+" " + ce);
+               System.out.println("Application Aborted.");
+               System.exit(0);
+            }        
+            //
+            // Pay close attention to the following three lines!! This is how it's done!
+            // This is how it's always done! The setModelsetModel method of any viewer takes care
+           // of connecting the viewer to the attribute (model) it's in charge of displaying.
+           // This is the way to tell each viewer what (which attribute) it has to show.
+           // Note that we use a viewer adapted to each type of attribute
+           //
+            ssViewer.setModel(ssAtt);
+            nSpectViewer.setModel(nsAtt);
+            nImageViewer.setModel(niAtt);
+         //
+            nSpectViewer.setPreferredSize(new java.awt.Dimension(400, 300));
+            nImageViewer.setPreferredSize(new java.awt.Dimension(500, 300));
+            Gradient  g = new Gradient();
+            g.buidColorGradient();
+            g.setColorAt(0,Color.black);
+            nImageViewer.setGradient(g);
+            nImageViewer.setBestFit(true);
+
+            //
+            // Add the viewers into the frame to show them
+            //
+            getContentPane().setLayout(new BorderLayout());
+            getContentPane().add(ssViewer, BorderLayout.SOUTH);
+            getContentPane().add(nSpectViewer, BorderLayout.CENTER);
+            getContentPane().add(nImageViewer, BorderLayout.EAST);
+            //
+            // To have the attributes values refreshed we should start the
+            // attribute list's refresher.
+            //
+            attributes.startRefresher();
+            //
+            // add the menubar to the frame
+            //
+            setJMenuBar(menu);
+            //
+            // JFrame stuff to make the thing show.
+            //
+            pack();
+            ATKGraphicsUtils.centerFrameOnScreen(this); //ATK utility to center window
+            setVisible(true);
+         }
+         public static void main(String [] args)
+         {
+            new SecondApplication();
+         }
+         public void quitItemActionPerformed(ActionEvent evt)
+         {
+            System.exit(0);
+         }
+         public void errHistItemActionPerformed(ActionEvent evt)
+         {
+            errorHistory.setVisible(true);
+         }
+    }
 
 | This program (SeondApplication) should look something like this
   (depending on your platform and your device attributes)
 | |image|
 
 .. code:: cpp
+  :number-lines:
 
 Synoptic viewer
 ^^^^^^^^^^^^^^^
@@ -5261,269 +4009,139 @@ assume that the synoptic has already been drawn using Jdraw graphical
 editor.
 
 .. code:: cpp
-
-    package~examples;
-
-    import~java.io.{*};
-
-    import~java.util.{*};
-
-    import~javax.swing.JFrame;
-
-    import~javax.swing.JMenuItem;
-
-    import~javax.swing.JMenuBar;
-
-    import~javax.swing.JMenu;
-
-    import~java.awt.event.ActionListener;
-
-    import~java.awt.event.ActionEvent;
-
-    import~java.awt.BorderLayout;
-
-    import~fr.esrf.tangoatk.widget.util.ErrorHistory;
-
-    import~fr.esrf.tangoatk.widget.util.ATKGraphicsUtils;
-
-    import~fr.esrf.tangoatk.widget.jdraw.SynopticFileViewer;
-
-    import~fr.esrf.tangoatk.widget.jdraw.TangoSynopticHandler;
-
-    public~class~ThirdApplication~extends~JFrame
-
-    \{
-
-    ~~~~~JMenuBar~~~~~~~~~~~~~~menu;
-
-    ~~~~~ErrorHistory~~~~~~~~~~errorHistory;~~//~A~window~that~displays~errors
-
-    ~~~~~SynopticFileViewer~~~~sfv;~~~~~~~~~~~//~TangoATK~generic~synoptic~viewer
-
-    ~~~~~
-
-    ~~~~~
-
-    ~~~~~public~ThirdApplication()
-
-    ~~~~~\{
-
-    ~~~~~~~~//~Swing~stuff~to~create~the~menu~bar~and~its~pulldown~menus
-
-    ~~~~~~~~menu~=~new~JMenuBar();
-
-    ~~~~~~~~JMenu~fileMenu~=~new~JMenu();
-
-    ~~~~~~~~fileMenu.setText(\textquotedbl{}File\textquotedbl{});~~~
-
-    ~~~~~~~~JMenu~viewMenu~=~new~JMenu();
-
-    ~~~~~~~~viewMenu.setText(\textquotedbl{}View\textquotedbl{});
-
-    ~~~~~~~~JMenuItem~quitItem~=~new~JMenuItem();
-
-    ~~~~~~~~quitItem.setText(\textquotedbl{}Quit\textquotedbl{});
-
-    ~~~~~~~~quitItem.addActionListener(new~java.awt.event.ActionListener()
-
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\{~~~~~~~~~~~~~~~~~
-
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~public~void~actionPerformed(ActionEvent~evt)
-
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\{quitItemActionPerformed(evt);\}
-
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\});
-
-    ~~~~~~~~fileMenu.add(quitItem);
-
-    ~~~~~~~~JMenuItem~errorHistItem~=~new~JMenuItem();
-
-    ~~~~~~~~errorHistItem.setText(\textquotedbl{}Error~History\textquotedbl{});
-
-    ~~~~~~~~errorHistItem.addActionListener(new~java.awt.event.ActionListener()
-
-    ~~~~~~~~~~~~~~~~\{~~~~~~~~~~~~~~~~~
-
-    ~~~~~~~~~~~~~~~~~public~void~actionPerformed(ActionEvent~evt)
-
-    ~~~~~~~~~~~~~~~~~\{errHistItemActionPerformed(evt);\}
-
-    ~~~~~~~~~~~~~~~~\});
-
-    ~~~~~~~~viewMenu.add(errorHistItem);
-
-    ~~~~~~~~menu.add(fileMenu);
-
-    ~~~~~~~~menu.add(viewMenu);
-
-    ~~~~~~~~//
-
-    ~~~~~~~~//~Here~we~create~TangoATK~synoptic~viewer~and~error~window.
-
-    ~~~~~~~~//
-
-    ~~~~~~~~errorHistory~=~new~ErrorHistory();
-
-    ~~~~~~~~sfv~=~new~SynopticFileViewer();
-
-    ~~~~~~~~try
-
-    ~~~~~~~~\{
-
-    ~~~~~~~~~~~~sfv.setErrorWindow(errorHistory);
-
-    ~~~~~~~~\}
-
-    ~~~~~~~~catch~(Exception~setErrwExcept)
-
-    ~~~~~~~~\{
-
-    ~~~~~~~~~~~~System.out.println(\textquotedbl{}Cannot~set~Error~History~Window\textquotedbl{});
-
-    ~~~~~~~~\}
-
-
-
-    ~~~~~~~~//~~~~~~
-
-    ~~~~~~~~//~Here~we~define~the~name~of~the~synoptic~file~to~show~and~the~tooltip~mode~to~use
-
-    ~~~~~~~~//~~~~~~~~
-
-    ~~~~~~~~try
-
-    ~~~~~~~~\{~~~~~
-
-    ~~~~~~~~~~sfv.setJdrawFileName(\textquotedbl{}/users/poncet/ATK\_OLD/jdraw\_files/id14.jdw\textquotedbl{});
-
-    ~~~~~~~~~~sfv.setToolTipMode~(TangoSynopticHandler.TOOL\_TIP\_NAME);
-
-    ~~~~~~~~\}
-
-    ~~~~~~~~catch~(FileNotFoundException~~fnfEx)
-
-    ~~~~~~~~\{
-
-    ~~~~~~~~~~~javax.swing.JOptionPane.showMessageDialog(
-
-    ~~~~~~~~~~~~~~null,~\textquotedbl{}Cannot~find~the~synoptic~file~:~id14.jdw.\textbackslash{}n\textquotedbl{}
-
-    ~~~~~~~~~~~~~~~~~~~+~\textquotedbl{}Check~the~file~name~you~entered;\textquotedbl{}
-
-    ~~~~~~~~~~~~~~~~~~~+~\textquotedbl{}~Application~will~abort~...\textbackslash{}n\textquotedbl{}
-
-    ~~~~~~~~~~~~~~~~~~~+~fnfEx,
-
-    ~~~~~~~~~~~~~~~~~~~\textquotedbl{}No~such~file\textquotedbl{},
-
-    ~~~~~~~~~~~~~~~~~~~javax.swing.JOptionPane.ERROR\_MESSAGE);
-
-    ~~~~~~~~~~~System.exit(-1);
-
-    ~~~~~~~~\}
-
-    ~~~~~~~~catch~(IllegalArgumentException~~illEx)
-
-    ~~~~~~~~\{
-
-    ~~~~~~~~~~~javax.swing.JOptionPane.showMessageDialog(
-
-    ~~~~~~~~~~~~~~null,~\textquotedbl{}Cannot~parse~the~synoptic~file~:~id14.jdw.\textbackslash{}n\textquotedbl{}
-
-    ~~~~~~~~~~~~~~~~~~~+~\textquotedbl{}Check~if~the~file~is~a~Jdraw~file.\textquotedbl{}
-
-    ~~~~~~~~~~~~~~~~~~~+~\textquotedbl{}~Application~will~abort~...\textbackslash{}n\textquotedbl{}
-
-    ~~~~~~~~~~~~~~~~~~~+~illEx,
-
-    ~~~~~~~~~~~~~~~~~~~\textquotedbl{}Cannot~parse~the~file\textquotedbl{},
-
-    ~~~~~~~~~~~~~~~~~~~javax.swing.JOptionPane.ERROR\_MESSAGE);
-
-    ~~~~~~~~~~~System.exit(-1);
-
-    ~~~~~~~~\}
-
-    ~~~~~~~~catch~(MissingResourceException~~mrEx)
-
-    ~~~~~~~~\{
-
-    ~~~~~~~~~~~javax.swing.JOptionPane.showMessageDialog(
-
-    ~~~~~~~~~~~~~~null,~\textquotedbl{}Cannot~parse~the~synoptic~file~:~id14.jdw.\textbackslash{}n\textquotedbl{}
-
-    ~~~~~~~~~~~~~~~~~~~+~\textquotedbl{}~Application~will~abort~...\textbackslash{}n\textquotedbl{}
-
-    ~~~~~~~~~~~~~~~~~~~+~mrEx,
-
-    ~~~~~~~~~~~~~~~~~~~\textquotedbl{}Cannot~parse~the~file\textquotedbl{},
-
-    ~~~~~~~~~~~~~~~~~~~javax.swing.JOptionPane.ERROR\_MESSAGE);
-
-    ~~~~~~~~~~~System.exit(-1);
-
-    ~~~~~~~~\}
-
-    ~~~~~~~~//
-
-    ~~~~~~~~//~Add~the~viewers~into~the~frame~to~show~them
-
-    ~~~~~~~~//
-
-    ~~~~~~~~getContentPane().setLayout(new~BorderLayout());
-
-    ~~~~~~~~getContentPane().add(sfv,~BorderLayout.CENTER);
-
-    ~~~~~~~~//
-
-    ~~~~~~~~//~add~the~menubar~to~the~frame
-
-    ~~~~~~~~//
-
-    ~~~~~~~~setJMenuBar(menu);
-
-    ~~~~~~~~//
-
-    ~~~~~~~~//~JFrame~stuff~to~make~the~thing~show.
-
-    ~~~~~~~~//
-
-    ~~~~~~~~pack();
-
-    ~~~~~~~~ATKGraphicsUtils.centerFrameOnScreen(this);~//TangoATK~utility~to~center~window
-
-    ~~~~~~~~setVisible(true);
-
-    ~~~~~\}
-
-    ~~~~~public~static~void~main(String~{[}{]}~args)
-
-    ~~~~~\{
-
-    ~~~~~~~~new~ThirdApplication();
-
-    ~~~~~\}
-
-    ~~~~~public~void~quitItemActionPerformed(ActionEvent~evt)
-
-    ~~~~~\{
-
-    ~~~~~~~~System.exit(0);
-
-    ~~~~~\}
-
-    ~~~~~public~void~errHistItemActionPerformed(ActionEvent~evt)
-
-    ~~~~~\{
-
-    ~~~~~~~~errorHistory.setVisible(true);
-
-    ~~~~~\}
-
-    \}
-
-    ~\\
-    ~\\
+  :number-lines:
+
+    package examples;
+    import java.io.*;
+    import java.util.*;
+    import javax.swing.JFrame;
+    import javax.swing.JMenuItem;
+    import javax.swing.JMenuBar;
+    import javax.swing.JMenu;
+    import java.awt.event.ActionListener;
+    import java.awt.event.ActionEvent;
+    import java.awt.BorderLayout;
+    import fr.esrf.tangoatk.widget.util.ErrorHistory;
+    import fr.esrf.tangoatk.widget.util.ATKGraphicsUtils;
+    import fr.esrf.tangoatk.widget.jdraw.SynopticFileViewer;
+    import fr.esrf.tangoatk.widget.jdraw.TangoSynopticHandler;
+    public class ThirdApplication extends JFrame
+    {
+         JMenuBar              menu;
+         ErrorHistory          errorHistory;  // A window that displays errors
+         SynopticFileViewer    sfv;           // TangoATK generic synoptic viewer
+         
+         
+         public ThirdApplication()
+         {
+            // Swing stuff to create the menu bar and its pulldown menus
+            menu = new JMenuBar();
+            JMenu fileMenu = new JMenu();
+            fileMenu.setText("File");   
+            JMenu viewMenu = new JMenu();
+            viewMenu.setText("View");
+            JMenuItem quitItem = new JMenuItem();
+            quitItem.setText("Quit");
+            quitItem.addActionListener(new java.awt.event.ActionListener()
+                                          {                 
+                                           public void actionPerformed(ActionEvent evt)
+                                           {quitItemActionPerformed(evt);}
+                                          });
+            fileMenu.add(quitItem);
+            JMenuItem errorHistItem = new JMenuItem();
+            errorHistItem.setText("Error History");
+            errorHistItem.addActionListener(new java.awt.event.ActionListener()
+                    {                 
+                     public void actionPerformed(ActionEvent evt)
+                     {errHistItemActionPerformed(evt);}
+                    });
+            viewMenu.add(errorHistItem);
+            menu.add(fileMenu);
+            menu.add(viewMenu);
+            //
+            // Here we create TangoATK synoptic viewer and error window.
+            //
+            errorHistory = new ErrorHistory();
+            sfv = new SynopticFileViewer();
+            try
+            {
+                sfv.setErrorWindow(errorHistory);
+            }
+            catch (Exception setErrwExcept)
+            {
+                System.out.println("Cannot set Error History Window");
+            }
+
+            //      
+            // Here we define the name of the synoptic file to show and the tooltip mode to use
+            //        
+            try
+            {     
+              sfv.setJdrawFileName("/users/poncet/ATK_OLD/jdraw_files/id14.jdw");
+              sfv.setToolTipMode (TangoSynopticHandler.TOOL_TIP_NAME);
+            }
+            catch (FileNotFoundException  fnfEx)
+            {
+               javax.swing.JOptionPane.showMessageDialog(
+                  null, "Cannot find the synoptic file : id14.jdw.\n"
+                       + "Check the file name you entered;"
+                       + " Application will abort ...\n"
+                       + fnfEx,
+                       "No such file",
+                       javax.swing.JOptionPane.ERROR_MESSAGE);
+               System.exit(-1);
+            }
+            catch (IllegalArgumentException  illEx)
+            {
+               javax.swing.JOptionPane.showMessageDialog(
+                  null, "Cannot parse the synoptic file : id14.jdw.\n"
+                       + "Check if the file is a Jdraw file."
+                       + " Application will abort ...\n"
+                       + illEx,
+                       "Cannot parse the file",
+                       javax.swing.JOptionPane.ERROR_MESSAGE);
+               System.exit(-1);
+            }
+            catch (MissingResourceException  mrEx)
+            {
+               javax.swing.JOptionPane.showMessageDialog(
+                  null, "Cannot parse the synoptic file : id14.jdw.\n"
+                       + " Application will abort ...\n"
+                       + mrEx,
+                       "Cannot parse the file",
+                       javax.swing.JOptionPane.ERROR_MESSAGE);
+               System.exit(-1);
+            }
+            //
+            // Add the viewers into the frame to show them
+            //
+            getContentPane().setLayout(new BorderLayout());
+            getContentPane().add(sfv, BorderLayout.CENTER);
+            //
+            // add the menubar to the frame
+            //
+            setJMenuBar(menu);
+            //
+            // JFrame stuff to make the thing show.
+            //
+            pack();
+            ATKGraphicsUtils.centerFrameOnScreen(this); //TangoATK utility to center window
+            setVisible(true);
+         }
+         public static void main(String [] args)
+         {
+            new ThirdApplication();
+         }
+         public void quitItemActionPerformed(ActionEvent evt)
+         {
+            System.exit(0);
+         }
+         public void errHistItemActionPerformed(ActionEvent evt)
+         {
+            errorHistory.setVisible(true);
+         }
+    }
+    [Input: line.tex]
 
 | The synoptic application (ThirdApplication) should look something like
   this (depending on your synoptic drawing file)
@@ -5545,84 +4163,47 @@ has the capability of receiving and treating *events* from a model which
 emits events.
 
 .. code:: cpp
+  :number-lines:
 
-    //~this~is~the~setModel~of~a~SimpleScalarViewer
+    // this is the setModel of a SimpleScalarViewer
+      public void setModelsetModel(INumberScalar scalar) {
 
-    ~~public~void~setModel\index{setModel}(INumberScalar~scalar)~\{
+        clearModel();
 
+        if (scalar != null) {
+          format = scalar.getProperty("format").getPresentation();
+          numberModel = scalar;
+     
+       // this is where the viewer connects itself to the 
+       // model. After this the viewer will (hopefully) receive 
+       // events through its numberScalarChange() method
 
+       numberModel.addNumberScalarListener(this);
+     
+          
+            numberModel.getProperty("format").addPresentationListener(this);
+          numberModel.getProperty("unit").addPresentationListener(this);
+        }
 
-    ~~~~clearModel();
+      }
+     
+     
 
-
-
-    ~~~~if~(scalar~!=~null)~\{
-
-    ~~~~~~format~=~scalar.getProperty(\textquotedbl{}format\textquotedbl{}).getPresentation();
-
-    ~~~~~~numberModel~=~scalar;
-
-    ~
-
-    ~~~//~this~is~where~the~viewer~connects~itself~to~the~
-
-    ~~~//~model.~After~this~the~viewer~will~(hopefully)~receive~
-
-    ~~~//~events~through~its~numberScalarChange()~method
-
-
-
-    ~~~numberModel.addNumberScalarListener(this);
-
-    ~
-
-    ~~~~~~
-
-    ~~~~~~~~numberModel.getProperty(\textquotedbl{}format\textquotedbl{}).addPresentationListener(this);
-
-    ~~~~~~numberModel.getProperty(\textquotedbl{}unit\textquotedbl{}).addPresentationListener(this);
-
-    ~~~~\}
-
-
-
-    ~~\}
-
-    ~
-
-    ~
-
-
-
-    //~Each~time~the~model~of~this~viewer~(the~numberscalar~attribute)~decides~it~is~time,~it~
-
-    //~calls~the~numberScalarChange~method~of~all~its~registered~listeners
-
-    //~with~a~NumberScalarEvent~object~which~contains~the~
-
-    //~the~new~value~of~the~numberscalar~attribute.
-
+    // Each time the model of this viewer (the numberscalar attribute) decides it is time, it 
+    // calls the numberScalarChange method of all its registered listeners
+    // with a NumberScalarEvent object which contains the 
+    // the new value of the numberscalar attribute.
     //
-
-    ~
-
-    ~~public~void~numberScalarChange(NumberScalarEvent~evt)~\{
-
-    ~~~~String~val;
-
-    ~~~~val~=~getDisplayString(evt);
-
-    ~~~~if~(unitVisible)~\{
-
-    ~~~~~~setText(val~+~\textquotedbl{}~\textquotedbl{}~+~numberModel.getUnit());
-
-    ~~~~\}~else~\{
-
-    ~~~~~~setText(val);
-
-    ~~~~\}
-
-    ~~\}
+     
+      public void numberScalarChange(NumberScalarEvent evt) {
+        String val;
+        val = getDisplayString(evt);
+        if (unitVisible) {
+          setText(val + " " + numberModel.getUnit());
+        } else {
+          setText(val);
+        }
+      }
 
 All listeners in TangoATK implement the ``IErrorListener`` interface
 which specifies the ``errorChange(ErrorEvent e)`` method. This means
@@ -5650,19 +4231,14 @@ amount of time and then call a method refresh on whatever kind of
 ``IRefreshee`` it has been given as parameter, as shown below
 
 .. code:: cpp
+  :number-lines:
 
-    //~This~is~an~example~from~DeviceFactory.
+    // This is an example from DeviceFactory.
+    // We create a new Refresher with the name "device"
+    // We add ourself to it, and start the thread
+     
 
-    //~We~create~a~new~Refresher~with~the~name~\textquotedbl{}device\textquotedbl{}
-
-    //~We~add~ourself~to~it,~and~start~the~thread
-
-    ~
-
-
-
-    Refresher~refresher~=~new~Refresher(\textquotedbl{}device\textquotedbl{});
-
+    Refresher refresher = new Refresher("device");
     refresher.addRefreshee(this).start();
 
 Both the ``AttributeList`` and the ``DeviceFactory`` implement the
@@ -5880,8 +4456,9 @@ IResultListener interface and registers itself as a resultListener for
 the command it has to show the results.
 
 .. code:: cpp
+  :number-lines:
 
-    ~
+     
 
 [TwoRicardo]|image|
 
@@ -6322,100 +4899,55 @@ Definition
 ''''''''''
 
 .. code:: cpp
+  :number-lines:
 
-    1~class~StepperMotor:~public~TANGO\_BASE\_CLASS
-
-    2~\{
-
-    3~public~:
-
-    4~~~~StepperMotor(Tango::DeviceClass~{*},string~\&);
-
-    5~~~~StepperMotor(Tango::DeviceClass~{*},const~char~{*});
-
-    6~~~~StepperMotor(Tango::DeviceClass~{*},const~char~{*},const~char~{*});
-
-    7~~~~\textasciitilde{}StepperMotor()~\{\};
-
-    8~
-
-    9~~~~DevLong~dev\_read\_position(DevLong);
-
-    10~~~DevLong~dev\_read\_direction(DevLong);
-
-    11~~~bool~direct\_cmd\_allowed(const~CORBA::Any~\&);
-
-    12~
-
-    13~~~virtual~Tango::DevState~dev\_state();
-
-    14~~~virtual~Tango::ConstDevString~dev\_status();
-
-    15~
-
-    16~~~virtual~void~always\_executed\_hook();
-
-    17~
-
-    18~~~virtual~void~read\_attr\_hardware(vector<long>~\&attr\_list);
-
-    19~~~virtual~void~write\_attr\_hardware(vector<long>~\&attr\_list);
-
-    20~
-
-    21~~~void~read\_position(Tango::Attribute~\&);
-
-    22~~~bool~is\_Position\_allowed(Tango::AttReqType~req);
-
-    23~~~void~write\_SetPosition(Tango::WAttribute~\&);
-
-    24~~~void~read\_Direction(Tango::Attribute~\&);
-
-    25~
-
-    26~~~virtual~void~init\_device();
-
-    27~~~virtual~void~delete\_device();
-
-    28~
-
-    29~~~void~get\_device\_properties();
-
-    30~
-
-    31~protected~:~
-
-    32~~~long~axis{[}AGSM\_MAX\_MOTORS{]};
-
-    33~~~DevLong~position{[}AGSM\_MAX\_MOTORS{]};
-
-    34~~~DevLong~direction{[}AGSM\_MAX\_MOTORS{]};
-
-    35~~~long~state{[}AGSM\_MAX\_MOTORS{]};
-
-    36~
-
-    37~~~Tango::DevLong~{*}attr\_Position\_read;
-
-    38~~~Tango::DevLong~{*}attr\_Direction\_read;
-
-    38~~~Tango::DevLong~attr\_SetPosition\_write;
-
-    40~
-
-    41~~~Tango::DevLong~min;
-
-    42~~~Tango::DevLong~max;
-
-    43~
-
-    44~~~Tango::DevLong~{*}ptr;
-
-    45~\};
-
-    46~
-
-    47~\}~/{*}~End~of~StepperMotor~namespace~{*}/
+   class StepperMotor: public TANGO_BASE_CLASS
+   {
+   public :
+      StepperMotor(Tango::DeviceClass *,string &);
+      StepperMotor(Tango::DeviceClass *,const char *);
+      StepperMotor(Tango::DeviceClass *,const char *,const char *);
+      ~StepperMotor() {};
+   
+      DevLong dev_read_position(DevLong);
+     DevLong dev_read_direction(DevLong);
+     bool direct_cmd_allowed(const CORBA::Any &);
+   
+     virtual Tango::DevState dev_state();
+     virtual Tango::ConstDevString dev_status();
+   
+     virtual void always_executed_hook();
+   
+     virtual void read_attr_hardware(vector<long> &attr_list);
+     virtual void write_attr_hardware(vector<long> &attr_list);
+   
+     void read_position(Tango::Attribute &);
+     bool is_Position_allowed(Tango::AttReqType req);
+     void write_SetPosition(Tango::WAttribute &);
+     void read_Direction(Tango::Attribute &);
+   
+     virtual void init_device();
+     virtual void delete_device();
+   
+     void get_device_properties();
+   
+   protected : 
+     long axis[AGSM_MAX_MOTORS];
+     DevLong position[AGSM_MAX_MOTORS];
+     DevLong direction[AGSM_MAX_MOTORS];
+     long state[AGSM_MAX_MOTORS];
+   
+     Tango::DevLong *attr_Position_read;
+     Tango::DevLong *attr_Direction_read;
+     Tango::DevLong attr_SetPosition_write;
+   
+     Tango::DevLong min;
+     Tango::DevLong max;
+   
+     Tango::DevLong *ptr;
+   };
+   
+   } /* End of StepperMotor namespace */
 
 Line 1 : The StepperMotor class inherits from the DeviceImpl class
 
@@ -6514,24 +5046,17 @@ Definition
 ''''''''''
 
 .. code:: cpp
+  :number-lines:
 
-    1~~class~DevReadPositionCmd~:~public~Command
-
-    2~~\{
-
-    3~~public:
-
-    4~~~~~~DevReadPositionCmd(const~char~{*},Tango\_CmdArgType,~Tango\_CmdArgType,~const~char~{*},~const~char{*});
-
-    5~~~~~~\textasciitilde{}DevReadPositionCmd()~\{\};
-
-    6~~~~~~~~~~
-
-    7~~~~~~virtual~bool~is\_allowed~(DeviceImpl~{*},~const~CORBA::Any~\&);
-
-    8~~~~~~virtual~CORBA::Any~{*}execute~(DeviceImpl~{*},~const~CORBA::Any~\&);
-
-    9~~\};
+    class DevReadPositionCmd : public Command
+    {
+    public:
+        DevReadPositionCmd(const char *,Tango_CmdArgType, Tango_CmdArgType, const char *, const char*);
+        ~DevReadPositionCmd() {};
+            
+        virtual bool is_allowed (DeviceImpl *, const CORBA::Any &);
+        virtual CORBA::Any *execute (DeviceImpl *, const CORBA::Any &);
+    };
 
 Line 1 : The class is a sub class of the Command class
 
@@ -6555,28 +5080,19 @@ Definition
 ''''''''''
 
 .. code:: cpp
+  :number-lines:
 
-    ~~~~~1~~class~PositionAttr:~public~Tango::Attr
-
-    ~~~~~2~~\{
-
-    ~~~~~3~~public:
-
-    ~~~~~4~~~~~PositionAttr():Attr(\textquotedbl{}Position\textquotedbl{},Tango::DEV\_LONG,Tango::READ);
-
-    ~~~~~5~~~~~\textasciitilde{}PositionAttr()~\{\};
-
-    ~~~~~6~~~~~~~~~~
-
-    ~~~~~7~~~~~virtual~void~read(Tango::DeviceImpl~{*}dev,Tango::Attribute~\&att)
-
-    ~~~~~8~~~~~\{(static\_cast<StepperMotor~{*}>(dev))->read\_Position(att);\}
-
-    ~~~~~9~~~~~virtual~bool~is\_allowed(Tango::DeviceImpl~{*}dev,Tango::AttReqType~ty)
-
-    ~~~~10~~~~~\{return~(static\_cast<StepperMotor~{*}>(dev))->is\_Position\_allowed(ty);\}
-
-    ~~~~11~~\};
+    class PositionAttr: public Tango::Attr
+    {
+    public:
+       PositionAttr():Attr("Position",Tango::DEV_LONG,Tango::READ);
+       ~PositionAttr() {};
+            
+       virtual void read(Tango::DeviceImpl *dev,Tango::Attribute &att)
+       {(static_cast<StepperMotor *>(dev))->read_Position(att);}
+       virtual bool is_allowed(Tango::DeviceImpl *dev,Tango::AttReqType ty)
+       {return (static_cast<StepperMotor *>(dev))->is_Position_allowed(ty);}
+    };
 
 Line 1 : The class is a sub class of the Attr class
 
@@ -7100,12 +5616,11 @@ helper functions defined by CORBA (in the CORBA namespace). These
 functions are :
 
 .. code:: cpp
+  :number-lines:
 
-    ~~~~char~{*}CORBA::string\_alloc(unsigned~long~len);
-
-    ~~~~char~{*}CORBA::string\_dup(const~char~{*});
-
-    ~~~~void~CORBA::string\_free(char~{*});
+        char *CORBA::string_alloc(unsigned long len);
+        char *CORBA::string_dup(const char *);
+        void CORBA::string_free(char *);
 
 These functions handle dynamic memory for strings. The *string\_alloc*
 function allocates one more byte than requested by the len parameter
@@ -7117,20 +5632,15 @@ memory allocated with *string\_alloc* and *string\_dup*. Calling
 following code fragment is an example of the Tango::DevString type usage
 
 .. code:: cpp
+  :number-lines:
 
-    ~~~~~1~~~~~Tango::DevString~str~=~CORBA::string\_alloc(5);
-
-    ~~~~~2~~~~~strcpy(str,\textquotedbl{}TANGO\textquotedbl{});
-
-    ~~~~~3~~
-
-    ~~~~~4~~~~~Tango::DevString~str1~=~CORBA::string\_dup(\textquotedbl{}Do~you~want~to~danse~TANGO?\textquotedbl{});
-
-    ~~~~~5~~
-
-    ~~~~~6~~~~~CORBA::string\_free(str);
-
-    ~~~~~7~~~~~CORBA::string\_free(str1);
+       Tango::DevString str = CORBA::string_alloc(5);
+       strcpy(str,"TANGO");
+    
+       Tango::DevString str1 = CORBA::string_dup("Do you want to danse TANGO?");
+    
+       CORBA::string_free(str);
+       CORBA::string_free(str1);
 
 Line 1-2 : TANGO is a five letters string. The CORBA::string\_alloc
 function parameter is 5 but the function allocates 6 bytes
@@ -7182,42 +5692,26 @@ The following code fragment is an example of how to use a
 Tango::DevVarLongArray type
 
 .. code:: cpp
+  :number-lines:
 
-    ~~~~~1~~~~~Tango::DevVarLongArray~{*}mylongseq\_ptr;
-
-    ~~~~~2~~~~~mylongseq\_ptr~=~new~Tango::DevVarLongArray();
-
-    ~~~~~3~~~~~mylongseq\_ptr->length(4);
-
-    ~~~~~4~~
-
-    ~~~~~5~~~~~({*}mylongseq\_ptr){[}0{]}~=~1;
-
-    ~~~~~6~~~~~({*}mylongseq\_ptr){[}1{]}~=~2;
-
-    ~~~~~7~~~~~({*}mylongseq\_ptr){[}2{]}~=~3;
-
-    ~~~~~8~~~~~({*}mylongseq\_ptr){[}3{]}~=~4;
-
-    ~~~~~9~~
-
-    ~~~~10~~~~~//~({*}mylongseq\_ptr){[}4{]}~=~5;
-
-    ~~~~11~~
-
-    ~~~~12~~~~~CORBA::Long~nb\_elt~=~mylongseq\_ptr->length();
-
-    ~~~~13~~
-
-    ~~~~14~~~~~mylongseq\_ptr->length(5);
-
-    ~~~~15~~~~~({*}mylongseq\_ptr){[}4{]}~=~5;
-
-    ~~~~16~~
-
-    ~~~~17~~~~~for~(int~i~=~0;i~<~mylongseq\_ptr->length();i++)
-
-    ~~~~18~~~~~~~~~~cout~<\textcompwordmark{}<~\textquotedbl{}Sequence~elt~\textquotedbl{}~<\textcompwordmark{}<~i~+~1~<\textcompwordmark{}<~\textquotedbl{}~=~\textquotedbl{}~<\textcompwordmark{}<~({*}mylongseq\_ptr){[}i{]}~<\textcompwordmark{}<~endl;
+       Tango::DevVarLongArray *mylongseq_ptr;
+       mylongseq_ptr = new Tango::DevVarLongArray();
+       mylongseq_ptr->length(4);
+    
+       (*mylongseq_ptr)[0] = 1;
+       (*mylongseq_ptr)[1] = 2;
+       (*mylongseq_ptr)[2] = 3;
+       (*mylongseq_ptr)[3] = 4;
+    
+       // (*mylongseq_ptr)[4] = 5;
+    
+       CORBA::Long nb_elt = mylongseq_ptr->length();
+    
+       mylongseq_ptr->length(5);
+       (*mylongseq_ptr)[4] = 5;
+    
+       for (int i = 0;i < mylongseq_ptr->length();i++)
+            cout << "Sequence elt " << i + 1 << " = " << (*mylongseq_ptr)[i] << endl;
 
 Line 1 : Declare a pointer to Tango::DevVarLongArray type which is a
 sequence of long
@@ -7241,30 +5735,20 @@ Line 17-18 : Print sequence element
 Another example for the Tango::DevVarStringArray type is given
 
 .. code:: cpp
+  :number-lines:
 
-    ~~~~~1~~~~~Tango::DevVarStringArray~mystrseq(4);
-
-    ~~~~~2~~~~~mystrseq.length(4);
-
-    ~~~~~3~~
-
-    ~~~~~4~~~~~mystrseq{[}0{]}~=~CORBA::string\_dup(\textquotedbl{}Rock~and~Roll\textquotedbl{});
-
-    ~~~~~5~~~~~mystrseq{[}1{]}~=~CORBA::string\_dup(\textquotedbl{}Bossa~Nova\textquotedbl{});
-
-    ~~~~~6~~~~~mystrseq{[}2{]}~=~CORBA::string\_dup(``Waltz'');
-
-    ~~~~~7~~~~~mystrseq{[}3{]}~=~CORBA::string\_dup(\textquotedbl{}Tango\textquotedbl{});
-
-    ~~~~~8~~
-
-    ~~~~~9~~~~~CORBA::Long~nb\_elt~=~mystrseq.length();
-
-    ~~~~10~~
-
-    ~~~~11~~~~~for~(int~i~=~0;i~<~mystrseq.length();i++)
-
-    ~~~~12~~~~~~~~~~cout~<\textcompwordmark{}<~\textquotedbl{}Sequence~elt~\textquotedbl{}~<\textcompwordmark{}<~i~+~1~<\textcompwordmark{}<~\textquotedbl{}~=~\textquotedbl{}~<\textcompwordmark{}<~mystrseq{[}i{]}~<\textcompwordmark{}<~endl;
+       Tango::DevVarStringArray mystrseq(4);
+       mystrseq.length(4);
+    
+       mystrseq[0] = CORBA::string_dup("Rock and Roll");
+       mystrseq[1] = CORBA::string_dup("Bossa Nova");
+       mystrseq[2] = CORBA::string_dup("Waltz");
+       mystrseq[3] = CORBA::string_dup("Tango");
+    
+       CORBA::Long nb_elt = mystrseq.length();
+    
+       for (int i = 0;i < mystrseq.length();i++)
+            cout << "Sequence elt " << i + 1 << " = " << mystrseq[i] << endl;
 
 Line 1 : Create a sequence using the maximum constructor
 
@@ -7294,22 +5778,16 @@ encoded\_data field type is a Tango::DevVarCharArray. An example of the
 usage of the Tango::DevVarLongStringArray type is detailed below.
 
 .. code:: cpp
+  :number-lines:
 
-    ~~~~~1~~~~~Tango::DevVarLongStringArray~my\_vl;
-
-    ~~~~~2~~
-
-    ~~~~~3~~~~~myvl.svalue.length(2);
-
-    ~~~~~4~~~~~myvl.svalue{[}0{]}~=~CORBA\_string\_dup(\textquotedbl{}Samba\textquotedbl{});
-
-    ~~~~~5~~~~~myvl.svalue{[}1{]}~=~CORBA\_string\_dup(\textquotedbl{}Rumba\textquotedbl{});
-
-    ~~~~~6~~
-
-    ~~~~~7~~~~~myvl.lvalue.length(1);
-
-    ~~~~~8~~~~~myvl.lvalue{[}0{]}~=~10;
+       Tango::DevVarLongStringArray my_vl;
+    
+       myvl.svalue.length(2);
+       myvl.svalue[0] = CORBA_string_dup("Samba");
+       myvl.svalue[1] = CORBA_string_dup("Rumba");
+    
+       myvl.lvalue.length(1);
+       myvl.lvalue[0] = 10;
 
 Line 1 : Declaration of the structure
 
@@ -7328,14 +5806,12 @@ enumeration to be a 32 bit type. The first enumerator will have the
 value 0, the next one will have the value 1 and so on.
 
 .. code:: cpp
+  :number-lines:
 
-    ~~~~~1~~~~~Tango::DevState~state;
-
-    ~~~~~2~~
-
-    ~~~~~3~~~~~state~=~Tango::ON;
-
-    ~~~~~4~~~~~state~=~Tango::FAULT;
+       Tango::DevState state;
+    
+       state = Tango::ON;
+       state = Tango::FAULT;
 
 Passing data between client and server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -7428,68 +5904,39 @@ Inserting/Extracting TANGO enumeration
 This is identical to inserting/extracting basic types
 
 .. code:: cpp
+  :number-lines:
 
-    ~~~~~1~~~~CORBA::Any~a;
-
-    ~~~~~2~~~~Tango::DevLong~l1,l2;
-
-    ~~~~~3~~~~l1~=~2;
-
-    ~~~~~4~~~~a~<\textcompwordmark{}<=~l1;
-
-    ~~~~~5~~~~a~>\textcompwordmark{}>=~l2;
-
-    ~~~~~6~~
-
-    ~~~~~7~~~~CORBA::Any~b;
-
-    ~~~~~8~~~~Tango::DevBoolean~b1,b2;
-
-    ~~~~~9~~~~b1~=~true;
-
-    ~~~~10~~~~b~<\textcompwordmark{}<=~CORBA::Any::from\_boolean(b1);
-
-    ~~~~11~~~~b~>\textcompwordmark{}>=~CORBA::Any::to\_boolean(b2);
-
-    ~~~~12~~
-
-    ~~~~13~~~~CORBA::Any~s;
-
-    ~~~~14~~~~Tango::DevString~str1,str2;
-
-    ~~~~15~~~~str1~=~\textquotedbl{}I~like~dancing~TANGO\textquotedbl{};
-
-    ~~~~16~~~~s~<\textcompwordmark{}<=~str1;
-
-    ~~~~17~~~~s~>\textcompwordmark{}>=~str2;
-
-    ~~~~18~~
-
-    ~~~~19~~//~~~CORBA::string\_free(str2);
-
-    ~~~~20~~//~~~a~<\textcompwordmark{}<=~CORBA::string\_dup(\textquotedbl{}Oups\textquotedbl{});
-
-    ~~~~21~~
-
-    ~~~~22~~~~CORBA::Any~seq;
-
-    ~~~~23~~~~Tango::DevVarFloatArray~fl\_arr1;
-
-    ~~~~24~~~~fl\_arr1.length(2);
-
-    ~~~~25~~~~fl\_arr1{[}0{]}~=~1.0;
-
-    ~~~~26~~~~fl\_arr1{[}1{]}~=~2.0;
-
-    ~~~~27~~~~seq~<\textcompwordmark{}<=~fl\_arr1;
-
-    ~~~~28~~~~const~Tango::DevVarFloatArray~{*}fl\_arr\_ptr;
-
-    ~~~~29~~~~seq~>\textcompwordmark{}>=~fl\_arr\_ptr;
-
-    ~~~~30~~
-
-    ~~~~31~~//~~~delete~fl\_arr\_ptr;
+      CORBA::Any a;
+      Tango::DevLong l1,l2;
+      l1 = 2;
+      a <<= l1;
+      a >>= l2;
+    
+      CORBA::Any b;
+      Tango::DevBoolean b1,b2;
+      b1 = true;
+      b <<= CORBA::Any::from_boolean(b1);
+      b >>= CORBA::Any::to_boolean(b2);
+    
+      CORBA::Any s;
+      Tango::DevString str1,str2;
+      str1 = "I like dancing TANGO";
+      s <<= str1;
+      s >>= str2;
+    
+    //   CORBA::string_free(str2);
+    //   a <<= CORBA::string_dup("Oups");
+    
+      CORBA::Any seq;
+      Tango::DevVarFloatArray fl_arr1;
+      fl_arr1.length(2);
+      fl_arr1[0] = 1.0;
+      fl_arr1[1] = 2.0;
+      seq <<= fl_arr1;
+      const Tango::DevVarFloatArray *fl_arr_ptr;
+      seq >>= fl_arr_ptr;
+    
+    //   delete fl_arr_ptr;
 
 Line 1-5 : Insertion and extraction of Tango::DevLong type
 
@@ -7520,10 +5967,10 @@ small helper methods have been written in the Command class. The
 signatures of these methods are :
 
 .. code:: cpp
+  :number-lines:
 
-    ~~~~~1~~~~~~~~~~void~extract\index{extract}(const~CORBA::Any~\&,<Tango~type>~\&);
-
-    ~~~~~2~~~~~~~~~~CORBA::Any~{*}insert\index{insert}(<Tango~type>);
+            void extractextract(const CORBA::Any &,<Tango type> &);
+            CORBA::Any *insertinsert(<Tango type>);
 
 An *extract* method has been written for all Tango types. These method
 extract the data from the Any object passed as parameter and throw an
@@ -7544,52 +5991,31 @@ methods (We suppose that we can use the Command class insert/extract
 methods)
 
 .. code:: cpp
+  :number-lines:
 
-    ~~~~~1~~~~Tango::DevLong~l1,l2;
-
-    ~~~~~2~~~~l1~=~2;
-
-    ~~~~~3~~~~CORBA::Any~{*}a\_ptr~=~insert(l1);
-
-    ~~~~~4~~~~extract({*}a\_ptr,l2);
-
-    ~~~~~5~~
-
-    ~~~~~6~~~~Tango::DevBoolean~b1,b2;
-
-    ~~~~~7~~~~b1~=~true;
-
-    ~~~~~8~~~~CORBA::Any~{*}b\_ptr~=~insert(b1);
-
-    ~~~~~9~~~~extract({*}b\_ptr,b2);
-
-    ~~~~10~~
-
-    ~~~~11~~~~Tango::DevString~str1,str2;
-
-    ~~~~12~~~~str1~=~\textquotedbl{}I~like~dancing~TANGO\textquotedbl{};
-
-    ~~~~13~~~~CORBA::Any~{*}s\_ptr~=~insert(str1);
-
-    ~~~~14~~~~extract({*}s\_ptr,str2);
-
-    ~~~~15~~
-
-    ~~~~16~~~~Tango::DevVarFloatArray~fl\_arr1;
-
-    ~~~~17~~~~fl\_arr1.length(2);
-
-    ~~~~18~~~~fl\_arr1{[}0{]}~=~1.0;
-
-    ~~~~19~~~~fl\_arr1{[}1{]}~=~2.0;
-
-    ~~~~20~~~~insert(fl\_arr1);
-
-    ~~~~21~~~~CORBA::Any~{*}seq\_ptr~=~insert(fl\_arr1);
-
-    ~~~~22~~~~Tango::DevVarFloatArray~{*}fl\_arr\_ptr;
-
-    ~~~~23~~~~extract({*}seq\_ptr,fl\_arr\_ptr);
+      Tango::DevLong l1,l2;
+      l1 = 2;
+      CORBA::Any *a_ptr = insert(l1);
+      extract(*a_ptr,l2);
+    
+      Tango::DevBoolean b1,b2;
+      b1 = true;
+      CORBA::Any *b_ptr = insert(b1);
+      extract(*b_ptr,b2);
+    
+      Tango::DevString str1,str2;
+      str1 = "I like dancing TANGO";
+      CORBA::Any *s_ptr = insert(str1);
+      extract(*s_ptr,str2);
+    
+      Tango::DevVarFloatArray fl_arr1;
+      fl_arr1.length(2);
+      fl_arr1[0] = 1.0;
+      fl_arr1[1] = 2.0;
+      insert(fl_arr1);
+      CORBA::Any *seq_ptr = insert(fl_arr1);
+      Tango::DevVarFloatArray *fl_arr_ptr;
+      extract(*seq_ptr,fl_arr_ptr);
 
 Line 1-4 : Insertion and extraction of Tango::DevLong type
 
@@ -7624,30 +6050,20 @@ Example of a method receiving a Tango::DevString and returning a
 Tango::DevString is detailed just below
 
 .. code:: cpp
+  :number-lines:
 
-    ~~~~~1~~Tango::DevString~MyDev::dev\_string(Tango::DevString~argin)
-
-    ~~~~~2~~\{
-
-    ~~~~~3~~~~~~Tango::DevString~~~~~~~~argout;
-
-    ~~~~~4~~
-
-    ~~~~~5~~~~~~cout~<\textcompwordmark{}<~\textquotedbl{}the~received~string~is~\textquotedbl{}~<\textcompwordmark{}<~argin~<\textcompwordmark{}<~endl;
-
-    ~~~~~6~~~~~~~~~~
-
-    ~~~~~7~~~~~~string~str(\textquotedbl{}Am~I~a~good~Tango~dancer~?\textquotedbl{});
-
-    ~~~~~8~~~~~~argout~=~new~char{[}str.size()~+~1{]};
-
-    ~~~~~9~~~~~~strcpy(argout,str.c\_str());
-
-    ~~~~10~~~~~~~~~~
-
-    ~~~~11~~~~~~return~argout;
-
-    ~~~~12~~\}
+    Tango::DevString MyDev::dev_string(Tango::DevString argin)
+    {
+        Tango::DevString        argout;
+    
+        cout << "the received string is " << argin << endl;
+            
+        string str("Am I a good Tango dancer ?");
+        argout = new char[str.size() + 1];
+        strcpy(argout,str.c_str());
+            
+        return argout;
+    }
 
 Note that there is no need to deallocate the memory used by the incoming
 string. Memory for the outgoing string is allocated at line 8, then it
@@ -7658,24 +6074,17 @@ command is executed. For constant string length, a statically allocated
 buffer can be used.
 
 .. code:: cpp
+  :number-lines:
 
-    ~~~~~1~~Tango::ConstDevString~MyDev::dev\_string(Tango::DevString~argin)
-
-    ~~~~~2~~\{
-
-    ~~~~~3~~~~~~Tango::ConstDevString~~~argout;
-
-    ~~~~~4~~
-
-    ~~~~~5~~~~~~cout~<\textcompwordmark{}<~\textquotedbl{}the~received~string~is~\textquotedbl{}~<\textcompwordmark{}<~argin~<\textcompwordmark{}<~endl;
-
-    ~~~~~6~~~~~~~~~~
-
-    ~~~~~7~~~~~~argout~=~\textquotedbl{}Hello~world\textquotedbl{};~
-
-    ~~~~~8~~~~~~return~argout;
-
-    ~~~~~9~~\}
+    Tango::ConstDevString MyDev::dev_string(Tango::DevString argin)
+    {
+        Tango::ConstDevString   argout;
+    
+        cout << "the received string is " << argin << endl;
+            
+        argout = "Hello world"; 
+        return argout;
+    }
 
 A Tango::ConstDevString data type is used. It is not a new data Tango
 data type. It has been introduced only to allows *Command::insert()*
@@ -7692,28 +6101,19 @@ Example of a method returning a Tango::DevVarLongArray is detailed just
 below
 
 .. code:: cpp
+  :number-lines:
 
-    ~~~~~1~~Tango::DevVarLongArray~{*}MyDev::dev\_array()
-
-    ~~~~~2~~\{
-
-    ~~~~~3~~~~~~Tango::DevVarLongArray~~{*}argout~~=~new~Tango::DevVarLongArray();
-
-    ~~~~~4~~~~~~~~~~~~~~~~~~
-
-    ~~~~~5~~~~~~long~output\_array\_length~=~...;
-
-    ~~~~~6~~~~~~argout->length(output\_array\_length);
-
-    ~~~~~7~~~~~~for~(int~i~=~0;i~<~output\_array\_length;i++)
-
-    ~~~~~8~~~~~~~~~~({*}argout){[}i{]}~=~i;
-
-    ~~~~~9~~
-
-    ~~~~10~~~~~~return~argout;
-
-    ~~~~11~~\}
+    Tango::DevVarLongArray *MyDev::dev_array()
+    {
+        Tango::DevVarLongArray  *argout  = new Tango::DevVarLongArray();
+                    
+        long output_array_length = ...;
+        argout->length(output_array_length);
+        for (int i = 0;i < output_array_length;i++)
+            (*argout)[i] = i;
+    
+        return argout;
+    }
 
 In this case, memory is allocated at line 3 and 6. Then, the sequence is
 populated. The sequence is created and returned using pointer. The
@@ -7727,22 +6127,16 @@ following example assuming a buffer of long data is declared as device
 data member and named buffer.
 
 .. code:: cpp
+  :number-lines:
 
-    ~~~~~1~~Tango::DevVarLongArray~{*}MyDev::dev\_array()
-
-    ~~~~~2~~\{
-
-    ~~~~~3~~~~~~Tango::DevVarLongArray~~{*}argout;
-
-    ~~~~~4~~~~~~~~~~~~~~~~~~
-
-    ~~~~~5~~~~~~long~output\_array\_length~=~...;
-
-    ~~~~~6~~~~~~argout~=~create\_DevVarLongArray(buffer,output\_array\_length);
-
-    ~~~~~7~~~~~~return~argout;
-
-    ~~~~~8~~\}
+    Tango::DevVarLongArray *MyDev::dev_array()
+    {
+        Tango::DevVarLongArray  *argout;
+                    
+        long output_array_length = ...;
+        argout = create_DevVarLongArray(buffer,output_array_length);
+        return argout;
+    }
 
 At line 3 only a pointer to a DevVarLongArray is defined. This pointer
 is set at line 6 using the *create\_DevVarLongArray()* method. This
@@ -7771,28 +6165,19 @@ Example of a method returning a Tango::DevVarStringArray is detailed
 just below
 
 .. code:: cpp
+  :number-lines:
 
-    ~~~~~1~~Tango::DevVarStringArray~{*}MyDev::dev\_str\_array()
-
-    ~~~~~2~~\{
-
-    ~~~~~3~~~~~Tango::DevVarStringArray~{*}argout~~=~new~Tango::DevVarStringArray();
-
-    ~~~~~4~~
-
-    ~~~~~5~~~~~argout->length(3);
-
-    ~~~~~6~~~~~({*}argout){[}0{]}~=~CORBA::string\_dup(\textquotedbl{}Rumba\textquotedbl{});
-
-    ~~~~~7~~~~~({*}argout){[}1{]}~=~CORBA::string\_dup(\textquotedbl{}Waltz\textquotedbl{});
-
-    ~~~~~8~~~~~string~str(\textquotedbl{}Jerck\textquotedbl{});
-
-    ~~~~~9~~~~~({*}argout){[}2{]}~=~CORBA::string\_dup(str.c\_str());
-
-    ~~~~10~~~~~return~argout;
-
-    ~~~~11~~\}
+    Tango::DevVarStringArray *MyDev::dev_str_array()
+    {
+       Tango::DevVarStringArray *argout  = new Tango::DevVarStringArray();
+    
+       argout->length(3);
+       (*argout)[0] = CORBA::string_dup("Rumba");
+       (*argout)[1] = CORBA::string_dup("Waltz");
+       string str("Jerck");
+       (*argout)[2] = CORBA::string_dup(str.c_str());
+       return argout;
+    }
 
 Memory is allocated at line 3 and 5. Then, the sequence is populated at
 lines 6,7 and 9. The usage of the *CORBA::string\_dup* function also
@@ -7811,24 +6196,17 @@ buffer of pointer to char is declared as device data member and named
 int\_buffer.
 
 .. code:: cpp
+  :number-lines:
 
-    ~~~~~1~~Tango::DevVarStringArray~{*}DocDs::dev\_str\_array()
-
-    ~~~~~2~~\{
-
-    ~~~~~3~~~~~int\_buffer{[}0{]}~=~\textquotedbl{}first\textquotedbl{};
-
-    ~~~~~4~~~~~int\_buffer{[}1{]}~=~\textquotedbl{}second\textquotedbl{};
-
-    ~~~~~5~~
-
-    ~~~~~6~~~~~Tango::DevVarStringArray~{*}argout;
-
-    ~~~~~7~~~~~argout~=~create\_DevVarStringArray(int\_buffer,2);
-
-    ~~~~~8~~~~~return~argout;
-
-    ~~~~~9~~\}
+    Tango::DevVarStringArray *DocDs::dev_str_array()
+    {
+       int_buffer[0] = "first";
+       int_buffer[1] = "second";
+    
+       Tango::DevVarStringArray *argout;
+       argout = create_DevVarStringArray(int_buffer,2);
+       return argout;
+    }
 
 The intermediate buffer is initialized with statically allocated memory
 at lines 3 and 4. The returned sequence is created at line 7 with the
@@ -7896,50 +6274,30 @@ of the DeviceImpl class. An exception is thrown to the client to
 indicate that the requested command is not defined in the command list.
 
 .. code:: cpp
+  :number-lines:
 
-    ~~~~~1~~~~TangoSys\_OMemStream~o;
-
-    ~~~~~2~~~~~~~~~~~~~~~~~~
-
-    ~~~~~3~~~~o~<\textcompwordmark{}<~\textquotedbl{}Command~\textquotedbl{}~<\textcompwordmark{}<~command~<\textcompwordmark{}<~\textquotedbl{}~not~found\textquotedbl{}~<\textcompwordmark{}<~ends;
-
-    ~~~~~4~~~~Tango::Except::throw\_exception(\textquotedbl{}API\_CommandNotFound\textquotedbl{},
-
-    ~~~~~5~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~o.str(),
-
-    ~~~~~6~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\textquotedbl{}DeviceClass::command\_handler\textquotedbl{});
-
-    ~~~~~7~~
-
-    ~~~~~8~~
-
-    ~~~~~9~~~~try
-
-    ~~~~10~~~~\{
-
-    ~~~~11~~~~~~~~.....
-
-    ~~~~12~~~~\}
-
-    ~~~~13~~~~catch~(Tango::DevFailed~\&e)
-
-    ~~~~14~~~~\{
-
-    ~~~~15~~~~~~~~TangoSys\_OMemStream~o;
-
-    ~~~~16~~~~~~~~~~~~~~~~~~
-
-    ~~~~17~~~~~~~~o~<\textcompwordmark{}<~\textquotedbl{}Command~\textquotedbl{}~<\textcompwordmark{}<~command~<\textcompwordmark{}<~\textquotedbl{}~not~found\textquotedbl{}~<\textcompwordmark{}<~ends;
-
-    ~~~~18~~~~~~~~Tango::Except::re\_throw\_exception(e,
-
-    ~~~~19~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\textquotedbl{}API\_CommandNotFound\textquotedbl{},
-
-    ~~~~20~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~o.str(),
-
-    ~~~~21~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\textquotedbl{}DeviceClass::command\_handler\textquotedbl{});
-
-    ~~~~22~~~~\}
+      TangoSys_OMemStream o;
+                    
+      o << "Command " << command << " not found" << ends;
+      Tango::Except::throw_exception("API_CommandNotFound",
+                                  o.str(),
+                                  "DeviceClass::command_handler");
+    
+    
+      try
+      {
+          .....
+      }
+      catch (Tango::DevFailed &e)
+      {
+          TangoSys_OMemStream o;
+                    
+          o << "Command " << command << " not found" << ends;
+          Tango::Except::re_throw_exception(e,
+                                    "API_CommandNotFound",
+                                    o.str(),
+                                    "DeviceClass::command_handler");
+      }
 
 Line 1 : Build a memory stream. Use the TangoSys\_MemStream because
 memory streams are not managed the same way between Windows and Unix
@@ -8082,36 +6440,23 @@ send log messages associated to a device must be a member of a class
 inheriting from the Tango::LogAdapter class. Here is an example:
 
 .. code:: cpp
+  :number-lines:
 
-    1~class~MyDeviceActualImpl:~public~Tango::LogAdapter
-
-    2~\{
-
-    3~public~:
-
-    4~~~~MyDeviceActualImpl(...,Tango::DeviceImpl~{*}device,...)
-
-    5~~~~:Tango::LogAdpater(device)
-
-    6~~~~\{
-
-    7~~~~~~~~~~....
-
-    8~//
-
-    9~//~The~following~log~is~associated~to~the~device~passed~to~the~constructor
-
-    10~//
-
-    11~~~~~~~~~DEBUG\_STREAM~<\textcompwordmark{}<~\textquotedbl{}In~MyDeviceActualImpl~constructor\textquotedbl{}~<\textcompwordmark{}<~endl;
-
-    12~
-
-    13~~~~~~~~~....
-
-    14~~~~\}
-
-    15~\};
+   class MyDeviceActualImpl: public Tango::LogAdapter
+   {
+   public :
+      MyDeviceActualImpl(...,Tango::DeviceImpl *device,...)
+      :Tango::LogAdpater(device)
+      {
+            ....
+   //
+   // The following log is associated to the device passed to the constructor
+   //
+           DEBUG_STREAM << "In MyDeviceActualImpl constructor" << endl;
+   
+           ....
+      }
+   };
 
 Writing a device server process
 -------------------------------
@@ -8372,34 +6717,22 @@ They mainly used the “<<” operator overloading features. The following
 code lines are an example of usage of these utilities.
 
 .. code:: cpp
+  :number-lines:
 
-    ~~~~~1~~~~vector<string>~v1;
-
-    ~~~~~2~~~~v1.push\_back(\textquotedbl{}one\textquotedbl{});
-
-    ~~~~~3~~~~v1.push\_back(\textquotedbl{}two\textquotedbl{});
-
-    ~~~~~4~~~~v1.push\_back(\textquotedbl{}three\textquotedbl{});
-
-    ~~~~~5~~~~~~~~~~
-
-    ~~~~~6~~~~Tango::DevVarStringArray~s;
-
-    ~~~~~7~~~~s~<\textcompwordmark{}<~v1;
-
-    ~~~~~8~~~~cout~<\textcompwordmark{}<~s~<\textcompwordmark{}<~endl;
-
-    ~~~~~9~~
-
-    ~~~~10~~~~vector<string>~v2;
-
-    ~~~~11~~~~v2~<\textcompwordmark{}<~s;
-
-    ~~~~12~~~~~~~~~~
-
-    ~~~~13~~~~for~(int~i~=~0;i~<~v2.size();i++)
-
-    ~~~~14~~~~~~~cout~<\textcompwordmark{}<~\textquotedbl{}vector~element~=~\textquotedbl{}~<\textcompwordmark{}<~v2{[}i{]}~<\textcompwordmark{}<~endl;
+      vector<string> v1;
+      v1.push_back("one");
+      v1.push_back("two");
+      v1.push_back("three");
+            
+      Tango::DevVarStringArray s;
+      s << v1;
+      cout << s << endl;
+    
+      vector<string> v2;
+      v2 << s;
+            
+      for (int i = 0;i < v2.size();i++)
+         cout << "vector element = " << v2[i] << endl;
 
 Line 1-4 : Create and Init a C++ string vector
 
@@ -8435,74 +6768,42 @@ included in the library because some linkers are perturbed by the
 presence of two main functions.
 
 .. code:: cpp
+  :number-lines:
 
-    ~~~~~1~~\#include~<tango.h>
-
-    ~~~~~2~~
-
-    ~~~~~3~~int~main(int~argc,char~{*}argv{[}{]})
-
-    ~~~~~4~~\{
-
-    ~~~~~5~~
-
-    ~~~~~6~~~~~~Tango::Util~{*}tg;
-
-    ~~~~~7~~~~~~~~~~
-
-    ~~~~~8~~~~~~try
-
-    ~~~~~9~~~~~~\{
-
-    ~~~~10~~~~~~~~~~
-
-    ~~~~11~~~~~~~~~~tg~=~Tango::Util::init(argc,argv);
-
-    ~~~~12~~
-
-    ~~~~13~~~~~~~~~~tg->server\_init();
-
-    ~~~~14~~
-
-    ~~~~15~~~~~~~~~~cout~<\textcompwordmark{}<~\textquotedbl{}Ready~to~accept~request\textquotedbl{}~<\textcompwordmark{}<~endl;
-
-    ~~~~16~~~~~~~~~~tg->server\_run();
-
-    ~~~~17~~~~~~\}
-
-    ~~~~18~~~~~~catch~(bad\_alloc)
-
-    ~~~~19~~~~~~\{
-
-    ~~~~20~~~~~~~~~~~cout~<\textcompwordmark{}<~\textquotedbl{}Can't~allocate~memory!!!\textquotedbl{}~<\textcompwordmark{}<~endl;
-
-    ~~~~21~~~~~~~~~~~cout~<\textcompwordmark{}<~\textquotedbl{}Exiting\textquotedbl{}~<\textcompwordmark{}<~endl;
-
-    ~~~~22~~~~~~\}
-
-    ~~~~23~~~~~~catch~(CORBA::Exception~\&e)
-
-    ~~~~24~~~~~~\{
-
-    ~~~~25~~~~~~~~~~~Tango::Except::print\_exception(e);
-
-    ~~~~26~~~~~~~~~~~~~~~~~~
-
-    ~~~~27~~~~~~~~~~~cout~<\textcompwordmark{}<~\textquotedbl{}Received~a~CORBA::Exception\textquotedbl{}~<\textcompwordmark{}<~endl;
-
-    ~~~~28~~~~~~~~~~~cout~<\textcompwordmark{}<~\textquotedbl{}Exiting\textquotedbl{}~<\textcompwordmark{}<~endl;
-
-    ~~~~29~~~~~~\}
-
-    ~~~~30~~
-
-    ~~~~31~~~~~~tg->server\_cleanup();
-
-    ~~~~32~~~~~~~~~~~~~~~~~~
-
-    ~~~~33~~~~~~return(0);
-
-    ~~~~34~~\}
+    #include <tango.h>
+    
+    int main(int argc,char *argv[])
+    {
+    
+        Tango::Util *tg;
+            
+        try
+        {
+            
+            tg = Tango::Util::init(argc,argv);
+    
+            tg->server_init();
+    
+            cout << "Ready to accept request" << endl;
+            tg->server_run();
+        }
+        catch (bad_alloc)
+        {
+             cout << "Can't allocate memory!!!" << endl;
+             cout << "Exiting" << endl;
+        }
+        catch (CORBA::Exception &e)
+        {
+             Tango::Except::print_exception(e);
+                    
+             cout << "Received a CORBA::Exception" << endl;
+             cout << "Exiting" << endl;
+        }
+    
+        tg->server_cleanup();
+                    
+        return(0);
+    }
 
 Line 1 : Include the **tango.h** file. This file is a master include
 file. It includes several other files. The list of files included by
@@ -8543,24 +6844,17 @@ with one implementation of the device server pattern for stepper motor
 device.
 
 .. code:: cpp
+  :number-lines:
 
-    ~~~~~1~~\#include~<tango.h>
-
-    ~~~~~2~~\#include~<steppermotorclass.h>
-
-    ~~~~~3~~
-
-    ~~~~~4~~void~Tango::DServer::class\_factory()
-
-    ~~~~~5~~\{
-
-    ~~~~~6~~
-
-    ~~~~~7~~~~~add\_class(StepperMotor::StepperMotorClass::init(\textquotedbl{}StepperMotor\textquotedbl{}));
-
-    ~~~~~8~~
-
-    ~~~~~9~~\}
+    #include <tango.h>
+    #include <steppermotorclass.h>
+    
+    void Tango::DServer::class_factory()
+    {
+    
+       add_class(StepperMotor::StepperMotorClass::init("StepperMotor"));
+    
+    }
 
 Line 1 : Include the Tango master include file
 
@@ -8578,52 +6872,31 @@ The class declaration file
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code:: cpp
+  :number-lines:
 
-    ~~~~~1~~\#include~<tango.h>
-
-    ~~~~~2~~
-
-    ~~~~~3~~namespace~StepperMotor
-
-    ~~~~~4~~\{
-
-    ~~~~~5~~
-
-    ~~~~~6~~class~StepperMotorClass~:~public~Tango::DeviceClass
-
-    ~~~~~7~~\{
-
-    ~~~~~8~~public:
-
-    ~~~~~9~~~~~~static~StepperMotorClass~{*}init(const~char~{*});
-
-    ~~~~10~~~~~~static~StepperMotorClass~{*}instance();
-
-    ~~~~11~~~~~~\textasciitilde{}StepperMotorClass()~\{\_instance~=~NULL;\}
-
-    ~~~~12~~~~~~~~~~
-
-    ~~~~13~~protected:
-
-    ~~~~14~~~~~~StepperMotorClass(string~\&);
-
-    ~~~~15~~~~~~static~StepperMotorClass~{*}\_instance;
-
-    ~~~~16~~~~~~void~command\_factory();
-
-    ~~~~17~~~~~~void~attribute\_factory(vector<Tango::Attr~{*}>~\&);
-
-    ~~~~18~~~~~~~~~~
-
-    ~~~~19~~public:
-
-    ~~~~20~~~~~~void~device\_factory(const~Tango::DevVarStringArray~{*});
-
-    ~~~~21~~\};
-
-    ~~~~22~~
-
-    ~~~~23~~\}~/{*}~End~of~StepperMotor~namespace~{*}/
+    #include <tango.h>
+    
+    namespace StepperMotor
+    {
+    
+    class StepperMotorClass : public Tango::DeviceClass
+    {
+    public:
+        static StepperMotorClass *init(const char *);
+        static StepperMotorClass *instance();
+        ~StepperMotorClass() {_instance = NULL;}
+            
+    protected:
+        StepperMotorClass(string &);
+        static StepperMotorClass *_instance;
+        void command_factory();
+        void attribute_factory(vector<Tango::Attr *> &);
+            
+    public:
+        void device_factory(const Tango::DevVarStringArray *);
+    };
+    
+    } /* End of StepperMotor namespace */
 
 Line 1 : Include the Tango master include file
 
@@ -8655,98 +6928,54 @@ The singleton related methods
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code:: cpp
+  :number-lines:
 
-    ~~~~~1~~\#include~<tango.h>
-
-    ~~~~~2~~
-
-    ~~~~~3~~\#include~<steppermotor.h>
-
-    ~~~~~4~~\#include~<steppermotorclass.h>
-
-    ~~~~~5~~
-
-    ~~~~~6~~namespace~StepperMotor
-
-    ~~~~~7~~\{
-
-    ~~~~~8~~
-
-    ~~~~~9~~StepperMotorClass~{*}StepperMotorClass::\_instance~=~NULL;
-
-    ~~~~10~~
-
-    ~~~~11~~StepperMotorClass::StepperMotorClass(string~\&s):
-
-    ~~~~12~~Tango::DeviceClass(s)
-
-    ~~~~13~~\{
-
-    ~~~~14~~~~~~INFO\_STREAM~<\textcompwordmark{}<~\textquotedbl{}Entering~StepperMotorClass~constructor\textquotedbl{}~<\textcompwordmark{}<~endl;
-
-    ~~~~15~~~~~~~~~~
-
-    ~~~~16~~~~~~INFO\_STREAM~<\textcompwordmark{}<~\textquotedbl{}Leaving~StepperMotorClass~constructor\textquotedbl{}~<\textcompwordmark{}<~endl;
-
-    ~~~~17~~\}
-
-    ~~~~18~~
-
-    ~~~~19~~
-
-    ~~~~20~~StepperMotorClass~{*}StepperMotorClass::init(const~char~{*}name)
-
-    ~~~~21~~\{
-
-    ~~~~22~~~~~~if~(\_instance~==~NULL)
-
-    ~~~~23~~~~~~\{
-
-    ~~~~24~~~~~~~~~~~~try
-
-    ~~~~25~~~~~~~~~~~~\{
-
-    ~~~~26~~~~~~~~~~~~~~~~~string~s(name);
-
-    ~~~~27~~~~~~~~~~~~~~~~~\_instance~=~new~StepperMotorClass(s);
-
-    ~~~~28~~~~~~~~~~~~\}
-
-    ~~~~29~~~~~~~~~~~~catch~(bad\_alloc)
-
-    ~~~~30~~~~~~~~~~~~\{
-
-    ~~~~31~~~~~~~~~~~~~~~~~throw;
-
-    ~~~~32~~~~~~~~~~~~\}~~~~~~~~~~~~~~~
-
-    ~~~~33~~~~~~\}~~~~~~~~~~~~~~~
-
-    ~~~~34~~~~~~return~\_instance;
-
-    ~~~~35~~\}
-
-    ~~~~36~~
-
-    ~~~~37~~StepperMotorClass~{*}StepperMotorClass::instance()
-
-    ~~~~38~~\{
-
-    ~~~~39~~~~~~if~(\_instance~==~NULL)
-
-    ~~~~40~~~~~~\{
-
-    ~~~~41~~~~~~~~~~~~cerr~<\textcompwordmark{}<~\textquotedbl{}Class~is~not~initialised~!!\textquotedbl{}~<\textcompwordmark{}<~endl;
-
-    ~~~~42~~~~~~~~~~~~exit(-1);
-
-    ~~~~43~~~~~~\}
-
-    ~~~~44~~~~~~return~\_instance;
-
-    ~~~~45~~\}
-
-    ~
+    #include <tango.h>
+    
+    #include <steppermotor.h>
+    #include <steppermotorclass.h>
+    
+    namespace StepperMotor
+    {
+    
+    StepperMotorClass *StepperMotorClass::_instance = NULL;
+    
+    StepperMotorClass::StepperMotorClass(string &s):
+    Tango::DeviceClass(s)
+    {
+        INFO_STREAM << "Entering StepperMotorClass constructor" << endl;
+            
+        INFO_STREAM << "Leaving StepperMotorClass constructor" << endl;
+    }
+    
+    
+    StepperMotorClass *StepperMotorClass::init(const char *name)
+    {
+        if (_instance == NULL)
+        {
+              try
+              {
+                   string s(name);
+                   _instance = new StepperMotorClass(s);
+              }
+              catch (bad_alloc)
+              {
+                   throw;
+              }               
+        }               
+        return _instance;
+    }
+    
+    StepperMotorClass *StepperMotorClass::instance()
+    {
+        if (_instance == NULL)
+        {
+              cerr << "Class is not initialised !!" << endl;
+              exit(-1);
+        }
+        return _instance;
+    }
+     
 
 Line 1-4 : include files: the Tango master include file (tango.h), the
 StepperMotorClass class definition file (steppermotorclass.h) and the
@@ -8787,44 +7016,27 @@ command is created using the inheritance model and the second command is
 created using the template command model.
 
 .. code:: cpp
+  :number-lines:
 
-    ~~~~~1~~
-
-    ~~~~~2~~void~StepperMotorClass::command\_factory()
-
-    ~~~~~3~~\{
-
-    ~~~~~4~~~~~~~~~~command\_list.push\_back(new~DevReadPositionCmd(\textquotedbl{}DevReadPosition\textquotedbl{},
-
-    ~~~~~5~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Tango::DEV\_LONG,
-
-    ~~~~~6~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Tango::DEV\_LONG,
-
-    ~~~~~7~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\textquotedbl{}Motor~number~(0-7)\textquotedbl{},
-
-    ~~~~~8~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\textquotedbl{}Motor~position\textquotedbl{}));
-
-    ~~~~~9~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-    ~~~~10~~~~~~~~~~command\_list.push\_back(
-
-    ~~~~11~~~~~~~~~~~~~~new~TemplCommandInOut<Tango::DevLong,Tango::DevLong>
-
-    ~~~~12~~~~~~~~~~~~~~~~~~((const~char~{*})\textquotedbl{}DevReadDirection\textquotedbl{},
-
-    ~~~~13~~~~~~~~~~~~~~~~~~~static\_cast<Tango::Lg\_CmdMethPtr\_Lg>
-
-    ~~~~14~~~~~~~~~~~~~~~~~~~~~~~~~~(\&StepperMotor::dev\_read\_direction),
-
-    ~~~~15~~~~~~~~~~~~~~~~~~~static\_cast<Tango::StateMethPtr>
-
-    ~~~~16~~~~~~~~~~~~~~~~~~~~~~~~~~(\&StepperMotor::direct\_cmd\_allowed))
-
-    ~~~~17~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~);
-
-    ~~~~18~~\}
-
-    ~~~~19~~
+    
+    void StepperMotorClass::command_factory()
+    {
+            command_list.push_back(new DevReadPositionCmd("DevReadPosition",
+                                                          Tango::DEV_LONG,
+                                                          Tango::DEV_LONG,
+                                                          "Motor number (0-7)",
+                                                          "Motor position"));
+                                                          
+            command_list.push_back(
+                new TemplCommandInOut<Tango::DevLong,Tango::DevLong>
+                    ((const char *)"DevReadDirection",
+                     static_cast<Tango::Lg_CmdMethPtr_Lg>
+                            (&StepperMotor::dev_read_direction),
+                     static_cast<Tango::StateMethPtr>
+                            (&StepperMotor::direct_cmd_allowed))
+                                  );
+    }
+    
 
 Line 4 : Creation of one instance of the DevReadPositionCmd class. The
 class is created with five arguments which are the command name, the
@@ -8860,34 +7072,22 @@ class and the instance of the device server process. This list is fetch
 from the Tango database.
 
 .. code:: cpp
+  :number-lines:
 
-    ~~~~~1~~void~StepperMotorClass::device\_factory(const~Tango::\_DevVarStringArray~{*}devlist\_ptr)
-
-    ~~~~~2~~\{
-
-    ~~~~~3~~~~~~~~~~
-
-    ~~~~~4~~~~~~for~(long~i~=~0;i~<~devlist\_ptr->length();i++)
-
-    ~~~~~5~~~~~~\{
-
-    ~~~~~6~~~~~~~~~~~DEBUG\_STREAM~<\textcompwordmark{}<~\textquotedbl{}Device~name~:~\textquotedbl{}~<\textcompwordmark{}<~({*}devlist\_ptr){[}i{]}~<\textcompwordmark{}<~endl;
-
-    ~~~~~7~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-    ~~~~~8~~~~~~~~~~~device\_list.push\_back(new~StepperMotor(this,({*}devlist\_ptr){[}i{]}));~~~~~~~9~~
-
-    ~~~~10~~~~~~~~~~~if~(Tango::Util::\_UseDb~==~true)
-
-    ~~~~11~~~~~~~~~~~~~~~~export\_device(device\_list.back());
-
-    ~~~~12~~~~~~~~~~~else
-
-    ~~~~13~~~~~~~~~~~~~~~~export\_device(device\_list.back(),({*}devlist\_ptr{[}i{]}));
-
-    ~~~~14~~~~~~\}
-
-    ~~~~15~~\}
+    void StepperMotorClass::device_factory(const Tango::_DevVarStringArray *devlist_ptr)
+    {
+            
+        for (long i = 0;i < devlist_ptr->length();i++)
+        {
+             DEBUG_STREAM << "Device name : " << (*devlist_ptr)[i] << endl;
+                                                    
+             device_list.push_back(new StepperMotor(this,(*devlist_ptr)[i]));       9  
+             if (Tango::Util::_UseDb == true)
+                  export_device(device_list.back());
+             else
+                  export_device(device_list.back(),(*devlist_ptr[i]));
+        }
+    }
 
 Line 4 : A loop for each device
 
@@ -8906,32 +7106,21 @@ The rule of this method is to fulfill a vector of pointer to attributes.
 A reference to this vector is passed as argument to this method.
 
 .. code:: cpp
+  :number-lines:
 
-    ~~~~~1~~void~StepperMotorClass::attribute\_factory(vector<Tango::Attr~{*}>~\&att\_list)
-
-    ~~~~~2~~\{
-
-    ~~~~~3~~~~~~att\_list.push\_back(new~PositionAttr());
-
-    ~~~~~4~~
-
-    ~~~~~5~~~~~~Tango::UserDefaultAttrProp~def\_prop;
-
-    ~~~~~6~~~~~~def\_prop.set\_label(\textquotedbl{}Set~the~motor~position\textquotedbl{});
-
-    ~~~~~7~~~~~~def\_prop.set\_format(\textquotedbl{}scientific;setprecision(4)\textquotedbl{});
-
-    ~~~~~8~~~~~~Tango::Attr~{*}at~=~new~SetPositionAttr();
-
-    ~~~~~9~~~~~~at->set\_default\_properties(def\_prop);
-
-    ~~~~10~~~~~~att\_list.push\_back(at);
-
-    ~~~~11~~
-
-    ~~~~12~~~~~~att\_list.push\_back(new~DirectcionAttr());
-
-    ~~~~13~~\}
+    void StepperMotorClass::attribute_factory(vector<Tango::Attr *> &att_list)
+    {
+        att_list.push_back(new PositionAttr());
+    
+        Tango::UserDefaultAttrProp def_prop;
+        def_prop.set_label("Set the motor position");
+        def_prop.set_format("scientific;setprecision(4)");
+        Tango::Attr *at = new SetPositionAttr();
+        at->set_default_properties(def_prop);
+        att_list.push_back(at);
+    
+        att_list.push_back(new DirectcionAttr());
+    }
 
 Line 3 : Create the PositionAttr class and store the pointer to this
 object into the attribute pointer vector.
@@ -8965,42 +7154,26 @@ The class declaration file
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code:: cpp
+  :number-lines:
 
-    ~~~~~1~~\#include~<tango.h>
-
-    ~~~~~2~~
-
-    ~~~~~3~~namespace~StepperMotor
-
-    ~~~~~4~~\{
-
-    ~~~~~5~~
-
-    ~~~~~6~~class~DevReadPositionCmd~:~public~Tango::Command
-
-    ~~~~~7~~\{
-
-    ~~~~~8~~public:
-
-    ~~~~~9~~~~~~DevReadPositionCmd(const~char~{*},Tango::CmdArgType,
-
-    ~~~~10~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Tango::CmdArgType,
-
-    ~~~~11~~~~~~~~~~~~~~~~~~~~~~~~~~~~~const~char~{*},const~char~{*});
-
-    ~~~~12~~~~~~\textasciitilde{}DevReadPositionCmd()~\{\};
-
-    ~~~~13~~~~~~~~~~
-
-    ~~~~14~~~~~~virtual~bool~is\_allowed~(Tango::DeviceImpl~{*},~const~CORBA::Any~\&);
-
-    ~~~~15~~~~~~virtual~CORBA::Any~{*}execute~(Tango::DeviceImpl~{*},~const~CORBA::Any~\&);
-
-    ~~~~16~~\};
-
-    ~~~~17~~
-
-    ~~~~18~~\}~/{*}~End~of~StepperMotor~namespace~{*}/
+    #include <tango.h>
+    
+    namespace StepperMotor
+    {
+    
+    class DevReadPositionCmd : public Tango::Command
+    {
+    public:
+        DevReadPositionCmd(const char *,Tango::CmdArgType,
+                               Tango::CmdArgType,
+                               const char *,const char *);
+        ~DevReadPositionCmd() {};
+            
+        virtual bool is_allowed (Tango::DeviceImpl *, const CORBA::Any &);
+        virtual CORBA::Any *execute (Tango::DeviceImpl *, const CORBA::Any &);
+    };
+    
+    } /* End of StepperMotor namespace */
 
 Line 1 : Include the tango master include file
 
@@ -9061,22 +7234,16 @@ set to false, the DeviceClass *command\_handle*\ r method will
 automatically send an exception to the caller.
 
 .. code:: cpp
+  :number-lines:
 
-    ~~~~~1~~bool~DevReadPositionCmd::is\_allowed(Tango::DeviceImpl~{*}device,
-
-    ~~~~~2~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~const~CORBA::Any~\&in\_any)
-
-    ~~~~~3~~\{
-
-    ~~~~~4~~~~~~~if~(device->get\_state()~==~Tango::ON)
-
-    ~~~~~5~~~~~~~~~~~~return~true;
-
-    ~~~~~6~~~~~~~else
-
-    ~~~~~7~~~~~~~~~~~~return~false;
-
-    ~~~~~8~~\}
+    bool DevReadPositionCmd::is_allowed(Tango::DeviceImpl *device,
+                                        const CORBA::Any &in_any)
+    {
+         if (device->get_state() == Tango::ON)
+              return true;
+         else
+              return false;
+    }
 
 Line 4 : Call the *get\_state* method of the DeviceImpl class which
 simply returns the device state
@@ -9094,28 +7261,19 @@ command input Any object. This method returns a pointer to an any object
 which must be initialized with the data to be returned to the caller.
 
 .. code:: cpp
+  :number-lines:
 
-    ~~~~~1~~CORBA::Any~{*}DevReadPositionCmd::execute(
-
-    ~~~~~2~~~~~~~~~~~~~~~~~~~~~~~~~~Tango::DeviceImpl~{*}device,
-
-    ~~~~~3~~~~~~~~~~~~~~~~~~~~~~~~~~const~CORBA::Any~\&in\_any)
-
-    ~~~~~4~~\{~~~~~~~
-
-    ~~~~~5~~~~~~~INFO\_STREAM~<\textcompwordmark{}<~\textquotedbl{}DevReadPositionCmd::execute():~arrived\textquotedbl{}~<\textcompwordmark{}<~endl;
-
-    ~~~~~6~~~~~~~Tango::DevLong~motor;
-
-    ~~~~~7~~
-
-    ~~~~~8~~~~~~~extract(in\_any,motor);
-
-    ~~~~~9~~~~~~~return~insert(
-
-    ~~~~10~~~~~~~~~~(static\_cast<StepperMotor~{*}>(device))->dev\_read\_position(motor));
-
-    ~~~~11~~\}
+    CORBA::Any *DevReadPositionCmd::execute(
+                            Tango::DeviceImpl *device,
+                            const CORBA::Any &in_any)
+    {       
+         INFO_STREAM << "DevReadPositionCmd::execute(): arrived" << endl;
+         Tango::DevLong motor;
+    
+         extract(in_any,motor);
+         return insert(
+            (static_cast<StepperMotor *>(device))->dev_read_position(motor));
+    }
 
 Line 8 : Extract incoming data from the input any object using a Command
 class *extract* helper method. If the type of the data in the Any object
@@ -9134,56 +7292,33 @@ The class declaration file
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code:: cpp
+  :number-lines:
 
-    ~~~~~1~~\#include~<tango.h>
-
-    ~~~~~2~~\#include~<steppermotor.h>
-
-    ~~~~~3~~
-
-    ~~~~~4~~namespace~StepperMotor
-
-    ~~~~~5~~\{
-
-    ~~~~~6~~
-
-    ~~~~~7~~
-
-    ~~~~~8~~class~PositionAttr:~public~Tango::Attr
-
-    ~~~~~9~~\{
-
-    ~~~~10~~public:
-
-    ~~~~11~~~~~~PositionAttr():Attr(\textquotedbl{}Position\textquotedbl{},
-
-    ~~~~12~~~~~~~~~~~~~~~~~~~~~~~~~~Tango::DEV\_LONG,
-
-    ~~~~13~~~~~~~~~~~~~~~~~~~~~~~~~~Tango::READ\_WITH\_WRITE,
-
-    ~~~~14~~~~~~~~~~~~~~~~~~~~~~~~~~\textquotedbl{}SetPosition\textquotedbl{})~\{\};
-
-    ~~~~15~~~~~~\textasciitilde{}PositionAttr()~\{\};
-
-    ~~~~16~~~~~~~~~~
-
-    ~~~~17~~~~~~virtual~void~read(Tango::DeviceImpl~{*}dev,Tango::Attribute~\&att)
-
-    ~~~~18~~~~~~\{(static\_cast<StepperMotor~{*}>(dev))->read\_Position(att);\}
-
-    ~~~~19~~~~~~virtual~bool~is\_allowed(Tango::DeviceImpl~{*}dev,Tango::AttReqType~ty)
-
-    ~~~~20~~~~~~\{return~(static\_cast<StepperMotor~{*}>(dev))->is\_Position\_allowed(ty);\}
-
-    ~~~~21~~\};
-
-    ~~~~22~~
-
-    ~~~~23~~\}~/{*}~End~of~StepperMotor~namespace~{*}/
-
-    ~~~~24~~
-
-    ~~~~25~~\#endif~//~\_STEPPERMOTORCLASS\_H
+    #include <tango.h>
+    #include <steppermotor.h>
+    
+    namespace StepperMotor
+    {
+    
+    
+    class PositionAttr: public Tango::Attr
+    {
+    public:
+        PositionAttr():Attr("Position",
+                            Tango::DEV_LONG,
+                            Tango::READ_WITH_WRITE,
+                            "SetPosition") {};
+        ~PositionAttr() {};
+            
+        virtual void read(Tango::DeviceImpl *dev,Tango::Attribute &att)
+        {(static_cast<StepperMotor *>(dev))->read_Position(att);}
+        virtual bool is_allowed(Tango::DeviceImpl *dev,Tango::AttReqType ty)
+        {return (static_cast<StepperMotor *>(dev))->is_Position_allowed(ty);}
+    };
+    
+    } /* End of StepperMotor namespace */
+    
+    #endif // _STEPPERMOTORCLASS_H
 
 Line 1-2 : Include the tango master include file and the steppermotor
 class definition include file
@@ -9265,114 +7400,62 @@ The class declaration file
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code:: cpp
+  :number-lines:
 
-    1~\#include~<tango.h>
-
-    2~
-
-    3~\#define~AGSM\_MAX\_MOTORS~8~//~maximum~number~of~motors~per~device
-
-    4~
-
-    5~namespace~StepperMotor
-
-    6~\{
-
-    7~
-
-    8~class~StepperMotor:~public~TANGO\_BASE\_CLASS
-
-    9~\{
-
-    10~public~:
-
-    11~~~~StepperMotor(Tango::DeviceClass~{*},string~\&);
-
-    12~~~~StepperMotor(Tango::DeviceClass~{*},const~char~{*});
-
-    13~~~~StepperMotor(Tango::DeviceClass~{*},const~char~{*},const~char~{*});
-
-    14~~~~\textasciitilde{}StepperMotor()~\{\};
-
-    15~
-
-    16~~~~DevLong~dev\_read\_position(DevLong);
-
-    17~~~~DevLong~dev\_read\_direction(DevLong);
-
-    18~~~~bool~direct\_cmd\_allowed(const~CORBA::Any~\&);
-
-    19~
-
-    20~~~~virtual~Tango::DevState~dev\_state();
-
-    21~~~~virtual~Tango::ConstDevString~dev\_status();
-
-    22~
-
-    23~~~~virtual~void~always\_executed\_hook();
-
-    24~
-
-    25~~~~virtual~void~read\_attr\_hardware(vector<long>~\&attr\_list);
-
-    26~~~~virtual~void~write\_attr\_hardware(vector<long>~\&attr\_list);
-
-    27~
-
-    28~~~~void~read\_position(Tango::Attribute~\&);
-
-    29~~~~bool~is\_Position\_allowed(Tango::AttReqType~req);
-
-    30~~~~void~write\_SetPosition(Tango::WAttribute~\&);
-
-    31~~~~void~read\_Direction(Tango::Attribute~\&);
-
-    32~
-
-    33~~~~virtual~void~init\_device();
-
-    34~~~~virtual~void~delete\_device();
-
-    35~
-
-    36~~~~void~get\_device\_properties();
-
-    37~
-
-    38~protected~:~
-
-    39~~~~long~axis{[}AGSM\_MAX\_MOTORS{]};
-
-    40~~~~DevLong~position{[}AGSM\_MAX\_MOTORS{]};
-
-    41~~~~DevLong~direction{[}AGSM\_MAX\_MOTORS{]};
-
-    42~~~~long~state{[}AGSM\_MAX\_MOTORS{]};
-
-    43~
-
-    44~~~~Tango::DevLong~{*}attr\_Position\_read;
-
-    45~~~~Tango::DevLong~{*}attr\_Direction\_read;
-
-    46~~~~Tango::DevLong~attr\_SetPosition\_write;
-
-    47~
-
-    48~~~~Tango::DevLong~min;
-
-    49~~~~Tango::DevLong~max;
-
-    50~
-
-    51~~~~Tango::DevLong~{*}ptr;
-
-    52~\};
-
-    53~
-
-    54~\}~/{*}~End~of~StepperMotor~namespace~{*}/
+   #include <tango.h>
+   
+   #define AGSM_MAX_MOTORS 8 // maximum number of motors per device
+   
+   namespace StepperMotor
+   {
+   
+   class StepperMotor: public TANGO_BASE_CLASS
+   {
+   public :
+      StepperMotor(Tango::DeviceClass *,string &);
+      StepperMotor(Tango::DeviceClass *,const char *);
+      StepperMotor(Tango::DeviceClass *,const char *,const char *);
+      ~StepperMotor() {};
+   
+      DevLong dev_read_position(DevLong);
+      DevLong dev_read_direction(DevLong);
+      bool direct_cmd_allowed(const CORBA::Any &);
+   
+      virtual Tango::DevState dev_state();
+      virtual Tango::ConstDevString dev_status();
+   
+      virtual void always_executed_hook();
+   
+      virtual void read_attr_hardware(vector<long> &attr_list);
+      virtual void write_attr_hardware(vector<long> &attr_list);
+   
+      void read_position(Tango::Attribute &);
+      bool is_Position_allowed(Tango::AttReqType req);
+      void write_SetPosition(Tango::WAttribute &);
+      void read_Direction(Tango::Attribute &);
+   
+      virtual void init_device();
+      virtual void delete_device();
+   
+      void get_device_properties();
+   
+   protected : 
+      long axis[AGSM_MAX_MOTORS];
+      DevLong position[AGSM_MAX_MOTORS];
+      DevLong direction[AGSM_MAX_MOTORS];
+      long state[AGSM_MAX_MOTORS];
+   
+      Tango::DevLong *attr_Position_read;
+      Tango::DevLong *attr_Direction_read;
+      Tango::DevLong attr_SetPosition_write;
+   
+      Tango::DevLong min;
+      Tango::DevLong max;
+   
+      Tango::DevLong *ptr;
+   };
+   
+   } /* End of StepperMotor namespace */
 
 Line 1 : Include the Tango master include file
 
@@ -9436,98 +7519,54 @@ only for the third form of constructor is the device description string
 passed as a classical pointer to a char array.
 
 .. code:: cpp
+  :number-lines:
 
-    1~~\#include~<tango.h>
-
-    2~~\#include~<steppermotor.h>
-
-    3~
-
-    4~~namespace~StepperMotor
-
-    5~~\{
-
-    6~
-
-    7~~StepperMotor::StepperMotor(Tango::DeviceClass~{*}cl,string~\&s)
-
-    8~~:TANGO\_BASE\_CLASS(cl,s.c\_str())
-
-    9~~\{
-
-    10~~~~init\_device();
-
-    11~\}
-
-    12~
-
-    13~StepperMotor::StepperMotor(Tango::DeviceClass~{*}cl,const~char~{*}s)
-
-    14~:TANGO\_BASE\_CLASS(cl,s)
-
-    15~\{
-
-    16~~~~init\_device();
-
-    17~\}
-
-    18~
-
-    19~StepperMotor::StepperMotor(Tango::DeviceClass~{*}cl,const~char~{*}s,const~char~{*}d)
-
-    20~:TANGO\_BASE\_CLASS(cl,s,d)
-
-    21~\{
-
-    22~~~~init\_device();
-
-    23~\}
-
-    24~
-
-    25~void~StepperMotor::init\_device()
-
-    26~\{
-
-    27~~~~cout~<\textcompwordmark{}<~\textquotedbl{}StepperMotor::StepperMotor()~create~\textquotedbl{}~<\textcompwordmark{}<~device\_name~<\textcompwordmark{}<~endl;
-
-    28~
-
-    29~~~~long~i;
-
-    30~
-
-    31~~~~for~(i=0;~i<~AGSM\_MAX\_MOTORS;~i++)
-
-    32~~~~\{
-
-    33~~~~~~~axis{[}i{]}~=~0;
-
-    34~~~~~~~position{[}i{]}~=~0;
-
-    35~~~~~~~direction{[}i{]}~=~0;
-
-    36~~~~\}
-
-    37~
-
-    38~~~~ptr~=~new~Tango::DevLong{[}10{]};
-
-    39~
-
-    40~~~~get\_device\_properties();
-
-    41~\}
-
-    42~
-
-    43~void~StepperMotor::delete\_device()
-
-    44~\{
-
-    45~~~~delete~{[}{]}~ptr;
-
-    46~\}
+    #include <tango.h>
+    #include <steppermotor.h>
+   
+    namespace StepperMotor
+    {
+   
+    StepperMotor::StepperMotor(Tango::DeviceClass *cl,string &s)
+    :TANGO_BASE_CLASS(cl,s.c_str())
+    {
+      init_device();
+   }
+   
+   StepperMotor::StepperMotor(Tango::DeviceClass *cl,const char *s)
+   :TANGO_BASE_CLASS(cl,s)
+   {
+      init_device();
+   }
+   
+   StepperMotor::StepperMotor(Tango::DeviceClass *cl,const char *s,const char *d)
+   :TANGO_BASE_CLASS(cl,s,d)
+   {
+      init_device();
+   }
+   
+   void StepperMotor::init_device()
+   {
+      cout << "StepperMotor::StepperMotor() create " << device_name << endl;
+   
+      long i;
+   
+      for (i=0; i< AGSM_MAX_MOTORS; i++)
+      {
+         axis[i] = 0;
+         position[i] = 0;
+         direction[i] = 0;
+      }
+   
+      ptr = new Tango::DevLong[10];
+   
+      get_device_properties();
+   }
+   
+   void StepperMotor::delete_device()
+   {
+      delete [] ptr;
+   }
 
 Line 1-2 : Include the Tango master include file (tango.h) and the
 StepperMotor class definition file (steppermotor.h)
@@ -9577,56 +7616,33 @@ of the TemplCommandInOut class. The *direct\_cmd\_allowed* method will
 be executed by the *is\_allowed* method of the TemplCommandInOut class.
 
 .. code:: cpp
+  :number-lines:
 
-    ~~~~~1~~DevLong~StepperMotor::dev\_read\_direction(DevLong~axis)
-
-    ~~~~~2~~\{
-
-    ~~~~~3~~~~~if~(axis~<~0~||~axis~>~AGSM\_MAX\_MOTORS)
-
-    ~~~~~4~~~~~\{
-
-    ~~~~~5~~~~~~~~~WARNING\_STREAM~<\textcompwordmark{}<~\textquotedbl{}Steppermotor::dev\_read\_direction():~axis~out~of~range~!\textquotedbl{};
-
-    ~~~~~6~~~~~~~~~WARNING\_STREAM~<\textcompwordmark{}<~endl;
-
-    ~~~~~7~~~~~~~~~TangoSys\_OMemStream~o;
-
-    ~~~~~8~~~~~~~~~~~~~~~~~~
-
-    ~~~~~9~~~~~~~~~o~<\textcompwordmark{}<~\textquotedbl{}Axis~number~\textquotedbl{}~<\textcompwordmark{}<~axis~<\textcompwordmark{}<~\textquotedbl{}~out~of~range\textquotedbl{}~<\textcompwordmark{}<~ends;
-
-    ~~~~10~~~~~~~~~throw\_exception(\textquotedbl{}StepperMotor\_OutOfRange\textquotedbl{},
-
-    ~~~~11~~~~~~~~~~~~~~~~~~~~~~~~~o.str(),
-
-    ~~~~12~~~~~~~~~~~~~~~~~~~~~~~~~\textquotedbl{}StepperMotor::dev\_read\_direction\textquotedbl{});
-
-    ~~~~13~~~~~~\}
-
-    ~~~~14~~
-
-    ~~~~15~~~~~~return~direction{[}axis{]};
-
-    ~~~~16~~\}
-
-    ~~~~17~~
-
-    ~~~~18~~
-
-    ~~~~19~~bool~StepperMotor::direct\_cmd\_allowed(const~CORBA::Any~\&in\_data)
-
-    ~~~~20~~\{
-
-    ~~~~21~~~~~~INFO\_STREAM~<\textcompwordmark{}<~\textquotedbl{}In~direct\_cmd\_allowed()~method\textquotedbl{}~<\textcompwordmark{}<~endl;
-
-    ~~~~22~~~~~~~~~~
-
-    ~~~~23~~~~~~return~true;
-
-    ~~~~24~~\}
-
-    ~~~~25~~
+    DevLong StepperMotor::dev_read_direction(DevLong axis)
+    {
+       if (axis < 0 || axis > AGSM_MAX_MOTORS)
+       {
+           WARNING_STREAM << "Steppermotor::dev_read_direction(): axis out of range !";
+           WARNING_STREAM << endl;
+           TangoSys_OMemStream o;
+                    
+           o << "Axis number " << axis << " out of range" << ends;
+           throw_exception("StepperMotor_OutOfRange",
+                           o.str(),
+                           "StepperMotor::dev_read_direction");
+        }
+    
+        return direction[axis];
+    }
+    
+    
+    bool StepperMotor::direct_cmd_allowed(const CORBA::Any &in_data)
+    {
+        INFO_STREAM << "In direct_cmd_allowed() method" << endl;
+            
+        return true;
+    }
+    
 
 Line 1-16 : The *dev\_read\_direction* method
 
@@ -9672,82 +7688,46 @@ The methods used for the Position attribute
   allowed only if the device state is ON.
 
 .. code:: cpp
+  :number-lines:
 
-    ~~~~~1~~void~StepperMotor::read\_attr\_hardware(vector<long>~\&attr\_list)
-
-    ~~~~~2~~\{
-
-    ~~~~~3~~~~~INFO\_STREAM~<\textcompwordmark{}<~\textquotedbl{}In~read\_attr\_hardware~for~\textquotedbl{}~<\textcompwordmark{}<~attr\_list.size();
-
-    ~~~~~4~~~~~INFO\_STREAM~<\textcompwordmark{}<~\textquotedbl{}~attribute(s)\textquotedbl{}~<\textcompwordmark{}<~endl;
-
-    ~~~~~5~~
-
-    ~~~~~6~~~~~for~(long~i~=~0;i~<~attr\_list.size();i++)
-
-    ~~~~~7~~~~~\{
-
-    ~~~~~8~~~~~~~~string~attr\_name;
-
-    ~~~~~9~~~~~~~~attr\_name~=~dev\_attr->get\_attr\_by\_ind(attr\_list{[}i{]}).get\_name();
-
-    ~~~~10~~
-
-    ~~~~11~~~~~~~~if~(attr\_name~==~\textquotedbl{}Position\textquotedbl{})
-
-    ~~~~12~~~~~~~~\{
-
-    ~~~~13~~~~~~~~~~~attr\_Position\_read~=~\&(position{[}0{]});
-
-    ~~~~14~~~~~~~~\}
-
-    ~~~~15~~~~~~~~else~if~(attr\_name~==~\textquotedbl{}Direction\textquotedbl{})
-
-    ~~~~16~~~~~~~~\{
-
-    ~~~~17~~~~~~~~~~~attr\_Direction\_read~=~\&(direction{[}0{]});
-
-    ~~~~18~~~~~~~~\}
-
-    ~~~~19~~~~~\}
-
-    ~~~~20~~\}
-
-    ~~~~21~~
-
-    ~~~~22~~void~read\_Position(Tango::Attribute~\&att)
-
-    ~~~~23~~\{
-
-    ~~~~24~~~~~att.set\_value(attr\_Position\_read);
-
-    ~~~~25~~\}
-
-    ~~~~26~~
-
-    ~~~~27~~bool~is\_Position\_allowed(Tango::AttReqType~req)
-
-    ~~~~28~~\{
-
-    ~~~~29~~~~~if~(req~==~Tango::WRITE\_REQ)
-
-    ~~~~30~~~~~~~~return~false;
-
-    ~~~~31~~~~~else
-
-    ~~~~32~~~~~\{
-
-    ~~~~33~~~~~~~~if~(get\_state()~==~Tango::ON)
-
-    ~~~~34~~~~~~~~~~~return~true;
-
-    ~~~~35~~~~~~~~else
-
-    ~~~~36~~~~~~~~~~~return~false;
-
-    ~~~~37~~~~~\}
-
-    ~~~~38~~\}
+    void StepperMotor::read_attr_hardware(vector<long> &attr_list)
+    {
+       INFO_STREAM << "In read_attr_hardware for " << attr_list.size();
+       INFO_STREAM << " attribute(s)" << endl;
+    
+       for (long i = 0;i < attr_list.size();i++)
+       {
+          string attr_name;
+          attr_name = dev_attr->get_attr_by_ind(attr_list[i]).get_name();
+    
+          if (attr_name == "Position")
+          {
+             attr_Position_read = &(position[0]);
+          }
+          else if (attr_name == "Direction")
+          {
+             attr_Direction_read = &(direction[0]);
+          }
+       }
+    }
+    
+    void read_Position(Tango::Attribute &att)
+    {
+       att.set_value(attr_Position_read);
+    }
+    
+    bool is_Position_allowed(Tango::AttReqType req)
+    {
+       if (req == Tango::WRITE_REQ)
+          return false;
+       else
+       {
+          if (get_state() == Tango::ON)
+             return true;
+          else
+             return false;
+       }
+    }
 
 Line 6 : A loop on each attribute to be read
 
@@ -9789,34 +7769,22 @@ attribute. Therefore, the StepperMotor class only defines a
 *write\_SetPosition()* method.
 
 .. code:: cpp
+  :number-lines:
 
-    1~void~StepperMotor::write\_SetPosition(Tango::WAttribute~\&att)
-
-    2~\{
-
-    3~~~~att.get\_write\_value(sttr\_SetPosition\_write);
-
-    4~
-
-    5~~~~DEBUG\_STREAM~<\textcompwordmark{}<~\textquotedbl{}Attribute~SetPosition~value~=~\textquotedbl{};
-
-    6~~~~DEBUG\_STREAM~<\textcompwordmark{}<~attr\_SetPosition\_write~<\textcompwordmark{}<~endl;
-
-    7~
-
-    8~~~~position{[}0{]}~=~attr\_SetPosition\_write;
-
-    9~\}
-
-    10~
-
-    11~void~StepperMotor::write\_attr\_hardware(vector<long>~\&attr\_list)
-
-    12~\{
-
-    13~
-
-    14~\}
+   void StepperMotor::write_SetPosition(Tango::WAttribute &att)
+   {
+      att.get_write_value(sttr_SetPosition_write);
+   
+      DEBUG_STREAM << "Attribute SetPosition value = ";
+      DEBUG_STREAM << attr_SetPosition_write << endl;
+   
+      position[0] = attr_SetPosition_write;
+   }
+   
+   void StepperMotor::write_attr_hardware(vector<long> &attr_list)
+   {
+   
+   }
 
 Line 3 : Retrieve new attribute value
 
@@ -9827,7 +7795,7 @@ Line 8 : Set the hardware (pretty simple in our case)
 | Line 11 - 14: The write\_attr\_hardware() method.
 | In our case, we don’t have to do anything in the
   *write\_attr\_hardware()* method. It is coded here just for
-  educational purpose. When itś not needed, this method has a default
+  educational purpose. When its not needed, this method has a default
   implementation in the Tango base class and it is not mandatory to
   declare and defin it in your own Tango class
 
@@ -9841,32 +7809,21 @@ figure [Dvice pattern figure]). This has been grouped in a method called
 objects are described in the Tango API documentation.
 
 .. code:: cpp
+  :number-lines:
 
-    ~~~~~1~~void~DocDs::get\_device\_property()
-
-    ~~~~~2~~\{
-
-    ~~~~~3~~~~~Tango::DbData~~~data;
-
-    ~~~~~4~~~~~data.push\_back(DbDatum(\textquotedbl{}Max\textquotedbl{}));
-
-    ~~~~~5~~~~~data.push\_back(DbDatum(\textquotedbl{}Min\textquotedbl{}));
-
-    ~~~~~6~~
-
-    ~~~~~7~~~~~get\_db\_device()->get\_property(data);
-
-    ~~~~~8~~
-
-    ~~~~~9~~~~~if~(data{[}0{]}.is\_empty()==false)
-
-    ~~~~10~~~~~~~~data{[}0{]}~~>\textcompwordmark{}>~~max;
-
-    ~~~~11~~~~~if~(data{[}1{]}.is\_empty()==false)
-
-    ~~~~12~~~~~~~~data{[}1{]}~~>\textcompwordmark{}>~~min;
-
-    ~~~~13~~\}
+    void DocDs::get_device_property()
+    {
+       Tango::DbData   data;
+       data.push_back(DbDatum("Max"));
+       data.push_back(DbDatum("Min"));
+    
+       get_db_device()->get_property(data);
+    
+       if (data[0].is_empty()==false)
+          data[0]  >>  max;
+       if (data[1].is_empty()==false)
+          data[1]  >>  min;
+    }
 
 Line 4-5 : Two DbDatum (one per property) are stored into a DbData
 object
@@ -9895,86 +7852,48 @@ data type. The *read\_Direction()* method is the method for reading the
 Direction attribute.
 
 .. code:: cpp
+  :number-lines:
 
-    1~~DevLong~StepperMotor::dev\_read\_position(DevLong~axis)
-
-    ~~~~~2~~\{
-
-    ~~~~~3~~
-
-    ~~~~~4~~~~~if~(axis~<~0~||~axis~>~AGSM\_MAX\_MOTORS)
-
-    ~~~~~5~~~~~\{
-
-    ~~~~~6~~~~~~~~~~WARNING\_STREAM~<\textcompwordmark{}<~\textquotedbl{}Steppermotor::dev\_read\_position():~axis~out~of~range~!\textquotedbl{};
-
-    ~~~~~7~~~~~~~~~~WARNING\_STREAM~<\textcompwordmark{}<~endl;
-
-    ~~~~~8~~~~~~~~~~~~~~~~~~
-
-    ~~~~~9~~~~~~~~~~TangoSys\_OMemStream~o;
-
-    ~~~~10~~~~~~~~~~~~~~~~~~
-
-    ~~~~11~~~~~~~~~~o~<\textcompwordmark{}<~\textquotedbl{}Axis~number~\textquotedbl{}~<\textcompwordmark{}<~axis~<\textcompwordmark{}<~\textquotedbl{}~out~of~range\textquotedbl{}~<\textcompwordmark{}<~ends;
-
-    ~~~~12~~~~~~~~~~throw\_exception(\textquotedbl{}StepperMotor\_OutOfRange\textquotedbl{},
-
-    ~~~~13~~~~~~~~~~~~~~~~~~~~~~~~~~o.str(),
-
-    ~~~~14~~~~~~~~~~~~~~~~~~~~~~~~~~\textquotedbl{}StepperMotor::dev\_read\_position\textquotedbl{});
-
-    ~~~~15~~~~~\}
-
-    ~~~~16~~
-
-    ~~~~17~~~~~return~position{[}axis{]};
-
-    ~~~~18~~\}
-
-    ~~~~19~~
-
-    ~~~~20~~void~always\_executed\_hook()
-
-    ~~~~21~~\{
-
-    ~~~~22~~~~~INFO\_STREAM~<\textcompwordmark{}<~\textquotedbl{}In~the~always\_executed\_hook~method~<\textcompwordmark{}<~endl;
-
-    ~~~~23~~\}
-
-    ~~~~24~~
-
-    ~~~~25~~Tango\_DevState~StepperMotor::dev\_state()
-
-    ~~~~26~~\{
-
-    ~~~~27~~~~~INFO\_STREAM~<\textcompwordmark{}<~\textquotedbl{}In~StepperMotor~state~command\textquotedbl{}~<\textcompwordmark{}<~endl;
-
-    ~~~~28~~~~~return~DeviceImpl::dev\_state();
-
-    ~~~~29~~\}
-
-    ~~~~30~~
-
-    ~~~~31~~Tango\_DevString~StepperMotor::dev\_status()
-
-    ~~~~32~~\{
-
-    ~~~~33~~~~~INFO\_STREAM~<\textcompwordmark{}<~\textquotedbl{}In~StepperMotor~status~command\textquotedbl{}~<\textcompwordmark{}<~endl;
-
-    ~~~~34~~~~~return~DeviceImpl::dev\_status();
-
-    ~~~~35~~\}
-
-    ~~~~36~~
-
-    ~~~~37~~void~read\_Direction(Tango::Attribute~att)
-
-    ~~~~38~~\{
-
-    ~~~~39~~~~~att.set\_value(attr\_Direction\_read);
-
-    ~~~~40~~\}
+    DevLong StepperMotor::dev_read_position(DevLong axis)
+    {
+    
+       if (axis < 0 || axis > AGSM_MAX_MOTORS)
+       {
+            WARNING_STREAM << "Steppermotor::dev_read_position(): axis out of range !";
+            WARNING_STREAM << endl;
+                    
+            TangoSys_OMemStream o;
+                    
+            o << "Axis number " << axis << " out of range" << ends;
+            throw_exception("StepperMotor_OutOfRange",
+                            o.str(),
+                            "StepperMotor::dev_read_position");
+       }
+    
+       return position[axis];
+    }
+    
+    void always_executed_hook()
+    {
+       INFO_STREAM << "In the always_executed_hook method << endl;
+    }
+    
+    Tango_DevState StepperMotor::dev_state()
+    {
+       INFO_STREAM << "In StepperMotor state command" << endl;
+       return DeviceImpl::dev_state();
+    }
+    
+    Tango_DevString StepperMotor::dev_status()
+    {
+       INFO_STREAM << "In StepperMotor status command" << endl;
+       return DeviceImpl::dev_status();
+    }
+    
+    void read_Direction(Tango::Attribute att)
+    {
+       att.set_value(attr_Direction_read);
+    }
 
 Line 1-18 : The *dev\_read\_position* method
 
@@ -10110,98 +8029,54 @@ classical *main()* function. Don’t forget to add the *tango.h* file in
 the list of included files.
 
 .. code:: cpp
+  :number-lines:
 
-    ~~~~~1~BOOL~FluidsApp::InitInstance()
-
-    ~~~~~2~\{
-
-    ~~~~~3~~~~AfxEnableControlContainer();
-
-    ~~~~~4~~
-
-    ~~~~~5~//~Standard~initialization
-
-    ~~~~~6~//~If~you~are~not~using~these~features~and~wish~to~reduce~the~size
-
-    ~~~~~7~//~~of~your~final~executable,~you~should~remove~from~the~following
-
-    ~~~~~8~//~~the~specific~initialization~routines~you~do~not~need.
-
-    ~~~~~9~~
-
-    ~~~~10~~\#ifdef~\_AFXDLL
-
-    ~~~~11~~~~Enable3dControls();~~~~~~~~~~//~Call~this~when~using~MFC~in~a~shared~DLL
-
-    ~~~~12~~\#else
-
-    ~~~~13~~~~Enable3dControlsStatic();~~~~//~Call~this~when~linking~to~MFC~statically
-
-    ~~~~14~~\#endif
-
-    ~~~~15~~~~Tango::Util~{*}tg;
-
-    ~~~~16~~~~try
-
-    ~~~~17~~~~\{
-
-    ~~~~18~~~~~~~~~~
-
-    ~~~~19~~~~~~~~tg~=~Tango::Util::init(m\_hInstance,m\_nCmdShow);
-
-    ~~~~20~~
-
-    ~~~~21~~~~~~~~tg->server\_init(true);
-
-    ~~~~22~~
-
-    ~~~~23~~~~~~~~tg->server\_run();
-
-    ~~~~24~~
-
-    ~~~~25~~~~\}
-
-    ~~~~26~~~~catch~(bad\_alloc)
-
-    ~~~~27~~~~\{
-
-    ~~~~28~~~~~~~~MessageBox((HWND)NULL,\textquotedbl{}Memory~error\textquotedbl{},\textquotedbl{}Command~line\textquotedbl{},MB\_ICONSTOP);
-
-    ~~~~29~~~~~~~~return(FALSE);
-
-    ~~~~30~~~~\}
-
-    ~~~~31~~~~catch~(Tango::DevFailed~\&e)
-
-    ~~~~32~~~~\{
-
-    ~~~~33~~~~~~~~MessageBox((HWND)NULL,,e.errors{[}0{]}.desc.in(),\textquotedbl{}Command~line\textquotedbl{},MB\_ICONSTOP);
-
-    ~~~~34~~~~~~~~return(FALSE);
-
-    ~~~~35~~~~\}
-
-    ~~~~36~~~~catch~(CORBA::Exception~\&)
-
-    ~~~~37~~~~\{
-
-    ~~~~38~~~~~~~~MessageBox((HWND)NULL,\textquotedbl{}Exception~CORBA\textquotedbl{},\textquotedbl{}Command~line\textquotedbl{},MB\_ICONSTOP);
-
-    ~~~~39~~~~~~~~return(FALSE);
-
-    ~~~~40~~~~\}
-
-    ~~~~41~~
-
-    ~~~~42~~~~m\_pMainWnd~=~new~CWnd;
-
-    ~~~~43~~~~m\_pMainWnd->Attach(tg->get\_ds\_main\_window());
-
-    ~~~~44~~
-
-    ~~~~45~~~~return~TRUE;
-
-    ~~~~46~~\}
+   BOOL FluidsApp::InitInstance()
+   {
+      AfxEnableControlContainer();
+    
+   // Standard initialization
+   // If you are not using these features and wish to reduce the size
+   //  of your final executable, you should remove from the following
+   //  the specific initialization routines you do not need.
+    
+    #ifdef _AFXDLL
+      Enable3dControls();          // Call this when using MFC in a shared DLL
+    #else
+      Enable3dControlsStatic();    // Call this when linking to MFC statically
+    #endif
+      Tango::Util *tg;
+      try
+      {
+            
+          tg = Tango::Util::init(m_hInstance,m_nCmdShow);
+    
+          tg->server_init(true);
+    
+          tg->server_run();
+    
+      }
+      catch (bad_alloc)
+      {
+          MessageBox((HWND)NULL,"Memory error","Command line",MB_ICONSTOP);
+          return(FALSE);
+      }
+      catch (Tango::DevFailed &e)
+      {
+          MessageBox((HWND)NULL,,e.errors[0].desc.in(),"Command line",MB_ICONSTOP);
+          return(FALSE);
+      }
+      catch (CORBA::Exception &)
+      {
+          MessageBox((HWND)NULL,"Exception CORBA","Command line",MB_ICONSTOP);
+          return(FALSE);
+      }
+    
+      m_pMainWnd = new CWnd;
+      m_pMainWnd->Attach(tg->get_ds_main_window());
+    
+      return TRUE;
+    }
 
 Line 19 : Initialise Tango system. This method also analises the
 argument used in command line.
@@ -10234,42 +8109,26 @@ server, its rule is to destroy the Tango::Util singleton if this one has
 been correctly constructed.
 
 .. code:: cpp
+  :number-lines:
 
-    ~~~~~1~~int~FluidsApp::ExitInstance()
-
-    ~~~~~2~~\{
-
-    ~~~~~3~~~~~bool~del~=~true;
-
-    ~~~~~4~~
-
-    ~~~~~5~~~~~try
-
-    ~~~~~6~~~~~\{
-
-    ~~~~~7~~~~~~~~~Tango::Util~{*}tg~=~Tango::Util::instance();
-
-    ~~~~~8~~~~~\}
-
-    ~~~~~9~~~~~catch(Tango::DevFailed)
-
-    ~~~~10~~~~~\{
-
-    ~~~~11~~~~~~~~~del~=~false;
-
-    ~~~~12~~~~~\}
-
-    ~~~~13~~
-
-    ~~~~14~~~~~if~(del~==~true)
-
-    ~~~~15~~~~~~~~~delete~(Tango::Util::instance());
-
-    ~~~~16~~
-
-    ~~~~17~~~~~return~CWinApp::ExitInstance();
-
-    ~~~~18~~\}
+    int FluidsApp::ExitInstance()
+    {
+       bool del = true;
+    
+       try
+       {
+           Tango::Util *tg = Tango::Util::instance();
+       }
+       catch(Tango::DevFailed)
+       {
+           del = false;
+       }
+    
+       if (del == true)
+           delete (Tango::Util::instance());
+    
+       return CWinApp::ExitInstance();
+    }
 
 Line 7 : Try to retrieve the Tango::Util singleton. If this one has not
 been constructed correctly, this call will throw an exception.
@@ -10350,106 +8209,58 @@ linker SUBSYSTEM option to Windows (Under Linker/System in the project
 properties window).
 
 .. code:: cpp
+  :number-lines:
 
-    ~~~~~1~~int~APIENTRY~WinMain(HINSTANCE~hInstance,
-
-    ~~~~~2~~~~~~~~~~~~~~~~~~~~~~~HINSTANCE~hPrevInstance,
-
-    ~~~~~3~~~~~~~~~~~~~~~~~~~~~~~LPSTR~~~~~lpCmdLine,
-
-    ~~~~~4~~~~~~~~~~~~~~~~~~~~~~~int~~~~~~~nCmdShow)
-
-    ~~~~~5~~\{
-
-    ~~~~~6~~~~~MSG~msg;
-
-    ~~~~~7~~~~~Tango::Util~{*}tg;
-
-    ~~~~~8~~
-
-    ~~~~~9~~~~~try
-
-    ~~~~10~~~~~\{
-
-    ~~~~11~~~~~~~~~tg~=~Tango::Util::init(hInstance,nCmdShow);
-
-    ~~~~12~~
-
-    ~~~~13~~~~~~~~~string~txt;
-
-    ~~~~14~~~~~~~~~txt~=~\textquotedbl{}Blabla~first~line\textbackslash{}n\textquotedbl{};
-
-    ~~~~15~~~~~~~~~txt~=~txt~+~\textquotedbl{}Blabla~second~line\textbackslash{}n\textquotedbl{};
-
-    ~~~~16~~~~~~~~~txt~=~txt~+~\textquotedbl{}Blabla~third~line\textbackslash{}n\textquotedbl{};
-
-    ~~~~17~~~~~~~~~tg->set\_main\_window\_text(txt);
-
-    ~~~~18~~~~~~~~~tg->set\_server\_version(\textquotedbl{}2.2\textquotedbl{});
-
-    ~~~~19~~
-
-    ~~~~20~~~~~~~~~tg->server\_init(true);
-
-    ~~~~21~~
-
-    ~~~~22~~~~~~~~~tg->server\_run();
-
-    ~~~~23~~
-
-    ~~~~24~~~~~\}
-
-    ~~~~25~~~~~catch~(bad\_alloc)
-
-    ~~~~26~~~~~\{
-
-    ~~~~27~~~~~~~~~MessageBox((HWND)NULL,\textquotedbl{}Memory~error\textquotedbl{},\textquotedbl{}Command~line\textquotedbl{},MB\_ICONSTOP);
-
-    ~~~~28~~~~~~~~~return~(FALSE);
-
-    ~~~~29~~~~~\}
-
-    ~~~~30~~~~~catch~(Tango::DevFailed~\&e)
-
-    ~~~~31~~~~~\{
-
-    ~~~~32~~~~~~~~~MessageBox((HWND)NULL,e.errors{[}0{]}.desc.in(),\textquotedbl{}Command~line\textquotedbl{},MB\_ICONSTOP);
-
-    ~~~~33~~~~~~~~~return~(FALSE);
-
-    ~~~~34~~~~~\}
-
-    ~~~~35~~~~~catch~(CORBA::Exception~\&)
-
-    ~~~~36~~~~~\{
-
-    ~~~~37~~~~~~~~~MessageBox((HWND)NULL,\textquotedbl{}Exception~CORBA\textquotedbl{},\textquotedbl{}Command~line\textquotedbl{},MB\_ICONSTOP);
-
-    ~~~~38~~~~~~~~~return(FALSE);
-
-    ~~~~39~~~~~\}
-
-    ~~~~40~~
-
-    ~~~~41~~~~~while~(GetMessage(\&msg,~NULL,~0,~0))~
-
-    ~~~~42~~~~~\{
-
-    ~~~~43~~~~~~~~~TranslateMessage(\&msg);
-
-    ~~~~44~~~~~~~~~DispatchMessage(\&msg);
-
-    ~~~~45~~~~~\}
-
-    ~~~~46~~
-
-    ~~~~47~~~~~delete~tg;
-
-    ~~~~48~~
-
-    ~~~~49~~~~~return~msg.wParam;
-
-    ~~~~50~~\}
+    int APIENTRY WinMain(HINSTANCE hInstance,
+                         HINSTANCE hPrevInstance,
+                         LPSTR     lpCmdLine,
+                         int       nCmdShow)
+    {
+       MSG msg;
+       Tango::Util *tg;
+    
+       try
+       {
+           tg = Tango::Util::init(hInstance,nCmdShow);
+    
+           string txt;
+           txt = "Blabla first line\n";
+           txt = txt + "Blabla second line\n";
+           txt = txt + "Blabla third line\n";
+           tg->set_main_window_text(txt);
+           tg->set_server_version("2.2");
+    
+           tg->server_init(true);
+    
+           tg->server_run();
+    
+       }
+       catch (bad_alloc)
+       {
+           MessageBox((HWND)NULL,"Memory error","Command line",MB_ICONSTOP);
+           return (FALSE);
+       }
+       catch (Tango::DevFailed &e)
+       {
+           MessageBox((HWND)NULL,e.errors[0].desc.in(),"Command line",MB_ICONSTOP);
+           return (FALSE);
+       }
+       catch (CORBA::Exception &)
+       {
+           MessageBox((HWND)NULL,"Exception CORBA","Command line",MB_ICONSTOP);
+           return(FALSE);
+       }
+    
+       while (GetMessage(&msg, NULL, 0, 0)) 
+       {
+           TranslateMessage(&msg);
+           DispatchMessage(&msg);
+       }
+    
+       delete tg;
+    
+       return msg.wParam;
+    }
 
 Line 11 : Create the Tango::Util singleton
 
@@ -10503,26 +8314,18 @@ method and the last one is used to log error or info messages. The class
 definition file looks like
 
 .. code:: cpp
+  :number-lines:
 
-    ~~~~~1~~\#include~<tango.h>
-
-    ~~~~~2~~\#include~<ntservice.h>
-
-    ~~~~~3~~
-
-    ~~~~~4~~class~MYService:~public~Tango::NTService
-
-    ~~~~~5~~\{
-
-    ~~~~~6~~public:
-
-    ~~~~~7~~~~~MYService(char~{*});
-
-    ~~~~~8~~
-
-    ~~~~~9~~~~~void~start(int,char~{*}{*},Tango::NTEventLogger~{*});
-
-    ~~~~10~~\};
+    #include <tango.h>
+    #include <ntservice.h>
+    
+    class MYService: public Tango::NTService
+    {
+    public:
+       MYService(char *);
+    
+       void start(int,char **,Tango::NTEventLogger *);
+    };
 
 Line 1-2 : Some include files
 
@@ -10534,76 +8337,43 @@ Line 7 : Constructor with one parameter
 | The class source code looks like
 
 .. code:: cpp
+  :number-lines:
 
-    ~~~~~1~~\#include~<myservice.h>
-
-    ~~~~~2~~\#include~<tango.h>
-
-    ~~~~~3~~
-
-    ~~~~~4~~using~namespace~std;
-
-    ~~~~~5~~
-
-    ~~~~~6~~MYService::MYService(char~{*}exec\_name):NTService(exec\_name)
-
-    ~~~~~7~~\{
-
-    ~~~~~8~~\}
-
-    ~~~~~9~~
-
-    ~~~~10~~void~MYService::start(int~argc,char~{*}{*}argv,Tango::NTEventLogger~{*}logger)
-
-    ~~~~11~~\{
-
-    ~~~~12~~~~~Tango::Util~{*}tg;
-
-    ~~~~13~~~~~try
-
-    ~~~~14~~~~~\{
-
-    ~~~~15~~~~~~~~Tango::Util::\_service~=~true;
-
-    ~~~~16~~
-
-    ~~~~17~~~~~~~~tg~=~Tango::Util::init(argc,argv);
-
-    ~~~~18~~
-
-    ~~~~19~~~~~~~~tg->server\_init();
-
-    ~~~~20~~
-
-    ~~~~21~~~~~~~~tg->server\_run();
-
-    ~~~~22~~~~~\}
-
-    ~~~~23~~~~~catch~(bad\_alloc)
-
-    ~~~~24~~~~~\{
-
-    ~~~~25~~~~~~~~logger->error(\textquotedbl{}Can't~allocate~memory~to~store~device~object\textquotedbl{});
-
-    ~~~~26~~~~~\}
-
-    ~~~~27~~~~~catch~(Tango::DevFailed~\&e)
-
-    ~~~~28~~~~~\{
-
-    ~~~~29~~~~~~~~logger->error(e.errors{[}0{]}.desc.in());
-
-    ~~~~30~~~~~\}
-
-    ~~~~31~~~~~catch~(CORBA::Exception~\&)
-
-    ~~~~32~~~~~\{
-
-    ~~~~33~~~~~~~~logger->error(\textquotedbl{}CORBA~Exception\textquotedbl{});
-
-    ~~~~34~~~~~\}
-
-    ~~~~35~~\}
+    #include <myservice.h>
+    #include <tango.h>
+    
+    using namespace std;
+    
+    MYService::MYService(char *exec_name):NTService(exec_name)
+    {
+    }
+    
+    void MYService::start(int argc,char **argv,Tango::NTEventLogger *logger)
+    {
+       Tango::Util *tg;
+       try
+       {
+          Tango::Util::_service = true;
+    
+          tg = Tango::Util::init(argc,argv);
+    
+          tg->server_init();
+    
+          tg->server_run();
+       }
+       catch (bad_alloc)
+       {
+          logger->error("Can't allocate memory to store device object");
+       }
+       catch (Tango::DevFailed &e)
+       {
+          logger->error(e.errors[0].desc.in());
+       }
+       catch (CORBA::Exception &)
+       {
+          logger->error("CORBA Exception");
+       }
+    }
 
 Line 6-8 : The MYService class constructor code.
 
@@ -10626,42 +8396,26 @@ the service, to check the service option and to run the service. The
 code looks like :
 
 .. code:: cpp
+  :number-lines:
 
-    ~~~~~1~~\#include~<tango.h>
-
-    ~~~~~2~~\#include~<MYService.h>
-
-    ~~~~~3~~
-
-    ~~~~~4~~using~namespace~std;
-
-    ~~~~~5~~
-
-    ~~~~~6~~
-
-    ~~~~~7~~int~main(int~argc,char~{*}argv{[}{]})
-
-    ~~~~~8~~\{
-
-    ~~~~~9~~~~~MYService~service(argv{[}0{]});
-
-    ~~~~10~~~~~~~~~~
-
-    ~~~~11~~~~~int~ret;
-
-    ~~~~12~~~~~if~((ret~=~service.options(argc,argv))~<=~0)
-
-    ~~~~13~~~~~~~~~return~ret;
-
-    ~~~~14~~~~~~~~~~
-
-    ~~~~15~~~~~service.run(argc,argv);
-
-    ~~~~16~~~~~~~~~~
-
-    ~~~~17~~~~~return~0;
-
-    ~~~~18~~\}
+    #include <tango.h>
+    #include <MYService.h>
+    
+    using namespace std;
+    
+    
+    int main(int argc,char *argv[])
+    {
+       MYService service(argv[0]);
+            
+       int ret;
+       if ((ret = service.options(argc,argv)) <= 0)
+           return ret;
+            
+       service.run(argc,argv);
+            
+       return 0;
+    }
 
 Line 9 : Create one instance of the MYService class with the executable
 name as parameter
@@ -10739,42 +8493,26 @@ service, follow these rules :
    function
 
 .. code:: cpp
+  :number-lines:
 
-    ~~~~~1~~int~main(int~argc,char~{*}argv{[}{]})
-
-    ~~~~~2~~\{
-
-    ~~~~~3~~~~~if~(!AfxWinInit(::GetModuleHandle(NULL),NULL,::GetCommandLine(),0))
-
-    ~~~~~4~~~~~\{
-
-    ~~~~~5~~~~~~~~cerr~<\textcompwordmark{}<~\textquotedbl{}Can't~initialise~MFC~!\textquotedbl{}~<\textcompwordmark{}<~endl;
-
-    ~~~~~6~~~~~~~~return~-1;
-
-    ~~~~~7~~~~~\}
-
-    ~~~~~8~~
-
-    ~~~~~9~~~~~service~serv(argv{[}0{]});
-
-    ~~~~10~~
-
-    ~~~~11~~~~~int~ret;
-
-    ~~~~12~~~~~if~((ret~=~serv.options(argc,argv))~<=~0)
-
-    ~~~~13~~~~~~~~~~return~ret;
-
-    ~~~~14~~
-
-    ~~~~15~~~~~serv.run(argc,argv);
-
-    ~~~~16~~
-
-    ~~~~17~~~~~return~0;
-
-    ~~~~18~~\}
+    int main(int argc,char *argv[])
+    {
+       if (!AfxWinInit(::GetModuleHandle(NULL),NULL,::GetCommandLine(),0))
+       {
+          cerr << "Can't initialise MFC !" << endl;
+          return -1;
+       }
+    
+       service serv(argv[0]);
+    
+       int ret;
+       if ((ret = serv.options(argc,argv)) <= 0)
+            return ret;
+    
+       serv.run(argc,argv);
+    
+       return 0;
+    }
 
 Line 3 : The MFC classes are initialized with the *AfxWinInit()*
 function call.
@@ -10847,94 +8585,52 @@ The following is an example of a Makefile for Linux. Obviously, all the
 paths are set to the ESRF file system structure.
 
 .. code:: cpp
+  :number-lines:
 
-    1~\#
-
-    2~\#~Makefile~to~generate~a~Tango~server
-
-    3~\#
-
-    4~
-
-    5~CC~=~c++
-
-    6~BIN\_DIR~=~ubuntu1104
-
-    7~TANGO\_HOME~=~/segfs/tango
-
-    8~
-
-    9~INCLUDE\_DIRS~=~-I~\$(TANGO\_HOME)/include/\$(BIN\_DIR)~-I~.
-
-    10
-
-    11~
-
-    12~LIB\_DIRS~=~-L~\$(TANGO\_HOME)/lib/\$(BIN\_DIR)
-
-    13~
-
-    14~
-
-    15~CXXFLAGS~=~-D\_REENTRANT~-std=c++0x~\$(INCLUDE\_DIRS)
-
-    16~LFLAGS~=~\$(LIB\_DIRS)~-ltango~\textbackslash{}
-
-    17~~~~~~~~~~~~~~~~~~~~~~-llog4tango~\textbackslash{}
-
-    18~~~~~~~~~~~~~~~~~~~~~~-lomniORB4~\textbackslash{}
-
-    19~~~~~~~~~~~~~~~~~~~~~~-lomniDynamic4~\textbackslash{}
-
-    20~~~~~~~~~~~~~~~~~~~~~~-lCOS4~\textbackslash{}
-
-    21~~~~~~~~~~~~~~~~~~~~~~-lomnithread~\textbackslash{}
-
-    22~~~~~~~~~~~~~~~~~~~~~~-lzmq~\textbackslash{}
-
-    23~~~~~~~~~~~~~~~~~~~~~~-lpthread
-
-    24~
-
-    25~
-
-    26~SVC\_OBJS~=~main.o~\textbackslash{}
-
-    27~~~~~~~~~~~~ClassFactory.o~\textbackslash{}
-
-    28~~~~~~~~~~~~SteppermotorClass.o~\textbackslash{}
-
-    29~~~~~~~~~~~~Steppermotor.o~\textbackslash{}
-
-    30~~~~~~~~~~~~SteppermotorStateMachine.o
-
-    31~
-
-    32~
-
-    33~.SUFFIXES:~.o~.cpp
-
-    34~.cpp.o:
-
-    35~~~~~\$(CC)~\$(CXXFLAGS)~-c~\$<
-
-    36~
-
-    37~
-
-    38~all:~StepperMotor
-
-    39~
-
-    40~StepperMotor:~\$(SVC\_OBJS)
-
-    41~~~~~\$(CC)~\$(SVC\_OBJS)~-o~\$(BIN\_DIR)/StepperMotor~\$(LFLAGS)
-
-    42~
-
-    43~clean:
-
-    44~~~~~rm~-f~{*}.o~core
+   #
+   # Makefile to generate a Tango server
+   #
+   
+   CC = c++
+   BIN_DIR = ubuntu1104
+   TANGO_HOME = /segfs/tango
+   
+   INCLUDE_DIRS = -I $(TANGO_HOME)/include/$(BIN_DIR) -I .
+  
+   
+   LIB_DIRS = -L $(TANGO_HOME)/lib/$(BIN_DIR)
+   
+   
+   CXXFLAGS = -D_REENTRANT -std=c++0x $(INCLUDE_DIRS)
+   LFLAGS = $(LIB_DIRS) -ltango \
+                        -llog4tango \
+                        -lomniORB4 \
+                        -lomniDynamic4 \
+                        -lCOS4 \
+                        -lomnithread \
+                        -lzmq \
+                        -lpthread
+   
+   
+   SVC_OBJS = main.o \
+              ClassFactory.o \
+              SteppermotorClass.o \
+              Steppermotor.o \
+              SteppermotorStateMachine.o
+   
+   
+   .SUFFIXES: .o .cpp
+   .cpp.o:
+       $(CC) $(CXXFLAGS) -c $<
+   
+   
+   all: StepperMotor
+   
+   StepperMotor: $(SVC_OBJS)
+       $(CC) $(SVC_OBJS) -o $(BIN_DIR)/StepperMotor $(LFLAGS)
+   
+   clean:
+       rm -f *.o core
 
 Line 5-7 : Define Makefile macros
 
@@ -11143,64 +8839,37 @@ signal SIGALRM (alarm signal) must be propagated only to the motor
 number 2 (id04/motor/02)
 
 .. code:: cpp
+  :number-lines:
 
-    ~1~~void~StepperMotor::init\_device()
-
-    ~2~~\{
-
-    ~3~~~~~~cout~<\textcompwordmark{}<~\textquotedbl{}StepperMotor::StepperMotor()~create~motor~\textquotedbl{}~<\textcompwordmark{}<~dev\_name~<\textcompwordmark{}<~endl;
-
-    ~4~~
-
-    ~5~~~~~~long~i;
-
-    ~6~~
-
-    ~7~~~~~~for~(i=0;~i<~AGSM\_MAX\_MOTORS;~i++)
-
-    ~8~~~~~~\{
-
-    ~9~~~~~~~~~~axis{[}i{]}~=~0;
-
-    10~~~~~~~~~~position{[}i{]}~=~0;
-
-    11~~~~~~~~~~direction{[}i{]}~=~0;
-
-    12~~~~~~\}
-
-    13~~
-
-    14~~~~~~if~(dev\_name~==~\textquotedbl{}id04/motor/02\textquotedbl{})
-
-    15~~~~~~~~~~register\_signal(SIGALRM);
-
-    16~~\}
-
-    17~~
-
-    18~~StepperMotor::\textasciitilde{}StepperMotor()
-
-    19~~\{
-
-    20~~~~~~unregister\_signal(SIGALRM);
-
-    21~~\}
-
-    22~~
-
-    23~~void~StepperMotor::signal\_handler(long~signo)
-
-    24~~\{
-
-    25~~~~~~INFO\_STREAM~<\textcompwordmark{}<~\textquotedbl{}Inside~signal~handler~for~signal~\textquotedbl{}~<\textcompwordmark{}<~signo~<\textcompwordmark{}<~endl;
-
-    26~~
-
-    27~~//~~Do~what~you~want~here
-
-    28~~
-
-    29~~\}
+    void StepperMotor::init_device()
+    {
+        cout << "StepperMotor::StepperMotor() create motor " << dev_name << endl;
+    
+        long i;
+    
+        for (i=0; i< AGSM_MAX_MOTORS; i++)
+        {
+            axis[i] = 0;
+            position[i] = 0;
+            direction[i] = 0;
+        }
+    
+        if (dev_name == "id04/motor/02")
+            register_signal(SIGALRM);
+    }
+    
+    StepperMotor::~StepperMotor()
+    {
+        unregister_signal(SIGALRM);
+    }
+    
+    void StepperMotor::signal_handler(long signo)
+    {
+        INFO_STREAM << "Inside signal handler for signal " << signo << endl;
+    
+    //  Do what you want here
+    
+    }
 
 The *init\_device* method is modified.
 
@@ -11274,38 +8943,24 @@ As you can guess, BClass has to inherit from AClass. The
 *command\_factory* method must also be adapted.
 
 .. code:: cpp
+  :number-lines:
 
-    ~~~~~1~~namespace~B
-
-    ~~~~~2~~\{
-
-    ~~~~~3~~
-
-    ~~~~~4~~class~BClass~:~public~A::AClass
-
-    ~~~~~5~~\{
-
-    ~~~~~6~~.....
-
-    ~~~~~7~~\}
-
-    ~~~~~8~~
-
-    ~~~~~9~~BClass::command\_factory()
-
-    ~~~~10~~\{
-
-    ~~~~11~~~~~~A::AClass::command\_factory();
-
-    ~~~~12~~
-
-    ~~~~13~~~~~~command\_list.push\_back(....);
-
-    ~~~~14~~\}
-
-    ~~~~15~~
-
-    ~~~~16~~\}~/{*}~End~of~B~namespace~{*}/
+    namespace B
+    {
+    
+    class BClass : public A::AClass
+    {
+    .....
+    }
+    
+    BClass::command_factory()
+    {
+        A::AClass::command_factory();
+    
+        command_list.push_back(....);
+    }
+    
+    } /* End of B namespace */
 
 Line 1 : Open the B namespace
 
@@ -11325,46 +8980,28 @@ Writing the B class
 As you can guess, B has to inherits from A.
 
 .. code:: cpp
+  :number-lines:
 
-    ~~~~~1~~namespace~B
-
-    ~~~~~2~~\{
-
-    ~~~~~3~~
-
-    ~~~~~4~~class~B~:~public~A:A
-
-    ~~~~~5~~\{
-
-    ~~~~~6~~~~~.....
-
-    ~~~~~7~~\};
-
-    ~~~~~8~~
-
-    ~~~~~9~~B::B(Tango::DeviceClass~{*}cl,const~char~{*}s):A::A(cl,s)
-
-    ~~~~10~~\{
-
-    ~~~~11~~~~~....
-
-    ~~~~12~~~~~init\_device();
-
-    ~~~~13~~\}
-
-    ~~~~14~~
-
-    ~~~~15~~void~B::init\_device()
-
-    ~~~~16~~\{
-
-    ~~~~17~~~~~....
-
-    ~~~~18~~\}
-
-    ~~~~19~~
-
-    ~~~~20~~\}~/{*}~End~of~B~namespace~{*}/
+    namespace B
+    {
+    
+    class B : public A:A
+    {
+       .....
+    };
+    
+    B::B(Tango::DeviceClass *cl,const char *s):A::A(cl,s)
+    {
+       ....
+       init_device();
+    }
+    
+    void B::init_device()
+    {
+       ....
+    }
+    
+    } /* End of B namespace */
 
 Line 1 : Open the B namespace.
 
@@ -11451,86 +9088,48 @@ developper has to concentrate on. The following code is one example of
 these two methods.
 
 .. code:: cpp
+  :number-lines:
 
-    ~~~~~1~~bool~StepperMotor::is\_DynData\_allowed(Tango::PipeReqType~req)
-
-    ~~~~~2~~\{
-
-    ~~~~~3~~~~~~if~(get\_state()~==~Tango::ON)
-
-    ~~~~~4~~~~~~~~~~return~true;
-
-    ~~~~~5~~~~~~else
-
-    ~~~~~6~~~~~~~~~~return~false;
-
-    ~~~~~7~~\}
-
-    ~~~~~8
-
-    ~~~~~9~~void~StepperMotor::read\_DynData(Tango::Pipe~\&pipe)
-
-    ~~~~10~~\{
-
-    ~~~~11~~~~~~nb\_call++;
-
-    ~~~~12~~~~~~if~(nb\_call~\%~2~==~0)
-
-    ~~~~13~~~~~~\{
-
-    ~~~~14~~~~~~~~~~pipe.set\_root\_blob\_name(``BlobCaseEven'');
-
-    ~~~~15
-
-    ~~~~16~~~~~~~~~~vector<string>~de\_names~\{''EvenFirstDE'',''EvenSecondDE''\};
-
-    ~~~~17~~~~~~~~~~pipe.set\_data\_elt\_names(de\_names);
-
-    ~~~~18
-
-    ~~~~19~~~~~~~~~~dl~=~666;
-
-    ~~~~20~~~~~~~~~~v\_db.clear();
-
-    ~~~~21~~~~~~~~~~v\_db.push\_back(1.11);
-
-    ~~~~22~~~~~~~~~~v\_db.push\_back(2.22);
-
-    ~~~~23
-
-    ~~~~24~~~~~~~~~~pipe~<\textcompwordmark{}<~dl~<\textcompwordmark{}<~v\_db;
-
-    ~~~~25~~~~~~\}
-
-    ~~~~26~~~~~~else
-
-    ~~~~27~~~~~~\{
-
-    ~~~~28~~~~~~~~~~pipe.set\_root\_blob\_name(``BlobCaseOdd'');
-
-    ~~~~29
-
-    ~~~~30~~~~~~~~~~vector<string>~de\_names~\{''OddFirstDE''\};
-
-    ~~~~31~~~~~~~~~~pipe.set\_data\_elt\_names(de\_names);
-
-    ~~~~32
-
-    ~~~~33~~~~~~~~~~v\_str.clear();
-
-    ~~~~34~~~~~~~~~~v\_str.push\_back(``Hola'');
-
-    ~~~~35~~~~~~~~~~v\_str.push\_back(``Salut'');
-
-    ~~~~36~~~~~~~~~~v\_str.push\_back(``Hi'');
-
-    ~~~~37
-
-    ~~~~38~~~~~~~~~~pipe~<\textcompwordmark{}<~v\_str;
-
-    ~~~~39~~~~~~\}
-
-    ~~~~40~~\}
+    bool StepperMotor::is_DynData_allowed(Tango::PipeReqType req)
+    {
+        if (get_state() == Tango::ON)
+            return true;
+        else
+            return false;
+    }
+  
+    void StepperMotor::read_DynData(Tango::Pipe &pipe)
+    {
+        nb_call++;
+        if (nb_call % 2 == 0)
+        {
+            pipe.set_root_blob_name("BlobCaseEven");
+  
+            vector<string> de_names {"EvenFirstDE","EvenSecondDE"};
+            pipe.set_data_elt_names(de_names);
+  
+            dl = 666;
+            v_db.clear();
+            v_db.push_back(1.11);
+            v_db.push_back(2.22);
+  
+            pipe << dl << v_db;
+        }
+        else
+        {
+            pipe.set_root_blob_name("BlobCaseOdd");
+  
+            vector<string> de_names {"OddFirstDE"};
+            pipe.set_data_elt_names(de_names);
+  
+            v_str.clear();
+            v_str.push_back("Hola");
+            v_str.push_back("Salut");
+            v_str.push_back("Hi");
+  
+            pipe << v_str;
+        }
+    }
 
 The *is\_DynData\_allowed* method is defined between lines 1 and 7. It
 is allowed to read or write the pipe only is the device state is ON.
@@ -11588,22 +9187,16 @@ developper has to concentrate on. The following code is one example of
 the *write\_DynData()* method.
 
 .. code:: cpp
+  :number-lines:
 
-    ~~~~~1~~void~StepperMotor::write\_DynData(Tango::WPipe~\&w\_pipe)
-
-    ~~~~~2~~\{
-
-    ~~~~~3~~~~~string~str;
-
-    ~~~~~4~~~~~vector<float>~v\_fl;
-
-    ~~~~~5
-
-    ~~~~~6~~~~~w\_pipe~>\textcompwordmark{}>~str~>\textcompwordmark{}>~v\_fl;
-
-    ~~~~~7~~~~~.....
-
-    ~~~~~8~~\}
+    void StepperMotor::write_DynData(Tango::WPipe &w_pipe)
+    {
+       string str;
+       vector<float> v_fl;
+  
+       w_pipe >> str >> v_fl;
+       .....
+    }
 
 In this example, we know that the pipe will always contain a srting
 followed by one array of float. On top of that, we are not niterested by
@@ -11742,44 +9335,27 @@ attribute creation time in the *attribute\_factory* method of the
 XXXClass class. Let us take one example
 
 .. code:: cpp
+  :number-lines:
 
-    ~~~~~1~~enum~class~Card:~short
-
-    ~~~~~2~~\{
-
-    ~~~~~3~~~~~~NORTH~=~0,
-
-    ~~~~~4~~~~~~SOUTH,
-
-    ~~~~~5~~~~~~EAST,
-
-    ~~~~~6~~~~~~WEST
-
-    ~~~~~7~~\};
-
-    ~~~~~8~
-
-    ~~~~~9~~void~XXXClass::attribute\_factory(vector<Tango::Attr~{*}>~\&att\_list)
-
-    ~~~~10~~\{
-
-    ~~~~11~~~~~~.....
-
-    ~~~~12~~~~~~TheEnumAttrib	{*}theenum~=~new~TheEnumAttrib();
-
-    ~~~~13~~~~~~Tango::UserDefaultAttrProp~theenum\_prop;
-
-    ~~~~14~~~~~~vector<string>~labels~=~\{\textquotedbl{}North\textquotedbl{},\textquotedbl{}South\textquotedbl{},\textquotedbl{}East\textquotedbl{},\textquotedbl{}West\textquotedbl{}\};
-
-    ~~~~15~~~~~~theenum\_prop.set\_enum\_labels(labels);
-
-    ~~~~16~~~~~~theenum->set\_default\_properties(theenum\_prop);
-
-    ~~~~17~~~~~~att\_list.push\_back(theenum);
-
-    ~~~~18~~~~~~.....
-
-    ~~~~19~~~\}	
+    enum class Card: short
+    {
+        NORTH = 0,
+        SOUTH,
+        EAST,
+        WEST
+    };
+   
+    void XXXClass::attribute_factory(vector<Tango::Attr *> &att_list)
+    {
+        .....
+        TheEnumAttrib	*theenum = new TheEnumAttrib();
+        Tango::UserDefaultAttrProp theenum_prop;
+        vector<string> labels = {"North","South","East","West"};
+        theenum_prop.set_enum_labels(labels);
+        theenum->set_default_properties(theenum_prop);
+        att_list.push_back(theenum);
+        .....
+     }	
 
 line 1-7 : The definition of the enumeration (C++11 in this example)
 
@@ -11802,30 +9378,20 @@ way specific to the device and passed to Tango using the Attribute class
 *set\_properties()* method. Let us take one example
 
 .. code:: cpp
+  :number-lines:
 
-    ~~~~~1~~void~MyDev::init\_device()
-
-    ~~~~~2~~\{
-
-    ~~~~~3~~~~~~...
-
-    ~~~~~4~~
-
-    ~~~~~5~~~~~~Attribute~\&att~=~get\_device\_attr()->get\_attr\_by\_name(\textquotedbl{}TheEnumAtt\textquotedbl{});
-
-    ~~~~~6~~~~~~MultiAttrProp<DevEnum>~multi\_prop;
-
-    ~~~~~7~~~~~~att.get\_properties(multi\_prop);
-
-    ~~~~~8~
-
-    ~~~~~9~~~~~~multi\_prop.enum\_labels~=~\{....\};
-
-    ~~~~10~~~~~~att.set\_properties(multi\_prop);
-
-    ~~~~11~~~~~~....
-
-    ~~~~12~~~\}	
+    void MyDev::init_device()
+    {
+        ...
+    
+        Attribute &att = get_device_attr()->get_attr_by_name("TheEnumAtt");
+        MultiAttrProp<DevEnum> multi_prop;
+        att.get_properties(multi_prop);
+   
+        multi_prop.enum_labels = {....};
+        att.set_properties(multi_prop);
+        ....
+     }	
 
 line 5 : Get a reference to the attribute object
 
@@ -11846,22 +9412,16 @@ enumeration definition. We assume that the enumeration is the same than
 the one defined above (Card enumeration)
 
 .. code:: cpp
+  :number-lines:
 
-    ~~~~~1~~enum~Card~points;
-
-    ~~~~~2~~
-
-    ~~~~~3~~void~MyDev::read\_TheEnum(Attribute~\&att)
-
-    ~~~~~4~~\{
-
-    ~~~~~5~~~~~~...
-
-    ~~~~~6~~~~~~points~=~SOUTH;
-
-    ~~~~~7~~~~~~att.set\_value(\&points);
-
-    ~~~~~8~~\}
+    enum Card points;
+    
+    void MyDev::read_TheEnum(Attribute &att)
+    {
+        ...
+        points = SOUTH;
+        att.set_value(&points);
+    }
 
 line 1 : One instance of the Card enum is created (named points)
 
@@ -11873,22 +9433,16 @@ line 6 : The enumeration is initialized
   looks like
 
 .. code:: cpp
+  :number-lines:
 
-    ~~~~~1~~DevShort~sh;
-
-    ~~~~~2~~
-
-    ~~~~~3~~void~MyDev::read\_TheEnum(Attribute~\&att)
-
-    ~~~~~4~~\{
-
-    ~~~~~5~~~~~~...
-
-    ~~~~~6~~~~~~sh~=~1;
-
-    ~~~~~7~~~~~~att.set\_value(\&sh);
-
-    ~~~~~8~~\}
+    DevShort sh;
+    
+    void MyDev::read_TheEnum(Attribute &att)
+    {
+        ...
+        sh = 1;
+        att.set_value(&sh);
+    }
 
 line 1 : A DevShort variable is created (named sh)
 
@@ -11906,20 +9460,15 @@ The later case is for generic client which do not have compile time
 knowledge of the enumeration. The code looks like
 
 .. code:: cpp
+  :number-lines:
 
-    ~~~~~1~~DeviceAttribute~da~=~the\_dev.read\_attribute(\textquotedbl{}TheEnumAtt\textquotedbl{});
-
-    ~~~~~2~~Card~ca;
-
-    ~~~~~3~~da~>\textcompwordmark{}>~ca;
-
-    ~~~~~4~~
-
-    ~~~~~5~~DeviceAttribute~db~=~the\_dev.read\_attribute(\textquotedbl{}TheEnumAtt\textquotedbl{});
-
-    ~~~~~6~~DevShort~sh;
-
-    ~~~~~7~~da~>\textcompwordmark{}>~sh;
+    DeviceAttribute da = the_dev.read_attribute("TheEnumAtt");
+    Card ca;
+    da >> ca;
+    
+    DeviceAttribute db = the_dev.read_attribute("TheEnumAtt");
+    DevShort sh;
+    da >> sh;
 
 line 2-3 : The attribute value is extracted in a C++ enumeration
 variable
@@ -12019,52 +9568,31 @@ to the device server administration device. The following piece of code
 shows how the source code should be written.
 
 .. code:: cpp
+  :number-lines:
 
-    ~~~~~1~~
-
-    ~~~~~2~~void~DevTestClass::command\_factory()
-
-    ~~~~~3~~\{
-
-    ~~~~~4~~...
-
-    ~~~~~5~~~~~~command\_list.push\_back(new~IOStartPoll(\textquotedbl{}IOStartPoll\textquotedbl{},
-
-    ~~~~~6~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Tango::DEV\_VOID,
-
-    ~~~~~7~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Tango::DEV\_LONG,
-
-    ~~~~~8~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\textquotedbl{}Void\textquotedbl{},
-
-    ~~~~~9~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\textquotedbl{}Constant~number\textquotedbl{}));
-
-    ~~~~10~~~~~~command\_list.back()->set\_polling\_period(400);
-
-    ~~~~11~~...
-
-    ~~~~12~~\}
-
-    ~~~~13~~
-
-    ~~~~14~~
-
-    ~~~~15~~void~DevTestClass::attribute\_factory(vector<Tango::Attr~{*}>~\&att\_list)
-
-    ~~~~16~~\{
-
-    ~~~~17~~...
-
-    ~~~~18~~~~~~att\_list.push\_back(new~Tango::Attr(\textquotedbl{}String\_attr\textquotedbl{},
-
-    ~~~~19~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Tango::DEV\_STRING,
-
-    ~~~~20~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Tango::READ));
-
-    ~~~~21~~~~~~att\_list.back()->set\_polling\_period(250);
-
-    ~~~~22~~...
-
-    ~~~~23~~\}
+    
+    void DevTestClass::command_factory()
+    {
+    ...
+        command_list.push_back(new IOStartPoll("IOStartPoll",
+                                                Tango::DEV_VOID,
+                                                Tango::DEV_LONG,
+                                                "Void",
+                                                "Constant number"));
+        command_list.back()->set_polling_period(400);
+    ...
+    }
+    
+    
+    void DevTestClass::attribute_factory(vector<Tango::Attr *> &att_list)
+    {
+    ...
+        att_list.push_back(new Tango::Attr("String_attr",
+                                            Tango::DEV_STRING,
+                                            Tango::READ));
+        att_list.back()->set_polling_period(250);
+    ...
+    }
 
 A polling period of 400 mS is set for the command called “IOStartPoll”
 at line 10 with the *set\_polling\_period* method of the Command class.
@@ -12288,26 +9816,18 @@ of the Util class. The following piece of code shows how this method
 could be used for one externally triggered command.
 
 .. code:: cpp
+  :number-lines:
 
-    ~~~~~1~~.....
-
-    ~~~~~2~~
-
-    ~~~~~3~~string~ext\_polled\_cmd(\textquotedbl{}MyCmd\textquotedbl{});
-
-    ~~~~~4~~Tango::DeviceImpl~{*}device~=~.....;
-
-    ~~~~~5~~
-
-    ~~~~~6~~Tango::Util~{*}tg~=~Tango::Util::instance();
-
-    ~~~~~7~~
-
-    ~~~~~8~~tg->trigger\_cmd\_polling(device,ext\_polled\_cmd);
-
-    ~~~~~9~~
-
-    ~~~~10~~.....
+    .....
+    
+    string ext_polled_cmd("MyCmd");
+    Tango::DeviceImpl *device = .....;
+    
+    Tango::Util *tg = Tango::Util::instance();
+    
+    tg->trigger_cmd_polling(device,ext_polled_cmd);
+    
+    .....
 
 line 3 : The externally polled command name
 
@@ -12344,66 +9864,38 @@ fill\_cmd\_polling\_buffer() method usage. Error management has also
 been removed.
 
 .. code:: cpp
+  :number-lines:
 
-    ~~~~~1~~....
-
-    ~~~~~2~~
-
-    ~~~~~3~~Tango::DevVarLongArray~dvla\_array{[}4{]};
-
-    ~~~~~4~~~~~~~~~~
-
-    ~~~~~5~~for(int~i~=~0;i~<~4;i++)
-
-    ~~~~~6~~\{
-
-    ~~~~~7~~~~~~dvla\_array{[}i{]}.length(3);
-
-    ~~~~~8~~~~~~dvla\_array{[}i{]}{[}0{]}~=~10~+~i;
-
-    ~~~~~9~~~~~~dvla\_array{[}i{]}{[}1{]}~=~11~+~i;
-
-    ~~~~10~~~~~~dvla\_array{[}i{]}{[}2{]}~=~12~+~i;
-
-    ~~~~11~~\}
-
-    ~~~~12~~
-
-    ~~~~13~~Tango::CmdHistoryStack<DevVarLongArray>~chs;
-
-    ~~~~14~~chs.length(4);
-
-    ~~~~15~~
-
-    ~~~~16~~for~(int~k~=~0;k~<~4;k++)
-
-    ~~~~17~~\{
-
-    ~~~~18~~~~~~time\_t~when~=~time(NULL);
-
-    ~~~~19~~
-
-    ~~~~20~~~~~~Tango::TimedCmdData<DevVarLongArray>~tcd(\&dvla\_array{[}k{]},when);
-
-    ~~~~21~~~~~~chs.push(tcd);
-
-    ~~~~22~~\}
-
-    ~~~~23~~
-
-    ~~~~24~~Tango::Util~{*}tg~=~Tango::Util::instance();
-
-    ~~~~25~~string~cmd\_name(\textquotedbl{}MyCmd\textquotedbl{});
-
-    ~~~~26~~DeviceImpl~{*}dev~=~....;
-
-    ~~~~27~~
-
-    ~~~~28~~tg->fill\_cmd\_polling\_buffer(dev,cmd\_name,chs);
-
-    ~~~~29~~
-
-    ~~~~30~~.....
+    ....
+    
+    Tango::DevVarLongArray dvla_array[4];
+            
+    for(int i = 0;i < 4;i++)
+    {
+        dvla_array[i].length(3);
+        dvla_array[i][0] = 10 + i;
+        dvla_array[i][1] = 11 + i;
+        dvla_array[i][2] = 12 + i;
+    }
+    
+    Tango::CmdHistoryStack<DevVarLongArray> chs;
+    chs.length(4);
+    
+    for (int k = 0;k < 4;k++)
+    {
+        time_t when = time(NULL);
+    
+        Tango::TimedCmdData<DevVarLongArray> tcd(&dvla_array[k],when);
+        chs.push(tcd);
+    }
+    
+    Tango::Util *tg = Tango::Util::instance();
+    string cmd_name("MyCmd");
+    DeviceImpl *dev = ....;
+    
+    tg->fill_cmd_polling_buffer(dev,cmd_name,chs);
+    
+    .....
 
 Line 3-11 : Simulate data coming from hardware
 
@@ -12441,54 +9933,32 @@ fill\_attr\_polling\_buffer() method usage with memory management issue.
 Error management has also been removed.
 
 .. code:: cpp
+  :number-lines:
 
-    ~~~~~1~~....
-
-    ~~~~~2~~
-
-    ~~~~~3~~AttrHistoryStack<DevString>~ahs;
-
-    ~~~~~4~~ahs.length(3);
-
-    ~~~~~5~~
-
-    ~~~~~6~~for~(int~k~=~0;k~<~3;k++)
-
-    ~~~~~7~~\{
-
-    ~~~~~8~~~~~~time\_t~when~=~time(NULL);
-
-    ~~~~~9~~
-
-    ~~~~10~~~~~~DevString~{*}ptr~=~new~DevString~{[}1{]};
-
-    ~~~~11~~~~~~ptr~=~CORBA::string\_dup(\textquotedbl{}Attr~history~data\textquotedbl{});
-
-    ~~~~12~~
-
-    ~~~~13~~~~~~TimedAttrData<DevString>~tad(ptr,Tango::ATTR\_VALID,true,when);
-
-    ~~~~14~~~~~~ahs.push(tad);
-
-    ~~~~15~~\}
-
-    ~~~~16~~
-
-    ~~~~17~~Tango::Util~{*}tg~=~Tango::Util::instance();
-
-    ~~~~18~~string~attr\_name(\textquotedbl{}MyAttr\textquotedbl{});
-
-    ~~~~19~~DeviceImpl~{*}dev~=~....;
-
-    ~~~~20~~
-
-    ~~~~21~~tg->fill\_attr\_polling\_buffer(dev,attr\_name,ahs);
-
-    ~~~~22~~
-
-    ~~~~23~~.....
-
-    ~~
+    ....
+    
+    AttrHistoryStack<DevString> ahs;
+    ahs.length(3);
+    
+    for (int k = 0;k < 3;k++)
+    {
+        time_t when = time(NULL);
+    
+        DevString *ptr = new DevString [1];
+        ptr = CORBA::string_dup("Attr history data");
+    
+        TimedAttrData<DevString> tad(ptr,Tango::ATTR_VALID,true,when);
+        ahs.push(tad);
+    }
+    
+    Tango::Util *tg = Tango::Util::instance();
+    string attr_name("MyAttr");
+    DeviceImpl *dev = ....;
+    
+    tg->fill_attr_polling_buffer(dev,attr_name,ahs);
+    
+    .....
+      
 
 Line 3-4 : Create one instance of the AttrHistoryStack class and reserve
 space for an history with 3 elements
@@ -12535,8 +10005,28 @@ The following code snippet is just an exmaple of how these methods could
 be used. They are documented in :raw-latex:`\cite{Tango-dsclasses-doc}`
 
 .. code:: cpp
+  :number-lines:
 
-    ~~~~~\lstinputlisting[language={C++}]{advanced/poll_in_ds.cpp.lines}
+         [Program Listing: poll_in_ds.cpp.lines
+  	void MyClass::read_attr(Tango::Attribute &attr)
+  	{
+  	    ...
+  	    ...
+  	    
+  	    string att_name("SomeAttribute");
+  	    string another_att_name("AnotherAttribute");
+  	
+  	    if (is_attribute_polled(att_name) == true)
+  	        stop_poll_attribute(att_name);
+  	    else
+  	        poll_attribute(another_att_name,500); 
+  	    
+  	    ....
+  	    ....
+  	    
+  	}
+
+    ]
 
 Threading
 ---------
@@ -12639,70 +10129,40 @@ mode. A method of the Tango::Util class allows to change this default
 behavior.
 
 .. code:: cpp
+  :number-lines:
 
-    ~~~~~1~~\#include~<tango.h>
-
-    ~~~~~2~~
-
-    ~~~~~3~~int~main(int~argc,char~{*}argv{[}{]})
-
-    ~~~~~4~~\{
-
-    ~~~~~5~~
-
-    ~~~~~6~~~~~~try
-
-    ~~~~~7~~~~~~\{
-
-    ~~~~~8~~~~~~~~~~
-
-    ~~~~~9~~~~~~~~~~Tango::Util~{*}tg~=~Tango::Util::init(argc,argv);
-
-    ~~~~10~~
-
-    ~~~~11~~~~~~~~~~tg->set\_serial\_model(Tango::BY\_CLASS);
-
-    ~~~~12~~
-
-    ~~~~13~~~~~~~~~~tg->server\_init();
-
-    ~~~~14~~
-
-    ~~~~15~~~~~~~~~~cout~<\textcompwordmark{}<~\textquotedbl{}Ready~to~accept~request\textquotedbl{}~<\textcompwordmark{}<~endl;
-
-    ~~~~16~~~~~~~~~~tg->server\_run();
-
-    ~~~~17~~~~~~\}
-
-    ~~~~18~~~~~~catch~(bad\_alloc)
-
-    ~~~~19~~~~~~\{
-
-    ~~~~20~~~~~~~~~~~cout~<\textcompwordmark{}<~\textquotedbl{}Can't~allocate~memory!!!\textquotedbl{}~<\textcompwordmark{}<~endl;
-
-    ~~~~21~~~~~~~~~~~cout~<\textcompwordmark{}<~\textquotedbl{}Exiting\textquotedbl{}~<\textcompwordmark{}<~endl;
-
-    ~~~~22~~~~~~\}
-
-    ~~~~23~~~~~~catch~(CORBA::Exception~\&e)
-
-    ~~~~24~~~~~~\{
-
-    ~~~~25~~~~~~~~~~~Tango::Except::print\_exception(e);
-
-    ~~~~26~~~~~~~~~~~~~~~~~~
-
-    ~~~~27~~~~~~~~~~~cout~<\textcompwordmark{}<~\textquotedbl{}Received~a~CORBA::Exception\textquotedbl{}~<\textcompwordmark{}<~endl;
-
-    ~~~~28~~~~~~~~~~~cout~<\textcompwordmark{}<~\textquotedbl{}Exiting\textquotedbl{}~<\textcompwordmark{}<~endl;
-
-    ~~~~29~~~~~~\}
-
-    ~~~~30~~~~~~~~~~
-
-    ~~~~31~~~~~~return(0);
-
-    ~~~~32~~\}
+    #include <tango.h>
+    
+    int main(int argc,char *argv[])
+    {
+    
+        try
+        {
+            
+            Tango::Util *tg = Tango::Util::init(argc,argv);
+    
+            tg->set_serial_model(Tango::BY_CLASS);
+    
+            tg->server_init();
+    
+            cout << "Ready to accept request" << endl;
+            tg->server_run();
+        }
+        catch (bad_alloc)
+        {
+             cout << "Can't allocate memory!!!" << endl;
+             cout << "Exiting" << endl;
+        }
+        catch (CORBA::Exception &e)
+        {
+             Tango::Except::print_exception(e);
+                    
+             cout << "Received a CORBA::Exception" << endl;
+             cout << "Exiting" << endl;
+        }
+            
+        return(0);
+    }
 
 The serialization model is set at line 11 before the server is
 initialized and the infinite loop is started. See
@@ -12742,54 +10202,32 @@ serialization behavior and to give the user omni\_mutex object to the
 kernel.
 
 .. code:: cpp
+  :number-lines:
 
-    1~void~MyClass::init\_device()
-
-    2~\{
-
-    3~~~~...
-
-    4~~~~...
-
-    5~~~~Tango::Attribute~\&att~=~dev\_attr->get\_attr\_by\_name(\textquotedbl{}TheAttribute\textquotedbl{});
-
-    6~~~~att.set\_attr\_serial\_model(Tango::ATTR\_BY\_USER);
-
-    7~~~~....
-
-    8~~~~....
-
-    9~
-
-    10~\}
-
-    11~
-
-    12~
-
-    13~void~MyClass::read\_TheAttribute(Tango::Attribute~\&attr)
-
-    14~\{
-
-    15~~~~....
-
-    16~~~~....
-
-    17~~~~the\_mutex.lock();
-
-    18~~~~....
-
-    19~~~~//~Fill~the~attribute~buffer
-
-    20~~~~....
-
-    21~~~~attr.set\_value(buffer,....);
-
-    22~~~~attr->set\_user\_attr\_mutex(\&the\_mutex);
-
-    23~\}
-
-    24~
+   void MyClass::init_device()
+   {
+      ...
+      ...
+      Tango::Attribute &att = dev_attr->get_attr_by_name("TheAttribute");
+      att.set_attr_serial_model(Tango::ATTR_BY_USER);
+      ....
+      ....
+   
+   }
+   
+   
+   void MyClass::read_TheAttribute(Tango::Attribute &attr)
+   {
+      ....
+      ....
+      the_mutex.lock();
+      ....
+      // Fill the attribute buffer
+      ....
+      attr.set_value(buffer,....);
+      attr->set_user_attr_mutex(&the_mutex);
+   }
+   
 
 The serialization model is set at line 6 in the init\_device() method.
 The user omni\_mutex is passed to the Tango kernel at line 22. This
@@ -12839,12 +10277,11 @@ non polled attributes the server has to declare that events are pushed
 from the code. Three methods are available for this purpose:
 
 .. code:: cpp
+  :number-lines:
 
-    Attr::set\_change\_event(bool~implemented,~bool~detect~=~true);
-
-    Attr::set\_archive\_event(bool~implemented,~bool~detect~=~true);
-
-    Attr::set\_data\_ready\_event(~bool~implemented);
+    Attr::set_change_event(bool implemented, bool detect = true);
+    Attr::set_archive_event(bool implemented, bool detect = true);
+    Attr::set_data_ready_event( bool implemented);
 
 where *implemented*\ =true indicates that events are pushed manually
 from the code and *detect*\ =true (when used) triggers the verification
@@ -12857,17 +10294,18 @@ To push events manually from the code a set of data type dependent
 methods can be used:
 
 .. code:: cpp
+  :number-lines:
 
-    DeviceImpl::push\_change\_event~(string~attr\_name,~....);
-
-    DeviceImpl::push\_archive\_event(string~attr\_name,~....);
+    DeviceImpl::push_change_event (string attr_name, ....);
+    DeviceImpl::push_archive_event(string attr_name, ....);
 
 For the data ready event, a DeviceImpl class method has to be used to
 push the event.
 
 .. code:: cpp
+  :number-lines:
 
-    DeviceImpl::push\_data\_ready\_event(string~attr\_name,Tango::DevLong~ctr);
+    DeviceImpl::push_data_ready_event(string attr_name,Tango::DevLong ctr);
 
 See the class documentation for all available interfaces.
 
@@ -12880,14 +10318,12 @@ To push non-standard events, use the following api call is available to
 all device servers :
 
 .. code:: cpp
+  :number-lines:
 
-    DeviceImpl::push\_event(~string~attr\_name,
-
-    ~~~~~~~~~~~~~vector<string>~\&filterable\_names,
-
-    ~~~~~~~~~~~~~vector<double>~\&filterable\_vals,
-
-    ~~~~~~~~~~~~~Attribute~\&att)
+    DeviceImpl::push_event( string attr_name,
+                 vector<string> &filterable_names,
+                 vector<double> &filterable_vals,
+                 Attribute &att)
 
 where *attr\_name* is the name of the attribute\ *. Filterable\_names*
 and *filterable\_vals* represent any filterable data which can be used
@@ -12899,52 +10335,31 @@ that, this event is sent with one filterable field called value which is
 set to the attribute value.
 
 .. code:: cpp
+  :number-lines:
 
-    1~~void~MyClass::read\_Sinusoide(Tango::Attribute~\&attr)
-
-    2~~\{
-
-    3~~~~...
-
-    4~~~~~~~struct~timeval~tv;
-
-    5~~~~~~~gettimeofday(\&tv,~NULL);
-
-    6~~~~~~~sinusoide~=~100~{*}~sin(~2~{*}~3.14~{*}~frequency~{*}~tv.tv\_sec);
-
-    7~~
-
-    8~~~~~~~if~(sinusoide~>=~0)~
-
-    9~~~~~~~\{
-
-    10~~~~~~~~~~vector<string>~filterable\_names;
-
-    11~~~~~~~~~~vector<double>~filterable\_value;
-
-    12~
-
-    13~~~~~~~~~~filterable\_names.push\_back(\textquotedbl{}value\textquotedbl{});
-
-    14~~~~~~~~~~filterable\_value.push\_back((double)sinusoide);
-
-    15~
-
-    16~~~~~~~~~~push\_event(~attr.get\_name(),
-
-    17~~~~~~~~~~~~~~~~~~~~~~filterable\_names,~filterable\_value,
-
-    18~~~~~~~~~~~~~~~~~~~~~~\&sinusoide);
-
-    19~~~~~~~\}
-
-    20~~~~....
-
-    21~~~~....
-
-    22~
-
-    23~\}
+    void MyClass::read_Sinusoide(Tango::Attribute &attr)
+    {
+      ...
+         struct timeval tv;
+         gettimeofday(&tv, NULL);
+         sinusoide = 100 * sin( 2 * 3.14 * frequency * tv.tv_sec);
+    
+         if (sinusoide >= 0) 
+         {
+            vector<string> filterable_names;
+            vector<double> filterable_value;
+   
+            filterable_names.push_back("value");
+            filterable_value.push_back((double)sinusoide);
+   
+            push_event( attr.get_name(),
+                        filterable_names, filterable_value,
+                        &sinusoide);
+         }
+      ....
+      ....
+   
+   }
 
 line 13-14 : The filter pair name/value is initialised
 
@@ -12987,16 +10402,13 @@ using multicasting with the address *226.20.21.22* and the port number
 for one event propagated using multicast is
 
 .. code:: cpp
+  :number-lines:
 
-    1~CtrlSystem->MulticastEvent:~~~Multicast~address,
-
-    2~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~port~number,
-
-    3~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{[}rate~in~Mbit/sec{]},
-
-    4~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{[}ivl~in~seconds{]},
-
-    5~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~event~name
+   CtrlSystem->MulticastEvent:   Multicast address,
+                                 port number,
+                                 [rate in Mbit/sec],
+                                 [ivl in seconds],
+                                 event name
 
 Rate and Ivl are optional properties. In case several events have to be
 transferred using multicasting, simply extend the MulicastEvent property
@@ -13080,22 +10492,16 @@ code shows how the source code should be written to set an attribute as
 memorized and to initialise only the attribute set point.
 
 .. code:: cpp
+  :number-lines:
 
-    1~void~DevTestClass::attribute\_factory(vector<Tango::Attr~{*}>~\&att\_list)
-
-    2~~\{
-
-    3~~~~~~...
-
-    4~~~~~~att\_list.push\_back(new~String\_attrAttr());
-
-    5~~~~~~att\_list.back()->set\_memorized();
-
-    6~~~~~~att\_list.back()->set\_memorized\_init(false);
-
-    7~~~~~~...
-
-    8~~\}
+   void DevTestClass::attribute_factory(vector<Tango::Attr *> &att_list)
+    {
+        ...
+        att_list.push_back(new String_attrAttr());
+        att_list.back()->set_memorized();
+        att_list.back()->set_memorized_init(false);
+        ...
+    }
 
 Line 4 : The attribute to be memorized is created and inserted in the
 attribute vector.
@@ -13194,40 +10600,25 @@ the attribute label can be defined. One example of how to program a
 forwarded attribute is given below
 
 .. code:: cpp
+  :number-lines:
 
-    1~~class~MyFwdAttr:~public~Tango::FwdAttr
-
-    2~~\{~
-
-    3~~public:~~~~~
-
-    4~~~~~~MyFwdAttr(const~string~\&\_n):FwdAttr(\_n)~\{\};~	
-
-    5~~~~~~\textasciitilde{}MyFwdAttr()~\{\};~
-
-    6~~\};
-
-    7
-
-    8~~void~DevTestClass::attribute\_factory(vector<Tango::Attr~{*}>~\&att\_list)
-
-    9~~\{
-
-    10~~~~~...
-
-    11~~~~~MyFwdAttr~{*}att1~=~new~MyFwdAttr(\textquotedbl{}fwd\_att\_name\textquotedbl{});
-
-    12~~~~~Tango::UserDefaultFwdAttrProp~att1\_prop;~	
-
-    13~~~~~att1\_prop.set\_label(\textquotedbl{}Gasp~a~fwd~attribute\textquotedbl{});
-
-    14~~~~~att1->set\_default\_properties(att1\_prop);~	
-
-    15~~~~~att\_list.push\_back(att1);
-
-    14~~~~~...
-
-    15~~\}
+    class MyFwdAttr: public Tango::FwdAttr
+    { 
+    public:     
+        MyFwdAttr(const string &_n):FwdAttr(_n) {}; 	
+        ~MyFwdAttr() {}; 
+    };
+  
+    void DevTestClass::attribute_factory(vector<Tango::Attr *> &att_list)
+    {
+       ...
+       MyFwdAttr *att1 = new MyFwdAttr("fwd_att_name");
+       Tango::UserDefaultFwdAttrProp att1_prop; 	
+       att1_prop.set_label("Gasp a fwd attribute");
+       att1->set_default_properties(att1_prop); 	
+       att_list.push_back(att1);
+       ...
+    }
 
 Line 1 : The forwarded attribute class inherits from FwdAttr class.
 
@@ -13268,7 +10659,7 @@ Within this class, you will find methods to:
 -  Encode a color image coded on 24 bits
 
 -  Decode images coded on 8 or 16 bits (gray scale) and returned a 8 or
-   16 bits grey scale image
+   bits grey scale image
 
 -  Decode color images transmitted using a compressed format (JPEG) and
    returns a 32 bits RGB image
@@ -13278,35 +10669,27 @@ used in a server and in a client. On the server side, creates an
 instance of the EncodedAttribute class within your object
 
 .. code:: cpp
+  :number-lines:
 
-    1~class~MyDevice::Tango::Device\_4Impl
-
-    2~~\{
-
-    3~~~~~~...
-
-    4~~~~~~Tango::EncodedAttribute~jpeg;
-
-    5~~~~~~...
-
-    6~~\}
+   class MyDevice::Tango::Device_4Impl
+    {
+        ...
+        Tango::EncodedAttribute jpeg;
+        ...
+    }
 
 In the code of your device, use an encoding method of the
 EncodedAttribute class
 
 .. code:: cpp
+  :number-lines:
 
-    1~void~MyDevice::read\_Encoded\_attr\_image(Tango::Attribute~\&att)
-
-    2~\{
-
-    3~~~~~~....
-
-    4~~~~~~jpeg.encode\_jpeg\_gray8(imageData,256,256,50.0);
-
-    5~~~~~~att.set\_value(\&jpeg);
-
-    6~\}
+   void MyDevice::read_Encoded_attr_image(Tango::Attribute &att)
+   {
+        ....
+        jpeg.encode_jpeg_gray8(imageData,256,256,50.0);
+        att.set_value(&jpeg);
+   }
 
 Line 4: Image encoding. The size of the image is 256 by 256. Each pixel
 is coded using 8 bits. The encoding quality is defined to 50 in a scale
@@ -13320,28 +10703,19 @@ On the client side, the code is the following (without exception
 management)
 
 .. code:: cpp
+  :number-lines:
 
-    1~~~~....
-
-    2~~~~DeviceAttribute~da;
-
-    3~~~~EncodedAttribute~att;
-
-    4~~~~int~width,height;
-
-    5~~~~unsigned~char~{*}gray8;
-
-    6~~~~~~
-
-    7~~~~da~=~device.read\_attribute(\textquotedbl{}Encoded\_attr\_image\textquotedbl{});
-
-    8~~~~att.decode\_gray8(\&da,\&width,\&height,\&gray8);
-
-    9~~~~....
-
-    10~~~delete~{[}{]}~gray8;
-
-    11~~~...
+      ....
+      DeviceAttribute da;
+      EncodedAttribute att;
+      int width,height;
+      unsigned char *gray8;
+        
+      da = device.read_attribute("Encoded_attr_image");
+      att.decode_gray8(&da,&width,&height,&gray8);
+      ....
+     delete [] gray8;
+     ...
 
 The attribute named Encoded\_attr\_image is read at line7. The image is
 decoded at line 8 in a 8 bits gray scale format. The image data are
@@ -13372,82 +10746,46 @@ main thread. The following piece of code is an example of how you can
 use this feature.
 
 .. code:: cpp
+  :number-lines:
 
-    ~~~~~1~~
-
-    ~~~~~2~~bool~my\_event\_loop()
-
-    ~~~~~3~~\{
-
-    ~~~~~4~~~~~bool~ret;
-
-    ~~~~~5~~
-
-    ~~~~~6~~~~~some\_sleeping\_time();
-
-    ~~~~~7~~
-
-    ~~~~~8~~~~~ret~=~handle\_gui\_events();
-
-    ~~~~~9~~
-
-    ~~~~10~~~~~return~ret;
-
-    ~~~~11~~\}
-
-    ~~~~12~~
-
-    ~~~~13~~int~main(int~argc,char~{*}argv{[}{]})
-
-    ~~~~14~~\{
-
-    ~~~~15~~~~~Tango::Util~{*}tg;
-
-    ~~~~16~~~~~try
-
-    ~~~~17~~~~~\{
-
-    ~~~~18~~~~~~~~//~Initialise~the~device~server
-
-    ~~~~19~~~~~~~~//-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-
-
-    ~~~~20~~~~~~~~tg~=~Tango::Util::init(argc,argv);
-
-    ~~~~21~~
-
-    ~~~~22~~~~~~~~tg->set\_polling\_threads\_pool\_size(5);
-
-    ~~~~23~~
-
-    ~~~~24~~~~~~~~//~Create~the~device~server~singleton~
-
-    ~~~~25~~~~~~~~//~~~~~~~~which~will~create~everything
-
-    ~~~~26~~~~~~~~//-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-
-
-    ~~~~27~~~~~~~~tg->server\_init(false);
-
-    ~~~~28~~
-
-    ~~~~29~~~~~~~~tg->server\_set\_event\_loop(my\_event\_loop);
-
-    ~~~~30~~
-
-    ~~~~31~~~~~~~~//~Run~the~endless~loop
-
-    ~~~~32~~~~~~~~//-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-
-
-    ~~~~33~~~~~~~~cout~<\textcompwordmark{}<~\textquotedbl{}Ready~to~accept~request\textquotedbl{}~<\textcompwordmark{}<~endl;
-
-    ~~~~34~~~~~~~~tg->server\_run();
-
-    ~~~~35~~~~~\}
-
-    ~~~~36~~~~~catch~(bad\_alloc)
-
-    ~~~~37~~~~~\{
-
-    ~~~~38~~~~~...
+    
+    bool my_event_loop()
+    {
+       bool ret;
+    
+       some_sleeping_time();
+    
+       ret = handle_gui_events();
+    
+       return ret;
+    }
+    
+    int main(int argc,char *argv[])
+    {
+       Tango::Util *tg;
+       try
+       {
+          // Initialise the device server
+          //----------------------------------------
+          tg = Tango::Util::init(argc,argv);
+    
+          tg->set_polling_threads_pool_size(5);
+    
+          // Create the device server singleton 
+          //        which will create everything
+          //----------------------------------------
+          tg->server_init(false);
+    
+          tg->server_set_event_loop(my_event_loop);
+    
+          // Run the endless loop
+          //----------------------------------------
+          cout << "Ready to accept request" << endl;
+          tg->server_run();
+       }
+       catch (bad_alloc)
+       {
+       ...
 
 The device server main event loop is set at line 29 before the call to
 the Util::server\_run() method. The function used as server loop is
@@ -13571,16 +10909,13 @@ When the *device\_name\_factory()* method is re-defined within the
 StepperMotorClass class.
 
 .. code:: cpp
+  :number-lines:
 
-    ~~~~~1~~void~StepperMotorClass::device\_name\_factory(vector<string>~\&list)
-
-    ~~~~~2~~\{
-
-    ~~~~~3~~~~~~list.push\_back(\textquotedbl{}sr/cav-tuner/1\textquotedbl{});
-
-    ~~~~~4~~~~~~list.push\_back(\textquotedbl{}sr/cav-tuner/2\textquotedbl{});
-
-    ~~~~~5~~\}
+    void StepperMotorClass::device_name_factory(vector<string> &list)
+    {
+        list.push_back("sr/cav-tuner/1");
+        list.push_back("sr/cav-tuner/2");
+    }
 
 -  | StepperMotor et -nodb
    | This commands starts a device server with two devices named
@@ -15144,12 +12479,11 @@ splitted by a comma. Example of polling\_threads\_pool\_conf property
 for 3 threads used:
 
 .. code:: cpp
+  :number-lines:
 
-    dserver/<ds~exec~name>/<inst.~name>/polling\_threads\_pool\_conf->~the/dev/01
-
-    ~~~~~~~~~~~~~~~~~~the/dev/02,the/dev/06
-
-    ~~~~~~~~~~~~~~~~~~the/dev/03
+    dserver/<ds exec name>/<inst. name>/polling_threads_pool_conf-> the/dev/01
+                      the/dev/02,the/dev/06
+                      the/dev/03
 
 Thread number 2 is in charge of 2 devices. Note that there is an entry
 in this list only for the used threads in the pool.
@@ -15260,7 +12594,8 @@ This is tunable at several level.
 #. At client or device server level using the library calls
    *Util::set\_ds\_event\_buffer\_hwm()* documented in
    :raw-latex:`\cite{Tango-dsclasses-doc}` or
-   *ApiUtil::set\_event\_buffer\_hwm()* .
+   *ApiUtil::set\_event\_buffer\_hwm()* documented in
+   [sec:Tango::ApiUtil]
 
 #. Using environment variables TANGO\_DS\_EVENT\_BUFFER\_HWM or
    TANGO\_EVENT\_BUFFER\_HWM
@@ -17871,12 +15206,11 @@ Example of starting and registering a Notification Service daemon on a
 UNIX like operating system
 
 .. code:: cpp
+  :number-lines:
 
-    ~~~~~1~~ulimit~-s~2048
-
-    ~~~~~2~~notifd~-n~-DDeadFilterInterval=300~\&
-
-    ~~~~~3~~notifd2db
+    ulimit -s 2048
+    notifd -n -DDeadFilterInterval=300 &
+    notifd2db
 
 The Notification Service daemon is started at line 2. Its
 -DDeadFilterInterval option is used to specify some internal cleaning of
@@ -17888,10 +15222,10 @@ daemon in the Tango database is done at line 2.
 It differs on a Windows computer
 
 .. code:: cpp
+  :number-lines:
 
-    ~~~~~1~~notifd~-n~-DDeadFilterInterval=300~-DFactoryIORFileName=C:\textbackslash{}Temp\textbackslash{}evfact.ior~\&
-
-    ~~~~~2~~notifd2db~C:\textbackslash{}Temp\textbackslash{}evfact.ior
+    notifd -n -DDeadFilterInterval=300 -DFactoryIORFileName=C:\Temp\evfact.ior &
+    notifd2db C:\Temp\evfact.ior
 
 For release 8 and above
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -17926,10 +15260,10 @@ done with the **notifd2db** command. Example of starting and registering
 a Notification Service daemon on a UNIX like operating system
 
 .. code:: cpp
+  :number-lines:
 
-    ~~~~~1~~notifd~-n~-DDeadFilterInterval=300~\&
-
-    ~~~~~2~~notifd2db~-o~/var/myfile.res
+    notifd -n -DDeadFilterInterval=300 &
+    notifd2db -o /var/myfile.res
 
 The Notification Service daemon is started at line 1. Its -n option is
 used to disable the use of the CORBA Naming Service for registering the
@@ -17943,10 +15277,10 @@ specified using its -D command line option. This file name has also to
 be passed to the notifd2db command.
 
 .. code:: cpp
+  :number-lines:
 
-    ~~~~~1~~notifd~-n~-DDeadFilterInterval=300~-DFactoryIORFileName=C:\textbackslash{}Temp\textbackslash{}evfact.ior~\&
-
-    ~~~~~2~~notifd2db~C:\textbackslash{}Temp\textbackslash{}evfact.ior~-o~C:\textbackslash{}Temp\textbackslash{}myfile.res
+    notifd -n -DDeadFilterInterval=300 -DFactoryIORFileName=C:\Temp\evfact.ior &
+    notifd2db C:\Temp\evfact.ior -o C:\Temp\myfile.res
 
 For release 8 and above
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -17966,8 +15300,9 @@ started with the instance name set to 1 and its device name is
 sys/access\_control/1. The command line to start this device server is:
 
 .. code:: cpp
+  :number-lines:
 
-    TangoAccessControl~1
+    TangoAccessControl 1
 
 This server connects to MySQL using a default logging name set to root.
 You can change this behaviour with the MYSQL\_USER and MYSQL\_PASSWORD
@@ -18066,86 +15401,48 @@ Property file syntax
 --------------------
 
 .. code:: cpp
+  :number-lines:
 
-    \textbf{1~}\#-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-
-
-    2~\#~SERVER~TimeoutTest/manu,~TimeoutTest~device~declaration
-
-    3~\#-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-
-
-    4~
-
-    5~TimeoutTest/manu/DEVICE/TimeoutTest:~\textquotedbl{}et/to/01\textquotedbl{},\textbackslash{}~
-
-    6~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\textquotedbl{}et/to/02\textquotedbl{},\textbackslash{}~
-
-    7~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\textquotedbl{}et/to/03\textquotedbl{}
-
-    8~
-
-    9~
-
-    10~\#~-{}-{}-~et/to/01~properties
-
-    11~
-
-    12~et/to/01->StringProp:~Property
-
-    13~et/to/01->ArrayProp:~1,\textbackslash{}~
-
-    14~~~~~~~~~~~~~~~~~~~~~~2,\textbackslash{}~
-
-    15~~~~~~~~~~~~~~~~~~~~~~3
-
-    16~et/to/01->attr\_min\_poll\_period:~TheAttr,\textbackslash{}~
-
-    17~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~1000
-
-    18~et/to/01->AnotherStringProp:~\textquotedbl{}A~long~string\textquotedbl{}
-
-    19~et/to/01->ArrayStringProp:~\textquotedbl{}the~first~prop\textquotedbl{},\textbackslash{}~
-
-    20~~~~~~~~~~~~~~~~~~~~~~~~~~~~\textquotedbl{}the~second~prop\textquotedbl{}
-
-    21~
-
-    22~\#~-{}-{}-~et/to/01~attribute~properties
-
-    23~
-
-    24~et/to/01/TheAttr->display\_unit:~1.0
-
-    25~et/to/01/TheAttr->event\_period:~1000
-
-    26~et/to/01/TheAttr->format:~\%4d
-
-    27~et/to/01/TheAttr->min\_alarm:~-2.0
-
-    28~et/to/01/TheAttr->min\_value:~-5.0
-
-    29~et/to/01/TheAttr->standard\_unit:~1.0
-
-    30~et/to/01/TheAttr->\_\_value:~111
-
-    31~et/to/01/BooAttr->event\_period:~1000doc\_url
-
-    32~et/to/01/TestAttr->display\_unit:~1.0
-
-    33~et/to/01/TestAttr->event\_period:~1000
-
-    34~et/to/01/TestAttr->format:~\%4d
-
-    35~et/to/01/TestAttr->standard\_unit:~1.0
-
-    36~et/to/01/DbAttr->abs\_change:~1.1
-
-    37~et/to/01/DbAttr->event\_period:~1000
-
-    38
-
-    39~CLASS/TimeoutTest->InheritedFrom:~~~Device\_4Impl
-
-    40~CLASS/TimeoutTest->doc\_url:~~~\textquotedbl{}http://www.esrf.fr/some/path\textquotedbl{}
+    \textbf{1 }#---------------------------------------------------------
+   # SERVER TimeoutTest/manu, TimeoutTest device declaration
+   #---------------------------------------------------------
+   
+   TimeoutTest/manu/DEVICE/TimeoutTest: "et/to/01",\ 
+                                        "et/to/02",\ 
+                                        "et/to/03"
+   
+   
+   # --- et/to/01 properties
+   
+   et/to/01->StringProp: Property
+   et/to/01->ArrayProp: 1,\ 
+                        2,\ 
+                        3
+   et/to/01->attr_min_poll_period: TheAttr,\ 
+                                   1000
+   et/to/01->AnotherStringProp: "A long string"
+   et/to/01->ArrayStringProp: "the first prop",\ 
+                              "the second prop"
+   
+   # --- et/to/01 attribute properties
+   
+   et/to/01/TheAttr->display_unit: 1.0
+   et/to/01/TheAttr->event_period: 1000
+   et/to/01/TheAttr->format: %4d
+   et/to/01/TheAttr->min_alarm: -2.0
+   et/to/01/TheAttr->min_value: -5.0
+   et/to/01/TheAttr->standard_unit: 1.0
+   et/to/01/TheAttr->__value: 111
+   et/to/01/BooAttr->event_period: 1000doc_url
+   et/to/01/TestAttr->display_unit: 1.0
+   et/to/01/TestAttr->event_period: 1000
+   et/to/01/TestAttr->format: %4d
+   et/to/01/TestAttr->standard_unit: 1.0
+   et/to/01/DbAttr->abs_change: 1.1
+   et/to/01/DbAttr->event_period: 1000
+  
+   CLASS/TimeoutTest->InheritedFrom:   Device_4Impl
+   CLASS/TimeoutTest->doc_url:   "http://www.esrf.fr/some/path"
 
 Line 1 - 3: Comments. Comment starts with the ’#’ character
 

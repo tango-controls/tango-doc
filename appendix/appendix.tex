@@ -1,7 +1,8 @@
 \appendix
 
 
-\chapter{Reference part\label{cha:Reference-part}}
+\chapter{Reference part}
+\label{cha:Reference-part}
 
 \textbf{This chapter is only part of the TANGO device server reference
 guide. To get reference documentation about the C++ library classes,
@@ -48,7 +49,8 @@ applied. The default state is Tango::UNKOWN, the default status is
 \emph{Not Initialised.}
 
 
-\subsection{The device polling\label{sub:The-device-polling-prop}}
+\subsection{The device polling}
+\label{sub:The-device-polling-prop}
 
 Seven device properties allow the polling tunning. These properties
 are described in the following table 
@@ -454,7 +456,8 @@ This parameter has a meaning only for attribute with a Tango::READ\_WITH\_WRITE
 read/write type. This is the name of the associated write attribute.
 
 
-\subsubsection{The attribute display level\index{level} parameter\label{display level}}
+\subsubsection{The attribute display level\index{level} parameter}
+\label{display level}
 
 This parameter is only an help for graphical application. It is a
 C++ enumeration starting at 0. The code associated with each attribute
@@ -1917,13 +1920,11 @@ object(s) of which device. This property is an array of strings with
 one string per used thread in the pool. The content of the string
 is simply a device name list with device name splitted by a comma.
 Example of polling\_threads\_pool\_conf property for 3 threads used:
-\begin{lyxcode}
-dserver/<ds~exec~name>/<inst.~name>/polling\_threads\_pool\_conf->~the/dev/01
-
-~~~~~~~~~~~~~~~~~~the/dev/02,the/dev/06
-
-~~~~~~~~~~~~~~~~~~the/dev/03
-\end{lyxcode}
+\begin{minted}[linenos]{cpp}
+dserver/<ds exec name>/<inst. name>/polling_threads_pool_conf-> the/dev/01
+                  the/dev/02,the/dev/06
+                  the/dev/03
+\end{minted}
 Thread number 2 is in charge of 2 devices. Note that there is an entry
 in this list only for the used threads in the pool.
 
@@ -1932,7 +1933,8 @@ property is to select the polling algorithm which was used in Tango
 device server process before Tango release 9.
 
 
-\section{Tango log consumer\index{consumer} \label{sec:Tango-log-consumer}}
+\section{Tango log consumer\index{consumer} }
+\label{sec:Tango-log-consumer}
 
 
 \subsection{The available Log Consumer}
@@ -2018,7 +2020,7 @@ and is tunable. This is tunable at several level.
 Each property is the max number of events storable in these buffer.
 \item At client or device server level using the library calls \emph{Util::set\_ds\_event\_buffer\_hwm()}
 documented in \cite{Tango-dsclasses-doc} or \emph{ApiUtil::set\_event\_buffer\_hwm()
-}.
+}documented in \ref{sec:Tango::ApiUtil}
 \item Using environment variables TANGO\_DS\_EVENT\_BUFFER\_HWM\index{TANGO-DS-EVENT-BUFFER-HWM}
 or TANGO\_EVENT\_BUFFER\_HWM\index{TANGO-EVENT-BUFFER-HWM}
 \end{enumerate}
@@ -2521,7 +2523,8 @@ into the same directory.
 
 
 \subsubsection{The database and controlled access server (MYSQL\_USER, MYSQL\_PASSWORD,
-MYSQL\_HOST and MYSQL\_DATABASE)\label{sub:Db-Env-Variables}}
+MYSQL\_HOST and MYSQL\_DATABASE)}
+\label{sub:Db-Env-Variables}
 
 The Tango database server and the controlled access server (if used)
 need to connect to the MySQL database. They are using four environment

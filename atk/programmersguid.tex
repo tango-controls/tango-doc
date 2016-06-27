@@ -143,443 +143,227 @@ The following program (FirstApplication)\index{ScalarListViewer}
 shows an implementation of the list mentioned above. It should be
 rather self-explanatory with the comments.
 
-\input{atk/line.tex}
-\begin{lyxcode}
-package~examples;
 
-~
-
-
-
-import~javax.swing.JFrame;
-
-import~javax.swing.JMenuItem;
-
-import~javax.swing.JMenuBar;
-
-import~javax.swing.JMenu;
-
-~
-
-
-
-import~java.awt.event.ActionListener;
-
-import~java.awt.event.ActionEvent;
-
-import~java.awt.BorderLayout;
-
-~
-
-
-
-import~fr.esrf.tangoatk.core.AttributeList;
-
-import~fr.esrf.tangoatk.core.ConnectionException;
-
-~
-
-
-
-import~fr.esrf.tangoatk.core.CommandList;
-
-import~fr.esrf.tangoatk.widget.util.ErrorHistory;
-
-import~fr.esrf.tangoatk.widget.util.ATKGraphicsUtils;
-
-import~fr.esrf.tangoatk.widget.attribute.ScalarListViewer;
-
-import~fr.esrf.tangoatk.widget.command.CommandComboViewer;
-
-~
-
-
-
-public~class~FirstApplication~extends~JFrame
-
-\{
-
-JMenuBar~menu;~~~~~~~~~~~~~~~~~~~~//~So~that~our~application~looks
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//~halfway~decent.
-
-AttributeList~attributes;~~~~~~~~~//~The~list~that~will~contain~our
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//~attributes
-
-CommandList~commands;~~~~~~~~~~~~~//~The~list~that~will~contain~our
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//~commands
-
-ErrorHistory~errorHistory;~~~~~~~~//~A~window~that~displays~errors
-
-ScalarListViewer~sListViewer;~~~~~//~A~viewer~which~knows~how~to
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//~display~a~list~of~scalar~attributes.
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//~If~you~want~to~display~other~types
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//~than~scalars,~you'll~have~to~wait
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//~for~the~next~example.
-
-CommandComboViewer~commandViewer;~//~A~viewer~which~knows~how~to~display
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//~a~combobox~of~commands~and~execute
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//~them.
-
-String~device;~~~~~~~~~~~~~~~~~~~~//~The~name~of~our~device.
-
-~
-
-
-
-public~FirstApplication()
-
-\{
-
-~~~//~The~swing~stuff~to~create~the~menu~bar~and~its~pulldown~menus
-
-~~~menu~=~new~JMenuBar();
-
-~~~JMenu~fileMenu~=~new~JMenu();
-
-~~~fileMenu.setText(\textquotedbl{}File\textquotedbl{});~~~
-
-~~~JMenu~viewMenu~=~new~JMenu();
-
-~~~viewMenu.setText(\textquotedbl{}View\textquotedbl{});
-
-
-
-~~~JMenuItem~quitItem~=~new~JMenuItem();
-
-~~~quitItem.setText(\textquotedbl{}Quit\textquotedbl{});
-
-~~~quitItem.addActionListener(new~
-
-~~~~~~java.awt.event.ActionListener()
-
-~~~~~~\{~~~~~~~~~~~~~~~~~
-
-~~~~~~~public~void
-
-~~~~~~~actionPerformed(ActionEvent~evt)
-
-~~~~~~~\{quitItemActionPerformed(evt);\}
-
-~~~~~~\});
-
-~~~fileMenu.add(quitItem);
-
-
-
-~~~JMenuItem~errorHistItem~=~new~JMenuItem();
-
-~~~errorHistItem.setText(\textquotedbl{}Error~History\textquotedbl{});
-
-~~~errorHistItem.addActionListener(new~
-
-~~~~~~~~~~~java.awt.event.ActionListener()
-
-~~~~~~~~~~~\{~~~~~~~~~~~~~~~~~
-
-~~~~~~~~~~~~public~void~
-
-~~~~~~~~~~~~actionPerformed(ActionEvent~evt)
-
-~~~~~~~~~~~~\{errHistItemActionPerformed(evt);\}
-
-~~~~~~~~~~~\});
-
-~~~viewMenu.add(errorHistItem);
-
-~~~menu.add(fileMenu);
-
-~~~menu.add(viewMenu);
-
-
-
-~~~//
-
-~~~//~Here~we~create~ATK~objects~to~handle~attributes,~commands~and~errors.
-
-~~~//
-
-~~~attributes~=~new~AttributeList();~
-
-~~~commands~=~new~CommandList();
-
-~~~errorHistory~=~new~ErrorHistory();
-
-~~~device~=~\textquotedbl{}id14/eh3\_mirror/1\textquotedbl{};
-
-~~~sListViewer~=~new~ScalarListViewer();
-
-~~~commandViewer~=~new~CommandComboViewer();
-
-
-
-
-
-//~
-
-//~A~feature~of~the~command~and~attribute~list~is~that~if~you
-
-//~supply~an~errorlistener~to~these~lists,~they'll~add~that
-
-//~errorlistener~to~all~subsequently~created~attributes~or
-
-//~commands.~So~it~is~important~to~do~this~\_before\_~you
-
-//~start~adding~attributes~or~commands.
+\begin{minted}[linenos]{cpp}
+package examples;
+ 
+
+import javax.swing.JFrame;
+import javax.swing.JMenuItem;
+import javax.swing.JMenuBar;
+import javax.swing.JMenu;
+ 
+
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.BorderLayout;
+ 
+
+import fr.esrf.tangoatk.core.AttributeList;
+import fr.esrf.tangoatk.core.ConnectionException;
+ 
+
+import fr.esrf.tangoatk.core.CommandList;
+import fr.esrf.tangoatk.widget.util.ErrorHistory;
+import fr.esrf.tangoatk.widget.util.ATKGraphicsUtils;
+import fr.esrf.tangoatk.widget.attribute.ScalarListViewer;
+import fr.esrf.tangoatk.widget.command.CommandComboViewer;
+ 
+
+public class FirstApplication extends JFrame
+{
+JMenuBar menu;                    // So that our application looks
+                                  // halfway decent.
+AttributeList attributes;         // The list that will contain our
+                                  // attributes
+CommandList commands;             // The list that will contain our
+                                  // commands
+ErrorHistory errorHistory;        // A window that displays errors
+ScalarListViewer sListViewer;     // A viewer which knows how to
+                                  // display a list of scalar attributes.
+                                  // If you want to display other types
+                                  // than scalars, you'll have to wait
+                                  // for the next example.
+CommandComboViewer commandViewer; // A viewer which knows how to display
+                                  // a combobox of commands and execute
+                                  // them.
+String device;                    // The name of our device.
+ 
+
+public FirstApplication()
+{
+   // The swing stuff to create the menu bar and its pulldown menus
+   menu = new JMenuBar();
+   JMenu fileMenu = new JMenu();
+   fileMenu.setText("File");   
+   JMenu viewMenu = new JMenu();
+   viewMenu.setText("View");
+
+   JMenuItem quitItem = new JMenuItem();
+   quitItem.setText("Quit");
+   quitItem.addActionListener(new 
+      java.awt.event.ActionListener()
+      {                 
+       public void
+       actionPerformed(ActionEvent evt)
+       {quitItemActionPerformed(evt);}
+      });
+   fileMenu.add(quitItem);
+
+   JMenuItem errorHistItem = new JMenuItem();
+   errorHistItem.setText("Error History");
+   errorHistItem.addActionListener(new 
+           java.awt.event.ActionListener()
+           {                 
+            public void 
+            actionPerformed(ActionEvent evt)
+            {errHistItemActionPerformed(evt);}
+           });
+   viewMenu.add(errorHistItem);
+   menu.add(fileMenu);
+   menu.add(viewMenu);
+
+   //
+   // Here we create ATK objects to handle attributes, commands and errors.
+   //
+   attributes = new AttributeList(); 
+   commands = new CommandList();
+   errorHistory = new ErrorHistory();
+   device = "id14/eh3_mirror/1";
+   sListViewer = new ScalarListViewer();
+   commandViewer = new CommandComboViewer();
+
+
+// 
+// A feature of the command and attribute list is that if you
+// supply an errorlistener to these lists, they'll add that
+// errorlistener to all subsequently created attributes or
+// commands. So it is important to do this _before_ you
+// start adding attributes or commands.
+//
+ 
+   attributes.addErrorListener(errorHistory);
+   commands.addErrorListener(errorHistory);
+ 
+//
+// Sometimes we're out of luck and the device or the attributes
+// are not available. In that case a ConnectionException is thrown.
+// This is why we add the attributes in a try/catch
+//
+ 
+   try
+   {
+ 
+//
+// Another feature of the attribute and command list is that they
+// can add wildcard names, currently only `*' is supported.
+// When using a wildcard, the lists will add all commands or
+// attributes available on the device.
+//
+   attributes.add(device + "/*");
+   }
+   catch (ConnectionException ce)
+   {
+      System.out.println("Error fetching " + 
+                         "attributes from " +
+                         device + " " + ce);
+   }
+ 
 
 //
+// See the comments for attributelist
+//
+ 
 
-~
-
-~~~attributes.addErrorListener(errorHistory);
-
-~~~commands.addErrorListener(errorHistory);
-
-~
+   try
+   {
+      commands.add(device + "/*");
+   }
+   catch (ConnectionException ce)
+   {
+      System.out.println("Error fetching " +
+                         "commands from " +
+                         device + " " + ce);
+   }
+ 
 
 //
-
-//~Sometimes~we're~out~of~luck~and~the~device~or~the~attributes
-
-//~are~not~available.~In~that~case~a~ConnectionException~is~thrown.
-
-//~This~is~why~we~add~the~attributes~in~a~try/catch
-
+// Here we tell the scalarViewer what it's to show. The
+// ScalarListViewer loops through the attribute-list and picks out
+// the ones which are scalars and show them.
 //
 
-~
-
-~~~try
-
-~~~\{
-
-~
+   sListViewer.setModel(attributes);
+ 
 
 //
+// This is where the CommandComboViewer is told what it's to
+// show. It knows how to show and execute most commands.
+//
+ 
 
-//~Another~feature~of~the~attribute~and~command~list~is~that~they
-
-//~can~add~wildcard~names,~currently~only~`{*}'~is~supported.
-
-//~When~using~a~wildcard,~the~lists~will~add~all~commands~or
-
-//~attributes~available~on~the~device.
+   commandViewer.setModel(commands);
+ 
 
 //
+// add the menubar to the frame
+//
+ 
 
-~~~attributes.add(device~+~\textquotedbl{}/{*}\textquotedbl{});
-
-~~~\}
-
-~~~catch~(ConnectionException~ce)
-
-~~~\{
-
-~~~~~~System.out.println(\textquotedbl{}Error~fetching~\textquotedbl{}~+~
-
-~~~~~~~~~~~~~~~~~~~~~~~~~\textquotedbl{}attributes~from~\textquotedbl{}~+
-
-~~~~~~~~~~~~~~~~~~~~~~~~~device~+~\textquotedbl{}~\textquotedbl{}~+~ce);
-
-~~~\}
-
-~
-
-
+   setJMenuBar(menu);
+ 
 
 //
+// Make the layout nice.
+//
+ 
 
-//~See~the~comments~for~attributelist
+   getContentPane().setLayout(new BorderLayout());
+   getContentPane().add(commandViewer, BorderLayout.NORTH);
+   getContentPane().add(sListViewer, BorderLayout.SOUTH);
+ 
 
 //
+// A third feature of the attributelist is that it knows how
+// to refresh its attributes.
+//
+ 
 
-~
-
-
-
-~~~try
-
-~~~\{
-
-~~~~~~commands.add(device~+~\textquotedbl{}/{*}\textquotedbl{});
-
-~~~\}
-
-~~~catch~(ConnectionException~ce)
-
-~~~\{
-
-~~~~~~System.out.println(\textquotedbl{}Error~fetching~\textquotedbl{}~+
-
-~~~~~~~~~~~~~~~~~~~~~~~~~\textquotedbl{}commands~from~\textquotedbl{}~+
-
-~~~~~~~~~~~~~~~~~~~~~~~~~device~+~\textquotedbl{}~\textquotedbl{}~+~ce);
-
-~~~\}
-
-~
-
-
+   attributes.startRefresher();
+ 
 
 //
-
-//~Here~we~tell~the~scalarViewer~what~it's~to~show.~The
-
-//~ScalarListViewer~loops~through~the~attribute-list~and~picks~out
-
-//~the~ones~which~are~scalars~and~show~them.
-
+// JFrame stuff to make the thing show.
 //
+ 
 
+   pack();
+   ATKGraphicsUtils.centerFrameOnScreen(this); //ATK utility to center window
 
+   setVisible(true);
+   }
+ 
 
-~~~sListViewer.setModel(attributes);
+   public static void main(String [] args)
+   {
+      new FirstApplication();
+   }
 
-~
+   public void quitItemActionPerformed(ActionEvent evt)
+   {
+      System.exit(0);
+   }
 
+   public void errHistItemActionPerformed(ActionEvent evt)
+   {
+      errorHistory.setVisible(true);
+   }
+}
 
 
-//
 
-//~This~is~where~the~CommandComboViewer~is~told~what~it's~to
+\end{minted}
 
-//~show.~It~knows~how~to~show~and~execute~most~commands.
-
-//
-
-~
-
-
-
-~~~commandViewer.setModel(commands);
-
-~
-
-
-
-//
-
-//~add~the~menubar~to~the~frame
-
-//
-
-~
-
-
-
-~~~setJMenuBar(menu);
-
-~
-
-
-
-//
-
-//~Make~the~layout~nice.
-
-//
-
-~
-
-
-
-~~~getContentPane().setLayout(new~BorderLayout());
-
-~~~getContentPane().add(commandViewer,~BorderLayout.NORTH);
-
-~~~getContentPane().add(sListViewer,~BorderLayout.SOUTH);
-
-~
-
-
-
-//
-
-//~A~third~feature~of~the~attributelist~is~that~it~knows~how
-
-//~to~refresh~its~attributes.
-
-//
-
-~
-
-
-
-~~~attributes.startRefresher();
-
-~
-
-
-
-//
-
-//~JFrame~stuff~to~make~the~thing~show.
-
-//
-
-~
-
-
-
-~~~pack();
-
-~~~ATKGraphicsUtils.centerFrameOnScreen(this);~//ATK~utility~to~center~window
-
-
-
-~~~setVisible(true);
-
-~~~\}
-
-~
-
-
-
-~~~public~static~void~main(String~{[}{]}~args)
-
-~~~\{
-
-~~~~~~new~FirstApplication();
-
-~~~\}
-
-
-
-~~~public~void~quitItemActionPerformed(ActionEvent~evt)
-
-~~~\{
-
-~~~~~~System.exit(0);
-
-~~~\}
-
-
-
-~~~public~void~errHistItemActionPerformed(ActionEvent~evt)
-
-~~~\{
-
-~~~~~~errorHistory.setVisible(true);
-
-~~~\}
-
-\}
-
-
-
-
-
-
-\end{lyxcode}
-\input{atk/line.tex}
 
 The program should look something like this (depending on your platform
 and your device)
@@ -596,39 +380,25 @@ the only difference is that it does not suffice to add the attributes
 by wildcard, you need to add them explicitly, like this: \\
 
 
-\input{atk/line.tex}
-\begin{lyxcode}
+
+\begin{minted}[linenos]{cpp}
 try
+{ 
+    // a StringScalar attribute from the device one
+   attributes.add("jlp/test/1/att_cinq");
+   // a NumberSpectrum attribute from the device one
+   attributes.add("jlp/test/1/att_spectrum");
+   // a NumberImage attribute from the device two
+   attributes.add("sr/d-ipc/id25-1n/Image");
+}
+catch (ConnectionException ce)
+{
+   System.out.println("Error fetching " + 
+       "attributes" + ce);
+}
 
-\{~
+\end{minted}
 
-~~~~//~a~StringScalar~attribute~from~the~device~one
-
-~~~attributes.add(\textquotedbl{}jlp/test/1/att\_cinq\textquotedbl{});
-
-~~~//~a~NumberSpectrum~attribute~from~the~device~one
-
-~~~attributes.add(\textquotedbl{}jlp/test/1/att\_spectrum\textquotedbl{});
-
-~~~//~a~NumberImage~attribute~from~the~device~two
-
-~~~attributes.add(\textquotedbl{}sr/d-ipc/id25-1n/Image\textquotedbl{});
-
-\}
-
-catch~(ConnectionException~ce)
-
-\{
-
-~~~System.out.println(\textquotedbl{}Error~fetching~\textquotedbl{}~+~
-
-~~~~~~~\textquotedbl{}attributes\textquotedbl{}~+~ce);
-
-\}
-
-
-\end{lyxcode}
-\input{atk/line.tex}
 
 The same goes for commands.
 
@@ -663,330 +433,175 @@ is a Multi-device application. Since this application uses individual
 attribute viewers and not an attribute list viewer, it shows an implementation
 of the list mentioned above.
 
-\input{atk/line.tex}
-\begin{lyxcode}
-package~examples;
 
-~
+\begin{minted}[linenos]{cpp}
+package examples;
+ 
+
+import javax.swing.JFrame;
+import javax.swing.JMenuItem;
+import javax.swing.JMenuBar;
+import javax.swing.JMenu;
+ 
+
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.BorderLayout;
+import java.awt.Color;
+ 
+
+import fr.esrf.tangoatk.core.AttributeList;
+import fr.esrf.tangoatk.core.ConnectionException;
+ 
+import fr.esrf.tangoatk.core.IStringScalar;
+import fr.esrf.tangoatk.core.INumberSpectrum;
+import fr.esrf.tangoatk.core.INumberImage;
+import fr.esrf.tangoatk.widget.util.ErrorHistory;
+import fr.esrf.tangoatk.widget.util.Gradient;
+import fr.esrf.tangoatk.widget.util.ATKGraphicsUtils;
+import fr.esrf.tangoatk.widget.attribute.NumberImageViewer;
+import fr.esrf.tangoatk.widget.attribute.NumberSpectrumViewer;
+import fr.esrf.tangoatk.widget.attribute.SimpleScalarViewer;
+
+public class SecondApplication extends JFrame
+{
+     JMenuBar            menu;
+     AttributeList       attributes;   // The list that will contain our attributes
+     ErrorHistory        errorHistory; // A window that displays errors
+     IStringScalar        ssAtt;
+     INumberSpectrum      nsAtt;
+     INumberImage         niAtt;
+     public SecondApplication()
+     {
+        // Swing stuff to create the menu bar and its pulldown menus
+        menu = new JMenuBar();
+        JMenu fileMenu = new JMenu();
+        fileMenu.setText("File");   
+        JMenu viewMenu = new JMenu();
+        viewMenu.setText("View");
+        JMenuItem quitItem = new JMenuItem();
+        quitItem.setText("Quit");
+        quitItem.addActionListener(new java.awt.event.ActionListener()
+                                      {                 
+                                       public void actionPerformed(ActionEvent evt)
+                                       {quitItemActionPerformed(evt);}
+                                      });
+
+        fileMenu.add(quitItem);
+        JMenuItem errorHistItem = new JMenuItem();
+        errorHistItem.setText("Error History");
+        errorHistItem.addActionListener(new java.awt.event.ActionListener()
+                {                 
+                 public void actionPerformed(ActionEvent evt)
+                 {errHistItemActionPerformed(evt);}
+                });
+        viewMenu.add(errorHistItem);
+        menu.add(fileMenu);
+        menu.add(viewMenu);
+      //
+      // Here we create TangoATK objects to view attributes and errors.
+      //
+        attributes = new AttributeList(); 
+        errorHistory = new ErrorHistory();
+      //
+      // We create a SimpleScalarViewer, a NumberSpectrumViewer and
+      // a NumberImageViewer, since we already knew that we were
+      // playing with a scalar attribute, a number spectrum attribute
+      // and a number image attribute this time.
+      //
+      SimpleScalarViewer     ssViewer = new SimpleScalarViewer();
+        NumberSpectrumViewer   nSpectViewer = new NumberSpectrumViewer();
+        NumberImageViewer      nImageViewer = new NumberImageViewer();
+        attributes.addErrorListener(errorHistory);
+     //
+     // The attribute (and command) list has the feature of returning the last
+     // attribute that was added to it. Just remember that it is returned as an
+     // IEntity object, so you need to cast it into a more specific object, like
+     // IStringScalar, which is the interface which defines a string scalar
+     //
+       try
+        {
+
+           ssAtt = (IStringScalar) attributes.add("jlp/test/1/att_cinq");
+           nsAtt = (INumberSpectrum) attributes.add("jlp/test/1/att_spectrum");
+           niAtt = (INumberImage) attributes.add("sr/d-ipc/id25-1n/Image");
+        }
+        catch (ConnectionException ce)
+        {
+           System.out.println("Error fetching one of the attributes  "+" " + ce);
+           System.out.println("Application Aborted.");
+           System.exit(0);
+        }        
+        //
+        // Pay close attention to the following three lines!! This is how it's done!
+        // This is how it's always done! The setModelsetModel method of any viewer takes care
+       // of connecting the viewer to the attribute (model) it's in charge of displaying.
+       // This is the way to tell each viewer what (which attribute) it has to show.
+       // Note that we use a viewer adapted to each type of attribute
+       //
+        ssViewer.setModel(ssAtt);
+        nSpectViewer.setModel(nsAtt);
+        nImageViewer.setModel(niAtt);
+     //
+        nSpectViewer.setPreferredSize(new java.awt.Dimension(400, 300));
+        nImageViewer.setPreferredSize(new java.awt.Dimension(500, 300));
+        Gradient  g = new Gradient();
+        g.buidColorGradient();
+        g.setColorAt(0,Color.black);
+        nImageViewer.setGradient(g);
+        nImageViewer.setBestFit(true);
+
+        //
+        // Add the viewers into the frame to show them
+        //
+        getContentPane().setLayout(new BorderLayout());
+        getContentPane().add(ssViewer, BorderLayout.SOUTH);
+        getContentPane().add(nSpectViewer, BorderLayout.CENTER);
+        getContentPane().add(nImageViewer, BorderLayout.EAST);
+        //
+        // To have the attributes values refreshed we should start the
+        // attribute list's refresher.
+        //
+        attributes.startRefresher();
+        //
+        // add the menubar to the frame
+        //
+        setJMenuBar(menu);
+        //
+        // JFrame stuff to make the thing show.
+        //
+        pack();
+        ATKGraphicsUtils.centerFrameOnScreen(this); //ATK utility to center window
+        setVisible(true);
+     }
+     public static void main(String [] args)
+     {
+        new SecondApplication();
+     }
+     public void quitItemActionPerformed(ActionEvent evt)
+     {
+        System.exit(0);
+     }
+     public void errHistItemActionPerformed(ActionEvent evt)
+     {
+        errorHistory.setVisible(true);
+     }
+}
+
+
+
+
+\end{minted}
 
-
-
-import~javax.swing.JFrame;
-
-import~javax.swing.JMenuItem;
-
-import~javax.swing.JMenuBar;
-
-import~javax.swing.JMenu;
-
-~
-
-
-
-import~java.awt.event.ActionListener;
-
-import~java.awt.event.ActionEvent;
-
-import~java.awt.BorderLayout;
-
-import~java.awt.Color;
-
-~
-
-
-
-import~fr.esrf.tangoatk.core.AttributeList;
-
-import~fr.esrf.tangoatk.core.ConnectionException;
-
-~
-
-import~fr.esrf.tangoatk.core.IStringScalar;
-
-import~fr.esrf.tangoatk.core.INumberSpectrum;
-
-import~fr.esrf.tangoatk.core.INumberImage;
-
-import~fr.esrf.tangoatk.widget.util.ErrorHistory;
-
-import~fr.esrf.tangoatk.widget.util.Gradient;
-
-import~fr.esrf.tangoatk.widget.util.ATKGraphicsUtils;
-
-import~fr.esrf.tangoatk.widget.attribute.NumberImageViewer;
-
-import~fr.esrf.tangoatk.widget.attribute.NumberSpectrumViewer;
-
-import~fr.esrf.tangoatk.widget.attribute.SimpleScalarViewer;
-
-
-
-public~class~SecondApplication~extends~JFrame
-
-\{
-
-~~~~~JMenuBar~~~~~~~~~~~~menu;
-
-~~~~~AttributeList~~~~~~~attributes;~~~//~The~list~that~will~contain~our~attributes
-
-~~~~~ErrorHistory~~~~~~~~errorHistory;~//~A~window~that~displays~errors
-
-~~~~~IStringScalar~~~~~~~~ssAtt;
-
-~~~~~INumberSpectrum~~~~~~nsAtt;
-
-~~~~~INumberImage~~~~~~~~~niAtt;
-
-~~~~~public~SecondApplication()
-
-~~~~~\{
-
-~~~~~~~~//~Swing~stuff~to~create~the~menu~bar~and~its~pulldown~menus
-
-~~~~~~~~menu~=~new~JMenuBar();
-
-~~~~~~~~JMenu~fileMenu~=~new~JMenu();
-
-~~~~~~~~fileMenu.setText(\textquotedbl{}File\textquotedbl{});~~~
-
-~~~~~~~~JMenu~viewMenu~=~new~JMenu();
-
-~~~~~~~~viewMenu.setText(\textquotedbl{}View\textquotedbl{});
-
-~~~~~~~~JMenuItem~quitItem~=~new~JMenuItem();
-
-~~~~~~~~quitItem.setText(\textquotedbl{}Quit\textquotedbl{});
-
-~~~~~~~~quitItem.addActionListener(new~java.awt.event.ActionListener()
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\{~~~~~~~~~~~~~~~~~
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~public~void~actionPerformed(ActionEvent~evt)
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\{quitItemActionPerformed(evt);\}
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\});
-
-
-
-~~~~~~~~fileMenu.add(quitItem);
-
-~~~~~~~~JMenuItem~errorHistItem~=~new~JMenuItem();
-
-~~~~~~~~errorHistItem.setText(\textquotedbl{}Error~History\textquotedbl{});
-
-~~~~~~~~errorHistItem.addActionListener(new~java.awt.event.ActionListener()
-
-~~~~~~~~~~~~~~~~\{~~~~~~~~~~~~~~~~~
-
-~~~~~~~~~~~~~~~~~public~void~actionPerformed(ActionEvent~evt)
-
-~~~~~~~~~~~~~~~~~\{errHistItemActionPerformed(evt);\}
-
-~~~~~~~~~~~~~~~~\});
-
-~~~~~~~~viewMenu.add(errorHistItem);
-
-~~~~~~~~menu.add(fileMenu);
-
-~~~~~~~~menu.add(viewMenu);
-
-~~~~~~//
-
-~~~~~~//~Here~we~create~TangoATK~objects~to~view~attributes~and~errors.
-
-~~~~~~//
-
-~~~~~~~~attributes~=~new~AttributeList();~
-
-~~~~~~~~errorHistory~=~new~ErrorHistory();
-
-~~~~~~//
-
-~~~~~~//~We~create~a~SimpleScalarViewer,~a~NumberSpectrumViewer~and
-
-~~~~~~//~a~NumberImageViewer,~since~we~already~knew~that~we~were
-
-~~~~~~//~playing~with~a~scalar~attribute,~a~number~spectrum~attribute
-
-~~~~~~//~and~a~number~image~attribute~this~time.
-
-~~~~~~//
-
-~~~~~~SimpleScalarViewer~~~~~ssViewer~=~new~SimpleScalarViewer();
-
-~~~~~~~~NumberSpectrumViewer~~~nSpectViewer~=~new~NumberSpectrumViewer();
-
-~~~~~~~~NumberImageViewer~~~~~~nImageViewer~=~new~NumberImageViewer();
-
-~~~~~~~~attributes.addErrorListener(errorHistory);
-
-~~~~~//
-
-~~~~~//~The~attribute~(and~command)~list~has~the~feature~of~returning~the~last
-
-~~~~~//~attribute~that~was~added~to~it.~Just~remember~that~it~is~returned~as~an
-
-~~~~~//~IEntity~object,~so~you~need~to~cast~it~into~a~more~specific~object,~like
-
-~~~~~//~IStringScalar,~which~is~the~interface~which~defines~a~string~scalar
-
-~~~~~//
-
-~~~~~~~try
-
-~~~~~~~~\{
-
-
-
-~~~~~~~~~~~ssAtt~=~(IStringScalar)~attributes.add(\textquotedbl{}jlp/test/1/att\_cinq\textquotedbl{});
-
-~~~~~~~~~~~nsAtt~=~(INumberSpectrum)~attributes.add(\textquotedbl{}jlp/test/1/att\_spectrum\textquotedbl{});
-
-~~~~~~~~~~~niAtt~=~(INumberImage)~attributes.add(\textquotedbl{}sr/d-ipc/id25-1n/Image\textquotedbl{});
-
-~~~~~~~~\}
-
-~~~~~~~~catch~(ConnectionException~ce)
-
-~~~~~~~~\{
-
-~~~~~~~~~~~System.out.println(\textquotedbl{}Error~fetching~one~of~the~attributes~~\textquotedbl{}+\textquotedbl{}~\textquotedbl{}~+~ce);
-
-~~~~~~~~~~~System.out.println(\textquotedbl{}Application~Aborted.\textquotedbl{});
-
-~~~~~~~~~~~System.exit(0);
-
-~~~~~~~~\}~~~~~~~~
-
-~~~~~~~~//
-
-~~~~~~~~//~Pay~close~attention~to~the~following~three~lines!!~This~is~how~it's~done!
-
-~~~~~~~~//~This~is~how~it's~always~done!~The~setModel\index{setModel}~method~of~any~viewer~takes~care
-
-~~~~~~~//~of~connecting~the~viewer~to~the~attribute~(model)~it's~in~charge~of~displaying.
-
-~~~~~~~//~This~is~the~way~to~tell~each~viewer~what~(which~attribute)~it~has~to~show.
-
-~~~~~~~//~Note~that~we~use~a~viewer~adapted~to~each~type~of~attribute
-
-~~~~~~~//
-
-~~~~~~~~ssViewer.setModel(ssAtt);
-
-~~~~~~~~nSpectViewer.setModel(nsAtt);
-
-~~~~~~~~nImageViewer.setModel(niAtt);
-
-~~~~~//
-
-~~~~~~~~nSpectViewer.setPreferredSize(new~java.awt.Dimension(400,~300));
-
-~~~~~~~~nImageViewer.setPreferredSize(new~java.awt.Dimension(500,~300));
-
-~~~~~~~~Gradient~~g~=~new~Gradient();
-
-~~~~~~~~g.buidColorGradient();
-
-~~~~~~~~g.setColorAt(0,Color.black);
-
-~~~~~~~~nImageViewer.setGradient(g);
-
-~~~~~~~~nImageViewer.setBestFit(true);
-
-
-
-~~~~~~~~//
-
-~~~~~~~~//~Add~the~viewers~into~the~frame~to~show~them
-
-~~~~~~~~//
-
-~~~~~~~~getContentPane().setLayout(new~BorderLayout());
-
-~~~~~~~~getContentPane().add(ssViewer,~BorderLayout.SOUTH);
-
-~~~~~~~~getContentPane().add(nSpectViewer,~BorderLayout.CENTER);
-
-~~~~~~~~getContentPane().add(nImageViewer,~BorderLayout.EAST);
-
-~~~~~~~~//
-
-~~~~~~~~//~To~have~the~attributes~values~refreshed~we~should~start~the
-
-~~~~~~~~//~attribute~list's~refresher.
-
-~~~~~~~~//
-
-~~~~~~~~attributes.startRefresher();
-
-~~~~~~~~//
-
-~~~~~~~~//~add~the~menubar~to~the~frame
-
-~~~~~~~~//
-
-~~~~~~~~setJMenuBar(menu);
-
-~~~~~~~~//
-
-~~~~~~~~//~JFrame~stuff~to~make~the~thing~show.
-
-~~~~~~~~//
-
-~~~~~~~~pack();
-
-~~~~~~~~ATKGraphicsUtils.centerFrameOnScreen(this);~//ATK~utility~to~center~window
-
-~~~~~~~~setVisible(true);
-
-~~~~~\}
-
-~~~~~public~static~void~main(String~{[}{]}~args)
-
-~~~~~\{
-
-~~~~~~~~new~SecondApplication();
-
-~~~~~\}
-
-~~~~~public~void~quitItemActionPerformed(ActionEvent~evt)
-
-~~~~~\{
-
-~~~~~~~~System.exit(0);
-
-~~~~~\}
-
-~~~~~public~void~errHistItemActionPerformed(ActionEvent~evt)
-
-~~~~~\{
-
-~~~~~~~~errorHistory.setVisible(true);
-
-~~~~~\}
-
-\}
-
-
-
-
-
-
-
-
-\end{lyxcode}
-\input{atk/line.tex}
 
 This program (SeondApplication) should look something like this (depending
 on your platform and your device attributes)\\
 
 
 \includegraphics[scale=0.5]{atk/img/prog_guide_exple2}
-\begin{lyxcode}
+\begin{minted}[linenos]{cpp}
 
-\end{lyxcode}
+\end{minted}
 
 \subsubsection{Synoptic\index{Synoptic} viewer}
 
@@ -1048,272 +663,142 @@ The following example (ThirdApplication), is a Synoptic\index{SynopticFileViewer
 application. We assume that the synoptic has already been drawn using
 Jdraw graphical editor.
 
-\input{atk/line.tex}
-\begin{lyxcode}
-package~examples;
 
-import~java.io.{*};
-
-import~java.util.{*};
-
-import~javax.swing.JFrame;
-
-import~javax.swing.JMenuItem;
-
-import~javax.swing.JMenuBar;
-
-import~javax.swing.JMenu;
-
-import~java.awt.event.ActionListener;
-
-import~java.awt.event.ActionEvent;
-
-import~java.awt.BorderLayout;
-
-import~fr.esrf.tangoatk.widget.util.ErrorHistory;
-
-import~fr.esrf.tangoatk.widget.util.ATKGraphicsUtils;
-
-import~fr.esrf.tangoatk.widget.jdraw.SynopticFileViewer;
-
-import~fr.esrf.tangoatk.widget.jdraw.TangoSynopticHandler;
-
-public~class~ThirdApplication~extends~JFrame
-
-\{
-
-~~~~~JMenuBar~~~~~~~~~~~~~~menu;
-
-~~~~~ErrorHistory~~~~~~~~~~errorHistory;~~//~A~window~that~displays~errors
-
-~~~~~SynopticFileViewer~~~~sfv;~~~~~~~~~~~//~TangoATK~generic~synoptic~viewer
-
-~~~~~
-
-~~~~~
-
-~~~~~public~ThirdApplication()
-
-~~~~~\{
-
-~~~~~~~~//~Swing~stuff~to~create~the~menu~bar~and~its~pulldown~menus
-
-~~~~~~~~menu~=~new~JMenuBar();
-
-~~~~~~~~JMenu~fileMenu~=~new~JMenu();
-
-~~~~~~~~fileMenu.setText(\textquotedbl{}File\textquotedbl{});~~~
-
-~~~~~~~~JMenu~viewMenu~=~new~JMenu();
-
-~~~~~~~~viewMenu.setText(\textquotedbl{}View\textquotedbl{});
-
-~~~~~~~~JMenuItem~quitItem~=~new~JMenuItem();
-
-~~~~~~~~quitItem.setText(\textquotedbl{}Quit\textquotedbl{});
-
-~~~~~~~~quitItem.addActionListener(new~java.awt.event.ActionListener()
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\{~~~~~~~~~~~~~~~~~
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~public~void~actionPerformed(ActionEvent~evt)
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\{quitItemActionPerformed(evt);\}
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\});
-
-~~~~~~~~fileMenu.add(quitItem);
-
-~~~~~~~~JMenuItem~errorHistItem~=~new~JMenuItem();
-
-~~~~~~~~errorHistItem.setText(\textquotedbl{}Error~History\textquotedbl{});
-
-~~~~~~~~errorHistItem.addActionListener(new~java.awt.event.ActionListener()
-
-~~~~~~~~~~~~~~~~\{~~~~~~~~~~~~~~~~~
-
-~~~~~~~~~~~~~~~~~public~void~actionPerformed(ActionEvent~evt)
-
-~~~~~~~~~~~~~~~~~\{errHistItemActionPerformed(evt);\}
-
-~~~~~~~~~~~~~~~~\});
-
-~~~~~~~~viewMenu.add(errorHistItem);
-
-~~~~~~~~menu.add(fileMenu);
-
-~~~~~~~~menu.add(viewMenu);
-
-~~~~~~~~//
-
-~~~~~~~~//~Here~we~create~TangoATK~synoptic~viewer~and~error~window.
-
-~~~~~~~~//
-
-~~~~~~~~errorHistory~=~new~ErrorHistory();
-
-~~~~~~~~sfv~=~new~SynopticFileViewer();
-
-~~~~~~~~try
-
-~~~~~~~~\{
-
-~~~~~~~~~~~~sfv.setErrorWindow(errorHistory);
-
-~~~~~~~~\}
-
-~~~~~~~~catch~(Exception~setErrwExcept)
-
-~~~~~~~~\{
-
-~~~~~~~~~~~~System.out.println(\textquotedbl{}Cannot~set~Error~History~Window\textquotedbl{});
-
-~~~~~~~~\}
-
-
-
-~~~~~~~~//~~~~~~
-
-~~~~~~~~//~Here~we~define~the~name~of~the~synoptic~file~to~show~and~the~tooltip~mode~to~use
-
-~~~~~~~~//~~~~~~~~
-
-~~~~~~~~try
-
-~~~~~~~~\{~~~~~
-
-~~~~~~~~~~sfv.setJdrawFileName(\textquotedbl{}/users/poncet/ATK\_OLD/jdraw\_files/id14.jdw\textquotedbl{});
-
-~~~~~~~~~~sfv.setToolTipMode~(TangoSynopticHandler.TOOL\_TIP\_NAME);
-
-~~~~~~~~\}
-
-~~~~~~~~catch~(FileNotFoundException~~fnfEx)
-
-~~~~~~~~\{
-
-~~~~~~~~~~~javax.swing.JOptionPane.showMessageDialog(
-
-~~~~~~~~~~~~~~null,~\textquotedbl{}Cannot~find~the~synoptic~file~:~id14.jdw.\textbackslash{}n\textquotedbl{}
-
-~~~~~~~~~~~~~~~~~~~+~\textquotedbl{}Check~the~file~name~you~entered;\textquotedbl{}
-
-~~~~~~~~~~~~~~~~~~~+~\textquotedbl{}~Application~will~abort~...\textbackslash{}n\textquotedbl{}
-
-~~~~~~~~~~~~~~~~~~~+~fnfEx,
-
-~~~~~~~~~~~~~~~~~~~\textquotedbl{}No~such~file\textquotedbl{},
-
-~~~~~~~~~~~~~~~~~~~javax.swing.JOptionPane.ERROR\_MESSAGE);
-
-~~~~~~~~~~~System.exit(-1);
-
-~~~~~~~~\}
-
-~~~~~~~~catch~(IllegalArgumentException~~illEx)
-
-~~~~~~~~\{
-
-~~~~~~~~~~~javax.swing.JOptionPane.showMessageDialog(
-
-~~~~~~~~~~~~~~null,~\textquotedbl{}Cannot~parse~the~synoptic~file~:~id14.jdw.\textbackslash{}n\textquotedbl{}
-
-~~~~~~~~~~~~~~~~~~~+~\textquotedbl{}Check~if~the~file~is~a~Jdraw~file.\textquotedbl{}
-
-~~~~~~~~~~~~~~~~~~~+~\textquotedbl{}~Application~will~abort~...\textbackslash{}n\textquotedbl{}
-
-~~~~~~~~~~~~~~~~~~~+~illEx,
-
-~~~~~~~~~~~~~~~~~~~\textquotedbl{}Cannot~parse~the~file\textquotedbl{},
-
-~~~~~~~~~~~~~~~~~~~javax.swing.JOptionPane.ERROR\_MESSAGE);
-
-~~~~~~~~~~~System.exit(-1);
-
-~~~~~~~~\}
-
-~~~~~~~~catch~(MissingResourceException~~mrEx)
-
-~~~~~~~~\{
-
-~~~~~~~~~~~javax.swing.JOptionPane.showMessageDialog(
-
-~~~~~~~~~~~~~~null,~\textquotedbl{}Cannot~parse~the~synoptic~file~:~id14.jdw.\textbackslash{}n\textquotedbl{}
-
-~~~~~~~~~~~~~~~~~~~+~\textquotedbl{}~Application~will~abort~...\textbackslash{}n\textquotedbl{}
-
-~~~~~~~~~~~~~~~~~~~+~mrEx,
-
-~~~~~~~~~~~~~~~~~~~\textquotedbl{}Cannot~parse~the~file\textquotedbl{},
-
-~~~~~~~~~~~~~~~~~~~javax.swing.JOptionPane.ERROR\_MESSAGE);
-
-~~~~~~~~~~~System.exit(-1);
-
-~~~~~~~~\}
-
-~~~~~~~~//
-
-~~~~~~~~//~Add~the~viewers~into~the~frame~to~show~them
-
-~~~~~~~~//
-
-~~~~~~~~getContentPane().setLayout(new~BorderLayout());
-
-~~~~~~~~getContentPane().add(sfv,~BorderLayout.CENTER);
-
-~~~~~~~~//
-
-~~~~~~~~//~add~the~menubar~to~the~frame
-
-~~~~~~~~//
-
-~~~~~~~~setJMenuBar(menu);
-
-~~~~~~~~//
-
-~~~~~~~~//~JFrame~stuff~to~make~the~thing~show.
-
-~~~~~~~~//
-
-~~~~~~~~pack();
-
-~~~~~~~~ATKGraphicsUtils.centerFrameOnScreen(this);~//TangoATK~utility~to~center~window
-
-~~~~~~~~setVisible(true);
-
-~~~~~\}
-
-~~~~~public~static~void~main(String~{[}{]}~args)
-
-~~~~~\{
-
-~~~~~~~~new~ThirdApplication();
-
-~~~~~\}
-
-~~~~~public~void~quitItemActionPerformed(ActionEvent~evt)
-
-~~~~~\{
-
-~~~~~~~~System.exit(0);
-
-~~~~~\}
-
-~~~~~public~void~errHistItemActionPerformed(ActionEvent~evt)
-
-~~~~~\{
-
-~~~~~~~~errorHistory.setVisible(true);
-
-~~~~~\}
-
-\}
-
-\input{atk/line.tex}~\\
-~\\
-
-\end{lyxcode}
+\begin{minted}[linenos]{cpp}
+package examples;
+import java.io.*;
+import java.util.*;
+import javax.swing.JFrame;
+import javax.swing.JMenuItem;
+import javax.swing.JMenuBar;
+import javax.swing.JMenu;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.BorderLayout;
+import fr.esrf.tangoatk.widget.util.ErrorHistory;
+import fr.esrf.tangoatk.widget.util.ATKGraphicsUtils;
+import fr.esrf.tangoatk.widget.jdraw.SynopticFileViewer;
+import fr.esrf.tangoatk.widget.jdraw.TangoSynopticHandler;
+public class ThirdApplication extends JFrame
+{
+     JMenuBar              menu;
+     ErrorHistory          errorHistory;  // A window that displays errors
+     SynopticFileViewer    sfv;           // TangoATK generic synoptic viewer
+     
+     
+     public ThirdApplication()
+     {
+        // Swing stuff to create the menu bar and its pulldown menus
+        menu = new JMenuBar();
+        JMenu fileMenu = new JMenu();
+        fileMenu.setText("File");   
+        JMenu viewMenu = new JMenu();
+        viewMenu.setText("View");
+        JMenuItem quitItem = new JMenuItem();
+        quitItem.setText("Quit");
+        quitItem.addActionListener(new java.awt.event.ActionListener()
+                                      {                 
+                                       public void actionPerformed(ActionEvent evt)
+                                       {quitItemActionPerformed(evt);}
+                                      });
+        fileMenu.add(quitItem);
+        JMenuItem errorHistItem = new JMenuItem();
+        errorHistItem.setText("Error History");
+        errorHistItem.addActionListener(new java.awt.event.ActionListener()
+                {                 
+                 public void actionPerformed(ActionEvent evt)
+                 {errHistItemActionPerformed(evt);}
+                });
+        viewMenu.add(errorHistItem);
+        menu.add(fileMenu);
+        menu.add(viewMenu);
+        //
+        // Here we create TangoATK synoptic viewer and error window.
+        //
+        errorHistory = new ErrorHistory();
+        sfv = new SynopticFileViewer();
+        try
+        {
+            sfv.setErrorWindow(errorHistory);
+        }
+        catch (Exception setErrwExcept)
+        {
+            System.out.println("Cannot set Error History Window");
+        }
+
+        //      
+        // Here we define the name of the synoptic file to show and the tooltip mode to use
+        //        
+        try
+        {     
+          sfv.setJdrawFileName("/users/poncet/ATK_OLD/jdraw_files/id14.jdw");
+          sfv.setToolTipMode (TangoSynopticHandler.TOOL_TIP_NAME);
+        }
+        catch (FileNotFoundException  fnfEx)
+        {
+           javax.swing.JOptionPane.showMessageDialog(
+              null, "Cannot find the synoptic file : id14.jdw.\n"
+                   + "Check the file name you entered;"
+                   + " Application will abort ...\n"
+                   + fnfEx,
+                   "No such file",
+                   javax.swing.JOptionPane.ERROR_MESSAGE);
+           System.exit(-1);
+        }
+        catch (IllegalArgumentException  illEx)
+        {
+           javax.swing.JOptionPane.showMessageDialog(
+              null, "Cannot parse the synoptic file : id14.jdw.\n"
+                   + "Check if the file is a Jdraw file."
+                   + " Application will abort ...\n"
+                   + illEx,
+                   "Cannot parse the file",
+                   javax.swing.JOptionPane.ERROR_MESSAGE);
+           System.exit(-1);
+        }
+        catch (MissingResourceException  mrEx)
+        {
+           javax.swing.JOptionPane.showMessageDialog(
+              null, "Cannot parse the synoptic file : id14.jdw.\n"
+                   + " Application will abort ...\n"
+                   + mrEx,
+                   "Cannot parse the file",
+                   javax.swing.JOptionPane.ERROR_MESSAGE);
+           System.exit(-1);
+        }
+        //
+        // Add the viewers into the frame to show them
+        //
+        getContentPane().setLayout(new BorderLayout());
+        getContentPane().add(sfv, BorderLayout.CENTER);
+        //
+        // add the menubar to the frame
+        //
+        setJMenuBar(menu);
+        //
+        // JFrame stuff to make the thing show.
+        //
+        pack();
+        ATKGraphicsUtils.centerFrameOnScreen(this); //TangoATK utility to center window
+        setVisible(true);
+     }
+     public static void main(String [] args)
+     {
+        new ThirdApplication();
+     }
+     public void quitItemActionPerformed(ActionEvent evt)
+     {
+        System.exit(0);
+     }
+     public void errHistItemActionPerformed(ActionEvent evt)
+     {
+        errorHistory.setVisible(true);
+     }
+}
+[Input: line.tex]
+
+
+\end{minted}
 The synoptic\index{synoptic} application (ThirdApplication) should
 look something like this (depending on your synoptic drawing file)\\
 \\
@@ -1336,93 +821,52 @@ An object implementing such a listener interface has the capability
 of receiving and treating \emph{events\index{event}} from a model\index{model}
 which emits events.
 
-\input{atk/line.tex}
-\begin{lyxcode}
-//~this~is~the~setModel~of~a~SimpleScalarViewer
 
-~~public~void~setModel\index{setModel}(INumberScalar~scalar)~\{
+\begin{minted}[linenos]{cpp}
+// this is the setModel of a SimpleScalarViewer
+  public void setModelsetModel(INumberScalar scalar) {
 
+    clearModel();
 
+    if (scalar != null) {
+      format = scalar.getProperty("format").getPresentation();
+      numberModel = scalar;
+ 
+   // this is where the viewer connects itself to the 
+   // model. After this the viewer will (hopefully) receive 
+   // events through its numberScalarChange() method
 
-~~~~clearModel();
+   numberModel.addNumberScalarListener(this);
+ 
+      
+        numberModel.getProperty("format").addPresentationListener(this);
+      numberModel.getProperty("unit").addPresentationListener(this);
+    }
 
+  }
+ 
+ 
 
-
-~~~~if~(scalar~!=~null)~\{
-
-~~~~~~format~=~scalar.getProperty(\textquotedbl{}format\textquotedbl{}).getPresentation();
-
-~~~~~~numberModel~=~scalar;
-
-~
-
-~~~//~this~is~where~the~viewer~connects~itself~to~the~
-
-~~~//~model.~After~this~the~viewer~will~(hopefully)~receive~
-
-~~~//~events~through~its~numberScalarChange()~method
-
-
-
-~~~numberModel.addNumberScalarListener(this);
-
-~
-
-~~~~~~
-
-~~~~~~~~numberModel.getProperty(\textquotedbl{}format\textquotedbl{}).addPresentationListener(this);
-
-~~~~~~numberModel.getProperty(\textquotedbl{}unit\textquotedbl{}).addPresentationListener(this);
-
-~~~~\}
-
-
-
-~~\}
-
-~
-
-~
-
-
-
-//~Each~time~the~model~of~this~viewer~(the~numberscalar~attribute)~decides~it~is~time,~it~
-
-//~calls~the~numberScalarChange~method~of~all~its~registered~listeners
-
-//~with~a~NumberScalarEvent~object~which~contains~the~
-
-//~the~new~value~of~the~numberscalar~attribute.
-
+// Each time the model of this viewer (the numberscalar attribute) decides it is time, it 
+// calls the numberScalarChange method of all its registered listeners
+// with a NumberScalarEvent object which contains the 
+// the new value of the numberscalar attribute.
 //
-
-~
-
-~~public~void~numberScalarChange(NumberScalarEvent~evt)~\{
-
-~~~~String~val;
-
-~~~~val~=~getDisplayString(evt);
-
-~~~~if~(unitVisible)~\{
-
-~~~~~~setText(val~+~\textquotedbl{}~\textquotedbl{}~+~numberModel.getUnit());
-
-~~~~\}~else~\{
-
-~~~~~~setText(val);
-
-~~~~\}
-
-~~\}
+ 
+  public void numberScalarChange(NumberScalarEvent evt) {
+    String val;
+    val = getDisplayString(evt);
+    if (unitVisible) {
+      setText(val + " " + numberModel.getUnit());
+    } else {
+      setText(val);
+    }
+  }
 
 
 
+\end{minted}
 
-
-
-\end{lyxcode}
-\input{atk/line.tex}
 
 All listeners in TangoATK implement the \texttt{IErrorListener} interface
 which specifies the \texttt{errorChange(ErrorEvent e)} method. This
@@ -1452,25 +896,18 @@ sleep for a given amount of time and then call a method refresh on
 whatever kind of \texttt{IRefreshee} it has been given as parameter,
 as shown below
 
-\input{atk/line.tex}
-\begin{lyxcode}
-//~This~is~an~example~from~DeviceFactory.
 
-//~We~create~a~new~Refresher~with~the~name~\textquotedbl{}device\textquotedbl{}
+\begin{minted}[linenos]{cpp}
+// This is an example from DeviceFactory.
+// We create a new Refresher with the name "device"
+// We add ourself to it, and start the thread
+ 
 
-//~We~add~ourself~to~it,~and~start~the~thread
-
-~
-
-
-
-Refresher~refresher~=~new~Refresher(\textquotedbl{}device\textquotedbl{});
-
+Refresher refresher = new Refresher("device");
 refresher.addRefreshee(this).start();
 
+\end{minted}
 
-\end{lyxcode}
-\input{atk/line.tex}
 
 Both the \texttt{AttributeList\index{AttributeList}} and the \texttt{DeviceFactory}
 implement the \texttt{IRefreshee} interface which specify only one
@@ -1658,13 +1095,11 @@ extends \texttt{IErrorListener}, any viewer\index{viewer} of command-results
 should also know how to handle errors. So a viewer of command-results
 implements IResultListener interface and registers itself as a resultListener
 for the command it has to show the results.
-\begin{lyxcode}
-~
+\begin{minted}[linenos]{cpp}
+ 
 
 
-
-
-\end{lyxcode}
+\end{minted}
 \begin{center}
 \label{TwoRicardo}\includegraphics[scale=4]{dance/0046-reduc}
 \par\end{center}

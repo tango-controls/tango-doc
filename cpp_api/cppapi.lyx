@@ -120,7 +120,7 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 DeviceProxy *my_device = new DeviceProxy(
 \begin_inset Quotes eld
 \end_inset
@@ -196,35 +196,35 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 cout << " device info : " << endl 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 DeviceInfo dev_info = my_device->info() << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 cout << " dev_class " << dev_info.dev_class;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 cout << " server_id " << dev_info.server_id;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 cout << " server_host " << dev_info.server_host;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 cout << " server_version " << dev_info.server_version;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 cout << " doc_url " << dev_info.doc_url;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 cout << " device_type " << dev_info.dev_type;
 \end_layout
 
@@ -268,7 +268,7 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 dev_state = my_device->state() << endl;
 \end_layout
 
@@ -307,7 +307,7 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 cout << "device status " << my_device->status() << endl;
 \end_layout
 
@@ -347,7 +347,7 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 cout << " device ping took " << my_device->ping() << " microseconds" <<
  endl;
 \end_layout
@@ -517,7 +517,7 @@ Returns the device description as a string.
 Exception: ConnectionFailed, CommunicationFailed
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
@@ -541,27 +541,27 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 class DbDevImportInfo { 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 public : 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     string name; 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     long exported; 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     string ior; 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     string version; }; 
 \end_layout
 
@@ -671,50 +671,50 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 typedef _CommandInfo
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     string           cmd_name;      /* command name as ascii string */
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     long             cmd_tag;       /* command as binary value (for TACO)
  */
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     long             in_type;       /* in type as binary value */
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     long             out_type;      /* out type as binary value */
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     string           in_type_desc;  /* description of in type (optional)
  */
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     string           out_type_desc; /* description of out type (optional)
  */
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     Tango::DispLevel disp_level;    /* Command display level */
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 } CommandInfo;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 typedef CommandInfoList vector<CommandInfo>;
 \end_layout
 
@@ -822,93 +822,93 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 DeviceProxy dev = new DeviceProxy("..."); 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 vector<DeviceDataHistory> *hist;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 hist = dev->command_history("Status",5);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 for (int i = 0;i < 5;i++) 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     bool fail = (*hist)[i].failed();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     if (fail == false)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         string str;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         (*hist)[i] >> str;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         cout << "Status = " << str << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     else
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         cout << "Command failed !" << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         cout << "Error level 0 desc = " << ((*hist)[i].errors())[0].desc <<
  endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     cout << "Date = " << (*hist)[i].date().tv_sec << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 delete hist;
 \end_layout
 
@@ -1097,91 +1097,91 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 typedef struct _AttributeInfo
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 { 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    string             name; 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    AttrWriteType      writable; 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    AttrDataFormat     data_format; 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    int                data_type; 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    int                max_dim_x; 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    int                max_dim_y; 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    string             description; 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    string             label; 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    string             unit; 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    string             standard_unit; 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    string             display_unit; 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    string             format; 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    string             min_value; 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    string             max_value; 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    string             min_alarm; 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    string             max_alarm; 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    string             writable_attr_name; 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    vector<string>     extensions; 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    Tango::DispLevel   disp_level;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 } AttributeInfo; 
 \end_layout
 
@@ -1225,188 +1225,188 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 struct AttributeInfoEx: public AttributeInfo
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 { 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    AttributeAlarmInfo alarms; 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    AttributeEventInfo events;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    vector<string>     sys_extensions; 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 };
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 struct AttributeAlarmInfo
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    string           min_alarm;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    string           max_alarm;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    string           min_warning;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    string           max_warning;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    string           delta_t;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    string           delta_val;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    vector<string>   extensions;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 };
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 struct AttributeEventInfo
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    ChangeEventInfo     ch_event;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    PeriodicEventInfo   per_event;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    ArchiveEventInfo    arch_event;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 };
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 struct ChangeEventInfo
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    string           rel_change;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    string           abs_change;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    vector<string>   extensions;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 };
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 struct PeriodicEventInfo
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    string           period;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    vector<string>   extensions;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 };
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 struct ArchiveEventInfo
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    string           archive_rel_change;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    string           archive_abs_change;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    string           archive_period;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    vector<string>   extensions;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 };
 \end_layout
 
@@ -1504,63 +1504,63 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 vector<DeviceAttribute> *devattr;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 vector<string> attr_names;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 attr_names.push_back("attribute_1");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 attr_names.push_back("attribute_2");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 devattr = device->read_attributes(attr_names);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 short short_attr_1;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 long long_attr_2;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 (*devattr)[0] >> short_attr_1;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 (*devattr)[1] >> long_attr_2;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 cout << "my_attribute value " << short_attr;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 delete devattr;
 \end_layout
 
@@ -1644,35 +1644,35 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 vector<DeviceAttribute> attr_in;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 string att1_name("First_attr");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 string att2_name("Second_attr");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 short short_attr;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 double double_attr; attr_in.push_back(DeviceAttribute(att1_name,short_attr));
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 attr_in.push_back(DeviceAttribute(att2_name,double_attr));
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 device->write_attributes(attr_in);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
@@ -1686,7 +1686,7 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
@@ -1786,102 +1786,102 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 DeviceProxy dev = new DeviceProxy("..."); 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 vector<DeviceAttributeHistory> *hist;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 hist = dev->attribute_history("Current",5);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 for (int i = 0;i < 5;i++) 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     bool fail = (*hist)[i].has_failed();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     if (fail == false)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         cout << "Attribute name = " << (*hist)[i].get_name() << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         cout << "Attribute quality factor = " << (*hist)[i].get_quality()
  << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         long value;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         (*hist)[i] >> value;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         cout << "Current = " << value << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     else
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         cout << "Attribute failed !" << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         cout << "Error level 0 desc = " << ((*hist)[i].get_err_stack())[0].desc
  << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     cout << "Date = " << (*hist)[i].get_date().tv_sec << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 delete hist;
 \end_layout
 
@@ -2027,83 +2027,83 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         Tango::DeviceProxy dev("...");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         long asyn_id;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         asyn_id = dev.command_inout_asynch("MyCmd");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         ...
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         ...
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         ...
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         Tango::DeviceData arg;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         try
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                 arg = dev.command_inout_reply(asyn_id);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         catch(Tango::AsynReplyNotArrived)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                 cerr << "Command not arrived !" << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         catch (Tango::DevFailed &e)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                 Tango::Except::print_exception(e);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         } 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
@@ -2220,7 +2220,7 @@ void DeviceProxy::command_inout_asynch(const char *name, DeviceData &argin,
 Idem previous call
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
@@ -2756,23 +2756,23 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 class MyCallBack: Tango::CallBack
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 public:
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    MyCallback(double d):data(d) {};
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    virtual void cmd_ended(Tango::CmdDoneEvent *);
 \begin_inset Newline newline
 \end_inset
@@ -2780,15 +2780,15 @@ public:
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 private:
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    double data;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 };
 \begin_inset Newline newline
 \end_inset
@@ -2800,51 +2800,51 @@ private:
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 void MyCallBack::cmd_ended(Tango CmdDoneEvent *cmd)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    if (cmd->err == true)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
       Tango::Except::print_error_stack(cmd->errors);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    else
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
       short cmd_result;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
       cmd->argout >> cmd_result;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
       cout << "Command result = " << cmd_result << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
       cout << "Callback personal data = " << data << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 }
 \begin_inset Newline newline
 \end_inset
@@ -2856,32 +2856,32 @@ void MyCallBack::cmd_ended(Tango CmdDoneEvent *cmd)
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 int main(int argc, char *argv[])
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    ....
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    ....
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    Tango::DeviceProxy dev("...");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    double my_data = ...;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    MyCallBack cb(my_data);
 \begin_inset Newline newline
 \end_inset
@@ -2889,35 +2889,35 @@ int main(int argc, char *argv[])
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    dev.command_inout_asynch("MyCmd",cb);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    ...
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    ...
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    ...
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    dev.get_asynch_replies();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    ...
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    ...
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 }
 \end_layout
 
@@ -4287,23 +4287,23 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 typedef union
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    pid_t           LockerPid;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    unsigned long   UUID[4];
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 }LockerId;
 \begin_inset Newline newline
 \end_inset
@@ -4315,23 +4315,23 @@ typedef union
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 enum LockerLanguage
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    CPP,
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    JAVA
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 };
 \begin_inset Newline newline
 \end_inset
@@ -4343,31 +4343,31 @@ enum LockerLanguage
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 struct LockerInfo
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    LockerLanguage  ll;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    LockerId        li;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    string          locker_host;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    string          locker_class;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 };
 \end_layout
 
@@ -4816,62 +4816,62 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 DeviceData my_short, my_long, my_string;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 DeviceData my_float_vector, my_double_vector;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 string a_string;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 short a_short;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 DevLong a_long;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 vector<float> a_float_vector;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 vector<double> a_double_vector;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 my_short << 100; // insert a short
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 my_short >> a_short; // extract a short
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 my_long << 1000; // insert a long
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 my_long >> a_long; // extract a long
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 my_string << string(
 \begin_inset Quotes eld
@@ -4884,27 +4884,27 @@ estas lista a bailar el tango ?
 ); // insert a string
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 my_string >> a_string; // extract a string
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 my_float_vector << a_float_vector // insert a vector of floats
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 my_float_vector >> a_float_vector; // extract a vector of floats
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 my_double_vector << a_double_vector; // insert a vector of doubles
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 my_double_vector >> a_double_vector; // extract a vector of doubles
 \begin_inset Newline newline
@@ -4913,56 +4913,56 @@ my_double_vector >> a_double_vector; // extract a vector of doubles
 //
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 // Example of memory management with TANGO sequence types without memory
  leaks
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 for (int i = 0;i < 10;i++)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     DeviceData din,dout;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     DevVarLongArray *in = new DevVarLongArray();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     in->length(2);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     (*in)[0] = 2;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     (*in)[1] = 4;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     din << in;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     try
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         dout = device->command_inout(
 \begin_inset Quotes eld
 \end_inset
@@ -4974,35 +4974,35 @@ Cmd
 ,din);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     catch(DevFailed &e)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
        ....
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     const DevVarLongArray *out;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     dout >> out;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     cout << 
 \begin_inset Quotes eld
 \end_inset
@@ -5014,15 +5014,15 @@ Received value =
  << (*out)[0];
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
@@ -5066,12 +5066,12 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 string string_read;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 DeviceData sl_read = my_device->command_inout(
 \begin_inset Quotes eld
@@ -5084,37 +5084,37 @@ ReadLine
 );
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 if (! sl_read.is_empty()) 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
     sl_read >> string_read;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 else
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
     cout << 
 \begin_inset Quotes eld
@@ -5127,7 +5127,7 @@ else
  << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 }
 \end_layout
@@ -5230,40 +5230,40 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
      1          DeviceData da;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      2  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      3          bitset<DeviceData::numFlags> bs = da.exceptions();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      4          cout << "bs = " << bs << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      5                  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      6          da.set_exceptions(DeviceData::wrongtype_flag);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      7          bs = da.exceptions();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      8                  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      9          cout << "bs = " << bs << endl;
 \end_layout
 
@@ -5298,7 +5298,7 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 DeviceProxy *dev = new DeviceProxy(
 \begin_inset Quotes eld
@@ -5311,11 +5311,11 @@ DeviceProxy *dev = new DeviceProxy(
 );
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 DeviceData out;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 out = dev->command_inout(
 \begin_inset Quotes eld
 \end_inset
@@ -5327,11 +5327,11 @@ MyCommand
 );
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 cout << 
 \begin_inset Quotes eld
 \end_inset
@@ -5343,7 +5343,7 @@ Command returned:
  << out << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
@@ -5450,7 +5450,7 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 DeviceProxy *dev = new DeviceProxy(
 \begin_inset Quotes eld
@@ -5463,19 +5463,19 @@ DeviceProxy *dev = new DeviceProxy(
 );
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 int hist_depth = 4;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 vector<DeviceDataHistory> *hist;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 hist = dev->command_history(
 \begin_inset Quotes eld
 \end_inset
@@ -5487,31 +5487,31 @@ MyCommand
 ,hist_depth);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 for (int i = 0;i < hist_depth;i++)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     cout << (*hist)[i] << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 delete hist;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
@@ -6860,226 +6860,226 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 DeviceAttribute my_short, my_long, my_string;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 DeviceAttribute my_float_vector, my_double_vector;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 string a_string;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 short a_short;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 DevLong a_long;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 vector<float> a_float_vector;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 vector<double> a_double_vector;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 my_short << 100; // insert a short
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 my_short >> a_short; // extract a short
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 my_long << 1000; // insert a long
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 my_long >> a_long; // extract a DevLong
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 my_string << string("estas lista a bailar el tango ?"); // insert a string
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 my_string >> a_string; // extract a string
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 my_float_vector << a_float_vector // insert a vector of floats
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 my_float_vector >> a_float_vector; // extract a vector of floats
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 my_double_vector << a_double_vector; // insert a vector of doubles
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 my_double_vector >> a_double_vector; // extract a vector of doubles
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 // Extract read and set value of an attribute separately
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 // and get their dimensions
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 vector<float> r_float_vector, w_float_vector;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 my_float_vector.extract_read (r_float_vector) // extract read values
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 int dim_x = my_float_vector.get_dim_x();      // get x dimension
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 int dim_y = my_float_vector.get_dim_y();      // get y dimension
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 my_float_vector.extract_set  (w_float_vector) // extract set values
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 int w_dim_x = my_float_vector.get_written_dim_x();  // get x dimension
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 int W_dim_y = my_float_vector.get_written_dim_y();  // get y dimension
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 // Example of memory management with TANGO sequence types without memory
  leaks
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 for (int i = 0;i < 10;i++)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     DeviceAttribute da;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     DevVarLongArray *out;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     try
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         da = device->read_attribute("Attr");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         da >> out;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     catch(DevFailed &e)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
        ....
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     cout << "Received value = " << (*out)[0];
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     delete out;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 }
 \end_layout
 
@@ -7123,52 +7123,52 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 string parity;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 DeviceAttribute sl_parity = my_device->read_attribute("parity");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 if (! sl_read.is_empty()) 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
     sl_parity >> parity;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 else
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
     cout << " no parity attribute defined for serial line !" << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 }
 \end_layout
@@ -7292,40 +7292,40 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
      1  DeviceAttribute da;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      2  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      3  bitset<DeviceAttribute::numFlags> bs = da.exceptions();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      4  cout << "bs = " << bs << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      5                  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      6  da.set_exceptions(DeviceAttribute::wrongtype_flag);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      7  bs = da.exceptions();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      8                  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      9  cout << "bs = " << bs << endl;
 \end_layout
 
@@ -7371,256 +7371,256 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
      1  DeviceAttribute da;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      2  vector<short> attr_data;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      3  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      4  try
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      5  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      6      da = device->read_attribute("Attr");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      7      da >> attr_data;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      8  }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      9  catch (DevFailed &e)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     10  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     11      ....
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     12  }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     13  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     14  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     15  ------------------------------------------------------------------------
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     16  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     17  DeviceAttribute da;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     18  vector<short> attr_data;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     19  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     20  da.reset_exceptions(DeviceAttribute::failed_flag);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     21  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     22  try
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     23  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     24      da = device->read_attribute("Attr");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     25  }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     26  catch (DevFailed &e)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     27  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     28      .....
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     29  }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     30  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     31  if (!(da >> attr_data))
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     32  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     33      DevErrorList &err = da.get_err_stack();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     34      .....
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     35  }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     36  else
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     37  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     38      .....
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     39  }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     40  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     41  ----------------------------------------------------------------------
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     42  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     43  DeviceAttribute da;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     44  vector<short> attr_data;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     45  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     46  try
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     47  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     48      da = device->read_attribute("Attr");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     49  }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     50  catch (DevFailed &e)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     51  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     52      ......
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     53  }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     54  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     55  if (da.has_failed())
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     56  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     57      DevErrorList &err = da.get_err_stack();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     58      ....
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     59  }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     60  else
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     61  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     62      da >> attr_data;        
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     63  }
 \end_layout
 
@@ -7755,109 +7755,109 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
  1  DeviceAttribute da;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  2  vector<short> attr_data;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  3  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  4  try
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  5  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  6     da = device->read_attribute("Attr");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  7     da >> attr_data;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  8  }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  9  catch (DevFailed &e)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 10  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 11     ....
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 12  }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 13  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 14  long read = da.get_nb_read();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 15  long written = da.get_nb_written();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 16  size_t size = attr_data.size();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 17  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 18  for (long i = 0;i < read;i++)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 19     cout << "Read value " << i+1 << " = " << attr_data[i] <<  endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 20
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 21  int ind;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 22  for (long j = 0; j < written;j++)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 23  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 24     size == 1 ? ind = j : ind = j + read;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 25     cout << "Last written value " << j+1 << " = " << attr_data[ind] <<
  endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 26  }
 \end_layout
 
@@ -7928,28 +7928,28 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 DeviceProxy *dev = new DeviceProxy("...");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 DeviceAttribute attr;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 attr = dev->read_attribute("MyAttribute");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 cout << "Attribute returned: " << attr << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
@@ -8012,7 +8012,7 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 DeviceProxy *dev = new DeviceProxy(
 \begin_inset Quotes eld
@@ -8025,19 +8025,19 @@ DeviceProxy *dev = new DeviceProxy(
 );
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 int hist_depth = 4;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 vector<DeviceAttributeHistory> *hist;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 hist = dev->attribute_history(
 \begin_inset Quotes eld
 \end_inset
@@ -8049,31 +8049,31 @@ MyAttribute
 ,hist_depth);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 for (int i = 0;i < hist_depth;i++)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     cout << (*hist)[i] << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 delete hist;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
@@ -8145,15 +8145,15 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 AttributeProxy *my_attr = new AttributeProxy("my/own/device/attr");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 AttributeProxy *my_attr_bis = new AttributeProxy("attr_alias");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 AttributeProxy *my_attr_ter = new AttributeProxy("dev_alias/attr");
 \end_layout
 
@@ -8212,7 +8212,7 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 dev_state = my_attr->state() << endl;
 \end_layout
 
@@ -8253,7 +8253,7 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 cout << "device status" << my_attr->status() << endl;
 \end_layout
 
@@ -8293,7 +8293,7 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 cout << "device ping took " << my_device->ping() << 
 \begin_inset Quotes eld
 \end_inset
@@ -8338,7 +8338,7 @@ Returns the DeviceProxy instance used to communicate with the device to
  which the attributes belongs.
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 
 \end_layout
@@ -8366,87 +8366,87 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 typedef struct _AttributeInfo { 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    string name; 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    AttrWriteType writable; 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    AttrDataFormat data_format; 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    int data_type; 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    int max_dim_x; 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    int max_dim_y; 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    string description; 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    string label; 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    string unit; 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    string standard_unit; 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    string display_unit; 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    string format; 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    string min_value; 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    string max_value; 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    string min_alarm; 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    string max_alarm; 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    string writable_attr_name; 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    vector<string> extensions; 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    Tango::DispLevel disp_level;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 } AttributeInfo; 
 \end_layout
 
@@ -8577,102 +8577,102 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 AttributeProxy attr = new AttributeProxy("my/own/device/Current"); 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 vector<DeviceAttributeHistory> *hist;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 hist = attr->history(5);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 for (int i = 0;i < 5;i++) 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     bool fail = (*hist)[i].has_failed();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     if (fail == false)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         cout << "Attribute name = " << (*hist)[i].get_name() << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         cout << "Attribute quality factor = " << (*hist)[i].get_quality()
  << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         long value;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         (*hist)[i] >> value;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         cout << "Current = " << value << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     else
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         cout << "Attribute failed !" << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         cout << "Error level 0 desc = " << ((*hist)[i].get_err_stack())[0].desc
  << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     cout << "Date = " << (*hist)[i].get_date().tv_sec << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 delete hist;
 \end_layout
 
@@ -8697,11 +8697,11 @@ NonSupportedFeature, ConnectionFailed, CommunicationFailed, DevFailed from
  device
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
@@ -10356,64 +10356,64 @@ Since we can have groups with the same name in the hierarchy, a group name
  Considering the following group:
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 -> gauges 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    | -> cell-01 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    |     |-> penning 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    |     |    |-> ...
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    |     |-> pirani
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    |          |-> ...
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    | -> cell-02
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    |     |-> penning
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    |     |    |-> ...
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    |     |-> pirani
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    |          |-> ...
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    | -> cell-03
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    |     |-> ...
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    |     
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    | -> ...
  
 \end_layout
@@ -10434,7 +10434,7 @@ fwd
  For instance, the following code remove any stepper motor in the hierarchy:
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 root_group->remove("*/stepper_motor/*");
 \end_layout
 
@@ -10555,52 +10555,52 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 try
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
   Tango::DeviceProxy *dp = g->get_device("my/device/01");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
   if (dp == 0)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
   {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 // my/device/01 doe snot belongs to the group
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
   {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 catch (const Tango::DevFailed &df)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 // my/device/01 belongs to the group but can't be reached
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 }
 \end_layout
 
@@ -10739,65 +10739,65 @@ Returns a reference to the specified group or NULL if there is no group
 Considering the following group:
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 -> gauges
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     |-> cell-01
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     |    |-> penning
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     |    |    |-> ...
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     |    |-> pirani
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     |    |-> ...
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     |-> cell-02
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     |    |-> penning
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     |    |    |-> ...
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     |    |-> pirani
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     |    |-> ...
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     | -> cell-03
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     |    |-> ...
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     |
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     | -> ...
  
 \end_layout
@@ -10872,67 +10872,67 @@ fwd
 Considering the following hierarchy:
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 g2->add("my/device/04"); g2->add("my/device/05");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 g4->add("my/device/08"); g4->add("my/device/09");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 g3->add("my/device/06");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 g3->addg(g4);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 g3->add("my/device/07");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 g1->add("my/device/01");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 g1->add(g2);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 g1->add("my/device/03");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 g1->add(g3);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 g1->add("my/device/02");
 \end_layout
 
@@ -10941,7 +10941,7 @@ The returned vector content depends on the value of the forward option.
  If set to true, the results will be organized as follows:
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 std::vector<std::string> dl = g1->get_device_list(true);
 \end_layout
 
@@ -11021,7 +11021,7 @@ dl[8]
 If the forward option is set to false, the results are:
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 std::vector<std::string> dl = g1->get_device_list(false);
 \end_layout
 
@@ -12141,7 +12141,7 @@ reference "sub:O-attr-values"
  the second group element and so on.
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
@@ -12188,12 +12188,12 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 using namespace Tango;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 Database *db = new Database();
 \end_layout
@@ -12235,7 +12235,7 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 cout << db->get_info() << endl;
 \end_layout
@@ -12265,57 +12265,57 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 Running since 2000-11-06 14:10:46
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 Devices defined  = 115
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 Devices exported  = 41
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 Device servers defined  = 47
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 Device servers exported  = 17
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 Class properties defined  = 5
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 Device properties defined  = 130
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 Class attribute properties defined  = 20
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 Device attribute properties defined  = 92
 \end_layout
@@ -12360,12 +12360,12 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 DbDevInfo my_device_info;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 my_device_info.name = 
 \begin_inset Quotes eld
@@ -12378,7 +12378,7 @@ my/own/device
 ;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 my_device_info._class = 
 \begin_inset Quotes eld
@@ -12391,7 +12391,7 @@ MyDevice
 ;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 my_device_info.server = 
 \begin_inset Quotes eld
@@ -12404,7 +12404,7 @@ MyServer/test
 ;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 db->add_device(my_device_info);
 \end_layout
@@ -12446,7 +12446,7 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 db->delete_device(
 \begin_inset Quotes eld
@@ -12503,12 +12503,12 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 DbDevImportInfo my_device_import;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 my_device_import = db->import_device(
 \begin_inset Quotes eld
@@ -12521,7 +12521,7 @@ my/own/device
 );
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 cout << 
 \begin_inset Quotes eld
@@ -12534,7 +12534,7 @@ cout <<
  << my_device_import.name;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 cout << 
 \begin_inset Quotes eld
@@ -12547,7 +12547,7 @@ exported
  << my_device_import.exported;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 cout << 
 \begin_inset Quotes eld
@@ -12560,7 +12560,7 @@ ior
  << my_device_import.ior;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 cout << 
 \begin_inset Quotes eld
@@ -12573,7 +12573,7 @@ version
  << my_device_import.version;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 cout << endl;
 \end_layout
@@ -12623,12 +12623,12 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 DbDevExportInfo my_device_export;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 my_device_export.name = 
 \begin_inset Quotes eld
@@ -12641,7 +12641,7 @@ my/own/device
 ;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 my_device_export.ior = 
 \begin_inset Quotes eld
@@ -12654,7 +12654,7 @@ the real ior
 ;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 my_device_export.host = 
 \begin_inset Quotes eld
@@ -12667,7 +12667,7 @@ dumela
 ;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 my_device_export.version = 
 \begin_inset Quotes eld
@@ -12680,12 +12680,12 @@ my_device_export.version =
 ;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 my_device_export.pid = get_pid();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 db->export_device(my_device_export);
 \end_layout
@@ -12732,7 +12732,7 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 db->unexport_device(
 \begin_inset Quotes eld
@@ -12873,23 +12873,23 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 string servicename("HdbManager");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 string instname("ctrm");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 DbDatum db_datum = db->get_services(servicename,instname);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 vector<string> service_list;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 db_datum >> service_list;
 \end_layout
 
@@ -12926,19 +12926,19 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 string servicename("HdbManager");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 string instname("ctrm");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 string devname("sys/hdb/1");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 db->register_service(servicename,instname,devname);
 \end_layout
 
@@ -12974,15 +12974,15 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 string servicename("HdbManager");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 string instname("ctrm");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 db->unregister_service(servicename,instname);
 \end_layout
 
@@ -13018,15 +13018,15 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 DbDatum db_datum = db->get_host_list();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 vector<string> host_list;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 db_datum >> host_list;
 \end_layout
 
@@ -13063,19 +13063,19 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 string wildcard("l-c0*");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 DbDatum db_datum = db->get_host_list(wildcard);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 vector<string> host_list;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 db_datum >> host_list;
 \end_layout
 
@@ -13113,19 +13113,19 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 string server("Serial/1");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 DbDatum db_datum = db->get_server_class_list(server);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 vector<string> class_list;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 db_datum >> class_list;
 \end_layout
 
@@ -13161,15 +13161,15 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 DbDatum db_datum = db->get_server_name_list();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 vector<string> server_list;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 db_datum >> server_list;
 \end_layout
 
@@ -13206,19 +13206,19 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 string servername("Serial");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 DbDatum db_datum = db->get_instance_name_list(servername);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 vector<string> instance_list;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 db_datum >> instance_list;
 \end_layout
 
@@ -13254,15 +13254,15 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 DbDatum db_datum = db->get_server_list();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 vector<string> server_list;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 db_datum >> server_list;
 \end_layout
 
@@ -13299,19 +13299,19 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 string wildcard("Serial/*");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 DbDatum db_datum = db->get_server_list(wildcard);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 vector<string> server_list;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 db_datum >> server_list;
 \end_layout
 
@@ -13347,19 +13347,19 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 string host("kidiboo");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 DbDatum db_datum = db->get_host_server_list(wildcard);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 vector<string> server_list;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 db_datum >> server_list;
 \end_layout
 
@@ -13395,11 +13395,11 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 string server("Serial/1");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 DbServerInfo info = db->get_server_info(server);
 \end_layout
 
@@ -13435,27 +13435,27 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 DbServerInfo info;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 info.name = "Serial/1"; // Server (name/instance)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 info.host = "kidiboo"; // Register on host kidiboo
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 info.mode = 1; // Controlled by Astor flag (0 or 1)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 info.level = 3; // Startup level (Used by Astor)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 db->put_server_info(info);
 \end_layout
 
@@ -13491,11 +13491,11 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 string server("Serial/1");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 db->delete_server_info(server);
 \end_layout
 
@@ -13538,12 +13538,12 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 vector<string> device_names;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 device_names << db_datum;
 \end_layout
@@ -13573,22 +13573,22 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 for (int i=0; i< db_datum.size(); i++)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 device_name[i] = db_datum.value_string[i];
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 }
 \end_layout
@@ -13736,19 +13736,19 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 string server("Serial/1");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 DbDatum db_datum = db->get_device_class_list(server);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 vector<string> dev_list;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 db_datum >> dev_list;
 \end_layout
 
@@ -13784,11 +13784,11 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 string devname("sr/rf-cavity/1");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 string classname = db->get_class_for_device(devname);
 \end_layout
 
@@ -13824,19 +13824,19 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 string devname("sr/rf-cavity/1");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 DbDatum db_datum = db->get_class_inheritance_for_device(devname);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 vector<string> class_list;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 db_datum >> class_list;
 \end_layout
 
@@ -13872,19 +13872,19 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 string classname("MyClass");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 DbDatum db_datum = db->get_device_exported_for_class(classname);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 vector<string> dev_list;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 db_datum >> dev_list;
 \end_layout
 
@@ -13921,19 +13921,19 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 string wildcard("Optic*");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 DbDatum db_datum = db->get_object_list(wildcard);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 vector<string> obj_list;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 db_datum >> obj_list;
 \end_layout
 
@@ -13970,23 +13970,23 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 string objname("OpticID9");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 string wildcard("Delta*");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 DbDatum db_datum = db->get_object_property_list(objname,wildcard);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 vector<string> prop_list;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 db_datum >> prop_list;
 \end_layout
 
@@ -14030,12 +14030,12 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 DbData db_data;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 db_data.push_back(DbDatum(
 \begin_inset Quotes eld
@@ -14048,7 +14048,7 @@ velocity
 ));
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 db_data.push_back(DbDatum(
 \begin_inset Quotes eld
@@ -14061,7 +14061,7 @@ acceleration
 ));
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 db->get_property(
 \begin_inset Quotes eld
@@ -14074,17 +14074,17 @@ mymotor
 , db_data);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 float velocity, acceleration;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 db_data[0] >> velocity;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 db_data[1] >> acceleration;
 \end_layout
@@ -14135,7 +14135,7 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 DbDatum velocity(
 \begin_inset Quotes eld
@@ -14156,32 +14156,32 @@ acceleration
 );
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 DbData db_data;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 velocity << 100000.0;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 acceleration << 500000.0;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 db_data.push_back(velocity);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 db_data.push_back(acceleration);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 db->put_property(
 \begin_inset Quotes eld
@@ -14238,12 +14238,12 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 DbData db_data;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 db_data.push_back(DbDatum(
 \begin_inset Quotes eld
@@ -14256,7 +14256,7 @@ velocity
 ));
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 db_data.push_back(DbDatum(
 \begin_inset Quotes eld
@@ -14269,7 +14269,7 @@ acceleration
 ));
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 db->delete_property(
 \begin_inset Quotes eld
@@ -14319,79 +14319,79 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 vector<DbHistory> hist;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 DbDatum result;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 string objname("jlptest");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 string propname("test_prop");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 hist = db->get_property_history(objname,propname);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 // Print the modification history of the specified property
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 for(int i=0;i<hist.size();i++) {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
   cout << "Name:" << hist[i].get_name() << endl; 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
   cout << "Date:" << hist[i].get_date() << endl; 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
   if( hist[i].is_deleted() ) {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     cout << "Deleted !" << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
   } else {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     hist[i].get_value() >> result;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     for (int j=0; j<result.size(); j++)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
       cout << "Value:" << result[j] << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
   }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 }
 \end_layout
 
@@ -14434,12 +14434,12 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 DbData db_data;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 db_data.push_back(DbDatum(
 \begin_inset Quotes eld
@@ -14452,7 +14452,7 @@ velocity
 ));
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 db_data.push_back(DbDatum(
 \begin_inset Quotes eld
@@ -14465,7 +14465,7 @@ acceleration
 ));
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 db->get_device_property(
 \begin_inset Quotes eld
@@ -14478,17 +14478,17 @@ id11/motor/1
 , db_data);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 float velocity, acceleration;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 db_data[0] >> velocity;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 db_data[1] >> acceleration;
 \end_layout
@@ -14539,7 +14539,7 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 DbDatum velocity(
 \begin_inset Quotes eld
@@ -14560,32 +14560,32 @@ acceleration
 );
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 DbData db_data;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 velocity << 100000.0;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 acceleration << 500000.0;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 db_data.push_back(velocity);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 db_data.push_back(acceleration);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 db->put_device_property(
 \begin_inset Quotes eld
@@ -14642,12 +14642,12 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 DbData db_data;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 db_data.push_back(DbDatum(
 \begin_inset Quotes eld
@@ -14660,7 +14660,7 @@ velocity
 ));
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 db_data.push_back(DbDatum(
 \begin_inset Quotes eld
@@ -14673,7 +14673,7 @@ acceleration
 ));
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 db->delete_device_property(
 \begin_inset Quotes eld
@@ -14755,147 +14755,147 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 DbData db_data;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 db_data.push_back(DbDatum("velocity"));
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 db_data.push_back(DbDatum("acceleration"));
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 db->get_device_attribute_property("id11/motor/1", db_data);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 float vel_max, vel_min, acc_max, acc_min;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 for (int i=0;i < db_data.size();)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      long nb_prop;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      string &att_name = db_data[i].name;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      db_data[i] >> nb_prop;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      i++;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      for (int k=0;k < nb_prop;k++)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
          string &prop_name = db_data[i].name;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
          if (att_name == "velocity")
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
          {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
              if (prop_name == "min")
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                  db_data[i] >>  vel_min;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
              else if (att_name == "max")
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                  db_data[i] >> vel_max;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
          }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
          else
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
          {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
              if (prop_name == "min")
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                  db_data[i] >> acc_min;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
              else
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                  db_data[i] >> acc_max;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
          }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
          i++;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 }
 \end_layout
 
@@ -14972,82 +14972,82 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 DbDatum velocity("velocity"), vel_min("min"), vel_max("max");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 DbDatum acceleration("acceleration"), acc_min("min"), acc_max("max");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 DbData db_data;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 velocity << 2;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 vel_min << 0.0;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 vel_max << 1000000.0;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 db_data.push_back(velocity);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 db_data.push_back(vel_min);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 db_data.push_back(vel_max);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 acceleration << 2;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 acc_min << 0.0;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 acc_max << 8000000;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 db_data.push_back(acceleration);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 db_data.push_back(acc_min);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 db_data.push_back(acc_max);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 db->put_device_attribute_property(
 \begin_inset Quotes eld
@@ -15115,21 +15115,21 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 DbData db_data;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 db_data.push_back(DbDatum("velocity"));
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 db_data.push_back(DbDatum("unit"));
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 db->delete_device_attribute_property("id11/motor/1", db_data);
 \end_layout
@@ -15190,19 +15190,19 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 string wildcard("Motor*");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 DbDatum db_datum = db->get_class_list(wildcard);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 vector<string> class_list;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 db_datum >> class_list;
 \end_layout
 
@@ -15238,19 +15238,19 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 string classname("MyClass");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 DbDatum db_datum = db->get_class_property_list(classname);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 vector<string> prop_list;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 db_datum >> prop_list;
 \end_layout
 
@@ -15293,37 +15293,37 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 DbData db_data;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 db_data.push_back(DbDatum("velocity"));
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 db_data.push_back(DbDatum("acceleration"));
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 db->get_class_property("StepperMotor", db_data);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 float velocity, acceleration;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 db_data[0] >> velocity;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 db_data[1] >> acceleration;
 \end_layout
@@ -15374,37 +15374,37 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 DbDatum velocity("velocity"), acceleration("acceleration");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 DbData db_data;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 velocity << 100000.0;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 acceleration << 500000.0;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 db_data.push_back(velocity);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 db_data.push_back(acceleration);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 db->put_class_property("StepperMotor", db_data);
 \end_layout
@@ -15453,22 +15453,22 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 DbData db_data;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 db_data.push_back(DbDatum("velocity"));
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 db_data.push_back(DbDatum("acceleration"));
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 db->delete_class_property("StepperMotor", db_data);
 \end_layout
@@ -15529,23 +15529,23 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 string classname("MyClass");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 string wildcard("*");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 DbDatum db_datum = db->get_class_attribute_list(classname,wildcard);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 vector<string> att_list;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 db_datum >> att_list;
 \end_layout
 
@@ -15595,151 +15595,151 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 DbData db_data;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 db_data.push_back(DbDatum("velocity"));
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 db_data.push_back(DbDatum("acceleration"));
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 db->get_class_attribute_property("StepperMotor", db_data);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 float vel_max, vel_min, acc_max, acc_min;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 for (int i=0; i< db_data.size(); i++)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      long nb_prop;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      string &att_name = db_data[i].name;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      db_data[i] >> nb_prop;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      i++;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      for (int k=0;k < nb_prop;k++)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
          string &prop_name = db_data[i].name;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
          if (att_name == "velocity")
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
          {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
              if (prop_name == "min")
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                  db_data[i] >>  vel_min;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
              else if (att_name == "max")
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                  db_data[i] >> vel_max;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
          }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
          else
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
          {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
              if (prop_name == "min")
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                  db_data[i] >> acc_min;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
              else
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                  db_data[i] >> acc_max;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
          }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
          i++;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
@@ -15816,82 +15816,82 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 DbDatum velocity("velocity"), vel_min("min"), vel_max("max");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 DbDatum acceleration("acceleration"), acc_min("min"), acc_max("max");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 DbData db_data;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 velocity << 2;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 vel_min << 0.0;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 vel_max << 1000000.0;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 db_data.push_back(velocity);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 db_data.push_back(vel_min);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 db_data.push_back(vel_max);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 acceleration << 2;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 acc_min << 0.0;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 acc_max << 8000000;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 db_data.push_back(acceleration);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 db_data.push_back(acc_min);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 db_data.push_back(acc_max);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 db->put_class_attribute_property("StepperMotor", db_data);
 \end_layout
@@ -15952,22 +15952,22 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 DbData db_data;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 db_data.push_back(DbDatum("velocity"));
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 db_data.push_back(DbDatum("unit"));
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 db->delete_class_attribute_property("StepperMotor", db_data);
 \end_layout
@@ -16157,42 +16157,42 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 DbData db_data;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 string filter("*");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 db_data = db->get_device_alias_list(filter);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 vector<string> al_list;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 db_data >> al_list;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 cout << al_list.size() << " device alias defined in db" << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 for (int i=0;i < al_list.size();i++)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     cout << "alias = " << al_list[i] << endl;
 \end_layout
 
@@ -16967,7 +16967,7 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 DbDatum my_short("my_short"), my_long(
 \begin_inset Quotes eld
@@ -16980,83 +16980,83 @@ my_long
 ), my_string("my_string");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 DbDatum my_float_vector("my_float_vector"), my_double_vector("my_double_vector")
 ;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 string a_string;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 short a_short;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 DevLong a_long;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 vector<float> a_float_vector;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 vector<double> a_double_vector;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 my_short << 100; // insert a short
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 my_short >> a_short; // extract a short
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 my_long << 1000; // insert a DevLong
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 my_long >> a_long; // extract a long
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 my_string << string("estas lista a bailar el tango ?"); // insert a string
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 my_string >> a_string; // extract a string
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 my_float_vector << a_float_vector // insert a vector of floats
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 my_float_vector >> a_float_vector; // extract a vector of floats
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 my_double_vector << a_double_vector; // insert a vector of doubles
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 my_double_vector >> a_double_vector; // extract a vector of doubles
 \end_layout
@@ -17100,52 +17100,52 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 sl_props.push_back(parity_prop);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 dbase->get_device_property(device_name, sl_props);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 if (! parity_prop.is_empty()) 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
     parity_prop >> parity;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 else
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
     cout << device_name << " has no parity defined in database !" << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 }
 \end_layout
@@ -17237,40 +17237,40 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
      1  DbDatum da;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      2  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      3  bitset<DbDatum::numFlags> bs = da.exceptions();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      4  cout << "bs = " << bs << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      5                  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      6  da.set_exceptions(DbDatum::wrongtype_flag);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      7  bs = da.exceptions();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      8                  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      9  cout << "bs = " << bs << endl;
 \end_layout
 
@@ -19992,56 +19992,56 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 catch (Tango::NamedDevFailed &e)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    long nb_faulty = e.get_faulty_attr_nb();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    for (long i = 0;i < nb_faulty;i++)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
        cout << "Attribute " << e.err_list[i].name << " failed!" << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
        for (long j = 0;j < e.err_list[i].err_stack.length();j++)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
        {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
            cout << "Reason [" << j << "] = " << e.err_list[i].err_stack[j].reason;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
            cout << "Desc [" << j << "] = " << e.err_list[i].err_stack[j].desc;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
        }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 }
 \end_layout
 

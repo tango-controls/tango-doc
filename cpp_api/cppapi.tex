@@ -43,7 +43,8 @@
 \usepackage{babel}
 \begin{document}
 
-\chapter{The TANGO C++ Application Programmer Interface\label{cha:The-TANGO-C++}}
+\chapter{The TANGO C++ Application Programmer Interface}
+\label{cha:The-TANGO-C++}
 
 
 \section{Tango::DeviceProxy()}
@@ -71,11 +72,11 @@ is not running DeviceProxy will try to build a connection every time
 the client tries to access the device. If the device is not defined
 an exception is thrown. Example :
 
-\input{line.tex}
+
 \begin{lyxcode}
 DeviceProxy~{*}my\_device~=~new~DeviceProxy(``my/own/device'');
 \end{lyxcode}
-\input{line.tex}
+
 
 See appendix on device naming for all details about Tango device naming
 syntax. If an alias\index{alias} name is defined for the device,
@@ -98,7 +99,7 @@ Idem previous call
 A method which returns information on the device in a DeviceInfo structure.
 Example :
 
-\input{line.tex}
+
 \begin{lyxcode}
 cout~<\textcompwordmark{}<~\textquotedbl{}~device~info~:~\textquotedbl{}~<\textcompwordmark{}<~endl~
 
@@ -116,7 +117,7 @@ cout~<\textcompwordmark{}<~\textquotedbl{}~doc\_url~\textquotedbl{}~<\textcompwo
 
 cout~<\textcompwordmark{}<~\textquotedbl{}~device\_type~\textquotedbl{}~<\textcompwordmark{}<~dev\_info.dev\_type;
 \end{lyxcode}
-\input{line.tex}
+
 
 All DeviceInfo fields are strings except for the server\_version server\_version
 which is a long integer.
@@ -130,11 +131,11 @@ from device}
 A method which return the state of the device as a Tango::DevState
 type. Example :
 
-\input{line.tex}
+
 \begin{lyxcode}
 dev\_state~=~my\_device->state()~<\textcompwordmark{}<~endl;
 \end{lyxcode}
-\input{line.tex}
+
 
 \emph{Exception: ConnectionFailed, CommunicationFailed}
 
@@ -144,11 +145,11 @@ dev\_state~=~my\_device->state()~<\textcompwordmark{}<~endl;
 A method which return the status of the device as a string. Example
 :
 
-\input{line.tex}
+
 \begin{lyxcode}
 cout~<\textcompwordmark{}<~\textquotedbl{}device~status~\textquotedbl{}~<\textcompwordmark{}<~my\_device->status()~<\textcompwordmark{}<~endl;
 \end{lyxcode}
-\input{line.tex}
+
 
 \emph{Exception: ConnectionFailed, CommunicationFailed}
 
@@ -158,11 +159,11 @@ cout~<\textcompwordmark{}<~\textquotedbl{}device~status~\textquotedbl{}~<\textco
 A method which sends a ping to the device and returns the time elapsed
 as microseconds. Example :
 
-\input{line.tex}
+
 \begin{lyxcode}
 cout~<\textcompwordmark{}<~\textquotedbl{}~device~ping~took~\textquotedbl{}~<\textcompwordmark{}<~my\_device->ping()~<\textcompwordmark{}<~\textquotedbl{}~microseconds\textquotedbl{}~<\textcompwordmark{}<~endl;
 \end{lyxcode}
-\input{line.tex}
+
 
 \emph{Exception: ConnectionFailed, CommunicationFailed}
 
@@ -259,7 +260,7 @@ Query the device for import info from the database. This method returns
 a DbDevImprtInfo type. The DbDevImportInfo type is a struct defined
 as follows :
 
-\input{line.tex}
+
 \begin{lyxcode}
 class~DbDevImportInfo~\{~
 
@@ -273,7 +274,7 @@ public~:~
 
 ~~~~string~version;~\};~
 \end{lyxcode}
-\input{line.tex}
+
 
 \emph{Exception: NonDbDevice}
 
@@ -326,7 +327,7 @@ of CommandInfo returned to the caller. It is the caller responsibility
 to delete this memory. The CommandInfo type is a struct defined as
 follows :
 
-\input{line.tex}
+
 \begin{lyxcode}
 typedef~\_CommandInfo
 
@@ -350,7 +351,7 @@ typedef~\_CommandInfo
 
 typedef~CommandInfoList~vector<CommandInfo>;
 \end{lyxcode}
-\input{line.tex}
+
 
 \emph{Exception:} \emph{ConnectionFailed, CommunicationFailed, DevFailed
 from device}
@@ -397,7 +398,7 @@ to the caller. It is the caller responsibility to delete this memory.
 Class DeviceDataHistory is detailed on chapter \ref{DataHistory}.
 See chapter on Advanced Feature for all details regarding polling.
 
-\input{line.tex}
+
 \begin{lyxcode}
 \noindent DeviceProxy~dev~=~new~DeviceProxy(\textquotedbl{}...\textquotedbl{});~
 
@@ -441,7 +442,7 @@ hist~=~dev->command\_history(\textquotedbl{}Status\textquotedbl{},5);
 
 delete~hist;
 \end{lyxcode}
-\input{line.tex}
+
 
 \emph{Exception:} \emph{NonSupportedFeature, ConnectionFailed, CommunicationFailed,
 DevFailed from device}
@@ -523,7 +524,7 @@ vector of AttributeInfo returned to the caller. It is the caller responsibility
 to delete this memory. AttributeInfo is a struct defined as follows
 :
 
-\input{line.tex}
+
 \begin{lyxcode}
 typedef~struct~\_AttributeInfo
 
@@ -569,7 +570,7 @@ typedef~struct~\_AttributeInfo
 
 \}~AttributeInfo;~
 \end{lyxcode}
-\input{line.tex}
+
 
 \emph{Exception: ConnectionFailed, CommunicationFailed, DevFailed
 from device}
@@ -584,7 +585,7 @@ memory for the vector of AttributeInfoEx returned to the caller. It
 is the caller responsibility to delete this memory. AttributeInfoEx
 is a structure defined as follows :
 
-\input{line.tex}
+
 \begin{lyxcode}
 struct~AttributeInfoEx:~public~AttributeInfo
 
@@ -676,7 +677,7 @@ struct~ArchiveEventInfo
 
 \};
 \end{lyxcode}
-\input{line.tex}
+
 
 \emph{Exception: ConnectionFailed, CommunicationFailed, DevFailed
 from device}
@@ -723,7 +724,7 @@ method allocates memory for the vector of DeviceAttribute objects
 returned to the caller. This is the caller responsibility to delete
 this memory. Example :
 
-\input{line.tex}
+
 \begin{lyxcode}
 vector<DeviceAttribute>~{*}devattr;
 
@@ -755,7 +756,7 @@ cout~<\textcompwordmark{}<~\textquotedbl{}my\_attribute~value~\textquotedbl{}~<\
 
 delete~devattr;
 \end{lyxcode}
-\input{line.tex}
+
 
 \emph{Exception: ConnectionFailed, CommunicationFailed}
 
@@ -789,7 +790,7 @@ this is the only API call which could throw a NamedDevFailedList exception.
 See \ref{sub:The-NamedDevFailedList-exception} to get all the details
 on this exception. Example :
 
-\input{line.tex}
+
 \begin{lyxcode}
 vector<DeviceAttribute>~attr\_in;
 
@@ -807,7 +808,7 @@ device->write\_attributes(attr\_in);
 
 
 \end{lyxcode}
-\input{line.tex}
+
 \begin{lyxcode}
 
 \end{lyxcode}
@@ -855,7 +856,7 @@ returned to the caller. It is the caller responsibility to delete
 this memory. Class DeviceAttributeHistory is detailed on chapter \ref{AttributeHistory}See
 also chapter on Advanced Feature for all details regarding polling.
 
-\input{line.tex}
+
 \begin{lyxcode}
 \noindent DeviceProxy~dev~=~new~DeviceProxy(\textquotedbl{}...\textquotedbl{});~
 
@@ -903,7 +904,7 @@ hist~=~dev->attribute\_history(\textquotedbl{}Current\textquotedbl{},5);
 
 delete~hist;
 \end{lyxcode}
-\input{line.tex}
+
 
 \emph{Exception:} \emph{NonSupportedFeature, ConnectionFailed, CommunicationFailed,
 DevFailed from device}
@@ -973,7 +974,7 @@ object. If the reply is an exception, it is re-thrown by this call.
 An exception is also thrown in case of the reply is not yet arrived.
 Example :
 
-\input{line.tex}
+
 \begin{lyxcode}
 ~~~~~~~~Tango::DeviceProxy~dev(\textquotedbl{}...\textquotedbl{});
 
@@ -1015,7 +1016,7 @@ Example :
 
 
 \end{lyxcode}
-\input{line.tex}
+
 
 \emph{Exception: AsynCall, AsynReplyNotArrived, CommunicationFailed,
 DevFailed from device}
@@ -1346,7 +1347,7 @@ arrived replied. Returns immediately if there is no replies already
 arrived or if there is no asynchronous request for the device. Example
 :
 
-\input{line.tex}
+
 \begin{lyxcode}
 class~MyCallBack:~Tango::CallBack
 
@@ -1424,7 +1425,7 @@ int~main(int~argc,~char~{*}argv{[}{]})
 
 \}
 \end{lyxcode}
-\input{line.tex}
+
 
 \emph{Exception: None, all errors are reported using the err and errors
 fields of the parameter passed to the callback method. See chapter
@@ -2007,7 +2008,7 @@ process informations in the structure passed as argument. If the device
 is not locked, the method returns false. The LockerInfo structure
 definition is
 
-\input{line.tex}
+
 \begin{lyxcode}
 typedef~union
 
@@ -2047,7 +2048,7 @@ struct~LockerInfo
 
 \};
 \end{lyxcode}
-\input{line.tex}
+
 
 The structure \emph{ll} field is set to either CPP or JAVA depending
 on the locker process language. In case of CPP client, the \emph{li}
@@ -2139,7 +2140,7 @@ for the following types :
 \item DevVarDoubleStringArray {*} (const DevVarDoubleStringArray {*} for
 extraction)
 \end{enumerate}
-\input{line.tex}
+
 
 \textbf{Note :}\\
 \textbf{Insertion by pointers takes full ownership of the pointed
@@ -2149,7 +2150,7 @@ after the insertion. Also note that when using extraction by pointers,
 the pointed to memory is inside the DeviceData object and its lifetime
 is the same than the DeviceData object lifetime.}
 
-\input{line.tex}
+
 
 Operators also exist for inserting TANGO CORBA sequence type by reference.
 The insertion copy the data into the DeviceData object. Insert operator
@@ -2194,7 +2195,7 @@ DeviceData object and you should not delete it
 \noindent Here is an example of creating, inserting and extracting
 some data type from/into DeviceData object :
 
-\input{line.tex}
+
 \begin{lyxcode}
 \noindent DeviceData~my\_short,~my\_long,~my\_string;
 
@@ -2279,7 +2280,7 @@ for~(int~i~=~0;i~<~10;i++)
 
 
 \end{lyxcode}
-\input{line.tex}
+
 
 \noindent \emph{Exception: WrongData if requested}
 
@@ -2291,7 +2292,7 @@ depending on whether the DeviceData object contains data or not. It
 can be used to test whether the DeviceData has been initialized or
 not e.g.
 
-\input{line.tex}
+
 \begin{lyxcode}
 \noindent string~string\_read;
 
@@ -2313,7 +2314,7 @@ not e.g.
 
 \noindent \}
 \end{lyxcode}
-\input{line.tex}
+
 
 \emph{Exception: WrongData if requested}
 
@@ -2357,7 +2358,7 @@ Sets one exception flag
 The following is an example of how to use these exceptions related
 methods
 
-\input{line.tex}
+
 \begin{lyxcode}
 \noindent ~~~~~1~~~~~~~~~~DeviceData~da;
 
@@ -2377,7 +2378,7 @@ methods
 
 ~~~~~9~~~~~~~~~~cout~<\textcompwordmark{}<~\textquotedbl{}bs~=~\textquotedbl{}~<\textcompwordmark{}<~bs~<\textcompwordmark{}<~endl;
 \end{lyxcode}
-\input{line.tex}
+
 
 
 \subsection{ostream \&operator<\textcompwordmark{}<(ostream \&, DeviceData \&)}
@@ -2387,7 +2388,7 @@ object. This function knows all types which could be inserted in a
 DeviceData object and print them accordingly. A special string is
 printed if the DeviceData object is empty
 
-\input{line.tex}
+
 \begin{lyxcode}
 \noindent DeviceProxy~{*}dev~=~new~DeviceProxy(``...'');
 
@@ -2401,10 +2402,11 @@ cout~<\textcompwordmark{}<~``Command~returned:~''~<\textcompwordmark{}<~out~<\te
 
 
 \end{lyxcode}
-\input{line.tex}
 
 
-\section{Tango::DeviceDataHistory\label{DataHistory}}
+
+\section{Tango::DeviceDataHistory}
+\label{DataHistory}
 
 This is the fundamental type for receiving data from device command
 polling buffers. This class inherits from the Tango::DeviceData class.
@@ -2450,7 +2452,7 @@ object. This function knows all types which could be inserted in a
 DeviceDataHistory object and print them accordingly. It also prints
 date and error stack in case the command returned an error.
 
-\input{line.tex}
+
 \begin{lyxcode}
 \noindent DeviceProxy~{*}dev~=~new~DeviceProxy(``...'');
 
@@ -2476,7 +2478,7 @@ delete~hist;
 
 
 \end{lyxcode}
-\input{line.tex}
+
 
 
 \section{\noindent Tango::DeviceAttribute}
@@ -2887,7 +2889,7 @@ methods are defined :
 \noindent Here is an example of creating, inserting and extracting
 some DeviceAttribute types :
 
-\input{line.tex}
+
 \begin{lyxcode}
 \noindent DeviceAttribute~my\_short,~my\_long,~my\_string;
 
@@ -2991,7 +2993,7 @@ for~(int~i~=~0;i~<~10;i++)
 
 \}
 \end{lyxcode}
-\input{line.tex}
+
 
 \noindent \emph{Exception: WrongData if requested}
 
@@ -3003,7 +3005,7 @@ depending on whether the DeviceAttribute object contains data or not.
 It can be used to test whether the DeviceAttribute has been initialized
 or not e.g.
 
-\input{line.tex}
+
 \begin{lyxcode}
 \noindent string~parity;
 
@@ -3025,7 +3027,7 @@ or not e.g.
 
 \noindent \}
 \end{lyxcode}
-\input{line.tex}
+
 
 \emph{Exception: WrongData if requested}
 
@@ -3075,7 +3077,7 @@ Set one exception flag
 The following is an example of how to use these exceptions related
 methods
 
-\input{line.tex}
+
 \begin{lyxcode}
 \noindent ~~~~~1~~DeviceAttribute~da;
 
@@ -3095,7 +3097,7 @@ methods
 
 ~~~~~9~~cout~<\textcompwordmark{}<~\textquotedbl{}bs~=~\textquotedbl{}~<\textcompwordmark{}<~bs~<\textcompwordmark{}<~endl;
 \end{lyxcode}
-\input{line.tex}
+
 
 
 \subsection{bool DeviceAttribute::has\_failed()}
@@ -3112,7 +3114,7 @@ was read.
 The following is an example of the three available ways to get data
 out of a DeviceAttribute object.
 
-\input{line.tex}
+
 \begin{lyxcode}
 \noindent ~~~~~1~~DeviceAttribute~da;
 
@@ -3240,7 +3242,7 @@ out of a DeviceAttribute object.
 
 ~~~~63~~\}
 \end{lyxcode}
-\input{line.tex}
+
 
 The first way is coded between lines 1 and 13. It uses the default
 behaviour of the DeviceAttribute object which is to throw an exception
@@ -3315,7 +3317,7 @@ Returns the number of read values
 Returns the number of written values. Here is an example of these
 last methods usage.
 
-\input{line.tex}
+
 \begin{lyxcode}
 \noindent ~1~~DeviceAttribute~da;
 
@@ -3369,7 +3371,7 @@ last methods usage.
 
 26~~\}
 \end{lyxcode}
-\input{line.tex}
+
 
 Line 24 is needed to cover the case of scalar write attribute where
 only one value is returned but both get\_nb\_read() and get\_nb\_written()
@@ -3404,7 +3406,7 @@ valid. It also prints the date returned within the attribute, the
 attribute name, the dim\_x and dim\_y attribute parameter and its
 quality factor.
 
-\input{line.tex}
+
 \begin{lyxcode}
 \noindent DeviceProxy~{*}dev~=~new~DeviceProxy(\textquotedbl{}...\textquotedbl{});
 
@@ -3418,10 +3420,11 @@ cout~<\textcompwordmark{}<~\textquotedbl{}Attribute~returned:~\textquotedbl{}~<\
 
 
 \end{lyxcode}
-\input{line.tex}
 
 
-\section{Tango::DeviceAttributeHistory\label{AttributeHistory}}
+
+\section{Tango::DeviceAttributeHistory}
+\label{AttributeHistory}
 
 This is the fundamental type for receiving data from device attribute
 polling buffers. This class inherits from the Tango::DeviceAttribute
@@ -3445,7 +3448,7 @@ prints date, attribute name, attribute dim\_x and dim\_y parameters,
 attribute quality factor and error stack in case the attribute returned
 an error.
 
-\input{line.tex}
+
 \begin{lyxcode}
 \noindent DeviceProxy~{*}dev~=~new~DeviceProxy(``...'');
 
@@ -3471,7 +3474,7 @@ delete~hist;
 
 
 \end{lyxcode}
-\input{line.tex}
+
 
 
 \section{Tango::AttributeProxy()}
@@ -3502,7 +3505,7 @@ be used instead of the three fields device name. If the device to
 which the attribute belongs to is not defined in the database, an
 exception is thrown. Examples :
 
-\input{line.tex}
+
 \begin{lyxcode}
 AttributeProxy~{*}my\_attr~=~new~AttributeProxy(\textquotedbl{}my/own/device/attr\textquotedbl{});
 
@@ -3510,7 +3513,7 @@ AttributeProxy~{*}my\_attr\_bis~=~new~AttributeProxy(\textquotedbl{}attr\_alias\
 
 AttributeProxy~{*}my\_attr\_ter~=~new~AttributeProxy(\textquotedbl{}dev\_alias/attr\textquotedbl{});
 \end{lyxcode}
-\input{line.tex}
+
 
 See appendix on device/attribute naming for all details about Tango
 device or attribute naming syntax. 
@@ -3532,11 +3535,11 @@ A method which returns the state of the device to which the attribute
 belongs to. This state is returned as a Tango::DevState type. Example
 :
 
-\input{line.tex}
+
 \begin{lyxcode}
 dev\_state~=~my\_attr->state()~<\textcompwordmark{}<~endl;
 \end{lyxcode}
-\input{line.tex}
+
 
 \emph{Exception: ConnectionFailed, CommunicationFailed}
 
@@ -3546,11 +3549,11 @@ dev\_state~=~my\_attr->state()~<\textcompwordmark{}<~endl;
 A method which return the status of the device to which the attribute
 belongs to. The status is returned as a string. Example :
 
-\input{line.tex}
+
 \begin{lyxcode}
 cout~<\textcompwordmark{}<~\textquotedbl{}device~status\textquotedbl{}~<\textcompwordmark{}<~my\_attr->status()~<\textcompwordmark{}<~endl;
 \end{lyxcode}
-\input{line.tex}
+
 
 \emph{Exception: ConnectionFailed, CommunicationFailed}
 
@@ -3560,11 +3563,11 @@ cout~<\textcompwordmark{}<~\textquotedbl{}device~status\textquotedbl{}~<\textcom
 A method which sends a ping to the device to which the attribute belongs
 and returns the time elapsed in microseconds. Example :
 
-\input{line.tex}
+
 \begin{lyxcode}
 cout~<\textcompwordmark{}<~\textquotedbl{}device~ping~took~\textquotedbl{}~<\textcompwordmark{}<~my\_device->ping()~<\textcompwordmark{}<~``~microseconds''~<\textcompwordmark{}<~endl;
 \end{lyxcode}
-\input{line.tex}
+
 
 \emph{Exception: ConnectionFailed, CommunicationFailed}
 
@@ -3590,7 +3593,7 @@ to which the attributes belongs.
 Return the attribute configuration. AttributeInfo is a struct defined
 as follows :
 
-\input{line.tex}
+
 \begin{lyxcode}
 typedef~struct~\_AttributeInfo~\{~
 
@@ -3634,7 +3637,7 @@ typedef~struct~\_AttributeInfo~\{~
 
 \}~AttributeInfo;~
 \end{lyxcode}
-\input{line.tex}
+
 
 \emph{Exception: ConnectionFailed, CommunicationFailed, DevFailed
 from device}
@@ -3700,7 +3703,7 @@ the caller responsibility to delete this memory. Class DeviceAttributeHistory
 is detailed on chapter \ref{AttributeHistory}See chapter on Advanced
 Feature for all details regarding polling.
 
-\input{line.tex}
+
 \begin{lyxcode}
 \noindent AttributeProxy~attr~=~new~AttributeProxy(\textquotedbl{}my/own/device/Current\textquotedbl{});~
 
@@ -3748,7 +3751,7 @@ hist~=~attr->history(5);
 
 delete~hist;
 \end{lyxcode}
-\input{line.tex}
+
 
 \emph{Exception:} \emph{NonSupportedFeature, ConnectionFailed, CommunicationFailed,
 DevFailed from device}
@@ -4153,7 +4156,8 @@ sections below for details.
 (with database), DevFailed from database device}
 
 
-\section{Tango::ApiUtil\label{sec:Tango::ApiUtil}}
+\section{Tango::ApiUtil}
+\label{sec:Tango::ApiUtil}
 
 This class is a singleton. Therefore, it is not necessary to create
 it. It will be automatically done. A static method allows a user to
@@ -4252,7 +4256,8 @@ variable is found. Otherwise, it returns -1.
 Set the client event buffer high water mark (HWM\index{HWM})
 
 
-\section{Asynchronous callback related classes\label{sec:Asynchronous-callback-related}}
+\section{Asynchronous callback related classes}
+\label{sec:Asynchronous-callback-related}
 
 
 \subsection{Tango::CallBack}
@@ -4626,7 +4631,7 @@ in case the specified device belongs to the group but can't be reached
 (not registered, down...). See example below. See also the Tango::DeviceProxy
 class documentation for details.
 
-\input{line.tex}
+
 \begin{lyxcode}
 \noindent try
 
@@ -4652,7 +4657,7 @@ catch~(const~Tango::DevFailed~\&df)
 
 \}
 \end{lyxcode}
-\input{line.tex}
+
 
 The request is systematically forwarded to subgroups (i.e. if no device
 named device\_name could be found in the local set of devices, the
@@ -5287,13 +5292,13 @@ device\_list(), info(), etc.
 environment variable ``TANGO\_HOST'' to determine which instance
 of the TANGO database to connect to. Example :
 
-\input{line.tex}
+
 \begin{lyxcode}
 \noindent using~namespace~Tango;
 
 \noindent Database~{*}db~=~new~Database();
 \end{lyxcode}
-\input{line.tex}
+
 
 The Database class also has a copy constructor and one assignement
 operator defined.
@@ -5304,15 +5309,15 @@ operator defined.
 \noindent Query the database for some general info about the tables
 in the database. Result is returned as a string. Example :
 
-\input{line.tex}
+
 \begin{lyxcode}
 \noindent cout~<\textcompwordmark{}<~db->get\_info()~<\textcompwordmark{}<~endl;
 \end{lyxcode}
-\input{line.tex}
+
 
 \noindent will return information like this :
 
-\input{line.tex}
+
 \begin{lyxcode}
 \noindent Running~since~2000-11-06~14:10:46
 
@@ -5336,7 +5341,7 @@ in the database. Result is returned as a string. Example :
 
 \noindent Device~attribute~properties~defined~~=~92
 \end{lyxcode}
-\input{line.tex}
+
 
 \noindent \emph{Exceptions: ConnectionFailed, CommunicationFailed,
 DevFailed from device (DB\_SQLError)}
@@ -5347,7 +5352,7 @@ DevFailed from device (DB\_SQLError)}
 \noindent Add a device to the database. The device name, server and
 class are specified in the DbDevInfo structure. Example :
 
-\input{line.tex}
+
 \begin{lyxcode}
 \noindent DbDevInfo~my\_device\_info;
 
@@ -5359,7 +5364,7 @@ class are specified in the DbDevInfo structure. Example :
 
 \noindent db->add\_device(my\_device\_info);
 \end{lyxcode}
-\input{line.tex}
+
 
 \emph{Exception: ConnectionFailed, CommunicationFailed, DevFailed
 from device}
@@ -5370,11 +5375,11 @@ from device}
 \noindent Delete the device of the specified name from the database.
 Example
 
-\input{line.tex}
+
 \begin{lyxcode}
 \noindent db->delete\_device(``my/own/device'');
 \end{lyxcode}
-\input{line.tex}
+
 
 \noindent \emph{Exceptions}: \emph{ConnectionFailed, CommunicationFailed,
 DevFailed from device (DB\_SQLError, DB\_DeviceNotDefined)}
@@ -5386,7 +5391,7 @@ DevFailed from device (DB\_SQLError, DB\_DeviceNotDefined)}
 device. The command returns the information in a DbDevImportInfo structure.
 Example :
 
-\input{line.tex}
+
 \begin{lyxcode}
 \noindent DbDevImportInfo~my\_device\_import;
 
@@ -5402,7 +5407,7 @@ Example :
 
 \noindent cout~<\textcompwordmark{}<~endl;
 \end{lyxcode}
-\input{line.tex}
+
 
 \noindent \emph{Exceptions}: \emph{ConnectionFailed, CommunicationFailed,
 DevFailed from device ( DB\_SQLError, DB\_DeviceNotDefined)}
@@ -5414,7 +5419,7 @@ DevFailed from device ( DB\_SQLError, DB\_DeviceNotDefined)}
 Device name, server, class, pid and version are specified in the DbDevExportInfo
 structure. Example :
 
-\input{line.tex}
+
 \begin{lyxcode}
 \noindent DbDevExportInfo~my\_device\_export;
 
@@ -5430,7 +5435,7 @@ structure. Example :
 
 \noindent db->export\_device(my\_device\_export);
 \end{lyxcode}
-\input{line.tex}
+
 
 \emph{Exceptions}: \emph{ConnectionFailed, CommunicationFailed, DevFailed
 from device (DB\_SQLError, DB\_DeviceNotDefined)}
@@ -5441,11 +5446,11 @@ from device (DB\_SQLError, DB\_DeviceNotDefined)}
 \noindent Mark the specified device as un-exported in the database.
 Example :
 
-\input{line.tex}
+
 \begin{lyxcode}
 \noindent db->unexport\_device(``my/own/device'');
 \end{lyxcode}
-\input{line.tex}
+
 
 \noindent \emph{Exceptions}: \emph{ConnectionFailed, CommunicationFailed,
 DevFailed from device (DB\_SQLError)}
@@ -5493,7 +5498,7 @@ DevFailed from device (DB\_SQLError)}
 Query database for specified services.The instname parameter can be
 a wildcard character (\textquotedbl{}{*}\textquotedbl{}).
 
-\input{line.tex}
+
 \begin{lyxcode}
 string~servicename(\textquotedbl{}HdbManager\textquotedbl{});
 
@@ -5505,7 +5510,7 @@ vector<string>~service\_list;
 
 db\_datum~>\textcompwordmark{}>~service\_list;
 \end{lyxcode}
-\input{line.tex}
+
 
 Exception: ConnectionFailed, CommunicationFailed, DevFailed from device
 
@@ -5515,7 +5520,7 @@ Exception: ConnectionFailed, CommunicationFailed, DevFailed from device
 
 Register the specified service wihtin the database.
 
-\input{line.tex}
+
 \begin{lyxcode}
 string~servicename(\textquotedbl{}HdbManager\textquotedbl{});
 
@@ -5525,7 +5530,7 @@ string~devname(\textquotedbl{}sys/hdb/1\textquotedbl{});
 
 db->register\_service(servicename,instname,devname);
 \end{lyxcode}
-\input{line.tex}
+
 
 Exception: ConnectionFailed, CommunicationFailed, DevFailed from device
 
@@ -5534,7 +5539,7 @@ Exception: ConnectionFailed, CommunicationFailed, DevFailed from device
 
 Unregister the specified service from the database.
 
-\input{line.tex}
+
 \begin{lyxcode}
 string~servicename(\textquotedbl{}HdbManager\textquotedbl{});
 
@@ -5542,7 +5547,7 @@ string~instname(\textquotedbl{}ctrm\textquotedbl{});
 
 db->unregister\_service(servicename,instname);
 \end{lyxcode}
-\input{line.tex}
+
 
 Exception: ConnectionFailed, CommunicationFailed, DevFailed from device
 
@@ -5551,7 +5556,7 @@ Exception: ConnectionFailed, CommunicationFailed, DevFailed from device
 
 Returns the list of all host names registered in the database.
 
-\input{line.tex}
+
 \begin{lyxcode}
 DbDatum~db\_datum~=~db->get\_host\_list();
 
@@ -5559,7 +5564,7 @@ vector<string>~host\_list;
 
 db\_datum~>\textcompwordmark{}>~host\_list;
 \end{lyxcode}
-\input{line.tex}
+
 
 Exception: ConnectionFailed, CommunicationFailed, DevFailed from device
 
@@ -5569,7 +5574,7 @@ Exception: ConnectionFailed, CommunicationFailed, DevFailed from device
 Returns the list of all host names registered in the database which
 match the specified wildcard (eg: \textquotedbl{}l-c0{*}\textquotedbl{}).
 
-\input{line.tex}
+
 \begin{lyxcode}
 string~wildcard(\textquotedbl{}l-c0{*}\textquotedbl{});
 
@@ -5579,7 +5584,7 @@ vector<string>~host\_list;
 
 db\_datum~>\textcompwordmark{}>~host\_list;
 \end{lyxcode}
-\input{line.tex}
+
 
 Exception: ConnectionFailed, CommunicationFailed, DevFailed from device
 
@@ -5590,7 +5595,7 @@ Query the database for a list of classes instancied by the specified
 server. The DServer class exists in all TANGO servers and for this
 reason this class is removed from the returned list.
 
-\input{line.tex}
+
 \begin{lyxcode}
 string~server(\textquotedbl{}Serial/1\textquotedbl{});
 
@@ -5600,7 +5605,7 @@ vector<string>~class\_list;
 
 db\_datum~>\textcompwordmark{}>~class\_list;
 \end{lyxcode}
-\input{line.tex}
+
 
 Exception: ConnectionFailed, CommunicationFailed, DevFailed from device
 
@@ -5609,7 +5614,7 @@ Exception: ConnectionFailed, CommunicationFailed, DevFailed from device
 
 Return the list of all server names registered in the database.
 
-\input{line.tex}
+
 \begin{lyxcode}
 DbDatum~db\_datum~=~db->get\_server\_name\_list();
 
@@ -5617,7 +5622,7 @@ vector<string>~server\_list;
 
 db\_datum~>\textcompwordmark{}>~server\_list;
 \end{lyxcode}
-\input{line.tex}
+
 
 Exception: ConnectionFailed, CommunicationFailed, DevFailed from device
 
@@ -5627,7 +5632,7 @@ Exception: ConnectionFailed, CommunicationFailed, DevFailed from device
 Return the list of all instance names existing in the database for
 the specifed server.
 
-\input{line.tex}
+
 \begin{lyxcode}
 string~servername(\textquotedbl{}Serial\textquotedbl{});
 
@@ -5637,7 +5642,7 @@ vector<string>~instance\_list;
 
 db\_datum~>\textcompwordmark{}>~instance\_list;
 \end{lyxcode}
-\input{line.tex}
+
 
 Exception: ConnectionFailed, CommunicationFailed, DevFailed from device
 
@@ -5646,7 +5651,7 @@ Exception: ConnectionFailed, CommunicationFailed, DevFailed from device
 
 Return the list of all servers registered in the database.
 
-\input{line.tex}
+
 \begin{lyxcode}
 DbDatum~db\_datum~=~db->get\_server\_list();
 
@@ -5654,7 +5659,7 @@ vector<string>~server\_list;
 
 db\_datum~>\textcompwordmark{}>~server\_list;
 \end{lyxcode}
-\input{line.tex}
+
 
 Exception: ConnectionFailed, CommunicationFailed, DevFailed from device
 
@@ -5664,7 +5669,7 @@ Exception: ConnectionFailed, CommunicationFailed, DevFailed from device
 Return the list of all servers registered in the database which match
 the specified wildcard (eg: \textquotedbl{}Serial/{*}\textquotedbl{}).
 
-\input{line.tex}
+
 \begin{lyxcode}
 string~wildcard(\textquotedbl{}Serial/{*}\textquotedbl{});
 
@@ -5674,7 +5679,7 @@ vector<string>~server\_list;
 
 db\_datum~>\textcompwordmark{}>~server\_list;
 \end{lyxcode}
-\input{line.tex}
+
 
 Exception: ConnectionFailed, CommunicationFailed, DevFailed from device
 
@@ -5684,7 +5689,7 @@ Exception: ConnectionFailed, CommunicationFailed, DevFailed from device
 Query the database for a list of servers registred on the specified
 host.
 
-\input{line.tex}
+
 \begin{lyxcode}
 string~host(\textquotedbl{}kidiboo\textquotedbl{});
 
@@ -5694,7 +5699,7 @@ vector<string>~server\_list;
 
 db\_datum~>\textcompwordmark{}>~server\_list;
 \end{lyxcode}
-\input{line.tex}
+
 
 Exception: ConnectionFailed, CommunicationFailed, DevFailed from device
 
@@ -5703,13 +5708,13 @@ Exception: ConnectionFailed, CommunicationFailed, DevFailed from device
 
 Query the database for server information.
 
-\input{line.tex}
+
 \begin{lyxcode}
 string~server(\textquotedbl{}Serial/1\textquotedbl{});
 
 DbServerInfo~info~=~db->get\_server\_info(server);
 \end{lyxcode}
-\input{line.tex}
+
 
 Exception: ConnectionFailed, CommunicationFailed, DevFailed from device
 
@@ -5718,7 +5723,7 @@ Exception: ConnectionFailed, CommunicationFailed, DevFailed from device
 
 Add/update server information in the database.
 
-\input{line.tex}
+
 \begin{lyxcode}
 DbServerInfo~info;
 
@@ -5732,7 +5737,7 @@ info.level~=~3;~//~Startup~level~(Used~by~Astor)
 
 db->put\_server\_info(info);
 \end{lyxcode}
-\input{line.tex}
+
 
 Exception: ConnectionFailed, CommunicationFailed, DevFailed from device
 
@@ -5741,13 +5746,13 @@ Exception: ConnectionFailed, CommunicationFailed, DevFailed from device
 
 Delete server information of the specifed server from the database.
 
-\input{line.tex}
+
 \begin{lyxcode}
 string~server(\textquotedbl{}Serial/1\textquotedbl{});
 
 db->delete\_server\_info(server);
 \end{lyxcode}
-\input{line.tex}
+
 
 Exception: ConnectionFailed, CommunicationFailed, DevFailed from device
 
@@ -5760,17 +5765,17 @@ The method returns a DbDatum type. The device names are stored as
 an array of strings. Here is two code example of how to extract the
 names from the DbDatum type :
 
-\input{line.tex}
+
 \begin{lyxcode}
 \noindent vector<string>~device\_names;
 
 \noindent device\_names~<\textcompwordmark{}<~db\_datum;
 \end{lyxcode}
-\input{line.tex}
+
 
 \noindent or :
 
-\input{line.tex}
+
 \begin{lyxcode}
 \noindent for~(int~i=0;~i<~db\_datum.size();~i++)
 
@@ -5780,7 +5785,7 @@ names from the DbDatum type :
 
 \noindent \}
 \end{lyxcode}
-\input{line.tex}
+
 
 \emph{Exception: ConnectionFailed, CommunicationFailed, DevFailed
 from device}
@@ -5843,7 +5848,7 @@ Query the database for a list of devices and classes served by the
 specified server. Return a list with the following structure: \{device
 name,class name,device name,class name,...\}
 
-\input{line.tex}
+
 \begin{lyxcode}
 string~server(\textquotedbl{}Serial/1\textquotedbl{});
 
@@ -5853,7 +5858,7 @@ vector<string>~dev\_list;
 
 db\_datum~>\textcompwordmark{}>~dev\_list;
 \end{lyxcode}
-\input{line.tex}
+
 
 Exception: ConnectionFailed, CommunicationFailed, DevFailed from device
 
@@ -5862,13 +5867,13 @@ Exception: ConnectionFailed, CommunicationFailed, DevFailed from device
 
 Return the class of the specified device.
 
-\input{line.tex}
+
 \begin{lyxcode}
 string~devname(\textquotedbl{}sr/rf-cavity/1\textquotedbl{});
 
 string~classname~=~db->get\_class\_for\_device(devname);
 \end{lyxcode}
-\input{line.tex}
+
 
 Exception: ConnectionFailed, CommunicationFailed, DevFailed from device
 
@@ -5877,7 +5882,7 @@ Exception: ConnectionFailed, CommunicationFailed, DevFailed from device
 
 Return the class inheritance scheme of the specified device.
 
-\input{line.tex}
+
 \begin{lyxcode}
 string~devname(\textquotedbl{}sr/rf-cavity/1\textquotedbl{});
 
@@ -5887,7 +5892,7 @@ vector<string>~class\_list;
 
 db\_datum~>\textcompwordmark{}>~class\_list;
 \end{lyxcode}
-\input{line.tex}
+
 
 Exception: ConnectionFailed, CommunicationFailed, DevFailed from device
 
@@ -5896,7 +5901,7 @@ Exception: ConnectionFailed, CommunicationFailed, DevFailed from device
 
 Query database for list of exported devices for the specified class.
 
-\input{line.tex}
+
 \begin{lyxcode}
 string~classname(\textquotedbl{}MyClass\textquotedbl{});
 
@@ -5906,7 +5911,7 @@ vector<string>~dev\_list;
 
 db\_datum~>\textcompwordmark{}>~dev\_list;
 \end{lyxcode}
-\input{line.tex}
+
 
 Exception: ConnectionFailed, CommunicationFailed, DevFailed from device
 
@@ -5916,7 +5921,7 @@ Exception: ConnectionFailed, CommunicationFailed, DevFailed from device
 Query the database for a list of object (free properties) for which
 properties are defined and which match the specified wildcard.
 
-\input{line.tex}
+
 \begin{lyxcode}
 string~wildcard(\textquotedbl{}Optic{*}\textquotedbl{});
 
@@ -5926,7 +5931,7 @@ vector<string>~obj\_list;
 
 db\_datum~>\textcompwordmark{}>~obj\_list;
 \end{lyxcode}
-\input{line.tex}
+
 
 Exception: ConnectionFailed, CommunicationFailed, DevFailed from device
 
@@ -5937,7 +5942,7 @@ Exception: ConnectionFailed, CommunicationFailed, DevFailed from device
 Query the database for a list of properties defined for the specified
 object and which match the specified wildcard.
 
-\input{line.tex}
+
 \begin{lyxcode}
 string~objname(\textquotedbl{}OpticID9\textquotedbl{});
 
@@ -5949,7 +5954,7 @@ vector<string>~prop\_list;
 
 db\_datum~>\textcompwordmark{}>~prop\_list;
 \end{lyxcode}
-\input{line.tex}
+
 
 Exception: ConnectionFailed, CommunicationFailed, DevFailed from device
 
@@ -5963,7 +5968,7 @@ in the same DbDatum structures. To retrieve the properties use the
 extract operator >\textcompwordmark{}>. Here is an example of how
 to use the DbData type to specify and extract properties :
 
-\input{line.tex}
+
 \begin{lyxcode}
 \noindent DbData~db\_data;
 
@@ -5979,7 +5984,7 @@ to use the DbData type to specify and extract properties :
 
 \noindent db\_data{[}1{]}~>\textcompwordmark{}>~acceleration;
 \end{lyxcode}
-\input{line.tex}
+
 
 \noindent \emph{Exceptions}: \emph{ConnectionFailed, CommunicationFailed,
 DevFailed from device (DB\_SQLError)}
@@ -5993,7 +5998,7 @@ of DbDatum structures. Use the insert operator >\textcompwordmark{}>
 to insert the properties into the DbDatum structures. Here is an example
 of how to insert properties into the database using this method :
 
-\input{line.tex}
+
 \begin{lyxcode}
 \noindent DbDatum~velocity(``velocity''),~acceleration(``acceleration'');
 
@@ -6009,7 +6014,7 @@ of how to insert properties into the database using this method :
 
 \noindent db->put\_property(``mymotor'',~db\_data);
 \end{lyxcode}
-\input{line.tex}
+
 
 \noindent \emph{Exceptions}: \emph{ConnectionFailed, CommunicationFailed,
 DevFailed from device (DB\_SQLError)}
@@ -6022,7 +6027,7 @@ property names are specified by the vector of DbDatum structures.
 Here is an example of how to delete properties from the database using
 this method :
 
-\input{line.tex}
+
 \begin{lyxcode}
 \noindent DbData~db\_data;
 
@@ -6032,7 +6037,7 @@ this method :
 
 \noindent db->delete\_property(``mymotor'',~db\_data);
 \end{lyxcode}
-\input{line.tex}
+
 
 \emph{Exceptions: ConnectionFailed, CommunicationFailed, DevFailed
 from device}
@@ -6044,7 +6049,7 @@ string \&propname)}
 Get the list of the last 10 modifications of the specifed object property.
 Note that propname can contain a wildcard character (eg: \textquotedbl{}prop{*}\textquotedbl{}). 
 
-\input{line.tex}
+
 \begin{lyxcode}
 vector<DbHistory>~hist;
 
@@ -6084,7 +6089,7 @@ for(int~i=0;i<hist.size();i++)~\{
 
 \}
 \end{lyxcode}
-\input{line.tex}
+
 
 Exceptions: ConnectionFailed, CommunicationFailed, DevFailed from
 device
@@ -6099,7 +6104,7 @@ DbDatum structures. To retrieve the properties use the extract operator
 >\textcompwordmark{}>. Here is an example of how to use the DbData
 type to specify and extract properties :
 
-\input{line.tex}
+
 \begin{lyxcode}
 \noindent DbData~db\_data;
 
@@ -6115,7 +6120,7 @@ type to specify and extract properties :
 
 \noindent db\_data{[}1{]}~>\textcompwordmark{}>~acceleration;
 \end{lyxcode}
-\input{line.tex}
+
 
 \noindent \emph{Exceptions}: \emph{ConnectionFailed, CommunicationFailed,
 DevFailed from device (DB\_SQLError)}
@@ -6129,7 +6134,7 @@ of DbDatum structures. Use the insert operator >\textcompwordmark{}>
 to insert the properties into the DbDatum structures. Here is an example
 of how to insert properties into the database using this method :
 
-\input{line.tex}
+
 \begin{lyxcode}
 \noindent DbDatum~velocity(``velocity''),~acceleration(``acceleration'');
 
@@ -6145,7 +6150,7 @@ of how to insert properties into the database using this method :
 
 \noindent db->put\_device\_property(``id11/motor/1'',~db\_data);
 \end{lyxcode}
-\input{line.tex}
+
 
 \noindent \emph{Exceptions}: \emph{ConnectionFailed, CommunicationFailed,
 DevFailed from device (DB\_SQLError)}
@@ -6158,7 +6163,7 @@ property names are specified by the vector of DbDatum structures.
 Here is an example of how to delete properties from the database using
 this method :
 
-\input{line.tex}
+
 \begin{lyxcode}
 \noindent DbData~db\_data;
 
@@ -6168,7 +6173,7 @@ this method :
 
 \noindent db->delete\_device\_property(``id11/motor/1'',~db\_data);
 \end{lyxcode}
-\input{line.tex}
+
 
 \noindent \emph{Exceptions}: \emph{ConnectionFailed, CommunicationFailed,
 DevFailed from device (DB\_SQLError)}
@@ -6201,7 +6206,7 @@ To retrieve the properties use the extract operator >\textcompwordmark{}>.
 Here is an example of how to use the DbData type to specify and extract
 attribute properties :
 
-\input{line.tex}
+
 \begin{lyxcode}
 \noindent DbData~db\_data;
 
@@ -6271,7 +6276,7 @@ for~(int~i=0;i~<~db\_data.size();)
 
 \}
 \end{lyxcode}
-\input{line.tex}
+
 
 \noindent \emph{Exceptions}: \emph{ConnectionFailed, CommunicationFailed,
 DevFailed from device (DB\_SQLError)}
@@ -6289,7 +6294,7 @@ Here is an example of how to insert/update properties \emph{min},
 \emph{max} for attribute \emph{acceleration} of device \emph{id11/motor/1}
 into the database using this method :
 
-\input{line.tex}
+
 \begin{lyxcode}
 \noindent DbDatum~velocity(\textquotedbl{}velocity\textquotedbl{}),~vel\_min(\textquotedbl{}min\textquotedbl{}),~vel\_max(\textquotedbl{}max\textquotedbl{});
 
@@ -6323,7 +6328,7 @@ into the database using this method :
 
 \noindent db->put\_device\_attribute\_property(``id11/motor/1'',~db\_data);
 \end{lyxcode}
-\input{line.tex}
+
 
 \noindent \emph{Exceptions}: \emph{ConnectionFailed, CommunicationFailed,
 DevFailed from device (DB\_SQLError)}
@@ -6338,7 +6343,7 @@ structures. Here is an example of how to delete the \emph{unit} property
 of the \emph{velocity} attribute of the \emph{id11/motor/1} device
 using this method :
 
-\input{line.tex}
+
 \begin{lyxcode}
 \noindent DbData~db\_data;
 
@@ -6348,7 +6353,7 @@ db\_data.push\_back(DbDatum(\textquotedbl{}velocity\textquotedbl{}));
 
 \noindent db->delete\_device\_attribute\_property(\textquotedbl{}id11/motor/1\textquotedbl{},~db\_data);
 \end{lyxcode}
-\input{line.tex}
+
 
 \noindent \emph{Exceptions}: \emph{ConnectionFailed, CommunicationFailed,
 DevFailed from device (DB\_SQLError)}
@@ -6372,7 +6377,7 @@ device
 Query the database for a list of classes which match the specified
 wildcard.
 
-\input{line.tex}
+
 \begin{lyxcode}
 string~wildcard(\textquotedbl{}Motor{*}\textquotedbl{});
 
@@ -6382,7 +6387,7 @@ vector<string>~class\_list;
 
 db\_datum~>\textcompwordmark{}>~class\_list;
 \end{lyxcode}
-\input{line.tex}
+
 
 Exception: ConnectionFailed, CommunicationFailed, DevFailed from device
 
@@ -6392,7 +6397,7 @@ Exception: ConnectionFailed, CommunicationFailed, DevFailed from device
 Query the database for a list of properties defined for the specified
 class.
 
-\input{line.tex}
+
 \begin{lyxcode}
 string~classname(\textquotedbl{}MyClass\textquotedbl{});
 
@@ -6402,7 +6407,7 @@ vector<string>~prop\_list;
 
 db\_datum~>\textcompwordmark{}>~prop\_list;
 \end{lyxcode}
-\input{line.tex}
+
 
 Exception: ConnectionFailed, CommunicationFailed, DevFailed from device
 
@@ -6416,7 +6421,7 @@ the properties use the extract operator >\textcompwordmark{}>. Here
 is an example of how to use the DbData type to specify and extract
 properties :
 
-\input{line.tex}
+
 \begin{lyxcode}
 \noindent DbData~db\_data;
 
@@ -6432,7 +6437,7 @@ properties :
 
 \noindent db\_data{[}1{]}~>\textcompwordmark{}>~acceleration;
 \end{lyxcode}
-\input{line.tex}
+
 
 \noindent \emph{Exceptions}: \emph{ConnectionFailed, CommunicationFailed,
 DevFailed from device (DB\_SQLError)}
@@ -6446,7 +6451,7 @@ of DbDatum structures. Use the insert operator >\textcompwordmark{}>
 to insert the properties into the DbDatum structures. Here is an example
 of how to insert properties into the database using this method :
 
-\input{line.tex}
+
 \begin{lyxcode}
 \noindent DbDatum~velocity(\textquotedbl{}velocity\textquotedbl{}),~acceleration(\textquotedbl{}acceleration\textquotedbl{});
 
@@ -6462,7 +6467,7 @@ of how to insert properties into the database using this method :
 
 \noindent db->put\_class\_property(\textquotedbl{}StepperMotor\textquotedbl{},~db\_data);
 \end{lyxcode}
-\input{line.tex}
+
 
 \noindent \emph{Exceptions}: \emph{ConnectionFailed, CommunicationFailed,
 DevFailed from device (DB\_SQLError)}
@@ -6475,7 +6480,7 @@ property names are specified by the vector of DbDatum structures.
 Here is an example of how to delete properties from the database using
 this method :
 
-\input{line.tex}
+
 \begin{lyxcode}
 \noindent DbData~db\_data;
 
@@ -6485,7 +6490,7 @@ this method :
 
 \noindent db->delete\_class\_property(\textquotedbl{}StepperMotor\textquotedbl{},~db\_data);
 \end{lyxcode}
-\input{line.tex}
+
 
 \noindent \emph{Exceptions}: \emph{ConnectionFailed, CommunicationFailed,
 DevFailed from device (DB\_SQLError)}
@@ -6509,7 +6514,7 @@ device
 Query the database for a list of attributes defined for the specified
 class which match the specified wildcard.
 
-\input{line.tex}
+
 \begin{lyxcode}
 string~classname(\textquotedbl{}MyClass\textquotedbl{});
 
@@ -6521,7 +6526,7 @@ vector<string>~att\_list;
 
 db\_datum~>\textcompwordmark{}>~att\_list;
 \end{lyxcode}
-\input{line.tex}
+
 
 Exception: ConnectionFailed, CommunicationFailed, DevFailed from device
 
@@ -6541,7 +6546,7 @@ To retrieve the properties use the extract operator >\textcompwordmark{}>.
 Here is an example of how to use the DbData type to specify and extract
 attribute properties :
 
-\input{line.tex}
+
 \begin{lyxcode}
 \noindent DbData~db\_data;
 
@@ -6613,7 +6618,7 @@ for~(int~i=0;~i<~db\_data.size();~i++)
 
 
 \end{lyxcode}
-\input{line.tex}
+
 
 \noindent \emph{Exceptions}: \emph{ConnectionFailed, CommunicationFailed,
 DevFailed from device (DB\_SQLError)}
@@ -6631,7 +6636,7 @@ properties for attribute \emph{velocity} and \emph{min}, \emph{max}
 properties for attribute \emph{acceleration} properties belonging
 to class \emph{StepperMotor} into the database using this method :
 
-\input{line.tex}
+
 \begin{lyxcode}
 \noindent DbDatum~velocity(\textquotedbl{}velocity\textquotedbl{}),~vel\_min(\textquotedbl{}min\textquotedbl{}),~vel\_max(\textquotedbl{}max\textquotedbl{});
 
@@ -6665,7 +6670,7 @@ to class \emph{StepperMotor} into the database using this method :
 
 \noindent db->put\_class\_attribute\_property(\textquotedbl{}StepperMotor\textquotedbl{},~db\_data);
 \end{lyxcode}
-\input{line.tex}
+
 
 \noindent \emph{Exceptions}: \emph{ConnectionFailed, CommunicationFailed,
 DevFailed from device (DB\_SQLError)}
@@ -6681,7 +6686,7 @@ deleted. Here is an example of how to delete the \emph{unit} property
 of the \emph{velocity} attribute of the \emph{StepperMotor} class
 from the database using this method :
 
-\input{line.tex}
+
 \begin{lyxcode}
 \noindent DbData~db\_data;
 
@@ -6691,7 +6696,7 @@ from the database using this method :
 
 \noindent db->delete\_class\_attribute\_property(\textquotedbl{}StepperMotor\textquotedbl{},~db\_data);
 \end{lyxcode}
-\input{line.tex}
+
 
 \noindent \emph{Exceptions}: \emph{ConnectionFailed, CommunicationFailed,
 DevFailed from device (DB\_SQLError)}
@@ -6772,7 +6777,7 @@ an array of strings and must be extracted into a vector<string>. If
 there is no alias with the given filter, the returned array will have
 a 0 size.
 
-\input{line.tex}
+
 \begin{lyxcode}
 \noindent DbData~db\_data;
 
@@ -6792,7 +6797,7 @@ for~(int~i=0;i~<~al\_list.size();i++)
 
 ~~~~cout~<\textcompwordmark{}<~\textquotedbl{}alias~=~\textquotedbl{}~<\textcompwordmark{}<~al\_list{[}i{]}~<\textcompwordmark{}<~endl;
 \end{lyxcode}
-\input{line.tex}
+
 
 \noindent \emph{Exceptions}: \emph{ConnectionFailed, CommunicationFailed,
 DevFailed from device (DB\_SQLError)}
@@ -7123,7 +7128,7 @@ C++ types :
 \noindent Here is an example of creating, inserting and extracting
 some DbDatum types :
 
-\input{line.tex}
+
 \begin{lyxcode}
 \noindent DbDatum~my\_short(\textquotedbl{}my\_short\textquotedbl{}),~my\_long(``my\_long''),~my\_string(\textquotedbl{}my\_string\textquotedbl{});
 
@@ -7159,7 +7164,7 @@ some DbDatum types :
 
 \noindent my\_double\_vector~>\textcompwordmark{}>~a\_double\_vector;~//~extract~a~vector~of~doubles
 \end{lyxcode}
-\input{line.tex}
+
 
 \emph{Exception: WrongData if requested}
 
@@ -7171,7 +7176,7 @@ depending on whether the DbDatum object contains data or not. It can
 be used to test whether a property is defined in the database or not
 e.g.
 
-\input{line.tex}
+
 \begin{lyxcode}
 \noindent sl\_props.push\_back(parity\_prop);
 
@@ -7193,7 +7198,7 @@ e.g.
 
 \noindent \}
 \end{lyxcode}
-\input{line.tex}
+
 
 \emph{Exception: WrongData if requested}
 
@@ -7230,7 +7235,7 @@ Sets one exception flag
 The following is an example of how to use these exceptions related
 methods
 
-\input{line.tex}
+
 \begin{lyxcode}
 \noindent ~~~~~1~~DbDatum~da;
 
@@ -7250,7 +7255,7 @@ methods
 
 ~~~~~9~~cout~<\textcompwordmark{}<~\textquotedbl{}bs~=~\textquotedbl{}~<\textcompwordmark{}<~bs~<\textcompwordmark{}<~endl;
 \end{lyxcode}
-\input{line.tex}
+
 
 
 \section{\noindent Tango::DbData}
@@ -7261,7 +7266,8 @@ is the standard input and output type for all methods which query
 and/or update properties in the database.
 
 
-\section{Exception\label{sec:Exception}}
+\section{Exception}
+\label{sec:Exception}
 
 All the exception thrown by this API are Tango::DevFailed exception.
 This exception is a variable length array of Tango::DevError type.
@@ -7570,7 +7576,8 @@ the event. Most likely, it means that there is no event property defined
 in the \emph{unsubscribe\_event} method
 \end{description}
 
-\subsection{The NamedDevFailedList\index{NamedDevFailedList} exception\label{sub:The-NamedDevFailedList-exception}}
+\subsection{The NamedDevFailedList\index{NamedDevFailedList} exception}
+\label{sub:The-NamedDevFailedList-exception}
 
 This exception is only thrown by the \emph{DeviceProxy::write\_attributes()\index{write-attributes}}
 method. In this case, it is necessary to have a new class of exception
@@ -7617,7 +7624,7 @@ stack.
 The following piece of code is an example of how to use this class
 exception
 
-\input{line.tex}
+
 \begin{lyxcode}
 \noindent catch~(Tango::NamedDevFailed~\&e)
 
@@ -7645,7 +7652,7 @@ exception
 
 \}
 \end{lyxcode}
-\input{line.tex}
+
 
 This exception inherits from Tango::DevFailed. It is possible to catch
 it with a \textquotedbl{}catch DevFailed\textquotedbl{} catch block.
@@ -7670,7 +7677,8 @@ informations on which API call generates the exception and device
 name.
 
 
-\section{Reconnection and exception\label{sec:Reconnection-and-exception}}
+\section{Reconnection and exception}
+\label{sec:Reconnection-and-exception}
 
 The Tango API automatically manages re-connection between client and
 server in case of communication error during a network access between

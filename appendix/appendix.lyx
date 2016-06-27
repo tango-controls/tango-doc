@@ -9908,16 +9908,16 @@ polling-threads-pool-conf
  Example of polling_threads_pool_conf property for 3 threads used:
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 dserver/<ds exec name>/<inst.
  name>/polling_threads_pool_conf-> the/dev/01
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                   the/dev/02,the/dev/06
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                   the/dev/03
 \end_layout
 
