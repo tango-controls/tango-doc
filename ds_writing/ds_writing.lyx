@@ -1,5 +1,5 @@
-#LyX 2.0 created this file. For more info see http://www.lyx.org/
-\lyxformat 413
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
 \begin_document
 \begin_header
 \textclass book
@@ -10,18 +10,18 @@
 \maintain_unincluded_children false
 \language english
 \language_package default
-\inputencoding latin1
+\inputencoding utf8
 \fontencoding global
 \font_roman default
 \font_sans default
 \font_typewriter default
+\font_math auto
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
 \font_sf_scale 100
 \font_tt_scale 100
-
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -32,15 +32,24 @@
 \use_hyperref false
 \papersize default
 \use_geometry false
-\use_amsmath 1
-\use_esint 0
-\use_mhchem 1
-\use_mathdots 1
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
 \cite_engine basic
+\cite_engine_type default
+\biblio_style plain
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
 \suppress_date false
+\justification true
 \use_refstyle 0
 \index Index
 \shortcut idx
@@ -221,7 +230,7 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-\begin_inset Caption
+\begin_inset Caption Standard
 
 \begin_layout Plain Layout
 Device pattern class diagram
@@ -249,7 +258,7 @@ Device pattern class diagram
 \end_layout
 
 \begin_layout Plain Layout
-\begin_inset Caption
+\begin_inset Caption Standard
 
 \begin_layout Plain Layout
 Device pattern class diagram
@@ -3006,7 +3015,7 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
-\begin_inset Caption
+\begin_inset Caption Standard
 
 \begin_layout Plain Layout
 Device pattern startup sequence
@@ -3144,7 +3153,7 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
-\begin_inset Caption
+\begin_inset Caption Standard
 
 \begin_layout Plain Layout
 Command execution timing
@@ -3658,7 +3667,7 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
-\begin_inset Caption
+\begin_inset Caption Standard
 
 \begin_layout Plain Layout
 Read attribute sequencing
@@ -3810,7 +3819,7 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
-\begin_inset Caption
+\begin_inset Caption Standard
 
 \begin_layout Plain Layout
 Write attribute sequencing
@@ -4549,7 +4558,7 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
-\begin_inset Caption
+\begin_inset Caption Standard
 
 \begin_layout Plain Layout
 A complete device server
@@ -4795,7 +4804,7 @@ namespace
 \begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="26" columns="2">
-<features islongtable="true" longtabularalignment="center">
+<features rotate="0" islongtable="true" longtabularalignment="center">
 <column alignment="center" valignment="top" width="0pt">
 <column alignment="left" valignment="top" width="0pt">
 <row>
@@ -5478,7 +5487,7 @@ For these types, the mapping between IDL and C++ is obvious and defined
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="11" columns="4">
-<features islongtable="true" longtabularalignment="center">
+<features rotate="0" islongtable="true" longtabularalignment="center">
 <column alignment="center" valignment="top" width="0pt">
 <column alignment="center" valignment="top" width="0pt">
 <column alignment="center" valignment="top" width="0pt">
@@ -7912,7 +7921,7 @@ Command::insert()
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="10" columns="2">
-<features islongtable="true" longtabularalignment="center">
+<features rotate="0" islongtable="true" longtabularalignment="center">
 <column alignment="center" valignment="top" width="0pt">
 <column alignment="center" valignment="top" width="0pt">
 <row>
@@ -9695,7 +9704,7 @@ state
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="15" columns="1">
-<features islongtable="true" longtabularalignment="center">
+<features rotate="0" islongtable="true" longtabularalignment="center">
 <column alignment="center" valignment="top" width="0pt">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
@@ -14750,7 +14759,7 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-\begin_inset Caption
+\begin_inset Caption Standard
 
 \begin_layout Plain Layout
 Tango device server main window
@@ -17166,7 +17175,7 @@ C++11
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="2" columns="3">
-<features islongtable="true" longtabularalignment="center">
+<features rotate="0" islongtable="true" longtabularalignment="center">
 <column alignment="center" valignment="top" width="0pt">
 <column alignment="center" valignment="top" width="0pt">
 <column alignment="block" valignment="middle" width="70mm">
@@ -17726,7 +17735,7 @@ omniORB
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="7" columns="2">
-<features islongtable="true" longtabularalignment="center">
+<features rotate="0" islongtable="true" longtabularalignment="center">
 <column alignment="center" valignment="top" width="0pt">
 <column alignment="center" valignment="top" width="0pt">
 <row>
@@ -19145,7 +19154,7 @@ status collapsed
 \end_layout
 
 \begin_layout Plain Layout
-\begin_inset Caption
+\begin_inset Caption Standard
 
 \begin_layout Plain Layout
 Read pipe sequencing
@@ -19533,7 +19542,7 @@ status collapsed
 \end_layout
 
 \begin_layout Plain Layout
-\begin_inset Caption
+\begin_inset Caption Standard
 
 \begin_layout Plain Layout
 Write pipe sequencing

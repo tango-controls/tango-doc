@@ -27,6 +27,15 @@ dvipdf tango.dvi
 # requires pandoc 1.17.1
 pandoc -s -S --toc --listings --wrap=auto tango.tex -o tango.rst
 
+for i in `find . -iname "*.rst"`
+do
+  # remove manual line numbers in code
+  sed -i 's/^\s\+[0-9]\+/  /g' "$i"
+
+  # and add automatic ones
+  sed -i 's/^.. code:: cpp$/&\n  :number-lines:/' "$i"
+done
+
 # RST -> HTML
 rst2html tango.rst tango.html
 
