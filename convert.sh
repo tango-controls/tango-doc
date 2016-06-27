@@ -2,14 +2,22 @@
 
 set -e
 
+LC_ALL=C
+
+for i in `find . -iname "*.lyx"`
+do
+  # use minted package which pandoc understands
+  sed -bi 's/\\begin_layout LyX-Code/\\begin_layout Verbatim/g' "$i"
+done
+
 # tex files are already in repo
-# lyx --export latex tango.lyx
+lyx -f all --export latex tango.lyx
 
 for i in `find . -iname "*.tex"`
 do
   # use minted package which pandoc understands
-  sed -i 's/\\begin{lyxcode}/\\begin{minted}[linenos]{cpp}/g' "$i"
-  sed -i 's/\\end{lyxcode}/\\end{minted}/g' "$i"
+  sed -i 's/\\begin{verbatim}/\\begin{minted}[linenos]{cpp}/g' "$i"
+  sed -i 's/\\end{verbatim}/\\end{minted}/g' "$i"
 
   # throw away picture hack
   sed -i 's/\\input{.*\/line.tex}//g' "$i"
@@ -17,6 +25,16 @@ do
 
   # move labels inside {} into the next line
   sed -i 's/\(\\label{[^}]*}\)}$/}\n\1/g' "$i"
+ 
+  # use pain latex instead f utf8 symbol 
+  sed -i 's/\xa9/\\copyright/g' "$i"
+
+  # sneak minted package in
+  sed -i 's/\\usepackage{breakurl}/\\usepackage{minted}/g' "$i"
+
+  # remove fancy quotes sometimes encountered in code
+  sed -i 's/“/"/g' "$i"
+  sed -i 's/”/"/g' "$i"
 done
 
 # compile the tex file, on errors the script aborts
