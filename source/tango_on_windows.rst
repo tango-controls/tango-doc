@@ -1,0 +1,40 @@
+.. Guide on how-to isntall Tango Controls on Windows
+
+Tango on Windows
+================
+
+This guide provides step by step guide on installation and usage of Tango Controls under Windows operating system
+
+What is Tango Controls
+----------------------
+
+Tango Conntrols is obejct oriented
+
+Tango binary package installation
+---------------------------------
+
+The simplest way to have Tango Controls running is to install it from a binary package. Binary package is available for
+download at http://www.tango-controls.org/downloads/binary/
+
+The procedure is as follow:
+
+- download the binary package with you favorite browser
+- run the downloaded executable file (double-click on it)
+- follow the instruction provided by installation wizard
+- configure TANGO_HOST envirinment variable
+    Each Tango Controls system/deployment has to have at least one running DataBaseds device server. The machine on which
+    this *device server* is running has a role of so called Tango Host. *DataBaseds is a device server providing
+    configuration information to all other components of the system as well as a runtime catalog of the components. It
+    allows (among others) client applications to find devices in distributed environment.*
+    The TANGO_HOST environment
+
+
+
+Tango Host role
+---------------
+
+Running device servers
+----------------------
+
+PyTango and Taurus installation
+-------------------------------
