@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Tango on Windows &mdash; Tango Controls Documentation 0.1 documentation</title>
+    <title>Tango on Windows &mdash; Tango Controls 0.1 documentation</title>
     
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -23,8 +23,8 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Tango Controls Documentation 0.1 documentation" href="index.html" />
-    <link rel="prev" title="Welcome to Tango Controls Documentation’s documentation!" href="index.html" /> 
+    <link rel="top" title="Tango Controls 0.1 documentation" href="index.html" />
+    <link rel="prev" title="Welcome to Tango Controls documentation!" href="index.html" /> 
   </head>
   <body>
     <div class="related">
@@ -34,9 +34,9 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="index.html" title="Welcome to Tango Controls Documentation’s documentation!"
+          <a href="index.html" title="Welcome to Tango Controls documentation!"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">Tango Controls Documentation 0.1 documentation</a> &raquo;</li> 
+        <li><a href="index.html">Tango Controls 0.1 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -50,37 +50,72 @@
 <p>This guide provides step by step guide on installation and usage of Tango Controls under Windows operating system</p>
 <div class="section" id="what-is-tango-controls">
 <h2>What is Tango Controls<a class="headerlink" href="#what-is-tango-controls" title="Permalink to this headline">¶</a></h2>
-<p>Tango Conntrols is obejct oriented</p>
+<p>Tango Controls is object oriented</p>
 </div>
 <div class="section" id="tango-binary-package-installation">
 <h2>Tango binary package installation<a class="headerlink" href="#tango-binary-package-installation" title="Permalink to this headline">¶</a></h2>
 <p>The simplest way to have Tango Controls running is to install it from a binary package. Binary package is available for
 download at <a class="reference external" href="http://www.tango-controls.org/downloads/binary/">http://www.tango-controls.org/downloads/binary/</a></p>
 <p>The procedure is as follow:</p>
+<ul class="simple">
+<li>download the binary package with you favorite browser</li>
+<li>run the downloaded executable file (double-click on it)</li>
+<li>follow the instruction provided by installation wizard</li>
+<li>configure TANGO_HOST environment variable</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Each Tango Controls system/deployment has to have at least one running DataBaseds <a class="reference internal" href="glossary.html#term-device-server"><em class="xref std std-term">device server</em></a>. The machine
+on which <a class="reference internal" href="glossary.html#term-device-server"><em class="xref std std-term">device server</em></a> is running has a role of so called <em class="xref std std-term">Tango Host</em>. <em>DataBaseds</em> is a device server providing
+configuration information to all other components of the system as well as a runtime catalog of the components. It
+allows (among others) client applications to find devices in distributed environment.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The TANGO_HOST environment variable is build as follows: {host_name_or_IP}:{port_on_which_db_server_is_running}</p>
+</div>
+</div>
+<div class="section" id="tango-host-role">
+<h2>Tango Host role<a class="headerlink" href="#tango-host-role" title="Permalink to this headline">¶</a></h2>
+<p>Tango Host role is created by running the DataBaseds device server. This device server in his most common applications
+requires MySQL database. To make a computer being a Tango Host you need to:</p>
+<ul class="simple">
+<li>install MySQL server.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You may use community version available from <a class="reference external" href="http://dev.mysql.com/downloads/mysql/">http://dev.mysql.com/downloads/mysql/</a> . It is suggested to use MySQL
+Installer with tools included.</p>
+</div>
 <ul>
-<li><p class="first">download the binary package with you favorite browser</p>
-</li>
-<li><p class="first">run the downloaded executable file (double-click on it)</p>
-</li>
-<li><p class="first">follow the instruction provided by installation wizard</p>
+<li><p class="first">configure MySQL server</p>
 </li>
 <li><dl class="first docutils">
-<dt>configure TANGO_HOST envirinment variable</dt>
-<dd><p class="first last">Each Tango Controls system/deployment has to have at least one running DataBaseds device server. The machine on which
-this <em>device server</em> is running has a role of so called Tango Host. <em>DataBaseds is a device server providing
-configuration information to all other components of the system as well as a runtime catalog of the components. It
-allows (among others) client applications to find devices in distributed environment.</em>
-The TANGO_HOST environment</p>
+<dt>setup environment variables</dt>
+<dd><ul class="first last simple">
+<li></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first">populate database with initial Tango configuration</p>
+</li>
+<li><p class="first">start a DataBaseds</p>
+</li>
+<li><dl class="first docutils">
+<dt>make it run as service</dt>
+<dd><ul class="first last simple">
+<li>on Windows 7</li>
+<li>on Windows 8 and above</li>
+</ul>
 </dd>
 </dl>
 </li>
 </ul>
 </div>
-<div class="section" id="tango-host-role">
-<h2>Tango Host role<a class="headerlink" href="#tango-host-role" title="Permalink to this headline">¶</a></h2>
-</div>
 <div class="section" id="running-device-servers">
 <h2>Running device servers<a class="headerlink" href="#running-device-servers" title="Permalink to this headline">¶</a></h2>
+<p>After</p>
 </div>
 <div class="section" id="pytango-and-taurus-installation">
 <h2>PyTango and Taurus installation<a class="headerlink" href="#pytango-and-taurus-installation" title="Permalink to this headline">¶</a></h2>
@@ -107,7 +142,7 @@ The TANGO_HOST environment</p>
 
   <h4>Previous topic</h4>
   <p class="topless"><a href="index.html"
-                        title="previous chapter">Welcome to Tango Controls Documentation&#8217;s documentation!</a></p>
+                        title="previous chapter">Welcome to Tango Controls documentation!</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="_sources/tango_on_windows.txt"
@@ -137,9 +172,9 @@ The TANGO_HOST environment</p>
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="index.html" title="Welcome to Tango Controls Documentation’s documentation!"
+          <a href="index.html" title="Welcome to Tango Controls documentation!"
              >previous</a> |</li>
-        <li><a href="index.html">Tango Controls Documentation 0.1 documentation</a> &raquo;</li> 
+        <li><a href="index.html">Tango Controls 0.1 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">

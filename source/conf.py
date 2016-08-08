@@ -52,7 +52,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'Tango Controls Documentation'
+project = u'Tango Controls'
 copyright = u'2016, Tango Community, 3Controls, Piotr Goryl'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -60,7 +60,7 @@ copyright = u'2016, Tango Community, 3Controls, Piotr Goryl'
 # built documents.
 #
 # The short X.Y version.
-version = '0'
+version = '0.1'
 # The full version, including alpha/beta/rc tags.
 release = '0.1'
 
