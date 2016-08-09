@@ -12,6 +12,7 @@ Contents:
    :maxdepth: 2
 
    tango_on_windows
+   glossary
 
 
 

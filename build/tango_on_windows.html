@@ -24,6 +24,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="top" title="Tango Controls 0.1 documentation" href="index.html" />
+    <link rel="next" title="Glossary" href="glossary.html" />
     <link rel="prev" title="Welcome to Tango Controls documentation!" href="index.html" /> 
   </head>
   <body>
@@ -33,6 +34,9 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glossary.html" title="Glossary"
+             accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="index.html" title="Welcome to Tango Controls documentation!"
              accesskey="P">previous</a> |</li>
@@ -50,50 +54,90 @@
 <p>This guide provides step by step guide on installation and usage of Tango Controls under Windows operating system</p>
 <div class="section" id="what-is-tango-controls">
 <h2>What is Tango Controls<a class="headerlink" href="#what-is-tango-controls" title="Permalink to this headline">¶</a></h2>
-<p>Tango Controls is object oriented</p>
+<p>Tango Controls is object oriented, distributed controls system.</p>
 </div>
 <div class="section" id="tango-binary-package-installation">
 <h2>Tango binary package installation<a class="headerlink" href="#tango-binary-package-installation" title="Permalink to this headline">¶</a></h2>
 <p>The simplest way to have Tango Controls running is to install it from a binary package. Binary package is available for
 download at <a class="reference external" href="http://www.tango-controls.org/downloads/binary/">http://www.tango-controls.org/downloads/binary/</a></p>
-<p>The procedure is as follow:</p>
 <ul class="simple">
-<li>download the binary package with you favorite browser</li>
-<li>run the downloaded executable file (double-click on it)</li>
-<li>follow the instruction provided by installation wizard</li>
-<li>configure TANGO_HOST environment variable</li>
+<li>Download the binary package with you favorite browser</li>
 </ul>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Each Tango Controls system/deployment has to have at least one running DataBaseds <a class="reference internal" href="glossary.html#term-device-server"><em class="xref std std-term">device server</em></a>. The machine
-on which <a class="reference internal" href="glossary.html#term-device-server"><em class="xref std std-term">device server</em></a> is running has a role of so called <em class="xref std std-term">Tango Host</em>. <em>DataBaseds</em> is a device server providing
-configuration information to all other components of the system as well as a runtime catalog of the components. It
+<div class="sidebar">
+<p class="first sidebar-title">Tango Host, DataBaseds</p>
+<p>Each Tango Controls system/deployment has to have at least one running DataBaseds <a class="reference internal" href="glossary.html#term-device-server"><em class="xref std std-term">device server</em></a>. The machine
+on which <a class="reference internal" href="glossary.html#term-device-server"><em class="xref std std-term">device server</em></a> is running has a role of so called <a class="reference internal" href="glossary.html#term-tango-host"><em class="xref std std-term">Tango Host</em></a>. DataBaseds is a device server providing
+configuration information to all other components of the system as well as a runtime catalog of the components/devices. It
 allows (among others) client applications to find devices in distributed environment.</p>
+<p>The <strong>TANGO_HOST</strong> variable is providing information about the address or IP number and the port on which the DataBaseds is
+listening for connections. The TANGO_HOST environment variable is build as follows:</p>
+<p><em>host_name_or_IP:port</em></p>
+<p class="last">example: <tt class="docutils literal"><span class="pre">localhost:10000</span></tt></p>
 </div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">The TANGO_HOST environment variable is build as follows: {host_name_or_IP}:{port_on_which_db_server_is_running}</p>
-</div>
+<ul>
+<li><p class="first">Run the downloaded executable file (double-click on it when downloaded)</p>
+</li>
+<li><p class="first">Follow instructions provided by the installation wizard</p>
+</li>
+<li><dl class="first docutils">
+<dt>Configure TANGO_HOST environment variable</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>on Windows 8 and 10:</dt>
+<dd><ul class="first last simple">
+<li>From the Desktop, right-click the very bottom left corner of the screen to get the Power User Task Menu.</li>
+<li>From the Power User Task Menu, click System</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>On Windows XP and 7</dt>
+<dd><ul class="first last simple">
+<li>From the Desktop, right-click the Computer icon and select Properties. If you don&#8217;t have a Computer icon on
+your desktop, click the Start button, right-click the Computer option in the Start menu, and select Properties.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first">Click the Advanced System Settings link in the left column.</p>
+</li>
+<li><p class="first">In the System Properties window, click on the Advanced tab, then click the Environment Variables button near
+the bottom of that tab.</p>
+</li>
+<li><p class="first">In the Environment Variables window click the New button.</p>
+</li>
+<li><p class="first">In the filed name write <tt class="docutils literal"><span class="pre">TANGO_HOST</span></tt></p>
+</li>
+<li><p class="first">In the field Value write proper value. If it is only computer in the Tango System write <tt class="docutils literal"><span class="pre">localhost:10000</span></tt></p>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
 </div>
 <div class="section" id="tango-host-role">
 <h2>Tango Host role<a class="headerlink" href="#tango-host-role" title="Permalink to this headline">¶</a></h2>
 <p>Tango Host role is created by running the DataBaseds device server. This device server in his most common applications
 requires MySQL database. To make a computer being a Tango Host you need to:</p>
-<ul class="simple">
-<li>install MySQL server.</li>
-</ul>
-<div class="admonition note">
+<ul>
+<li><p class="first">install MySQL server.</p>
+<blockquote>
+<div><div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">You may use community version available from <a class="reference external" href="http://dev.mysql.com/downloads/mysql/">http://dev.mysql.com/downloads/mysql/</a> . It is suggested to use MySQL
-Installer with tools included.</p>
+Installer with all tools included.</p>
 </div>
-<ul>
+</div></blockquote>
+</li>
 <li><p class="first">configure MySQL server</p>
 </li>
 <li><dl class="first docutils">
 <dt>setup environment variables</dt>
 <dd><ul class="first last simple">
-<li></li>
+<li>MYSQL_USER to have value tango</li>
+<li>MYSQL</li>
 </ul>
 </dd>
 </dl>
@@ -143,6 +187,9 @@ Installer with tools included.</p>
   <h4>Previous topic</h4>
   <p class="topless"><a href="index.html"
                         title="previous chapter">Welcome to Tango Controls documentation!</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glossary.html"
+                        title="next chapter">Glossary</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="_sources/tango_on_windows.txt"
@@ -171,6 +218,9 @@ Installer with tools included.</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
+        <li class="right" >
+          <a href="glossary.html" title="Glossary"
+             >next</a> |</li>
         <li class="right" >
           <a href="index.html" title="Welcome to Tango Controls documentation!"
              >previous</a> |</li>

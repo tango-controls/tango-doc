@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>&lt;no title&gt; &mdash; Tango Controls 0.1 documentation</title>
+    <title>Glossary &mdash; Tango Controls 0.1 documentation</title>
     
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -23,7 +23,8 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Tango Controls 0.1 documentation" href="index.html" /> 
+    <link rel="top" title="Tango Controls 0.1 documentation" href="index.html" />
+    <link rel="prev" title="Tango on Windows" href="tango_on_windows.html" /> 
   </head>
   <body>
     <div class="related">
@@ -32,6 +33,9 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="tango_on_windows.html" title="Tango on Windows"
+             accesskey="P">previous</a> |</li>
         <li><a href="index.html">Tango Controls 0.1 documentation</a> &raquo;</li> 
       </ul>
     </div>  
@@ -41,15 +45,28 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <dl class="glossary docutils">
+  <div class="section" id="glossary">
+<h1>Glossary<a class="headerlink" href="#glossary" title="Permalink to this headline">¶</a></h1>
+<dl class="glossary docutils">
 <dt id="term-device-server">device server</dt>
 <dd>Device Server is a program (executable) which is able to create :term:&#8217;device&#8217; of certain classes. To create d</dd>
 <dt id="term-device">device</dt>
 <dd>Device is key concept of Tango Controls. It is an object providing access to its <a class="reference internal" href="#term-attributes"><em class="xref std std-term">attributes</em></a>,
-<em class="xref std std-term">pipes</em> and <em class="xref std std-term">commands</em>. Device is</dd>
+<a class="reference internal" href="#term-pipes"><em class="xref std std-term">pipes</em></a> and <a class="reference internal" href="#term-commands"><em class="xref std std-term">commands</em></a>. Device is</dd>
 <dt id="term-attribute"><span id="term-attributes"></span>attribute<br />attributes</dt>
-<dd>Attribute is ...</dd>
+<dd>An attribute is...</dd>
+<dt id="term-command"><span id="term-commands"></span>command<br />commands</dt>
+<dd>A command is...</dd>
+<dt id="term-pipe"><span id="term-pipes"></span>pipe<br />pipes</dt>
+<dd>A pipe is...</dd>
+<dt id="term-tango-host">Tango Host</dt>
+<dd>Each Tango Controls system/deployment has to have at least one running DataBaseds <a class="reference internal" href="#term-device-server"><em class="xref std std-term">device server</em></a>.
+The machine on which DataBaseds <a class="reference internal" href="#term-device-server"><em class="xref std std-term">device server</em></a> is running has a role of so called <a class="reference internal" href="#term-tango-host"><em class="xref std std-term">Tango Host</em></a>.
+<em>DataBaseds</em> is a device server providing configuration information to all other components of the system as
+well as a runtime catalog of the components/devices. It allows (among others) client applications to find
+devices in distributed environment.</dd>
 </dl>
+</div>
 
 
           </div>
@@ -57,6 +74,9 @@
       </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="tango_on_windows.html"
+                        title="previous chapter">Tango on Windows</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="_sources/glossary.txt"
@@ -85,6 +105,9 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
+        <li class="right" >
+          <a href="tango_on_windows.html" title="Tango on Windows"
+             >previous</a> |</li>
         <li><a href="index.html">Tango Controls 0.1 documentation</a> &raquo;</li> 
       </ul>
     </div>
