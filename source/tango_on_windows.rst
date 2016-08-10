@@ -52,7 +52,7 @@ http://www.tango-controls.org/downloads/binary/
 Tango Host role
 ---------------
 
-Tango Host role is created by running the DataBaseds device server. This device server in his most common applications
+Tango Host role is created by running the DataBaseds device server. This device server in his most common application
 requires MySQL database. To make a computer being a Tango Host you need to:
 
 - install MySQL server.
@@ -61,18 +61,24 @@ requires MySQL database. To make a computer being a Tango Host you need to:
         You may use community version available from http://dev.mysql.com/downloads/mysql/ . It is suggested to use MySQL
         Installer with all tools included.
 
-- configure MySQL server
 - setup environment variables
-    - ``MYSQL_USER`` to have value ``tango``
-    - ``MYSQL_PASSWORD`` to have value ``tango``
-
+    - open command line
+    - invoke command: ``%TANGO_ROOT%\bin\dbconfig.exe``
     .. note::
-        You may use other username and password
+        This will setup two envirinment variables
+        - ``MYSQL_USER``
+        - ``MYSQL_PASSWORD``
+        To provide inforamtion on access to the MySQL server. You may also setup this values manualy.
 
 - populate database with initial Tango configuration
-- start a DataBaseds
-
-- make it run as service
+    - in command line call: ``%TANGO_ROOT%\share\tango\db\create_db.bat``
+- start a DataBaseds :term:`device server`
+    - open new command line window
+    - in the command line call: ``"%TANGO_ROOT%\bin\start-db.bat"``
+    .. note::
+        To make you Tango installation operational you have to have this ``DataBaseds`` running permamently. You may either
+        add the command above to ``Autostart`` or run it as service
+- make ``DataBaseds`` run as service
     - on Windows 7
     - on Windows 8 and above
 

@@ -54,12 +54,13 @@
 <p>This guide provides step by step guide on installation and usage of Tango Controls under Windows operating system</p>
 <div class="section" id="what-is-tango-controls">
 <h2>What is Tango Controls<a class="headerlink" href="#what-is-tango-controls" title="Permalink to this headline">¶</a></h2>
-<p>Tango Controls is object oriented, distributed controls system.</p>
+<p>Tango Controls is object oriented, distributed controls system. For more information see:
+<a class="reference external" href="http://www.tango-controls.org/what-is-tango-controls/">http://www.tango-controls.org/what-is-tango-controls/</a></p>
 </div>
 <div class="section" id="tango-binary-package-installation">
 <h2>Tango binary package installation<a class="headerlink" href="#tango-binary-package-installation" title="Permalink to this headline">¶</a></h2>
-<p>The simplest way to have Tango Controls running is to install it from a binary package. Binary package is available for
-download at <a class="reference external" href="http://www.tango-controls.org/downloads/binary/">http://www.tango-controls.org/downloads/binary/</a></p>
+<p>The simplest way to have Tango Controls running is to install it from a binary package. A binaries are available at
+<a class="reference external" href="http://www.tango-controls.org/downloads/binary/">http://www.tango-controls.org/downloads/binary/</a></p>
 <ul class="simple">
 <li>Download the binary package with you favorite browser</li>
 </ul>
@@ -119,7 +120,7 @@ the bottom of that tab.</p>
 </div>
 <div class="section" id="tango-host-role">
 <h2>Tango Host role<a class="headerlink" href="#tango-host-role" title="Permalink to this headline">¶</a></h2>
-<p>Tango Host role is created by running the DataBaseds device server. This device server in his most common applications
+<p>Tango Host role is created by running the DataBaseds device server. This device server in his most common application
 requires MySQL database. To make a computer being a Tango Host you need to:</p>
 <ul>
 <li><p class="first">install MySQL server.</p>
@@ -131,23 +132,46 @@ Installer with all tools included.</p>
 </div>
 </div></blockquote>
 </li>
-<li><p class="first">configure MySQL server</p>
-</li>
 <li><dl class="first docutils">
 <dt>setup environment variables</dt>
+<dd><ul class="first simple">
+<li>open command line</li>
+<li>invoke command: <tt class="docutils literal"><span class="pre">%TANGO_ROOT%\bin\dbconfig.exe</span></tt></li>
+</ul>
+<div class="last admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This will setup two envirinment variables
+- <tt class="docutils literal"><span class="pre">MYSQL_USER</span></tt>
+- <tt class="docutils literal"><span class="pre">MYSQL_PASSWORD</span></tt>
+To provide inforamtion on access to the MySQL server. You may also setup this values manualy.</p>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>populate database with initial Tango configuration</dt>
 <dd><ul class="first last simple">
-<li>MYSQL_USER to have value tango</li>
-<li>MYSQL</li>
+<li>in command line call: <tt class="docutils literal"><span class="pre">%TANGO_ROOT%\share\tango\db\create_db.bat</span></tt></li>
 </ul>
 </dd>
 </dl>
 </li>
-<li><p class="first">populate database with initial Tango configuration</p>
-</li>
-<li><p class="first">start a DataBaseds</p>
+<li><dl class="first docutils">
+<dt>start a DataBaseds <a class="reference internal" href="glossary.html#term-device-server"><em class="xref std std-term">device server</em></a></dt>
+<dd><ul class="first simple">
+<li>open new command line window</li>
+<li>in the command line call: <tt class="docutils literal"><span class="pre">&quot;%TANGO_ROOT%\bin\start-db.bat&quot;</span></tt></li>
+</ul>
+<div class="last admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">To make you Tango installation operational you have to have this <tt class="docutils literal"><span class="pre">DataBaseds</span></tt> running permamently. You may either
+add the command above to <tt class="docutils literal"><span class="pre">Autostart</span></tt> or run it as service</p>
+</div>
+</dd>
+</dl>
 </li>
 <li><dl class="first docutils">
-<dt>make it run as service</dt>
+<dt>make <tt class="docutils literal"><span class="pre">DataBaseds</span></tt> run as service</dt>
 <dd><ul class="first last simple">
 <li>on Windows 7</li>
 <li>on Windows 8 and above</li>
