@@ -143,6 +143,10 @@ Assuming you have downloaded it and copied to the Tango bin folder please follow
     - Start a tool called :program:`Astor`. You may use either Windows :guilabel:`Start` menu or
       call :command:`tango-astor.bat`
     - In :guilabel:`Astor` window select menu :menuselection:`&Command --> Add a New Host`
+    - In the from that appear provide your :guilabel:`Host name` and :guilabel:`Device Servers PATH`.
+        .. image:: img/tango-on-windows/starter-01.png
+    - Accept with :guilabel:`Create`
+    - Go back to :program:`Command Line`
 
 - Install Starter service. Invoke :command:`nssm.exe install Tango-DataBaseds`
 
@@ -154,9 +158,10 @@ Assuming you have downloaded it and copied to the Tango bin folder please follow
     - In the Environment tab provide TANGO_HOST variable, like:
         .. image:: img/tango-on-windows/starter-as-service-02.png
     - Click :guilabel:`Install Service`
-    - Do not start the service yet
-
-
+    - Start the service: :command:`nssm.exe start Tango-Starter`
+    - Go back to :program:`Astor`
+    - After a while you will see a green led next to your host name:
+        .. image:: img/tango-on-windows/starter-02.png
 
 PyTango and Taurus installation
 -------------------------------

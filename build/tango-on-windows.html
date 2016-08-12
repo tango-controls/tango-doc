@@ -280,10 +280,22 @@ with <strong class="command">mkdir c:DeviceServersbin</strong></li>
 </li>
 <li><dl class="first docutils">
 <dt>Add entry about the Starter device server you will start on your computer:</dt>
-<dd><ul class="first last simple">
-<li>Start a tool called <strong class="program">Astor</strong>. You may use either Windows <em class="guilabel">Start</em> menu or
-call <strong class="command">tango-astor.bat</strong></li>
-<li>In <em class="guilabel">Astor</em> window select menu <em class="menuselection"><span class="accelerator">C</span>ommand ‣ Add a New Host</em></li>
+<dd><ul class="first last">
+<li><p class="first">Start a tool called <strong class="program">Astor</strong>. You may use either Windows <em class="guilabel">Start</em> menu or
+call <strong class="command">tango-astor.bat</strong></p>
+</li>
+<li><p class="first">In <em class="guilabel">Astor</em> window select menu <em class="menuselection"><span class="accelerator">C</span>ommand ‣ Add a New Host</em></p>
+</li>
+<li><dl class="first docutils">
+<dt>In the from that appear provide your <em class="guilabel">Host name</em> and <em class="guilabel">Device Servers PATH</em>.</dt>
+<dd><img alt="_images/starter-01.png" class="first last" src="_images/starter-01.png" />
+</dd>
+</dl>
+</li>
+<li><p class="first">Accept with <em class="guilabel">Create</em></p>
+</li>
+<li><p class="first">Go back to <strong class="program">Command Line</strong></p>
+</li>
 </ul>
 </dd>
 </dl>
@@ -294,7 +306,7 @@ call <strong class="command">tango-astor.bat</strong></li>
 <li><dl class="first docutils">
 <dt>In the Application tab provide information as follows.</dt>
 <dd><img alt="_images/starter-as-service-01.png" class="first" src="_images/starter-as-service-01.png" />
-<p class="last">Adjust if you installation path is different. In <em class="guilabel">Arguments</em> <tt class="docutils literal"><span class="pre">exchange</span> <span class="pre">pg-dell-new</span></tt> with proper name
+<p class="last">Adjust if you installation path is different. In <em class="guilabel">Arguments</em> exchange <tt class="docutils literal"><span class="pre">pg-dell-new</span></tt> with proper name
 of your host.</p>
 </dd>
 </dl>
@@ -307,7 +319,15 @@ of your host.</p>
 </li>
 <li><p class="first">Click <em class="guilabel">Install Service</em></p>
 </li>
-<li><p class="first">Do not start the service yet</p>
+<li><p class="first">Start the service: <strong class="command">nssm.exe start Tango-Starter</strong></p>
+</li>
+<li><p class="first">Go back to <strong class="program">Astor</strong></p>
+</li>
+<li><dl class="first docutils">
+<dt>After a while you will see a green led next to your host name:</dt>
+<dd><img alt="_images/starter-02.png" class="first last" src="_images/starter-02.png" />
+</dd>
+</dl>
 </li>
 </ul>
 </div></blockquote>
