@@ -123,55 +123,78 @@ the bottom of that tab.</p>
 <p>Tango Host role is created by running the DataBaseds device server. This device server in his most common application
 requires MySQL database. To make a computer being a Tango Host you need to:</p>
 <ul>
-<li><p class="first">install MySQL server.</p>
+<li><p class="first">Install MySQL server</p>
 <blockquote>
 <div><div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">You may use community version available from <a class="reference external" href="http://dev.mysql.com/downloads/mysql/">http://dev.mysql.com/downloads/mysql/</a> . It is suggested to use MySQL
-Installer with all tools included.</p>
+Installer with all tools included. You may read more on MySQL installation topic there:
+<a class="reference external" href="http://dev.mysql.com/doc/refman/5.7/en/windows-installation.html">http://dev.mysql.com/doc/refman/5.7/en/windows-installation.html</a></p>
 </div>
 </div></blockquote>
 </li>
 <li><dl class="first docutils">
-<dt>setup environment variables</dt>
-<dd><ul class="first simple">
-<li>open command line</li>
-<li>invoke command: <tt class="docutils literal"><span class="pre">%TANGO_ROOT%\bin\dbconfig.exe</span></tt></li>
-</ul>
-<div class="last admonition note">
+<dt>Setup environment variables providing credentials to access MySQL</dt>
+<dd><ul class="first last">
+<li><p class="first">Open command line</p>
+</li>
+<li><p class="first">Invoke command: <tt class="docutils literal"><span class="pre">%TANGO_ROOT%\bin\dbconfig.exe</span></tt></p>
+<blockquote>
+<div><div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">This will setup two envirinment variables
-- <tt class="docutils literal"><span class="pre">MYSQL_USER</span></tt>
-- <tt class="docutils literal"><span class="pre">MYSQL_PASSWORD</span></tt>
-To provide inforamtion on access to the MySQL server. You may also setup this values manualy.</p>
+<p class="last">This let you setup two envirinment variables
+<tt class="docutils literal"><span class="pre">MYSQL_USER</span></tt> and <tt class="docutils literal"><span class="pre">MYSQL_PASSWORD</span></tt> used to MySQL server. You may use <tt class="docutils literal"><span class="pre">root</span></tt> credentials provided upon MySQL
+installati if it is your development workstation. For production environment it is suggested to create additional
+user with <tt class="docutils literal"><span class="pre">DB</span> <span class="pre">Admin</span></tt> privileges. On Windows you may use <tt class="docutils literal"><span class="pre">MySQL</span> <span class="pre">installer</span></tt> from Start menu and select the
+option <tt class="docutils literal"><span class="pre">Reconfigure</span></tt> for MySQL Server.
+Please refer to: <a class="reference external" href="http://dev.mysql.com/doc/refman/5.7/en/adding-users.html">http://dev.mysql.com/doc/refman/5.7/en/adding-users.html</a></p>
 </div>
-</dd>
-</dl>
+</div></blockquote>
 </li>
-<li><dl class="first docutils">
-<dt>populate database with initial Tango configuration</dt>
-<dd><ul class="first last simple">
-<li>in command line call: <tt class="docutils literal"><span class="pre">%TANGO_ROOT%\share\tango\db\create_db.bat</span></tt></li>
 </ul>
 </dd>
 </dl>
 </li>
 <li><dl class="first docutils">
-<dt>start a DataBaseds <a class="reference internal" href="glossary.html#term-device-server"><em class="xref std std-term">device server</em></a></dt>
-<dd><ul class="first simple">
-<li>open new command line window</li>
-<li>in the command line call: <tt class="docutils literal"><span class="pre">&quot;%TANGO_ROOT%\bin\start-db.bat&quot;</span></tt></li>
+<dt>Populate database with initial Tango configuration</dt>
+<dd><ul class="first last">
+<li><p class="first">Open command line</p>
+</li>
+<li><p class="first">Add MySQL client to be available in the PATH. For MySQL version 5.7 the command should be:
+<tt class="docutils literal"><span class="pre">set</span> <span class="pre">PATH=%PATH%;&quot;C:\Program</span> <span class="pre">Files\MySQL\MySQL</span> <span class="pre">Server</span> <span class="pre">5.7\bin&quot;</span></tt></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Adjust the path according to you MySQL version and a path where it is installed</p>
+</div>
+</li>
+<li><p class="first">Invoke: <tt class="docutils literal"><span class="pre">cd</span> <span class="pre">&quot;%TANGO_ROOT%\share\tango\db\&quot;</span></tt></p>
+</li>
+<li><p class="first">Invoke: <tt class="docutils literal"><span class="pre">create_db.bat</span></tt></p>
+</li>
 </ul>
-<div class="last admonition note">
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Start a DataBaseds <a class="reference internal" href="glossary.html#term-device-server"><em class="xref std std-term">device server</em></a></dt>
+<dd><ul class="first last">
+<li><p class="first">open new command line window</p>
+</li>
+<li><p class="first">in the command line call: <tt class="docutils literal"><span class="pre">&quot;%TANGO_ROOT%\bin\start-db.bat&quot;</span></tt></p>
+<blockquote>
+<div><div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">To make you Tango installation operational you have to have this <tt class="docutils literal"><span class="pre">DataBaseds</span></tt> running permamently. You may either
-add the command above to <tt class="docutils literal"><span class="pre">Autostart</span></tt> or run it as service</p>
+add the command above to <tt class="docutils literal"><span class="pre">Autostart</span></tt> or run it as a service.</p>
 </div>
+</div></blockquote>
+</li>
+</ul>
 </dd>
 </dl>
 </li>
 <li><dl class="first docutils">
-<dt>make <tt class="docutils literal"><span class="pre">DataBaseds</span></tt> run as service</dt>
+<dt>Make <tt class="docutils literal"><span class="pre">DataBaseds</span></tt> run as service</dt>
 <dd><ul class="first last simple">
 <li>on Windows 7</li>
 <li>on Windows 8 and above</li>

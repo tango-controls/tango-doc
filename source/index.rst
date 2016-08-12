@@ -11,7 +11,7 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
-   tango_on_windows
+   tango-on-windows
    glossary
 
 

@@ -1,0 +1,165 @@
+.. Guide on how-to isntall Tango Controls on Windows
+
+Tango on Windows
+================
+
+This guide provides step by step guide on installation and usage of Tango Controls under Windows operating system
+
+What is Tango Controls
+----------------------
+
+Tango Controls is object oriented, distributed controls system. For more information see:
+http://www.tango-controls.org/what-is-tango-controls/
+
+Tango binary package installation
+---------------------------------
+
+The simplest way to have Tango Controls running is to install it from a binary package. A binaries are available at
+http://www.tango-controls.org/downloads/binary/
+
+- Prerequisite
+    - Some :program:`Tango Controls` tools need :program:`Java Run Time Environment >=1.7`. Please install it first.
+
+- Download the binary package with you favorite browser
+
+.. sidebar:: Tango Host, DataBaseds
+
+    Each Tango Controls system/deployment has to have at least one running DataBaseds :term:`device server`. The machine
+    on which :term:`device server` is running has a role of so called :term:`Tango Host`. DataBaseds is a device server providing
+    configuration information to all other components of the system as well as a runtime catalog of the components/devices. It
+    allows (among others) client applications to find devices in distributed environment.
+
+    The :envvar:`TANGO_HOST` variable is providing information about the address or IP number and the port on which the DataBaseds is
+    listening for connections. The :envvar:`TANGO_HOST` environment variable is build as follows:
+
+    *host_name_or_IP:port*, example: ``localhost:10000``
+
+- Run the downloaded executable file (double-click on it when downloaded)
+- Follow instructions provided by the installation wizard
+- Configure :envvar:`TANGO_HOST` environment variable
+    - on Windows 8 and 10:
+        - From the Desktop, right-click the very bottom left corner of the screen to get
+          the :guilabel:`Power User Task Menu`.
+        - From the :guilabel:`Power User Task Menu`, click :guilabel:`System`
+    - On Windows XP and 7
+        - From the Desktop, right-click the :guilabel:`Computer` icon and select :menuselection:`Properties`. If you
+          don't have a :guilabel:`Computer` icon on your desktop, click :guilabel:`Start` button, right-click the
+          :guilabel:`Computer` option in the :guilabel:`Start` menu, and select :menuselection:`Properties`.
+    - Click the :guilabel:`Advanced System Settings` link in the left column.
+    - In the System Properties window, click on the :guilabel:`Advanced` tab,
+      then click the :guilabel:`Environment Variables` button near the bottom of that tab.
+    - In the :guilabel:`Environment Variables` window click the :guilabel:`New` button.
+    - In the filed :guilabel:`Name` write ``TANGO_HOST``
+    - In the field :guilabel:`Value` write proper value. If it is only computer in the Tango System provide ``localhost:10000``
+
+Tango Host role
+---------------
+
+Tango Host role is created by running the :program:`DataBaseds` device server. This device server requires MySQL
+database, in his most common application. To make a computer being a Tango Host you need to:
+
+- Install MySQL server
+    You may use community version available from http://dev.mysql.com/downloads/mysql/ . It is suggested to use MySQL
+    Installer with all tools included. You may read more on MySQL installation topic there:
+    http://dev.mysql.com/doc/refman/5.7/en/windows-installation.html
+
+    It is suggested to create dedicated ``tango`` user with *DB Admin* priviledges during installation.
+    In the installation wizzard on a tab :guilabel:`Accounts and Roles` select button :guilabel:`Add User`
+    and create a dedicated user. See
+
+        .. image:: img/tango-on-windows/mysql-user-02.png
+
+- Setup environment variables providing credentials to access MySQL
+    - Open :guilabel:`Command Line`
+    - Invoke command: :command:`%TANGO_ROOT%\bin\dbconfig.exe`
+
+        .. note::
+            This let you setup two environment variables
+            :envvar:`MYSQL_USER` and :envvar:`MYSQL_PASSWORD` used to MySQL server. You may use ``root`` credentials
+            provided upon MySQL installation if it is your development workstation. For production environment it is
+            suggested to create additional user with ``DB Admin`` privileges. On Windows you may use ``MySQL installer``
+            from :guilabel:`Start` menu and select the option :guilabel:`Reconfigure` for MySQL Server.
+            Please refer to: http://dev.mysql.com/doc/refman/5.7/en/adding-users.html
+
+- Populate database with initial Tango configuration
+    - Open command line
+    - Add MySQL client to be available in the PATH. For MySQL version 5.7 the command should be:
+      :command:`set PATH=%PATH%;"C:\Program Files\MySQL\MySQL Server 5.7\bin"`
+
+      .. note::
+         Adjust the path according to you MySQL version and a path where it is installed
+
+    - Invoke :command:`cd "%TANGO_ROOT%\share\tango\db\"`
+    - Call :program:`create_db.bat`
+
+- Start a :program:`DataBaseds` :term:`device server`
+    - open new command line window
+    - in the command line call :command:`"%TANGO_ROOT%\bin\start-db.bat"`
+
+        .. note::
+            To make you Tango installation operational you have to have this :program:`DataBaseds` running permanently.
+            You may either add the command above to :guilabel:`Autostart` or run it as a service.
+
+- Make :program:`DataBaseds` run as service
+    .. note::
+        The proposed solution uses NSSM tool which works on all versions of Windows but you may find some other tools
+        available including native srvany.exe.
+
+    - Download NSSM from http://nssm.cc/
+    - Unpack the file to some convinient location. It is suggested to copy proper (32bit or 64bit) version to the
+      Tango bin folder ``%TANGO_ROOT%\bin\``
+    - Open :guilabel:`Command Line` as Administrator
+    - Change current path to where the :program:`nssm` is unpacked or copied, eg. :command:`cd "%TANGO_ROOT%\bin"`
+    - Invoke :command:`nssm.exe install Tango-DataBaseds`. This will open a window where you can define service parameters.
+        - In the Application tab provide information as follows (adjust if you installation path is different).
+            .. image:: img/tango-on-windows/databaseds-as-service-01.png
+        - In the Environment tab provide variables with credentials used for accessting the MySQL, like:
+            .. image:: img/tango-on-windows/databaseds-as-service-02.png
+        - Click :guilabel:`Install Service`
+    - Invoke :command:`nssm.exe start Tango-DataBaseds` to start the service
+    - Test if everything is ok. Use :guilabel:`Start` menu to run Jive or in command line call :command:`"%TANGO_ROOT%\bin\start-jive.bat"`
+
+Running device servers
+----------------------
+
+The recommended way of running device servers is to use :program:`Starter` service. Then you may use NSSM as for DataBaseds.
+Assuming you have downloaded it and copied to the Tango bin folder please follow:
+
+- Open Command Line as Administrator (if it is not yet open)
+- Prepare
+
+    .. note::
+        To let your device servers start with :program:`Starter` service their executables has to be in a path without
+        spaces. This a limitation of the current :program:`Starter` implementation.
+
+    - Create a directory for :term:`device servers`. Let it be :file:`C:\DeviceServers\bin`
+      with :command:`mkdir c:\DeviceServers\bin`
+
+    - Change to the Tango bin directory (:command:`cd "%TANGO_ROOT%\bin"`)
+    - Copy :program:`TangoTest` :term:`device server` to newly crated folder:
+      :command:`copy TangoTest.exe c:\DeviceServers\bin`
+
+- Add entry about the Starter device server you will start on your computer:
+    - Start a tool called :program:`Astor`. You may use either Windows :guilabel:`Start` menu or
+      call :command:`tango-astor.bat`
+    - In :guilabel:`Astor` window select menu :menuselection:`&Command --> Add a New Host`
+
+- Install Starter service. Invoke :command:`nssm.exe install Tango-DataBaseds`
+
+    - In the Application tab provide information as follows.
+        .. image:: img/tango-on-windows/starter-as-service-01.png
+
+        Adjust if you installation path is different. In :guilabel:`Arguments` exchange ``pg-dell-new`` with proper name
+        of your host.
+    - In the Environment tab provide TANGO_HOST variable, like:
+        .. image:: img/tango-on-windows/starter-as-service-02.png
+    - Click :guilabel:`Install Service`
+    - Do not start the service yet
+
+
+
+PyTango and Taurus installation
+-------------------------------
+
+
+

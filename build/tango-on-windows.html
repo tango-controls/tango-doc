@@ -1,0 +1,388 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Tango on Windows &mdash; Tango Controls 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Tango Controls 0.1 documentation" href="index.html" />
+    <link rel="next" title="Glossary" href="glossary.html" />
+    <link rel="prev" title="Welcome to Tango Controls documentation!" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glossary.html" title="Glossary"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to Tango Controls documentation!"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Tango Controls 0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="tango-on-windows">
+<h1>Tango on Windows<a class="headerlink" href="#tango-on-windows" title="Permalink to this headline">¶</a></h1>
+<p>This guide provides step by step guide on installation and usage of Tango Controls under Windows operating system</p>
+<div class="section" id="what-is-tango-controls">
+<h2>What is Tango Controls<a class="headerlink" href="#what-is-tango-controls" title="Permalink to this headline">¶</a></h2>
+<p>Tango Controls is object oriented, distributed controls system. For more information see:
+<a class="reference external" href="http://www.tango-controls.org/what-is-tango-controls/">http://www.tango-controls.org/what-is-tango-controls/</a></p>
+</div>
+<div class="section" id="tango-binary-package-installation">
+<h2>Tango binary package installation<a class="headerlink" href="#tango-binary-package-installation" title="Permalink to this headline">¶</a></h2>
+<p>The simplest way to have Tango Controls running is to install it from a binary package. A binaries are available at
+<a class="reference external" href="http://www.tango-controls.org/downloads/binary/">http://www.tango-controls.org/downloads/binary/</a></p>
+<ul>
+<li><dl class="first docutils">
+<dt>Prerequisite</dt>
+<dd><ul class="first last simple">
+<li>Some <strong class="program">Tango Controls</strong> tools need <strong class="program">Java Run Time Environment &gt;=1.7</strong>. Please install it first.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first">Download the binary package with you favorite browser</p>
+</li>
+</ul>
+<div class="sidebar">
+<p class="first sidebar-title">Tango Host, DataBaseds</p>
+<p>Each Tango Controls system/deployment has to have at least one running DataBaseds <a class="reference internal" href="glossary.html#term-device-server"><em class="xref std std-term">device server</em></a>. The machine
+on which <a class="reference internal" href="glossary.html#term-device-server"><em class="xref std std-term">device server</em></a> is running has a role of so called <a class="reference internal" href="glossary.html#term-tango-host"><em class="xref std std-term">Tango Host</em></a>. DataBaseds is a device server providing
+configuration information to all other components of the system as well as a runtime catalog of the components/devices. It
+allows (among others) client applications to find devices in distributed environment.</p>
+<p>The <span class="target" id="index-0"></span><tt class="xref std std-envvar docutils literal"><span class="pre">TANGO_HOST</span></tt> variable is providing information about the address or IP number and the port on which the DataBaseds is
+listening for connections. The <span class="target" id="index-1"></span><tt class="xref std std-envvar docutils literal"><span class="pre">TANGO_HOST</span></tt> environment variable is build as follows:</p>
+<p class="last"><em>host_name_or_IP:port</em>, example: <tt class="docutils literal"><span class="pre">localhost:10000</span></tt></p>
+</div>
+<ul>
+<li><p class="first">Run the downloaded executable file (double-click on it when downloaded)</p>
+</li>
+<li><p class="first">Follow instructions provided by the installation wizard</p>
+</li>
+<li><dl class="first docutils">
+<dt>Configure <span class="target" id="index-2"></span><tt class="xref std std-envvar docutils literal"><span class="pre">TANGO_HOST</span></tt> environment variable</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>on Windows 8 and 10:</dt>
+<dd><ul class="first last simple">
+<li>From the Desktop, right-click the very bottom left corner of the screen to get
+the <em class="guilabel">Power User Task Menu</em>.</li>
+<li>From the <em class="guilabel">Power User Task Menu</em>, click <em class="guilabel">System</em></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>On Windows XP and 7</dt>
+<dd><ul class="first last simple">
+<li>From the Desktop, right-click the <em class="guilabel">Computer</em> icon and select <em class="menuselection">Properties</em>. If you
+don&#8217;t have a <em class="guilabel">Computer</em> icon on your desktop, click <em class="guilabel">Start</em> button, right-click the
+<em class="guilabel">Computer</em> option in the <em class="guilabel">Start</em> menu, and select <em class="menuselection">Properties</em>.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first">Click the <em class="guilabel">Advanced System Settings</em> link in the left column.</p>
+</li>
+<li><p class="first">In the System Properties window, click on the <em class="guilabel">Advanced</em> tab,
+then click the <em class="guilabel">Environment Variables</em> button near the bottom of that tab.</p>
+</li>
+<li><p class="first">In the <em class="guilabel">Environment Variables</em> window click the <em class="guilabel">New</em> button.</p>
+</li>
+<li><p class="first">In the filed <em class="guilabel">Name</em> write <tt class="docutils literal"><span class="pre">TANGO_HOST</span></tt></p>
+</li>
+<li><p class="first">In the field <em class="guilabel">Value</em> write proper value. If it is only computer in the Tango System provide <tt class="docutils literal"><span class="pre">localhost:10000</span></tt></p>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="tango-host-role">
+<h2>Tango Host role<a class="headerlink" href="#tango-host-role" title="Permalink to this headline">¶</a></h2>
+<p>Tango Host role is created by running the <strong class="program">DataBaseds</strong> device server. This device server requires MySQL
+database, in his most common application. To make a computer being a Tango Host you need to:</p>
+<ul>
+<li><dl class="first docutils">
+<dt>Install MySQL server</dt>
+<dd><p class="first">You may use community version available from <a class="reference external" href="http://dev.mysql.com/downloads/mysql/">http://dev.mysql.com/downloads/mysql/</a> . It is suggested to use MySQL
+Installer with all tools included. You may read more on MySQL installation topic there:
+<a class="reference external" href="http://dev.mysql.com/doc/refman/5.7/en/windows-installation.html">http://dev.mysql.com/doc/refman/5.7/en/windows-installation.html</a></p>
+<p>It is suggested to create dedicated <tt class="docutils literal"><span class="pre">tango</span></tt> user with <em>DB Admin</em> priviledges during installation.
+In the installation wizzard on a tab <em class="guilabel">Accounts and Roles</em> select button <em class="guilabel">Add User</em>
+and create a dedicated user. See</p>
+<blockquote class="last">
+<div><img alt="_images/mysql-user-02.png" src="_images/mysql-user-02.png" />
+</div></blockquote>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Setup environment variables providing credentials to access MySQL</dt>
+<dd><ul class="first last">
+<li><p class="first">Open <em class="guilabel">Command Line</em></p>
+</li>
+<li><p class="first">Invoke command: <strong class="command">%TANGO_ROOT%bindbconfig.exe</strong></p>
+<blockquote>
+<div><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This let you setup two environment variables
+<span class="target" id="index-3"></span><tt class="xref std std-envvar docutils literal"><span class="pre">MYSQL_USER</span></tt> and <span class="target" id="index-4"></span><tt class="xref std std-envvar docutils literal"><span class="pre">MYSQL_PASSWORD</span></tt> used to MySQL server. You may use <tt class="docutils literal"><span class="pre">root</span></tt> credentials
+provided upon MySQL installation if it is your development workstation. For production environment it is
+suggested to create additional user with <tt class="docutils literal"><span class="pre">DB</span> <span class="pre">Admin</span></tt> privileges. On Windows you may use <tt class="docutils literal"><span class="pre">MySQL</span> <span class="pre">installer</span></tt>
+from <em class="guilabel">Start</em> menu and select the option <em class="guilabel">Reconfigure</em> for MySQL Server.
+Please refer to: <a class="reference external" href="http://dev.mysql.com/doc/refman/5.7/en/adding-users.html">http://dev.mysql.com/doc/refman/5.7/en/adding-users.html</a></p>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Populate database with initial Tango configuration</dt>
+<dd><ul class="first last">
+<li><p class="first">Open command line</p>
+</li>
+<li><p class="first">Add MySQL client to be available in the PATH. For MySQL version 5.7 the command should be:
+<strong class="command">set PATH=%PATH%;&#8221;C:Program FilesMySQLMySQL Server 5.7bin&#8221;</strong></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Adjust the path according to you MySQL version and a path where it is installed</p>
+</div>
+</li>
+<li><p class="first">Invoke <strong class="command">cd &#8220;%TANGO_ROOT%sharetangodb&#8221;</strong></p>
+</li>
+<li><p class="first">Call <strong class="program">create_db.bat</strong></p>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Start a <strong class="program">DataBaseds</strong> <a class="reference internal" href="glossary.html#term-device-server"><em class="xref std std-term">device server</em></a></dt>
+<dd><ul class="first last">
+<li><p class="first">open new command line window</p>
+</li>
+<li><p class="first">in the command line call <strong class="command">&#8220;%TANGO_ROOT%binstart-db.bat&#8221;</strong></p>
+<blockquote>
+<div><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">To make you Tango installation operational you have to have this <strong class="program">DataBaseds</strong> running permanently.
+You may either add the command above to <em class="guilabel">Autostart</em> or run it as a service.</p>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Make <strong class="program">DataBaseds</strong> run as service</dt>
+<dd><div class="first admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The proposed solution uses NSSM tool which works on all versions of Windows but you may find some other tools
+available including native srvany.exe.</p>
+</div>
+<ul class="last">
+<li><p class="first">Download NSSM from <a class="reference external" href="http://nssm.cc/">http://nssm.cc/</a></p>
+</li>
+<li><p class="first">Unpack the file to some convinient location. It is suggested to copy proper (32bit or 64bit) version to the
+Tango bin folder <tt class="docutils literal"><span class="pre">%TANGO_ROOT%\bin\</span></tt></p>
+</li>
+<li><p class="first">Open <em class="guilabel">Command Line</em> as Administrator</p>
+</li>
+<li><p class="first">Change current path to where the <strong class="program">nssm</strong> is unpacked or copied, eg. <strong class="command">cd &#8220;%TANGO_ROOT%bin&#8221;</strong></p>
+</li>
+<li><dl class="first docutils">
+<dt>Invoke <strong class="command">nssm.exe install Tango-DataBaseds</strong>. This will open a window where you can define service parameters.</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>In the Application tab provide information as follows (adjust if you installation path is different).</dt>
+<dd><img alt="_images/databaseds-as-service-01.png" class="first last" src="_images/databaseds-as-service-01.png" />
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>In the Environment tab provide variables with credentials used for accessting the MySQL, like:</dt>
+<dd><img alt="_images/databaseds-as-service-02.png" class="first last" src="_images/databaseds-as-service-02.png" />
+</dd>
+</dl>
+</li>
+<li><p class="first">Click <em class="guilabel">Install Service</em></p>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first">Invoke <strong class="command">nssm.exe start Tango-DataBaseds</strong> to start the service</p>
+</li>
+<li><p class="first">Test if everything is ok. Use <em class="guilabel">Start</em> menu to run Jive or in command line call <strong class="command">&#8220;%TANGO_ROOT%binstart-jive.bat&#8221;</strong></p>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="running-device-servers">
+<h2>Running device servers<a class="headerlink" href="#running-device-servers" title="Permalink to this headline">¶</a></h2>
+<p>The recommended way of running device servers is to use <strong class="program">Starter</strong> service. Then you may use NSSM as for DataBaseds.
+Assuming you have downloaded it and copied to the Tango bin folder please follow:</p>
+<ul>
+<li><p class="first">Open Command Line as Administrator (if it is not yet open)</p>
+</li>
+<li><p class="first">Prepare</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">To let your device servers start with <strong class="program">Starter</strong> service their executables has to be in a path without
+spaces. This a limitation of the current <strong class="program">Starter</strong> implementation.</p>
+</div>
+<ul class="simple">
+<li>Create a directory for <a class="reference internal" href="glossary.html#term-device-servers"><em class="xref std std-term">device servers</em></a>. Let it be <tt class="file docutils literal"><span class="pre">C:DeviceServersbin</span></tt>
+with <strong class="command">mkdir c:DeviceServersbin</strong></li>
+<li>Change to the Tango bin directory (<strong class="command">cd &#8220;%TANGO_ROOT%bin&#8221;</strong>)</li>
+<li>Copy <strong class="program">TangoTest</strong> <a class="reference internal" href="glossary.html#term-device-server"><em class="xref std std-term">device server</em></a> to newly crated folder:
+<strong class="command">copy TangoTest.exe c:DeviceServersbin</strong></li>
+</ul>
+</div></blockquote>
+</li>
+<li><dl class="first docutils">
+<dt>Add entry about the Starter device server you will start on your computer:</dt>
+<dd><ul class="first last simple">
+<li>Start a tool called <strong class="program">Astor</strong>. You may use either Windows <em class="guilabel">Start</em> menu or
+call <strong class="command">tango-astor.bat</strong></li>
+<li>In <em class="guilabel">Astor</em> window select menu <em class="menuselection"><span class="accelerator">C</span>ommand ‣ Add a New Host</em></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first">Install Starter service. Invoke <strong class="command">nssm.exe install Tango-DataBaseds</strong></p>
+<blockquote>
+<div><ul>
+<li><dl class="first docutils">
+<dt>In the Application tab provide information as follows.</dt>
+<dd><img alt="_images/starter-as-service-01.png" class="first" src="_images/starter-as-service-01.png" />
+<p class="last">Adjust if you installation path is different. In <em class="guilabel">Arguments</em> <tt class="docutils literal"><span class="pre">exchange</span> <span class="pre">pg-dell-new</span></tt> with proper name
+of your host.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>In the Environment tab provide TANGO_HOST variable, like:</dt>
+<dd><img alt="_images/starter-as-service-02.png" class="first last" src="_images/starter-as-service-02.png" />
+</dd>
+</dl>
+</li>
+<li><p class="first">Click <em class="guilabel">Install Service</em></p>
+</li>
+<li><p class="first">Do not start the service yet</p>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="pytango-and-taurus-installation">
+<h2>PyTango and Taurus installation<a class="headerlink" href="#pytango-and-taurus-installation" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Tango on Windows</a><ul>
+<li><a class="reference internal" href="#what-is-tango-controls">What is Tango Controls</a></li>
+<li><a class="reference internal" href="#tango-binary-package-installation">Tango binary package installation</a></li>
+<li><a class="reference internal" href="#tango-host-role">Tango Host role</a></li>
+<li><a class="reference internal" href="#running-device-servers">Running device servers</a></li>
+<li><a class="reference internal" href="#pytango-and-taurus-installation">PyTango and Taurus installation</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Welcome to Tango Controls documentation!</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glossary.html"
+                        title="next chapter">Glossary</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/tango-on-windows.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glossary.html" title="Glossary"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to Tango Controls documentation!"
+             >previous</a> |</li>
+        <li><a href="index.html">Tango Controls 0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2016, Tango Community, 3Controls, Piotr Goryl.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

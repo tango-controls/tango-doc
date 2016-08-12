@@ -6,6 +6,7 @@ Glossary
 .. glossary::
 
     device server
+    device servers
         Device Server is a program (executable) which is able to create :term:'device' of certain classes. To create d
 
     device

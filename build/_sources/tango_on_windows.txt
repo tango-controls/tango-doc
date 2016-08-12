@@ -55,30 +55,44 @@ Tango Host role
 Tango Host role is created by running the DataBaseds device server. This device server in his most common application
 requires MySQL database. To make a computer being a Tango Host you need to:
 
-- install MySQL server.
+- Install MySQL server
 
     .. note::
         You may use community version available from http://dev.mysql.com/downloads/mysql/ . It is suggested to use MySQL
-        Installer with all tools included.
+        Installer with all tools included. You may read more on MySQL installation topic there:
+        http://dev.mysql.com/doc/refman/5.7/en/windows-installation.html
 
-- setup environment variables
-    - open command line
-    - invoke command: ``%TANGO_ROOT%\bin\dbconfig.exe``
-    .. note::
-        This will setup two envirinment variables
-        - ``MYSQL_USER``
-        - ``MYSQL_PASSWORD``
-        To provide inforamtion on access to the MySQL server. You may also setup this values manualy.
+- Setup environment variables providing credentials to access MySQL
+    - Open command line
+    - Invoke command: ``%TANGO_ROOT%\bin\dbconfig.exe``
 
-- populate database with initial Tango configuration
-    - in command line call: ``%TANGO_ROOT%\share\tango\db\create_db.bat``
-- start a DataBaseds :term:`device server`
+        .. note::
+            This let you setup two envirinment variables
+            ``MYSQL_USER`` and ``MYSQL_PASSWORD`` used to MySQL server. You may use ``root`` credentials provided upon MySQL
+            installati if it is your development workstation. For production environment it is suggested to create additional
+            user with ``DB Admin`` privileges. On Windows you may use ``MySQL installer`` from Start menu and select the
+            option ``Reconfigure`` for MySQL Server.
+            Please refer to: http://dev.mysql.com/doc/refman/5.7/en/adding-users.html
+
+- Populate database with initial Tango configuration
+    - Open command line
+    - Add MySQL client to be available in the PATH. For MySQL version 5.7 the command should be:
+      ``set PATH=%PATH%;"C:\Program Files\MySQL\MySQL Server 5.7\bin"``
+
+      .. note::
+         Adjust the path according to you MySQL version and a path where it is installed
+
+    - Invoke: ``cd "%TANGO_ROOT%\share\tango\db\"``
+    - Invoke: ``create_db.bat``
+- Start a DataBaseds :term:`device server`
     - open new command line window
     - in the command line call: ``"%TANGO_ROOT%\bin\start-db.bat"``
-    .. note::
-        To make you Tango installation operational you have to have this ``DataBaseds`` running permamently. You may either
-        add the command above to ``Autostart`` or run it as service
-- make ``DataBaseds`` run as service
+
+        .. note::
+            To make you Tango installation operational you have to have this ``DataBaseds`` running permamently. You may either
+            add the command above to ``Autostart`` or run it as a service.
+
+- Make ``DataBaseds`` run as service
     - on Windows 7
     - on Windows 8 and above
 
