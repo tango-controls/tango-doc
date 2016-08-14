@@ -12,6 +12,7 @@ Contents:
    :maxdepth: 2
 
    tango-on-windows
+   pytango-and-taurus-on-windows
    glossary
 
 

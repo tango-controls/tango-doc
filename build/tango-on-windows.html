@@ -8,7 +8,7 @@
     
     <title>Tango on Windows &mdash; Tango Controls 0.1 documentation</title>
     
-    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
@@ -24,7 +24,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="top" title="Tango Controls 0.1 documentation" href="index.html" />
-    <link rel="next" title="Glossary" href="glossary.html" />
+    <link rel="next" title="PyTango nad Taurus on Windows" href="pytango-and-taurus-on-windows.html" />
     <link rel="prev" title="Welcome to Tango Controls documentation!" href="index.html" /> 
   </head>
   <body>
@@ -35,14 +35,58 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="glossary.html" title="Glossary"
+          <a href="pytango-and-taurus-on-windows.html" title="PyTango nad Taurus on Windows"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="index.html" title="Welcome to Tango Controls documentation!"
              accesskey="P">previous</a> |</li>
         <li><a href="index.html">Tango Controls 0.1 documentation</a> &raquo;</li> 
       </ul>
-    </div>  
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/logo_tangocontrols.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Tango on Windows</a><ul>
+<li><a class="reference internal" href="#what-is-tango-controls">What is Tango Controls</a></li>
+<li><a class="reference internal" href="#tango-package-installation">Tango  package installation</a></li>
+<li><a class="reference internal" href="#tango-host-role">Tango Host role</a></li>
+<li><a class="reference internal" href="#running-device-servers">Running <tt class="docutils literal"><span class="pre">Device</span> <span class="pre">Servers</span></tt></a></li>
+<li><a class="reference internal" href="#what-s-next">What&#8217;s next</a></li>
+<li><a class="reference internal" href="#typical-issues">Typical issues</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Welcome to Tango Controls documentation!</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="pytango-and-taurus-on-windows.html"
+                        title="next chapter">PyTango nad Taurus on Windows</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/tango-on-windows.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
 
     <div class="document">
       <div class="documentwrapper">
@@ -51,32 +95,37 @@
             
   <div class="section" id="tango-on-windows">
 <h1>Tango on Windows<a class="headerlink" href="#tango-on-windows" title="Permalink to this headline">¶</a></h1>
-<p>This guide provides step by step guide on installation and usage of Tango Controls under Windows operating system</p>
+<p>This guide provides step by step guide on installation of Tango Controls under Windows operating systems.</p>
 <div class="section" id="what-is-tango-controls">
 <h2>What is Tango Controls<a class="headerlink" href="#what-is-tango-controls" title="Permalink to this headline">¶</a></h2>
-<p>Tango Controls is object oriented, distributed controls system. For more information see:
+<p>Tango Controls is object oriented, distributed control system. It is framework for building custom SCADA systems.
+It defines communication protocol and API. It provides libraries, set of GUI tools and drivers (so called
+<a class="reference internal" href="glossary.html#term-device-servers"><em class="xref std std-term">Device Servers</em></a>) for variety of standard and specific control equipment. For more information see:
 <a class="reference external" href="http://www.tango-controls.org/what-is-tango-controls/">http://www.tango-controls.org/what-is-tango-controls/</a></p>
-</div>
-<div class="section" id="tango-binary-package-installation">
-<h2>Tango binary package installation<a class="headerlink" href="#tango-binary-package-installation" title="Permalink to this headline">¶</a></h2>
-<p>The simplest way to have Tango Controls running is to install it from a binary package. A binaries are available at
-<a class="reference external" href="http://www.tango-controls.org/downloads/binary/">http://www.tango-controls.org/downloads/binary/</a></p>
-<ul>
-<li><dl class="first docutils">
-<dt>Prerequisite</dt>
-<dd><ul class="first last simple">
-<li>Some <strong class="program">Tango Controls</strong> tools need <strong class="program">Java Run Time Environment &gt;=1.7</strong>. Please install it first.</li>
+<p>Your computer may have different (one or more) roles in Tango system. The roles are:</p>
+<ul class="simple">
+<li>Client computer, where you run GUI applications like <strong class="program">Synoptic</strong>,</li>
+<li>Tango Host, where configuration for all other components are stored,</li>
+<li>Device Servers running.</li>
 </ul>
-</dd>
-</dl>
-</li>
-<li><p class="first">Download the binary package with you favorite browser</p>
-</li>
+<p>Your Windows computer may perform all above roles simultaneously.</p>
+</div>
+<div class="section" id="tango-package-installation">
+<h2>Tango  package installation<a class="headerlink" href="#tango-package-installation" title="Permalink to this headline">¶</a></h2>
+<div class="topic">
+<p class="topic-title first">Prerequisite</p>
+<p>Some <strong class="program">Tango Controls</strong> tools need <strong class="program">Java Runtime Environment (JRE) &gt;=1.7</strong>. Please install it first.
+You may find JRE on <a class="reference external" href="http://java.com">http://java.com</a> .</p>
+</div>
+<p>The simplest way to have Tango Controls running is to install it from a binary package. Binaries are available at
+<a class="reference external" href="http://www.tango-controls.org/downloads/binary/">http://www.tango-controls.org/downloads/binary/</a></p>
+<ul class="simple">
+<li>Download the binary package with your favorite browser.</li>
 </ul>
 <div class="sidebar">
 <p class="first sidebar-title">Tango Host, DataBaseds</p>
-<p>Each Tango Controls system/deployment has to have at least one running DataBaseds <a class="reference internal" href="glossary.html#term-device-server"><em class="xref std std-term">device server</em></a>. The machine
-on which <a class="reference internal" href="glossary.html#term-device-server"><em class="xref std std-term">device server</em></a> is running has a role of so called <a class="reference internal" href="glossary.html#term-tango-host"><em class="xref std std-term">Tango Host</em></a>. DataBaseds is a device server providing
+<p>Each Tango Controls system/deployment has to have at least one running DataBaseds <a class="reference internal" href="glossary.html#term-device-server"><em class="xref std std-term">Device Server</em></a>. The machine
+on which <a class="reference internal" href="glossary.html#term-device-server"><em class="xref std std-term">Device Server</em></a> is running has a role of so called <a class="reference internal" href="glossary.html#term-tango-host"><em class="xref std std-term">Tango Host</em></a>. DataBaseds is a device server providing
 configuration information to all other components of the system as well as a runtime catalog of the components/devices. It
 allows (among others) client applications to find devices in distributed environment.</p>
 <p>The <span class="target" id="index-0"></span><tt class="xref std std-envvar docutils literal"><span class="pre">TANGO_HOST</span></tt> variable is providing information about the address or IP number and the port on which the DataBaseds is
@@ -84,19 +133,19 @@ listening for connections. The <span class="target" id="index-1"></span><tt clas
 <p class="last"><em>host_name_or_IP:port</em>, example: <tt class="docutils literal"><span class="pre">localhost:10000</span></tt></p>
 </div>
 <ul>
-<li><p class="first">Run the downloaded executable file (double-click on it when downloaded)</p>
+<li><p class="first">Run the downloaded executable file (double-click on it when downloaded).</p>
 </li>
-<li><p class="first">Follow instructions provided by the installation wizard</p>
+<li><p class="first">Follow instructions provided by the installation wizard.</p>
 </li>
 <li><dl class="first docutils">
-<dt>Configure <span class="target" id="index-2"></span><tt class="xref std std-envvar docutils literal"><span class="pre">TANGO_HOST</span></tt> environment variable</dt>
+<dt>Configure <span class="target" id="index-2"></span><tt class="xref std std-envvar docutils literal"><span class="pre">TANGO_HOST</span></tt> environment variable:</dt>
 <dd><ul class="first last">
 <li><dl class="first docutils">
 <dt>on Windows 8 and 10:</dt>
 <dd><ul class="first last simple">
 <li>From the Desktop, right-click the very bottom left corner of the screen to get
 the <em class="guilabel">Power User Task Menu</em>.</li>
-<li>From the <em class="guilabel">Power User Task Menu</em>, click <em class="guilabel">System</em></li>
+<li>From the <em class="guilabel">Power User Task Menu</em>, click <em class="guilabel">System</em>.</li>
 </ul>
 </dd>
 </dl>
@@ -118,15 +167,19 @@ then click the <em class="guilabel">Environment Variables</em> button near the b
 </li>
 <li><p class="first">In the <em class="guilabel">Environment Variables</em> window click the <em class="guilabel">New</em> button.</p>
 </li>
-<li><p class="first">In the filed <em class="guilabel">Name</em> write <tt class="docutils literal"><span class="pre">TANGO_HOST</span></tt></p>
+<li><p class="first">In the filed <em class="guilabel">Name</em> write <tt class="docutils literal"><span class="pre">TANGO_HOST</span></tt>.</p>
 </li>
-<li><p class="first">In the field <em class="guilabel">Value</em> write proper value. If it is only computer in the Tango System provide <tt class="docutils literal"><span class="pre">localhost:10000</span></tt></p>
+<li><p class="first">In the field <em class="guilabel">Value</em> write proper value. If it is only computer in the Tango System provide <tt class="docutils literal"><span class="pre">localhost:10000</span></tt>.</p>
 </li>
 </ul>
 </dd>
 </dl>
 </li>
 </ul>
+<p>If there is a <a class="reference internal" href="glossary.html#term-tango-host"><em class="xref std std-term">Tango Host</em></a> already running on some other computer in your deploymen and you have provided proper
+address and port in the <span class="target" id="index-3"></span><tt class="xref std std-envvar docutils literal"><span class="pre">TANHO_HOST</span></tt> you may start using client and management applications like
+<strong class="program">Jive</strong>, <strong class="program">Jdraw</strong>/<strong class="program">Synoptic</strong>. In other case you have to configure the system to perform role of
+<a class="reference internal" href="glossary.html#term-tango-host"><em class="xref std std-term">Tango Host</em></a>.</p>
 </div>
 <div class="section" id="tango-host-role">
 <h2>Tango Host role<a class="headerlink" href="#tango-host-role" title="Permalink to this headline">¶</a></h2>
@@ -134,7 +187,7 @@ then click the <em class="guilabel">Environment Variables</em> button near the b
 database, in his most common application. To make a computer being a Tango Host you need to:</p>
 <ul>
 <li><dl class="first docutils">
-<dt>Install MySQL server</dt>
+<dt>Install MySQL server.</dt>
 <dd><p class="first">You may use community version available from <a class="reference external" href="http://dev.mysql.com/downloads/mysql/">http://dev.mysql.com/downloads/mysql/</a> . It is suggested to use MySQL
 Installer with all tools included. You may read more on MySQL installation topic there:
 <a class="reference external" href="http://dev.mysql.com/doc/refman/5.7/en/windows-installation.html">http://dev.mysql.com/doc/refman/5.7/en/windows-installation.html</a></p>
@@ -148,16 +201,16 @@ and create a dedicated user. See</p>
 </dl>
 </li>
 <li><dl class="first docutils">
-<dt>Setup environment variables providing credentials to access MySQL</dt>
+<dt>Setup environment variables providing credentials to access MySQL:</dt>
 <dd><ul class="first last">
-<li><p class="first">Open <em class="guilabel">Command Line</em></p>
+<li><p class="first">Open <em class="guilabel">Command Line</em>.</p>
 </li>
-<li><p class="first">Invoke command: <strong class="command">%TANGO_ROOT%bindbconfig.exe</strong></p>
+<li><p class="first">Invoke command: <strong class="command">%TANGO_ROOT%bindbconfig.exe</strong>.</p>
 <blockquote>
 <div><div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">This let you setup two environment variables
-<span class="target" id="index-3"></span><tt class="xref std std-envvar docutils literal"><span class="pre">MYSQL_USER</span></tt> and <span class="target" id="index-4"></span><tt class="xref std std-envvar docutils literal"><span class="pre">MYSQL_PASSWORD</span></tt> used to MySQL server. You may use <tt class="docutils literal"><span class="pre">root</span></tt> credentials
+<span class="target" id="index-4"></span><tt class="xref std std-envvar docutils literal"><span class="pre">MYSQL_USER</span></tt> and <span class="target" id="index-5"></span><tt class="xref std std-envvar docutils literal"><span class="pre">MYSQL_PASSWORD</span></tt> used to MySQL server. You may use <tt class="docutils literal"><span class="pre">root</span></tt> credentials
 provided upon MySQL installation if it is your development workstation. For production environment it is
 suggested to create additional user with <tt class="docutils literal"><span class="pre">DB</span> <span class="pre">Admin</span></tt> privileges. On Windows you may use <tt class="docutils literal"><span class="pre">MySQL</span> <span class="pre">installer</span></tt>
 from <em class="guilabel">Start</em> menu and select the option <em class="guilabel">Reconfigure</em> for MySQL Server.
@@ -170,31 +223,31 @@ Please refer to: <a class="reference external" href="http://dev.mysql.com/doc/re
 </dl>
 </li>
 <li><dl class="first docutils">
-<dt>Populate database with initial Tango configuration</dt>
+<dt>Populate database with initial Tango configuration:</dt>
 <dd><ul class="first last">
-<li><p class="first">Open command line</p>
+<li><p class="first">Open command line.</p>
 </li>
 <li><p class="first">Add MySQL client to be available in the PATH. For MySQL version 5.7 the command should be:
 <strong class="command">set PATH=%PATH%;&#8221;C:Program FilesMySQLMySQL Server 5.7bin&#8221;</strong></p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Adjust the path according to you MySQL version and a path where it is installed</p>
+<p class="last">Adjust the path according to you MySQL version and the path where it is installed.</p>
 </div>
 </li>
-<li><p class="first">Invoke <strong class="command">cd &#8220;%TANGO_ROOT%sharetangodb&#8221;</strong></p>
+<li><p class="first">Invoke <strong class="command">cd &#8220;%TANGO_ROOT%sharetangodb&#8221;</strong>.</p>
 </li>
-<li><p class="first">Call <strong class="program">create_db.bat</strong></p>
+<li><p class="first">Call <strong class="program">create_db.bat</strong>.</p>
 </li>
 </ul>
 </dd>
 </dl>
 </li>
 <li><dl class="first docutils">
-<dt>Start a <strong class="program">DataBaseds</strong> <a class="reference internal" href="glossary.html#term-device-server"><em class="xref std std-term">device server</em></a></dt>
+<dt>Start a <strong class="program">DataBaseds</strong> <a class="reference internal" href="glossary.html#term-device-server"><em class="xref std std-term">Device Server</em></a>:</dt>
 <dd><ul class="first last">
-<li><p class="first">open new command line window</p>
+<li><p class="first">open new command line window.</p>
 </li>
-<li><p class="first">in the command line call <strong class="command">&#8220;%TANGO_ROOT%binstart-db.bat&#8221;</strong></p>
+<li><p class="first">in the command line call <strong class="command">&#8220;%TANGO_ROOT%binstart-db.bat&#8221;</strong>.</p>
 <blockquote>
 <div><div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -215,14 +268,14 @@ You may either add the command above to <em class="guilabel">Autostart</em> or r
 available including native srvany.exe.</p>
 </div>
 <ul class="last">
-<li><p class="first">Download NSSM from <a class="reference external" href="http://nssm.cc/">http://nssm.cc/</a></p>
+<li><p class="first">Download NSSM from <a class="reference external" href="http://nssm.cc/">http://nssm.cc/</a>.</p>
 </li>
 <li><p class="first">Unpack the file to some convinient location. It is suggested to copy proper (32bit or 64bit) version to the
-Tango bin folder <tt class="docutils literal"><span class="pre">%TANGO_ROOT%\bin\</span></tt></p>
+Tango bin folder <tt class="docutils literal"><span class="pre">%TANGO_ROOT%\bin\</span></tt>.</p>
 </li>
-<li><p class="first">Open <em class="guilabel">Command Line</em> as Administrator</p>
+<li><p class="first">Open <em class="guilabel">Command Line</em> as Administrator.</p>
 </li>
-<li><p class="first">Change current path to where the <strong class="program">nssm</strong> is unpacked or copied, eg. <strong class="command">cd &#8220;%TANGO_ROOT%bin&#8221;</strong></p>
+<li><p class="first">Change current path to where the <strong class="program">nssm</strong> is unpacked or copied, eg. <strong class="command">cd &#8220;%TANGO_ROOT%bin&#8221;</strong>.</p>
 </li>
 <li><dl class="first docutils">
 <dt>Invoke <strong class="command">nssm.exe install Tango-DataBaseds</strong>. This will open a window where you can define service parameters.</dt>
@@ -239,15 +292,16 @@ Tango bin folder <tt class="docutils literal"><span class="pre">%TANGO_ROOT%\bin
 </dd>
 </dl>
 </li>
-<li><p class="first">Click <em class="guilabel">Install Service</em></p>
+<li><p class="first">Click <em class="guilabel">Install Service</em>.</p>
 </li>
 </ul>
 </dd>
 </dl>
 </li>
-<li><p class="first">Invoke <strong class="command">nssm.exe start Tango-DataBaseds</strong> to start the service</p>
+<li><p class="first">Invoke <strong class="command">nssm.exe start Tango-DataBaseds</strong> to start the service.</p>
 </li>
-<li><p class="first">Test if everything is ok. Use <em class="guilabel">Start</em> menu to run Jive or in command line call <strong class="command">&#8220;%TANGO_ROOT%binstart-jive.bat&#8221;</strong></p>
+<li><p class="first">Test if everything is ok. Use <em class="guilabel">Start</em> menu to run Jive or in command line call
+<strong class="command">&#8220;%TANGO_ROOT%binstart-jive.bat&#8221;</strong>.</p>
 </li>
 </ul>
 </dd>
@@ -256,13 +310,14 @@ Tango bin folder <tt class="docutils literal"><span class="pre">%TANGO_ROOT%\bin
 </ul>
 </div>
 <div class="section" id="running-device-servers">
-<h2>Running device servers<a class="headerlink" href="#running-device-servers" title="Permalink to this headline">¶</a></h2>
-<p>The recommended way of running device servers is to use <strong class="program">Starter</strong> service. Then you may use NSSM as for DataBaseds.
+<h2>Running <a class="reference internal" href="glossary.html#term-device-servers"><em class="xref std std-term">Device Servers</em></a><a class="headerlink" href="#running-device-servers" title="Permalink to this headline">¶</a></h2>
+<p>The recommended way of running device servers is to use <strong class="program">Starter</strong> service. Then you may use
+<strong class="program">NSSM</strong> as for <strong class="program">DataBaseds</strong>.
 Assuming you have downloaded it and copied to the Tango bin folder please follow:</p>
 <ul>
-<li><p class="first">Open Command Line as Administrator (if it is not yet open)</p>
+<li><p class="first">Open Command Line as Administrator (if it is not yet open).</p>
 </li>
-<li><p class="first">Prepare</p>
+<li><p class="first">Prepare folder for <a class="reference internal" href="glossary.html#term-device-servers"><em class="xref std std-term">Device Servers</em></a> executable:</p>
 <blockquote>
 <div><div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -270,10 +325,10 @@ Assuming you have downloaded it and copied to the Tango bin folder please follow
 spaces. This a limitation of the current <strong class="program">Starter</strong> implementation.</p>
 </div>
 <ul class="simple">
-<li>Create a directory for <a class="reference internal" href="glossary.html#term-device-servers"><em class="xref std std-term">device servers</em></a>. Let it be <tt class="file docutils literal"><span class="pre">C:DeviceServersbin</span></tt>
+<li>Create a directory for <a class="reference internal" href="glossary.html#term-device-servers"><em class="xref std std-term">Device Servers</em></a>. Let it be <tt class="file docutils literal"><span class="pre">C:DeviceServersbin</span></tt>
 with <strong class="command">mkdir c:DeviceServersbin</strong></li>
-<li>Change to the Tango bin directory (<strong class="command">cd &#8220;%TANGO_ROOT%bin&#8221;</strong>)</li>
-<li>Copy <strong class="program">TangoTest</strong> <a class="reference internal" href="glossary.html#term-device-server"><em class="xref std std-term">device server</em></a> to newly crated folder:
+<li>Change to the Tango bin directory with command (<strong class="command">cd &#8220;%TANGO_ROOT%bin&#8221;</strong>)</li>
+<li>Copy <strong class="program">TangoTest</strong> <a class="reference internal" href="glossary.html#term-device-server"><em class="xref std std-term">Device Server</em></a> to newly crated folder:
 <strong class="command">copy TangoTest.exe c:DeviceServersbin</strong></li>
 </ul>
 </div></blockquote>
@@ -300,9 +355,11 @@ call <strong class="command">tango-astor.bat</strong></p>
 </dd>
 </dl>
 </li>
-<li><p class="first">Install Starter service. Invoke <strong class="command">nssm.exe install Tango-DataBaseds</strong></p>
-<blockquote>
-<div><ul>
+<li><dl class="first docutils">
+<dt>Install Starter service.</dt>
+<dd><ul class="first last">
+<li><p class="first">Invoke <strong class="command">nssm.exe install Tango-DataBaseds</strong></p>
+</li>
 <li><dl class="first docutils">
 <dt>In the Application tab provide information as follows.</dt>
 <dd><img alt="_images/starter-as-service-01.png" class="first" src="_images/starter-as-service-01.png" />
@@ -330,57 +387,80 @@ of your host.</p>
 </dl>
 </li>
 </ul>
-</div></blockquote>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Run <strong class="program">TangoTest</strong> device server</dt>
+<dd><p class="first">You may test the configuration by starting prefigured TangoTest device.</p>
+<ul class="last">
+<li><dl class="first docutils">
+<dt>Start <strong class="program">Astor</strong> if it is not running.</dt>
+<dd><img alt="_images/device-server-01.png" class="first last" src="_images/device-server-01.png" />
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Double Click on your computer name to open <em class="guilabel">Control Panel</em>. It open a window as below:</dt>
+<dd><img alt="_images/device-server-02.png" class="first last" src="_images/device-server-02.png" />
+</dd>
+</dl>
+</li>
+<li><p class="first">Click <em class="guilabel">Start new</em>.</p>
+</li>
+<li><dl class="first docutils">
+<dt>In window opened select <em class="menuselection">TangoTest/test</em>.</dt>
+<dd><img alt="_images/device-server-03.png" class="first last" src="_images/device-server-03.png" />
+</dd>
+</dl>
+</li>
+<li><p class="first">Click <em class="guilabel">Start Server</em>.</p>
+</li>
+<li><dl class="first docutils">
+<dt>In opened window select <em class="guilabel">Controlled by Astro -&gt; Yes</em>, and <em class="guilabel">Startup Level -&gt; Level 1</em>.</dt>
+<dd><img alt="_images/device-server-04.png" class="first last" src="_images/device-server-04.png" />
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>When you click <em class="guilabel">OK</em> it should start the server. After a while you should see:</dt>
+<dd><img alt="_images/device-server-05.png" class="first last" src="_images/device-server-05.png" />
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Running your <a class="reference internal" href="glossary.html#term-device-servers"><em class="xref std std-term">Device Servers</em></a></dt>
+<dd><ul class="first last simple">
+<li>You need to copy an executable to the folder configured for <strong class="program">Starter&#8217;. In our example it is
+:file:`C:DeviceServersbin</strong>.</li>
+<li>Then use <strong class="program">Astor</strong>. After opening <em class="guilabel">Control panel</em> for your computer (double clicking on label)
+and selection <em class="guilabel">Start New</em>...</li>
+<li>Select <em class="guilabel">Create New Server</em> and follow a wizzard.</li>
+</ul>
+</dd>
+</dl>
 </li>
 </ul>
 </div>
-<div class="section" id="pytango-and-taurus-installation">
-<h2>PyTango and Taurus installation<a class="headerlink" href="#pytango-and-taurus-installation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="what-s-next">
+<h2>What&#8217;s next<a class="headerlink" href="#what-s-next" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div>You should check PyTango and Taurus library and tools to cope with scripting and GUIs for Tango
+<a class="reference internal" href="pytango-and-taurus-on-windows.html"><em>PyTango nad Taurus on Windows</em></a>.</div></blockquote>
+</div>
+<div class="section" id="typical-issues">
+<h2>Typical issues<a class="headerlink" href="#typical-issues" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div></div></blockquote>
 </div>
 </div>
 
 
           </div>
-        </div>
-      </div>
-      <div class="sphinxsidebar">
-        <div class="sphinxsidebarwrapper">
-  <h3><a href="index.html">Table Of Contents</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">Tango on Windows</a><ul>
-<li><a class="reference internal" href="#what-is-tango-controls">What is Tango Controls</a></li>
-<li><a class="reference internal" href="#tango-binary-package-installation">Tango binary package installation</a></li>
-<li><a class="reference internal" href="#tango-host-role">Tango Host role</a></li>
-<li><a class="reference internal" href="#running-device-servers">Running device servers</a></li>
-<li><a class="reference internal" href="#pytango-and-taurus-installation">PyTango and Taurus installation</a></li>
-</ul>
-</li>
-</ul>
-
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="index.html"
-                        title="previous chapter">Welcome to Tango Controls documentation!</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="glossary.html"
-                        title="next chapter">Glossary</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="_sources/tango-on-windows.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
-  <h3>Quick search</h3>
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -392,7 +472,7 @@ of your host.</p>
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="glossary.html" title="Glossary"
+          <a href="pytango-and-taurus-on-windows.html" title="PyTango nad Taurus on Windows"
              >next</a> |</li>
         <li class="right" >
           <a href="index.html" title="Welcome to Tango Controls documentation!"
