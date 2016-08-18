@@ -156,7 +156,7 @@ Assuming you have downloaded it and copied to the Tango bin folder please follow
         To let your device servers start with :program:`Starter` service their executables have to be in a path without
         spaces. This is a limitation of the current :program:`Starter` implementation.
 
-    - Create a directory for :term:`Device Servers`. Let it be :file:`C:\DeviceServers\bin`
+    - Create a directory for :term:`Device Servers`. Let it be :file:`C:\\DeviceServers\\bin`
       with :command:`mkdir c:\DeviceServers\bin`
 
     - Change to the Tango bin directory with command (:command:`cd "%TANGO_ROOT%\bin"`)
