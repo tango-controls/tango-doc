@@ -14,7 +14,7 @@
 
 
 \title{Tango Controls Documentation Documentation}
-\date{August 14, 2016}
+\date{August 18, 2016}
 \release{0.1}
 \author{Tango Community, 3Controls, Piotr Goryl}
 \newcommand{\sphinxlogo}{}
@@ -136,7 +136,7 @@ This guide provides step by step guide on installation of Tango Controls under W
 
 \section{What is Tango Controls}
 \label{tango-on-windows:what-is-tango-controls}
-Tango Controls is object oriented, distributed control system. It is framework for building custom SCADA systems.
+Tango Controls is an object oriented, distributed control system. It is a framework for building custom SCADA systems.
 It defines communication protocol and API. It provides libraries, set of GUI tools and drivers (so called
 {\hyperref[glossary:term-device-servers]{\emph{Device Servers}}}) for variety of standard and specific control equipment. For more information see:
 \href{http://www.tango-controls.org/what-is-tango-controls/}{http://www.tango-controls.org/what-is-tango-controls/}
@@ -149,7 +149,7 @@ Your computer may have different (one or more) roles in the Tango CS system. The
 Client computer, where you run GUI applications like \textbf{Synoptic},
 
 \item {} 
-Tango Host, where configuration for all other components are stored,
+Tango Host, where configuration of all other components is stored,
 
 \item {} 
 Device Servers running.
@@ -167,7 +167,7 @@ Your Windows computer may perform all above roles simultaneously.
 \medskip
 
 
-Some \textbf{Tango Controls} tools need \textbf{Java Runtime Environment (JRE) \textgreater{}=1.7}. Please install it first.
+Some \textbf{Tango Controls} tools require \textbf{Java Runtime Environment (JRE) \textgreater{}=1.7}. Please install it first.
 You may find JRE on \href{http://java.com}{http://java.com} .
 \end{minipage}}
 \begin{center}\setlength{\fboxsep}{5pt}\shadowbox{\box0}\end{center}
@@ -187,12 +187,12 @@ Download the binary package with your favorite browser.
 
 
 Each Tango Controls system/deployment has to have at least one running DataBaseds {\hyperref[glossary:term-device-server]{\emph{Device Server}}}. The machine
-on which {\hyperref[glossary:term-device-server]{\emph{Device Server}}} is running has a role of so called {\hyperref[glossary:term-tango-host]{\emph{Tango Host}}}. DataBaseds is a device server providing
+on which the {\hyperref[glossary:term-device-server]{\emph{Device Server}}} is running has a role of so called {\hyperref[glossary:term-tango-host]{\emph{Tango Host}}}. DataBaseds is a device server providing
 configuration information to all other components of the system as well as a runtime catalog of the components/devices. It
 allows (among others) client applications to find devices in distributed environment.
 
 The \index{TANGO\_HOST}\index{environment variable!TANGO\_HOST}\code{TANGO\_HOST} variable is providing information about the address or IP number and the port on which the DataBaseds is
-listening for connections. The \index{TANGO\_HOST}\index{environment variable!TANGO\_HOST}\code{TANGO\_HOST} environment variable is build as follows:
+listening for connections. The \index{TANGO\_HOST}\index{environment variable!TANGO\_HOST}\code{TANGO\_HOST} environment variable is built as follows:
 
 \emph{host\_name\_or\_IP:port}, example: \code{localhost:10000}
 \end{minipage}}
@@ -207,7 +207,7 @@ Follow instructions provided by the installation wizard.
 \item {} \begin{description}
 \item[{Configure \index{TANGO\_HOST}\index{environment variable!TANGO\_HOST}\code{TANGO\_HOST} environment variable:}] \leavevmode\begin{itemize}
 \item {} \begin{description}
-\item[{on Windows 8 and 10:}] \leavevmode\begin{itemize}
+\item[{On Windows 8 and 10:}] \leavevmode\begin{itemize}
 \item {} 
 From the Desktop, right-click the very bottom left corner of the screen to get
 the \emph{Power User Task Menu}.
@@ -241,10 +241,10 @@ then click the \emph{Environment Variables} button near the bottom of that tab.
 In the \emph{Environment Variables} window click the \emph{New} button.
 
 \item {} 
-In the filed \emph{Name} write \code{TANGO\_HOST}.
+In the field \emph{Name} write \code{TANGO\_HOST}.
 
 \item {} 
-In the field \emph{Value} write proper value. If it is only computer in the Tango System provide \code{localhost:10000}.
+In the field \emph{Value} write proper value. If it is the only computer in the Tango System provide \code{localhost:10000}.
 
 \end{itemize}
 
@@ -252,21 +252,21 @@ In the field \emph{Value} write proper value. If it is only computer in the Tang
 
 \end{itemize}
 
-If there is a {\hyperref[glossary:term-tango-host]{\emph{Tango Host}}} already running on some other computer in your deploymen and you have provided proper
+If there is a {\hyperref[glossary:term-tango-host]{\emph{Tango Host}}} already running on some other computer in your deployment and you have provided proper
 address and port in the \index{TANGO\_HOST}\index{environment variable!TANGO\_HOST}\code{TANGO\_HOST} you may start using client and management applications like
-\textbf{Jive}, \textbf{Jdraw}/\textbf{Synoptic}. In other case you have to configure the system to perform role of
+\textbf{Jive}, \textbf{Jdraw}/\textbf{Synoptic}. In other case you have to configure the system to perform a role of
 {\hyperref[glossary:term-tango-host]{\emph{Tango Host}}}.
 
 
 \section{Tango Host role}
 \label{tango-on-windows:tango-host-role}
 Tango Host role is created by running the \textbf{DataBaseds} device server. This device server requires MySQL
-database, in his most common application. To make a computer being a Tango Host you need to:
+database in its most common application. To make a computer become a Tango Host you need to:
 \begin{itemize}
 \item {} \begin{description}
 \item[{Install MySQL server.}] \leavevmode
-You may use community version available from \href{http://dev.mysql.com/downloads/mysql/}{http://dev.mysql.com/downloads/mysql/} . It is suggested to use MySQL
-Installer with all tools included. You may read more on MySQL installation topic there:
+You may use community version available from \href{http://dev.mysql.com/downloads/mysql/}{http://dev.mysql.com/downloads/mysql/} . It is suggested to use
+\textbf{MySQL Installer} with all tools included. You may read more on MySQL installation topic here:
 \href{http://dev.mysql.com/doc/refman/5.7/en/windows-installation.html}{http://dev.mysql.com/doc/refman/5.7/en/windows-installation.html}
 
 It is suggested to create dedicated \code{tango} user with \emph{DB Admin} priviledges during installation.
@@ -289,10 +289,10 @@ Invoke command: \textbf{\%TANGO\_ROOT\%bindbconfig.exe}.
 \begin{quote}
 
 \begin{notice}{note}{Note:}
-This let you setup two environment variables
-\index{MYSQL\_USER}\index{environment variable!MYSQL\_USER}\code{MYSQL\_USER} and \index{MYSQL\_PASSWORD}\index{environment variable!MYSQL\_PASSWORD}\code{MYSQL\_PASSWORD} used to MySQL server. You may use \code{root} credentials
+This lets you setup two environment variables
+\index{MYSQL\_USER}\index{environment variable!MYSQL\_USER}\code{MYSQL\_USER} and \index{MYSQL\_PASSWORD}\index{environment variable!MYSQL\_PASSWORD}\code{MYSQL\_PASSWORD} used to access the MySQL server. You may use \code{root} credentials
 provided upon MySQL installation if it is your development workstation. For production environment it is
-suggested to create additional user with \code{DB Admin} privileges. On Windows you may use \code{MySQL installer}
+suggested to create an additional user with \code{DB Admin} privileges. On Windows you may use \textbf{MySQL Installer}
 from \emph{Start} menu and select the option \emph{Reconfigure} for MySQL Server.
 Please refer to: \href{http://dev.mysql.com/doc/refman/5.7/en/adding-users.html}{http://dev.mysql.com/doc/refman/5.7/en/adding-users.html}
 \end{notice}
@@ -303,16 +303,16 @@ Please refer to: \href{http://dev.mysql.com/doc/refman/5.7/en/adding-users.html}
 \end{description}
 
 \item {} \begin{description}
-\item[{Populate database with initial Tango configuration:}] \leavevmode\begin{itemize}
+\item[{Populate database with an initial Tango configuration:}] \leavevmode\begin{itemize}
 \item {} 
-Open command line.
+Open a command line.
 
 \item {} 
 Add MySQL client to be available in the PATH. For MySQL version 5.7 the command should be:
 \textbf{set PATH=\%PATH\%;''C:Program FilesMySQLMySQL Server 5.7bin''}
 
 \begin{notice}{note}{Note:}
-Adjust the path according to you MySQL version and the path where it is installed.
+Adjust the path according to your MySQL version and the path where it is installed.
 \end{notice}
 
 \item {} 
@@ -328,14 +328,14 @@ Call \textbf{create\_db.bat}.
 \item {} \begin{description}
 \item[{Start a \textbf{DataBaseds} {\hyperref[glossary:term-device-server]{\emph{Device Server}}}:}] \leavevmode\begin{itemize}
 \item {} 
-open new command line window.
+Open a new command line window.
 
 \item {} 
-in the command line call \textbf{``\%TANGO\_ROOT\%binstart-db.bat''}.
+In the command line call \textbf{``\%TANGO\_ROOT\%binstart-db.bat''}.
 \begin{quote}
 
 \begin{notice}{note}{Note:}
-To make you Tango installation operational you have to have this \textbf{DataBaseds} running permanently.
+To make your Tango installation operational you have to have this \textbf{DataBaseds} running permanently.
 You may either add the command above to \emph{Autostart} or run it as a service.
 \end{notice}
 \end{quote}
@@ -345,7 +345,7 @@ You may either add the command above to \emph{Autostart} or run it as a service.
 \end{description}
 
 \item {} \begin{description}
-\item[{Make \textbf{DataBaseds} run as service}] \leavevmode
+\item[{Make \textbf{DataBaseds} run as a service}] \leavevmode
 \begin{notice}{note}{Note:}
 The proposed solution uses NSSM tool which works on all versions of Windows but you may find some other tools
 available including native srvany.exe.
@@ -367,13 +367,13 @@ Change current path to where the \textbf{nssm} is unpacked or copied, eg. \textb
 \item {} \begin{description}
 \item[{Invoke \textbf{nssm.exe install Tango-DataBaseds}. This will open a window where you can define service parameters.}] \leavevmode\begin{itemize}
 \item {} \begin{description}
-\item[{In the Application tab provide information as follows (adjust if you installation path is different).}] \leavevmode
+\item[{In the Application tab provide information as follows (adjust if your installation path is different).}] \leavevmode
 \includegraphics{databaseds-as-service-01.png}
 
 \end{description}
 
 \item {} \begin{description}
-\item[{In the Environment tab provide variables with credentials used for accessting the MySQL, like:}] \leavevmode
+\item[{In the Environment tab provide variables with credentials used for accessing the MySQL, like:}] \leavevmode
 \includegraphics{databaseds-as-service-02.png}
 
 \end{description}
@@ -413,8 +413,8 @@ Prepare folder for {\hyperref[glossary:term-device-servers]{\emph{Device Servers
 \begin{quote}
 
 \begin{notice}{note}{Note:}
-To let your device servers start with \textbf{Starter} service their executables has to be in a path without
-spaces. This a limitation of the current \textbf{Starter} implementation.
+To let your device servers start with \textbf{Starter} service their executables have to be in a path without
+spaces. This is a limitation of the current \textbf{Starter} implementation.
 \end{notice}
 \begin{itemize}
 \item {} 
@@ -425,7 +425,7 @@ with \textbf{mkdir c:DeviceServersbin}
 Change to the Tango bin directory with command (\textbf{cd ``\%TANGO\_ROOT\%bin''})
 
 \item {} 
-Copy \textbf{TangoTest} {\hyperref[glossary:term-device-server]{\emph{Device Server}}} to newly crated folder:
+Copy \textbf{TangoTest} {\hyperref[glossary:term-device-server]{\emph{Device Server}}} to the newly crated folder:
 \textbf{copy TangoTest.exe c:DeviceServersbin}
 
 \end{itemize}
@@ -441,7 +441,7 @@ call \textbf{tango-astor.bat}
 In \emph{Astor} window select menu \emph{\DUspan{accelerator}{C}ommand \(\rightarrow\) Add a New Host}
 
 \item {} \begin{description}
-\item[{In the from that appear provide your \emph{Host name} and \emph{Device Servers PATH}.}] \leavevmode
+\item[{In the form that appears provide your \emph{Host name} and \emph{Device Servers PATH}.}] \leavevmode
 \includegraphics{starter-01.png}
 
 \end{description}
@@ -470,7 +470,7 @@ In the Application tab provide information as follows:
 
 \end{itemize}
 
-Adjust if you installation path is different. In \emph{Arguments} exchange \code{pg-dell-new} with proper name
+Adjust if your installation path is different. In \emph{Arguments} exchange \code{pg-dell-new} with the proper name
 of your host.
 \begin{itemize}
 \item {} 
@@ -524,7 +524,7 @@ Double Click on your computer name to open \emph{Control Panel}. It opens a wind
 Click \emph{Start new}.
 
 \item {} 
-In window opened select \emph{TangoTest/test}:
+In the open window select \emph{TangoTest/test}:
 \begin{quote}
 
 \includegraphics{device-server-03.png}
@@ -534,7 +534,7 @@ In window opened select \emph{TangoTest/test}:
 Click \emph{Start Server}.
 
 \item {} 
-In opened window select \emph{Controlled by Astro -\textgreater{} Yes}, and \emph{Startup Level -\textgreater{} Level 1}.
+In the open window select \emph{Controlled by Astro -\textgreater{} Yes}, and \emph{Startup Level -\textgreater{} Level 1}.
 \begin{quote}
 
 \includegraphics{device-server-04.png}
@@ -557,7 +557,7 @@ You need to copy an executable to the folder configured for \textbf{Starter}. In
 \code{C:DeviceServersbin}.
 
 \item {} 
-Then use \textbf{Astor}. After opening \emph{Control panel} for your computer (double clicking on label)
+Then use \textbf{Astor}. After opening \emph{Control panel} for your computer (double clicking on a label)
 and selection \emph{Start New}...
 
 \item {} 
@@ -589,11 +589,11 @@ You should check PyTango and Taurus library and tools to cope with scripting and
 \chapter{Glossary}
 \label{glossary:glossary}\label{glossary::doc}\label{glossary:index-0}\begin{description}
 \item[{\index{device server|textbf}device server, \index{device servers|textbf}device servers}] \leavevmode\phantomsection\label{glossary:term-device-server}
-Device Server is a program (executable) which is able to create :term:'device' of certain classes. To create d
+Device Server is a program (executable) which is able to create :term:'device' of certain classes...
 
 \item[{\index{device|textbf}device}] \leavevmode\phantomsection\label{glossary:term-device}
-Device is key concept of Tango Controls. It is an object providing access to its {\hyperref[glossary:term-attributes]{\emph{attributes}}},
-{\hyperref[glossary:term-pipes]{\emph{pipes}}} and {\hyperref[glossary:term-commands]{\emph{commands}}}. Device is
+Device is a key concept of Tango Controls. It is an object providing access to its {\hyperref[glossary:term-attributes]{\emph{attributes}}},
+{\hyperref[glossary:term-pipes]{\emph{pipes}}} and {\hyperref[glossary:term-commands]{\emph{commands}}}. Device is...
 
 \item[{\index{attribute|textbf}attribute, \index{attributes|textbf}attributes}] \leavevmode\phantomsection\label{glossary:term-attribute}
 An attribute is...
