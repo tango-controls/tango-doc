@@ -12,8 +12,9 @@ Welcome to Tango Controls documentation!
 Contents:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
+   java-server-guide/index
    tango-on-windows
    pytango-and-taurus-on-windows
    glossary
