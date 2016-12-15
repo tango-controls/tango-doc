@@ -3,27 +3,22 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-.. image:: img/logo_tangocontrols.png
+.. image:: ../img/logo_tangocontrols.png
     :align: center
 
-Welcome to Tango Controls documentation!
-========================================
+TANGO Device Server Guidelines
+==============================
 
 Contents:
 
 .. toctree::
    :maxdepth: 2
 
-   tango-on-windows
-   pytango-and-taurus-on-windows
-   glossary
+   TangoDesignGuidelines-Revision-7
 
 
 
-Indices and tables
-==================
 
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
-

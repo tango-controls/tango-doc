@@ -1,4 +1,4 @@
-**Versions of the document **
+**Versions of the document**
 
 +--------------+-------------------+----------------+-----------------------------------------+----------------+
 | **Date**     | **Writer**        | **Reviewer**   | **Modifications**                       | **Revision**   |
