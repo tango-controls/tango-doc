@@ -3,28 +3,22 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-.. image:: img/logo_tangocontrols.png
+.. image:: ../img/logo_tangocontrols.png
     :align: center
 
-Welcome to Tango Controls documentation!
-========================================
+Tango Device in Java
+====================
 
 Contents:
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
-   ds-guide/index
-   java-server-guide/index
-   tango-on-windows
-   pytango-and-taurus-on-windows
-   glossary
+   JavaServerUserDoc
 
 
 
 
-Indices and tables
-==================
 
 * :ref:`genindex`
 * :ref:`modindex`
