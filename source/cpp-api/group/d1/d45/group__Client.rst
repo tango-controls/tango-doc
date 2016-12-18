@@ -1,0 +1,4 @@
+Group Client
+============
+
+.. doxygengroup:: Client
