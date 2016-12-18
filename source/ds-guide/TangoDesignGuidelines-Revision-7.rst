@@ -177,8 +177,7 @@ always\_executed\_hook versus read\_attr\_hardware*
 `*1.18* *Appendix 2 – Full code samples*
 41 <#appendix-2-full-code-samples>`__
 
-    *
-    Illustrations table*
+    *Illustrations table*
 
 `*Figure 1 : The software bus view of devices* 9 <#_Toc372125445>`__
 
@@ -1187,11 +1186,9 @@ details.
 
 When the design of the Tango class requires threading:
 
-• in case of simple thread usage, in C++ the recommendation is to use a
-C++11 thread
+• in case of simple thread usage, in C++ the recommendation is to use a C++11 thread
 
-• In case of acquisition thread with messages exchange in C++ the
-recommendation is to use Yat4TANGO::DeviceTask class..
+• In case of acquisition thread with messages exchange in C++ the recommendation is to use Yat4TANGO::DeviceTask class..
 
 TANGO device implementation
 ===========================
@@ -1630,8 +1627,7 @@ Semantics of non-nominal states
 Although the developer is free to choose the device states, we must
 define a common error state for all the devices.
 
-In general, any dysfunction is associated with the state *TANGO::
-FAULT*.
+In general, any dysfunction is associated with the state *TANGO::FAULT*.
 
 The use of the *TANGO::ALARM* state should be reserved for very special
 cases where it is necessary to define an intermediate state between
@@ -1650,17 +1646,11 @@ The device states changes when the init execution is over.
 
 Semantics recommended for FAULT and ALARM states is as follows:
 
-• UNKNOWN (grey): communication problem with the equipment or the
-“sub”-devices which prevents the device to really know his real state
+• UNKNOWN (grey): communication problem with the equipment or the “sub”-devices which prevents the device to really know his real state
 
-• FAULT (red): A problem which prevents the normal functioning
-(including during the initialization). Getting out from a FAULT state is
-possible only by repairing the cause of the problem and/or executing a
-Reset command.
+• FAULT (red): A problem which prevents the normal functioning (including during the initialization). Getting out from a FAULT state is possible only by repairing the cause of the problem and/or executing a Reset command.
 
-• ALARM (orange): the device is functional but one element is out of
-range (bad parameters but not preventing the functioning, limit switch
-of a motor). An attribute is out of range.
+• ALARM (orange): the device is functional but one element is out of range (bad parameters but not preventing the functioning, limit switch of a motor). An attribute is out of range.
 
 State machine management
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1761,10 +1751,9 @@ The rules to follow are:
 
 • Logs to the console are prohibited. The developer must use the logging
 stream proposed by TANGO (there is a stream for every logging level, the
-levels being inclusive in the order specified below). : *DEBUG\_STREAM,
-INFO\_STREAM, WARN\_STREAM, ERROR\_STREAM, FATAL\_STREAM*
+levels being inclusive in the order specified below). : *DEBUG\_STREAM, INFO\_STREAM, WARN\_STREAM, ERROR\_STREAM, FATAL\_STREAM*
 
--  It is important to use the right level of *logging*: on a higher
+-  It is important to use the right level of *logging* : on a higher
    level than DEBUG, the device should be a little wordy. Beyond the
    INFO level, it should produce only critical logs.
 
@@ -1994,17 +1983,11 @@ first exception, the others can disappear.
 
 **Exception handling in init\_device method: **
 
-- no exceptions should be propagated from the method
-*MyDevice::init\_device*\ **.** Otherwise, **the device quits.** The
-device should be kept alive regardless of any failure.
+- no exceptions should be propagated from the method *MyDevice::init\_device*\ **.** Otherwise, **the device quits.** The device should be kept alive regardless of any failure.
 
-- The code for this method must contain a try / catch block, which
-guarantees that no exception is propagated in this context
+- The code for this method must contain a try / catch block, which guarantees that no exception is propagated in this context
 
-- If an exception is thrown, the developer must set the device state to
-FAULT and update the Status to indicate the error nature. (*The goal is
-to understand easily why the device failed to initialize properly, while
-still allowing the operator to adjust this or these problems*)
+- If an exception is thrown, the developer must set the device state to FAULT and update the Status to indicate the error nature. (*The goal is to understand easily why the device failed to initialize properly, while still allowing the operator to adjust this or these problems*)
 
 **Examples of error handling in C++:**
 
@@ -2109,8 +2092,7 @@ Example C++ « AttributeSequenceWriter » :
 
 Example C++ « NITC01 » :
 
-.. [1]
-   http://www.tango-controls.org
+.. [1] http://www.tango-controls.org
 
 .. |image0| image:: media/image2.emf
 .. |image1| image:: media/image6.png
