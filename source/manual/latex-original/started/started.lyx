@@ -1,0 +1,1668 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass book
+\begin_preamble
+\usepackage{a4wide}
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding latin1
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 0
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 5
+\tocdepth 5
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+Getting Started
+\end_layout
+
+\begin_layout Section
+A C++ TANGO client
+\end_layout
+
+\begin_layout Standard
+\noindent
+The quickest way of getting started is by studying this example :
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "line.tex"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+\noindent
+/* 
+\end_layout
+
+\begin_layout LyX-Code
+\noindent
+ * example of a client using the TANGO C++ api.
+\end_layout
+
+\begin_layout LyX-Code
+\noindent
+ */
+\end_layout
+
+\begin_layout LyX-Code
+\noindent
+#include <tango.h>
+\end_layout
+
+\begin_layout LyX-Code
+\noindent
+using namespace Tango;
+\end_layout
+
+\begin_layout LyX-Code
+\noindent
+int main(unsigned int argc, char **argv)
+\end_layout
+
+\begin_layout LyX-Code
+\noindent
+{
+\end_layout
+
+\begin_layout LyX-Code
+    try
+\end_layout
+
+\begin_layout LyX-Code
+    {
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+//
+\end_layout
+
+\begin_layout LyX-Code
+// create a connection to a TANGO device
+\end_layout
+
+\begin_layout LyX-Code
+//
+\end_layout
+
+\begin_layout LyX-Code
+ 
+\end_layout
+
+\begin_layout LyX-Code
+        DeviceProxy *device = new DeviceProxy(
+\begin_inset Quotes eld
+\end_inset
+
+sys/database/2
+\begin_inset Quotes erd
+\end_inset
+
+);
+\end_layout
+
+\begin_layout LyX-Code
+ 
+\end_layout
+
+\begin_layout LyX-Code
+//
+\end_layout
+
+\begin_layout LyX-Code
+// Ping the device
+\end_layout
+
+\begin_layout LyX-Code
+//
+\end_layout
+
+\begin_layout LyX-Code
+ 
+\end_layout
+
+\begin_layout LyX-Code
+        device->ping();
+\end_layout
+
+\begin_layout LyX-Code
+ 
+\end_layout
+
+\begin_layout LyX-Code
+//
+\end_layout
+
+\begin_layout LyX-Code
+// Execute a command on the device and extract the reply as a string
+\end_layout
+
+\begin_layout LyX-Code
+//
+\end_layout
+
+\begin_layout LyX-Code
+ 
+\end_layout
+
+\begin_layout LyX-Code
+        string db_info; 
+\end_layout
+
+\begin_layout LyX-Code
+        DeviceData cmd_reply;
+\end_layout
+
+\begin_layout LyX-Code
+        cmd_reply = device->command_inout(
+\begin_inset Quotes eld
+\end_inset
+
+DbInfo
+\begin_inset Quotes erd
+\end_inset
+
+);
+\end_layout
+
+\begin_layout LyX-Code
+        cmd_reply >> db_info;
+\end_layout
+
+\begin_layout LyX-Code
+        cout << 
+\begin_inset Quotes eld
+\end_inset
+
+Command reply 
+\begin_inset Quotes eld
+\end_inset
+
+ << db_info << endl;
+\end_layout
+
+\begin_layout LyX-Code
+ 
+\end_layout
+
+\begin_layout LyX-Code
+//
+\end_layout
+
+\begin_layout LyX-Code
+// Read a device attribute (string data type)
+\end_layout
+
+\begin_layout LyX-Code
+//
+\end_layout
+
+\begin_layout LyX-Code
+ 
+\end_layout
+
+\begin_layout LyX-Code
+        string spr;
+\end_layout
+
+\begin_layout LyX-Code
+        DeviceAttribute att_reply;
+\end_layout
+
+\begin_layout LyX-Code
+        att_reply = device->read_attribute(
+\begin_inset Quotes eld
+\end_inset
+
+StoredProcedureRelease
+\begin_inset Quotes erd
+\end_inset
+
+);
+\end_layout
+
+\begin_layout LyX-Code
+        att_reply >> spr;
+\end_layout
+
+\begin_layout LyX-Code
+        cout << 
+\begin_inset Quotes eld
+\end_inset
+
+Database device stored procedure release: 
+\begin_inset Quotes eld
+\end_inset
+
+ << spr << endl;
+\end_layout
+
+\begin_layout LyX-Code
+    }
+\end_layout
+
+\begin_layout LyX-Code
+\noindent
+    catch (DevFailed &e)
+\end_layout
+
+\begin_layout LyX-Code
+\noindent
+    {
+\end_layout
+
+\begin_layout LyX-Code
+\noindent
+        Except::print_exception(e);
+\end_layout
+
+\begin_layout LyX-Code
+\noindent
+        exit(-1);
+\end_layout
+
+\begin_layout LyX-Code
+\noindent
+    } 
+\end_layout
+
+\begin_layout LyX-Code
+\noindent
+}
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "line.tex"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Modify this example to fit your device server or client's needs, compile
+ it and link with the library -ltango.
+ Forget about those painful early TANGO days when you had to learn CORBA
+ and manipulate Any's.
+ Life's going to easy and fun from now on !
+\end_layout
+
+\begin_layout Section
+A TANGO device server
+\end_layout
+
+\begin_layout Standard
+The code given in this chapter as example has been generated using POGO.
+ Pogo
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Pogo
+\end_layout
+
+\end_inset
+
+ is a code generator for Tango device server.
+ See 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Pogo doc"
+
+\end_inset
+
+ for more information about POGO.
+ The following examples briefly describe how to write device class with
+ commands which receives and return different kind of Tango data types and
+ also how to write device attributes
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+attribute
+\end_layout
+
+\end_inset
+
+ The device class implements 5 commands and 3 attributes.
+ The commands are :
+\end_layout
+
+\begin_layout Itemize
+The command 
+\series bold
+DevSimple
+\series default
+ deals with simple Tango data type
+\end_layout
+
+\begin_layout Itemize
+The command 
+\series bold
+DevString
+\series default
+ deals with Tango strings
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+DevArray
+\series default
+ receive and return an array of simple Tango data type
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+DevStrArray
+\series default
+ which does not receive any data but which returns an array of strings
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+DevStruct
+\series default
+ which also does not receive data but which returns one of the two Tango
+ composed types (DevVarDoubleStringArray)
+\end_layout
+
+\begin_layout Standard
+For all these commands, the default behavior of the state machine (command
+ always allowed) is acceptable.
+ The attributes are :
+\end_layout
+
+\begin_layout Itemize
+A spectrum type attribute of the Tango string type called 
+\series bold
+StrAttr
+\end_layout
+
+\begin_layout Itemize
+A readable attribute of the Tango::DevLong type called 
+\series bold
+LongRdAttr
+\series default
+.
+ This attribute is linked with the following writable attribute
+\end_layout
+
+\begin_layout Itemize
+A writable attribute also of the Tango::DevLong type called 
+\series bold
+LongWrAttr
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+Since release 9, a Tango device also supports pipe.
+ This is an advanced feature reserved for some specific cases.
+ Therefore, there is no device pipe example in this "Getting started" chapter.
+\end_layout
+
+\begin_layout Subsection
+The commands and attributes code
+\end_layout
+
+\begin_layout Standard
+For each command called DevXxxx, pogo generates in the device class a method
+ named dev_xxx which will be executed when the command is requested by a
+ client.
+ In this chapter, the name of the device class is 
+\emph on
+DocDs
+\end_layout
+
+\begin_layout Subsubsection
+The DevSimple command
+\end_layout
+
+\begin_layout Standard
+This method receives a Tango::DevFloat
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Tango::DevFloat
+\end_layout
+
+\end_inset
+
+ type and also returns a data of the Tango::DevFloat type which is simply
+ the double of the input value.
+ The code for the method executed by this command is the following:
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "line.tex"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+     1  Tango::DevFloat DocDs::dev_simple(Tango::DevFloat argin)
+\end_layout
+
+\begin_layout LyX-Code
+     2  {
+\end_layout
+
+\begin_layout LyX-Code
+     3          Tango::DevFloat argout ;
+\end_layout
+
+\begin_layout LyX-Code
+     4          DEBUG_STREAM << "DocDs::dev_simple(): entering...
+ !" << endl;
+\end_layout
+
+\begin_layout LyX-Code
+     5  
+\end_layout
+
+\begin_layout LyX-Code
+     6          //      Add your own code to control device here
+\end_layout
+
+\begin_layout LyX-Code
+     7  
+\end_layout
+
+\begin_layout LyX-Code
+     8          argout = argin * 2;
+\end_layout
+
+\begin_layout LyX-Code
+     9          return argout;
+\end_layout
+
+\begin_layout LyX-Code
+    10  }
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "line.tex"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This method is fairly simple.
+ The received data is passed to the method as its argument.
+ It is
+\end_layout
+
+\begin_layout Standard
+doubled at line 8 and the method simply returns the result.
+\end_layout
+
+\begin_layout Subsubsection
+The DevArray command
+\end_layout
+
+\begin_layout Standard
+This method receives a data of the Tango::DevVarLongArray
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Tango::DevVarLongArray
+\end_layout
+
+\end_inset
+
+ type and also returns a data of the Tango::DevVarLongArray type.
+ Each element of the array is doubled.
+ The code for the method executed by the command is the following :
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "line.tex"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+     1  Tango::DevVarLongArray *DocDs::dev_array(const Tango::DevVarLongArray
+ *argin)
+\end_layout
+
+\begin_layout LyX-Code
+     2  {
+\end_layout
+
+\begin_layout LyX-Code
+     3          //      POGO has generated a method core with argout allocation.
+\end_layout
+
+\begin_layout LyX-Code
+     4          //      If you would like to use a static reference without
+ copying,
+\end_layout
+
+\begin_layout LyX-Code
+     5          //      See "TANGO Device Server Programmer's Manual"
+\end_layout
+
+\begin_layout LyX-Code
+     6          //              (chapter x.x)
+\end_layout
+
+\begin_layout LyX-Code
+     7          //------------------------------------------------------------
+\end_layout
+
+\begin_layout LyX-Code
+     8          Tango::DevVarLongArray  *argout  = new Tango::DevVarLongArray();
+\end_layout
+
+\begin_layout LyX-Code
+     9                  
+\end_layout
+
+\begin_layout LyX-Code
+    10          DEBUG_STREAM << "DocDs::dev_array(): entering...
+ !" << endl;
+\end_layout
+
+\begin_layout LyX-Code
+    11  
+\end_layout
+
+\begin_layout LyX-Code
+    12          //      Add your own code to control device here
+\end_layout
+
+\begin_layout LyX-Code
+    13  
+\end_layout
+
+\begin_layout LyX-Code
+    14          long argin_length = argin->length();    
+\end_layout
+
+\begin_layout LyX-Code
+    15          argout->length(argin_length);
+\end_layout
+
+\begin_layout LyX-Code
+    16          for (int i = 0;i < argin_length;i++)
+\end_layout
+
+\begin_layout LyX-Code
+    17                  (*argout)[i] = (*argin)[i] * 2;
+\end_layout
+
+\begin_layout LyX-Code
+    18  
+\end_layout
+
+\begin_layout LyX-Code
+    19          return argout;
+\end_layout
+
+\begin_layout LyX-Code
+    20  }
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "line.tex"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The argout data array is created at line 8.
+ Its length is set at line 15 from the input argument length.
+ The array is populated at line 16,17 and returned.
+ This method allocates memory
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+memory
+\end_layout
+
+\end_inset
+
+ for the argout array.
+ This memory is freed by the Tango core classes after the data have been
+ sent to the caller (no delete is needed).
+ It is also possible to return data from a statically allocated array without
+ copying.
+ Look at chapter 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Data exchange"
+
+\end_inset
+
+ for all the details.
+\end_layout
+
+\begin_layout Subsubsection
+The DevString command
+\end_layout
+
+\begin_layout Standard
+This method receives a data of the Tango::DevString
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Tango::DevString
+\end_layout
+
+\end_inset
+
+ type and also returns a data of the Tango::DevString type.
+ The command simply displays the content of the input string and returns
+ a hard-coded string.
+ The code for the method executed by the command is the following :
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "line.tex"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+     1  Tango::DevString DocDs::dev_string(Tango::DevString argin)
+\end_layout
+
+\begin_layout LyX-Code
+     2  {
+\end_layout
+
+\begin_layout LyX-Code
+     3          //      POGO has generated a method core with argout allocation.
+\end_layout
+
+\begin_layout LyX-Code
+     4          //      If you would like to use a static reference without
+ copying,
+\end_layout
+
+\begin_layout LyX-Code
+     5          //      See "TANGO Device Server Programmer's Manual"
+\end_layout
+
+\begin_layout LyX-Code
+     6          //              (chapter x.x)
+\end_layout
+
+\begin_layout LyX-Code
+     7          //------------------------------------------------------------
+\end_layout
+
+\begin_layout LyX-Code
+     8          Tango::DevString        argout;
+\end_layout
+
+\begin_layout LyX-Code
+     9          DEBUG_STREAM << "DocDs::dev_string(): entering...
+ !" << endl;
+\end_layout
+
+\begin_layout LyX-Code
+    10  
+\end_layout
+
+\begin_layout LyX-Code
+    11          //      Add your own code to control device here
+\end_layout
+
+\begin_layout LyX-Code
+    12  
+\end_layout
+
+\begin_layout LyX-Code
+    13          cout << "the received string is " << argin << endl;
+\end_layout
+
+\begin_layout LyX-Code
+    14          
+\end_layout
+
+\begin_layout LyX-Code
+    15          string str("Am I a good Tango dancer ?");
+\end_layout
+
+\begin_layout LyX-Code
+    16          argout = new char[str.size() + 1];
+\end_layout
+
+\begin_layout LyX-Code
+    17          strcpy(argout,str.c_str());
+\end_layout
+
+\begin_layout LyX-Code
+    18          
+\end_layout
+
+\begin_layout LyX-Code
+    19          return argout;
+\end_layout
+
+\begin_layout LyX-Code
+    20  }
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "line.tex"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The argout string is created at line 8.
+ Internally, this method is using a standard C++ string.
+ Memory for the returned data is allocated at line 16 and is initialized
+ at line 17.
+ This method allocates memory
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+memory
+\end_layout
+
+\end_inset
+
+ for the argout string.
+ This memory is freed by the Tango core classes after the data have been
+ sent to the caller (no delete is needed).
+ It is also possible to return data from a statically allocated string without
+ copying.
+ Look at chapter 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Data exchange"
+
+\end_inset
+
+ for all the details.
+\end_layout
+
+\begin_layout Subsubsection
+The DevStrArray command
+\end_layout
+
+\begin_layout Standard
+This method does not receive input data but returns an array of strings
+ (Tango::DevVarStringArray
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Tango::DevVarStringArray
+\end_layout
+
+\end_inset
+
+ type).
+ The code for the method executed by this command is the following:
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "line.tex"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+     1  Tango::DevVarStringArray *DocDs::dev_str_array()
+\end_layout
+
+\begin_layout LyX-Code
+     2  {
+\end_layout
+
+\begin_layout LyX-Code
+     3          //      POGO has generated a method core with argout allocation.
+\end_layout
+
+\begin_layout LyX-Code
+     4          //      If you would like to use a static reference without
+ copying,
+\end_layout
+
+\begin_layout LyX-Code
+     5          //      See "TANGO Device Server Programmer's Manual"
+\end_layout
+
+\begin_layout LyX-Code
+     6          //              (chapter x.x)
+\end_layout
+
+\begin_layout LyX-Code
+     7          //------------------------------------------------------------
+\end_layout
+
+\begin_layout LyX-Code
+     8          Tango::DevVarStringArray        *argout  = new Tango::DevVarStri
+ngArray();
+\end_layout
+
+\begin_layout LyX-Code
+     9  
+\end_layout
+
+\begin_layout LyX-Code
+    10          DEBUG_STREAM << "DocDs::dev_str_array(): entering...
+ !" << endl;
+\end_layout
+
+\begin_layout LyX-Code
+    11  
+\end_layout
+
+\begin_layout LyX-Code
+    12          //      Add your own code to control device here
+\end_layout
+
+\begin_layout LyX-Code
+    13  
+\end_layout
+
+\begin_layout LyX-Code
+    14          argout->length(3);
+\end_layout
+
+\begin_layout LyX-Code
+    15          (*argout)[0] = CORBA::string_dup("Rumba");
+\end_layout
+
+\begin_layout LyX-Code
+    16          (*argout)[1] = CORBA::string_dup("Waltz");
+\end_layout
+
+\begin_layout LyX-Code
+    17          string str("Jerck");
+\end_layout
+
+\begin_layout LyX-Code
+    18          (*argout)[2] = CORBA::string_dup(str.c_str());
+\end_layout
+
+\begin_layout LyX-Code
+    19          return argout;
+\end_layout
+
+\begin_layout LyX-Code
+    20  }
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "line.tex"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The argout data array is created at line 8.
+ Its length is set at line 14.
+ The array is populated at line 15,16 and 18.
+ The last array element is initialized from a standard C++ string created
+ at line 17.
+ Note the usage of the 
+\emph on
+string_dup
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+string-dup
+\end_layout
+
+\end_inset
+
+
+\emph default
+ function of the CORBA namespace.
+ This is necessary for strings array due to the CORBA memory
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+memory
+\end_layout
+
+\end_inset
+
+ allocation schema.
+\end_layout
+
+\begin_layout Subsubsection
+The DevStruct command
+\end_layout
+
+\begin_layout Standard
+This method does not receive input data but returns a structure of the Tango::De
+vVarDoubleStringArray
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Tango::DevVarDoubleStringArray
+\end_layout
+
+\end_inset
+
+ type.
+ This type is a composed type with an array of double and an array of strings.
+ The code for the method executed by this command is the following:
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "line.tex"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+     1  Tango::DevVarDoubleStringArray *DocDs::dev_struct()
+\end_layout
+
+\begin_layout LyX-Code
+     2  {
+\end_layout
+
+\begin_layout LyX-Code
+     3          //      POGO has generated a method core with argout allocation.
+\end_layout
+
+\begin_layout LyX-Code
+     4          //      If you would like to use a static reference without
+ copying,
+\end_layout
+
+\begin_layout LyX-Code
+     5          //      See "TANGO Device Server Programmer's Manual"
+\end_layout
+
+\begin_layout LyX-Code
+     6          //              (chapter x.x)
+\end_layout
+
+\begin_layout LyX-Code
+     7          //------------------------------------------------------------
+\end_layout
+
+\begin_layout LyX-Code
+     8          Tango::DevVarDoubleStringArray  *argout  = new Tango::DevVarDoub
+leStringArray();
+\end_layout
+
+\begin_layout LyX-Code
+     9  
+\end_layout
+
+\begin_layout LyX-Code
+    10          DEBUG_STREAM << "DocDs::dev_struct(): entering...
+ !" << endl;
+\end_layout
+
+\begin_layout LyX-Code
+    11          
+\end_layout
+
+\begin_layout LyX-Code
+    12          //      Add your own code to control device here
+\end_layout
+
+\begin_layout LyX-Code
+    13  
+\end_layout
+
+\begin_layout LyX-Code
+    14          argout->dvalue.length(3);
+\end_layout
+
+\begin_layout LyX-Code
+    15          argout->dvalue[0] = 0.0;
+\end_layout
+
+\begin_layout LyX-Code
+    16          argout->dvalue[1] = 11.11;
+\end_layout
+
+\begin_layout LyX-Code
+    17          argout->dvalue[2] = 22.22;
+\end_layout
+
+\begin_layout LyX-Code
+    18          
+\end_layout
+
+\begin_layout LyX-Code
+    19          argout->svalue.length(2);
+\end_layout
+
+\begin_layout LyX-Code
+    20          argout->svalue[0] = CORBA::string_dup("Be Bop");
+\end_layout
+
+\begin_layout LyX-Code
+    21          string str("Smurf");
+\end_layout
+
+\begin_layout LyX-Code
+    22          argout->svalue[1] = CORBA::string_dup(str.c_str());
+\end_layout
+
+\begin_layout LyX-Code
+    23          
+\end_layout
+
+\begin_layout LyX-Code
+    24          return argout;
+\end_layout
+
+\begin_layout LyX-Code
+    25  }
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "line.tex"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The argout data structure is created at line 8.
+ The length of the double array in the output structure is set at line 14.
+ The array is populated between lines 15 and 17.
+ The length of the string array in the output structure is set at line 19.
+ This string array is populated between lines 20 an 22 from a hard-coded
+ string and from a standard C++ string.
+ This method allocates memory
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+memory
+\end_layout
+
+\end_inset
+
+ for the argout data.
+ This memory is freed by the Tango core classes after the data have been
+ sent to the caller (no delete is needed).
+ Note the usage of the 
+\emph on
+string_dup
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+string-dup
+\end_layout
+
+\end_inset
+
+
+\emph default
+ function of the CORBA namespace.
+ This is necessary for strings array due to the CORBA memory allocation
+ schema.
+\end_layout
+
+\begin_layout Subsubsection
+The three attributes
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+attribute
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Some data have been added to the definition of the device class in order
+ to store attributes value.
+ These data are (part of the class definition) :
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "line.tex"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+     1  
+\end_layout
+
+\begin_layout LyX-Code
+     2  
+\end_layout
+
+\begin_layout LyX-Code
+     3  protected :     
+\end_layout
+
+\begin_layout LyX-Code
+     4          //      Add your own data members here
+\end_layout
+
+\begin_layout LyX-Code
+     5          //-----------------------------------------
+\end_layout
+
+\begin_layout LyX-Code
+     6          Tango::DevString        attr_str_array[5];
+\end_layout
+
+\begin_layout LyX-Code
+     7          Tango::DevLong          attr_rd;
+\end_layout
+
+\begin_layout LyX-Code
+     8          Tango::DevLong          attr_wr;
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "line.tex"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+One data has been created for each attribute.
+ As the StrAttr attribute is of type spectrum with a maximum X dimension
+ of 5, an array of length 5 has been reserved.
+\end_layout
+
+\begin_layout Standard
+Several methods are necessary to implement these attributes.
+ One method to read the hardware which is common to all "readable" attributes
+ plus one "read" method for each readable attribute and one "write" method
+ for each writable attribute.
+ The code for these methods is the following :
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "line.tex"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+1 void DocDs::read_attr_hardware(vector<long> &attr_list)
+\end_layout
+
+\begin_layout LyX-Code
+2 {
+\end_layout
+
+\begin_layout LyX-Code
+3     DEBUG_STREAM << "DocDs::read_attr_hardware(vector<long> &attr_list)
+ entering...
+ "<< endl;
+\end_layout
+
+\begin_layout LyX-Code
+4 // Add your own code here
+\end_layout
+
+\begin_layout LyX-Code
+5 
+\end_layout
+
+\begin_layout LyX-Code
+6     string att_name;
+\end_layout
+
+\begin_layout LyX-Code
+7     for (long i = 0;i < attr_list.size();i++)
+\end_layout
+
+\begin_layout LyX-Code
+8     {
+\end_layout
+
+\begin_layout LyX-Code
+9         att_name = dev_attr->get_attr_by_ind(attr_list[i]).get_name();
+\end_layout
+
+\begin_layout LyX-Code
+10 
+\end_layout
+
+\begin_layout LyX-Code
+11        if (att_name == "LongRdAttr")
+\end_layout
+
+\begin_layout LyX-Code
+12        {
+\end_layout
+
+\begin_layout LyX-Code
+13            attr_rd = 5;
+\end_layout
+
+\begin_layout LyX-Code
+14        }
+\end_layout
+
+\begin_layout LyX-Code
+15    }
+\end_layout
+
+\begin_layout LyX-Code
+16 }
+\end_layout
+
+\begin_layout LyX-Code
+17 
+\end_layout
+
+\begin_layout LyX-Code
+18 void DocDs::read_LongRdAttr(Tango::Attribute &attr)
+\end_layout
+
+\begin_layout LyX-Code
+19 {
+\end_layout
+
+\begin_layout LyX-Code
+20     DEBUG_STREAM << "DocDs::read_LongRdAttr(Tango::Attribute &attr) entering...
+ "<< endl;
+\end_layout
+
+\begin_layout LyX-Code
+21 
+\end_layout
+
+\begin_layout LyX-Code
+22     attr.set_value(&attr_rd);
+\end_layout
+
+\begin_layout LyX-Code
+23 }
+\end_layout
+
+\begin_layout LyX-Code
+24 
+\end_layout
+
+\begin_layout LyX-Code
+25 void DocDs::read_LongWrAttr(Tango::Attribute &attr)
+\end_layout
+
+\begin_layout LyX-Code
+26 {
+\end_layout
+
+\begin_layout LyX-Code
+27     DEBUG_STREAM << "DocDs::read_LongWrAttr(Tango::Attribute &attr) entering...
+ "<< endl;
+\end_layout
+
+\begin_layout LyX-Code
+28 
+\end_layout
+
+\begin_layout LyX-Code
+29     attr.set_value(&attr_wr);
+\end_layout
+
+\begin_layout LyX-Code
+30 }
+\end_layout
+
+\begin_layout LyX-Code
+31 
+\end_layout
+
+\begin_layout LyX-Code
+32 void DocDs::write_LongWrAttr(Tango::WAttribute &attr)
+\end_layout
+
+\begin_layout LyX-Code
+33 {
+\end_layout
+
+\begin_layout LyX-Code
+34     DEBUG_STREAM << "DocDs::write_LongWrAttr(Tango::WAttribute &attr)
+ entering...
+ "<< endl;
+\end_layout
+
+\begin_layout LyX-Code
+35 
+\end_layout
+
+\begin_layout LyX-Code
+36     attr.get_write_value(attr_wr);
+\end_layout
+
+\begin_layout LyX-Code
+37     DEBUG_STREAM << "Value to be written = " << attr_wr << endl;
+\end_layout
+
+\begin_layout LyX-Code
+38 }
+\end_layout
+
+\begin_layout LyX-Code
+39 
+\end_layout
+
+\begin_layout LyX-Code
+40 void DocDs::read_StrAttr(Tango::Attribute &attr)
+\end_layout
+
+\begin_layout LyX-Code
+41 {
+\end_layout
+
+\begin_layout LyX-Code
+42     DEBUG_STREAM << "DocDs::read_StrAttr(Tango::Attribute &attr) entering...
+ "<< endl;
+\end_layout
+
+\begin_layout LyX-Code
+43 
+\end_layout
+
+\begin_layout LyX-Code
+44     attr_str_array[0] = const_cast<char *>("Rock");
+\end_layout
+
+\begin_layout LyX-Code
+45     attr_str_array[1] = const_cast<char *>("Samba");
+\end_layout
+
+\begin_layout LyX-Code
+46 
+\end_layout
+
+\begin_layout LyX-Code
+47     attr_set_value(attr_str_array, 2);
+\end_layout
+
+\begin_layout LyX-Code
+48 }
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "line.tex"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The 
+\emph on
+read_attr_hardware
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+read-attr-hardware
+\end_layout
+
+\end_inset
+
+()
+\emph default
+ method is executed once when a client execute the read_attributes
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+read-attributes
+\end_layout
+
+\end_inset
+
+ CORBA request whatever the number of attribute to be read is.
+ The rule of this method is to read the hardware and to store the read values
+ somewhere in the device object.
+ In our example, only the LongRdAttr attribute internal value is set by
+ this method at line 13.
+ The method 
+\emph on
+read_LongRdAttr()
+\emph default
+ is executed by the read_attributes
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+read-attributes
+\end_layout
+
+\end_inset
+
+ CORBA call when the LongRdAttr attribute is read but after the read_attr_hardwa
+re() method has been executed.
+ Its rule is to set the attribute value in the TANGO core classes object
+ representing the attribute.
+ This is done at line 22.
+ The method 
+\emph on
+read_LongWrAttr()
+\emph default
+ will be executed when the LongWrAttr attribute is read (after the 
+\emph on
+read_attr_hardware()
+\emph default
+ method).
+ The attribute value is set at line 29.
+ In the same manner, the method called 
+\emph on
+read_StrAttr()
+\emph default
+ will be executed when the attribute StrAttr is read.
+ Its value is initialized in this method at line 44 and 45 with the 
+\emph on
+string_dup
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+string-dup
+\end_layout
+
+\end_inset
+
+
+\emph default
+ Tango function.
+ There are several ways to code spectrum or image attribute of the DevString
+ data type.
+ A HowTo related to this topic is available on the Tango control system
+ Web site.
+ The 
+\emph on
+write_LongWrAttr()
+\emph default
+ method is executed when the LongWrAttr attribute
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+attribute
+\end_layout
+
+\end_inset
+
+ value is set by a client.
+ The new attribute value coming from the client is stored in the object
+ data at line 36.
+\end_layout
+
+\begin_layout Standard
+Pogo also generates a file called "DocDsStateMachine.cpp" (for a Tango device
+ server class called DocDs).
+ This file is used to store methods coding the device state machine.
+ By default a allways allowed state machine is provided.
+ For more information about coding the state machine, refer to the chapter
+ "Writing a device server".
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset CommandInset label
+LatexCommand label
+name "APicture"
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename ../dance/tg_argentine.jpg
+	groupId pictures
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

@@ -1,0 +1,54 @@
+     1	#include <tango.h>
+     2	
+     3	#define AGSM_MAX_MOTORS 8 // maximum number of motors per device
+     4	
+     5	namespace StepperMotor
+     6	{
+     7	
+     8	class StepperMotor: public TANGO_BASE_CLASS
+     9	{
+    10	public :
+    11		StepperMotor(Tango::DeviceClass *,string &);
+    12		StepperMotor(Tango::DeviceClass *,const char *);
+    13		StepperMotor(Tango::DeviceClass *,const char *,const char *);
+    14		~StepperMotor() {};
+    15		
+    16		DevLong dev_read_position(DevLong);
+    17		DevLong dev_read_direction(DevLong);
+    18		bool direct_cmd_allowed(const CORBA::Any &);
+    19		
+    20		virtual Tango::DevState dev_state();
+    21		virtual Tango::ConstDevString dev_status();
+    22	
+    23		virtual void always_executed_hook();
+    24	
+    25		virtual void read_attr_hardware(vector<long> &attr_list);
+    26		virtual void write_attr_hardware(vector<long> &attr_list);
+    27	
+    28		void read_position(Tango::Attribute &);
+    29		bool is_Position_allowed(Tango::AttReqType req);
+    30		void write_SetPosition(Tango::WAttribute &);
+    31		void read_Direction(Tango::Attribute &);
+    32				
+    33		virtual void init_device();
+    34		virtual void delete_device();
+    35	
+    36		void get_device_properties();
+    37	
+    38	protected :	
+    39		long axis[AGSM_MAX_MOTORS];
+    40		DevLong position[AGSM_MAX_MOTORS];
+    41		DevLong direction[AGSM_MAX_MOTORS];
+    42		long state[AGSM_MAX_MOTORS];
+    43		
+    44		Tango::DevLong	*attr_Position_read;
+    45		Tango::DevLong	*attr_Direction_read;
+    46		Tango::DevLong	attr_SetPosition_write;
+    47	
+    48		Tango::DevLong	min;
+    49		Tango::DevLong	max;
+    50	
+    51		Tango::DevLong *ptr;
+    52	};
+    53	
+    54	} /* End of StepperMotor namespace */

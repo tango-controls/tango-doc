@@ -1,0 +1,46 @@
+     1	#include <tango.h>
+     2	#include <steppermotor.h>
+     3	
+     4	namespace StepperMotor
+     5	{
+     6	
+     7	StepperMotor::StepperMotor(Tango::DeviceClass *cl,string &s)
+     8	:TANGO_BASE_CLASS(cl,s.c_str())
+     9	{
+    10		init_device();
+    11	}
+    12	
+    13	StepperMotor::StepperMotor(Tango::DeviceClass *cl,const char *s)
+    14	:TANGO_BASE_CLASS(cl,s)
+    15	{
+    16		init_device();
+    17	}
+    18	
+    19	StepperMotor::StepperMotor(Tango::DeviceClass *cl,const char *s,const char *d)
+    20	:TANGO_BASE_CLASS(cl,s,d)
+    21	{
+    22		init_device();
+    23	}
+    24	
+    25	void StepperMotor::init_device()
+    26	{
+    27		cout << "StepperMotor::StepperMotor() create " << device_name << endl;
+    28	
+    29		long i;
+    30	
+    31		for (i=0; i< AGSM_MAX_MOTORS; i++)
+    32		{
+    33	        	axis[i] = 0;
+    34	        	position[i] = 0;
+    35	        	direction[i] = 0;
+    36		}
+    37	
+    38		ptr = new Tango::DevLong[10];
+    39	
+    40		get_device_properties();
+    41	}
+    42	
+    43	void StepperMotor::delete_device()
+    44	{
+    45		delete [] ptr;
+    46	}

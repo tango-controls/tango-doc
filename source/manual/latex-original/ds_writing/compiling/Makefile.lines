@@ -1,0 +1,44 @@
+     1	#
+     2	#		Makefile to generate a Tango server
+     3	#
+     4	
+     5	CC = /usr/local/bin/c++
+     6	AR = ar
+     7	BIN_DIR = linuxx86
+     8	ORBACUS_BASE = /segfs/tango/ORB/ORBacus/linux
+     9	JTC_BASE = /segfs/tango/JTC/linux
+    10	
+    11	TANGO_HOME = /segfs/tango
+    12	
+    13	INCLUDE_DIRS = -I $(ORBACUS_BASE)/include \
+    14		       -I $(JTC_BASE)/include  \
+    15		       -I $(TANGO_HOME)/include \
+    16		       -I .
+    17	
+    18	LIB_DIRS = -L $(ORBACUS_BASE)/lib \
+    19	  	   -L $(JTC_BASE)/lib \
+    20	           -L $(TANGO_HOME)/$(BIN_DIR)
+    21	
+    22	
+    23	CXXFLAGS =  $(INCLUDE_DIRS)
+    24	LFLAGS =  $(LIB_DIRS) -ltango -lOB -lJTC -lpthread
+    25	
+    26	
+    27	SVC_OBJS = 	main.o \
+    28			classfactory.o \
+    29			steppermotorclass.o \
+    30			steppermotor.o
+    31	
+    32	
+    33	.SUFFIXES:	.o .cpp
+    34	.cpp.o:
+    35		$(CC) $(CXXFLAGS) -c $<
+    36		
+    37				
+    38	all: StepperMotor
+    39	
+    40	StepperMotor:	$(SVC_OBJS)
+    41		$(CC) $(SVC_OBJS) -o $(BIN_DIR)/StepperMotor $(LFLAGS)
+    42		
+    43	clean:
+    44		rm -f *.o core

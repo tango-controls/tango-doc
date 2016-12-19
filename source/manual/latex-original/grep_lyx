@@ -1,0 +1,33 @@
+#!/bin/bash
+
+echo "--->  In advanced chapter"
+grep -i $1 advanced/advanced.lyx
+
+echo "--->  In appendix chapter"
+grep -i $1 appendix/idl.lyx
+grep -i $1 appendix/appendix.lyx
+grep -i $1 appendix/naming.lyx
+
+echo "--->  In atk chapter"
+grep -i $1 atk/programmersguid.lyx
+
+echo "---> In gen_api chapter"
+grep -i $1 gen_api/genapi.lyx
+
+echo "--->  In cppapi chapter"
+grep -i $1 cpp_api/cppapi.lyx
+
+echo "--->  In ds_model chapter"
+grep -i $1 ds_model/ds_model.lyx
+
+echo "--->  In ds_writing chapter"
+grep -i $1 ds_writing/ds_writing.lyx
+
+echo "--->  In introduction chapter"
+grep -i $1 intro/intro.lyx
+
+echo "--->  In started chapter"
+grep -i $1 started/started.lyx
+
+echo "--->  In main document"
+grep -i $1 tango.lyx

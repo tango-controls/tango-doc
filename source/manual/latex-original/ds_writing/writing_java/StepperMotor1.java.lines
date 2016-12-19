@@ -1,0 +1,44 @@
+     1	package StepperMotor;
+     2	
+     3	import java.util.*;
+     4	import org.omg.CORBA.*;
+     5	import fr.esrf.Tango.*;
+     6	import fr.esrf.TangoDs.*;
+     7	
+     8	public class StepperMotor extends DeviceImpl implements TangoConst
+     9	{
+    10		protected final int SM_MAX_MOTORS = 8;
+    11		
+    12		protected int[] 		axis = new int[SM_MAX_MOTORS];
+    13		protected int[]			position = new int[SM_MAX_MOTORS];
+    14		protected int[] 		direction = new int[SM_MAX_MOTORS];	
+    15		protected int[]			state = new int[SM_MAX_MOTORS];
+    16		
+    17		protected int[]			attr_Direction_read = new int[1];
+    18		protected int[]			attr_Position_read = new int[1];
+    19		protected int			attr_SetPosition_write;
+    20			
+    21	
+    22		StepperMotor(DeviceClass cl,String s,String desc,
+    23			     DevState state,String status) throws DevFailed
+    24		{
+    25			super(cl,s,desc,state,status);
+    26			init_device();
+    27		}
+    28	
+    29		public void init_device()
+    30		{
+    31			System.out.println("StepperMotor() create motor " + dev_name);
+    32	
+    33			int i;
+    34	
+    35			for (i=0; i< SM_MAX_MOTORS; i++)
+    36			{
+    37	        		axis[i] = 0;
+    38	        		position[i] = 0;
+    39	        		direction[i] = 0;
+    40	        		state[i] = 0;
+    41			}
+    42	
+    43		}
+    44	}
