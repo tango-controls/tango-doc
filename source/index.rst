@@ -17,6 +17,7 @@ Contents:
    manual/index
    ds-guide/index
    java-server-guide/index
+   cpp-api/index
    tango-on-windows
    pytango-and-taurus-on-windows
    glossary

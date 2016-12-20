@@ -9,12 +9,12 @@ Welcome to cppTango's documentation!
 Contents:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 5
 
-   class
-   file
-   group
-   namespace
-   struct
-   union
+   classlist
+   filelist
+   grouplist
+   namespacelist
+   structlist
+   unionlist
 

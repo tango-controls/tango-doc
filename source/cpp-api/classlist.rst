@@ -2,6 +2,6 @@ Class list
 ==========
 
 .. toctree::
-   :glob:
+   :maxdepth: 5
 
    class/*
