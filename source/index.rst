@@ -14,6 +14,7 @@ Contents:
 .. toctree::
    :maxdepth: 1
 
+   manual/index
    ds-guide/index
    java-server-guide/index
    tango-on-windows
