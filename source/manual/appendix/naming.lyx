@@ -1,0 +1,503 @@
+#LyX 1.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 221
+\textclass book
+\language english
+\inputencoding latin1
+\fontscheme default
+\graphics default
+\paperfontsize default
+\spacing single 
+\papersize a4paper
+\paperpackage widemarginsa4
+\use_geometry 0
+\use_amsmath 0
+\use_natbib 0
+\use_numerical_citations 0
+\paperorientation portrait
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\quotes_times 2
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+
+\layout Chapter
+
+Tango object naming (device, attribute and property)
+\layout Section
+
+Device name
+\begin_inset LatexCommand \label{DeviceNaming}
+
+\end_inset 
+
+
+\layout Standard
+
+A Tango device name is a three fields name.
+ The field separator is the 
+\series bold 
+/
+\series default 
+ character.
+ The first field is named 
+\series bold 
+domain
+\series default 
+, the second field is named 
+\series bold 
+family
+\series default 
+ and the last field is named 
+\series bold 
+member
+\series default 
+.A tango device name looks like
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+ 
+\backslash 
+begin{center}
+\end_inset 
+
+domain/family/member
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+end{center} 
+\end_inset 
+
+It is a hierarchical notation.
+ The member specifies which element within a family.
+ The family specifies which kind of equipment within a domain.
+ The domain groups devices related to which part of the accelerator/experiment
+ they belongs to.
+ At ESRF, some of the machine control system domain name are SR for the
+ storage ring, TL1 for the transfer line 1 or SY for the synchrotron booster.
+ For experiment, ID11 is the domain name for all devices belonging to the
+ experiment behind insertion device 11.
+ Here are some examples of Tango device name used at the ESRF :
+\layout Itemize
+
+
+\series bold 
+sr/d-ct/1
+\series default 
+ : The current transformer.
+ The domain part is sr for storage ring.
+ The family part is d-ct for diagnostic/current transformer and the member
+ part is 1
+\layout Itemize
+
+
+\series bold 
+fe/v-pen/id11-1
+\series default 
+ : A Penning gauge.
+ The domain part is fe for front-end.
+ The family part is v-pen for vacuum/penning and the member name is id11-1
+ to specify that this is the first gauge on the front-end part after the
+ insertion device 11
+\layout Section
+
+Full object name
+\layout Standard
+
+The device name as described above is not enough to cover all Tango usage
+ like device server without database or device access for multi control
+ system.
+ With the naming schema, we must also be able to name attribute and property.
+ Therefore, the full naming schema is
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+begin{center}
+\end_inset 
+
+
+\emph on 
+[protocol://][host:port/]device_name[/attribute][->property][#dbase=xx
+\emph default 
+
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+]
+\backslash 
+end{center}
+\end_inset 
+
+The protocol, host, port, attribute, property and dbase fields are optional.
+ The meaning of these fields are :
+\layout List
+\labelwidthstring 00.00.0000
+
+protocol : Specifies which protocol is used (Tango or Taco).
+ Tango is the default
+\layout List
+\labelwidthstring 00.00.0000
+
+dbase=xx : The supported value for xx is 
+\emph on 
+yes
+\emph default 
+ and 
+\emph on 
+no
+\emph default 
+.
+ This field is used to specify that the device is a device served by a device
+ server started with or without database usage.
+ The default value is 
+\emph on 
+dbase=yes
+\layout List
+\labelwidthstring 00.00.0000
+
+host:port : This field has different meaning according to the dbase value.
+ If 
+\emph on 
+dbase=yes
+\emph default 
+ (the default), the host is the host where the control system database server
+ is running and port is the database server port.
+ It has a higher priority than the value defined by the TANGO_HOST environment
+ variable.
+ If 
+\emph on 
+dbase=no
+\emph default 
+, host is the host name where the device server process serving the device
+ is running and port is the device server process port.
+\layout List
+\labelwidthstring 00.00.0000
+
+attribute : The attribute name
+\layout List
+\labelwidthstring 00.00.0000
+
+property : The property name
+\layout Standard
+
+The host:port and dbase=xx fields are necessary only when creating the DevicePro
+xy object used to remotely access the device.
+ The -> characters are used to specify a property name.
+\layout Subsection
+
+Some examples
+\layout Subsubsection
+
+Full device name examples
+\layout Itemize
+
+
+\series bold 
+gizmo:20000/sr/d-ct/1
+\series default 
+ : Device sr/d-ct/1 running in a specified control system with the database
+ server running on a host called gizmo and using the port number 20000.
+ The TANGO_HOST environment variable will not be used.
+\layout Itemize
+
+
+\series bold 
+tango://freak:2345/id11/rv/1#dbase=no
+\series default 
+ : Device served by a device server started without database.
+ The server is running on a host called freak and use port number 2345.
+ //freak:2345/id11/rv/1#dbase=no is also possible for the same device.
+\layout Itemize
+
+
+\series bold 
+Taco://sy/ps-ki/1
+\series default 
+ : Taco device sy/ps-ki/1
+\layout Subsubsection
+
+Attribute name examples
+\layout Itemize
+
+
+\series bold 
+id11/mot/1/Position
+\series default 
+ : Attribute position for device id11/mot/1 
+\layout Itemize
+
+
+\series bold 
+sr/d-ct/1/Lifetime
+\series default 
+ : Attribute lifetime for Tango device sr/d-ct/1
+\layout Subsubsection
+
+Attribute property name
+\layout Itemize
+
+
+\series bold 
+id11/rv/1/temp->label
+\series default 
+ : Property label for attribute temp for device id11/rv/1.
+\layout Itemize
+
+
+\series bold 
+sr/d-ct/1/Lifetime->unit
+\series default 
+ : The unit property for the Lifetime attribute of the sr/d-ct/1 device
+\layout Subsubsection
+
+Device property name
+\layout Itemize
+
+
+\series bold 
+sr/d-ct/1->address
+\series default 
+ : the address property for device sr/d-ct/1
+\layout Subsubsection
+
+Class property name
+\layout Itemize
+
+
+\series bold 
+Starter->doc_url
+\series default 
+ : The doc_url property for a class called Starter
+\layout Section
+
+Device and attribute name alias
+\begin_inset LatexCommand \index{alias}
+
+\end_inset 
+
+
+\layout Standard
+
+Within Tango, each device or attribute can have an alias name defined in
+ the database.
+ Every time a device or an attribute name is requested by the API's, it
+ is possible to use the alias.
+ The alias is simply an open string stored in the database.
+ The rule of the alias is to give device or attribute name a name more natural
+ from the physicist point of view.
+ Let's imagine that for experiment, the sample position is described by
+ angles called teta and psi in physics book.
+ It is more natural for physicist when they move the motor related to sample
+ position to use 
+\emph on 
+teta
+\emph default 
+ and 
+\emph on 
+psi
+\emph default 
+ rather device name like 
+\emph on 
+idxx/mot/1
+\emph default 
+ or 
+\emph on 
+idxx/mot/2
+\emph default 
+.
+ An attribute alias is a synonym for the four fields used to name an attribute.
+ For instance, the attribute 
+\emph on 
+Current
+\emph default 
+ of a power-supply device called 
+\emph on 
+sr/ps/dipole
+\emph default 
+ could have an alias 
+\emph on 
+DipoleCurrent
+\emph default 
+.
+ This alias can be used when creating an instance of a AttributeProxy class
+ instead of the full attribute name which is 
+\emph on 
+sr/ps/dipole/Current
+\emph default 
+.
+ Device alias name are uniq within a Tango control system.
+ Attribute alias name are also uniq within a Tango control system.
+\layout Section
+
+Reserved words and characters, limitations
+\layout Standard
+
+From the naming schema described above, the reserved characters are 
+\series bold 
+:
+\series default 
+,
+\series bold 
+#
+\series default 
+,
+\series bold 
+/
+\series default 
+ and the reserved string is :
+\series bold 
+ ->
+\series default 
+.
+ On top of that, the dbt_update tool (tool to fulfill database from the
+ content of a file) reserved the 
+\series bold 
+device
+\series default 
+ word
+\layout Standard
+
+The device name, its domain, member and family fields and its alias are
+ stored in the Tango database.
+ The default maximum size for these items are :
+\layout Standard
+\added_space_top 0.3cm \added_space_bottom 0.3cm \align center 
+
+\begin_inset  Tabular
+<lyxtabular version="3" rows="6" columns="2">
+<features islongtable="true">
+<column alignment="center" valignment="top" leftline="true" width="0pt">
+<column alignment="center" valignment="top" leftline="true" rightline="true" width="0pt">
+<row topline="true" bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+Item
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+max length
+\end_inset 
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+device name
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+255
+\end_inset 
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+domain field
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+85
+\end_inset 
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+family field
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+85
+\end_inset 
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+member field
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+85
+\end_inset 
+</cell>
+</row>
+<row topline="true" bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+device alias name
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+255
+\end_inset 
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset 
+
+
+\layout Standard
+
+The device name, the command name, the attribute name, the property name,
+ the device alias name and the device server name are 
+\series bold 
+case insensitive
+\series default 
+.
+\the_end

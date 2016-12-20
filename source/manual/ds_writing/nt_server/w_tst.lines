@@ -1,0 +1,51 @@
+     1	int APIENTRY WinMain(HINSTANCE hInstance,
+     2	                     HINSTANCE hPrevInstance,
+     3	                     LPSTR     lpCmdLine,
+     4	                     int       nCmdShow)
+     5	{
+     6	
+     7	//
+     8	// Your code
+     9	//
+    10	
+    11	        TangoUtil *tg;
+    12		try
+    13		{
+    14	                tg = TangoUtil::init(hInstance,nCmdShow);
+    15	
+    16	                tg->server_init();
+    17	
+    18	               	tg->get_boa()->init_servers();
+    19		}
+    20		catch (bad_alloc)
+    21		{
+    22			MessageBox((HWND)NULL,"Mem alloc failed","WinMain",MB_ICONSTOP);
+    23			return(FALSE);
+    24		}
+    25		catch (CORBA_Exception &e)
+    26		{
+    27			MessageBox((HWND)NULL,"Exception CORBA","WinMain",MB_ICONSTOP);
+    28	                return(FALSE);
+    29		}
+    30	
+    31		if (!InitInstance (hInstance, nCmdShow)) 
+    32		{
+    33			return FALSE;
+    34		}
+    35		hAccelTable = LoadAccelerators(hInstance, (LPCTSTR)IDC_W_TST);
+    36	
+    37		while (GetMessage(&msg, NULL, 0, 0)) 
+    38		{
+    39			if (!TranslateAccelerator(msg.hwnd, hAccelTable, &msg)) 
+    40			{
+    41				TranslateMessage(&msg);
+    42				DispatchMessage(&msg);
+    43			}
+    44		}
+    45	
+    46	        delete tg;
+    47	
+    48		return msg.wParam;
+    49	}
+    50	
+    51	

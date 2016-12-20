@@ -1,0 +1,11 @@
+     1	public float dev_simple(float argin) throws DevFailed
+     2	{
+     3		float	argout =  (float)0;
+     4	
+     5		Util.out2.println("Entering dev_simple()");
+     6	
+     7		// ---Add your Own code to control device here ---
+     8	
+     9		argout = argin * 2;
+    10		return argout;
+    11	}

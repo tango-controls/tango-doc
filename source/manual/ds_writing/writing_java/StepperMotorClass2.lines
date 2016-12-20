@@ -1,0 +1,13 @@
+     1	public void command_factory()
+     2	{
+     3		String str = new String("DevReadPosition");
+     4		command_list.addElement(new DevReadPositionCmd(str,
+     5			 	     Tango_DEV_LONG,Tango_DEV_LONG,
+     6				     "Motor number (0-7)",
+     7				     "Motor position"));
+     8	
+     9		str =  new String("DevReadDirection");
+    10		command_list.addElement(new TemplCommandInOut(str,
+    11		                        "dev_read_direction",
+    12					"direct_cmd_allowed"));
+    13	}

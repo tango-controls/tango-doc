@@ -1,0 +1,8 @@
+     1	bool DevReadPositionCmd::is_allowed(Tango::DeviceImpl *device,
+     2					    const CORBA::Any &in_any)
+     3	{
+     4		if (device->get_state() == Tango::ON)
+     5			return true;
+     6		else
+     7			return false;
+     8	}

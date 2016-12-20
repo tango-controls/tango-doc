@@ -1,0 +1,17 @@
+     1	package StepperMotor;
+     2	
+     3	import org.omg.CORBA.*;
+     4	import fr.esrf.Tango.*;
+     5	import fr.ersf.TangoDs.*;
+     6	
+     7	public class DevReadPositionCmd extends Command implements TangoConst
+     8	{
+     9		public  boolean is_allowed(DeviceImpl dev, Any data_in)
+    10		{
+    11			if (dev.get_state() == DevState.ON)
+    12				return(true);
+    13			else
+    14				return(false);
+    15		}	
+    16	
+    17	}

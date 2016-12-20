@@ -1,0 +1,40 @@
+#
+#		Makefile to generate a TANGO java device server
+#
+
+JAVAC = javac -classpath $(CLASSPATH):..
+
+# ------------------------------------------------
+#
+#		The compiler flags
+#
+#-------------------------------------------------
+
+JAVAFLAGS = -g
+
+#-------------------------------------------------
+
+
+CL_LIST = 	DevReadPositionCmd.class \
+		StepperMotor.class \
+		StepperMotorClass.class
+
+PACKAGE = server
+	
+#
+# Rule for compiling
+#
+	
+.SUFFIXES:	.class .java
+.java.class:
+	$(JAVAC) $(JAVAFLAGS) $<
+		
+#---------------------------------------------------
+
+
+all:	$(PACKAGE)
+	
+$(PACKAGE): 	$(CL_LIST)
+											
+clean:
+	rm -f *.class

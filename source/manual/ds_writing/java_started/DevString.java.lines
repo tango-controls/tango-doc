@@ -1,0 +1,11 @@
+     1	public String dev_string(String argin) throws DevFailed
+     2	{
+     3		Util.out2.println("Entering dev_string()");
+     4	
+     5		// ---Add your Own code to control device here ---
+     6	
+     7		System.out.println("the received string is "+argin);
+     8	
+     9		String argout = new String("Am I a good Tango dancer ?");
+    10		return argout;
+    11	}
