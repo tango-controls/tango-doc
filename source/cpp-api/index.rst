@@ -9,7 +9,7 @@ Welcome to cppTango's documentation!
 Contents:
 
 .. toctree::
-   :maxdepth: 5
+   :maxdepth: 1
 
    classlist
    filelist
