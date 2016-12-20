@@ -1,0 +1,19 @@
+     1	public void attribute_factory(Vector att) throws DevFailed
+     2	{
+     3		att.addElement(new Attr("Position",
+     4					Tango_DEV_LONG,
+     5					AttrWriteType.READ_WITH_WRITE,
+     6					"SetPosition"));
+     7	
+     8		UserDefaultAttrProp def_prop = new UserDefaultAttrProp();
+     9		def_prop.set_label("set the motor position");
+    10		def_prop.set_format("scientific;setprecision(4)");
+    11		Attr at = new Attr("SetPosition",
+    12				   Tango_DEV_LONG,
+    13				   AttrWriteType.WRITE));
+    14		at.set_default_properties(def_prop);
+    15		att.addElement(at);
+    16	
+    17		att.addElement(new Attr("Direction",
+    18					Tango_DEV_LONG));
+    19	}

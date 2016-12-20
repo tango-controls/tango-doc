@@ -1,0 +1,17 @@
+     1	void MyClass::read_attr(Tango::Attribute &attr)
+     2	{
+     3	    ...
+     4	    ...
+     5	    
+     6	    string att_name("SomeAttribute");
+     7	    string another_att_name("AnotherAttribute");
+     8	
+     9	    if (is_attribute_polled(att_name) == true)
+    10	        stop_poll_attribute(att_name);
+    11	    else
+    12	        poll_attribute(another_att_name,500); 
+    13	    
+    14	    ....
+    15	    ....
+    16	    
+    17	}

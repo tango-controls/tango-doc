@@ -1,0 +1,33 @@
+     1	public void read_attr_hardware(Vector attr_list)
+     2	{
+     3		Util.out2.println("In read_attr_hardware for "+attr_list.size()+" attribute(s)");
+     4		for (int i = 0;i< attr_list.size();i++)
+     5		{
+     6			int ind = ((Integer)(attr_list.elementAt(i))).intValue();
+     7			String attr_name = dev_attr.get_attr_by_ind(ind).get_name();
+     8			
+     9			if (attr_name == "Position")
+    10			{
+    11				attr_Position_read[0] = position[0];
+    12			}
+    13			else if (attr_name == "Direction")
+    14			{
+    15				attr_Direction_read[0] = direction[0];
+    16			}
+    17		}	
+    18	}
+    19	
+    20	
+    21	public void read_attr(Attribute attr) throws DevFailed
+    22	{
+    23		String attr_name = attr.get_name();
+    24		Util.out2.println("In read_attr for attribute "+attr_name);
+    25		if (attr_name.equals("Position") == true)
+    26		{
+    27			attr.set_value(attr_Position_read);
+    28		}
+    29		else if (attr_name.equals("Direction") == true)
+    30		{
+    31			attr.set_value(attr_Direction_read);
+    32		}
+    33	}	

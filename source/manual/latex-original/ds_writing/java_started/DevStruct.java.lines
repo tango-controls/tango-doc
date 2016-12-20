@@ -1,0 +1,19 @@
+     1	public DevVarDoubleStringArray dev_struct() throws DevFailed
+     2	{
+     3		DevVarDoubleStringArray	argout = new DevVarDoubleStringArray();
+     4	
+     5		Util.out2.println("Entering dev_struct()");
+     6	
+     7		// ---Add your Own code to control device here ---
+     8	
+     9		argout.dvalue = new double[3];
+    10		argout.dvalue[0] = 0.0;
+    11		argout.dvalue[1] = 11.11;
+    12		argout.dvalue[2] = 22.22;
+    13	
+    14		argout.svalue = new String[2];
+    15		argout.svalue[0] = new String("Be Bop");
+    16		argout.svalue[1] = new String("Smurf");
+    17	
+    18		return argout;
+    19	}

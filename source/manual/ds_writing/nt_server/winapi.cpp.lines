@@ -1,0 +1,50 @@
+     1	int APIENTRY WinMain(HINSTANCE hInstance,
+     2	                     HINSTANCE hPrevInstance,
+     3	                     LPSTR     lpCmdLine,
+     4	                     int       nCmdShow)
+     5	{
+     6		MSG msg;
+     7		Tango::Util *tg;
+     8	
+     9		try
+    10		{
+    11			tg = Tango::Util::init(hInstance,nCmdShow);
+    12	
+    13			string txt;
+    14			txt = "Blabla first line\n";
+    15			txt = txt + "Blabla second line\n";
+    16			txt = txt + "Blabla third line\n";
+    17			tg->set_main_window_text(txt);
+    18			tg->set_server_version("2.2");
+    19	
+    20	                tg->server_init(true);
+    21	
+    22			tg->server_run();
+    23	
+    24		}
+    25		catch (bad_alloc)
+    26		{
+    27			MessageBox((HWND)NULL,"Memory error","Command line",MB_ICONSTOP);
+    28			return (FALSE);
+    29		}
+    30		catch (Tango::DevFailed &e)
+    31		{
+    32			MessageBox((HWND)NULL,e.errors[0].desc.in(),"Command line",MB_ICONSTOP);
+    33			return (FALSE);
+    34		}
+    35		catch (CORBA::Exception &)
+    36		{
+    37			MessageBox((HWND)NULL,"Exception CORBA","Command line",MB_ICONSTOP);
+    38	                return(FALSE);
+    39		}
+    40	
+    41		while (GetMessage(&msg, NULL, 0, 0)) 
+    42		{
+    43			TranslateMessage(&msg);
+    44			DispatchMessage(&msg);
+    45		}
+    46	
+    47	        delete tg;
+    48	
+    49		return msg.wParam;
+    50	}

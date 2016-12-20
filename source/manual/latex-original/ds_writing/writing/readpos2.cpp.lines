@@ -1,0 +1,11 @@
+     1	CORBA::Any *DevReadPositionCmd::execute(
+     2				Tango::DeviceImpl *device,
+     3				const CORBA::Any &in_any)
+     4	{	
+     5		cout2 << "DevReadPositionCmd::execute(): arrived" << endl;
+     6		Tango::DevLong motor;
+     7	
+     8		extract(in_any,motor);
+     9		return insert(
+    10		    (static_cast<StepperMotor *>(device))->dev_read_position(motor));
+    11	}

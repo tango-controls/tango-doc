@@ -1,0 +1,9 @@
+     1	#include <tango.h>
+     2	#include <steppermotorclass.h>
+     3	
+     4	void Tango::DServer::class_factory()
+     5	{
+     6	
+     7		add_class(StepperMotor::StepperMotorClass::init("StepperMotor"));
+     8	
+     9	}

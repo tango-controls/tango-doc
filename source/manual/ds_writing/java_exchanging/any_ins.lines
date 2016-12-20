@@ -1,0 +1,13 @@
+     1	int l1 = 1;
+     2	Any a = insert(l1);
+     3	int l2 = extract_DevLong(a);
+     4	
+     5	String str = new String("I like dancing TANGO");
+     6	Any s = insert(str);
+     7	String str_ex = extract_DevString(s);
+     8	
+     9	int[] array = new int[2];
+    10	array[0] = 1;
+    11	array[1] = 2;
+    12	Any arr = insert(array);
+    13	int[] array_ext = extract_DevVarLongArray(arr);

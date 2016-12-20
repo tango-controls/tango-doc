@@ -1,0 +1,23 @@
+     1	
+     2	void DevTestClass::command_factory()
+     3	{
+     4	...
+     5		command_list.push_back(new IOStartPoll("IOStartPoll",
+     6						       Tango::DEV_VOID,
+     7						       Tango::DEV_LONG,
+     8						       "Void",
+     9						       "Constant number"));
+    10		command_list.back()->set_polling_period(400);
+    11	...
+    12	}
+    13	
+    14	
+    15	void DevTestClass::attribute_factory(vector<Tango::Attr *> &att_list)
+    16	{
+    17	...
+    18	  	att_list.push_back(new Tango::Attr("String_attr",
+    19	                                           Tango::DEV_STRING,
+    20	                                           Tango::READ));
+    21	  	att_list.back()->set_polling_period(250);
+    22	...
+    23	}

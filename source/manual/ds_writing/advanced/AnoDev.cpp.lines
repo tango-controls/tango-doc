@@ -1,0 +1,8 @@
+     1	    string dev_name("sys/serial/2");
+     2	
+     3	    Tango::DeviceImpl *dev;
+     4	    Tango::Util *tg = Tango::Util::instance();
+     5	    dev = tg->get_device_by_name(dev_name.c_str());
+     6	    
+     7	    Tango::DevState d_state = dev->state();
+     8	    cout2 << "The serial line device state is " << d_state << endl;

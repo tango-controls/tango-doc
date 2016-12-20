@@ -1,0 +1,11 @@
+     1	Tango::DevVarStringArray *MyDev::dev_str_array()
+     2	{
+     3		Tango::DevVarStringArray *argout  = new Tango::DevVarStringArray();
+     4	
+     5		argout->length(3);
+     6		(*argout)[0] = CORBA::string_dup("Rumba");
+     7		(*argout)[1] = CORBA::string_dup("Waltz");
+     8		string str("Jerck");
+     9		(*argout)[2] = CORBA::string_dup(str.c_str());
+    10		return argout;
+    11	}

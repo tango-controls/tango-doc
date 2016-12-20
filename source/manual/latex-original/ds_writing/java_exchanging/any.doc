@@ -1,0 +1,22 @@
+Any a = TangoUtil.instance().get_orb().create_any();
+int l1 = 1;
+a.insert_long(l1);
+int l2 = a.extract_long();
+
+DevLongHelper.insert(a,l1);
+int l3 = DevLongHelper.extract(a);
+
+Any s = TangoUtil.instance().get_orb().create_any();
+String str = new String("I like dancing TANGO");
+s.insert_string(str);
+String str_ex = s.extract_string();
+
+DevStringHelper.insert(s,str);
+String str_help = DevStringHelper.extract(s);
+
+Any arr = TangoUtil.instance().get_orb().create_any();
+int[] array = new int[2];
+array[0] = 1;
+array[1] = 2;
+DevVarLongArrayHelper.insert(arr,array);
+int[] array_ext = DevVarLongArrayhelper.extract(arr);

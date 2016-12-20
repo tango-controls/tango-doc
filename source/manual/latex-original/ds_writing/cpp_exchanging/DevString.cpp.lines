@@ -1,0 +1,12 @@
+     1	Tango::DevString MyDev::dev_string(Tango::DevString argin)
+     2	{
+     3		Tango::DevString	argout;
+     4	
+     5		cout << "the received string is " << argin << endl;
+     6		
+     7		string str("Am I a good Tango dancer ?");
+     8		argout = new char[str.size() + 1];
+     9		strcpy(argout,str.c_str());
+    10		
+    11		return argout;
+    12	}

@@ -1,0 +1,63 @@
+     1		DeviceAttribute da;
+     2		vector<short> attr_data;
+     3	
+     4		try
+     5		{
+     6			da = device->read_attribute("Attr");
+     7			da >> attr_data;
+     8		}
+     9		catch (DevFailed &e)
+    10		{
+    11			....
+    12		}
+    13	
+    14	
+    15	------------------------------------------------------------------------
+    16	
+    17		DeviceAttribute da;
+    18		vector<short> attr_data;
+    19	
+    20		da.reset_exceptions(DeviceAttribute::failed_flag);
+    21	
+    22		try
+    23		{
+    24			da = device->read_attribute("Attr");
+    25		}
+    26		catch (DevFailed &e)
+    27		{
+    28			.....
+    29		}
+    30	
+    31		if (!(da >> attr_data))
+    32		{
+    33			DevErrorList &err = da.get_err_stack();
+    34			.....
+    35		}
+    36		else
+    37		{
+    38			.....
+    39		}
+    40	
+    41	----------------------------------------------------------------------
+    42	
+    43		DeviceAttribute da;
+    44		vector<short> attr_data;
+    45	
+    46		try
+    47		{
+    48			da = device->read_Attribute("Attr");
+    49		}
+    50		catch (DevFailed &e)
+    51		{
+    52			......
+    53		}
+    54	
+    55		if (da.has_failed())
+    56		{
+    57			DevErrorList &err = da.get_err_stack();
+    58			....
+    59		}
+    60		else
+    61		{
+    62			da >> attr_data;	
+    63		}

@@ -1,0 +1,19 @@
+     1	void StepperMotor::write_attr_hardware(vector<long> &attr_list)
+     2	{
+     3		cout2 << "In write_attr_hardware for " << attr_list.size();
+     4		cout2 << " attribute(s)" << endl;
+     5		
+     6		for (long i = 0;i < attr_list.size();i++)
+     7		{
+     8			Tango::WAttribute &att = dev_attr->get_w_attr_by_ind(attr_list[i]);
+     9			string att_name = att.get_name();
+    10	
+    11			if (att_name == "SetPosition")
+    12			{
+    13				att.get_write_value(attr_SetPosition_write);
+    14				cout2 << "Attribute SetPosition value = ";
+    15				cout2 << attr_SetPosition_write << endl;
+    16				position[0] = attr_SetPosition_write;
+    17			}
+    18		}
+    19	}

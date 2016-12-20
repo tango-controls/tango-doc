@@ -1,0 +1,19 @@
+     1	public void device_factory(String[] devlist) throws DevFailed
+     2	{
+     3		for (int i = 0;i < devlist.length;i++)
+     4		{
+     5			Util.out4.println("Device name : " + devlist[i]);
+     6							
+     7			device_list.addElement(new StepperMotor(this,
+     8						  	        devlist[i],
+     9								"A Tango motor",
+    10								DevState.ON,
+    11								"The motor is ON"));
+    12	
+    13			if (Util.instance()._UseDb == true)
+    14				export_device(((DeviceImpl)(device_list.lastElement())));
+    15			else
+    16				export_device(((DeviceImpl)(device_list.lastElement())),
+    17						devlist[i]);
+    18		}
+    19	}

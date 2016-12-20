@@ -1,0 +1,35 @@
+     1	void MyClass::read_attr(Tango::Attribute &attr)
+     2	{
+     3	    ...
+     4	    ...
+     5	    
+     6	    
+     7	    if (attr_name == "Sinusoide")
+     8	    {
+     9	        struct timeval tv;
+    10	        gettimeofday(&tv, NULL);
+    11	        sinusoide = 100 * sin( 2 * 3.14 * frequency * tv.tv_sec);
+    12	        attr.set_value(&sinusoide);
+    13		
+    14		if (sinusoide >= 0)              
+    15	        {
+    16	            vector<string> filterable_names;
+    17	            vector<double> filterable_value;
+    18	   
+    19	            filterable_names.push_back("value");
+    20	            filterable_value.push_back((double)sinusoide);
+    21	           
+    22	            push_event( filterable_names,
+    23	                        filterable_value,
+    24	                        attr);
+    25				
+    26	            attr.set_value(&sinusoide);
+    27		    
+    28	        }
+    29	      
+    30	    }
+    31	    
+    32	    ....
+    33	    ....
+    34	    
+    35	}
