@@ -1,0 +1,40 @@
+     1	class Command
+     2	{
+     3	public:
+     4		Command() {};
+     5		Command(const char *,Tango_CmdArgType,Tango_CmdArgType);
+     6		Command(string &,Tango_CmdArgType,Tango_CmdArgType);
+     7		Command(const char *,Tango_CmdArgType,Tango_CmdArgType, const char *,const char *);
+     8		Command(string &,Tango_CmdArgType,Tango_CmdArgType,string &,string &);
+     9		
+    10		virtual ~Command() {};
+    11		
+    12		virtual CORBA_Any * execute (DeviceImpl *, const CORBA_Any &) = 0;
+    13		virtual bool is_allowed (DeviceImpl *, const CORBA_Any &);
+    14		
+    15		string &get_name() {return name;}
+    16		Tango_CmdArgType get_in_type() {return in_type;}
+    17		Tango_CmdArgType get_out_type() {return out_type;}
+    18		
+    19		string &get_in_type_desc() {return in_type_desc;}
+    20		string &get_out_type_desc() {return out_type_desc;}
+    21		void set_in_type_desc(const char *desc) {in_type_desc = desc;}
+    22		void set_in_type_desc(string &desc) {in_type_desc = desc;}
+    23		void set_out_type_desc(const char *desc) {out_type_desc = desc;}
+    24		void set_out_type_desc(string &desc) {out_type_desc = desc;}
+    25	
+    26		void extract(const CORBA_Any &,Tango_DevBoolean &);
+    27		void extract(const CORBA_Any &,Tango_DevShort &);
+    28		....
+    29	
+    30		CORBA_Any *insert();	
+    31		CORBA_Any *insert(Tango_DevBoolean);
+    32		....
+    33				
+    34	protected:
+    35		string 			name;		// The command name
+    36		Tango_CmdArgType	in_type;	// The command input type code
+    37		Tango_CmdArgType	out_type;	// The command output type code
+    38		string			in_type_desc;	// Input type desc
+    39		string			out_type_desc;	// Output type desc
+    40	};

@@ -1,0 +1,47 @@
+     1	package StepperMotor
+     2	
+     3	import java.util.*;
+     4	import org.omg.CORBA.*;
+     5	import fr.esrf.Tango.*;
+     6	import fr.esrf.TangoDs.*;
+     7	
+     8	public class StepperMotor extends DeviceImpl implements TangoConst
+     9	{
+    10		public static void main(String[] argv)
+    11		{
+    12			try
+    13			{
+    14			
+    15				Util tg = Util.init(argv,"StepperMotor");
+    16				
+    17				tg.add_class("StepperMotor");
+    18				tg.server_init();
+    19				
+    20				System.out.println("Ready to accept request");
+    21	
+    22				tg.server_run();
+    23			}
+    24			catch (OutOfMemoryError ex)
+    25			{
+    26				System.err.println("Can't allocate memory !!!!");
+    27				System.err.println("Exiting");
+    28			}
+    29			catch (UserException ex)
+    30			{
+    31				Except.print_exception(ex);
+    32				
+    33				System.err.println("Received a CORBA user exception");
+    34				System.err.println("Exiting");
+    35			}
+    36			catch (SystemException ex)
+    37			{
+    38				Except.print_exception(ex);
+    39				
+    40				System.err.println("Received a CORBA system exception");
+    41				System.err.println("Exiting");
+    42			}
+    43			
+    44			System.exit(-1);		
+    45		
+    46		}	
+    47	}

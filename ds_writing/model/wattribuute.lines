@@ -1,0 +1,31 @@
+     1	class WAttribute:public Attribute
+     2	{
+     3	public:
+     4		WAttribute(vector<AttrProperty> &,long ,string &);
+     5		~WAttribute() {};
+     6		
+     7		void get_write_value(Tango_DevShort &);
+     8		void get_write_value(Tango_DevLong &);
+     9		void get_write_value(Tango_DevDouble &);
+    10		void get_write_value(Tango_DevString &);
+    11		
+    12		virtual void set_value();
+    13		void rollback();
+    14		
+    15		void set_write_value(const CORBA_Any &);
+    16	
+    17	private:
+    18		Tango_DevShort 		short_val;
+    19		Tango_DevShort		old_short_val;
+    20		
+    21		Tango_DevLong		long_val;
+    22		Tango_DevLong		old_long_val;
+    23		
+    24		Tango_DevDouble		double_val;
+    25		Tango_DevDouble		old_double_val;
+    26		
+    27		Tango_DevString		str_val;
+    28		Tango_DevString		old_str_val;
+    29		
+    30		bool			string_allocated;
+    31	};

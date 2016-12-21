@@ -1,0 +1,105 @@
+\def\ESRFlogo{%
+\setlength{\unitlength}{.25mm}
+\begin{picture}(0,0)
+\put(0,22){\circle*{9}}
+\put(11,18){\circle*{9}}
+\put(20,9){\circle*{9}}
+\put(21,-3){\circle*{9}}
+\put(16,-14){\circle*{9}}
+\put(6,-21){\circle*{9}}
+\put(-6,-21){\circle*{9}}
+\put(-16,-14){\circle*{9}}
+\put(-21,-3){\circle*{9}}
+\put(-20,9){\circle*{9}}
+\put(-11,18){\circle*{9}}
+\put(0,34){\circle*{6}}
+\put(9,32){\circle*{6}}
+\put(18,28){\circle*{6}}
+\put(25,22){\circle*{6}}
+\put(30,14){\circle*{6}}
+\put(33,4){\circle*{6}}
+\put(33,-4){\circle*{6}}
+\put(30,-14){\circle*{6}}
+\put(25,-22){\circle*{6}}
+\put(18,-28){\circle*{6}}
+\put(9,-32){\circle*{6}}
+\put(0,-33){\circle*{6}}
+\put(-9,-32){\circle*{6}}
+\put(-18,-28){\circle*{6}}
+\put(-25,-22){\circle*{6}}
+\put(-30,-14){\circle*{6}}
+\put(-33,-4){\circle*{6}}
+\put(-33,4){\circle*{6}}
+\put(-30,14){\circle*{6}}
+\put(-25,22){\circle*{6}}
+\put(-18,28){\circle*{6}}
+\put(-9,32){\circle*{6}}
+\put(0,44){\circle*{4}}
+\put(12,42){\circle*{4}}
+\put(23,37){\circle*{4}}
+\put(33,28){\circle*{4}}
+\put(40,18){\circle*{4}}
+\put(43,6){\circle*{4}}
+\put(43,-6){\circle*{4}}
+\put(40,-18){\circle*{4}}
+\put(33,-28){\circle*{4}}
+\put(23,-37){\circle*{4}}
+\put(12,-42){\circle*{4}}
+\put(0,-43){\circle*{4}}
+\put(-12,-42){\circle*{4}}
+\put(-23,-37){\circle*{4}}
+\put(-33,-28){\circle*{4}}
+\put(-40,-18){\circle*{4}}
+\put(-43,-6){\circle*{4}}
+\put(-43,6){\circle*{4}}
+\put(-40,18){\circle*{4}}
+\put(-33,28){\circle*{4}}
+\put(-23,37){\circle*{4}}
+\put(-12,42){\circle*{4}}
+\put(0,52){\circle*{3}}
+\put(14,49){\circle*{3}}
+\put(28,43){\circle*{3}}
+\put(39,34){\circle*{3}}
+\put(47,21){\circle*{3}}
+\put(51,7){\circle*{3}}
+\put(51,-7){\circle*{3}}
+\put(47,-21){\circle*{3}}
+\put(39,-34){\circle*{3}}
+\put(28,-43){\circle*{3}}
+\put(14,-49){\circle*{3}}
+\put(0,-51){\circle*{3}}
+\put(-14,-49){\circle*{3}}
+\put(-28,-43){\circle*{3}}
+\put(-39,-34){\circle*{3}}
+\put(-47,-21){\circle*{3}}
+\put(-51,-7){\circle*{3}}
+\put(-51,7){\circle*{3}}
+\put(-47,21){\circle*{3}}
+\put(-39,34){\circle*{3}}
+\put(-28,43){\circle*{3}}
+\put(-14,49){\circle*{3}}
+\end{picture}
+}
+
+\def\ESRFhead{  %       ESRF Header
+	\ESRFlogo{
+	\large\sc
+\hfill  {\bf E}uropean {\bf S}ynchrotron {\bf R}adiation {\bf F}acility \par
+	\normalsize\sc
+\hfill  installation europeenne de rayonnement synchrotron
+	}\vskip 0.5cm}
+
+\def\ESRFTitle#1#2{\def\head{#1}
+	\thispagestyle{empty}
+        \ESRFhead
+	\vskip 2.0cm
+        \bc
+        \huge {\bf      #1}
+        \vskip  1 cm 
+	\large     #2   
+        \vskip  1cm
+        \large  \today
+        \vskip  1cm
+        \ec 
+	}
+

@@ -1,0 +1,28 @@
+     1	class StepperMotor: public DeviceImpl
+     2	{
+     3	public :
+     4		StepperMotor(DeviceClass *,string &);
+     5		StepperMotor(DeviceClass *,const char *);
+     6		StepperMotor(DeviceClass *,const char *,const char *);
+     7		~StepperMotor() {};
+     8		
+     9		long dev_read_position(long);
+    10		long dev_read_direction(long);
+    11		bool direct_cmd_allowed(const CORBA::Any &);
+    12		
+    13		void read_attr_hardware(vector<long> &);
+    14		bool is_Position_allowed(Tango::AttReqType);
+    15		void read_Position(Tango::Attribute &);
+    16	
+    17		virtual Tango_DevState dev_state();
+    18		virtual Tango_DevString dev_status();
+    19		virtual void always_executed_hook();
+    20		
+    21		virtual void init_device();
+    22	
+    23	protected :	
+    24		long axis[AGSM_MAX_MOTORS];
+    25		long position[AGSM_MAX_MOTORS];
+    26		long direction[AGSM_MAX_MOTORS];
+    27		long state[AGSM_MAX_MOTORS];
+    28	};

@@ -1,0 +1,8 @@
+     1	   Tango_DevVarLongStringArray my_vl;
+     2	
+     3	   myvl.svalue.length(2);
+     4	   myvl.svalue[0] = CORBA_string_dup("Samba");
+     5	   myvl.svalue[1] = CORBA_string_dup("Rumba");
+     6	
+     7	   myvl.lvalue.length(1);
+     8	   myvl.lvalue[0] = 10;

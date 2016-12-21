@@ -1,0 +1,12 @@
+     1	
+     2		nb_args = 3;
+     3		args = new char*[3];
+     4		args[0] = "StepperMotor";
+     5		args[1] = "et";
+     6		args[2] = "-v";
+     7		TangoUtil *tg = TangoUtil::init(nb_args,args);
+     8	
+     9		tg->server_init();
+    10	
+    11		tg->get_boa()->init_servers();
+    12	

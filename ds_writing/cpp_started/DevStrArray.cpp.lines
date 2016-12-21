@@ -1,0 +1,20 @@
+     1	Tango::DevVarStringArray *DocDs::dev_str_array()
+     2	{
+     3		//	POGO has generated a method core with argout allocation.
+     4		//	If you would like to use a static reference without copying,
+     5		//	See "TANGO Device Server Programmer's Manual"
+     6		//		(chapter x.x)
+     7		//------------------------------------------------------------
+     8		Tango::DevVarStringArray	*argout  = new Tango::DevVarStringArray();
+     9	
+    10		cout1 << "DocDs::dev_str_array(): entering... !" << endl;
+    11	
+    12		//	Add your own code to control device here
+    13	
+    14		argout->length(3);
+    15		(*argout)[0] = CORBA::string_dup("Rumba");
+    16		(*argout)[1] = CORBA::string_dup("Waltz");
+    17		string str("Jerck");
+    18		(*argout)[2] = CORBA::string_dup(str.c_str());
+    19		return argout;
+    20	}

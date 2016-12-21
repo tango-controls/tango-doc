@@ -1,0 +1,13 @@
+     1	public class A extends DeviceImpl implements TangoConst
+     2	{
+     3		public void my_cmd(long input)
+     4		{
+     5		}
+     6	}
+     7	
+     8	public class B extends A implements TangoConst
+     9	{
+    10		public void my_cmd(long input)
+    11		{
+    12		}
+    13	}

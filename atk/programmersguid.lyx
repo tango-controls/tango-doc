@@ -1,0 +1,4373 @@
+#LyX 1.6.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
+\begin_document
+\begin_header
+\textclass book
+\begin_preamble
+\usepackage{a4wide}
+\end_preamble
+\use_default_options false
+\language english
+\inputencoding latin1
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 0
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 5
+\tocdepth 4
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+TangoATK Programmer's Guide
+\end_layout
+
+\begin_layout Standard
+This chapter is only a brief Tango ATK (Application ToolKit) programmer's
+ guide.
+ You can find a reference guide with a full description of TangoATK classes
+ and methods in the ATK JavaDoc 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "ATK-doc"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+A tutorial document 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "ATK-Tutorial"
+
+\end_inset
+
+ is also provided and includes the detailed description of the ATK architecture
+ and the ATK components.
+ In the ATK Tutorial 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "ATK-Tutorial"
+
+\end_inset
+
+ you can find some code examples and also Flash Demos which explain how
+ to start using Tango ATK.
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Standard
+This document describes how to develop applications using the Tango Application
+ Toolkit, TangoATK for short.
+ It will start with a brief description of the main concepts behind the
+ toolkit, and then continue with more practical, real-life examples to explain
+ key parts.
+\end_layout
+
+\begin_layout Subsection
+Assumptions
+\end_layout
+
+\begin_layout Standard
+The author assumes that the reader has a good knowledge of the Java programming
+ language, and a thorough understanding of object-oriented programming.
+ Also, it is expected that the reader is fluent in all aspects regarding
+ Tango devices, attributes, and commands.
+\end_layout
+
+\begin_layout Section
+The key concepts of TangoATK
+\end_layout
+
+\begin_layout Standard
+TangoATK was developed with these goals in mind
+\end_layout
+
+\begin_layout Itemize
+TangoATK should help minimize development time 
+\end_layout
+
+\begin_layout Itemize
+TangoATK should help minimize bugs in applications 
+\end_layout
+
+\begin_layout Itemize
+TangoATK should support applications that contain attributes and commands
+ from several different devices.
+ 
+\end_layout
+
+\begin_layout Itemize
+TangoATK should help avoid code duplication.
+ 
+\end_layout
+
+\begin_layout Standard
+Since most Tango-applications were foreseen to be displayed on some sort
+ of graphic terminal, TangoATK needed to provide support for some sort of
+ graphic building blocks.
+ To enable this, and since the toolkit was to be written in Java, we looked
+ to Swing to figure out how to do this.
+\end_layout
+
+\begin_layout Standard
+Swing is developed using a variant over a design-pattern the Model-View-Controll
+er
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Model-View-Controller
+\end_layout
+
+\end_inset
+
+ (MVC
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+MVC
+\end_layout
+
+\end_inset
+
+) pattern called 
+\emph on
+model-delegate
+\emph default
+, where the view and the controller of the MVC-pattern are merged into one
+ object.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/core-widget.eps
+	scale 60
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This pattern made the choice of labor division quite easy: all non-graphic
+ parts of TangoATK reside in the packages beneath 
+\family typewriter
+fr.esrf.tangoatk.core
+\family default
+
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+model
+\end_layout
+
+\end_inset
+
+
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+core
+\end_layout
+
+\end_inset
+
+, and anything remotely graphic are located beneath 
+\family typewriter
+fr.esrf.tangoatk.widge
+\family default
+t
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+viewer
+\end_layout
+
+\end_inset
+
+
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+widget
+\end_layout
+
+\end_inset
+
+.
+ More on the content and organization of this will follow.
+\end_layout
+
+\begin_layout Standard
+The communication between the non-graphic and graphic objects are done by
+ having the graphic object registering itself as a listener to the non-graphic
+ object, and the non-graphic object emmiting events telling the listeners
+ that its state has changed.
+\end_layout
+
+\begin_layout Subsection
+Minimize development time
+\end_layout
+
+\begin_layout Standard
+For TangoATK to help minimize the development time of graphic applications,
+ the toolkit has been developed along two lines of thought
+\end_layout
+
+\begin_layout Itemize
+Things that are needed in most applications are included, eg 
+\family typewriter
+Splash
+\family default
+, a splash
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+splash
+\end_layout
+
+\end_inset
+
+ window which gives a graphical way for the application to show the progress
+ of a long operation.
+ The splash window is moslty used in the startup phase of the application.
+\end_layout
+
+\begin_layout Itemize
+Building blocks provided by TangoATK should be easy to use and follow certain
+ patterns, eg every graphic widget has a 
+\family typewriter
+setModel
+\family default
+ method which is used to connect the widget with its non-graphic model.
+ 
+\end_layout
+
+\begin_layout Standard
+In addition to this, TangoATK provides a framework for error handling, something
+ that is often a time consuming task.
+\end_layout
+
+\begin_layout Subsection
+Minimize bugs in applications
+\end_layout
+
+\begin_layout Standard
+Together with the Tango API, TangoATK takes care of most of the hard things
+ related to programming with Tango.
+ Using TangoATK the developer can focus on developing her application, not
+ on understanding Tango.
+\end_layout
+
+\begin_layout Subsection
+Attributes and commands from different devices
+\end_layout
+
+\begin_layout Standard
+To be able to create applications with attributes
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+attributes
+\end_layout
+
+\end_inset
+
+ and commands
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+commands
+\end_layout
+
+\end_inset
+
+ from different devices, it was decided that the central objects of TangoATK
+ were not to be the device
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+device
+\end_layout
+
+\end_inset
+
+, but rather the 
+\emph on
+attributes and the commands
+\emph default
+.
+ This will certainly feel a bit awkward at first, but trust me, the design
+ holds.
+\end_layout
+
+\begin_layout Standard
+For this design to be feasible, a structure was needed to keep track of
+ the commands and attributes, so the 
+\emph on
+command-list
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+command-list
+\end_layout
+
+\end_inset
+
+ and the attribute-list
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+attribte-list
+\end_layout
+
+\end_inset
+
+
+\emph default
+ was introduced.
+ These two objects can hold commands and attributes from any number of devices.
+\end_layout
+
+\begin_layout Subsection
+Avoid code duplication
+\end_layout
+
+\begin_layout Standard
+When writing applications for a control-system without a framework much
+ code is duplicated.
+ Anything from simple widgets for showing numeric values to error handling
+ has to be implemented each time.
+ TangoATK supplies a number of frequently used widgets along with a framework
+ for connecting these widgets with their non-graphic counterparts.
+ Because of this, the developer only needs to write the 
+\emph on
+glue
+\emph default
+ - the code which connects these objects in a manner that suits the specified
+ application.
+\end_layout
+
+\begin_layout Section
+The real getting started
+\end_layout
+
+\begin_layout Standard
+Generally there are two kinds of end-user applications: Applications that
+ only know how to treat one device, and applications that treat many devices.
+\end_layout
+
+\begin_layout Subsection
+Single device applications
+\end_layout
+
+\begin_layout Standard
+Single device applications are quite easy to write, even with a gui.
+ The following steps are required
+\end_layout
+
+\begin_layout Enumerate
+Instantiate an AttributeList
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+AttributeList
+\end_layout
+
+\end_inset
+
+ and fill it with the attributes you want.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Instantiate a CommandList
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+CommandList
+\end_layout
+
+\end_inset
+
+ and fill it with the commands you want.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Connect the whole 
+\emph on
+AttributeList
+\emph default
+ with a 
+\emph on
+list viewer
+\emph default
+ and / or each 
+\emph on
+individual attribute
+\emph default
+ with an 
+\emph on
+attribute viewer
+\emph default
+.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Connect the whole 
+\emph on
+CommandList
+\emph default
+ to a 
+\emph on
+command list viewer
+\emph default
+ and / or connect each 
+\emph on
+individual command
+\emph default
+ in the command list with a 
+\emph on
+command viewer
+\emph default
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/listpanel.eps
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The following program (FirstApplication)
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+ScalarListViewer
+\end_layout
+
+\end_inset
+
+ shows an implementation of the list mentioned above.
+ It should be rather self-explanatory with the comments.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "line.tex"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Verbatim
+package examples;
+\end_layout
+
+\begin_layout Verbatim
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+import javax.swing.JFrame;
+\end_layout
+
+\begin_layout Verbatim
+import javax.swing.JMenuItem;
+\end_layout
+
+\begin_layout Verbatim
+import javax.swing.JMenuBar;
+\end_layout
+
+\begin_layout Verbatim
+import javax.swing.JMenu;
+\end_layout
+
+\begin_layout Verbatim
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+import java.awt.event.ActionListener;
+\end_layout
+
+\begin_layout Verbatim
+import java.awt.event.ActionEvent;
+\end_layout
+
+\begin_layout Verbatim
+import java.awt.BorderLayout;
+\end_layout
+
+\begin_layout Verbatim
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+import fr.esrf.tangoatk.core.AttributeList;
+\end_layout
+
+\begin_layout Verbatim
+import fr.esrf.tangoatk.core.ConnectionException;
+\end_layout
+
+\begin_layout Verbatim
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+import fr.esrf.tangoatk.core.CommandList;
+\end_layout
+
+\begin_layout Verbatim
+import fr.esrf.tangoatk.widget.util.ErrorHistory;
+\end_layout
+
+\begin_layout Verbatim
+import fr.esrf.tangoatk.widget.util.ATKGraphicsUtils;
+\end_layout
+
+\begin_layout Verbatim
+import fr.esrf.tangoatk.widget.attribute.ScalarListViewer;
+\end_layout
+
+\begin_layout Verbatim
+import fr.esrf.tangoatk.widget.command.CommandComboViewer;
+\end_layout
+
+\begin_layout Verbatim
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+public class FirstApplication extends JFrame
+\end_layout
+
+\begin_layout Verbatim
+{
+\end_layout
+
+\begin_layout Verbatim
+JMenuBar menu;                    // So that our application looks
+\end_layout
+
+\begin_layout Verbatim
+                                  // halfway decent.
+\end_layout
+
+\begin_layout Verbatim
+AttributeList attributes;         // The list that will contain our
+\end_layout
+
+\begin_layout Verbatim
+                                  // attributes
+\end_layout
+
+\begin_layout Verbatim
+CommandList commands;             // The list that will contain our
+\end_layout
+
+\begin_layout Verbatim
+                                  // commands
+\end_layout
+
+\begin_layout Verbatim
+ErrorHistory errorHistory;        // A window that displays errors
+\end_layout
+
+\begin_layout Verbatim
+ScalarListViewer sListViewer;     // A viewer which knows how to
+\end_layout
+
+\begin_layout Verbatim
+                                  // display a list of scalar attributes.
+\end_layout
+
+\begin_layout Verbatim
+                                  // If you want to display other types
+\end_layout
+
+\begin_layout Verbatim
+                                  // than scalars, you'll have to wait
+\end_layout
+
+\begin_layout Verbatim
+                                  // for the next example.
+\end_layout
+
+\begin_layout Verbatim
+CommandComboViewer commandViewer; // A viewer which knows how to display
+\end_layout
+
+\begin_layout Verbatim
+                                  // a combobox of commands and execute
+\end_layout
+
+\begin_layout Verbatim
+                                  // them.
+\end_layout
+
+\begin_layout Verbatim
+String device;                    // The name of our device.
+\end_layout
+
+\begin_layout Verbatim
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+public FirstApplication()
+\end_layout
+
+\begin_layout Verbatim
+{
+\end_layout
+
+\begin_layout Verbatim
+   // The swing stuff to create the menu bar and its pulldown menus
+\end_layout
+
+\begin_layout Verbatim
+   menu = new JMenuBar();
+\end_layout
+
+\begin_layout Verbatim
+   JMenu fileMenu = new JMenu();
+\end_layout
+
+\begin_layout Verbatim
+   fileMenu.setText("File");   
+\end_layout
+
+\begin_layout Verbatim
+   JMenu viewMenu = new JMenu();
+\end_layout
+
+\begin_layout Verbatim
+   viewMenu.setText("View");
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+   JMenuItem quitItem = new JMenuItem();
+\end_layout
+
+\begin_layout Verbatim
+   quitItem.setText("Quit");
+\end_layout
+
+\begin_layout Verbatim
+   quitItem.addActionListener(new 
+\end_layout
+
+\begin_layout Verbatim
+      java.awt.event.ActionListener()
+\end_layout
+
+\begin_layout Verbatim
+      {                 
+\end_layout
+
+\begin_layout Verbatim
+       public void
+\end_layout
+
+\begin_layout Verbatim
+       actionPerformed(ActionEvent evt)
+\end_layout
+
+\begin_layout Verbatim
+       {quitItemActionPerformed(evt);}
+\end_layout
+
+\begin_layout Verbatim
+      });
+\end_layout
+
+\begin_layout Verbatim
+   fileMenu.add(quitItem);
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+   JMenuItem errorHistItem = new JMenuItem();
+\end_layout
+
+\begin_layout Verbatim
+   errorHistItem.setText("Error History");
+\end_layout
+
+\begin_layout Verbatim
+   errorHistItem.addActionListener(new 
+\end_layout
+
+\begin_layout Verbatim
+           java.awt.event.ActionListener()
+\end_layout
+
+\begin_layout Verbatim
+           {                 
+\end_layout
+
+\begin_layout Verbatim
+            public void 
+\end_layout
+
+\begin_layout Verbatim
+            actionPerformed(ActionEvent evt)
+\end_layout
+
+\begin_layout Verbatim
+            {errHistItemActionPerformed(evt);}
+\end_layout
+
+\begin_layout Verbatim
+           });
+\end_layout
+
+\begin_layout Verbatim
+   viewMenu.add(errorHistItem);
+\end_layout
+
+\begin_layout Verbatim
+   menu.add(fileMenu);
+\end_layout
+
+\begin_layout Verbatim
+   menu.add(viewMenu);
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+   //
+\end_layout
+
+\begin_layout Verbatim
+   // Here we create ATK objects to handle attributes, commands and errors.
+\end_layout
+
+\begin_layout Verbatim
+   //
+\end_layout
+
+\begin_layout Verbatim
+   attributes = new AttributeList(); 
+\end_layout
+
+\begin_layout Verbatim
+   commands = new CommandList();
+\end_layout
+
+\begin_layout Verbatim
+   errorHistory = new ErrorHistory();
+\end_layout
+
+\begin_layout Verbatim
+   device = "id14/eh3_mirror/1";
+\end_layout
+
+\begin_layout Verbatim
+   sListViewer = new ScalarListViewer();
+\end_layout
+
+\begin_layout Verbatim
+   commandViewer = new CommandComboViewer();
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+// 
+\end_layout
+
+\begin_layout Verbatim
+// A feature of the command and attribute list is that if you
+\end_layout
+
+\begin_layout Verbatim
+// supply an errorlistener to these lists, they'll add that
+\end_layout
+
+\begin_layout Verbatim
+// errorlistener to all subsequently created attributes or
+\end_layout
+
+\begin_layout Verbatim
+// commands.
+ So it is important to do this _before_ you
+\end_layout
+
+\begin_layout Verbatim
+// start adding attributes or commands.
+\end_layout
+
+\begin_layout Verbatim
+//
+\end_layout
+
+\begin_layout Verbatim
+ 
+\end_layout
+
+\begin_layout Verbatim
+   attributes.addErrorListener(errorHistory);
+\end_layout
+
+\begin_layout Verbatim
+   commands.addErrorListener(errorHistory);
+\end_layout
+
+\begin_layout Verbatim
+ 
+\end_layout
+
+\begin_layout Verbatim
+//
+\end_layout
+
+\begin_layout Verbatim
+// Sometimes we're out of luck and the device or the attributes
+\end_layout
+
+\begin_layout Verbatim
+// are not available.
+ In that case a ConnectionException is thrown.
+\end_layout
+
+\begin_layout Verbatim
+// This is why we add the attributes in a try/catch
+\end_layout
+
+\begin_layout Verbatim
+//
+\end_layout
+
+\begin_layout Verbatim
+ 
+\end_layout
+
+\begin_layout Verbatim
+   try
+\end_layout
+
+\begin_layout Verbatim
+   {
+\end_layout
+
+\begin_layout Verbatim
+ 
+\end_layout
+
+\begin_layout Verbatim
+//
+\end_layout
+
+\begin_layout Verbatim
+// Another feature of the attribute and command list is that they
+\end_layout
+
+\begin_layout Verbatim
+// can add wildcard names, currently only `*' is supported.
+\end_layout
+
+\begin_layout Verbatim
+// When using a wildcard, the lists will add all commands or
+\end_layout
+
+\begin_layout Verbatim
+// attributes available on the device.
+\end_layout
+
+\begin_layout Verbatim
+//
+\end_layout
+
+\begin_layout Verbatim
+   attributes.add(device + "/*");
+\end_layout
+
+\begin_layout Verbatim
+   }
+\end_layout
+
+\begin_layout Verbatim
+   catch (ConnectionException ce)
+\end_layout
+
+\begin_layout Verbatim
+   {
+\end_layout
+
+\begin_layout Verbatim
+      System.out.println("Error fetching " + 
+\end_layout
+
+\begin_layout Verbatim
+                         "attributes from " +
+\end_layout
+
+\begin_layout Verbatim
+                         device + " " + ce);
+\end_layout
+
+\begin_layout Verbatim
+   }
+\end_layout
+
+\begin_layout Verbatim
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+//
+\end_layout
+
+\begin_layout Verbatim
+// See the comments for attributelist
+\end_layout
+
+\begin_layout Verbatim
+//
+\end_layout
+
+\begin_layout Verbatim
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+   try
+\end_layout
+
+\begin_layout Verbatim
+   {
+\end_layout
+
+\begin_layout Verbatim
+      commands.add(device + "/*");
+\end_layout
+
+\begin_layout Verbatim
+   }
+\end_layout
+
+\begin_layout Verbatim
+   catch (ConnectionException ce)
+\end_layout
+
+\begin_layout Verbatim
+   {
+\end_layout
+
+\begin_layout Verbatim
+      System.out.println("Error fetching " +
+\end_layout
+
+\begin_layout Verbatim
+                         "commands from " +
+\end_layout
+
+\begin_layout Verbatim
+                         device + " " + ce);
+\end_layout
+
+\begin_layout Verbatim
+   }
+\end_layout
+
+\begin_layout Verbatim
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+//
+\end_layout
+
+\begin_layout Verbatim
+// Here we tell the scalarViewer what it's to show.
+ The
+\end_layout
+
+\begin_layout Verbatim
+// ScalarListViewer loops through the attribute-list and picks out
+\end_layout
+
+\begin_layout Verbatim
+// the ones which are scalars and show them.
+\end_layout
+
+\begin_layout Verbatim
+//
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+   sListViewer.setModel(attributes);
+\end_layout
+
+\begin_layout Verbatim
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+//
+\end_layout
+
+\begin_layout Verbatim
+// This is where the CommandComboViewer is told what it's to
+\end_layout
+
+\begin_layout Verbatim
+// show.
+ It knows how to show and execute most commands.
+\end_layout
+
+\begin_layout Verbatim
+//
+\end_layout
+
+\begin_layout Verbatim
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+   commandViewer.setModel(commands);
+\end_layout
+
+\begin_layout Verbatim
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+//
+\end_layout
+
+\begin_layout Verbatim
+// add the menubar to the frame
+\end_layout
+
+\begin_layout Verbatim
+//
+\end_layout
+
+\begin_layout Verbatim
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+   setJMenuBar(menu);
+\end_layout
+
+\begin_layout Verbatim
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+//
+\end_layout
+
+\begin_layout Verbatim
+// Make the layout nice.
+\end_layout
+
+\begin_layout Verbatim
+//
+\end_layout
+
+\begin_layout Verbatim
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+   getContentPane().setLayout(new BorderLayout());
+\end_layout
+
+\begin_layout Verbatim
+   getContentPane().add(commandViewer, BorderLayout.NORTH);
+\end_layout
+
+\begin_layout Verbatim
+   getContentPane().add(sListViewer, BorderLayout.SOUTH);
+\end_layout
+
+\begin_layout Verbatim
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+//
+\end_layout
+
+\begin_layout Verbatim
+// A third feature of the attributelist is that it knows how
+\end_layout
+
+\begin_layout Verbatim
+// to refresh its attributes.
+\end_layout
+
+\begin_layout Verbatim
+//
+\end_layout
+
+\begin_layout Verbatim
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+   attributes.startRefresher();
+\end_layout
+
+\begin_layout Verbatim
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+//
+\end_layout
+
+\begin_layout Verbatim
+// JFrame stuff to make the thing show.
+\end_layout
+
+\begin_layout Verbatim
+//
+\end_layout
+
+\begin_layout Verbatim
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+   pack();
+\end_layout
+
+\begin_layout Verbatim
+   ATKGraphicsUtils.centerFrameOnScreen(this); //ATK utility to center window
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+   setVisible(true);
+\end_layout
+
+\begin_layout Verbatim
+   }
+\end_layout
+
+\begin_layout Verbatim
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+   public static void main(String [] args)
+\end_layout
+
+\begin_layout Verbatim
+   {
+\end_layout
+
+\begin_layout Verbatim
+      new FirstApplication();
+\end_layout
+
+\begin_layout Verbatim
+   }
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+   public void quitItemActionPerformed(ActionEvent evt)
+\end_layout
+
+\begin_layout Verbatim
+   {
+\end_layout
+
+\begin_layout Verbatim
+      System.exit(0);
+\end_layout
+
+\begin_layout Verbatim
+   }
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+   public void errHistItemActionPerformed(ActionEvent evt)
+\end_layout
+
+\begin_layout Verbatim
+   {
+\end_layout
+
+\begin_layout Verbatim
+      errorHistory.setVisible(true);
+\end_layout
+
+\begin_layout Verbatim
+   }
+\end_layout
+
+\begin_layout Verbatim
+}
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "line.tex"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The program should look something like this (depending on your platform
+ and your device)
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/prog_guide_exple1.jpg
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Multi device applications
+\end_layout
+
+\begin_layout Standard
+Multi device applications are quite similar to the single device applications,
+ the only difference is that it does not suffice to add the attributes by
+ wildcard, you need to add them explicitly, like this: 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "line.tex"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Verbatim
+try
+\end_layout
+
+\begin_layout Verbatim
+{ 
+\end_layout
+
+\begin_layout Verbatim
+    // a StringScalar attribute from the device one
+\end_layout
+
+\begin_layout Verbatim
+   attributes.add("jlp/test/1/att_cinq");
+\end_layout
+
+\begin_layout Verbatim
+   // a NumberSpectrum attribute from the device one
+\end_layout
+
+\begin_layout Verbatim
+   attributes.add("jlp/test/1/att_spectrum");
+\end_layout
+
+\begin_layout Verbatim
+   // a NumberImage attribute from the device two
+\end_layout
+
+\begin_layout Verbatim
+   attributes.add("sr/d-ipc/id25-1n/Image");
+\end_layout
+
+\begin_layout Verbatim
+}
+\end_layout
+
+\begin_layout Verbatim
+catch (ConnectionException ce)
+\end_layout
+
+\begin_layout Verbatim
+{
+\end_layout
+
+\begin_layout Verbatim
+   System.out.println("Error fetching " + 
+\end_layout
+
+\begin_layout Verbatim
+       "attributes" + ce);
+\end_layout
+
+\begin_layout Verbatim
+}
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "line.tex"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The same goes for commands.
+\end_layout
+
+\begin_layout Subsection
+More on displaying attributes
+\end_layout
+
+\begin_layout Standard
+So far, we've only considered scalar
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+scalar
+\end_layout
+
+\end_inset
+
+ attributes, and not only that, we've also cheated quite a bit since we
+ just passed the attribute list to the 
+\family typewriter
+fr.esrf.tangoatk.widget.attribute.ScalarListViewer
+\family default
+ and let it do all the magic.
+ The attribute list viewers are only available for scalar attributes (NumberScal
+arListViewer
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+NumberScalarListViewer
+\end_layout
+
+\end_inset
+
+ and ScalarListViewer
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+ScalarListViewer
+\end_layout
+
+\end_inset
+
+).
+ If you have one or several spectrum
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+spectrum
+\end_layout
+
+\end_inset
+
+ or image
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+image
+\end_layout
+
+\end_inset
+
+ attributes you must connect each spectrum or image attribute to it's correspond
+ing attribute viewer individually.
+ So let's take a look at how you can connect individual attributes (and
+ not a whole attribute list) to an individual attribute viewer (and not
+ to an attribute list viewer).
+\end_layout
+
+\begin_layout Subsubsection
+Connecting an attribute
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+model
+\end_layout
+
+\end_inset
+
+ to a viewer
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+viewer
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Generally it is done in the following way:
+\end_layout
+
+\begin_layout Enumerate
+You retrieve the attribute from the attribute list 
+\end_layout
+
+\begin_layout Enumerate
+You instantiate the viewer 
+\end_layout
+
+\begin_layout Enumerate
+Your call the 
+\family typewriter
+setModel
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+setModel
+\end_layout
+
+\end_inset
+
+
+\family default
+ method on the viewer with the attribute as argument.
+ 
+\end_layout
+
+\begin_layout Enumerate
+You add your viewer to some panel
+\end_layout
+
+\begin_layout Standard
+The following example (SecondApplication)
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+SimpleScalarViewer
+\end_layout
+
+\end_inset
+
+
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+NumberImageViewer
+\end_layout
+
+\end_inset
+
+
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+NumberSpectrumViewer
+\end_layout
+
+\end_inset
+
+, is a Multi-device application.
+ Since this application uses individual attribute viewers and not an attribute
+ list viewer, it shows an implementation of the list mentioned above.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "line.tex"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Verbatim
+package examples;
+\end_layout
+
+\begin_layout Verbatim
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+import javax.swing.JFrame;
+\end_layout
+
+\begin_layout Verbatim
+import javax.swing.JMenuItem;
+\end_layout
+
+\begin_layout Verbatim
+import javax.swing.JMenuBar;
+\end_layout
+
+\begin_layout Verbatim
+import javax.swing.JMenu;
+\end_layout
+
+\begin_layout Verbatim
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+import java.awt.event.ActionListener;
+\end_layout
+
+\begin_layout Verbatim
+import java.awt.event.ActionEvent;
+\end_layout
+
+\begin_layout Verbatim
+import java.awt.BorderLayout;
+\end_layout
+
+\begin_layout Verbatim
+import java.awt.Color;
+\end_layout
+
+\begin_layout Verbatim
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+import fr.esrf.tangoatk.core.AttributeList;
+\end_layout
+
+\begin_layout Verbatim
+import fr.esrf.tangoatk.core.ConnectionException;
+\end_layout
+
+\begin_layout Verbatim
+ 
+\end_layout
+
+\begin_layout Verbatim
+import fr.esrf.tangoatk.core.IStringScalar;
+\end_layout
+
+\begin_layout Verbatim
+import fr.esrf.tangoatk.core.INumberSpectrum;
+\end_layout
+
+\begin_layout Verbatim
+import fr.esrf.tangoatk.core.INumberImage;
+\end_layout
+
+\begin_layout Verbatim
+import fr.esrf.tangoatk.widget.util.ErrorHistory;
+\end_layout
+
+\begin_layout Verbatim
+import fr.esrf.tangoatk.widget.util.Gradient;
+\end_layout
+
+\begin_layout Verbatim
+import fr.esrf.tangoatk.widget.util.ATKGraphicsUtils;
+\end_layout
+
+\begin_layout Verbatim
+import fr.esrf.tangoatk.widget.attribute.NumberImageViewer;
+\end_layout
+
+\begin_layout Verbatim
+import fr.esrf.tangoatk.widget.attribute.NumberSpectrumViewer;
+\end_layout
+
+\begin_layout Verbatim
+import fr.esrf.tangoatk.widget.attribute.SimpleScalarViewer;
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+public class SecondApplication extends JFrame
+\end_layout
+
+\begin_layout Verbatim
+{
+\end_layout
+
+\begin_layout Verbatim
+     JMenuBar            menu;
+\end_layout
+
+\begin_layout Verbatim
+     AttributeList       attributes;   // The list that will contain our
+ attributes
+\end_layout
+
+\begin_layout Verbatim
+     ErrorHistory        errorHistory; // A window that displays errors
+\end_layout
+
+\begin_layout Verbatim
+     IStringScalar        ssAtt;
+\end_layout
+
+\begin_layout Verbatim
+     INumberSpectrum      nsAtt;
+\end_layout
+
+\begin_layout Verbatim
+     INumberImage         niAtt;
+\end_layout
+
+\begin_layout Verbatim
+     public SecondApplication()
+\end_layout
+
+\begin_layout Verbatim
+     {
+\end_layout
+
+\begin_layout Verbatim
+        // Swing stuff to create the menu bar and its pulldown menus
+\end_layout
+
+\begin_layout Verbatim
+        menu = new JMenuBar();
+\end_layout
+
+\begin_layout Verbatim
+        JMenu fileMenu = new JMenu();
+\end_layout
+
+\begin_layout Verbatim
+        fileMenu.setText("File");   
+\end_layout
+
+\begin_layout Verbatim
+        JMenu viewMenu = new JMenu();
+\end_layout
+
+\begin_layout Verbatim
+        viewMenu.setText("View");
+\end_layout
+
+\begin_layout Verbatim
+        JMenuItem quitItem = new JMenuItem();
+\end_layout
+
+\begin_layout Verbatim
+        quitItem.setText("Quit");
+\end_layout
+
+\begin_layout Verbatim
+        quitItem.addActionListener(new java.awt.event.ActionListener()
+\end_layout
+
+\begin_layout Verbatim
+                                      {                 
+\end_layout
+
+\begin_layout Verbatim
+                                       public void actionPerformed(ActionEvent
+ evt)
+\end_layout
+
+\begin_layout Verbatim
+                                       {quitItemActionPerformed(evt);}
+\end_layout
+
+\begin_layout Verbatim
+                                      });
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+        fileMenu.add(quitItem);
+\end_layout
+
+\begin_layout Verbatim
+        JMenuItem errorHistItem = new JMenuItem();
+\end_layout
+
+\begin_layout Verbatim
+        errorHistItem.setText("Error History");
+\end_layout
+
+\begin_layout Verbatim
+        errorHistItem.addActionListener(new java.awt.event.ActionListener()
+\end_layout
+
+\begin_layout Verbatim
+                {                 
+\end_layout
+
+\begin_layout Verbatim
+                 public void actionPerformed(ActionEvent evt)
+\end_layout
+
+\begin_layout Verbatim
+                 {errHistItemActionPerformed(evt);}
+\end_layout
+
+\begin_layout Verbatim
+                });
+\end_layout
+
+\begin_layout Verbatim
+        viewMenu.add(errorHistItem);
+\end_layout
+
+\begin_layout Verbatim
+        menu.add(fileMenu);
+\end_layout
+
+\begin_layout Verbatim
+        menu.add(viewMenu);
+\end_layout
+
+\begin_layout Verbatim
+      //
+\end_layout
+
+\begin_layout Verbatim
+      // Here we create TangoATK objects to view attributes and errors.
+\end_layout
+
+\begin_layout Verbatim
+      //
+\end_layout
+
+\begin_layout Verbatim
+        attributes = new AttributeList(); 
+\end_layout
+
+\begin_layout Verbatim
+        errorHistory = new ErrorHistory();
+\end_layout
+
+\begin_layout Verbatim
+      //
+\end_layout
+
+\begin_layout Verbatim
+      // We create a SimpleScalarViewer, a NumberSpectrumViewer and
+\end_layout
+
+\begin_layout Verbatim
+      // a NumberImageViewer, since we already knew that we were
+\end_layout
+
+\begin_layout Verbatim
+      // playing with a scalar attribute, a number spectrum attribute
+\end_layout
+
+\begin_layout Verbatim
+      // and a number image attribute this time.
+\end_layout
+
+\begin_layout Verbatim
+      //
+\end_layout
+
+\begin_layout Verbatim
+      SimpleScalarViewer     ssViewer = new SimpleScalarViewer();
+\end_layout
+
+\begin_layout Verbatim
+        NumberSpectrumViewer   nSpectViewer = new NumberSpectrumViewer();
+\end_layout
+
+\begin_layout Verbatim
+        NumberImageViewer      nImageViewer = new NumberImageViewer();
+\end_layout
+
+\begin_layout Verbatim
+        attributes.addErrorListener(errorHistory);
+\end_layout
+
+\begin_layout Verbatim
+     //
+\end_layout
+
+\begin_layout Verbatim
+     // The attribute (and command) list has the feature of returning the
+ last
+\end_layout
+
+\begin_layout Verbatim
+     // attribute that was added to it.
+ Just remember that it is returned as an
+\end_layout
+
+\begin_layout Verbatim
+     // IEntity object, so you need to cast it into a more specific object,
+ like
+\end_layout
+
+\begin_layout Verbatim
+     // IStringScalar, which is the interface which defines a string scalar
+\end_layout
+
+\begin_layout Verbatim
+     //
+\end_layout
+
+\begin_layout Verbatim
+       try
+\end_layout
+
+\begin_layout Verbatim
+        {
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+           ssAtt = (IStringScalar) attributes.add("jlp/test/1/att_cinq");
+\end_layout
+
+\begin_layout Verbatim
+           nsAtt = (INumberSpectrum) attributes.add("jlp/test/1/att_spectrum");
+\end_layout
+
+\begin_layout Verbatim
+           niAtt = (INumberImage) attributes.add("sr/d-ipc/id25-1n/Image");
+\end_layout
+
+\begin_layout Verbatim
+        }
+\end_layout
+
+\begin_layout Verbatim
+        catch (ConnectionException ce)
+\end_layout
+
+\begin_layout Verbatim
+        {
+\end_layout
+
+\begin_layout Verbatim
+           System.out.println("Error fetching one of the attributes  "+" "
+ + ce);
+\end_layout
+
+\begin_layout Verbatim
+           System.out.println("Application Aborted.");
+\end_layout
+
+\begin_layout Verbatim
+           System.exit(0);
+\end_layout
+
+\begin_layout Verbatim
+        }        
+\end_layout
+
+\begin_layout Verbatim
+        //
+\end_layout
+
+\begin_layout Verbatim
+        // Pay close attention to the following three lines!! This is how
+ it's done!
+\end_layout
+
+\begin_layout Verbatim
+        // This is how it's always done! The setModel
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+setModel
+\end_layout
+
+\end_inset
+
+ method of any viewer takes care
+\end_layout
+
+\begin_layout Verbatim
+       // of connecting the viewer to the attribute (model) it's in charge
+ of displaying.
+\end_layout
+
+\begin_layout Verbatim
+       // This is the way to tell each viewer what (which attribute) it
+ has to show.
+\end_layout
+
+\begin_layout Verbatim
+       // Note that we use a viewer adapted to each type of attribute
+\end_layout
+
+\begin_layout Verbatim
+       //
+\end_layout
+
+\begin_layout Verbatim
+        ssViewer.setModel(ssAtt);
+\end_layout
+
+\begin_layout Verbatim
+        nSpectViewer.setModel(nsAtt);
+\end_layout
+
+\begin_layout Verbatim
+        nImageViewer.setModel(niAtt);
+\end_layout
+
+\begin_layout Verbatim
+     //
+\end_layout
+
+\begin_layout Verbatim
+        nSpectViewer.setPreferredSize(new java.awt.Dimension(400, 300));
+\end_layout
+
+\begin_layout Verbatim
+        nImageViewer.setPreferredSize(new java.awt.Dimension(500, 300));
+\end_layout
+
+\begin_layout Verbatim
+        Gradient  g = new Gradient();
+\end_layout
+
+\begin_layout Verbatim
+        g.buidColorGradient();
+\end_layout
+
+\begin_layout Verbatim
+        g.setColorAt(0,Color.black);
+\end_layout
+
+\begin_layout Verbatim
+        nImageViewer.setGradient(g);
+\end_layout
+
+\begin_layout Verbatim
+        nImageViewer.setBestFit(true);
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+        //
+\end_layout
+
+\begin_layout Verbatim
+        // Add the viewers into the frame to show them
+\end_layout
+
+\begin_layout Verbatim
+        //
+\end_layout
+
+\begin_layout Verbatim
+        getContentPane().setLayout(new BorderLayout());
+\end_layout
+
+\begin_layout Verbatim
+        getContentPane().add(ssViewer, BorderLayout.SOUTH);
+\end_layout
+
+\begin_layout Verbatim
+        getContentPane().add(nSpectViewer, BorderLayout.CENTER);
+\end_layout
+
+\begin_layout Verbatim
+        getContentPane().add(nImageViewer, BorderLayout.EAST);
+\end_layout
+
+\begin_layout Verbatim
+        //
+\end_layout
+
+\begin_layout Verbatim
+        // To have the attributes values refreshed we should start the
+\end_layout
+
+\begin_layout Verbatim
+        // attribute list's refresher.
+\end_layout
+
+\begin_layout Verbatim
+        //
+\end_layout
+
+\begin_layout Verbatim
+        attributes.startRefresher();
+\end_layout
+
+\begin_layout Verbatim
+        //
+\end_layout
+
+\begin_layout Verbatim
+        // add the menubar to the frame
+\end_layout
+
+\begin_layout Verbatim
+        //
+\end_layout
+
+\begin_layout Verbatim
+        setJMenuBar(menu);
+\end_layout
+
+\begin_layout Verbatim
+        //
+\end_layout
+
+\begin_layout Verbatim
+        // JFrame stuff to make the thing show.
+\end_layout
+
+\begin_layout Verbatim
+        //
+\end_layout
+
+\begin_layout Verbatim
+        pack();
+\end_layout
+
+\begin_layout Verbatim
+        ATKGraphicsUtils.centerFrameOnScreen(this); //ATK utility to center
+ window
+\end_layout
+
+\begin_layout Verbatim
+        setVisible(true);
+\end_layout
+
+\begin_layout Verbatim
+     }
+\end_layout
+
+\begin_layout Verbatim
+     public static void main(String [] args)
+\end_layout
+
+\begin_layout Verbatim
+     {
+\end_layout
+
+\begin_layout Verbatim
+        new SecondApplication();
+\end_layout
+
+\begin_layout Verbatim
+     }
+\end_layout
+
+\begin_layout Verbatim
+     public void quitItemActionPerformed(ActionEvent evt)
+\end_layout
+
+\begin_layout Verbatim
+     {
+\end_layout
+
+\begin_layout Verbatim
+        System.exit(0);
+\end_layout
+
+\begin_layout Verbatim
+     }
+\end_layout
+
+\begin_layout Verbatim
+     public void errHistItemActionPerformed(ActionEvent evt)
+\end_layout
+
+\begin_layout Verbatim
+     {
+\end_layout
+
+\begin_layout Verbatim
+        errorHistory.setVisible(true);
+\end_layout
+
+\begin_layout Verbatim
+     }
+\end_layout
+
+\begin_layout Verbatim
+}
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "line.tex"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This program (SeondApplication) should look something like this (depending
+ on your platform and your device attributes)
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename img/prog_guide_exple2.jpg
+	lyxscale 75
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Subsubsection
+Synoptic
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Synoptic
+\end_layout
+
+\end_inset
+
+ viewer
+\end_layout
+
+\begin_layout Standard
+TangoATK provides a generic class to view and to animate the synoptics.
+ The name of this class is fr.esrf.tangoatk.widget.jdraw.SynopticFileViewer
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+SynopticFileViewer
+\end_layout
+
+\end_inset
+
+.
+ This class is based on a 
+\begin_inset Quotes eld
+\end_inset
+
+home-made
+\begin_inset Quotes erd
+\end_inset
+
+ graphical layer called jdraw
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+jdraw
+\end_layout
+
+\end_inset
+
+.
+ The jdraw package is also included inside TangoATK distribution.
+\end_layout
+
+\begin_layout Standard
+SynopticFileViewer is a sub-class of the class TangoSynopticHandler.
+ All the work for connection to tango devices and run time animation is
+ done inside the TangoSynopticHandler.
+\end_layout
+
+\begin_layout Standard
+The recipe for using the TangoATK synoptic viewer is the following
+\end_layout
+
+\begin_layout Enumerate
+You use Jdraw graphical editor to draw your synoptic 
+\end_layout
+
+\begin_layout Enumerate
+During drawing phase don't forget to associate parts of the drawing to tango
+ attributes or commands.
+ Use the 
+\begin_inset Quotes eld
+\end_inset
+
+name
+\begin_inset Quotes erd
+\end_inset
+
+ in the property window to do this
+\end_layout
+
+\begin_layout Enumerate
+During drawing phase you can also aasociate a class (frequently a 
+\begin_inset Quotes eld
+\end_inset
+
+specific panel
+\begin_inset Quotes erd
+\end_inset
+
+ class) which will be displayed when the user clicks on some part of the
+ drawing.
+ Use the 
+\begin_inset Quotes eld
+\end_inset
+
+extension
+\begin_inset Quotes erd
+\end_inset
+
+ tab in the property window to do this.
+\end_layout
+
+\begin_layout Enumerate
+Test the run-time behaviour of your synoptic.
+ Use 
+\begin_inset Quotes eld
+\end_inset
+
+Tango Synoptic view
+\begin_inset Quotes erd
+\end_inset
+
+ command in the 
+\begin_inset Quotes eld
+\end_inset
+
+views
+\begin_inset Quotes erd
+\end_inset
+
+ pulldown menu to do this.
+\end_layout
+
+\begin_layout Enumerate
+Save the drawing file.
+\end_layout
+
+\begin_layout Enumerate
+There is a simple synoptic application (SynopticAppli) which is provided
+ ready to use.
+ If this generic application is enough for you, you can forget about the
+ step 7.
+\end_layout
+
+\begin_layout Enumerate
+You can now develop a specific TangoATK based application which instantiates
+ the SynopticFileViewer.
+ To load the synoptic file in the SynopticFileViewer you have the choice
+ : either you load it by giving the absolute path name of the synoptic file
+ or you load the synoptic file using Java input streams.
+ The second solution is used when the synoptic file is included inside the
+ application jarfile.
+\end_layout
+
+\begin_layout Standard
+The SynopticFilerViewer will browse the objects in the synoptic file at
+ run time.
+ It discovers if some parts of the drawing is associated with an attribute
+ or a command.
+ In this case it will automatically connect to the corresponding attribute
+ or command.
+ Once the connection is successfull SynopticFileViewer will animate the
+ synoptic according to the default behaviour described below :
+\end_layout
+
+\begin_layout Itemize
+For 
+\emph on
+tango state attributes
+\emph default
+ : the colour of the drawing object reflects the value of the state.
+ A mouse click on the drawing object associated with the tango state attribute
+ will instantiate and display the class specified during the drawing phase.
+ If no class is specified the atkpanel generic device panel is displayed.
+\end_layout
+
+\begin_layout Itemize
+For 
+\emph on
+tango attributes
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+attributes
+\end_layout
+
+\end_inset
+
+
+\emph default
+ : the current value of the attribute is displayed through the drawing object
+\end_layout
+
+\begin_layout Itemize
+For 
+\emph on
+tango commands
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+commands
+\end_layout
+
+\end_inset
+
+
+\emph default
+ : the mouse click on the drawing object associated with the command will
+ launch the device command.
+\end_layout
+
+\begin_layout Itemize
+If the tooltip
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+tooltip
+\end_layout
+
+\end_inset
+
+ property is set to 
+\begin_inset Quotes eld
+\end_inset
+
+name
+\begin_inset Quotes erd
+\end_inset
+
+ when the mouse enters 
+\emph on
+any tango object
+\emph default
+ ( attribute or command), inside the synoptic drawing the name of the tango
+ object is displayed in a tooltip.
+\end_layout
+
+\begin_layout Standard
+The following example (ThirdApplication), is a Synoptic
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+SynopticFileViewer
+\end_layout
+
+\end_inset
+
+
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Synoptic
+\end_layout
+
+\end_inset
+
+ application.
+ We assume that the synoptic has already been drawn using Jdraw graphical
+ editor.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "line.tex"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Verbatim
+package examples;
+\end_layout
+
+\begin_layout Verbatim
+import java.io.*;
+\end_layout
+
+\begin_layout Verbatim
+import java.util.*;
+\end_layout
+
+\begin_layout Verbatim
+import javax.swing.JFrame;
+\end_layout
+
+\begin_layout Verbatim
+import javax.swing.JMenuItem;
+\end_layout
+
+\begin_layout Verbatim
+import javax.swing.JMenuBar;
+\end_layout
+
+\begin_layout Verbatim
+import javax.swing.JMenu;
+\end_layout
+
+\begin_layout Verbatim
+import java.awt.event.ActionListener;
+\end_layout
+
+\begin_layout Verbatim
+import java.awt.event.ActionEvent;
+\end_layout
+
+\begin_layout Verbatim
+import java.awt.BorderLayout;
+\end_layout
+
+\begin_layout Verbatim
+import fr.esrf.tangoatk.widget.util.ErrorHistory;
+\end_layout
+
+\begin_layout Verbatim
+import fr.esrf.tangoatk.widget.util.ATKGraphicsUtils;
+\end_layout
+
+\begin_layout Verbatim
+import fr.esrf.tangoatk.widget.jdraw.SynopticFileViewer;
+\end_layout
+
+\begin_layout Verbatim
+import fr.esrf.tangoatk.widget.jdraw.TangoSynopticHandler;
+\end_layout
+
+\begin_layout Verbatim
+public class ThirdApplication extends JFrame
+\end_layout
+
+\begin_layout Verbatim
+{
+\end_layout
+
+\begin_layout Verbatim
+     JMenuBar              menu;
+\end_layout
+
+\begin_layout Verbatim
+     ErrorHistory          errorHistory;  // A window that displays errors
+\end_layout
+
+\begin_layout Verbatim
+     SynopticFileViewer    sfv;           // TangoATK generic synoptic viewer
+\end_layout
+
+\begin_layout Verbatim
+     
+\end_layout
+
+\begin_layout Verbatim
+     
+\end_layout
+
+\begin_layout Verbatim
+     public ThirdApplication()
+\end_layout
+
+\begin_layout Verbatim
+     {
+\end_layout
+
+\begin_layout Verbatim
+        // Swing stuff to create the menu bar and its pulldown menus
+\end_layout
+
+\begin_layout Verbatim
+        menu = new JMenuBar();
+\end_layout
+
+\begin_layout Verbatim
+        JMenu fileMenu = new JMenu();
+\end_layout
+
+\begin_layout Verbatim
+        fileMenu.setText("File");   
+\end_layout
+
+\begin_layout Verbatim
+        JMenu viewMenu = new JMenu();
+\end_layout
+
+\begin_layout Verbatim
+        viewMenu.setText("View");
+\end_layout
+
+\begin_layout Verbatim
+        JMenuItem quitItem = new JMenuItem();
+\end_layout
+
+\begin_layout Verbatim
+        quitItem.setText("Quit");
+\end_layout
+
+\begin_layout Verbatim
+        quitItem.addActionListener(new java.awt.event.ActionListener()
+\end_layout
+
+\begin_layout Verbatim
+                                      {                 
+\end_layout
+
+\begin_layout Verbatim
+                                       public void actionPerformed(ActionEvent
+ evt)
+\end_layout
+
+\begin_layout Verbatim
+                                       {quitItemActionPerformed(evt);}
+\end_layout
+
+\begin_layout Verbatim
+                                      });
+\end_layout
+
+\begin_layout Verbatim
+        fileMenu.add(quitItem);
+\end_layout
+
+\begin_layout Verbatim
+        JMenuItem errorHistItem = new JMenuItem();
+\end_layout
+
+\begin_layout Verbatim
+        errorHistItem.setText("Error History");
+\end_layout
+
+\begin_layout Verbatim
+        errorHistItem.addActionListener(new java.awt.event.ActionListener()
+\end_layout
+
+\begin_layout Verbatim
+                {                 
+\end_layout
+
+\begin_layout Verbatim
+                 public void actionPerformed(ActionEvent evt)
+\end_layout
+
+\begin_layout Verbatim
+                 {errHistItemActionPerformed(evt);}
+\end_layout
+
+\begin_layout Verbatim
+                });
+\end_layout
+
+\begin_layout Verbatim
+        viewMenu.add(errorHistItem);
+\end_layout
+
+\begin_layout Verbatim
+        menu.add(fileMenu);
+\end_layout
+
+\begin_layout Verbatim
+        menu.add(viewMenu);
+\end_layout
+
+\begin_layout Verbatim
+        //
+\end_layout
+
+\begin_layout Verbatim
+        // Here we create TangoATK synoptic viewer and error window.
+\end_layout
+
+\begin_layout Verbatim
+        //
+\end_layout
+
+\begin_layout Verbatim
+        errorHistory = new ErrorHistory();
+\end_layout
+
+\begin_layout Verbatim
+        sfv = new SynopticFileViewer();
+\end_layout
+
+\begin_layout Verbatim
+        try
+\end_layout
+
+\begin_layout Verbatim
+        {
+\end_layout
+
+\begin_layout Verbatim
+            sfv.setErrorWindow(errorHistory);
+\end_layout
+
+\begin_layout Verbatim
+        }
+\end_layout
+
+\begin_layout Verbatim
+        catch (Exception setErrwExcept)
+\end_layout
+
+\begin_layout Verbatim
+        {
+\end_layout
+
+\begin_layout Verbatim
+            System.out.println("Cannot set Error History Window");
+\end_layout
+
+\begin_layout Verbatim
+        }
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+        //      
+\end_layout
+
+\begin_layout Verbatim
+        // Here we define the name of the synoptic file to show and the
+ tooltip mode to use
+\end_layout
+
+\begin_layout Verbatim
+        //        
+\end_layout
+
+\begin_layout Verbatim
+        try
+\end_layout
+
+\begin_layout Verbatim
+        {     
+\end_layout
+
+\begin_layout Verbatim
+          sfv.setJdrawFileName("/users/poncet/ATK_OLD/jdraw_files/id14.jdw");
+\end_layout
+
+\begin_layout Verbatim
+          sfv.setToolTipMode (TangoSynopticHandler.TOOL_TIP_NAME);
+\end_layout
+
+\begin_layout Verbatim
+        }
+\end_layout
+
+\begin_layout Verbatim
+        catch (FileNotFoundException  fnfEx)
+\end_layout
+
+\begin_layout Verbatim
+        {
+\end_layout
+
+\begin_layout Verbatim
+           javax.swing.JOptionPane.showMessageDialog(
+\end_layout
+
+\begin_layout Verbatim
+              null, "Cannot find the synoptic file : id14.jdw.
+\backslash
+n"
+\end_layout
+
+\begin_layout Verbatim
+                   + "Check the file name you entered;"
+\end_layout
+
+\begin_layout Verbatim
+                   + " Application will abort ...
+\backslash
+n"
+\end_layout
+
+\begin_layout Verbatim
+                   + fnfEx,
+\end_layout
+
+\begin_layout Verbatim
+                   "No such file",
+\end_layout
+
+\begin_layout Verbatim
+                   javax.swing.JOptionPane.ERROR_MESSAGE);
+\end_layout
+
+\begin_layout Verbatim
+           System.exit(-1);
+\end_layout
+
+\begin_layout Verbatim
+        }
+\end_layout
+
+\begin_layout Verbatim
+        catch (IllegalArgumentException  illEx)
+\end_layout
+
+\begin_layout Verbatim
+        {
+\end_layout
+
+\begin_layout Verbatim
+           javax.swing.JOptionPane.showMessageDialog(
+\end_layout
+
+\begin_layout Verbatim
+              null, "Cannot parse the synoptic file : id14.jdw.
+\backslash
+n"
+\end_layout
+
+\begin_layout Verbatim
+                   + "Check if the file is a Jdraw file."
+\end_layout
+
+\begin_layout Verbatim
+                   + " Application will abort ...
+\backslash
+n"
+\end_layout
+
+\begin_layout Verbatim
+                   + illEx,
+\end_layout
+
+\begin_layout Verbatim
+                   "Cannot parse the file",
+\end_layout
+
+\begin_layout Verbatim
+                   javax.swing.JOptionPane.ERROR_MESSAGE);
+\end_layout
+
+\begin_layout Verbatim
+           System.exit(-1);
+\end_layout
+
+\begin_layout Verbatim
+        }
+\end_layout
+
+\begin_layout Verbatim
+        catch (MissingResourceException  mrEx)
+\end_layout
+
+\begin_layout Verbatim
+        {
+\end_layout
+
+\begin_layout Verbatim
+           javax.swing.JOptionPane.showMessageDialog(
+\end_layout
+
+\begin_layout Verbatim
+              null, "Cannot parse the synoptic file : id14.jdw.
+\backslash
+n"
+\end_layout
+
+\begin_layout Verbatim
+                   + " Application will abort ...
+\backslash
+n"
+\end_layout
+
+\begin_layout Verbatim
+                   + mrEx,
+\end_layout
+
+\begin_layout Verbatim
+                   "Cannot parse the file",
+\end_layout
+
+\begin_layout Verbatim
+                   javax.swing.JOptionPane.ERROR_MESSAGE);
+\end_layout
+
+\begin_layout Verbatim
+           System.exit(-1);
+\end_layout
+
+\begin_layout Verbatim
+        }
+\end_layout
+
+\begin_layout Verbatim
+        //
+\end_layout
+
+\begin_layout Verbatim
+        // Add the viewers into the frame to show them
+\end_layout
+
+\begin_layout Verbatim
+        //
+\end_layout
+
+\begin_layout Verbatim
+        getContentPane().setLayout(new BorderLayout());
+\end_layout
+
+\begin_layout Verbatim
+        getContentPane().add(sfv, BorderLayout.CENTER);
+\end_layout
+
+\begin_layout Verbatim
+        //
+\end_layout
+
+\begin_layout Verbatim
+        // add the menubar to the frame
+\end_layout
+
+\begin_layout Verbatim
+        //
+\end_layout
+
+\begin_layout Verbatim
+        setJMenuBar(menu);
+\end_layout
+
+\begin_layout Verbatim
+        //
+\end_layout
+
+\begin_layout Verbatim
+        // JFrame stuff to make the thing show.
+\end_layout
+
+\begin_layout Verbatim
+        //
+\end_layout
+
+\begin_layout Verbatim
+        pack();
+\end_layout
+
+\begin_layout Verbatim
+        ATKGraphicsUtils.centerFrameOnScreen(this); //TangoATK utility to
+ center window
+\end_layout
+
+\begin_layout Verbatim
+        setVisible(true);
+\end_layout
+
+\begin_layout Verbatim
+     }
+\end_layout
+
+\begin_layout Verbatim
+     public static void main(String [] args)
+\end_layout
+
+\begin_layout Verbatim
+     {
+\end_layout
+
+\begin_layout Verbatim
+        new ThirdApplication();
+\end_layout
+
+\begin_layout Verbatim
+     }
+\end_layout
+
+\begin_layout Verbatim
+     public void quitItemActionPerformed(ActionEvent evt)
+\end_layout
+
+\begin_layout Verbatim
+     {
+\end_layout
+
+\begin_layout Verbatim
+        System.exit(0);
+\end_layout
+
+\begin_layout Verbatim
+     }
+\end_layout
+
+\begin_layout Verbatim
+     public void errHistItemActionPerformed(ActionEvent evt)
+\end_layout
+
+\begin_layout Verbatim
+     {
+\end_layout
+
+\begin_layout Verbatim
+        errorHistory.setVisible(true);
+\end_layout
+
+\begin_layout Verbatim
+     }
+\end_layout
+
+\begin_layout Verbatim
+}
+\end_layout
+
+\begin_layout Verbatim
+\begin_inset CommandInset include
+LatexCommand input
+filename "line.tex"
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The synoptic
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+synoptic
+\end_layout
+
+\end_inset
+
+ application (ThirdApplication) should look something like this (depending
+ on your synoptic drawing file)
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Graphics
+	filename img/prog_guide_exple3.jpg
+	lyxscale 75
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+A short note on the relationship between models and viewers
+\end_layout
+
+\begin_layout Standard
+As seen in the examples above, the connection between a model
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+model
+\end_layout
+
+\end_inset
+
+ and its viewer
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+viewer
+\end_layout
+
+\end_inset
+
+ is generally done by calling 
+\family typewriter
+setModel
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+setModel
+\end_layout
+
+\end_inset
+
+(model
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+model
+\end_layout
+
+\end_inset
+
+)
+\family default
+ on the viewer
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+viewer
+\end_layout
+
+\end_inset
+
+, it is never explained what happens behind the scenes when this is done.
+\end_layout
+
+\begin_layout Subsubsection
+Listeners
+\end_layout
+
+\begin_layout Standard
+Most of the viewers
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+viewer
+\end_layout
+
+\end_inset
+
+ implement some sort of 
+\emph on
+listener
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+listener
+\end_layout
+
+\end_inset
+
+
+\emph default
+ interface, eg INumberScalarListener
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+INumberScalarListener
+\end_layout
+
+\end_inset
+
+.
+ An object implementing such a listener interface has the capability of
+ receiving and treating 
+\emph on
+events
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+event
+\end_layout
+
+\end_inset
+
+
+\emph default
+ from a model
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+model
+\end_layout
+
+\end_inset
+
+ which emits events.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "line.tex"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Verbatim
+// this is the setModel of a SimpleScalarViewer
+\end_layout
+
+\begin_layout Verbatim
+  public void setModel
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+setModel
+\end_layout
+
+\end_inset
+
+(INumberScalar scalar) {
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+    clearModel();
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+    if (scalar != null) {
+\end_layout
+
+\begin_layout Verbatim
+      format = scalar.getProperty("format").getPresentation();
+\end_layout
+
+\begin_layout Verbatim
+      numberModel = scalar;
+\end_layout
+
+\begin_layout Verbatim
+ 
+\end_layout
+
+\begin_layout Verbatim
+   // this is where the viewer connects itself to the 
+\end_layout
+
+\begin_layout Verbatim
+   // model.
+ After this the viewer will (hopefully) receive 
+\end_layout
+
+\begin_layout Verbatim
+   // events through its numberScalarChange() method
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+   numberModel.addNumberScalarListener(this);
+\end_layout
+
+\begin_layout Verbatim
+ 
+\end_layout
+
+\begin_layout Verbatim
+      
+\end_layout
+
+\begin_layout Verbatim
+        numberModel.getProperty("format").addPresentationListener(this);
+\end_layout
+
+\begin_layout Verbatim
+      numberModel.getProperty("unit").addPresentationListener(this);
+\end_layout
+
+\begin_layout Verbatim
+    }
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+  }
+\end_layout
+
+\begin_layout Verbatim
+ 
+\end_layout
+
+\begin_layout Verbatim
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+// Each time the model of this viewer (the numberscalar attribute) decides
+ it is time, it 
+\end_layout
+
+\begin_layout Verbatim
+// calls the numberScalarChange method of all its registered listeners
+\end_layout
+
+\begin_layout Verbatim
+// with a NumberScalarEvent object which contains the 
+\end_layout
+
+\begin_layout Verbatim
+// the new value of the numberscalar attribute.
+\end_layout
+
+\begin_layout Verbatim
+//
+\end_layout
+
+\begin_layout Verbatim
+ 
+\end_layout
+
+\begin_layout Verbatim
+  public void numberScalarChange(NumberScalarEvent evt) {
+\end_layout
+
+\begin_layout Verbatim
+    String val;
+\end_layout
+
+\begin_layout Verbatim
+    val = getDisplayString(evt);
+\end_layout
+
+\begin_layout Verbatim
+    if (unitVisible) {
+\end_layout
+
+\begin_layout Verbatim
+      setText(val + " " + numberModel.getUnit());
+\end_layout
+
+\begin_layout Verbatim
+    } else {
+\end_layout
+
+\begin_layout Verbatim
+      setText(val);
+\end_layout
+
+\begin_layout Verbatim
+    }
+\end_layout
+
+\begin_layout Verbatim
+  }
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "line.tex"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+All listeners in TangoATK implement the 
+\family typewriter
+IErrorListener
+\family default
+ interface which specifies the 
+\family typewriter
+errorChange(ErrorEvent e)
+\family default
+ method.
+ This means that all listeners are forced to handle errors in some way or
+ another.
+\end_layout
+
+\begin_layout Section
+The key objects of TangoATK
+\end_layout
+
+\begin_layout Standard
+As seen from the examples above, the key objects of TangoATK are the 
+\family typewriter
+CommandList
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+CommandList
+\end_layout
+
+\end_inset
+
+
+\family default
+ and the 
+\family typewriter
+AttributeList
+\family default
+
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+AttributeList
+\end_layout
+
+\end_inset
+
+.
+ These two classes inherit from the abstract class 
+\family typewriter
+AEntityList
+\family default
+ which implements all of the common functionality between the two lists.
+ These lists use the functionality of the 
+\family typewriter
+CommandFactory
+\family default
+, the 
+\family typewriter
+AttributeFactory
+\family default
+, which both derive from 
+\family typewriter
+AEntityFactory,
+\family default
+ and the 
+\family typewriter
+DeviceFactory
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+In addition to these factories and lists there is one (for the time being)
+ other important functionality lurking around, the refreshers.
+\end_layout
+
+\begin_layout Subsection
+The Refreshers
+\end_layout
+
+\begin_layout Standard
+The refreshers
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+refresher
+\end_layout
+
+\end_inset
+
+, represented in TangoATK by the 
+\family typewriter
+Refresher
+\family default
+ object, is simply a subclass of 
+\family typewriter
+java.lang.Thread
+\family default
+ which will sleep for a given amount of time and then call a method refresh
+ on whatever kind of 
+\family typewriter
+IRefreshee
+\family default
+ it has been given as parameter, as shown below
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "line.tex"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Verbatim
+// This is an example from DeviceFactory.
+\end_layout
+
+\begin_layout Verbatim
+// We create a new Refresher with the name "device"
+\end_layout
+
+\begin_layout Verbatim
+// We add ourself to it, and start the thread
+\end_layout
+
+\begin_layout Verbatim
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+Refresher refresher = new Refresher("device");
+\end_layout
+
+\begin_layout Verbatim
+refresher.addRefreshee(this).start();
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "line.tex"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Both the 
+\family typewriter
+AttributeList
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+AttributeList
+\end_layout
+
+\end_inset
+
+
+\family default
+ and the 
+\family typewriter
+DeviceFactory
+\family default
+ implement the 
+\family typewriter
+IRefreshee
+\family default
+ interface which specify only one method, 
+\family typewriter
+refresh()
+\family default
+, and can thus be refreshed by the 
+\family typewriter
+Refresher
+\family default
+
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+refresher
+\end_layout
+
+\end_inset
+
+.
+ Even if the new release of TangoATK is based on the Tango Events
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+event
+\end_layout
+
+\end_inset
+
+
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+Tango-Event
+\end_layout
+
+\end_inset
+
+, the refresher mecanisme will not be removed.
+ As a matter of fact, the method refresh() implemented in 
+\noun on
+AttributeList
+\noun default
+ skips all attributes (members of the list) for which the subscribe
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+subscribe
+\end_layout
+
+\end_inset
+
+ to the tango event has succeeded and calls the old refresh() method for
+ the others (for which subscribe to tango events has failed).
+ 
+\end_layout
+
+\begin_layout Standard
+In a first stage this will allow the TangoATK applications to mix the use
+ of the old tango device servers (which do not implement tango events) and
+ the new ones in the same code.
+ In other words, TangoATK subscribes for tango events if possible otherwise
+ TangoATK will refresh the attributes through the old refresher mecanisme.
+\end_layout
+
+\begin_layout Standard
+Another reason for keeping the refresher is that the subscribe event can
+ fail even for the attributes of the new Tango device servers.
+ As soon as the specified attribute is not polled the Tango events cannot
+ be generated for that attribute.
+ Therefore the event subscription will fail.
+ In this case the attribute will be refreshed thanks to the ATK attribute
+ list refresher.
+\end_layout
+
+\begin_layout Standard
+The 
+\family typewriter
+AttributePolledList
+\family default
+ class allows the application programmer to force explicitly the use of
+ the refresher method for all attributes added in an AttributePolledList
+ even if the corresponding device servers implement tango events.
+ Some viewers (fr.esrf.tangoatk.widget.attribute.Trend) need an AttributePolledList
+ in order to force the refresh of the attribute without using tango events.
+\end_layout
+
+\begin_layout Subsubsection
+What happens on a refresh
+\end_layout
+
+\begin_layout Standard
+When 
+\family typewriter
+refresh
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+refresh
+\end_layout
+
+\end_inset
+
+
+\family default
+ is called on the 
+\family typewriter
+AttributeList
+\family default
+ and the 
+\family typewriter
+DeviceFactory
+\family default
+, they loop through their objects, 
+\family typewriter
+IAttributes
+\family default
+ and 
+\family typewriter
+IDevices
+\family default
+, respectively, and ask them to refresh themselves if they are not event
+ driven.
+\end_layout
+
+\begin_layout Standard
+When 
+\noun on
+AttributeFactory
+\noun default
+, creates an 
+\family typewriter
+IAttribute
+\family default
+, TangoATK tries to subscribe for Tango Change event for that attribute.
+ If the subscription succeeds then the attribute is marked as event driven.
+ If the subscription for Tango Change event fails, TangoATK tries to subscribe
+ for Tango Periodic event.
+ If the subscription succeeds then the attribute is marked as event driven.
+ If the subscription fails then the attribute is marked as to be 
+\begin_inset Quotes eld
+\end_inset
+
+ without events
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+In the 
+\noun on
+refresh()
+\noun default
+ method of the 
+\noun on
+AttributeList
+\noun default
+ during the loop through the objects if the object is marked event driven
+ then the object is simply skipped.
+ But if the object (attribute) is not marked as event driven, the 
+\noun on
+refresh()
+\noun default
+ method of the 
+\noun on
+AttributeList
+\noun default
+, asks the object to refresh itself by calling the 
+\begin_inset Quotes eld
+\end_inset
+
+
+\noun on
+refresh()
+\noun default
+
+\begin_inset Quotes erd
+\end_inset
+
+ method of that object (attribute or device).
+ The 
+\noun on
+refresh()
+\noun default
+ method of an attribute will in turn call the 
+\begin_inset Quotes eld
+\end_inset
+
+readAttribute
+\begin_inset Quotes erd
+\end_inset
+
+ on the Tango device.
+\end_layout
+
+\begin_layout Standard
+The result of this is that the 
+\family typewriter
+IAttributes
+\family default
+ fire off events to their registered listeners
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+listener
+\end_layout
+
+\end_inset
+
+ containing snapshots of their state.
+ The events are fired either because the 
+\noun on
+IAttribute
+\noun default
+ has received a Tango Change event, respectively a Tango Periodic event
+ (event driven objects), or because the 
+\noun on
+refresh()
+\noun default
+ method of the object has issued a readAttribute on the Tango device.
+\end_layout
+
+\begin_layout Subsection
+The DeviceFactory
+\end_layout
+
+\begin_layout Standard
+The device factory is responsible for two things
+\end_layout
+
+\begin_layout Enumerate
+Creating new devices (Tango device proxies) when needed 
+\end_layout
+
+\begin_layout Enumerate
+Refreshing the state and status of these devices 
+\end_layout
+
+\begin_layout Standard
+Regarding the first point, new devices are created when they are asked for
+ and only if they have not already been created.
+ If a programmer asks for the same device twice, she is returned a reference
+ to the same device-object.
+\end_layout
+
+\begin_layout Standard
+The 
+\family typewriter
+DeviceFactory
+\family default
+ contains a Refresher as described above, which makes sure that the all
+ 
+\family sans
+Devices
+\family default
+ in the 
+\family sans
+DeviceFactory
+\family default
+ updates their state and status and fire events to its listeners.
+\end_layout
+
+\begin_layout Subsection
+The AttributeFactory and the CommandFactory
+\end_layout
+
+\begin_layout Standard
+These factories are responsible for taking a name of an attribute or command
+ and returning an object representing the attribute or command.
+ It is also responsible for making sure that the appropriate 
+\family typewriter
+IDevice
+\family default
+ is already available.
+ Normally the programmer does not want to use these factory classes directly.
+ They are used by TangoATK classes indirectly when the application programmer
+ calls the AttributeList's (or CommandList's) 
+\noun on
+add()
+\noun default
+ method.
+\end_layout
+
+\begin_layout Subsection
+The AttributeList
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+AttributeList
+\end_layout
+
+\end_inset
+
+ and the CommandList
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+CommandList
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+These lists are containers for attributes and commands.
+ They delegate the construction-work to the factories mentioned above, and
+ generally do not do much more, apart from containing refreshers, and thus
+ being able to make the objects they contain refresh their listeners.
+\end_layout
+
+\begin_layout Subsection
+The Attributes
+\end_layout
+
+\begin_layout Standard
+The attributes
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+attributes
+\end_layout
+
+\end_inset
+
+ come in several flavors.
+ Tango supports the following types:
+\end_layout
+
+\begin_layout Itemize
+Short 
+\end_layout
+
+\begin_layout Itemize
+Long 
+\end_layout
+
+\begin_layout Itemize
+Double
+\end_layout
+
+\begin_layout Itemize
+String 
+\end_layout
+
+\begin_layout Itemize
+Unsigned Char
+\end_layout
+
+\begin_layout Itemize
+Boolean
+\end_layout
+
+\begin_layout Itemize
+Unsigned Short
+\end_layout
+
+\begin_layout Itemize
+Float
+\end_layout
+
+\begin_layout Itemize
+Unsigned Long
+\end_layout
+
+\begin_layout Standard
+According to Tango specifications, all these types can be of the following
+ formats:
+\end_layout
+
+\begin_layout Itemize
+Scalar, a single value 
+\end_layout
+
+\begin_layout Itemize
+Spectrum, a single array 
+\end_layout
+
+\begin_layout Itemize
+Image, a two dimensional array 
+\end_layout
+
+\begin_layout Standard
+For the sake of simplicity, TangoATK has combined all the numeric types
+ into one, presenting all of them as doubles.
+ So the TangoATK classes which handle the numeric attributes are : NumberScalar,
+ NumberSpectrum and NumberImage (Number can be short, long, double, float,
+ ...).
+\end_layout
+
+\begin_layout Subsubsection
+The hierarchy
+\end_layout
+
+\begin_layout Standard
+The numeric attribute hierarchy is expressed in the following interfaces:
+\end_layout
+
+\begin_layout Description
+INumberScalar extends 
+\series bold
+INumber
+\end_layout
+
+\begin_layout Description
+INumberSpectrum extends 
+\series bold
+INumber
+\end_layout
+
+\begin_layout Description
+INumberImage extends 
+\series bold
+INumber
+\end_layout
+
+\begin_layout Description
+
+\series medium
+and
+\series bold
+ INumber
+\series default
+ in turn extends 
+\series bold
+IAttribute
+\series default
+ 
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Each of these types emit their proper events and have their proper listeners.
+ Please consult the javadoc for further information.
+\end_layout
+
+\begin_layout Subsection
+The Commands
+\end_layout
+
+\begin_layout Standard
+The commands
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+commands
+\end_layout
+
+\end_inset
+
+ in Tango are rather ugly beasts.
+ There exists the following kinds of commands
+\end_layout
+
+\begin_layout Itemize
+Those which take input 
+\end_layout
+
+\begin_layout Itemize
+Those which do not take input 
+\end_layout
+
+\begin_layout Itemize
+Those which do output 
+\end_layout
+
+\begin_layout Itemize
+Those which do not do output 
+\end_layout
+
+\begin_layout Standard
+Now, for both input and output we have the following types:
+\end_layout
+
+\begin_layout Itemize
+Double 
+\end_layout
+
+\begin_layout Itemize
+Float
+\end_layout
+
+\begin_layout Itemize
+Unsigned Long
+\end_layout
+
+\begin_layout Itemize
+Long 
+\end_layout
+
+\begin_layout Itemize
+Unsigned Short
+\end_layout
+
+\begin_layout Itemize
+Short 
+\end_layout
+
+\begin_layout Itemize
+String
+\end_layout
+
+\begin_layout Standard
+These types can appear in scalar or array formats.
+ In addition to this, there are also four other types of parameters:
+\end_layout
+
+\begin_layout Enumerate
+Boolean
+\end_layout
+
+\begin_layout Enumerate
+Unsigned Char Array
+\end_layout
+
+\begin_layout Enumerate
+The StringLongArray 
+\end_layout
+
+\begin_layout Enumerate
+The StringDoubleArray 
+\end_layout
+
+\begin_layout Standard
+The last two types mentioned above are two-dimensional arrays containing
+ a string array in the first dimension and a long or double array in the
+ second dimension, respectively.
+\end_layout
+
+\begin_layout Standard
+As for the attributes, all numeric types have been converted into doubles,
+ but there has been made little or no effort to create an hierarchy of types
+ for the commands.
+\end_layout
+
+\begin_layout Subsubsection
+Events
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+event
+\end_layout
+
+\end_inset
+
+ and listeners
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+listener
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The commands publish results to their 
+\family typewriter
+IResultListener
+\family default
+s, by the means of a 
+\family typewriter
+ResultEvent
+\family default
+.
+ The 
+\family typewriter
+IResultListener
+\family default
+ extends 
+\family typewriter
+IErrorListener
+\family default
+, any viewer
+\begin_inset Index
+status collapsed
+
+\begin_layout Plain Layout
+viewer
+\end_layout
+
+\end_inset
+
+ of command-results should also know how to handle errors.
+ So a viewer of command-results implements IResultListener interface and
+ registers itself as a resultListener for the command it has to show the
+ results.
+\end_layout
+
+\begin_layout Verbatim
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset CommandInset label
+LatexCommand label
+name "TwoRicardo"
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename ../dance/0046-reduc.jpg
+	scale 400
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

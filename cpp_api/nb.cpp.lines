@@ -1,0 +1,21 @@
+     1	DeviceAttribute da;
+     2	vector<short> attr_data;
+     3	
+     4	try
+     5	{
+     6	   da = device->read_attribute("Attr");
+     7	   da >> attr_data;
+     8	}
+     9	catch (DevFailed &e)
+    10	{
+    11	   ....
+    12	}
+    13	
+    14	long read = da.get_nb_read();
+    15	long written = da.get_nb_written();
+    16	
+    17	for (long i = 0;i < read;i++)
+    18	   cout << "Read value " << i+1 << " = " << attr_data[i] << endl;
+    19	
+    20	for (long j = 0; j < written;j++)
+    21	   cout << "Last written value " << j+1 << " = " << attr_data[j + read] << endl;

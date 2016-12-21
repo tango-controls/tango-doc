@@ -1,0 +1,80 @@
+     1	class Attribute
+     2	{
+     3	public:
+     4		Attribute(vector<AttrProperty> &,long ,string &);
+     5		virtual ~Attribute() {};
+     6		
+     7		bool is_writable();
+     8		bool is_writ_associated();
+     9		bool is_alarmed();
+    10		bool is_min_alarm();
+    11		bool is_max_alarm();
+    12		
+    13		string &get_name();
+    14		string &get_upper_name();
+    15		long get_name_size();
+    16		long get_data_type();
+    17		Tango_AttrDataFormat get_data_format();
+    18		string &get_assoc_name();
+    19		long get_assoc_ind();
+    20		void set_assoc_ind(long);
+    21		Tango_TimeVal &get_when();
+    22		Tango_AttrQuality &get_quality();
+    23		void set_quality(Tango_AttrQuality);
+    24		long get_data_size();
+    25		void set_value_flag(bool);
+    26		bool get_value_flag();
+    27		
+    28		void get_properties(Tango_AttributeConfig &);
+    29		void set_properties(const Tango_AttributeConfig &,string &);
+    30		void upd_database(const Tango_AttributeConfig &,string &);
+    31		
+    32		bool check_alarm();
+    33		
+    34		void set_value(Tango_DevShort *,Tango_AttrQuality);
+    35		void set_value(Tango_DevLong *,Tango_AttrQuality);
+    36		...
+    37		Tango_DevVarShortArray *get_short_value();
+    38		Tango_DevVarLongArray *get_long_value();
+    39		Tango_DevVarDoubleArray *get_double_value();
+    40		Tango_DevVarStringArray *get_string_value();
+    41		virtual void set_value() {};
+    42		void delete_seq();
+    43		void wanted_date(bool);
+    44		
+    45		void add_write_value(Tango_DevShort &);
+    46		void add_write_value(Tango_DevLong &);
+    47		...
+    48						
+    49		friend ostream &operator<<(ostream &,Attribute &);
+    50	
+    51	protected:
+    52		string 			name;
+    53		bool			writable;
+    54		long			data_type;
+    55		Tango_AttrDataFormat	data_format;
+    56		long			dim_x;
+    57		long			dim_y;
+    58		
+    59		string			label;
+    60		string			description;
+    61		string			unit;
+    62		string			standard_unit;
+    63		string 			display_unit;
+    64		string			format;
+    65		string			writable_attr_name;
+    66		string			min_alarm_str;
+    67		string			max_alarm_str;
+    68		string			min_value_str;
+    69		string			max_value_str;
+    70	
+    71		Tango_Attr_CheckVal	min_alarm;	
+    72		Tango_Attr_CheckVal	max_alarm;	
+    73		Tango_Attr_CheckVal	min_value;	
+    74		Tango_Attr_CheckVal	max_value;
+    75		
+    76		Tango_Attr_Value	value;
+    77		long			data_size;
+    78		....
+    79		
+    80	};

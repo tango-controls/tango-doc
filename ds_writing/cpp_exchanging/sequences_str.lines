@@ -1,0 +1,12 @@
+     1	   Tango_DevVarStringArray mystrseq();
+     2	   mystrseq.length(4);
+     3	
+     4	   mystrseq[0] = CORBA_string_dup("Rock and Roll");
+     5	   mystrseq[1] = CORBA_string_dup("Bossa Nova");
+     6	   mystrseq[2] = CORBA_string_dup();
+     7	   mystrseq[3] = CORBA_string_dup("Tango");
+     8	
+     9	   CORBA_Long nb_elt = mystrseq.length();
+    10	
+    11	   for (int i = 0;i < mystrseq.length();i++)
+    12	   	cout << "Sequence elt " << i + 1 << " = " << mystrseq[i] << endl;

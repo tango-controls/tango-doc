@@ -1,0 +1,25 @@
+     1	#include <tango.h>
+     2	#include <steppermotor.h>
+     3	
+     4	namespace StepperMotor
+     5	{
+     6	
+     7	
+     8	class PositionAttr: public Tango::Attr
+     9	{
+    10	public:
+    11		PositionAttr():Attr("Position",
+    12	                            Tango::DEV_DOUBLE,
+    13	                            Tango::READ_WITH_WRITE,i
+    14	                            "SetPosition") {};
+    15		~PositionAttr() {};
+    16		
+    17		virtual void read(Tango::DeviceImpl *dev,Tango::Attribute &att)
+    18		{(static_cast<StepperMotor *>(dev))->read_Position(att);}
+    19		virtual bool is_allowed(Tango::DeviceImpl *dev,Tango::AttReqType ty)
+    20		{return (static_cast<StepperMotor *>(dev))->is_Position_allowed(ty);}
+    21	};
+    22	
+    23	} /* End of StepperMotor namespace */
+    24	
+    25	#endif // _STEPPERMOTORCLASS_H
