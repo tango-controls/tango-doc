@@ -1,9 +1,0 @@
-     1	Tango::DevVarStringArray *DocDs::dev_str_array()
-     2	{
-     3		int_buffer[0] = "first";
-     4		int_buffer[1] = "second";
-     5	
-     6		Tango::DevVarStringArray *argout;
-     7		argout = create_DevVarStringArray(int_buffer,2);
-     8		return argout;
-     9	}
