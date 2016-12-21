@@ -1,20 +1,32 @@
-.. cppTango documentation master file, created by
-   sphinx-quickstart on Sun Dec 18 15:54:03 2016.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
++----------+---------------------------------------+
+| |Logo|   | Tango Core Classes Reference  9.2.5   |
++----------+---------------------------------------+
 
-Welcome to cppTango's documentation!
-====================================
+-  `Main Page <index.html>`__
+-  `Related Pages <pages.html>`__
+-  `Modules <modules.html>`__
+-  `Namespaces <namespaces.html>`__
+-  `Classes <annotated.html>`__
+-  `Files <files.html>`__
+
+Tango Core Classes Reference Documentation
+
 
 Contents:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 5
 
-   class
-   file
-   group
-   namespace
-   struct
-   union
+   *
+   */*
+   */*/*
+   */*/*/*
+   */*/*/*/*
 
+
+-  Generated on Fri Oct 7 2016 11:11:17 for Tango Core Classes Reference
+   by |doxygen| 1.8.8
+
+.. |Logo| image:: logo.jpg
+.. |doxygen| image:: doxygen.png
+   :target: http://www.doxygen.org/index.html

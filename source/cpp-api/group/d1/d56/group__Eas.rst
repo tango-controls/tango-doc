@@ -1,4 +1,0 @@
-Group Eas
-=========
-
-.. doxygengroup:: Eas

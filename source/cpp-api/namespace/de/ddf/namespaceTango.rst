@@ -1,4 +1,0 @@
-Namespace Tango
-===============
-
-.. doxygennamespace:: Tango

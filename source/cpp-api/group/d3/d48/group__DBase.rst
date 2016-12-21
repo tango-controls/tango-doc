@@ -1,4 +1,0 @@
-Group DBase
-===========
-
-.. doxygengroup:: DBase

@@ -1,4 +1,0 @@
-Group Server
-============
-
-.. doxygengroup:: Server

@@ -1,4 +1,0 @@
-Group Ope
-=========
-
-.. doxygengroup:: Ope

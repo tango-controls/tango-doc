@@ -1,4 +1,0 @@
-Group Grp
-=========
-
-.. doxygengroup:: Grp
