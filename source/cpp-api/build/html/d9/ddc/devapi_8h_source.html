@@ -1,0 +1,1834 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>&lt;no title&gt; &#8212; Tango Core Classes Reference Documentation 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="top" title="Tango Core Classes Reference Documentation 1.0 documentation" href="../../index.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><img alt="Logo" src="../../_images/logo251.jpg" /></td>
+<td>Tango Core Classes Reference &nbsp;9.2.5</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><a class="reference external" href="../../index.html">Main&nbsp;Page</a></li>
+<li><a class="reference external" href="../../pages.html">Related&nbsp;Pages</a></li>
+<li><a class="reference external" href="../../modules.html">Modules</a></li>
+<li><a class="reference external" href="../../namespaces.html">Namespaces</a></li>
+<li><a class="reference external" href="../../annotated.html">Classes</a></li>
+<li><a class="reference external" href="../../files.html">Files</a></li>
+<li><a class="reference external" href="../../files.html">File&nbsp;List</a></li>
+<li><a class="reference external" href="../../globals.html">File&nbsp;Members</a></li>
+</ul>
+<p>devapi.h</p>
+<p><a class="reference external" href="../../d9/ddc/devapi_8h.html">Go to the documentation of this file.</a></p>
+<p>1&nbsp;//=====================================================================================================================</p>
+<p>2&nbsp;//</p>
+<p>3&nbsp;// devapi.h - include file for TANGO device api</p>
+<p>4&nbsp;//</p>
+<p>5&nbsp;//</p>
+<p>6&nbsp;// Copyright (C) :
+2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015</p>
+<p>7&nbsp;// European Synchrotron Radiation Facility</p>
+<p>8&nbsp;// BP 220, Grenoble 38043</p>
+<p>9&nbsp;// FRANCE</p>
+<p>10&nbsp;//</p>
+<p>11&nbsp;// This file is part of Tango.</p>
+<p>12&nbsp;//</p>
+<p>13&nbsp;// Tango is free software: you can redistribute it and/or modify it
+under the terms of the GNU Lesser General Public</p>
+<p>14&nbsp;// License as published by the Free Software Foundation, either
+version 3 of the License, or</p>
+<p>15&nbsp;// (at your option) any later version.</p>
+<p>16&nbsp;//</p>
+<p>17&nbsp;// Tango is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty</p>
+<p>18&nbsp;// of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the</p>
+<p>19&nbsp;// GNU Lesser General Public License for more details.</p>
+<p>20&nbsp;//</p>
+<p>21&nbsp;// You should have received a copy of the GNU Lesser General Public
+License along with Tango.</p>
+<p>22&nbsp;// If not, see &lt;<a class="reference external" href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>&gt;.</p>
+<p>23&nbsp;//</p>
+<p>24&nbsp;// $Revision$</p>
+<p>25&nbsp;//</p>
+<p>26&nbsp;//====================================================================================================================</p>
+<p>27</p>
+<p>28&nbsp;#ifndef _DEVAPI_H</p>
+<p>29&nbsp;#define _DEVAPI_H</p>
+<p><a class="reference external" href="../../d9/ddc/devapi_8h.html">30</a></p>
+<p>31&nbsp;#include &lt;tango.h&gt;</p>
+<p><a class="reference external" href="../../d9/ddc/devapi_8h.html">32</a>&nbsp;#include
+&lt;<a class="reference external" href="../../d4/d13/tango__const_8h.html">tango/server/tango_const.h</a>&gt;</p>
+<p><a class="reference external" href="../../d9/ddc/devapi_8h.html">33</a>&nbsp;#include
+&lt;<a class="reference external" href="../../d3/d7a/apiexcept_8h.html">tango/client/apiexcept.h</a>&gt;</p>
+<p>34&nbsp;#include &lt;tango/client/cbthread.h&gt;</p>
+<p>35&nbsp;#include &lt;tango/client/lockthread.h&gt;</p>
+<p>36&nbsp;#include &lt;tango/server/readers_writers_lock.h&gt;</p>
+<p>37</p>
+<p>38&nbsp;#include &lt;bitset&gt;</p>
+<p>39</p>
+<p>40&nbsp;using namespace <a class="reference external" href="../../d8/dcc/namespacestd.html">std</a>;</p>
+<p>41</p>
+<p>42&nbsp;namespace <a class="reference external" href="../../de/ddf/namespaceTango.html">Tango</a></p>
+<p>43&nbsp;{</p>
+<p>44</p>
+<p>47&nbsp;//</p>
+<p>48&nbsp;// forward declarations</p>
+<p>49&nbsp;//</p>
+<p>50</p>
+<p>51&nbsp;class DeviceData;</p>
+<p>52&nbsp;class DeviceAttribute;</p>
+<p>53&nbsp;class DbDevice;</p>
+<p>54&nbsp;class DbAttribute;</p>
+<p><a class="reference external" href="../../d7/d2a/classTango_1_1ApiUtil.html">55</a>&nbsp;class
+<a class="reference external" href="../../d3/d0f/classTango_1_1DbDatum.html">DbDatum</a>;</p>
+<p><a class="reference external" href="../../d9/d83/classTango_1_1DeviceProxy.html">56</a>&nbsp;class
+<a class="reference external" href="../../d0/d4b/classTango_1_1DbDevImportInfo.html">DbDevImportInfo</a>;</p>
+<p>57&nbsp;class <a class="reference external" href="../../d6/dc5/classTango_1_1Database.html">Database</a>;</p>
+<p><a class="reference external" href="../../d3/d4b/classTango_1_1AttributeProxy.html">58</a>&nbsp;class
+<a class="reference external" href="../../d4/d49/classTango_1_1AsynReq.html">AsynReq</a>;</p>
+<p>59&nbsp;class NotifdEventConsumer;</p>
+<p>60&nbsp;class ZmqEventConsumer;</p>
+<p>61&nbsp;class <a class="reference external" href="../../d4/ded/classTango_1_1CallBack.html">CallBack</a>;</p>
+<p>62&nbsp;class
+<a class="reference external" href="../../d3/d4b/classTango_1_1AttributeProxy.html">AttributeProxy</a>;</p>
+<p>63&nbsp;class TangoMonitor;</p>
+<p><a class="reference external" href="../../df/d22/classTango_1_1DeviceData.html">64</a></p>
+<p>65&nbsp;//</p>
+<p>66&nbsp;// Some typedef</p>
+<p>67&nbsp;//</p>
+<p>68</p>
+<p>69&nbsp;typedef vector&lt;DbDatum&gt;
+<a class="reference external" href="../../de/ddf/namespaceTango.html#a99fa459235396b406532406b562984c0">DbData</a>;</p>
+<p>70</p>
+<p><a class="reference external" href="../../d7/d2a/classTango_1_1ApiUtil.html#a6edde9186c939355ab52dc2cffa82e8c">71</a>&nbsp;typedef
+union</p>
+<p>72&nbsp;{</p>
+<p><a class="reference external" href="../../d8/d7f/unionTango_1_1LockerId.html#a9b563ab895bb99554f04e46618290ff1">73</a>
+TangoSys_Pid
+<a class="reference external" href="../../d8/d7f/unionTango_1_1LockerId.html#a9b563ab895bb99554f04e46618290ff1">LockerPid</a>;</p>
+<p><a class="reference external" href="../../d8/d7f/unionTango_1_1LockerId.html#ad648fc376844a4bc06479a5c37149e22">74</a>
+unsigned long UUID[4];</p>
+<p>75&nbsp;}`LockerId &lt;../../d8/d7f/unionTango_1_1LockerId.html&gt;`__;</p>
+<p><a class="reference external" href="../../d0/d0c/structTango_1_1DataElement.html#a9991e976d3509e95b2251727640c7282">76</a></p>
+<p><a class="reference external" href="../../d0/d0c/structTango_1_1DataElement.html#a0b593af779503f27457d6c44ea6bff27">77</a>&nbsp;struct
+<a class="reference external" href="../../dd/d39/structTango_1_1LockerInfo.html">LockerInfo</a></p>
+<p>78&nbsp;{</p>
+<p><a class="reference external" href="../../dd/d39/structTango_1_1LockerInfo.html#a7a15276bc7ce4c7dd2ff59f8aa67f185">79</a>
+LockerLanguage
+<a class="reference external" href="../../dd/d39/structTango_1_1LockerInfo.html#a7a15276bc7ce4c7dd2ff59f8aa67f185">ll</a>;</p>
+<p><a class="reference external" href="../../dd/d39/structTango_1_1LockerInfo.html#ac19a902ad6cc0fe15e74485cc09d3f5a">80</a>
+<a class="reference external" href="../../d8/d7f/unionTango_1_1LockerId.html">LockerId</a>
+<a class="reference external" href="../../dd/d39/structTango_1_1LockerInfo.html#ac19a902ad6cc0fe15e74485cc09d3f5a">li</a>;</p>
+<p><a class="reference external" href="../../dd/d39/structTango_1_1LockerInfo.html#ad357dac7c976f8336baeadcf8abafe81">81</a>
+string
+<a class="reference external" href="../../dd/d39/structTango_1_1LockerInfo.html#ad357dac7c976f8336baeadcf8abafe81">locker_host</a>;</p>
+<p><a class="reference external" href="../../dd/d39/structTango_1_1LockerInfo.html#a024019267de036847a9f7e30b2c3fe1a">82</a>
+string
+<a class="reference external" href="../../dd/d39/structTango_1_1LockerInfo.html#a024019267de036847a9f7e30b2c3fe1a">locker_class</a>;</p>
+<p>83&nbsp;};</p>
+<p>84</p>
+<p><a class="reference external" href="../../d0/d41/structTango_1_1LockingThread.html">85</a>&nbsp;struct
+<a class="reference external" href="../../d0/d41/structTango_1_1LockingThread.html">LockingThread</a></p>
+<p><a class="reference external" href="../../d0/d0c/structTango_1_1DataElement.html#af5a5d4272dde06c89b12a490a34935b0">86</a>&nbsp;{</p>
+<p><a class="reference external" href="../../d0/d41/structTango_1_1LockingThread.html#ae8e7851b01b8c8a9a34c8044cb9ca3a9">87</a>
+TangoMonitor
+*<a class="reference external" href="../../d0/d41/structTango_1_1LockingThread.html#ae8e7851b01b8c8a9a34c8044cb9ca3a9">mon</a>;</p>
+<p><a class="reference external" href="../../d0/d41/structTango_1_1LockingThread.html#a3a3fe5fd038680368a3f32e2d190bc80">88</a>
+LockThCmd
+*<a class="reference external" href="../../d0/d41/structTango_1_1LockingThread.html#a3a3fe5fd038680368a3f32e2d190bc80">shared</a>;</p>
+<p><a class="reference external" href="../../d0/d41/structTango_1_1LockingThread.html#a98fd861b6d8fcddf32da3be51fc1ac4b">89</a>
+LockThread
+*<a class="reference external" href="../../d0/d41/structTango_1_1LockingThread.html#a98fd861b6d8fcddf32da3be51fc1ac4b">l_thread</a>;</p>
+<p>90&nbsp;};</p>
+<p><a class="reference external" href="../../d0/d0c/structTango_1_1DataElement.html#acef99a390cec2bcd807a428992bcba81">91</a></p>
+<p>97&nbsp;#ifdef GEN_DOC</p>
+<p><a class="reference external" href="../../d9/d83/classTango_1_1DeviceProxy.html#af7e5f3e23d25e03f0f21824a5015c5bf">98</a>&nbsp;typedef
+struct
+<a class="reference external" href="../../d0/dfd/structTango_1_1DevCommandInfo.html">DevCommandInfo</a></p>
+<p>99&nbsp;#else</p>
+<p>100&nbsp;typedef struct _DevCommandInfo</p>
+<p>101&nbsp;#endif</p>
+<p>102&nbsp;{</p>
+<p><a class="reference external" href="../../d0/dfd/structTango_1_1DevCommandInfo.html#af0dbf63ccee65d2cb1d0f0d721a9881b">103</a>
+string
+<a class="reference external" href="../../d0/dfd/structTango_1_1DevCommandInfo.html#af0dbf63ccee65d2cb1d0f0d721a9881b">cmd_name</a>;</p>
+<p><a class="reference external" href="../../d0/dfd/structTango_1_1DevCommandInfo.html#ac010816c9134830bd21806807c76fda1">104</a>
+long
+<a class="reference external" href="../../d0/dfd/structTango_1_1DevCommandInfo.html#ac010816c9134830bd21806807c76fda1">cmd_tag</a>;</p>
+<p><a class="reference external" href="../../d0/dfd/structTango_1_1DevCommandInfo.html#ada0b412c05607021230d5780e4984eff">105</a>
+long
+<a class="reference external" href="../../d0/dfd/structTango_1_1DevCommandInfo.html#ada0b412c05607021230d5780e4984eff">in_type</a>;</p>
+<p><a class="reference external" href="../../d0/dfd/structTango_1_1DevCommandInfo.html#a6719a1b6a0396a2867b1b9fbd09cfe74">106</a>
+long
+<a class="reference external" href="../../d0/dfd/structTango_1_1DevCommandInfo.html#a6719a1b6a0396a2867b1b9fbd09cfe74">out_type</a>;</p>
+<p><a class="reference external" href="../../d0/dfd/structTango_1_1DevCommandInfo.html#ace0c93f7dfa9891f9e5845abbb8debaf">107</a>
+string
+<a class="reference external" href="../../d0/dfd/structTango_1_1DevCommandInfo.html#ace0c93f7dfa9891f9e5845abbb8debaf">in_type_desc</a>;</p>
+<p><a class="reference external" href="../../d0/dfd/structTango_1_1DevCommandInfo.html#a21c04c4239a3c5657af2378aed451c1e">108</a>
+string
+<a class="reference external" href="../../d0/dfd/structTango_1_1DevCommandInfo.html#a21c04c4239a3c5657af2378aed451c1e">out_type_desc</a>;</p>
+<p>109</p>
+<p>111&nbsp; bool operator==(const _DevCommandInfo &amp;);</p>
+<p><a class="reference external" href="../../df/dd9/classTango_1_1DevicePipeBlob.html">112</a>&nbsp;}`DevCommandInfo &lt;../../de/ddf/namespaceTango.html#ab853e559703141ec81b1c30a5c9d88d2&gt;`__;</p>
+<p>113</p>
+<p>114</p>
+<p><a class="reference external" href="../../d7/d7a/structTango_1_1AttributeDimension.html">115</a>&nbsp;struct
+<a class="reference external" href="../../d7/d7a/structTango_1_1AttributeDimension.html">AttributeDimension</a></p>
+<p>116&nbsp;{</p>
+<p><a class="reference external" href="../../d7/d7a/structTango_1_1AttributeDimension.html#a483a7f7db671828cb1fd467f34b30961">117</a>
+long
+<a class="reference external" href="../../d7/d7a/structTango_1_1AttributeDimension.html#a483a7f7db671828cb1fd467f34b30961">dim_x</a>;</p>
+<p><a class="reference external" href="../../d7/d7a/structTango_1_1AttributeDimension.html#aca8429fb212898c0367fcf5ab4c838a9">118</a>
+long
+<a class="reference external" href="../../d7/d7a/structTango_1_1AttributeDimension.html#aca8429fb212898c0367fcf5ab4c838a9">dim_y</a>;</p>
+<p>119&nbsp;};</p>
+<p>120</p>
+<p>127&nbsp;#ifdef GEN_DOC</p>
+<p><a class="reference external" href="../../d3/d96/structTango_1_1CommandInfo.html">128</a>&nbsp;typedef struct
+<a class="reference external" href="../../d3/d96/structTango_1_1CommandInfo.html">CommandInfo</a> : public
+<a class="reference external" href="../../d0/dfd/structTango_1_1DevCommandInfo.html">DevCommandInfo</a></p>
+<p>129&nbsp;#else</p>
+<p>130&nbsp;typedef struct _CommandInfo : public
+<a class="reference external" href="../../d0/dfd/structTango_1_1DevCommandInfo.html">DevCommandInfo</a></p>
+<p>131&nbsp;#endif</p>
+<p>132&nbsp;{</p>
+<p><a class="reference external" href="../../d3/d96/structTango_1_1CommandInfo.html#a3750fb7df117913285dcf4db9a36b037">133</a>
+Tango::DispLevel
+<a class="reference external" href="../../d3/d96/structTango_1_1CommandInfo.html#a3750fb7df117913285dcf4db9a36b037">disp_level</a>;</p>
+<p><a class="reference external" href="../../d3/d4b/classTango_1_1AttributeProxy.html#a8cb7eb5b0f09011511a35a04a4d5851c">134</a></p>
+<p><a class="reference external" href="../../d7/d2a/classTango_1_1ApiUtil.html#af7dd5dc2e904f8af4d12d56386165624">136</a>
+friend ostream
+&amp;<a class="reference external" href="../../de/ddf/namespaceTango.html#aa44aae3bf7d5731b0dd44eaee68e9eb5">operator&lt;&lt;</a>(ostream
+&amp;,_CommandInfo &amp;);</p>
+<p>137&nbsp; bool operator==(const _CommandInfo &amp;);</p>
+<p>138&nbsp;}`CommandInfo &lt;../../d1/d45/group__Client.html#ga0e7b3d0d4f4606a890d79fdee1581f18&gt;`__;</p>
+<p>139</p>
+<p><a class="reference external" href="../../d1/d45/group__Client.html#ga702913bccb1c2d427d7a6f046602d657">146</a>&nbsp;typedef
+vector&lt;CommandInfo&gt;
+<a class="reference external" href="../../d1/d45/group__Client.html#ga702913bccb1c2d427d7a6f046602d657">CommandInfoList</a>;</p>
+<p>147</p>
+<p><a class="reference external" href="../../d2/d46/structTango_1_1__DeviceInfo.html">148</a>&nbsp;struct
+<a class="reference external" href="../../d2/d46/structTango_1_1__DeviceInfo.html">_DeviceInfo</a></p>
+<p>149&nbsp;{</p>
+<p><a class="reference external" href="../../d2/d46/structTango_1_1__DeviceInfo.html#adeee0b4e5ba2ea180afbf2e22211d3b2">150</a>
+string
+<a class="reference external" href="../../d2/d46/structTango_1_1__DeviceInfo.html#adeee0b4e5ba2ea180afbf2e22211d3b2">dev_class</a>;</p>
+<p><a class="reference external" href="../../d2/d46/structTango_1_1__DeviceInfo.html#a2e7d98036dafa968ebef16982f49677b">151</a>
+string
+<a class="reference external" href="../../d2/d46/structTango_1_1__DeviceInfo.html#a2e7d98036dafa968ebef16982f49677b">server_id</a>;</p>
+<p><a class="reference external" href="../../d2/d46/structTango_1_1__DeviceInfo.html#a161e8a72fc4ee3812548f95ef9f1c209">152</a>
+string
+<a class="reference external" href="../../d2/d46/structTango_1_1__DeviceInfo.html#a161e8a72fc4ee3812548f95ef9f1c209">server_host</a>;</p>
+<p><a class="reference external" href="../../d2/d46/structTango_1_1__DeviceInfo.html#a45899619243d8a7e3a91fe46a6db12b3">153</a>
+long
+<a class="reference external" href="../../d2/d46/structTango_1_1__DeviceInfo.html#a45899619243d8a7e3a91fe46a6db12b3">server_version</a>;</p>
+<p><a class="reference external" href="../../d2/d46/structTango_1_1__DeviceInfo.html#a437472a3c6a1dbbbf7125180577e3e88">154</a>
+string
+<a class="reference external" href="../../d2/d46/structTango_1_1__DeviceInfo.html#a437472a3c6a1dbbbf7125180577e3e88">doc_url</a>;</p>
+<p><a class="reference external" href="../../d2/d46/structTango_1_1__DeviceInfo.html#a24c77497253a5b2c35e976de5680f05d">155</a>
+string
+<a class="reference external" href="../../d2/d46/structTango_1_1__DeviceInfo.html#a24c77497253a5b2c35e976de5680f05d">dev_type</a>;</p>
+<p><a class="reference external" href="../../df/dd9/classTango_1_1DevicePipeBlob.html#aa16f3e082d2d6f7ee4f12135a9f63cb7">156</a>&nbsp;};</p>
+<p>157</p>
+<p><a class="reference external" href="../../de/ddf/namespaceTango.html#a6e79cf63803c5345bbccc9c3a8573efe">158</a>&nbsp;typedef
+<a class="reference external" href="../../d2/d46/structTango_1_1__DeviceInfo.html">_DeviceInfo</a>
+<a class="reference external" href="../../de/ddf/namespaceTango.html#a6e79cf63803c5345bbccc9c3a8573efe">DeviceInfo</a>;</p>
+<p>159</p>
+<p>165&nbsp;#ifdef GEN_DOC</p>
+<p><a class="reference external" href="../../db/d74/structTango_1_1DeviceAttributeConfig.html">166</a>&nbsp;typedef
+struct
+<a class="reference external" href="../../db/d74/structTango_1_1DeviceAttributeConfig.html">DeviceAttributeConfig</a></p>
+<p>167&nbsp;#else</p>
+<p>168&nbsp;typedef struct _DeviceAttributeConfig</p>
+<p>169&nbsp;#endif</p>
+<p>170&nbsp;{</p>
+<p><a class="reference external" href="../../db/d74/structTango_1_1DeviceAttributeConfig.html#aa986f46571ce7f48ac88d005034b16be">171</a>
+string
+<a class="reference external" href="../../db/d74/structTango_1_1DeviceAttributeConfig.html#aa986f46571ce7f48ac88d005034b16be">name</a>;</p>
+<p><a class="reference external" href="../../db/d74/structTango_1_1DeviceAttributeConfig.html#a5f02c5c4d857bd6eec495a746dfaf646">172</a>
+AttrWriteType
+<a class="reference external" href="../../db/d74/structTango_1_1DeviceAttributeConfig.html#a5f02c5c4d857bd6eec495a746dfaf646">writable</a>;</p>
+<p><a class="reference external" href="../../db/d74/structTango_1_1DeviceAttributeConfig.html#a10e944fe3cc1e6dce24ebfd2f474c294">173</a>
+AttrDataFormat
+<a class="reference external" href="../../db/d74/structTango_1_1DeviceAttributeConfig.html#a10e944fe3cc1e6dce24ebfd2f474c294">data_format</a>;</p>
+<p><a class="reference external" href="../../db/d74/structTango_1_1DeviceAttributeConfig.html#a2e2c5a17bc577057f9db3fec6fc5002c">174</a>
+int
+<a class="reference external" href="../../db/d74/structTango_1_1DeviceAttributeConfig.html#a2e2c5a17bc577057f9db3fec6fc5002c">data_type</a>;</p>
+<p><a class="reference external" href="../../db/d74/structTango_1_1DeviceAttributeConfig.html#a1194d38c18b4aaeba0989b14d912f17f">175</a>
+int
+<a class="reference external" href="../../db/d74/structTango_1_1DeviceAttributeConfig.html#a1194d38c18b4aaeba0989b14d912f17f">max_dim_x</a>;</p>
+<p><a class="reference external" href="../../db/d74/structTango_1_1DeviceAttributeConfig.html#a519d30179f56a9d0405a2b16fbd762eb">176</a>
+int
+<a class="reference external" href="../../db/d74/structTango_1_1DeviceAttributeConfig.html#a519d30179f56a9d0405a2b16fbd762eb">max_dim_y</a>;</p>
+<p><a class="reference external" href="../../db/d74/structTango_1_1DeviceAttributeConfig.html#a3ee3ca0543af398a2ee69901ab2086ea">177</a>
+string
+<a class="reference external" href="../../db/d74/structTango_1_1DeviceAttributeConfig.html#a3ee3ca0543af398a2ee69901ab2086ea">description</a>;</p>
+<p><a class="reference external" href="../../db/d74/structTango_1_1DeviceAttributeConfig.html#a4ec80e8421b9f1f3e250b047771a4a17">178</a>
+string
+<a class="reference external" href="../../db/d74/structTango_1_1DeviceAttributeConfig.html#a4ec80e8421b9f1f3e250b047771a4a17">label</a>;</p>
+<p><a class="reference external" href="../../db/d74/structTango_1_1DeviceAttributeConfig.html#abbfe98ae17bfc21368b6347b9611e4f8">179</a>
+string
+<a class="reference external" href="../../db/d74/structTango_1_1DeviceAttributeConfig.html#abbfe98ae17bfc21368b6347b9611e4f8">unit</a>;</p>
+<p><a class="reference external" href="../../db/d74/structTango_1_1DeviceAttributeConfig.html#a6e39a2bd02dff03ba378d42e0f0892e8">180</a>
+string
+<a class="reference external" href="../../db/d74/structTango_1_1DeviceAttributeConfig.html#a6e39a2bd02dff03ba378d42e0f0892e8">standard_unit</a>;</p>
+<p><a class="reference external" href="../../db/d74/structTango_1_1DeviceAttributeConfig.html#ae7ec9432c308d2080bff8390bf86e9dc">181</a>
+string
+<a class="reference external" href="../../db/d74/structTango_1_1DeviceAttributeConfig.html#ae7ec9432c308d2080bff8390bf86e9dc">display_unit</a>;</p>
+<p><a class="reference external" href="../../db/d74/structTango_1_1DeviceAttributeConfig.html#ad3ec3ee2584e54354a9ad398432b7e63">182</a>
+string
+<a class="reference external" href="../../db/d74/structTango_1_1DeviceAttributeConfig.html#ad3ec3ee2584e54354a9ad398432b7e63">format</a>;</p>
+<p><a class="reference external" href="../../db/d74/structTango_1_1DeviceAttributeConfig.html#aa647cb22659434ffe9833adbfecb11ab">183</a>
+string
+<a class="reference external" href="../../db/d74/structTango_1_1DeviceAttributeConfig.html#aa647cb22659434ffe9833adbfecb11ab">min_value</a>;</p>
+<p><a class="reference external" href="../../db/d74/structTango_1_1DeviceAttributeConfig.html#a84c6e32024eb2ab01a03cb1016f2acbd">184</a>
+string
+<a class="reference external" href="../../db/d74/structTango_1_1DeviceAttributeConfig.html#a84c6e32024eb2ab01a03cb1016f2acbd">max_value</a>;</p>
+<p><a class="reference external" href="../../db/d74/structTango_1_1DeviceAttributeConfig.html#a265cd1f58f040fbb4fdebb8a5eb13718">185</a>
+string
+<a class="reference external" href="../../db/d74/structTango_1_1DeviceAttributeConfig.html#a265cd1f58f040fbb4fdebb8a5eb13718">min_alarm</a>;</p>
+<p><a class="reference external" href="../../db/d74/structTango_1_1DeviceAttributeConfig.html#ac2be6304818d741aa970abcb3ff91105">186</a>
+string
+<a class="reference external" href="../../db/d74/structTango_1_1DeviceAttributeConfig.html#ac2be6304818d741aa970abcb3ff91105">max_alarm</a>;</p>
+<p><a class="reference external" href="../../db/d74/structTango_1_1DeviceAttributeConfig.html#a7c86de3d725f10a4ca07b086d04ce043">187</a>
+string
+<a class="reference external" href="../../db/d74/structTango_1_1DeviceAttributeConfig.html#a7c86de3d725f10a4ca07b086d04ce043">writable_attr_name</a>;</p>
+<p><a class="reference external" href="../../db/d74/structTango_1_1DeviceAttributeConfig.html#ae77d336e762e1c6e1e8fcea17d6b107f">188</a>
+vector&lt;string&gt;
+<a class="reference external" href="../../db/d74/structTango_1_1DeviceAttributeConfig.html#ae77d336e762e1c6e1e8fcea17d6b107f">extensions</a>;</p>
+<p>189</p>
+<p>191&nbsp; bool operator==(const _DeviceAttributeConfig &amp;);</p>
+<p>192&nbsp;}`DeviceAttributeConfig &lt;../../de/ddf/namespaceTango.html#a2926592cba03eca7ecf3ab28587f19f0&gt;`__;</p>
+<p>193</p>
+<p>200&nbsp;#ifdef GEN_DOC</p>
+<p><a class="reference external" href="../../df/dab/structTango_1_1AttributeInfo.html">201</a>&nbsp;typedef struct
+<a class="reference external" href="../../df/dab/structTango_1_1AttributeInfo.html">AttributeInfo</a> :
+public
+<a class="reference external" href="../../db/d74/structTango_1_1DeviceAttributeConfig.html">DeviceAttributeConfig</a></p>
+<p><a class="reference external" href="../../d7/de8/classTango_1_1Connection.html#af1fa8c85c338781be7d16a99581cf383">202</a>&nbsp;#else</p>
+<p>203&nbsp;typedef struct _AttributeInfo : public
+<a class="reference external" href="../../db/d74/structTango_1_1DeviceAttributeConfig.html">DeviceAttributeConfig</a></p>
+<p>204&nbsp;#endif</p>
+<p>205&nbsp;{</p>
+<p><a class="reference external" href="../../df/dab/structTango_1_1AttributeInfo.html#aa958466c57a8cb39cb5aac4d451e13e2">206</a>
+Tango::DispLevel
+<a class="reference external" href="../../df/dab/structTango_1_1AttributeInfo.html#aa958466c57a8cb39cb5aac4d451e13e2">disp_level</a>;</p>
+<p>207</p>
+<p>209&nbsp; friend ostream
+&amp;<a class="reference external" href="../../de/ddf/namespaceTango.html#aa44aae3bf7d5731b0dd44eaee68e9eb5">operator&lt;&lt;</a>(ostream
+&amp;,_AttributeInfo &amp;);</p>
+<p>210&nbsp; bool operator==(const _AttributeInfo &amp;);</p>
+<p><a class="reference external" href="../../d7/de8/classTango_1_1Connection.html#ab9dad67ef6e9ba3268ac9d5627f70ea0">211</a>&nbsp;}`AttributeInfo &lt;../../d1/d45/group__Client.html#gad3bc51cab7995f9e00f253b183924ae9&gt;`__;</p>
+<p>212</p>
+<p>219&nbsp;#ifdef GEN_DOC</p>
+<p><a class="reference external" href="../../d0/d4a/structTango_1_1AttributeAlarmInfo.html">220</a>&nbsp;typedef
+struct
+<a class="reference external" href="../../d0/d4a/structTango_1_1AttributeAlarmInfo.html">AttributeAlarmInfo</a></p>
+<p>221&nbsp;#else</p>
+<p>222&nbsp;typedef struct _AttributeAlarmInfo</p>
+<p>223&nbsp;#endif</p>
+<p>224&nbsp;{</p>
+<p><a class="reference external" href="../../d0/d4a/structTango_1_1AttributeAlarmInfo.html#a75ab6140f065a841206c4c8a812bffea">225</a>
+string
+<a class="reference external" href="../../d0/d4a/structTango_1_1AttributeAlarmInfo.html#a75ab6140f065a841206c4c8a812bffea">min_alarm</a>;</p>
+<p><a class="reference external" href="../../d0/d4a/structTango_1_1AttributeAlarmInfo.html#aac90fcaa709d3614ac9d838f3af2f41a">226</a>
+string
+<a class="reference external" href="../../d0/d4a/structTango_1_1AttributeAlarmInfo.html#aac90fcaa709d3614ac9d838f3af2f41a">max_alarm</a>;</p>
+<p><a class="reference external" href="../../d0/d4a/structTango_1_1AttributeAlarmInfo.html#af47fd458db3938f4242350cca362d473">227</a>
+string
+<a class="reference external" href="../../d0/d4a/structTango_1_1AttributeAlarmInfo.html#af47fd458db3938f4242350cca362d473">min_warning</a>;</p>
+<p><a class="reference external" href="../../d0/d4a/structTango_1_1AttributeAlarmInfo.html#ab89ae378c905d41c580b922f16f55ffa">228</a>
+string
+<a class="reference external" href="../../d0/d4a/structTango_1_1AttributeAlarmInfo.html#ab89ae378c905d41c580b922f16f55ffa">max_warning</a>;</p>
+<p><a class="reference external" href="../../df/d22/classTango_1_1DeviceData.html#a441796301b708d97386ea636104889d4">229</a>
+string delta_t;</p>
+<p><a class="reference external" href="../../d0/d4a/structTango_1_1AttributeAlarmInfo.html#a5e6d8bd051731bf5730ef92d89dc9810">230</a>
+string
+<a class="reference external" href="../../d0/d4a/structTango_1_1AttributeAlarmInfo.html#a5e6d8bd051731bf5730ef92d89dc9810">delta_val</a>;</p>
+<p><a class="reference external" href="../../d0/d4a/structTango_1_1AttributeAlarmInfo.html#a41217de305a07f3aac512190bf802436">231</a>
+vector&lt;string&gt;
+<a class="reference external" href="../../d0/d4a/structTango_1_1AttributeAlarmInfo.html#a41217de305a07f3aac512190bf802436">extensions</a>;</p>
+<p>232</p>
+<p>234&nbsp; bool operator==(const _AttributeAlarmInfo &amp;);</p>
+<p><a class="reference external" href="../../d7/de8/classTango_1_1Connection.html#affa1c0fff97f714eddf69ebdb17c6665">235</a>&nbsp;}`AttributeAlarmInfo &lt;../../d1/d45/group__Client.html#ga05d242f249708dcd595c8f022917de27&gt;`__;</p>
+<p>236</p>
+<p>243&nbsp;#ifdef GEN_DOC</p>
+<p><a class="reference external" href="../../d9/d49/structTango_1_1ChangeEventInfo.html">244</a>&nbsp;typedef
+struct
+<a class="reference external" href="../../d9/d49/structTango_1_1ChangeEventInfo.html">ChangeEventInfo</a></p>
+<p>245&nbsp;#else</p>
+<p>246&nbsp;typedef struct _ChangeEventInfo</p>
+<p>247&nbsp;#endif</p>
+<p>248&nbsp;{</p>
+<p><a class="reference external" href="../../d9/d49/structTango_1_1ChangeEventInfo.html#a4d5e1f716c77065751e457ae2c9521e9">249</a>
+string
+<a class="reference external" href="../../d9/d49/structTango_1_1ChangeEventInfo.html#a4d5e1f716c77065751e457ae2c9521e9">rel_change</a>;</p>
+<p><a class="reference external" href="../../d9/d49/structTango_1_1ChangeEventInfo.html#af8803ddcc0f31b3c524225f9a05eb899">250</a>
+string
+<a class="reference external" href="../../d9/d49/structTango_1_1ChangeEventInfo.html#af8803ddcc0f31b3c524225f9a05eb899">abs_change</a>;</p>
+<p><a class="reference external" href="../../d9/d49/structTango_1_1ChangeEventInfo.html#a355cf98af8fe7a780f9e1a3b6ed131f9">251</a>
+vector&lt;string&gt;
+<a class="reference external" href="../../d9/d49/structTango_1_1ChangeEventInfo.html#a355cf98af8fe7a780f9e1a3b6ed131f9">extensions</a>;</p>
+<p>252&nbsp;}`ChangeEventInfo &lt;../../d1/d45/group__Client.html#gad6df317aebc920b1e9489cc83d80f2c0&gt;`__;</p>
+<p>253</p>
+<p><a class="reference external" href="../../d5/d70/classTango_1_1__KillProc__.html">260</a>&nbsp;#ifdef GEN_DOC</p>
+<p><a class="reference external" href="../../d6/d55/structTango_1_1PeriodicEventInfo.html">261</a>&nbsp;typedef
+struct
+<a class="reference external" href="../../d6/d55/structTango_1_1PeriodicEventInfo.html">PeriodicEventInfo</a></p>
+<p>262&nbsp;#else</p>
+<p><a class="reference external" href="../../d5/d70/classTango_1_1__KillProc__.html#aff4f5d7d3e86e1ef444f39e39fa08b8d">263</a>&nbsp;typedef
+struct _PeriodicEventInfo</p>
+<p>264&nbsp;#endif</p>
+<p>265&nbsp;{</p>
+<p><a class="reference external" href="../../d6/d55/structTango_1_1PeriodicEventInfo.html#ad5384dc1bb57e6d1e7b566d4d1947edc">266</a>
+string
+<a class="reference external" href="../../d6/d55/structTango_1_1PeriodicEventInfo.html#ad5384dc1bb57e6d1e7b566d4d1947edc">period</a>;</p>
+<p><a class="reference external" href="../../d6/d55/structTango_1_1PeriodicEventInfo.html#af22ec2f765f0a23dcba8389924e5bdbd">267</a>
+vector&lt;string&gt;
+<a class="reference external" href="../../d6/d55/structTango_1_1PeriodicEventInfo.html#af22ec2f765f0a23dcba8389924e5bdbd">extensions</a>;</p>
+<p>268&nbsp;}`PeriodicEventInfo &lt;../../d1/d45/group__Client.html#ga6795ae3557967c7d684ea7fc2c2ae470&gt;`__;</p>
+<p>269</p>
+<p>276&nbsp;#ifdef GEN_DOC</p>
+<p><a class="reference external" href="../../d1/d29/structTango_1_1ArchiveEventInfo.html">277</a>&nbsp;typedef
+struct
+<a class="reference external" href="../../d1/d29/structTango_1_1ArchiveEventInfo.html">ArchiveEventInfo</a></p>
+<p>278&nbsp;#else</p>
+<p>279&nbsp;typedef struct _ArchiveEventInfo</p>
+<p>280&nbsp;#endif</p>
+<p>281&nbsp;{</p>
+<p><a class="reference external" href="../../d1/d29/structTango_1_1ArchiveEventInfo.html#afecffe46830ac832cee719a7614a4030">282</a>
+string
+<a class="reference external" href="../../d1/d29/structTango_1_1ArchiveEventInfo.html#afecffe46830ac832cee719a7614a4030">archive_rel_change</a>;</p>
+<p><a class="reference external" href="../../d1/d29/structTango_1_1ArchiveEventInfo.html#ac3f5f5d04b5780fa72fb70e79548e7b1">283</a>
+string
+<a class="reference external" href="../../d1/d29/structTango_1_1ArchiveEventInfo.html#ac3f5f5d04b5780fa72fb70e79548e7b1">archive_abs_change</a>;</p>
+<p><a class="reference external" href="../../d1/d29/structTango_1_1ArchiveEventInfo.html#a8eab759c5b4d6913ecfb73ee7b7ad08e">284</a>
+string
+<a class="reference external" href="../../d1/d29/structTango_1_1ArchiveEventInfo.html#a8eab759c5b4d6913ecfb73ee7b7ad08e">archive_period</a>;</p>
+<p><a class="reference external" href="../../d1/d29/structTango_1_1ArchiveEventInfo.html#a4104ec8d3d324941d0275200365d9d02">285</a>
+vector&lt;string&gt;
+<a class="reference external" href="../../d1/d29/structTango_1_1ArchiveEventInfo.html#a4104ec8d3d324941d0275200365d9d02">extensions</a>;</p>
+<p>286&nbsp;}`ArchiveEventInfo &lt;../../d1/d45/group__Client.html#ga9a2aca65efc6caf661f33f5886695dcc&gt;`__;</p>
+<p>287</p>
+<p>294&nbsp;#ifdef GEN_DOC</p>
+<p><a class="reference external" href="../../da/dce/structTango_1_1AttributeEventInfo.html">295</a>&nbsp;typedef
+struct
+<a class="reference external" href="../../da/dce/structTango_1_1AttributeEventInfo.html">AttributeEventInfo</a></p>
+<p>296&nbsp;#else</p>
+<p>297&nbsp;typedef struct _AttributeEventInfo</p>
+<p>298&nbsp;#endif</p>
+<p>299&nbsp;{</p>
+<p><a class="reference external" href="../../da/dce/structTango_1_1AttributeEventInfo.html#a1af98248c881a274162b3542577ca21f">300</a>
+<a class="reference external" href="../../d9/d49/structTango_1_1ChangeEventInfo.html">ChangeEventInfo</a>
+<a class="reference external" href="../../da/dce/structTango_1_1AttributeEventInfo.html#a1af98248c881a274162b3542577ca21f">ch_event</a>;</p>
+<p><a class="reference external" href="../../da/dce/structTango_1_1AttributeEventInfo.html#a10e613e8f4809b162492eb74c5906a89">301</a>
+<a class="reference external" href="../../d6/d55/structTango_1_1PeriodicEventInfo.html">PeriodicEventInfo</a>
+<a class="reference external" href="../../da/dce/structTango_1_1AttributeEventInfo.html#a10e613e8f4809b162492eb74c5906a89">per_event</a>;</p>
+<p><a class="reference external" href="../../da/dce/structTango_1_1AttributeEventInfo.html#aac8d39bbcab8839baf68267da64d850b">302</a>
+<a class="reference external" href="../../d1/d29/structTango_1_1ArchiveEventInfo.html">ArchiveEventInfo</a>
+<a class="reference external" href="../../da/dce/structTango_1_1AttributeEventInfo.html#aac8d39bbcab8839baf68267da64d850b">arch_event</a>;</p>
+<p>303</p>
+<p>305&nbsp; bool operator==(const _AttributeEventInfo &amp;);</p>
+<p><a class="reference external" href="../../d3/d4b/classTango_1_1AttributeProxy.html#a5dcb9de15ebbcb991bc372e7ade13b93">306</a>&nbsp;}`AttributeEventInfo &lt;../../d1/d45/group__Client.html#gafbe27a305aed98cb963bacb178c78859&gt;`__;</p>
+<p>307</p>
+<p><a class="reference external" href="../../d1/d45/group__Client.html#ga76ad081a56687025de62cf1cbaf48124">314</a>&nbsp;typedef
+enum
+<a class="reference external" href="../../d1/d45/group__Client.html#ga76ad081a56687025de62cf1cbaf48124">_AttrMemorizedType</a></p>
+<p>315&nbsp;{</p>
+<p><a class="reference external" href="../../d1/d45/group__Client.html#gga76ad081a56687025de62cf1cbaf48124abf2e9bbaf87fc8c3446b88b7422c86b7">316</a>
+<a class="reference external" href="../../d1/d45/group__Client.html#gga76ad081a56687025de62cf1cbaf48124abf2e9bbaf87fc8c3446b88b7422c86b7">NOT_KNOWN</a>,</p>
+<p><a class="reference external" href="../../d1/d45/group__Client.html#gga76ad081a56687025de62cf1cbaf48124a77d085684a448679e0729b6b444b2639">317</a>
+<a class="reference external" href="../../d1/d45/group__Client.html#gga76ad081a56687025de62cf1cbaf48124a77d085684a448679e0729b6b444b2639">NONE</a>,</p>
+<p><a class="reference external" href="../../d1/d45/group__Client.html#gga76ad081a56687025de62cf1cbaf48124a1c81faba262469013aee0d8dd975f378">318</a>
+<a class="reference external" href="../../d1/d45/group__Client.html#gga76ad081a56687025de62cf1cbaf48124a1c81faba262469013aee0d8dd975f378">MEMORIZED</a>,</p>
+<p><a class="reference external" href="../../d1/d45/group__Client.html#gga76ad081a56687025de62cf1cbaf48124a12c0889f5b2cd005995da692bbc1e3ae">319</a>
+<a class="reference external" href="../../d1/d45/group__Client.html#gga76ad081a56687025de62cf1cbaf48124a12c0889f5b2cd005995da692bbc1e3ae">MEMORIZED_WRITE_INIT</a></p>
+<p>320&nbsp;}`AttrMemorizedType &lt;../../d1/d45/group__Client.html#gae59d9d9726e3916b6a49bda9de1bff2c&gt;`__;</p>
+<p>321</p>
+<p>322</p>
+<p>329&nbsp;#ifdef GEN_DOC</p>
+<p><a class="reference external" href="../../d3/d71/structTango_1_1AttributeInfoEx.html">330</a>&nbsp;typedef
+struct
+<a class="reference external" href="../../d3/d71/structTango_1_1AttributeInfoEx.html">AttributeInfoEx</a>:
+public
+<a class="reference external" href="../../df/dab/structTango_1_1AttributeInfo.html">AttributeInfo</a></p>
+<p>331&nbsp;#else</p>
+<p>332&nbsp;typedef struct _AttributeInfoEx : public
+<a class="reference external" href="../../df/dab/structTango_1_1AttributeInfo.html">AttributeInfo</a></p>
+<p>333&nbsp;#endif</p>
+<p>334&nbsp;{</p>
+<p><a class="reference external" href="../../d3/d71/structTango_1_1AttributeInfoEx.html#a9b125948c23b7a7747ad16165625ab66">335</a>
+string
+<a class="reference external" href="../../d3/d71/structTango_1_1AttributeInfoEx.html#a9b125948c23b7a7747ad16165625ab66">root_attr_name</a>;</p>
+<p><a class="reference external" href="../../d3/d71/structTango_1_1AttributeInfoEx.html#a60e3af52cd117f6c05f3408124caa4ce">336</a>
+<a class="reference external" href="../../d1/d45/group__Client.html#gae59d9d9726e3916b6a49bda9de1bff2c">AttrMemorizedType</a>
+<a class="reference external" href="../../d3/d71/structTango_1_1AttributeInfoEx.html#a60e3af52cd117f6c05f3408124caa4ce">memorized</a>;</p>
+<p><a class="reference external" href="../../d3/d71/structTango_1_1AttributeInfoEx.html#a4b0ef35e29ace8d9ea557ad142018185">337</a>
+vector&lt;string&gt;
+<a class="reference external" href="../../d3/d71/structTango_1_1AttributeInfoEx.html#a4b0ef35e29ace8d9ea557ad142018185">enum_labels</a>;</p>
+<p><a class="reference external" href="../../d3/d71/structTango_1_1AttributeInfoEx.html#aaf01f87192831893661acfa4b926d0c8">338</a>
+<a class="reference external" href="../../d0/d4a/structTango_1_1AttributeAlarmInfo.html">AttributeAlarmInfo</a>
+<a class="reference external" href="../../d3/d71/structTango_1_1AttributeInfoEx.html#aaf01f87192831893661acfa4b926d0c8">alarms</a>;</p>
+<p><a class="reference external" href="../../d3/d71/structTango_1_1AttributeInfoEx.html#a57d8d88a07dac398a91ad4180d7cb6c8">339</a>
+<a class="reference external" href="../../da/dce/structTango_1_1AttributeEventInfo.html">AttributeEventInfo</a>
+<a class="reference external" href="../../d3/d71/structTango_1_1AttributeInfoEx.html#a57d8d88a07dac398a91ad4180d7cb6c8">events</a>;</p>
+<p><a class="reference external" href="../../d3/d71/structTango_1_1AttributeInfoEx.html#afdf808e107b2d36d75eb8e07d798d7b4">340</a>
+vector&lt;string&gt;
+<a class="reference external" href="../../d3/d71/structTango_1_1AttributeInfoEx.html#afdf808e107b2d36d75eb8e07d798d7b4">sys_extensions</a>;</p>
+<p>341</p>
+<p><a class="reference external" href="../../d3/d4b/classTango_1_1AttributeProxy.html#af375564aa69d17d8797974ba96e35800">343</a>
+_AttributeInfoEx &amp; operator=(const AttributeConfig_2 *);</p>
+<p>344&nbsp; _AttributeInfoEx &amp; operator=(const AttributeConfig_3 *);</p>
+<p>345&nbsp; _AttributeInfoEx &amp; operator=(const AttributeConfig_5 *);</p>
+<p>346</p>
+<p>347&nbsp; friend ostream
+&amp;<a class="reference external" href="../../de/ddf/namespaceTango.html#aa44aae3bf7d5731b0dd44eaee68e9eb5">operator&lt;&lt;</a>(ostream
+&amp;,_AttributeInfoEx &amp;);</p>
+<p>348&nbsp; bool operator==(const _AttributeInfoEx &amp;);</p>
+<p>349&nbsp;}`AttributeInfoEx &lt;../../d1/d45/group__Client.html#ga09323cc9a29673f93f38e5e0190c6be6&gt;`__;</p>
+<p>350</p>
+<p><a class="reference external" href="../../de/ddf/namespaceTango.html#a87d0e8cd391e8df4af01f2a2cd66b2d3">351</a>&nbsp;typedef
+vector&lt;AttributeInfo&gt;
+<a class="reference external" href="../../de/ddf/namespaceTango.html#a87d0e8cd391e8df4af01f2a2cd66b2d3">AttributeInfoList</a>;</p>
+<p>352</p>
+<p><a class="reference external" href="../../d1/d45/group__Client.html#ga7175e05437edf640b8e555d1a601335c">359</a>&nbsp;typedef
+vector&lt;AttributeInfoEx&gt;
+<a class="reference external" href="../../d1/d45/group__Client.html#ga7175e05437edf640b8e555d1a601335c">AttributeInfoListEx</a>;</p>
+<p>360</p>
+<p>366&nbsp;#ifdef GEN_DOC</p>
+<p><a class="reference external" href="../../d8/d04/structTango_1_1PipeInfo.html">367</a>&nbsp;typedef struct
+<a class="reference external" href="../../d8/d04/structTango_1_1PipeInfo.html">PipeInfo</a></p>
+<p><a class="reference external" href="../../d3/d4b/classTango_1_1AttributeProxy.html#a372f8ccd607388b0d83276fbb2f65c6d">368</a>&nbsp;#else</p>
+<p>369&nbsp;typedef struct _PipeInfo</p>
+<p>370&nbsp;#endif</p>
+<p>371&nbsp;{</p>
+<p><a class="reference external" href="../../d8/d04/structTango_1_1PipeInfo.html#aac516bafc197363c2631c05d28442407">372</a>
+string
+<a class="reference external" href="../../d8/d04/structTango_1_1PipeInfo.html#aac516bafc197363c2631c05d28442407">name</a>;</p>
+<p><a class="reference external" href="../../d8/d04/structTango_1_1PipeInfo.html#a5aaaf10e1d4adb9da8fb317bb1d965e5">373</a>
+string
+<a class="reference external" href="../../d8/d04/structTango_1_1PipeInfo.html#a5aaaf10e1d4adb9da8fb317bb1d965e5">description</a>;</p>
+<p><a class="reference external" href="../../d8/d04/structTango_1_1PipeInfo.html#a80e59d16eddbac22bb4386dc065413b8">374</a>
+string
+<a class="reference external" href="../../d8/d04/structTango_1_1PipeInfo.html#a80e59d16eddbac22bb4386dc065413b8">label</a>;</p>
+<p><a class="reference external" href="../../d8/d04/structTango_1_1PipeInfo.html#a82393be90b61b52fd490c5ee98bba7f6">375</a>
+Tango::DispLevel
+<a class="reference external" href="../../d8/d04/structTango_1_1PipeInfo.html#a82393be90b61b52fd490c5ee98bba7f6">disp_level</a>;</p>
+<p><a class="reference external" href="../../d8/d04/structTango_1_1PipeInfo.html#ae0c6e057b77c1e3b1c8db29759817916">376</a>
+Tango::PipeWriteType
+<a class="reference external" href="../../d8/d04/structTango_1_1PipeInfo.html#ae0c6e057b77c1e3b1c8db29759817916">writable</a>;</p>
+<p><a class="reference external" href="../../d8/d04/structTango_1_1PipeInfo.html#aee2c6ec24ba43f8a91e29ea5d0b5c4f4">377</a>
+vector&lt;string&gt;
+<a class="reference external" href="../../d8/d04/structTango_1_1PipeInfo.html#aee2c6ec24ba43f8a91e29ea5d0b5c4f4">extensions</a>;</p>
+<p>378</p>
+<p>380&nbsp; friend ostream
+&amp;<a class="reference external" href="../../de/ddf/namespaceTango.html#aa44aae3bf7d5731b0dd44eaee68e9eb5">operator&lt;&lt;</a>(ostream
+&amp;,_PipeInfo &amp;);</p>
+<p>381&nbsp;// bool operator==(const _PipeInfo &amp;);</p>
+<p><a class="reference external" href="../../d3/d4b/classTango_1_1AttributeProxy.html#a49230d67f6d95ecc595df8603702f487">382</a>&nbsp;}`PipeInfo &lt;../../de/ddf/namespaceTango.html#ad35a82291acaf683a0c33416db790f0f&gt;`__;</p>
+<p>383</p>
+<p>384&nbsp;// TODO: Pipe -&gt; Change the type for writable to replace PIPE_READ,
+PIPE_READ_WRITE by READ, READ_WRITE (IDL limitation)</p>
+<p>385</p>
+<p><a class="reference external" href="../../de/ddf/namespaceTango.html#a40adbc36986b3444fcde63126e4a011e">386</a>&nbsp;typedef
+vector&lt;PipeInfo&gt;
+<a class="reference external" href="../../de/ddf/namespaceTango.html#a40adbc36986b3444fcde63126e4a011e">PipeInfoList</a>;</p>
+<p>387</p>
+<p>388&nbsp;//</p>
+<p>389&nbsp;// Can&#8217;t use CALLBACK (without _) in the following enum because
+it&#8217;s a</p>
+<p>390&nbsp;// pre-defined type on Windows....</p>
+<p>391&nbsp;//</p>
+<p>392</p>
+<p><a class="reference external" href="../../d1/d45/group__Client.html#ga6c80e2130b95642d5c39ee8db7a25620">399</a>&nbsp;enum
+<a class="reference external" href="../../d1/d45/group__Client.html#ga6c80e2130b95642d5c39ee8db7a25620">asyn_req_type</a></p>
+<p>400&nbsp;{</p>
+<p><a class="reference external" href="../../d1/d45/group__Client.html#gga6c80e2130b95642d5c39ee8db7a25620a0c8c20bdddc6ba94c2c8465da593e80c">401</a>
+<a class="reference external" href="../../d1/d45/group__Client.html#gga6c80e2130b95642d5c39ee8db7a25620a0c8c20bdddc6ba94c2c8465da593e80c">POLLING</a>,</p>
+<p><a class="reference external" href="../../d1/d45/group__Client.html#gga6c80e2130b95642d5c39ee8db7a25620a0d735acd8a950dd8379589f3b3a392c1">402</a>
+<a class="reference external" href="../../d1/d45/group__Client.html#gga6c80e2130b95642d5c39ee8db7a25620a0d735acd8a950dd8379589f3b3a392c1">CALL_BACK</a>,</p>
+<p><a class="reference external" href="../../d1/d45/group__Client.html#gga6c80e2130b95642d5c39ee8db7a25620a5f52f099a007030f3d4bca03801df6e7">403</a>
+<a class="reference external" href="../../d1/d45/group__Client.html#gga6c80e2130b95642d5c39ee8db7a25620a5f52f099a007030f3d4bca03801df6e7">ALL_ASYNCH</a></p>
+<p>404&nbsp;};</p>
+<p><a class="reference external" href="../../d3/d4b/classTango_1_1AttributeProxy.html#ae6ed266f3a4e48a3fc7232aded5d2127">405</a></p>
+<p><a class="reference external" href="../../d1/d45/group__Client.html#ga3a5254b5c0c8de0c71c18bad2bd742bc">412</a>&nbsp;enum
+<a class="reference external" href="../../d1/d45/group__Client.html#ga3a5254b5c0c8de0c71c18bad2bd742bc">cb_sub_model</a></p>
+<p>413&nbsp;{</p>
+<p><a class="reference external" href="../../d1/d45/group__Client.html#gga3a5254b5c0c8de0c71c18bad2bd742bca776212fa9631a1e9b40990653ea37f87">414</a>
+<a class="reference external" href="../../d1/d45/group__Client.html#gga3a5254b5c0c8de0c71c18bad2bd742bca776212fa9631a1e9b40990653ea37f87">PUSH_CALLBACK</a>,</p>
+<p><a class="reference external" href="../../d1/d45/group__Client.html#gga3a5254b5c0c8de0c71c18bad2bd742bca3542fc1395bd94ac0429ee11ea9e1275">415</a>
+<a class="reference external" href="../../d1/d45/group__Client.html#gga3a5254b5c0c8de0c71c18bad2bd742bca3542fc1395bd94ac0429ee11ea9e1275">PULL_CALLBACK</a></p>
+<p>416&nbsp;};</p>
+<p>417</p>
+<p>418&nbsp;//</p>
+<p>419&nbsp;// Some define</p>
+<p>420&nbsp;//</p>
+<p>421</p>
+<p><a class="reference external" href="../../d9/ddc/devapi_8h.html#a63df0a7f4d69d411be47d312a0f28ebf">422</a>&nbsp;#define
+CONNECTION_OK 1</p>
+<p><a class="reference external" href="../../d9/ddc/devapi_8h.html#ad5fa52feb9025532cea9d330e28d51aa">423</a>&nbsp;#define
+CONNECTION_NOTOK 0</p>
+<p>424</p>
+<p><a class="reference external" href="../../d9/ddc/devapi_8h.html#ad30310d84397f2d7d9d25cebb6bd7c86">425</a>&nbsp;#define
+PROT_SEP &#8221;://&#8221;</p>
+<p><a class="reference external" href="../../d9/ddc/devapi_8h.html#afdf7c4231304a360aefbf69ac8cf4739">426</a>&nbsp;#define
+TACO_PROTOCOL &#8220;taco&#8221;</p>
+<p><a class="reference external" href="../../d9/ddc/devapi_8h.html#a20a67da887c3cabf0f41bede062fff6d">427</a>&nbsp;#define
+TANGO_PROTOCOL &#8220;tango&#8221;</p>
+<p>428</p>
+<p><a class="reference external" href="../../d9/ddc/devapi_8h.html#ab915b57fc77348add935a3aff8b547a1">429</a>&nbsp;#define
+MODIFIER &#8216;#&#8217;</p>
+<p><a class="reference external" href="../../d9/ddc/devapi_8h.html#a5357c09cf268a3b18c52a1381d5840c6">430</a>&nbsp;#define
+DBASE_YES &#8220;dbase=yes&#8221;</p>
+<p><a class="reference external" href="../../d9/ddc/devapi_8h.html#a947f7b71bf3b735ec5f985b98e8408af">431</a>&nbsp;#define
+DBASE_NO &#8220;dbase=no&#8221;</p>
+<p><a class="reference external" href="../../d9/ddc/devapi_8h.html#a809ec615c48b8d104b92904520826201">432</a>&nbsp;#define
+MODIFIER_DBASE_NO &#8220;#dbase=no&#8221;</p>
+<p>433</p>
+<p><a class="reference external" href="../../d9/ddc/devapi_8h.html#a069365e28330f206f735a1e4843ef313">434</a>&nbsp;#define
+HOST_SEP &#8216;:&#8217;</p>
+<p><a class="reference external" href="../../d9/ddc/devapi_8h.html#a82e4983f9ea1c5d1a262dcdb58f7b805">435</a>&nbsp;#define
+PORT_SEP &#8216;/&#8217;</p>
+<p><a class="reference external" href="../../d9/ddc/devapi_8h.html#a76a0ee5e0ec87fb1c3b7312018ad4255">436</a>&nbsp;#define
+DEV_NAME_FIELD_SEP &#8216;/&#8217;</p>
+<p><a class="reference external" href="../../d9/ddc/devapi_8h.html#af26fc406280186045444fa1c6c314ea1">437</a>&nbsp;#define
+RES_SEP &#8220;-&gt;&#8221;</p>
+<p><a class="reference external" href="../../d9/ddc/devapi_8h.html#ae42ac97d0f548932d9a1da8f2bd9844f">438</a>&nbsp;#define
+DEVICE_SEP &#8216;/&#8217;</p>
+<p>439</p>
+<p><a class="reference external" href="../../d9/ddc/devapi_8h.html#a26bc7754535586390fbe30623760e254">440</a>&nbsp;#define
+FROM_IOR &#8220;IOR&#8221;</p>
+<p><a class="reference external" href="../../d9/ddc/devapi_8h.html#af19bd6c1a125bbcb95028adc2aaddfb1">441</a>&nbsp;#define
+NOT_USED &#8220;Unused&#8221;</p>
+<p>442</p>
+<p>443</p>
+<p>444&nbsp;/****************************************************************************************</p>
+<p>445&nbsp; * *</p>
+<p>446&nbsp; * The ApiUtil class *</p>
+<p>447&nbsp; * &#8212;&#8212;&#8212;&#8212;&#8212;&#8211; *</p>
+<p>448&nbsp; * *</p>
+<p>449
+***************************************************************************************/</p>
+<p>450</p>
+<p>451&nbsp;#include &#8220;ApiUtil.h&#8221;</p>
+<p>452</p>
+<p>453</p>
+<p>454&nbsp;/****************************************************************************************</p>
+<p>455&nbsp; * *</p>
+<p>456&nbsp; * The DeviceData class *</p>
+<p>457&nbsp; * &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211; *</p>
+<p>458&nbsp; * *</p>
+<p>459
+***************************************************************************************/</p>
+<p>460</p>
+<p>461</p>
+<p>462&nbsp;#include &#8220;DeviceData.h&#8221;</p>
+<p>463</p>
+<p>464&nbsp;/****************************************************************************************</p>
+<p>465&nbsp; * *</p>
+<p>466&nbsp; * The DevicePipe class *</p>
+<p>467&nbsp; * &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211; *</p>
+<p>468&nbsp; * *</p>
+<p>469
+***************************************************************************************/</p>
+<p>470</p>
+<p>471</p>
+<p>472&nbsp;#include &#8220;DevicePipe.h&#8221;</p>
+<p>473</p>
+<p>474&nbsp;/****************************************************************************************</p>
+<p>475&nbsp; * *</p>
+<p>476&nbsp; * The DeviceAttribute class *</p>
+<p>477&nbsp; * &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;- *</p>
+<p>478&nbsp; * *</p>
+<p>479
+***************************************************************************************/</p>
+<p>480</p>
+<p>481</p>
+<p>482&nbsp;#include &#8220;DeviceAttribute.h&#8221;</p>
+<p>483</p>
+<p>484</p>
+<p><a class="reference external" href="../../d9/d83/classTango_1_1DeviceProxy.html#a5c362996e56c723d7d2959a974b9aacc">485</a>&nbsp;/****************************************************************************************</p>
+<p>486&nbsp; * *</p>
+<p>487&nbsp; * The xxxDataHistory classes *</p>
+<p>488&nbsp; * &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211; *</p>
+<p>489&nbsp; * *</p>
+<p>490
+***************************************************************************************/</p>
+<p>491</p>
+<p><a class="reference external" href="../../d8/dc0/classTango_1_1DeviceDataHistory.html">510</a>&nbsp;class
+<a class="reference external" href="../../d8/dc0/classTango_1_1DeviceDataHistory.html">DeviceDataHistory</a>:
+public <a class="reference external" href="../../df/d22/classTango_1_1DeviceData.html">DeviceData</a></p>
+<p>511&nbsp;{</p>
+<p><a class="reference external" href="../../d9/d83/classTango_1_1DeviceProxy.html#a86d45a2c6d13ceff780b96854a095920">512</a></p>
+<p><a class="reference external" href="../../d3/d4b/classTango_1_1AttributeProxy.html#ae53bb772bd5c55030baa7be4abebe899">513</a>&nbsp;public
+:</p>
+<p>515&nbsp;//</p>
+<p>516&nbsp;// constructor methods</p>
+<p>517&nbsp;//</p>
+<p>518</p>
+<p>519
+<a class="reference external" href="../../d8/dc0/classTango_1_1DeviceDataHistory.html">DeviceDataHistory</a>();</p>
+<p><a class="reference external" href="../../df/d22/classTango_1_1DeviceData.html#a1f43b8fa4cc2c1c371b471f4a49b9ddb">520</a>
+<a class="reference external" href="../../d8/dc0/classTango_1_1DeviceDataHistory.html">DeviceDataHistory</a>(int,
+int *,DevCmdHistoryList *);</p>
+<p>521
+<a class="reference external" href="../../d8/dc0/classTango_1_1DeviceDataHistory.html">DeviceDataHistory</a>(const
+<a class="reference external" href="../../d8/dc0/classTango_1_1DeviceDataHistory.html">DeviceDataHistory</a>
+&amp;);</p>
+<p>522
+<a class="reference external" href="../../d8/dc0/classTango_1_1DeviceDataHistory.html">DeviceDataHistory</a>
+&amp; operator=(const
+<a class="reference external" href="../../d8/dc0/classTango_1_1DeviceDataHistory.html">DeviceDataHistory</a>
+&amp;);</p>
+<p>523&nbsp;#ifdef HAS_RVALUE</p>
+<p>524
+<a class="reference external" href="../../d8/dc0/classTango_1_1DeviceDataHistory.html">DeviceDataHistory</a>(<a class="reference external" href="../../d8/dc0/classTango_1_1DeviceDataHistory.html">DeviceDataHistory</a>
+&amp;&amp;);</p>
+<p><a class="reference external" href="../../d3/d4b/classTango_1_1AttributeProxy.html#ae318688c635207dc084b843726c9fdab">525</a>
+<a class="reference external" href="../../d8/dc0/classTango_1_1DeviceDataHistory.html">DeviceDataHistory</a>
+&amp;operator=(<a class="reference external" href="../../d8/dc0/classTango_1_1DeviceDataHistory.html">DeviceDataHistory</a>
+&amp;&amp;);</p>
+<p>526&nbsp;#endif</p>
+<p>527</p>
+<p><a class="reference external" href="../../df/d22/classTango_1_1DeviceData.html#afc018476b633193426ba5e02451ff70b">528</a>
+~<a class="reference external" href="../../d8/dc0/classTango_1_1DeviceDataHistory.html">DeviceDataHistory</a>();</p>
+<p>529</p>
+<p>531</p>
+<p><a class="reference external" href="../../d8/dc0/classTango_1_1DeviceDataHistory.html#aa30b768579c6ac8083cc4c577a6a7885">538</a>
+bool
+<a class="reference external" href="../../d8/dc0/classTango_1_1DeviceDataHistory.html#aa30b768579c6ac8083cc4c577a6a7885">has_failed</a>()
+{return fail;}</p>
+<p><a class="reference external" href="../../d8/dc0/classTango_1_1DeviceDataHistory.html#a29a818b5c86b2208ed6aee8700849945">546</a>
+TimeVal
+&amp;<a class="reference external" href="../../d8/dc0/classTango_1_1DeviceDataHistory.html#a29a818b5c86b2208ed6aee8700849945">get_date</a>()
+{return time;}</p>
+<p><a class="reference external" href="../../d8/dc0/classTango_1_1DeviceDataHistory.html#a661631cafdd62b484736e92d8d700829">555</a>
+const DevErrorList
+&amp;<a class="reference external" href="../../d8/dc0/classTango_1_1DeviceDataHistory.html#a661631cafdd62b484736e92d8d700829">get_err_stack</a>()
+{return err.in();}</p>
+<p><a class="reference external" href="../../df/dd9/classTango_1_1DevicePipeBlob.html#ae6d904cd958cb22382ceefef4a4c8593">579</a>
+friend ostream
+&amp;<a class="reference external" href="../../de/ddf/namespaceTango.html#aa44aae3bf7d5731b0dd44eaee68e9eb5">operator&lt;&lt;</a>(ostream
+&amp;str,<a class="reference external" href="../../d8/dc0/classTango_1_1DeviceDataHistory.html">DeviceDataHistory</a>
+&amp;ddh);</p>
+<p>580</p>
+<p><a class="reference external" href="../../d3/d4b/classTango_1_1AttributeProxy.html#a88b91e0189b350080975a60b3b90595c">582</a>&nbsp;//
+Three following methods for compatibility with older release</p>
+<p>583</p>
+<p>584&nbsp; bool failed() {return fail;}</p>
+<p>585&nbsp; void failed(bool val) {fail = val;}</p>
+<p>586&nbsp; void set_date(TimeVal &amp;tv) {time = tv;}</p>
+<p>587&nbsp; TimeVal &amp;date() {return time;}</p>
+<p>588&nbsp; const DevErrorList &amp;errors() {return err.in();}</p>
+<p>589&nbsp; void errors(DevErrorList_var &amp;del) {err = del;}</p>
+<p>590</p>
+<p>591&nbsp;protected:</p>
+<p>593&nbsp; bool fail;</p>
+<p>594&nbsp; TimeVal time;</p>
+<p><a class="reference external" href="../../d3/d4b/classTango_1_1AttributeProxy.html#a8a058915ddab00f20210db286d92ba0b">595</a>
+DevErrorList_var err;</p>
+<p>596</p>
+<p>597&nbsp; DevCmdHistoryList *seq_ptr;</p>
+<p>598&nbsp; int *ref_ctr_ptr;</p>
+<p>599</p>
+<p>600&nbsp;private:</p>
+<p>601&nbsp; class DeviceDataHistoryExt</p>
+<p>602&nbsp; {</p>
+<p>603&nbsp; public:</p>
+<p>604&nbsp; DeviceDataHistoryExt() {};</p>
+<p>605&nbsp; };</p>
+<p>606</p>
+<p>607&nbsp;#ifdef HAS_UNIQUE_PTR</p>
+<p>608&nbsp; unique_ptr&lt;DeviceDataHistoryExt&gt; ext_hist;</p>
+<p>609&nbsp;#else</p>
+<p>610&nbsp; DeviceDataHistoryExt *ext_hist; // Class extension</p>
+<p>611&nbsp;#endif</p>
+<p>612&nbsp;};</p>
+<p>613</p>
+<p><a class="reference external" href="../../de/ddf/namespaceTango.html#aa64a337e34f9bfb5207ba07aa7cd51f9">614</a>&nbsp;typedef
+vector&lt;DeviceDataHistory&gt;
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aa64a337e34f9bfb5207ba07aa7cd51f9">DeviceDataHistoryList</a>;</p>
+<p><a class="reference external" href="../../df/dd9/classTango_1_1DevicePipeBlob.html#ad0ef655afc8a1d0a59a44091892b017f">615</a></p>
+<p><a class="reference external" href="../../d8/d41/classTango_1_1DeviceAttributeHistory.html">633</a>&nbsp;class
+<a class="reference external" href="../../d8/d41/classTango_1_1DeviceAttributeHistory.html">DeviceAttributeHistory</a>:
+public
+<a class="reference external" href="../../d7/dca/classTango_1_1DeviceAttribute.html">DeviceAttribute</a></p>
+<p>634&nbsp;{</p>
+<p>635</p>
+<p>636&nbsp;public :</p>
+<p>638&nbsp;//</p>
+<p>639&nbsp;// constructor methods</p>
+<p>640&nbsp;//</p>
+<p>641</p>
+<p>642
+<a class="reference external" href="../../d8/d41/classTango_1_1DeviceAttributeHistory.html">DeviceAttributeHistory</a>();</p>
+<p>643
+<a class="reference external" href="../../d8/d41/classTango_1_1DeviceAttributeHistory.html">DeviceAttributeHistory</a>(int,
+DevAttrHistoryList_var &amp;);</p>
+<p>644
+<a class="reference external" href="../../d8/d41/classTango_1_1DeviceAttributeHistory.html">DeviceAttributeHistory</a>(int,
+DevAttrHistoryList_3_var &amp;);</p>
+<p>645
+<a class="reference external" href="../../d8/d41/classTango_1_1DeviceAttributeHistory.html">DeviceAttributeHistory</a>(const
+<a class="reference external" href="../../d8/d41/classTango_1_1DeviceAttributeHistory.html">DeviceAttributeHistory</a>
+&amp;);</p>
+<p>646
+<a class="reference external" href="../../d8/d41/classTango_1_1DeviceAttributeHistory.html">DeviceAttributeHistory</a>
+&amp; operator=(const
+<a class="reference external" href="../../d8/d41/classTango_1_1DeviceAttributeHistory.html">DeviceAttributeHistory</a>
+&amp;);</p>
+<p>647&nbsp;#ifdef HAS_RVALUE</p>
+<p>648
+<a class="reference external" href="../../d8/d41/classTango_1_1DeviceAttributeHistory.html">DeviceAttributeHistory</a>(<a class="reference external" href="../../d8/d41/classTango_1_1DeviceAttributeHistory.html">DeviceAttributeHistory</a>
+&amp;&amp;);</p>
+<p>649
+<a class="reference external" href="../../d8/d41/classTango_1_1DeviceAttributeHistory.html">DeviceAttributeHistory</a>
+&amp;operator=(<a class="reference external" href="../../d8/d41/classTango_1_1DeviceAttributeHistory.html">DeviceAttributeHistory</a>
+&amp;&amp;);</p>
+<p>650&nbsp;#endif</p>
+<p>651</p>
+<p>652
+~<a class="reference external" href="../../d8/d41/classTango_1_1DeviceAttributeHistory.html">DeviceAttributeHistory</a>();</p>
+<p>654</p>
+<p><a class="reference external" href="../../d8/d41/classTango_1_1DeviceAttributeHistory.html#a29502710f173c46c03a6334f0498899e">661</a>
+bool
+<a class="reference external" href="../../d8/d41/classTango_1_1DeviceAttributeHistory.html#a29502710f173c46c03a6334f0498899e">has_failed</a>()
+{return fail;}</p>
+<p>685&nbsp; friend ostream
+&amp;<a class="reference external" href="../../de/ddf/namespaceTango.html#aa44aae3bf7d5731b0dd44eaee68e9eb5">operator&lt;&lt;</a>(ostream
+&amp;str,<a class="reference external" href="../../d8/d41/classTango_1_1DeviceAttributeHistory.html">DeviceAttributeHistory</a>
+&amp;dah);</p>
+<p>686</p>
+<p>688&nbsp;// Three following methods for compatibility with older release</p>
+<p>689</p>
+<p>690&nbsp; bool failed() {return fail;}</p>
+<p>691&nbsp; void failed(bool val) {fail = val;}</p>
+<p>692&nbsp; TimeVal &amp;date() {return time;}</p>
+<p>693&nbsp;// const DevErrorList &amp;errors() {return err;}</p>
+<p>694</p>
+<p>695&nbsp;protected:</p>
+<p>697&nbsp; bool fail;</p>
+<p>698&nbsp; char compatibility_padding[16];</p>
+<p>699</p>
+<p>700&nbsp;private:</p>
+<p>701&nbsp; class DeviceAttributeHistoryExt</p>
+<p>702&nbsp; {</p>
+<p>703&nbsp; public:</p>
+<p>704&nbsp; DeviceAttributeHistoryExt() {};</p>
+<p>705&nbsp; };</p>
+<p>706</p>
+<p>707&nbsp;#ifdef HAS_UNIQUE_PTR</p>
+<p>708&nbsp; unique_ptr&lt;DeviceAttributeHistoryExt&gt; ext_hist;</p>
+<p>709&nbsp;#else</p>
+<p>710&nbsp; DeviceAttributeHistoryExt *ext_hist; // Class extension</p>
+<p>711&nbsp;#endif</p>
+<p>712&nbsp;};</p>
+<p>713</p>
+<p>714</p>
+<p>715&nbsp;/****************************************************************************************</p>
+<p>716&nbsp; * *</p>
+<p>717&nbsp; * The Connection class *</p>
+<p>718&nbsp; * &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211; *</p>
+<p>719&nbsp; * *</p>
+<p>720
+***************************************************************************************/</p>
+<p>721</p>
+<p>722&nbsp;#include &#8220;Connection.h&#8221;</p>
+<p>723</p>
+<p>724&nbsp;/****************************************************************************************</p>
+<p>725&nbsp; * *</p>
+<p>726&nbsp; * The DeviceProxy class *</p>
+<p>727&nbsp; * &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211; *</p>
+<p>728&nbsp; * *</p>
+<p>729
+***************************************************************************************/</p>
+<p>730</p>
+<p>731&nbsp;#include &#8220;DeviceProxy.h&#8221;</p>
+<p>732</p>
+<p>733&nbsp;/****************************************************************************************</p>
+<p>734&nbsp; * *</p>
+<p>735&nbsp; * The AttributeProxy class *</p>
+<p>736&nbsp; * &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211; *</p>
+<p>737&nbsp; * *</p>
+<p>738
+***************************************************************************************/</p>
+<p>739</p>
+<p>740&nbsp;#include &#8220;AttributeProxy.h&#8221;</p>
+<p>741</p>
+<p>742&nbsp;/****************************************************************************************</p>
+<p>743&nbsp; * *</p>
+<p>744&nbsp; * The DummyDeviceProxy class *</p>
+<p>745&nbsp; * &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211; *</p>
+<p>746&nbsp; * *</p>
+<p>747
+***************************************************************************************/</p>
+<p>748</p>
+<p><a class="reference external" href="../../d9/dcb/classTango_1_1DummyDeviceProxy.html">749</a>&nbsp;class
+<a class="reference external" href="../../d9/dcb/classTango_1_1DummyDeviceProxy.html">DummyDeviceProxy</a>:
+public
+<a class="reference external" href="../../d7/de8/classTango_1_1Connection.html">Tango::Connection</a></p>
+<p>750&nbsp;{</p>
+<p>751&nbsp;public:</p>
+<p><a class="reference external" href="../../d9/dcb/classTango_1_1DummyDeviceProxy.html#a208e369e11d5e1d945b123ec217dc16d">752</a>
+<a class="reference external" href="../../d9/dcb/classTango_1_1DummyDeviceProxy.html#a208e369e11d5e1d945b123ec217dc16d">DummyDeviceProxy</a>():<a class="reference external" href="../../de/ddf/namespaceTango.html">Tango</a>::<a class="reference external" href="../../d7/de8/classTango_1_1Connection.html">Connection</a>(true)
+{};</p>
+<p>753</p>
+<p><a class="reference external" href="../../d9/dcb/classTango_1_1DummyDeviceProxy.html#ae1aeac6ff92474063cc58a531b2c6d09">754</a>
+virtual string
+<a class="reference external" href="../../d9/dcb/classTango_1_1DummyDeviceProxy.html#ae1aeac6ff92474063cc58a531b2c6d09">get_corba_name</a>(bool)
+{string str;return str;}</p>
+<p><a class="reference external" href="../../d9/dcb/classTango_1_1DummyDeviceProxy.html#af1b4aeeda9976c31d43bf0629c0c2e87">755</a>
+virtual string
+<a class="reference external" href="../../d9/dcb/classTango_1_1DummyDeviceProxy.html#af1b4aeeda9976c31d43bf0629c0c2e87">build_corba_name</a>()
+{string str;return str;}</p>
+<p><a class="reference external" href="../../d9/dcb/classTango_1_1DummyDeviceProxy.html#a2901b3e72b2928c0c0fb0bd2674990e4">756</a>
+virtual int
+<a class="reference external" href="../../d9/dcb/classTango_1_1DummyDeviceProxy.html#a2901b3e72b2928c0c0fb0bd2674990e4">get_lock_ctr</a>()
+{return 0;}</p>
+<p><a class="reference external" href="../../d9/dcb/classTango_1_1DummyDeviceProxy.html#a06125348959666fb0774765b8d49f15d">757</a>
+virtual void
+<a class="reference external" href="../../d9/dcb/classTango_1_1DummyDeviceProxy.html#a06125348959666fb0774765b8d49f15d">set_lock_ctr</a>(int)
+{};</p>
+<p>758</p>
+<p><a class="reference external" href="../../d9/dcb/classTango_1_1DummyDeviceProxy.html#a95f30faa9de8e4fb82f65b6689da1a08">759</a>
+virtual string
+<a class="reference external" href="../../d9/dcb/classTango_1_1DummyDeviceProxy.html#a95f30faa9de8e4fb82f65b6689da1a08">dev_name</a>()
+{string str;return str;}</p>
+<p>760</p>
+<p><a class="reference external" href="../../d9/dcb/classTango_1_1DummyDeviceProxy.html#ad6fb4f3237b716ee6e53417317a2984a">761</a>
+int
+<a class="reference external" href="../../d9/dcb/classTango_1_1DummyDeviceProxy.html#ad6fb4f3237b716ee6e53417317a2984a">get_env_var</a>(const
+char *cc,string &amp;str_ref) {return
+Tango::Connection::get_env_var(cc,str_ref);}</p>
+<p>762&nbsp;};</p>
+<p>763</p>
+<p>764</p>
+<p>765</p>
+<p>770</p>
+<p><a class="reference external" href="../../d7/d2a/classTango_1_1ApiUtil.html#afbc9fb1ffff7730689224dea5a3d9676">771</a>&nbsp;inline
+<a class="reference external" href="../../d7/d2a/classTango_1_1ApiUtil.html">ApiUtil</a>
+*ApiUtil::instance()</p>
+<p>772&nbsp;{</p>
+<p>773&nbsp; omni_mutex_lock lo(inst_mutex);</p>
+<p>774</p>
+<p>775&nbsp; if (_instance == NULL)</p>
+<p>776&nbsp; _instance = new
+<a class="reference external" href="../../d7/d2a/classTango_1_1ApiUtil.html">ApiUtil</a>();</p>
+<p>777&nbsp; return _instance;</p>
+<p>778&nbsp;}</p>
+<p>779</p>
+<p>780&nbsp;inline long Connection::add_asyn_request(CORBA::Request_ptr
+req,<a class="reference external" href="../../db/d68/classTango_1_1TgRequest.html#a6ae144d0765e704695987f8b20255343">TgRequest::ReqType</a>
+req_type)</p>
+<p>781&nbsp;{</p>
+<p>782&nbsp; omni_mutex_lock guard(asyn_mutex);</p>
+<p>783&nbsp; long id =
+ApiUtil::instance()-&gt;get_pasyn_table()-&gt;store_request(req,req_type);</p>
+<p>784&nbsp; pasyn_ctr++;</p>
+<p>785&nbsp; return id;</p>
+<p>786&nbsp;}</p>
+<p>787</p>
+<p>788&nbsp;inline void Connection::remove_asyn_request(long id)</p>
+<p>789&nbsp;{</p>
+<p>790&nbsp; omni_mutex_lock guard(asyn_mutex);</p>
+<p>791</p>
+<p>792&nbsp; ApiUtil::instance()-&gt;get_pasyn_table()-&gt;remove_request(id);</p>
+<p>793&nbsp; pasyn_ctr&#8211;;</p>
+<p>794&nbsp;}</p>
+<p>795</p>
+<p>796&nbsp;inline void Connection::add_asyn_cb_request(CORBA::Request_ptr
+req,CallBack *cb,Connection *con,TgRequest::ReqType req_type)</p>
+<p>797&nbsp;{</p>
+<p>798&nbsp; omni_mutex_lock guard(asyn_mutex);</p>
+<p>799
+ApiUtil::instance()-&gt;get_pasyn_table()-&gt;store_request(req,cb,con,req_type);</p>
+<p>800&nbsp; pasyn_cb_ctr++;</p>
+<p>801&nbsp;}</p>
+<p>802</p>
+<p>803&nbsp;inline void Connection::remove_asyn_cb_request(Connection
+*con,CORBA::Request_ptr req)</p>
+<p>804&nbsp;{</p>
+<p>805&nbsp; omni_mutex_lock guard(asyn_mutex);</p>
+<p>806&nbsp; ApiUtil::instance()-&gt;get_pasyn_table()-&gt;remove_request(con,req);</p>
+<p>807&nbsp; pasyn_cb_ctr&#8211;;</p>
+<p>808&nbsp;}</p>
+<p>809</p>
+<p>810&nbsp;inline long Connection::get_pasyn_cb_ctr()</p>
+<p><a class="reference external" href="../../da/dc5/classTango_1_1DevicePipe.html">811</a>&nbsp;{</p>
+<p>812&nbsp; long ret;</p>
+<p>813&nbsp; asyn_mutex.lock();</p>
+<p>814&nbsp; ret = pasyn_cb_ctr;</p>
+<p>815&nbsp; asyn_mutex.unlock();</p>
+<p>816&nbsp; return ret;</p>
+<p>817&nbsp;}</p>
+<p>818</p>
+<p>819&nbsp;inline void
+Connection::dec_asynch_counter(<a class="reference external" href="../../d1/d45/group__Client.html#ga6c80e2130b95642d5c39ee8db7a25620">asyn_req_type</a>
+ty)</p>
+<p>820&nbsp;{</p>
+<p>821&nbsp; omni_mutex_lock guard(asyn_mutex);</p>
+<p>822&nbsp; if
+(ty==`POLLING &lt;../../d1/d45/group__Client.html#gga6c80e2130b95642d5c39ee8db7a25620a0c8c20bdddc6ba94c2c8465da593e80c&gt;`__)</p>
+<p>823&nbsp; pasyn_ctr&#8211;;</p>
+<p>824&nbsp; else if
+(ty==`CALL_BACK &lt;../../d1/d45/group__Client.html#gga6c80e2130b95642d5c39ee8db7a25620a0d735acd8a950dd8379589f3b3a392c1&gt;`__)</p>
+<p><a class="reference external" href="../../d9/d83/classTango_1_1DeviceProxy.html#a50002daad4dc97b0651680e5f2b7a655">825</a>
+pasyn_cb_ctr&#8211;;</p>
+<p>826&nbsp;}</p>
+<p>827</p>
+<p>828&nbsp;inline void DeviceProxy::check_connect_adm_device()</p>
+<p>829&nbsp;{</p>
+<p>830&nbsp; omni_mutex_lock guard(adm_dev_mutex);</p>
+<p>831&nbsp; if (adm_device == NULL)</p>
+<p>832&nbsp; connect_to_adm_device();</p>
+<p>833&nbsp;}</p>
+<p>834</p>
+<p>835&nbsp;//</p>
+<p>836&nbsp;// For Tango 8 ZMQ event system</p>
+<p>837&nbsp;//</p>
+<p>838</p>
+<p><a class="reference external" href="../../d9/d83/classTango_1_1DeviceProxy.html#af1b71ba4bd5427c2effd7321d53a7af4">839</a>&nbsp;inline
+int DeviceProxy::subscribe_event (const string &amp;attr_name,
+<a class="reference external" href="../../d1/d45/group__Client.html#ga5366e2a8cedf5aab5be8835974f787c6">EventType</a>
+event, <a class="reference external" href="../../d4/ded/classTango_1_1CallBack.html">CallBack</a>
+*callback)</p>
+<p>840&nbsp;{</p>
+<p>841&nbsp; vector&lt;string&gt; filt;</p>
+<p>842&nbsp; return subscribe_event (attr_name,event,callback,filt,false);</p>
+<p>843&nbsp;}</p>
+<p>844</p>
+<p><a class="reference external" href="../../d9/d83/classTango_1_1DeviceProxy.html#a80c449b725a134b1e9aac6771b70ed5c">845</a>&nbsp;inline
+int DeviceProxy::subscribe_event (const string &amp;attr_name,
+<a class="reference external" href="../../d1/d45/group__Client.html#ga5366e2a8cedf5aab5be8835974f787c6">EventType</a>
+event,</p>
+<p>846&nbsp; <a class="reference external" href="../../d4/ded/classTango_1_1CallBack.html">CallBack</a>
+*callback,bool stateless)</p>
+<p>847&nbsp;{</p>
+<p>848&nbsp; vector&lt;string&gt; filt;</p>
+<p>849&nbsp; return subscribe_event(attr_name,event,callback,filt,stateless);</p>
+<p>850&nbsp;}</p>
+<p>851</p>
+<p><a class="reference external" href="../../d9/d83/classTango_1_1DeviceProxy.html#a5fef157c74708fa54acde839749b9449">852</a>&nbsp;inline
+int DeviceProxy::subscribe_event (const string &amp;attr_name,
+<a class="reference external" href="../../d1/d45/group__Client.html#ga5366e2a8cedf5aab5be8835974f787c6">EventType</a>
+event,</p>
+<p>853&nbsp; int event_queue_size,bool stateless)</p>
+<p><a class="reference external" href="../../da/dc5/classTango_1_1DevicePipe.html#a12dc55a63df0edd0fa2f858dce39ad25">854</a>&nbsp;{</p>
+<p>855&nbsp; vector&lt;string&gt; filt;</p>
+<p>856&nbsp; return
+subscribe_event(attr_name,event,event_queue_size,filt,stateless);</p>
+<p>857&nbsp;}</p>
+<p>858</p>
+<p>863</p>
+<p><a class="reference external" href="../../d9/ddc/devapi_8h.html#a5b2352705b0926360e354673fc237148">864</a>&nbsp;#define
+READ_ATT_EXCEPT(NAME_CHAR,OBJ) \</p>
+<p>865&nbsp; catch (Tango::ConnectionFailed &amp;e) \</p>
+<p>866&nbsp; { \</p>
+<p>867&nbsp; TangoSys_OMemStream desc; \</p>
+<p>868&nbsp; desc &lt;&lt; &#8220;Failed to read_attribute on device &#8221; &lt;&lt; device_name; \</p>
+<p>869&nbsp; desc &lt;&lt; &#8221;, attribute &#8221; &lt;&lt; NAME_CHAR &lt;&lt; ends; \</p>
+<p>870&nbsp; ApiConnExcept::re_throw_exception(e,(const
+char*)&#8221;API_AttributeFailed&#8221;, \</p>
+<p><a class="reference external" href="../../da/dc5/classTango_1_1DevicePipe.html#a7394bfd9106027f25e1b8c0d3bd7d29c">871</a>
+desc.str(), (const char*)&#8221;DeviceProxy::read_attribute()&#8221;); \</p>
+<p>872&nbsp; } \</p>
+<p>873&nbsp; catch (Tango::DevFailed &amp;e) \</p>
+<p>874&nbsp; { \</p>
+<p>875&nbsp; TangoSys_OMemStream desc; \</p>
+<p>876&nbsp; desc &lt;&lt; &#8220;Failed to read_attribute on device &#8221; &lt;&lt; device_name; \</p>
+<p>877&nbsp; desc &lt;&lt; &#8221;, attribute &#8221; &lt;&lt; NAME_CHAR &lt;&lt; ends; \</p>
+<p>878&nbsp; Except::re_throw_exception(e,(const
+char*)&#8221;API_AttributeFailed&#8221;, \</p>
+<p><a class="reference external" href="../../da/dc5/classTango_1_1DevicePipe.html#a39aea23db45f1a51c3b59351147dfdba">879</a>
+desc.str(), (const char*)&#8221;DeviceProxy::read_attribute()&#8221;); \</p>
+<p>880&nbsp; } \</p>
+<p>881&nbsp; catch (CORBA::TRANSIENT &amp;trans) \</p>
+<p>882&nbsp; { \</p>
+<p>883
+TRANSIENT_NOT_EXIST_EXCEPT(trans,&#8221;DeviceProxy&#8221;,&#8221;read_attribute&#8221;,OBJ);
+\</p>
+<p>884&nbsp; } \</p>
+<p>885&nbsp; catch (CORBA::OBJECT_NOT_EXIST &amp;one) \</p>
+<p>886&nbsp; { \</p>
+<p>887&nbsp; if (one.minor() == omni::OBJECT_NOT_EXIST_NoMatch ||
+one.minor() == 0) \</p>
+<p>888&nbsp; { \</p>
+<p>889
+TRANSIENT_NOT_EXIST_EXCEPT(one,&#8221;DeviceProxy&#8221;,&#8221;read_attribute&#8221;,OBJ);
+\</p>
+<p>890&nbsp; } \</p>
+<p>891&nbsp; else \</p>
+<p>892&nbsp; { \</p>
+<p>893&nbsp; set_connection_state(CONNECTION_NOTOK); \</p>
+<p>894&nbsp; TangoSys_OMemStream desc; \</p>
+<p>895&nbsp; desc &lt;&lt; &#8220;Failed to read_attribute on device &#8221; &lt;&lt; device_name &lt;&lt;
+ends; \</p>
+<p>896&nbsp; ApiCommExcept::re_throw_exception(one, \</p>
+<p>897&nbsp; (const char*)&#8221;API_CommunicationFailed&#8221;, \</p>
+<p>898&nbsp; desc.str(), \</p>
+<p>899&nbsp; (const char*)&#8221;DeviceProxy::read_attribute()&#8221;); \</p>
+<p>900&nbsp; } \</p>
+<p>901&nbsp; } \</p>
+<p>902&nbsp; catch (CORBA::COMM_FAILURE &amp;comm) \</p>
+<p>903&nbsp; { \</p>
+<p>904&nbsp; if (comm.minor() == omni::COMM_FAILURE_WaitingForReply) \</p>
+<p><a class="reference external" href="../../da/dc5/classTango_1_1DevicePipe.html#ad989caa7a3c2a43296f17ba8602e0fef">905</a>
+{ \</p>
+<p>906
+TRANSIENT_NOT_EXIST_EXCEPT(comm,&#8221;DeviceProxy&#8221;,&#8221;read_attribute&#8221;,OBJ);
+\</p>
+<p>907&nbsp; } \</p>
+<p>908&nbsp; else \</p>
+<p>909&nbsp; { \</p>
+<p>910&nbsp; set_connection_state(CONNECTION_NOTOK); \</p>
+<p>911&nbsp; TangoSys_OMemStream desc; \</p>
+<p>912&nbsp; desc &lt;&lt; &#8220;Failed to read_attribute on device &#8221; &lt;&lt; device_name &lt;&lt;
+ends; \</p>
+<p>913&nbsp; ApiCommExcept::re_throw_exception(comm, \</p>
+<p><a class="reference external" href="../../da/dc5/classTango_1_1DevicePipe.html#adfe7a29d49a733829216ec36bd705a49">914</a>
+(const char*)&#8221;API_CommunicationFailed&#8221;, \</p>
+<p>915&nbsp; desc.str(), \</p>
+<p>916&nbsp; (const char*)&#8221;DeviceProxy::read_attribute()&#8221;); \</p>
+<p>917&nbsp; } \</p>
+<p>918&nbsp; } \</p>
+<p>919&nbsp; catch (CORBA::SystemException &amp;ce) \</p>
+<p>920&nbsp; { \</p>
+<p>921&nbsp; set_connection_state(CONNECTION_NOTOK); \</p>
+<p>922&nbsp; TangoSys_OMemStream desc; \</p>
+<p>923&nbsp; desc &lt;&lt; &#8220;Failed to read_attribute on device &#8221; &lt;&lt; device_name &lt;&lt;
+ends; \</p>
+<p>924&nbsp; ApiCommExcept::re_throw_exception(ce, \</p>
+<p>925&nbsp; (const char*)&#8221;API_CommunicationFailed&#8221;, \</p>
+<p>926&nbsp; desc.str(), \</p>
+<p><a class="reference external" href="../../d9/d83/classTango_1_1DeviceProxy.html#a2152d80457a5fc501be7a3d7f4127b90">927</a>
+(const char*)&#8221;DeviceProxy::read_attribute()&#8221;); \</p>
+<p>928&nbsp; }</p>
+<p>929</p>
+<p>930</p>
+<p><a class="reference external" href="../../d9/ddc/devapi_8h.html#a212fe5b444c8a877f2e51baeb2436921">931</a>&nbsp;#define
+COPY_BASE_CONFIG(A,B) \</p>
+<p>932&nbsp; A[i].name = B[i].name; \</p>
+<p>933&nbsp; A[i].writable = B[i].writable; \</p>
+<p>934&nbsp; A[i].data_format = B[i].data_format; \</p>
+<p>935&nbsp; A[i].data_type = B[i].data_type; \</p>
+<p>936&nbsp; A[i].max_dim_x = B[i].max_dim_x; \</p>
+<p>937&nbsp; A[i].max_dim_y = B[i].max_dim_y; \</p>
+<p>938&nbsp; A[i].description = B[i].description; \</p>
+<p>939&nbsp; A[i].label = B[i].label; \</p>
+<p><a class="reference external" href="../../da/dc5/classTango_1_1DevicePipe.html#a00c05c84ecb64e225d735a0a2fc4e546">940</a>
+A[i].unit = B[i].unit; \</p>
+<p>941&nbsp; A[i].standard_unit = B[i].standard_unit; \</p>
+<p>942&nbsp; A[i].display_unit = B[i].display_unit; \</p>
+<p>943&nbsp; A[i].format = B[i].format; \</p>
+<p>944&nbsp; A[i].min_value = B[i].min_value; \</p>
+<p>945&nbsp; A[i].max_value = B[i].max_value; \</p>
+<p>946&nbsp; A[i].writable_attr_name = B[i].writable_attr_name; \</p>
+<p>947&nbsp; A[i].extensions.resize(B[i].extensions.length()); \</p>
+<p><a class="reference external" href="../../da/dc5/classTango_1_1DevicePipe.html#a1c49f10b17cda1734a1b3f3134bdb8c7">948</a>
+for (size_t j=0; j&lt;B[i].extensions.length(); j++) \</p>
+<p>949&nbsp; { \</p>
+<p>950&nbsp; A[i].extensions[j] = B[i].extensions[j]; \</p>
+<p><a class="reference external" href="../../d7/dca/classTango_1_1DeviceAttribute.html#a3927b11e5bd052f81c77f8a04621d0a5">951</a>
+}</p>
+<p>952</p>
+<p>953</p>
+<p><a class="reference external" href="../../d9/ddc/devapi_8h.html#aba49d44855cac4267f984f3da452ef18">954</a>&nbsp;#define
+COPY_ALARM_CONFIG(A,B) \</p>
+<p>955&nbsp; A[i].alarms.min_alarm = B[i].att_alarm.min_alarm; \</p>
+<p>956&nbsp; A[i].alarms.max_alarm = B[i].att_alarm.max_alarm; \</p>
+<p><a class="reference external" href="../../da/dc5/classTango_1_1DevicePipe.html#a242f6981b33c372833459baee14315fe">957</a>
+A[i].alarms.min_warning = B[i].att_alarm.min_warning; \</p>
+<p>958&nbsp; A[i].alarms.max_warning = B[i].att_alarm.max_warning; \</p>
+<p>959&nbsp; A[i].alarms.delta_t = B[i].att_alarm.delta_t; \</p>
+<p>960&nbsp; A[i].alarms.delta_val = B[i].att_alarm.delta_val; \</p>
+<p>961&nbsp; A[i].alarms.extensions.resize(B[i].att_alarm.extensions.length());
+\</p>
+<p>962&nbsp; for (size_t j=0; j&lt;B[i].att_alarm.extensions.length(); j++) \</p>
+<p>963&nbsp; { \</p>
+<p>964&nbsp; A[i].alarms.extensions[j] = B[i].att_alarm.extensions[j]; \</p>
+<p>965&nbsp; }</p>
+<p><a class="reference external" href="../../da/dc5/classTango_1_1DevicePipe.html#a3cc8834e05ef939588b5954d1bb875ff">966</a></p>
+<p>967</p>
+<p><a class="reference external" href="../../d9/ddc/devapi_8h.html#ab5f7c287c880797594b14f91b6115c11">968</a>&nbsp;#define
+COPY_EVENT_CONFIG(A,B) \</p>
+<p>969&nbsp; A[i].events.ch_event.rel_change =
+B[i].event_prop.ch_event.rel_change; \</p>
+<p>970&nbsp; A[i].events.ch_event.abs_change =
+B[i].event_prop.ch_event.abs_change; \</p>
+<p><a class="reference external" href="../../d7/dca/classTango_1_1DeviceAttribute.html#a3f9f8c8594eca47c15d14a428e1ce449">971</a>
+A[i].events.ch_event.extensions.resize(B[i].event_prop.ch_event.extensions.length());
+\</p>
+<p>972&nbsp; for (size_t j=0; j&lt;B[i].event_prop.ch_event.extensions.length();
+j++) \</p>
+<p>973&nbsp; { \</p>
+<p>974&nbsp; A[i].events.ch_event.extensions[j] =
+B[i].event_prop.ch_event.extensions[j]; \</p>
+<p>975&nbsp; } \</p>
+<p>976&nbsp;\</p>
+<p>977&nbsp; A[i].events.per_event.period = B[i].event_prop.per_event.period;
+\</p>
+<p>978
+A[i].events.per_event.extensions.resize(B[i].event_prop.per_event.extensions.length());
+\</p>
+<p><a class="reference external" href="../../d7/dca/classTango_1_1DeviceAttribute.html#aadacbabadd2fb9533f47c2e401c2bf9c">979</a>
+for (size_t j=0; j&lt;B[i].event_prop.per_event.extensions.length();
+j++) \</p>
+<p>980&nbsp; { \</p>
+<p>981&nbsp; A[i].events.per_event.extensions[j] =
+B[i].event_prop.per_event.extensions[j]; \</p>
+<p>982&nbsp; } \</p>
+<p>983&nbsp;\</p>
+<p>984&nbsp; A[i].events.arch_event.archive_rel_change =
+B[i].event_prop.arch_event.rel_change; \</p>
+<p>985&nbsp; A[i].events.arch_event.archive_abs_change =
+B[i].event_prop.arch_event.abs_change; \</p>
+<p>986&nbsp; A[i].events.arch_event.archive_period =
+B[i].event_prop.arch_event.period; \</p>
+<p>987
+A[i].events.arch_event.extensions.resize(B[i].event_prop.arch_event.extensions.length());
+\</p>
+<p>988&nbsp; for (size_t j=0;
+j&lt;B[i].event_prop.arch_event.extensions.length(); j++) \</p>
+<p>989&nbsp; { \</p>
+<p>990&nbsp; A[i].events.arch_event.extensions[j] =
+B[i].event_prop.arch_event.extensions[j]; \</p>
+<p>991&nbsp; }</p>
+<p>992</p>
+<p>993</p>
+<p>997</p>
+<p>998</p>
+<p><a class="reference external" href="../../df/db5/classTango_1_1AutoConnectTimeout.html">999</a>&nbsp;class
+<a class="reference external" href="../../df/db5/classTango_1_1AutoConnectTimeout.html">AutoConnectTimeout</a></p>
+<p>1000&nbsp;{</p>
+<p><a class="reference external" href="../../d7/dca/classTango_1_1DeviceAttribute.html#a4dfe60e076172a05f332a35c5412e182">1001</a>&nbsp;public:</p>
+<p><a class="reference external" href="../../df/db5/classTango_1_1AutoConnectTimeout.html#a1b74740f36e43fdb3b13df1decebced8">1002</a>
+<a class="reference external" href="../../df/db5/classTango_1_1AutoConnectTimeout.html#a1b74740f36e43fdb3b13df1decebced8">AutoConnectTimeout</a>(unsigned
+int to) {omniORB::setClientConnectTimeout((CORBA::ULong)to);}</p>
+<p><a class="reference external" href="../../df/db5/classTango_1_1AutoConnectTimeout.html#a401679594dbe8613868c2e0c75924787">1003</a>
+<a class="reference external" href="../../df/db5/classTango_1_1AutoConnectTimeout.html#a401679594dbe8613868c2e0c75924787">~AutoConnectTimeout</a>()
+{omniORB::setClientConnectTimeout(<a class="reference external" href="../../de/ddf/namespaceTango.html#ad922e360c668c83ea8123b7ac1591874">NARROW_CLNT_TIMEOUT</a>);}</p>
+<p>1004&nbsp;};</p>
+<p>1005</p>
+<p>1006&nbsp;} // End of Tango namespace</p>
+<p>1007</p>
+<p>1008&nbsp;#endif /* _DEVAPI_H */</p>
+<p><a class="reference external" href="../../d1/d45/group__Client.html#gga6c80e2130b95642d5c39ee8db7a25620a0c8c20bdddc6ba94c2c8465da593e80c">Tango::POLLING</a></p>
+<p>Polling mode request.</p>
+<p><strong>Definition:</strong> devapi.h:401</p>
+<p><a class="reference external" href="../../d1/d29/structTango_1_1ArchiveEventInfo.html#a8eab759c5b4d6913ecfb73ee7b7ad08e">Tango::ArchiveEventInfo::archive_period</a></p>
+<p>string archive_period</p>
+<p>Archive event period.</p>
+<p><strong>Definition:</strong> devapi.h:284</p>
+<p><a class="reference external" href="../../de/ddf/namespaceTango.html#a99fa459235396b406532406b562984c0">Tango::DbData</a></p>
+<p>vector&lt; DbDatum &gt; DbData</p>
+<p><strong>Definition:</strong> dbapi.h:66</p>
+<p><a class="reference external" href="../../d3/d7a/apiexcept_8h.html">apiexcept.h</a></p>
+<p><a class="reference external" href="../../d7/d7a/structTango_1_1AttributeDimension.html#a483a7f7db671828cb1fd467f34b30961">Tango::AttributeDimension::dim_x</a></p>
+<p>long dim_x</p>
+<p><strong>Definition:</strong> devapi.h:117</p>
+<p><a class="reference external" href="../../d0/d4a/structTango_1_1AttributeAlarmInfo.html#aac90fcaa709d3614ac9d838f3af2f41a">Tango::AttributeAlarmInfo::max_alarm</a></p>
+<p>string max_alarm</p>
+<p>max alarm level</p>
+<p><strong>Definition:</strong> devapi.h:226</p>
+<p><a class="reference external" href="../../d4/d49/classTango_1_1AsynReq.html">Tango::AsynReq</a></p>
+<p><strong>Definition:</strong> devasyn.h:387</p>
+<p><a class="reference external" href="../../d1/d45/group__Client.html#ga3a5254b5c0c8de0c71c18bad2bd742bc">Tango::cb_sub_model</a></p>
+<p>cb_sub_model</p>
+<p>Possible callback mode.</p>
+<p><strong>Definition:</strong> devapi.h:412</p>
+<p><a class="reference external" href="../../db/d74/structTango_1_1DeviceAttributeConfig.html#a3ee3ca0543af398a2ee69901ab2086ea">Tango::DeviceAttributeConfig::description</a></p>
+<p>string description</p>
+<p>Description.</p>
+<p><strong>Definition:</strong> devapi.h:177</p>
+<p><a class="reference external" href="../../d0/d4a/structTango_1_1AttributeAlarmInfo.html#a75ab6140f065a841206c4c8a812bffea">Tango::AttributeAlarmInfo::min_alarm</a></p>
+<p>string min_alarm</p>
+<p>Min alarm level.</p>
+<p><strong>Definition:</strong> devapi.h:225</p>
+<p><a class="reference external" href="../../d8/d41/classTango_1_1DeviceAttributeHistory.html">Tango::DeviceAttributeHistory</a></p>
+<p>Fundamental type for receiving data from device attribute polling
+buffers.</p>
+<p><strong>Definition:</strong> devapi.h:633</p>
+<p><a class="reference external" href="../../d3/d71/structTango_1_1AttributeInfoEx.html">Tango::AttributeInfoEx</a></p>
+<p>Extended attribute configuration data.</p>
+<p><strong>Definition:</strong> devapi.h:330</p>
+<p><a class="reference external" href="../../db/d74/structTango_1_1DeviceAttributeConfig.html#a265cd1f58f040fbb4fdebb8a5eb13718">Tango::DeviceAttributeConfig::min_alarm</a></p>
+<p>string min_alarm</p>
+<p>Min alarm.</p>
+<p><strong>Definition:</strong> devapi.h:185</p>
+<p><a class="reference external" href="../../d1/d45/group__Client.html#gae59d9d9726e3916b6a49bda9de1bff2c">Tango::AttrMemorizedType</a></p>
+<p>enum Tango::_AttrMemorizedType AttrMemorizedType</p>
+<p>Possible memorized attribute type.</p>
+<p><a class="reference external" href="../../d6/dc5/classTango_1_1Database.html">Tango::Database</a></p>
+<p>A high level object which contains the link to the database.</p>
+<p><strong>Definition:</strong> dbapi.h:53</p>
+<p><a class="reference external" href="../../d6/d55/structTango_1_1PeriodicEventInfo.html#ad5384dc1bb57e6d1e7b566d4d1947edc">Tango::PeriodicEventInfo::period</a></p>
+<p>string period</p>
+<p>Event period.</p>
+<p><strong>Definition:</strong> devapi.h:266</p>
+<p><a class="reference external" href="../../de/ddf/namespaceTango.html#a6e79cf63803c5345bbccc9c3a8573efe">Tango::DeviceInfo</a></p>
+<p>_DeviceInfo DeviceInfo</p>
+<p><strong>Definition:</strong> devapi.h:158</p>
+<p><a class="reference external" href="../../d8/dc0/classTango_1_1DeviceDataHistory.html#a29a818b5c86b2208ed6aee8700849945">Tango::DeviceDataHistory::get_date</a></p>
+<p>TimeVal &amp; get_date()</p>
+<p>Get record polling date.</p>
+<p><strong>Definition:</strong> devapi.h:546</p>
+<p><a class="reference external" href="../../db/d74/structTango_1_1DeviceAttributeConfig.html#a4ec80e8421b9f1f3e250b047771a4a17">Tango::DeviceAttributeConfig::label</a></p>
+<p>string label</p>
+<p>Label.</p>
+<p><strong>Definition:</strong> devapi.h:178</p>
+<p><a class="reference external" href="../../d1/d29/structTango_1_1ArchiveEventInfo.html#ac3f5f5d04b5780fa72fb70e79548e7b1">Tango::ArchiveEventInfo::archive_abs_change</a></p>
+<p>string archive_abs_change</p>
+<p>Archive abosolute change threshold.</p>
+<p><strong>Definition:</strong> devapi.h:283</p>
+<p><a class="reference external" href="../../d7/d2a/classTango_1_1ApiUtil.html">Tango::ApiUtil</a></p>
+<p>Miscellaneous utility methods usefull in a Tango client.</p>
+<p><strong>Definition:</strong> devapi.h:55</p>
+<p><a class="reference external" href="../../db/d74/structTango_1_1DeviceAttributeConfig.html">Tango::DeviceAttributeConfig</a></p>
+<p>Base structure for Attribute configuration.</p>
+<p><strong>Definition:</strong> devapi.h:166</p>
+<p><a class="reference external" href="../../d9/d49/structTango_1_1ChangeEventInfo.html">Tango::ChangeEventInfo</a></p>
+<p>Attribute change event configuration.</p>
+<p><strong>Definition:</strong> devapi.h:244</p>
+<p><a class="reference external" href="../../d8/dc0/classTango_1_1DeviceDataHistory.html#a661631cafdd62b484736e92d8d700829">Tango::DeviceDataHistory::get_err_stack</a></p>
+<p>const DevErrorList &amp; get_err_stack()</p>
+<p>Get record error stack.</p>
+<p><strong>Definition:</strong> devapi.h:555</p>
+<p><a class="reference external" href="../../d8/d7f/unionTango_1_1LockerId.html#a9b563ab895bb99554f04e46618290ff1">Tango::LockerId::LockerPid</a></p>
+<p>TangoSys_Pid LockerPid</p>
+<p><strong>Definition:</strong> devapi.h:73</p>
+<p><a class="reference external" href="../../d3/d71/structTango_1_1AttributeInfoEx.html#a4b0ef35e29ace8d9ea557ad142018185">Tango::AttributeInfoEx::enum_labels</a></p>
+<p>vector&lt; string &gt; enum_labels</p>
+<p>Enumerated attribute labels.</p>
+<p><strong>Definition:</strong> devapi.h:337</p>
+<p><a class="reference external" href="../../d8/dc0/classTango_1_1DeviceDataHistory.html#aa30b768579c6ac8083cc4c577a6a7885">Tango::DeviceDataHistory::has_failed</a></p>
+<p>bool has_failed()</p>
+<p>Check if the record was a failure.</p>
+<p><strong>Definition:</strong> devapi.h:538</p>
+<p><a class="reference external" href="../../d2/d46/structTango_1_1__DeviceInfo.html#a45899619243d8a7e3a91fe46a6db12b3">Tango::_DeviceInfo::server_version</a></p>
+<p>long server_version</p>
+<p><strong>Definition:</strong> devapi.h:153</p>
+<p><a class="reference external" href="../../d9/dcb/classTango_1_1DummyDeviceProxy.html#ad6fb4f3237b716ee6e53417317a2984a">Tango::DummyDeviceProxy::get_env_var</a></p>
+<p>int get_env_var(const char *cc, string &amp;str_ref)</p>
+<p><strong>Definition:</strong> devapi.h:761</p>
+<p><a class="reference external" href="../../d0/d4a/structTango_1_1AttributeAlarmInfo.html#a41217de305a07f3aac512190bf802436">Tango::AttributeAlarmInfo::extensions</a></p>
+<p>vector&lt; string &gt; extensions</p>
+<p>Future extensions.</p>
+<p><strong>Definition:</strong> devapi.h:231</p>
+<p><a class="reference external" href="../../d9/dcb/classTango_1_1DummyDeviceProxy.html#a95f30faa9de8e4fb82f65b6689da1a08">Tango::DummyDeviceProxy::dev_name</a></p>
+<p>virtual string dev_name()</p>
+<p><strong>Definition:</strong> devapi.h:759</p>
+<p><a class="reference external" href="../../d0/d4b/classTango_1_1DbDevImportInfo.html">Tango::DbDevImportInfo</a></p>
+<p>Device import information from the database.</p>
+<p><strong>Definition:</strong> dbapi.h:815</p>
+<p><a class="reference external" href="../../d0/d41/structTango_1_1LockingThread.html#a98fd861b6d8fcddf32da3be51fc1ac4b">Tango::LockingThread::l_thread</a></p>
+<p>LockThread * l_thread</p>
+<p><strong>Definition:</strong> devapi.h:89</p>
+<p><a class="reference external" href="../../d1/d45/group__Client.html#ga7175e05437edf640b8e555d1a601335c">Tango::AttributeInfoListEx</a></p>
+<p>vector&lt; AttributeInfoEx &gt; AttributeInfoListEx</p>
+<p>vector of AttributeInfoEx structure</p>
+<p><strong>Definition:</strong> devapi.h:359</p>
+<p><a class="reference external" href="../../da/dce/structTango_1_1AttributeEventInfo.html#a10e613e8f4809b162492eb74c5906a89">Tango::AttributeEventInfo::per_event</a></p>
+<p>PeriodicEventInfo per_event</p>
+<p>Attribute periodic event info.</p>
+<p><strong>Definition:</strong> devapi.h:301</p>
+<p><a class="reference external" href="../../d1/d45/group__Client.html#gafbe27a305aed98cb963bacb178c78859">Tango::AttributeEventInfo</a></p>
+<p>struct Tango::AttributeEventInfo AttributeEventInfo</p>
+<p>Attribute event configuration.</p>
+<p><a class="reference external" href="../../d8/dcc/namespacestd.html">std</a></p>
+<p><strong>Definition:</strong> LoggerStream.hh:178</p>
+<p><a class="reference external" href="../../db/d74/structTango_1_1DeviceAttributeConfig.html#a2e2c5a17bc577057f9db3fec6fc5002c">Tango::DeviceAttributeConfig::data_type</a></p>
+<p>int data_type</p>
+<p>Data type.</p>
+<p><strong>Definition:</strong> devapi.h:174</p>
+<p><a class="reference external" href="../../d9/d49/structTango_1_1ChangeEventInfo.html#af8803ddcc0f31b3c524225f9a05eb899">Tango::ChangeEventInfo::abs_change</a></p>
+<p>string abs_change</p>
+<p>Absolute change threshold.</p>
+<p><strong>Definition:</strong> devapi.h:250</p>
+<p><a class="reference external" href="../../d8/d7f/unionTango_1_1LockerId.html">Tango::LockerId</a></p>
+<p><strong>Definition:</strong> devapi.h:71</p>
+<p><a class="reference external" href="../../d1/d29/structTango_1_1ArchiveEventInfo.html">Tango::ArchiveEventInfo</a></p>
+<p>Attribute archive event configuration.</p>
+<p><strong>Definition:</strong> devapi.h:277</p>
+<p><a class="reference external" href="../../d1/d29/structTango_1_1ArchiveEventInfo.html#afecffe46830ac832cee719a7614a4030">Tango::ArchiveEventInfo::archive_rel_change</a></p>
+<p>string archive_rel_change</p>
+<p>Archive relative change threshold.</p>
+<p><strong>Definition:</strong> devapi.h:282</p>
+<p><a class="reference external" href="../../db/d74/structTango_1_1DeviceAttributeConfig.html#a519d30179f56a9d0405a2b16fbd762eb">Tango::DeviceAttributeConfig::max_dim_y</a></p>
+<p>int max_dim_y</p>
+<p>Max dim Y.</p>
+<p><strong>Definition:</strong> devapi.h:176</p>
+<p><a class="reference external" href="../../d1/d45/group__Client.html#ga05d242f249708dcd595c8f022917de27">Tango::AttributeAlarmInfo</a></p>
+<p>struct Tango::AttributeAlarmInfo AttributeAlarmInfo</p>
+<p>Attribute alarms configuration.</p>
+<p><a class="reference external" href="../../d4/ded/classTango_1_1CallBack.html">Tango::CallBack</a></p>
+<p>Event and asynchronous (callback model) calls base class.</p>
+<p><strong>Definition:</strong> devasyn.h:234</p>
+<p><a class="reference external" href="../../db/d68/classTango_1_1TgRequest.html#a6ae144d0765e704695987f8b20255343">Tango::TgRequest::ReqType</a></p>
+<p>ReqType</p>
+<p><strong>Definition:</strong> devasyn.h:360</p>
+<p><a class="reference external" href="../../d3/d4b/classTango_1_1AttributeProxy.html">Tango::AttributeProxy</a></p>
+<p>Easy to use interface to Tango device attribute.</p>
+<p><strong>Definition:</strong> devapi.h:58</p>
+<p><a class="reference external" href="../../d2/d46/structTango_1_1__DeviceInfo.html#a2e7d98036dafa968ebef16982f49677b">Tango::_DeviceInfo::server_id</a></p>
+<p>string server_id</p>
+<p><strong>Definition:</strong> devapi.h:151</p>
+<p><a class="reference external" href="../../d1/d45/group__Client.html#ga5366e2a8cedf5aab5be8835974f787c6">Tango::EventType</a></p>
+<p>EventType</p>
+<p>Possible event type.</p>
+<p><strong>Definition:</strong> tango_const.h:1089</p>
+<p><a class="reference external" href="../../d1/d45/group__Client.html#ga9a2aca65efc6caf661f33f5886695dcc">Tango::ArchiveEventInfo</a></p>
+<p>struct Tango::ArchiveEventInfo ArchiveEventInfo</p>
+<p>Attribute archive event configuration.</p>
+<p><a class="reference external" href="../../df/db5/classTango_1_1AutoConnectTimeout.html">Tango::AutoConnectTimeout</a></p>
+<p>Small utility classes</p>
+<p><strong>Definition:</strong> devapi.h:999</p>
+<p><a class="reference external" href="../../d0/d4a/structTango_1_1AttributeAlarmInfo.html#ab89ae378c905d41c580b922f16f55ffa">Tango::AttributeAlarmInfo::max_warning</a></p>
+<p>string max_warning</p>
+<p>Max warning level.</p>
+<p><strong>Definition:</strong> devapi.h:228</p>
+<p><a class="reference external" href="../../d8/d04/structTango_1_1PipeInfo.html#aac516bafc197363c2631c05d28442407">Tango::PipeInfo::name</a></p>
+<p>string name</p>
+<p>Pipe name.</p>
+<p><strong>Definition:</strong> devapi.h:372</p>
+<p><a class="reference external" href="../../d1/d45/group__Client.html#gad3bc51cab7995f9e00f253b183924ae9">Tango::AttributeInfo</a></p>
+<p>Tango::AttributeInfo AttributeInfo</p>
+<p>Attribute configuration data extension.</p>
+<p><a class="reference external" href="../../df/d22/classTango_1_1DeviceData.html">Tango::DeviceData</a></p>
+<p>Fundamental type for sending and receiving data from device commands.</p>
+<p><strong>Definition:</strong> devapi.h:64</p>
+<p><a class="reference external" href="../../d9/dcb/classTango_1_1DummyDeviceProxy.html#a2901b3e72b2928c0c0fb0bd2674990e4">Tango::DummyDeviceProxy::get_lock_ctr</a></p>
+<p>virtual int get_lock_ctr()</p>
+<p><strong>Definition:</strong> devapi.h:756</p>
+<p><a class="reference external" href="../../de/ddf/namespaceTango.html">Tango</a></p>
+<hr class="docutils" />
+<p><strong>Definition:</strong> device.h:50</p>
+<p><a class="reference external" href="../../df/db5/classTango_1_1AutoConnectTimeout.html#a1b74740f36e43fdb3b13df1decebced8">Tango::AutoConnectTimeout::AutoConnectTimeout</a></p>
+<p>AutoConnectTimeout(unsigned int to)</p>
+<p><strong>Definition:</strong> devapi.h:1002</p>
+<p><a class="reference external" href="../../db/d74/structTango_1_1DeviceAttributeConfig.html#ae7ec9432c308d2080bff8390bf86e9dc">Tango::DeviceAttributeConfig::display_unit</a></p>
+<p>string display_unit</p>
+<p>Display unit.</p>
+<p><strong>Definition:</strong> devapi.h:181</p>
+<p><a class="reference external" href="../../d1/d45/group__Client.html#gga3a5254b5c0c8de0c71c18bad2bd742bca3542fc1395bd94ac0429ee11ea9e1275">Tango::PULL_CALLBACK</a></p>
+<p>Callback pull model.</p>
+<p><strong>Definition:</strong> devapi.h:415</p>
+<p><a class="reference external" href="../../db/d74/structTango_1_1DeviceAttributeConfig.html#a5f02c5c4d857bd6eec495a746dfaf646">Tango::DeviceAttributeConfig::writable</a></p>
+<p>AttrWriteType writable</p>
+<p>Writable type (Read, Write,...)</p>
+<p><strong>Definition:</strong> devapi.h:172</p>
+<p><a class="reference external" href="../../d1/d45/group__Client.html#gga6c80e2130b95642d5c39ee8db7a25620a0d735acd8a950dd8379589f3b3a392c1">Tango::CALL_BACK</a></p>
+<p>Callback mode request.</p>
+<p><strong>Definition:</strong> devapi.h:402</p>
+<p><a class="reference external" href="../../d0/d4a/structTango_1_1AttributeAlarmInfo.html">Tango::AttributeAlarmInfo</a></p>
+<p>Attribute alarms configuration.</p>
+<p><strong>Definition:</strong> devapi.h:220</p>
+<p><a class="reference external" href="../../d1/d45/group__Client.html#ga76ad081a56687025de62cf1cbaf48124">Tango::_AttrMemorizedType</a></p>
+<p>_AttrMemorizedType</p>
+<p>Possible memorized attribute type.</p>
+<p><strong>Definition:</strong> devapi.h:314</p>
+<p><a class="reference external" href="../../d6/d55/structTango_1_1PeriodicEventInfo.html">Tango::PeriodicEventInfo</a></p>
+<p>Attribute periodic event configuration.</p>
+<p><strong>Definition:</strong> devapi.h:261</p>
+<p><a class="reference external" href="../../db/d74/structTango_1_1DeviceAttributeConfig.html#aa986f46571ce7f48ac88d005034b16be">Tango::DeviceAttributeConfig::name</a></p>
+<p>string name</p>
+<p>Name.</p>
+<p><strong>Definition:</strong> devapi.h:171</p>
+<p><a class="reference external" href="../../d1/d45/group__Client.html#gga76ad081a56687025de62cf1cbaf48124a1c81faba262469013aee0d8dd975f378">Tango::MEMORIZED</a></p>
+<p>Memorized attribute.</p>
+<p><strong>Definition:</strong> devapi.h:318</p>
+<p><a class="reference external" href="../../d8/dc0/classTango_1_1DeviceDataHistory.html">Tango::DeviceDataHistory</a></p>
+<p>Fundamental type for receiving data from device command polling buffers.</p>
+<p><strong>Definition:</strong> devapi.h:510</p>
+<p><a class="reference external" href="../../d7/d7a/structTango_1_1AttributeDimension.html">Tango::AttributeDimension</a></p>
+<p><strong>Definition:</strong> devapi.h:115</p>
+<p><a class="reference external" href="../../da/dce/structTango_1_1AttributeEventInfo.html#aac8d39bbcab8839baf68267da64d850b">Tango::AttributeEventInfo::arch_event</a></p>
+<p>ArchiveEventInfo arch_event</p>
+<p>Attribute archive event info.</p>
+<p><strong>Definition:</strong> devapi.h:302</p>
+<p><a class="reference external" href="../../d1/d45/group__Client.html#gad6df317aebc920b1e9489cc83d80f2c0">Tango::ChangeEventInfo</a></p>
+<p>struct Tango::ChangeEventInfo ChangeEventInfo</p>
+<p>Attribute change event configuration.</p>
+<p><a class="reference external" href="../../d1/d45/group__Client.html#gga76ad081a56687025de62cf1cbaf48124a12c0889f5b2cd005995da692bbc1e3ae">Tango::MEMORIZED_WRITE_INIT</a></p>
+<p>Memorized attribute with memorized value writen at initialization.</p>
+<p><strong>Definition:</strong> devapi.h:319</p>
+<p><a class="reference external" href="../../d1/d45/group__Client.html#gga3a5254b5c0c8de0c71c18bad2bd742bca776212fa9631a1e9b40990653ea37f87">Tango::PUSH_CALLBACK</a></p>
+<p>Callback push model.</p>
+<p><strong>Definition:</strong> devapi.h:414</p>
+<p><a class="reference external" href="../../db/d74/structTango_1_1DeviceAttributeConfig.html#ad3ec3ee2584e54354a9ad398432b7e63">Tango::DeviceAttributeConfig::format</a></p>
+<p>string format</p>
+<p>Format.</p>
+<p><strong>Definition:</strong> devapi.h:182</p>
+<p><a class="reference external" href="../../d3/d71/structTango_1_1AttributeInfoEx.html#a60e3af52cd117f6c05f3408124caa4ce">Tango::AttributeInfoEx::memorized</a></p>
+<p>AttrMemorizedType memorized</p>
+<p>The attribute memorization type.</p>
+<p><strong>Definition:</strong> devapi.h:336</p>
+<p><a class="reference external" href="../../d0/dfd/structTango_1_1DevCommandInfo.html#ada0b412c05607021230d5780e4984eff">Tango::DevCommandInfo::in_type</a></p>
+<p>long in_type</p>
+<p>Input parameter data type.</p>
+<p><strong>Definition:</strong> devapi.h:105</p>
+<p><a class="reference external" href="../../db/d74/structTango_1_1DeviceAttributeConfig.html#a7c86de3d725f10a4ca07b086d04ce043">Tango::DeviceAttributeConfig::writable_attr_name</a></p>
+<p>string writable_attr_name</p>
+<p>Writable att. name.</p>
+<p><strong>Definition:</strong> devapi.h:187</p>
+<p><a class="reference external" href="../../d9/dcb/classTango_1_1DummyDeviceProxy.html#a06125348959666fb0774765b8d49f15d">Tango::DummyDeviceProxy::set_lock_ctr</a></p>
+<p>virtual void set_lock_ctr(int)</p>
+<p><strong>Definition:</strong> devapi.h:757</p>
+<p><a class="reference external" href="../../d1/d45/group__Client.html#gga76ad081a56687025de62cf1cbaf48124a77d085684a448679e0729b6b444b2639">Tango::NONE</a></p>
+<p>The attribute is not memorized.</p>
+<p><strong>Definition:</strong> devapi.h:317</p>
+<p><a class="reference external" href="../../d0/d41/structTango_1_1LockingThread.html#a3a3fe5fd038680368a3f32e2d190bc80">Tango::LockingThread::shared</a></p>
+<p>LockThCmd * shared</p>
+<p><strong>Definition:</strong> devapi.h:88</p>
+<p><a class="reference external" href="../../d2/d46/structTango_1_1__DeviceInfo.html#a161e8a72fc4ee3812548f95ef9f1c209">Tango::_DeviceInfo::server_host</a></p>
+<p>string server_host</p>
+<p><strong>Definition:</strong> devapi.h:152</p>
+<p><a class="reference external" href="../../d1/d29/structTango_1_1ArchiveEventInfo.html#a4104ec8d3d324941d0275200365d9d02">Tango::ArchiveEventInfo::extensions</a></p>
+<p>vector&lt; string &gt; extensions</p>
+<p>Future exetnsions.</p>
+<p><strong>Definition:</strong> devapi.h:285</p>
+<p><a class="reference external" href="../../d3/d96/structTango_1_1CommandInfo.html">Tango::CommandInfo</a></p>
+<p>Command information data extension.</p>
+<p><strong>Definition:</strong> devapi.h:128</p>
+<p><a class="reference external" href="../../d9/d49/structTango_1_1ChangeEventInfo.html#a4d5e1f716c77065751e457ae2c9521e9">Tango::ChangeEventInfo::rel_change</a></p>
+<p>string rel_change</p>
+<p>Relative change threshold.</p>
+<p><strong>Definition:</strong> devapi.h:249</p>
+<p><a class="reference external" href="../../de/ddf/namespaceTango.html#ab853e559703141ec81b1c30a5c9d88d2">Tango::DevCommandInfo</a></p>
+<p>struct Tango::DevCommandInfo DevCommandInfo</p>
+<p>Base structure for command information.</p>
+<p><a class="reference external" href="../../d2/d46/structTango_1_1__DeviceInfo.html#a24c77497253a5b2c35e976de5680f05d">Tango::_DeviceInfo::dev_type</a></p>
+<p>string dev_type</p>
+<p><strong>Definition:</strong> devapi.h:155</p>
+<p><a class="reference external" href="../../de/ddf/namespaceTango.html#aa64a337e34f9bfb5207ba07aa7cd51f9">Tango::DeviceDataHistoryList</a></p>
+<p>vector&lt; DeviceDataHistory &gt; DeviceDataHistoryList</p>
+<p><strong>Definition:</strong> devapi.h:614</p>
+<p><a class="reference external" href="../../d2/d46/structTango_1_1__DeviceInfo.html#adeee0b4e5ba2ea180afbf2e22211d3b2">Tango::_DeviceInfo::dev_class</a></p>
+<p>string dev_class</p>
+<p><strong>Definition:</strong> devapi.h:150</p>
+<p><a class="reference external" href="../../de/ddf/namespaceTango.html#aa44aae3bf7d5731b0dd44eaee68e9eb5">Tango::operator&lt;&lt;</a></p>
+<p>DevicePipeBlob &amp; operator&lt;&lt;(DevicePipeBlob &amp;, DataElement&lt; T &gt; &amp;)</p>
+<p><a class="reference external" href="../../dd/d39/structTango_1_1LockerInfo.html#a024019267de036847a9f7e30b2c3fe1a">Tango::LockerInfo::locker_class</a></p>
+<p>string locker_class</p>
+<p><strong>Definition:</strong> devapi.h:82</p>
+<p><a class="reference external" href="../../d8/d04/structTango_1_1PipeInfo.html#aee2c6ec24ba43f8a91e29ea5d0b5c4f4">Tango::PipeInfo::extensions</a></p>
+<p>vector&lt; string &gt; extensions</p>
+<p>For future extensions.</p>
+<p><strong>Definition:</strong> devapi.h:377</p>
+<p><a class="reference external" href="../../db/d74/structTango_1_1DeviceAttributeConfig.html#a84c6e32024eb2ab01a03cb1016f2acbd">Tango::DeviceAttributeConfig::max_value</a></p>
+<p>string max_value</p>
+<p>Max value.</p>
+<p><strong>Definition:</strong> devapi.h:184</p>
+<p><a class="reference external" href="../../d1/d45/group__Client.html#gga6c80e2130b95642d5c39ee8db7a25620a5f52f099a007030f3d4bca03801df6e7">Tango::ALL_ASYNCH</a></p>
+<p>All request.</p>
+<p><strong>Definition:</strong> devapi.h:403</p>
+<p><a class="reference external" href="../../d8/d04/structTango_1_1PipeInfo.html">Tango::PipeInfo</a></p>
+<p>Base structure for pipe information.</p>
+<p><strong>Definition:</strong> devapi.h:367</p>
+<p><a class="reference external" href="../../d0/dfd/structTango_1_1DevCommandInfo.html#ace0c93f7dfa9891f9e5845abbb8debaf">Tango::DevCommandInfo::in_type_desc</a></p>
+<p>string in_type_desc</p>
+<p>Input parameter description.</p>
+<p><strong>Definition:</strong> devapi.h:107</p>
+<p><a class="reference external" href="../../d7/dca/classTango_1_1DeviceAttribute.html">Tango::DeviceAttribute</a></p>
+<p>Fundamental type for sending an dreceiving data to and from device
+attributes.</p>
+<p><strong>Definition:</strong> devapi.h:73</p>
+<p><a class="reference external" href="../../de/ddf/namespaceTango.html#a2926592cba03eca7ecf3ab28587f19f0">Tango::DeviceAttributeConfig</a></p>
+<p>struct Tango::DeviceAttributeConfig DeviceAttributeConfig</p>
+<p>Base structure for Attribute configuration.</p>
+<p><a class="reference external" href="../../d1/d45/group__Client.html#ga0e7b3d0d4f4606a890d79fdee1581f18">Tango::CommandInfo</a></p>
+<p>Tango::CommandInfo CommandInfo</p>
+<p>Command information data extension.</p>
+<p><a class="reference external" href="../../d0/d4a/structTango_1_1AttributeAlarmInfo.html#af47fd458db3938f4242350cca362d473">Tango::AttributeAlarmInfo::min_warning</a></p>
+<p>string min_warning</p>
+<p>Min warning level.</p>
+<p><strong>Definition:</strong> devapi.h:227</p>
+<p><a class="reference external" href="../../d8/d04/structTango_1_1PipeInfo.html#a80e59d16eddbac22bb4386dc065413b8">Tango::PipeInfo::label</a></p>
+<p>string label</p>
+<p>Pipe label.</p>
+<p><strong>Definition:</strong> devapi.h:374</p>
+<p><a class="reference external" href="../../dd/d39/structTango_1_1LockerInfo.html#ac19a902ad6cc0fe15e74485cc09d3f5a">Tango::LockerInfo::li</a></p>
+<p>LockerId li</p>
+<p><strong>Definition:</strong> devapi.h:80</p>
+<p><a class="reference external" href="../../da/dce/structTango_1_1AttributeEventInfo.html">Tango::AttributeEventInfo</a></p>
+<p>Attribute event configuration.</p>
+<p><strong>Definition:</strong> devapi.h:295</p>
+<p><a class="reference external" href="../../db/d74/structTango_1_1DeviceAttributeConfig.html#ae77d336e762e1c6e1e8fcea17d6b107f">Tango::DeviceAttributeConfig::extensions</a></p>
+<p>vector&lt; string &gt; extensions</p>
+<p>For future extensions.</p>
+<p><strong>Definition:</strong> devapi.h:188</p>
+<p><a class="reference external" href="../../d9/dcb/classTango_1_1DummyDeviceProxy.html">Tango::DummyDeviceProxy</a></p>
+<p><strong>Definition:</strong> devapi.h:749</p>
+<p><a class="reference external" href="../../d3/d0f/classTango_1_1DbDatum.html">Tango::DbDatum</a></p>
+<p>A database value.</p>
+<p><strong>Definition:</strong> dbapi.h:443</p>
+<p><a class="reference external" href="../../df/db5/classTango_1_1AutoConnectTimeout.html#a401679594dbe8613868c2e0c75924787">Tango::AutoConnectTimeout::~AutoConnectTimeout</a></p>
+<p>~AutoConnectTimeout()</p>
+<p><strong>Definition:</strong> devapi.h:1003</p>
+<p><a class="reference external" href="../../d1/d45/group__Client.html#ga702913bccb1c2d427d7a6f046602d657">Tango::CommandInfoList</a></p>
+<p>vector&lt; CommandInfo &gt; CommandInfoList</p>
+<p>A vector of CommandInfo structure.</p>
+<p><strong>Definition:</strong> devapi.h:146</p>
+<p><a class="reference external" href="../../de/ddf/namespaceTango.html#a40adbc36986b3444fcde63126e4a011e">Tango::PipeInfoList</a></p>
+<p>vector&lt; PipeInfo &gt; PipeInfoList</p>
+<p><strong>Definition:</strong> devapi.h:386</p>
+<p><a class="reference external" href="../../db/d74/structTango_1_1DeviceAttributeConfig.html#aa647cb22659434ffe9833adbfecb11ab">Tango::DeviceAttributeConfig::min_value</a></p>
+<p>string min_value</p>
+<p>Min value.</p>
+<p><strong>Definition:</strong> devapi.h:183</p>
+<p><a class="reference external" href="../../df/dab/structTango_1_1AttributeInfo.html">Tango::AttributeInfo</a></p>
+<p>Attribute configuration data extension.</p>
+<p><strong>Definition:</strong> devapi.h:201</p>
+<p><a class="reference external" href="../../dd/d39/structTango_1_1LockerInfo.html">Tango::LockerInfo</a></p>
+<p><strong>Definition:</strong> devapi.h:77</p>
+<p><a class="reference external" href="../../d0/dfd/structTango_1_1DevCommandInfo.html#ac010816c9134830bd21806807c76fda1">Tango::DevCommandInfo::cmd_tag</a></p>
+<p>long cmd_tag</p>
+<p>The command tag.</p>
+<p><strong>Definition:</strong> devapi.h:104</p>
+<p><a class="reference external" href="../../d0/dfd/structTango_1_1DevCommandInfo.html#af0dbf63ccee65d2cb1d0f0d721a9881b">Tango::DevCommandInfo::cmd_name</a></p>
+<p>string cmd_name</p>
+<p>The command name.</p>
+<p><strong>Definition:</strong> devapi.h:103</p>
+<p><a class="reference external" href="../../d1/d45/group__Client.html#ga6c80e2130b95642d5c39ee8db7a25620">Tango::asyn_req_type</a></p>
+<p>asyn_req_type</p>
+<p>Possible asynchronous request type.</p>
+<p><strong>Definition:</strong> devapi.h:399</p>
+<p><a class="reference external" href="../../d0/dfd/structTango_1_1DevCommandInfo.html">Tango::DevCommandInfo</a></p>
+<p>Base structure for command information.</p>
+<p><strong>Definition:</strong> devapi.h:98</p>
+<p><a class="reference external" href="../../d7/de8/classTango_1_1Connection.html">Tango::Connection</a></p>
+<p>Base class for Tango device access.</p>
+<p><strong>Definition:</strong> devapi.h:56</p>
+<p><a class="reference external" href="../../db/d74/structTango_1_1DeviceAttributeConfig.html#a1194d38c18b4aaeba0989b14d912f17f">Tango::DeviceAttributeConfig::max_dim_x</a></p>
+<p>int max_dim_x</p>
+<p>Max dim X.</p>
+<p><strong>Definition:</strong> devapi.h:175</p>
+<p><a class="reference external" href="../../d0/dfd/structTango_1_1DevCommandInfo.html#a6719a1b6a0396a2867b1b9fbd09cfe74">Tango::DevCommandInfo::out_type</a></p>
+<p>long out_type</p>
+<p>Output parameter data type.</p>
+<p><strong>Definition:</strong> devapi.h:106</p>
+<p><a class="reference external" href="../../d0/d4a/structTango_1_1AttributeAlarmInfo.html#a5e6d8bd051731bf5730ef92d89dc9810">Tango::AttributeAlarmInfo::delta_val</a></p>
+<p>string delta_val</p>
+<p>Delta val RDS.</p>
+<p><strong>Definition:</strong> devapi.h:230</p>
+<p><a class="reference external" href="../../d1/d45/group__Client.html#gga76ad081a56687025de62cf1cbaf48124abf2e9bbaf87fc8c3446b88b7422c86b7">Tango::NOT_KNOWN</a></p>
+<p>Device too old to get this info.</p>
+<p><strong>Definition:</strong> devapi.h:316</p>
+<p><a class="reference external" href="../../d3/d71/structTango_1_1AttributeInfoEx.html#afdf808e107b2d36d75eb8e07d798d7b4">Tango::AttributeInfoEx::sys_extensions</a></p>
+<p>vector&lt; string &gt; sys_extensions</p>
+<p>Future extensions.</p>
+<p><strong>Definition:</strong> devapi.h:340</p>
+<p><a class="reference external" href="../../d8/d04/structTango_1_1PipeInfo.html#ae0c6e057b77c1e3b1c8db29759817916">Tango::PipeInfo::writable</a></p>
+<p>Tango::PipeWriteType writable</p>
+<p>Writable type (Read, Read-Write)</p>
+<p><strong>Definition:</strong> devapi.h:376</p>
+<p><a class="reference external" href="../../db/d74/structTango_1_1DeviceAttributeConfig.html#ac2be6304818d741aa970abcb3ff91105">Tango::DeviceAttributeConfig::max_alarm</a></p>
+<p>string max_alarm</p>
+<p>Max alarm.</p>
+<p><strong>Definition:</strong> devapi.h:186</p>
+<p><a class="reference external" href="../../d1/d45/group__Client.html#ga09323cc9a29673f93f38e5e0190c6be6">Tango::AttributeInfoEx</a></p>
+<p>Tango::AttributeInfoEx AttributeInfoEx</p>
+<p>Extended attribute configuration data.</p>
+<p><a class="reference external" href="../../d6/d55/structTango_1_1PeriodicEventInfo.html#af22ec2f765f0a23dcba8389924e5bdbd">Tango::PeriodicEventInfo::extensions</a></p>
+<p>vector&lt; string &gt; extensions</p>
+<p>Future extensions.</p>
+<p><strong>Definition:</strong> devapi.h:267</p>
+<p><a class="reference external" href="../../d2/d46/structTango_1_1__DeviceInfo.html">Tango::_DeviceInfo</a></p>
+<p><strong>Definition:</strong> devapi.h:148</p>
+<p><a class="reference external" href="../../d8/d41/classTango_1_1DeviceAttributeHistory.html#a29502710f173c46c03a6334f0498899e">Tango::DeviceAttributeHistory::has_failed</a></p>
+<p>bool has_failed()</p>
+<p>Check if the record was a failure.</p>
+<p><strong>Definition:</strong> devapi.h:661</p>
+<p><a class="reference external" href="../../d7/d7a/structTango_1_1AttributeDimension.html#aca8429fb212898c0367fcf5ab4c838a9">Tango::AttributeDimension::dim_y</a></p>
+<p>long dim_y</p>
+<p><strong>Definition:</strong> devapi.h:118</p>
+<p><a class="reference external" href="../../de/ddf/namespaceTango.html#a87d0e8cd391e8df4af01f2a2cd66b2d3">Tango::AttributeInfoList</a></p>
+<p>vector&lt; AttributeInfo &gt; AttributeInfoList</p>
+<p><strong>Definition:</strong> devapi.h:351</p>
+<p><a class="reference external" href="../../d3/d71/structTango_1_1AttributeInfoEx.html#a9b125948c23b7a7747ad16165625ab66">Tango::AttributeInfoEx::root_attr_name</a></p>
+<p>string root_attr_name</p>
+<p>Root attribute name (in case of forwarded attribute)</p>
+<p><strong>Definition:</strong> devapi.h:335</p>
+<p><a class="reference external" href="../../d0/dfd/structTango_1_1DevCommandInfo.html#a21c04c4239a3c5657af2378aed451c1e">Tango::DevCommandInfo::out_type_desc</a></p>
+<p>string out_type_desc</p>
+<p>Ouptput parameter description.</p>
+<p><strong>Definition:</strong> devapi.h:108</p>
+<p><a class="reference external" href="../../d1/d45/group__Client.html#ga6795ae3557967c7d684ea7fc2c2ae470">Tango::PeriodicEventInfo</a></p>
+<p>struct Tango::PeriodicEventInfo PeriodicEventInfo</p>
+<p>Attribute periodic event configuration.</p>
+<p><a class="reference external" href="../../d2/d46/structTango_1_1__DeviceInfo.html#a437472a3c6a1dbbbf7125180577e3e88">Tango::_DeviceInfo::doc_url</a></p>
+<p>string doc_url</p>
+<p><strong>Definition:</strong> devapi.h:154</p>
+<p><a class="reference external" href="../../df/dab/structTango_1_1AttributeInfo.html#aa958466c57a8cb39cb5aac4d451e13e2">Tango::AttributeInfo::disp_level</a></p>
+<p>Tango::DispLevel disp_level</p>
+<p>Display level.</p>
+<p><strong>Definition:</strong> devapi.h:206</p>
+<p><a class="reference external" href="../../d8/d04/structTango_1_1PipeInfo.html#a82393be90b61b52fd490c5ee98bba7f6">Tango::PipeInfo::disp_level</a></p>
+<p>Tango::DispLevel disp_level</p>
+<p>Display level.</p>
+<p><strong>Definition:</strong> devapi.h:375</p>
+<p><a class="reference external" href="../../d9/dcb/classTango_1_1DummyDeviceProxy.html#a208e369e11d5e1d945b123ec217dc16d">Tango::DummyDeviceProxy::DummyDeviceProxy</a></p>
+<p>DummyDeviceProxy()</p>
+<p><strong>Definition:</strong> devapi.h:752</p>
+<p><a class="reference external" href="../../d9/d49/structTango_1_1ChangeEventInfo.html#a355cf98af8fe7a780f9e1a3b6ed131f9">Tango::ChangeEventInfo::extensions</a></p>
+<p>vector&lt; string &gt; extensions</p>
+<p>Future extensions.</p>
+<p><strong>Definition:</strong> devapi.h:251</p>
+<p><a class="reference external" href="../../d3/d71/structTango_1_1AttributeInfoEx.html#a57d8d88a07dac398a91ad4180d7cb6c8">Tango::AttributeInfoEx::events</a></p>
+<p>AttributeEventInfo events</p>
+<p>The attribute events configuration.</p>
+<p><strong>Definition:</strong> devapi.h:339</p>
+<p><a class="reference external" href="../../db/d74/structTango_1_1DeviceAttributeConfig.html#a6e39a2bd02dff03ba378d42e0f0892e8">Tango::DeviceAttributeConfig::standard_unit</a></p>
+<p>string standard_unit</p>
+<p>Standard unit.</p>
+<p><strong>Definition:</strong> devapi.h:180</p>
+<p><a class="reference external" href="../../d8/d04/structTango_1_1PipeInfo.html#a5aaaf10e1d4adb9da8fb317bb1d965e5">Tango::PipeInfo::description</a></p>
+<p>string description</p>
+<p>Pipe description.</p>
+<p><strong>Definition:</strong> devapi.h:373</p>
+<p><a class="reference external" href="../../d0/d41/structTango_1_1LockingThread.html#ae8e7851b01b8c8a9a34c8044cb9ca3a9">Tango::LockingThread::mon</a></p>
+<p>TangoMonitor * mon</p>
+<p><strong>Definition:</strong> devapi.h:87</p>
+<p><a class="reference external" href="../../d3/d96/structTango_1_1CommandInfo.html#a3750fb7df117913285dcf4db9a36b037">Tango::CommandInfo::disp_level</a></p>
+<p>Tango::DispLevel disp_level</p>
+<p>The command display level.</p>
+<p><strong>Definition:</strong> devapi.h:133</p>
+<p><a class="reference external" href="../../db/d74/structTango_1_1DeviceAttributeConfig.html#a10e944fe3cc1e6dce24ebfd2f474c294">Tango::DeviceAttributeConfig::data_format</a></p>
+<p>AttrDataFormat data_format</p>
+<p>Data format (Scalar, Spectrum,...)</p>
+<p><strong>Definition:</strong> devapi.h:173</p>
+<p><a class="reference external" href="../../d9/dcb/classTango_1_1DummyDeviceProxy.html#ae1aeac6ff92474063cc58a531b2c6d09">Tango::DummyDeviceProxy::get_corba_name</a></p>
+<p>virtual string get_corba_name(bool)</p>
+<p><strong>Definition:</strong> devapi.h:754</p>
+<p><a class="reference external" href="../../db/d74/structTango_1_1DeviceAttributeConfig.html#abbfe98ae17bfc21368b6347b9611e4f8">Tango::DeviceAttributeConfig::unit</a></p>
+<p>string unit</p>
+<p>Unit.</p>
+<p><strong>Definition:</strong> devapi.h:179</p>
+<p><a class="reference external" href="../../d0/d41/structTango_1_1LockingThread.html">Tango::LockingThread</a></p>
+<p><strong>Definition:</strong> devapi.h:85</p>
+<p><a class="reference external" href="../../d4/d13/tango__const_8h.html">tango_const.h</a></p>
+<p><a class="reference external" href="../../dd/d39/structTango_1_1LockerInfo.html#ad357dac7c976f8336baeadcf8abafe81">Tango::LockerInfo::locker_host</a></p>
+<p>string locker_host</p>
+<p><strong>Definition:</strong> devapi.h:81</p>
+<p><a class="reference external" href="../../d9/dcb/classTango_1_1DummyDeviceProxy.html#af1b4aeeda9976c31d43bf0629c0c2e87">Tango::DummyDeviceProxy::build_corba_name</a></p>
+<p>virtual string build_corba_name()</p>
+<p><strong>Definition:</strong> devapi.h:755</p>
+<p><a class="reference external" href="../../de/ddf/namespaceTango.html#ad35a82291acaf683a0c33416db790f0f">Tango::PipeInfo</a></p>
+<p>struct Tango::PipeInfo PipeInfo</p>
+<p>Base structure for pipe information.</p>
+<p><a class="reference external" href="../../dd/d39/structTango_1_1LockerInfo.html#a7a15276bc7ce4c7dd2ff59f8aa67f185">Tango::LockerInfo::ll</a></p>
+<p>LockerLanguage ll</p>
+<p><strong>Definition:</strong> devapi.h:79</p>
+<p><a class="reference external" href="../../d3/d71/structTango_1_1AttributeInfoEx.html#aaf01f87192831893661acfa4b926d0c8">Tango::AttributeInfoEx::alarms</a></p>
+<p>AttributeAlarmInfo alarms</p>
+<p>The attribute alarms.</p>
+<p><strong>Definition:</strong> devapi.h:338</p>
+<p><a class="reference external" href="../../da/dce/structTango_1_1AttributeEventInfo.html#a1af98248c881a274162b3542577ca21f">Tango::AttributeEventInfo::ch_event</a></p>
+<p>ChangeEventInfo ch_event</p>
+<p>Attribute change event info.</p>
+<p><strong>Definition:</strong> devapi.h:300</p>
+<p><a class="reference external" href="../../de/ddf/namespaceTango.html#ad922e360c668c83ea8123b7ac1591874">Tango::NARROW_CLNT_TIMEOUT</a></p>
+<p>const int NARROW_CLNT_TIMEOUT</p>
+<p><strong>Definition:</strong> tango_const.h:170</p>
+<ul class="simple">
+<li><a class="reference external" href="../../dir_93bc669b4520ad36068f344e109b7d17.html">include</a></li>
+<li><a class="reference external" href="../../dir_8ff48e8f3ef80891a9957ae5e9583431.html">tango</a></li>
+<li><a class="reference external" href="../../dir_aabb28ef55dfa122001606060d01cd05.html">client</a></li>
+<li><a class="reference external" href="../../d9/ddc/devapi_8h.html">devapi.h</a></li>
+<li>Generated on Fri Oct 7 2016 11:11:15 for Tango Core Classes Reference
+by <a class="reference external" href="http://www.doxygen.org/index.html"><img alt="doxygen" src="../../_images/doxygen251.png" /></a> 1.8.8</li>
+</ul>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/d9/ddc/devapi_8h_source.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, 3Controls.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.8</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+      |
+      <a href="../../_sources/d9/ddc/devapi_8h_source.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

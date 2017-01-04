@@ -1,0 +1,654 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>&lt;no title&gt; &#8212; Tango Core Classes Reference Documentation 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="top" title="Tango Core Classes Reference Documentation 1.0 documentation" href="../../index.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><img alt="Logo" src="../../_images/logo29.jpg" /></td>
+<td>Tango Core Classes Reference &nbsp;9.2.5</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><a class="reference external" href="../../index.html">Main&nbsp;Page</a></li>
+<li><a class="reference external" href="../../pages.html">Related&nbsp;Pages</a></li>
+<li><a class="reference external" href="../../modules.html">Modules</a></li>
+<li><a class="reference external" href="../../namespaces.html">Namespaces</a></li>
+<li><a class="reference external" href="../../annotated.html">Classes</a></li>
+<li><a class="reference external" href="../../files.html">Files</a></li>
+<li><a class="reference external" href="../../files.html">File&nbsp;List</a></li>
+<li><a class="reference external" href="../../globals.html">File&nbsp;Members</a></li>
+</ul>
+<p>Logger.hh</p>
+<p><a class="reference external" href="../../d1/d13/Logger_8hh.html">Go to the documentation of this file.</a></p>
+<p>1&nbsp;//</p>
+<p>2&nbsp;// Logger.hh</p>
+<p>3&nbsp;//</p>
+<p>4&nbsp;// Copyright (C) : 2000 - 2002</p>
+<p>5&nbsp;// LifeLine Networks BV (www.lifeline.nl). All rights reserved.</p>
+<p>6&nbsp;// Bastiaan Bakker. All rights reserved.</p>
+<p>7&nbsp;//</p>
+<p>8&nbsp;// 2004,2005,2006,2007,2008,2009,2010,2011,2012</p>
+<p>9&nbsp;// Synchrotron SOLEIL</p>
+<p>10&nbsp;// L&#8217;Orme des Merisiers</p>
+<p>11&nbsp;// Saint-Aubin - BP 48 - France</p>
+<p>12&nbsp;//</p>
+<p>13&nbsp;// This file is part of log4tango.</p>
+<p>14&nbsp;//</p>
+<p>15&nbsp;// Log4ango is free software: you can redistribute it and/or modify</p>
+<p>16&nbsp;// it under the terms of the GNU Lesser General Public License as
+published by</p>
+<p>17&nbsp;// the Free Software Foundation, either version 3 of the License, or</p>
+<p>18&nbsp;// (at your option) any later version.</p>
+<p>19&nbsp;//</p>
+<p>20&nbsp;// Log4tango is distributed in the hope that it will be useful,</p>
+<p>21&nbsp;// but WITHOUT ANY WARRANTY; without even the implied warranty of</p>
+<p>22&nbsp;// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the</p>
+<p>23&nbsp;// GNU Lesser General Public License for more details.</p>
+<p>24&nbsp;//</p>
+<p>25&nbsp;// You should have received a copy of the GNU Lesser General Public
+License</p>
+<p>26&nbsp;// along with Log4Tango. If not, see &lt;<a class="reference external" href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>&gt;.</p>
+<p>27</p>
+<p>28&nbsp;#ifndef _LOG4TANGO_LOGGER_H</p>
+<p>29&nbsp;#define _LOG4TANGO_LOGGER_H</p>
+<p>30</p>
+<p>31&nbsp;//&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;</p>
+<p>32&nbsp;// IMPL. OPTION</p>
+<p>33&nbsp;//&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;</p>
+<p>34&nbsp;//#define LOG4TANGO_LOGGERS_USE_LOGSTREAM</p>
+<p>35</p>
+<p>36&nbsp;#include &#8220;<a class="reference external" href="../../da/dd8/Portability_8hh.html">Portability.hh</a>&#8220;</p>
+<p>37&nbsp;#include
+&#8220;<a class="reference external" href="../../d6/d73/AppenderAttachable_8hh.html">AppenderAttachable.hh</a>&#8220;</p>
+<p>38&nbsp;#include &#8220;<a class="reference external" href="../../d2/d60/LoggingEvent_8hh.html">LoggingEvent.hh</a>&#8220;</p>
+<p>39&nbsp;#include &#8220;<a class="reference external" href="../../d2/d33/Level_8hh.html">Level.hh</a>&#8220;</p>
+<p>40&nbsp;#ifndef LOG4TANGO_LOGGERS_USE_LOGSTREAM</p>
+<p>41&nbsp;# include
+&#8220;<a class="reference external" href="../../d2/de3/LoggerStream_8hh.html">LoggerStream.hh</a>&#8220;</p>
+<p>42&nbsp;#endif</p>
+<p>43</p>
+<p>44&nbsp;namespace <a class="reference external" href="../../d4/db0/namespacelog4tango.html">log4tango</a> {</p>
+<p>45</p>
+<p>46&nbsp;#ifdef LOG4TANGO_LOGGERS_USE_LOGSTREAM</p>
+<p>47&nbsp;//&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;</p>
+<p>48&nbsp;// FORWARD DECL.</p>
+<p>49&nbsp;//&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;</p>
+<p>50&nbsp;class LogStream;</p>
+<p>51&nbsp;#endif</p>
+<p>52</p>
+<p>53&nbsp;//&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;</p>
+<p>54&nbsp;// class : Logger</p>
+<p>55&nbsp;//&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;</p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html">56</a>&nbsp;class
+<a class="reference external" href="../../df/d5d/Export_8hh.html#abb9e874b4244b6247ac9dbb62a2c7b8f">LOG4TANGO_EXPORT</a>
+<a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html">Logger</a> : public
+<a class="reference external" href="../../d6/d89/classlog4tango_1_1AppenderAttachable.html">AppenderAttachable</a></p>
+<p>57&nbsp;{</p>
+<p>58&nbsp;public:</p>
+<p>59</p>
+<p>65
+<a class="reference external" href="../../d4/db0/namespacelog4tango.html#a32cdd650c4bcacf2d8fbd74caae3205d">Logger</a>(const
+std::string&amp; name,</p>
+<p>66
+<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#aa708c09b6a19a8cc8a3b19631561ca99">Level::Value</a>
+level =
+<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#ad9edd63020b6becc9aef8802c48eb461a955ee789684a2e9952b7e4f56b6bb74f">Level::OFF</a>);</p>
+<p>67</p>
+<p>71&nbsp; virtual
+~<a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html">Logger</a>();</p>
+<p>72</p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#abfe1c32b01e64c5f58f52812f898f170">77</a>
+inline const std::string&amp;
+<a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#abfe1c32b01e64c5f58f52812f898f170">get_name</a>()
+const {</p>
+<p>78&nbsp; return _name;</p>
+<p>79&nbsp; }</p>
+<p>80</p>
+<p>85&nbsp; void set_level
+(<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#aa708c09b6a19a8cc8a3b19631561ca99">Level::Value</a>
+level);</p>
+<p>86</p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#a0bfd7a54498aba29263cfb0dae55faff">91</a>
+inline
+<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#aa708c09b6a19a8cc8a3b19631561ca99">Level::Value</a>
+<a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#a0bfd7a54498aba29263cfb0dae55faff">get_level</a>()
+const {</p>
+<p>92&nbsp; return _level;</p>
+<p>93&nbsp; }</p>
+<p>94</p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#a393cade41cee1267e49018f5b4f8fa67">101</a>
+bool
+<a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#a393cade41cee1267e49018f5b4f8fa67">is_level_enabled</a>
+(<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#aa708c09b6a19a8cc8a3b19631561ca99">Level::Value</a>
+level) const {</p>
+<p>102&nbsp; return _level &gt;= level;</p>
+<p>103&nbsp; }</p>
+<p>104</p>
+<p>111&nbsp; void log
+(<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#aa708c09b6a19a8cc8a3b19631561ca99">Level::Value</a>
+level,</p>
+<p>112&nbsp; const char* string_format, ...);</p>
+<p>113</p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#afab624480348ae2bae502c72efeaf38e">119</a>
+inline void
+<a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#afab624480348ae2bae502c72efeaf38e">log</a>
+(<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#aa708c09b6a19a8cc8a3b19631561ca99">Level::Value</a>
+level, const std::string&amp; message)</p>
+<p>120&nbsp; {</p>
+<p>121&nbsp; if (is_level_enabled(level)) {</p>
+<p>122&nbsp; log_unconditionally(level, message);</p>
+<p>123&nbsp; }</p>
+<p>124&nbsp; }</p>
+<p>125</p>
+<p>132&nbsp; void log_unconditionally
+(<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#aa708c09b6a19a8cc8a3b19631561ca99">Level::Value</a>
+level,</p>
+<p>133&nbsp; const char* string_format, ...);</p>
+<p>134</p>
+<p>140&nbsp; void log_unconditionally
+(<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#aa708c09b6a19a8cc8a3b19631561ca99">Level::Value</a>
+level,</p>
+<p>141&nbsp; const std::string&amp; message);</p>
+<p>142</p>
+<p>148&nbsp; void debug (const char* string_format, ...);</p>
+<p>149</p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#acdeaf9ecda4f2fd1b6ac845e188b34d6">154</a>
+inline void
+<a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#acdeaf9ecda4f2fd1b6ac845e188b34d6">debug</a>
+(const std::string&amp; message) {</p>
+<p>155&nbsp; if
+(is_level_enabled(<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#ad9edd63020b6becc9aef8802c48eb461aa98b4453bf21b1af1c2d3d953887f393">Level::DEBUG</a>))
+{</p>
+<p>156
+log_unconditionally(<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#ad9edd63020b6becc9aef8802c48eb461aa98b4453bf21b1af1c2d3d953887f393">Level::DEBUG</a>,
+message);</p>
+<p>157&nbsp; }</p>
+<p>158&nbsp; }</p>
+<p>159</p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#a6ce8b32ab06c6b77f8aac562dabf9c1f">164</a>
+inline bool
+<a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#a6ce8b32ab06c6b77f8aac562dabf9c1f">is_debug_enabled</a>
+(void) const {</p>
+<p>165&nbsp; return is_level_enabled
+(<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#ad9edd63020b6becc9aef8802c48eb461aa98b4453bf21b1af1c2d3d953887f393">Level::DEBUG</a>);</p>
+<p>166&nbsp; };</p>
+<p>167</p>
+<p>168&nbsp;#ifndef LOG4TANGO_LOGGERS_USE_LOGSTREAM</p>
+<p>169</p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#a652427a4aed5322eb189f7409498cd18">173</a>
+inline
+<a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html">LoggerStream</a>
+<a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#a652427a4aed5322eb189f7409498cd18">debug_stream</a>
+(void) {</p>
+<p>174&nbsp; return
+<a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html">LoggerStream</a>(*this,
+<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#ad9edd63020b6becc9aef8802c48eb461aa98b4453bf21b1af1c2d3d953887f393">Level::DEBUG</a>,
+true);</p>
+<p>175&nbsp; }</p>
+<p>176&nbsp;#else</p>
+<p>177</p>
+<p>181&nbsp; inline
+<a class="reference external" href="../../d7/dff/classlog4tango_1_1LogStream.html">LogStream</a>&amp;
+debug_stream (void) {</p>
+<p>182&nbsp; return *_log_streams[_DEBUG_STREAM_ID];</p>
+<p>183&nbsp; }</p>
+<p>184&nbsp;#endif</p>
+<p>185</p>
+<p>191&nbsp; void info (const char* string_format, ...);</p>
+<p>192</p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#a987565b18e6ea9a2524d64c80759c2eb">197</a>
+inline void
+<a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#a987565b18e6ea9a2524d64c80759c2eb">info</a>
+(const std::string&amp; message) {</p>
+<p>198&nbsp; if
+(is_level_enabled(<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#ad9edd63020b6becc9aef8802c48eb461ae666ceb60dfca43381816abf33e2cd1b">Level::INFO</a>))
+{</p>
+<p>199
+log_unconditionally(<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#ad9edd63020b6becc9aef8802c48eb461ae666ceb60dfca43381816abf33e2cd1b">Level::INFO</a>,
+message);</p>
+<p>200&nbsp; }</p>
+<p>201&nbsp; }</p>
+<p>202</p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#af73279505009e650e615294711fe75fe">207</a>
+inline bool
+<a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#af73279505009e650e615294711fe75fe">is_info_enabled</a>
+(void) const {</p>
+<p>208&nbsp; return
+is_level_enabled(<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#ad9edd63020b6becc9aef8802c48eb461ae666ceb60dfca43381816abf33e2cd1b">Level::INFO</a>);</p>
+<p>209&nbsp; };</p>
+<p>210</p>
+<p>211&nbsp;#ifndef LOG4TANGO_LOGGERS_USE_LOGSTREAM</p>
+<p>212</p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#a22a2fd4d13e70e352a5f47dd02d33342">216</a>
+inline
+<a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html">LoggerStream</a>
+<a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#a22a2fd4d13e70e352a5f47dd02d33342">info_stream</a>
+(void) {</p>
+<p>217&nbsp; return
+<a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html">LoggerStream</a>(*this,
+<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#ad9edd63020b6becc9aef8802c48eb461ae666ceb60dfca43381816abf33e2cd1b">Level::INFO</a>,
+true);</p>
+<p>218&nbsp; }</p>
+<p>219&nbsp;#else</p>
+<p>220</p>
+<p>224&nbsp; inline
+<a class="reference external" href="../../d7/dff/classlog4tango_1_1LogStream.html">LogStream</a>&amp;
+info_stream (void) {</p>
+<p>225&nbsp; return *_log_streams[_INFO_STREAM_ID];</p>
+<p>226&nbsp; }</p>
+<p>227&nbsp;#endif</p>
+<p>228</p>
+<p>234&nbsp; void warn (const char* string_format, ...);</p>
+<p>235</p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#a22646b15ebc33254f734e23280868345">240</a>
+inline void
+<a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#a22646b15ebc33254f734e23280868345">warn</a>
+(const std::string&amp; message) {</p>
+<p>241&nbsp; if
+(is_level_enabled(<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#ad9edd63020b6becc9aef8802c48eb461ab0dfb37a2ad73d7b7f53a460819a2cc3">Level::WARN</a>))
+{</p>
+<p>242
+log_unconditionally(<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#ad9edd63020b6becc9aef8802c48eb461ab0dfb37a2ad73d7b7f53a460819a2cc3">Level::WARN</a>,
+message);</p>
+<p>243&nbsp; }</p>
+<p>244&nbsp; }</p>
+<p>245</p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#ac48da8e8705775526b0d94f974dd158d">250</a>
+inline bool
+<a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#ac48da8e8705775526b0d94f974dd158d">is_warn_enabled</a>
+(void) const {</p>
+<p>251&nbsp; return
+is_level_enabled(<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#ad9edd63020b6becc9aef8802c48eb461ab0dfb37a2ad73d7b7f53a460819a2cc3">Level::WARN</a>);</p>
+<p>252&nbsp; };</p>
+<p>253</p>
+<p>254&nbsp;#ifndef LOG4TANGO_LOGGERS_USE_LOGSTREAM</p>
+<p>255</p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#a223a0d6d82a1e054d07474e87b207bba">259</a>
+inline
+<a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html">LoggerStream</a>
+<a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#a223a0d6d82a1e054d07474e87b207bba">warn_stream</a>
+(void) {</p>
+<p>260&nbsp; return
+<a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html">LoggerStream</a>(*this,
+<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#ad9edd63020b6becc9aef8802c48eb461ab0dfb37a2ad73d7b7f53a460819a2cc3">Level::WARN</a>,
+true);</p>
+<p>261&nbsp; };</p>
+<p>262&nbsp;#else</p>
+<p>263</p>
+<p>267&nbsp; inline
+<a class="reference external" href="../../d7/dff/classlog4tango_1_1LogStream.html">LogStream</a>&amp;
+warn_stream (void) {</p>
+<p>268&nbsp; return *_log_streams[_WARN_STREAM_ID];</p>
+<p>269&nbsp; }</p>
+<p>270&nbsp;#endif</p>
+<p>271</p>
+<p>277&nbsp; void error (const char* string_format, ...);</p>
+<p>278</p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#a7d587fb218937b9c525f5c48e5f0e230">283</a>
+inline void
+<a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#a7d587fb218937b9c525f5c48e5f0e230">error</a>
+(const std::string&amp; message) {</p>
+<p>284&nbsp; if
+(is_level_enabled(<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#ad9edd63020b6becc9aef8802c48eb461ae9f52151dce772e7a7ee87bc824b1fdf">Level::ERROR</a>))
+{</p>
+<p>285
+log_unconditionally(<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#ad9edd63020b6becc9aef8802c48eb461ae9f52151dce772e7a7ee87bc824b1fdf">Level::ERROR</a>,
+message);</p>
+<p>286&nbsp; }</p>
+<p>287&nbsp; }</p>
+<p>288</p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#ab2ec2debd2d3024293a0d873af8e86b3">293</a>
+inline bool
+<a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#ab2ec2debd2d3024293a0d873af8e86b3">is_error_enabled</a>
+(void) const {</p>
+<p>294&nbsp; return
+is_level_enabled(<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#ad9edd63020b6becc9aef8802c48eb461ae9f52151dce772e7a7ee87bc824b1fdf">Level::ERROR</a>);</p>
+<p>295&nbsp; };</p>
+<p>296</p>
+<p>297&nbsp;#ifndef LOG4TANGO_LOGGERS_USE_LOGSTREAM</p>
+<p>298</p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#a09c866cc0bfb1de324c676617234f4fd">302</a>
+inline
+<a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html">LoggerStream</a>
+<a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#a09c866cc0bfb1de324c676617234f4fd">error_stream</a>
+(void) {</p>
+<p>303&nbsp; return
+<a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html">LoggerStream</a>(*this,
+<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#ad9edd63020b6becc9aef8802c48eb461ae9f52151dce772e7a7ee87bc824b1fdf">Level::ERROR</a>,
+true);</p>
+<p>304&nbsp; };</p>
+<p>305&nbsp;#else</p>
+<p>306</p>
+<p>310&nbsp; inline
+<a class="reference external" href="../../d7/dff/classlog4tango_1_1LogStream.html">LogStream</a>&amp;
+error_stream (void) {</p>
+<p>311&nbsp; return *_log_streams[_ERROR_STREAM_ID];</p>
+<p>312&nbsp; }</p>
+<p>313&nbsp;#endif</p>
+<p>314</p>
+<p>320&nbsp; void fatal(const char* string_format, ...);</p>
+<p>321</p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#a56287e6a0a500f74d9fd7bc09f612111">326</a>
+inline void
+<a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#a56287e6a0a500f74d9fd7bc09f612111">fatal</a>
+(const std::string&amp; message) {</p>
+<p>327&nbsp; if
+(is_level_enabled(<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#ad9edd63020b6becc9aef8802c48eb461a58fb50808d864278c4127f5c8ac5406c">Level::FATAL</a>))
+{</p>
+<p>328
+log_unconditionally(<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#ad9edd63020b6becc9aef8802c48eb461a58fb50808d864278c4127f5c8ac5406c">Level::FATAL</a>,
+message);</p>
+<p>329&nbsp; }</p>
+<p>330&nbsp; }</p>
+<p>331</p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#a16213b0ab5912487ad2eb62c4337900b">336</a>
+inline bool
+<a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#a16213b0ab5912487ad2eb62c4337900b">is_fatal_enabled</a>
+(void) const {</p>
+<p>337&nbsp; return
+is_level_enabled(<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#ad9edd63020b6becc9aef8802c48eb461a58fb50808d864278c4127f5c8ac5406c">Level::FATAL</a>);</p>
+<p>338&nbsp; };</p>
+<p>339</p>
+<p>340&nbsp;#ifndef LOG4TANGO_LOGGERS_USE_LOGSTREAM</p>
+<p>341</p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#ae734bcc83b3b3687a073edaacd5c74f0">345</a>
+inline
+<a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html">LoggerStream</a>
+<a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#ae734bcc83b3b3687a073edaacd5c74f0">fatal_stream</a>
+(void) {</p>
+<p>346&nbsp; return
+<a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html">LoggerStream</a>(*this,
+<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#ad9edd63020b6becc9aef8802c48eb461a58fb50808d864278c4127f5c8ac5406c">Level::FATAL</a>,
+true);</p>
+<p>347&nbsp; };</p>
+<p>348&nbsp;#else</p>
+<p>349</p>
+<p>353&nbsp; inline
+<a class="reference external" href="../../d7/dff/classlog4tango_1_1LogStream.html">LogStream</a>&amp;
+fatal_stream (void) {</p>
+<p>354&nbsp; return *_log_streams[_FATAL_STREAM_ID];</p>
+<p>355&nbsp; }</p>
+<p>356&nbsp;#endif</p>
+<p>357</p>
+<p>358&nbsp;#ifndef LOG4TANGO_LOGGERS_USE_LOGSTREAM</p>
+<p>359</p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#a34b294678a690630721e8824f16020de">365</a>
+inline
+<a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html">LoggerStream</a>
+<a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#a34b294678a690630721e8824f16020de">get_stream</a>
+(<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#aa708c09b6a19a8cc8a3b19631561ca99">Level::Value</a>
+level, bool filter = true) {</p>
+<p>366&nbsp; return
+<a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html">LoggerStream</a>(*this,
+level, filter);</p>
+<p>367&nbsp; }</p>
+<p>368&nbsp;#endif</p>
+<p>369</p>
+<p>370&nbsp;protected:</p>
+<p>371</p>
+<p>377&nbsp; void call_appenders (const
+<a class="reference external" href="../../d8/df2/structlog4tango_1_1LoggingEvent.html">LoggingEvent</a>&amp;
+event);</p>
+<p>378</p>
+<p>379</p>
+<p>380&nbsp;private:</p>
+<p>381</p>
+<p>382&nbsp;#ifdef LOG4TANGO_LOGGERS_USE_LOGSTREAM</p>
+<p>383</p>
+<p>384&nbsp; enum {</p>
+<p>385&nbsp; _FATAL_STREAM_ID = 0,</p>
+<p>386&nbsp; _ERROR_STREAM_ID = 1,</p>
+<p>387&nbsp; _WARN_STREAM_ID = 2,</p>
+<p>388&nbsp; _INFO_STREAM_ID = 3,</p>
+<p>389&nbsp; _DEBUG_STREAM_ID = 4</p>
+<p>390&nbsp; };</p>
+<p>391&nbsp;#endif</p>
+<p>392</p>
+<p>394&nbsp; const std::string _name;</p>
+<p>395</p>
+<p>397
+<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#aa708c09b6a19a8cc8a3b19631561ca99">Level::Value</a>
+_level;</p>
+<p>398</p>
+<p>399&nbsp;#ifdef LOG4TANGO_LOGGERS_USE_LOGSTREAM</p>
+<p>400</p>
+<p>401&nbsp; LogStream *_log_streams[5];</p>
+<p>402&nbsp;#endif</p>
+<p>403</p>
+<p>404&nbsp; /* prevent copying and assignment */</p>
+<p>405
+<a class="reference external" href="../../d4/db0/namespacelog4tango.html#a32cdd650c4bcacf2d8fbd74caae3205d">Logger</a>
+(const
+<a class="reference external" href="../../d4/db0/namespacelog4tango.html#a32cdd650c4bcacf2d8fbd74caae3205d">Logger</a>&amp;);</p>
+<p>406
+<a class="reference external" href="../../d4/db0/namespacelog4tango.html#a32cdd650c4bcacf2d8fbd74caae3205d">Logger</a>&amp;
+operator= (const
+<a class="reference external" href="../../d4/db0/namespacelog4tango.html#a32cdd650c4bcacf2d8fbd74caae3205d">Logger</a>&amp;);</p>
+<p>407&nbsp;};</p>
+<p>408</p>
+<p>409&nbsp;} // namespace log4tango</p>
+<p>410</p>
+<p>411&nbsp;#endif // _LOG4TANGO_LOGGER_H</p>
+<p><a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#ad9edd63020b6becc9aef8802c48eb461ab0dfb37a2ad73d7b7f53a460819a2cc3">log4tango::Level::WARN</a></p>
+<p><strong>Definition:</strong> Level.hh:90</p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#a7d587fb218937b9c525f5c48e5f0e230">log4tango::Logger::error</a></p>
+<p>void error(const std::string &amp;message)</p>
+<p>Log a message with error level.</p>
+<p><strong>Definition:</strong> Logger.hh:283</p>
+<p><a class="reference external" href="../../d2/d60/LoggingEvent_8hh.html">LoggingEvent.hh</a></p>
+<p><a class="reference external" href="../../d4/db0/namespacelog4tango.html">log4tango</a></p>
+<p><strong>Definition:</strong> Appender.hh:40</p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#a34b294678a690630721e8824f16020de">log4tango::Logger::get_stream</a></p>
+<p>LoggerStream get_stream(Level::Value level, bool filter=true)</p>
+<p>Return a LoggerStream with given Level.</p>
+<p><strong>Definition:</strong> Logger.hh:365</p>
+<p><a class="reference external" href="../../d2/de3/LoggerStream_8hh.html">LoggerStream.hh</a></p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#a652427a4aed5322eb189f7409498cd18">log4tango::Logger::debug_stream</a></p>
+<p>LoggerStream debug_stream(void)</p>
+<p>Return a LoggerStream with level DEBUG.</p>
+<p><strong>Definition:</strong> Logger.hh:173</p>
+<p><a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#ad9edd63020b6becc9aef8802c48eb461aa98b4453bf21b1af1c2d3d953887f393">log4tango::Level::DEBUG</a></p>
+<p><strong>Definition:</strong> Level.hh:92</p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#a16213b0ab5912487ad2eb62c4337900b">log4tango::Logger::is_fatal_enabled</a></p>
+<p>bool is_fatal_enabled(void) const</p>
+<p>Return true if the Logger will log messages with level FATAL.</p>
+<p><strong>Definition:</strong> Logger.hh:336</p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html">log4tango::Logger</a></p>
+<p><strong>Definition:</strong> Logger.hh:56</p>
+<p><a class="reference external" href="../../d2/d33/Level_8hh.html">Level.hh</a></p>
+<p><a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#ad9edd63020b6becc9aef8802c48eb461a955ee789684a2e9952b7e4f56b6bb74f">log4tango::Level::OFF</a></p>
+<p><strong>Definition:</strong> Level.hh:87</p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#a393cade41cee1267e49018f5b4f8fa67">log4tango::Logger::is_level_enabled</a></p>
+<p>bool is_level_enabled(Level::Value level) const</p>
+<p>Returns true if the level of the Logger is equal to or higher than given
+level.</p>
+<p><strong>Definition:</strong> Logger.hh:101</p>
+<p><a class="reference external" href="../../da/dd8/Portability_8hh.html">Portability.hh</a></p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#a0bfd7a54498aba29263cfb0dae55faff">log4tango::Logger::get_level</a></p>
+<p>Level::Value get_level() const</p>
+<p>Returns the assigned Level, if any, for this Logger.</p>
+<p><strong>Definition:</strong> Logger.hh:91</p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#a09c866cc0bfb1de324c676617234f4fd">log4tango::Logger::error_stream</a></p>
+<p>LoggerStream error_stream(void)</p>
+<p>Return a LoggerStream with level ERROR.</p>
+<p><strong>Definition:</strong> Logger.hh:302</p>
+<p><a class="reference external" href="../../df/d5d/Export_8hh.html#abb9e874b4244b6247ac9dbb62a2c7b8f">LOG4TANGO_EXPORT</a></p>
+<p>#define LOG4TANGO_EXPORT</p>
+<p><strong>Definition:</strong> Export.hh:38</p>
+<p><a class="reference external" href="../../d7/dff/classlog4tango_1_1LogStream.html">log4tango::LogStream</a></p>
+<p><strong>Definition:</strong> LogStream.hh:46</p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#a56287e6a0a500f74d9fd7bc09f612111">log4tango::Logger::fatal</a></p>
+<p>void fatal(const std::string &amp;message)</p>
+<p>Log a message with fatal level.</p>
+<p><strong>Definition:</strong> Logger.hh:326</p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#acdeaf9ecda4f2fd1b6ac845e188b34d6">log4tango::Logger::debug</a></p>
+<p>void debug(const std::string &amp;message)</p>
+<p>Log a message with debug level.</p>
+<p><strong>Definition:</strong> Logger.hh:154</p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#ab2ec2debd2d3024293a0d873af8e86b3">log4tango::Logger::is_error_enabled</a></p>
+<p>bool is_error_enabled(void) const</p>
+<p>Return true if the Logger will log messages with level ERROR.</p>
+<p><strong>Definition:</strong> Logger.hh:293</p>
+<p><a class="reference external" href="../../d6/d89/classlog4tango_1_1AppenderAttachable.html">log4tango::AppenderAttachable</a></p>
+<p><strong>Definition:</strong> AppenderAttachable.hh:58</p>
+<p><a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html">log4tango::LoggerStream</a></p>
+<p><strong>Definition:</strong> LoggerStream.hh:58</p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#a223a0d6d82a1e054d07474e87b207bba">log4tango::Logger::warn_stream</a></p>
+<p>LoggerStream warn_stream(void)</p>
+<p>Return a LoggerStream with level WARN.</p>
+<p><strong>Definition:</strong> Logger.hh:259</p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#a22646b15ebc33254f734e23280868345">log4tango::Logger::warn</a></p>
+<p>void warn(const std::string &amp;message)</p>
+<p>Log a message with warn level.</p>
+<p><strong>Definition:</strong> Logger.hh:240</p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#afab624480348ae2bae502c72efeaf38e">log4tango::Logger::log</a></p>
+<p>void log(Level::Value level, const std::string &amp;message)</p>
+<p>Log a message with the specified level.</p>
+<p><strong>Definition:</strong> Logger.hh:119</p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#a6ce8b32ab06c6b77f8aac562dabf9c1f">log4tango::Logger::is_debug_enabled</a></p>
+<p>bool is_debug_enabled(void) const</p>
+<p>Return true if the Logger will log messages with level DEBUG.</p>
+<p><strong>Definition:</strong> Logger.hh:164</p>
+<p><a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#ad9edd63020b6becc9aef8802c48eb461ae9f52151dce772e7a7ee87bc824b1fdf">log4tango::Level::ERROR</a></p>
+<p><strong>Definition:</strong> Level.hh:89</p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#a22a2fd4d13e70e352a5f47dd02d33342">log4tango::Logger::info_stream</a></p>
+<p>LoggerStream info_stream(void)</p>
+<p>Return a LoggerStream with level INFO.</p>
+<p><strong>Definition:</strong> Logger.hh:216</p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#abfe1c32b01e64c5f58f52812f898f170">log4tango::Logger::get_name</a></p>
+<p>const std::string &amp; get_name() const</p>
+<p>Return the logger name.</p>
+<p><strong>Definition:</strong> Logger.hh:77</p>
+<p><a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#ad9edd63020b6becc9aef8802c48eb461a58fb50808d864278c4127f5c8ac5406c">log4tango::Level::FATAL</a></p>
+<p><strong>Definition:</strong> Level.hh:88</p>
+<p><a class="reference external" href="../../d6/d73/AppenderAttachable_8hh.html">AppenderAttachable.hh</a></p>
+<p><a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#aa708c09b6a19a8cc8a3b19631561ca99">log4tango::Level::Value</a></p>
+<p>int Value</p>
+<p>The type of Level Values.</p>
+<p><strong>Definition:</strong> Level.hh:98</p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#a987565b18e6ea9a2524d64c80759c2eb">log4tango::Logger::info</a></p>
+<p>void info(const std::string &amp;message)</p>
+<p>Log a message with info level.</p>
+<p><strong>Definition:</strong> Logger.hh:197</p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#ae734bcc83b3b3687a073edaacd5c74f0">log4tango::Logger::fatal_stream</a></p>
+<p>LoggerStream fatal_stream(void)</p>
+<p>Return a LoggerStream with level FATAL.</p>
+<p><strong>Definition:</strong> Logger.hh:345</p>
+<p><a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#ad9edd63020b6becc9aef8802c48eb461ae666ceb60dfca43381816abf33e2cd1b">log4tango::Level::INFO</a></p>
+<p><strong>Definition:</strong> Level.hh:91</p>
+<p><a class="reference external" href="../../d4/db0/namespacelog4tango.html#a32cdd650c4bcacf2d8fbd74caae3205d">log4tango::Logger</a></p>
+<p>class LOG4TANGO_EXPORT Logger</p>
+<p><strong>Definition:</strong> LoggerStream.hh:43</p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#ac48da8e8705775526b0d94f974dd158d">log4tango::Logger::is_warn_enabled</a></p>
+<p>bool is_warn_enabled(void) const</p>
+<p>Return true if the Logger will log messages with level WARN.</p>
+<p><strong>Definition:</strong> Logger.hh:250</p>
+<p><a class="reference external" href="../../d8/df2/structlog4tango_1_1LoggingEvent.html">log4tango::LoggingEvent</a></p>
+<p>The internal representation of logging events.</p>
+<p><strong>Definition:</strong> LoggingEvent.hh:50</p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#af73279505009e650e615294711fe75fe">log4tango::Logger::is_info_enabled</a></p>
+<p>bool is_info_enabled(void) const</p>
+<p>Return true if the Logger will log messages with level INFO.</p>
+<p><strong>Definition:</strong> Logger.hh:207</p>
+<ul class="simple">
+<li><a class="reference external" href="../../dir_93bc669b4520ad36068f344e109b7d17.html">include</a></li>
+<li><a class="reference external" href="../../dir_5a849e394260fc4e91409ef0349c0857.html">log4tango</a></li>
+<li><a class="reference external" href="../../d1/d13/Logger_8hh.html">Logger.hh</a></li>
+<li>Generated on Fri Oct 7 2016 11:11:15 for Tango Core Classes Reference
+by <a class="reference external" href="http://www.doxygen.org/index.html"><img alt="doxygen" src="../../_images/doxygen29.png" /></a> 1.8.8</li>
+</ul>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/d1/d13/Logger_8hh_source.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, 3Controls.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.8</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+      |
+      <a href="../../_sources/d1/d13/Logger_8hh_source.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>&lt;no title&gt; &#8212; Tango Core Classes Reference Documentation 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="top" title="Tango Core Classes Reference Documentation 1.0 documentation" href="../../index.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><img alt="Logo" src="../../_images/logo58.jpg" /></td>
+<td>Tango Core Classes Reference &nbsp;9.2.5</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><a class="reference external" href="../../index.html">Main&nbsp;Page</a></li>
+<li><a class="reference external" href="../../pages.html">Related&nbsp;Pages</a></li>
+<li><a class="reference external" href="../../modules.html">Modules</a></li>
+<li><a class="reference external" href="../../namespaces.html">Namespaces</a></li>
+<li><a class="reference external" href="../../annotated.html">Classes</a></li>
+<li><a class="reference external" href="../../files.html">Files</a></li>
+<li><a class="reference external" href="../../files.html">File&nbsp;List</a></li>
+<li><a class="reference external" href="../../globals.html">File&nbsp;Members</a></li>
+</ul>
+<p>LoggingEvent.hh</p>
+<p><a class="reference external" href="../../d2/d60/LoggingEvent_8hh.html">Go to the documentation of this
+file.</a></p>
+<p>1&nbsp;//</p>
+<p>2&nbsp;// LoggingEvent.hh</p>
+<p>3&nbsp;//</p>
+<p>4&nbsp;// Copyright (C) : 2000 - 2002</p>
+<p>5&nbsp;// LifeLine Networks BV (www.lifeline.nl). All rights reserved.</p>
+<p>6&nbsp;// Bastiaan Bakker. All rights reserved.</p>
+<p>7&nbsp;//</p>
+<p>8&nbsp;// 2004,2005,2006,2007,2008,2009,2010,2011,2012</p>
+<p>9&nbsp;// Synchrotron SOLEIL</p>
+<p>10&nbsp;// L&#8217;Orme des Merisiers</p>
+<p>11&nbsp;// Saint-Aubin - BP 48 - France</p>
+<p>12&nbsp;//</p>
+<p>13&nbsp;// This file is part of log4tango.</p>
+<p>14&nbsp;//</p>
+<p>15&nbsp;// Log4ango is free software: you can redistribute it and/or modify</p>
+<p>16&nbsp;// it under the terms of the GNU Lesser General Public License as
+published by</p>
+<p>17&nbsp;// the Free Software Foundation, either version 3 of the License, or</p>
+<p>18&nbsp;// (at your option) any later version.</p>
+<p>19&nbsp;//</p>
+<p>20&nbsp;// Log4tango is distributed in the hope that it will be useful,</p>
+<p>21&nbsp;// but WITHOUT ANY WARRANTY; without even the implied warranty of</p>
+<p>22&nbsp;// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the</p>
+<p>23&nbsp;// GNU Lesser General Public License for more details.</p>
+<p>24&nbsp;//</p>
+<p>25&nbsp;// You should have received a copy of the GNU Lesser General Public
+License</p>
+<p>26&nbsp;// along with Log4Tango. If not, see &lt;<a class="reference external" href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>&gt;.</p>
+<p>27</p>
+<p>28&nbsp;#ifndef _LOG4TANGO_LOGGINGEVENT_H</p>
+<p>29&nbsp;#define _LOG4TANGO_LOGGINGEVENT_H</p>
+<p>30</p>
+<p>31&nbsp;#include &#8220;<a class="reference external" href="../../da/dd8/Portability_8hh.html">Portability.hh</a>&#8220;</p>
+<p>32&nbsp;#include &lt;string&gt;</p>
+<p>33</p>
+<p>34&nbsp;#include &#8220;<a class="reference external" href="../../d2/d33/Level_8hh.html">Level.hh</a>&#8220;</p>
+<p>35&nbsp;#include &#8220;<a class="reference external" href="../../db/d7c/TimeStamp_8hh.html">TimeStamp.hh</a>&#8220;</p>
+<p>36</p>
+<p>37&nbsp;namespace <a class="reference external" href="../../d4/db0/namespacelog4tango.html">log4tango</a> {</p>
+<p>38</p>
+<p>47&nbsp;//&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;</p>
+<p>48&nbsp;// struct : LoggingEvent</p>
+<p>49&nbsp;//&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;</p>
+<p><a class="reference external" href="../../d8/df2/structlog4tango_1_1LoggingEvent.html">50</a>&nbsp;struct
+<a class="reference external" href="../../df/d5d/Export_8hh.html#abb9e874b4244b6247ac9dbb62a2c7b8f">LOG4TANGO_EXPORT</a>
+<a class="reference external" href="../../d8/df2/structlog4tango_1_1LoggingEvent.html">LoggingEvent</a></p>
+<p>51&nbsp;{</p>
+<p>52&nbsp;public:</p>
+<p>63&nbsp;#ifdef LOG4TANGO_HAS_NDC</p>
+<p>64
+<a class="reference external" href="../../d8/df2/structlog4tango_1_1LoggingEvent.html">LoggingEvent</a>(const
+std::string&amp; logger,</p>
+<p>65&nbsp; const std::string&amp; message,</p>
+<p>66&nbsp; const std::string&amp; ndc,</p>
+<p>67
+<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#aa708c09b6a19a8cc8a3b19631561ca99">Level::Value</a>
+level);</p>
+<p>68&nbsp;#else</p>
+<p>69
+<a class="reference external" href="../../d8/df2/structlog4tango_1_1LoggingEvent.html">LoggingEvent</a>(const
+std::string&amp; logger,</p>
+<p>70&nbsp; const std::string&amp; message,</p>
+<p>71
+<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#aa708c09b6a19a8cc8a3b19631561ca99">Level::Value</a>
+level);</p>
+<p>72&nbsp;#endif // LOG4TANGO_HAS_NDC</p>
+<p>73</p>
+<p>75
+<a class="reference external" href="../../d8/df2/structlog4tango_1_1LoggingEvent.html">LoggingEvent</a>(const
+<a class="reference external" href="../../d8/df2/structlog4tango_1_1LoggingEvent.html">LoggingEvent</a>&amp;
+event);</p>
+<p>76</p>
+<p><a class="reference external" href="../../d8/df2/structlog4tango_1_1LoggingEvent.html#af3e2d7c25fb876601d7a009cfef40905">78</a>
+const std::string
+<a class="reference external" href="../../d8/df2/structlog4tango_1_1LoggingEvent.html#af3e2d7c25fb876601d7a009cfef40905">logger_name</a>;</p>
+<p>79</p>
+<p><a class="reference external" href="../../d8/df2/structlog4tango_1_1LoggingEvent.html#ab2a64b1de2ffe194eb4050840bbb7e90">81</a>
+const std::string
+<a class="reference external" href="../../d8/df2/structlog4tango_1_1LoggingEvent.html#ab2a64b1de2ffe194eb4050840bbb7e90">message</a>;</p>
+<p>82</p>
+<p>83&nbsp;#ifdef LOG4TANGO_HAS_NDC</p>
+<p>84</p>
+<p>85&nbsp; const std::string ndc;</p>
+<p>86&nbsp;#endif</p>
+<p>87</p>
+<p><a class="reference external" href="../../d8/df2/structlog4tango_1_1LoggingEvent.html#a669d5dbcaf34dff9ad9ec7578856a550">89</a>
+<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#aa708c09b6a19a8cc8a3b19631561ca99">Level::Value</a>
+<a class="reference external" href="../../d8/df2/structlog4tango_1_1LoggingEvent.html#a669d5dbcaf34dff9ad9ec7578856a550">level</a>;</p>
+<p>90</p>
+<p><a class="reference external" href="../../d8/df2/structlog4tango_1_1LoggingEvent.html#a6819a2b7cfcdc27390f2cbaa0ff4dcd1">92</a>
+std::string
+<a class="reference external" href="../../d8/df2/structlog4tango_1_1LoggingEvent.html#a6819a2b7cfcdc27390f2cbaa0ff4dcd1">thread_name</a>;</p>
+<p>93</p>
+<p><a class="reference external" href="../../d8/df2/structlog4tango_1_1LoggingEvent.html#ad811ff7b6b12fcefce201d91a95f6c75">95</a>
+long
+<a class="reference external" href="../../d8/df2/structlog4tango_1_1LoggingEvent.html#ad811ff7b6b12fcefce201d91a95f6c75">thread_id</a>;</p>
+<p>96</p>
+<p><a class="reference external" href="../../d8/df2/structlog4tango_1_1LoggingEvent.html#a69f17c639dea4fdca9db9a05f7cf810b">99</a>
+<a class="reference external" href="../../d2/df5/classlog4tango_1_1TimeStamp.html">TimeStamp</a>
+<a class="reference external" href="../../d8/df2/structlog4tango_1_1LoggingEvent.html#a69f17c639dea4fdca9db9a05f7cf810b">timestamp</a>;</p>
+<p>100</p>
+<p>101&nbsp;private:</p>
+<p>103&nbsp; const
+<a class="reference external" href="../../d8/df2/structlog4tango_1_1LoggingEvent.html">LoggingEvent</a>&amp;
+operator= (const
+<a class="reference external" href="../../d8/df2/structlog4tango_1_1LoggingEvent.html">LoggingEvent</a>&amp;);</p>
+<p>104&nbsp;};</p>
+<p>105</p>
+<p>106&nbsp;} // namespace log4tango</p>
+<p>107</p>
+<p>108&nbsp;#endif // _LOG4TANGO_LOGGINGEVENT_H</p>
+<p>109</p>
+<p><a class="reference external" href="../../d4/db0/namespacelog4tango.html">log4tango</a></p>
+<p><strong>Definition:</strong> Appender.hh:40</p>
+<p><a class="reference external" href="../../d8/df2/structlog4tango_1_1LoggingEvent.html#af3e2d7c25fb876601d7a009cfef40905">log4tango::LoggingEvent::logger_name</a></p>
+<p>const std::string logger_name</p>
+<p>The logger name.</p>
+<p><strong>Definition:</strong> LoggingEvent.hh:78</p>
+<p><a class="reference external" href="../../db/d7c/TimeStamp_8hh.html">TimeStamp.hh</a></p>
+<p><a class="reference external" href="../../d8/df2/structlog4tango_1_1LoggingEvent.html#ab2a64b1de2ffe194eb4050840bbb7e90">log4tango::LoggingEvent::message</a></p>
+<p>const std::string message</p>
+<p>The application supplied message of logging event.</p>
+<p><strong>Definition:</strong> LoggingEvent.hh:81</p>
+<p><a class="reference external" href="../../d2/d33/Level_8hh.html">Level.hh</a></p>
+<p><a class="reference external" href="../../da/dd8/Portability_8hh.html">Portability.hh</a></p>
+<p><a class="reference external" href="../../df/d5d/Export_8hh.html#abb9e874b4244b6247ac9dbb62a2c7b8f">LOG4TANGO_EXPORT</a></p>
+<p>#define LOG4TANGO_EXPORT</p>
+<p><strong>Definition:</strong> Export.hh:38</p>
+<p><a class="reference external" href="../../d2/df5/classlog4tango_1_1TimeStamp.html">log4tango::TimeStamp</a></p>
+<p><strong>Definition:</strong> TimeStamp.hh:38</p>
+<p><a class="reference external" href="../../d8/df2/structlog4tango_1_1LoggingEvent.html#a69f17c639dea4fdca9db9a05f7cf810b">log4tango::LoggingEvent::timestamp</a></p>
+<p>TimeStamp timestamp</p>
+<p>The number of seconds elapsed since the epoch (1/1/1970 00:00:00 UTC)
+until logging event was created...</p>
+<p><strong>Definition:</strong> LoggingEvent.hh:99</p>
+<p><a class="reference external" href="../../d8/df2/structlog4tango_1_1LoggingEvent.html#a6819a2b7cfcdc27390f2cbaa0ff4dcd1">log4tango::LoggingEvent::thread_name</a></p>
+<p>std::string thread_name</p>
+<p>Name of thread in which this logging event was generated.</p>
+<p><strong>Definition:</strong> LoggingEvent.hh:92</p>
+<p><a class="reference external" href="../../d8/df2/structlog4tango_1_1LoggingEvent.html#a669d5dbcaf34dff9ad9ec7578856a550">log4tango::LoggingEvent::level</a></p>
+<p>Level::Value level</p>
+<p>Level of logging event.</p>
+<p><strong>Definition:</strong> LoggingEvent.hh:89</p>
+<p><a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#aa708c09b6a19a8cc8a3b19631561ca99">log4tango::Level::Value</a></p>
+<p>int Value</p>
+<p>The type of Level Values.</p>
+<p><strong>Definition:</strong> Level.hh:98</p>
+<p><a class="reference external" href="../../d8/df2/structlog4tango_1_1LoggingEvent.html">log4tango::LoggingEvent</a></p>
+<p>The internal representation of logging events.</p>
+<p><strong>Definition:</strong> LoggingEvent.hh:50</p>
+<p><a class="reference external" href="../../d8/df2/structlog4tango_1_1LoggingEvent.html#ad811ff7b6b12fcefce201d91a95f6c75">log4tango::LoggingEvent::thread_id</a></p>
+<p>long thread_id</p>
+<p>id of thread in which this logging event was generated</p>
+<p><strong>Definition:</strong> LoggingEvent.hh:95</p>
+<ul class="simple">
+<li><a class="reference external" href="../../dir_93bc669b4520ad36068f344e109b7d17.html">include</a></li>
+<li><a class="reference external" href="../../dir_5a849e394260fc4e91409ef0349c0857.html">log4tango</a></li>
+<li><a class="reference external" href="../../d2/d60/LoggingEvent_8hh.html">LoggingEvent.hh</a></li>
+<li>Generated on Fri Oct 7 2016 11:11:15 for Tango Core Classes Reference
+by <a class="reference external" href="http://www.doxygen.org/index.html"><img alt="doxygen" src="../../_images/doxygen58.png" /></a> 1.8.8</li>
+</ul>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/d2/d60/LoggingEvent_8hh_source.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, 3Controls.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.8</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+      |
+      <a href="../../_sources/d2/d60/LoggingEvent_8hh_source.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

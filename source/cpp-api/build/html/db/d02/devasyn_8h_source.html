@@ -1,0 +1,801 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>&lt;no title&gt; &#8212; Tango Core Classes Reference Documentation 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="top" title="Tango Core Classes Reference Documentation 1.0 documentation" href="../../index.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><img alt="Logo" src="../../_images/logo287.jpg" /></td>
+<td>Tango Core Classes Reference &nbsp;9.2.5</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><a class="reference external" href="../../index.html">Main&nbsp;Page</a></li>
+<li><a class="reference external" href="../../pages.html">Related&nbsp;Pages</a></li>
+<li><a class="reference external" href="../../modules.html">Modules</a></li>
+<li><a class="reference external" href="../../namespaces.html">Namespaces</a></li>
+<li><a class="reference external" href="../../annotated.html">Classes</a></li>
+<li><a class="reference external" href="../../files.html">Files</a></li>
+<li><a class="reference external" href="../../files.html">File&nbsp;List</a></li>
+<li><a class="reference external" href="../../globals.html">File&nbsp;Members</a></li>
+</ul>
+<p>devasyn.h</p>
+<p><a class="reference external" href="../../db/d02/devasyn_8h.html">Go to the documentation of this file.</a></p>
+<p>1&nbsp;//</p>
+<p>2&nbsp;// devsyn.h - include file for TANGO api device asynchronous calls</p>
+<p>3&nbsp;//</p>
+<p>4&nbsp;//</p>
+<p>5&nbsp;// Copyright (C) :
+2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015</p>
+<p>6&nbsp;// European Synchrotron Radiation Facility</p>
+<p>7&nbsp;// BP 220, Grenoble 38043</p>
+<p>8&nbsp;// FRANCE</p>
+<p>9&nbsp;//</p>
+<p>10&nbsp;// This file is part of Tango.</p>
+<p>11&nbsp;//</p>
+<p>12&nbsp;// Tango is free software: you can redistribute it and/or modify</p>
+<p>13&nbsp;// it under the terms of the GNU Lesser General Public License as
+published by</p>
+<p>14&nbsp;// the Free Software Foundation, either version 3 of the License, or</p>
+<p>15&nbsp;// (at your option) any later version.</p>
+<p>16&nbsp;//</p>
+<p>17&nbsp;// Tango is distributed in the hope that it will be useful,</p>
+<p>18&nbsp;// but WITHOUT ANY WARRANTY; without even the implied warranty of</p>
+<p>19&nbsp;// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the</p>
+<p>20&nbsp;// GNU Lesser General Public License for more details.</p>
+<p>21&nbsp;//</p>
+<p>22&nbsp;// You should have received a copy of the GNU Lesser General Public
+License</p>
+<p>23&nbsp;// along with Tango. If not, see &lt;<a class="reference external" href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>&gt;.</p>
+<p>24</p>
+<p>25</p>
+<p>26&nbsp;#ifndef _DEVASYN_H</p>
+<p>27&nbsp;#define _DEVASYN_H</p>
+<p>28</p>
+<p>29&nbsp;#include &lt;tango.h&gt;</p>
+<p>30</p>
+<p>31&nbsp;#include &lt;map&gt;</p>
+<p>32</p>
+<p>33&nbsp;using namespace <a class="reference external" href="../../d8/dcc/namespacestd.html">std</a>;</p>
+<p>34</p>
+<p>35&nbsp;namespace <a class="reference external" href="../../de/ddf/namespaceTango.html">Tango</a> {</p>
+<p>36</p>
+<p>37</p>
+<p>38&nbsp;//&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;</p>
+<p>39</p>
+<p>40&nbsp;class DeviceProxy;</p>
+<p>41&nbsp;class Connection;</p>
+<p>42&nbsp;class DeviceData;</p>
+<p>43&nbsp;class DeviceAttribute;</p>
+<p>44&nbsp;class NamedDevFailedList;</p>
+<p>45&nbsp;class EventData;</p>
+<p>46&nbsp;class AttrConfEventData;</p>
+<p>47&nbsp;class DataReadyEventData;</p>
+<p>48&nbsp;class DevIntrChangeEventData;</p>
+<p>49&nbsp;class PipeEventData;</p>
+<p>50&nbsp;class EventDataList;</p>
+<p>51&nbsp;class AttrConfEventDataList;</p>
+<p>52&nbsp;class DataReadyEventDataList;</p>
+<p>53&nbsp;class DevIntrChangeEventDataList;</p>
+<p>54&nbsp;class PipeEventDataList;</p>
+<p>55&nbsp;class EventConsumer;</p>
+<p>56&nbsp;class EventConsumerKeepAliveThread;</p>
+<p>57</p>
+<p>58&nbsp;/********************************************************************************</p>
+<p>59&nbsp; * *</p>
+<p>60&nbsp; * CmdDoneEvent class *</p>
+<p>61&nbsp; * *</p>
+<p>62
+*******************************************************************************/</p>
+<p>63</p>
+<p><a class="reference external" href="../../dc/d43/classTango_1_1CmdDoneEvent.html">76</a>&nbsp;class
+<a class="reference external" href="../../dc/d43/classTango_1_1CmdDoneEvent.html">CmdDoneEvent</a></p>
+<p>77&nbsp;{</p>
+<p>78&nbsp;public:</p>
+<p>80
+<a class="reference external" href="../../dc/d43/classTango_1_1CmdDoneEvent.html">CmdDoneEvent</a>(<a class="reference external" href="../../d9/d83/classTango_1_1DeviceProxy.html">DeviceProxy</a>
+*dev,</p>
+<p>81&nbsp; string &amp;cmd,</p>
+<p>82&nbsp; <a class="reference external" href="../../df/d22/classTango_1_1DeviceData.html">DeviceData</a> &amp;arg,</p>
+<p>83&nbsp; DevErrorList &amp;err_in):device(dev),</p>
+<p>84&nbsp; cmd_name(cmd),</p>
+<p>85&nbsp; argout(arg),</p>
+<p>86&nbsp; errors(err_in)</p>
+<p>87&nbsp; {if (errors.length()==0) err=false;else err=true;}</p>
+<p>88</p>
+<p><a class="reference external" href="../../dc/d43/classTango_1_1CmdDoneEvent.html#a4815622ebc52bc227f481e2d488cc7c1">90</a>
+<a class="reference external" href="../../d9/d83/classTango_1_1DeviceProxy.html">Tango::DeviceProxy</a>
+*<a class="reference external" href="../../dc/d43/classTango_1_1CmdDoneEvent.html#a4815622ebc52bc227f481e2d488cc7c1">device</a>;</p>
+<p><a class="reference external" href="../../dc/d43/classTango_1_1CmdDoneEvent.html#a9b3ff5a65147c469b19d5deafecf600a">91</a>
+string
+&amp;<a class="reference external" href="../../dc/d43/classTango_1_1CmdDoneEvent.html#a9b3ff5a65147c469b19d5deafecf600a">cmd_name</a>;</p>
+<p><a class="reference external" href="../../dc/d43/classTango_1_1CmdDoneEvent.html#a5bfb13a2fa90db07a6bd6092188dd96b">92</a>
+<a class="reference external" href="../../df/d22/classTango_1_1DeviceData.html">DeviceData</a>
+&amp;<a class="reference external" href="../../dc/d43/classTango_1_1CmdDoneEvent.html#a5bfb13a2fa90db07a6bd6092188dd96b">argout</a>;</p>
+<p><a class="reference external" href="../../dc/d43/classTango_1_1CmdDoneEvent.html#aa65c091b8483025114f5825760cb994a">93</a>
+bool
+<a class="reference external" href="../../dc/d43/classTango_1_1CmdDoneEvent.html#aa65c091b8483025114f5825760cb994a">err</a>;</p>
+<p><a class="reference external" href="../../dc/d43/classTango_1_1CmdDoneEvent.html#ad6842cac8f28ad790a3a19bd4818390e">94</a>
+DevErrorList
+&amp;<a class="reference external" href="../../dc/d43/classTango_1_1CmdDoneEvent.html#ad6842cac8f28ad790a3a19bd4818390e">errors</a>;</p>
+<p>95</p>
+<p>96&nbsp;private:</p>
+<p>97&nbsp; class CmdDoneEventExt</p>
+<p>98&nbsp; {</p>
+<p>99&nbsp; public:</p>
+<p>100&nbsp; CmdDoneEventExt() {};</p>
+<p>101&nbsp; };</p>
+<p>102</p>
+<p>103&nbsp;#ifdef HAS_UNIQUE_PTR</p>
+<p>104&nbsp; unique_ptr&lt;CmdDoneEventExt&gt; ext;</p>
+<p>105&nbsp;#else</p>
+<p>106&nbsp; CmdDoneEventExt *ext;</p>
+<p>107&nbsp;#endif</p>
+<p>108&nbsp;};</p>
+<p>109</p>
+<p>110&nbsp;/********************************************************************************</p>
+<p>111&nbsp; * *</p>
+<p>112&nbsp; * AttrReadEvent class *</p>
+<p>113&nbsp; * *</p>
+<p>114
+*******************************************************************************/</p>
+<p>115</p>
+<p><a class="reference external" href="../../dc/d42/classTango_1_1AttrReadEvent.html">129</a>&nbsp;class
+<a class="reference external" href="../../dc/d42/classTango_1_1AttrReadEvent.html">AttrReadEvent</a></p>
+<p>130&nbsp;{</p>
+<p>131&nbsp;public:</p>
+<p>133
+<a class="reference external" href="../../dc/d42/classTango_1_1AttrReadEvent.html">AttrReadEvent</a>(<a class="reference external" href="../../d9/d83/classTango_1_1DeviceProxy.html">DeviceProxy</a>
+*dev,</p>
+<p>134&nbsp; vector&lt;string&gt; &amp;att_names,</p>
+<p>135&nbsp; vector&lt;DeviceAttribute&gt; *arg,</p>
+<p>136&nbsp; DevErrorList &amp;err_in):device(dev),</p>
+<p>137&nbsp; attr_names(att_names),</p>
+<p>138&nbsp; argout(arg),</p>
+<p>139&nbsp; errors(err_in)</p>
+<p>140&nbsp; {if (errors.length()==0) err=false;else err=true;}</p>
+<p>141</p>
+<p><a class="reference external" href="../../dc/d42/classTango_1_1AttrReadEvent.html#acf3b676448255116ba14ee7c7bc4e062">143</a>
+<a class="reference external" href="../../d9/d83/classTango_1_1DeviceProxy.html">Tango::DeviceProxy</a>
+*<a class="reference external" href="../../dc/d42/classTango_1_1AttrReadEvent.html#acf3b676448255116ba14ee7c7bc4e062">device</a>;</p>
+<p><a class="reference external" href="../../dc/d42/classTango_1_1AttrReadEvent.html#aba1abaa8dd0c0513945d73297d6f31e2">144</a>
+vector&lt;string&gt;
+&amp;<a class="reference external" href="../../dc/d42/classTango_1_1AttrReadEvent.html#aba1abaa8dd0c0513945d73297d6f31e2">attr_names</a>;</p>
+<p><a class="reference external" href="../../dc/d42/classTango_1_1AttrReadEvent.html#afb3a4d42905139147b8f3badae37f509">145</a>
+vector&lt;DeviceAttribute&gt;
+*<a class="reference external" href="../../dc/d42/classTango_1_1AttrReadEvent.html#afb3a4d42905139147b8f3badae37f509">argout</a>;</p>
+<p><a class="reference external" href="../../dc/d42/classTango_1_1AttrReadEvent.html#a81fa0b8b572d1dd3328afb21c747b34a">146</a>
+bool
+<a class="reference external" href="../../dc/d42/classTango_1_1AttrReadEvent.html#a81fa0b8b572d1dd3328afb21c747b34a">err</a>;</p>
+<p><a class="reference external" href="../../dc/d42/classTango_1_1AttrReadEvent.html#ac15cd8804bb7185316d718a7fca674ff">147</a>
+DevErrorList
+&amp;<a class="reference external" href="../../dc/d42/classTango_1_1AttrReadEvent.html#ac15cd8804bb7185316d718a7fca674ff">errors</a>;</p>
+<p>148</p>
+<p>149&nbsp;private:</p>
+<p>150&nbsp; class AttrReadEventExt</p>
+<p>151&nbsp; {</p>
+<p>152&nbsp; public:</p>
+<p>153&nbsp; AttrReadEventExt() {};</p>
+<p>154&nbsp; };</p>
+<p>155</p>
+<p>156&nbsp;#ifdef HAS_UNIQUE_PTR</p>
+<p>157&nbsp; unique_ptr&lt;AttrReadEventExt&gt; ext;</p>
+<p>158&nbsp;#else</p>
+<p>159&nbsp; AttrReadEventExt *ext;</p>
+<p>160&nbsp;#endif</p>
+<p>161&nbsp;};</p>
+<p>162</p>
+<p>163&nbsp;/********************************************************************************</p>
+<p>164&nbsp; * *</p>
+<p>165&nbsp; * AttrWrittenEvent class *</p>
+<p>166&nbsp; * *</p>
+<p>167
+*******************************************************************************/</p>
+<p>168</p>
+<p><a class="reference external" href="../../da/d7f/classTango_1_1AttrWrittenEvent.html">182</a>&nbsp;class
+<a class="reference external" href="../../da/d7f/classTango_1_1AttrWrittenEvent.html">AttrWrittenEvent</a></p>
+<p>183&nbsp;{</p>
+<p>184&nbsp;public:</p>
+<p>186
+<a class="reference external" href="../../da/d7f/classTango_1_1AttrWrittenEvent.html">AttrWrittenEvent</a>(<a class="reference external" href="../../d9/d83/classTango_1_1DeviceProxy.html">DeviceProxy</a>
+*dev,</p>
+<p>187&nbsp; vector&lt;string&gt; &amp;att_names,</p>
+<p>188
+<a class="reference external" href="../../d8/d55/classTango_1_1NamedDevFailedList.html">NamedDevFailedList</a>
+&amp;err_in):device(dev),</p>
+<p>189&nbsp; attr_names(att_names),</p>
+<p>190&nbsp; errors(err_in)</p>
+<p>191&nbsp; {err = errors.call_failed();}</p>
+<p>192</p>
+<p><a class="reference external" href="../../da/d7f/classTango_1_1AttrWrittenEvent.html#a23c2655b23415d44475c2ecfe5eeb782">194</a>
+<a class="reference external" href="../../d9/d83/classTango_1_1DeviceProxy.html">Tango::DeviceProxy</a>
+*<a class="reference external" href="../../da/d7f/classTango_1_1AttrWrittenEvent.html#a23c2655b23415d44475c2ecfe5eeb782">device</a>;</p>
+<p><a class="reference external" href="../../da/d7f/classTango_1_1AttrWrittenEvent.html#a5ffa7a0ee56495141515b939d64df365">195</a>
+vector&lt;string&gt;
+&amp;<a class="reference external" href="../../da/d7f/classTango_1_1AttrWrittenEvent.html#a5ffa7a0ee56495141515b939d64df365">attr_names</a>;</p>
+<p><a class="reference external" href="../../da/d7f/classTango_1_1AttrWrittenEvent.html#ac81796b8acd485a713c00695bf53d5a8">196</a>
+bool
+<a class="reference external" href="../../da/d7f/classTango_1_1AttrWrittenEvent.html#ac81796b8acd485a713c00695bf53d5a8">err</a>;</p>
+<p><a class="reference external" href="../../da/d7f/classTango_1_1AttrWrittenEvent.html#ab66070e56148e1aed6c9e5125af2c8dd">197</a>
+<a class="reference external" href="../../d8/d55/classTango_1_1NamedDevFailedList.html">NamedDevFailedList</a>
+&amp;<a class="reference external" href="../../da/d7f/classTango_1_1AttrWrittenEvent.html#ab66070e56148e1aed6c9e5125af2c8dd">errors</a>;</p>
+<p>198</p>
+<p>199&nbsp;private:</p>
+<p>200&nbsp; class AttrWrittenEventExt</p>
+<p>201&nbsp; {</p>
+<p>202&nbsp; public:</p>
+<p>203&nbsp; AttrWrittenEventExt() {};</p>
+<p>204&nbsp; };</p>
+<p>205</p>
+<p>206&nbsp;#ifdef HAS_UNIQUE_PTR</p>
+<p>207&nbsp; unique_ptr&lt;AttrWrittenEventExt&gt; ext;</p>
+<p>208&nbsp;#else</p>
+<p>209&nbsp; AttrWrittenEventExt *ext;</p>
+<p>210&nbsp;#endif</p>
+<p>211&nbsp;};</p>
+<p>212</p>
+<p>213&nbsp;/********************************************************************************</p>
+<p>214&nbsp; * *</p>
+<p>215&nbsp; * CallBack class *</p>
+<p>216&nbsp; * *</p>
+<p>217
+*******************************************************************************/</p>
+<p>218</p>
+<p><a class="reference external" href="../../d4/ded/classTango_1_1CallBack.html">234</a>&nbsp;class
+<a class="reference external" href="../../d4/ded/classTango_1_1CallBack.html">CallBack</a></p>
+<p>235&nbsp;{</p>
+<p>236</p>
+<p><a class="reference external" href="../../d4/ded/classTango_1_1CallBack.html#a1267d53ae947792829a0db311573ae18">237</a>&nbsp;friend
+class EventConsumer;</p>
+<p><a class="reference external" href="../../d4/ded/classTango_1_1CallBack.html#aa6907ff9f96d034b806902f0627d9dcb">238</a>&nbsp;friend
+class EventConsumerKeepAliveThread;</p>
+<p>239</p>
+<p>240&nbsp;public:</p>
+<p>241&nbsp;#ifdef GEN_DOC</p>
+<p>242</p>
+<p><a class="reference external" href="../../d4/ded/classTango_1_1CallBack.html#a9a39818975ee8f46755209a62ffed5f7">251</a>
+virtual void
+<a class="reference external" href="../../d4/ded/classTango_1_1CallBack.html#a9a39818975ee8f46755209a62ffed5f7">cmd_ended</a>(<a class="reference external" href="../../dc/d43/classTango_1_1CmdDoneEvent.html">CmdDoneEvent</a>
+*cde) {};</p>
+<p><a class="reference external" href="../../d4/ded/classTango_1_1CallBack.html#a47a4fc0fca26863bd7b31e6f1e978f72">261</a>
+virtual void
+<a class="reference external" href="../../d4/ded/classTango_1_1CallBack.html#a47a4fc0fca26863bd7b31e6f1e978f72">attr_read</a>(<a class="reference external" href="../../dc/d42/classTango_1_1AttrReadEvent.html">AttrReadEvent</a>
+*are) {};</p>
+<p><a class="reference external" href="../../d4/ded/classTango_1_1CallBack.html#a352e653238bb6ecb134fa36d4adb44bc">271</a>
+virtual void
+<a class="reference external" href="../../d4/ded/classTango_1_1CallBack.html#a352e653238bb6ecb134fa36d4adb44bc">attr_written</a>(<a class="reference external" href="../../da/d7f/classTango_1_1AttrWrittenEvent.html">AttrWrittenEvent</a>
+*awe) {};</p>
+<p><a class="reference external" href="../../d4/ded/classTango_1_1CallBack.html#a6a794901a14f08b1cda918e1d18acce9">280</a>
+virtual void
+<a class="reference external" href="../../d4/ded/classTango_1_1CallBack.html#a6a794901a14f08b1cda918e1d18acce9">push_event</a>(<a class="reference external" href="../../d7/d5f/classTango_1_1EventData.html">EventData</a>
+*ed) {};</p>
+<p><a class="reference external" href="../../d4/ded/classTango_1_1CallBack.html#a5d1dc656f3a7f50df6860f01fac4f32e">290</a>
+virtual void
+<a class="reference external" href="../../d4/ded/classTango_1_1CallBack.html#a5d1dc656f3a7f50df6860f01fac4f32e">push_event</a>(<a class="reference external" href="../../d9/da1/classTango_1_1AttrConfEventData.html">AttrConfEventData</a>
+*ace) {};</p>
+<p><a class="reference external" href="../../d4/ded/classTango_1_1CallBack.html#abab8a359a1e492e12a21b3dab7b93501">299</a>
+virtual void
+<a class="reference external" href="../../d4/ded/classTango_1_1CallBack.html#abab8a359a1e492e12a21b3dab7b93501">push_event</a>(<a class="reference external" href="../../df/d39/classTango_1_1DataReadyEventData.html">DataReadyEventData</a>
+*dre) {};</p>
+<p><a class="reference external" href="../../d4/ded/classTango_1_1CallBack.html#acf0ff8451e6fd851f8724237d4fad4a8">308</a>
+virtual void
+<a class="reference external" href="../../d4/ded/classTango_1_1CallBack.html#acf0ff8451e6fd851f8724237d4fad4a8">push_event</a>(<a class="reference external" href="../../db/d47/classTango_1_1DevIntrChangeEventData.html">DevIntrChangeEventData</a>
+*dic) {};</p>
+<p><a class="reference external" href="../../d4/ded/classTango_1_1CallBack.html#aac4aa49f209d8db18ce415f2a1a5d13d">317</a>
+virtual void
+<a class="reference external" href="../../d4/ded/classTango_1_1CallBack.html#aac4aa49f209d8db18ce415f2a1a5d13d">push_event</a>(<a class="reference external" href="../../d8/d0d/classTango_1_1PipeEventData.html">PipeEventData</a>
+*ped) {};</p>
+<p>318&nbsp;#else</p>
+<p>319&nbsp; virtual void
+cmd_ended(<a class="reference external" href="../../dc/d43/classTango_1_1CmdDoneEvent.html">CmdDoneEvent</a>
+*) {};</p>
+<p>320&nbsp; virtual void attr_read(AttrReadEvent *) {};</p>
+<p>321&nbsp; virtual void attr_written(AttrWrittenEvent *) {};</p>
+<p>322&nbsp; virtual void push_event(EventData *) {};</p>
+<p>323&nbsp; virtual void push_event(AttrConfEventData *) {};</p>
+<p>324&nbsp; virtual void push_event(DataReadyEventData *) {};</p>
+<p>325&nbsp; virtual void push_event(DevIntrChangeEventData *) {};</p>
+<p>326&nbsp; virtual void push_event(PipeEventData *) {};</p>
+<p>327&nbsp;#endif</p>
+<p>328</p>
+<p>330&nbsp; virtual ~CallBack() {};</p>
+<p>331</p>
+<p>332&nbsp;private:</p>
+<p>333&nbsp; class CallBackExt</p>
+<p>334&nbsp; {</p>
+<p>335&nbsp; public:</p>
+<p>336&nbsp; CallBackExt() {};</p>
+<p>337&nbsp; };</p>
+<p>338</p>
+<p>339&nbsp;#ifdef HAS_UNIQUE_PTR</p>
+<p>340&nbsp; unique_ptr&lt;CallBackExt&gt; ext;</p>
+<p>341&nbsp;#else</p>
+<p>342&nbsp; CallBackExt *ext;</p>
+<p>343&nbsp;#endif</p>
+<p>344&nbsp;};</p>
+<p>345</p>
+<p>346&nbsp;//&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;</p>
+<p>347</p>
+<p><a class="reference external" href="../../d5/dad/classTango_1_1UniqIdent.html">348</a>&nbsp;class
+<a class="reference external" href="../../d5/dad/classTango_1_1UniqIdent.html">UniqIdent</a>: public
+omni_mutex</p>
+<p>349&nbsp;{</p>
+<p>350&nbsp;public:</p>
+<p><a class="reference external" href="../../d5/dad/classTango_1_1UniqIdent.html#af52963f388bed708e8725889a9139fab">351</a>
+<a class="reference external" href="../../d5/dad/classTango_1_1UniqIdent.html#af52963f388bed708e8725889a9139fab">UniqIdent</a>()
+{omni_mutex_lock sync(*this);ctr = 0;}</p>
+<p><a class="reference external" href="../../d5/dad/classTango_1_1UniqIdent.html#aafd90488ed0f2161d8f705886008ba46">352</a>
+long
+<a class="reference external" href="../../d5/dad/classTango_1_1UniqIdent.html#aafd90488ed0f2161d8f705886008ba46">get_ident</a>()
+{omni_mutex_lock sync(*this);return ++ctr;}</p>
+<p>353</p>
+<p><a class="reference external" href="../../d5/dad/classTango_1_1UniqIdent.html#a5e162225e409d439ebb8d92976511651">354</a>
+long
+<a class="reference external" href="../../d5/dad/classTango_1_1UniqIdent.html#a5e162225e409d439ebb8d92976511651">ctr</a>;</p>
+<p>355&nbsp;};</p>
+<p>356</p>
+<p><a class="reference external" href="../../db/d68/classTango_1_1TgRequest.html">357</a>&nbsp;class
+<a class="reference external" href="../../db/d68/classTango_1_1TgRequest.html">TgRequest</a></p>
+<p>358&nbsp;{</p>
+<p>359&nbsp;public:</p>
+<p><a class="reference external" href="../../db/d68/classTango_1_1TgRequest.html#a6ae144d0765e704695987f8b20255343">360</a>
+enum
+<a class="reference external" href="../../db/d68/classTango_1_1TgRequest.html#a6ae144d0765e704695987f8b20255343">ReqType</a></p>
+<p>361&nbsp; {</p>
+<p><a class="reference external" href="../../db/d68/classTango_1_1TgRequest.html#a6ae144d0765e704695987f8b20255343a04e80a438e091149063679db1a10ddb9">362</a>
+<a class="reference external" href="../../db/d68/classTango_1_1TgRequest.html#a6ae144d0765e704695987f8b20255343a04e80a438e091149063679db1a10ddb9">CMD_INOUT</a>,</p>
+<p><a class="reference external" href="../../db/d68/classTango_1_1TgRequest.html#a6ae144d0765e704695987f8b20255343a3466c21a6337f0cd76a5bbd90a566172">363</a>
+<a class="reference external" href="../../db/d68/classTango_1_1TgRequest.html#a6ae144d0765e704695987f8b20255343a3466c21a6337f0cd76a5bbd90a566172">READ_ATTR</a>,</p>
+<p><a class="reference external" href="../../db/d68/classTango_1_1TgRequest.html#a6ae144d0765e704695987f8b20255343aa7268c071129d7da5e811bf37b8f2fcb">364</a>
+<a class="reference external" href="../../db/d68/classTango_1_1TgRequest.html#a6ae144d0765e704695987f8b20255343aa7268c071129d7da5e811bf37b8f2fcb">WRITE_ATTR_SINGLE</a>,</p>
+<p><a class="reference external" href="../../db/d68/classTango_1_1TgRequest.html#a6ae144d0765e704695987f8b20255343a82796f46c21ca154dc78089e2983de65">365</a>
+WRITE_ATTR</p>
+<p>366&nbsp; };</p>
+<p>367</p>
+<p><a class="reference external" href="../../db/d68/classTango_1_1TgRequest.html#aaff69a8c4221e4ac48febff3f9c6e3b6">368</a>
+<a class="reference external" href="../../db/d68/classTango_1_1TgRequest.html#aaff69a8c4221e4ac48febff3f9c6e3b6">TgRequest</a>(CORBA::Request_ptr
+re,<a class="reference external" href="../../db/d68/classTango_1_1TgRequest.html#a6ae144d0765e704695987f8b20255343">ReqType</a>
+ty):request(re),req_type(ty),cb_ptr(NULL),</p>
+<p>369&nbsp; arrived(false),dev(NULL)</p>
+<p>370&nbsp; {};</p>
+<p>371</p>
+<p><a class="reference external" href="../../db/d68/classTango_1_1TgRequest.html#ad17a7ebe95dc9bd2ed9e55409ada8059">372</a>
+<a class="reference external" href="../../db/d68/classTango_1_1TgRequest.html#ad17a7ebe95dc9bd2ed9e55409ada8059">TgRequest</a>(CORBA::Request_ptr
+re,<a class="reference external" href="../../db/d68/classTango_1_1TgRequest.html#a6ae144d0765e704695987f8b20255343">ReqType</a>
+ty,<a class="reference external" href="../../d4/ded/classTango_1_1CallBack.html">CallBack</a>
+*cb):request(re),req_type(ty),cb_ptr(cb),</p>
+<p>373&nbsp; arrived(false),dev(NULL)</p>
+<p>374&nbsp; {};</p>
+<p>375</p>
+<p><a class="reference external" href="../../db/d68/classTango_1_1TgRequest.html#a3a6abdbc73d075711e9573909fbd0dba">376</a>
+<a class="reference external" href="../../db/d68/classTango_1_1TgRequest.html#a3a6abdbc73d075711e9573909fbd0dba">TgRequest</a>(<a class="reference external" href="../../d7/de8/classTango_1_1Connection.html">Tango::Connection</a>
+*con,<a class="reference external" href="../../db/d68/classTango_1_1TgRequest.html#a6ae144d0765e704695987f8b20255343">ReqType</a>
+ty,<a class="reference external" href="../../d4/ded/classTango_1_1CallBack.html">CallBack</a>
+*cb):request(NULL),req_type(ty),cb_ptr(cb),</p>
+<p>377&nbsp; arrived(false),dev(con)</p>
+<p><a class="reference external" href="../../db/d68/classTango_1_1TgRequest.html#ac67ab29d677879fb006e4bbd434fef00">378</a>
+{};</p>
+<p>379</p>
+<p>380&nbsp; CORBA::Request_ptr request;</p>
+<p><a class="reference external" href="../../db/d68/classTango_1_1TgRequest.html#a17cf8b3659ac680ae34ab0d801daa163">381</a>
+<a class="reference external" href="../../db/d68/classTango_1_1TgRequest.html#a6ae144d0765e704695987f8b20255343">ReqType</a>
+<a class="reference external" href="../../db/d68/classTango_1_1TgRequest.html#a17cf8b3659ac680ae34ab0d801daa163">req_type</a>;</p>
+<p><a class="reference external" href="../../db/d68/classTango_1_1TgRequest.html#afa65b05a864aed9174755a819d8193a0">382</a>
+<a class="reference external" href="../../d4/ded/classTango_1_1CallBack.html">CallBack</a>
+*<a class="reference external" href="../../db/d68/classTango_1_1TgRequest.html#afa65b05a864aed9174755a819d8193a0">cb_ptr</a>;</p>
+<p><a class="reference external" href="../../db/d68/classTango_1_1TgRequest.html#ab6edfb4b709db11d6863eaf6b3d963fb">383</a>
+bool
+<a class="reference external" href="../../db/d68/classTango_1_1TgRequest.html#ab6edfb4b709db11d6863eaf6b3d963fb">arrived</a>;</p>
+<p><a class="reference external" href="../../db/d68/classTango_1_1TgRequest.html#a6600b476fa5be339ff010fe4f60d593b">384</a>
+<a class="reference external" href="../../d7/de8/classTango_1_1Connection.html">Connection</a>
+*<a class="reference external" href="../../db/d68/classTango_1_1TgRequest.html#a6600b476fa5be339ff010fe4f60d593b">dev</a>;</p>
+<p>385&nbsp;};</p>
+<p>386</p>
+<p><a class="reference external" href="../../d4/d49/classTango_1_1AsynReq.html">387</a>&nbsp;class
+<a class="reference external" href="../../d4/d49/classTango_1_1AsynReq.html">AsynReq</a>: public
+omni_mutex</p>
+<p>388&nbsp;{</p>
+<p>389&nbsp;public:</p>
+<p><a class="reference external" href="../../d4/d49/classTango_1_1AsynReq.html#aaf398fa29d8dd69b8a3e8140bc064ac4">390</a>
+<a class="reference external" href="../../d4/d49/classTango_1_1AsynReq.html#aaf398fa29d8dd69b8a3e8140bc064ac4">AsynReq</a>(<a class="reference external" href="../../d5/dad/classTango_1_1UniqIdent.html">UniqIdent</a>
+*ptr):ui_ptr(ptr),cond(this) {};</p>
+<p><a class="reference external" href="../../d4/d49/classTango_1_1AsynReq.html#a561d72b073445ffa393fa2b488cdb102">391</a>
+<a class="reference external" href="../../d4/d49/classTango_1_1AsynReq.html#a561d72b073445ffa393fa2b488cdb102">~AsynReq</a>()
+{delete ui_ptr;}</p>
+<p>392</p>
+<p>393&nbsp; <a class="reference external" href="../../db/d68/classTango_1_1TgRequest.html">TgRequest</a>
+&amp;get_request(long);</p>
+<p>394&nbsp; <a class="reference external" href="../../db/d68/classTango_1_1TgRequest.html">TgRequest</a>
+&amp;get_request(CORBA::Request_ptr);</p>
+<p>395&nbsp; <a class="reference external" href="../../db/d68/classTango_1_1TgRequest.html">TgRequest</a>
+*get_request(<a class="reference external" href="../../d7/de8/classTango_1_1Connection.html">Tango::Connection</a>
+*);</p>
+<p>396</p>
+<p>397&nbsp; long
+store_request(CORBA::Request_ptr,<a class="reference external" href="../../db/d68/classTango_1_1TgRequest.html#a6ae144d0765e704695987f8b20255343">TgRequest::ReqType</a>);</p>
+<p>398&nbsp; void
+store_request(CORBA::Request_ptr,<a class="reference external" href="../../d4/ded/classTango_1_1CallBack.html">CallBack</a>
+*,<a class="reference external" href="../../d7/de8/classTango_1_1Connection.html">Connection</a>
+*,<a class="reference external" href="../../db/d68/classTango_1_1TgRequest.html#a6ae144d0765e704695987f8b20255343">TgRequest::ReqType</a>);</p>
+<p>399</p>
+<p>400&nbsp; void remove_request(long);</p>
+<p>401&nbsp; void
+remove_request(<a class="reference external" href="../../d7/de8/classTango_1_1Connection.html">Connection</a>
+*,CORBA::Request_ptr);</p>
+<p>402</p>
+<p><a class="reference external" href="../../d4/d49/classTango_1_1AsynReq.html#ab2cd39f7e22d7379c3ec231f1a4f8996">403</a>
+size_t
+<a class="reference external" href="../../d4/d49/classTango_1_1AsynReq.html#ab2cd39f7e22d7379c3ec231f1a4f8996">get_request_nb</a>()
+{omni_mutex_lock sync(*this);return asyn_poll_req_table.size();}</p>
+<p><a class="reference external" href="../../d4/d49/classTango_1_1AsynReq.html#a2382aa029446ce932fc1806d27a79c86">404</a>
+size_t
+<a class="reference external" href="../../d4/d49/classTango_1_1AsynReq.html#a2382aa029446ce932fc1806d27a79c86">get_cb_request_nb</a>()
+{omni_mutex_lock sync(*this);return cb_req_table.size();}</p>
+<p><a class="reference external" href="../../d4/d49/classTango_1_1AsynReq.html#a64026d73695274edd8dbac838eb5a7ee">405</a>
+size_t
+<a class="reference external" href="../../d4/d49/classTango_1_1AsynReq.html#a64026d73695274edd8dbac838eb5a7ee">get_cb_request_nb_i</a>()
+{return cb_req_table.size();}</p>
+<p>406</p>
+<p>407&nbsp; void mark_as_arrived(CORBA::Request_ptr req);</p>
+<p><a class="reference external" href="../../d4/d49/classTango_1_1AsynReq.html#a0ee69f2ee61f7c3cb9832b5d65ba175a">408</a>
+multimap&lt;Connection *,TgRequest&gt;
+&amp;<a class="reference external" href="../../d4/d49/classTango_1_1AsynReq.html#a0ee69f2ee61f7c3cb9832b5d65ba175a">get_cb_dev_table</a>()
+{return cb_dev_table;}</p>
+<p>409</p>
+<p>410&nbsp; void mark_as_cancelled(long);</p>
+<p>411&nbsp; void mark_all_polling_as_cancelled();</p>
+<p><a class="reference external" href="../../d4/d49/classTango_1_1AsynReq.html#ad7570fa623931b56985d6bcd69c4a564">412</a>
+void
+<a class="reference external" href="../../d4/d49/classTango_1_1AsynReq.html#ad7570fa623931b56985d6bcd69c4a564">wait</a>()
+{cond.wait();}</p>
+<p><a class="reference external" href="../../d4/d49/classTango_1_1AsynReq.html#add4662104ae067eb6a30cd4227d49798">413</a>
+void
+<a class="reference external" href="../../d4/d49/classTango_1_1AsynReq.html#add4662104ae067eb6a30cd4227d49798">signal</a>()
+{omni_mutex_lock sync(*this);cond.signal();}</p>
+<p>414</p>
+<p>415&nbsp;protected:</p>
+<p><a class="reference external" href="../../d4/d49/classTango_1_1AsynReq.html#abf576e773e62e7f20b3972b2478458fa">416</a>
+map&lt;long,TgRequest&gt;
+<a class="reference external" href="../../d4/d49/classTango_1_1AsynReq.html#abf576e773e62e7f20b3972b2478458fa">asyn_poll_req_table</a>;</p>
+<p><a class="reference external" href="../../d4/d49/classTango_1_1AsynReq.html#af5c541f5c4b03e3a693a97716fb6f40e">417</a>
+<a class="reference external" href="../../d5/dad/classTango_1_1UniqIdent.html">UniqIdent</a>
+*<a class="reference external" href="../../d4/d49/classTango_1_1AsynReq.html#af5c541f5c4b03e3a693a97716fb6f40e">ui_ptr</a>;</p>
+<p>418</p>
+<p><a class="reference external" href="../../d4/d49/classTango_1_1AsynReq.html#a12999a86b535765b5e0c1da4c29eefb2">419</a>
+multimap&lt;Connection *,TgRequest&gt;
+<a class="reference external" href="../../d4/d49/classTango_1_1AsynReq.html#a12999a86b535765b5e0c1da4c29eefb2">cb_dev_table</a>;</p>
+<p><a class="reference external" href="../../d4/d49/classTango_1_1AsynReq.html#ae3bcdf7be7d8fb5e17b0e2a00a23206d">420</a>
+map&lt;CORBA::Request_ptr,TgRequest&gt;
+<a class="reference external" href="../../d4/d49/classTango_1_1AsynReq.html#ae3bcdf7be7d8fb5e17b0e2a00a23206d">cb_req_table</a>;</p>
+<p>421</p>
+<p><a class="reference external" href="../../d4/d49/classTango_1_1AsynReq.html#acde2d2aba10f49ff4fe5fad1ab508370">422</a>
+vector&lt;long&gt;
+<a class="reference external" href="../../d4/d49/classTango_1_1AsynReq.html#acde2d2aba10f49ff4fe5fad1ab508370">cancelled_request</a>;</p>
+<p>423</p>
+<p>424&nbsp;private:</p>
+<p>425&nbsp; omni_condition cond;</p>
+<p>426&nbsp; bool remove_cancelled_request(long);</p>
+<p>427&nbsp;};</p>
+<p>428</p>
+<p>429&nbsp;} // End of Tango namespace</p>
+<p>430</p>
+<p>431&nbsp;#endif /* _DEVASYN_H */</p>
+<p><a class="reference external" href="../../db/d68/classTango_1_1TgRequest.html">Tango::TgRequest</a></p>
+<p><strong>Definition:</strong> devasyn.h:357</p>
+<p><a class="reference external" href="../../dc/d42/classTango_1_1AttrReadEvent.html#ac15cd8804bb7185316d718a7fca674ff">Tango::AttrReadEvent::errors</a></p>
+<p>DevErrorList &amp; errors</p>
+<p>The error stack.</p>
+<p><strong>Definition:</strong> devasyn.h:147</p>
+<p><a class="reference external" href="../../db/d47/classTango_1_1DevIntrChangeEventData.html">Tango::DevIntrChangeEventData</a></p>
+<p>Device interface change event callback execution data.</p>
+<p><strong>Definition:</strong> event.h:353</p>
+<p><a class="reference external" href="../../d4/d49/classTango_1_1AsynReq.html#ab2cd39f7e22d7379c3ec231f1a4f8996">Tango::AsynReq::get_request_nb</a></p>
+<p>size_t get_request_nb()</p>
+<p><strong>Definition:</strong> devasyn.h:403</p>
+<p><a class="reference external" href="../../da/d7f/classTango_1_1AttrWrittenEvent.html#a23c2655b23415d44475c2ecfe5eeb782">Tango::AttrWrittenEvent::device</a></p>
+<p>Tango::DeviceProxy * device</p>
+<p>The DeviceProxy object on which the call was executed.</p>
+<p><strong>Definition:</strong> devasyn.h:194</p>
+<p><a class="reference external" href="../../d4/d49/classTango_1_1AsynReq.html">Tango::AsynReq</a></p>
+<p><strong>Definition:</strong> devasyn.h:387</p>
+<p><a class="reference external" href="../../d5/dad/classTango_1_1UniqIdent.html">Tango::UniqIdent</a></p>
+<p><strong>Definition:</strong> devasyn.h:348</p>
+<p><a class="reference external" href="../../d4/ded/classTango_1_1CallBack.html#a5d1dc656f3a7f50df6860f01fac4f32e">Tango::CallBack::push_event</a></p>
+<p>virtual void push_event(AttrConfEventData *ace)</p>
+<p>attribute configuration change event callback method</p>
+<p><strong>Definition:</strong> devasyn.h:290</p>
+<p><a class="reference external" href="../../dc/d42/classTango_1_1AttrReadEvent.html#acf3b676448255116ba14ee7c7bc4e062">Tango::AttrReadEvent::device</a></p>
+<p>Tango::DeviceProxy * device</p>
+<p>The DeviceProxy object on which the call was executed.</p>
+<p><strong>Definition:</strong> devasyn.h:143</p>
+<p><a class="reference external" href="../../dc/d42/classTango_1_1AttrReadEvent.html#afb3a4d42905139147b8f3badae37f509">Tango::AttrReadEvent::argout</a></p>
+<p>vector&lt; DeviceAttribute &gt; * argout</p>
+<p>The attribute data.</p>
+<p><strong>Definition:</strong> devasyn.h:145</p>
+<p><a class="reference external" href="../../d4/d49/classTango_1_1AsynReq.html#add4662104ae067eb6a30cd4227d49798">Tango::AsynReq::signal</a></p>
+<p>void signal()</p>
+<p><strong>Definition:</strong> devasyn.h:413</p>
+<p><a class="reference external" href="../../d8/d0d/classTango_1_1PipeEventData.html">Tango::PipeEventData</a></p>
+<p>Pipe event callback execution data.</p>
+<p><strong>Definition:</strong> event.h:439</p>
+<p><a class="reference external" href="../../d4/d49/classTango_1_1AsynReq.html#af5c541f5c4b03e3a693a97716fb6f40e">Tango::AsynReq::ui_ptr</a></p>
+<p>UniqIdent * ui_ptr</p>
+<p><strong>Definition:</strong> devasyn.h:417</p>
+<p><a class="reference external" href="../../db/d68/classTango_1_1TgRequest.html#ad17a7ebe95dc9bd2ed9e55409ada8059">Tango::TgRequest::TgRequest</a></p>
+<p>TgRequest(CORBA::Request_ptr re, ReqType ty, CallBack *cb)</p>
+<p><strong>Definition:</strong> devasyn.h:372</p>
+<p><a class="reference external" href="../../d4/d49/classTango_1_1AsynReq.html#a2382aa029446ce932fc1806d27a79c86">Tango::AsynReq::get_cb_request_nb</a></p>
+<p>size_t get_cb_request_nb()</p>
+<p><strong>Definition:</strong> devasyn.h:404</p>
+<p><a class="reference external" href="../../d4/d49/classTango_1_1AsynReq.html#ad7570fa623931b56985d6bcd69c4a564">Tango::AsynReq::wait</a></p>
+<p>void wait()</p>
+<p><strong>Definition:</strong> devasyn.h:412</p>
+<p><a class="reference external" href="../../db/d68/classTango_1_1TgRequest.html#ab6edfb4b709db11d6863eaf6b3d963fb">Tango::TgRequest::arrived</a></p>
+<p>bool arrived</p>
+<p><strong>Definition:</strong> devasyn.h:383</p>
+<p><a class="reference external" href="../../dc/d43/classTango_1_1CmdDoneEvent.html#ad6842cac8f28ad790a3a19bd4818390e">Tango::CmdDoneEvent::errors</a></p>
+<p>DevErrorList &amp; errors</p>
+<p>The error stack.</p>
+<p><strong>Definition:</strong> devasyn.h:94</p>
+<p><a class="reference external" href="../../da/d7f/classTango_1_1AttrWrittenEvent.html#a5ffa7a0ee56495141515b939d64df365">Tango::AttrWrittenEvent::attr_names</a></p>
+<p>vector&lt; string &gt; &amp; attr_names</p>
+<p>The attribute name list.</p>
+<p><strong>Definition:</strong> devasyn.h:195</p>
+<p><a class="reference external" href="../../d4/ded/classTango_1_1CallBack.html#a9a39818975ee8f46755209a62ffed5f7">Tango::CallBack::cmd_ended</a></p>
+<p>virtual void cmd_ended(CmdDoneEvent *cde)</p>
+<p>Asynchronous command execution callback method.</p>
+<p><strong>Definition:</strong> devasyn.h:251</p>
+<p><a class="reference external" href="../../d8/dcc/namespacestd.html">std</a></p>
+<p><strong>Definition:</strong> LoggerStream.hh:178</p>
+<p><a class="reference external" href="../../db/d68/classTango_1_1TgRequest.html#a17cf8b3659ac680ae34ab0d801daa163">Tango::TgRequest::req_type</a></p>
+<p>ReqType req_type</p>
+<p><strong>Definition:</strong> devasyn.h:381</p>
+<p><a class="reference external" href="../../d4/ded/classTango_1_1CallBack.html">Tango::CallBack</a></p>
+<p>Event and asynchronous (callback model) calls base class.</p>
+<p><strong>Definition:</strong> devasyn.h:234</p>
+<p><a class="reference external" href="../../db/d68/classTango_1_1TgRequest.html#a6ae144d0765e704695987f8b20255343">Tango::TgRequest::ReqType</a></p>
+<p>ReqType</p>
+<p><strong>Definition:</strong> devasyn.h:360</p>
+<p><a class="reference external" href="../../d4/d49/classTango_1_1AsynReq.html#a64026d73695274edd8dbac838eb5a7ee">Tango::AsynReq::get_cb_request_nb_i</a></p>
+<p>size_t get_cb_request_nb_i()</p>
+<p><strong>Definition:</strong> devasyn.h:405</p>
+<p><a class="reference external" href="../../d8/d55/classTango_1_1NamedDevFailedList.html">Tango::NamedDevFailedList</a></p>
+<p>An exception class.</p>
+<p><strong>Definition:</strong> apiexcept.h:79</p>
+<p><a class="reference external" href="../../df/d22/classTango_1_1DeviceData.html">Tango::DeviceData</a></p>
+<p>Fundamental type for sending and receiving data from device commands.</p>
+<p><strong>Definition:</strong> devapi.h:64</p>
+<p><a class="reference external" href="../../de/ddf/namespaceTango.html">Tango</a></p>
+<hr class="docutils" />
+<p><strong>Definition:</strong> device.h:50</p>
+<p><a class="reference external" href="../../db/d68/classTango_1_1TgRequest.html#afa65b05a864aed9174755a819d8193a0">Tango::TgRequest::cb_ptr</a></p>
+<p>CallBack * cb_ptr</p>
+<p><strong>Definition:</strong> devasyn.h:382</p>
+<p><a class="reference external" href="../../d4/d49/classTango_1_1AsynReq.html#a561d72b073445ffa393fa2b488cdb102">Tango::AsynReq::~AsynReq</a></p>
+<p>~AsynReq()</p>
+<p><strong>Definition:</strong> devasyn.h:391</p>
+<p><a class="reference external" href="../../df/d39/classTango_1_1DataReadyEventData.html">Tango::DataReadyEventData</a></p>
+<p>Data ready event callback execution data.</p>
+<p><strong>Definition:</strong> event.h:268</p>
+<p><a class="reference external" href="../../da/d7f/classTango_1_1AttrWrittenEvent.html">Tango::AttrWrittenEvent</a></p>
+<p>Asynchronous write attribute execution callback data.</p>
+<p><strong>Definition:</strong> devasyn.h:182</p>
+<p><a class="reference external" href="../../d4/d49/classTango_1_1AsynReq.html#a12999a86b535765b5e0c1da4c29eefb2">Tango::AsynReq::cb_dev_table</a></p>
+<p>multimap&lt; Connection *, TgRequest &gt; cb_dev_table</p>
+<p><strong>Definition:</strong> devasyn.h:419</p>
+<p><a class="reference external" href="../../dc/d43/classTango_1_1CmdDoneEvent.html#a5bfb13a2fa90db07a6bd6092188dd96b">Tango::CmdDoneEvent::argout</a></p>
+<p>DeviceData &amp; argout</p>
+<p>The command argout.</p>
+<p><strong>Definition:</strong> devasyn.h:92</p>
+<p><a class="reference external" href="../../db/d68/classTango_1_1TgRequest.html#a3a6abdbc73d075711e9573909fbd0dba">Tango::TgRequest::TgRequest</a></p>
+<p>TgRequest(Tango::Connection *con, ReqType ty, CallBack *cb)</p>
+<p><strong>Definition:</strong> devasyn.h:376</p>
+<p><a class="reference external" href="../../d4/ded/classTango_1_1CallBack.html#a6a794901a14f08b1cda918e1d18acce9">Tango::CallBack::push_event</a></p>
+<p>virtual void push_event(EventData *ed)</p>
+<p>Event callback method.</p>
+<p><strong>Definition:</strong> devasyn.h:280</p>
+<p><a class="reference external" href="../../d4/ded/classTango_1_1CallBack.html#acf0ff8451e6fd851f8724237d4fad4a8">Tango::CallBack::push_event</a></p>
+<p>virtual void push_event(DevIntrChangeEventData *dic)</p>
+<p>Device interface change event callback method.</p>
+<p><strong>Definition:</strong> devasyn.h:308</p>
+<p><a class="reference external" href="../../da/d7f/classTango_1_1AttrWrittenEvent.html#ac81796b8acd485a713c00695bf53d5a8">Tango::AttrWrittenEvent::err</a></p>
+<p>bool err</p>
+<p>A boolean flag set to true if the request failed. False otherwise.</p>
+<p><strong>Definition:</strong> devasyn.h:196</p>
+<p><a class="reference external" href="../../db/d68/classTango_1_1TgRequest.html#a6ae144d0765e704695987f8b20255343a04e80a438e091149063679db1a10ddb9">Tango::TgRequest::CMD_INOUT</a></p>
+<p><strong>Definition:</strong> devasyn.h:362</p>
+<p><a class="reference external" href="../../d4/ded/classTango_1_1CallBack.html#a352e653238bb6ecb134fa36d4adb44bc">Tango::CallBack::attr_written</a></p>
+<p>virtual void attr_written(AttrWrittenEvent *awe)</p>
+<p>Asynchronous write attribute execution callback method.</p>
+<p><strong>Definition:</strong> devasyn.h:271</p>
+<p><a class="reference external" href="../../d7/d5f/classTango_1_1EventData.html">Tango::EventData</a></p>
+<p>Event callback execution data.</p>
+<p><strong>Definition:</strong> event.h:73</p>
+<p><a class="reference external" href="../../d5/dad/classTango_1_1UniqIdent.html#af52963f388bed708e8725889a9139fab">Tango::UniqIdent::UniqIdent</a></p>
+<p>UniqIdent()</p>
+<p><strong>Definition:</strong> devasyn.h:351</p>
+<p><a class="reference external" href="../../db/d68/classTango_1_1TgRequest.html#aaff69a8c4221e4ac48febff3f9c6e3b6">Tango::TgRequest::TgRequest</a></p>
+<p>TgRequest(CORBA::Request_ptr re, ReqType ty)</p>
+<p><strong>Definition:</strong> devasyn.h:368</p>
+<p><a class="reference external" href="../../d4/ded/classTango_1_1CallBack.html#a47a4fc0fca26863bd7b31e6f1e978f72">Tango::CallBack::attr_read</a></p>
+<p>virtual void attr_read(AttrReadEvent *are)</p>
+<p>Asynchronous read attribute execution callback method.</p>
+<p><strong>Definition:</strong> devasyn.h:261</p>
+<p><a class="reference external" href="../../db/d68/classTango_1_1TgRequest.html#a6ae144d0765e704695987f8b20255343aa7268c071129d7da5e811bf37b8f2fcb">Tango::TgRequest::WRITE_ATTR_SINGLE</a></p>
+<p><strong>Definition:</strong> devasyn.h:364</p>
+<p><a class="reference external" href="../../dc/d42/classTango_1_1AttrReadEvent.html#aba1abaa8dd0c0513945d73297d6f31e2">Tango::AttrReadEvent::attr_names</a></p>
+<p>vector&lt; string &gt; &amp; attr_names</p>
+<p>The attribute name list.</p>
+<p><strong>Definition:</strong> devasyn.h:144</p>
+<p><a class="reference external" href="../../d9/da1/classTango_1_1AttrConfEventData.html">Tango::AttrConfEventData</a></p>
+<p>Attribute configuration change event callback execution data.</p>
+<p><strong>Definition:</strong> event.h:172</p>
+<p><a class="reference external" href="../../db/d68/classTango_1_1TgRequest.html#a6600b476fa5be339ff010fe4f60d593b">Tango::TgRequest::dev</a></p>
+<p>Connection * dev</p>
+<p><strong>Definition:</strong> devasyn.h:384</p>
+<p><a class="reference external" href="../../d4/ded/classTango_1_1CallBack.html#abab8a359a1e492e12a21b3dab7b93501">Tango::CallBack::push_event</a></p>
+<p>virtual void push_event(DataReadyEventData *dre)</p>
+<p>Data ready event callback method.</p>
+<p><strong>Definition:</strong> devasyn.h:299</p>
+<p><a class="reference external" href="../../dc/d42/classTango_1_1AttrReadEvent.html#a81fa0b8b572d1dd3328afb21c747b34a">Tango::AttrReadEvent::err</a></p>
+<p>bool err</p>
+<p>A boolean flag set to true if the request failed. False otherwise.</p>
+<p><strong>Definition:</strong> devasyn.h:146</p>
+<p><a class="reference external" href="../../d4/d49/classTango_1_1AsynReq.html#abf576e773e62e7f20b3972b2478458fa">Tango::AsynReq::asyn_poll_req_table</a></p>
+<p>map&lt; long, TgRequest &gt; asyn_poll_req_table</p>
+<p><strong>Definition:</strong> devasyn.h:416</p>
+<p><a class="reference external" href="../../dc/d43/classTango_1_1CmdDoneEvent.html#a4815622ebc52bc227f481e2d488cc7c1">Tango::CmdDoneEvent::device</a></p>
+<p>Tango::DeviceProxy * device</p>
+<p>The DeviceProxy object on which the call was executed.</p>
+<p><strong>Definition:</strong> devasyn.h:90</p>
+<p><a class="reference external" href="../../d5/dad/classTango_1_1UniqIdent.html#aafd90488ed0f2161d8f705886008ba46">Tango::UniqIdent::get_ident</a></p>
+<p>long get_ident()</p>
+<p><strong>Definition:</strong> devasyn.h:352</p>
+<p><a class="reference external" href="../../d7/de8/classTango_1_1Connection.html">Tango::Connection</a></p>
+<p>Base class for Tango device access.</p>
+<p><strong>Definition:</strong> devapi.h:56</p>
+<p><a class="reference external" href="../../dc/d43/classTango_1_1CmdDoneEvent.html#aa65c091b8483025114f5825760cb994a">Tango::CmdDoneEvent::err</a></p>
+<p>bool err</p>
+<p>A boolean flag set to true if the command failed. False otherwise.</p>
+<p><strong>Definition:</strong> devasyn.h:93</p>
+<p><a class="reference external" href="../../d9/d83/classTango_1_1DeviceProxy.html">Tango::DeviceProxy</a></p>
+<p>High level class which provides the client with an easy-to-use interface
+to TANGO devices...</p>
+<p><strong>Definition:</strong> devapi.h:56</p>
+<p><a class="reference external" href="../../d4/d49/classTango_1_1AsynReq.html#ae3bcdf7be7d8fb5e17b0e2a00a23206d">Tango::AsynReq::cb_req_table</a></p>
+<p>map&lt; CORBA::Request_ptr, TgRequest &gt; cb_req_table</p>
+<p><strong>Definition:</strong> devasyn.h:420</p>
+<p><a class="reference external" href="../../d4/d49/classTango_1_1AsynReq.html#a0ee69f2ee61f7c3cb9832b5d65ba175a">Tango::AsynReq::get_cb_dev_table</a></p>
+<p>multimap&lt; Connection *, TgRequest &gt; &amp; get_cb_dev_table()</p>
+<p><strong>Definition:</strong> devasyn.h:408</p>
+<p><a class="reference external" href="../../db/d68/classTango_1_1TgRequest.html#a6ae144d0765e704695987f8b20255343a3466c21a6337f0cd76a5bbd90a566172">Tango::TgRequest::READ_ATTR</a></p>
+<p><strong>Definition:</strong> devasyn.h:363</p>
+<p><a class="reference external" href="../../d4/d49/classTango_1_1AsynReq.html#acde2d2aba10f49ff4fe5fad1ab508370">Tango::AsynReq::cancelled_request</a></p>
+<p>vector&lt; long &gt; cancelled_request</p>
+<p><strong>Definition:</strong> devasyn.h:422</p>
+<p><a class="reference external" href="../../da/d7f/classTango_1_1AttrWrittenEvent.html#ab66070e56148e1aed6c9e5125af2c8dd">Tango::AttrWrittenEvent::errors</a></p>
+<p>NamedDevFailedList &amp; errors</p>
+<p>The error stack.</p>
+<p><strong>Definition:</strong> devasyn.h:197</p>
+<p><a class="reference external" href="../../d4/ded/classTango_1_1CallBack.html#aac4aa49f209d8db18ce415f2a1a5d13d">Tango::CallBack::push_event</a></p>
+<p>virtual void push_event(PipeEventData *ped)</p>
+<p>Pipe event callback method.</p>
+<p><strong>Definition:</strong> devasyn.h:317</p>
+<p><a class="reference external" href="../../dc/d43/classTango_1_1CmdDoneEvent.html">Tango::CmdDoneEvent</a></p>
+<p>Asynchronous command execution callback data.</p>
+<p><strong>Definition:</strong> devasyn.h:76</p>
+<p><a class="reference external" href="../../d4/d49/classTango_1_1AsynReq.html#aaf398fa29d8dd69b8a3e8140bc064ac4">Tango::AsynReq::AsynReq</a></p>
+<p>AsynReq(UniqIdent *ptr)</p>
+<p><strong>Definition:</strong> devasyn.h:390</p>
+<p><a class="reference external" href="../../dc/d43/classTango_1_1CmdDoneEvent.html#a9b3ff5a65147c469b19d5deafecf600a">Tango::CmdDoneEvent::cmd_name</a></p>
+<p>string &amp; cmd_name</p>
+<p>The command name.</p>
+<p><strong>Definition:</strong> devasyn.h:91</p>
+<p><a class="reference external" href="../../d5/dad/classTango_1_1UniqIdent.html#a5e162225e409d439ebb8d92976511651">Tango::UniqIdent::ctr</a></p>
+<p>long ctr</p>
+<p><strong>Definition:</strong> devasyn.h:354</p>
+<p><a class="reference external" href="../../dc/d42/classTango_1_1AttrReadEvent.html">Tango::AttrReadEvent</a></p>
+<p>Asynchronous read attribute execution callback data.</p>
+<p><strong>Definition:</strong> devasyn.h:129</p>
+<ul class="simple">
+<li><a class="reference external" href="../../dir_93bc669b4520ad36068f344e109b7d17.html">include</a></li>
+<li><a class="reference external" href="../../dir_8ff48e8f3ef80891a9957ae5e9583431.html">tango</a></li>
+<li><a class="reference external" href="../../dir_aabb28ef55dfa122001606060d01cd05.html">client</a></li>
+<li><a class="reference external" href="../../db/d02/devasyn_8h.html">devasyn.h</a></li>
+<li>Generated on Fri Oct 7 2016 11:11:15 for Tango Core Classes Reference
+by <a class="reference external" href="http://www.doxygen.org/index.html"><img alt="doxygen" src="../../_images/doxygen287.png" /></a> 1.8.8</li>
+</ul>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/db/d02/devasyn_8h_source.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, 3Controls.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.8</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+      |
+      <a href="../../_sources/db/d02/devasyn_8h_source.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

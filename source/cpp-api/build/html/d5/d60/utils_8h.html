@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Classes &#8212; Tango Core Classes Reference Documentation 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="top" title="Tango Core Classes Reference Documentation 1.0 documentation" href="../../index.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><img alt="Logo" src="../../_images/logo140.jpg" /></td>
+<td>Tango Core Classes Reference &nbsp;9.2.5</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><a class="reference external" href="../../index.html">Main&nbsp;Page</a></li>
+<li><a class="reference external" href="../../pages.html">Related&nbsp;Pages</a></li>
+<li><a class="reference external" href="../../modules.html">Modules</a></li>
+<li><a class="reference external" href="../../namespaces.html">Namespaces</a></li>
+<li><a class="reference external" href="../../annotated.html">Classes</a></li>
+<li><a class="reference external" href="../../files.html">Files</a></li>
+<li><a class="reference external" href="../../files.html">File&nbsp;List</a></li>
+<li><a class="reference external" href="../../globals.html">File&nbsp;Members</a></li>
+</ul>
+<p><a class="reference external" href="#nested-classes">Classes</a> | <a class="reference external" href="#namespaces">Namespaces</a> |
+<a class="reference external" href="#func-members">Functions</a></p>
+<p>utils.h File Reference</p>
+<div class="line-block">
+<div class="line"><code class="docutils literal"><span class="pre">#include</span> <span class="pre">&lt;tango.h&gt;</span></code></div>
+<div class="line-block">
+<div class="line"><code class="docutils literal"><span class="pre">#include</span> <span class="pre">&lt;tango/server/pollext.h&gt;</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">#include</span> <span class="pre">&lt;tango/server/subdev_diag.h&gt;</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">#include</span> <span class="pre">&lt;new&gt;</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">#include</span> <span class="pre">&lt;tango/server/rootattreg.h&gt;</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">#include</span> <span class="pre">&lt;tango/server/pollthread.h&gt;</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">#include</span> <span class="pre">&lt;unistd.h&gt;</span></code></div>
+</div>
+</div>
+<p>Include dependency graph for utils.h:</p>
+<p><img alt="image1" src="../../_images/utils_8h__incl.png" /></p>
+<p><a class="reference external" href="../../d5/d60/utils_8h_source.html">Go to the source code of this
+file.</a></p>
+<div class="section" id="classes">
+<h1>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h1>
+<p>class</p>
+<p><a class="reference external" href="../../de/dbe/classTango_1_1AutoPyLock.html">Tango::AutoPyLock</a></p>
+<p>class</p>
+<p><a class="reference external" href="../../d9/dd7/classTango_1_1CreatePyLock.html">Tango::CreatePyLock</a></p>
+<p>struct</p>
+<p><a class="reference external" href="../../d5/db2/structTango_1_1DevDbUpd.html">Tango::DevDbUpd</a></p>
+<p>class</p>
+<p><a class="reference external" href="../../d6/d62/classTango_1_1Interceptors.html">Tango::Interceptors</a></p>
+<p>struct</p>
+<p><a class="reference external" href="../../dc/d66/structTango_1_1PollingThreadInfo.html">Tango::PollingThreadInfo</a></p>
+<p>class</p>
+<p><a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html">Tango::PyData</a></p>
+<p>class</p>
+<p><a class="reference external" href="../../d4/d9f/classTango_1_1PyLock.html">Tango::PyLock</a></p>
+<p>class</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html">Tango::Util</a></p>
+<div class="line-block">
+<div class="line">This class is a used to store TANGO device server process data and to</div>
+</div>
+<p>provide the user with a set of utilities method.
+<a class="reference external" href="../../d4/deb/classTango_1_1Util.html#details">More...</a></p>
+</div>
+<div class="section" id="namespaces">
+<h1>Namespaces<a class="headerlink" href="#namespaces" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="../../de/ddf/namespaceTango.html">Tango</a></p>
+<div class="line-block">
+<div class="line">=============================================================================</div>
+</div>
+</div>
+<div class="section" id="functions">
+<h1>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h1>
+<p>long</p>
+<p><a class="reference external" href="../../de/ddf/namespaceTango.html#ad7ae390b6e548a26ff1b5cf3075ff577">Tango::_convert_tango_lib_release</a>
+()</p>
+<p>void</p>
+<p><a class="reference external" href="../../de/ddf/namespaceTango.html#adb1cc901df596cd8aea1e5d51f0cf6ac">Tango::clear_att_dim</a>
+(Tango::AttributeValue_3 &amp;att_val)</p>
+<p>void</p>
+<p><a class="reference external" href="../../de/ddf/namespaceTango.html#a81b6f4ac7fbc8951b4ea9983a42ab7c8">Tango::clear_att_dim</a>
+(Tango::AttributeValue_4 &amp;att_val)</p>
+<p>void</p>
+<p><a class="reference external" href="../../de/ddf/namespaceTango.html#a63d4a1bf19f45c384a1524f5f73162d7">Tango::clear_att_dim</a>
+(Tango::AttributeValue_5 &amp;att_val)</p>
+<p>void</p>
+<p><a class="reference external" href="../../de/ddf/namespaceTango.html#a43fad155477a5f86d88574f1d8e2ac21">Tango::create_PyPerThData</a>
+(omni::omniInterceptors::createThread_T::info_T &amp;)</p>
+<p>CORBA::Any *</p>
+<p><a class="reference external" href="../../de/ddf/namespaceTango.html#a3b3bd64ad7f36f411ad17050d314a460">Tango::return_empty_any</a>
+(const char *cmd)</p>
+<div class="line-block">
+<div class="line">Create and return an empty CORBA Any object.</div>
+</div>
+<p><a class="reference external" href="#a3b3bd64ad7f36f411ad17050d314a460">More...</a></p>
+<ul class="simple">
+<li><a class="reference external" href="../../dir_93bc669b4520ad36068f344e109b7d17.html">include</a></li>
+<li><a class="reference external" href="../../dir_8ff48e8f3ef80891a9957ae5e9583431.html">tango</a></li>
+<li><a class="reference external" href="../../dir_53b28a22454594c5818f3f3f5a9fd698.html">server</a></li>
+<li><a class="reference external" href="../../d5/d60/utils_8h.html">utils.h</a></li>
+<li>Generated on Fri Oct 7 2016 11:11:15 for Tango Core Classes Reference
+by <a class="reference external" href="http://www.doxygen.org/index.html"><img alt="doxygen" src="../../_images/doxygen140.png" /></a> 1.8.8</li>
+</ul>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Classes</a></li>
+<li><a class="reference internal" href="#namespaces">Namespaces</a></li>
+<li><a class="reference internal" href="#functions">Functions</a></li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/d5/d60/utils_8h.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, 3Controls.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.8</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+      |
+      <a href="../../_sources/d5/d60/utils_8h.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

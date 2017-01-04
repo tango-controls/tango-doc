@@ -1,0 +1,436 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Public Member Functions &#8212; Tango Core Classes Reference Documentation 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="top" title="Tango Core Classes Reference Documentation 1.0 documentation" href="../../index.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><img alt="Logo" src="../../_images/logo180.jpg" /></td>
+<td>Tango Core Classes Reference &nbsp;9.2.5</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><a class="reference external" href="../../index.html">Main&nbsp;Page</a></li>
+<li><a class="reference external" href="../../pages.html">Related&nbsp;Pages</a></li>
+<li><a class="reference external" href="../../modules.html">Modules</a></li>
+<li><a class="reference external" href="../../namespaces.html">Namespaces</a></li>
+<li><a class="reference external" href="../../annotated.html">Classes</a></li>
+<li><a class="reference external" href="../../files.html">Files</a></li>
+<li><a class="reference external" href="../../annotated.html">Class&nbsp;List</a></li>
+<li><a class="reference external" href="../../inherits.html">Class&nbsp;Hierarchy</a></li>
+<li><a class="reference external" href="../../functions.html">Class&nbsp;Members</a></li>
+</ul>
+<p><a class="reference external" href="#nested-classes">Classes</a> | <a class="reference external" href="#pub-methods">Public Member
+Functions</a> | <a class="reference external" href="#pub-static-methods">Static Public Member
+Functions</a> | <a class="reference external" href="../../da/d48/classTango_1_1ApiUtil-members.html">List of all
+members</a></p>
+<p>Tango::ApiUtil Class Reference</p>
+<p><a class="reference external" href="../../d1/d45/group__Client.html">Client classes</a></p>
+<p>Miscellaneous utility methods usefull in a
+<a class="reference external" href="../../de/ddf/namespaceTango.html">Tango</a> client.
+<a class="reference external" href="../../d7/d2a/classTango_1_1ApiUtil.html#details">More...</a></p>
+<div class="section" id="public-member-functions">
+<h1>Public Member Functions<a class="headerlink" href="#public-member-functions" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="../../d1/d45/group__Client.html#ga3a5254b5c0c8de0c71c18bad2bd742bc">cb_sub_model</a></p>
+<p><a class="reference external" href="../../d7/d2a/classTango_1_1ApiUtil.html#af7dd5dc2e904f8af4d12d56386165624">get_asynch_cb_sub_model</a>
+()</p>
+<div class="line-block">
+<div class="line">Get asynchronous callback sub-model.</div>
+</div>
+<p><a class="reference external" href="#af7dd5dc2e904f8af4d12d56386165624">More...</a></p>
+<p>void</p>
+<p><a class="reference external" href="../../d7/d2a/classTango_1_1ApiUtil.html#a5c4038939143cab55c417982b4b896fb">get_asynch_replies</a>
+()</p>
+<div class="line-block">
+<div class="line">Fire callback methods for asynchronous request(s)</div>
+</div>
+<p><a class="reference external" href="#a5c4038939143cab55c417982b4b896fb">More...</a></p>
+<p>void</p>
+<p><a class="reference external" href="../../d7/d2a/classTango_1_1ApiUtil.html#a5084d60c3ba8c3a8d20e22bb2b3355c7">get_asynch_replies</a>
+(long timeout)</p>
+<div class="line-block">
+<div class="line">Fire callback methods for asynchronous request(s) with timeout.</div>
+</div>
+<p><a class="reference external" href="#a5084d60c3ba8c3a8d20e22bb2b3355c7">More...</a></p>
+<p>size_t</p>
+<p><a class="reference external" href="../../d7/d2a/classTango_1_1ApiUtil.html#a260c968e8e556692681c5b3af065b73b">pending_asynch_call</a>
+(<a class="reference external" href="../../d1/d45/group__Client.html#ga6c80e2130b95642d5c39ee8db7a25620">asyn_req_type</a>
+ty)</p>
+<div class="line-block">
+<div class="line">Get pending asynchronous requets number.</div>
+</div>
+<p><a class="reference external" href="#a260c968e8e556692681c5b3af065b73b">More...</a></p>
+<p>void</p>
+<p><a class="reference external" href="../../d7/d2a/classTango_1_1ApiUtil.html#a316875dce449fb9b4fca8ec932f17d75">set_asynch_cb_sub_model</a>
+(<a class="reference external" href="../../d1/d45/group__Client.html#ga3a5254b5c0c8de0c71c18bad2bd742bc">cb_sub_model</a>
+csm)</p>
+<div class="line-block">
+<div class="line">Set asynchronous callback sub-model.</div>
+</div>
+<p><a class="reference external" href="#a316875dce449fb9b4fca8ec932f17d75">More...</a></p>
+</div>
+<div class="section" id="static-public-member-functions">
+<h1>Static Public Member Functions<a class="headerlink" href="#static-public-member-functions" title="Permalink to this headline">¶</a></h1>
+<p>static TANGO_IMP_EXP void</p>
+<p><a class="reference external" href="../../d7/d2a/classTango_1_1ApiUtil.html#a6edde9186c939355ab52dc2cffa82e8c">cleanup</a>
+()</p>
+<div class="line-block">
+<div class="line">Destroy the <a class="reference external" href="../../d7/d2a/classTango_1_1ApiUtil.html">ApiUtil</a></div>
+</div>
+<p>instance. <a class="reference external" href="#a6edde9186c939355ab52dc2cffa82e8c">More...</a></p>
+<p>static TANGO_IMP_EXP int</p>
+<p><a class="reference external" href="../../d7/d2a/classTango_1_1ApiUtil.html#a8a7109bd160494b0bd0dbbe60478117e">get_env_var</a>
+(const char *name, string &amp;value)</p>
+<div class="line-block">
+<div class="line">Get environment variable.</div>
+</div>
+<p><a class="reference external" href="#a8a7109bd160494b0bd0dbbe60478117e">More...</a></p>
+<p>static TANGO_IMP_EXP
+<a class="reference external" href="../../d7/d2a/classTango_1_1ApiUtil.html">ApiUtil</a> *</p>
+<p><a class="reference external" href="../../d7/d2a/classTango_1_1ApiUtil.html#afbc9fb1ffff7730689224dea5a3d9676">instance</a>
+()</p>
+<div class="line-block">
+<div class="line">Retrieve the <a class="reference external" href="../../d7/d2a/classTango_1_1ApiUtil.html">ApiUtil</a></div>
+</div>
+<p>instance. <a class="reference external" href="#afbc9fb1ffff7730689224dea5a3d9676">More...</a></p>
+</div>
+<div class="section" id="detailed-description">
+<h1>Detailed Description<a class="headerlink" href="#detailed-description" title="Permalink to this headline">¶</a></h1>
+<p>Miscellaneous utility methods usefull in a
+<a class="reference external" href="../../de/ddf/namespaceTango.html">Tango</a> client.</p>
+<p>This class is a singleton. Therefore, it is not necessary to create it.
+It will be automatically done. A static method allows a user to retrieve
+the instance</p>
+<dl class="docutils">
+<dt>Author</dt>
+<dd>taurel</dd>
+<dt>Revision</dt>
+<dd>1</dd>
+</dl>
+</div>
+<div class="section" id="member-function-documentation">
+<h1>Member Function Documentation<a class="headerlink" href="#member-function-documentation" title="Permalink to this headline">¶</a></h1>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Destroy the <a class="reference external" href="../../d7/d2a/classTango_1_1ApiUtil.html">ApiUtil</a>
+instance.</p>
+<p>Destroy the <a class="reference external" href="../../d7/d2a/classTango_1_1ApiUtil.html">ApiUtil</a>
+singleton instance.</p>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Get asynchronous callback sub-model.</p>
+<p>Get the asynchronous callback sub-model</p>
+<dl class="docutils">
+<dt>Returns</dt>
+<dd>The asynchronous callback sub-model</dd>
+</dl>
+<table border="1" class="docutils">
+<colgroup>
+<col width="71%" />
+<col width="8%" />
+<col width="6%" />
+<col width="8%" />
+<col width="6%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>void Tango::ApiUtil::get_asynch_replies</td>
+<td>(</td>
+<td>&nbsp;</td>
+<td>)</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p>Fire callback methods for asynchronous request(s)</p>
+<p>Fire callback methods for all (any device) asynchronous requests
+(command and attribute) with already arrived replied. Returns
+immediately if there is no replies already arrived or if there is no
+asynchronous requests.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="56%" />
+<col width="6%" />
+<col width="11%" />
+<col width="16%" />
+<col width="6%" />
+<col width="5%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>void Tango::ApiUtil::get_asynch_replies</td>
+<td>(</td>
+<td>long</td>
+<td><em>timeout</em></td>
+<td>)</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p>Fire callback methods for asynchronous request(s) with timeout.</p>
+<p>Fire callback methods for all (any device) asynchronous requests
+(command and attributes) with already arrived replied. Wait and block
+the caller for timeout milliseconds if they are some device asynchronous
+requests which are not yet arrived. Returns immediately if there is no
+asynchronous request. If timeout is set to 0, the call waits until all
+the asynchronous requests sent has received a reply.</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="20%" />
+<col width="28%" />
+<col width="53%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>[in]</td>
+<td>timeout</td>
+<td>The timeout value</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Get environment variable.</p>
+<p>Get environment variable. On Unixes OS, this call tries to get the
+variable in the caller environment then in a file <a href="#id1"><span class="problematic" id="id2">**</span></a>.tangorc in the user
+home directory and finally in a file <em>/etc/tangorc</em>. On Windows, this
+call looks in the user environment then in a file stored in
+TANGO_HOME%/tangorc. This method returns 0 of the environment variable
+is found. Otherwise, it returns -1.</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="17%" />
+<col width="17%" />
+<col width="65%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>[in]</td>
+<td>name</td>
+<td>The environment variable name</td>
+</tr>
+<tr class="row-even"><td>[out]</td>
+<td>value</td>
+<td>The environment variable value</td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt>Returns</dt>
+<dd>Set to -1 if the environment varaibel is not found</dd>
+</dl>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Retrieve the <a class="reference external" href="../../d7/d2a/classTango_1_1ApiUtil.html">ApiUtil</a>
+instance.</p>
+</div>
+<div class="section" id="some-inline-methods">
+<h1>Some inline methods<a class="headerlink" href="#some-inline-methods" title="Permalink to this headline">¶</a></h1>
+<p>Return the <a class="reference external" href="../../d7/d2a/classTango_1_1ApiUtil.html">ApiUtil</a>
+singleton instance</p>
+<dl class="docutils">
+<dt>Returns</dt>
+<dd>The singleton instance</dd>
+</dl>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Get pending asynchronous requets number.</p>
+<p>Return number of asynchronous pending requests (any device).</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="19%" />
+<col width="14%" />
+<col width="67%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>[in]</td>
+<td>ty</td>
+<td>Asynchronous request type</td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt>Returns</dt>
+<dd>Pending asynchronous request number</dd>
+</dl>
+<table border="1" class="docutils">
+<colgroup>
+<col width="31%" />
+<col width="3%" />
+<col width="55%" />
+<col width="5%" />
+<col width="3%" />
+<col width="2%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>void Tango::ApiUtil::set_asynch_cb_sub_model</td>
+<td>(</td>
+<td><a class="reference external" href="../../d1/d45/group__Client.html#ga3a5254b5c0c8de0c71c18bad2bd742bc">cb_sub_model</a></td>
+<td><em>csm</em></td>
+<td>)</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p>Set asynchronous callback sub-model.</p>
+<p>Set the asynchronous callback sub-model between the pull and push
+sub-model. See <a class="reference external" href="../../de/ddf/namespaceTango.html">Tango</a> book chapter
+4.5 to read the definition of these sub-models. By default, all
+<a class="reference external" href="../../de/ddf/namespaceTango.html">Tango</a> client using asynchronous
+callback model are in pull sub-model. This call must be used to switch
+to the push sub-model. NOTE that in push sub-model, a separate thread is
+spawned to deal with server replies.</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="15%" />
+<col width="13%" />
+<col width="72%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>[in]</td>
+<td>csm</td>
+<td>The asynchronous callback sub-model</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<hr class="docutils" />
+<p>The documentation for this class was generated from the following file:</p>
+<ul class="simple">
+<li><a class="reference external" href="../../d9/ddc/devapi_8h_source.html">devapi.h</a></li>
+<li><a class="reference external" href="../../de/ddf/namespaceTango.html">Tango</a></li>
+<li><a class="reference external" href="../../d7/d2a/classTango_1_1ApiUtil.html">ApiUtil</a></li>
+<li>Generated on Fri Oct 7 2016 11:11:16 for Tango Core Classes Reference
+by <a class="reference external" href="http://www.doxygen.org/index.html"><img alt="doxygen" src="../../_images/doxygen180.png" /></a> 1.8.8</li>
+</ul>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Public Member Functions</a></li>
+<li><a class="reference internal" href="#static-public-member-functions">Static Public Member Functions</a></li>
+<li><a class="reference internal" href="#detailed-description">Detailed Description</a></li>
+<li><a class="reference internal" href="#member-function-documentation">Member Function Documentation</a></li>
+<li><a class="reference internal" href="#some-inline-methods">Some inline methods</a></li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/d7/d2a/classTango_1_1ApiUtil.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, 3Controls.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.8</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+      |
+      <a href="../../_sources/d7/d2a/classTango_1_1ApiUtil.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

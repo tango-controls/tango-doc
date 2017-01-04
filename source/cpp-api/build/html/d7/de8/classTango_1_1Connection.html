@@ -1,0 +1,1359 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Public Member Functions &#8212; Tango Core Classes Reference Documentation 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="top" title="Tango Core Classes Reference Documentation 1.0 documentation" href="../../index.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><img alt="Logo" src="../../_images/logo197.jpg" /></td>
+<td>Tango Core Classes Reference &nbsp;9.2.5</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><a class="reference external" href="../../index.html">Main&nbsp;Page</a></li>
+<li><a class="reference external" href="../../pages.html">Related&nbsp;Pages</a></li>
+<li><a class="reference external" href="../../modules.html">Modules</a></li>
+<li><a class="reference external" href="../../namespaces.html">Namespaces</a></li>
+<li><a class="reference external" href="../../annotated.html">Classes</a></li>
+<li><a class="reference external" href="../../files.html">Files</a></li>
+<li><a class="reference external" href="../../annotated.html">Class&nbsp;List</a></li>
+<li><a class="reference external" href="../../inherits.html">Class&nbsp;Hierarchy</a></li>
+<li><a class="reference external" href="../../functions.html">Class&nbsp;Members</a></li>
+</ul>
+<p><a class="reference external" href="#nested-classes">Classes</a> | <a class="reference external" href="#friends">Friends</a> | <a class="reference external" href="../../d4/dc8/classTango_1_1Connection-members.html">List of all
+members</a></p>
+<p>Tango::Connection Class Referenceabstract</p>
+<p><a class="reference external" href="../../d1/d45/group__Client.html">Client classes</a></p>
+<p>Base class for <a class="reference external" href="../../de/ddf/namespaceTango.html">Tango</a> device
+access. <a class="reference external" href="../../d7/de8/classTango_1_1Connection.html#details">More...</a></p>
+<p>Inheritance diagram for Tango::Connection:</p>
+<p><img alt="Inheritance graph" src="../../_images/classTango_1_1Connection__inherit__graph.png" /></p>
+<p>[<a class="reference external" href="../../graph_legend.html">legend</a>]</p>
+<div class="section" id="public-member-functions">
+<h1>Public Member Functions<a class="headerlink" href="#public-member-functions" title="Permalink to this headline">¶</a></h1>
+<p>Miscellaneous methods</p>
+<p>virtual void</p>
+<p><a class="reference external" href="../../d7/de8/classTango_1_1Connection.html#a0a05fa878281ae0665274d481ed1bfe4">set_timeout_millis</a>
+(int timeout)</p>
+<div class="line-block">
+<div class="line">Set device timeout. <a class="reference external" href="#a0a05fa878281ae0665274d481ed1bfe4">More...</a></div>
+</div>
+<p>virtual int</p>
+<p><a class="reference external" href="../../d7/de8/classTango_1_1Connection.html#af911bbab02b415ebd3dc8faeb7d687a7">get_timeout_millis</a>
+()</p>
+<div class="line-block">
+<div class="line">Get device timeout. <a class="reference external" href="#af911bbab02b415ebd3dc8faeb7d687a7">More...</a></div>
+</div>
+<p>int</p>
+<p><a class="reference external" href="../../d7/de8/classTango_1_1Connection.html#a5d1843ba0973d0845939a4f106dbad28">get_idl_version</a>
+()</p>
+<div class="line-block">
+<div class="line">Get device IDL version.</div>
+</div>
+<p><a class="reference external" href="#a5d1843ba0973d0845939a4f106dbad28">More...</a></p>
+<p>virtual Tango::DevSource</p>
+<p><a class="reference external" href="../../d7/de8/classTango_1_1Connection.html#afcaee3ed7d1a75a21749ad64fbee8700">get_source</a>
+()</p>
+<div class="line-block">
+<div class="line">Get device source. <a class="reference external" href="#afcaee3ed7d1a75a21749ad64fbee8700">More...</a></div>
+</div>
+<p>virtual void</p>
+<p><a class="reference external" href="../../d7/de8/classTango_1_1Connection.html#adaeaaf890490018e714dc1a92516b76f">set_source</a>
+(Tango::DevSource sou)</p>
+<div class="line-block">
+<div class="line">Set device source. <a class="reference external" href="#adaeaaf890490018e714dc1a92516b76f">More...</a></div>
+</div>
+<p>virtual void</p>
+<p><a class="reference external" href="../../d7/de8/classTango_1_1Connection.html#af1fa8c85c338781be7d16a99581cf383">set_transparency_reconnection</a>
+(bool val)</p>
+<div class="line-block">
+<div class="line">Set device transparency (reconnection) mode.</div>
+</div>
+<p><a class="reference external" href="#af1fa8c85c338781be7d16a99581cf383">More...</a></p>
+<p>virtual bool</p>
+<p><a class="reference external" href="../../d7/de8/classTango_1_1Connection.html#ab9dad67ef6e9ba3268ac9d5627f70ea0">get_transparency_reconnection</a>
+()</p>
+<div class="line-block">
+<div class="line">Get device transparency (reconnection) mode.</div>
+</div>
+<p><a class="reference external" href="#ab9dad67ef6e9ba3268ac9d5627f70ea0">More...</a></p>
+<p>Synchronous command oriented methods</p>
+<p>virtual <a class="reference external" href="../../df/d22/classTango_1_1DeviceData.html">DeviceData</a></p>
+<p><a class="reference external" href="../../d7/de8/classTango_1_1Connection.html#ad878054e953c5288ac0bc137c6307347">command_inout</a>
+(string &amp;cmd_name)</p>
+<div class="line-block">
+<div class="line">Execute a command (without input data)</div>
+</div>
+<p><a class="reference external" href="#ad878054e953c5288ac0bc137c6307347">More...</a></p>
+<p>virtual <a class="reference external" href="../../df/d22/classTango_1_1DeviceData.html">DeviceData</a></p>
+<p><a class="reference external" href="../../d7/de8/classTango_1_1Connection.html#affa1c0fff97f714eddf69ebdb17c6665">command_inout</a>
+(const char *cmd_name)</p>
+<div class="line-block">
+<div class="line">Execute a command (without input data)</div>
+</div>
+<p><a class="reference external" href="#affa1c0fff97f714eddf69ebdb17c6665">More...</a></p>
+<p>virtual <a class="reference external" href="../../df/d22/classTango_1_1DeviceData.html">DeviceData</a></p>
+<p><a class="reference external" href="../../d7/de8/classTango_1_1Connection.html#af5d9faa2fff08068c579202d29404df5">command_inout</a>
+(string &amp;cmd_name,
+<a class="reference external" href="../../df/d22/classTango_1_1DeviceData.html">DeviceData</a> &amp;d_in)</p>
+<div class="line-block">
+<div class="line">Execute a command (with input data)</div>
+</div>
+<p><a class="reference external" href="#af5d9faa2fff08068c579202d29404df5">More...</a></p>
+<p>virtual <a class="reference external" href="../../df/d22/classTango_1_1DeviceData.html">DeviceData</a></p>
+<p><a class="reference external" href="../../d7/de8/classTango_1_1Connection.html#a484969b4553471d1f15d873cc638cc1d">command_inout</a>
+(const char *cmd_name,
+<a class="reference external" href="../../df/d22/classTango_1_1DeviceData.html">DeviceData</a> &amp;d_in)</p>
+<div class="line-block">
+<div class="line">Execute a command (with input data)</div>
+</div>
+<p><a class="reference external" href="#a484969b4553471d1f15d873cc638cc1d">More...</a></p>
+<p>Aynchronous command oriented methods</p>
+<p>virtual long</p>
+<p><a class="reference external" href="../../d7/de8/classTango_1_1Connection.html#a253afbec47129a1f235e5642648fb9ae">command_inout_asynch</a>
+(const char *cmd_name,
+<a class="reference external" href="../../df/d22/classTango_1_1DeviceData.html">DeviceData</a> &amp;argin, bool
+forget=false)</p>
+<div class="line-block">
+<div class="line">Execute a command asynchronously (with input argument)</div>
+</div>
+<p><a class="reference external" href="#a253afbec47129a1f235e5642648fb9ae">More...</a></p>
+<p>virtual long</p>
+<p><a class="reference external" href="../../d7/de8/classTango_1_1Connection.html#a05d55e0b38d0af49f77cbf1ccb3fbe56">command_inout_asynch</a>
+(string &amp;cmd_name,
+<a class="reference external" href="../../df/d22/classTango_1_1DeviceData.html">DeviceData</a> &amp;argin, bool
+forget=false)</p>
+<div class="line-block">
+<div class="line">Execute a command asynchronously (with input argument)</div>
+</div>
+<p><a class="reference external" href="#a05d55e0b38d0af49f77cbf1ccb3fbe56">More...</a></p>
+<p>virtual long</p>
+<p><a class="reference external" href="../../d7/de8/classTango_1_1Connection.html#a13709d9e18276ce038e358e9ef7e54e0">command_inout_asynch</a>
+(const char *cmd_name, bool forget=false)</p>
+<div class="line-block">
+<div class="line">Execute a command asynchronously.</div>
+</div>
+<p><a class="reference external" href="#a13709d9e18276ce038e358e9ef7e54e0">More...</a></p>
+<p>virtual long</p>
+<p><a class="reference external" href="../../d7/de8/classTango_1_1Connection.html#a3ac6eaa4960de354249d9d9fa6c09b32">command_inout_asynch</a>
+(string &amp;cmd_name, bool forget=false)</p>
+<div class="line-block">
+<div class="line">Execute a command asynchronously.</div>
+</div>
+<p><a class="reference external" href="#a3ac6eaa4960de354249d9d9fa6c09b32">More...</a></p>
+<p>virtual <a class="reference external" href="../../df/d22/classTango_1_1DeviceData.html">DeviceData</a></p>
+<p><a class="reference external" href="../../d7/de8/classTango_1_1Connection.html#afae0ebefc88ab77671fc717f30b53c8f">command_inout_reply</a>
+(long id)</p>
+<div class="line-block">
+<div class="line">Check an asynchronous command_inout answer is arrived.</div>
+</div>
+<p><a class="reference external" href="#afae0ebefc88ab77671fc717f30b53c8f">More...</a></p>
+<p>virtual <a class="reference external" href="../../df/d22/classTango_1_1DeviceData.html">DeviceData</a></p>
+<p><a class="reference external" href="../../d7/de8/classTango_1_1Connection.html#a02eedd172fbcb947d0a93f10d4f8def1">command_inout_reply</a>
+(long id, long timeout)</p>
+<div class="line-block">
+<div class="line">Check an asynchronous command_inout answer is arrived with timeout.</div>
+</div>
+<p><a class="reference external" href="#a02eedd172fbcb947d0a93f10d4f8def1">More...</a></p>
+<p>virtual void</p>
+<p><a class="reference external" href="../../d7/de8/classTango_1_1Connection.html#ab15806ba65762f244739c66e6a978fcc">command_inout_asynch</a>
+(string &amp;cmd_name,
+<a class="reference external" href="../../d4/ded/classTango_1_1CallBack.html">CallBack</a> &amp;cb)</p>
+<div class="line-block">
+<div class="line">Execute a command asynchronously with callback.</div>
+</div>
+<p><a class="reference external" href="#ab15806ba65762f244739c66e6a978fcc">More...</a></p>
+<p>virtual void</p>
+<p><a class="reference external" href="../../d7/de8/classTango_1_1Connection.html#a1b7ee02774b5ce6263539bbc62c20966">command_inout_asynch</a>
+(const char *cmd_name,
+<a class="reference external" href="../../d4/ded/classTango_1_1CallBack.html">CallBack</a> &amp;cb)</p>
+<div class="line-block">
+<div class="line">Execute a command asynchronously with callback.</div>
+</div>
+<p><a class="reference external" href="#a1b7ee02774b5ce6263539bbc62c20966">More...</a></p>
+<p>virtual void</p>
+<p><a class="reference external" href="../../d7/de8/classTango_1_1Connection.html#af29ba99c37cb252ab1d386d192f2721f">command_inout_asynch</a>
+(string &amp;cmd_name,
+<a class="reference external" href="../../df/d22/classTango_1_1DeviceData.html">DeviceData</a> &amp;argin,
+<a class="reference external" href="../../d4/ded/classTango_1_1CallBack.html">CallBack</a> &amp;cb)</p>
+<div class="line-block">
+<div class="line">Execute a command asynchronously with input value and callback.</div>
+</div>
+<p><a class="reference external" href="#af29ba99c37cb252ab1d386d192f2721f">More...</a></p>
+<p>virtual void</p>
+<p><a class="reference external" href="../../d7/de8/classTango_1_1Connection.html#a0bb2ab58c99eb35b86f069a2a41c111c">command_inout_asynch</a>
+(const char *cmd_name,
+<a class="reference external" href="../../df/d22/classTango_1_1DeviceData.html">DeviceData</a> &amp;argin,
+<a class="reference external" href="../../d4/ded/classTango_1_1CallBack.html">CallBack</a> &amp;cb)</p>
+<div class="line-block">
+<div class="line">Execute a command asynchronously with input value and callback.</div>
+</div>
+<p><a class="reference external" href="#a0bb2ab58c99eb35b86f069a2a41c111c">More...</a></p>
+<p>Asynchronous attribute related methods</p>
+<p>virtual void</p>
+<p><a class="reference external" href="../../d7/de8/classTango_1_1Connection.html#aab2655c9b8626777ab54dc795a4f0738">get_asynch_replies</a>
+()</p>
+<div class="line-block">
+<div class="line">Fire callback methods.</div>
+</div>
+<p><a class="reference external" href="#aab2655c9b8626777ab54dc795a4f0738">More...</a></p>
+<p>virtual void</p>
+<p><a class="reference external" href="../../d7/de8/classTango_1_1Connection.html#a860bae40f4ad7866c78d4408bb76fa74">get_asynch_replies</a>
+(long timeout)</p>
+<div class="line-block">
+<div class="line">Fire callback methds with timeout.</div>
+</div>
+<p><a class="reference external" href="#a860bae40f4ad7866c78d4408bb76fa74">More...</a></p>
+<p>virtual void</p>
+<p><a class="reference external" href="../../d7/de8/classTango_1_1Connection.html#aa340cda55c9be5ba4c87b92b6213f6f1">cancel_asynch_request</a>
+(long id)</p>
+<div class="line-block">
+<div class="line">Cancel a pending asynchronous request.</div>
+</div>
+<p><a class="reference external" href="#aa340cda55c9be5ba4c87b92b6213f6f1">More...</a></p>
+<p>virtual void</p>
+<p><a class="reference external" href="../../d7/de8/classTango_1_1Connection.html#a7e596bb67ca070748f501ab990d5f880">cancel_all_polling_asynch_request</a>
+()</p>
+<div class="line-block">
+<div class="line">Cancel all pending asynchronous request.</div>
+</div>
+<p><a class="reference external" href="#a7e596bb67ca070748f501ab990d5f880">More...</a></p>
+</div>
+<div class="section" id="friends">
+<h1>Friends<a class="headerlink" href="#friends" title="Permalink to this headline">¶</a></h1>
+<p>class</p>
+<p><a class="reference external" href="../../d7/de8/classTango_1_1Connection.html#afe656a6bbadb8bd0422eb74f87665405">FwdAttribute</a></p>
+</div>
+<div class="section" id="detailed-description">
+<h1>Detailed Description<a class="headerlink" href="#detailed-description" title="Permalink to this headline">¶</a></h1>
+<p>Base class for <a class="reference external" href="../../de/ddf/namespaceTango.html">Tango</a> device
+access.</p>
+<p>Base class for <a class="reference external" href="../../de/ddf/namespaceTango.html">Tango</a> device
+access. This class is pure virtual and can be instanciated as is.</p>
+<dl class="docutils">
+<dt>Author</dt>
+<dd>taurel</dd>
+<dt>Revision</dt>
+<dd>1</dd>
+</dl>
+</div>
+<div class="section" id="member-function-documentation">
+<h1>Member Function Documentation<a class="headerlink" href="#member-function-documentation" title="Permalink to this headline">¶</a></h1>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Cancel all pending asynchronous request.</p>
+<p>Cancel all pending polling asynchronous requests. This is a call local
+to the client. It simply allows the caller not to get the answers of the
+asynchronous requests. It does not interrupt the call execution on the
+remote devices.</p>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Cancel a pending asynchronous request.</p>
+<p>Cancel a pending asynchronous request. id is the asynchronous call
+identifier. This is a call local to the client. It simply allows the
+caller not to get the answer of the asynchronous request. It does not
+interrupt the call execution on the remote device.</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="22%" />
+<col width="16%" />
+<col width="62%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>[in]</td>
+<td>id</td>
+<td>The call identifier</td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt>Exceptions</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="75%" />
+<col width="25%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>AsynCall</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Execute a command (without input data)</p>
+<p>Execute a command on a device which takes no input arguments (void). The
+result is returned in a
+<a class="reference external" href="../../df/d22/classTango_1_1DeviceData.html">DeviceData</a> object</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="20%" />
+<col width="32%" />
+<col width="49%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>[in]</td>
+<td>cmd_name</td>
+<td>The command name</td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt>Returns</dt>
+<dd>The command result</dd>
+<dt>Exceptions</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="81%" />
+<col width="19%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>ConnectionFailed,CommunicationFailed,DeviceUnlocked,DevFailed</td>
+<td>from device</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Execute a command (without input data)</p>
+<p>Execute a command on a device which takes no input arguments (void). The
+result is returned in a
+<a class="reference external" href="../../df/d22/classTango_1_1DeviceData.html">DeviceData</a> object</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="20%" />
+<col width="32%" />
+<col width="49%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>[in]</td>
+<td>cmd_name</td>
+<td>The command name</td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt>Returns</dt>
+<dd>The command result</dd>
+<dt>Exceptions</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="81%" />
+<col width="19%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>ConnectionFailed,CommunicationFailed,DeviceUnlocked,DevFailed</td>
+<td>from device</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Execute a command (with input data)</p>
+<p>Execute a command on a device. Input arguments are passed in a
+<a class="reference external" href="../../df/d22/classTango_1_1DeviceData.html">DeviceData</a> object,
+output is returned as a
+<a class="reference external" href="../../df/d22/classTango_1_1DeviceData.html">DeviceData</a> object.</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="9%" />
+<col width="15%" />
+<col width="76%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>[in]</td>
+<td>cmd_name</td>
+<td>The command name</td>
+</tr>
+<tr class="row-even"><td>[in]</td>
+<td>d_in</td>
+<td><a class="reference external" href="../../d2/d1d/classTango_1_1Command.html">Command</a> input data</td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt>Returns</dt>
+<dd>The command result</dd>
+<dt>Exceptions</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="81%" />
+<col width="19%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>ConnectionFailed,CommunicationFailed,DeviceUnlocked,DevFailed</td>
+<td>from device</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Execute a command (with input data)</p>
+<p>Execute a command on a device. Input arguments are passed in a
+<a class="reference external" href="../../df/d22/classTango_1_1DeviceData.html">DeviceData</a> object,
+output is returned as a
+<a class="reference external" href="../../df/d22/classTango_1_1DeviceData.html">DeviceData</a> object.</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="9%" />
+<col width="15%" />
+<col width="76%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>[in]</td>
+<td>cmd_name</td>
+<td>The command name</td>
+</tr>
+<tr class="row-even"><td>[in]</td>
+<td>d_in</td>
+<td><a class="reference external" href="../../d2/d1d/classTango_1_1Command.html">Command</a> input data</td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt>Returns</dt>
+<dd>The command result</dd>
+<dt>Exceptions</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="81%" />
+<col width="19%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>ConnectionFailed,CommunicationFailed,DeviceUnlocked,DevFailed</td>
+<td>from device</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Execute a command asynchronously (with input argument)</p>
+<p>Execute asynchronously (polling model) a command on a device. Input
+arguments are passed in a
+<a class="reference external" href="../../df/d22/classTango_1_1DeviceData.html">DeviceData</a> object (see
+following chapters on how to insert data into
+<a class="reference external" href="../../df/d22/classTango_1_1DeviceData.html">DeviceData</a> object). The
+last argument is a fire and forget flag. If this flag is set to true,
+this means that the client does not care at all about the server answer
+and will even not try to get it. A false default value is provided.
+Please, note that device re-connection will not take place (in case it
+is needed) if the fire and forget mode is used. Therefore, an
+application using only fire and forget requests is not able to
+automatically re-connnect to device. This call returns an asynchronous
+call identifier which is needed to get the command result.</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="9%" />
+<col width="15%" />
+<col width="76%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>[in]</td>
+<td>cmd_name</td>
+<td>The command name</td>
+</tr>
+<tr class="row-even"><td>[in]</td>
+<td>argin</td>
+<td><a class="reference external" href="../../d2/d1d/classTango_1_1Command.html">Command</a> input data</td>
+</tr>
+<tr class="row-odd"><td>[in]</td>
+<td>forget</td>
+<td>Fire and forget flag</td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt>Returns</dt>
+<dd>The call identifier</dd>
+<dt>Exceptions</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="83%" />
+<col width="17%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>ConnectionFailed</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Execute a command asynchronously (with input argument)</p>
+<p>Execute asynchronously (polling model) a command on a device. Input
+arguments are passed in a
+<a class="reference external" href="../../df/d22/classTango_1_1DeviceData.html">DeviceData</a> object (see
+following chapters on how to insert data into
+<a class="reference external" href="../../df/d22/classTango_1_1DeviceData.html">DeviceData</a> object). The
+last argument is a fire and forget flag. If this flag is set to true,
+this means that the client does not care at all about the server answer
+and will even not try to get it. A false default value is provided.
+Please, note that device re-connection will not take place (in case it
+is needed) if the fire and forget mode is used. Therefore, an
+application using only fire and forget requests is not able to
+automatically re-connnect to device. This call returns an asynchronous
+call identifier which is needed to get the command result.</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="9%" />
+<col width="15%" />
+<col width="76%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>[in]</td>
+<td>cmd_name</td>
+<td>The command name</td>
+</tr>
+<tr class="row-even"><td>[in]</td>
+<td>argin</td>
+<td><a class="reference external" href="../../d2/d1d/classTango_1_1Command.html">Command</a> input data</td>
+</tr>
+<tr class="row-odd"><td>[in]</td>
+<td>forget</td>
+<td>Fire and forget flag</td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt>Returns</dt>
+<dd>The call identifier</dd>
+<dt>Exceptions</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="83%" />
+<col width="17%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>ConnectionFailed</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Execute a command asynchronously.</p>
+<p>Execute asynchronously (polling model) a command on a device which takes
+no input argument. The last argument is a fire and forget flag. If this
+flag is set to true, this means that the client does not care at all
+about the server answer and will even not try to get it. A false default
+value is provided. Please, note that device re-connection will not take
+place (in case it is needed) if the fire and forget mode is used.
+Therefore, an application using only fire and forget requests is not
+able to automatically re-connnect to device. This call returns an
+asynchronous call identifier which is needed to get the command result.</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="18%" />
+<col width="29%" />
+<col width="53%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>[in]</td>
+<td>cmd_name</td>
+<td>The command name</td>
+</tr>
+<tr class="row-even"><td>[in]</td>
+<td>forget</td>
+<td>Fire and forget flag</td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt>Returns</dt>
+<dd>The call identifier</dd>
+<dt>Exceptions</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="83%" />
+<col width="17%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>ConnectionFailed</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Execute a command asynchronously.</p>
+<p>Execute asynchronously (polling model) a command on a device which takes
+no input argument. The last argument is a fire and forget flag. If this
+flag is set to true, this means that the client does not care at all
+about the server answer and will even not try to get it. A false default
+value is provided. Please, note that device re-connection will not take
+place (in case it is needed) if the fire and forget mode is used.
+Therefore, an application using only fire and forget requests is not
+able to automatically re-connnect to device. This call returns an
+asynchronous call identifier which is needed to get the command result.</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="18%" />
+<col width="29%" />
+<col width="53%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>[in]</td>
+<td>cmd_name</td>
+<td>The command name</td>
+</tr>
+<tr class="row-even"><td>[in]</td>
+<td>forget</td>
+<td>Fire and forget flag</td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt>Returns</dt>
+<dd>The call identifier</dd>
+<dt>Exceptions</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="83%" />
+<col width="17%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>ConnectionFailed</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Execute a command asynchronously with callback.</p>
+<p>Execute asynchronously (callback model) a command on a device which
+takes no input argument. The last argument is a reference to a callback
+object. This callback object should be an instance of a user class
+inheriting from the
+<a class="reference external" href="../../d4/ded/classTango_1_1CallBack.html">Tango::CallBack</a> class
+with the cmd_ended() method overloaded.</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="18%" />
+<col width="29%" />
+<col width="53%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>[in]</td>
+<td>cmd_name</td>
+<td>The command name</td>
+</tr>
+<tr class="row-even"><td>[in]</td>
+<td>cb</td>
+<td>The call-back object</td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt>Exceptions</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="83%" />
+<col width="17%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>ConnectionFailed</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Execute a command asynchronously with callback.</p>
+<p>Execute asynchronously (callback model) a command on a device which
+takes no input argument. The last argument is a reference to a callback
+object. This callback object should be an instance of a user class
+inheriting from the
+<a class="reference external" href="../../d4/ded/classTango_1_1CallBack.html">Tango::CallBack</a> class
+with the cmd_ended() method overloaded.</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="18%" />
+<col width="29%" />
+<col width="53%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>[in]</td>
+<td>cmd_name</td>
+<td>The command name</td>
+</tr>
+<tr class="row-even"><td>[in]</td>
+<td>cb</td>
+<td>The call-back object</td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt>Exceptions</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="83%" />
+<col width="17%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>ConnectionFailed</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Execute a command asynchronously with input value and callback.</p>
+<p>Execute asynchronously (callback model) a command on a device. Input
+arguments are passed in a
+<a class="reference external" href="../../df/d22/classTango_1_1DeviceData.html">DeviceData</a> object (see
+following chapters on how to insert data into
+<a class="reference external" href="../../df/d22/classTango_1_1DeviceData.html">DeviceData</a> object). The
+last argument is a reference to a callback object. This callback object
+should be an instance of a user class inheriting from the
+<a class="reference external" href="../../d4/ded/classTango_1_1CallBack.html">Tango::CallBack</a> class
+with the cmd_ended() method overloaded.</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="17%" />
+<col width="28%" />
+<col width="55%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>[in]</td>
+<td>cmd_name</td>
+<td>The command name</td>
+</tr>
+<tr class="row-even"><td>[in]</td>
+<td>argin</td>
+<td>The command input data</td>
+</tr>
+<tr class="row-odd"><td>[in]</td>
+<td>cb</td>
+<td>The call-back object</td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt>Exceptions</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="83%" />
+<col width="17%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>ConnectionFailed</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Execute a command asynchronously with input value and callback.</p>
+<p>Execute asynchronously (callback model) a command on a device. Input
+arguments are passed in a
+<a class="reference external" href="../../df/d22/classTango_1_1DeviceData.html">DeviceData</a> object (see
+following chapters on how to insert data into
+<a class="reference external" href="../../df/d22/classTango_1_1DeviceData.html">DeviceData</a> object). The
+last argument is a reference to a callback object. This callback object
+should be an instance of a user class inheriting from the
+<a class="reference external" href="../../d4/ded/classTango_1_1CallBack.html">Tango::CallBack</a> class
+with the cmd_ended() method overloaded.</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="17%" />
+<col width="28%" />
+<col width="55%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>[in]</td>
+<td>cmd_name</td>
+<td>The command name</td>
+</tr>
+<tr class="row-even"><td>[in]</td>
+<td>argin</td>
+<td>The command input data</td>
+</tr>
+<tr class="row-odd"><td>[in]</td>
+<td>cb</td>
+<td>The call-back object</td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt>Exceptions</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="83%" />
+<col width="17%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>ConnectionFailed</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Check an asynchronous command_inout answer is arrived.</p>
+<p>Check if the answer of an asynchronous command_inout is arrived
+(polling model). id is the asynchronous call identifier. If the reply is
+arrived and if it is a valid reply, it is returned to the caller in a
+<a class="reference external" href="../../df/d22/classTango_1_1DeviceData.html">DeviceData</a> object. If
+the reply is an exception, it is re-thrown by this call. An exception is
+also thrown in case of the reply is not yet arrived. Example :</p>
+<p><a class="reference external" href="../../d9/d83/classTango_1_1DeviceProxy.html">Tango::DeviceProxy</a>
+dev(&#8221;...&#8221;);</p>
+<p>long asyn_id;</p>
+<p>asyn_id = dev.command_inout_asynch(&#8220;MyCmd&#8221;);</p>
+<p>...</p>
+<p>...</p>
+<p>...</p>
+<p>Tango::DeviceData arg;</p>
+<p>try</p>
+<p>{</p>
+<p>arg = dev.command_inout_reply(asyn_id);</p>
+<p>}</p>
+<p>catch(Tango::AsynReplyNotArrived)</p>
+<p>{</p>
+<p>cerr &lt;&lt; &#8220;Command not arrived !&#8221; &lt;&lt;
+<a class="reference external" href="../../d8/dcc/namespacestd.html#a4639029cd5db5428c743a52d095356b9">endl</a>;</p>
+<p>}</p>
+<p>catch (Tango::DevFailed &amp;e)</p>
+<p>{</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#a649730652d055010916449aad7a9b5f3">Tango::Except::print_exception</a>(e);</p>
+<p>}</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="22%" />
+<col width="16%" />
+<col width="62%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>[in]</td>
+<td>id</td>
+<td>The call identifier</td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt>Returns</dt>
+<dd>The command result</dd>
+<dt>Exceptions</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="81%" />
+<col width="19%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>AsynCall,AsynReplyNotArrived,CommunicationFailed,DevFailed</td>
+<td>from device</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Check an asynchronous command_inout answer is arrived with timeout.</p>
+<p>Check if the answer of an asynchronous command_inout is arrived
+(polling model). id is the asynchronous call identifier. If the reply is
+arrived and if it is a valid reply, it is returned to the caller in a
+<a class="reference external" href="../../df/d22/classTango_1_1DeviceData.html">DeviceData</a> object. If
+the reply is an exception, it is re-thrown by this call. If the reply is
+not yet arrived, the call will wait (blocking the process) for the time
+specified in timeout. If after timeout milliseconds, the reply is still
+not there, an exception is thrown. If timeout is set to 0, the call
+waits until the reply arrived.</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="18%" />
+<col width="25%" />
+<col width="57%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>[in]</td>
+<td>id</td>
+<td>The call identifier 8</td>
+</tr>
+<tr class="row-even"><td>[in]</td>
+<td>timeout</td>
+<td>The timeout value</td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt>Returns</dt>
+<dd>The command result</dd>
+<dt>Exceptions</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="81%" />
+<col width="19%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>AsynCall,AsynReplyNotArrived,CommunicationFailed,DevFailed</td>
+<td>from device</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Fire callback methods.</p>
+<p>Fire callback methods for device asynchronous requests with already
+arrived replied. Returns immediately if there is no replies already
+arrived or if there is no asynchronous request for the device. Example :</p>
+<p>class MyCallBack:
+<a class="reference external" href="../../d4/ded/classTango_1_1CallBack.html">Tango::CallBack</a></p>
+<p>{</p>
+<p>public:</p>
+<p>MyCallback(double d):data(d) {};</p>
+<p>virtual void
+cmd_ended(<a class="reference external" href="../../dc/d43/classTango_1_1CmdDoneEvent.html">Tango::CmdDoneEvent</a>
+*);</p>
+<p>private:</p>
+<p>double data;</p>
+<p>};</p>
+<p>void
+MyCallBack::cmd_ended(<a class="reference external" href="../../de/ddf/namespaceTango.html">Tango</a>
+CmdDoneEvent *cmd)</p>
+<p>{</p>
+<p>if (cmd-&gt;err == true)</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#aba359c6be26a171c1d9ebd143f7a9630">Tango::Except::print_error_stack</a>(cmd-&gt;errors);</p>
+<p>else</p>
+<p>{</p>
+<p>short cmd_result;</p>
+<p>cmd-&gt;argout &gt;&gt; cmd_result;</p>
+<p>cout &lt;&lt; &#8220;Command result = &#8221; &lt;&lt; cmd_result &lt;&lt;
+<a class="reference external" href="../../d8/dcc/namespacestd.html#a4639029cd5db5428c743a52d095356b9">endl</a>;</p>
+<p>cout &lt;&lt; &#8220;Callback personal data = &#8221; &lt;&lt; data &lt;&lt;
+<a class="reference external" href="../../d8/dcc/namespacestd.html#a4639029cd5db5428c743a52d095356b9">endl</a>;</p>
+<p>}</p>
+<p>}</p>
+<p>int main(int argc, char *argv[])</p>
+<p>{</p>
+<hr class="docutils" />
+<hr class="docutils" />
+<p><a class="reference external" href="../../d9/d83/classTango_1_1DeviceProxy.html">Tango::DeviceProxy</a>
+dev(&#8221;...&#8221;);</p>
+<p>double my_data = ...;</p>
+<p>MyCallBack cb(my_data);</p>
+<p>...</p>
+<p>dev.command_inout_asynch(&#8220;MyCmd&#8221;,cb);</p>
+<p>...</p>
+<p>...</p>
+<p>...</p>
+<p>dev.get_asynch_replies();</p>
+<p>...</p>
+<p>...</p>
+<p>}</p>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Fire callback methds with timeout.</p>
+<p>Fire callback methods for device asynchronous requests (command and
+attributes) with already arrived replied. Wait and block the caller for
+timeout milliseconds if they are some device asynchronous requests which
+are not yet arrived. Returns immediately if there is no asynchronous
+request for the device. If timeout is set to 0, the call waits until all
+the asynchronous requests sent to the device has received a reply.</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="20%" />
+<col width="28%" />
+<col width="53%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>[in]</td>
+<td>timeout</td>
+<td>The timeout value</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Get device IDL version.</p>
+<p>Get the version of the <a class="reference external" href="../../de/ddf/namespaceTango.html">Tango</a>
+Device IDL interface implemented by the device</p>
+<dl class="docutils">
+<dt>Returns</dt>
+<dd>The device IDL version</dd>
+</dl>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Get device source.</p>
+<p>Get the device data source used by command_inout or read_attribute
+methods. The DevSource is an enumerated type which can be one of {DEV,
+CACHE, CACHE_DEV}. See chapter on Advanced Feature in <a class="reference external" href="http://www.esrf.eu/computing/cs/tango/tango_doc/kernel_doc/ds_prog/index.html">Tango
+book</a>
+for all details regarding polling.</p>
+<dl class="docutils">
+<dt>Returns</dt>
+<dd>The device source flag</dd>
+</dl>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Get device timeout.</p>
+<p>Get the client side timeout in milliseconds.</p>
+<dl class="docutils">
+<dt>Returns</dt>
+<dd>The device timeout (in mS)</dd>
+</dl>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Get device transparency (reconnection) mode.</p>
+<p>Returns the transparency reconnection flag. See recon for more details
+on reconnection and exception</p>
+<dl class="docutils">
+<dt>Returns</dt>
+<dd>The device transparency flag</dd>
+</dl>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Set device source.</p>
+<p>Set the data source (device, polling buffer, polling buffer than device)
+for command_inout and read_attribute methods. The DevSource is an
+enumerated type which can be one of {DEV, CACHE, CACHE_DEV}. The
+default value is CACHE_DEV. See chapter on Advanced Feature for all
+details regarding polling</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="22%" />
+<col width="19%" />
+<col width="58%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>[in]</td>
+<td>sou</td>
+<td>The device source</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Set device timeout.</p>
+<p>Set client side timeout for device in milliseconds. Any method which
+takes longer than this time to execute will throw an exception.</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="17%" />
+<col width="24%" />
+<col width="59%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>[in]</td>
+<td>timeout</td>
+<td>The timeout value in mS</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Set device transparency (reconnection) mode.</p>
+<p>If flag is true, no exception will be thrown in case of network
+communication error between client and server. The API will try to
+re-build the network connection between client and server as soon as an
+error is detected. See recon for more details on reconnection and
+exception</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="17%" />
+<col width="15%" />
+<col width="68%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>[in]</td>
+<td>val</td>
+<td>The device transparency flag</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</div>
+<div class="section" id="friends-and-related-function-documentation">
+<h1>Friends And Related Function Documentation<a class="headerlink" href="#friends-and-related-function-documentation" title="Permalink to this headline">¶</a></h1>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<hr class="docutils" />
+<p>The documentation for this class was generated from the following file:</p>
+<ul class="simple">
+<li><a class="reference external" href="../../d9/ddc/devapi_8h_source.html">devapi.h</a></li>
+<li><a class="reference external" href="../../de/ddf/namespaceTango.html">Tango</a></li>
+<li><a class="reference external" href="../../d7/de8/classTango_1_1Connection.html">Connection</a></li>
+<li>Generated on Fri Oct 7 2016 11:11:16 for Tango Core Classes Reference
+by <a class="reference external" href="http://www.doxygen.org/index.html"><img alt="doxygen" src="../../_images/doxygen197.png" /></a> 1.8.8</li>
+</ul>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Public Member Functions</a></li>
+<li><a class="reference internal" href="#friends">Friends</a></li>
+<li><a class="reference internal" href="#detailed-description">Detailed Description</a></li>
+<li><a class="reference internal" href="#member-function-documentation">Member Function Documentation</a></li>
+<li><a class="reference internal" href="#friends-and-related-function-documentation">Friends And Related Function Documentation</a></li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/d7/de8/classTango_1_1Connection.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, 3Controls.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.8</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+      |
+      <a href="../../_sources/d7/de8/classTango_1_1Connection.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

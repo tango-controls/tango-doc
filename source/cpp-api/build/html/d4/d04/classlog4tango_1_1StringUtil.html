@@ -1,0 +1,290 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Static Public Member Functions &#8212; Tango Core Classes Reference Documentation 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="top" title="Tango Core Classes Reference Documentation 1.0 documentation" href="../../index.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><img alt="Logo" src="../../_images/logo102.jpg" /></td>
+<td>Tango Core Classes Reference &nbsp;9.2.5</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><a class="reference external" href="../../index.html">Main&nbsp;Page</a></li>
+<li><a class="reference external" href="../../pages.html">Related&nbsp;Pages</a></li>
+<li><a class="reference external" href="../../modules.html">Modules</a></li>
+<li><a class="reference external" href="../../namespaces.html">Namespaces</a></li>
+<li><a class="reference external" href="../../annotated.html">Classes</a></li>
+<li><a class="reference external" href="../../files.html">Files</a></li>
+<li><a class="reference external" href="../../annotated.html">Class&nbsp;List</a></li>
+<li><a class="reference external" href="../../inherits.html">Class&nbsp;Hierarchy</a></li>
+<li><a class="reference external" href="../../functions.html">Class&nbsp;Members</a></li>
+</ul>
+<p><a class="reference external" href="#pub-static-methods">Static Public Member Functions</a> | <a class="reference external" href="../../dd/d55/classlog4tango_1_1StringUtil-members.html">List of all
+members</a></p>
+<p>log4tango::StringUtil Class Reference</p>
+<p><code class="docutils literal"><span class="pre">#include</span> <span class="pre">&quot;StringUtil.hh&quot;</span></code></p>
+<div class="section" id="static-public-member-functions">
+<h1>Static Public Member Functions<a class="headerlink" href="#static-public-member-functions" title="Permalink to this headline">¶</a></h1>
+<p>static unsigned int</p>
+<p><a class="reference external" href="../../d4/d04/classlog4tango_1_1StringUtil.html#a0cbc8f98a127ba0cb36df3845e16405c">split</a>
+(std::vector&lt; std::string &gt; &amp;v, const std::string &amp;s, char delimiter,
+unsigned int maxSegments=INT_MAX)</p>
+<div class="line-block">
+<div class="line">splits a string into a vector of string segments based on the given</div>
+</div>
+<p>delimiter. <a class="reference external" href="#a0cbc8f98a127ba0cb36df3845e16405c">More...</a></p>
+<p>template&lt;typename T &gt;</p>
+<p>static unsigned int</p>
+<p><a class="reference external" href="../../d4/d04/classlog4tango_1_1StringUtil.html#aaefb28c23a501416d11eb8a0c41b5fd2">split</a>
+(T &amp;output, const std::string &amp;s, char delimiter, unsigned int
+maxSegments=INT_MAX)</p>
+<div class="line-block">
+<div class="line">splits a string into string segments based on the given delimiter and</div>
+</div>
+<p>assigns the segments through an output_iterator.
+<a class="reference external" href="#aaefb28c23a501416d11eb8a0c41b5fd2">More...</a></p>
+<p>static std::string</p>
+<p><a class="reference external" href="../../d4/d04/classlog4tango_1_1StringUtil.html#a5b1f1af63d4ac9d16150d08f2af6ebbc">trim</a>
+(const std::string &amp;s)</p>
+<div class="line-block">
+<div class="line">Returns a string identical to the given string but without leading or</div>
+</div>
+<p>trailing HTABs or spaces.
+<a class="reference external" href="#a5b1f1af63d4ac9d16150d08f2af6ebbc">More...</a></p>
+<p>static std::string</p>
+<p><a class="reference external" href="../../d4/d04/classlog4tango_1_1StringUtil.html#a1588cfe00d2951f175025f949793f866">vform</a>
+(const char *format, va_list args)</p>
+<div class="line-block">
+<div class="line">Returns a string contructed from the a format specifier and a va_list</div>
+</div>
+<p>of arguments, analogously to vprintf(3).
+<a class="reference external" href="#a1588cfe00d2951f175025f949793f866">More...</a></p>
+</div>
+<div class="section" id="member-function-documentation">
+<h1>Member Function Documentation<a class="headerlink" href="#member-function-documentation" title="Permalink to this headline">¶</a></h1>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>splits a string into a vector of string segments based on the given
+delimiter.</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="7%" />
+<col width="93%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>v</td>
+<td>The vector in which the segments will be stored. The vector will be emptied before storing the segments</td>
+</tr>
+<tr class="row-even"><td>s</td>
+<td>The string to split into segments.</td>
+</tr>
+<tr class="row-odd"><td>delimiter</td>
+<td>The delimiter character</td>
+</tr>
+<tr class="row-even"><td>maxSegments</td>
+<td>the maximum number of segments. Upon return v.size() &lt;= maxSegments. The string is scanned from left to right so v[maxSegments - 1] may contain a string containing the delimiter character.</td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt>Returns</dt>
+<dd>The actual number of segments (limited by maxSegments).</dd>
+</dl>
+<p>template&lt;typename T &gt;</p>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>splits a string into string segments based on the given delimiter and
+assigns the segments through an output_iterator.</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="11%" />
+<col width="89%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>output</td>
+<td>The output_iterator through which to assign the string segments. Typically this will be a back_insertion_iterator.</td>
+</tr>
+<tr class="row-even"><td>s</td>
+<td>The string to split into segments.</td>
+</tr>
+<tr class="row-odd"><td>delimiter</td>
+<td>The delimiter character</td>
+</tr>
+<tr class="row-even"><td>maxSegments</td>
+<td>The maximum number of segments.</td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt>Returns</dt>
+<dd>The actual number of segments (limited by maxSegments).</dd>
+</dl>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Returns a string identical to the given string but without leading or
+trailing HTABs or spaces.</p>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Returns a string contructed from the a format specifier and a va_list
+of arguments, analogously to vprintf(3).</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>format</td>
+<td>the format specifier.</td>
+</tr>
+<tr class="row-even"><td>args</td>
+<td>the va_list of arguments.</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<p>References
+<a class="reference external" href="../../da/dfc/StringUtil_8cpp.html#ac2e4f48c3da557e8b268aee96009e135">VSNPRINTF</a>.</p>
+<p>Referenced by
+<a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#a86870349be1352d8c529e713acf51a0b">log4tango::Logger::debug()</a>,
+<a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#ac9c2f129c56991f6bf7148ce5b7f1518">log4tango::Logger::error()</a>,
+<a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#a4c8832412bde8329c5a69acd88e08b8c">log4tango::Logger::fatal()</a>,
+<a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#adaba6152f4a39580d48bae035ac30778">log4tango::Logger::info()</a>,
+<a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#aebe7a33e64c1dd47d908d5a1eec18545">log4tango::Logger::log()</a>,
+<a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#adc92f13df7647dbeac96120bbda218f4">log4tango::Logger::log_unconditionally()</a>,
+and
+<a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#ab7a7dfad91aa2196ed91a607808f1061">log4tango::Logger::warn()</a>.</p>
+<hr class="docutils" />
+<p>The documentation for this class was generated from the following files:</p>
+<ul class="simple">
+<li><a class="reference external" href="../../de/d24/StringUtil_8hh_source.html">StringUtil.hh</a></li>
+<li><a class="reference external" href="../../da/dfc/StringUtil_8cpp.html">StringUtil.cpp</a></li>
+<li><a class="reference external" href="../../d4/db0/namespacelog4tango.html">log4tango</a></li>
+<li><a class="reference external" href="../../d4/d04/classlog4tango_1_1StringUtil.html">StringUtil</a></li>
+<li>Generated on Fri Oct 7 2016 11:11:16 for Tango Core Classes Reference
+by <a class="reference external" href="http://www.doxygen.org/index.html"><img alt="doxygen" src="../../_images/doxygen102.png" /></a> 1.8.8</li>
+</ul>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Static Public Member Functions</a></li>
+<li><a class="reference internal" href="#member-function-documentation">Member Function Documentation</a></li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/d4/d04/classlog4tango_1_1StringUtil.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, 3Controls.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.8</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+      |
+      <a href="../../_sources/d4/d04/classlog4tango_1_1StringUtil.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,1773 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>&lt;no title&gt; &#8212; Tango Core Classes Reference Documentation 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="top" title="Tango Core Classes Reference Documentation 1.0 documentation" href="../../index.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><img alt="Logo" src="../../_images/logo140.jpg" /></td>
+<td>Tango Core Classes Reference &nbsp;9.2.5</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><a class="reference external" href="../../index.html">Main&nbsp;Page</a></li>
+<li><a class="reference external" href="../../pages.html">Related&nbsp;Pages</a></li>
+<li><a class="reference external" href="../../modules.html">Modules</a></li>
+<li><a class="reference external" href="../../namespaces.html">Namespaces</a></li>
+<li><a class="reference external" href="../../annotated.html">Classes</a></li>
+<li><a class="reference external" href="../../files.html">Files</a></li>
+<li><a class="reference external" href="../../files.html">File&nbsp;List</a></li>
+<li><a class="reference external" href="../../globals.html">File&nbsp;Members</a></li>
+</ul>
+<p>utils.h</p>
+<p><a class="reference external" href="../../d5/d60/utils_8h.html">Go to the documentation of this file.</a></p>
+<p>1&nbsp;//=============================================================================</p>
+<p>2&nbsp;//</p>
+<p>3&nbsp;// file : utils.h</p>
+<p>4&nbsp;//</p>
+<p>5&nbsp;// description : Include for utility functions or classes</p>
+<p>6&nbsp;//</p>
+<p>7&nbsp;// project : TANGO</p>
+<p>8&nbsp;//</p>
+<p>9&nbsp;// author(s) : A.Gotz + E.Taurel</p>
+<p>10&nbsp;//</p>
+<p>11&nbsp;// Copyright (C) :
+2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015</p>
+<p>12&nbsp;// European Synchrotron Radiation Facility</p>
+<p>13&nbsp;// BP 220, Grenoble 38043</p>
+<p>14&nbsp;// FRANCE</p>
+<p>15&nbsp;//</p>
+<p>16&nbsp;// This file is part of Tango.</p>
+<p>17&nbsp;//</p>
+<p>18&nbsp;// Tango is free software: you can redistribute it and/or modify</p>
+<p>19&nbsp;// it under the terms of the GNU Lesser General Public License as
+published by</p>
+<p>20&nbsp;// the Free Software Foundation, either version 3 of the License, or</p>
+<p>21&nbsp;// (at your option) any later version.</p>
+<p>22&nbsp;//</p>
+<p>23&nbsp;// Tango is distributed in the hope that it will be useful,</p>
+<p>24&nbsp;// but WITHOUT ANY WARRANTY; without even the implied warranty of</p>
+<p>25&nbsp;// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the</p>
+<p>26&nbsp;// GNU Lesser General Public License for more details.</p>
+<p>27&nbsp;//</p>
+<p>28&nbsp;// You should have received a copy of the GNU Lesser General Public
+License</p>
+<p>29&nbsp;// along with Tango. If not, see &lt;<a class="reference external" href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>&gt;.</p>
+<p>30&nbsp;//</p>
+<p>31&nbsp;// $Revision$</p>
+<p>32&nbsp;//</p>
+<p>33&nbsp;//=============================================================================</p>
+<p>34</p>
+<p>35&nbsp;#ifndef _UTILS_H</p>
+<p>36&nbsp;#define _UTILS_H</p>
+<p>37</p>
+<p>38&nbsp;#include &lt;tango.h&gt;</p>
+<p>39&nbsp;#include
+&lt;<a class="reference external" href="../../db/d17/pollext_8h.html">tango/server/pollext.h</a>&gt;</p>
+<p>40&nbsp;#include &lt;tango/server/subdev_diag.h&gt;</p>
+<p>41&nbsp;#include &lt;new&gt;</p>
+<p>42&nbsp;#include &lt;tango/server/rootattreg.h&gt;</p>
+<p>43&nbsp;#include &lt;tango/server/pollthread.h&gt;</p>
+<p>44</p>
+<p>45&nbsp;#ifndef _TG_WINDOWS_</p>
+<p>46&nbsp; #include &lt;unistd.h&gt;</p>
+<p>47&nbsp;#else</p>
+<p>48&nbsp; #include &lt;coutbuf.h&gt;</p>
+<p>49&nbsp; #include &lt;w32win.h&gt;</p>
+<p>50&nbsp;#endif /* _TG_WINDOWS_ */</p>
+<p>51</p>
+<p>52&nbsp;//</p>
+<p>53&nbsp;// For debug purpose</p>
+<p>54&nbsp;//</p>
+<p>55</p>
+<p>56&nbsp;#ifndef TANGO_HAS_LOG4TANGO</p>
+<p>57</p>
+<p>58&nbsp;#define cout1 if ((Tango::Util::_tracelevel &gt;= 1) &amp;&amp; \</p>
+<p>59&nbsp; (Tango::Util::_tracelevel &lt; 5)) cout</p>
+<p>60&nbsp;#define cout2 if ((Tango::Util::_tracelevel &gt;= 2) &amp;&amp; \</p>
+<p>61&nbsp; (Tango::Util::_tracelevel &lt; 5)) cout</p>
+<p>62&nbsp;#define cout3 if ((Tango::Util::_tracelevel &gt;= 3) &amp;&amp; \</p>
+<p>63&nbsp; (Tango::Util::_tracelevel &lt; 5)) cout</p>
+<p>64&nbsp;#define cout4 if ((Tango::Util::_tracelevel &gt;= 4) &amp;&amp; \</p>
+<p>65&nbsp; (Tango::Util::_tracelevel &lt; 5)) cout</p>
+<p>66</p>
+<p>67&nbsp;#define cout5 if (Tango::Util::_tracelevel &gt;= 5) cout</p>
+<p>68</p>
+<p>69&nbsp;#endif //TANGO_HAS_LOG4TANGO</p>
+<p>70</p>
+<p>71</p>
+<p>72&nbsp;namespace <a class="reference external" href="../../de/ddf/namespaceTango.html">Tango</a></p>
+<p>73&nbsp;{</p>
+<p>74</p>
+<p>75&nbsp;class DeviceImpl;</p>
+<p>76&nbsp;class DeviceClass;</p>
+<p>77&nbsp;class DServer;</p>
+<p>78&nbsp;class AutoTangoMonitor;</p>
+<p>79&nbsp;class Util;</p>
+<p>80&nbsp;class NotifdEventSupplier;</p>
+<p>81&nbsp;class ZmqEventSupplier;</p>
+<p>82&nbsp;class PyLock;</p>
+<p>83&nbsp;class CreatePyLock;</p>
+<p>84&nbsp;class DbServerCache;</p>
+<p>85&nbsp;class SubDevDiag;</p>
+<p>86</p>
+<p>87&nbsp;struct PollingThreadInfo;</p>
+<p>88&nbsp;struct DevDbUpd;</p>
+<p>89</p>
+<p>90&nbsp;#ifdef _TG_WINDOWS_</p>
+<p>91&nbsp;class CoutBuf;</p>
+<p>92&nbsp;class W32Win;</p>
+<p>93&nbsp;#endif</p>
+<p>94</p>
+<p>95</p>
+<p><a class="reference external" href="../../d4/d9f/classTango_1_1PyLock.html">96</a>&nbsp;class
+<a class="reference external" href="../../d4/d9f/classTango_1_1PyLock.html">PyLock</a></p>
+<p>97&nbsp;{</p>
+<p>98&nbsp;public:</p>
+<p><a class="reference external" href="../../d4/d9f/classTango_1_1PyLock.html#a1afe28ba14cf56f031c9960db681f9a3">99</a>
+<a class="reference external" href="../../d4/d9f/classTango_1_1PyLock.html#a1afe28ba14cf56f031c9960db681f9a3">PyLock</a>()
+{}</p>
+<p><a class="reference external" href="../../d4/d9f/classTango_1_1PyLock.html#afd0b51426d645c9c6c08e2fedf324908">100</a>
+virtual
+<a class="reference external" href="../../d4/d9f/classTango_1_1PyLock.html#afd0b51426d645c9c6c08e2fedf324908">~PyLock</a>()
+{}</p>
+<p>101</p>
+<p><a class="reference external" href="../../d4/d9f/classTango_1_1PyLock.html#a0c766fd01a1e36673db89e712eb14727">102</a>
+virtual void
+<a class="reference external" href="../../d4/d9f/classTango_1_1PyLock.html#a0c766fd01a1e36673db89e712eb14727">Get</a>()
+{}</p>
+<p><a class="reference external" href="../../d4/d9f/classTango_1_1PyLock.html#a1eab5bc8ab2ae9ca1fe7deb49e7a7682">103</a>
+virtual void
+<a class="reference external" href="../../d4/d9f/classTango_1_1PyLock.html#a1eab5bc8ab2ae9ca1fe7deb49e7a7682">Release</a>()
+{}</p>
+<p>104&nbsp;};</p>
+<p>105</p>
+<p><a class="reference external" href="../../d9/dd7/classTango_1_1CreatePyLock.html">106</a>&nbsp;class
+<a class="reference external" href="../../d9/dd7/classTango_1_1CreatePyLock.html">CreatePyLock</a></p>
+<p>107&nbsp;{</p>
+<p>108&nbsp;public:</p>
+<p><a class="reference external" href="../../d9/dd7/classTango_1_1CreatePyLock.html#a6ed4dcb11ebec0270281b896e9efe2f2">109</a>
+<a class="reference external" href="../../d9/dd7/classTango_1_1CreatePyLock.html#a6ed4dcb11ebec0270281b896e9efe2f2">CreatePyLock</a>()
+{}</p>
+<p><a class="reference external" href="../../d9/dd7/classTango_1_1CreatePyLock.html#aaf58411a22d5d3866af917fe433a1cff">110</a>
+virtual
+<a class="reference external" href="../../d9/dd7/classTango_1_1CreatePyLock.html#aaf58411a22d5d3866af917fe433a1cff">~CreatePyLock</a>()
+{}</p>
+<p>111</p>
+<p><a class="reference external" href="../../d9/dd7/classTango_1_1CreatePyLock.html#a1dab7fbb63d9d24477ea78f7f1951eb3">112</a>
+virtual <a class="reference external" href="../../d4/d9f/classTango_1_1PyLock.html">PyLock</a>
+*<a class="reference external" href="../../d9/dd7/classTango_1_1CreatePyLock.html#a1dab7fbb63d9d24477ea78f7f1951eb3">create</a>()
+{return new <a class="reference external" href="../../d4/d9f/classTango_1_1PyLock.html">PyLock</a>();}</p>
+<p>113&nbsp;};</p>
+<p>114</p>
+<p><a class="reference external" href="../../d6/d62/classTango_1_1Interceptors.html">115</a>&nbsp;class
+<a class="reference external" href="../../d6/d62/classTango_1_1Interceptors.html">Interceptors</a></p>
+<p>116&nbsp;{</p>
+<p>117&nbsp;public:</p>
+<p><a class="reference external" href="../../d6/d62/classTango_1_1Interceptors.html#a4c5255368e548bba8405ecf44b2b698f">118</a>
+<a class="reference external" href="../../d6/d62/classTango_1_1Interceptors.html#a4c5255368e548bba8405ecf44b2b698f">Interceptors</a>()
+{}</p>
+<p><a class="reference external" href="../../d6/d62/classTango_1_1Interceptors.html#aa6e716d549719f06e696ddfb3d596091">119</a>
+virtual
+<a class="reference external" href="../../d6/d62/classTango_1_1Interceptors.html#aa6e716d549719f06e696ddfb3d596091">~Interceptors</a>()
+{}</p>
+<p>120</p>
+<p><a class="reference external" href="../../d6/d62/classTango_1_1Interceptors.html#ae04addadc7821a6dd88dc6f2661a0c19">121</a>
+virtual void
+<a class="reference external" href="../../d6/d62/classTango_1_1Interceptors.html#ae04addadc7821a6dd88dc6f2661a0c19">create_thread</a>()
+{}</p>
+<p><a class="reference external" href="../../d6/d62/classTango_1_1Interceptors.html#a3a874b0abbff6982eff3d335e58a9569">122</a>
+virtual void
+<a class="reference external" href="../../d6/d62/classTango_1_1Interceptors.html#a3a874b0abbff6982eff3d335e58a9569">delete_thread</a>()
+{}</p>
+<p>123&nbsp;};</p>
+<p>124</p>
+<p>125&nbsp;//=============================================================================</p>
+<p>126&nbsp;//</p>
+<p>127&nbsp;// The Util class</p>
+<p>128&nbsp;//</p>
+<p>129&nbsp;// description : This class contains all properties and methods</p>
+<p>130&nbsp;// which a device server process requires only once e.g.</p>
+<p>131&nbsp;// the orb and boa pointers....</p>
+<p>132&nbsp;// This class is a singleton ( The constructor is</p>
+<p>133&nbsp;// protected and the _instance data member is static)</p>
+<p>134&nbsp;//</p>
+<p>135&nbsp;// This class must be created at the beginning of each</p>
+<p>136&nbsp;// device server process</p>
+<p>137&nbsp;//</p>
+<p>138&nbsp;//=============================================================================</p>
+<p>139</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html">153</a>&nbsp;class
+<a class="reference external" href="../../d4/deb/classTango_1_1Util.html">Util</a></p>
+<p>154&nbsp;{</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#aa90445f0324fbdea288f7b41aa4a6790">155</a>
+friend class
+<a class="reference external" href="../../d4/deb/classTango_1_1Util.html#aa90445f0324fbdea288f7b41aa4a6790">Tango::AutoTangoMonitor</a>;</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a8b820dd210d17c25d7da4ba8379ee41e">156</a>
+friend class
+<a class="reference external" href="../../d7/d2a/classTango_1_1ApiUtil.html">Tango::ApiUtil</a>;</p>
+<p>157&nbsp;public:</p>
+<p>158</p>
+<p>163</p>
+<p>175&nbsp; static <a class="reference external" href="../../d4/deb/classTango_1_1Util.html">Util</a>
+*<a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a79b69d3b0376e45516410fe35a7c499c">init</a>(int
+argc,char *argv[]);</p>
+<p>176&nbsp;#ifdef _TG_WINDOWS_</p>
+<p>177</p>
+<p>189&nbsp; TANGO_IMP_EXP static
+<a class="reference external" href="../../d4/deb/classTango_1_1Util.html">Util</a>
+*<a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a79b69d3b0376e45516410fe35a7c499c">init</a>(HINSTANCE
+AppInst,int CmdShow);</p>
+<p>190&nbsp;#endif</p>
+<p>191</p>
+<p>201&nbsp; TANGO_IMP_EXP static
+<a class="reference external" href="../../d4/deb/classTango_1_1Util.html">Util</a>
+*<a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a577119e32b43b1344d6f9ef37f587472">instance</a>(bool
+exit = true);</p>
+<p>203</p>
+<p>210
+<a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a9f4928ff121e0c7e25c23457fcdde12a">~Util</a>();</p>
+<p>212</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#ad439b7b797d20280db7558d3e0ca97b2">222</a>
+CORBA::ORB_ptr
+<a class="reference external" href="../../d4/deb/classTango_1_1Util.html#ad439b7b797d20280db7558d3e0ca97b2">get_orb</a>()
+{return CORBA::ORB::_duplicate(orb);}</p>
+<p>223</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a9c2ea6e24a2e83cd09a1dbdc7218bbee">233</a>
+PortableServer::POA_ptr
+<a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a9c2ea6e24a2e83cd09a1dbdc7218bbee">get_poa</a>()
+{return PortableServer::POA::_duplicate(_poa);}</p>
+<p>234</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#abf6c91c64e226fae5ed1639cd28071ce">240</a>
+void
+<a class="reference external" href="../../d4/deb/classTango_1_1Util.html#abf6c91c64e226fae5ed1639cd28071ce">set_trace_level</a>(int
+level)
+{<a class="reference external" href="../../d4/deb/classTango_1_1Util.html#ac618c4a4d49ce20ae605ecded0ffe61c">_tracelevel</a>
+= level;}</p>
+<p>241</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a49822fbfc1d15e017397230127ce33ee">247</a>
+int
+<a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a49822fbfc1d15e017397230127ce33ee">get_trace_level</a>()
+{return
+<a class="reference external" href="../../d4/deb/classTango_1_1Util.html#ac618c4a4d49ce20ae605ecded0ffe61c">_tracelevel</a>;}</p>
+<p>248</p>
+<p>249&nbsp;#ifndef TANGO_HAS_LOG4TANGO</p>
+<p>250</p>
+<p>255&nbsp; void set_trace_output(string &amp;trace) {trace_output = trace;}</p>
+<p>256</p>
+<p>262&nbsp; string &amp;get_trace_output() {return trace_output;}</p>
+<p>263</p>
+<p>269&nbsp; TangoSys_Cout &amp;get_out() {return cout_tmp;}</p>
+<p>270</p>
+<p>276&nbsp; void set_trace_output_stream(ofstream *in) {file_stream = in;}</p>
+<p>277</p>
+<p>283&nbsp; ofstream *get_trace_output_stream() {return file_stream;}</p>
+<p>284&nbsp;#endif //TANGO_HAS_LOG4TANGO</p>
+<p>285</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#ae8f35a5ab069649e607be6097c8b1fd8">291</a>
+string
+&amp;<a class="reference external" href="../../d4/deb/classTango_1_1Util.html#ae8f35a5ab069649e607be6097c8b1fd8">get_ds_inst_name</a>()
+{return ds_instance_name;}</p>
+<p>292</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a23221e64a028a7ddd7a03b9064322ddd">298</a>
+string
+&amp;<a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a23221e64a028a7ddd7a03b9064322ddd">get_ds_exec_name</a>()
+{return ds_exec_name;}</p>
+<p>299</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#aab15cb9f574c44c37b0d2dcce3531b3a">307</a>
+string
+&amp;<a class="reference external" href="../../d4/deb/classTango_1_1Util.html#aab15cb9f574c44c37b0d2dcce3531b3a">get_ds_name</a>()
+{return ds_name;}</p>
+<p>308</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a54e78ffcf1f76cd8d8d03022921ea0f3">314</a>
+string
+&amp;<a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a54e78ffcf1f76cd8d8d03022921ea0f3">get_host_name</a>()
+{return hostname;}</p>
+<p>315</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#aff3a13d613a5c362c4c32e3946081a8f">321</a>
+string
+&amp;<a class="reference external" href="../../d4/deb/classTango_1_1Util.html#aff3a13d613a5c362c4c32e3946081a8f">get_pid_str</a>()
+{return pid_str;}</p>
+<p>322</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#aff871862b632defb0006e95404b3089a">328</a>
+TangoSys_Pid
+<a class="reference external" href="../../d4/deb/classTango_1_1Util.html#aff871862b632defb0006e95404b3089a">get_pid</a>()
+{return pid;}</p>
+<p>329</p>
+<p>336&nbsp; long
+<a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a10b07c18428bf23e1bc2cb3ac917ff6a">get_tango_lib_release</a>();</p>
+<p>337</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a1f604cdabca2b7efd2a54287a04d567d">343</a>
+string
+&amp;<a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a1f604cdabca2b7efd2a54287a04d567d">get_version_str</a>()
+{return version_str;}</p>
+<p>344</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a19ed2067f664f4e7d98ac0876fcc7fd5">350</a>
+string
+&amp;<a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a19ed2067f664f4e7d98ac0876fcc7fd5">get_server_version</a>()
+{return server_version;}</p>
+<p>351</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#abb2c6dbbb85e9c0d73c7304dec83b8a2">357</a>
+void
+<a class="reference external" href="../../d4/deb/classTango_1_1Util.html#abb2c6dbbb85e9c0d73c7304dec83b8a2">set_server_version</a>(const
+char *vers) {server_version = vers;}</p>
+<p>358</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a55f6da618ced3d2c73b4b4650f41a781">364</a>
+void
+<a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a55f6da618ced3d2c73b4b4650f41a781">set_class_list</a>(vector&lt;DeviceClass
+*&gt; *list) {cl_list_ptr = list;cl_list = *list;}</p>
+<p>365</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a5129fe98f63d85e72d35ed4619d14b5d">371</a>
+void
+<a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a5129fe98f63d85e72d35ed4619d14b5d">add_class_to_list</a>(<a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html">DeviceClass</a>
+* cl) {cl_list.push_back(cl);}</p>
+<p>372</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a0d18e9c85522737eb4fb4bfff15af44c">378</a>
+const vector&lt;DeviceClass *&gt;
+*<a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a0d18e9c85522737eb4fb4bfff15af44c">get_class_list</a>()
+{return &amp;cl_list;}</p>
+<p>379</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a84851a5fba97e3b553e5a567446f59c0">386</a>
+void
+<a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a84851a5fba97e3b553e5a567446f59c0">set_serial_model</a>(<a class="reference external" href="../../de/ddf/namespaceTango.html#a0d80a625ea3e8339d930b249624ed0b6">SerialModel</a>
+ser) {ser_model = ser;}</p>
+<p>387</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#ab045a913f25a49e2bb2a1b1895324b87">394</a>
+<a class="reference external" href="../../de/ddf/namespaceTango.html#a0d80a625ea3e8339d930b249624ed0b6">SerialModel</a>
+<a class="reference external" href="../../d4/deb/classTango_1_1Util.html#ab045a913f25a49e2bb2a1b1895324b87">get_serial_model</a>()
+{return ser_model;}</p>
+<p>395</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#ae8106bcba73bdaf045057e1dc16b0637">401</a>
+NotifdEventSupplier
+*<a class="reference external" href="../../d4/deb/classTango_1_1Util.html#ae8106bcba73bdaf045057e1dc16b0637">get_notifd_event_supplier</a>()
+{return nd_event_supplier;}</p>
+<p>402</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#adef106a678ba16179069e1f5b0b14de2">408</a>
+ZmqEventSupplier
+*<a class="reference external" href="../../d4/deb/classTango_1_1Util.html#adef106a678ba16179069e1f5b0b14de2">get_zmq_event_supplier</a>()
+{return zmq_event_supplier;}</p>
+<p>409</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#ae085bbb2bd407369c62a126971f12f7d">415</a>
+void
+<a class="reference external" href="../../d4/deb/classTango_1_1Util.html#ae085bbb2bd407369c62a126971f12f7d">set_ds_event_buffer_hwm</a>(DevLong
+val) {if (user_pub_hwm == -1)user_pub_hwm = val;}</p>
+<p>417</p>
+<p>432&nbsp; void
+<a class="reference external" href="../../d4/deb/classTango_1_1Util.html#aa5f6adfd5e1b7f03fdbd7eadeffb3fb7">trigger_cmd_polling</a>(<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html">DeviceImpl</a>
+*dev,const string &amp;name);</p>
+<p>433</p>
+<p>446&nbsp; void
+<a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a9cb37786d6f990990c7905b39b889d27">trigger_attr_polling</a>(<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html">DeviceImpl</a>
+*dev,const string &amp;name);</p>
+<p>447</p>
+<p>463&nbsp; template &lt;typename T&gt;</p>
+<p>464&nbsp; void
+<a class="reference external" href="../../d4/deb/classTango_1_1Util.html#aa9e35fe725db9e490dbd2bf561e5bbe5">fill_attr_polling_buffer</a>(<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html">DeviceImpl</a>
+*dev,</p>
+<p>465&nbsp; string &amp;att_name,</p>
+<p>466
+<a class="reference external" href="../../d0/dcb/classTango_1_1AttrHistoryStack.html">AttrHistoryStack&lt;T&gt;</a>
+&amp;data);</p>
+<p>467</p>
+<p>483&nbsp; template &lt;typename T&gt;</p>
+<p>484&nbsp; void
+<a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a797a10d317dc6aab6ef2948fc94b90cf">fill_cmd_polling_buffer</a>(<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html">DeviceImpl</a>
+*dev,</p>
+<p>485&nbsp; string &amp;cmd_name,</p>
+<p>486
+<a class="reference external" href="../../dc/d8f/classTango_1_1CmdHistoryStack.html">CmdHistoryStack&lt;T&gt;</a>
+&amp;data);</p>
+<p>487</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a27485b14ec5334576704e31b65e2d03c">493</a>
+void
+<a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a27485b14ec5334576704e31b65e2d03c">set_polling_threads_pool_size</a>(unsigned
+long thread_nb) {poll_pool_size = thread_nb;}</p>
+<p>494</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#af6aee977b3c8f5de4f135fca9b024ddf">500</a>
+unsigned long
+<a class="reference external" href="../../d4/deb/classTango_1_1Util.html#af6aee977b3c8f5de4f135fca9b024ddf">get_polling_threads_pool_size</a>()
+{return poll_pool_size;}</p>
+<p>501</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#ae1df5b54896147fc95d689efc2936cc4">507</a>
+void
+<a class="reference external" href="../../d4/deb/classTango_1_1Util.html#ae1df5b54896147fc95d689efc2936cc4">set_polling_before_9</a>(bool
+val) {polling_bef_9_def=true;polling_bef_9=val;}</p>
+<p>509</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a8b5d14831423f0f2dafab927fa4e64ed">517</a>
+bool
+<a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a8b5d14831423f0f2dafab927fa4e64ed">is_svr_starting</a>()
+{return svr_starting;}</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a7e5a56fe3a14633ffafc01c63698f45f">523</a>
+bool
+<a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a7e5a56fe3a14633ffafc01c63698f45f">is_svr_shutting_down</a>()
+{return svr_stopping;}</p>
+<p>530&nbsp; bool
+<a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a5ed4c18bfe81f1983d9ddc542491ca65">is_device_restarting</a>(string
+&amp;d_name);</p>
+<p>532</p>
+<p>541&nbsp; void
+<a class="reference external" href="../../d4/deb/classTango_1_1Util.html#aa44378b4c63d0c2d86060b364f6b5639">connect_db</a>();</p>
+<p>542</p>
+<p>546&nbsp; void
+<a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a6e221145196c95c02be5474dcd9520c0">reset_filedatabase</a>();</p>
+<p>547</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a7db09207aa90d9515115a296c057f789">553</a>
+<a class="reference external" href="../../d6/dc5/classTango_1_1Database.html">Database</a>
+*<a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a7db09207aa90d9515115a296c057f789">get_database</a>()
+{return db;}</p>
+<p>554</p>
+<p>561&nbsp; void
+<a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a48cc2bfa8af581f5b56ff7b72de4c2ff">unregister_server</a>();</p>
+<p>563</p>
+<p>579&nbsp; vector&lt;DeviceImpl *&gt;
+&amp;<a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a4458c86fc6af2862f08d292912a6d430">get_device_list_by_class</a>(const
+string &amp;class_name);</p>
+<p>580</p>
+<p>594&nbsp; vector&lt;DeviceImpl *&gt;
+&amp;<a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a4458c86fc6af2862f08d292912a6d430">get_device_list_by_class</a>(const
+char *class_name);</p>
+<p>595</p>
+<p>606&nbsp; <a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html">DeviceImpl</a>
+*<a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a6ff7a35d328ee87b5dca4a04ea8b12c8">get_device_by_name</a>(const
+string &amp;dev_name);</p>
+<p>607</p>
+<p>618&nbsp; <a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html">DeviceImpl</a>
+*<a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a6ff7a35d328ee87b5dca4a04ea8b12c8">get_device_by_name</a>(const
+char *dev_name);</p>
+<p>619</p>
+<p>625&nbsp; DServer
+*<a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a8d86b4bcf0c279aaadb9d476f9c261fd">get_dserver_device</a>();</p>
+<p>626</p>
+<p>636&nbsp; vector&lt;DeviceImpl *&gt;
+<a class="reference external" href="../../d4/deb/classTango_1_1Util.html#ae201024b8f84c08743097a43e2551540">get_device_list</a>(const
+string &amp;name);</p>
+<p>638</p>
+<p>649&nbsp; void
+<a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a3fddd272b3d6f6e3990a8d98ee64cb7d">server_init</a>(bool
+with_window = false);</p>
+<p>650</p>
+<p>658&nbsp; void
+<a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a6299b8c885918b5a0cbfe74d1563501b">server_run</a>();</p>
+<p>659</p>
+<p>666&nbsp; void
+<a class="reference external" href="../../d4/deb/classTango_1_1Util.html#ad1ff436c06ef8b7cba2c96c09f6176ae">server_cleanup</a>();</p>
+<p>667</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a578233d769fc2fff627930f9b38e7ecd">681</a>
+void
+<a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a578233d769fc2fff627930f9b38e7ecd">server_set_event_loop</a>(bool
+(*f_ptr)()) {ev_loop_func = f_ptr;}</p>
+<p>683</p>
+<p>684</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#ac618c4a4d49ce20ae605ecded0ffe61c">690</a>
+static int
+<a class="reference external" href="../../d4/deb/classTango_1_1Util.html#ac618c4a4d49ce20ae605ecded0ffe61c">_tracelevel</a>;</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a194cd965fd1aebe1800adbe076558742">695</a>
+TANGO_IMP static bool
+<a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a194cd965fd1aebe1800adbe076558742">_UseDb</a>;</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a92f38f300de79ece0538b691c806e4a6">702</a>
+TANGO_IMP static bool
+<a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a92f38f300de79ece0538b691c806e4a6">_daemon</a>;</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#aadfaa555e0b480fa2cb63e820f390e11">709</a>
+TANGO_IMP static long
+<a class="reference external" href="../../d4/deb/classTango_1_1Util.html#aadfaa555e0b480fa2cb63e820f390e11">_sleep_between_connect</a>;</p>
+<p>711</p>
+<p>713</p>
+<p>714&nbsp; TANGO_IMP static bool _FileDb;</p>
+<p>715</p>
+<p>717</p>
+<p>718&nbsp;#ifdef _TG_WINDOWS_</p>
+<p>719</p>
+<p>727&nbsp; HWND get_console_window();</p>
+<p>728</p>
+<p>734&nbsp; HWND get_ds_main_window();</p>
+<p>735</p>
+<p>741&nbsp; CoutBuf *get_debug_object();</p>
+<p>742</p>
+<p>743&nbsp; TANGO_IMP static bool _service;</p>
+<p>749&nbsp; string &amp;get_main_window_text() {return main_win_text;}</p>
+<p>750</p>
+<p>757&nbsp; void set_main_window_text(string &amp;txt) {main_win_text = txt;}</p>
+<p>759&nbsp;#endif</p>
+<p>760</p>
+<p>761&nbsp;protected:</p>
+<p>771
+<a class="reference external" href="../../d4/deb/classTango_1_1Util.html#ae8cb0ef44d4f03250ab33b603a1dfee2">Util</a>(int
+argc,char *argv[]);</p>
+<p>772&nbsp;#ifdef _TG_WINDOWS_</p>
+<p>773</p>
+<p>783
+<a class="reference external" href="../../d4/deb/classTango_1_1Util.html#ae8cb0ef44d4f03250ab33b603a1dfee2">Util</a>(HINSTANCE
+AppInst,int CmdShow);</p>
+<p>784&nbsp;#endif</p>
+<p>785</p>
+<p>786&nbsp;//</p>
+<p>787&nbsp;// The extension class</p>
+<p>788&nbsp;//</p>
+<p>789</p>
+<p>790&nbsp;private:</p>
+<p>791</p>
+<p>792&nbsp; class UtilExt</p>
+<p>793&nbsp; {</p>
+<p>794&nbsp; public:</p>
+<p>795&nbsp; UtilExt() {}</p>
+<p>796</p>
+<p>797&nbsp; ~UtilExt() {}</p>
+<p>798&nbsp; };</p>
+<p>799</p>
+<p>800</p>
+<p>801&nbsp;public:</p>
+<p>803&nbsp; void set_interceptors(Interceptors *in) {inter = in;}</p>
+<p>804&nbsp; Interceptors *get_interceptors() {return inter;}</p>
+<p>805</p>
+<p>806&nbsp; map &lt;string,vector&lt;string&gt; &gt; &amp;get_cmd_line_name_list() {return
+cmd_line_name_list;}</p>
+<p>807&nbsp; void get_cmd_line_name_list(const string &amp;,vector&lt;string&gt; &amp;);</p>
+<p>808&nbsp; TangoMonitor &amp;get_heartbeat_monitor() {return poll_mon;}</p>
+<p>809&nbsp; PollThCmd &amp;get_heartbeat_shared_cmd() {return shared_data;}</p>
+<p>810&nbsp; bool poll_status() {return poll_on;}</p>
+<p>811&nbsp; void poll_status(bool status) {poll_on = status;}</p>
+<p>812</p>
+<p>813&nbsp;//</p>
+<p>814&nbsp;// Some methods are duplicated here (with different names). It is
+for compatibility reason</p>
+<p>815&nbsp;//</p>
+<p>816</p>
+<p>817&nbsp; void polling_configure();</p>
+<p>818&nbsp; PollThread *get_polling_thread_object() {return heartbeat_th;}</p>
+<p>819&nbsp; PollThread *get_heartbeat_thread_object() {return
+heartbeat_th;}</p>
+<p>820&nbsp; void clr_poll_th_ptr() {heartbeat_th = NULL;}</p>
+<p>821&nbsp; void clr_heartbeat_th_ptr() {heartbeat_th = NULL;}</p>
+<p>822&nbsp; int get_polling_thread_id() {return heartbeat_th_id;}</p>
+<p>823&nbsp; int get_heartbeat_thread_id() {return heartbeat_th_id;}</p>
+<p>824&nbsp; void stop_heartbeat_thread();</p>
+<p>825&nbsp; string &amp;get_svr_port_num() {return svr_port_num;}</p>
+<p>826</p>
+<p>827&nbsp; void create_notifd_event_supplier();</p>
+<p>828&nbsp; void create_zmq_event_supplier();</p>
+<p>829</p>
+<p>830&nbsp; void *get_py_interp() {return py_interp;}</p>
+<p>831&nbsp; void set_py_interp(void *ptr) {py_interp = ptr;}</p>
+<p>832</p>
+<p>833&nbsp; bool is_py_ds() {return py_ds;}</p>
+<p>834&nbsp; void set_py_ds() {py_ds=true;}</p>
+<p>835</p>
+<p>836&nbsp; bool is_py_dbg() {return py_dbg;}</p>
+<p>837&nbsp; void set_py_dbg() {py_dbg=true;}</p>
+<p>838</p>
+<p>839&nbsp; void set_py_lock_creator(CreatePyLock *py) {cr_py_lock = py;}</p>
+<p>840&nbsp; CreatePyLock *get_py_lock_creator() {return cr_py_lock;}</p>
+<p>841</p>
+<p>842&nbsp; DbServerCache *get_db_cache() {return db_cache;}</p>
+<p>843&nbsp; void unvalidate_db_cache() {if (db_cache!=NULL){delete
+db_cache;db_cache = NULL;}}</p>
+<p>844</p>
+<p>845&nbsp; void set_svr_starting(bool val) {svr_starting = val;}</p>
+<p>846&nbsp; void set_svr_shutting_down(bool val) {svr_stopping = val;}</p>
+<p>847</p>
+<p>848&nbsp; vector&lt;string&gt; &amp;get_polled_dyn_attr_names() {return
+polled_dyn_attr_names;}</p>
+<p>849&nbsp; vector&lt;string&gt; &amp;get_polled_dyn_cmd_names() {return
+polled_dyn_cmd_names;}</p>
+<p>850&nbsp; vector&lt;string&gt; &amp;get_full_polled_att_list() {return
+polled_att_list;}</p>
+<p>851&nbsp; vector&lt;string&gt; &amp;get_full_polled_cmd_list() {return
+polled_cmd_list;}</p>
+<p>852&nbsp; string &amp;get_dyn_att_dev_name() {return dyn_att_dev_name;}</p>
+<p>853&nbsp; string &amp;get_dyn_cmd_dev_name() {return dyn_cmd_dev_name;}</p>
+<p>854&nbsp; vector&lt;string&gt; &amp;get_all_dyn_attr_names() {return
+all_dyn_attr;}</p>
+<p>855</p>
+<p>856&nbsp; void clean_attr_polled_prop();</p>
+<p>857&nbsp; void clean_cmd_polled_prop();</p>
+<p>858&nbsp; void clean_dyn_attr_prop();</p>
+<p>859</p>
+<p>860&nbsp; int create_poll_thread(const char *,bool,bool,int smallest_upd
+= -1);</p>
+<p>861&nbsp; void stop_all_polling_threads();</p>
+<p>862&nbsp; vector&lt;PollingThreadInfo *&gt; &amp;get_polling_threads_info() {return
+poll_ths;}</p>
+<p>863&nbsp; PollingThreadInfo *get_polling_thread_info_by_id(int);</p>
+<p>864&nbsp; int get_polling_thread_id_by_name(const char *);</p>
+<p>865&nbsp; void check_pool_conf(DServer *,unsigned long);</p>
+<p>866&nbsp; int check_dev_poll(vector&lt;string&gt; &amp;,vector&lt;string&gt; &amp;,DeviceImpl
+*);</p>
+<p>867&nbsp; void split_string(string &amp;,char,vector&lt;string&gt; &amp;);</p>
+<p>868&nbsp; void upd_polling_prop(vector&lt;DevDbUpd&gt; &amp;,DServer *);</p>
+<p>869&nbsp; int get_th_polled_devs(string &amp;,vector&lt;string&gt; &amp;);</p>
+<p>870&nbsp; void get_th_polled_devs(long,vector&lt;string&gt; &amp;);</p>
+<p>871&nbsp; void build_first_pool_conf(vector&lt;string&gt; &amp;);</p>
+<p>872&nbsp; bool is_dev_already_in_pool_conf(string
+&amp;,vector&lt;string&gt;&amp;,int);</p>
+<p>873&nbsp; vector&lt;string&gt; &amp;get_poll_pool_conf() {return poll_pool_conf;}</p>
+<p>874&nbsp; int get_dev_entry_in_pool_conf(string &amp;);</p>
+<p>875&nbsp; void remove_dev_from_polling_map(string &amp;dev_name);</p>
+<p>876&nbsp; void remove_polling_thread_info_by_id(int);</p>
+<p>877</p>
+<p>878&nbsp; bool is_server_event_loop_set() {if (ev_loop_func !=
+NULL)return true;else return false;}</p>
+<p>879&nbsp; void set_shutdown_server(bool val) {shutdown_server = val;}</p>
+<p>880</p>
+<p>881&nbsp; void shutdown_ds();</p>
+<p>882</p>
+<p>883&nbsp; SubDevDiag &amp;get_sub_dev_diag() {return sub_dev_diag;}</p>
+<p>884</p>
+<p>885&nbsp; bool get_endpoint_specified() {return endpoint_specified;}</p>
+<p>886&nbsp; void set_endpoint_specified(bool val) {endpoint_specified =
+val;}</p>
+<p>887</p>
+<p>888&nbsp; string &amp;get_specified_ip() {return specified_ip;}</p>
+<p>889&nbsp; void set_specified_ip(string &amp;val) {specified_ip = val;}</p>
+<p>890</p>
+<p>891&nbsp; DevLong get_user_pub_hwm() {return user_pub_hwm;}</p>
+<p>892</p>
+<p>893&nbsp; void add_restarting_device(string &amp;d_name)
+{restarting_devices.push_back(d_name);}</p>
+<p>894&nbsp; void delete_restarting_device(string &amp;d_name);</p>
+<p>895</p>
+<p>896&nbsp; bool is_wattr_nan_allowed() {return wattr_nan_allowed;}</p>
+<p>897&nbsp; void set_wattr_nan_allowed(bool val) {wattr_nan_allowed=val;}</p>
+<p>898</p>
+<p>899&nbsp; RootAttRegistry &amp;get_root_att_reg() {return root_att_reg;}</p>
+<p>900&nbsp; void event_name_2_event_type(string
+&amp;,<a class="reference external" href="../../d1/d45/group__Client.html#ga5366e2a8cedf5aab5be8835974f787c6">EventType</a>
+&amp;);</p>
+<p>901</p>
+<p>902&nbsp; void validate_cmd_line_classes();</p>
+<p>903</p>
+<p>904&nbsp; static void tango_host_from_fqan(string &amp;,string &amp;);</p>
+<p>905&nbsp; static void tango_host_from_fqan(string &amp;,string &amp;,int &amp;);</p>
+<p>906</p>
+<p>907&nbsp; bool is_polling_bef_9_def() {return polling_bef_9_def;}</p>
+<p>908&nbsp; bool get_polling_bef_9() {return polling_bef_9;}</p>
+<p>909</p>
+<p>910&nbsp;private:</p>
+<p>911&nbsp; TANGO_IMP static
+<a class="reference external" href="../../d4/deb/classTango_1_1Util.html#ae8cb0ef44d4f03250ab33b603a1dfee2">Util</a>
+*_instance;</p>
+<p>912&nbsp; static bool _constructed;</p>
+<p>913&nbsp;#ifdef _TG_WINDOWS_</p>
+<p>914&nbsp; static bool _win;</p>
+<p>915&nbsp; int argc;</p>
+<p>916&nbsp; char **argv;</p>
+<p>917&nbsp; int nCmd;</p>
+<p>918&nbsp; CoutBuf *pcb;</p>
+<p>919&nbsp; W32Win *ds_window;</p>
+<p>920&nbsp; string main_win_text;</p>
+<p>921&nbsp; bool go;</p>
+<p>922&nbsp; TangoMonitor mon;</p>
+<p>923</p>
+<p>924&nbsp; void build_argc_argv();</p>
+<p>925&nbsp; void install_cons_handler();</p>
+<p>926</p>
+<p>927&nbsp; class ORBWin32Loop: public omni_thread</p>
+<p>928&nbsp; {</p>
+<p>929
+<a class="reference external" href="../../d4/deb/classTango_1_1Util.html#ae8cb0ef44d4f03250ab33b603a1dfee2">Util</a>
+*util;</p>
+<p>930&nbsp; public:</p>
+<p>931
+ORBWin32Loop(<a class="reference external" href="../../d4/deb/classTango_1_1Util.html#ae8cb0ef44d4f03250ab33b603a1dfee2">Util</a>
+*u):util(u) {}</p>
+<p>932&nbsp; virtual ~ORBWin32Loop() {}</p>
+<p>933</p>
+<p>934&nbsp; void *run_undetached(void *);</p>
+<p>935&nbsp; void start() {start_undetached();}</p>
+<p>936&nbsp; private:</p>
+<p>937&nbsp; void wait_for_go();</p>
+<p>938&nbsp; };</p>
+<p>939&nbsp; friend class ORBWin32Loop;</p>
+<p>940&nbsp; ORBWin32Loop *loop_th;</p>
+<p>941&nbsp;#endif</p>
+<p>942</p>
+<p>943&nbsp; CORBA::ORB_var orb;</p>
+<p>944&nbsp; PortableServer::POA_var _poa;</p>
+<p>945</p>
+<p>946&nbsp; string ds_instance_name; // The instance name</p>
+<p>947&nbsp; string ds_exec_name; // The server exec. name</p>
+<p>948&nbsp; string ds_name; // The server name</p>
+<p>949</p>
+<p>950&nbsp; string hostname; // The host name</p>
+<p>951&nbsp; string pid_str; // The process PID (as string)</p>
+<p>952&nbsp; TangoSys_Pid pid; // The process PID</p>
+<p>953</p>
+<p>954&nbsp; string version_str; // Tango version</p>
+<p>955&nbsp; string server_version; // Device server version</p>
+<p>956</p>
+<p>957&nbsp; string database_file_name;</p>
+<p>958</p>
+<p>959&nbsp;#ifndef TANGO_HAS_LOG4TANGO</p>
+<p>960&nbsp; string trace_output;</p>
+<p>961&nbsp; TangoSys_Cout cout_tmp;</p>
+<p>962&nbsp; ofstream *file_stream;</p>
+<p>963&nbsp;#endif //TANGO_HAS_LOG4TANGO</p>
+<p>964</p>
+<p>965&nbsp; Database *db; // The db proxy</p>
+<p>966</p>
+<p>967&nbsp; void effective_job(int,char *[]);</p>
+<p>968&nbsp; void create_CORBA_objects();</p>
+<p>969&nbsp; void misc_init();</p>
+<p>970&nbsp; void init_host_name();</p>
+<p>971&nbsp; void server_already_running();</p>
+<p>972&nbsp; void print_usage(char *);</p>
+<p>973&nbsp; static void print_err_message(const char
+*,<a class="reference external" href="../../de/ddf/namespaceTango.html#a70c30a7719984da8f69730dfdb6288e4">Tango::MessBoxType</a>
+type =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#a70c30a7719984da8f69730dfdb6288e4ab8e844c8af530408208f3f9e0b42e5d0">Tango::STOP</a>);</p>
+<p>974&nbsp; void print_err_message(const string
+&amp;mess,<a class="reference external" href="../../de/ddf/namespaceTango.html#a70c30a7719984da8f69730dfdb6288e4">Tango::MessBoxType</a>
+type =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#a70c30a7719984da8f69730dfdb6288e4ab8e844c8af530408208f3f9e0b42e5d0">Tango::STOP</a>)</p>
+<p>975&nbsp; {</p>
+<p>976&nbsp; print_err_message(mess.c_str(),type);</p>
+<p>977&nbsp; }</p>
+<p>978&nbsp; void check_args(int, char *[]);</p>
+<p>979&nbsp; void display_help_message();</p>
+<p>980&nbsp; DeviceImpl *find_device_name_core(string &amp;);</p>
+<p>981&nbsp; void check_orb_endpoint(int,char **);</p>
+<p>982&nbsp; void validate_sort(vector&lt;string&gt; &amp;);</p>
+<p>983&nbsp; void check_end_point_specified(int,char **);</p>
+<p>984</p>
+<p>985&nbsp; bool display_help; // display help message flag</p>
+<p>986&nbsp; const vector&lt;DeviceClass *&gt; *cl_list_ptr; // Ptr to server
+device class list</p>
+<p>987&nbsp;#ifdef HAS_UNIQUE_PTR</p>
+<p>988&nbsp; unique_ptr&lt;UtilExt&gt; ext; // Class extension</p>
+<p>989&nbsp;#else</p>
+<p>990&nbsp; Util::UtilExt *ext; // Class extension</p>
+<p>991&nbsp;#endif</p>
+<p>992&nbsp; vector&lt;DeviceClass *&gt; cl_list; // Full class list ptr</p>
+<p>993</p>
+<p>994&nbsp;//</p>
+<p>995&nbsp;// Ported from the extension class</p>
+<p>996&nbsp;//</p>
+<p>997</p>
+<p>998&nbsp; map&lt;string,vector&lt;string&gt; &gt; cmd_line_name_list; // Command line
+map &lt;Class name, device name list&gt;</p>
+<p>999</p>
+<p>1000&nbsp; PollThread *heartbeat_th; // The heartbeat thread object</p>
+<p>1001&nbsp; int heartbeat_th_id; // The heartbeat thread identifier</p>
+<p>1002&nbsp; PollThCmd shared_data; // The shared buffer</p>
+<p>1003&nbsp; TangoMonitor poll_mon; // The monitor</p>
+<p>1004&nbsp; bool poll_on; // Polling on flag</p>
+<p>1005
+<a class="reference external" href="../../de/ddf/namespaceTango.html#a0d80a625ea3e8339d930b249624ed0b6">SerialModel</a>
+ser_model; // The serialization model</p>
+<p>1006&nbsp; TangoMonitor only_one; // Serialization monitor</p>
+<p>1007&nbsp; NotifdEventSupplier *nd_event_supplier; // The notifd event
+supplier object</p>
+<p>1008</p>
+<p>1009&nbsp; void *py_interp; // The Python interpreter</p>
+<p>1010&nbsp; bool py_ds; // The Python DS flag</p>
+<p>1011&nbsp; CreatePyLock *cr_py_lock; // The python lock creator pointer</p>
+<p>1012&nbsp; bool py_dbg; // Badly written Python dbg flag</p>
+<p>1013</p>
+<p>1014&nbsp; DbServerCache *db_cache; // The db cache</p>
+<p>1015&nbsp; Interceptors *inter; // The user interceptors</p>
+<p>1016</p>
+<p>1017&nbsp; bool svr_starting; // Server is starting flag</p>
+<p>1018&nbsp; bool svr_stopping; // Server is shutting down flag</p>
+<p>1019</p>
+<p>1020&nbsp; vector&lt;string&gt; polled_dyn_attr_names; // Dynamic att. names
+(used for polling clean-up)</p>
+<p>1021&nbsp; vector&lt;string&gt; polled_dyn_cmd_names; // Dynamic cmd. names
+(used for polling clean-up)</p>
+<p>1022&nbsp; vector&lt;string&gt; polled_att_list; // Full polled att list</p>
+<p>1023&nbsp; vector&lt;string&gt; polled_cmd_list; // Full polled cmd list</p>
+<p>1024&nbsp; vector&lt;string&gt; all_dyn_attr; // All dynamic attr name list</p>
+<p>1025&nbsp; string dyn_att_dev_name; // Device name (use for dyn att
+clean-up)</p>
+<p>1026&nbsp; string dyn_cmd_dev_name; // Device name (use for dyn cmd
+clean-up)</p>
+<p>1027</p>
+<p>1028&nbsp; unsigned long poll_pool_size; // Polling threads pool size</p>
+<p>1029&nbsp; vector&lt;string&gt; poll_pool_conf; // Polling threads pool conf.</p>
+<p>1030&nbsp; map&lt;string,int&gt; dev_poll_th_map; // Link between device name
+and polling thread id</p>
+<p>1031&nbsp; vector&lt;PollingThreadInfo *&gt; poll_ths; // Polling threads</p>
+<p>1032&nbsp; bool conf_needs_db_upd; // Polling conf needs to be udated in
+db</p>
+<p>1033</p>
+<p>1034&nbsp; bool (*ev_loop_func)(void); // Ptr to user event loop</p>
+<p>1035&nbsp; bool shutdown_server; // Flag to exit the manual event loop</p>
+<p>1036</p>
+<p>1037&nbsp; SubDevDiag sub_dev_diag; // Object to handle sub device
+diagnostics</p>
+<p>1038&nbsp; bool _dummy_thread; // The main DS thread is not the process
+main thread</p>
+<p>1039</p>
+<p>1040&nbsp; string svr_port_num; // Server port when using file as database</p>
+<p>1041</p>
+<p>1042&nbsp; ZmqEventSupplier *zmq_event_supplier; // The zmq event supplier
+object</p>
+<p>1043&nbsp; bool endpoint_specified; // Endpoint specified on cmd line</p>
+<p>1044&nbsp; string specified_ip; // IP address specified in the endpoint</p>
+<p>1045&nbsp; DevLong user_pub_hwm; // User defined pub HWM</p>
+<p>1046</p>
+<p>1047&nbsp; vector&lt;string&gt; restarting_devices; // Restarting devices name</p>
+<p>1048&nbsp; bool wattr_nan_allowed; // NaN allowed when writing attribute</p>
+<p>1049&nbsp; RootAttRegistry root_att_reg; // Root attribute(s) registry</p>
+<p>1050</p>
+<p>1051&nbsp; bool polling_bef_9_def; // Is polling algo requirement defined</p>
+<p>1052&nbsp; bool polling_bef_9; // use Tango &lt; 9 polling algo. flag</p>
+<p>1053&nbsp;};</p>
+<p>1054</p>
+<p>1055&nbsp;//***************************************************************************</p>
+<p>1056&nbsp;//</p>
+<p>1057&nbsp;// Some inline methods</p>
+<p>1058&nbsp;//</p>
+<p>1059&nbsp;//***************************************************************************</p>
+<p>1060</p>
+<p>1061&nbsp;//&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;</p>
+<p>1062&nbsp;//</p>
+<p>1063&nbsp;// method : Util::is_device_restarting()</p>
+<p>1064&nbsp;//</p>
+<p>1065&nbsp;// description : Return a boolean if the device with name given as
+parameter</p>
+<p>1066&nbsp;// is actually executing a RestartDevice command</p>
+<p>1067&nbsp;//</p>
+<p>1068&nbsp;// args: - d_name : - The device name</p>
+<p>1069&nbsp;//</p>
+<p>1070&nbsp;// Returns true if the devce is restarting. False otherwise</p>
+<p>1071&nbsp;//</p>
+<p>1072&nbsp;//&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;</p>
+<p>1073</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a5ed4c18bfe81f1983d9ddc542491ca65">1074</a>&nbsp;inline
+bool
+<a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a5ed4c18bfe81f1983d9ddc542491ca65">Util::is_device_restarting</a>(string
+&amp;d_name)</p>
+<p>1075&nbsp;{</p>
+<p>1076&nbsp; bool ret = false;</p>
+<p>1077</p>
+<p>1078&nbsp; if (restarting_devices.empty() == false)</p>
+<p>1079&nbsp; {</p>
+<p>1080&nbsp; vector&lt;string&gt;::iterator pos;</p>
+<p>1081&nbsp; pos =
+find(restarting_devices.begin(),restarting_devices.end(),d_name);</p>
+<p>1082&nbsp; if (pos != restarting_devices.end())</p>
+<p>1083&nbsp; ret = true;</p>
+<p>1084&nbsp; }</p>
+<p>1085</p>
+<p>1086&nbsp; return ret;</p>
+<p>1087&nbsp;}</p>
+<p>1088</p>
+<p>1089&nbsp;//&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;</p>
+<p>1090&nbsp;//</p>
+<p>1091&nbsp;// method : Util::check_orb_endpoint()</p>
+<p>1092&nbsp;//</p>
+<p>1093&nbsp;// description :</p>
+<p>1094&nbsp;//</p>
+<p>1095&nbsp;// args: - argc :</p>
+<p>1096&nbsp;// - argv</p>
+<p>1097&nbsp;//</p>
+<p>1098&nbsp;//</p>
+<p>1099&nbsp;//&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;</p>
+<p>1100</p>
+<p>1101&nbsp;inline void Util::check_orb_endpoint(int argc, char *argv[])</p>
+<p>1102&nbsp;{</p>
+<p>1103&nbsp; long arg_nb;</p>
+<p>1104&nbsp; for (arg_nb = 2;arg_nb &lt; argc;arg_nb++)</p>
+<p>1105&nbsp; {</p>
+<p>1106&nbsp; if (::strcmp(argv[arg_nb],&#8221;-ORBendPoint&#8221;) == 0)</p>
+<p>1107&nbsp; {</p>
+<p>1108&nbsp; arg_nb++;</p>
+<p>1109&nbsp; string endpoint = argv[arg_nb];</p>
+<p>1110&nbsp; string::size_type pos;</p>
+<p>1111&nbsp; if ((pos = endpoint.rfind(&#8216;:&#8217;)) == string::npos)</p>
+<p>1112&nbsp; {</p>
+<p>1113&nbsp; cerr &lt;&lt; &#8220;Strange ORB endPoint specification&#8221; &lt;&lt;
+<a class="reference external" href="../../d8/dcc/namespacestd.html#a4639029cd5db5428c743a52d095356b9">endl</a>;</p>
+<p>1114&nbsp; print_usage(argv[0]);</p>
+<p>1115&nbsp; }</p>
+<p>1116&nbsp; svr_port_num = endpoint.substr(++pos);</p>
+<p>1117&nbsp; break;</p>
+<p>1118&nbsp; }</p>
+<p>1119&nbsp; }</p>
+<p>1120&nbsp; if (arg_nb == argc)</p>
+<p>1121&nbsp; {</p>
+<p>1122&nbsp; cerr &lt;&lt; &#8220;Missing ORB endPoint specification&#8221; &lt;&lt;
+<a class="reference external" href="../../d8/dcc/namespacestd.html#a4639029cd5db5428c743a52d095356b9">endl</a>;</p>
+<p>1123&nbsp; print_usage(argv[0]);</p>
+<p>1124&nbsp; }</p>
+<p>1125&nbsp;}</p>
+<p>1126</p>
+<p>1127&nbsp;//&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;</p>
+<p>1128&nbsp;//</p>
+<p>1129&nbsp;// method : Util::event_name_2_event_type()</p>
+<p>1130&nbsp;//</p>
+<p>1131&nbsp;// description :</p>
+<p>1132&nbsp;//</p>
+<p>1133&nbsp;// args: - event_name :</p>
+<p>1134&nbsp;// - et</p>
+<p>1135&nbsp;//</p>
+<p>1136&nbsp;//</p>
+<p>1137&nbsp;//&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;</p>
+<p>1138</p>
+<p>1139&nbsp;inline void Util::event_name_2_event_type(string
+&amp;event_name,<a class="reference external" href="../../d1/d45/group__Client.html#ga5366e2a8cedf5aab5be8835974f787c6">EventType</a>
+&amp;et)</p>
+<p>1140&nbsp;{</p>
+<p>1141&nbsp; if (event_name == &#8220;change&#8221;)</p>
+<p>1142&nbsp; et =
+<a class="reference external" href="../../d1/d45/group__Client.html#gga5366e2a8cedf5aab5be8835974f787c6a65a4e38e653bfce94ecc77f071e71eaf">CHANGE_EVENT</a>;</p>
+<p>1143&nbsp; else if (event_name == &#8220;quality&#8221;)</p>
+<p>1144&nbsp; et =
+<a class="reference external" href="../../d1/d45/group__Client.html#gga5366e2a8cedf5aab5be8835974f787c6a2e5f1c2696e76501860ed84e06fdfa9b">QUALITY_EVENT</a>;</p>
+<p>1145&nbsp; else if (event_name == &#8220;periodic&#8221;)</p>
+<p>1146&nbsp; et =
+<a class="reference external" href="../../d1/d45/group__Client.html#gga5366e2a8cedf5aab5be8835974f787c6a56db5ee0e5d86d9a5e629c55edff2a83">PERIODIC_EVENT</a>;</p>
+<p>1147&nbsp; else if (event_name == &#8220;archive&#8221;)</p>
+<p>1148&nbsp; et =
+<a class="reference external" href="../../d1/d45/group__Client.html#gga5366e2a8cedf5aab5be8835974f787c6a2420bb7fba51c4471791ad71422a6bd4">ARCHIVE_EVENT</a>;</p>
+<p>1149&nbsp; else if (event_name == &#8220;user_event&#8221;)</p>
+<p>1150&nbsp; et =
+<a class="reference external" href="../../d1/d45/group__Client.html#gga5366e2a8cedf5aab5be8835974f787c6a24368c57cf5b762b7351edb9d21afd48">USER_EVENT</a>;</p>
+<p>1151&nbsp; else if (event_name == &#8220;attr_conf&#8221; || event_name ==
+&#8220;attr_conf_5&#8221;)</p>
+<p>1152&nbsp; et =
+<a class="reference external" href="../../d1/d45/group__Client.html#gga5366e2a8cedf5aab5be8835974f787c6ab955c951d7aac96b5c46f108f7d7ef18">ATTR_CONF_EVENT</a>;</p>
+<p>1153&nbsp; else</p>
+<p>1154&nbsp; et =
+<a class="reference external" href="../../d1/d45/group__Client.html#gga5366e2a8cedf5aab5be8835974f787c6a3f5f44f764a22bdb1bd809c711e9eefd">DATA_READY_EVENT</a>;</p>
+<p>1155&nbsp;}</p>
+<p>1156</p>
+<p>1157&nbsp;//+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-</p>
+<p>1158&nbsp;//</p>
+<p>1159&nbsp;// function : return_empty_any</p>
+<p>1160&nbsp;//</p>
+<p>1161&nbsp;// description : Return from a command when the command does not
+have</p>
+<p>1162&nbsp;// any output argument</p>
+<p>1163&nbsp;//</p>
+<p>1164&nbsp;// arguments : in : - cmd : The command name</p>
+<p>1165&nbsp;//</p>
+<p>1166&nbsp;//&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;</p>
+<p>1167</p>
+<p><a class="reference external" href="../../de/ddf/namespaceTango.html#a3b3bd64ad7f36f411ad17050d314a460">1182</a>&nbsp;inline
+CORBA::Any
+*<a class="reference external" href="../../de/ddf/namespaceTango.html#a3b3bd64ad7f36f411ad17050d314a460">return_empty_any</a>(const
+char *cmd)</p>
+<p>1183&nbsp;{</p>
+<p>1184</p>
+<p>1185&nbsp; CORBA::Any *out_any = NULL;</p>
+<p>1186&nbsp; try</p>
+<p>1187&nbsp; {</p>
+<p>1188&nbsp; out_any = new CORBA::Any();</p>
+<p>1189&nbsp; }</p>
+<p>1190&nbsp; catch (bad_alloc &amp;)</p>
+<p>1191&nbsp; {</p>
+<p>1192&nbsp; TangoSys_MemStream o;</p>
+<p>1193</p>
+<p>1194&nbsp; o &lt;&lt; cmd &lt;&lt; &#8221;::execute&#8221;;</p>
+<p>1195
+<a class="reference external" href="../../df/d37/classTango_1_1Except.html#a937f591028b392e50070fbc4149beec6">Tango::Except::throw_exception</a>((const
+char
+*)<a class="reference external" href="../../de/ddf/namespaceTango.html#ad2903a1aa0ddfe85d8b306a99351fefb">API_MemoryAllocation</a>,</p>
+<p>1196&nbsp; (const char *)&#8221;Can&#8217;t allocate memory in server&#8221;,</p>
+<p>1197&nbsp; o.str());</p>
+<p>1198&nbsp; }</p>
+<p>1199&nbsp; return(out_any);</p>
+<p>1200</p>
+<p>1201&nbsp;}</p>
+<p>1202</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a6a5e05c240b76db97a357703bdd30552">1203</a>&nbsp;inline
+<a class="reference external" href="../../da/dbb/classTango_1_1DbDevice.html">DbDevice</a>
+*<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a6a5e05c240b76db97a357703bdd30552">DeviceImpl::get_db_device</a>()</p>
+<p>1204&nbsp;{</p>
+<p>1205&nbsp; if
+(<a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a194cd965fd1aebe1800adbe076558742">Tango::Util::_UseDb</a>
+== false)</p>
+<p>1206&nbsp; {</p>
+<p>1207&nbsp; TangoSys_OMemStream desc_mess;</p>
+<p>1208&nbsp; desc_mess &lt;&lt; &#8220;Method not available for device &#8221;;</p>
+<p>1209&nbsp; desc_mess &lt;&lt;
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#af2649629d515c38fc5a19c44f07e2f40">device_name</a>;</p>
+<p>1210&nbsp; desc_mess &lt;&lt; &#8221; which is a non database device&#8221;;</p>
+<p>1211</p>
+<p>1212
+<a class="reference external" href="../../df/d37/classTango_1_1Except.html#a937f591028b392e50070fbc4149beec6">Except::throw_exception</a>((const
+char
+*)<a class="reference external" href="../../de/ddf/namespaceTango.html#a4758e5099c8864befc48b6b0b52a3af0">API_NonDatabaseDevice</a>,</p>
+<p>1213&nbsp; desc_mess.str(),</p>
+<p>1214&nbsp; (const char *)&#8221;DeviceImpl::get_db_device&#8221;);</p>
+<p>1215&nbsp; }</p>
+<p>1216</p>
+<p>1217&nbsp; return
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#ae063e45a3778e7241d74f7270461cbb4">db_dev</a>;</p>
+<p>1218&nbsp;}</p>
+<p>1219</p>
+<p>1220&nbsp;void
+<a class="reference external" href="../../de/ddf/namespaceTango.html#adb1cc901df596cd8aea1e5d51f0cf6ac">clear_att_dim</a>(Tango::AttributeValue_3
+&amp;att_val);</p>
+<p>1221&nbsp;void
+<a class="reference external" href="../../de/ddf/namespaceTango.html#adb1cc901df596cd8aea1e5d51f0cf6ac">clear_att_dim</a>(Tango::AttributeValue_4
+&amp;att_val);</p>
+<p>1222&nbsp;void
+<a class="reference external" href="../../de/ddf/namespaceTango.html#adb1cc901df596cd8aea1e5d51f0cf6ac">clear_att_dim</a>(Tango::AttributeValue_5
+&amp;att_val);</p>
+<p>1223</p>
+<p>1224&nbsp;//&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;</p>
+<p>1225&nbsp;//</p>
+<p>1226&nbsp;// Polling threads pool related class/struct</p>
+<p>1227&nbsp;//</p>
+<p>1228&nbsp;//&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;</p>
+<p>1229</p>
+<p><a class="reference external" href="../../dc/d66/structTango_1_1PollingThreadInfo.html">1230</a>&nbsp;struct
+<a class="reference external" href="../../dc/d66/structTango_1_1PollingThreadInfo.html">PollingThreadInfo</a></p>
+<p>1231&nbsp;{</p>
+<p><a class="reference external" href="../../dc/d66/structTango_1_1PollingThreadInfo.html#a0ed194258705e10b4b4b8b132e4687dd">1232</a>
+int
+<a class="reference external" href="../../dc/d66/structTango_1_1PollingThreadInfo.html#a0ed194258705e10b4b4b8b132e4687dd">thread_id</a>;
+// The polling thread identifier</p>
+<p><a class="reference external" href="../../dc/d66/structTango_1_1PollingThreadInfo.html#a32ce4856c38b4bbc52564f24e61c7321">1233</a>
+PollThread
+*<a class="reference external" href="../../dc/d66/structTango_1_1PollingThreadInfo.html#a32ce4856c38b4bbc52564f24e61c7321">poll_th</a>;
+// The polling thread object</p>
+<p><a class="reference external" href="../../dc/d66/structTango_1_1PollingThreadInfo.html#a34ac72f11342fa6246db3ff04c8dc032">1234</a>
+PollThCmd
+<a class="reference external" href="../../dc/d66/structTango_1_1PollingThreadInfo.html#a34ac72f11342fa6246db3ff04c8dc032">shared_data</a>;
+// The shared buffer</p>
+<p><a class="reference external" href="../../dc/d66/structTango_1_1PollingThreadInfo.html#a37f783d36e383cf347ccacab3387aa51">1235</a>
+TangoMonitor
+<a class="reference external" href="../../dc/d66/structTango_1_1PollingThreadInfo.html#a37f783d36e383cf347ccacab3387aa51">poll_mon</a>;
+// The monitor</p>
+<p><a class="reference external" href="../../dc/d66/structTango_1_1PollingThreadInfo.html#aba7953103780bcc5f3e93ad265b61ea1">1236</a>
+vector&lt;string&gt;
+<a class="reference external" href="../../dc/d66/structTango_1_1PollingThreadInfo.html#aba7953103780bcc5f3e93ad265b61ea1">polled_devices</a>;
+// Polled devices for this thread</p>
+<p><a class="reference external" href="../../dc/d66/structTango_1_1PollingThreadInfo.html#a263e8adedff07f0b831780e349a9a7d0">1237</a>
+int
+<a class="reference external" href="../../dc/d66/structTango_1_1PollingThreadInfo.html#a263e8adedff07f0b831780e349a9a7d0">nb_polled_objects</a>;
+// Polled objects number in this thread</p>
+<p><a class="reference external" href="../../dc/d66/structTango_1_1PollingThreadInfo.html#a04264b5d754e7559ad8ad67fff69a110">1238</a>
+int
+<a class="reference external" href="../../dc/d66/structTango_1_1PollingThreadInfo.html#a04264b5d754e7559ad8ad67fff69a110">smallest_upd</a>;
+// Smallest thread update period</p>
+<p><a class="reference external" href="../../dc/d66/structTango_1_1PollingThreadInfo.html#a8b8d1a40cf642511070d7fb097f74a28">1239</a>
+vector&lt;DevVarLongStringArray *&gt;
+<a class="reference external" href="../../dc/d66/structTango_1_1PollingThreadInfo.html#a8b8d1a40cf642511070d7fb097f74a28">v_poll_cmd</a>;
+// Command(s) to send</p>
+<p>1240</p>
+<p><a class="reference external" href="../../dc/d66/structTango_1_1PollingThreadInfo.html#af876c42e90deca5c9d47fe7987366c2e">1241</a>
+<a class="reference external" href="../../dc/d66/structTango_1_1PollingThreadInfo.html#af876c42e90deca5c9d47fe7987366c2e">PollingThreadInfo</a>():thread_id(0),poll_th(NULL),poll_mon(&#8220;Polling_thread_mon&#8221;),nb_polled_objects(0),smallest_upd(0)</p>
+<p>1242&nbsp; {shared_data.cmd_pending = false;shared_data.trigger=false;}</p>
+<p>1243&nbsp;};</p>
+<p>1244</p>
+<p><a class="reference external" href="../../d5/db2/structTango_1_1DevDbUpd.html">1245</a>&nbsp;struct
+<a class="reference external" href="../../d5/db2/structTango_1_1DevDbUpd.html">DevDbUpd</a></p>
+<p>1246&nbsp;{</p>
+<p><a class="reference external" href="../../d5/db2/structTango_1_1DevDbUpd.html#a3665ce564deae9a35f51c41d7038e529">1247</a>
+unsigned long
+<a class="reference external" href="../../d5/db2/structTango_1_1DevDbUpd.html#a3665ce564deae9a35f51c41d7038e529">class_ind</a>;</p>
+<p><a class="reference external" href="../../d5/db2/structTango_1_1DevDbUpd.html#a38a8627129626359064789f8f600b579">1248</a>
+unsigned long
+<a class="reference external" href="../../d5/db2/structTango_1_1DevDbUpd.html#a38a8627129626359064789f8f600b579">dev_ind</a>;</p>
+<p><a class="reference external" href="../../d5/db2/structTango_1_1DevDbUpd.html#a937cf0da3cefa83ad3ae61f8a9dcad1f">1249</a>
+int
+<a class="reference external" href="../../d5/db2/structTango_1_1DevDbUpd.html#a937cf0da3cefa83ad3ae61f8a9dcad1f">mod_prop</a>;</p>
+<p>1250&nbsp;};</p>
+<p>1251</p>
+<p>1252&nbsp;//&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;</p>
+<p>1253&nbsp;//</p>
+<p>1254&nbsp;// Python device server classes</p>
+<p>1255&nbsp;//</p>
+<p>1256&nbsp;//&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;</p>
+<p>1257</p>
+<p>1258</p>
+<p>1259&nbsp;//</p>
+<p>1260&nbsp;// For thread creation interceptor (Python device servers)</p>
+<p>1261&nbsp;//</p>
+<p>1262</p>
+<p>1263&nbsp;void
+<a class="reference external" href="../../de/ddf/namespaceTango.html#a43fad155477a5f86d88574f1d8e2ac21">create_PyPerThData</a>(omni::omniInterceptors::createThread_T::info_T
+&amp;);</p>
+<p>1264</p>
+<p>1265</p>
+<p><a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html">1266</a>&nbsp;class
+<a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html">PyData</a>: public
+omni_thread::value_t</p>
+<p>1267&nbsp;{</p>
+<p>1268&nbsp;public:</p>
+<p><a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#a98da570943af3fb4d9386850bb0ebc4c">1269</a>
+<a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#a98da570943af3fb4d9386850bb0ebc4c">PyData</a>():<a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#a5452838e669ec839234459d7db57bff3">rec_state</a>(false),`rec_status &lt;../../d5/d7d/classTango_1_1PyData.html#a047f79a4c3ba0ae4b6043026d31c2ca8&gt;`__(false)</p>
+<p>1270&nbsp; {</p>
+<p>1271
+<a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#ac771fa07a83093d3adffd83a69394481">device_name</a>
+= &#8220;No associated device name!&#8221;;</p>
+<p>1272</p>
+<p>1273&nbsp; try</p>
+<p>1274&nbsp; {</p>
+<p>1275&nbsp; <a class="reference external" href="../../d4/deb/classTango_1_1Util.html">Util</a> *tg =
+<a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a577119e32b43b1344d6f9ef37f587472">Util::instance</a>(false);</p>
+<p>1276&nbsp; <a class="reference external" href="../../d9/dd7/classTango_1_1CreatePyLock.html">CreatePyLock</a>
+*Creator = tg-&gt;get_py_lock_creator();</p>
+<p>1277
+<a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#a2f4bcb08a5653dfc6137862aeaa3bce7">PerTh_py_lock</a>
+=
+Creator-&gt;<a class="reference external" href="../../d9/dd7/classTango_1_1CreatePyLock.html#a1dab7fbb63d9d24477ea78f7f1951eb3">create</a>();</p>
+<p>1278&nbsp; }</p>
+<p>1279&nbsp; catch(Tango::DevFailed &amp;)
+{<a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#a2f4bcb08a5653dfc6137862aeaa3bce7">PerTh_py_lock</a>=NULL;}</p>
+<p>1280&nbsp; }</p>
+<p>1281</p>
+<p><a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#a9f0f9dd95a4133c2d94f7dd07013a1e1">1282</a>
+<a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#a9f0f9dd95a4133c2d94f7dd07013a1e1">~PyData</a>()</p>
+<p>1283&nbsp; {</p>
+<p>1284&nbsp; if
+(<a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#a2f4bcb08a5653dfc6137862aeaa3bce7">PerTh_py_lock</a>
+!= NULL)</p>
+<p>1285&nbsp; delete
+<a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#a2f4bcb08a5653dfc6137862aeaa3bce7">PerTh_py_lock</a>;</p>
+<p>1286&nbsp; }</p>
+<p>1287</p>
+<p><a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#ab43581a61e37c52df1c464e262d280d2">1288</a>
+DevVarCharArray
+<a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#ab43581a61e37c52df1c464e262d280d2">PerTh_dvca</a>;</p>
+<p><a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#a6ee5be64c90d940fc63c9bd8e191ca74">1289</a>
+DevVarShortArray
+<a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#a6ee5be64c90d940fc63c9bd8e191ca74">PerTh_dvsha</a>;</p>
+<p><a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#a0e12526319c05fa6aaf445484b536890">1290</a>
+DevVarLongArray
+<a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#a0e12526319c05fa6aaf445484b536890">PerTh_dvla</a>;</p>
+<p><a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#a324a0e96fabfe4c1cf6d99ef3c5c1e75">1291</a>
+DevVarFloatArray
+<a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#a324a0e96fabfe4c1cf6d99ef3c5c1e75">PerTh_dvfa</a>;</p>
+<p><a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#a17b084256b71d8a61f3e95cb080d33e6">1292</a>
+DevVarDoubleArray
+<a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#a17b084256b71d8a61f3e95cb080d33e6">PerTh_dvda</a>;</p>
+<p><a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#ac92beb98b5f4805a421fbc2e793faad6">1293</a>
+DevVarUShortArray
+<a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#ac92beb98b5f4805a421fbc2e793faad6">PerTh_dvusa</a>;</p>
+<p><a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#a44206072acd001ca4070a193d23f1b9e">1294</a>
+DevVarULongArray
+<a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#a44206072acd001ca4070a193d23f1b9e">PerTh_dvula</a>;</p>
+<p><a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#aa7f30e052ddcac7cb02cd6cd2548b4d3">1295</a>
+DevVarStringArray
+<a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#aa7f30e052ddcac7cb02cd6cd2548b4d3">PerTh_dvsa</a>;</p>
+<p><a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#a8f2867611bde6c2bac6b4101f5fde7c7">1296</a>
+DevVarLongStringArray
+<a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#a8f2867611bde6c2bac6b4101f5fde7c7">PerTh_dvlsa</a>;</p>
+<p><a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#ad9842dd552c41ab0ffc28b4e95e93d55">1297</a>
+DevVarDoubleStringArray
+<a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#ad9842dd552c41ab0ffc28b4e95e93d55">PerTh_dvdsa</a>;</p>
+<p><a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#a703a851cbc4e192a9622527f068f32aa">1298</a>
+DevVarLong64Array
+<a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#a703a851cbc4e192a9622527f068f32aa">PerTh_dvl64a</a>;</p>
+<p><a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#a78aecea8ee48e0dee4995ef5c7a6abff">1299</a>
+DevVarULong64Array
+<a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#a78aecea8ee48e0dee4995ef5c7a6abff">PerTh_dvul64a</a>;</p>
+<p><a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#a98561b5e9c727034d4111e822172b4d8">1300</a>
+DevVarEncodedArray
+<a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#a98561b5e9c727034d4111e822172b4d8">PerTh_dvea</a>;</p>
+<p>1301</p>
+<p><a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#a299e537d89784a8f94fd0bedcabf1a98">1302</a>
+string
+<a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#a299e537d89784a8f94fd0bedcabf1a98">PerTh_string</a>;</p>
+<p><a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#a2032805b8c84d1bc82263b5877673a42">1303</a>
+DevFailed
+<a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#a2032805b8c84d1bc82263b5877673a42">PerTh_df</a>;</p>
+<p><a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#a0827b0a384ed37aa2cdadd9f088ddeaa">1304</a>
+vector&lt;string&gt;
+<a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#a0827b0a384ed37aa2cdadd9f088ddeaa">PerTh_vec_str</a>;</p>
+<p><a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#aa2c3319a646452bf32bf337db2a39705">1305</a>
+vector&lt;double&gt;
+<a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#aa2c3319a646452bf32bf337db2a39705">PerTh_vec_db</a>;</p>
+<p><a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#aa6fdaf75321c1c9b3a819c732046ab91">1306</a>
+DevErrorList
+<a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#aa6fdaf75321c1c9b3a819c732046ab91">PerTh_del</a>;</p>
+<p>1307</p>
+<p><a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#a5452838e669ec839234459d7db57bff3">1308</a>
+bool
+<a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#a5452838e669ec839234459d7db57bff3">rec_state</a>;</p>
+<p><a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#a047f79a4c3ba0ae4b6043026d31c2ca8">1309</a>
+bool
+<a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#a047f79a4c3ba0ae4b6043026d31c2ca8">rec_status</a>;</p>
+<p>1310</p>
+<p>1311&nbsp; // name of the associated device to a thread</p>
+<p>1312&nbsp; // used to sub device referencing</p>
+<p><a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#ac771fa07a83093d3adffd83a69394481">1313</a>
+string
+<a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#ac771fa07a83093d3adffd83a69394481">device_name</a>;</p>
+<p>1314</p>
+<p><a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#a2f4bcb08a5653dfc6137862aeaa3bce7">1315</a>
+<a class="reference external" href="../../d4/d9f/classTango_1_1PyLock.html">PyLock</a>
+*<a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#a2f4bcb08a5653dfc6137862aeaa3bce7">PerTh_py_lock</a>;</p>
+<p>1316&nbsp;};</p>
+<p>1317</p>
+<p>1318</p>
+<p><a class="reference external" href="../../de/dbe/classTango_1_1AutoPyLock.html">1319</a>&nbsp;class
+<a class="reference external" href="../../de/dbe/classTango_1_1AutoPyLock.html">AutoPyLock</a></p>
+<p>1320&nbsp;{</p>
+<p>1321&nbsp;public:</p>
+<p>1322
+<a class="reference external" href="../../de/dbe/classTango_1_1AutoPyLock.html#a00ec70eee990cfd77c37f70a57787bac">AutoPyLock</a>();</p>
+<p>1323
+<a class="reference external" href="../../de/dbe/classTango_1_1AutoPyLock.html#a9a890e8f67795bf6e5678b80977160bc">~AutoPyLock</a>();</p>
+<p>1324&nbsp;};</p>
+<p>1325</p>
+<p>1326&nbsp;long
+<a class="reference external" href="../../de/ddf/namespaceTango.html#ad7ae390b6e548a26ff1b5cf3075ff577">_convert_tango_lib_release</a>();</p>
+<p>1327</p>
+<p>1328&nbsp;} // End of Tango namespace</p>
+<p>1329</p>
+<p>1330&nbsp;#endif /* UTILS */</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#aa5f6adfd5e1b7f03fdbd7eadeffb3fb7">Tango::Util::trigger_cmd_polling</a></p>
+<p>void trigger_cmd_polling(DeviceImpl *dev, const string &amp;name)</p>
+<p>Trigger polling for polled command.</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a6ff7a35d328ee87b5dca4a04ea8b12c8">Tango::Util::get_device_by_name</a></p>
+<p>DeviceImpl * get_device_by_name(const string &amp;dev_name)</p>
+<p>Get a device reference from its name.</p>
+<p><a class="reference external" href="../../d9/dd7/classTango_1_1CreatePyLock.html#a6ed4dcb11ebec0270281b896e9efe2f2">Tango::CreatePyLock::CreatePyLock</a></p>
+<p>CreatePyLock()</p>
+<p><strong>Definition:</strong> utils.h:109</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a79b69d3b0376e45516410fe35a7c499c">Tango::Util::init</a></p>
+<p>static Util * init(int argc, char *argv[])</p>
+<p>Create and get the singleton object reference.</p>
+<p><a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#a98561b5e9c727034d4111e822172b4d8">Tango::PyData::PerTh_dvea</a></p>
+<p>DevVarEncodedArray PerTh_dvea</p>
+<p><strong>Definition:</strong> utils.h:1300</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html">Tango::Util</a></p>
+<p>This class is a used to store TANGO device server process data and to
+provide the user with a set of ...</p>
+<p><strong>Definition:</strong> utils.h:153</p>
+<p><a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#a17b084256b71d8a61f3e95cb080d33e6">Tango::PyData::PerTh_dvda</a></p>
+<p>DevVarDoubleArray PerTh_dvda</p>
+<p><strong>Definition:</strong> utils.h:1292</p>
+<p><a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#ad9842dd552c41ab0ffc28b4e95e93d55">Tango::PyData::PerTh_dvdsa</a></p>
+<p>DevVarDoubleStringArray PerTh_dvdsa</p>
+<p><strong>Definition:</strong> utils.h:1297</p>
+<p><a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#ac771fa07a83093d3adffd83a69394481">Tango::PyData::device_name</a></p>
+<p>string device_name</p>
+<p><strong>Definition:</strong> utils.h:1313</p>
+<p><a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#a9f0f9dd95a4133c2d94f7dd07013a1e1">Tango::PyData::~PyData</a></p>
+<p>~PyData()</p>
+<p><strong>Definition:</strong> utils.h:1282</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a92f38f300de79ece0538b691c806e4a6">Tango::Util::_daemon</a></p>
+<p>static TANGO_IMP bool _daemon</p>
+<p>A daemon process flag.</p>
+<p><strong>Definition:</strong> utils.h:702</p>
+<p><a class="reference external" href="../../d6/d62/classTango_1_1Interceptors.html#aa6e716d549719f06e696ddfb3d596091">Tango::Interceptors::~Interceptors</a></p>
+<p>virtual ~Interceptors()</p>
+<p><strong>Definition:</strong> utils.h:119</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a9f4928ff121e0c7e25c23457fcdde12a">Tango::Util::~Util</a></p>
+<p>~Util()</p>
+<p>The class destructor.</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a54e78ffcf1f76cd8d8d03022921ea0f3">Tango::Util::get_host_name</a></p>
+<p>string &amp; get_host_name()</p>
+<p>Get the host name where the device server process is running.</p>
+<p><strong>Definition:</strong> utils.h:314</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#adef106a678ba16179069e1f5b0b14de2">Tango::Util::get_zmq_event_supplier</a></p>
+<p>ZmqEventSupplier * get_zmq_event_supplier()</p>
+<p>Get a reference to the ZMQ TANGO EventSupplier object.</p>
+<p><strong>Definition:</strong> utils.h:408</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a6e221145196c95c02be5474dcd9520c0">Tango::Util::reset_filedatabase</a></p>
+<p>void reset_filedatabase()</p>
+<p>Reread the file database.</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a7db09207aa90d9515115a296c057f789">Tango::Util::get_database</a></p>
+<p>Database * get_database()</p>
+<p>Get a reference to the TANGO database object.</p>
+<p><strong>Definition:</strong> utils.h:553</p>
+<p><a class="reference external" href="../../d6/dc5/classTango_1_1Database.html">Tango::Database</a></p>
+<p>A high level object which contains the link to the database.</p>
+<p><strong>Definition:</strong> dbapi.h:53</p>
+<p><a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#aa2c3319a646452bf32bf337db2a39705">Tango::PyData::PerTh_vec_db</a></p>
+<p>vector&lt; double &gt; PerTh_vec_db</p>
+<p><strong>Definition:</strong> utils.h:1305</p>
+<p><a class="reference external" href="../../d7/d2a/classTango_1_1ApiUtil.html">Tango::ApiUtil</a></p>
+<p>Miscellaneous utility methods usefull in a Tango client.</p>
+<p><strong>Definition:</strong> devapi.h:55</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#ad439b7b797d20280db7558d3e0ca97b2">Tango::Util::get_orb</a></p>
+<p>CORBA::ORB_ptr get_orb()</p>
+<p>Get a reference to the CORBA ORB.</p>
+<p><strong>Definition:</strong> utils.h:222</p>
+<p><a class="reference external" href="../../d0/dcb/classTango_1_1AttrHistoryStack.html">Tango::AttrHistoryStack</a></p>
+<p>This class is a used to pass an attribute value history when the user
+directly fills the attribute po...</p>
+<p><strong>Definition:</strong> pollext.h:722</p>
+<p><a class="reference external" href="../../dc/d66/structTango_1_1PollingThreadInfo.html#a0ed194258705e10b4b4b8b132e4687dd">Tango::PollingThreadInfo::thread_id</a></p>
+<p>int thread_id</p>
+<p><strong>Definition:</strong> utils.h:1232</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a578233d769fc2fff627930f9b38e7ecd">Tango::Util::server_set_event_loop</a></p>
+<p>void server_set_event_loop(bool(*f_ptr)())</p>
+<p>Set the server event loop.</p>
+<p><strong>Definition:</strong> utils.h:681</p>
+<p><a class="reference external" href="../../d1/d45/group__Client.html#gga5366e2a8cedf5aab5be8835974f787c6a2420bb7fba51c4471791ad71422a6bd4">Tango::ARCHIVE_EVENT</a></p>
+<p>Archive event.</p>
+<p><strong>Definition:</strong> tango_const.h:1093</p>
+<p><a class="reference external" href="../../d4/d9f/classTango_1_1PyLock.html#afd0b51426d645c9c6c08e2fedf324908">Tango::PyLock::~PyLock</a></p>
+<p>virtual ~PyLock()</p>
+<p><strong>Definition:</strong> utils.h:100</p>
+<p><a class="reference external" href="../../d4/d9f/classTango_1_1PyLock.html#a1eab5bc8ab2ae9ca1fe7deb49e7a7682">Tango::PyLock::Release</a></p>
+<p>virtual void Release()</p>
+<p><strong>Definition:</strong> utils.h:103</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a1f604cdabca2b7efd2a54287a04d567d">Tango::Util::get_version_str</a></p>
+<p>string &amp; get_version_str()</p>
+<p>Get the IDL TANGO version.</p>
+<p><strong>Definition:</strong> utils.h:343</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a3fddd272b3d6f6e3990a8d98ee64cb7d">Tango::Util::server_init</a></p>
+<p>void server_init(bool with_window=false)</p>
+<p>Initialise all the device server pattern(s) embedded in a device server
+process.</p>
+<p><a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#a2032805b8c84d1bc82263b5877673a42">Tango::PyData::PerTh_df</a></p>
+<p>DevFailed PerTh_df</p>
+<p><strong>Definition:</strong> utils.h:1303</p>
+<p><a class="reference external" href="../../d5/db2/structTango_1_1DevDbUpd.html#a38a8627129626359064789f8f600b579">Tango::DevDbUpd::dev_ind</a></p>
+<p>unsigned long dev_ind</p>
+<p><strong>Definition:</strong> utils.h:1248</p>
+<p><a class="reference external" href="../../da/dbb/classTango_1_1DbDevice.html">Tango::DbDevice</a></p>
+<p>A high level object for a device interface to the database.</p>
+<p><strong>Definition:</strong> dbapi.h:52</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#ae1df5b54896147fc95d689efc2936cc4">Tango::Util::set_polling_before_9</a></p>
+<p>void set_polling_before_9(bool val)</p>
+<p>Set the polling thread algorithm to the algorithum used before Tango 9.</p>
+<p><strong>Definition:</strong> utils.h:507</p>
+<p><a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#a0827b0a384ed37aa2cdadd9f088ddeaa">Tango::PyData::PerTh_vec_str</a></p>
+<p>vector&lt; string &gt; PerTh_vec_str</p>
+<p><strong>Definition:</strong> utils.h:1304</p>
+<p><a class="reference external" href="../../d5/db2/structTango_1_1DevDbUpd.html">Tango::DevDbUpd</a></p>
+<p><strong>Definition:</strong> utils.h:1245</p>
+<p><a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#aa6fdaf75321c1c9b3a819c732046ab91">Tango::PyData::PerTh_del</a></p>
+<p>DevErrorList PerTh_del</p>
+<p><strong>Definition:</strong> utils.h:1306</p>
+<p><a class="reference external" href="../../de/ddf/namespaceTango.html#a0d80a625ea3e8339d930b249624ed0b6">Tango::SerialModel</a></p>
+<p>SerialModel</p>
+<p><strong>Definition:</strong> tango_const.h:964</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a9c2ea6e24a2e83cd09a1dbdc7218bbee">Tango::Util::get_poa</a></p>
+<p>PortableServer::POA_ptr get_poa()</p>
+<p>Get a reference to the CORBA Portable Object Adapter (POA)</p>
+<p><strong>Definition:</strong> utils.h:233</p>
+<p><a class="reference external" href="../../de/ddf/namespaceTango.html#ad7ae390b6e548a26ff1b5cf3075ff577">Tango::_convert_tango_lib_release</a></p>
+<p>long _convert_tango_lib_release()</p>
+<p><a class="reference external" href="../../d8/dcc/namespacestd.html#a4639029cd5db5428c743a52d095356b9">std::endl</a></p>
+<p>log4tango::LoggerStream &amp; endl(log4tango::LoggerStream &amp;ls)</p>
+<p><strong>Definition:</strong> LoggerStream.hh:180</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#aa44378b4c63d0c2d86060b364f6b5639">Tango::Util::connect_db</a></p>
+<p>void connect_db()</p>
+<p>Connect the process to the TANGO database.</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a23221e64a028a7ddd7a03b9064322ddd">Tango::Util::get_ds_exec_name</a></p>
+<p>string &amp; get_ds_exec_name()</p>
+<p>Get the device server executable name.</p>
+<p><strong>Definition:</strong> utils.h:298</p>
+<p><a class="reference external" href="../../dc/d66/structTango_1_1PollingThreadInfo.html#a34ac72f11342fa6246db3ff04c8dc032">Tango::PollingThreadInfo::shared_data</a></p>
+<p>PollThCmd shared_data</p>
+<p><strong>Definition:</strong> utils.h:1234</p>
+<p><a class="reference external" href="../../d1/d45/group__Client.html#gga5366e2a8cedf5aab5be8835974f787c6a65a4e38e653bfce94ecc77f071e71eaf">Tango::CHANGE_EVENT</a></p>
+<p>Change event.</p>
+<p><strong>Definition:</strong> tango_const.h:1090</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#ab045a913f25a49e2bb2a1b1895324b87">Tango::Util::get_serial_model</a></p>
+<p>SerialModel get_serial_model()</p>
+<p>Get the serialization model.</p>
+<p><strong>Definition:</strong> utils.h:394</p>
+<p><a class="reference external" href="../../d9/dd7/classTango_1_1CreatePyLock.html#a1dab7fbb63d9d24477ea78f7f1951eb3">Tango::CreatePyLock::create</a></p>
+<p>virtual PyLock * create()</p>
+<p><strong>Definition:</strong> utils.h:112</p>
+<p><a class="reference external" href="../../d1/d45/group__Client.html#gga5366e2a8cedf5aab5be8835974f787c6a24368c57cf5b762b7351edb9d21afd48">Tango::USER_EVENT</a></p>
+<p>User event.</p>
+<p><strong>Definition:</strong> tango_const.h:1094</p>
+<p><a class="reference external" href="../../d1/d45/group__Client.html#ga5366e2a8cedf5aab5be8835974f787c6">Tango::EventType</a></p>
+<p>EventType</p>
+<p>Possible event type.</p>
+<p><strong>Definition:</strong> tango_const.h:1089</p>
+<p><a class="reference external" href="../../d4/d9f/classTango_1_1PyLock.html">Tango::PyLock</a></p>
+<p><strong>Definition:</strong> utils.h:96</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#aff871862b632defb0006e95404b3089a">Tango::Util::get_pid</a></p>
+<p>TangoSys_Pid get_pid()</p>
+<p>Get the device server process identifier.</p>
+<p><strong>Definition:</strong> utils.h:328</p>
+<p><a class="reference external" href="../../dc/d66/structTango_1_1PollingThreadInfo.html#a04264b5d754e7559ad8ad67fff69a110">Tango::PollingThreadInfo::smallest_upd</a></p>
+<p>int smallest_upd</p>
+<p><strong>Definition:</strong> utils.h:1238</p>
+<p><a class="reference external" href="../../d5/db2/structTango_1_1DevDbUpd.html#a937cf0da3cefa83ad3ae61f8a9dcad1f">Tango::DevDbUpd::mod_prop</a></p>
+<p>int mod_prop</p>
+<p><strong>Definition:</strong> utils.h:1249</p>
+<p><a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#ab43581a61e37c52df1c464e262d280d2">Tango::PyData::PerTh_dvca</a></p>
+<p>DevVarCharArray PerTh_dvca</p>
+<p><strong>Definition:</strong> utils.h:1288</p>
+<p><a class="reference external" href="../../de/ddf/namespaceTango.html">Tango</a></p>
+<hr class="docutils" />
+<p><strong>Definition:</strong> device.h:50</p>
+<p><a class="reference external" href="../../de/dbe/classTango_1_1AutoPyLock.html#a9a890e8f67795bf6e5678b80977160bc">Tango::AutoPyLock::~AutoPyLock</a></p>
+<p>~AutoPyLock()</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#ae8106bcba73bdaf045057e1dc16b0637">Tango::Util::get_notifd_event_supplier</a></p>
+<p>NotifdEventSupplier * get_notifd_event_supplier()</p>
+<p>Get a reference to the notifd TANGO EventSupplier object.</p>
+<p><strong>Definition:</strong> utils.h:401</p>
+<p><a class="reference external" href="../../d4/d9f/classTango_1_1PyLock.html#a1afe28ba14cf56f031c9960db681f9a3">Tango::PyLock::PyLock</a></p>
+<p>PyLock()</p>
+<p><strong>Definition:</strong> utils.h:99</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a48cc2bfa8af581f5b56ff7b72de4c2ff">Tango::Util::unregister_server</a></p>
+<p>void unregister_server()</p>
+<p>Unregister a device server process from the TANGO database.</p>
+<p><a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#a324a0e96fabfe4c1cf6d99ef3c5c1e75">Tango::PyData::PerTh_dvfa</a></p>
+<p>DevVarFloatArray PerTh_dvfa</p>
+<p><strong>Definition:</strong> utils.h:1291</p>
+<p><a class="reference external" href="../../de/dbe/classTango_1_1AutoPyLock.html">Tango::AutoPyLock</a></p>
+<p><strong>Definition:</strong> utils.h:1319</p>
+<p><a class="reference external" href="../../dc/d66/structTango_1_1PollingThreadInfo.html#aba7953103780bcc5f3e93ad265b61ea1">Tango::PollingThreadInfo::polled_devices</a></p>
+<p>vector&lt; string &gt; polled_devices</p>
+<p><strong>Definition:</strong> utils.h:1236</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a4458c86fc6af2862f08d292912a6d430">Tango::Util::get_device_list_by_class</a></p>
+<p>vector&lt; DeviceImpl * &gt; &amp; get_device_list_by_class(const string
+&amp;class_name)</p>
+<p>Get the list of device references for a given TANGO class.</p>
+<p><a class="reference external" href="../../d1/d45/group__Client.html#gga5366e2a8cedf5aab5be8835974f787c6a3f5f44f764a22bdb1bd809c711e9eefd">Tango::DATA_READY_EVENT</a></p>
+<p>Data ready event.</p>
+<p><strong>Definition:</strong> tango_const.h:1096</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#aff3a13d613a5c362c4c32e3946081a8f">Tango::Util::get_pid_str</a></p>
+<p>string &amp; get_pid_str()</p>
+<p>Get the device server process identifier as a String.</p>
+<p><strong>Definition:</strong> utils.h:321</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#ae085bbb2bd407369c62a126971f12f7d">Tango::Util::set_ds_event_buffer_hwm</a></p>
+<p>void set_ds_event_buffer_hwm(DevLong val)</p>
+<p>Set device server process event buffer high water mark (HWM)</p>
+<p><strong>Definition:</strong> utils.h:415</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#abb2c6dbbb85e9c0d73c7304dec83b8a2">Tango::Util::set_server_version</a></p>
+<p>void set_server_version(const char *vers)</p>
+<p>Set the device server version.</p>
+<p><strong>Definition:</strong> utils.h:357</p>
+<p><a class="reference external" href="../../d6/d62/classTango_1_1Interceptors.html#a3a874b0abbff6982eff3d335e58a9569">Tango::Interceptors::delete_thread</a></p>
+<p>virtual void delete_thread()</p>
+<p><strong>Definition:</strong> utils.h:122</p>
+<p><a class="reference external" href="../../dc/d66/structTango_1_1PollingThreadInfo.html#af876c42e90deca5c9d47fe7987366c2e">Tango::PollingThreadInfo::PollingThreadInfo</a></p>
+<p>PollingThreadInfo()</p>
+<p><strong>Definition:</strong> utils.h:1241</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#af2649629d515c38fc5a19c44f07e2f40">Tango::DeviceImpl::device_name</a></p>
+<p>string device_name</p>
+<p>The device name.</p>
+<p><strong>Definition:</strong> device.h:3256</p>
+<p><a class="reference external" href="../../d1/d45/group__Client.html#gga5366e2a8cedf5aab5be8835974f787c6ab955c951d7aac96b5c46f108f7d7ef18">Tango::ATTR_CONF_EVENT</a></p>
+<p>Attribute configuration change event.</p>
+<p><strong>Definition:</strong> tango_const.h:1095</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a27485b14ec5334576704e31b65e2d03c">Tango::Util::set_polling_threads_pool_size</a></p>
+<p>void set_polling_threads_pool_size(unsigned long thread_nb)</p>
+<p>Set the polling threads pool size.</p>
+<p><strong>Definition:</strong> utils.h:493</p>
+<p><a class="reference external" href="../../dc/d66/structTango_1_1PollingThreadInfo.html#a8b8d1a40cf642511070d7fb097f74a28">Tango::PollingThreadInfo::v_poll_cmd</a></p>
+<p>vector&lt; DevVarLongStringArray * &gt; v_poll_cmd</p>
+<p><strong>Definition:</strong> utils.h:1239</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#aadfaa555e0b480fa2cb63e820f390e11">Tango::Util::_sleep_between_connect</a></p>
+<p>static TANGO_IMP long _sleep_between_connect</p>
+<p>The loop sleeping time in case of the _daemon flag set to true.</p>
+<p><strong>Definition:</strong> utils.h:709</p>
+<p><a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#a98da570943af3fb4d9386850bb0ebc4c">Tango::PyData::PyData</a></p>
+<p>PyData()</p>
+<p><strong>Definition:</strong> utils.h:1269</p>
+<p><a class="reference external" href="../../d6/d62/classTango_1_1Interceptors.html#ae04addadc7821a6dd88dc6f2661a0c19">Tango::Interceptors::create_thread</a></p>
+<p>virtual void create_thread()</p>
+<p><strong>Definition:</strong> utils.h:121</p>
+<p><a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#a703a851cbc4e192a9622527f068f32aa">Tango::PyData::PerTh_dvl64a</a></p>
+<p>DevVarLong64Array PerTh_dvl64a</p>
+<p><strong>Definition:</strong> utils.h:1298</p>
+<p><a class="reference external" href="../../d9/dd7/classTango_1_1CreatePyLock.html#aaf58411a22d5d3866af917fe433a1cff">Tango::CreatePyLock::~CreatePyLock</a></p>
+<p>virtual ~CreatePyLock()</p>
+<p><strong>Definition:</strong> utils.h:110</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a194cd965fd1aebe1800adbe076558742">Tango::Util::_UseDb</a></p>
+<p>static TANGO_IMP bool _UseDb</p>
+<p>The database use flag (Use with extreme care).</p>
+<p><strong>Definition:</strong> utils.h:695</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a5ed4c18bfe81f1983d9ddc542491ca65">Tango::Util::is_device_restarting</a></p>
+<p>bool is_device_restarting(string &amp;d_name)</p>
+<p>Check if the device is actually restarted by the device server process
+admin device with its DevResta...</p>
+<p><strong>Definition:</strong> utils.h:1074</p>
+<p><a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#ac92beb98b5f4805a421fbc2e793faad6">Tango::PyData::PerTh_dvusa</a></p>
+<p>DevVarUShortArray PerTh_dvusa</p>
+<p><strong>Definition:</strong> utils.h:1293</p>
+<p><a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#a8f2867611bde6c2bac6b4101f5fde7c7">Tango::PyData::PerTh_dvlsa</a></p>
+<p>DevVarLongStringArray PerTh_dvlsa</p>
+<p><strong>Definition:</strong> utils.h:1296</p>
+<p><a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#a5452838e669ec839234459d7db57bff3">Tango::PyData::rec_state</a></p>
+<p>bool rec_state</p>
+<p><strong>Definition:</strong> utils.h:1308</p>
+<p><a class="reference external" href="../../d5/db2/structTango_1_1DevDbUpd.html#a3665ce564deae9a35f51c41d7038e529">Tango::DevDbUpd::class_ind</a></p>
+<p>unsigned long class_ind</p>
+<p><strong>Definition:</strong> utils.h:1247</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#ac618c4a4d49ce20ae605ecded0ffe61c">Tango::Util::_tracelevel</a></p>
+<p>static int _tracelevel</p>
+<p>The process trace level.</p>
+<p><strong>Definition:</strong> utils.h:690</p>
+<p><a class="reference external" href="../../d4/d9f/classTango_1_1PyLock.html#a0c766fd01a1e36673db89e712eb14727">Tango::PyLock::Get</a></p>
+<p>virtual void Get()</p>
+<p><strong>Definition:</strong> utils.h:102</p>
+<p><a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#aa7f30e052ddcac7cb02cd6cd2548b4d3">Tango::PyData::PerTh_dvsa</a></p>
+<p>DevVarStringArray PerTh_dvsa</p>
+<p><strong>Definition:</strong> utils.h:1295</p>
+<p><a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#a299e537d89784a8f94fd0bedcabf1a98">Tango::PyData::PerTh_string</a></p>
+<p>string PerTh_string</p>
+<p><strong>Definition:</strong> utils.h:1302</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a84851a5fba97e3b553e5a567446f59c0">Tango::Util::set_serial_model</a></p>
+<p>void set_serial_model(SerialModel ser)</p>
+<p>Set the serialization model.</p>
+<p><strong>Definition:</strong> utils.h:386</p>
+<p><a class="reference external" href="../../d9/dd7/classTango_1_1CreatePyLock.html">Tango::CreatePyLock</a></p>
+<p><strong>Definition:</strong> utils.h:106</p>
+<p><a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html">Tango::PyData</a></p>
+<p><strong>Definition:</strong> utils.h:1266</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a6a5e05c240b76db97a357703bdd30552">Tango::DeviceImpl::get_db_device</a></p>
+<p>DbDevice * get_db_device()</p>
+<p>Get a pointer to the associated DbDevice object.</p>
+<p><strong>Definition:</strong> utils.h:1203</p>
+<p><a class="reference external" href="../../de/ddf/namespaceTango.html#a43fad155477a5f86d88574f1d8e2ac21">Tango::create_PyPerThData</a></p>
+<p>void
+create_PyPerThData(omni::omniInterceptors::createThread_T::info_T &amp;)</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#ae8f35a5ab069649e607be6097c8b1fd8">Tango::Util::get_ds_inst_name</a></p>
+<p>string &amp; get_ds_inst_name()</p>
+<p>Get the device server instance name.</p>
+<p><strong>Definition:</strong> utils.h:291</p>
+<p><a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#a6ee5be64c90d940fc63c9bd8e191ca74">Tango::PyData::PerTh_dvsha</a></p>
+<p>DevVarShortArray PerTh_dvsha</p>
+<p><strong>Definition:</strong> utils.h:1289</p>
+<p><a class="reference external" href="../../db/d17/pollext_8h.html">pollext.h</a></p>
+<p><a class="reference external" href="../../de/dbe/classTango_1_1AutoPyLock.html#a00ec70eee990cfd77c37f70a57787bac">Tango::AutoPyLock::AutoPyLock</a></p>
+<p>AutoPyLock()</p>
+<p><a class="reference external" href="../../dc/d66/structTango_1_1PollingThreadInfo.html#a263e8adedff07f0b831780e349a9a7d0">Tango::PollingThreadInfo::nb_polled_objects</a></p>
+<p>int nb_polled_objects</p>
+<p><strong>Definition:</strong> utils.h:1237</p>
+<p><a class="reference external" href="../../de/ddf/namespaceTango.html#a4758e5099c8864befc48b6b0b52a3af0">Tango::API_NonDatabaseDevice</a></p>
+<p>const char *const API_NonDatabaseDevice</p>
+<p><strong>Definition:</strong> tango_const.h:413</p>
+<p><a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#a047f79a4c3ba0ae4b6043026d31c2ca8">Tango::PyData::rec_status</a></p>
+<p>bool rec_status</p>
+<p><strong>Definition:</strong> utils.h:1309</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#abf6c91c64e226fae5ed1639cd28071ce">Tango::Util::set_trace_level</a></p>
+<p>void set_trace_level(int level)</p>
+<p>Set the process trace level.</p>
+<p><strong>Definition:</strong> utils.h:240</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a7e5a56fe3a14633ffafc01c63698f45f">Tango::Util::is_svr_shutting_down</a></p>
+<p>bool is_svr_shutting_down()</p>
+<p>Check if the device server process is in its shutting down sequence.</p>
+<p><strong>Definition:</strong> utils.h:523</p>
+<p><a class="reference external" href="../../de/ddf/namespaceTango.html#a70c30a7719984da8f69730dfdb6288e4">Tango::MessBoxType</a></p>
+<p>MessBoxType</p>
+<p><strong>Definition:</strong> tango_const.h:939</p>
+<p><a class="reference external" href="../../dc/d66/structTango_1_1PollingThreadInfo.html#a37f783d36e383cf347ccacab3387aa51">Tango::PollingThreadInfo::poll_mon</a></p>
+<p>TangoMonitor poll_mon</p>
+<p><strong>Definition:</strong> utils.h:1235</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html">Tango::DeviceImpl</a></p>
+<p>Base class for all TANGO device.</p>
+<p><strong>Definition:</strong> device.h:90</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a49822fbfc1d15e017397230127ce33ee">Tango::Util::get_trace_level</a></p>
+<p>int get_trace_level()</p>
+<p>Get the process trace level.</p>
+<p><strong>Definition:</strong> utils.h:247</p>
+<p><a class="reference external" href="../../dc/d66/structTango_1_1PollingThreadInfo.html#a32ce4856c38b4bbc52564f24e61c7321">Tango::PollingThreadInfo::poll_th</a></p>
+<p>PollThread * poll_th</p>
+<p><strong>Definition:</strong> utils.h:1233</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a577119e32b43b1344d6f9ef37f587472">Tango::Util::instance</a></p>
+<p>static TANGO_IMP_EXP Util * instance(bool exit=true)</p>
+<p>Get the singleton object reference.</p>
+<p><a class="reference external" href="../../de/ddf/namespaceTango.html#adb1cc901df596cd8aea1e5d51f0cf6ac">Tango::clear_att_dim</a></p>
+<p>void clear_att_dim(Tango::AttributeValue_3 &amp;att_val)</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#ae063e45a3778e7241d74f7270461cbb4">Tango::DeviceImpl::db_dev</a></p>
+<p>DbDevice * db_dev</p>
+<p>Pointer to the associated DbDevice object.</p>
+<p><strong>Definition:</strong> device.h:3284</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a5129fe98f63d85e72d35ed4619d14b5d">Tango::Util::add_class_to_list</a></p>
+<p>void add_class_to_list(DeviceClass *cl)</p>
+<p>Add a DeviceClass to the DeviceClass list pointer.</p>
+<p><strong>Definition:</strong> utils.h:371</p>
+<p><a class="reference external" href="../../d1/d45/group__Client.html#gga5366e2a8cedf5aab5be8835974f787c6a2e5f1c2696e76501860ed84e06fdfa9b">Tango::QUALITY_EVENT</a></p>
+<p>Quality change event (deprecated - do not use)</p>
+<p><strong>Definition:</strong> tango_const.h:1091</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a8b5d14831423f0f2dafab927fa4e64ed">Tango::Util::is_svr_starting</a></p>
+<p>bool is_svr_starting()</p>
+<p>Check if the device server process is in its starting phase.</p>
+<p><strong>Definition:</strong> utils.h:517</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a55f6da618ced3d2c73b4b4650f41a781">Tango::Util::set_class_list</a></p>
+<p>void set_class_list(vector&lt; DeviceClass * &gt; *list)</p>
+<p>Set the DeviceClass list pointer.</p>
+<p><strong>Definition:</strong> utils.h:364</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#ae201024b8f84c08743097a43e2551540">Tango::Util::get_device_list</a></p>
+<p>vector&lt; DeviceImpl * &gt; get_device_list(const string &amp;name)</p>
+<p>Get DeviceList from name.</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#ad1ff436c06ef8b7cba2c96c09f6176ae">Tango::Util::server_cleanup</a></p>
+<p>void server_cleanup()</p>
+<p>Cleanup a Tango device server process before exit.</p>
+<p><a class="reference external" href="../../d1/d45/group__Client.html#gga5366e2a8cedf5aab5be8835974f787c6a56db5ee0e5d86d9a5e629c55edff2a83">Tango::PERIODIC_EVENT</a></p>
+<p>Periodic event.</p>
+<p><strong>Definition:</strong> tango_const.h:1092</p>
+<p><a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#a2f4bcb08a5653dfc6137862aeaa3bce7">Tango::PyData::PerTh_py_lock</a></p>
+<p>PyLock * PerTh_py_lock</p>
+<p><strong>Definition:</strong> utils.h:1315</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#aa90445f0324fbdea288f7b41aa4a6790">Tango::Util::AutoTangoMonitor</a></p>
+<p>friend class Tango::AutoTangoMonitor</p>
+<p><strong>Definition:</strong> utils.h:155</p>
+<p><a class="reference external" href="../../dc/d8f/classTango_1_1CmdHistoryStack.html">Tango::CmdHistoryStack</a></p>
+<p>This class is a used to pass a command result history when the user
+directly fills the command pollin...</p>
+<p><strong>Definition:</strong> pollext.h:909</p>
+<p><a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#a78aecea8ee48e0dee4995ef5c7a6abff">Tango::PyData::PerTh_dvul64a</a></p>
+<p>DevVarULong64Array PerTh_dvul64a</p>
+<p><strong>Definition:</strong> utils.h:1299</p>
+<p><a class="reference external" href="../../d6/d62/classTango_1_1Interceptors.html#a4c5255368e548bba8405ecf44b2b698f">Tango::Interceptors::Interceptors</a></p>
+<p>Interceptors()</p>
+<p><strong>Definition:</strong> utils.h:118</p>
+<p><a class="reference external" href="../../de/ddf/namespaceTango.html#a70c30a7719984da8f69730dfdb6288e4ab8e844c8af530408208f3f9e0b42e5d0">Tango::STOP</a></p>
+<p><strong>Definition:</strong> tango_const.h:940</p>
+<p><a class="reference external" href="../../dc/d66/structTango_1_1PollingThreadInfo.html">Tango::PollingThreadInfo</a></p>
+<p><strong>Definition:</strong> utils.h:1230</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a797a10d317dc6aab6ef2948fc94b90cf">Tango::Util::fill_cmd_polling_buffer</a></p>
+<p>void fill_cmd_polling_buffer(DeviceImpl *dev, string &amp;cmd_name,
+CmdHistoryStack&lt; T &gt; &amp;data)</p>
+<p>Fill polling buffer for polled command.</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a6299b8c885918b5a0cbfe74d1563501b">Tango::Util::server_run</a></p>
+<p>void server_run()</p>
+<p>Run the CORBA event loop.</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a0d18e9c85522737eb4fb4bfff15af44c">Tango::Util::get_class_list</a></p>
+<p>const vector&lt; DeviceClass * &gt; * get_class_list()</p>
+<p>Get the DeviceClass list pointer.</p>
+<p><strong>Definition:</strong> utils.h:378</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a9cb37786d6f990990c7905b39b889d27">Tango::Util::trigger_attr_polling</a></p>
+<p>void trigger_attr_polling(DeviceImpl *dev, const string &amp;name)</p>
+<p>Trigger polling for polled attribute.</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#a937f591028b392e50070fbc4149beec6">Tango::Except::throw_exception</a></p>
+<p>static void throw_exception(const char *reason, const char *desc,
+const char *origin, Tango::ErrSeverity sever=Tango::ERR)</p>
+<p>Generate and throw a TANGO DevFailed exception.</p>
+<p><strong>Definition:</strong> except.h:122</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#aa9e35fe725db9e490dbd2bf561e5bbe5">Tango::Util::fill_attr_polling_buffer</a></p>
+<p>void fill_attr_polling_buffer(DeviceImpl *dev, string &amp;att_name,
+AttrHistoryStack&lt; T &gt; &amp;data)</p>
+<p>Fill polling buffer for polled attribute.</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a10b07c18428bf23e1bc2cb3ac917ff6a">Tango::Util::get_tango_lib_release</a></p>
+<p>long get_tango_lib_release()</p>
+<p>Get the TANGO library version number.</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#af6aee977b3c8f5de4f135fca9b024ddf">Tango::Util::get_polling_threads_pool_size</a></p>
+<p>unsigned long get_polling_threads_pool_size()</p>
+<p>Get the polling threads pool size.</p>
+<p><strong>Definition:</strong> utils.h:500</p>
+<p><a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html">Tango::DeviceClass</a></p>
+<p>Base class for all TANGO device-class class.</p>
+<p><strong>Definition:</strong> deviceclass.h:76</p>
+<p><a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#a44206072acd001ca4070a193d23f1b9e">Tango::PyData::PerTh_dvula</a></p>
+<p>DevVarULongArray PerTh_dvula</p>
+<p><strong>Definition:</strong> utils.h:1294</p>
+<p><a class="reference external" href="../../de/ddf/namespaceTango.html#ad2903a1aa0ddfe85d8b306a99351fefb">Tango::API_MemoryAllocation</a></p>
+<p>const char *const API_MemoryAllocation</p>
+<p><strong>Definition:</strong> tango_const.h:408</p>
+<p><a class="reference external" href="../../de/ddf/namespaceTango.html#a3b3bd64ad7f36f411ad17050d314a460">Tango::return_empty_any</a></p>
+<p>CORBA::Any * return_empty_any(const char *cmd)</p>
+<p>Create and return an empty CORBA Any object.</p>
+<p><strong>Definition:</strong> utils.h:1182</p>
+<p><a class="reference external" href="../../d5/d7d/classTango_1_1PyData.html#a0e12526319c05fa6aaf445484b536890">Tango::PyData::PerTh_dvla</a></p>
+<p>DevVarLongArray PerTh_dvla</p>
+<p><strong>Definition:</strong> utils.h:1290</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a19ed2067f664f4e7d98ac0876fcc7fd5">Tango::Util::get_server_version</a></p>
+<p>string &amp; get_server_version()</p>
+<p>Get the device server version.</p>
+<p><strong>Definition:</strong> utils.h:350</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#a8d86b4bcf0c279aaadb9d476f9c261fd">Tango::Util::get_dserver_device</a></p>
+<p>DServer * get_dserver_device()</p>
+<p>Get a reference to the dserver device attached to the device server
+process.</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#aab15cb9f574c44c37b0d2dcce3531b3a">Tango::Util::get_ds_name</a></p>
+<p>string &amp; get_ds_name()</p>
+<p>Get the device server name.</p>
+<p><strong>Definition:</strong> utils.h:307</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html#ae8cb0ef44d4f03250ab33b603a1dfee2">Tango::Util::Util</a></p>
+<p>Util(int argc, char *argv[])</p>
+<p>Constructs a newly allocated Util object.</p>
+<p><a class="reference external" href="../../d6/d62/classTango_1_1Interceptors.html">Tango::Interceptors</a></p>
+<p><strong>Definition:</strong> utils.h:115</p>
+<ul class="simple">
+<li><a class="reference external" href="../../dir_93bc669b4520ad36068f344e109b7d17.html">include</a></li>
+<li><a class="reference external" href="../../dir_8ff48e8f3ef80891a9957ae5e9583431.html">tango</a></li>
+<li><a class="reference external" href="../../dir_53b28a22454594c5818f3f3f5a9fd698.html">server</a></li>
+<li><a class="reference external" href="../../d5/d60/utils_8h.html">utils.h</a></li>
+<li>Generated on Fri Oct 7 2016 11:11:15 for Tango Core Classes Reference
+by <a class="reference external" href="http://www.doxygen.org/index.html"><img alt="doxygen" src="../../_images/doxygen140.png" /></a> 1.8.8</li>
+</ul>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/d5/d60/utils_8h_source.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, 3Controls.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.8</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+      |
+      <a href="../../_sources/d5/d60/utils_8h_source.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

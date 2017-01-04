@@ -1,0 +1,334 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>&lt;no title&gt; &#8212; Tango Core Classes Reference Documentation 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="top" title="Tango Core Classes Reference Documentation 1.0 documentation" href="../../index.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><img alt="Logo" src="../../_images/logo277.jpg" /></td>
+<td>Tango Core Classes Reference &nbsp;9.2.5</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><a class="reference external" href="../../index.html">Main&nbsp;Page</a></li>
+<li><a class="reference external" href="../../pages.html">Related&nbsp;Pages</a></li>
+<li><a class="reference external" href="../../modules.html">Modules</a></li>
+<li><a class="reference external" href="../../namespaces.html">Namespaces</a></li>
+<li><a class="reference external" href="../../annotated.html">Classes</a></li>
+<li><a class="reference external" href="../../files.html">Files</a></li>
+<li><a class="reference external" href="../../files.html">File&nbsp;List</a></li>
+<li><a class="reference external" href="../../globals.html">File&nbsp;Members</a></li>
+</ul>
+<p>encoded_attribute.h</p>
+<p><a class="reference external" href="../../da/dc2/encoded__attribute_8h.html">Go to the documentation of this
+file.</a></p>
+<p>1&nbsp;//</p>
+<p>3&nbsp;// file : encoded_attribute.h</p>
+<p>4&nbsp;//</p>
+<p>5&nbsp;// description : Include file for the management of Tango::DevEncoded
+format</p>
+<p>6&nbsp;//</p>
+<p>7&nbsp;// project : TANGO</p>
+<p>8&nbsp;//</p>
+<p>9&nbsp;// author(s) : JL Pons</p>
+<p>10&nbsp;//</p>
+<p>11&nbsp;// Copyright (C) :
+2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015</p>
+<p>12&nbsp;// European Synchrotron Radiation Facility</p>
+<p>13&nbsp;// BP 220, Grenoble 38043</p>
+<p>14&nbsp;// FRANCE</p>
+<p>15&nbsp;//</p>
+<p>16&nbsp;// This file is part of Tango.</p>
+<p>17&nbsp;//</p>
+<p>18&nbsp;// Tango is free software: you can redistribute it and/or modify</p>
+<p>19&nbsp;// it under the terms of the GNU Lesser General Public License as
+published by</p>
+<p>20&nbsp;// the Free Software Foundation, either version 3 of the License, or</p>
+<p>21&nbsp;// (at your option) any later version.</p>
+<p>22&nbsp;//</p>
+<p>23&nbsp;// Tango is distributed in the hope that it will be useful,</p>
+<p>24&nbsp;// but WITHOUT ANY WARRANTY; without even the implied warranty of</p>
+<p>25&nbsp;// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the</p>
+<p>26&nbsp;// GNU Lesser General Public License for more details.</p>
+<p>27&nbsp;//</p>
+<p>28&nbsp;// You should have received a copy of the GNU Lesser General Public
+License</p>
+<p>29&nbsp;// along with Tango. If not, see &lt;<a class="reference external" href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>&gt;.</p>
+<p>30&nbsp;//</p>
+<p>31&nbsp;// $Revision$</p>
+<p>32&nbsp;//</p>
+<p>33&nbsp;//</p>
+<p>34&nbsp;//=============================================================================</p>
+<p>35</p>
+<p>36&nbsp;#include &lt;tango.h&gt;</p>
+<p>37</p>
+<p>38&nbsp;#ifndef _ENCODED_ATT_H</p>
+<p>39&nbsp;#define _ENCODED_ATT_H</p>
+<p>40</p>
+<p>41&nbsp;#include &lt;tango/server/encoded_format.h&gt;</p>
+<p>42</p>
+<p>43&nbsp;namespace <a class="reference external" href="../../de/ddf/namespaceTango.html">Tango</a></p>
+<p>44&nbsp;{</p>
+<p>45</p>
+<p><a class="reference external" href="../../da/da5/classTango_1_1EncodedAttribute.html">53</a>&nbsp;class
+<a class="reference external" href="../../da/da5/classTango_1_1EncodedAttribute.html">EncodedAttribute</a></p>
+<p>54&nbsp;{</p>
+<p>55</p>
+<p>56&nbsp;public:</p>
+<p>57</p>
+<p>65
+<a class="reference external" href="../../da/da5/classTango_1_1EncodedAttribute.html#a2d44e9152c929390d51fd631f5e31d37">EncodedAttribute</a>();</p>
+<p>66</p>
+<p>79
+<a class="reference external" href="../../da/da5/classTango_1_1EncodedAttribute.html#a2d44e9152c929390d51fd631f5e31d37">EncodedAttribute</a>(int
+buf_pool_size,bool serialization = false);</p>
+<p>81</p>
+<p>89
+<a class="reference external" href="../../da/da5/classTango_1_1EncodedAttribute.html#a6e013aa1fbfaa40971b3db1a32c17970">~EncodedAttribute</a>();</p>
+<p>91</p>
+<p>95</p>
+<p>105&nbsp; void
+<a class="reference external" href="../../da/da5/classTango_1_1EncodedAttribute.html#a7a98013fc1577c67127c0cca9b192b88">encode_jpeg_gray8</a>(unsigned
+char *gray8,int width,int height,double quality);</p>
+<p>106</p>
+<p>116&nbsp; void
+<a class="reference external" href="../../da/da5/classTango_1_1EncodedAttribute.html#afd6be02fbf49d3f7823679d190eea0a1">encode_jpeg_rgb32</a>(unsigned
+char *rgb32,int width,int height,double quality);</p>
+<p>117</p>
+<p>127&nbsp; void
+<a class="reference external" href="../../da/da5/classTango_1_1EncodedAttribute.html#a2bf74ff1635f2d3120dd0cdbef5e0c00">encode_jpeg_rgb24</a>(unsigned
+char *rgb24,int width,int height,double quality);</p>
+<p>128</p>
+<p>137&nbsp; void
+<a class="reference external" href="../../da/da5/classTango_1_1EncodedAttribute.html#a0aeecda296c64b53ab43317e94e6ac35">encode_gray8</a>(unsigned
+char *gray8,int width,int height);</p>
+<p>138</p>
+<p>147&nbsp; void
+<a class="reference external" href="../../da/da5/classTango_1_1EncodedAttribute.html#aa67d49c4b99bd6e91e80138acca7a1a4">encode_gray16</a>(unsigned
+short *gray16,int width,int height);</p>
+<p>148</p>
+<p>157&nbsp; void
+<a class="reference external" href="../../da/da5/classTango_1_1EncodedAttribute.html#a8c0850a138718cf1a1513c20c1e58844">encode_rgb24</a>(unsigned
+char *rgb24,int width,int height);</p>
+<p>159</p>
+<p>160</p>
+<p>173&nbsp; void
+<a class="reference external" href="../../da/da5/classTango_1_1EncodedAttribute.html#a0a64f653b5fe0049cb04daf0740c4755">decode_rgb32</a>(<a class="reference external" href="../../d7/dca/classTango_1_1DeviceAttribute.html">DeviceAttribute</a>
+*attr,int *width,int *height,unsigned char **rgb32);</p>
+<p>174</p>
+<p>184&nbsp; void
+<a class="reference external" href="../../da/da5/classTango_1_1EncodedAttribute.html#ae12a9771857f2fecbebd3b9381213ab5">decode_gray8</a>(<a class="reference external" href="../../d7/dca/classTango_1_1DeviceAttribute.html">DeviceAttribute</a>
+*attr,int *width,int *height,unsigned char **gray8);</p>
+<p>185</p>
+<p>195&nbsp; void
+<a class="reference external" href="../../da/da5/classTango_1_1EncodedAttribute.html#a76fef5a1583210da6f06d7e3fe5bf7bb">decode_gray16</a>(<a class="reference external" href="../../d7/dca/classTango_1_1DeviceAttribute.html">DeviceAttribute</a>
+*attr,int *width,int *height,unsigned short **gray16);</p>
+<p>196</p>
+<p>198</p>
+<p>200</p>
+<p>201&nbsp; DevUChar *get_data()</p>
+<p>202&nbsp; {if (index==0)</p>
+<p>203&nbsp; return (DevUChar *)buffer_array[buf_elt_nb-1];</p>
+<p>204&nbsp; else</p>
+<p>205&nbsp; return (DevUChar *)buffer_array[index-1];}</p>
+<p>206</p>
+<p>207&nbsp; long get_size()</p>
+<p>208&nbsp; {if (index==0)</p>
+<p>209&nbsp; return (long)buffSize_array[buf_elt_nb-1];</p>
+<p>210&nbsp; else</p>
+<p>211&nbsp; return (long)buffSize_array[index-1];}</p>
+<p>212</p>
+<p>213&nbsp; DevString *get_format() {return &amp;format;}</p>
+<p>214&nbsp; bool get_exclusion() {return manage_exclusion;}</p>
+<p>215&nbsp; omni_mutex *get_mutex()</p>
+<p>216&nbsp; {if (index==0)</p>
+<p>217&nbsp; return &amp;(mutex_array[buf_elt_nb-1]);</p>
+<p>218&nbsp; else</p>
+<p>219&nbsp; return &amp;(mutex_array[index-1]);}</p>
+<p>220</p>
+<p>221&nbsp;private:</p>
+<p>222&nbsp; class EncodedAttributeExt</p>
+<p>223&nbsp; {</p>
+<p>224&nbsp; };</p>
+<p>225</p>
+<p>226&nbsp; unsigned char **buffer_array;</p>
+<p>227&nbsp; int *buffSize_array;</p>
+<p>228&nbsp; omni_mutex *mutex_array;</p>
+<p>229&nbsp; char *format;</p>
+<p>230</p>
+<p>231&nbsp; int index;</p>
+<p>232&nbsp; int buf_elt_nb;</p>
+<p>233&nbsp; bool manage_exclusion;</p>
+<p>234</p>
+<p>235&nbsp;#ifdef HAS_UNIQUE_PTR</p>
+<p>236&nbsp; unique_ptr&lt;EncodedAttributeExt&gt; ext; // Class extension</p>
+<p>237&nbsp;#else</p>
+<p>238&nbsp; EncodedAttributeExt *ext;</p>
+<p>239&nbsp;#endif</p>
+<p>240</p>
+<p>241&nbsp;};</p>
+<p>242</p>
+<p><a class="reference external" href="../../da/dc2/encoded__attribute_8h.html#a122c2c871efab18ffb4af25a750eeb0e">243</a>&nbsp;#define
+INC_INDEX() \</p>
+<p>244&nbsp; index++; \</p>
+<p>245&nbsp; if (index == buf_elt_nb) \</p>
+<p>246&nbsp; index = 0;</p>
+<p>247</p>
+<p>248&nbsp;} // End of Tango namespace</p>
+<p>249</p>
+<p>250&nbsp;#endif // _ENCODED_ATT_H</p>
+<p><a class="reference external" href="../../da/da5/classTango_1_1EncodedAttribute.html#aa67d49c4b99bd6e91e80138acca7a1a4">Tango::EncodedAttribute::encode_gray16</a></p>
+<p>void encode_gray16(unsigned short *gray16, int width, int height)</p>
+<p>Encode a 16 bit grayscale image (no compression)</p>
+<p><a class="reference external" href="../../da/da5/classTango_1_1EncodedAttribute.html#a6e013aa1fbfaa40971b3db1a32c17970">Tango::EncodedAttribute::~EncodedAttribute</a></p>
+<p>~EncodedAttribute()</p>
+<p>The attribute desctructor.</p>
+<p><a class="reference external" href="../../da/da5/classTango_1_1EncodedAttribute.html#a2bf74ff1635f2d3120dd0cdbef5e0c00">Tango::EncodedAttribute::encode_jpeg_rgb24</a></p>
+<p>void encode_jpeg_rgb24(unsigned char *rgb24, int width, int height,
+double quality)</p>
+<p>Encode a 24 bit rgb color image as JPEG format.</p>
+<p><a class="reference external" href="../../da/da5/classTango_1_1EncodedAttribute.html#a0aeecda296c64b53ab43317e94e6ac35">Tango::EncodedAttribute::encode_gray8</a></p>
+<p>void encode_gray8(unsigned char *gray8, int width, int height)</p>
+<p>Encode a 8 bit grayscale image (no compression)</p>
+<p><a class="reference external" href="../../de/ddf/namespaceTango.html">Tango</a></p>
+<hr class="docutils" />
+<p><strong>Definition:</strong> device.h:50</p>
+<p><a class="reference external" href="../../da/da5/classTango_1_1EncodedAttribute.html#a0a64f653b5fe0049cb04daf0740c4755">Tango::EncodedAttribute::decode_rgb32</a></p>
+<p>void decode_rgb32(DeviceAttribute *attr, int *width, int *height,
+unsigned char **rgb32)</p>
+<p>Decode a color image (JPEG_RGB or RGB24) and returns a 32 bits RGB
+image.</p>
+<p><a class="reference external" href="../../da/da5/classTango_1_1EncodedAttribute.html#ae12a9771857f2fecbebd3b9381213ab5">Tango::EncodedAttribute::decode_gray8</a></p>
+<p>void decode_gray8(DeviceAttribute *attr, int *width, int *height,
+unsigned char **gray8)</p>
+<p>Decode a 8 bits grayscale image (JPEG_GRAY8 or GRAY8) and returns a 8
+bits gray scale image...</p>
+<p><a class="reference external" href="../../da/da5/classTango_1_1EncodedAttribute.html#a76fef5a1583210da6f06d7e3fe5bf7bb">Tango::EncodedAttribute::decode_gray16</a></p>
+<p>void decode_gray16(DeviceAttribute *attr, int *width, int *height,
+unsigned short **gray16)</p>
+<p>Decode a 16 bits grayscale image (GRAY16) and returns a 16 bits gray
+scale image. ...</p>
+<p><a class="reference external" href="../../da/da5/classTango_1_1EncodedAttribute.html#a7a98013fc1577c67127c0cca9b192b88">Tango::EncodedAttribute::encode_jpeg_gray8</a></p>
+<p>void encode_jpeg_gray8(unsigned char *gray8, int width, int height,
+double quality)</p>
+<p>Encode a 8 bit grayscale image as JPEG format.</p>
+<p><a class="reference external" href="../../da/da5/classTango_1_1EncodedAttribute.html#a2d44e9152c929390d51fd631f5e31d37">Tango::EncodedAttribute::EncodedAttribute</a></p>
+<p>EncodedAttribute()</p>
+<p>Create a new EncodedAttribute object.</p>
+<p><a class="reference external" href="../../d7/dca/classTango_1_1DeviceAttribute.html">Tango::DeviceAttribute</a></p>
+<p>Fundamental type for sending an dreceiving data to and from device
+attributes.</p>
+<p><strong>Definition:</strong> devapi.h:73</p>
+<p><a class="reference external" href="../../da/da5/classTango_1_1EncodedAttribute.html#a8c0850a138718cf1a1513c20c1e58844">Tango::EncodedAttribute::encode_rgb24</a></p>
+<p>void encode_rgb24(unsigned char *rgb24, int width, int height)</p>
+<p>Encode a 24 bit color image (no compression)</p>
+<p><a class="reference external" href="../../da/da5/classTango_1_1EncodedAttribute.html#afd6be02fbf49d3f7823679d190eea0a1">Tango::EncodedAttribute::encode_jpeg_rgb32</a></p>
+<p>void encode_jpeg_rgb32(unsigned char *rgb32, int width, int height,
+double quality)</p>
+<p>Encode a 32 bit rgb color image as JPEG format.</p>
+<p><a class="reference external" href="../../da/da5/classTango_1_1EncodedAttribute.html">Tango::EncodedAttribute</a></p>
+<p>This class provides method to deal with Tango::DevEncoded attribute
+format.</p>
+<p><strong>Definition:</strong> encoded_attribute.h:53</p>
+<ul class="simple">
+<li><a class="reference external" href="../../dir_93bc669b4520ad36068f344e109b7d17.html">include</a></li>
+<li><a class="reference external" href="../../dir_8ff48e8f3ef80891a9957ae5e9583431.html">tango</a></li>
+<li><a class="reference external" href="../../dir_53b28a22454594c5818f3f3f5a9fd698.html">server</a></li>
+<li><a class="reference external" href="../../da/dc2/encoded__attribute_8h.html">encoded_attribute.h</a></li>
+<li>Generated on Fri Oct 7 2016 11:11:15 for Tango Core Classes Reference
+by <a class="reference external" href="http://www.doxygen.org/index.html"><img alt="doxygen" src="../../_images/doxygen277.png" /></a> 1.8.8</li>
+</ul>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/da/dc2/encoded__attribute_8h_source.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, 3Controls.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.8</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+      |
+      <a href="../../_sources/da/dc2/encoded__attribute_8h_source.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

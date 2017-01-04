@@ -1,0 +1,1539 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>&lt;no title&gt; &#8212; Tango Core Classes Reference Documentation 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="top" title="Tango Core Classes Reference Documentation 1.0 documentation" href="../../index.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><img alt="Logo" src="../../_images/logo331.jpg" /></td>
+<td>Tango Core Classes Reference &nbsp;9.2.5</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><a class="reference external" href="../../index.html">Main&nbsp;Page</a></li>
+<li><a class="reference external" href="../../pages.html">Related&nbsp;Pages</a></li>
+<li><a class="reference external" href="../../modules.html">Modules</a></li>
+<li><a class="reference external" href="../../namespaces.html">Namespaces</a></li>
+<li><a class="reference external" href="../../annotated.html">Classes</a></li>
+<li><a class="reference external" href="../../files.html">Files</a></li>
+<li><a class="reference external" href="../../files.html">File&nbsp;List</a></li>
+<li><a class="reference external" href="../../globals.html">File&nbsp;Members</a></li>
+</ul>
+<p>except.h</p>
+<p><a class="reference external" href="../../dc/d65/except_8h.html">Go to the documentation of this file.</a></p>
+<p>1&nbsp;//===================================================================================================================</p>
+<p>2&nbsp;//</p>
+<p>3&nbsp;// file : except.h</p>
+<p>4&nbsp;//</p>
+<p>5&nbsp;// description : Include for exception related utilities</p>
+<p>6&nbsp;//</p>
+<p>7&nbsp;// project : TANGO</p>
+<p>8&nbsp;//</p>
+<p>9&nbsp;// author(s) : A.Gotz + E.Taurel</p>
+<p>10&nbsp;//</p>
+<p>11&nbsp;// Copyright (C) :
+2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015</p>
+<p>12&nbsp;// European Synchrotron Radiation Facility</p>
+<p>13&nbsp;// BP 220, Grenoble 38043</p>
+<p>14&nbsp;// FRANCE</p>
+<p>15&nbsp;//</p>
+<p>16&nbsp;// This file is part of Tango.</p>
+<p>17&nbsp;//</p>
+<p>18&nbsp;// Tango is free software: you can redistribute it and/or modify it
+under the terms of the GNU Lesser General Public</p>
+<p>19&nbsp;// License as published by the Free Software Foundation, either
+version 3 of the License, or</p>
+<p>20&nbsp;// (at your option) any later version.</p>
+<p>21&nbsp;//</p>
+<p>22&nbsp;// Tango is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty</p>
+<p>23&nbsp;// of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the</p>
+<p>24&nbsp;// GNU Lesser General Public License for more details.</p>
+<p>25&nbsp;//</p>
+<p>26&nbsp;// You should have received a copy of the GNU Lesser General Public
+License along with Tango.</p>
+<p>27&nbsp;// If not, see &lt;<a class="reference external" href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>&gt;.</p>
+<p>28&nbsp;//</p>
+<p>29&nbsp;// $Revision$</p>
+<p>30&nbsp;//</p>
+<p>31&nbsp;//==================================================================================================================</p>
+<p>32</p>
+<p>33&nbsp;#ifndef _EXCEPT_H</p>
+<p>34&nbsp;#define _EXCEPT_H</p>
+<p>35</p>
+<p>36&nbsp;#include &lt;string&gt;</p>
+<p>37</p>
+<p>38&nbsp;#include &lt;idl/tango.h&gt;</p>
+<p>39</p>
+<p>40&nbsp;using namespace <a class="reference external" href="../../d8/dcc/namespacestd.html">std</a>;</p>
+<p>41</p>
+<p>42</p>
+<p>43&nbsp;namespace <a class="reference external" href="../../de/ddf/namespaceTango.html">Tango</a></p>
+<p>44&nbsp;{</p>
+<p>45</p>
+<p>46&nbsp;class DeviceImpl;</p>
+<p>47</p>
+<p>48&nbsp;//==================================================================================================================</p>
+<p>49&nbsp;//</p>
+<p>50&nbsp;// Class :</p>
+<p>51&nbsp;// Except</p>
+<p>52&nbsp;//</p>
+<p>53&nbsp;// description :</p>
+<p>54&nbsp;// This class is a container for all exceptions related methods to be
+used in aa Tango device server/client.</p>
+<p>55&nbsp;// Most of these methods are static.</p>
+<p>56&nbsp;//</p>
+<p>57&nbsp;//==================================================================================================================</p>
+<p>58</p>
+<p><a class="reference external" href="../../dc/d65/except_8h.html#a98061b263048c425ae02e64a6bbb0106">59</a>&nbsp;#define
+NOSPACEINDOC_EXCEPT</p>
+<p>60</p>
+<p>61</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html">74</a>&nbsp;class
+<a class="reference external" href="../../df/d37/classTango_1_1Except.html">Except</a></p>
+<p>75&nbsp;{</p>
+<p>76&nbsp;public:</p>
+<p>77</p>
+<p>87&nbsp; static void print_exception(const CORBA::Exception &amp;ex);</p>
+<p>89</p>
+<p>99&nbsp; static void print_error_stack(const Tango::DevErrorList &amp;ex);</p>
+<p>100</p>
+<p>102</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#a937f591028b392e50070fbc4149beec6">122</a>
+static inline void
+<a class="reference external" href="../../df/d37/classTango_1_1Except.html#a937f591028b392e50070fbc4149beec6">throw_exception</a>(const
+char *reason,</p>
+<p>123&nbsp; const char *desc,</p>
+<p>124&nbsp; const char *origin,</p>
+<p>125&nbsp; Tango::ErrSeverity sever = Tango::ERR)</p>
+<p>126&nbsp; {</p>
+<p>127&nbsp; Tango::DevErrorList errors(1);</p>
+<p>128</p>
+<p>129&nbsp; errors.length(1);</p>
+<p>130&nbsp; errors[0].desc =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(desc);</p>
+<p>131&nbsp; errors[0].severity = sever;</p>
+<p>132&nbsp; errors[0].reason =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(reason);</p>
+<p>133&nbsp; errors[0].origin =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(origin);</p>
+<p>134</p>
+<p>135&nbsp; throw Tango::DevFailed(errors);</p>
+<p>136&nbsp; }</p>
+<p>137</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#a2dc82f122c0bdde68566f0a6b3419f13">157</a>
+static inline void
+<a class="reference external" href="../../df/d37/classTango_1_1Except.html#a2dc82f122c0bdde68566f0a6b3419f13">throw_exception</a>(const
+char *reason,</p>
+<p>158&nbsp; const char *desc,</p>
+<p>159&nbsp; char *origin,</p>
+<p>160&nbsp; Tango::ErrSeverity sever = Tango::ERR)</p>
+<p>161&nbsp; {</p>
+<p>162&nbsp; Tango::DevErrorList errors(1);</p>
+<p>163</p>
+<p>164&nbsp; errors.length(1);</p>
+<p>165&nbsp; errors[0].desc =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(desc);</p>
+<p>166&nbsp; errors[0].severity = sever;</p>
+<p>167&nbsp; errors[0].reason =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(reason);</p>
+<p>168&nbsp; errors[0].origin =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(origin);</p>
+<p>169&nbsp; delete[] origin;</p>
+<p>170</p>
+<p>171&nbsp; throw Tango::DevFailed(errors);</p>
+<p>172&nbsp; }</p>
+<p>173</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#a21f0ffe9ed4839c570f8137edb3d7241">193</a>
+static inline void
+<a class="reference external" href="../../df/d37/classTango_1_1Except.html#a21f0ffe9ed4839c570f8137edb3d7241">throw_exception</a>(const
+char *reason,</p>
+<p>194&nbsp; char *desc,</p>
+<p>195&nbsp; const char *origin,</p>
+<p>196&nbsp; Tango::ErrSeverity sever = Tango::ERR)</p>
+<p>197&nbsp; {</p>
+<p>198&nbsp; Tango::DevErrorList errors(1);</p>
+<p>199</p>
+<p>200&nbsp; errors.length(1);</p>
+<p>201&nbsp; errors[0].severity = sever;</p>
+<p>202&nbsp; errors[0].desc =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(desc);</p>
+<p>203&nbsp; delete[] desc;</p>
+<p>204&nbsp; errors[0].origin =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(origin);</p>
+<p>205&nbsp; errors[0].reason =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(reason);</p>
+<p>206</p>
+<p>207&nbsp; throw Tango::DevFailed(errors);</p>
+<p>208&nbsp; }</p>
+<p>209</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#a4b6a58d11b720d1aef7cc341802ddc4e">228</a>
+static inline void
+<a class="reference external" href="../../df/d37/classTango_1_1Except.html#a4b6a58d11b720d1aef7cc341802ddc4e">throw_exception</a>(const
+char *reason,</p>
+<p>229&nbsp; char *desc,</p>
+<p>230&nbsp; char *origin,</p>
+<p>231&nbsp; Tango::ErrSeverity sever = Tango::ERR)</p>
+<p>232&nbsp; {</p>
+<p>233&nbsp; Tango::DevErrorList errors(1);</p>
+<p>234</p>
+<p>235&nbsp; errors.length(1);</p>
+<p>236&nbsp; errors[0].severity = sever;</p>
+<p>237&nbsp; errors[0].reason =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(reason);</p>
+<p>238&nbsp; errors[0].origin =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(origin);</p>
+<p>239&nbsp; delete[] origin;</p>
+<p>240&nbsp; errors[0].desc =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(desc);</p>
+<p>241&nbsp; delete[] desc;</p>
+<p>242</p>
+<p>243&nbsp; throw Tango::DevFailed(errors);</p>
+<p>244&nbsp; }</p>
+<p>245</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#a4bc955a801d67a784828f4b79471e959">265</a>
+static inline void
+<a class="reference external" href="../../df/d37/classTango_1_1Except.html#a4bc955a801d67a784828f4b79471e959">throw_exception</a>(char
+*reason,</p>
+<p>266&nbsp; const char *desc,</p>
+<p>267&nbsp; const char *origin,</p>
+<p>268&nbsp; Tango::ErrSeverity sever = Tango::ERR)</p>
+<p>269&nbsp; {</p>
+<p>270&nbsp; Tango::DevErrorList errors(1);</p>
+<p>271</p>
+<p>272&nbsp; errors.length(1);</p>
+<p>273&nbsp; errors[0].severity = sever;</p>
+<p>274&nbsp; errors[0].reason =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(reason);</p>
+<p>275&nbsp; delete[] reason;</p>
+<p>276&nbsp; errors[0].origin =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(origin);</p>
+<p>277&nbsp; errors[0].desc =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(desc);</p>
+<p>278</p>
+<p>279&nbsp; throw Tango::DevFailed(errors);</p>
+<p>280&nbsp; }</p>
+<p>281</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#a21253baed3a2521bfa388fc8079f2026">301</a>
+static inline void
+<a class="reference external" href="../../df/d37/classTango_1_1Except.html#a21253baed3a2521bfa388fc8079f2026">throw_exception</a>(char
+*reason,</p>
+<p>302&nbsp; const char *desc,</p>
+<p>303&nbsp; char *origin,</p>
+<p>304&nbsp; Tango::ErrSeverity sever = Tango::ERR)</p>
+<p>305&nbsp; {</p>
+<p>306&nbsp; Tango::DevErrorList errors(1);</p>
+<p>307</p>
+<p>308&nbsp; errors.length(1);</p>
+<p>309&nbsp; errors[0].severity = sever;</p>
+<p>310&nbsp; errors[0].reason =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(reason);</p>
+<p>311&nbsp; delete[] reason;</p>
+<p>312&nbsp; errors[0].origin =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(origin);</p>
+<p>313&nbsp; delete[] origin;</p>
+<p>314&nbsp; errors[0].desc =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(desc);</p>
+<p>315</p>
+<p>316&nbsp; throw Tango::DevFailed(errors);</p>
+<p>317&nbsp; }</p>
+<p>318</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#a87d6f2b545de08d288da642068e001c8">338</a>
+static inline void
+<a class="reference external" href="../../df/d37/classTango_1_1Except.html#a87d6f2b545de08d288da642068e001c8">throw_exception</a>(char
+*reason,</p>
+<p>339&nbsp; char *desc,</p>
+<p>340&nbsp; const char *origin,</p>
+<p>341&nbsp; Tango::ErrSeverity sever = Tango::ERR)</p>
+<p>342&nbsp; {</p>
+<p>343&nbsp; Tango::DevErrorList errors(1);</p>
+<p>344</p>
+<p>345&nbsp; errors.length(1);</p>
+<p>346&nbsp; errors[0].severity = sever;</p>
+<p>347&nbsp; errors[0].reason =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(reason);</p>
+<p>348&nbsp; delete[] reason;</p>
+<p>349&nbsp; errors[0].origin =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(origin);</p>
+<p>350&nbsp; errors[0].desc =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(desc);</p>
+<p>351&nbsp; delete[] desc;</p>
+<p>352</p>
+<p>353&nbsp; throw Tango::DevFailed(errors);</p>
+<p>354&nbsp; }</p>
+<p>355</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#a55ed8f25cc157fa3152ede702b36517c">375</a>
+static inline void
+<a class="reference external" href="../../df/d37/classTango_1_1Except.html#a55ed8f25cc157fa3152ede702b36517c">throw_exception</a>(char
+*reason,</p>
+<p>376&nbsp; char *desc,</p>
+<p>377&nbsp; char *origin,</p>
+<p>378&nbsp; Tango::ErrSeverity sever = Tango::ERR)</p>
+<p>379&nbsp; {</p>
+<p>380&nbsp; Tango::DevErrorList errors(1);</p>
+<p>381</p>
+<p>382&nbsp; errors.length(1);</p>
+<p>383&nbsp; errors[0].severity = sever;</p>
+<p>384&nbsp; errors[0].reason =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(reason);</p>
+<p>385&nbsp; delete[] reason;</p>
+<p>386&nbsp; errors[0].origin =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(origin);</p>
+<p>387&nbsp; delete[] origin;</p>
+<p>388&nbsp; errors[0].desc =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(desc);</p>
+<p>389&nbsp; delete[] desc;</p>
+<p>390</p>
+<p>391&nbsp; throw Tango::DevFailed(errors);</p>
+<p>392&nbsp; }</p>
+<p>393</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#ae8002ec9ea1ba0c99a0770b55ff71d98">412</a>
+static inline void
+<a class="reference external" href="../../df/d37/classTango_1_1Except.html#ae8002ec9ea1ba0c99a0770b55ff71d98">throw_exception</a>(const
+string &amp;reason,</p>
+<p>413&nbsp; const string &amp;desc,</p>
+<p>414&nbsp; const string &amp;origin,</p>
+<p>415&nbsp; Tango::ErrSeverity sever = Tango::ERR)</p>
+<p>416&nbsp; {</p>
+<p>417&nbsp; Tango::DevErrorList errors(1);</p>
+<p>418</p>
+<p>419&nbsp; errors.length(1);</p>
+<p>420&nbsp; errors[0].severity = sever;</p>
+<p>421&nbsp; errors[0].reason =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(reason.c_str());</p>
+<p>422&nbsp; errors[0].origin =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(origin.c_str());</p>
+<p>423&nbsp; errors[0].desc =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(desc.c_str());</p>
+<p>424</p>
+<p>425&nbsp; throw Tango::DevFailed(errors);</p>
+<p>426&nbsp; }</p>
+<p>427</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#aea2efa05e2b0f46a343061cf88655547">446</a>
+static inline void
+<a class="reference external" href="../../df/d37/classTango_1_1Except.html#aea2efa05e2b0f46a343061cf88655547">throw_exception</a>(const
+string &amp;reason,</p>
+<p>447&nbsp; const string &amp;desc,</p>
+<p>448&nbsp; const char *origin,</p>
+<p>449&nbsp; Tango::ErrSeverity sever = Tango::ERR)</p>
+<p>450&nbsp; {</p>
+<p>451&nbsp; Tango::DevErrorList errors(1);</p>
+<p>452</p>
+<p>453&nbsp; errors.length(1);</p>
+<p>454&nbsp; errors[0].severity = sever;</p>
+<p>455&nbsp; errors[0].reason =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(reason.c_str());</p>
+<p>456&nbsp; errors[0].origin =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(origin);</p>
+<p>457&nbsp; errors[0].desc =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(desc.c_str());</p>
+<p>458</p>
+<p>459&nbsp; throw Tango::DevFailed(errors);</p>
+<p>460&nbsp; }</p>
+<p>461</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#a13ecdf493972a076fcf3627624198cce">480</a>
+static inline void
+<a class="reference external" href="../../df/d37/classTango_1_1Except.html#a13ecdf493972a076fcf3627624198cce">throw_exception</a>(const
+string &amp;reason,</p>
+<p>481&nbsp; const char *desc,</p>
+<p>482&nbsp; const string &amp;origin,</p>
+<p>483&nbsp; Tango::ErrSeverity sever = Tango::ERR)</p>
+<p>484&nbsp; {</p>
+<p>485&nbsp; Tango::DevErrorList errors(1);</p>
+<p>486</p>
+<p>487&nbsp; errors.length(1);</p>
+<p>488&nbsp; errors[0].severity = sever;</p>
+<p>489&nbsp; errors[0].reason =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(reason.c_str());</p>
+<p>490&nbsp; errors[0].origin =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(desc);</p>
+<p>491&nbsp; errors[0].desc =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(origin.c_str());</p>
+<p>492</p>
+<p>493&nbsp; throw Tango::DevFailed(errors);</p>
+<p>494&nbsp; }</p>
+<p>495</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#ac7a9b59a82aa568890f75c0232e68824">514</a>
+static inline void
+<a class="reference external" href="../../df/d37/classTango_1_1Except.html#ac7a9b59a82aa568890f75c0232e68824">throw_exception</a>(const
+string &amp;reason,</p>
+<p>515&nbsp; const char *desc,</p>
+<p>516&nbsp; const char *origin,</p>
+<p>517&nbsp; Tango::ErrSeverity sever = Tango::ERR)</p>
+<p>518&nbsp; {</p>
+<p>519&nbsp; Tango::DevErrorList errors(1);</p>
+<p>520</p>
+<p>521&nbsp; errors.length(1);</p>
+<p>522&nbsp; errors[0].severity = sever;</p>
+<p>523&nbsp; errors[0].reason =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(reason.c_str());</p>
+<p>524&nbsp; errors[0].origin =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(origin);</p>
+<p>525&nbsp; errors[0].desc =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(desc);</p>
+<p>526</p>
+<p>527&nbsp; throw Tango::DevFailed(errors);</p>
+<p>528&nbsp; }</p>
+<p>529</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#ac7d152b9c381a9ff2202224404b4df34">548</a>
+static inline void
+<a class="reference external" href="../../df/d37/classTango_1_1Except.html#ac7d152b9c381a9ff2202224404b4df34">throw_exception</a>(const
+char *reason,</p>
+<p>549&nbsp; const string &amp;desc,</p>
+<p>550&nbsp; const string &amp;origin,</p>
+<p>551&nbsp; Tango::ErrSeverity sever = Tango::ERR)</p>
+<p>552&nbsp; {</p>
+<p>553&nbsp; Tango::DevErrorList errors(1);</p>
+<p>554</p>
+<p>555&nbsp; errors.length(1);</p>
+<p>556&nbsp; errors[0].severity = sever;</p>
+<p>557&nbsp; errors[0].reason =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(reason);</p>
+<p>558&nbsp; errors[0].origin =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(origin.c_str());</p>
+<p>559&nbsp; errors[0].desc =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(desc.c_str());</p>
+<p>560</p>
+<p>561&nbsp; throw Tango::DevFailed(errors);</p>
+<p>562&nbsp; }</p>
+<p>563</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#ae1125b916a127f9b75832b018eb98ede">582</a>
+static inline void
+<a class="reference external" href="../../df/d37/classTango_1_1Except.html#ae1125b916a127f9b75832b018eb98ede">throw_exception</a>(const
+char *reason,</p>
+<p>583&nbsp; const string &amp;desc,</p>
+<p>584&nbsp; const char *origin,</p>
+<p>585&nbsp; Tango::ErrSeverity sever = Tango::ERR)</p>
+<p>586&nbsp; {</p>
+<p>587&nbsp; Tango::DevErrorList errors(1);</p>
+<p>588</p>
+<p>589&nbsp; errors.length(1);</p>
+<p>590&nbsp; errors[0].severity = sever;</p>
+<p>591&nbsp; errors[0].reason =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(reason);</p>
+<p>592&nbsp; errors[0].origin =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(origin);</p>
+<p>593&nbsp; errors[0].desc =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(desc.c_str());</p>
+<p>594</p>
+<p>595&nbsp; throw Tango::DevFailed(errors);</p>
+<p>596&nbsp; }</p>
+<p>597</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#a92359694cca28325fd6480f87e4b9668">616</a>
+static inline void
+<a class="reference external" href="../../df/d37/classTango_1_1Except.html#a92359694cca28325fd6480f87e4b9668">throw_exception</a>(const
+char *reason,</p>
+<p>617&nbsp; const char *desc,</p>
+<p>618&nbsp; const string &amp;origin,</p>
+<p>619&nbsp; Tango::ErrSeverity sever = Tango::ERR)</p>
+<p>620&nbsp; {</p>
+<p>621&nbsp; Tango::DevErrorList errors(1);</p>
+<p>622</p>
+<p>623&nbsp; errors.length(1);</p>
+<p>624&nbsp; errors[0].severity = sever;</p>
+<p>625&nbsp; errors[0].reason =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(reason);</p>
+<p>626&nbsp; errors[0].origin =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(origin.c_str());</p>
+<p>627&nbsp; errors[0].desc =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(desc);</p>
+<p>628</p>
+<p>629&nbsp; throw Tango::DevFailed(errors);</p>
+<p>630&nbsp; }</p>
+<p>631</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#a379a9cc1c1ccfc574ffecd135279e13f">651</a>
+static inline void
+<a class="reference external" href="../../df/d37/classTango_1_1Except.html#a379a9cc1c1ccfc574ffecd135279e13f">throw_exception</a>(const
+string &amp;reason,</p>
+<p>652&nbsp; const string &amp;desc,</p>
+<p>653&nbsp; char *origin,</p>
+<p>654&nbsp; Tango::ErrSeverity sever = Tango::ERR)</p>
+<p>655&nbsp; {</p>
+<p>656&nbsp; Tango::DevErrorList errors(1);</p>
+<p>657</p>
+<p>658&nbsp; errors.length(1);</p>
+<p>659&nbsp; errors[0].severity = sever;</p>
+<p>660&nbsp; errors[0].reason =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(reason.c_str());</p>
+<p>661&nbsp; errors[0].origin =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(origin);</p>
+<p>662&nbsp; delete[] origin;</p>
+<p>663&nbsp; errors[0].desc =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(desc.c_str());</p>
+<p>664</p>
+<p>665&nbsp; throw Tango::DevFailed(errors);</p>
+<p>666&nbsp; }</p>
+<p>667</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#a8a7e6834550169c1b9bd4c6cd822bd58">687</a>
+static inline void
+<a class="reference external" href="../../df/d37/classTango_1_1Except.html#a8a7e6834550169c1b9bd4c6cd822bd58">throw_exception</a>(const
+string &amp;reason,</p>
+<p>688&nbsp; char *desc,</p>
+<p>689&nbsp; const string &amp;origin,</p>
+<p>690&nbsp; Tango::ErrSeverity sever = Tango::ERR)</p>
+<p>691&nbsp; {</p>
+<p>692&nbsp; Tango::DevErrorList errors(1);</p>
+<p>693</p>
+<p>694&nbsp; errors.length(1);</p>
+<p>695&nbsp; errors[0].severity = sever;</p>
+<p>696&nbsp; errors[0].reason =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(reason.c_str());</p>
+<p>697&nbsp; errors[0].origin =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(desc);</p>
+<p>698&nbsp; delete[] desc;</p>
+<p>699&nbsp; errors[0].desc =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(origin.c_str());</p>
+<p>700</p>
+<p>701&nbsp; throw Tango::DevFailed(errors);</p>
+<p>702&nbsp; }</p>
+<p>703</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#a81dc475cd517c75e49c188bb91fd0e60">723</a>
+static inline void
+<a class="reference external" href="../../df/d37/classTango_1_1Except.html#a81dc475cd517c75e49c188bb91fd0e60">throw_exception</a>(const
+string &amp;reason,</p>
+<p>724&nbsp; char *desc,</p>
+<p>725&nbsp; char *origin,</p>
+<p>726&nbsp; Tango::ErrSeverity sever = Tango::ERR)</p>
+<p>727&nbsp; {</p>
+<p>728&nbsp; Tango::DevErrorList errors(1);</p>
+<p>729</p>
+<p>730&nbsp; errors.length(1);</p>
+<p>731&nbsp; errors[0].severity = sever;</p>
+<p>732&nbsp; errors[0].reason =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(reason.c_str());</p>
+<p>733&nbsp; errors[0].origin =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(origin);</p>
+<p>734&nbsp; delete[] origin;</p>
+<p>735&nbsp; errors[0].desc =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(desc);</p>
+<p>736&nbsp; delete desc;</p>
+<p>737</p>
+<p>738&nbsp; throw Tango::DevFailed(errors);</p>
+<p>739&nbsp; }</p>
+<p>740</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#a81a64fad0f2d00d7e9eae178fe986ea8">760</a>
+static inline void
+<a class="reference external" href="../../df/d37/classTango_1_1Except.html#a81a64fad0f2d00d7e9eae178fe986ea8">throw_exception</a>(char
+*reason,</p>
+<p>761&nbsp; const string &amp;desc,</p>
+<p>762&nbsp; const string &amp;origin,</p>
+<p>763&nbsp; Tango::ErrSeverity sever = Tango::ERR)</p>
+<p>764&nbsp; {</p>
+<p>765&nbsp; Tango::DevErrorList errors(1);</p>
+<p>766</p>
+<p>767&nbsp; errors.length(1);</p>
+<p>768&nbsp; errors[0].severity = sever;</p>
+<p>769&nbsp; errors[0].reason =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(reason);</p>
+<p>770&nbsp; delete[] reason;</p>
+<p>771&nbsp; errors[0].origin =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(origin.c_str());</p>
+<p>772&nbsp; errors[0].desc =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(desc.c_str());</p>
+<p>773</p>
+<p>774&nbsp; throw Tango::DevFailed(errors);</p>
+<p>775&nbsp; }</p>
+<p>776</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#a99d02e0220c93333faf67f1b680c38c1">796</a>
+static inline void
+<a class="reference external" href="../../df/d37/classTango_1_1Except.html#a99d02e0220c93333faf67f1b680c38c1">throw_exception</a>(char
+*reason,</p>
+<p>797&nbsp; const string &amp;desc,</p>
+<p>798&nbsp; char *origin,</p>
+<p>799&nbsp; Tango::ErrSeverity sever = Tango::ERR)</p>
+<p>800&nbsp; {</p>
+<p>801&nbsp; Tango::DevErrorList errors(1);</p>
+<p>802</p>
+<p>803&nbsp; errors.length(1);</p>
+<p>804&nbsp; errors[0].severity = sever;</p>
+<p>805&nbsp; errors[0].reason =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(reason);</p>
+<p>806&nbsp; delete[] reason;</p>
+<p>807&nbsp; errors[0].origin =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(origin);</p>
+<p>808&nbsp; delete[] origin;</p>
+<p>809&nbsp; errors[0].desc =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(desc.c_str());</p>
+<p>810</p>
+<p>811&nbsp; throw Tango::DevFailed(errors);</p>
+<p>812&nbsp; }</p>
+<p>813</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#a51c66f4b7d4ef481676117b5db783695">833</a>
+static inline void
+<a class="reference external" href="../../df/d37/classTango_1_1Except.html#a51c66f4b7d4ef481676117b5db783695">throw_exception</a>(char
+*reason,</p>
+<p>834&nbsp; char *desc,</p>
+<p>835&nbsp; const string &amp;origin,</p>
+<p>836&nbsp; Tango::ErrSeverity sever = Tango::ERR)</p>
+<p>837&nbsp; {</p>
+<p>838&nbsp; Tango::DevErrorList errors(1);</p>
+<p>839</p>
+<p>840&nbsp; errors.length(1);</p>
+<p>841&nbsp; errors[0].severity = sever;</p>
+<p>842&nbsp; errors[0].reason =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(reason);</p>
+<p>843&nbsp; delete[] reason;</p>
+<p>844&nbsp; errors[0].origin =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(desc);</p>
+<p>845&nbsp; delete[] desc;</p>
+<p>846&nbsp; errors[0].desc =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(origin.c_str());</p>
+<p>847</p>
+<p>848&nbsp; throw Tango::DevFailed(errors);</p>
+<p>849&nbsp; }</p>
+<p>850</p>
+<p>852</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#a9c3792241214eac89e7fbdd91646b67a">873</a>
+static inline void
+<a class="reference external" href="../../df/d37/classTango_1_1Except.html#a9c3792241214eac89e7fbdd91646b67a">re_throw_exception</a>(Tango::DevFailed
+&amp;ex,</p>
+<p>874&nbsp; const char *reason,</p>
+<p>875&nbsp; const char *desc,</p>
+<p>876&nbsp; const char *origin,</p>
+<p>877&nbsp; Tango::ErrSeverity sever = Tango::ERR)</p>
+<p>878&nbsp; {</p>
+<p>879&nbsp; long nb_err = ex.errors.length();</p>
+<p>880&nbsp; ex.errors.length(nb_err + 1);</p>
+<p>881</p>
+<p>882&nbsp; ex.errors[nb_err].desc =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(desc);</p>
+<p>883&nbsp; ex.errors[nb_err].severity = sever;</p>
+<p>884&nbsp; ex.errors[nb_err].reason =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(reason);</p>
+<p>885&nbsp; ex.errors[nb_err].origin =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(origin);</p>
+<p>886</p>
+<p>887&nbsp; throw ex;</p>
+<p>888&nbsp; }</p>
+<p>889</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#ab892eac30e082eca52af8c57f245e46e">910</a>
+static inline void
+<a class="reference external" href="../../df/d37/classTango_1_1Except.html#ab892eac30e082eca52af8c57f245e46e">re_throw_exception</a>(Tango::DevFailed
+&amp;ex,</p>
+<p>911&nbsp; const char *reason,</p>
+<p>912&nbsp; const char *desc,</p>
+<p>913&nbsp; char *origin,</p>
+<p>914&nbsp; Tango::ErrSeverity sever = Tango::ERR)</p>
+<p>915&nbsp; {</p>
+<p>916&nbsp; long nb_err = ex.errors.length();</p>
+<p>917&nbsp; ex.errors.length(nb_err + 1);</p>
+<p>918</p>
+<p>919&nbsp; ex.errors[nb_err].desc =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(desc);</p>
+<p>920&nbsp; ex.errors[nb_err].severity = sever;</p>
+<p>921&nbsp; ex.errors[nb_err].reason =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(reason);</p>
+<p>922&nbsp; ex.errors[nb_err].origin =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(origin);</p>
+<p>923&nbsp; delete[] origin;</p>
+<p>924</p>
+<p>925&nbsp; throw ex;</p>
+<p>926&nbsp; }</p>
+<p>927</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#a498aaee0525e6650bb17e209581837f8">948</a>
+static inline void
+<a class="reference external" href="../../df/d37/classTango_1_1Except.html#a498aaee0525e6650bb17e209581837f8">re_throw_exception</a>(Tango::DevFailed
+&amp;ex,</p>
+<p>949&nbsp; const char *reason,</p>
+<p>950&nbsp; char *desc,</p>
+<p>951&nbsp; const char *origin,</p>
+<p>952&nbsp; Tango::ErrSeverity sever = Tango::ERR)</p>
+<p>953&nbsp; {</p>
+<p>954&nbsp; long nb_err = ex.errors.length();</p>
+<p>955&nbsp; ex.errors.length(nb_err + 1);</p>
+<p>956</p>
+<p>957&nbsp; ex.errors[nb_err].severity = sever;</p>
+<p>958&nbsp; ex.errors[nb_err].desc =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(desc);</p>
+<p>959&nbsp; delete[] desc;</p>
+<p>960&nbsp; ex.errors[nb_err].origin =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(origin);</p>
+<p>961&nbsp; ex.errors[nb_err].reason =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(reason);</p>
+<p>962</p>
+<p>963&nbsp; throw ex;</p>
+<p>964&nbsp; }</p>
+<p>965</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#a0422b78fa9a5632a46f3c617917ea80f">985</a>
+static inline void
+<a class="reference external" href="../../df/d37/classTango_1_1Except.html#a0422b78fa9a5632a46f3c617917ea80f">re_throw_exception</a>(Tango::DevFailed
+&amp;ex,</p>
+<p>986&nbsp; const char *reason,</p>
+<p>987&nbsp; char *desc,</p>
+<p>988&nbsp; char *origin,</p>
+<p>989&nbsp; Tango::ErrSeverity sever = Tango::ERR)</p>
+<p>990&nbsp; {</p>
+<p>991&nbsp; long nb_err = ex.errors.length();</p>
+<p>992&nbsp; ex.errors.length(nb_err + 1);</p>
+<p>993</p>
+<p>994&nbsp; ex.errors[nb_err].severity = sever;</p>
+<p>995&nbsp; ex.errors[nb_err].reason =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(reason);</p>
+<p>996&nbsp; ex.errors[nb_err].origin =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(origin);</p>
+<p>997&nbsp; delete[] origin;</p>
+<p>998&nbsp; ex.errors[nb_err].desc =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(desc);</p>
+<p>999&nbsp; delete[] desc;</p>
+<p>1000</p>
+<p>1001&nbsp; throw ex;</p>
+<p>1002&nbsp; }</p>
+<p>1003</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#a8896fdbe1a3bbe7b3aee6930a3d01b68">1024</a>
+static inline void
+<a class="reference external" href="../../df/d37/classTango_1_1Except.html#a8896fdbe1a3bbe7b3aee6930a3d01b68">re_throw_exception</a>(Tango::DevFailed
+&amp;ex,</p>
+<p>1025&nbsp; char *reason,</p>
+<p>1026&nbsp; const char *desc,</p>
+<p>1027&nbsp; const char *origin,</p>
+<p>1028&nbsp; Tango::ErrSeverity sever = Tango::ERR)</p>
+<p>1029&nbsp; {</p>
+<p>1030&nbsp; long nb_err = ex.errors.length();</p>
+<p>1031&nbsp; ex.errors.length(nb_err + 1);</p>
+<p>1032</p>
+<p>1033&nbsp; ex.errors[nb_err].severity = sever;</p>
+<p>1034&nbsp; ex.errors[nb_err].reason =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(reason);</p>
+<p>1035&nbsp; delete[] reason;</p>
+<p>1036&nbsp; ex.errors[nb_err].origin =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(origin);</p>
+<p>1037&nbsp; ex.errors[nb_err].desc =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(desc);</p>
+<p>1038</p>
+<p>1039&nbsp; throw ex;</p>
+<p>1040&nbsp; }</p>
+<p>1041</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#a83510f679847371ba4ac8813e82fc14f">1062</a>
+static inline void
+<a class="reference external" href="../../df/d37/classTango_1_1Except.html#a83510f679847371ba4ac8813e82fc14f">re_throw_exception</a>(Tango::DevFailed
+&amp;ex,</p>
+<p>1063&nbsp; char *reason,</p>
+<p>1064&nbsp; const char *desc,</p>
+<p>1065&nbsp; char *origin,</p>
+<p>1066&nbsp; Tango::ErrSeverity sever = Tango::ERR)</p>
+<p>1067&nbsp; {</p>
+<p>1068&nbsp; long nb_err = ex.errors.length();</p>
+<p>1069&nbsp; ex.errors.length(nb_err + 1);</p>
+<p>1070</p>
+<p>1071&nbsp; ex.errors[nb_err].severity = sever;</p>
+<p>1072&nbsp; ex.errors[nb_err].reason =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(reason);</p>
+<p>1073&nbsp; delete[] reason;</p>
+<p>1074&nbsp; ex.errors[nb_err].origin =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(origin);</p>
+<p>1075&nbsp; delete[] origin;</p>
+<p>1076&nbsp; ex.errors[nb_err].desc =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(desc);</p>
+<p>1077</p>
+<p>1078&nbsp; throw ex;</p>
+<p>1079&nbsp; }</p>
+<p>1080</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#aa01396d9679d7b260a31a61735bf4004">1101</a>
+static inline void
+<a class="reference external" href="../../df/d37/classTango_1_1Except.html#aa01396d9679d7b260a31a61735bf4004">re_throw_exception</a>(Tango::DevFailed
+&amp;ex,</p>
+<p>1102&nbsp; char *reason,</p>
+<p>1103&nbsp; char *desc,</p>
+<p>1104&nbsp; const char *origin,</p>
+<p>1105&nbsp; Tango::ErrSeverity sever = Tango::ERR)</p>
+<p>1106&nbsp; {</p>
+<p>1107&nbsp; long nb_err = ex.errors.length();</p>
+<p>1108&nbsp; ex.errors.length(nb_err + 1);</p>
+<p>1109</p>
+<p>1110&nbsp; ex.errors[nb_err].severity = sever;</p>
+<p>1111&nbsp; ex.errors[nb_err].reason =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(reason);</p>
+<p>1112&nbsp; delete[] reason;</p>
+<p>1113&nbsp; ex.errors[nb_err].origin =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(origin);</p>
+<p>1114&nbsp; ex.errors[nb_err].desc =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(desc);</p>
+<p>1115&nbsp; delete[] desc;</p>
+<p>1116</p>
+<p>1117&nbsp; throw ex;</p>
+<p>1118&nbsp; }</p>
+<p>1119</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#ae2c8a7188665f1cd16f448aa4ab83d17">1140</a>
+static inline void
+<a class="reference external" href="../../df/d37/classTango_1_1Except.html#ae2c8a7188665f1cd16f448aa4ab83d17">re_throw_exception</a>(Tango::DevFailed
+&amp;ex,</p>
+<p>1141&nbsp; char *reason,</p>
+<p>1142&nbsp; char *desc,</p>
+<p>1143&nbsp; char *origin,</p>
+<p>1144&nbsp; Tango::ErrSeverity sever = Tango::ERR)</p>
+<p>1145&nbsp; {</p>
+<p>1146&nbsp; long nb_err = ex.errors.length();</p>
+<p>1147&nbsp; ex.errors.length(nb_err + 1);</p>
+<p>1148</p>
+<p>1149&nbsp; ex.errors[nb_err].severity = sever;</p>
+<p>1150&nbsp; ex.errors[nb_err].reason =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(reason);</p>
+<p>1151&nbsp; delete[] reason;</p>
+<p>1152&nbsp; ex.errors[nb_err].origin =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(origin);</p>
+<p>1153&nbsp; delete[] origin;</p>
+<p>1154&nbsp; ex.errors[nb_err].desc =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(desc);</p>
+<p>1155&nbsp; delete[] desc;</p>
+<p>1156</p>
+<p>1157&nbsp; throw ex;</p>
+<p>1158&nbsp; }</p>
+<p>1159</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#ace5f51b25e895260bb85b318d4e4f59c">1179</a>
+static inline void
+<a class="reference external" href="../../df/d37/classTango_1_1Except.html#ace5f51b25e895260bb85b318d4e4f59c">re_throw_exception</a>(Tango::DevFailed
+&amp;ex,</p>
+<p>1180&nbsp; const string &amp;reason,</p>
+<p>1181&nbsp; const string &amp;desc,</p>
+<p>1182&nbsp; const string &amp;origin,</p>
+<p>1183&nbsp; Tango::ErrSeverity sever = Tango::ERR)</p>
+<p>1184&nbsp; {</p>
+<p>1185&nbsp; long nb_err = ex.errors.length();</p>
+<p>1186&nbsp; ex.errors.length(nb_err + 1);</p>
+<p>1187</p>
+<p>1188&nbsp; ex.errors[nb_err].severity = sever;</p>
+<p>1189&nbsp; ex.errors[nb_err].reason =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(reason.c_str());</p>
+<p>1190&nbsp; ex.errors[nb_err].origin =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(origin.c_str());</p>
+<p>1191&nbsp; ex.errors[nb_err].desc =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(desc.c_str());</p>
+<p>1192</p>
+<p>1193&nbsp; throw ex;</p>
+<p>1194&nbsp; }</p>
+<p>1195</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#aeba14e603df6a856739c7734859c50f9">1215</a>
+static inline void
+<a class="reference external" href="../../df/d37/classTango_1_1Except.html#aeba14e603df6a856739c7734859c50f9">re_throw_exception</a>(Tango::DevFailed
+&amp;ex,</p>
+<p>1216&nbsp; const string &amp;reason,</p>
+<p>1217&nbsp; const string &amp;desc,</p>
+<p>1218&nbsp; const char *origin,</p>
+<p>1219&nbsp; Tango::ErrSeverity sever = Tango::ERR)</p>
+<p>1220&nbsp; {</p>
+<p>1221&nbsp; long nb_err = ex.errors.length();</p>
+<p>1222&nbsp; ex.errors.length(nb_err + 1);</p>
+<p>1223</p>
+<p>1224&nbsp; ex.errors[nb_err].severity = sever;</p>
+<p>1225&nbsp; ex.errors[nb_err].reason =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(reason.c_str());</p>
+<p>1226&nbsp; ex.errors[nb_err].origin =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(origin);</p>
+<p>1227&nbsp; ex.errors[nb_err].desc =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(desc.c_str());</p>
+<p>1228</p>
+<p>1229&nbsp; throw ex;</p>
+<p>1230&nbsp; }</p>
+<p>1231</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#a03a3ffc68c976acb58a8e61eb50fcad6">1251</a>
+static inline void
+<a class="reference external" href="../../df/d37/classTango_1_1Except.html#a03a3ffc68c976acb58a8e61eb50fcad6">re_throw_exception</a>(Tango::DevFailed
+&amp;ex,</p>
+<p>1252&nbsp; const string &amp;reason,</p>
+<p>1253&nbsp; const char *desc,</p>
+<p>1254&nbsp; const string &amp;origin,</p>
+<p>1255&nbsp; Tango::ErrSeverity sever = Tango::ERR)</p>
+<p>1256&nbsp; {</p>
+<p>1257&nbsp; long nb_err = ex.errors.length();</p>
+<p>1258&nbsp; ex.errors.length(nb_err + 1);</p>
+<p>1259</p>
+<p>1260&nbsp; ex.errors[nb_err].severity = sever;</p>
+<p>1261&nbsp; ex.errors[nb_err].reason =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(reason.c_str());</p>
+<p>1262&nbsp; ex.errors[nb_err].origin =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(desc);</p>
+<p>1263&nbsp; ex.errors[nb_err].desc =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(origin.c_str());</p>
+<p>1264</p>
+<p>1265&nbsp; throw ex;</p>
+<p>1266&nbsp; }</p>
+<p>1267</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#a1ca76b2d4a5b22d0a2079e3889b12a9e">1287</a>
+static inline void
+<a class="reference external" href="../../df/d37/classTango_1_1Except.html#a1ca76b2d4a5b22d0a2079e3889b12a9e">re_throw_exception</a>(Tango::DevFailed
+&amp;ex,</p>
+<p>1288&nbsp; const string &amp;reason,</p>
+<p>1289&nbsp; const char *desc,</p>
+<p>1290&nbsp; const char *origin,</p>
+<p>1291&nbsp; Tango::ErrSeverity sever = Tango::ERR)</p>
+<p>1292&nbsp; {</p>
+<p>1293&nbsp; long nb_err = ex.errors.length();</p>
+<p>1294&nbsp; ex.errors.length(nb_err + 1);</p>
+<p>1295</p>
+<p>1296&nbsp; ex.errors[nb_err].severity = sever;</p>
+<p>1297&nbsp; ex.errors[nb_err].reason =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(reason.c_str());</p>
+<p>1298&nbsp; ex.errors[nb_err].origin =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(origin);</p>
+<p>1299&nbsp; ex.errors[nb_err].desc =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(desc);</p>
+<p>1300</p>
+<p>1301&nbsp; throw ex;</p>
+<p>1302&nbsp; }</p>
+<p>1303</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#aa28f7d876b6967235e854555fc2fe1ba">1323</a>
+static inline void
+<a class="reference external" href="../../df/d37/classTango_1_1Except.html#aa28f7d876b6967235e854555fc2fe1ba">re_throw_exception</a>(Tango::DevFailed
+&amp;ex,</p>
+<p>1324&nbsp; const char *reason,</p>
+<p>1325&nbsp; const string &amp;desc,</p>
+<p>1326&nbsp; const string &amp;origin,</p>
+<p>1327&nbsp; Tango::ErrSeverity sever = Tango::ERR)</p>
+<p>1328&nbsp; {</p>
+<p>1329&nbsp; long nb_err = ex.errors.length();</p>
+<p>1330&nbsp; ex.errors.length(nb_err + 1);</p>
+<p>1331</p>
+<p>1332&nbsp; ex.errors[nb_err].severity = sever;</p>
+<p>1333&nbsp; ex.errors[nb_err].reason =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(reason);</p>
+<p>1334&nbsp; ex.errors[nb_err].origin =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(origin.c_str());</p>
+<p>1335&nbsp; ex.errors[nb_err].desc =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(desc.c_str());</p>
+<p>1336</p>
+<p>1337&nbsp; throw ex;</p>
+<p>1338&nbsp; }</p>
+<p>1339</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#a93e9e068103c707d2c4931f8c7804ef8">1359</a>
+static inline void
+<a class="reference external" href="../../df/d37/classTango_1_1Except.html#a93e9e068103c707d2c4931f8c7804ef8">re_throw_exception</a>(Tango::DevFailed
+&amp;ex,</p>
+<p>1360&nbsp; const char *reason,</p>
+<p>1361&nbsp; const string &amp;desc,</p>
+<p>1362&nbsp; const char *origin,</p>
+<p>1363&nbsp; Tango::ErrSeverity sever = Tango::ERR)</p>
+<p>1364&nbsp; {</p>
+<p>1365&nbsp; long nb_err = ex.errors.length();</p>
+<p>1366&nbsp; ex.errors.length(nb_err + 1);</p>
+<p>1367</p>
+<p>1368&nbsp; ex.errors[nb_err].severity = sever;</p>
+<p>1369&nbsp; ex.errors[nb_err].reason =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(reason);</p>
+<p>1370&nbsp; ex.errors[nb_err].origin =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(origin);</p>
+<p>1371&nbsp; ex.errors[nb_err].desc =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(desc.c_str());</p>
+<p>1372</p>
+<p>1373&nbsp; throw ex;</p>
+<p>1374&nbsp; }</p>
+<p>1375</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#a1d0f06fa487f3506e49cad58d36e6ba0">1395</a>
+static inline void
+<a class="reference external" href="../../df/d37/classTango_1_1Except.html#a1d0f06fa487f3506e49cad58d36e6ba0">re_throw_exception</a>(Tango::DevFailed
+&amp;ex,</p>
+<p>1396&nbsp; const char *reason,</p>
+<p>1397&nbsp; const char *desc,</p>
+<p>1398&nbsp; const string &amp;origin,</p>
+<p>1399&nbsp; Tango::ErrSeverity sever = Tango::ERR)</p>
+<p>1400&nbsp; {</p>
+<p>1401&nbsp; long nb_err = ex.errors.length();</p>
+<p>1402&nbsp; ex.errors.length(nb_err + 1);</p>
+<p>1403</p>
+<p>1404&nbsp; ex.errors[nb_err].severity = sever;</p>
+<p>1405&nbsp; ex.errors[nb_err].reason =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(reason);</p>
+<p>1406&nbsp; ex.errors[nb_err].origin =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(desc);</p>
+<p>1407&nbsp; ex.errors[nb_err].desc =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(origin.c_str());</p>
+<p>1408</p>
+<p>1409&nbsp; throw ex;</p>
+<p>1410&nbsp; }</p>
+<p>1411</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#a73f743dfaac89212eeb994bb40e79577">1432</a>
+static inline void
+<a class="reference external" href="../../df/d37/classTango_1_1Except.html#a73f743dfaac89212eeb994bb40e79577">re_throw_exception</a>(Tango::DevFailed
+&amp;ex,</p>
+<p>1433&nbsp; const string &amp;reason,</p>
+<p>1434&nbsp; const string &amp;desc,</p>
+<p>1435&nbsp; char *origin,</p>
+<p>1436&nbsp; Tango::ErrSeverity sever = Tango::ERR)</p>
+<p>1437&nbsp; {</p>
+<p>1438&nbsp; long nb_err = ex.errors.length();</p>
+<p>1439&nbsp; ex.errors.length(nb_err + 1);</p>
+<p>1440</p>
+<p>1441&nbsp; ex.errors[nb_err].severity = sever;</p>
+<p>1442&nbsp; ex.errors[nb_err].reason =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(reason.c_str());</p>
+<p>1443&nbsp; ex.errors[nb_err].origin =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(origin);</p>
+<p>1444&nbsp; delete[] origin;</p>
+<p>1445&nbsp; ex.errors[nb_err].desc =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(desc.c_str());</p>
+<p>1446</p>
+<p>1447&nbsp; throw ex;</p>
+<p>1448&nbsp; }</p>
+<p>1449</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#a1a0b86d7563895673901bbfb9e862b9b">1470</a>
+static inline void
+<a class="reference external" href="../../df/d37/classTango_1_1Except.html#a1a0b86d7563895673901bbfb9e862b9b">re_throw_exception</a>(Tango::DevFailed
+&amp;ex,</p>
+<p>1471&nbsp; const string &amp;reason,</p>
+<p>1472&nbsp; char *desc,</p>
+<p>1473&nbsp; const string &amp;origin,</p>
+<p>1474&nbsp; Tango::ErrSeverity sever = Tango::ERR)</p>
+<p>1475&nbsp; {</p>
+<p>1476&nbsp; long nb_err = ex.errors.length();</p>
+<p>1477&nbsp; ex.errors.length(nb_err + 1);</p>
+<p>1478</p>
+<p>1479&nbsp; ex.errors[nb_err].severity = sever;</p>
+<p>1480&nbsp; ex.errors[nb_err].reason =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(reason.c_str());</p>
+<p>1481&nbsp; ex.errors[nb_err].origin =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(desc);</p>
+<p>1482&nbsp; delete[] desc;</p>
+<p>1483&nbsp; ex.errors[nb_err].desc =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(origin.c_str());</p>
+<p>1484</p>
+<p>1485&nbsp; throw ex;</p>
+<p>1486&nbsp; }</p>
+<p>1487</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#ab919ac526ab5cc7912d98df37989a96d">1508</a>
+static inline void
+<a class="reference external" href="../../df/d37/classTango_1_1Except.html#ab919ac526ab5cc7912d98df37989a96d">re_throw_exception</a>(Tango::DevFailed
+&amp;ex,</p>
+<p>1509&nbsp; const string &amp;reason,</p>
+<p>1510&nbsp; char *desc,</p>
+<p>1511&nbsp; char *origin,</p>
+<p>1512&nbsp; Tango::ErrSeverity sever = Tango::ERR)</p>
+<p>1513&nbsp; {</p>
+<p>1514&nbsp; long nb_err = ex.errors.length();</p>
+<p>1515&nbsp; ex.errors.length(nb_err + 1);</p>
+<p>1516</p>
+<p>1517&nbsp; ex.errors[nb_err].severity = sever;</p>
+<p>1518&nbsp; ex.errors[nb_err].reason =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(reason.c_str());</p>
+<p>1519&nbsp; ex.errors[nb_err].origin =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(origin);</p>
+<p>1520&nbsp; delete[] origin;</p>
+<p>1521&nbsp; ex.errors[nb_err].desc =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(desc);</p>
+<p>1522&nbsp; delete desc;</p>
+<p>1523</p>
+<p>1524&nbsp; throw ex;</p>
+<p>1525&nbsp; }</p>
+<p>1526</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#aa52f5b4614aaa58d60a2fc830ef23ba6">1547</a>
+static inline void
+<a class="reference external" href="../../df/d37/classTango_1_1Except.html#aa52f5b4614aaa58d60a2fc830ef23ba6">re_throw_exception</a>(Tango::DevFailed
+&amp;ex,</p>
+<p>1548&nbsp; char *reason,</p>
+<p>1549&nbsp; const string &amp;desc,</p>
+<p>1550&nbsp; const string &amp;origin,</p>
+<p>1551&nbsp; Tango::ErrSeverity sever = Tango::ERR)</p>
+<p>1552&nbsp; {</p>
+<p>1553&nbsp; long nb_err = ex.errors.length();</p>
+<p>1554&nbsp; ex.errors.length(nb_err + 1);</p>
+<p>1555</p>
+<p>1556&nbsp; ex.errors[nb_err].severity = sever;</p>
+<p>1557&nbsp; ex.errors[nb_err].reason =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(reason);</p>
+<p>1558&nbsp; delete[] reason;</p>
+<p>1559&nbsp; ex.errors[nb_err].origin =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(origin.c_str());</p>
+<p>1560&nbsp; ex.errors[nb_err].desc =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(desc.c_str());</p>
+<p>1561</p>
+<p>1562&nbsp; throw ex;</p>
+<p>1563&nbsp; }</p>
+<p>1564</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#a28f9a09de30e050f27d879e1120d3ad2">1585</a>
+static inline void
+<a class="reference external" href="../../df/d37/classTango_1_1Except.html#a28f9a09de30e050f27d879e1120d3ad2">re_throw_exception</a>(Tango::DevFailed
+&amp;ex,</p>
+<p>1586&nbsp; char *reason,</p>
+<p>1587&nbsp; const string &amp;desc,</p>
+<p>1588&nbsp; char *origin,</p>
+<p>1589&nbsp; Tango::ErrSeverity sever = Tango::ERR)</p>
+<p>1590&nbsp; {</p>
+<p>1591&nbsp; long nb_err = ex.errors.length();</p>
+<p>1592&nbsp; ex.errors.length(nb_err + 1);</p>
+<p>1593</p>
+<p>1594&nbsp; ex.errors[nb_err].severity = sever;</p>
+<p>1595&nbsp; ex.errors[nb_err].reason =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(reason);</p>
+<p>1596&nbsp; delete[] reason;</p>
+<p>1597&nbsp; ex.errors[nb_err].origin =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(origin);</p>
+<p>1598&nbsp; delete[] origin;</p>
+<p>1599&nbsp; ex.errors[nb_err].desc =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(desc.c_str());</p>
+<p>1600</p>
+<p>1601&nbsp; throw ex;</p>
+<p>1602&nbsp; }</p>
+<p>1603</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#a42d1f2a98eb402a268e582128ddd61ab">1624</a>
+static inline void
+<a class="reference external" href="../../df/d37/classTango_1_1Except.html#a42d1f2a98eb402a268e582128ddd61ab">re_throw_exception</a>(Tango::DevFailed
+&amp;ex,</p>
+<p>1625&nbsp; char *reason,</p>
+<p>1626&nbsp; char *desc,</p>
+<p>1627&nbsp; const string &amp;origin,</p>
+<p>1628&nbsp; Tango::ErrSeverity sever = Tango::ERR)</p>
+<p>1629&nbsp; {</p>
+<p>1630&nbsp; long nb_err = ex.errors.length();</p>
+<p>1631&nbsp; ex.errors.length(nb_err + 1);</p>
+<p>1632</p>
+<p>1633&nbsp; ex.errors[nb_err].severity = sever;</p>
+<p>1634&nbsp; ex.errors[nb_err].reason =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(reason);</p>
+<p>1635&nbsp; delete[] reason;</p>
+<p>1636&nbsp; ex.errors[nb_err].origin =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(desc);</p>
+<p>1637&nbsp; delete[] desc;</p>
+<p>1638&nbsp; ex.errors[nb_err].desc =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(origin.c_str());</p>
+<p>1639</p>
+<p>1640&nbsp; throw ex;</p>
+<p>1641&nbsp; }</p>
+<p>1643</p>
+<p>1664&nbsp; static void throw_exception(const CORBA::SystemException
+&amp;ex,const char *origin);</p>
+<p>1665</p>
+<p>1685&nbsp; static void throw_exception(const CORBA::SystemException &amp;ex,char
+*origin);</p>
+<p>1686</p>
+<p>1706&nbsp; static void throw_exception(const CORBA::SystemException
+&amp;ex,const string &amp;origin);</p>
+<p>1707</p>
+<p>1708</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#a79a7b2e44c9584e8795042c1ff7a92cc">1731</a>
+static inline void
+<a class="reference external" href="../../df/d37/classTango_1_1Except.html#a79a7b2e44c9584e8795042c1ff7a92cc">throw_named_exception</a>(const
+char *att_name,const char *reason,</p>
+<p>1732&nbsp; const char *desc,const char *origin,Tango::ErrSeverity sever =
+Tango::ERR)</p>
+<p>1733&nbsp; {</p>
+<p>1734&nbsp; Tango::NamedDevErrorList errors(1);</p>
+<p>1735</p>
+<p>1736&nbsp; errors.length(1);</p>
+<p>1737&nbsp; errors[0].name =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(att_name);</p>
+<p>1738&nbsp; errors[0].index_in_call = 999;</p>
+<p>1739&nbsp; errors[0].err_list.length(1);</p>
+<p>1740&nbsp; errors[0].err_list[0].desc =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(desc);</p>
+<p>1741&nbsp; errors[0].err_list[0].severity = sever;</p>
+<p>1742&nbsp; errors[0].err_list[0].reason =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(reason);</p>
+<p>1743&nbsp; errors[0].err_list[0].origin =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(origin);</p>
+<p>1744</p>
+<p>1745&nbsp; throw Tango::MultiDevFailed(errors);</p>
+<p>1746&nbsp; }</p>
+<p>1747</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#a55ba95758fa392f750ad9b84d0a636f8">1769</a>
+static inline void
+<a class="reference external" href="../../df/d37/classTango_1_1Except.html#a55ba95758fa392f750ad9b84d0a636f8">throw_named_exception</a>(vector&lt;string&gt;
+&amp;atts,const char *reason,</p>
+<p>1770&nbsp; const char *desc,const char *origin,Tango::ErrSeverity sever =
+Tango::ERR)</p>
+<p>1771&nbsp; {</p>
+<p>1772&nbsp; unsigned int a_size = (unsigned int)atts.size();</p>
+<p>1773&nbsp; Tango::NamedDevErrorList errors(a_size);</p>
+<p>1774</p>
+<p>1775&nbsp; errors.length(a_size);</p>
+<p>1776&nbsp; for (unsigned int loop = 0;loop &lt; a_size;loop++)</p>
+<p>1777&nbsp; {</p>
+<p>1778&nbsp; errors[loop].name =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(atts[loop].c_str());</p>
+<p>1779&nbsp; errors[loop].index_in_call = 999;</p>
+<p>1780&nbsp; errors[loop].err_list.length(1);</p>
+<p>1781&nbsp; errors[loop].err_list[0].desc =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(desc);</p>
+<p>1782&nbsp; errors[loop].err_list[0].severity = sever;</p>
+<p>1783&nbsp; errors[loop].err_list[0].reason =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(reason);</p>
+<p>1784&nbsp; errors[loop].err_list[0].origin =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">CORBA::string_dup</a>(origin);</p>
+<p>1785&nbsp; }</p>
+<p>1786</p>
+<p>1787&nbsp; throw Tango::MultiDevFailed(errors);</p>
+<p>1788&nbsp; }</p>
+<p>1789</p>
+<p>1815&nbsp; static void
+throw_named_exception(<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html">Tango::DeviceImpl</a>
+*d,long att_idx,const char *reason,</p>
+<p>1816&nbsp; const char *desc,const char *origin,Tango::ErrSeverity sever =
+Tango::ERR);</p>
+<p>1817</p>
+<p>1843&nbsp; static void
+throw_named_exception(<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html">Tango::DeviceImpl</a>
+*d,vector&lt;long&gt; &amp;atts,const char *reason,</p>
+<p>1844&nbsp; const char *desc,const char *origin,Tango::ErrSeverity sever =
+Tango::ERR);</p>
+<p>1845</p>
+<p>1846</p>
+<p>1860&nbsp; static bool compare_exception(Tango::DevFailed &amp;ex1,
+Tango::DevFailed &amp;ex2);</p>
+<p>1861</p>
+<p>1862</p>
+<p>1864</p>
+<p>1866</p>
+<p>1867&nbsp; static char *print_CORBA_SystemException(const
+CORBA::SystemException *);</p>
+<p>1868&nbsp; static char *print_CORBA_SystemException_r(const
+CORBA::SystemException *, char * err_msg); // reentrant version</p>
+<p>1869&nbsp; static omni_mutex the_mutex;</p>
+<p>1870</p>
+<p>1871&nbsp;protected:</p>
+<p>1873&nbsp; static char mess[256];</p>
+<p>1874&nbsp;};</p>
+<p>1875</p>
+<p>1876&nbsp;} // End of Tango namespace</p>
+<p>1877</p>
+<p>1878&nbsp;#endif /* EXCEPT */</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#a51c66f4b7d4ef481676117b5db783695">Tango::Except::throw_exception</a></p>
+<p>static void throw_exception(char *reason, char *desc, const string
+&amp;origin, Tango::ErrSeverity sever=Tango::ERR)</p>
+<p>Generate and throw a TANGO DevFailed exception.</p>
+<p><strong>Definition:</strong> except.h:833</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#ab919ac526ab5cc7912d98df37989a96d">Tango::Except::re_throw_exception</a></p>
+<p>static void re_throw_exception(Tango::DevFailed &amp;ex, const string
+&amp;reason, char *desc, char *origin, Tango::ErrSeverity
+sever=Tango::ERR)</p>
+<p>Re-throw a TANGO DevFailed exception with one more error.</p>
+<p><strong>Definition:</strong> except.h:1508</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#a21f0ffe9ed4839c570f8137edb3d7241">Tango::Except::throw_exception</a></p>
+<p>static void throw_exception(const char *reason, char *desc, const
+char *origin, Tango::ErrSeverity sever=Tango::ERR)</p>
+<p>Generate and throw a TANGO DevFailed exception.</p>
+<p><strong>Definition:</strong> except.h:193</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#a379a9cc1c1ccfc574ffecd135279e13f">Tango::Except::throw_exception</a></p>
+<p>static void throw_exception(const string &amp;reason, const string &amp;desc,
+char *origin, Tango::ErrSeverity sever=Tango::ERR)</p>
+<p>Generate and throw a TANGO DevFailed exception.</p>
+<p><strong>Definition:</strong> except.h:651</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#a79a7b2e44c9584e8795042c1ff7a92cc">Tango::Except::throw_named_exception</a></p>
+<p>static void throw_named_exception(const char *att_name, const char
+*reason, const char *desc, const char *origin, Tango::ErrSeverity
+sever=Tango::ERR)</p>
+<p>Throw a TANGO MultiDevFailed exception.</p>
+<p><strong>Definition:</strong> except.h:1731</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#aeba14e603df6a856739c7734859c50f9">Tango::Except::re_throw_exception</a></p>
+<p>static void re_throw_exception(Tango::DevFailed &amp;ex, const string
+&amp;reason, const string &amp;desc, const char *origin, Tango::ErrSeverity
+sever=Tango::ERR)</p>
+<p>Re-throw a TANGO DevFailed exception with one more error.</p>
+<p><strong>Definition:</strong> except.h:1215</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#aa28f7d876b6967235e854555fc2fe1ba">Tango::Except::re_throw_exception</a></p>
+<p>static void re_throw_exception(Tango::DevFailed &amp;ex, const char
+*reason, const string &amp;desc, const string &amp;origin, Tango::ErrSeverity
+sever=Tango::ERR)</p>
+<p>Re-throw a TANGO DevFailed exception with one more error.</p>
+<p><strong>Definition:</strong> except.h:1323</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#a1ca76b2d4a5b22d0a2079e3889b12a9e">Tango::Except::re_throw_exception</a></p>
+<p>static void re_throw_exception(Tango::DevFailed &amp;ex, const string
+&amp;reason, const char *desc, const char *origin, Tango::ErrSeverity
+sever=Tango::ERR)</p>
+<p>Re-throw a TANGO DevFailed exception with one more error.</p>
+<p><strong>Definition:</strong> except.h:1287</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#a03a3ffc68c976acb58a8e61eb50fcad6">Tango::Except::re_throw_exception</a></p>
+<p>static void re_throw_exception(Tango::DevFailed &amp;ex, const string
+&amp;reason, const char *desc, const string &amp;origin, Tango::ErrSeverity
+sever=Tango::ERR)</p>
+<p>Re-throw a TANGO DevFailed exception with one more error.</p>
+<p><strong>Definition:</strong> except.h:1251</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#a4bc955a801d67a784828f4b79471e959">Tango::Except::throw_exception</a></p>
+<p>static void throw_exception(char *reason, const char *desc, const
+char *origin, Tango::ErrSeverity sever=Tango::ERR)</p>
+<p>Generate and throw a TANGO DevFailed exception.</p>
+<p><strong>Definition:</strong> except.h:265</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#a55ed8f25cc157fa3152ede702b36517c">Tango::Except::throw_exception</a></p>
+<p>static void throw_exception(char *reason, char *desc, char *origin,
+Tango::ErrSeverity sever=Tango::ERR)</p>
+<p>Generate and throw a TANGO DevFailed exception.</p>
+<p><strong>Definition:</strong> except.h:375</p>
+<p><a class="reference external" href="../../d8/dcc/namespacestd.html">std</a></p>
+<p><strong>Definition:</strong> LoggerStream.hh:178</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#a2dc82f122c0bdde68566f0a6b3419f13">Tango::Except::throw_exception</a></p>
+<p>static void throw_exception(const char *reason, const char *desc,
+char *origin, Tango::ErrSeverity sever=Tango::ERR)</p>
+<p>Generate and throw a TANGO DevFailed exception.</p>
+<p><strong>Definition:</strong> except.h:157</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#ac7d152b9c381a9ff2202224404b4df34">Tango::Except::throw_exception</a></p>
+<p>static void throw_exception(const char *reason, const string &amp;desc,
+const string &amp;origin, Tango::ErrSeverity sever=Tango::ERR)</p>
+<p>Generate and throw a TANGO DevFailed exception.</p>
+<p><strong>Definition:</strong> except.h:548</p>
+<p><a class="reference external" href="../../de/ddf/namespaceTango.html">Tango</a></p>
+<hr class="docutils" />
+<p><strong>Definition:</strong> device.h:50</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#a21253baed3a2521bfa388fc8079f2026">Tango::Except::throw_exception</a></p>
+<p>static void throw_exception(char *reason, const char *desc, char
+*origin, Tango::ErrSeverity sever=Tango::ERR)</p>
+<p>Generate and throw a TANGO DevFailed exception.</p>
+<p><strong>Definition:</strong> except.h:301</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#a93e9e068103c707d2c4931f8c7804ef8">Tango::Except::re_throw_exception</a></p>
+<p>static void re_throw_exception(Tango::DevFailed &amp;ex, const char
+*reason, const string &amp;desc, const char *origin, Tango::ErrSeverity
+sever=Tango::ERR)</p>
+<p>Re-throw a TANGO DevFailed exception with one more error.</p>
+<p><strong>Definition:</strong> except.h:1359</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#a1a0b86d7563895673901bbfb9e862b9b">Tango::Except::re_throw_exception</a></p>
+<p>static void re_throw_exception(Tango::DevFailed &amp;ex, const string
+&amp;reason, char *desc, const string &amp;origin, Tango::ErrSeverity
+sever=Tango::ERR)</p>
+<p>Re-throw a TANGO DevFailed exception with one more error.</p>
+<p><strong>Definition:</strong> except.h:1470</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#ae8002ec9ea1ba0c99a0770b55ff71d98">Tango::Except::throw_exception</a></p>
+<p>static void throw_exception(const string &amp;reason, const string &amp;desc,
+const string &amp;origin, Tango::ErrSeverity sever=Tango::ERR)</p>
+<p>Generate and throw a TANGO DevFailed exception.</p>
+<p><strong>Definition:</strong> except.h:412</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#a81dc475cd517c75e49c188bb91fd0e60">Tango::Except::throw_exception</a></p>
+<p>static void throw_exception(const string &amp;reason, char *desc, char
+*origin, Tango::ErrSeverity sever=Tango::ERR)</p>
+<p>Generate and throw a TANGO DevFailed exception.</p>
+<p><strong>Definition:</strong> except.h:723</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#a13ecdf493972a076fcf3627624198cce">Tango::Except::throw_exception</a></p>
+<p>static void throw_exception(const string &amp;reason, const char *desc,
+const string &amp;origin, Tango::ErrSeverity sever=Tango::ERR)</p>
+<p>Generate and throw a TANGO DevFailed exception.</p>
+<p><strong>Definition:</strong> except.h:480</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#aea2efa05e2b0f46a343061cf88655547">Tango::Except::throw_exception</a></p>
+<p>static void throw_exception(const string &amp;reason, const string &amp;desc,
+const char *origin, Tango::ErrSeverity sever=Tango::ERR)</p>
+<p>Generate and throw a TANGO DevFailed exception.</p>
+<p><strong>Definition:</strong> except.h:446</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#a87d6f2b545de08d288da642068e001c8">Tango::Except::throw_exception</a></p>
+<p>static void throw_exception(char *reason, char *desc, const char
+*origin, Tango::ErrSeverity sever=Tango::ERR)</p>
+<p>Generate and throw a TANGO DevFailed exception.</p>
+<p><strong>Definition:</strong> except.h:338</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#ae2c8a7188665f1cd16f448aa4ab83d17">Tango::Except::re_throw_exception</a></p>
+<p>static void re_throw_exception(Tango::DevFailed &amp;ex, char *reason,
+char *desc, char *origin, Tango::ErrSeverity sever=Tango::ERR)</p>
+<p>Re-throw a TANGO DevFailed exception with one more error.</p>
+<p><strong>Definition:</strong> except.h:1140</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#ae1125b916a127f9b75832b018eb98ede">Tango::Except::throw_exception</a></p>
+<p>static void throw_exception(const char *reason, const string &amp;desc,
+const char *origin, Tango::ErrSeverity sever=Tango::ERR)</p>
+<p>Generate and throw a TANGO DevFailed exception.</p>
+<p><strong>Definition:</strong> except.h:582</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#a83510f679847371ba4ac8813e82fc14f">Tango::Except::re_throw_exception</a></p>
+<p>static void re_throw_exception(Tango::DevFailed &amp;ex, char *reason,
+const char *desc, char *origin, Tango::ErrSeverity sever=Tango::ERR)</p>
+<p>Re-throw a TANGO DevFailed exception with one more error.</p>
+<p><strong>Definition:</strong> except.h:1062</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#a9c3792241214eac89e7fbdd91646b67a">Tango::Except::re_throw_exception</a></p>
+<p>static void re_throw_exception(Tango::DevFailed &amp;ex, const char
+*reason, const char *desc, const char *origin, Tango::ErrSeverity
+sever=Tango::ERR)</p>
+<p>Re-throw a TANGO DevFailed exception with one more error.</p>
+<p><strong>Definition:</strong> except.h:873</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#a28f9a09de30e050f27d879e1120d3ad2">Tango::Except::re_throw_exception</a></p>
+<p>static void re_throw_exception(Tango::DevFailed &amp;ex, char *reason,
+const string &amp;desc, char *origin, Tango::ErrSeverity sever=Tango::ERR)</p>
+<p>Re-throw a TANGO DevFailed exception with one more error.</p>
+<p><strong>Definition:</strong> except.h:1585</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#aa01396d9679d7b260a31a61735bf4004">Tango::Except::re_throw_exception</a></p>
+<p>static void re_throw_exception(Tango::DevFailed &amp;ex, char *reason,
+char *desc, const char *origin, Tango::ErrSeverity sever=Tango::ERR)</p>
+<p>Re-throw a TANGO DevFailed exception with one more error.</p>
+<p><strong>Definition:</strong> except.h:1101</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html">Tango::DeviceImpl</a></p>
+<p>Base class for all TANGO device.</p>
+<p><strong>Definition:</strong> device.h:90</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#a8896fdbe1a3bbe7b3aee6930a3d01b68">Tango::Except::re_throw_exception</a></p>
+<p>static void re_throw_exception(Tango::DevFailed &amp;ex, char *reason,
+const char *desc, const char *origin, Tango::ErrSeverity
+sever=Tango::ERR)</p>
+<p>Re-throw a TANGO DevFailed exception with one more error.</p>
+<p><strong>Definition:</strong> except.h:1024</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#a73f743dfaac89212eeb994bb40e79577">Tango::Except::re_throw_exception</a></p>
+<p>static void re_throw_exception(Tango::DevFailed &amp;ex, const string
+&amp;reason, const string &amp;desc, char *origin, Tango::ErrSeverity
+sever=Tango::ERR)</p>
+<p>Re-throw a TANGO DevFailed exception with one more error.</p>
+<p><strong>Definition:</strong> except.h:1432</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#a4b6a58d11b720d1aef7cc341802ddc4e">Tango::Except::throw_exception</a></p>
+<p>static void throw_exception(const char *reason, char *desc, char
+*origin, Tango::ErrSeverity sever=Tango::ERR)</p>
+<p>Generate and throw a TANGO DevFailed exception.</p>
+<p><strong>Definition:</strong> except.h:228</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#ace5f51b25e895260bb85b318d4e4f59c">Tango::Except::re_throw_exception</a></p>
+<p>static void re_throw_exception(Tango::DevFailed &amp;ex, const string
+&amp;reason, const string &amp;desc, const string &amp;origin, Tango::ErrSeverity
+sever=Tango::ERR)</p>
+<p>Re-throw a TANGO DevFailed exception with one more error.</p>
+<p><strong>Definition:</strong> except.h:1179</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#ab892eac30e082eca52af8c57f245e46e">Tango::Except::re_throw_exception</a></p>
+<p>static void re_throw_exception(Tango::DevFailed &amp;ex, const char
+*reason, const char *desc, char *origin, Tango::ErrSeverity
+sever=Tango::ERR)</p>
+<p>Re-throw a TANGO DevFailed exception with one more error.</p>
+<p><strong>Definition:</strong> except.h:910</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#a81a64fad0f2d00d7e9eae178fe986ea8">Tango::Except::throw_exception</a></p>
+<p>static void throw_exception(char *reason, const string &amp;desc, const
+string &amp;origin, Tango::ErrSeverity sever=Tango::ERR)</p>
+<p>Generate and throw a TANGO DevFailed exception.</p>
+<p><strong>Definition:</strong> except.h:760</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#a8a7e6834550169c1b9bd4c6cd822bd58">Tango::Except::throw_exception</a></p>
+<p>static void throw_exception(const string &amp;reason, char *desc, const
+string &amp;origin, Tango::ErrSeverity sever=Tango::ERR)</p>
+<p>Generate and throw a TANGO DevFailed exception.</p>
+<p><strong>Definition:</strong> except.h:687</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#a99d02e0220c93333faf67f1b680c38c1">Tango::Except::throw_exception</a></p>
+<p>static void throw_exception(char *reason, const string &amp;desc, char
+*origin, Tango::ErrSeverity sever=Tango::ERR)</p>
+<p>Generate and throw a TANGO DevFailed exception.</p>
+<p><strong>Definition:</strong> except.h:796</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#a0422b78fa9a5632a46f3c617917ea80f">Tango::Except::re_throw_exception</a></p>
+<p>static void re_throw_exception(Tango::DevFailed &amp;ex, const char
+*reason, char *desc, char *origin, Tango::ErrSeverity
+sever=Tango::ERR)</p>
+<p>Re-throw a TANGO DevFailed exception with one more error.</p>
+<p><strong>Definition:</strong> except.h:985</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#a92359694cca28325fd6480f87e4b9668">Tango::Except::throw_exception</a></p>
+<p>static void throw_exception(const char *reason, const char *desc,
+const string &amp;origin, Tango::ErrSeverity sever=Tango::ERR)</p>
+<p>Generate and throw a TANGO DevFailed exception.</p>
+<p><strong>Definition:</strong> except.h:616</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#a937f591028b392e50070fbc4149beec6">Tango::Except::throw_exception</a></p>
+<p>static void throw_exception(const char *reason, const char *desc,
+const char *origin, Tango::ErrSeverity sever=Tango::ERR)</p>
+<p>Generate and throw a TANGO DevFailed exception.</p>
+<p><strong>Definition:</strong> except.h:122</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html">Tango::Except</a></p>
+<p>Container class for all exception related methods.</p>
+<p><strong>Definition:</strong> except.h:74</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#a1d0f06fa487f3506e49cad58d36e6ba0">Tango::Except::re_throw_exception</a></p>
+<p>static void re_throw_exception(Tango::DevFailed &amp;ex, const char
+*reason, const char *desc, const string &amp;origin, Tango::ErrSeverity
+sever=Tango::ERR)</p>
+<p>Re-throw a TANGO DevFailed exception with one more error.</p>
+<p><strong>Definition:</strong> except.h:1395</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#a55ba95758fa392f750ad9b84d0a636f8">Tango::Except::throw_named_exception</a></p>
+<p>static void throw_named_exception(vector&lt; string &gt; &amp;atts, const char
+*reason, const char *desc, const char *origin, Tango::ErrSeverity
+sever=Tango::ERR)</p>
+<p>Throw a TANGO MultiDevFailed exception.</p>
+<p><strong>Definition:</strong> except.h:1769</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#aa52f5b4614aaa58d60a2fc830ef23ba6">Tango::Except::re_throw_exception</a></p>
+<p>static void re_throw_exception(Tango::DevFailed &amp;ex, char *reason,
+const string &amp;desc, const string &amp;origin, Tango::ErrSeverity
+sever=Tango::ERR)</p>
+<p>Re-throw a TANGO DevFailed exception with one more error.</p>
+<p><strong>Definition:</strong> except.h:1547</p>
+<p><a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">Tango::string_dup</a></p>
+<p>char * string_dup(char *s)</p>
+<p><strong>Definition:</strong> tango_const.h:462</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#ac7a9b59a82aa568890f75c0232e68824">Tango::Except::throw_exception</a></p>
+<p>static void throw_exception(const string &amp;reason, const char *desc,
+const char *origin, Tango::ErrSeverity sever=Tango::ERR)</p>
+<p>Generate and throw a TANGO DevFailed exception.</p>
+<p><strong>Definition:</strong> except.h:514</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#a42d1f2a98eb402a268e582128ddd61ab">Tango::Except::re_throw_exception</a></p>
+<p>static void re_throw_exception(Tango::DevFailed &amp;ex, char *reason,
+char *desc, const string &amp;origin, Tango::ErrSeverity sever=Tango::ERR)</p>
+<p>Re-throw a TANGO DevFailed exception with one more error.</p>
+<p><strong>Definition:</strong> except.h:1624</p>
+<p><a class="reference external" href="../../df/d37/classTango_1_1Except.html#a498aaee0525e6650bb17e209581837f8">Tango::Except::re_throw_exception</a></p>
+<p>static void re_throw_exception(Tango::DevFailed &amp;ex, const char
+*reason, char *desc, const char *origin, Tango::ErrSeverity
+sever=Tango::ERR)</p>
+<p>Re-throw a TANGO DevFailed exception with one more error.</p>
+<p><strong>Definition:</strong> except.h:948</p>
+<ul class="simple">
+<li><a class="reference external" href="../../dir_93bc669b4520ad36068f344e109b7d17.html">include</a></li>
+<li><a class="reference external" href="../../dir_8ff48e8f3ef80891a9957ae5e9583431.html">tango</a></li>
+<li><a class="reference external" href="../../dir_53b28a22454594c5818f3f3f5a9fd698.html">server</a></li>
+<li><a class="reference external" href="../../dc/d65/except_8h.html">except.h</a></li>
+<li>Generated on Fri Oct 7 2016 11:11:15 for Tango Core Classes Reference
+by <a class="reference external" href="http://www.doxygen.org/index.html"><img alt="doxygen" src="../../_images/doxygen331.png" /></a> 1.8.8</li>
+</ul>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/dc/d65/except_8h_source.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, 3Controls.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.8</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+      |
+      <a href="../../_sources/dc/d65/except_8h_source.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

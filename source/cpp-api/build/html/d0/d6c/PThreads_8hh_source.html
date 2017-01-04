@@ -1,0 +1,424 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>&lt;no title&gt; &#8212; Tango Core Classes Reference Documentation 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="top" title="Tango Core Classes Reference Documentation 1.0 documentation" href="../../index.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><img alt="Logo" src="../../_images/logo15.jpg" /></td>
+<td>Tango Core Classes Reference &nbsp;9.2.5</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><a class="reference external" href="../../index.html">Main&nbsp;Page</a></li>
+<li><a class="reference external" href="../../pages.html">Related&nbsp;Pages</a></li>
+<li><a class="reference external" href="../../modules.html">Modules</a></li>
+<li><a class="reference external" href="../../namespaces.html">Namespaces</a></li>
+<li><a class="reference external" href="../../annotated.html">Classes</a></li>
+<li><a class="reference external" href="../../files.html">Files</a></li>
+<li><a class="reference external" href="../../files.html">File&nbsp;List</a></li>
+<li><a class="reference external" href="../../globals.html">File&nbsp;Members</a></li>
+</ul>
+<p>PThreads.hh</p>
+<p><a class="reference external" href="../../d0/d6c/PThreads_8hh.html">Go to the documentation of this
+file.</a></p>
+<p>1&nbsp;//</p>
+<p>2&nbsp;// PThreads.hh</p>
+<p>3&nbsp;//</p>
+<p>4&nbsp;// Copyright (C) : 2000 - 2002</p>
+<p>5&nbsp;// LifeLine Networks BV (www.lifeline.nl). All rights reserved.</p>
+<p>6&nbsp;// Bastiaan Bakker. All rights reserved.</p>
+<p>7&nbsp;//</p>
+<p>8&nbsp;// 2004,2005,2006,2007,2008,2009,2010,2011,2012</p>
+<p>9&nbsp;// Synchrotron SOLEIL</p>
+<p>10&nbsp;// L&#8217;Orme des Merisiers</p>
+<p>11&nbsp;// Saint-Aubin - BP 48 - France</p>
+<p>12&nbsp;//</p>
+<p>13&nbsp;// This file is part of log4tango.</p>
+<p>14&nbsp;//</p>
+<p>15&nbsp;// Log4ango is free software: you can redistribute it and/or modify</p>
+<p>16&nbsp;// it under the terms of the GNU Lesser General Public License as
+published by</p>
+<p>17&nbsp;// the Free Software Foundation, either version 3 of the License, or</p>
+<p>18&nbsp;// (at your option) any later version.</p>
+<p>19&nbsp;//</p>
+<p>20&nbsp;// Log4tango is distributed in the hope that it will be useful,</p>
+<p>21&nbsp;// but WITHOUT ANY WARRANTY; without even the implied warranty of</p>
+<p>22&nbsp;// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the</p>
+<p>23&nbsp;// GNU Lesser General Public License for more details.</p>
+<p>24&nbsp;//</p>
+<p>25&nbsp;// You should have received a copy of the GNU Lesser General Public
+License</p>
+<p>26&nbsp;// along with Log4Tango. If not, see &lt;<a class="reference external" href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>&gt;.</p>
+<p>27</p>
+<p>28&nbsp;#ifndef _LOG4TANGO_THREADING_PTHREADS_H</p>
+<p>29&nbsp;#define _LOG4TANGO_THREADING_PTHREADS_H</p>
+<p>30</p>
+<p>31&nbsp;#include &#8221;../Portability.hh&#8221;</p>
+<p>32&nbsp;#include &lt;stdio.h&gt;</p>
+<p>33&nbsp;#include &lt;pthread.h&gt;</p>
+<p>34&nbsp;#include &lt;string&gt;</p>
+<p>35&nbsp;#include &lt;assert.h&gt;</p>
+<p>36</p>
+<p>37&nbsp;namespace <a class="reference external" href="../../d4/db0/namespacelog4tango.html">log4tango</a> {</p>
+<p>38</p>
+<p>39&nbsp;namespace threading {</p>
+<p>40</p>
+<p>41&nbsp;std::string
+<a class="reference external" href="../../db/d10/namespacelog4tango_1_1threading.html#a91163823bc4a91e103ecad618f8b146a">get_thread_id</a>
+(void);</p>
+<p>42</p>
+<p>43&nbsp;long
+<a class="reference external" href="../../db/d10/namespacelog4tango_1_1threading.html#a078567483c4ee7490efecaa30047117f">thread_id</a>
+(void);</p>
+<p>44</p>
+<p>45&nbsp;//&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;</p>
+<p>46&nbsp;// Class : Mutex</p>
+<p>47&nbsp;//&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;</p>
+<p>48&nbsp;class
+<a class="reference external" href="../../db/d10/namespacelog4tango_1_1threading.html#a6ab044c515d422f490f47a2499bf1f0a">Mutex</a></p>
+<p>49&nbsp;{</p>
+<p>50&nbsp;private:</p>
+<p>51&nbsp; pthread_mutex_t mutex;</p>
+<p>52</p>
+<p>53</p>
+<p>54&nbsp;public:</p>
+<p><a class="reference external" href="../../d8/d70/classlog4tango_1_1threading_1_1Mutex.html#abc347dc995fca40b2017977630c173bc">55</a>
+inline
+<a class="reference external" href="../../d8/d70/classlog4tango_1_1threading_1_1Mutex.html#abc347dc995fca40b2017977630c173bc">Mutex</a>()
+{</p>
+<p>56&nbsp; ::pthread_mutex_init(&amp;mutex, NULL);</p>
+<p>57&nbsp; }</p>
+<p>58</p>
+<p><a class="reference external" href="../../d8/d70/classlog4tango_1_1threading_1_1Mutex.html#ad75cb2944b40e951cb131c66a573ef3c">59</a>
+inline
+<a class="reference external" href="../../d8/d70/classlog4tango_1_1threading_1_1Mutex.html#ad75cb2944b40e951cb131c66a573ef3c">~Mutex</a>()
+{</p>
+<p>60&nbsp; ::pthread_mutex_destroy(&amp;mutex);</p>
+<p>61&nbsp; }</p>
+<p>62</p>
+<p><a class="reference external" href="../../d8/d70/classlog4tango_1_1threading_1_1Mutex.html#a121bae8bb2ca8d412983fbb303441ed0">63</a>
+inline void
+<a class="reference external" href="../../d8/d70/classlog4tango_1_1threading_1_1Mutex.html#a121bae8bb2ca8d412983fbb303441ed0">lock</a>()
+{</p>
+<p>64&nbsp; ::pthread_mutex_lock(&amp;mutex);</p>
+<p>65&nbsp; }</p>
+<p>66</p>
+<p><a class="reference external" href="../../d8/d70/classlog4tango_1_1threading_1_1Mutex.html#a0689618bc67462cc3646e86de6b5f261">67</a>
+inline void
+<a class="reference external" href="../../d8/d70/classlog4tango_1_1threading_1_1Mutex.html#a0689618bc67462cc3646e86de6b5f261">unlock</a>()
+{</p>
+<p>68&nbsp; ::pthread_mutex_unlock(&amp;mutex);</p>
+<p>69&nbsp; }</p>
+<p>70&nbsp;};</p>
+<p>71</p>
+<p>72&nbsp;//&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;</p>
+<p>73&nbsp;// Class : ScopedLock</p>
+<p>74&nbsp;//&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;</p>
+<p>75&nbsp;class
+<a class="reference external" href="../../db/d10/namespacelog4tango_1_1threading.html#ae0fb75dd01061ba7df4e4a68120507f1">ScopedLock</a></p>
+<p>76&nbsp;{</p>
+<p>77&nbsp;private:</p>
+<p>78
+<a class="reference external" href="../../db/d10/namespacelog4tango_1_1threading.html#a6ab044c515d422f490f47a2499bf1f0a">Mutex</a>&amp;
+_mutex;</p>
+<p>79</p>
+<p>80&nbsp;public:</p>
+<p><a class="reference external" href="../../d3/d60/classlog4tango_1_1threading_1_1ScopedLock.html#a3c6e5abbb0fada2b3ea6432bd19862dd">81</a>
+inline
+<a class="reference external" href="../../d3/d60/classlog4tango_1_1threading_1_1ScopedLock.html#a3c6e5abbb0fada2b3ea6432bd19862dd">ScopedLock</a>(<a class="reference external" href="../../d8/d70/classlog4tango_1_1threading_1_1Mutex.html">Mutex</a>
+&amp;m) : _mutex(m) {</p>
+<p>82&nbsp; _mutex.lock();</p>
+<p>83&nbsp; }</p>
+<p>84</p>
+<p><a class="reference external" href="../../d3/d60/classlog4tango_1_1threading_1_1ScopedLock.html#ab03de73986f5bb51e7e40d5725e725bb">85</a>
+inline
+<a class="reference external" href="../../d3/d60/classlog4tango_1_1threading_1_1ScopedLock.html#ab03de73986f5bb51e7e40d5725e725bb">~ScopedLock</a>()
+{</p>
+<p>86&nbsp; _mutex.unlock();</p>
+<p>87&nbsp; }</p>
+<p>88&nbsp;};</p>
+<p>89</p>
+<p>90&nbsp;//&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;</p>
+<p>91&nbsp;// Class : RecursiveMutex</p>
+<p>92&nbsp;//&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;</p>
+<p>93&nbsp;class RecursiveMutex</p>
+<p>94&nbsp;{</p>
+<p>95&nbsp;public:</p>
+<p>96&nbsp; // ctor</p>
+<p>97
+<a class="reference external" href="../../df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex.html#a7bb6f1bb4ca7072b24bda6321e196fc8">RecursiveMutex</a>
+(void);</p>
+<p>98</p>
+<p>99&nbsp; // dtor</p>
+<p>100
+<a class="reference external" href="../../df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex.html#a7210fe141d367494415cf8b580910fdf">~RecursiveMutex</a>
+(void);</p>
+<p>101</p>
+<p>102&nbsp; // Locking an RecursiveMutex:</p>
+<p>103&nbsp; // If &lt;timeout_&gt; is null (the default), &lt;lock&gt; blocks until</p>
+<p>104&nbsp; // the mutex is acquired and returns 1 (true). Otherwise,</p>
+<p>105&nbsp; // &lt;lock&gt; blocks until the mutex is acquired or times out</p>
+<p>106&nbsp; // after &lt;timeout_&gt; milliseconds in which case 0 (false) is</p>
+<p>107&nbsp; // returned.</p>
+<p>108&nbsp; int
+<a class="reference external" href="../../df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex.html#ab25b75795eeed61c179ba00d3b9cd4e0">lock</a>
+(long timeout_ = 0);</p>
+<p>109</p>
+<p>110&nbsp; // Releasing an RecursiveMutex:</p>
+<p>111&nbsp; // Call unlock &lt;recursion level&gt; times (i.e. one call for</p>
+<p>112&nbsp; // each previous call to lock) or call unlockn just once.</p>
+<p>113&nbsp; // These two methods do nothing if the caller is not the</p>
+<p>114&nbsp; // current owner of the mutex.</p>
+<p>115&nbsp; void
+<a class="reference external" href="../../df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex.html#a35bcfd9220d32eb5d8974acde72e9820">unlock</a>
+(void);</p>
+<p>116&nbsp; void
+<a class="reference external" href="../../df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex.html#ae8ca497191c6f8ac476f50fe5172f777">unlockn</a>
+(void);</p>
+<p>117</p>
+<p>118&nbsp;protected:</p>
+<p>119&nbsp; // guards the &lt;recursion level&gt; and &lt;owner id&gt;</p>
+<p><a class="reference external" href="../../df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex.html#a84a463cd8c14c629e9449a1ab16aecfb">120</a>
+pthread_mutex_t
+<a class="reference external" href="../../df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex.html#a84a463cd8c14c629e9449a1ab16aecfb">guard_</a>;</p>
+<p>121</p>
+<p>122&nbsp; // this condition variable suspends other waiting threads</p>
+<p>123&nbsp; // until the mutex is available</p>
+<p><a class="reference external" href="../../df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex.html#abafc328ab69204599821730c657c3cba">124</a>
+pthread_cond_t
+<a class="reference external" href="../../df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex.html#abafc328ab69204599821730c657c3cba">mutex_available_</a>;</p>
+<p>125</p>
+<p>126&nbsp;private:</p>
+<p>127&nbsp; // current level of the recursion</p>
+<p>128&nbsp; long recursion_level_;</p>
+<p>129</p>
+<p>130&nbsp; // current owner of the lock.</p>
+<p>131&nbsp; pthread_t owner_id_;</p>
+<p>132</p>
+<p>133&nbsp; // dummy copy constructor and operator= to prevent copying</p>
+<p>134
+<a class="reference external" href="../../df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex.html#a7bb6f1bb4ca7072b24bda6321e196fc8">RecursiveMutex</a>
+(const
+<a class="reference external" href="../../df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex.html">RecursiveMutex</a>&amp;);</p>
+<p>135
+<a class="reference external" href="../../df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex.html">RecursiveMutex</a>&amp;
+operator= (const
+<a class="reference external" href="../../df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex.html">RecursiveMutex</a>&amp;);</p>
+<p>136&nbsp;};</p>
+<p>137</p>
+<p>138&nbsp;//&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;</p>
+<p>139&nbsp;// Class : ThreadLocalDataHolder</p>
+<p>140&nbsp;//&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;</p>
+<p>141&nbsp;#ifdef LOG4TANGO_HAS_NDC</p>
+<p>142&nbsp;template&lt;typename T&gt; class ThreadLocalDataHolder {</p>
+<p>143</p>
+<p>144&nbsp;private:</p>
+<p>145&nbsp; pthread_key_t _key;</p>
+<p>146</p>
+<p>147&nbsp;public:</p>
+<p>148&nbsp; typedef T data_type;</p>
+<p>149</p>
+<p>150&nbsp; inline ThreadLocalDataHolder() {</p>
+<p>151&nbsp; ::pthread_key_create(&amp;_key, freeHolder);</p>
+<p>152&nbsp; }</p>
+<p>153</p>
+<p>154&nbsp; inline static void freeHolder(void *p) {</p>
+<p>155&nbsp; assert(p != NULL);</p>
+<p>156&nbsp; delete reinterpret_cast&lt;T *&gt;(p);</p>
+<p>157&nbsp; }</p>
+<p>158</p>
+<p>159&nbsp; inline ~ThreadLocalDataHolder() {</p>
+<p>160&nbsp; T *data = get();</p>
+<p>161&nbsp; if (data != NULL) {</p>
+<p>162&nbsp; delete data;</p>
+<p>163&nbsp; }</p>
+<p>164&nbsp; ::pthread_key_delete(_key);</p>
+<p>165&nbsp; }</p>
+<p>166</p>
+<p>167&nbsp; inline T* get() const {</p>
+<p>168&nbsp; return reinterpret_cast&lt;T *&gt;(::pthread_getspecific(_key));</p>
+<p>169&nbsp; }</p>
+<p>170</p>
+<p>171&nbsp; inline T* operator-&gt;() const { return get(); }</p>
+<p>172&nbsp; inline T&amp; operator*() const { return *get(); }</p>
+<p>173</p>
+<p>174&nbsp; inline T* release() {</p>
+<p>175&nbsp; T* result = get();</p>
+<p>176&nbsp; ::pthread_setspecific(_key, NULL);</p>
+<p>177&nbsp; return result;</p>
+<p>178&nbsp; }</p>
+<p>179</p>
+<p>180&nbsp; inline void reset(T* p = NULL) {</p>
+<p>181&nbsp; T *data = get();</p>
+<p>182&nbsp; if (data != NULL) {</p>
+<p>183&nbsp; delete data;</p>
+<p>184&nbsp; }</p>
+<p>185&nbsp; ::pthread_setspecific(_key, p);</p>
+<p>186&nbsp; }</p>
+<p>187&nbsp;};</p>
+<p>188&nbsp;#endif //LOG4TANGO_HAS_NDC</p>
+<p>189</p>
+<p>190&nbsp;} // namespace threading</p>
+<p>191</p>
+<p>192&nbsp;} // namespace log4tango</p>
+<p>193</p>
+<p>194&nbsp;#endif // _LOG4TANGO_THREADING_PTHREADS_H</p>
+<p><a class="reference external" href="../../d4/db0/namespacelog4tango.html">log4tango</a></p>
+<p><strong>Definition:</strong> Appender.hh:40</p>
+<p><a class="reference external" href="../../df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex.html#abafc328ab69204599821730c657c3cba">log4tango::threading::RecursiveMutex::mutex_available_</a></p>
+<p>pthread_cond_t mutex_available_</p>
+<p><strong>Definition:</strong> PThreads.hh:124</p>
+<p><a class="reference external" href="../../df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex.html#a84a463cd8c14c629e9449a1ab16aecfb">log4tango::threading::RecursiveMutex::guard_</a></p>
+<p>pthread_mutex_t guard_</p>
+<p><strong>Definition:</strong> PThreads.hh:120</p>
+<p><a class="reference external" href="../../df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex.html">log4tango::threading::RecursiveMutex</a></p>
+<p><strong>Definition:</strong> MSThreads.hh:123</p>
+<p><a class="reference external" href="../../db/d10/namespacelog4tango_1_1threading.html#a6ab044c515d422f490f47a2499bf1f0a">log4tango::threading::Mutex</a></p>
+<p>int Mutex</p>
+<p><strong>Definition:</strong> DummyThreads.hh:41</p>
+<p><a class="reference external" href="../../d8/d70/classlog4tango_1_1threading_1_1Mutex.html#a0689618bc67462cc3646e86de6b5f261">log4tango::threading::Mutex::unlock</a></p>
+<p>void unlock()</p>
+<p><strong>Definition:</strong> PThreads.hh:67</p>
+<p><a class="reference external" href="../../db/d10/namespacelog4tango_1_1threading.html#ae0fb75dd01061ba7df4e4a68120507f1">log4tango::threading::ScopedLock</a></p>
+<p>int ScopedLock</p>
+<p><strong>Definition:</strong> DummyThreads.hh:43</p>
+<p><a class="reference external" href="../../d8/d70/classlog4tango_1_1threading_1_1Mutex.html#ad75cb2944b40e951cb131c66a573ef3c">log4tango::threading::Mutex::~Mutex</a></p>
+<p>~Mutex()</p>
+<p><strong>Definition:</strong> PThreads.hh:59</p>
+<p><a class="reference external" href="../../db/d10/namespacelog4tango_1_1threading.html#a078567483c4ee7490efecaa30047117f">log4tango::threading::thread_id</a></p>
+<p>long thread_id(void)</p>
+<p><a class="reference external" href="../../d8/d70/classlog4tango_1_1threading_1_1Mutex.html#abc347dc995fca40b2017977630c173bc">log4tango::threading::Mutex::Mutex</a></p>
+<p>Mutex()</p>
+<p><strong>Definition:</strong> PThreads.hh:55</p>
+<p><a class="reference external" href="../../d3/d60/classlog4tango_1_1threading_1_1ScopedLock.html#a3c6e5abbb0fada2b3ea6432bd19862dd">log4tango::threading::ScopedLock::ScopedLock</a></p>
+<p>ScopedLock(Mutex &amp;m)</p>
+<p><strong>Definition:</strong> PThreads.hh:81</p>
+<p><a class="reference external" href="../../df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex.html#ab25b75795eeed61c179ba00d3b9cd4e0">log4tango::threading::RecursiveMutex::lock</a></p>
+<p>int lock(long timeout_=0)</p>
+<p><strong>Definition:</strong> MSThreads.hh:142</p>
+<p><a class="reference external" href="../../d3/d60/classlog4tango_1_1threading_1_1ScopedLock.html#ab03de73986f5bb51e7e40d5725e725bb">log4tango::threading::ScopedLock::~ScopedLock</a></p>
+<p>~ScopedLock()</p>
+<p><strong>Definition:</strong> PThreads.hh:85</p>
+<p><a class="reference external" href="../../df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex.html#a7210fe141d367494415cf8b580910fdf">log4tango::threading::RecursiveMutex::~RecursiveMutex</a></p>
+<p>~RecursiveMutex(void)</p>
+<p><strong>Definition:</strong> MSThreads.hh:132</p>
+<p><a class="reference external" href="../../db/d10/namespacelog4tango_1_1threading.html#a91163823bc4a91e103ecad618f8b146a">log4tango::threading::get_thread_id</a></p>
+<p>std::string get_thread_id(void)</p>
+<p><strong>Definition:</strong> DummyThreads.cpp:37</p>
+<p><a class="reference external" href="../../df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex.html#a7bb6f1bb4ca7072b24bda6321e196fc8">log4tango::threading::RecursiveMutex::RecursiveMutex</a></p>
+<p>RecursiveMutex(void)</p>
+<p><strong>Definition:</strong> MSThreads.hh:127</p>
+<p><a class="reference external" href="../../df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex.html#a35bcfd9220d32eb5d8974acde72e9820">log4tango::threading::RecursiveMutex::unlock</a></p>
+<p>void unlock(void)</p>
+<p><strong>Definition:</strong> MSThreads.hh:153</p>
+<p><a class="reference external" href="../../df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex.html#ae8ca497191c6f8ac476f50fe5172f777">log4tango::threading::RecursiveMutex::unlockn</a></p>
+<p>void unlockn(void)</p>
+<p><strong>Definition:</strong> MSThreads.hh:159</p>
+<p><a class="reference external" href="../../d8/d70/classlog4tango_1_1threading_1_1Mutex.html#a121bae8bb2ca8d412983fbb303441ed0">log4tango::threading::Mutex::lock</a></p>
+<p>void lock()</p>
+<p><strong>Definition:</strong> PThreads.hh:63</p>
+<p><a class="reference external" href="../../d8/d70/classlog4tango_1_1threading_1_1Mutex.html">log4tango::threading::Mutex</a></p>
+<p><strong>Definition:</strong> MSThreads.hh:74</p>
+<ul class="simple">
+<li><a class="reference external" href="../../dir_93bc669b4520ad36068f344e109b7d17.html">include</a></li>
+<li><a class="reference external" href="../../dir_5a849e394260fc4e91409ef0349c0857.html">log4tango</a></li>
+<li><a class="reference external" href="../../dir_58cd9cfc9a679a0ea9e384cd3ddfdc12.html">threading</a></li>
+<li><a class="reference external" href="../../d0/d6c/PThreads_8hh.html">PThreads.hh</a></li>
+<li>Generated on Fri Oct 7 2016 11:11:15 for Tango Core Classes Reference
+by <a class="reference external" href="http://www.doxygen.org/index.html"><img alt="doxygen" src="../../_images/doxygen15.png" /></a> 1.8.8</li>
+</ul>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/d0/d6c/PThreads_8hh_source.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, 3Controls.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.8</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+      |
+      <a href="../../_sources/d0/d6c/PThreads_8hh_source.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

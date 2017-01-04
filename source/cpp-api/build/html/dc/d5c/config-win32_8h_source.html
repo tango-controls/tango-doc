@@ -1,0 +1,309 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>&lt;no title&gt; &#8212; Tango Core Classes Reference Documentation 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="top" title="Tango Core Classes Reference Documentation 1.0 documentation" href="../../index.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><img alt="Logo" src="../../_images/logo330.jpg" /></td>
+<td>Tango Core Classes Reference &nbsp;9.2.5</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><a class="reference external" href="../../index.html">Main&nbsp;Page</a></li>
+<li><a class="reference external" href="../../pages.html">Related&nbsp;Pages</a></li>
+<li><a class="reference external" href="../../modules.html">Modules</a></li>
+<li><a class="reference external" href="../../namespaces.html">Namespaces</a></li>
+<li><a class="reference external" href="../../annotated.html">Classes</a></li>
+<li><a class="reference external" href="../../files.html">Files</a></li>
+<li><a class="reference external" href="../../files.html">File&nbsp;List</a></li>
+<li><a class="reference external" href="../../globals.html">File&nbsp;Members</a></li>
+</ul>
+<p>config-win32.h</p>
+<p><a class="reference external" href="../../dc/d5c/config-win32_8h.html">Go to the documentation of this
+file.</a></p>
+<p>1&nbsp;//</p>
+<p>2&nbsp;// config-win32.hh</p>
+<p>3&nbsp;//</p>
+<p>4&nbsp;// Copyright (C) : 2000 - 2002</p>
+<p>5&nbsp;// LifeLine Networks BV (www.lifeline.nl). All rights reserved.</p>
+<p>6&nbsp;// Bastiaan Bakker. All rights reserved.</p>
+<p>7&nbsp;//</p>
+<p>8&nbsp;// 2004,2005,2006,2007,2008,2009,2010,2011,2012</p>
+<p>9&nbsp;// Synchrotron SOLEIL</p>
+<p>10&nbsp;// L&#8217;Orme des Merisiers</p>
+<p>11&nbsp;// Saint-Aubin - BP 48 - France</p>
+<p>12&nbsp;//</p>
+<p>13&nbsp;// This file is part of log4tango.</p>
+<p>14&nbsp;//</p>
+<p>15&nbsp;// Log4ango is free software: you can redistribute it and/or modify</p>
+<p>16&nbsp;// it under the terms of the GNU Lesser General Public License as
+published by</p>
+<p>17&nbsp;// the Free Software Foundation, either version 3 of the License, or</p>
+<p>18&nbsp;// (at your option) any later version.</p>
+<p>19&nbsp;//</p>
+<p>20&nbsp;// Log4tango is distributed in the hope that it will be useful,</p>
+<p>21&nbsp;// but WITHOUT ANY WARRANTY; without even the implied warranty of</p>
+<p>22&nbsp;// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the</p>
+<p>23&nbsp;// GNU Lesser General Public License for more details.</p>
+<p>24&nbsp;//</p>
+<p>25&nbsp;// You should have received a copy of the GNU Lesser General Public
+License</p>
+<p>26&nbsp;// along with Log4Tango. If not, see &lt;<a class="reference external" href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>&gt;.</p>
+<p>27</p>
+<p>28&nbsp;#ifndef _INCLUDE_LOG4TANGO_CONFIG_WIN32_H</p>
+<p>29&nbsp;#define _INCLUDE_LOG4TANGO_CONFIG_WIN32_H 1</p>
+<p>30</p>
+<p>31&nbsp;/* manually edited from include/log4tango/config.h */</p>
+<p>32</p>
+<p>33&nbsp;/* Define if you have the syslog function. */</p>
+<p>34&nbsp;/* #undef LOG4TANGO_HAVE_SYSLOG */</p>
+<p>35</p>
+<p>36&nbsp;/* Define if you have the `ftime&#8217; function. */</p>
+<p>37&nbsp;#ifndef LOG4TANGO_HAVE_FTIME</p>
+<p><a class="reference external" href="../../dc/d5c/config-win32_8h.html#ac492a1f9d85c862446bf20a4d71f284f">38</a>&nbsp;#
+define LOG4TANGO_HAVE_FTIME 1</p>
+<p>39&nbsp;#endif</p>
+<p>40</p>
+<p>41&nbsp;/* Define if you have the `gettimeofday&#8217; function. */</p>
+<p>42&nbsp;/* #undef LOG4TANGO_HAVE_GETTIMEOFDAY */</p>
+<p>43</p>
+<p>44&nbsp;/* define if the compiler has int64_t */</p>
+<p>45&nbsp;#ifndef LOG4TANGO_HAVE_INT64_T</p>
+<p><a class="reference external" href="../../dc/d5c/config-win32_8h.html#aef0b926c63a2735c24fb9677cb0f1015">46</a>&nbsp;#define
+LOG4TANGO_HAVE_INT64_T</p>
+<p>47&nbsp;//#define int64_t __int64</p>
+<p><a class="reference external" href="../../dc/d5c/config-win32_8h.html#a67a9885ef4908cb72ce26d75b694386c">48</a>&nbsp;typedef
+__int64
+<a class="reference external" href="../../dc/d5c/config-win32_8h.html#a67a9885ef4908cb72ce26d75b694386c">int64_t</a>;</p>
+<p>49</p>
+<p>50&nbsp;#if defined(_MSC_VER) &amp;&amp; _MSC_VER &lt; 1300</p>
+<p>51&nbsp;# define LOG4TANGO_MISSING_INT64_OSTREAM_OP</p>
+<p>52&nbsp;#endif</p>
+<p>53</p>
+<p>54&nbsp;#endif</p>
+<p>55</p>
+<p>56&nbsp;/* Define if you have the &lt;io.h&gt; header file. */</p>
+<p>57&nbsp;#ifndef LOG4TANGO_HAVE_IO_H</p>
+<p><a class="reference external" href="../../dc/d5c/config-win32_8h.html#a1a6c808e0640cc974380511c6279b978">58</a>&nbsp;#
+define LOG4TANGO_HAVE_IO_H 1</p>
+<p>59&nbsp;#endif</p>
+<p>60</p>
+<p>61&nbsp;/* Define if you have the &lt;unistd.h&gt; header file. */</p>
+<p>62&nbsp;/* #undef LOG4TANGO_HAVE_UNISTD_H */</p>
+<p>63</p>
+<p>64&nbsp;/* Define if you have the idsa library (-lidsa). */</p>
+<p>65&nbsp;/* #undef LOG4TANGO_HAVE_LIBIDSA */</p>
+<p>66</p>
+<p>67&nbsp;/* Define if you have the `strcasecmp&#8217; function. */</p>
+<p>68&nbsp;/* #undef LOG4TANGO_HAVE_STRCASECMP */</p>
+<p>69</p>
+<p>70&nbsp;/* Name of package */</p>
+<p>71&nbsp;#ifndef LOG4TANGO_PACKAGE</p>
+<p><a class="reference external" href="../../dc/d5c/config-win32_8h.html#a5d9607afa531130040cef0b7fd31c021">72</a>&nbsp;#
+define LOG4TANGO_PACKAGE &#8220;log4tango&#8221;</p>
+<p>73&nbsp;#endif</p>
+<p>74</p>
+<p>75&nbsp;/* Version number of package */</p>
+<p>76&nbsp;#ifndef LOG4TANGO_VERSION</p>
+<p><a class="reference external" href="../../dc/d5c/config-win32_8h.html#a9afef51901812e2daa9e7faa557c29c3">77</a>&nbsp;#
+define LOG4TANGO_VERSION &#8220;0.3.4&#8221;</p>
+<p>78&nbsp;#endif</p>
+<p>79</p>
+<p>80&nbsp;/* define if the compiler implements namespaces */</p>
+<p>81&nbsp;#ifndef LOG4TANGO_HAVE_NAMESPACES</p>
+<p><a class="reference external" href="../../dc/d5c/config-win32_8h.html#ad5a921fd076de198c2e9cc83f5254376">82</a>&nbsp;#
+define LOG4TANGO_HAVE_NAMESPACES 1</p>
+<p>83&nbsp;#endif</p>
+<p>84</p>
+<p>85&nbsp;/* define if the compiler has stringstream */</p>
+<p>86&nbsp;#ifndef LOG4TANGO_HAVE_SSTREAM</p>
+<p><a class="reference external" href="../../dc/d5c/config-win32_8h.html#abcbcf16a705691c3fc1c6842e9f2e850">87</a>&nbsp;#
+define LOG4TANGO_HAVE_SSTREAM 1</p>
+<p>88&nbsp;#endif</p>
+<p>89</p>
+<p>90&nbsp;/* define if the C library has snprintf */</p>
+<p>91&nbsp;#ifndef LOG4TANGO_HAVE_SNPRINTF</p>
+<p><a class="reference external" href="../../dc/d5c/config-win32_8h.html#a929c3c3cdd0d6742f5b06a8015fefef1">92</a>&nbsp;#
+define LOG4TANGO_HAVE_SNPRINTF 1</p>
+<p>93&nbsp;#endif</p>
+<p>94</p>
+<p>95&nbsp;/* define to get around problems with ERROR in windows.h */</p>
+<p>96&nbsp;#ifndef LOG4TANGO_FIX_ERROR_COLLISION</p>
+<p><a class="reference external" href="../../dc/d5c/config-win32_8h.html#a035f5e502e96cd5e909dc6ca33a9083c">97</a>&nbsp;#
+define LOG4TANGO_FIX_ERROR_COLLISION 1</p>
+<p>98&nbsp;#endif</p>
+<p>99</p>
+<p>100&nbsp;/* define WIN32 for Borland */</p>
+<p>101&nbsp;#ifndef WIN32</p>
+<p><a class="reference external" href="../../dc/d5c/config-win32_8h.html#a6402e8b8594280624585b8fd643bfb65">102</a>&nbsp;#
+define WIN32</p>
+<p>103&nbsp;#endif</p>
+<p>104</p>
+<p>105&nbsp;/* use threads */</p>
+<p>106&nbsp;#ifndef LOG4TANGO_HAVE_THREADING</p>
+<p><a class="reference external" href="../../dc/d5c/config-win32_8h.html#ab03bddf2508202a5a163ef82f4de82c9">107</a>&nbsp;#
+define LOG4TANGO_HAVE_THREADING</p>
+<p>108&nbsp;#endif</p>
+<p>109</p>
+<p>110&nbsp;/* use ms threads */</p>
+<p>111&nbsp;#ifndef LOG4TANGO_USE_MSTHREADS</p>
+<p><a class="reference external" href="../../dc/d5c/config-win32_8h.html#ad6c861ed12235fbcb0697fcc7741a9fa">112</a>&nbsp;#
+define LOG4TANGO_USE_MSTHREADS</p>
+<p>113&nbsp;#endif</p>
+<p>114</p>
+<p>115&nbsp;/* supply DLL main */</p>
+<p>116&nbsp;#ifndef LOG4TANGO_SUPPLY_DLLMAIN</p>
+<p><a class="reference external" href="../../dc/d5c/config-win32_8h.html#a1cf708c2fca25d90f2b8633876638e2b">117</a>&nbsp;#
+define LOG4TANGO_SUPPLY_DLLMAIN</p>
+<p>118&nbsp;#endif</p>
+<p>119</p>
+<p>120&nbsp;/* MSVCs &lt;cstdlib&gt; and &lt;cstring&gt; headers are broken in the sense
+that they</p>
+<p>121&nbsp; put functions in the global namespace instead of std:</p>
+<p>122&nbsp; The #defines below enable a workaround for MSVC 6 and lower. If
+MSVC 7</p>
+<p>123&nbsp; is still broken please adjust the _MSC_VER version check and
+report it.</p>
+<p>124&nbsp; See also bug report #628211.</p>
+<p>125&nbsp;*/</p>
+<p>126&nbsp;#if defined(_MSC_VER) &amp;&amp; _MSC_VER &lt; 1300</p>
+<p>127</p>
+<p>128&nbsp;#ifndef LOG4TANGO_CSTDLIB_NOT_IN_STD</p>
+<p>129&nbsp;# define LOG4TANGO_CSTDLIB_NOT_IN_STD</p>
+<p>130&nbsp;#endif</p>
+<p>131</p>
+<p>132&nbsp;#ifndef LOG4TANGO_CSTRING_NOT_IN_STD</p>
+<p>133&nbsp;# define LOG4TANGO_CSTRING_NOT_IN_STD</p>
+<p>134&nbsp;#endif</p>
+<p>135</p>
+<p>136&nbsp;#ifndef LOG4TANGO_CTIME_NOT_IN_STD</p>
+<p>137&nbsp;# define LOG4TANGO_CTIME_NOT_IN_STD</p>
+<p>138&nbsp;#endif</p>
+<p>139</p>
+<p>140&nbsp;#ifndef LOG4TANGO_CMATH_NOT_IN_STD</p>
+<p>141&nbsp;# define LOG4TANGO_CMATH_NOT_IN_STD</p>
+<p>142&nbsp;#endif</p>
+<p>143</p>
+<p>144&nbsp;#endif</p>
+<p>145</p>
+<p>146&nbsp;/* define mode_t. Move to Portability.hh if more platforms need it
+*/</p>
+<p>147&nbsp;namespace <a class="reference external" href="../../d4/db0/namespacelog4tango.html">log4tango</a></p>
+<p>148&nbsp;{</p>
+<p><a class="reference external" href="../../d4/db0/namespacelog4tango.html#af02411cb691986e819f7fbf75872b81a">149</a>&nbsp;typedef
+unsigned short
+<a class="reference external" href="../../d4/db0/namespacelog4tango.html#af02411cb691986e819f7fbf75872b81a">mode_t</a>;</p>
+<p>150&nbsp;}</p>
+<p>151</p>
+<p>152&nbsp;/* _INCLUDE_LOG4TANGO_CONFIG_WIN32_H */</p>
+<p>153&nbsp;#endif</p>
+<p><a class="reference external" href="../../d4/db0/namespacelog4tango.html#af02411cb691986e819f7fbf75872b81a">log4tango::mode_t</a></p>
+<p>unsigned short mode_t</p>
+<p><strong>Definition:</strong> config-win32.h:149</p>
+<p><a class="reference external" href="../../d4/db0/namespacelog4tango.html">log4tango</a></p>
+<p><strong>Definition:</strong> Appender.hh:40</p>
+<p><a class="reference external" href="../../dc/d5c/config-win32_8h.html#a67a9885ef4908cb72ce26d75b694386c">int64_t</a></p>
+<p>__int64 int64_t</p>
+<p><strong>Definition:</strong> config-win32.h:48</p>
+<ul class="simple">
+<li><a class="reference external" href="../../dir_93bc669b4520ad36068f344e109b7d17.html">include</a></li>
+<li><a class="reference external" href="../../dir_5a849e394260fc4e91409ef0349c0857.html">log4tango</a></li>
+<li><a class="reference external" href="../../dc/d5c/config-win32_8h.html">config-win32.h</a></li>
+<li>Generated on Fri Oct 7 2016 11:11:15 for Tango Core Classes Reference
+by <a class="reference external" href="http://www.doxygen.org/index.html"><img alt="doxygen" src="../../_images/doxygen330.png" /></a> 1.8.8</li>
+</ul>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/dc/d5c/config-win32_8h_source.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, 3Controls.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.8</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+      |
+      <a href="../../_sources/dc/d5c/config-win32_8h_source.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

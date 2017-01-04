@@ -1,0 +1,760 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>&lt;no title&gt; &#8212; Tango Core Classes Reference Documentation 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="top" title="Tango Core Classes Reference Documentation 1.0 documentation" href="../../index.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><img alt="Logo" src="../../_images/logo259.jpg" /></td>
+<td>Tango Core Classes Reference &nbsp;9.2.5</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><a class="reference external" href="../../index.html">Main&nbsp;Page</a></li>
+<li><a class="reference external" href="../../pages.html">Related&nbsp;Pages</a></li>
+<li><a class="reference external" href="../../modules.html">Modules</a></li>
+<li><a class="reference external" href="../../namespaces.html">Namespaces</a></li>
+<li><a class="reference external" href="../../annotated.html">Classes</a></li>
+<li><a class="reference external" href="../../files.html">Files</a></li>
+<li><a class="reference external" href="../../files.html">File&nbsp;List</a></li>
+<li><a class="reference external" href="../../globals.html">File&nbsp;Members</a></li>
+</ul>
+<p>pipe.h</p>
+<p><a class="reference external" href="../../da/d3e/pipe_8h.html">Go to the documentation of this file.</a></p>
+<p>1&nbsp;//===================================================================================================================</p>
+<p>2&nbsp;//</p>
+<p>3&nbsp;// file : Pipe.h</p>
+<p>4&nbsp;//</p>
+<p>5&nbsp;// description : Include file for the Pipe class.</p>
+<p>6&nbsp;//</p>
+<p>7&nbsp;// project : TANGO</p>
+<p>8&nbsp;//</p>
+<p>9&nbsp;// author(s) : E.Taurel</p>
+<p>10&nbsp;//</p>
+<p>11&nbsp;// Copyright (C) : 2014,2015</p>
+<p>12&nbsp;// European Synchrotron Radiation Facility</p>
+<p>13&nbsp;// BP 220, Grenoble 38043</p>
+<p>14&nbsp;// FRANCE</p>
+<p>15&nbsp;//</p>
+<p>16&nbsp;// This file is part of Tango.</p>
+<p>17&nbsp;//</p>
+<p>18&nbsp;// Tango is free software: you can redistribute it and/or modify it
+under the terms of the GNU Lesser General Public</p>
+<p>19&nbsp;// License as published by the Free Software Foundation, either
+version 3 of the License, or</p>
+<p>20&nbsp;// (at your option) any later version.</p>
+<p>21&nbsp;//</p>
+<p>22&nbsp;// Tango is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty</p>
+<p>23&nbsp;// of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the</p>
+<p>24&nbsp;// GNU Lesser General Public License for more details.</p>
+<p>25&nbsp;//</p>
+<p>26&nbsp;// You should have received a copy of the GNU Lesser General Public
+License along with Tango.</p>
+<p>27&nbsp;// If not, see &lt;<a class="reference external" href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>&gt;.</p>
+<p>28&nbsp;//</p>
+<p>29&nbsp;// $Revision$</p>
+<p>30&nbsp;//</p>
+<p>31&nbsp;//===================================================================================================================</p>
+<p>32</p>
+<p>33&nbsp;#ifndef _PIPE_H</p>
+<p>34&nbsp;#define _PIPE_H</p>
+<p>35</p>
+<p>36&nbsp;#include &lt;tango.h&gt;</p>
+<p>37</p>
+<p>38&nbsp;#include &lt;stdarg.h&gt;</p>
+<p>39</p>
+<p>40&nbsp;namespace <a class="reference external" href="../../de/ddf/namespaceTango.html">Tango</a></p>
+<p>41&nbsp;{</p>
+<p>42</p>
+<p>43&nbsp;#ifndef HAS_LAMBDA_FUNC</p>
+<p>44&nbsp;//</p>
+<p>45&nbsp;// Binary function objects to be used by the find_if algorithm.</p>
+<p>46&nbsp;// The find_if algo. want to have a predicate, this means that the
+return value must be a boolean (R is its name).</p>
+<p>47&nbsp;// The find_if algo. needs a unary predicate. This function object
+is a binary function object.</p>
+<p>48&nbsp;// It must be used with the bind2nd function adapter</p>
+<p>49&nbsp;//</p>
+<p>50</p>
+<p>51&nbsp;template &lt;typename A1,typename A2,typename R&gt;</p>
+<p><a class="reference external" href="../../dd/d06/structTango_1_1WantedPipe.html">52</a>&nbsp;struct
+<a class="reference external" href="../../dd/d06/structTango_1_1WantedPipe.html">WantedPipe</a> : public
+binary_function&lt;A1,A2,R&gt;</p>
+<p>53&nbsp;{</p>
+<p><a class="reference external" href="../../dd/d06/structTango_1_1WantedPipe.html#a7ba811ef470b2d0349ad209cf30ea93a">54</a>
+R
+<a class="reference external" href="../../dd/d06/structTango_1_1WantedPipe.html#a7ba811ef470b2d0349ad209cf30ea93a">operator()</a>(A1
+pipe_ptr, A2 name) const</p>
+<p>55&nbsp; {</p>
+<p>56&nbsp; if (::strlen(name) != pipe_ptr-&gt;get_lower_name().size())</p>
+<p>57&nbsp; return false;</p>
+<p>58&nbsp; string tmp_name(name);</p>
+<p>59
+transform(tmp_name.begin(),tmp_name.end(),tmp_name.begin(),::tolower);</p>
+<p>60&nbsp; return pipe_ptr-&gt;get_lower_name() == tmp_name;</p>
+<p>61&nbsp; }</p>
+<p>62&nbsp;};</p>
+<p>63&nbsp;#endif</p>
+<p>64</p>
+<p>65</p>
+<p><a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html">77</a>&nbsp;class
+<a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html">Pipe</a></p>
+<p>78&nbsp;{</p>
+<p>79&nbsp;public:</p>
+<p>80</p>
+<p><a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a48f8fa0e8e169fd8f278407b771dc27d">89</a>
+<a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a48f8fa0e8e169fd8f278407b771dc27d">Pipe</a>():ext(new
+PipeExt) {}</p>
+<p>90</p>
+<p>100
+<a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a48f8fa0e8e169fd8f278407b771dc27d">Pipe</a>(const
+string
+&amp;<a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#af3cae1c6cb5f44b9a51e45b61d67cfdb">name</a>,const
+Tango::DispLevel level,const PipeWriteType pwt=PIPE_READ);</p>
+<p>102</p>
+<p>109&nbsp;#ifdef HAS_UNIQUE_PTR</p>
+<p>110&nbsp; virtual
+<a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a4b23ac2255767c1effe26d4a3bd26cab">~Pipe</a>()
+{}</p>
+<p>111&nbsp;#else</p>
+<p><a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a4b23ac2255767c1effe26d4a3bd26cab">112</a>
+virtual
+<a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a4b23ac2255767c1effe26d4a3bd26cab">~Pipe</a>()
+{delete ext;}</p>
+<p>113&nbsp;#endif</p>
+<p>114</p>
+<p>115</p>
+<p>118</p>
+<p>120</p>
+<p><a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a00bb2112e4e81c63ff5e55ffa046c9d7">131</a>
+string
+&amp;<a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a00bb2112e4e81c63ff5e55ffa046c9d7">get_name</a>()
+{return
+<a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#af3cae1c6cb5f44b9a51e45b61d67cfdb">name</a>;}</p>
+<p>132</p>
+<p><a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#ac70b0bcbaf0f31a91fd27f21fe05fef6">138</a>
+void
+<a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#ac70b0bcbaf0f31a91fd27f21fe05fef6">set_name</a>(string
+&amp;new_name)
+{<a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#af3cae1c6cb5f44b9a51e45b61d67cfdb">name</a>=new_name;}</p>
+<p>139</p>
+<p>145&nbsp; void
+<a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#acf20d48edb9f74cf8268cc6cd5e0e4fa">set_default_properties</a>(<a class="reference external" href="../../d9/de2/classTango_1_1UserDefaultPipeProp.html">UserDefaultPipeProp</a>
+&amp;prop);</p>
+<p>146</p>
+<p><a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#af3201b786412b40011bbc4343e995ebe">152</a>
+string
+&amp;<a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#af3201b786412b40011bbc4343e995ebe">get_lower_name</a>()
+{return
+<a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#af7c22f717b75210fcb5328a38be95e7c">lower_name</a>;}</p>
+<p>153</p>
+<p><a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a03818186cd3b89c123db978ec735174b">159</a>
+const string
+&amp;<a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a03818186cd3b89c123db978ec735174b">get_root_blob_name</a>()
+{return
+<a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a784d199e1309184b6c5afbe64dcc64b4">the_blob</a>.<a class="reference external" href="../../df/dd9/classTango_1_1DevicePipeBlob.html#a5271acce39f4b6d3ddc5e91775ff8039">get_name</a>();}</p>
+<p>160</p>
+<p><a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#afc0f382d5d6c6d03abb2e25ceb4456e6">166</a>
+void
+<a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#afc0f382d5d6c6d03abb2e25ceb4456e6">set_root_blob_name</a>(const
+string
+&amp;<a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#af3cae1c6cb5f44b9a51e45b61d67cfdb">name</a>)
+{<a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a784d199e1309184b6c5afbe64dcc64b4">the_blob</a>.<a class="reference external" href="../../df/dd9/classTango_1_1DevicePipeBlob.html#aa16f3e082d2d6f7ee4f12135a9f63cb7">set_name</a>(name);}</p>
+<p>167</p>
+<p><a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a21c57287d00cae3a66f6cb9626f6324d">173</a>
+string
+&amp;<a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a21c57287d00cae3a66f6cb9626f6324d">get_desc</a>()
+{return
+<a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a317ab27c21563fc4d279007991c8080b">desc</a>;}</p>
+<p>174</p>
+<p><a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#ae66635efe0978d51fd62e73b34b24e5c">180</a>
+string
+&amp;<a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#ae66635efe0978d51fd62e73b34b24e5c">get_label</a>()
+{return
+<a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a139a571b46d6f4911fae84269d0beff6">label</a>;}</p>
+<p>181</p>
+<p><a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a6b6e9b53474dc7121ff7fb38942c1250">187</a>
+Tango::DispLevel
+<a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a6b6e9b53474dc7121ff7fb38942c1250">get_disp_level</a>()
+{return
+<a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a58da366eded254dd357432105a5fd645">disp_level</a>;}</p>
+<p>188</p>
+<p><a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#ad4981873f1e6f3d5e294f66d3b01b848">194</a>
+Tango::PipeWriteType
+<a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#ad4981873f1e6f3d5e294f66d3b01b848">get_writable</a>()
+{return
+<a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#afaec591f0261e13cb7df7277c9f09ece">writable</a>;}</p>
+<p>195</p>
+<p>204&nbsp; void
+<a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a77c6b9c413099b205da176541100659d">set_pipe_serial_model</a>(<a class="reference external" href="../../de/ddf/namespaceTango.html#a65f765a424afb133707cfba235633f98">PipeSerialModel</a>
+ser_model);</p>
+<p><a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a131457c57f76313b0784d02228e423dd">212</a>
+<a class="reference external" href="../../de/ddf/namespaceTango.html#a65f765a424afb133707cfba235633f98">PipeSerialModel</a>
+<a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a131457c57f76313b0784d02228e423dd">get_pipe_serial_model</a>()
+{return pipe_serial_model;}</p>
+<p><a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#acbe28a16686f044af10708792fddf245">223</a>
+void
+<a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#acbe28a16686f044af10708792fddf245">set_user_pipe_mutex</a>(omni_mutex
+*mut_ptr) {user_pipe_mutex = mut_ptr;}</p>
+<p>225</p>
+<p>229&nbsp;#ifdef GEN_DOC</p>
+<p>230</p>
+<p>240&nbsp; <a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html">Pipe</a> &amp; <a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#ac67072c3bf8d26e547ea92aac9b7e260">operator
+&lt;&lt;</a>(short
+&amp;datum);</p>
+<p>241&nbsp;#endif</p>
+<p>242</p>
+<p><a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a9e73adb9661dd91811af627d701d8832">249</a>
+void
+<a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a9e73adb9661dd91811af627d701d8832">set_data_elt_nb</a>(size_t
+nb)
+{<a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a784d199e1309184b6c5afbe64dcc64b4">the_blob</a>.<a class="reference external" href="../../df/dd9/classTango_1_1DevicePipeBlob.html#aaca17726578d592076c6bad76a98e59c">set_data_elt_nb</a>(nb);}</p>
+<p><a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a90537af700f9c8f7bbbe4540e0b9542b">258</a>
+void
+<a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a90537af700f9c8f7bbbe4540e0b9542b">set_data_elt_names</a>(vector&lt;string&gt;
+&amp;names)
+{<a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a784d199e1309184b6c5afbe64dcc64b4">the_blob</a>.<a class="reference external" href="../../df/dd9/classTango_1_1DevicePipeBlob.html#ae6c90f89d110cd3f7e7368346f4ae9e7">set_data_elt_names</a>(names);}</p>
+<p><a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a85b5e99f841bc2a6f6fe2c7dce9f2928">266</a>
+size_t
+<a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a85b5e99f841bc2a6f6fe2c7dce9f2928">get_data_elt_nb</a>()
+{return
+<a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a784d199e1309184b6c5afbe64dcc64b4">the_blob</a>.<a class="reference external" href="../../df/dd9/classTango_1_1DevicePipeBlob.html#a85220fe9f2351d7a43dc4f7fdf4cd3d5">get_data_elt_nb</a>();}</p>
+<p>268</p>
+<p>269</p>
+<p><a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#abd430c1ee08d7d19ebbf469974c62dc4">295</a>
+void
+<a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#abd430c1ee08d7d19ebbf469974c62dc4">exceptions</a>(bitset&lt;DevicePipeBlob::numFlags&gt;
+fl)
+{<a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a784d199e1309184b6c5afbe64dcc64b4">the_blob</a>.<a class="reference external" href="../../df/dd9/classTango_1_1DevicePipeBlob.html#ac1573563218260fa5211c66c367d85df">exceptions</a>(fl);}</p>
+<p><a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a4fb5132f87eba2ccd54a392b0612a1fa">315</a>
+bitset&lt;DevicePipeBlob::numFlags&gt;
+<a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a4fb5132f87eba2ccd54a392b0612a1fa">exceptions</a>()
+{return
+<a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a784d199e1309184b6c5afbe64dcc64b4">the_blob</a>.<a class="reference external" href="../../df/dd9/classTango_1_1DevicePipeBlob.html#ac1573563218260fa5211c66c367d85df">exceptions</a>();}</p>
+<p><a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#ad0961a4c770ff42b0b672907268b6c14">323</a>
+void
+<a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#ad0961a4c770ff42b0b672907268b6c14">reset_exceptions</a>(DevicePipeBlob::except_flags
+fl)
+{<a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a784d199e1309184b6c5afbe64dcc64b4">the_blob</a>.<a class="reference external" href="../../df/dd9/classTango_1_1DevicePipeBlob.html#ab54466d1b593e8e464957f19ef685ae2">reset_exceptions</a>(fl);}</p>
+<p><a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a6362521002ff86cf970661a7699b5c54">331</a>
+void
+<a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a6362521002ff86cf970661a7699b5c54">set_exceptions</a>(DevicePipeBlob::except_flags
+fl)
+{<a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a784d199e1309184b6c5afbe64dcc64b4">the_blob</a>.<a class="reference external" href="../../df/dd9/classTango_1_1DevicePipeBlob.html#ae6d904cd958cb22382ceefef4a4c8593">set_exceptions</a>(fl);}</p>
+<p><a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a5de39890365fd35d887d66ef8fe5bae7">340</a>
+bool
+<a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a5de39890365fd35d887d66ef8fe5bae7">has_failed</a>()
+{return
+<a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a784d199e1309184b6c5afbe64dcc64b4">the_blob</a>.<a class="reference external" href="../../df/dd9/classTango_1_1DevicePipeBlob.html#aefce9c5e97eb7a80197d1590a13c4f50">has_failed</a>();}</p>
+<p><a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a124f05b1125ea60be231ded98f27d303">367</a>
+bitset&lt;DevicePipeBlob::numFlags&gt;
+<a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a124f05b1125ea60be231ded98f27d303">state</a>()
+{return
+<a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a784d199e1309184b6c5afbe64dcc64b4">the_blob</a>.<a class="reference external" href="../../df/dd9/classTango_1_1DevicePipeBlob.html#ad0ef655afc8a1d0a59a44091892b017f">state</a>();}</p>
+<p>369</p>
+<p>374</p>
+<p>376</p>
+<p>378&nbsp; virtual bool is_allowed
+(<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html">DeviceImpl</a>
+*dev,<a class="reference external" href="../../de/ddf/namespaceTango.html#af86537193dcecd8a6710791fc2d4969d">PipeReqType</a>)
+{(void)dev;return true;}</p>
+<p>379&nbsp; virtual void read(DeviceImpl *) {}</p>
+<p>380</p>
+<p>381
+<a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a48f8fa0e8e169fd8f278407b771dc27d">Pipe</a>
+&amp;operator[](const string &amp;);</p>
+<p>382</p>
+<p>383&nbsp; bool get_value_flag() {return value_flag;}</p>
+<p>384&nbsp; void set_value_flag(bool val) {value_flag = val;}</p>
+<p>385&nbsp; void set_time();</p>
+<p>386&nbsp; Tango::TimeVal &amp;get_when() {return when;}</p>
+<p>387&nbsp; void set_returned_data_ptr(DevPipeData *_p) {ret_data=_p;}</p>
+<p>388&nbsp; void set_label(const string &amp;_lab)
+{<a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a139a571b46d6f4911fae84269d0beff6">label</a>=_lab;}</p>
+<p>389&nbsp; void set_desc(const string &amp;_desc)
+{<a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a317ab27c21563fc4d279007991c8080b">desc</a>=_desc;}</p>
+<p>390&nbsp; bool is_label_lib_default() {return
+<a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a139a571b46d6f4911fae84269d0beff6">label</a>==<a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#af3cae1c6cb5f44b9a51e45b61d67cfdb">name</a>;}</p>
+<p>391&nbsp; bool is_desc_lib_default() {return
+<a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a317ab27c21563fc4d279007991c8080b">desc</a>==<a class="reference external" href="../../de/ddf/namespaceTango.html#afc637002b6beb9ee21bfec6985df5889">DescNotSpec</a>;}</p>
+<p>392&nbsp; void set_upd_properties(const PipeConfig &amp;,DeviceImpl *);</p>
+<p>393&nbsp; void set_properties(const Tango::PipeConfig &amp;,DeviceImpl
+*,vector&lt;Attribute::AttPropDb&gt; &amp;);</p>
+<p>394&nbsp; void upd_database(vector&lt;Attribute::AttPropDb&gt; &amp;,string &amp;);</p>
+<p>395&nbsp; vector&lt;PipeProperty&gt; &amp;get_user_default_properties() {return
+user_def_prop;}</p>
+<p>396&nbsp; void set_one_str_prop(const char *,const CORBA::String_member
+&amp;,string &amp;,vector&lt;Attribute::AttPropDb&gt; &amp;,vector&lt;PipeProperty&gt;
+&amp;,vector&lt;PipeProperty&gt; &amp;,const char *);</p>
+<p>397&nbsp; bool prop_in_list(const char *,string
+&amp;,size_t,vector&lt;PipeProperty&gt; &amp;);</p>
+<p>398</p>
+<p>399&nbsp; DevicePipeBlob &amp;get_blob() {return
+<a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a784d199e1309184b6c5afbe64dcc64b4">the_blob</a>;}</p>
+<p>400</p>
+<p>401&nbsp; omni_mutex *get_pipe_mutex() {return &amp;pipe_mutex;}</p>
+<p>402&nbsp; omni_mutex *get_user_pipe_mutex() {return user_pipe_mutex;}</p>
+<p>403</p>
+<p>404&nbsp; void fire_event(DeviceImpl *,DevFailed *);</p>
+<p>405&nbsp;#ifdef _TG_WINDOWS_</p>
+<p>406&nbsp; void fire_event(DeviceImpl *,DevicePipeBlob *,bool);</p>
+<p>407&nbsp;#else</p>
+<p>408&nbsp; void fire_event(DeviceImpl *_dev,DevicePipeBlob *_dat,bool bo)
+{struct timeval
+now;gettimeofday(&amp;now,NULL);fire_event(_dev,_dat,now,bo);}</p>
+<p>409&nbsp;#endif</p>
+<p>410&nbsp; void fire_event(DeviceImpl *,DevicePipeBlob *,struct timeval
+&amp;,bool);</p>
+<p>411</p>
+<p>412&nbsp; void set_event_subscription(time_t _t) {event_subscription =
+_t;}</p>
+<p>413</p>
+<p><a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a113a5beda9b94ad235073dd9cfd3504a">414</a>
+friend class
+<a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a113a5beda9b94ad235073dd9cfd3504a">EventSupplier</a>;</p>
+<p><a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a89ef1b5b0e914a3b89e77cebe6dd8ce8">415</a>
+friend class
+<a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a89ef1b5b0e914a3b89e77cebe6dd8ce8">ZmqEventSupplier</a>;</p>
+<p>416</p>
+<p>417&nbsp;protected:</p>
+<p><a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#af3cae1c6cb5f44b9a51e45b61d67cfdb">423</a>
+string
+<a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#af3cae1c6cb5f44b9a51e45b61d67cfdb">name</a>;</p>
+<p><a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#af7c22f717b75210fcb5328a38be95e7c">427</a>
+string
+<a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#af7c22f717b75210fcb5328a38be95e7c">lower_name</a>;</p>
+<p><a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a317ab27c21563fc4d279007991c8080b">431</a>
+string
+<a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a317ab27c21563fc4d279007991c8080b">desc</a>;</p>
+<p><a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a139a571b46d6f4911fae84269d0beff6">435</a>
+string
+<a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a139a571b46d6f4911fae84269d0beff6">label</a>;</p>
+<p><a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a58da366eded254dd357432105a5fd645">439</a>
+Tango::DispLevel
+<a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a58da366eded254dd357432105a5fd645">disp_level</a>;</p>
+<p><a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#afaec591f0261e13cb7df7277c9f09ece">443</a>
+Tango::PipeWriteType
+<a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#afaec591f0261e13cb7df7277c9f09ece">writable</a>;</p>
+<p>445</p>
+<p><a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a784d199e1309184b6c5afbe64dcc64b4">446</a>
+<a class="reference external" href="../../df/dd9/classTango_1_1DevicePipeBlob.html">DevicePipeBlob</a>
+<a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a784d199e1309184b6c5afbe64dcc64b4">the_blob</a>;</p>
+<p>447</p>
+<p>448&nbsp;private:</p>
+<p>449&nbsp; class PipeExt</p>
+<p>450&nbsp; {</p>
+<p>451&nbsp; public:</p>
+<p>452&nbsp; PipeExt() {}</p>
+<p>453&nbsp; };</p>
+<p>454</p>
+<p>455&nbsp;#ifdef HAS_UNIQUE_PTR</p>
+<p>456&nbsp; unique_ptr&lt;PipeExt&gt; ext; // Class extension</p>
+<p>457&nbsp;#else</p>
+<p>458&nbsp; PipeExt *ext;</p>
+<p>459&nbsp;#endif</p>
+<p>460</p>
+<p>461&nbsp; bool value_flag; // Flag set when pipe value is set</p>
+<p>462&nbsp; Tango::TimeVal when; // Date associated to the pipe</p>
+<p>463&nbsp; Tango::DevPipeData *ret_data; // Pointer for read data</p>
+<p>464</p>
+<p>465&nbsp; vector&lt;string&gt; pe_out_names; // Data elements name</p>
+<p>466&nbsp; int rec_count; // Data elements ctr</p>
+<p>467</p>
+<p>468
+<a class="reference external" href="../../de/ddf/namespaceTango.html#a65f765a424afb133707cfba235633f98">PipeSerialModel</a>
+pipe_serial_model; // Flag for attribute serialization model</p>
+<p>469</p>
+<p>470&nbsp; omni_mutex pipe_mutex; // Mutex to protect the pipe shared data
+buffer</p>
+<p>471&nbsp; omni_mutex *user_pipe_mutex; // Ptr for user mutex in case he
+manages exclusion</p>
+<p>472</p>
+<p>473&nbsp; time_t event_subscription; // Last time() a subscription was made</p>
+<p>474&nbsp; vector&lt;PipeProperty&gt; user_def_prop; // User default properties</p>
+<p>475&nbsp;};</p>
+<p>476</p>
+<p>477&nbsp;template &lt;typename T&gt;</p>
+<p>478&nbsp;Pipe
+&amp;<a class="reference external" href="../../de/ddf/namespaceTango.html#aa688eba2e41c677db31e4805ae230cef">operator&lt;&lt;</a>(Pipe
+&amp;,T &amp;);</p>
+<p>479</p>
+<p>480&nbsp;template &lt;typename T&gt;</p>
+<p>481&nbsp;Pipe
+&amp;<a class="reference external" href="../../de/ddf/namespaceTango.html#aa688eba2e41c677db31e4805ae230cef">operator&lt;&lt;</a>(Pipe
+&amp;,T *);</p>
+<p>482</p>
+<p>483&nbsp;template &lt;typename T&gt;</p>
+<p>484&nbsp;Pipe &amp;operator&lt;&lt;(Pipe &amp;, DataElement&lt;T&gt; &amp;);</p>
+<p>485</p>
+<p>486</p>
+<p>487&nbsp;//</p>
+<p>488&nbsp;// Throw exception if pointer is null</p>
+<p>489&nbsp;//</p>
+<p>490</p>
+<p><a class="reference external" href="../../da/d3e/pipe_8h.html#a137d9d2c4e4a865274b4fbbb0327cb4b">491</a>&nbsp;#define
+PIPE_CHECK_PTR(A,B,C) \</p>
+<p>492&nbsp; if (A == NULL) \</p>
+<p>493&nbsp; { \</p>
+<p>494&nbsp; stringstream o; \</p>
+<p>495&nbsp; o &lt;&lt; &#8220;Data pointer for pipe &#8221; &lt;&lt; B &lt;&lt; &#8221;, data element &#8221; &lt;&lt; C &lt;&lt; &#8221;
+is NULL!&#8221;; \</p>
+<p>496
+Except::throw_exception(API_PipeOptProp,o.str(),&#8221;Pipe::set_value()&#8221;);
+\</p>
+<p>497&nbsp; } \</p>
+<p>498&nbsp; else \</p>
+<p>499&nbsp; (void)0</p>
+<p>500</p>
+<p>501</p>
+<p>502&nbsp;//</p>
+<p>503&nbsp;// Some inline methods</p>
+<p>504&nbsp;//</p>
+<p>505</p>
+<p>506&nbsp;//+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;</p>
+<p>507&nbsp;//</p>
+<p>508&nbsp;// method :</p>
+<p>509&nbsp;// Pipe::prop_in_list</p>
+<p>510&nbsp;//</p>
+<p>511&nbsp;// description :</p>
+<p>512&nbsp;// Search for a property in a list</p>
+<p>513&nbsp;// A similar method exists in Attribute class!!</p>
+<p>514&nbsp;//</p>
+<p>515&nbsp;// args:</p>
+<p>516&nbsp;// in :</p>
+<p>517&nbsp;// - prop_name : The property name</p>
+<p>518&nbsp;// - list_size : The size list</p>
+<p>519&nbsp;// - list : The list</p>
+<p>520&nbsp;// out :</p>
+<p>521&nbsp;// - prop_str : String initialized with prop. value (if found)</p>
+<p>522&nbsp;//</p>
+<p>523&nbsp;//&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;</p>
+<p>524</p>
+<p>525&nbsp;inline bool Pipe::prop_in_list(const char *prop_name,string
+&amp;prop_str,size_t list_size,vector&lt;PipeProperty&gt; &amp;list)</p>
+<p>526&nbsp;{</p>
+<p>527&nbsp; bool ret = false;</p>
+<p>528</p>
+<p>529&nbsp; if (list_size != 0)</p>
+<p>530&nbsp; {</p>
+<p>531&nbsp; size_t i;</p>
+<p>532&nbsp; for (i = 0;i &lt; list_size;i++)</p>
+<p>533&nbsp; {</p>
+<p>534&nbsp; if
+(list[i].<a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a00bb2112e4e81c63ff5e55ffa046c9d7">get_name</a>()
+== prop_name)</p>
+<p>535&nbsp; break;</p>
+<p>536&nbsp; }</p>
+<p>537&nbsp; if (i != list_size)</p>
+<p>538&nbsp; {</p>
+<p>539&nbsp; prop_str = list[i].get_value();</p>
+<p>540&nbsp; ret = true;</p>
+<p>541&nbsp; }</p>
+<p>542&nbsp; }</p>
+<p>543</p>
+<p>544&nbsp; return ret;</p>
+<p>545&nbsp;}</p>
+<p>546</p>
+<p>547&nbsp;} // End of Tango namespace</p>
+<p>548</p>
+<p>549&nbsp;#endif // _PIPE_H</p>
+<p><a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a21c57287d00cae3a66f6cb9626f6324d">Tango::Pipe::get_desc</a></p>
+<p>string &amp; get_desc()</p>
+<p>Return the pipe description.</p>
+<p><strong>Definition:</strong> pipe.h:173</p>
+<p><a class="reference external" href="../../de/ddf/namespaceTango.html#aa688eba2e41c677db31e4805ae230cef">Tango::operator&lt;&lt;</a></p>
+<p>Pipe &amp; operator&lt;&lt;(Pipe &amp;, T &amp;)</p>
+<p><a class="reference external" href="../../dd/d06/structTango_1_1WantedPipe.html#a7ba811ef470b2d0349ad209cf30ea93a">Tango::WantedPipe::operator()</a></p>
+<p>R operator()(A1 pipe_ptr, A2 name) const</p>
+<p><strong>Definition:</strong> pipe.h:54</p>
+<p><a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#ad4981873f1e6f3d5e294f66d3b01b848">Tango::Pipe::get_writable</a></p>
+<p>Tango::PipeWriteType get_writable()</p>
+<p>Get the pipe writable type (RO/RW).</p>
+<p><strong>Definition:</strong> pipe.h:194</p>
+<p><a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a131457c57f76313b0784d02228e423dd">Tango::Pipe::get_pipe_serial_model</a></p>
+<p>PipeSerialModel get_pipe_serial_model()</p>
+<p>Get pipe serialization model.</p>
+<p><strong>Definition:</strong> pipe.h:212</p>
+<p><a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a784d199e1309184b6c5afbe64dcc64b4">Tango::Pipe::the_blob</a></p>
+<p>DevicePipeBlob the_blob</p>
+<p><strong>Definition:</strong> pipe.h:446</p>
+<p><a class="reference external" href="../../df/dd9/classTango_1_1DevicePipeBlob.html#aa16f3e082d2d6f7ee4f12135a9f63cb7">Tango::DevicePipeBlob::set_name</a></p>
+<p>void set_name(const string &amp;blob_name)</p>
+<p>Set blob name.</p>
+<p><strong>Definition:</strong> devapi.h:156</p>
+<p><a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#acbe28a16686f044af10708792fddf245">Tango::Pipe::set_user_pipe_mutex</a></p>
+<p>void set_user_pipe_mutex(omni_mutex *mut_ptr)</p>
+<p>Set pipe user mutex.</p>
+<p><strong>Definition:</strong> pipe.h:223</p>
+<p><a class="reference external" href="../../df/dd9/classTango_1_1DevicePipeBlob.html#aaca17726578d592076c6bad76a98e59c">Tango::DevicePipeBlob::set_data_elt_nb</a></p>
+<p>void set_data_elt_nb(size_t nb)</p>
+<p>Set blob data element number.</p>
+<p><a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#ae66635efe0978d51fd62e73b34b24e5c">Tango::Pipe::get_label</a></p>
+<p>string &amp; get_label()</p>
+<p>Return the pipe label.</p>
+<p><strong>Definition:</strong> pipe.h:180</p>
+<p><a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#af3201b786412b40011bbc4343e995ebe">Tango::Pipe::get_lower_name</a></p>
+<p>string &amp; get_lower_name()</p>
+<p>Return the pipe name in lower case letters.</p>
+<p><strong>Definition:</strong> pipe.h:152</p>
+<p><a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a00bb2112e4e81c63ff5e55ffa046c9d7">Tango::Pipe::get_name</a></p>
+<p>string &amp; get_name()</p>
+<p>Return the pipe name.</p>
+<p><strong>Definition:</strong> pipe.h:131</p>
+<p><a class="reference external" href="../../df/dd9/classTango_1_1DevicePipeBlob.html#aefce9c5e97eb7a80197d1590a13c4f50">Tango::DevicePipeBlob::has_failed</a></p>
+<p>bool has_failed()</p>
+<p>Check insertion/extraction success.</p>
+<p><a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a89ef1b5b0e914a3b89e77cebe6dd8ce8">Tango::Pipe::ZmqEventSupplier</a></p>
+<p>friend class ZmqEventSupplier</p>
+<p><strong>Definition:</strong> pipe.h:415</p>
+<p><a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a6b6e9b53474dc7121ff7fb38942c1250">Tango::Pipe::get_disp_level</a></p>
+<p>Tango::DispLevel get_disp_level()</p>
+<p>Return the pipe display level.</p>
+<p><strong>Definition:</strong> pipe.h:187</p>
+<p><a class="reference external" href="../../d9/de2/classTango_1_1UserDefaultPipeProp.html">Tango::UserDefaultPipeProp</a></p>
+<p>User class to set pipe default properties.</p>
+<p><strong>Definition:</strong> pipedesc.h:58</p>
+<p><a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#af3cae1c6cb5f44b9a51e45b61d67cfdb">Tango::Pipe::name</a></p>
+<p>string name</p>
+<p>The pipe name.</p>
+<p><strong>Definition:</strong> pipe.h:423</p>
+<p><a class="reference external" href="../../df/dd9/classTango_1_1DevicePipeBlob.html">Tango::DevicePipeBlob</a></p>
+<p>A device pipe blob.</p>
+<p><strong>Definition:</strong> devapi.h:112</p>
+<p><a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#afc0f382d5d6c6d03abb2e25ceb4456e6">Tango::Pipe::set_root_blob_name</a></p>
+<p>void set_root_blob_name(const string &amp;name)</p>
+<p>Set the root data blob name.</p>
+<p><strong>Definition:</strong> pipe.h:166</p>
+<p><a class="reference external" href="../../de/ddf/namespaceTango.html">Tango</a></p>
+<hr class="docutils" />
+<p><strong>Definition:</strong> device.h:50</p>
+<p><a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a58da366eded254dd357432105a5fd645">Tango::Pipe::disp_level</a></p>
+<p>Tango::DispLevel disp_level</p>
+<p>The pipe display level.</p>
+<p><strong>Definition:</strong> pipe.h:439</p>
+<p><a class="reference external" href="../../df/dd9/classTango_1_1DevicePipeBlob.html#ac1573563218260fa5211c66c367d85df">Tango::DevicePipeBlob::exceptions</a></p>
+<p>void exceptions(bitset&lt; numFlags &gt; fl)</p>
+<p>Set exception flag.</p>
+<p><strong>Definition:</strong> devapi.h:543</p>
+<p><a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#ad0961a4c770ff42b0b672907268b6c14">Tango::Pipe::reset_exceptions</a></p>
+<p>void reset_exceptions(DevicePipeBlob::except_flags fl)</p>
+<p>Reset one exception flag.</p>
+<p><strong>Definition:</strong> pipe.h:323</p>
+<p><a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html">Tango::Pipe</a></p>
+<p>This class is a class representing a pipe in the TANGO device server
+pattern.</p>
+<p><strong>Definition:</strong> pipe.h:77</p>
+<p><a class="reference external" href="../../df/dd9/classTango_1_1DevicePipeBlob.html#a5271acce39f4b6d3ddc5e91775ff8039">Tango::DevicePipeBlob::get_name</a></p>
+<p>const string &amp; get_name()</p>
+<p>Get blob name.</p>
+<p><strong>Definition:</strong> devapi.h:164</p>
+<p><a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#ac70b0bcbaf0f31a91fd27f21fe05fef6">Tango::Pipe::set_name</a></p>
+<p>void set_name(string &amp;new_name)</p>
+<p>Set the pipe name.</p>
+<p><strong>Definition:</strong> pipe.h:138</p>
+<p><a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a139a571b46d6f4911fae84269d0beff6">Tango::Pipe::label</a></p>
+<p>string label</p>
+<p>The pipe label.</p>
+<p><strong>Definition:</strong> pipe.h:435</p>
+<p><a class="reference external" href="../../dd/d06/structTango_1_1WantedPipe.html">Tango::WantedPipe</a></p>
+<p><strong>Definition:</strong> pipe.h:52</p>
+<p><a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a317ab27c21563fc4d279007991c8080b">Tango::Pipe::desc</a></p>
+<p>string desc</p>
+<p>The pipe description.</p>
+<p><strong>Definition:</strong> pipe.h:431</p>
+<p><a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a85b5e99f841bc2a6f6fe2c7dce9f2928">Tango::Pipe::get_data_elt_nb</a></p>
+<p>size_t get_data_elt_nb()</p>
+<p>Get blob data element number.</p>
+<p><strong>Definition:</strong> pipe.h:266</p>
+<p><a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a4fb5132f87eba2ccd54a392b0612a1fa">Tango::Pipe::exceptions</a></p>
+<p>bitset&lt; DevicePipeBlob::numFlags &gt; exceptions()</p>
+<p>Get exception flag.</p>
+<p><strong>Definition:</strong> pipe.h:315</p>
+<p><a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a4b23ac2255767c1effe26d4a3bd26cab">Tango::Pipe::~Pipe</a></p>
+<p>virtual ~Pipe()</p>
+<p>The object desctructor.</p>
+<p><strong>Definition:</strong> pipe.h:112</p>
+<p><a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a113a5beda9b94ad235073dd9cfd3504a">Tango::Pipe::EventSupplier</a></p>
+<p>friend class EventSupplier</p>
+<p><strong>Definition:</strong> pipe.h:414</p>
+<p><a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a5de39890365fd35d887d66ef8fe5bae7">Tango::Pipe::has_failed</a></p>
+<p>bool has_failed()</p>
+<p>Check insertion/extraction success.</p>
+<p><strong>Definition:</strong> pipe.h:340</p>
+<p><a class="reference external" href="../../de/ddf/namespaceTango.html#afc637002b6beb9ee21bfec6985df5889">Tango::DescNotSpec</a></p>
+<p>const char *const DescNotSpec</p>
+<p><strong>Definition:</strong> tango_const.h:301</p>
+<p><a class="reference external" href="../../df/dd9/classTango_1_1DevicePipeBlob.html#a85220fe9f2351d7a43dc4f7fdf4cd3d5">Tango::DevicePipeBlob::get_data_elt_nb</a></p>
+<p>size_t get_data_elt_nb()</p>
+<p>Get blob data element number.</p>
+<p><a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#afaec591f0261e13cb7df7277c9f09ece">Tango::Pipe::writable</a></p>
+<p>Tango::PipeWriteType writable</p>
+<p>The pipe R/W type.</p>
+<p><strong>Definition:</strong> pipe.h:443</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html">Tango::DeviceImpl</a></p>
+<p>Base class for all TANGO device.</p>
+<p><strong>Definition:</strong> device.h:90</p>
+<p><a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a90537af700f9c8f7bbbe4540e0b9542b">Tango::Pipe::set_data_elt_names</a></p>
+<p>void set_data_elt_names(vector&lt; string &gt; &amp;names)</p>
+<p>Set blob data element number and names.</p>
+<p><strong>Definition:</strong> pipe.h:258</p>
+<p><a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a48f8fa0e8e169fd8f278407b771dc27d">Tango::Pipe::Pipe</a></p>
+<p>Pipe()</p>
+<p>Constructs a newly allocated Pipe object.</p>
+<p><strong>Definition:</strong> pipe.h:89</p>
+<p><a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#acf20d48edb9f74cf8268cc6cd5e0e4fa">Tango::Pipe::set_default_properties</a></p>
+<p>void set_default_properties(UserDefaultPipeProp &amp;prop)</p>
+<p>Set default attribute properties.</p>
+<p><a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#af7c22f717b75210fcb5328a38be95e7c">Tango::Pipe::lower_name</a></p>
+<p>string lower_name</p>
+<p>The pipe name in lower case.</p>
+<p><strong>Definition:</strong> pipe.h:427</p>
+<p><a class="reference external" href="../../de/ddf/namespaceTango.html#af86537193dcecd8a6710791fc2d4969d">Tango::AttReqType</a></p>
+<p>AttReqType</p>
+<p><strong>Definition:</strong> tango_const.h:971</p>
+<p><a class="reference external" href="../../de/ddf/namespaceTango.html#a65f765a424afb133707cfba235633f98">Tango::PipeSerialModel</a></p>
+<p>PipeSerialModel</p>
+<p><strong>Definition:</strong> tango_const.h:1124</p>
+<p><a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a124f05b1125ea60be231ded98f27d303">Tango::Pipe::state</a></p>
+<p>bitset&lt; DevicePipeBlob::numFlags &gt; state()</p>
+<p>Get instance insertion/extraction state.</p>
+<p><strong>Definition:</strong> pipe.h:367</p>
+<p><a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#ac67072c3bf8d26e547ea92aac9b7e260">Tango::Pipe::operator&lt;&lt;</a></p>
+<p>Pipe &amp; operator&lt;&lt;(short &amp;datum)</p>
+<p>Insert data into a device pipe.</p>
+<p><a class="reference external" href="../../df/dd9/classTango_1_1DevicePipeBlob.html#ae6c90f89d110cd3f7e7368346f4ae9e7">Tango::DevicePipeBlob::set_data_elt_names</a></p>
+<p>void set_data_elt_names(vector&lt; string &gt; &amp;names)</p>
+<p>Set blob data element number and names.</p>
+<p><a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a6362521002ff86cf970661a7699b5c54">Tango::Pipe::set_exceptions</a></p>
+<p>void set_exceptions(DevicePipeBlob::except_flags fl)</p>
+<p>Set one exception flag.</p>
+<p><strong>Definition:</strong> pipe.h:331</p>
+<p><a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a9e73adb9661dd91811af627d701d8832">Tango::Pipe::set_data_elt_nb</a></p>
+<p>void set_data_elt_nb(size_t nb)</p>
+<p>Set blob data element number.</p>
+<p><strong>Definition:</strong> pipe.h:249</p>
+<p><a class="reference external" href="../../df/dd9/classTango_1_1DevicePipeBlob.html#ae6d904cd958cb22382ceefef4a4c8593">Tango::DevicePipeBlob::set_exceptions</a></p>
+<p>void set_exceptions(except_flags fl)</p>
+<p>Set one exception flag.</p>
+<p><strong>Definition:</strong> devapi.h:579</p>
+<p><a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a03818186cd3b89c123db978ec735174b">Tango::Pipe::get_root_blob_name</a></p>
+<p>const string &amp; get_root_blob_name()</p>
+<p>Return the root data blob name.</p>
+<p><strong>Definition:</strong> pipe.h:159</p>
+<p><a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#abd430c1ee08d7d19ebbf469974c62dc4">Tango::Pipe::exceptions</a></p>
+<p>void exceptions(bitset&lt; DevicePipeBlob::numFlags &gt; fl)</p>
+<p>Set exception flag.</p>
+<p><strong>Definition:</strong> pipe.h:295</p>
+<p><a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html#a77c6b9c413099b205da176541100659d">Tango::Pipe::set_pipe_serial_model</a></p>
+<p>void set_pipe_serial_model(PipeSerialModel ser_model)</p>
+<p>Set pipe serialization model.</p>
+<p><a class="reference external" href="../../df/dd9/classTango_1_1DevicePipeBlob.html#ad0ef655afc8a1d0a59a44091892b017f">Tango::DevicePipeBlob::state</a></p>
+<p>bitset&lt; numFlags &gt; state()</p>
+<p>Get instance insertion/extraction state.</p>
+<p><strong>Definition:</strong> devapi.h:615</p>
+<p><a class="reference external" href="../../df/dd9/classTango_1_1DevicePipeBlob.html#ab54466d1b593e8e464957f19ef685ae2">Tango::DevicePipeBlob::reset_exceptions</a></p>
+<p>void reset_exceptions(except_flags fl)</p>
+<p>Reset one exception flag.</p>
+<p><strong>Definition:</strong> devapi.h:571</p>
+<ul class="simple">
+<li><a class="reference external" href="../../dir_93bc669b4520ad36068f344e109b7d17.html">include</a></li>
+<li><a class="reference external" href="../../dir_8ff48e8f3ef80891a9957ae5e9583431.html">tango</a></li>
+<li><a class="reference external" href="../../dir_53b28a22454594c5818f3f3f5a9fd698.html">server</a></li>
+<li><a class="reference external" href="../../da/d3e/pipe_8h.html">pipe.h</a></li>
+<li>Generated on Fri Oct 7 2016 11:11:15 for Tango Core Classes Reference
+by <a class="reference external" href="http://www.doxygen.org/index.html"><img alt="doxygen" src="../../_images/doxygen259.png" /></a> 1.8.8</li>
+</ul>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/da/d3e/pipe_8h_source.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, 3Controls.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.8</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+      |
+      <a href="../../_sources/da/d3e/pipe_8h_source.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

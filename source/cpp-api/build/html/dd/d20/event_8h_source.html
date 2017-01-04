@@ -1,0 +1,1128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>&lt;no title&gt; &#8212; Tango Core Classes Reference Documentation 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="top" title="Tango Core Classes Reference Documentation 1.0 documentation" href="../../index.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><img alt="Logo" src="../../_images/logo347.jpg" /></td>
+<td>Tango Core Classes Reference &nbsp;9.2.5</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><a class="reference external" href="../../index.html">Main&nbsp;Page</a></li>
+<li><a class="reference external" href="../../pages.html">Related&nbsp;Pages</a></li>
+<li><a class="reference external" href="../../modules.html">Modules</a></li>
+<li><a class="reference external" href="../../namespaces.html">Namespaces</a></li>
+<li><a class="reference external" href="../../annotated.html">Classes</a></li>
+<li><a class="reference external" href="../../files.html">Files</a></li>
+<li><a class="reference external" href="../../files.html">File&nbsp;List</a></li>
+<li><a class="reference external" href="../../globals.html">File&nbsp;Members</a></li>
+</ul>
+<p>event.h</p>
+<p><a class="reference external" href="../../dd/d20/event_8h.html">Go to the documentation of this file.</a></p>
+<p>1&nbsp;//===================================================================================================================</p>
+<p>2&nbsp;//</p>
+<p>3&nbsp;// file : event.h</p>
+<p>4&nbsp;//</p>
+<p>5&nbsp;// description : C++ include file for implementing the TANGO event
+server and client singleton classes -</p>
+<p>6&nbsp;// EventSupplier and EventConsumer.</p>
+<p>7&nbsp;// These classes are used to send events from the server to the
+notification service and to receive</p>
+<p>8&nbsp;// events from the notification service.</p>
+<p>9&nbsp;//</p>
+<p>10&nbsp;// author(s) : A.Gotz (<a class="reference external" href="mailto:goetz&#37;&#52;&#48;esrf&#46;fr">goetz<span>&#64;</span>esrf<span>&#46;</span>fr</a>)</p>
+<p>11&nbsp;//</p>
+<p>12&nbsp;// Copyright (C) :
+2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015</p>
+<p>13&nbsp;// European Synchrotron Radiation Facility</p>
+<p>14&nbsp;// BP 220, Grenoble 38043</p>
+<p>15&nbsp;// FRANCE</p>
+<p>16&nbsp;//</p>
+<p>17&nbsp;// This file is part of Tango.</p>
+<p>18&nbsp;//</p>
+<p>19&nbsp;// Tango is free software: you can redistribute it and/or modify it
+under the terms of the GNU Lesser General Public</p>
+<p>20&nbsp;// License as published by the Free Software Foundation, either
+version 3 of the License, or</p>
+<p>21&nbsp;// (at your option) any later version.</p>
+<p>22&nbsp;//</p>
+<p>23&nbsp;// Tango is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty</p>
+<p>24&nbsp;// of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the</p>
+<p>25&nbsp;// GNU Lesser General Public License for more details.</p>
+<p>26&nbsp;//</p>
+<p>27&nbsp;// You should have received a copy of the GNU Lesser General Public
+License along with Tango.</p>
+<p>28&nbsp;// If not, see &lt;<a class="reference external" href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>&gt;.</p>
+<p>29&nbsp;//</p>
+<p>30&nbsp;// $Revision$</p>
+<p>31&nbsp;//</p>
+<p>32&nbsp;//===================================================================================================================</p>
+<p>33</p>
+<p>34&nbsp;#ifndef _EVENTAPI_H</p>
+<p>35&nbsp;#define _EVENTAPI_H</p>
+<p>36</p>
+<p>37&nbsp;#include
+&lt;<a class="reference external" href="../../d3/d7c/attribute_8h.html">tango/server/attribute.h</a>&gt;</p>
+<p>38&nbsp;#include &lt;<a class="reference external" href="../../dc/d65/except_8h.html">tango/server/except.h</a>&gt;</p>
+<p>39&nbsp;#include
+&lt;<a class="reference external" href="../../d4/d13/tango__const_8h.html">tango/server/tango_const.h</a>&gt;</p>
+<p>40</p>
+<p>41&nbsp;#include &lt;zmq.hpp&gt;</p>
+<p>42</p>
+<p>43&nbsp;namespace <a class="reference external" href="../../de/ddf/namespaceTango.html">Tango</a></p>
+<p>44&nbsp;{</p>
+<p>45</p>
+<p>46&nbsp;#ifndef _USRDLL</p>
+<p>47&nbsp;extern &#8220;C&#8221;</p>
+<p>48&nbsp;{</p>
+<p>49&nbsp;#endif</p>
+<p>50&nbsp;void
+<a class="reference external" href="../../de/ddf/namespaceTango.html#a6d32a888f539065eae8dd0dec4c32b63">leavefunc</a>();</p>
+<p>51&nbsp;#ifndef _USRDLL</p>
+<p>52&nbsp;}</p>
+<p>53&nbsp;#endif</p>
+<p>54</p>
+<p>55&nbsp;/********************************************************************************</p>
+<p>56&nbsp; * *</p>
+<p>57&nbsp; * EventData class *</p>
+<p>58&nbsp; * *</p>
+<p>59
+*******************************************************************************/</p>
+<p>60</p>
+<p><a class="reference external" href="../../d7/d5f/classTango_1_1EventData.html">73</a>&nbsp;class
+<a class="reference external" href="../../d7/d5f/classTango_1_1EventData.html">EventData</a></p>
+<p>74&nbsp;{</p>
+<p>75&nbsp;public :</p>
+<p>77&nbsp; <a class="reference external" href="../../d7/d5f/classTango_1_1EventData.html">EventData</a>() {}</p>
+<p>78
+<a class="reference external" href="../../d7/d5f/classTango_1_1EventData.html">EventData</a>(<a class="reference external" href="../../d9/d83/classTango_1_1DeviceProxy.html">DeviceProxy</a>
+*dev,string &amp;nam,string
+&amp;evt,<a class="reference external" href="../../d7/dca/classTango_1_1DeviceAttribute.html">Tango::DeviceAttribute</a>
+*attr_value_in,DevErrorList &amp;errors_in);</p>
+<p>79</p>
+<p>80&nbsp; ~<a class="reference external" href="../../d7/d5f/classTango_1_1EventData.html">EventData</a>();</p>
+<p>81&nbsp; <a class="reference external" href="../../d7/d5f/classTango_1_1EventData.html">EventData</a>(const
+<a class="reference external" href="../../d7/d5f/classTango_1_1EventData.html">EventData</a> &amp;);</p>
+<p>82&nbsp; <a class="reference external" href="../../d7/d5f/classTango_1_1EventData.html">EventData</a> &amp;
+operator=(const
+<a class="reference external" href="../../d7/d5f/classTango_1_1EventData.html">EventData</a> &amp;);</p>
+<p>86&nbsp; Tango::TimeVal reception_date;</p>
+<p>87&nbsp; Tango::TimeVal &amp;get_date() {return reception_date;}</p>
+<p>88</p>
+<p><a class="reference external" href="../../d7/d5f/classTango_1_1EventData.html#ae56b5ea4399a060a10cba21884fc7a40">90</a>
+<a class="reference external" href="../../d9/d83/classTango_1_1DeviceProxy.html">DeviceProxy</a>
+*<a class="reference external" href="../../d7/d5f/classTango_1_1EventData.html#ae56b5ea4399a060a10cba21884fc7a40">device</a>;</p>
+<p><a class="reference external" href="../../d7/d5f/classTango_1_1EventData.html#a0bd1e69e134e164209b86a4630357934">91</a>
+string
+<a class="reference external" href="../../d7/d5f/classTango_1_1EventData.html#a0bd1e69e134e164209b86a4630357934">attr_name</a>;</p>
+<p><a class="reference external" href="../../d7/d5f/classTango_1_1EventData.html#a346675d2a32c917164b53fa653af173c">92</a>
+string
+<a class="reference external" href="../../d7/d5f/classTango_1_1EventData.html#a346675d2a32c917164b53fa653af173c">event</a>;</p>
+<p><a class="reference external" href="../../d7/d5f/classTango_1_1EventData.html#a5c709e4322db6f5129abf5063044c4a7">93</a>
+<a class="reference external" href="../../d7/dca/classTango_1_1DeviceAttribute.html">DeviceAttribute</a>
+*<a class="reference external" href="../../d7/d5f/classTango_1_1EventData.html#a5c709e4322db6f5129abf5063044c4a7">attr_value</a>;</p>
+<p><a class="reference external" href="../../d7/d5f/classTango_1_1EventData.html#a415f9374bb792e3a638447c66af32523">94</a>
+bool
+<a class="reference external" href="../../d7/d5f/classTango_1_1EventData.html#a415f9374bb792e3a638447c66af32523">err</a>;</p>
+<p><a class="reference external" href="../../d7/d5f/classTango_1_1EventData.html#abbb35ed304e18a77b63d8b49210329e6">95</a>
+DevErrorList
+<a class="reference external" href="../../d7/d5f/classTango_1_1EventData.html#abbb35ed304e18a77b63d8b49210329e6">errors</a>;</p>
+<p>96</p>
+<p>97&nbsp;private:</p>
+<p>98&nbsp; void set_time();</p>
+<p>99&nbsp;};</p>
+<p>100</p>
+<p><a class="reference external" href="../../d0/d71/classTango_1_1FwdEventData.html">101</a>&nbsp;class
+<a class="reference external" href="../../d0/d71/classTango_1_1FwdEventData.html">FwdEventData</a>: public
+<a class="reference external" href="../../d7/d5f/classTango_1_1EventData.html">EventData</a></p>
+<p>102&nbsp;{</p>
+<p>103&nbsp;public:</p>
+<p>104
+<a class="reference external" href="../../d0/d71/classTango_1_1FwdEventData.html#ac40ba97b20f3b6e560a49645f490d0dc">FwdEventData</a>();</p>
+<p>105
+<a class="reference external" href="../../d0/d71/classTango_1_1FwdEventData.html#ac40ba97b20f3b6e560a49645f490d0dc">FwdEventData</a>(<a class="reference external" href="../../d9/d83/classTango_1_1DeviceProxy.html">DeviceProxy</a>
+*,string &amp;,string
+&amp;,<a class="reference external" href="../../d7/dca/classTango_1_1DeviceAttribute.html">Tango::DeviceAttribute</a>
+*,DevErrorList &amp;);</p>
+<p>106
+<a class="reference external" href="../../d0/d71/classTango_1_1FwdEventData.html#ac40ba97b20f3b6e560a49645f490d0dc">FwdEventData</a>(<a class="reference external" href="../../d9/d83/classTango_1_1DeviceProxy.html">DeviceProxy</a>
+*,string &amp;,string
+&amp;,<a class="reference external" href="../../d7/dca/classTango_1_1DeviceAttribute.html">Tango::DeviceAttribute</a>
+*,DevErrorList &amp;,zmq::message_t *);</p>
+<p>107</p>
+<p><a class="reference external" href="../../d0/d71/classTango_1_1FwdEventData.html#a07b8a8e405b306fd9092ace7de53401d">108</a>
+void
+<a class="reference external" href="../../d0/d71/classTango_1_1FwdEventData.html#a07b8a8e405b306fd9092ace7de53401d">set_av_5</a>(const
+AttributeValue_5 *_p) {av_5 = _p;}</p>
+<p><a class="reference external" href="../../d0/d71/classTango_1_1FwdEventData.html#a619ea982fd645f27cab11c4c66de586b">109</a>
+const AttributeValue_5
+*<a class="reference external" href="../../d0/d71/classTango_1_1FwdEventData.html#a619ea982fd645f27cab11c4c66de586b">get_av_5</a>()
+{return av_5;}</p>
+<p><a class="reference external" href="../../d0/d71/classTango_1_1FwdEventData.html#a44b315e19fbd41954b9174c4fe8b5efc">110</a>
+zmq::message_t
+*<a class="reference external" href="../../d0/d71/classTango_1_1FwdEventData.html#a44b315e19fbd41954b9174c4fe8b5efc">get_zmq_mess_ptr</a>()
+{return event_data;}</p>
+<p>111</p>
+<p>112&nbsp;private:</p>
+<p>113&nbsp; const AttributeValue_5 *av_5;</p>
+<p>114&nbsp; zmq::message_t *event_data;</p>
+<p>115&nbsp;};</p>
+<p>116</p>
+<p>117&nbsp;/********************************************************************************</p>
+<p>118&nbsp; * *</p>
+<p>119&nbsp; * EventDataList class *</p>
+<p>120&nbsp; * *</p>
+<p>121
+*******************************************************************************/</p>
+<p><a class="reference external" href="../../d3/d57/classTango_1_1EventDataList.html">122</a>&nbsp;class
+<a class="reference external" href="../../d3/d57/classTango_1_1EventDataList.html">EventDataList</a>:public
+vector&lt;EventData *&gt;</p>
+<p>123&nbsp;{</p>
+<p>124&nbsp;public:</p>
+<p><a class="reference external" href="../../d3/d57/classTango_1_1EventDataList.html#ac1d92a0c7d7056b40d504f70ed3b13c5">125</a>
+<a class="reference external" href="../../d3/d57/classTango_1_1EventDataList.html#ac1d92a0c7d7056b40d504f70ed3b13c5">EventDataList</a>():
+vector&lt;<a class="reference external" href="../../d7/d5f/classTango_1_1EventData.html">EventData</a>
+*&gt;(0) {};</p>
+<p><a class="reference external" href="../../d3/d57/classTango_1_1EventDataList.html#a5fa9bd471834abf508f4dbf79de09d5e">126</a>
+<a class="reference external" href="../../d3/d57/classTango_1_1EventDataList.html#a5fa9bd471834abf508f4dbf79de09d5e">~EventDataList</a>()</p>
+<p>127&nbsp; {</p>
+<p>128&nbsp; if (size() &gt; 0)</p>
+<p>129&nbsp; {</p>
+<p>130&nbsp; EventDataList::iterator vpos;</p>
+<p>131&nbsp; for (vpos=begin(); vpos!=end(); ++vpos)</p>
+<p>132&nbsp; {</p>
+<p>133&nbsp; delete (*vpos);</p>
+<p>134&nbsp; }</p>
+<p>135&nbsp; }</p>
+<p>136&nbsp; }</p>
+<p><a class="reference external" href="../../d3/d57/classTango_1_1EventDataList.html#afc697e717c9f28a44a32fb7065f8589d">137</a>
+void
+<a class="reference external" href="../../d3/d57/classTango_1_1EventDataList.html#afc697e717c9f28a44a32fb7065f8589d">clear</a>()</p>
+<p>138&nbsp; {</p>
+<p>139&nbsp; if (size() &gt; 0)</p>
+<p>140&nbsp; {</p>
+<p>141&nbsp; EventDataList::iterator vpos;</p>
+<p>142&nbsp; for (vpos=begin(); vpos!=end(); ++vpos)</p>
+<p>143&nbsp; {</p>
+<p>144&nbsp; delete (*vpos);</p>
+<p>145&nbsp; }</p>
+<p>146</p>
+<p>147&nbsp; this-&gt;vector&lt;EventData *&gt;::clear();</p>
+<p>148&nbsp; }</p>
+<p>149&nbsp; }</p>
+<p>150&nbsp;};</p>
+<p>151</p>
+<p>152</p>
+<p>153&nbsp;/********************************************************************************</p>
+<p>154&nbsp; * *</p>
+<p>155&nbsp; * AttrConfEventData class *</p>
+<p>156&nbsp; * *</p>
+<p>157
+*******************************************************************************/</p>
+<p>158</p>
+<p><a class="reference external" href="../../d9/da1/classTango_1_1AttrConfEventData.html">172</a>&nbsp;class
+<a class="reference external" href="../../d9/da1/classTango_1_1AttrConfEventData.html">AttrConfEventData</a></p>
+<p>173&nbsp;{</p>
+<p>174&nbsp;public :</p>
+<p>176
+<a class="reference external" href="../../d9/da1/classTango_1_1AttrConfEventData.html">AttrConfEventData</a>()
+{}</p>
+<p>177
+<a class="reference external" href="../../d9/da1/classTango_1_1AttrConfEventData.html">AttrConfEventData</a>(<a class="reference external" href="../../d9/d83/classTango_1_1DeviceProxy.html">DeviceProxy</a>
+*dev,string &amp;nam,string &amp;evt,</p>
+<p>178
+<a class="reference external" href="../../d3/d71/structTango_1_1AttributeInfoEx.html">Tango::AttributeInfoEx</a>
+*attr_conf_in,</p>
+<p>179&nbsp; DevErrorList &amp;errors_in);</p>
+<p>180
+~<a class="reference external" href="../../d9/da1/classTango_1_1AttrConfEventData.html">AttrConfEventData</a>();</p>
+<p>181
+<a class="reference external" href="../../d9/da1/classTango_1_1AttrConfEventData.html">AttrConfEventData</a>(const
+<a class="reference external" href="../../d9/da1/classTango_1_1AttrConfEventData.html">AttrConfEventData</a>
+&amp;);</p>
+<p>182
+<a class="reference external" href="../../d9/da1/classTango_1_1AttrConfEventData.html">AttrConfEventData</a>
+&amp; operator=(const
+<a class="reference external" href="../../d9/da1/classTango_1_1AttrConfEventData.html">AttrConfEventData</a>
+&amp;);</p>
+<p>186&nbsp; Tango::TimeVal reception_date;</p>
+<p>187&nbsp; Tango::TimeVal &amp;get_date() {return reception_date;}</p>
+<p>188</p>
+<p><a class="reference external" href="../../d9/da1/classTango_1_1AttrConfEventData.html#a6da04a13ce41eff0ddcf63417f001c13">190</a>
+<a class="reference external" href="../../d9/d83/classTango_1_1DeviceProxy.html">DeviceProxy</a>
+*<a class="reference external" href="../../d9/da1/classTango_1_1AttrConfEventData.html#a6da04a13ce41eff0ddcf63417f001c13">device</a>;</p>
+<p><a class="reference external" href="../../d9/da1/classTango_1_1AttrConfEventData.html#a950448309e5b62a4387d94fd38ce0d75">191</a>
+string
+<a class="reference external" href="../../d9/da1/classTango_1_1AttrConfEventData.html#a950448309e5b62a4387d94fd38ce0d75">attr_name</a>;</p>
+<p><a class="reference external" href="../../d9/da1/classTango_1_1AttrConfEventData.html#a70a8c86b121849afab88c952c6cc8bde">192</a>
+string
+<a class="reference external" href="../../d9/da1/classTango_1_1AttrConfEventData.html#a70a8c86b121849afab88c952c6cc8bde">event</a>;</p>
+<p><a class="reference external" href="../../d9/da1/classTango_1_1AttrConfEventData.html#af84272ced68dde94791aa090fc80bd24">193</a>
+<a class="reference external" href="../../d3/d71/structTango_1_1AttributeInfoEx.html">AttributeInfoEx</a>
+*<a class="reference external" href="../../d9/da1/classTango_1_1AttrConfEventData.html#af84272ced68dde94791aa090fc80bd24">attr_conf</a>;</p>
+<p><a class="reference external" href="../../d9/da1/classTango_1_1AttrConfEventData.html#a2e3fb06bc98bb156e254ebeb6a1c222e">194</a>
+bool
+<a class="reference external" href="../../d9/da1/classTango_1_1AttrConfEventData.html#a2e3fb06bc98bb156e254ebeb6a1c222e">err</a>;</p>
+<p><a class="reference external" href="../../d9/da1/classTango_1_1AttrConfEventData.html#adb1f2a3796ba28cfa8a6de522b1596a8">195</a>
+DevErrorList
+<a class="reference external" href="../../d9/da1/classTango_1_1AttrConfEventData.html#adb1f2a3796ba28cfa8a6de522b1596a8">errors</a>;</p>
+<p>196</p>
+<p>197&nbsp;private:</p>
+<p>198&nbsp; void set_time();</p>
+<p>199&nbsp;};</p>
+<p>200</p>
+<p>201</p>
+<p><a class="reference external" href="../../d1/d08/classTango_1_1FwdAttrConfEventData.html">202</a>&nbsp;class
+<a class="reference external" href="../../d1/d08/classTango_1_1FwdAttrConfEventData.html">FwdAttrConfEventData</a>:
+public
+<a class="reference external" href="../../d9/da1/classTango_1_1AttrConfEventData.html">AttrConfEventData</a></p>
+<p>203&nbsp;{</p>
+<p>204&nbsp;public:</p>
+<p>205
+<a class="reference external" href="../../d1/d08/classTango_1_1FwdAttrConfEventData.html#a65b41bd462ee1a1bea3ea0f7a8d62a37">FwdAttrConfEventData</a>();</p>
+<p>206
+<a class="reference external" href="../../d1/d08/classTango_1_1FwdAttrConfEventData.html#a65b41bd462ee1a1bea3ea0f7a8d62a37">FwdAttrConfEventData</a>(<a class="reference external" href="../../d9/d83/classTango_1_1DeviceProxy.html">DeviceProxy</a>
+*,string &amp;,string
+&amp;,<a class="reference external" href="../../d3/d71/structTango_1_1AttributeInfoEx.html">Tango::AttributeInfoEx</a>
+*,DevErrorList &amp;);</p>
+<p>207</p>
+<p><a class="reference external" href="../../d1/d08/classTango_1_1FwdAttrConfEventData.html#a8954f696a706ec4aa1f7390e974de017">208</a>
+void
+<a class="reference external" href="../../d1/d08/classTango_1_1FwdAttrConfEventData.html#a8954f696a706ec4aa1f7390e974de017">set_fwd_attr_conf</a>(const
+AttributeConfig_5 *_p) {fwd_attr_conf = _p;}</p>
+<p><a class="reference external" href="../../d1/d08/classTango_1_1FwdAttrConfEventData.html#ade61194ca130c87b018f3222d6970264">209</a>
+const AttributeConfig_5
+*<a class="reference external" href="../../d1/d08/classTango_1_1FwdAttrConfEventData.html#ade61194ca130c87b018f3222d6970264">get_fwd_attr_conf</a>()
+{return fwd_attr_conf;}</p>
+<p>210</p>
+<p>211&nbsp;private:</p>
+<p>212&nbsp; const AttributeConfig_5 *fwd_attr_conf;</p>
+<p>213&nbsp;};</p>
+<p>214</p>
+<p>215&nbsp;/********************************************************************************</p>
+<p>216&nbsp; * *</p>
+<p>217&nbsp; * AttrConfEventDataList class *</p>
+<p>218&nbsp; * *</p>
+<p>219
+*******************************************************************************/</p>
+<p><a class="reference external" href="../../d5/d4a/classTango_1_1AttrConfEventDataList.html">220</a>&nbsp;class
+<a class="reference external" href="../../d5/d4a/classTango_1_1AttrConfEventDataList.html">AttrConfEventDataList</a>:public
+vector&lt;AttrConfEventData *&gt;</p>
+<p>221&nbsp;{</p>
+<p>222&nbsp;public:</p>
+<p><a class="reference external" href="../../d5/d4a/classTango_1_1AttrConfEventDataList.html#a4f05996e7c728cbe81a3d9c7537681b9">223</a>
+<a class="reference external" href="../../d5/d4a/classTango_1_1AttrConfEventDataList.html#a4f05996e7c728cbe81a3d9c7537681b9">AttrConfEventDataList</a>():
+vector&lt;<a class="reference external" href="../../d9/da1/classTango_1_1AttrConfEventData.html">AttrConfEventData</a>
+*&gt;(0) {};</p>
+<p><a class="reference external" href="../../d5/d4a/classTango_1_1AttrConfEventDataList.html#aded16cd8d6444b0eeafebdb718c34d90">224</a>
+<a class="reference external" href="../../d5/d4a/classTango_1_1AttrConfEventDataList.html#aded16cd8d6444b0eeafebdb718c34d90">~AttrConfEventDataList</a>()</p>
+<p>225&nbsp; {</p>
+<p>226&nbsp; if (size() &gt; 0)</p>
+<p>227&nbsp; {</p>
+<p>228&nbsp; AttrConfEventDataList::iterator vpos;</p>
+<p>229&nbsp; for (vpos=begin(); vpos!=end(); ++vpos)</p>
+<p>230&nbsp; {</p>
+<p>231&nbsp; delete (*vpos);</p>
+<p>232&nbsp; }</p>
+<p>233&nbsp; }</p>
+<p>234&nbsp; }</p>
+<p><a class="reference external" href="../../d5/d4a/classTango_1_1AttrConfEventDataList.html#a2bdc684a5056ac4c891e904e088c520e">235</a>
+void
+<a class="reference external" href="../../d5/d4a/classTango_1_1AttrConfEventDataList.html#a2bdc684a5056ac4c891e904e088c520e">clear</a>()</p>
+<p>236&nbsp; {</p>
+<p>237&nbsp; if (size() &gt; 0)</p>
+<p>238&nbsp; {</p>
+<p>239&nbsp; AttrConfEventDataList::iterator vpos;</p>
+<p>240&nbsp; for (vpos=begin(); vpos!=end(); ++vpos)</p>
+<p>241&nbsp; {</p>
+<p>242&nbsp; delete (*vpos);</p>
+<p>243&nbsp; }</p>
+<p>244</p>
+<p>245&nbsp; this-&gt;vector&lt;AttrConfEventData *&gt;::clear();</p>
+<p>246&nbsp; }</p>
+<p>247&nbsp; }</p>
+<p>248&nbsp;};</p>
+<p>249</p>
+<p>250&nbsp;/********************************************************************************</p>
+<p>251&nbsp; * *</p>
+<p>252&nbsp; * DataReadyEventData class *</p>
+<p>253&nbsp; * *</p>
+<p>254
+*******************************************************************************/</p>
+<p>255</p>
+<p><a class="reference external" href="../../df/d39/classTango_1_1DataReadyEventData.html">268</a>&nbsp;class
+<a class="reference external" href="../../df/d39/classTango_1_1DataReadyEventData.html">DataReadyEventData</a></p>
+<p>269&nbsp;{</p>
+<p>270&nbsp;public :</p>
+<p>272
+<a class="reference external" href="../../df/d39/classTango_1_1DataReadyEventData.html">DataReadyEventData</a>()
+{}</p>
+<p>273
+<a class="reference external" href="../../df/d39/classTango_1_1DataReadyEventData.html">DataReadyEventData</a>(<a class="reference external" href="../../d9/d83/classTango_1_1DeviceProxy.html">DeviceProxy</a>
+*,AttDataReady *,string &amp;evt,DevErrorList &amp;);</p>
+<p>274
+~<a class="reference external" href="../../df/d39/classTango_1_1DataReadyEventData.html">DataReadyEventData</a>()
+{};</p>
+<p>275
+<a class="reference external" href="../../df/d39/classTango_1_1DataReadyEventData.html">DataReadyEventData</a>(const
+<a class="reference external" href="../../df/d39/classTango_1_1DataReadyEventData.html">DataReadyEventData</a>
+&amp;);</p>
+<p>276
+<a class="reference external" href="../../df/d39/classTango_1_1DataReadyEventData.html">DataReadyEventData</a>
+&amp; operator=(const
+<a class="reference external" href="../../df/d39/classTango_1_1DataReadyEventData.html">DataReadyEventData</a>
+&amp;);</p>
+<p>280&nbsp; Tango::TimeVal reception_date;</p>
+<p>281&nbsp; Tango::TimeVal &amp;get_date() {return reception_date;}</p>
+<p>282</p>
+<p><a class="reference external" href="../../df/d39/classTango_1_1DataReadyEventData.html#a7df862854af7b80913dcb9dd1d330a64">284</a>
+<a class="reference external" href="../../d9/d83/classTango_1_1DeviceProxy.html">DeviceProxy</a>
+*<a class="reference external" href="../../df/d39/classTango_1_1DataReadyEventData.html#a7df862854af7b80913dcb9dd1d330a64">device</a>;</p>
+<p><a class="reference external" href="../../df/d39/classTango_1_1DataReadyEventData.html#a2cd31366088f9fee0d06364c2a81796f">285</a>
+string
+<a class="reference external" href="../../df/d39/classTango_1_1DataReadyEventData.html#a2cd31366088f9fee0d06364c2a81796f">attr_name</a>;</p>
+<p><a class="reference external" href="../../df/d39/classTango_1_1DataReadyEventData.html#a90279b05b0751e18e8f348c0a41848fa">286</a>
+string
+<a class="reference external" href="../../df/d39/classTango_1_1DataReadyEventData.html#a90279b05b0751e18e8f348c0a41848fa">event</a>;</p>
+<p><a class="reference external" href="../../df/d39/classTango_1_1DataReadyEventData.html#abc2542d1f11b9d8faff06e524793aa69">287</a>
+int
+<a class="reference external" href="../../df/d39/classTango_1_1DataReadyEventData.html#abc2542d1f11b9d8faff06e524793aa69">attr_data_type</a>;</p>
+<p><a class="reference external" href="../../df/d39/classTango_1_1DataReadyEventData.html#a68d3c729f0f7aa64540f30c65b2b690f">288</a>
+int
+<a class="reference external" href="../../df/d39/classTango_1_1DataReadyEventData.html#a68d3c729f0f7aa64540f30c65b2b690f">ctr</a>;</p>
+<p>289</p>
+<p><a class="reference external" href="../../df/d39/classTango_1_1DataReadyEventData.html#afc55fe4eee219eea959e8ad53d34f310">290</a>
+bool
+<a class="reference external" href="../../df/d39/classTango_1_1DataReadyEventData.html#afc55fe4eee219eea959e8ad53d34f310">err</a>;</p>
+<p><a class="reference external" href="../../df/d39/classTango_1_1DataReadyEventData.html#acc8ce497a9b75d7db6878472ae471995">291</a>
+DevErrorList
+<a class="reference external" href="../../df/d39/classTango_1_1DataReadyEventData.html#acc8ce497a9b75d7db6878472ae471995">errors</a>;</p>
+<p>292</p>
+<p>293&nbsp;private:</p>
+<p>294&nbsp; void set_time();</p>
+<p>295&nbsp;};</p>
+<p>296</p>
+<p>297&nbsp;/********************************************************************************</p>
+<p>298&nbsp; * *</p>
+<p>299&nbsp; * DataReadyEventDataList class *</p>
+<p>300&nbsp; * *</p>
+<p>301
+*******************************************************************************/</p>
+<p>302</p>
+<p><a class="reference external" href="../../d0/d3e/classTango_1_1DataReadyEventDataList.html">303</a>&nbsp;class
+<a class="reference external" href="../../d0/d3e/classTango_1_1DataReadyEventDataList.html">DataReadyEventDataList</a>:public
+vector&lt;DataReadyEventData *&gt;</p>
+<p>304&nbsp;{</p>
+<p>305&nbsp;public:</p>
+<p><a class="reference external" href="../../d0/d3e/classTango_1_1DataReadyEventDataList.html#a0777dbe24e4e7a121b66a3162b816647">306</a>
+<a class="reference external" href="../../d0/d3e/classTango_1_1DataReadyEventDataList.html#a0777dbe24e4e7a121b66a3162b816647">DataReadyEventDataList</a>():
+vector&lt;<a class="reference external" href="../../df/d39/classTango_1_1DataReadyEventData.html">DataReadyEventData</a>
+*&gt;(0) {};</p>
+<p><a class="reference external" href="../../d0/d3e/classTango_1_1DataReadyEventDataList.html#a8f1c43c6f88edbcf56fa991a35f34d77">307</a>
+<a class="reference external" href="../../d0/d3e/classTango_1_1DataReadyEventDataList.html#a8f1c43c6f88edbcf56fa991a35f34d77">~DataReadyEventDataList</a>()</p>
+<p>308&nbsp; {</p>
+<p>309&nbsp; if (size() &gt; 0)</p>
+<p>310&nbsp; {</p>
+<p>311&nbsp; DataReadyEventDataList::iterator vpos;</p>
+<p>312&nbsp; for (vpos=begin(); vpos!=end(); ++vpos)</p>
+<p>313&nbsp; {</p>
+<p>314&nbsp; delete (*vpos);</p>
+<p>315&nbsp; }</p>
+<p>316&nbsp; }</p>
+<p>317&nbsp; }</p>
+<p><a class="reference external" href="../../d0/d3e/classTango_1_1DataReadyEventDataList.html#a3acc594e72f1ae67e29797a0b66aac19">318</a>
+void
+<a class="reference external" href="../../d0/d3e/classTango_1_1DataReadyEventDataList.html#a3acc594e72f1ae67e29797a0b66aac19">clear</a>()</p>
+<p>319&nbsp; {</p>
+<p>320&nbsp; if (size() &gt; 0)</p>
+<p>321&nbsp; {</p>
+<p>322&nbsp; DataReadyEventDataList::iterator vpos;</p>
+<p>323&nbsp; for (vpos=begin(); vpos!=end(); ++vpos)</p>
+<p>324&nbsp; {</p>
+<p>325&nbsp; delete (*vpos);</p>
+<p>326&nbsp; }</p>
+<p>327</p>
+<p>328&nbsp; this-&gt;vector&lt;DataReadyEventData *&gt;::clear();</p>
+<p>329&nbsp; }</p>
+<p>330&nbsp; }</p>
+<p>331&nbsp;}</p>
+<p>332&nbsp;;</p>
+<p>333</p>
+<p>334</p>
+<p>335&nbsp;/********************************************************************************</p>
+<p>336&nbsp; * *</p>
+<p>337&nbsp; * DevIntrChangeEventData class *</p>
+<p>338&nbsp; * *</p>
+<p>339
+*******************************************************************************/</p>
+<p>340</p>
+<p><a class="reference external" href="../../db/d47/classTango_1_1DevIntrChangeEventData.html">353</a>&nbsp;class
+<a class="reference external" href="../../db/d47/classTango_1_1DevIntrChangeEventData.html">DevIntrChangeEventData</a></p>
+<p>354&nbsp;{</p>
+<p>355&nbsp;public :</p>
+<p>357
+<a class="reference external" href="../../db/d47/classTango_1_1DevIntrChangeEventData.html">DevIntrChangeEventData</a>()
+{}</p>
+<p>358
+<a class="reference external" href="../../db/d47/classTango_1_1DevIntrChangeEventData.html">DevIntrChangeEventData</a>(<a class="reference external" href="../../d9/d83/classTango_1_1DeviceProxy.html">DeviceProxy</a>
+*,string &amp;,string &amp;,DevCmdInfoList_2 *,AttributeConfigList_5
+*,bool,DevErrorList &amp;);</p>
+<p>359
+<a class="reference external" href="../../db/d47/classTango_1_1DevIntrChangeEventData.html">DevIntrChangeEventData</a>(<a class="reference external" href="../../d9/d83/classTango_1_1DeviceProxy.html">DeviceProxy</a>
+*,string &amp;,string
+&amp;,<a class="reference external" href="../../d1/d45/group__Client.html#ga702913bccb1c2d427d7a6f046602d657">CommandInfoList</a>
+*,<a class="reference external" href="../../d1/d45/group__Client.html#ga7175e05437edf640b8e555d1a601335c">AttributeInfoListEx</a>
+*,bool,DevErrorList &amp;);</p>
+<p>360
+~<a class="reference external" href="../../db/d47/classTango_1_1DevIntrChangeEventData.html">DevIntrChangeEventData</a>()
+{};</p>
+<p>361
+<a class="reference external" href="../../db/d47/classTango_1_1DevIntrChangeEventData.html">DevIntrChangeEventData</a>(const
+<a class="reference external" href="../../db/d47/classTango_1_1DevIntrChangeEventData.html">DevIntrChangeEventData</a>
+&amp;);</p>
+<p>362
+<a class="reference external" href="../../db/d47/classTango_1_1DevIntrChangeEventData.html">DevIntrChangeEventData</a>
+&amp; operator=(const
+<a class="reference external" href="../../db/d47/classTango_1_1DevIntrChangeEventData.html">DevIntrChangeEventData</a>
+&amp;);</p>
+<p>366&nbsp; Tango::TimeVal reception_date;</p>
+<p>367&nbsp; Tango::TimeVal &amp;get_date() {return reception_date;}</p>
+<p>368</p>
+<p><a class="reference external" href="../../db/d47/classTango_1_1DevIntrChangeEventData.html#aa23d2843deae51a30852fb1d49d51c91">370</a>
+<a class="reference external" href="../../d9/d83/classTango_1_1DeviceProxy.html">DeviceProxy</a>
+*<a class="reference external" href="../../db/d47/classTango_1_1DevIntrChangeEventData.html#aa23d2843deae51a30852fb1d49d51c91">device</a>;</p>
+<p><a class="reference external" href="../../db/d47/classTango_1_1DevIntrChangeEventData.html#a9d4af2556b9cda47da2210546419f3ca">371</a>
+string
+<a class="reference external" href="../../db/d47/classTango_1_1DevIntrChangeEventData.html#a9d4af2556b9cda47da2210546419f3ca">event</a>;</p>
+<p><a class="reference external" href="../../db/d47/classTango_1_1DevIntrChangeEventData.html#acc8d3960c808ddbcd750224ba1d9f417">372</a>
+string
+<a class="reference external" href="../../db/d47/classTango_1_1DevIntrChangeEventData.html#acc8d3960c808ddbcd750224ba1d9f417">device_name</a>;</p>
+<p><a class="reference external" href="../../db/d47/classTango_1_1DevIntrChangeEventData.html#ab75f7e002dd7df09755b26e513231dc2">373</a>
+<a class="reference external" href="../../d1/d45/group__Client.html#ga702913bccb1c2d427d7a6f046602d657">CommandInfoList</a>
+<a class="reference external" href="../../db/d47/classTango_1_1DevIntrChangeEventData.html#ab75f7e002dd7df09755b26e513231dc2">cmd_list</a>;</p>
+<p><a class="reference external" href="../../db/d47/classTango_1_1DevIntrChangeEventData.html#a89db4537a1e2634d03b6f3836469a5e0">374</a>
+<a class="reference external" href="../../d1/d45/group__Client.html#ga7175e05437edf640b8e555d1a601335c">AttributeInfoListEx</a>
+<a class="reference external" href="../../db/d47/classTango_1_1DevIntrChangeEventData.html#a89db4537a1e2634d03b6f3836469a5e0">att_list</a>;</p>
+<p><a class="reference external" href="../../db/d47/classTango_1_1DevIntrChangeEventData.html#adbf8cb3b33018c236a5fa1440edb3588">375</a>
+bool
+<a class="reference external" href="../../db/d47/classTango_1_1DevIntrChangeEventData.html#adbf8cb3b33018c236a5fa1440edb3588">dev_started</a>;</p>
+<p>376</p>
+<p><a class="reference external" href="../../db/d47/classTango_1_1DevIntrChangeEventData.html#a52384944b2b92cbd9ecf66b21c4a9fdc">378</a>
+bool
+<a class="reference external" href="../../db/d47/classTango_1_1DevIntrChangeEventData.html#a52384944b2b92cbd9ecf66b21c4a9fdc">err</a>;</p>
+<p><a class="reference external" href="../../db/d47/classTango_1_1DevIntrChangeEventData.html#a33be40ed8e49d251e5ba18e87a6468ef">379</a>
+DevErrorList
+<a class="reference external" href="../../db/d47/classTango_1_1DevIntrChangeEventData.html#a33be40ed8e49d251e5ba18e87a6468ef">errors</a>;</p>
+<p>380</p>
+<p>381&nbsp;private:</p>
+<p>382&nbsp; void set_time();</p>
+<p>383&nbsp;};</p>
+<p>384</p>
+<p>385&nbsp;/********************************************************************************</p>
+<p>386&nbsp; * *</p>
+<p>387&nbsp; * DevIntrChangeEventDataList class *</p>
+<p>388&nbsp; * *</p>
+<p>389
+*******************************************************************************/</p>
+<p>390</p>
+<p><a class="reference external" href="../../dc/d3b/classTango_1_1DevIntrChangeEventDataList.html">391</a>&nbsp;class
+<a class="reference external" href="../../dc/d3b/classTango_1_1DevIntrChangeEventDataList.html">DevIntrChangeEventDataList</a>:public
+vector&lt;DevIntrChangeEventData *&gt;</p>
+<p>392&nbsp;{</p>
+<p>393&nbsp;public:</p>
+<p><a class="reference external" href="../../dc/d3b/classTango_1_1DevIntrChangeEventDataList.html#a872f6e8647f117e686bc55632184d058">394</a>
+<a class="reference external" href="../../dc/d3b/classTango_1_1DevIntrChangeEventDataList.html#a872f6e8647f117e686bc55632184d058">DevIntrChangeEventDataList</a>():
+vector&lt;<a class="reference external" href="../../db/d47/classTango_1_1DevIntrChangeEventData.html">DevIntrChangeEventData</a>
+*&gt;(0) {};</p>
+<p><a class="reference external" href="../../dc/d3b/classTango_1_1DevIntrChangeEventDataList.html#adf7441209e03b2d0e3d3ff49eca9ca16">395</a>
+<a class="reference external" href="../../dc/d3b/classTango_1_1DevIntrChangeEventDataList.html#adf7441209e03b2d0e3d3ff49eca9ca16">~DevIntrChangeEventDataList</a>()</p>
+<p>396&nbsp; {</p>
+<p>397&nbsp; if (size() &gt; 0)</p>
+<p>398&nbsp; {</p>
+<p>399&nbsp; DevIntrChangeEventDataList::iterator vpos;</p>
+<p>400&nbsp; for (vpos=begin(); vpos!=end(); ++vpos)</p>
+<p>401&nbsp; {</p>
+<p>402&nbsp; delete (*vpos);</p>
+<p>403&nbsp; }</p>
+<p>404&nbsp; }</p>
+<p>405&nbsp; }</p>
+<p><a class="reference external" href="../../dc/d3b/classTango_1_1DevIntrChangeEventDataList.html#a9d5faf3b858a7f140599260aee1bb9fa">406</a>
+void
+<a class="reference external" href="../../dc/d3b/classTango_1_1DevIntrChangeEventDataList.html#a9d5faf3b858a7f140599260aee1bb9fa">clear</a>()</p>
+<p>407&nbsp; {</p>
+<p>408&nbsp; if (size() &gt; 0)</p>
+<p>409&nbsp; {</p>
+<p>410&nbsp; DevIntrChangeEventDataList::iterator vpos;</p>
+<p>411&nbsp; for (vpos=begin(); vpos!=end(); ++vpos)</p>
+<p>412&nbsp; {</p>
+<p>413&nbsp; delete (*vpos);</p>
+<p>414&nbsp; }</p>
+<p>415</p>
+<p>416&nbsp; this-&gt;vector&lt;DevIntrChangeEventData *&gt;::clear();</p>
+<p>417&nbsp; }</p>
+<p>418&nbsp; }</p>
+<p>419&nbsp;};</p>
+<p>420</p>
+<p>421&nbsp;/********************************************************************************</p>
+<p>422&nbsp; * *</p>
+<p>423&nbsp; * PipeEventData class *</p>
+<p>424&nbsp; * *</p>
+<p>425
+*******************************************************************************/</p>
+<p>426</p>
+<p><a class="reference external" href="../../d8/d0d/classTango_1_1PipeEventData.html">439</a>&nbsp;class
+<a class="reference external" href="../../d8/d0d/classTango_1_1PipeEventData.html">PipeEventData</a></p>
+<p>440&nbsp;{</p>
+<p>441&nbsp;public :</p>
+<p>443
+<a class="reference external" href="../../d8/d0d/classTango_1_1PipeEventData.html">PipeEventData</a>() {}</p>
+<p>444
+<a class="reference external" href="../../d8/d0d/classTango_1_1PipeEventData.html">PipeEventData</a>(<a class="reference external" href="../../d9/d83/classTango_1_1DeviceProxy.html">DeviceProxy</a>
+*dev,string &amp;nam,string
+&amp;evt,<a class="reference external" href="../../da/dc5/classTango_1_1DevicePipe.html">Tango::DevicePipe</a>
+*pipe_value_in,DevErrorList &amp;errors_in);</p>
+<p>445</p>
+<p>446
+~<a class="reference external" href="../../d8/d0d/classTango_1_1PipeEventData.html">PipeEventData</a>();</p>
+<p>447
+<a class="reference external" href="../../d8/d0d/classTango_1_1PipeEventData.html">PipeEventData</a>(const
+<a class="reference external" href="../../d8/d0d/classTango_1_1PipeEventData.html">PipeEventData</a> &amp;);</p>
+<p>448&nbsp; <a class="reference external" href="../../d8/d0d/classTango_1_1PipeEventData.html">PipeEventData</a> &amp;
+operator=(const
+<a class="reference external" href="../../d8/d0d/classTango_1_1PipeEventData.html">PipeEventData</a> &amp;);</p>
+<p>452&nbsp; Tango::TimeVal reception_date;</p>
+<p>453&nbsp; Tango::TimeVal &amp;get_date() {return reception_date;}</p>
+<p>454</p>
+<p><a class="reference external" href="../../d8/d0d/classTango_1_1PipeEventData.html#ad858aeea852abd28dd5fbfd7193fc463">456</a>
+<a class="reference external" href="../../d9/d83/classTango_1_1DeviceProxy.html">DeviceProxy</a>
+*<a class="reference external" href="../../d8/d0d/classTango_1_1PipeEventData.html#ad858aeea852abd28dd5fbfd7193fc463">device</a>;</p>
+<p><a class="reference external" href="../../d8/d0d/classTango_1_1PipeEventData.html#a13fb52ff7d823781399a34d4f8aa9e0f">457</a>
+string
+<a class="reference external" href="../../d8/d0d/classTango_1_1PipeEventData.html#a13fb52ff7d823781399a34d4f8aa9e0f">pipe_name</a>;</p>
+<p><a class="reference external" href="../../d8/d0d/classTango_1_1PipeEventData.html#a4920be1cb5e2d932f68962a4dcb7fb71">458</a>
+string
+<a class="reference external" href="../../d8/d0d/classTango_1_1PipeEventData.html#a4920be1cb5e2d932f68962a4dcb7fb71">event</a>;</p>
+<p><a class="reference external" href="../../d8/d0d/classTango_1_1PipeEventData.html#a742f0f346a553510d3f6d1560d78ba2a">459</a>
+<a class="reference external" href="../../da/dc5/classTango_1_1DevicePipe.html">DevicePipe</a>
+*<a class="reference external" href="../../d8/d0d/classTango_1_1PipeEventData.html#a742f0f346a553510d3f6d1560d78ba2a">pipe_value</a>;</p>
+<p><a class="reference external" href="../../d8/d0d/classTango_1_1PipeEventData.html#a85b367c351c624ef0cb36f877b47980a">460</a>
+bool
+<a class="reference external" href="../../d8/d0d/classTango_1_1PipeEventData.html#a85b367c351c624ef0cb36f877b47980a">err</a>;</p>
+<p><a class="reference external" href="../../d8/d0d/classTango_1_1PipeEventData.html#aefe334e6f2283326ff11f0ec3a46a2ec">461</a>
+DevErrorList
+<a class="reference external" href="../../d8/d0d/classTango_1_1PipeEventData.html#aefe334e6f2283326ff11f0ec3a46a2ec">errors</a>;</p>
+<p>462</p>
+<p>463&nbsp;private:</p>
+<p>464&nbsp; void set_time();</p>
+<p>465&nbsp;};</p>
+<p>466</p>
+<p>467&nbsp;/********************************************************************************</p>
+<p>468&nbsp; * *</p>
+<p>469&nbsp; * PipeEventDataList class *</p>
+<p>470&nbsp; * *</p>
+<p>471
+*******************************************************************************/</p>
+<p>472</p>
+<p><a class="reference external" href="../../d1/d12/classTango_1_1PipeEventDataList.html">473</a>&nbsp;class
+<a class="reference external" href="../../d1/d12/classTango_1_1PipeEventDataList.html">PipeEventDataList</a>:public
+vector&lt;PipeEventData *&gt;</p>
+<p>474&nbsp;{</p>
+<p>475&nbsp;public:</p>
+<p><a class="reference external" href="../../d1/d12/classTango_1_1PipeEventDataList.html#a993c95943d47907b18b1c7f7b0fd6f16">476</a>
+<a class="reference external" href="../../d1/d12/classTango_1_1PipeEventDataList.html#a993c95943d47907b18b1c7f7b0fd6f16">PipeEventDataList</a>():
+vector&lt;<a class="reference external" href="../../d8/d0d/classTango_1_1PipeEventData.html">PipeEventData</a>
+*&gt;(0) {};</p>
+<p><a class="reference external" href="../../d1/d12/classTango_1_1PipeEventDataList.html#aba1ed1818cbccb3e07ee2da584e40e85">477</a>
+<a class="reference external" href="../../d1/d12/classTango_1_1PipeEventDataList.html#aba1ed1818cbccb3e07ee2da584e40e85">~PipeEventDataList</a>()</p>
+<p>478&nbsp; {</p>
+<p>479&nbsp; if (size() &gt; 0)</p>
+<p>480&nbsp; {</p>
+<p>481&nbsp; PipeEventDataList::iterator vpos;</p>
+<p>482&nbsp; for (vpos=begin(); vpos!=end(); ++vpos)</p>
+<p>483&nbsp; {</p>
+<p>484&nbsp; delete (*vpos);</p>
+<p>485&nbsp; }</p>
+<p>486&nbsp; }</p>
+<p>487&nbsp; }</p>
+<p><a class="reference external" href="../../d1/d12/classTango_1_1PipeEventDataList.html#aca52a643f45df5ecf81036332a874e76">488</a>
+void
+<a class="reference external" href="../../d1/d12/classTango_1_1PipeEventDataList.html#aca52a643f45df5ecf81036332a874e76">clear</a>()</p>
+<p>489&nbsp; {</p>
+<p>490&nbsp; if (size() &gt; 0)</p>
+<p>491&nbsp; {</p>
+<p>492&nbsp; PipeEventDataList::iterator vpos;</p>
+<p>493&nbsp; for (vpos=begin(); vpos!=end(); ++vpos)</p>
+<p>494&nbsp; {</p>
+<p>495&nbsp; delete (*vpos);</p>
+<p>496&nbsp; }</p>
+<p>497</p>
+<p>498&nbsp; this-&gt;vector&lt;PipeEventData *&gt;::clear();</p>
+<p>499&nbsp; }</p>
+<p>500&nbsp; }</p>
+<p>501&nbsp;};</p>
+<p>502</p>
+<p>503</p>
+<p>504&nbsp;/********************************************************************************</p>
+<p>505&nbsp; * *</p>
+<p>506&nbsp; * EventQueue class *</p>
+<p>507&nbsp; * *</p>
+<p>508
+*******************************************************************************/</p>
+<p><a class="reference external" href="../../d1/d2f/classTango_1_1EventQueue.html">509</a>&nbsp;class
+<a class="reference external" href="../../d1/d2f/classTango_1_1EventQueue.html">EventQueue</a></p>
+<p>510&nbsp;{</p>
+<p>511&nbsp;public:</p>
+<p>512
+<a class="reference external" href="../../d1/d2f/classTango_1_1EventQueue.html#aff28e8d8ab5c02d96623653e3fc58655">EventQueue</a>();</p>
+<p>513
+<a class="reference external" href="../../d1/d2f/classTango_1_1EventQueue.html#aff28e8d8ab5c02d96623653e3fc58655">EventQueue</a>(long
+max_size);</p>
+<p>514
+<a class="reference external" href="../../d1/d2f/classTango_1_1EventQueue.html#a3a80d06ad50ff07a6f6222f10492904c">~EventQueue</a>();</p>
+<p>515</p>
+<p>516&nbsp; void
+<a class="reference external" href="../../d1/d2f/classTango_1_1EventQueue.html#a6d482a1f15ffe9542e3d020be37d0d66">insert_event</a>(<a class="reference external" href="../../d7/d5f/classTango_1_1EventData.html">EventData</a>
+*new_event);</p>
+<p>517&nbsp; void
+<a class="reference external" href="../../d1/d2f/classTango_1_1EventQueue.html#a6d482a1f15ffe9542e3d020be37d0d66">insert_event</a>(<a class="reference external" href="../../d9/da1/classTango_1_1AttrConfEventData.html">AttrConfEventData</a>
+*new_event);</p>
+<p>518&nbsp; void
+<a class="reference external" href="../../d1/d2f/classTango_1_1EventQueue.html#a6d482a1f15ffe9542e3d020be37d0d66">insert_event</a>(<a class="reference external" href="../../df/d39/classTango_1_1DataReadyEventData.html">DataReadyEventData</a>
+*new_event);</p>
+<p>519&nbsp; void
+<a class="reference external" href="../../d1/d2f/classTango_1_1EventQueue.html#a6d482a1f15ffe9542e3d020be37d0d66">insert_event</a>(<a class="reference external" href="../../db/d47/classTango_1_1DevIntrChangeEventData.html">DevIntrChangeEventData</a>
+*new_event);</p>
+<p>520&nbsp; void
+<a class="reference external" href="../../d1/d2f/classTango_1_1EventQueue.html#a6d482a1f15ffe9542e3d020be37d0d66">insert_event</a>(<a class="reference external" href="../../d8/d0d/classTango_1_1PipeEventData.html">PipeEventData</a>
+*new_event);</p>
+<p>521</p>
+<p>522&nbsp; int
+<a class="reference external" href="../../d1/d2f/classTango_1_1EventQueue.html#a0ab7cfe0b9b255a9928478eddd8f955c">size</a>();</p>
+<p>523&nbsp; TimeVal
+<a class="reference external" href="../../d1/d2f/classTango_1_1EventQueue.html#a505546a336dc7cccbb0b2a9427446d93">get_last_event_date</a>();</p>
+<p><a class="reference external" href="../../d1/d2f/classTango_1_1EventQueue.html#ac1823d42d92c9b4faf6317a0a08be94e">524</a>
+bool
+<a class="reference external" href="../../d1/d2f/classTango_1_1EventQueue.html#ac1823d42d92c9b4faf6317a0a08be94e">is_empty</a>()
+{if (event_buffer.empty() == true) return true;else return false;}</p>
+<p>525</p>
+<p>526&nbsp; void
+<a class="reference external" href="../../d1/d2f/classTango_1_1EventQueue.html#af1a21b499b68ce9adbb44122548ac559">get_events</a>(<a class="reference external" href="../../d3/d57/classTango_1_1EventDataList.html">EventDataList</a>
+&amp;event_list);</p>
+<p>527&nbsp; void
+<a class="reference external" href="../../d1/d2f/classTango_1_1EventQueue.html#af1a21b499b68ce9adbb44122548ac559">get_events</a>(<a class="reference external" href="../../d5/d4a/classTango_1_1AttrConfEventDataList.html">AttrConfEventDataList</a>
+&amp;event_list);</p>
+<p>528&nbsp; void
+<a class="reference external" href="../../d1/d2f/classTango_1_1EventQueue.html#af1a21b499b68ce9adbb44122548ac559">get_events</a>(<a class="reference external" href="../../d0/d3e/classTango_1_1DataReadyEventDataList.html">DataReadyEventDataList</a>
+&amp;event_list);</p>
+<p>529&nbsp; void
+<a class="reference external" href="../../d1/d2f/classTango_1_1EventQueue.html#af1a21b499b68ce9adbb44122548ac559">get_events</a>(<a class="reference external" href="../../dc/d3b/classTango_1_1DevIntrChangeEventDataList.html">DevIntrChangeEventDataList</a>
+&amp;event_list);</p>
+<p>530&nbsp; void
+<a class="reference external" href="../../d1/d2f/classTango_1_1EventQueue.html#af1a21b499b68ce9adbb44122548ac559">get_events</a>(<a class="reference external" href="../../d1/d12/classTango_1_1PipeEventDataList.html">PipeEventDataList</a>
+&amp;event_list);</p>
+<p>531&nbsp; void
+<a class="reference external" href="../../d1/d2f/classTango_1_1EventQueue.html#af1a21b499b68ce9adbb44122548ac559">get_events</a>(<a class="reference external" href="../../d4/ded/classTango_1_1CallBack.html">CallBack</a>
+*cb);</p>
+<p>532</p>
+<p>533&nbsp;private:</p>
+<p>534&nbsp; void inc_indexes();</p>
+<p>535</p>
+<p>536&nbsp; vector&lt;EventData *&gt; event_buffer;</p>
+<p>537&nbsp; vector&lt;AttrConfEventData *&gt; conf_event_buffer;</p>
+<p>538&nbsp; vector&lt;DataReadyEventData *&gt; ready_event_buffer;</p>
+<p>539&nbsp; vector&lt;DevIntrChangeEventData *&gt; dev_inter_event_buffer;</p>
+<p>540&nbsp; vector&lt;PipeEventData *&gt; pipe_event_buffer;</p>
+<p>541</p>
+<p>542&nbsp; long max_elt;</p>
+<p>543&nbsp; long insert_elt;</p>
+<p>544&nbsp; long nb_elt;</p>
+<p>545</p>
+<p>546&nbsp; omni_mutex modification_mutex;</p>
+<p>547&nbsp;};</p>
+<p>548</p>
+<p>549</p>
+<p>550&nbsp;} // End of namespace</p>
+<p>551</p>
+<p>552</p>
+<p>553&nbsp;#endif // _EVENTAPI_H</p>
+<p><a class="reference external" href="../../d8/d0d/classTango_1_1PipeEventData.html#aefe334e6f2283326ff11f0ec3a46a2ec">Tango::PipeEventData::errors</a></p>
+<p>DevErrorList errors</p>
+<p>The error stack.</p>
+<p><strong>Definition:</strong> event.h:461</p>
+<p><a class="reference external" href="../../db/d47/classTango_1_1DevIntrChangeEventData.html">Tango::DevIntrChangeEventData</a></p>
+<p>Device interface change event callback execution data.</p>
+<p><strong>Definition:</strong> event.h:353</p>
+<p><a class="reference external" href="../../d9/da1/classTango_1_1AttrConfEventData.html#af84272ced68dde94791aa090fc80bd24">Tango::AttrConfEventData::attr_conf</a></p>
+<p>AttributeInfoEx * attr_conf</p>
+<p>The attribute configuration.</p>
+<p><strong>Definition:</strong> event.h:193</p>
+<p><a class="reference external" href="../../dc/d65/except_8h.html">except.h</a></p>
+<p><a class="reference external" href="../../db/d47/classTango_1_1DevIntrChangeEventData.html#a9d4af2556b9cda47da2210546419f3ca">Tango::DevIntrChangeEventData::event</a></p>
+<p>string event</p>
+<p>The event name.</p>
+<p><strong>Definition:</strong> event.h:371</p>
+<p><a class="reference external" href="../../df/d39/classTango_1_1DataReadyEventData.html#acc8ce497a9b75d7db6878472ae471995">Tango::DataReadyEventData::errors</a></p>
+<p>DevErrorList errors</p>
+<p>The error stack.</p>
+<p><strong>Definition:</strong> event.h:291</p>
+<p><a class="reference external" href="../../d3/d71/structTango_1_1AttributeInfoEx.html">Tango::AttributeInfoEx</a></p>
+<p>Extended attribute configuration data.</p>
+<p><strong>Definition:</strong> devapi.h:330</p>
+<p><a class="reference external" href="../../db/d47/classTango_1_1DevIntrChangeEventData.html#a89db4537a1e2634d03b6f3836469a5e0">Tango::DevIntrChangeEventData::att_list</a></p>
+<p>AttributeInfoListEx att_list</p>
+<p>Device attribute list info.</p>
+<p><strong>Definition:</strong> event.h:374</p>
+<p><a class="reference external" href="../../d5/d4a/classTango_1_1AttrConfEventDataList.html">Tango::AttrConfEventDataList</a></p>
+<p><strong>Definition:</strong> event.h:220</p>
+<p><a class="reference external" href="../../d1/d12/classTango_1_1PipeEventDataList.html#a993c95943d47907b18b1c7f7b0fd6f16">Tango::PipeEventDataList::PipeEventDataList</a></p>
+<p>PipeEventDataList()</p>
+<p><strong>Definition:</strong> event.h:476</p>
+<p><a class="reference external" href="../../d8/d0d/classTango_1_1PipeEventData.html">Tango::PipeEventData</a></p>
+<p>Pipe event callback execution data.</p>
+<p><strong>Definition:</strong> event.h:439</p>
+<p><a class="reference external" href="../../df/d39/classTango_1_1DataReadyEventData.html#a90279b05b0751e18e8f348c0a41848fa">Tango::DataReadyEventData::event</a></p>
+<p>string event</p>
+<p>The event name.</p>
+<p><strong>Definition:</strong> event.h:286</p>
+<p><a class="reference external" href="../../db/d47/classTango_1_1DevIntrChangeEventData.html#acc8d3960c808ddbcd750224ba1d9f417">Tango::DevIntrChangeEventData::device_name</a></p>
+<p>string device_name</p>
+<p>The device name.</p>
+<p><strong>Definition:</strong> event.h:372</p>
+<p><a class="reference external" href="../../d8/d0d/classTango_1_1PipeEventData.html#ad858aeea852abd28dd5fbfd7193fc463">Tango::PipeEventData::device</a></p>
+<p>DeviceProxy * device</p>
+<p>The DeviceProxy object on which the call was executed.</p>
+<p><strong>Definition:</strong> event.h:456</p>
+<p><a class="reference external" href="../../d0/d71/classTango_1_1FwdEventData.html#a619ea982fd645f27cab11c4c66de586b">Tango::FwdEventData::get_av_5</a></p>
+<p>const AttributeValue_5 * get_av_5()</p>
+<p><strong>Definition:</strong> event.h:109</p>
+<p><a class="reference external" href="../../d0/d71/classTango_1_1FwdEventData.html">Tango::FwdEventData</a></p>
+<p><strong>Definition:</strong> event.h:101</p>
+<p><a class="reference external" href="../../d1/d45/group__Client.html#ga7175e05437edf640b8e555d1a601335c">Tango::AttributeInfoListEx</a></p>
+<p>vector&lt; AttributeInfoEx &gt; AttributeInfoListEx</p>
+<p>vector of AttributeInfoEx structure</p>
+<p><strong>Definition:</strong> devapi.h:359</p>
+<p><a class="reference external" href="../../d9/da1/classTango_1_1AttrConfEventData.html#a950448309e5b62a4387d94fd38ce0d75">Tango::AttrConfEventData::attr_name</a></p>
+<p>string attr_name</p>
+<p>The attribute name.</p>
+<p><strong>Definition:</strong> event.h:191</p>
+<p><a class="reference external" href="../../d5/d4a/classTango_1_1AttrConfEventDataList.html#aded16cd8d6444b0eeafebdb718c34d90">Tango::AttrConfEventDataList::~AttrConfEventDataList</a></p>
+<p>~AttrConfEventDataList()</p>
+<p><strong>Definition:</strong> event.h:224</p>
+<p><a class="reference external" href="../../da/dc5/classTango_1_1DevicePipe.html">Tango::DevicePipe</a></p>
+<p>Fundamental type for sending/receiving data from device pipes.</p>
+<p><strong>Definition:</strong> devapi.h:811</p>
+<p><a class="reference external" href="../../d7/d5f/classTango_1_1EventData.html#a415f9374bb792e3a638447c66af32523">Tango::EventData::err</a></p>
+<p>bool err</p>
+<p>A boolean flag set to true if the request failed. False otherwise.</p>
+<p><strong>Definition:</strong> event.h:94</p>
+<p><a class="reference external" href="../../d0/d3e/classTango_1_1DataReadyEventDataList.html">Tango::DataReadyEventDataList</a></p>
+<p><strong>Definition:</strong> event.h:303</p>
+<p><a class="reference external" href="../../df/d39/classTango_1_1DataReadyEventData.html#a2cd31366088f9fee0d06364c2a81796f">Tango::DataReadyEventData::attr_name</a></p>
+<p>string attr_name</p>
+<p>The attribute name.</p>
+<p><strong>Definition:</strong> event.h:285</p>
+<p><a class="reference external" href="../../d4/ded/classTango_1_1CallBack.html">Tango::CallBack</a></p>
+<p>Event and asynchronous (callback model) calls base class.</p>
+<p><strong>Definition:</strong> devasyn.h:234</p>
+<p><a class="reference external" href="../../d1/d2f/classTango_1_1EventQueue.html#a6d482a1f15ffe9542e3d020be37d0d66">Tango::EventQueue::insert_event</a></p>
+<p>void insert_event(EventData *new_event)</p>
+<p><a class="reference external" href="../../d1/d2f/classTango_1_1EventQueue.html#a505546a336dc7cccbb0b2a9427446d93">Tango::EventQueue::get_last_event_date</a></p>
+<p>TimeVal get_last_event_date()</p>
+<p><a class="reference external" href="../../de/ddf/namespaceTango.html">Tango</a></p>
+<hr class="docutils" />
+<p><strong>Definition:</strong> device.h:50</p>
+<p><a class="reference external" href="../../d1/d12/classTango_1_1PipeEventDataList.html#aba1ed1818cbccb3e07ee2da584e40e85">Tango::PipeEventDataList::~PipeEventDataList</a></p>
+<p>~PipeEventDataList()</p>
+<p><strong>Definition:</strong> event.h:477</p>
+<p><a class="reference external" href="../../db/d47/classTango_1_1DevIntrChangeEventData.html#adbf8cb3b33018c236a5fa1440edb3588">Tango::DevIntrChangeEventData::dev_started</a></p>
+<p>bool dev_started</p>
+<p>Device started flag (true when event sent due to device being
+(re)started and with only a possible bu...</p>
+<p><strong>Definition:</strong> event.h:375</p>
+<p><a class="reference external" href="../../df/d39/classTango_1_1DataReadyEventData.html">Tango::DataReadyEventData</a></p>
+<p>Data ready event callback execution data.</p>
+<p><strong>Definition:</strong> event.h:268</p>
+<p><a class="reference external" href="../../db/d47/classTango_1_1DevIntrChangeEventData.html#aa23d2843deae51a30852fb1d49d51c91">Tango::DevIntrChangeEventData::device</a></p>
+<p>DeviceProxy * device</p>
+<p>The DeviceProxy object on which the call was executed.</p>
+<p><strong>Definition:</strong> event.h:370</p>
+<p><a class="reference external" href="../../de/ddf/namespaceTango.html#a6d32a888f539065eae8dd0dec4c32b63">Tango::leavefunc</a></p>
+<p>void leavefunc()</p>
+<p><a class="reference external" href="../../d5/d4a/classTango_1_1AttrConfEventDataList.html#a2bdc684a5056ac4c891e904e088c520e">Tango::AttrConfEventDataList::clear</a></p>
+<p>void clear()</p>
+<p><strong>Definition:</strong> event.h:235</p>
+<p><a class="reference external" href="../../d7/d5f/classTango_1_1EventData.html#abbb35ed304e18a77b63d8b49210329e6">Tango::EventData::errors</a></p>
+<p>DevErrorList errors</p>
+<p>The error stack.</p>
+<p><strong>Definition:</strong> event.h:95</p>
+<p><a class="reference external" href="../../d0/d71/classTango_1_1FwdEventData.html#ac40ba97b20f3b6e560a49645f490d0dc">Tango::FwdEventData::FwdEventData</a></p>
+<p>FwdEventData()</p>
+<p><a class="reference external" href="../../df/d39/classTango_1_1DataReadyEventData.html#abc2542d1f11b9d8faff06e524793aa69">Tango::DataReadyEventData::attr_data_type</a></p>
+<p>int attr_data_type</p>
+<p>The attribute data type.</p>
+<p><strong>Definition:</strong> event.h:287</p>
+<p><a class="reference external" href="../../d0/d3e/classTango_1_1DataReadyEventDataList.html#a3acc594e72f1ae67e29797a0b66aac19">Tango::DataReadyEventDataList::clear</a></p>
+<p>void clear()</p>
+<p><strong>Definition:</strong> event.h:318</p>
+<p><a class="reference external" href="../../d3/d57/classTango_1_1EventDataList.html#afc697e717c9f28a44a32fb7065f8589d">Tango::EventDataList::clear</a></p>
+<p>void clear()</p>
+<p><strong>Definition:</strong> event.h:137</p>
+<p><a class="reference external" href="../../df/d39/classTango_1_1DataReadyEventData.html#a7df862854af7b80913dcb9dd1d330a64">Tango::DataReadyEventData::device</a></p>
+<p>DeviceProxy * device</p>
+<p>The DeviceProxy object on which the call was executed.</p>
+<p><strong>Definition:</strong> event.h:284</p>
+<p><a class="reference external" href="../../d3/d7c/attribute_8h.html">attribute.h</a></p>
+<p><a class="reference external" href="../../d1/d12/classTango_1_1PipeEventDataList.html">Tango::PipeEventDataList</a></p>
+<p><strong>Definition:</strong> event.h:473</p>
+<p><a class="reference external" href="../../d1/d12/classTango_1_1PipeEventDataList.html#aca52a643f45df5ecf81036332a874e76">Tango::PipeEventDataList::clear</a></p>
+<p>void clear()</p>
+<p><strong>Definition:</strong> event.h:488</p>
+<p><a class="reference external" href="../../d9/da1/classTango_1_1AttrConfEventData.html#a6da04a13ce41eff0ddcf63417f001c13">Tango::AttrConfEventData::device</a></p>
+<p>DeviceProxy * device</p>
+<p>The DeviceProxy object on which the call was executed.</p>
+<p><strong>Definition:</strong> event.h:190</p>
+<p><a class="reference external" href="../../d0/d71/classTango_1_1FwdEventData.html#a07b8a8e405b306fd9092ace7de53401d">Tango::FwdEventData::set_av_5</a></p>
+<p>void set_av_5(const AttributeValue_5 *_p)</p>
+<p><strong>Definition:</strong> event.h:108</p>
+<p><a class="reference external" href="../../d1/d2f/classTango_1_1EventQueue.html#af1a21b499b68ce9adbb44122548ac559">Tango::EventQueue::get_events</a></p>
+<p>void get_events(EventDataList &amp;event_list)</p>
+<p><a class="reference external" href="../../dc/d3b/classTango_1_1DevIntrChangeEventDataList.html#a9d5faf3b858a7f140599260aee1bb9fa">Tango::DevIntrChangeEventDataList::clear</a></p>
+<p>void clear()</p>
+<p><strong>Definition:</strong> event.h:406</p>
+<p><a class="reference external" href="../../d7/d5f/classTango_1_1EventData.html#ae56b5ea4399a060a10cba21884fc7a40">Tango::EventData::device</a></p>
+<p>DeviceProxy * device</p>
+<p>The DeviceProxy object on which the call was executed.</p>
+<p><strong>Definition:</strong> event.h:90</p>
+<p><a class="reference external" href="../../d7/d5f/classTango_1_1EventData.html">Tango::EventData</a></p>
+<p>Event callback execution data.</p>
+<p><strong>Definition:</strong> event.h:73</p>
+<p><a class="reference external" href="../../d1/d08/classTango_1_1FwdAttrConfEventData.html#a8954f696a706ec4aa1f7390e974de017">Tango::FwdAttrConfEventData::set_fwd_attr_conf</a></p>
+<p>void set_fwd_attr_conf(const AttributeConfig_5 *_p)</p>
+<p><strong>Definition:</strong> event.h:208</p>
+<p><a class="reference external" href="../../d8/d0d/classTango_1_1PipeEventData.html#a85b367c351c624ef0cb36f877b47980a">Tango::PipeEventData::err</a></p>
+<p>bool err</p>
+<p>A boolean flag set to true if the request failed. False otherwise.</p>
+<p><strong>Definition:</strong> event.h:460</p>
+<p><a class="reference external" href="../../dc/d3b/classTango_1_1DevIntrChangeEventDataList.html#a872f6e8647f117e686bc55632184d058">Tango::DevIntrChangeEventDataList::DevIntrChangeEventDataList</a></p>
+<p>DevIntrChangeEventDataList()</p>
+<p><strong>Definition:</strong> event.h:394</p>
+<p><a class="reference external" href="../../db/d47/classTango_1_1DevIntrChangeEventData.html#a33be40ed8e49d251e5ba18e87a6468ef">Tango::DevIntrChangeEventData::errors</a></p>
+<p>DevErrorList errors</p>
+<p>The error stack.</p>
+<p><strong>Definition:</strong> event.h:379</p>
+<p><a class="reference external" href="../../d7/d5f/classTango_1_1EventData.html#a5c709e4322db6f5129abf5063044c4a7">Tango::EventData::attr_value</a></p>
+<p>DeviceAttribute * attr_value</p>
+<p>The attribute data.</p>
+<p><strong>Definition:</strong> event.h:93</p>
+<p><a class="reference external" href="../../d1/d08/classTango_1_1FwdAttrConfEventData.html">Tango::FwdAttrConfEventData</a></p>
+<p><strong>Definition:</strong> event.h:202</p>
+<p><a class="reference external" href="../../d1/d2f/classTango_1_1EventQueue.html#aff28e8d8ab5c02d96623653e3fc58655">Tango::EventQueue::EventQueue</a></p>
+<p>EventQueue()</p>
+<p><a class="reference external" href="../../d1/d2f/classTango_1_1EventQueue.html#a0ab7cfe0b9b255a9928478eddd8f955c">Tango::EventQueue::size</a></p>
+<p>int size()</p>
+<p><a class="reference external" href="../../df/d39/classTango_1_1DataReadyEventData.html#afc55fe4eee219eea959e8ad53d34f310">Tango::DataReadyEventData::err</a></p>
+<p>bool err</p>
+<p>A boolean flag set to true if the request failed. False otherwise.</p>
+<p><strong>Definition:</strong> event.h:290</p>
+<p><a class="reference external" href="../../d0/d3e/classTango_1_1DataReadyEventDataList.html#a8f1c43c6f88edbcf56fa991a35f34d77">Tango::DataReadyEventDataList::~DataReadyEventDataList</a></p>
+<p>~DataReadyEventDataList()</p>
+<p><strong>Definition:</strong> event.h:307</p>
+<p><a class="reference external" href="../../d7/dca/classTango_1_1DeviceAttribute.html">Tango::DeviceAttribute</a></p>
+<p>Fundamental type for sending an dreceiving data to and from device
+attributes.</p>
+<p><strong>Definition:</strong> devapi.h:73</p>
+<p><a class="reference external" href="../../db/d47/classTango_1_1DevIntrChangeEventData.html#ab75f7e002dd7df09755b26e513231dc2">Tango::DevIntrChangeEventData::cmd_list</a></p>
+<p>CommandInfoList cmd_list</p>
+<p>Device command list info.</p>
+<p><strong>Definition:</strong> event.h:373</p>
+<p><a class="reference external" href="../../df/d39/classTango_1_1DataReadyEventData.html#a68d3c729f0f7aa64540f30c65b2b690f">Tango::DataReadyEventData::ctr</a></p>
+<p>int ctr</p>
+<p>The user counter. Set to 0 if not defined when sent by the server.</p>
+<p><strong>Definition:</strong> event.h:288</p>
+<p><a class="reference external" href="../../d9/da1/classTango_1_1AttrConfEventData.html">Tango::AttrConfEventData</a></p>
+<p>Attribute configuration change event callback execution data.</p>
+<p><strong>Definition:</strong> event.h:172</p>
+<p><a class="reference external" href="../../d9/da1/classTango_1_1AttrConfEventData.html#adb1f2a3796ba28cfa8a6de522b1596a8">Tango::AttrConfEventData::errors</a></p>
+<p>DevErrorList errors</p>
+<p>The error stack.</p>
+<p><strong>Definition:</strong> event.h:195</p>
+<p><a class="reference external" href="../../db/d47/classTango_1_1DevIntrChangeEventData.html#a52384944b2b92cbd9ecf66b21c4a9fdc">Tango::DevIntrChangeEventData::err</a></p>
+<p>bool err</p>
+<p>A boolean flag set to true if the request failed. False otherwise.</p>
+<p><strong>Definition:</strong> event.h:378</p>
+<p><a class="reference external" href="../../d3/d57/classTango_1_1EventDataList.html#ac1d92a0c7d7056b40d504f70ed3b13c5">Tango::EventDataList::EventDataList</a></p>
+<p>EventDataList()</p>
+<p><strong>Definition:</strong> event.h:125</p>
+<p><a class="reference external" href="../../d1/d2f/classTango_1_1EventQueue.html#a3a80d06ad50ff07a6f6222f10492904c">Tango::EventQueue::~EventQueue</a></p>
+<p>~EventQueue()</p>
+<p><a class="reference external" href="../../d1/d45/group__Client.html#ga702913bccb1c2d427d7a6f046602d657">Tango::CommandInfoList</a></p>
+<p>vector&lt; CommandInfo &gt; CommandInfoList</p>
+<p>A vector of CommandInfo structure.</p>
+<p><strong>Definition:</strong> devapi.h:146</p>
+<p><a class="reference external" href="../../d0/d71/classTango_1_1FwdEventData.html#a44b315e19fbd41954b9174c4fe8b5efc">Tango::FwdEventData::get_zmq_mess_ptr</a></p>
+<p>zmq::message_t * get_zmq_mess_ptr()</p>
+<p><strong>Definition:</strong> event.h:110</p>
+<p><a class="reference external" href="../../d7/d5f/classTango_1_1EventData.html#a0bd1e69e134e164209b86a4630357934">Tango::EventData::attr_name</a></p>
+<p>string attr_name</p>
+<p>The attribute name.</p>
+<p><strong>Definition:</strong> event.h:91</p>
+<p><a class="reference external" href="../../d3/d57/classTango_1_1EventDataList.html">Tango::EventDataList</a></p>
+<p><strong>Definition:</strong> event.h:122</p>
+<p><a class="reference external" href="../../d8/d0d/classTango_1_1PipeEventData.html#a4920be1cb5e2d932f68962a4dcb7fb71">Tango::PipeEventData::event</a></p>
+<p>string event</p>
+<p>The event name.</p>
+<p><strong>Definition:</strong> event.h:458</p>
+<p><a class="reference external" href="../../d1/d08/classTango_1_1FwdAttrConfEventData.html#ade61194ca130c87b018f3222d6970264">Tango::FwdAttrConfEventData::get_fwd_attr_conf</a></p>
+<p>const AttributeConfig_5 * get_fwd_attr_conf()</p>
+<p><strong>Definition:</strong> event.h:209</p>
+<p><a class="reference external" href="../../dc/d3b/classTango_1_1DevIntrChangeEventDataList.html#adf7441209e03b2d0e3d3ff49eca9ca16">Tango::DevIntrChangeEventDataList::~DevIntrChangeEventDataList</a></p>
+<p>~DevIntrChangeEventDataList()</p>
+<p><strong>Definition:</strong> event.h:395</p>
+<p><a class="reference external" href="../../d8/d0d/classTango_1_1PipeEventData.html#a13fb52ff7d823781399a34d4f8aa9e0f">Tango::PipeEventData::pipe_name</a></p>
+<p>string pipe_name</p>
+<p>The pipe name.</p>
+<p><strong>Definition:</strong> event.h:457</p>
+<p><a class="reference external" href="../../d5/d4a/classTango_1_1AttrConfEventDataList.html#a4f05996e7c728cbe81a3d9c7537681b9">Tango::AttrConfEventDataList::AttrConfEventDataList</a></p>
+<p>AttrConfEventDataList()</p>
+<p><strong>Definition:</strong> event.h:223</p>
+<p><a class="reference external" href="../../d3/d57/classTango_1_1EventDataList.html#a5fa9bd471834abf508f4dbf79de09d5e">Tango::EventDataList::~EventDataList</a></p>
+<p>~EventDataList()</p>
+<p><strong>Definition:</strong> event.h:126</p>
+<p><a class="reference external" href="../../d1/d2f/classTango_1_1EventQueue.html">Tango::EventQueue</a></p>
+<p><strong>Definition:</strong> event.h:509</p>
+<p><a class="reference external" href="../../d9/da1/classTango_1_1AttrConfEventData.html#a2e3fb06bc98bb156e254ebeb6a1c222e">Tango::AttrConfEventData::err</a></p>
+<p>bool err</p>
+<p>A boolean flag set to true if the request failed. False otherwise.</p>
+<p><strong>Definition:</strong> event.h:194</p>
+<p><a class="reference external" href="../../d9/d83/classTango_1_1DeviceProxy.html">Tango::DeviceProxy</a></p>
+<p>High level class which provides the client with an easy-to-use interface
+to TANGO devices...</p>
+<p><strong>Definition:</strong> devapi.h:56</p>
+<p><a class="reference external" href="../../d8/d0d/classTango_1_1PipeEventData.html#a742f0f346a553510d3f6d1560d78ba2a">Tango::PipeEventData::pipe_value</a></p>
+<p>DevicePipe * pipe_value</p>
+<p>The pipe data.</p>
+<p><strong>Definition:</strong> event.h:459</p>
+<p><a class="reference external" href="../../d9/da1/classTango_1_1AttrConfEventData.html#a70a8c86b121849afab88c952c6cc8bde">Tango::AttrConfEventData::event</a></p>
+<p>string event</p>
+<p>The event name.</p>
+<p><strong>Definition:</strong> event.h:192</p>
+<p><a class="reference external" href="../../d7/d5f/classTango_1_1EventData.html#a346675d2a32c917164b53fa653af173c">Tango::EventData::event</a></p>
+<p>string event</p>
+<p>The event name.</p>
+<p><strong>Definition:</strong> event.h:92</p>
+<p><a class="reference external" href="../../dc/d3b/classTango_1_1DevIntrChangeEventDataList.html">Tango::DevIntrChangeEventDataList</a></p>
+<p><strong>Definition:</strong> event.h:391</p>
+<p><a class="reference external" href="../../d1/d08/classTango_1_1FwdAttrConfEventData.html#a65b41bd462ee1a1bea3ea0f7a8d62a37">Tango::FwdAttrConfEventData::FwdAttrConfEventData</a></p>
+<p>FwdAttrConfEventData()</p>
+<p><a class="reference external" href="../../d4/d13/tango__const_8h.html">tango_const.h</a></p>
+<p><a class="reference external" href="../../d1/d2f/classTango_1_1EventQueue.html#ac1823d42d92c9b4faf6317a0a08be94e">Tango::EventQueue::is_empty</a></p>
+<p>bool is_empty()</p>
+<p><strong>Definition:</strong> event.h:524</p>
+<p><a class="reference external" href="../../d0/d3e/classTango_1_1DataReadyEventDataList.html#a0777dbe24e4e7a121b66a3162b816647">Tango::DataReadyEventDataList::DataReadyEventDataList</a></p>
+<p>DataReadyEventDataList()</p>
+<p><strong>Definition:</strong> event.h:306</p>
+<ul class="simple">
+<li><a class="reference external" href="../../dir_93bc669b4520ad36068f344e109b7d17.html">include</a></li>
+<li><a class="reference external" href="../../dir_8ff48e8f3ef80891a9957ae5e9583431.html">tango</a></li>
+<li><a class="reference external" href="../../dir_aabb28ef55dfa122001606060d01cd05.html">client</a></li>
+<li><a class="reference external" href="../../dd/d20/event_8h.html">event.h</a></li>
+<li>Generated on Fri Oct 7 2016 11:11:15 for Tango Core Classes Reference
+by <a class="reference external" href="http://www.doxygen.org/index.html"><img alt="doxygen" src="../../_images/doxygen347.png" /></a> 1.8.8</li>
+</ul>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/dd/d20/event_8h_source.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, 3Controls.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.8</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+      |
+      <a href="../../_sources/dd/d20/event_8h_source.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,545 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>&lt;no title&gt; &#8212; Tango Core Classes Reference Documentation 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="top" title="Tango Core Classes Reference Documentation 1.0 documentation" href="../../index.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><img alt="Logo" src="../../_images/logo198.jpg" /></td>
+<td>Tango Core Classes Reference &nbsp;9.2.5</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><a class="reference external" href="../../index.html">Main&nbsp;Page</a></li>
+<li><a class="reference external" href="../../pages.html">Related&nbsp;Pages</a></li>
+<li><a class="reference external" href="../../modules.html">Modules</a></li>
+<li><a class="reference external" href="../../namespaces.html">Namespaces</a></li>
+<li><a class="reference external" href="../../annotated.html">Classes</a></li>
+<li><a class="reference external" href="../../files.html">Files</a></li>
+<li><a class="reference external" href="../../files.html">File&nbsp;List</a></li>
+<li><a class="reference external" href="../../globals.html">File&nbsp;Members</a></li>
+</ul>
+<p>deviceclass.h</p>
+<p><a class="reference external" href="../../d7/dfc/deviceclass_8h.html">Go to the documentation of this
+file.</a></p>
+<p>1&nbsp;//=============================================================================</p>
+<p>2&nbsp;//</p>
+<p>3&nbsp;// file : Deviceclass.h</p>
+<p>4&nbsp;//</p>
+<p>5&nbsp;// description : Include file for the DeviceClass root class.</p>
+<p>6&nbsp;//</p>
+<p>7&nbsp;// project : TANGO</p>
+<p>8&nbsp;//</p>
+<p>9&nbsp;// author(s) : E.Taurel</p>
+<p>10&nbsp;//</p>
+<p>11&nbsp;// Copyright (C) :
+2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015</p>
+<p>12&nbsp;// European Synchrotron Radiation Facility</p>
+<p>13&nbsp;// BP 220, Grenoble 38043</p>
+<p>14&nbsp;// FRANCE</p>
+<p>15&nbsp;//</p>
+<p>16&nbsp;// This file is part of Tango.</p>
+<p>17&nbsp;//</p>
+<p>18&nbsp;// Tango is free software: you can redistribute it and/or modify</p>
+<p>19&nbsp;// it under the terms of the GNU Lesser General Public License as
+published by</p>
+<p>20&nbsp;// the Free Software Foundation, either version 3 of the License, or</p>
+<p>21&nbsp;// (at your option) any later version.</p>
+<p>22&nbsp;//</p>
+<p>23&nbsp;// Tango is distributed in the hope that it will be useful,</p>
+<p>24&nbsp;// but WITHOUT ANY WARRANTY; without even the implied warranty of</p>
+<p>25&nbsp;// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the</p>
+<p>26&nbsp;// GNU Lesser General Public License for more details.</p>
+<p>27&nbsp;//</p>
+<p>28&nbsp;// You should have received a copy of the GNU Lesser General Public
+License</p>
+<p>29&nbsp;// along with Tango. If not, see &lt;<a class="reference external" href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>&gt;.</p>
+<p>30&nbsp;//</p>
+<p>31&nbsp;// $Revision$</p>
+<p>32&nbsp;//</p>
+<p>33&nbsp;//</p>
+<p>34&nbsp;//=============================================================================</p>
+<p>35</p>
+<p>36&nbsp;#ifndef _DEVICECLASS_H</p>
+<p>37&nbsp;#define _DEVICECLASS_H</p>
+<p>38</p>
+<p>39&nbsp;namespace <a class="reference external" href="../../de/ddf/namespaceTango.html">Tango</a></p>
+<p>40&nbsp;{</p>
+<p>41</p>
+<p>42&nbsp;class Command;</p>
+<p>43&nbsp;class Pipe;</p>
+<p>44&nbsp;class DeviceClass;</p>
+<p>45&nbsp;class AutoTangoMonitor;</p>
+<p>46&nbsp;class NoSyncModelTangoMonitor;</p>
+<p>47&nbsp;class EventSupplier;</p>
+<p>48&nbsp;class Util;</p>
+<p>49&nbsp;class DServer;</p>
+<p>50</p>
+<p>51</p>
+<p>52&nbsp;//=============================================================================</p>
+<p>53&nbsp;//</p>
+<p>54&nbsp;// The DeviceClass class</p>
+<p>55&nbsp;//</p>
+<p>56&nbsp;//</p>
+<p>57&nbsp;// description : This class will act as root class for all other</p>
+<p>58&nbsp;// DeviceClass classes. Its job is to define all Device</p>
+<p>59&nbsp;// class related properties and methods which exist only</p>
+<p>60&nbsp;// once e.g. the command list.</p>
+<p>61&nbsp;//</p>
+<p>62&nbsp;//=============================================================================</p>
+<p>63</p>
+<p><a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html">76</a>&nbsp;class</p>
+<p>77&nbsp;#ifdef _TG_WINDOWS_</p>
+<p>78&nbsp; #ifndef _TANGO_LIB</p>
+<p>79&nbsp; __declspec(dllexport)</p>
+<p>80&nbsp; #endif</p>
+<p>81&nbsp;#endif</p>
+<p>82&nbsp; <a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html">DeviceClass</a></p>
+<p>83&nbsp;{</p>
+<p><a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html#aa90445f0324fbdea288f7b41aa4a6790">84</a>
+friend class Tango::AutoTangoMonitor;</p>
+<p>85&nbsp;public:</p>
+<p>86</p>
+<p>93&nbsp; virtual
+~<a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html">DeviceClass</a>();</p>
+<p>95</p>
+<p>117&nbsp; CORBA::Any
+*command_handler(<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html">DeviceImpl</a>
+*device,</p>
+<p>118&nbsp; string &amp;command,const CORBA::Any &amp;in_any);</p>
+<p>127&nbsp; virtual void command_factory() = 0;</p>
+<p><a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html#a0ea1a3848a3d59f55a6734772859c4ec">136</a>
+virtual void
+<a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html#a0ea1a3848a3d59f55a6734772859c4ec">attribute_factory</a>(vector&lt;Attr
+*&gt; &amp;) {};</p>
+<p><a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html#a09321e4257b799709d77f40ace03242a">145</a>
+virtual void
+<a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html#a09321e4257b799709d77f40ace03242a">pipe_factory</a>()
+{};</p>
+<p>146</p>
+<p>160&nbsp; virtual void device_factory(const Tango::DevVarStringArray
+*dev_list) = 0;</p>
+<p>161</p>
+<p><a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html#a2596f49733e5dc80d52d8d240f4f83cd">172</a>
+virtual void
+<a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html#a2596f49733e5dc80d52d8d240f4f83cd">device_name_factory</a>(vector&lt;string&gt;
+&amp;list) {(void)list;};</p>
+<p>173</p>
+<p>184&nbsp; void device_destroyer(const string &amp;dev_name);</p>
+<p>185</p>
+<p>196&nbsp; void device_destroyer(const char *dev_name);</p>
+<p>197</p>
+<p>199</p>
+<p><a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html#a0577ce350035604373496d5d1fceee39">210</a>
+string
+&amp;<a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html#a0577ce350035604373496d5d1fceee39">get_name</a>()
+{return name;}</p>
+<p><a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html#a66c9909cee0aba6e337d4b80ff1396c0">216</a>
+string
+&amp;<a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html#a66c9909cee0aba6e337d4b80ff1396c0">get_doc_url</a>()
+{return doc_url;}</p>
+<p><a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html#aca6317feaf809a2f18d0c28a6ae9df53">222</a>
+string
+&amp;<a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html#aca6317feaf809a2f18d0c28a6ae9df53">get_type</a>()
+{return type;}</p>
+<p><a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html#ad6359a7f1e9677b65102224b84d0cb98">228</a>
+vector&lt;DeviceImpl *&gt;
+&amp;<a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html#ad6359a7f1e9677b65102224b84d0cb98">get_device_list</a>()
+{return device_list;}</p>
+<p><a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html#a9e37d56d78b31cbc5c767f65c1b2117f">234</a>
+vector&lt;Command *&gt;
+&amp;<a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html#a9e37d56d78b31cbc5c767f65c1b2117f">get_command_list</a>()
+{return command_list;}</p>
+<p>242&nbsp; vector&lt;Pipe *&gt; &amp;get_pipe_list(const string &amp;dev_name);</p>
+<p>248&nbsp; <a class="reference external" href="../../d2/d1d/classTango_1_1Command.html">Command</a>
+&amp;get_cmd_by_name(const string &amp;);</p>
+<p>257&nbsp; <a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html">Pipe</a>
+&amp;get_pipe_by_name(const string &amp;pipe_name,const string &amp;dev_name);</p>
+<p><a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html#a0782567b9fa64959d5a3e41cdc893a6a">264</a>
+<a class="reference external" href="../../dc/d38/classTango_1_1DbClass.html">DbClass</a>
+*<a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html#a0782567b9fa64959d5a3e41cdc893a6a">get_db_class</a>()
+{return db_class;}</p>
+<p><a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html#a82ce643e9668e99ab16c56f484e6284b">270</a>
+MultiClassAttribute
+*<a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html#a82ce643e9668e99ab16c56f484e6284b">get_class_attr</a>()
+{return class_attr;}</p>
+<p><a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html#a2a9c1c29d9d4dbf07d44630a5f729ee7">276</a>
+MultiClassPipe
+*<a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html#a2a9c1c29d9d4dbf07d44630a5f729ee7">get_class_pipe</a>()
+{return class_pipe;}</p>
+<p><a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html#ac51857831a8313233a91ec7baa91aff1">282</a>
+void
+<a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html#ac51857831a8313233a91ec7baa91aff1">set_type</a>(string
+&amp;dev_type) {type = dev_type;}</p>
+<p><a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html#af84e5725fbc6e5d97219c3cdc9169ed9">288</a>
+void
+<a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html#af84e5725fbc6e5d97219c3cdc9169ed9">set_type</a>(const
+char *dev_type) {type = dev_type;}</p>
+<p>290</p>
+<p>291</p>
+<p>295&nbsp;#if defined _TG_WINDOWS_</p>
+<p>296</p>
+<p>308&nbsp; void register_signal(long signo);</p>
+<p>309&nbsp;#else</p>
+<p>310</p>
+<p>325&nbsp; void register_signal(long signo,bool own_handler = false);</p>
+<p>326&nbsp;#endif</p>
+<p>327</p>
+<p>342&nbsp; void unregister_signal(long signo);</p>
+<p>343</p>
+<p>353&nbsp; virtual void signal_handler(long signo);</p>
+<p>354</p>
+<p>356</p>
+<p>357&nbsp;protected:</p>
+<p>367
+<a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html">DeviceClass</a>(string
+&amp;s);</p>
+<p>369</p>
+<p>387&nbsp; void
+export_device(<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html">DeviceImpl</a>
+*dev,const char* corba_dev_name = &#8220;Unused&#8221;);</p>
+<p>388</p>
+<p><a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html#abffecec6eb34eebaa56e8297e2999204">400</a>
+void
+<a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html#abffecec6eb34eebaa56e8297e2999204">set_default_command</a>(<a class="reference external" href="../../d2/d1d/classTango_1_1Command.html">Command</a>
+*cmd) {default_cmd = cmd;}</p>
+<p>402</p>
+<p><a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html#a17e2d247caf604ac2f2ab8f69ec4261c">408</a>
+string
+<a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html#a17e2d247caf604ac2f2ab8f69ec4261c">name</a>;</p>
+<p><a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html#a19e2e40c4a095e6f002fc8367d98cdff">412</a>
+string
+<a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html#a19e2e40c4a095e6f002fc8367d98cdff">doc_url</a>;</p>
+<p><a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html#a04a29a0cd699e1100f9d69e7b6202039">416</a>
+string
+<a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html#a04a29a0cd699e1100f9d69e7b6202039">type</a>;</p>
+<p><a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html#ac7c054f57761e8fdf84660008d1070b5">420</a>
+vector&lt;Command *&gt;
+<a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html#ac7c054f57761e8fdf84660008d1070b5">command_list</a>;</p>
+<p><a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html#add35f135439357ce2815140a6e5ebb89">424</a>
+vector&lt;DeviceImpl *&gt;
+<a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html#add35f135439357ce2815140a6e5ebb89">device_list</a>;</p>
+<p><a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html#a94b87afbec24955aca456718488485ed">428</a>
+<a class="reference external" href="../../dc/d38/classTango_1_1DbClass.html">DbClass</a>
+*<a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html#a94b87afbec24955aca456718488485ed">db_class</a>;</p>
+<p><a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html#a4430e4458d46045ebd5a19ed472e2c59">432</a>
+MultiClassAttribute
+*<a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html#a4430e4458d46045ebd5a19ed472e2c59">class_attr</a>;</p>
+<p><a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html#ab664e50fbdb4a0843f11477011e962f8">436</a>
+MultiClassPipe
+*<a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html#ab664e50fbdb4a0843f11477011e962f8">class_pipe</a>;</p>
+<p><a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html#a2626f63ac4db19102480950a815fb549">440</a>
+vector&lt;Pipe *&gt;
+<a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html#a2626f63ac4db19102480950a815fb549">pipe_list</a>;</p>
+<p>442</p>
+<p>443&nbsp;public:</p>
+<p>445&nbsp; vector&lt;string&gt; &amp;get_nodb_name_list() {return nodb_name_list;}</p>
+<p>446&nbsp; void set_memorized_values(bool flag, long idx = 0,bool from_init
+= false);</p>
+<p>447</p>
+<p>448&nbsp; void add_wiz_dev_prop(string &amp;name,string &amp;desc,string &amp;def);</p>
+<p>449&nbsp; void add_wiz_dev_prop(string &amp;name,string &amp;desc);</p>
+<p>450</p>
+<p>451&nbsp; void add_wiz_class_prop(string &amp;name,string &amp;desc,string &amp;def);</p>
+<p>452&nbsp; void add_wiz_class_prop(string &amp;name,string &amp;desc);</p>
+<p>453</p>
+<p>454&nbsp; vector&lt;string&gt; &amp;get_wiz_class_prop() {return wiz_class_prop;}</p>
+<p>455&nbsp; vector&lt;string&gt; &amp;get_wiz_dev_prop() {return wiz_dev_prop;}</p>
+<p>456</p>
+<p>457&nbsp; string &amp;get_cvs_tag() {return cvs_tag;}</p>
+<p>458&nbsp; string &amp;get_cvs_location() {return cvs_location;}</p>
+<p>459</p>
+<p>460&nbsp; string &amp;get_svn_tag() {return svn_tag;}</p>
+<p>461&nbsp; string &amp;get_svn_location() {return svn_location;}</p>
+<p>462</p>
+<p>463&nbsp; void set_cvs_tag(string &amp;str) {cvs_tag=str;}</p>
+<p>464&nbsp; void set_cvs_location(string &amp;str) {cvs_location=str;}</p>
+<p>465</p>
+<p>466&nbsp; void add_device(DeviceImpl *dev) {device_list.push_back(dev);}</p>
+<p>467&nbsp; void delete_dev(long
+idx,<a class="reference external" href="../../d4/deb/classTango_1_1Util.html">Tango::Util</a>
+*tg,PortableServer::POA_ptr r_poa);</p>
+<p>468</p>
+<p>469&nbsp; bool is_py_class() {return py_class;}</p>
+<p>470&nbsp; void set_py_class(bool py) {py_class=py;}</p>
+<p>471&nbsp; virtual void delete_class() {}</p>
+<p>472&nbsp; void get_mcast_event(DServer *);</p>
+<p>473</p>
+<p>474&nbsp; bool is_command_allowed(const char *);</p>
+<p>475</p>
+<p>476&nbsp; bool get_device_factory_done() {return device_factory_done;}</p>
+<p>477&nbsp; void set_device_factory_done(bool val) {device_factory_done =
+val;}</p>
+<p>478</p>
+<p>479&nbsp; void check_att_conf();</p>
+<p>480&nbsp; void release_devices_mon();</p>
+<p>481</p>
+<p>482&nbsp; void remove_command(const string &amp;);</p>
+<p>483</p>
+<p>484&nbsp; void create_device_pipe(DeviceClass *,DeviceImpl *);</p>
+<p>485&nbsp; vector&lt;Pipe *&gt; &amp;get_pipe_list() {return pipe_list;}</p>
+<p>486</p>
+<p>487&nbsp;protected:</p>
+<p>489&nbsp; Command *get_default_command() {return default_cmd;}</p>
+<p>490</p>
+<p>491&nbsp;private:</p>
+<p>492&nbsp; class DeviceClassExt</p>
+<p>493&nbsp; {</p>
+<p>494&nbsp; public:</p>
+<p>495&nbsp; DeviceClassExt() {};</p>
+<p>496</p>
+<p>497&nbsp; map&lt;string,vector&lt;Pipe *&gt; &gt; dev_pipe_list;</p>
+<p>498&nbsp; };</p>
+<p>499</p>
+<p>500&nbsp; void get_class_system_resource();</p>
+<p>501&nbsp; void throw_mem_value(DeviceImpl *,Attribute &amp;);</p>
+<p>502</p>
+<p>503&nbsp; vector&lt;string&gt; wiz_class_prop;</p>
+<p>504&nbsp; vector&lt;string&gt; wiz_dev_prop;</p>
+<p>505</p>
+<p>506&nbsp; vector&lt;string&gt; allowed_cmds;</p>
+<p>507</p>
+<p>508&nbsp;#ifdef HAS_UNIQUE_PTR</p>
+<p>509&nbsp; unique_ptr&lt;DeviceClassExt&gt; ext; // Class extension</p>
+<p>510&nbsp;#else</p>
+<p>511&nbsp; DeviceClassExt *ext;</p>
+<p>512&nbsp;#endif</p>
+<p>513</p>
+<p>514&nbsp;//</p>
+<p>515&nbsp;// Ported from the extension class</p>
+<p>516&nbsp;//</p>
+<p>517</p>
+<p>518&nbsp; vector&lt;string&gt; nodb_name_list;</p>
+<p>519&nbsp; TangoMonitor only_one;</p>
+<p>520&nbsp; string cvs_tag;</p>
+<p>521&nbsp; string cvs_location;</p>
+<p>522&nbsp; Command * default_cmd;</p>
+<p>523&nbsp; bool py_class;</p>
+<p>524&nbsp; string svn_tag;</p>
+<p>525&nbsp; string svn_location;</p>
+<p>526&nbsp; bool device_factory_done;</p>
+<p>527&nbsp;};</p>
+<p>528</p>
+<p>529</p>
+<p>530&nbsp;} // End of Tango namespace</p>
+<p>531</p>
+<p>532&nbsp;#endif // _DEVICECLASS_H</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html">Tango::Util</a></p>
+<p>This class is a used to store TANGO device server process data and to
+provide the user with a set of ...</p>
+<p><strong>Definition:</strong> utils.h:153</p>
+<p><a class="reference external" href="../../dc/d38/classTango_1_1DbClass.html">Tango::DbClass</a></p>
+<p>A database object for a class which can be used to query or modify class
+properties.</p>
+<p><strong>Definition:</strong> dbapi.h:267</p>
+<p><a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html#a17e2d247caf604ac2f2ab8f69ec4261c">Tango::DeviceClass::name</a></p>
+<p>string name</p>
+<p>The TANGO device class name.</p>
+<p><strong>Definition:</strong> deviceclass.h:408</p>
+<p><a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html#aca6317feaf809a2f18d0c28a6ae9df53">Tango::DeviceClass::get_type</a></p>
+<p>string &amp; get_type()</p>
+<p>Get the TANGO device type name.</p>
+<p><strong>Definition:</strong> deviceclass.h:222</p>
+<p><a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html#af84e5725fbc6e5d97219c3cdc9169ed9">Tango::DeviceClass::set_type</a></p>
+<p>void set_type(const char *dev_type)</p>
+<p>Set the TANGO device type name.</p>
+<p><strong>Definition:</strong> deviceclass.h:288</p>
+<p><a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html#a0782567b9fa64959d5a3e41cdc893a6a">Tango::DeviceClass::get_db_class</a></p>
+<p>DbClass * get_db_class()</p>
+<p>Get a pointer to the associated DbClass object.</p>
+<p><strong>Definition:</strong> deviceclass.h:264</p>
+<p><a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html#abffecec6eb34eebaa56e8297e2999204">Tango::DeviceClass::set_default_command</a></p>
+<p>void set_default_command(Command *cmd)</p>
+<p>Set a Tango classs default command.</p>
+<p><strong>Definition:</strong> deviceclass.h:400</p>
+<p><a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html#a2a9c1c29d9d4dbf07d44630a5f729ee7">Tango::DeviceClass::get_class_pipe</a></p>
+<p>MultiClassPipe * get_class_pipe()</p>
+<p>Get a pointer to the class pipes object.</p>
+<p><strong>Definition:</strong> deviceclass.h:276</p>
+<p><a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html#a82ce643e9668e99ab16c56f484e6284b">Tango::DeviceClass::get_class_attr</a></p>
+<p>MultiClassAttribute * get_class_attr()</p>
+<p>Get a pointer to the class attributes object.</p>
+<p><strong>Definition:</strong> deviceclass.h:270</p>
+<p><a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html#a09321e4257b799709d77f40ace03242a">Tango::DeviceClass::pipe_factory</a></p>
+<p>virtual void pipe_factory()</p>
+<p>Create all the pipes supported by this class of device.</p>
+<p><strong>Definition:</strong> deviceclass.h:145</p>
+<p><a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html#a2626f63ac4db19102480950a815fb549">Tango::DeviceClass::pipe_list</a></p>
+<p>vector&lt; Pipe * &gt; pipe_list</p>
+<p>The pipe(s) list.</p>
+<p><strong>Definition:</strong> deviceclass.h:440</p>
+<p><a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html#a94b87afbec24955aca456718488485ed">Tango::DeviceClass::db_class</a></p>
+<p>DbClass * db_class</p>
+<p>The associated DbClass object.</p>
+<p><strong>Definition:</strong> deviceclass.h:428</p>
+<p><a class="reference external" href="../../de/ddf/namespaceTango.html">Tango</a></p>
+<hr class="docutils" />
+<p><strong>Definition:</strong> device.h:50</p>
+<p><a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html#a0577ce350035604373496d5d1fceee39">Tango::DeviceClass::get_name</a></p>
+<p>string &amp; get_name()</p>
+<p>Get the TANGO device class name.</p>
+<p><strong>Definition:</strong> deviceclass.h:210</p>
+<p><a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html#ab664e50fbdb4a0843f11477011e962f8">Tango::DeviceClass::class_pipe</a></p>
+<p>MultiClassPipe * class_pipe</p>
+<p>Pointer to the class multi pipe object.</p>
+<p><strong>Definition:</strong> deviceclass.h:436</p>
+<p><a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html#ad6359a7f1e9677b65102224b84d0cb98">Tango::DeviceClass::get_device_list</a></p>
+<p>vector&lt; DeviceImpl * &gt; &amp; get_device_list()</p>
+<p>Get the device object vector.</p>
+<p><strong>Definition:</strong> deviceclass.h:228</p>
+<p><a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html#ac7c054f57761e8fdf84660008d1070b5">Tango::DeviceClass::command_list</a></p>
+<p>vector&lt; Command * &gt; command_list</p>
+<p>The command(s) list.</p>
+<p><strong>Definition:</strong> deviceclass.h:420</p>
+<p><a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html#a2596f49733e5dc80d52d8d240f4f83cd">Tango::DeviceClass::device_name_factory</a></p>
+<p>virtual void device_name_factory(vector&lt; string &gt; &amp;list)</p>
+<p>Create device(s) name list (for no database device server).</p>
+<p><strong>Definition:</strong> deviceclass.h:172</p>
+<p><a class="reference external" href="../../d8/d14/classTango_1_1Pipe.html">Tango::Pipe</a></p>
+<p>This class is a class representing a pipe in the TANGO device server
+pattern.</p>
+<p><strong>Definition:</strong> pipe.h:77</p>
+<p><a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html#a0ea1a3848a3d59f55a6734772859c4ec">Tango::DeviceClass::attribute_factory</a></p>
+<p>virtual void attribute_factory(vector&lt; Attr * &gt; &amp;)</p>
+<p>Create all the attributes name supported by this class of device.</p>
+<p><strong>Definition:</strong> deviceclass.h:136</p>
+<p><a class="reference external" href="../../d2/d1d/classTango_1_1Command.html">Tango::Command</a></p>
+<p>This class is a class representing a command in the TANGO device server
+pattern.</p>
+<p><strong>Definition:</strong> command.h:83</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html">Tango::DeviceImpl</a></p>
+<p>Base class for all TANGO device.</p>
+<p><strong>Definition:</strong> device.h:90</p>
+<p><a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html#ac51857831a8313233a91ec7baa91aff1">Tango::DeviceClass::set_type</a></p>
+<p>void set_type(string &amp;dev_type)</p>
+<p>Set the TANGO device type name.</p>
+<p><strong>Definition:</strong> deviceclass.h:282</p>
+<p><a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html#a19e2e40c4a095e6f002fc8367d98cdff">Tango::DeviceClass::doc_url</a></p>
+<p>string doc_url</p>
+<p>The TANGO device class documentation URL.</p>
+<p><strong>Definition:</strong> deviceclass.h:412</p>
+<p><a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html#a4430e4458d46045ebd5a19ed472e2c59">Tango::DeviceClass::class_attr</a></p>
+<p>MultiClassAttribute * class_attr</p>
+<p>Pointer to the class multi attribute object.</p>
+<p><strong>Definition:</strong> deviceclass.h:432</p>
+<p><a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html">Tango::DeviceClass</a></p>
+<p>Base class for all TANGO device-class class.</p>
+<p><strong>Definition:</strong> deviceclass.h:76</p>
+<p><a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html#a04a29a0cd699e1100f9d69e7b6202039">Tango::DeviceClass::type</a></p>
+<p>string type</p>
+<p>The TANGO device type name.</p>
+<p><strong>Definition:</strong> deviceclass.h:416</p>
+<p><a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html#a9e37d56d78b31cbc5c767f65c1b2117f">Tango::DeviceClass::get_command_list</a></p>
+<p>vector&lt; Command * &gt; &amp; get_command_list()</p>
+<p>Get the command object vector.</p>
+<p><strong>Definition:</strong> deviceclass.h:234</p>
+<p><a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html#a66c9909cee0aba6e337d4b80ff1396c0">Tango::DeviceClass::get_doc_url</a></p>
+<p>string &amp; get_doc_url()</p>
+<p>Get the TANGO device class documentation URL.</p>
+<p><strong>Definition:</strong> deviceclass.h:216</p>
+<p><a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html#add35f135439357ce2815140a6e5ebb89">Tango::DeviceClass::device_list</a></p>
+<p>vector&lt; DeviceImpl * &gt; device_list</p>
+<p>The device(s) list.</p>
+<p><strong>Definition:</strong> deviceclass.h:424</p>
+<ul class="simple">
+<li><a class="reference external" href="../../dir_93bc669b4520ad36068f344e109b7d17.html">include</a></li>
+<li><a class="reference external" href="../../dir_8ff48e8f3ef80891a9957ae5e9583431.html">tango</a></li>
+<li><a class="reference external" href="../../dir_53b28a22454594c5818f3f3f5a9fd698.html">server</a></li>
+<li><a class="reference external" href="../../d7/dfc/deviceclass_8h.html">deviceclass.h</a></li>
+<li>Generated on Fri Oct 7 2016 11:11:15 for Tango Core Classes Reference
+by <a class="reference external" href="http://www.doxygen.org/index.html"><img alt="doxygen" src="../../_images/doxygen198.png" /></a> 1.8.8</li>
+</ul>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/d7/dfc/deviceclass_8h_source.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, 3Controls.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.8</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+      |
+      <a href="../../_sources/d7/dfc/deviceclass_8h_source.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

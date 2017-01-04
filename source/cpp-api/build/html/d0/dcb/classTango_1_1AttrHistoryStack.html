@@ -1,0 +1,296 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Public Member Functions &#8212; Tango Core Classes Reference Documentation 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="top" title="Tango Core Classes Reference Documentation 1.0 documentation" href="../../index.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><img alt="Logo" src="../../_images/logo21.jpg" /></td>
+<td>Tango Core Classes Reference &nbsp;9.2.5</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><a class="reference external" href="../../index.html">Main&nbsp;Page</a></li>
+<li><a class="reference external" href="../../pages.html">Related&nbsp;Pages</a></li>
+<li><a class="reference external" href="../../modules.html">Modules</a></li>
+<li><a class="reference external" href="../../namespaces.html">Namespaces</a></li>
+<li><a class="reference external" href="../../annotated.html">Classes</a></li>
+<li><a class="reference external" href="../../files.html">Files</a></li>
+<li><a class="reference external" href="../../annotated.html">Class&nbsp;List</a></li>
+<li><a class="reference external" href="../../inherits.html">Class&nbsp;Hierarchy</a></li>
+<li><a class="reference external" href="../../functions.html">Class&nbsp;Members</a></li>
+</ul>
+<p><a class="reference external" href="#pub-methods">Public Member Functions</a> | <a class="reference external" href="../../d6/d5c/classTango_1_1AttrHistoryStack-members.html">List of all
+members</a></p>
+<p>Tango::AttrHistoryStack&lt; T &gt; Class Template Reference</p>
+<p><a class="reference external" href="../../da/d64/group__Server.html">Server classes</a></p>
+<p>This class is a used to pass an attribute value history when the user
+directly fills the attribute polling buffer.
+<a class="reference external" href="../../d0/dcb/classTango_1_1AttrHistoryStack.html#details">More...</a></p>
+<div class="section" id="public-member-functions">
+<h1>Public Member Functions<a class="headerlink" href="#public-member-functions" title="Permalink to this headline">¶</a></h1>
+<p>void</p>
+<p><a class="reference external" href="../../d0/dcb/classTango_1_1AttrHistoryStack.html#aac60d22a112badcb3c27fb0b6c22eecd">clear</a>
+()</p>
+<div class="line-block">
+<div class="line">Clear the stack. <a class="reference external" href="#aac60d22a112badcb3c27fb0b6c22eecd">More...</a></div>
+</div>
+<p>vector&lt;
+<a class="reference external" href="../../da/d12/classTango_1_1TimedAttrData.html">TimedAttrData</a>&lt; T &gt;
+&gt; &amp;</p>
+<p><a class="reference external" href="../../d0/dcb/classTango_1_1AttrHistoryStack.html#a73318d3db023c337bdbeae5fc743b3fd">get_data</a>
+()</p>
+<div class="line-block">
+<div class="line">Get stack data. <a class="reference external" href="#a73318d3db023c337bdbeae5fc743b3fd">More...</a></div>
+</div>
+<p>size_t</p>
+<p><a class="reference external" href="../../d0/dcb/classTango_1_1AttrHistoryStack.html#a078798e0c374f134f0cfb315a515f028">length</a>
+()</p>
+<div class="line-block">
+<div class="line">Get stack depth. <a class="reference external" href="#a078798e0c374f134f0cfb315a515f028">More...</a></div>
+</div>
+<p>void</p>
+<p><a class="reference external" href="../../d0/dcb/classTango_1_1AttrHistoryStack.html#afcf19d9e75e02341bb8533cc7c61df5e">length</a>
+(long nb)</p>
+<div class="line-block">
+<div class="line">Reserve memory for stack elements.</div>
+</div>
+<p><a class="reference external" href="#afcf19d9e75e02341bb8533cc7c61df5e">More...</a></p>
+<p>void</p>
+<p><a class="reference external" href="../../d0/dcb/classTango_1_1AttrHistoryStack.html#a6356c9fc9d4dd06b941b8e4a36de1f90">push</a>
+(<a class="reference external" href="../../da/d12/classTango_1_1TimedAttrData.html">TimedAttrData</a>&lt; T
+&gt; const &amp;elt)</p>
+<div class="line-block">
+<div class="line">Store a new element in the stack.</div>
+</div>
+<p><a class="reference external" href="#a6356c9fc9d4dd06b941b8e4a36de1f90">More...</a></p>
+</div>
+<div class="section" id="detailed-description">
+<h1>Detailed Description<a class="headerlink" href="#detailed-description" title="Permalink to this headline">¶</a></h1>
+<dl class="docutils">
+<dt>template&lt;typename T&gt;</dt>
+<dd>class Tango::AttrHistoryStack&lt; T &gt;</dd>
+</dl>
+<hr class="docutils" />
+<p>This class is a used to pass an attribute value history when the user
+directly fills the attribute polling buffer.</p>
+<p>Each element in this stack will be used to store one element of the
+attribute polling buffer</p>
+<p>$Author$ $Revision$</p>
+</div>
+<div class="section" id="member-function-documentation">
+<h1>Member Function Documentation<a class="headerlink" href="#member-function-documentation" title="Permalink to this headline">¶</a></h1>
+<p>template&lt;typename T&gt;</p>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Clear the stack.</p>
+<p>template&lt;typename T&gt;</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="91%" />
+<col width="2%" />
+<col width="2%" />
+<col width="2%" />
+<col width="2%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>vector&lt;<a class="reference external" href="../../da/d12/classTango_1_1TimedAttrData.html">TimedAttrData</a>&lt;T&gt; &gt;&amp; <a class="reference external" href="../../d0/dcb/classTango_1_1AttrHistoryStack.html">Tango::AttrHistoryStack</a>&lt; T &gt;::get_data</td>
+<td>(</td>
+<td>&nbsp;</td>
+<td>)</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p>Get stack data.</p>
+<dl class="docutils">
+<dt>Returns</dt>
+<dd>The stack itself</dd>
+</dl>
+<p>template&lt;typename T&gt;</p>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Get stack depth.</p>
+<dl class="docutils">
+<dt>Returns</dt>
+<dd>The stack depth</dd>
+</dl>
+<p>template&lt;typename T&gt;</p>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Reserve memory for stack elements.</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>nb</td>
+<td>The stack element number</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<p>template&lt;typename T&gt;</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="48%" />
+<col width="2%" />
+<col width="41%" />
+<col width="4%" />
+<col width="2%" />
+<col width="2%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>void <a class="reference external" href="../../d0/dcb/classTango_1_1AttrHistoryStack.html">Tango::AttrHistoryStack</a>&lt; T &gt;::push</td>
+<td>(</td>
+<td><a class="reference external" href="../../da/d12/classTango_1_1TimedAttrData.html">TimedAttrData</a>&lt; T &gt; const &amp;</td>
+<td><em>elt</em></td>
+<td>)</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p>Store a new element in the stack.</p>
+<p>This method stores a new element in the stack</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="27%" />
+<col width="73%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>elt</td>
+<td>The new element</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<hr class="docutils" />
+<p>The documentation for this class was generated from the following file:</p>
+<ul class="simple">
+<li><a class="reference external" href="../../db/d17/pollext_8h_source.html">pollext.h</a></li>
+<li><a class="reference external" href="../../de/ddf/namespaceTango.html">Tango</a></li>
+<li><a class="reference external" href="../../d0/dcb/classTango_1_1AttrHistoryStack.html">AttrHistoryStack</a></li>
+<li>Generated on Fri Oct 7 2016 11:11:16 for Tango Core Classes Reference
+by <a class="reference external" href="http://www.doxygen.org/index.html"><img alt="doxygen" src="../../_images/doxygen21.png" /></a> 1.8.8</li>
+</ul>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Public Member Functions</a></li>
+<li><a class="reference internal" href="#detailed-description">Detailed Description</a></li>
+<li><a class="reference internal" href="#member-function-documentation">Member Function Documentation</a></li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/d0/dcb/classTango_1_1AttrHistoryStack.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, 3Controls.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.8</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+      |
+      <a href="../../_sources/d0/dcb/classTango_1_1AttrHistoryStack.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

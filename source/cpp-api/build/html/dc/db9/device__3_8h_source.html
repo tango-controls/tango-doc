@@ -1,0 +1,432 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>&lt;no title&gt; &#8212; Tango Core Classes Reference Documentation 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="top" title="Tango Core Classes Reference Documentation 1.0 documentation" href="../../index.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><img alt="Logo" src="../../_images/logo340.jpg" /></td>
+<td>Tango Core Classes Reference &nbsp;9.2.5</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><a class="reference external" href="../../index.html">Main&nbsp;Page</a></li>
+<li><a class="reference external" href="../../pages.html">Related&nbsp;Pages</a></li>
+<li><a class="reference external" href="../../modules.html">Modules</a></li>
+<li><a class="reference external" href="../../namespaces.html">Namespaces</a></li>
+<li><a class="reference external" href="../../annotated.html">Classes</a></li>
+<li><a class="reference external" href="../../files.html">Files</a></li>
+<li><a class="reference external" href="../../files.html">File&nbsp;List</a></li>
+<li><a class="reference external" href="../../globals.html">File&nbsp;Members</a></li>
+</ul>
+<p>device_3.h</p>
+<p><a class="reference external" href="../../dc/db9/device__3_8h.html">Go to the documentation of this
+file.</a></p>
+<p>1&nbsp;//=============================================================================</p>
+<p>2&nbsp;//</p>
+<p>3&nbsp;// file : Device.h</p>
+<p>4&nbsp;//</p>
+<p>5&nbsp;// description : Include for the Device root classes.</p>
+<p>6&nbsp;// Three classes are declared in this file :</p>
+<p>7&nbsp;// The Device class</p>
+<p>8&nbsp;// The DeviceClass class</p>
+<p>9&nbsp;//</p>
+<p>10&nbsp;// project : TANGO</p>
+<p>11&nbsp;//</p>
+<p>12&nbsp;// author(s) : A.Gotz + E.Taurel</p>
+<p>13&nbsp;//</p>
+<p>14&nbsp;// Copyright (C) :
+2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015</p>
+<p>15&nbsp;// European Synchrotron Radiation Facility</p>
+<p>16&nbsp;// BP 220, Grenoble 38043</p>
+<p>17&nbsp;// FRANCE</p>
+<p>18&nbsp;//</p>
+<p>19&nbsp;// This file is part of Tango.</p>
+<p>20&nbsp;//</p>
+<p>21&nbsp;// Tango is free software: you can redistribute it and/or modify</p>
+<p>22&nbsp;// it under the terms of the GNU Lesser General Public License as
+published by</p>
+<p>23&nbsp;// the Free Software Foundation, either version 3 of the License, or</p>
+<p>24&nbsp;// (at your option) any later version.</p>
+<p>25&nbsp;//</p>
+<p>26&nbsp;// Tango is distributed in the hope that it will be useful,</p>
+<p>27&nbsp;// but WITHOUT ANY WARRANTY; without even the implied warranty of</p>
+<p>28&nbsp;// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the</p>
+<p>29&nbsp;// GNU Lesser General Public License for more details.</p>
+<p>30&nbsp;//</p>
+<p>31&nbsp;// You should have received a copy of the GNU Lesser General Public
+License</p>
+<p>32&nbsp;// along with Tango. If not, see &lt;<a class="reference external" href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>&gt;.</p>
+<p>33&nbsp;//</p>
+<p>34&nbsp;// $Revision: 18607</p>
+<p>35&nbsp;//</p>
+<p>36&nbsp;//=============================================================================</p>
+<p>37</p>
+<p>38&nbsp;#ifndef _DEVICE_3_H</p>
+<p>39&nbsp;#define _DEVICE_3_H</p>
+<p>40</p>
+<p>41&nbsp;#include &lt;tango.h&gt;</p>
+<p>42</p>
+<p>43&nbsp;namespace <a class="reference external" href="../../de/ddf/namespaceTango.html">Tango</a></p>
+<p>44&nbsp;{</p>
+<p>45</p>
+<p>46&nbsp;class DeviceClass;</p>
+<p>47&nbsp;class AttributeValueList_4;</p>
+<p>48</p>
+<p>49&nbsp;//=============================================================================</p>
+<p>50&nbsp;//</p>
+<p>51&nbsp;// The Device_3Impl class</p>
+<p>52&nbsp;//</p>
+<p>53&nbsp;//</p>
+<p>54&nbsp;// description : This class is derived directly from the
+Tango::Device_skel</p>
+<p>55&nbsp;// class generated by CORBA. It represents the CORBA</p>
+<p>56&nbsp;// servant which will be accessed by the client.</p>
+<p>57&nbsp;// It implements all the methods</p>
+<p>58&nbsp;// and attributes defined in the IDL interface for Device.</p>
+<p>59&nbsp;//</p>
+<p>60&nbsp;//=============================================================================</p>
+<p>61</p>
+<p><a class="reference external" href="../../d9/d5b/structTango_1_1AttIdx.html">62</a>&nbsp;struct
+<a class="reference external" href="../../d9/d5b/structTango_1_1AttIdx.html">AttIdx</a></p>
+<p>63&nbsp;{</p>
+<p><a class="reference external" href="../../d9/d5b/structTango_1_1AttIdx.html#aa71a9486541800c6fae590d925c4e9fa">64</a>
+long
+<a class="reference external" href="../../d9/d5b/structTango_1_1AttIdx.html#aa71a9486541800c6fae590d925c4e9fa">idx_in_names</a>;</p>
+<p><a class="reference external" href="../../d9/d5b/structTango_1_1AttIdx.html#adea7a0153553f99a39be55f22c5d42c0">65</a>
+long
+<a class="reference external" href="../../d9/d5b/structTango_1_1AttIdx.html#adea7a0153553f99a39be55f22c5d42c0">idx_in_multi_attr</a>;</p>
+<p><a class="reference external" href="../../d9/d5b/structTango_1_1AttIdx.html#ac0bbd831200c802daaad0c584cc81f0b">66</a>
+bool
+<a class="reference external" href="../../d9/d5b/structTango_1_1AttIdx.html#ac0bbd831200c802daaad0c584cc81f0b">failed</a>;</p>
+<p>67&nbsp;};</p>
+<p>68</p>
+<p><a class="reference external" href="../../db/d65/classTango_1_1Device__3Impl.html">85</a>&nbsp;class
+<a class="reference external" href="../../db/d65/classTango_1_1Device__3Impl.html">Device_3Impl</a> :
+public virtual POA_Tango::Device_3,</p>
+<p>86&nbsp; public
+<a class="reference external" href="../../d8/dbf/classTango_1_1Device__2Impl.html">Device_2Impl</a></p>
+<p>87&nbsp;{</p>
+<p>88&nbsp;public:</p>
+<p>89</p>
+<p>104
+<a class="reference external" href="../../db/d65/classTango_1_1Device__3Impl.html#ac9db8606c8ea7044642865d104ad74af">Device_3Impl</a>(<a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html">DeviceClass</a>
+*<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a103c3527a529f7a40ecadf227a8a7990">device_class</a>,string
+&amp;dev_name);</p>
+<p>105</p>
+<p>118
+<a class="reference external" href="../../db/d65/classTango_1_1Device__3Impl.html#ac9db8606c8ea7044642865d104ad74af">Device_3Impl</a>(<a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html">DeviceClass</a>
+*device_class,string &amp;dev_name,string
+&amp;<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a480f48ff00c9d1aa8bd406323967df7d">desc</a>);</p>
+<p>119</p>
+<p>134
+<a class="reference external" href="../../db/d65/classTango_1_1Device__3Impl.html#ac9db8606c8ea7044642865d104ad74af">Device_3Impl</a>(<a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html">DeviceClass</a>
+*device_class,</p>
+<p>135&nbsp; string &amp;dev_name,string &amp;desc,</p>
+<p>136&nbsp; Tango::DevState
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a1b5f98bd245bd7e94403eaebc2913283">dev_state</a>,string
+&amp;<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#afcea586ff5d465e6f752fd256a66aeea">dev_status</a>);</p>
+<p>137</p>
+<p>155
+<a class="reference external" href="../../db/d65/classTango_1_1Device__3Impl.html#ac9db8606c8ea7044642865d104ad74af">Device_3Impl</a>(<a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html">DeviceClass</a>
+*device_class,</p>
+<p>156&nbsp; const char *dev_name,const char *desc = &#8220;A TANGO device&#8221;,</p>
+<p>157&nbsp; Tango::DevState dev_state = Tango::UNKNOWN,</p>
+<p>158&nbsp; const char *dev_status =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#ae1851ebaa91cbf1df9317e3f47f6190a">StatusNotSet</a>);</p>
+<p>160</p>
+<p>167&nbsp;#ifdef HAS_UNIQUE_PTR</p>
+<p>168&nbsp; virtual
+<a class="reference external" href="../../db/d65/classTango_1_1Device__3Impl.html#a364061576e373d8bec46b5bba70f2817">~Device_3Impl</a>()
+{}</p>
+<p>169&nbsp;#else</p>
+<p><a class="reference external" href="../../db/d65/classTango_1_1Device__3Impl.html#a364061576e373d8bec46b5bba70f2817">170</a>
+virtual
+<a class="reference external" href="../../db/d65/classTango_1_1Device__3Impl.html#a364061576e373d8bec46b5bba70f2817">~Device_3Impl</a>()
+{delete ext_3;}</p>
+<p>171&nbsp;#endif</p>
+<p>172</p>
+<p>173</p>
+<p>174</p>
+<p>178</p>
+<p>198&nbsp; virtual Tango::AttributeValueList_3
+*<a class="reference external" href="../../db/d65/classTango_1_1Device__3Impl.html#a870e349674aca9b3ebee55157a31b5d3">read_attributes_3</a>(const
+Tango::DevVarStringArray&amp; names,</p>
+<p>199&nbsp; Tango::DevSource source);</p>
+<p>200</p>
+<p>216&nbsp; virtual void
+<a class="reference external" href="../../db/d65/classTango_1_1Device__3Impl.html#af1a705a748bf08290150c3e50bdb29ff">write_attributes_3</a>(const
+Tango::AttributeValueList&amp; values);</p>
+<p>217</p>
+<p>238&nbsp; virtual Tango::DevAttrHistoryList_3
+*<a class="reference external" href="../../db/d65/classTango_1_1Device__3Impl.html#a87abb35e56c7b00c542e949ef43ba1b0">read_attribute_history_3</a>(const
+char* name,</p>
+<p>239&nbsp; CORBA::Long n);</p>
+<p>240</p>
+<p>250&nbsp; virtual Tango::DevInfo_3
+*<a class="reference external" href="../../db/d65/classTango_1_1Device__3Impl.html#a28dab632521e2fb0e52827d155af673c">info_3</a>();</p>
+<p>251</p>
+<p>271&nbsp; virtual Tango::AttributeConfigList_3
+*<a class="reference external" href="../../db/d65/classTango_1_1Device__3Impl.html#a651489039cc5222dc1197b3368aa8cdd">get_attribute_config_3</a>(const
+Tango::DevVarStringArray&amp; names);</p>
+<p>272</p>
+<p>288&nbsp; virtual void
+<a class="reference external" href="../../db/d65/classTango_1_1Device__3Impl.html#a6eaac6785a84422132e654916fc2cf7e">set_attribute_config_3</a>(const
+Tango::AttributeConfigList_3&amp; new_conf);</p>
+<p>290</p>
+<p>292&nbsp; void write_attributes_in_db(vector&lt;long&gt; &amp;,vector&lt;long&gt; &amp;);</p>
+<p>293&nbsp; void add_state_status_attrs();</p>
+<p>294&nbsp; void read_attributes_from_cache(const
+Tango::DevVarStringArray&amp;,<a class="reference external" href="../../d5/d25/structTango_1_1__AttributeIdlData.html">Tango::AttributeIdlData</a>
+&amp;);</p>
+<p>295&nbsp; void delete_dev() {ext_3-&gt;delete_dev();}</p>
+<p>296&nbsp; void get_attr_props(const char *,vector&lt;AttrProperty&gt; &amp;);</p>
+<p>297</p>
+<p>298&nbsp;protected:</p>
+<p>300&nbsp; void read_attributes_no_except(const
+Tango::DevVarStringArray&amp;,<a class="reference external" href="../../d5/d25/structTango_1_1__AttributeIdlData.html">Tango::AttributeIdlData</a>
+&amp;,bool,vector&lt;long&gt; &amp;);</p>
+<p>301&nbsp; void write_attributes_in_db(vector&lt;long&gt; &amp;,vector&lt;AttIdx&gt; &amp;);</p>
+<p>302&nbsp; void add_alarmed(vector&lt;long&gt; &amp;);</p>
+<p>303&nbsp; long reading_state_necessary(vector&lt;AttIdx&gt; &amp;);</p>
+<p>304&nbsp; void state2attr(Tango::DevState,Tango::AttributeValue_3 &amp;);</p>
+<p>305&nbsp; void state2attr(Tango::DevState,Tango::AttributeValue_4 &amp;);</p>
+<p>306&nbsp; void state2attr(Tango::DevState,Tango::AttributeValue_5 &amp;);</p>
+<p>307&nbsp; void
+status2attr(<a class="reference external" href="../../de/ddf/namespaceTango.html#a31a504495ecab5fd862cb6e60d40360c">Tango::ConstDevString</a>,Tango::AttributeValue_3
+&amp;);</p>
+<p>308&nbsp; void
+status2attr(<a class="reference external" href="../../de/ddf/namespaceTango.html#a31a504495ecab5fd862cb6e60d40360c">Tango::ConstDevString</a>,Tango::AttributeValue_4
+&amp;);</p>
+<p>309&nbsp; void
+status2attr(<a class="reference external" href="../../de/ddf/namespaceTango.html#a31a504495ecab5fd862cb6e60d40360c">Tango::ConstDevString</a>,Tango::AttributeValue_5
+&amp;);</p>
+<p>310&nbsp; void alarmed_not_read(vector&lt;AttIdx&gt; &amp;);</p>
+<p>311</p>
+<p>312&nbsp; void write_attributes_34(const Tango::AttributeValueList *,const
+Tango::AttributeValueList_4 *);</p>
+<p>313</p>
+<p>314&nbsp; template &lt;typename T,typename V&gt;</p>
+<p>315&nbsp; void set_attribute_config_3_local(const T &amp;,const V
+&amp;,bool,int);</p>
+<p>316</p>
+<p>317&nbsp; template &lt;typename T&gt; void error_from_devfailed(T &amp;,DevFailed
+&amp;,const char *);</p>
+<p>318&nbsp; template &lt;typename T&gt; void error_from_errorlist(T &amp;,DevErrorList
+&amp;,const char *);</p>
+<p>319</p>
+<p>320&nbsp; template &lt;typename T&gt; void one_error(T &amp;,const char *,const char
+*,string &amp;,Attribute &amp;);</p>
+<p>321&nbsp; template &lt;typename T&gt; void one_error(T &amp;,const char *,const char
+*,string &amp;,const char *);</p>
+<p>322</p>
+<p>323&nbsp; template &lt;typename T,typename V&gt; void init_polled_out_data(T &amp;,V
+&amp;);</p>
+<p>324&nbsp; template &lt;typename T&gt; void init_out_data(T &amp;,Attribute
+&amp;,AttrWriteType &amp;);</p>
+<p>325&nbsp; template &lt;typename T&gt; void init_out_data_quality(T &amp;,Attribute
+&amp;,AttrQuality);</p>
+<p>326</p>
+<p>327&nbsp; template &lt;typename T&gt; void base_state2attr(T &amp;);</p>
+<p>328&nbsp; template &lt;typename T&gt; void base_status2attr(T &amp;);</p>
+<p>329</p>
+<p>330&nbsp;private:</p>
+<p>331</p>
+<p>332&nbsp; class Device_3ImplExt</p>
+<p>333&nbsp; {</p>
+<p>334&nbsp; public:</p>
+<p>335&nbsp; Device_3ImplExt() {}</p>
+<p>336&nbsp; virtual ~Device_3ImplExt() {}</p>
+<p>337</p>
+<p>338&nbsp; virtual void delete_dev() {}</p>
+<p>339&nbsp; };</p>
+<p>340</p>
+<p>341&nbsp; void real_ctor();</p>
+<p>342</p>
+<p>343&nbsp;#ifdef HAS_UNIQUE_PTR</p>
+<p>344&nbsp; unique_ptr&lt;Device_3ImplExt&gt; ext_3; // Class extension</p>
+<p>345&nbsp;#else</p>
+<p>346&nbsp; Device_3ImplExt *ext_3;</p>
+<p>347&nbsp;#endif</p>
+<p>348&nbsp;};</p>
+<p>349</p>
+<p>350&nbsp;} // End of Tango namespace</p>
+<p>351</p>
+<p>352&nbsp;#endif // _DEVICE_H</p>
+<p><a class="reference external" href="../../d5/d25/structTango_1_1__AttributeIdlData.html">Tango::_AttributeIdlData</a></p>
+<p><strong>Definition:</strong> tango_const.h:1208</p>
+<p><a class="reference external" href="../../d9/d5b/structTango_1_1AttIdx.html#adea7a0153553f99a39be55f22c5d42c0">Tango::AttIdx::idx_in_multi_attr</a></p>
+<p>long idx_in_multi_attr</p>
+<p><strong>Definition:</strong> device_3.h:65</p>
+<p><a class="reference external" href="../../db/d65/classTango_1_1Device__3Impl.html">Tango::Device_3Impl</a></p>
+<p>Base class for all TANGO device since version 3.</p>
+<p><strong>Definition:</strong> device_3.h:85</p>
+<p><a class="reference external" href="../../d9/d5b/structTango_1_1AttIdx.html">Tango::AttIdx</a></p>
+<p><strong>Definition:</strong> device_3.h:62</p>
+<p><a class="reference external" href="../../db/d65/classTango_1_1Device__3Impl.html#a28dab632521e2fb0e52827d155af673c">Tango::Device_3Impl::info_3</a></p>
+<p>virtual Tango::DevInfo_3 * info_3()</p>
+<p>Get device info.</p>
+<p><a class="reference external" href="../../de/ddf/namespaceTango.html">Tango</a></p>
+<hr class="docutils" />
+<p><strong>Definition:</strong> device.h:50</p>
+<p><a class="reference external" href="../../db/d65/classTango_1_1Device__3Impl.html#a87abb35e56c7b00c542e949ef43ba1b0">Tango::Device_3Impl::read_attribute_history_3</a></p>
+<p>virtual Tango::DevAttrHistoryList_3 *
+read_attribute_history_3(const char *name, CORBA::Long n)</p>
+<p>Read attribute value history.</p>
+<p><a class="reference external" href="../../db/d65/classTango_1_1Device__3Impl.html#a651489039cc5222dc1197b3368aa8cdd">Tango::Device_3Impl::get_attribute_config_3</a></p>
+<p>virtual Tango::AttributeConfigList_3 * get_attribute_config_3(const
+Tango::DevVarStringArray &amp;names)</p>
+<p>Get attribute(s) configuration.</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a480f48ff00c9d1aa8bd406323967df7d">Tango::DeviceImpl::desc</a></p>
+<p>string desc</p>
+<p>The device description.</p>
+<p><strong>Definition:</strong> device.h:3260</p>
+<p><a class="reference external" href="../../db/d65/classTango_1_1Device__3Impl.html#ac9db8606c8ea7044642865d104ad74af">Tango::Device_3Impl::Device_3Impl</a></p>
+<p>Device_3Impl(DeviceClass *device_class, string &amp;dev_name)</p>
+<p>Constructs a newly allocated Device_3Impl object from its name.</p>
+<p><a class="reference external" href="../../db/d65/classTango_1_1Device__3Impl.html#a364061576e373d8bec46b5bba70f2817">Tango::Device_3Impl::~Device_3Impl</a></p>
+<p>virtual ~Device_3Impl()</p>
+<p>The device desctructor.</p>
+<p><strong>Definition:</strong> device_3.h:170</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a1b5f98bd245bd7e94403eaebc2913283">Tango::DeviceImpl::dev_state</a></p>
+<p>virtual Tango::DevState dev_state()</p>
+<p>Get device state.</p>
+<p><a class="reference external" href="../../d8/dbf/classTango_1_1Device__2Impl.html">Tango::Device_2Impl</a></p>
+<p>Base class for all TANGO device since version 2.</p>
+<p><strong>Definition:</strong> device_2.h:77</p>
+<p><a class="reference external" href="../../d9/d5b/structTango_1_1AttIdx.html#ac0bbd831200c802daaad0c584cc81f0b">Tango::AttIdx::failed</a></p>
+<p>bool failed</p>
+<p><strong>Definition:</strong> device_3.h:66</p>
+<p><a class="reference external" href="../../de/ddf/namespaceTango.html#ae1851ebaa91cbf1df9317e3f47f6190a">Tango::StatusNotSet</a></p>
+<p>const char *const StatusNotSet</p>
+<p><strong>Definition:</strong> tango_const.h:71</p>
+<p><a class="reference external" href="../../db/d65/classTango_1_1Device__3Impl.html#a6eaac6785a84422132e654916fc2cf7e">Tango::Device_3Impl::set_attribute_config_3</a></p>
+<p>virtual void set_attribute_config_3(const
+Tango::AttributeConfigList_3 &amp;new_conf)</p>
+<p>Set attribute(s) configuration.</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#afcea586ff5d465e6f752fd256a66aeea">Tango::DeviceImpl::dev_status</a></p>
+<p>virtual Tango::ConstDevString dev_status()</p>
+<p>Get device status.</p>
+<p><a class="reference external" href="../../d9/d5b/structTango_1_1AttIdx.html#aa71a9486541800c6fae590d925c4e9fa">Tango::AttIdx::idx_in_names</a></p>
+<p>long idx_in_names</p>
+<p><strong>Definition:</strong> device_3.h:64</p>
+<p><a class="reference external" href="../../de/ddf/namespaceTango.html#a31a504495ecab5fd862cb6e60d40360c">Tango::ConstDevString</a></p>
+<p>const char * ConstDevString</p>
+<p><strong>Definition:</strong> tango_const.h:469</p>
+<p><a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html">Tango::DeviceClass</a></p>
+<p>Base class for all TANGO device-class class.</p>
+<p><strong>Definition:</strong> deviceclass.h:76</p>
+<p><a class="reference external" href="../../db/d65/classTango_1_1Device__3Impl.html#a870e349674aca9b3ebee55157a31b5d3">Tango::Device_3Impl::read_attributes_3</a></p>
+<p>virtual Tango::AttributeValueList_3 * read_attributes_3(const
+Tango::DevVarStringArray &amp;names, Tango::DevSource source)</p>
+<p>Read attribute(s) value.</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a103c3527a529f7a40ecadf227a8a7990">Tango::DeviceImpl::device_class</a></p>
+<p>DeviceClass * device_class</p>
+<p>Pointer to the device-class object associated with the device.</p>
+<p><strong>Definition:</strong> device.h:3276</p>
+<p><a class="reference external" href="../../db/d65/classTango_1_1Device__3Impl.html#af1a705a748bf08290150c3e50bdb29ff">Tango::Device_3Impl::write_attributes_3</a></p>
+<p>virtual void write_attributes_3(const Tango::AttributeValueList
+&amp;values)</p>
+<p>Write attribute(s) value.</p>
+<ul class="simple">
+<li><a class="reference external" href="../../dir_93bc669b4520ad36068f344e109b7d17.html">include</a></li>
+<li><a class="reference external" href="../../dir_8ff48e8f3ef80891a9957ae5e9583431.html">tango</a></li>
+<li><a class="reference external" href="../../dir_53b28a22454594c5818f3f3f5a9fd698.html">server</a></li>
+<li><a class="reference external" href="../../dc/db9/device__3_8h.html">device_3.h</a></li>
+<li>Generated on Fri Oct 7 2016 11:11:15 for Tango Core Classes Reference
+by <a class="reference external" href="http://www.doxygen.org/index.html"><img alt="doxygen" src="../../_images/doxygen340.png" /></a> 1.8.8</li>
+</ul>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/dc/db9/device__3_8h_source.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, 3Controls.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.8</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+      |
+      <a href="../../_sources/dc/db9/device__3_8h_source.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

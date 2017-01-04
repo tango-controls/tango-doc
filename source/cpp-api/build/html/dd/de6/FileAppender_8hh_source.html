@@ -1,0 +1,258 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>&lt;no title&gt; &#8212; Tango Core Classes Reference Documentation 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="top" title="Tango Core Classes Reference Documentation 1.0 documentation" href="../../index.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><img alt="Logo" src="../../_images/logo364.jpg" /></td>
+<td>Tango Core Classes Reference &nbsp;9.2.5</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><a class="reference external" href="../../index.html">Main&nbsp;Page</a></li>
+<li><a class="reference external" href="../../pages.html">Related&nbsp;Pages</a></li>
+<li><a class="reference external" href="../../modules.html">Modules</a></li>
+<li><a class="reference external" href="../../namespaces.html">Namespaces</a></li>
+<li><a class="reference external" href="../../annotated.html">Classes</a></li>
+<li><a class="reference external" href="../../files.html">Files</a></li>
+<li><a class="reference external" href="../../files.html">File&nbsp;List</a></li>
+<li><a class="reference external" href="../../globals.html">File&nbsp;Members</a></li>
+</ul>
+<p>FileAppender.hh</p>
+<p><a class="reference external" href="../../dd/de6/FileAppender_8hh.html">Go to the documentation of this
+file.</a></p>
+<p>1&nbsp;//</p>
+<p>2&nbsp;// FileAppender.hh</p>
+<p>3&nbsp;//</p>
+<p>4&nbsp;// Copyright (C) : 2000 - 2002</p>
+<p>5&nbsp;// LifeLine Networks BV (www.lifeline.nl). All rights reserved.</p>
+<p>6&nbsp;// Bastiaan Bakker. All rights reserved.</p>
+<p>7&nbsp;//</p>
+<p>8&nbsp;// 2004,2005,2006,2007,2008,2009,2010,2011,2012</p>
+<p>9&nbsp;// Synchrotron SOLEIL</p>
+<p>10&nbsp;// L&#8217;Orme des Merisiers</p>
+<p>11&nbsp;// Saint-Aubin - BP 48 - France</p>
+<p>12&nbsp;//</p>
+<p>13&nbsp;// This file is part of log4tango.</p>
+<p>14&nbsp;//</p>
+<p>15&nbsp;// Log4ango is free software: you can redistribute it and/or modify</p>
+<p>16&nbsp;// it under the terms of the GNU Lesser General Public License as
+published by</p>
+<p>17&nbsp;// the Free Software Foundation, either version 3 of the License, or</p>
+<p>18&nbsp;// (at your option) any later version.</p>
+<p>19&nbsp;//</p>
+<p>20&nbsp;// Log4tango is distributed in the hope that it will be useful,</p>
+<p>21&nbsp;// but WITHOUT ANY WARRANTY; without even the implied warranty of</p>
+<p>22&nbsp;// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the</p>
+<p>23&nbsp;// GNU Lesser General Public License for more details.</p>
+<p>24&nbsp;//</p>
+<p>25&nbsp;// You should have received a copy of the GNU Lesser General Public
+License</p>
+<p>26&nbsp;// along with Log4Tango. If not, see &lt;<a class="reference external" href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>&gt;.</p>
+<p>27</p>
+<p>28&nbsp;#ifndef _LOG4TANGO_FILEAPPENDER_H</p>
+<p>29&nbsp;#define _LOG4TANGO_FILEAPPENDER_H</p>
+<p>30</p>
+<p>31&nbsp;#include &#8220;<a class="reference external" href="../../da/dd8/Portability_8hh.html">Portability.hh</a>&#8220;</p>
+<p>32&nbsp;#include
+&#8220;<a class="reference external" href="../../d3/da3/LayoutAppender_8hh.html">LayoutAppender.hh</a>&#8220;</p>
+<p>33</p>
+<p>34&nbsp;namespace <a class="reference external" href="../../d4/db0/namespacelog4tango.html">log4tango</a> {</p>
+<p>35</p>
+<p>36&nbsp;//&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;</p>
+<p>37&nbsp;// class : FileAppender</p>
+<p>38&nbsp;//&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;</p>
+<p><a class="reference external" href="../../dd/d62/classlog4tango_1_1FileAppender.html">39</a>&nbsp;class
+<a class="reference external" href="../../df/d5d/Export_8hh.html#abb9e874b4244b6247ac9dbb62a2c7b8f">LOG4TANGO_EXPORT</a>
+<a class="reference external" href="../../dd/d62/classlog4tango_1_1FileAppender.html">FileAppender</a> :
+public
+<a class="reference external" href="../../d3/db6/classlog4tango_1_1LayoutAppender.html">LayoutAppender</a></p>
+<p>40&nbsp;{</p>
+<p>41&nbsp;public:</p>
+<p>42</p>
+<p>52
+<a class="reference external" href="../../dd/d62/classlog4tango_1_1FileAppender.html">FileAppender</a>(const
+std::string&amp; name, const std::string&amp; fileName,</p>
+<p>53&nbsp; bool append = true,
+<a class="reference external" href="../../d4/db0/namespacelog4tango.html#af02411cb691986e819f7fbf75872b81a">mode_t</a>
+mode = 00644);</p>
+<p>54</p>
+<p>60
+<a class="reference external" href="../../dd/d62/classlog4tango_1_1FileAppender.html">FileAppender</a>(const
+std::string&amp; name, int fd);</p>
+<p>61</p>
+<p>65&nbsp; virtual
+~<a class="reference external" href="../../dd/d62/classlog4tango_1_1FileAppender.html">FileAppender</a>();</p>
+<p>66</p>
+<p>74&nbsp; virtual bool reopen (void);</p>
+<p>75</p>
+<p>79&nbsp; virtual void close (void);</p>
+<p>80</p>
+<p>86&nbsp; virtual bool is_valid (void) const;</p>
+<p>87</p>
+<p>96&nbsp; virtual void set_append (bool append);</p>
+<p>97</p>
+<p>101&nbsp; virtual bool get_append (void) const;</p>
+<p>102</p>
+<p>106&nbsp; virtual void set_mode
+(<a class="reference external" href="../../d4/db0/namespacelog4tango.html#af02411cb691986e819f7fbf75872b81a">mode_t</a>
+mode);</p>
+<p>107</p>
+<p>111&nbsp; virtual
+<a class="reference external" href="../../d4/db0/namespacelog4tango.html#af02411cb691986e819f7fbf75872b81a">mode_t</a>
+get_mode() const;</p>
+<p>112</p>
+<p>113&nbsp;protected:</p>
+<p>114</p>
+<p>115&nbsp; virtual int _append (const
+<a class="reference external" href="../../d8/df2/structlog4tango_1_1LoggingEvent.html">LoggingEvent</a>&amp;
+event);</p>
+<p>116</p>
+<p><a class="reference external" href="../../dd/d62/classlog4tango_1_1FileAppender.html#a7a21e40ff4eb363cc20678a4be99c93d">117</a>
+const std::string
+<a class="reference external" href="../../dd/d62/classlog4tango_1_1FileAppender.html#a7a21e40ff4eb363cc20678a4be99c93d">_file_name</a>;</p>
+<p><a class="reference external" href="../../dd/d62/classlog4tango_1_1FileAppender.html#a04f8a77d3ad3aa7cdcaa8f6be93c5ab0">118</a>
+int
+<a class="reference external" href="../../dd/d62/classlog4tango_1_1FileAppender.html#a04f8a77d3ad3aa7cdcaa8f6be93c5ab0">_fd</a>;</p>
+<p><a class="reference external" href="../../dd/d62/classlog4tango_1_1FileAppender.html#a6d4608df941bbaef01e82396bfc85cb2">119</a>
+int
+<a class="reference external" href="../../dd/d62/classlog4tango_1_1FileAppender.html#a6d4608df941bbaef01e82396bfc85cb2">_flags</a>;</p>
+<p><a class="reference external" href="../../dd/d62/classlog4tango_1_1FileAppender.html#a158481e2d508ad2615d78615a86e5206">120</a>
+<a class="reference external" href="../../d4/db0/namespacelog4tango.html#af02411cb691986e819f7fbf75872b81a">mode_t</a>
+<a class="reference external" href="../../dd/d62/classlog4tango_1_1FileAppender.html#a158481e2d508ad2615d78615a86e5206">_mode</a>;</p>
+<p>121&nbsp;};</p>
+<p>122</p>
+<p>123&nbsp;} // namespace log4tango</p>
+<p>124</p>
+<p>125&nbsp;#endif // _LOG4TANGO_FILEAPPENDER_H</p>
+<p><a class="reference external" href="../../d3/db6/classlog4tango_1_1LayoutAppender.html">log4tango::LayoutAppender</a></p>
+<p><strong>Definition:</strong> LayoutAppender.hh:41</p>
+<p><a class="reference external" href="../../d4/db0/namespacelog4tango.html#af02411cb691986e819f7fbf75872b81a">log4tango::mode_t</a></p>
+<p>unsigned short mode_t</p>
+<p><strong>Definition:</strong> config-win32.h:149</p>
+<p><a class="reference external" href="../../d4/db0/namespacelog4tango.html">log4tango</a></p>
+<p><strong>Definition:</strong> Appender.hh:40</p>
+<p><a class="reference external" href="../../dd/d62/classlog4tango_1_1FileAppender.html#a158481e2d508ad2615d78615a86e5206">log4tango::FileAppender::_mode</a></p>
+<p>mode_t _mode</p>
+<p><strong>Definition:</strong> FileAppender.hh:120</p>
+<p><a class="reference external" href="../../da/dd8/Portability_8hh.html">Portability.hh</a></p>
+<p><a class="reference external" href="../../df/d5d/Export_8hh.html#abb9e874b4244b6247ac9dbb62a2c7b8f">LOG4TANGO_EXPORT</a></p>
+<p>#define LOG4TANGO_EXPORT</p>
+<p><strong>Definition:</strong> Export.hh:38</p>
+<p><a class="reference external" href="../../dd/d62/classlog4tango_1_1FileAppender.html#a04f8a77d3ad3aa7cdcaa8f6be93c5ab0">log4tango::FileAppender::_fd</a></p>
+<p>int _fd</p>
+<p><strong>Definition:</strong> FileAppender.hh:118</p>
+<p><a class="reference external" href="../../dd/d62/classlog4tango_1_1FileAppender.html#a7a21e40ff4eb363cc20678a4be99c93d">log4tango::FileAppender::_file_name</a></p>
+<p>const std::string _file_name</p>
+<p><strong>Definition:</strong> FileAppender.hh:117</p>
+<p><a class="reference external" href="../../dd/d62/classlog4tango_1_1FileAppender.html">log4tango::FileAppender</a></p>
+<p><strong>Definition:</strong> FileAppender.hh:39</p>
+<p><a class="reference external" href="../../dd/d62/classlog4tango_1_1FileAppender.html#a6d4608df941bbaef01e82396bfc85cb2">log4tango::FileAppender::_flags</a></p>
+<p>int _flags</p>
+<p><strong>Definition:</strong> FileAppender.hh:119</p>
+<p><a class="reference external" href="../../d8/df2/structlog4tango_1_1LoggingEvent.html">log4tango::LoggingEvent</a></p>
+<p>The internal representation of logging events.</p>
+<p><strong>Definition:</strong> LoggingEvent.hh:50</p>
+<p><a class="reference external" href="../../d3/da3/LayoutAppender_8hh.html">LayoutAppender.hh</a></p>
+<ul class="simple">
+<li><a class="reference external" href="../../dir_93bc669b4520ad36068f344e109b7d17.html">include</a></li>
+<li><a class="reference external" href="../../dir_5a849e394260fc4e91409ef0349c0857.html">log4tango</a></li>
+<li><a class="reference external" href="../../dd/de6/FileAppender_8hh.html">FileAppender.hh</a></li>
+<li>Generated on Fri Oct 7 2016 11:11:15 for Tango Core Classes Reference
+by <a class="reference external" href="http://www.doxygen.org/index.html"><img alt="doxygen" src="../../_images/doxygen364.png" /></a> 1.8.8</li>
+</ul>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/dd/de6/FileAppender_8hh_source.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, 3Controls.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.8</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+      |
+      <a href="../../_sources/dd/de6/FileAppender_8hh_source.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

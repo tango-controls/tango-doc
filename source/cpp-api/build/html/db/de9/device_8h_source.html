@@ -1,0 +1,2214 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>&lt;no title&gt; &#8212; Tango Core Classes Reference Documentation 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="top" title="Tango Core Classes Reference Documentation 1.0 documentation" href="../../index.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><img alt="Logo" src="../../_images/logo316.jpg" /></td>
+<td>Tango Core Classes Reference &nbsp;9.2.5</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><a class="reference external" href="../../index.html">Main&nbsp;Page</a></li>
+<li><a class="reference external" href="../../pages.html">Related&nbsp;Pages</a></li>
+<li><a class="reference external" href="../../modules.html">Modules</a></li>
+<li><a class="reference external" href="../../namespaces.html">Namespaces</a></li>
+<li><a class="reference external" href="../../annotated.html">Classes</a></li>
+<li><a class="reference external" href="../../files.html">Files</a></li>
+<li><a class="reference external" href="../../files.html">File&nbsp;List</a></li>
+<li><a class="reference external" href="../../globals.html">File&nbsp;Members</a></li>
+</ul>
+<p>device.h</p>
+<p><a class="reference external" href="../../db/de9/device_8h.html">Go to the documentation of this file.</a></p>
+<p>1&nbsp;//===================================================================================================================</p>
+<p>2&nbsp;//</p>
+<p>3&nbsp;// file : Device.h</p>
+<p>4&nbsp;//</p>
+<p>5&nbsp;// description : Include for the Device root classes called DeviceImpl</p>
+<p>6&nbsp;//</p>
+<p>7&nbsp;// project : TANGO</p>
+<p>8&nbsp;//</p>
+<p>9&nbsp;// author(s) : A.Gotz + E.Taurel</p>
+<p>10&nbsp;//</p>
+<p>11&nbsp;// Copyright (C) :
+2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015</p>
+<p>12&nbsp;// European Synchrotron Radiation Facility</p>
+<p>13&nbsp;// BP 220, Grenoble 38043</p>
+<p>14&nbsp;// FRANCE</p>
+<p>15&nbsp;//</p>
+<p>16&nbsp;// This file is part of Tango.</p>
+<p>17&nbsp;//</p>
+<p>18&nbsp;// Tango is free software: you can redistribute it and/or modify it
+under the terms of the GNU Lesser General Public</p>
+<p>19&nbsp;// License as published by the Free Software Foundation, either
+version 3 of the License, or</p>
+<p>20&nbsp;// (at your option) any later version.</p>
+<p>21&nbsp;//</p>
+<p>22&nbsp;// Tango is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty</p>
+<p>23&nbsp;// of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the</p>
+<p>24&nbsp;// GNU Lesser General Public License for more details.</p>
+<p>25&nbsp;//</p>
+<p>26&nbsp;// You should have received a copy of the GNU Lesser General Public
+License along with Tango.</p>
+<p>27&nbsp;// If not, see &lt;<a class="reference external" href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>&gt;.</p>
+<p>28&nbsp;//</p>
+<p>29&nbsp;// $Revision$</p>
+<p>30&nbsp;//</p>
+<p>31&nbsp;//===================================================================================================================</p>
+<p>32</p>
+<p>33&nbsp;#ifndef _DEVICE_H</p>
+<p>34&nbsp;#define _DEVICE_H</p>
+<p>35</p>
+<p>36&nbsp;#include &lt;tango.h&gt;</p>
+<p>37&nbsp;#include &lt;tango/server/blackbox.h&gt;</p>
+<p>38&nbsp;#include &lt;tango/server/classattribute.h&gt;</p>
+<p>39&nbsp;#include &lt;tango/server/classpipe.h&gt;</p>
+<p>40&nbsp;#include
+&lt;<a class="reference external" href="../../d4/d18/attrdesc_8h.html">tango/server/attrdesc.h</a>&gt;</p>
+<p>41&nbsp;#include
+&lt;<a class="reference external" href="../../d3/d7c/attribute_8h.html">tango/server/attribute.h</a>&gt;</p>
+<p>42&nbsp;#include
+&lt;<a class="reference external" href="../../df/da4/w__attribute_8h.html">tango/server/w_attribute.h</a>&gt;</p>
+<p>43&nbsp;#include &lt;tango/server/fwdattribute.h&gt;</p>
+<p>44&nbsp;#include
+&lt;<a class="reference external" href="../../da/dd1/multiattribute_8h.html">tango/server/multiattribute.h</a>&gt;</p>
+<p>45&nbsp;#include &lt;tango/server/pollobj.h&gt;</p>
+<p>46&nbsp;#include
+&lt;<a class="reference external" href="../../d7/dfc/deviceclass_8h.html">tango/server/deviceclass.h</a>&gt;</p>
+<p>47&nbsp;#include &lt;tango/server/devintr.h&gt;</p>
+<p>48&nbsp;#include &lt;tango/server/dintrthread.h&gt;</p>
+<p>49</p>
+<p><a class="reference external" href="../../de/ddf/namespaceTango.html">50</a>&nbsp;namespace
+<a class="reference external" href="../../de/ddf/namespaceTango.html">Tango</a></p>
+<p>51&nbsp;{</p>
+<p>52</p>
+<p>53&nbsp;class <a class="reference external" href="../../d2/d1d/classTango_1_1Command.html">Command</a>;</p>
+<p>54&nbsp;class <a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html">DeviceClass</a>;</p>
+<p>55&nbsp;class AutoTangoMonitor;</p>
+<p>56&nbsp;class NoSyncModelTangoMonitor;</p>
+<p>57&nbsp;class EventSupplier;</p>
+<p>58&nbsp;class EventSubscriptionChangeCmd;</p>
+<p>59&nbsp;class <a class="reference external" href="../../d4/deb/classTango_1_1Util.html">Util</a>;</p>
+<p>60&nbsp;class FwdWrongConf;</p>
+<p>61</p>
+<p>64&nbsp;//=============================================================================</p>
+<p>65&nbsp;//</p>
+<p>66&nbsp;// The DeviceImpl class</p>
+<p>67&nbsp;//</p>
+<p>68&nbsp;//</p>
+<p>69&nbsp;// description : This class is derived directly from the
+Tango::Device_skel</p>
+<p>70&nbsp;// class generated by CORBA. It represents the CORBA</p>
+<p>71&nbsp;// servant which will be accessed by the client.</p>
+<p>72&nbsp;// It implements all the methods</p>
+<p>73&nbsp;// and attributes defined in the IDL interface for Device.</p>
+<p>74&nbsp;//</p>
+<p>75&nbsp;//=============================================================================</p>
+<p>76</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html">90</a>&nbsp;class
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html">DeviceImpl</a> : public
+virtual POA_Tango::Device</p>
+<p>91&nbsp;{</p>
+<p>92&nbsp;public:</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#aa90445f0324fbdea288f7b41aa4a6790">93</a>
+friend class
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#aa90445f0324fbdea288f7b41aa4a6790">Tango::AutoTangoMonitor</a>;</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a2902621019fa17e307d9093137d0d4e7">94</a>
+friend class
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a2902621019fa17e307d9093137d0d4e7">Tango::NoSyncModelTangoMonitor</a>;</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a4cdabe9798a15fab2e519f9c4471e32c">95</a>
+friend class
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a4cdabe9798a15fab2e519f9c4471e32c">Tango::EventSupplier</a>;</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a38c76f8655cb5af13615b7a2ea89d1fe">96</a>
+friend class
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a38c76f8655cb5af13615b7a2ea89d1fe">Tango::EventSubscriptionChangeCmd</a>;</p>
+<p>97</p>
+<p>112
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a5cd151bc1016a1e0aaee47df1949fc03">DeviceImpl</a>(<a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html">DeviceClass</a>
+*<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a103c3527a529f7a40ecadf227a8a7990">device_class</a>,string
+&amp;dev_name);</p>
+<p>113</p>
+<p>126
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a5cd151bc1016a1e0aaee47df1949fc03">DeviceImpl</a>(<a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html">DeviceClass</a>
+*<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a103c3527a529f7a40ecadf227a8a7990">device_class</a>,string
+&amp;dev_name,string
+&amp;<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a480f48ff00c9d1aa8bd406323967df7d">desc</a>);</p>
+<p>141
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a5cd151bc1016a1e0aaee47df1949fc03">DeviceImpl</a>(<a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html">DeviceClass</a>
+*<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a103c3527a529f7a40ecadf227a8a7990">device_class</a>,</p>
+<p>142&nbsp; string &amp;dev_name,string
+&amp;<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a480f48ff00c9d1aa8bd406323967df7d">desc</a>,</p>
+<p>143&nbsp; Tango::DevState
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a1b5f98bd245bd7e94403eaebc2913283">dev_state</a>,string
+&amp;<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#afcea586ff5d465e6f752fd256a66aeea">dev_status</a>);</p>
+<p>162
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a5cd151bc1016a1e0aaee47df1949fc03">DeviceImpl</a>(<a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html">DeviceClass</a>
+*<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a103c3527a529f7a40ecadf227a8a7990">device_class</a>,</p>
+<p>163&nbsp; const char *dev_name,const char
+*<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a480f48ff00c9d1aa8bd406323967df7d">desc</a>
+= &#8220;A TANGO device&#8221;,</p>
+<p>164&nbsp; Tango::DevState
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a1b5f98bd245bd7e94403eaebc2913283">dev_state</a>
+= Tango::UNKNOWN,</p>
+<p>165&nbsp; const char
+*<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#afcea586ff5d465e6f752fd256a66aeea">dev_status</a>
+=
+<a class="reference external" href="../../de/ddf/namespaceTango.html#ae1851ebaa91cbf1df9317e3f47f6190a">StatusNotSet</a>);</p>
+<p>166</p>
+<p>168</p>
+<p>175&nbsp; virtual
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a9a5ffdab6150008e52d87ea4c38ee9ff">~DeviceImpl</a>();</p>
+<p>177</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#adc92cdf3a75da5ebc139b7bf7d9c7377">191</a>
+string
+&amp;<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#adc92cdf3a75da5ebc139b7bf7d9c7377">get_status</a>()
+{return
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#aa66233801c127f96878d701259739383">device_status</a>;}</p>
+<p>192</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a54f9d94ef1072a6cb19ee472ccf044d7">198</a>
+void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a54f9d94ef1072a6cb19ee472ccf044d7">set_status</a>(const
+string &amp;new_status)
+{<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#aa66233801c127f96878d701259739383">device_status</a>
+= new_status;}</p>
+<p>199</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#ab1c6dfb1ea310030cd464f9091a2b8b0">206</a>
+void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#ab1c6dfb1ea310030cd464f9091a2b8b0">append_status</a>(const
+string &amp;stat,bool new_line=false)
+{if(new_line==true)<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#aa66233801c127f96878d701259739383">device_status</a>.append(1,&#8217;\n&#8217;);<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#aa66233801c127f96878d701259739383">device_status</a>.append(stat);}</p>
+<p>207</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a5b53b4435a1ea8087849a9e505d70f2a">216</a>
+Tango::DevState
+&amp;<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a5b53b4435a1ea8087849a9e505d70f2a">get_state</a>()
+{return
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a214ba0a5741c52165869ae11219d414a">device_state</a>;}</p>
+<p>217</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a051cb13d94de8492f37a9b5f48e38e56">225</a>
+Tango::DevState
+&amp;<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a051cb13d94de8492f37a9b5f48e38e56">get_prev_state</a>()
+{return device_prev_state;}</p>
+<p>231&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a2123f00afdfa638c31399eb10efefd66">set_state</a>
+(const Tango::DevState &amp;new_state);</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#ac337fcab0f8fa8647e817a9aedc87f0c">240</a>
+string
+&amp;<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#ac337fcab0f8fa8647e817a9aedc87f0c">get_name</a>()
+{return
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#af2649629d515c38fc5a19c44f07e2f40">device_name</a>;}</p>
+<p>241</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a61fa9524c2eba31eba7ba9ff3b48ef0a">250</a>
+<a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html">DeviceClass</a>
+*<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a61fa9524c2eba31eba7ba9ff3b48ef0a">get_device_class</a>()
+{return
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a103c3527a529f7a40ecadf227a8a7990">device_class</a>;}</p>
+<p>251</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a339ebeff825166048358919948782be8">260</a>
+<a class="reference external" href="../../dc/d3b/classTango_1_1MultiAttribute.html">MultiAttribute</a>
+*<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a339ebeff825166048358919948782be8">get_device_attr</a>()
+{return
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#aed3e20a35c92335be9ba742abdd9d60b">dev_attr</a>;}</p>
+<p>261</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#abfe5f92400f24bcfed94bc7a0d731233">270</a>
+void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#abfe5f92400f24bcfed94bc7a0d731233">set_device_attr</a>(<a class="reference external" href="../../dc/d3b/classTango_1_1MultiAttribute.html">MultiAttribute</a>
+*ptr)
+{<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#aed3e20a35c92335be9ba742abdd9d60b">dev_attr</a>
+= ptr;}</p>
+<p>271</p>
+<p>280&nbsp; <a class="reference external" href="../../da/dbb/classTango_1_1DbDevice.html">DbDevice</a>
+*<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a6a5e05c240b76db97a357703bdd30552">get_db_device</a>();</p>
+<p>281</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#ae4071b4df6b9398e890d8dea51365383">291</a>
+void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#ae4071b4df6b9398e890d8dea51365383">set_d_var</a>(Tango::Device_ptr
+d) {d_var = d;}</p>
+<p>292</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#af57cb03749073660df2f1515204d17aa">302</a>
+Tango::Device_var
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#af57cb03749073660df2f1515204d17aa">get_d_var</a>()
+{return d_var;}</p>
+<p>303</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a99aba4af5cd29838f50956a75427d5f7">312</a>
+void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a99aba4af5cd29838f50956a75427d5f7">set_obj_id</a>(PortableServer::ObjectId_var
+o) {obj_id = o;}</p>
+<p>313</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a59b8a8053b36fe6eb5058342f77829ab">322</a>
+PortableServer::ObjectId_var
+&amp;<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a59b8a8053b36fe6eb5058342f77829ab">get_obj_id</a>()
+{return obj_id;}</p>
+<p>323</p>
+<p>332&nbsp; virtual PortableServer::POA_ptr
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a0895eb0df1a110eba046df7200d86f48">_default_POA</a>();</p>
+<p>333</p>
+<p>335</p>
+<p>336&nbsp;protected:</p>
+<p>347&nbsp; bool
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#ab6434f2fd256b10b21ba38ba80b7231c">is_attribute_polled</a>(const
+string &amp;att_name);</p>
+<p>356&nbsp; bool
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#ab3075b4e266562181c28d33be817ec0d">is_command_polled</a>(const
+string &amp;cmd_name);</p>
+<p>365&nbsp; int
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#ab4b52ce4ebdfb338399dc146cc629529">get_attribute_poll_period</a>(const
+string &amp;att_name);</p>
+<p>374&nbsp; int
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a00f3e7b568926d1e09b1dff8f574979f">get_command_poll_period</a>(const
+string &amp;cmd_name);</p>
+<p>383&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a6a748b41d85396d38cd004a30a10bda1">poll_attribute</a>(const
+string &amp;att_name,int period);</p>
+<p>392&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a96a247ceb8f389dbb02e8e693847fcdf">poll_command</a>(const
+string &amp;cmd_name,int period);</p>
+<p>400&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a70d7f89e019fa63535ab7815a0cb4552">stop_poll_attribute</a>(const
+string &amp;att_name);</p>
+<p>408&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#acbf6090c2400d6c44a6474b458c58b36">stop_poll_command</a>(const
+string &amp;cmd_name);</p>
+<p>410</p>
+<p>411&nbsp;public:</p>
+<p>427&nbsp; virtual void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#afaa3632ea04076bb5614a98ff944ef8c">init_device</a>()
+= 0;</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#ac2cf9bd6e0a5da8c121c65b068d36463">442</a>
+virtual void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#ac2cf9bd6e0a5da8c121c65b068d36463">delete_device</a>()
+{};</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a086fe46c88aed6e2aff70a9cb6c26e84">455</a>
+virtual void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a086fe46c88aed6e2aff70a9cb6c26e84">always_executed_hook</a>(void)
+{};</p>
+<p>456</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a934daa7bef5a3f01c50ba304006fdda4">473</a>
+virtual void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a934daa7bef5a3f01c50ba304006fdda4">read_attr_hardware</a>(vector&lt;long&gt;
+&amp;attr_list) {(void)attr_list;};</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a7c6302cff47fca241560187e1c178701">486</a>
+virtual void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a7c6302cff47fca241560187e1c178701">read_attr</a>(<a class="reference external" href="../../d6/dad/classTango_1_1Attribute.html">Attribute</a>
+&amp;attr) {(void)attr;};</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a7aee6ee9fee2feb7f358972ec1677328">503</a>
+virtual void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a7aee6ee9fee2feb7f358972ec1677328">write_attr_hardware</a>(vector&lt;long&gt;
+&amp;attr_list) {(void)attr_list;};</p>
+<p>522&nbsp; virtual Tango::DevState
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a1b5f98bd245bd7e94403eaebc2913283">dev_state</a>();</p>
+<p>523</p>
+<p>538&nbsp; virtual
+<a class="reference external" href="../../de/ddf/namespaceTango.html#a31a504495ecab5fd862cb6e60d40360c">Tango::ConstDevString</a>
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#afcea586ff5d465e6f752fd256a66aeea">dev_status</a>();</p>
+<p>539</p>
+<p>559&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a9f130650c3a9da5190001adfbc2dc50c">add_attribute</a>(<a class="reference external" href="../../d5/dcd/classTango_1_1Attr.html">Attr</a>
+*new_attr);</p>
+<p>560</p>
+<p>579&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#aa88509d4d6bba29d28a6c124cf0349a6">remove_attribute</a>(<a class="reference external" href="../../d5/dcd/classTango_1_1Attr.html">Attr</a>
+*rem_attr,bool free_it = false, bool clean_db = true);</p>
+<p>580</p>
+<p>599&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#aa88509d4d6bba29d28a6c124cf0349a6">remove_attribute</a>(string
+&amp;rem_attr_name,bool free_it = false,bool clean_db = true);</p>
+<p>600</p>
+<p>622&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a64f3aafd381cd25bb562cdb4074932d9">add_command</a>(<a class="reference external" href="../../d2/d1d/classTango_1_1Command.html">Command</a>
+*new_cmd, bool device = false);</p>
+<p>641&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#ae57fcb9d357314f6e4f159a62de3fb8d">remove_command</a>(<a class="reference external" href="../../d2/d1d/classTango_1_1Command.html">Command</a>
+*rem_cmd,bool free_it = false,bool clean_db = true);</p>
+<p>642</p>
+<p>661&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#ae57fcb9d357314f6e4f159a62de3fb8d">remove_command</a>(const
+string &amp;rem_cmd_name,bool free_it = false,bool clean_db = true);</p>
+<p>662</p>
+<p>676&nbsp; vector&lt;PollObj *&gt;::iterator
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#ac47d75934efad28b5668ee8b90df0999">get_polled_obj_by_type_name</a>(<a class="reference external" href="../../de/ddf/namespaceTango.html#ac5ffdb26e95e0c322c8ed79524ad9b6e">Tango::PollObjType</a>
+obj_type,const string &amp;obj_name);</p>
+<p>692&nbsp; bool
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#ab7ccad84e75ab8e91ada91bb49a028ba">is_there_subscriber</a>(const
+string
+&amp;att_name,<a class="reference external" href="../../d1/d45/group__Client.html#ga5366e2a8cedf5aab5be8835974f787c6">EventType</a>
+event_type);</p>
+<p>694</p>
+<p>695</p>
+<p>696</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#ab4b7bdcca9c83603da302783c86553bc">713</a>
+inline Tango::DevVarCharArray
+*<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#ab4b7bdcca9c83603da302783c86553bc">create_DevVarCharArray</a>(unsigned
+char *ptr,long length)</p>
+<p>714&nbsp; {</p>
+<p>715&nbsp; return new Tango::DevVarCharArray(length,length,ptr,false);</p>
+<p>716&nbsp; }</p>
+<p>717</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#aa4c9e98e8b3fa64328eca74a4d1e07d3">729</a>
+inline Tango::DevVarShortArray
+*<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#aa4c9e98e8b3fa64328eca74a4d1e07d3">create_DevVarShortArray</a>(short
+*ptr,long length)</p>
+<p>730&nbsp; {</p>
+<p>731&nbsp; return new Tango::DevVarShortArray(length,length,ptr,false);</p>
+<p>732&nbsp; }</p>
+<p>733</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#ac094cb1f6aaf9f8672e7a508ac561e6b">746</a>
+inline Tango::DevVarLongArray
+*<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#ac094cb1f6aaf9f8672e7a508ac561e6b">create_DevVarLongArray</a>(DevLong
+*ptr,long length)</p>
+<p>747&nbsp; {</p>
+<p>748&nbsp; return new Tango::DevVarLongArray(length,length,ptr,false);</p>
+<p>749&nbsp; }</p>
+<p>750</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a78a091f645e75c006f856adde52c1c50">763</a>
+inline Tango::DevVarLong64Array
+*<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a78a091f645e75c006f856adde52c1c50">create_DevVarLong64Array</a>(DevLong64
+*ptr,long length)</p>
+<p>764&nbsp; {</p>
+<p>765&nbsp; return new Tango::DevVarLong64Array(length,length,ptr,false);</p>
+<p>766&nbsp; }</p>
+<p>767</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#ab0cee831dc51482a9b16f49406a796c4">779</a>
+inline Tango::DevVarFloatArray
+*<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#ab0cee831dc51482a9b16f49406a796c4">create_DevVarFloatArray</a>(float
+*ptr,long length)</p>
+<p>780&nbsp; {</p>
+<p>781&nbsp; return new Tango::DevVarFloatArray(length,length,ptr,false);</p>
+<p>782&nbsp; }</p>
+<p>783</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a11715eb4830c827fed3b0e5592cfd1a0">795</a>
+inline Tango::DevVarDoubleArray
+*<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a11715eb4830c827fed3b0e5592cfd1a0">create_DevVarDoubleArray</a>(double
+*ptr,long length)</p>
+<p>796&nbsp; {</p>
+<p>797&nbsp; return new Tango::DevVarDoubleArray(length,length,ptr,false);</p>
+<p>798&nbsp; }</p>
+<p>799</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#ad08bf54e4603f07b21a522047626ffef">811</a>
+inline Tango::DevVarUShortArray
+*<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#ad08bf54e4603f07b21a522047626ffef">create_DevVarUShortArray</a>(unsigned
+short *ptr,long length)</p>
+<p>812&nbsp; {</p>
+<p>813&nbsp; return new Tango::DevVarUShortArray(length,length,ptr,false);</p>
+<p>814&nbsp; }</p>
+<p>815</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a408b4dd2c4b27caf1ffdefdc5fdde784">828</a>
+inline Tango::DevVarULongArray
+*<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a408b4dd2c4b27caf1ffdefdc5fdde784">create_DevVarULongArray</a>(DevULong
+*ptr,long length)</p>
+<p>829&nbsp; {</p>
+<p>830&nbsp; return new Tango::DevVarULongArray(length,length,ptr,false);</p>
+<p>831&nbsp; }</p>
+<p>832</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#aa00f880d45531edc57cf3f070ce9e757">846</a>
+inline Tango::DevVarULong64Array
+*<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#aa00f880d45531edc57cf3f070ce9e757">create_DevVarULong64Array</a>(DevULong64
+*ptr,long length)</p>
+<p>847&nbsp; {</p>
+<p>848&nbsp; return new Tango::DevVarULong64Array(length,length,ptr,false);</p>
+<p>849&nbsp; }</p>
+<p>850</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#abe7b41d84597f3e9327c2a8fdc2eff2b">862</a>
+inline Tango::DevVarStringArray
+*<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#abe7b41d84597f3e9327c2a8fdc2eff2b">create_DevVarStringArray</a>(char
+**ptr,long length)</p>
+<p>863&nbsp; {</p>
+<p>864&nbsp; return new Tango::DevVarStringArray(length,length,ptr,false);</p>
+<p>865&nbsp; }</p>
+<p>867</p>
+<p>868</p>
+<p>886&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#acc288d1cf858125abe0e6e4e154e9f43">set_change_event</a>
+(string attr_name, bool implemented, bool detect = true);</p>
+<p>887</p>
+<p>900&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a6c789211496cd65dd417ea4fe633c85a">push_change_event</a>
+(string attr_name, DevFailed *except = NULL);</p>
+<p>901</p>
+<p>923&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a6c789211496cd65dd417ea4fe633c85a">push_change_event</a>
+(string attr_name, Tango::DevShort *p_data, long x = 1,long y =
+0,bool release = false);</p>
+<p>924</p>
+<p>946&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a6c789211496cd65dd417ea4fe633c85a">push_change_event</a>
+(string attr_name, Tango::DevLong *p_data, long x = 1,long y = 0,bool
+release = false);</p>
+<p>947</p>
+<p>969&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a6c789211496cd65dd417ea4fe633c85a">push_change_event</a>
+(string attr_name, Tango::DevLong64 *p_data, long x = 1,long y =
+0,bool release = false);</p>
+<p>970</p>
+<p>992&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a6c789211496cd65dd417ea4fe633c85a">push_change_event</a>
+(string attr_name, Tango::DevFloat *p_data, long x = 1,long y =
+0,bool release = false);</p>
+<p>993</p>
+<p>1015&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a6c789211496cd65dd417ea4fe633c85a">push_change_event</a>
+(string attr_name, Tango::DevDouble *p_data, long x = 1,long y =
+0,bool release = false);</p>
+<p>1016</p>
+<p>1038&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a6c789211496cd65dd417ea4fe633c85a">push_change_event</a>
+(string attr_name, Tango::DevString *p_data, long x = 1,long y =
+0,bool release = false);</p>
+<p>1039</p>
+<p>1061&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a6c789211496cd65dd417ea4fe633c85a">push_change_event</a>
+(string attr_name, Tango::DevBoolean *p_data, long x = 1,long y =
+0,bool release = false);</p>
+<p>1062</p>
+<p>1084&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a6c789211496cd65dd417ea4fe633c85a">push_change_event</a>
+(string attr_name, Tango::DevUShort *p_data, long x = 1,long y =
+0,bool release = false);</p>
+<p>1085</p>
+<p>1107&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a6c789211496cd65dd417ea4fe633c85a">push_change_event</a>
+(string attr_name, Tango::DevUChar *p_data, long x = 1,long y =
+0,bool release = false);</p>
+<p>1108</p>
+<p>1130&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a6c789211496cd65dd417ea4fe633c85a">push_change_event</a>
+(string attr_name, Tango::DevULong *p_data, long x = 1,long y =
+0,bool release = false);</p>
+<p>1131</p>
+<p>1153&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a6c789211496cd65dd417ea4fe633c85a">push_change_event</a>
+(string attr_name, Tango::DevULong64 *p_data, long x = 1,long y =
+0,bool release = false);</p>
+<p>1154</p>
+<p>1176&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a6c789211496cd65dd417ea4fe633c85a">push_change_event</a>
+(string attr_name, Tango::DevState *p_data, long x = 1,long y =
+0,bool release = false);</p>
+<p>1177</p>
+<p>1199&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a6c789211496cd65dd417ea4fe633c85a">push_change_event</a>
+(string attr_name, Tango::DevEncoded *p_data, long x = 1,long y =
+0,bool release = false);</p>
+<p>1200</p>
+<p>1223&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a6c789211496cd65dd417ea4fe633c85a">push_change_event</a>
+(string attr_name, Tango::DevString *p_str_data, Tango::DevUChar
+*p_data, long size,bool release = false);</p>
+<p>1224</p>
+<p>1247&nbsp;#ifdef _TG_WINDOWS_</p>
+<p>1248&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a6c789211496cd65dd417ea4fe633c85a">push_change_event</a>
+(string attr_name, Tango::DevShort *p_data, struct _timeb &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>1249&nbsp;#else</p>
+<p>1250&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a6c789211496cd65dd417ea4fe633c85a">push_change_event</a>
+(string attr_name, Tango::DevShort *p_data, struct timeval &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>1251&nbsp;#endif</p>
+<p>1252</p>
+<p>1274&nbsp;#ifdef _TG_WINDOWS_</p>
+<p>1275&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a6c789211496cd65dd417ea4fe633c85a">push_change_event</a>
+(string attr_name, Tango::DevLong *p_data, struct _timeb &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>1276&nbsp;#else</p>
+<p>1277&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a6c789211496cd65dd417ea4fe633c85a">push_change_event</a>
+(string attr_name, Tango::DevLong *p_data, struct timeval &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>1278&nbsp;#endif</p>
+<p>1279</p>
+<p>1302&nbsp;#ifdef _TG_WINDOWS_</p>
+<p>1303&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a6c789211496cd65dd417ea4fe633c85a">push_change_event</a>
+(string attr_name, Tango::DevLong64 *p_data, struct _timeb &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>1304&nbsp;#else</p>
+<p>1305&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a6c789211496cd65dd417ea4fe633c85a">push_change_event</a>
+(string attr_name, Tango::DevLong64 *p_data, struct timeval &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>1306&nbsp;#endif</p>
+<p>1307</p>
+<p>1330&nbsp;#ifdef _TG_WINDOWS_</p>
+<p>1331&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a6c789211496cd65dd417ea4fe633c85a">push_change_event</a>
+(string attr_name, Tango::DevFloat *p_data, struct _timeb &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>1332&nbsp;#else</p>
+<p>1333&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a6c789211496cd65dd417ea4fe633c85a">push_change_event</a>
+(string attr_name, Tango::DevFloat *p_data, struct timeval &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>1334&nbsp;#endif</p>
+<p>1335</p>
+<p>1357&nbsp;#ifdef _TG_WINDOWS_</p>
+<p>1358&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a6c789211496cd65dd417ea4fe633c85a">push_change_event</a>
+(string attr_name, Tango::DevDouble *p_data, struct _timeb &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>1359&nbsp;#else</p>
+<p>1360&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a6c789211496cd65dd417ea4fe633c85a">push_change_event</a>
+(string attr_name, Tango::DevDouble *p_data, struct timeval &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>1361&nbsp;#endif</p>
+<p>1362</p>
+<p>1384&nbsp;#ifdef _TG_WINDOWS_</p>
+<p>1385&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a6c789211496cd65dd417ea4fe633c85a">push_change_event</a>
+(string attr_name, Tango::DevString *p_data, struct _timeb &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>1386&nbsp;#else</p>
+<p>1387&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a6c789211496cd65dd417ea4fe633c85a">push_change_event</a>
+(string attr_name, Tango::DevString *p_data, struct timeval &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>1388&nbsp;#endif</p>
+<p>1389</p>
+<p>1411&nbsp;#ifdef _TG_WINDOWS_</p>
+<p>1412&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a6c789211496cd65dd417ea4fe633c85a">push_change_event</a>
+(string attr_name, Tango::DevBoolean *p_data, struct _timeb &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>1413&nbsp;#else</p>
+<p>1414&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a6c789211496cd65dd417ea4fe633c85a">push_change_event</a>
+(string attr_name, Tango::DevBoolean *p_data, struct timeval &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>1415&nbsp;#endif</p>
+<p>1416</p>
+<p>1438&nbsp;#ifdef _TG_WINDOWS_</p>
+<p>1439&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a6c789211496cd65dd417ea4fe633c85a">push_change_event</a>
+(string attr_name, Tango::DevUShort *p_data, struct _timeb &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>1440&nbsp;#else</p>
+<p>1441&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a6c789211496cd65dd417ea4fe633c85a">push_change_event</a>
+(string attr_name, Tango::DevUShort *p_data, struct timeval &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>1442&nbsp;#endif</p>
+<p>1443</p>
+<p>1465&nbsp;#ifdef _TG_WINDOWS_</p>
+<p>1466&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a6c789211496cd65dd417ea4fe633c85a">push_change_event</a>
+(string attr_name, Tango::DevUChar *p_data, struct _timeb &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>1467&nbsp;#else</p>
+<p>1468&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a6c789211496cd65dd417ea4fe633c85a">push_change_event</a>
+(string attr_name, Tango::DevUChar *p_data, struct timeval &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>1469&nbsp;#endif</p>
+<p>1470</p>
+<p>1493&nbsp;#ifdef _TG_WINDOWS_</p>
+<p>1494&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a6c789211496cd65dd417ea4fe633c85a">push_change_event</a>
+(string attr_name, Tango::DevULong *p_data, struct _timeb &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>1495&nbsp;#else</p>
+<p>1496&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a6c789211496cd65dd417ea4fe633c85a">push_change_event</a>
+(string attr_name, Tango::DevULong *p_data, struct timeval &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>1497&nbsp;#endif</p>
+<p>1498</p>
+<p>1521&nbsp;#ifdef _TG_WINDOWS_</p>
+<p>1522&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a6c789211496cd65dd417ea4fe633c85a">push_change_event</a>
+(string attr_name, Tango::DevULong64 *p_data, struct _timeb &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>1523&nbsp;#else</p>
+<p>1524&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a6c789211496cd65dd417ea4fe633c85a">push_change_event</a>
+(string attr_name, Tango::DevULong64 *p_data, struct timeval &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>1525&nbsp;#endif</p>
+<p>1526</p>
+<p>1549&nbsp;#ifdef _TG_WINDOWS_</p>
+<p>1550&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a6c789211496cd65dd417ea4fe633c85a">push_change_event</a>
+(string attr_name, Tango::DevState *p_data, struct _timeb &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>1551&nbsp;#else</p>
+<p>1552&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a6c789211496cd65dd417ea4fe633c85a">push_change_event</a>
+(string attr_name, Tango::DevState *p_data, struct timeval &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>1553&nbsp;#endif</p>
+<p>1554</p>
+<p>1577&nbsp;#ifdef _TG_WINDOWS_</p>
+<p>1578&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a6c789211496cd65dd417ea4fe633c85a">push_change_event</a>
+(string attr_name, Tango::DevEncoded *p_data, struct _timeb &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>1579&nbsp;#else</p>
+<p>1580&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a6c789211496cd65dd417ea4fe633c85a">push_change_event</a>
+(string attr_name, Tango::DevEncoded *p_data, struct timeval &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>1581&nbsp;#endif</p>
+<p>1582</p>
+<p>1606&nbsp;#ifdef _TG_WINDOWS_</p>
+<p>1607&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a6c789211496cd65dd417ea4fe633c85a">push_change_event</a>
+(string attr_name, Tango::DevString *p_str_data, Tango::DevUChar
+*p_data, long size, struct _timeb &amp;t, Tango::AttrQuality qual, bool
+release = false);</p>
+<p>1608&nbsp;#else</p>
+<p>1609&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a6c789211496cd65dd417ea4fe633c85a">push_change_event</a>
+(string attr_name, Tango::DevString *p_str_data, Tango::DevUChar
+*p_data, long size, struct timeval &amp;t, Tango::AttrQuality qual, bool
+release = false);</p>
+<p>1610&nbsp;#endif</p>
+<p>1611</p>
+<p>1612</p>
+<p>1613</p>
+<p>1614</p>
+<p>1615</p>
+<p>1633&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#ad90289326211e05632a245a87bab11bb">set_archive_event</a>
+(string attr_name, bool implemented, bool detect = true);</p>
+<p>1634</p>
+<p>1647&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a5db64e22096acbd28c24e4c0eb91ae8f">push_archive_event</a>
+(string attr_name, DevFailed *except = NULL);</p>
+<p>1648</p>
+<p>1670&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a5db64e22096acbd28c24e4c0eb91ae8f">push_archive_event</a>
+(string attr_name, Tango::DevShort *p_data, long x = 1,long y =
+0,bool release = false);</p>
+<p>1671</p>
+<p>1693&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a5db64e22096acbd28c24e4c0eb91ae8f">push_archive_event</a>
+(string attr_name, Tango::DevLong *p_data, long x = 1,long y = 0,bool
+release = false);</p>
+<p>1694</p>
+<p>1716&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a5db64e22096acbd28c24e4c0eb91ae8f">push_archive_event</a>
+(string attr_name, Tango::DevLong64 *p_data, long x = 1,long y =
+0,bool release = false);</p>
+<p>1717</p>
+<p>1739&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a5db64e22096acbd28c24e4c0eb91ae8f">push_archive_event</a>
+(string attr_name, Tango::DevFloat *p_data, long x = 1,long y =
+0,bool release = false);</p>
+<p>1740</p>
+<p>1762&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a5db64e22096acbd28c24e4c0eb91ae8f">push_archive_event</a>
+(string attr_name, Tango::DevDouble *p_data, long x = 1,long y =
+0,bool release = false);</p>
+<p>1763</p>
+<p>1785&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a5db64e22096acbd28c24e4c0eb91ae8f">push_archive_event</a>
+(string attr_name, Tango::DevString *p_data, long x = 1,long y =
+0,bool release = false);</p>
+<p>1786</p>
+<p>1808&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a5db64e22096acbd28c24e4c0eb91ae8f">push_archive_event</a>
+(string attr_name, Tango::DevBoolean *p_data, long x = 1,long y =
+0,bool release = false);</p>
+<p>1809</p>
+<p>1831&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a5db64e22096acbd28c24e4c0eb91ae8f">push_archive_event</a>
+(string attr_name, Tango::DevUShort *p_data, long x = 1,long y =
+0,bool release = false);</p>
+<p>1832</p>
+<p>1854&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a5db64e22096acbd28c24e4c0eb91ae8f">push_archive_event</a>
+(string attr_name, Tango::DevUChar *p_data, long x = 1,long y =
+0,bool release = false);</p>
+<p>1855</p>
+<p>1877&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a5db64e22096acbd28c24e4c0eb91ae8f">push_archive_event</a>
+(string attr_name, Tango::DevULong *p_data, long x = 1,long y =
+0,bool release = false);</p>
+<p>1878</p>
+<p>1900&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a5db64e22096acbd28c24e4c0eb91ae8f">push_archive_event</a>
+(string attr_name, Tango::DevULong64 *p_data, long x = 1,long y =
+0,bool release = false);</p>
+<p>1901</p>
+<p>1923&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a5db64e22096acbd28c24e4c0eb91ae8f">push_archive_event</a>
+(string attr_name, Tango::DevState *p_data, long x = 1,long y =
+0,bool release = false);</p>
+<p>1924</p>
+<p>1946&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a5db64e22096acbd28c24e4c0eb91ae8f">push_archive_event</a>
+(string attr_name, Tango::DevEncoded *p_data, long x = 1,long y =
+0,bool release = false);</p>
+<p>1947</p>
+<p>1970&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a5db64e22096acbd28c24e4c0eb91ae8f">push_archive_event</a>
+(string attr_name, Tango::DevString *p_str_data, Tango::DevUChar
+*p_data, long size, bool release = false);</p>
+<p>1971</p>
+<p>1994&nbsp;#ifdef _TG_WINDOWS_</p>
+<p>1995&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a5db64e22096acbd28c24e4c0eb91ae8f">push_archive_event</a>
+(string attr_name, Tango::DevShort *p_data, struct _timeb &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>1996&nbsp;#else</p>
+<p>1997&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a5db64e22096acbd28c24e4c0eb91ae8f">push_archive_event</a>
+(string attr_name, Tango::DevShort *p_data, struct timeval &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>1998&nbsp;#endif</p>
+<p>1999</p>
+<p>2021&nbsp;#ifdef _TG_WINDOWS_</p>
+<p>2022&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a5db64e22096acbd28c24e4c0eb91ae8f">push_archive_event</a>
+(string attr_name, Tango::DevLong *p_data, struct _timeb &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>2023&nbsp;#else</p>
+<p>2024&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a5db64e22096acbd28c24e4c0eb91ae8f">push_archive_event</a>
+(string attr_name, Tango::DevLong *p_data, struct timeval &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>2025&nbsp;#endif</p>
+<p>2026</p>
+<p>2048&nbsp;#ifdef _TG_WINDOWS_</p>
+<p>2049&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a5db64e22096acbd28c24e4c0eb91ae8f">push_archive_event</a>
+(string attr_name, Tango::DevLong64 *p_data, struct _timeb &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>2050&nbsp;#else</p>
+<p>2051&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a5db64e22096acbd28c24e4c0eb91ae8f">push_archive_event</a>
+(string attr_name, Tango::DevLong64 *p_data, struct timeval &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>2052&nbsp;#endif</p>
+<p>2053</p>
+<p>2075&nbsp;#ifdef _TG_WINDOWS_</p>
+<p>2076&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a5db64e22096acbd28c24e4c0eb91ae8f">push_archive_event</a>
+(string attr_name, Tango::DevFloat *p_data, struct _timeb &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>2077&nbsp;#else</p>
+<p>2078&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a5db64e22096acbd28c24e4c0eb91ae8f">push_archive_event</a>
+(string attr_name, Tango::DevFloat *p_data, struct timeval &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>2079&nbsp;#endif</p>
+<p>2080</p>
+<p>2102&nbsp;#ifdef _TG_WINDOWS_</p>
+<p>2103&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a5db64e22096acbd28c24e4c0eb91ae8f">push_archive_event</a>
+(string attr_name, Tango::DevDouble *p_data, struct _timeb &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>2104&nbsp;#else</p>
+<p>2105&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a5db64e22096acbd28c24e4c0eb91ae8f">push_archive_event</a>
+(string attr_name, Tango::DevDouble *p_data, struct timeval &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>2106&nbsp;#endif</p>
+<p>2107</p>
+<p>2129&nbsp;#ifdef _TG_WINDOWS_</p>
+<p>2130&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a5db64e22096acbd28c24e4c0eb91ae8f">push_archive_event</a>
+(string attr_name, Tango::DevString *p_data, struct _timeb &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>2131&nbsp;#else</p>
+<p>2132&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a5db64e22096acbd28c24e4c0eb91ae8f">push_archive_event</a>
+(string attr_name, Tango::DevString *p_data, struct timeval &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>2133&nbsp;#endif</p>
+<p>2134</p>
+<p>2156&nbsp;#ifdef _TG_WINDOWS_</p>
+<p>2157&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a5db64e22096acbd28c24e4c0eb91ae8f">push_archive_event</a>
+(string attr_name, Tango::DevBoolean *p_data, struct _timeb &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>2158&nbsp;#else</p>
+<p>2159&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a5db64e22096acbd28c24e4c0eb91ae8f">push_archive_event</a>
+(string attr_name, Tango::DevBoolean *p_data, struct timeval &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>2160&nbsp;#endif</p>
+<p>2161</p>
+<p>2183&nbsp;#ifdef _TG_WINDOWS_</p>
+<p>2184&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a5db64e22096acbd28c24e4c0eb91ae8f">push_archive_event</a>
+(string attr_name, Tango::DevUShort *p_data, struct _timeb &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>2185&nbsp;#else</p>
+<p>2186&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a5db64e22096acbd28c24e4c0eb91ae8f">push_archive_event</a>
+(string attr_name, Tango::DevUShort *p_data, struct timeval &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>2187&nbsp;#endif</p>
+<p>2188</p>
+<p>2210&nbsp;#ifdef _TG_WINDOWS_</p>
+<p>2211&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a5db64e22096acbd28c24e4c0eb91ae8f">push_archive_event</a>
+(string attr_name, Tango::DevUChar *p_data, struct _timeb &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>2212&nbsp;#else</p>
+<p>2213&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a5db64e22096acbd28c24e4c0eb91ae8f">push_archive_event</a>
+(string attr_name, Tango::DevUChar *p_data, struct timeval &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>2214&nbsp;#endif</p>
+<p>2215</p>
+<p>2237&nbsp;#ifdef _TG_WINDOWS_</p>
+<p>2238&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a5db64e22096acbd28c24e4c0eb91ae8f">push_archive_event</a>
+(string attr_name, Tango::DevULong *p_data, struct _timeb &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>2239&nbsp;#else</p>
+<p>2240&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a5db64e22096acbd28c24e4c0eb91ae8f">push_archive_event</a>
+(string attr_name, Tango::DevULong *p_data, struct timeval &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>2241&nbsp;#endif</p>
+<p>2242</p>
+<p>2264&nbsp;#ifdef _TG_WINDOWS_</p>
+<p>2265&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a5db64e22096acbd28c24e4c0eb91ae8f">push_archive_event</a>
+(string attr_name, Tango::DevULong64 *p_data, struct _timeb &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>2266&nbsp;#else</p>
+<p>2267&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a5db64e22096acbd28c24e4c0eb91ae8f">push_archive_event</a>
+(string attr_name, Tango::DevULong64 *p_data, struct timeval &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>2268&nbsp;#endif</p>
+<p>2269</p>
+<p>2291&nbsp;#ifdef _TG_WINDOWS_</p>
+<p>2292&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a5db64e22096acbd28c24e4c0eb91ae8f">push_archive_event</a>
+(string attr_name, Tango::DevState *p_data, struct _timeb &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>2293&nbsp;#else</p>
+<p>2294&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a5db64e22096acbd28c24e4c0eb91ae8f">push_archive_event</a>
+(string attr_name, Tango::DevState *p_data, struct timeval &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>2295&nbsp;#endif</p>
+<p>2296</p>
+<p>2319&nbsp;#ifdef _TG_WINDOWS_</p>
+<p>2320&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a5db64e22096acbd28c24e4c0eb91ae8f">push_archive_event</a>
+(string attr_name, Tango::DevEncoded *p_data, struct _timeb &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>2321&nbsp;#else</p>
+<p>2322&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a5db64e22096acbd28c24e4c0eb91ae8f">push_archive_event</a>
+(string attr_name, Tango::DevEncoded *p_data, struct timeval &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>2323&nbsp;#endif</p>
+<p>2324</p>
+<p>2348&nbsp;#ifdef _TG_WINDOWS_</p>
+<p>2349&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a5db64e22096acbd28c24e4c0eb91ae8f">push_archive_event</a>
+(string attr_name, Tango::DevString *p_str_data, Tango::DevUChar
+*p_data, long size, struct _timeb &amp;t, Tango::AttrQuality qual, bool
+release = false);</p>
+<p>2350&nbsp;#else</p>
+<p>2351&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a5db64e22096acbd28c24e4c0eb91ae8f">push_archive_event</a>
+(string attr_name, Tango::DevString *p_str_data, Tango::DevUChar
+*p_data, long size, struct timeval &amp;t, Tango::AttrQuality qual, bool
+release = false);</p>
+<p>2352&nbsp;#endif</p>
+<p>2353</p>
+<p>2354</p>
+<p>2355</p>
+<p>2356</p>
+<p>2357</p>
+<p>2378&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a002bc27747f35517048b5b87169c52c8">push_event</a>
+(string attr_name,vector&lt;string&gt; &amp;filt_names,vector&lt;double&gt;
+&amp;filt_vals,DevFailed *except = NULL);</p>
+<p>2379</p>
+<p>2401&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a002bc27747f35517048b5b87169c52c8">push_event</a>
+(string attr_name,vector&lt;string&gt; &amp;filt_names,vector&lt;double&gt;
+&amp;filt_vals,Tango::DevShort *p_data, long x = 1,long y = 0,bool
+release = false);</p>
+<p>2402</p>
+<p>2424&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a002bc27747f35517048b5b87169c52c8">push_event</a>
+(string attr_name,vector&lt;string&gt; &amp;filt_names,vector&lt;double&gt;
+&amp;filt_vals,Tango::DevLong *p_data, long x = 1,long y = 0,bool release
+= false);</p>
+<p>2425</p>
+<p>2447&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a002bc27747f35517048b5b87169c52c8">push_event</a>
+(string attr_name,vector&lt;string&gt; &amp;filt_names,vector&lt;double&gt;
+&amp;filt_vals,Tango::DevLong64 *p_data, long x = 1,long y = 0,bool
+release = false);</p>
+<p>2448</p>
+<p>2470&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a002bc27747f35517048b5b87169c52c8">push_event</a>
+(string attr_name,vector&lt;string&gt; &amp;filt_names,vector&lt;double&gt;
+&amp;filt_vals,Tango::DevFloat *p_data, long x = 1,long y = 0,bool
+release = false);</p>
+<p>2471</p>
+<p>2493&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a002bc27747f35517048b5b87169c52c8">push_event</a>
+(string attr_name,vector&lt;string&gt; &amp;filt_names,vector&lt;double&gt;
+&amp;filt_vals,Tango::DevDouble *p_data, long x = 1,long y = 0,bool
+release = false);</p>
+<p>2494</p>
+<p>2516&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a002bc27747f35517048b5b87169c52c8">push_event</a>
+(string attr_name,vector&lt;string&gt; &amp;filt_names,vector&lt;double&gt;
+&amp;filt_vals,Tango::DevString *p_data, long x = 1,long y = 0,bool
+release = false);</p>
+<p>2517</p>
+<p>2539&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a002bc27747f35517048b5b87169c52c8">push_event</a>
+(string attr_name,vector&lt;string&gt; &amp;filt_names,vector&lt;double&gt;
+&amp;filt_vals,Tango::DevBoolean *p_data, long x = 1,long y = 0,bool
+release = false);</p>
+<p>2540</p>
+<p>2562&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a002bc27747f35517048b5b87169c52c8">push_event</a>
+(string attr_name,vector&lt;string&gt; &amp;filt_names,vector&lt;double&gt;
+&amp;filt_vals,Tango::DevUShort *p_data, long x = 1,long y = 0,bool
+release = false);</p>
+<p>2563</p>
+<p>2585&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a002bc27747f35517048b5b87169c52c8">push_event</a>
+(string attr_name,vector&lt;string&gt; &amp;filt_names,vector&lt;double&gt;
+&amp;filt_vals,Tango::DevUChar *p_data, long x = 1,long y = 0,bool
+release = false);</p>
+<p>2586</p>
+<p>2608&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a002bc27747f35517048b5b87169c52c8">push_event</a>
+(string attr_name,vector&lt;string&gt; &amp;filt_names,vector&lt;double&gt;
+&amp;filt_vals,Tango::DevULong *p_data, long x = 1,long y = 0,bool
+release = false);</p>
+<p>2609</p>
+<p>2631&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a002bc27747f35517048b5b87169c52c8">push_event</a>
+(string attr_name,vector&lt;string&gt; &amp;filt_names,vector&lt;double&gt;
+&amp;filt_vals,Tango::DevULong64 *p_data, long x = 1,long y = 0,bool
+release = false);</p>
+<p>2632</p>
+<p>2654&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a002bc27747f35517048b5b87169c52c8">push_event</a>
+(string attr_name,vector&lt;string&gt; &amp;filt_names,vector&lt;double&gt;
+&amp;filt_vals,Tango::DevState *p_data, long x = 1,long y = 0,bool
+release = false);</p>
+<p>2655</p>
+<p>2677&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a002bc27747f35517048b5b87169c52c8">push_event</a>
+(string attr_name,vector&lt;string&gt; &amp;filt_names,vector&lt;double&gt;
+&amp;filt_vals,Tango::DevEncoded *p_data, long x = 1,long y = 0,bool
+release = false);</p>
+<p>2678</p>
+<p>2701&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a002bc27747f35517048b5b87169c52c8">push_event</a>
+(string attr_name,vector&lt;string&gt; &amp;filt_names,vector&lt;double&gt;
+&amp;filt_vals,Tango::DevString *p_str_data, Tango::DevUChar *p_data,
+long size, bool release = false);</p>
+<p>2702</p>
+<p>2725&nbsp;#ifdef _TG_WINDOWS_</p>
+<p>2726&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a002bc27747f35517048b5b87169c52c8">push_event</a>
+(string attr_name,vector&lt;string&gt; &amp;filt_names,vector&lt;double&gt;
+&amp;filt_vals,Tango::DevShort *p_data, struct _timeb &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>2727&nbsp;#else</p>
+<p>2728&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a002bc27747f35517048b5b87169c52c8">push_event</a>
+(string attr_name,vector&lt;string&gt; &amp;filt_names,vector&lt;double&gt;
+&amp;filt_vals,Tango::DevShort *p_data, struct timeval &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>2729&nbsp;#endif</p>
+<p>2730</p>
+<p>2752&nbsp;#ifdef _TG_WINDOWS_</p>
+<p>2753&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a002bc27747f35517048b5b87169c52c8">push_event</a>
+(string attr_name,vector&lt;string&gt; &amp;filt_names,vector&lt;double&gt;
+&amp;filt_vals,Tango::DevLong *p_data, struct _timeb &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>2754&nbsp;#else</p>
+<p>2755&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a002bc27747f35517048b5b87169c52c8">push_event</a>
+(string attr_name,vector&lt;string&gt; &amp;filt_names,vector&lt;double&gt;
+&amp;filt_vals,Tango::DevLong *p_data, struct timeval &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>2756&nbsp;#endif</p>
+<p>2757</p>
+<p>2780&nbsp;#ifdef _TG_WINDOWS_</p>
+<p>2781&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a002bc27747f35517048b5b87169c52c8">push_event</a>
+(string attr_name,vector&lt;string&gt; &amp;filt_names,vector&lt;double&gt;
+&amp;filt_vals,Tango::DevLong64 *p_data, struct _timeb &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>2782&nbsp;#else</p>
+<p>2783&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a002bc27747f35517048b5b87169c52c8">push_event</a>
+(string attr_name,vector&lt;string&gt; &amp;filt_names,vector&lt;double&gt;
+&amp;filt_vals,Tango::DevLong64 *p_data, struct timeval &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>2784&nbsp;#endif</p>
+<p>2785</p>
+<p>2808&nbsp;#ifdef _TG_WINDOWS_</p>
+<p>2809&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a002bc27747f35517048b5b87169c52c8">push_event</a>
+(string attr_name,vector&lt;string&gt; &amp;filt_names,vector&lt;double&gt;
+&amp;filt_vals,Tango::DevFloat *p_data, struct _timeb &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>2810&nbsp;#else</p>
+<p>2811&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a002bc27747f35517048b5b87169c52c8">push_event</a>
+(string attr_name,vector&lt;string&gt; &amp;filt_names,vector&lt;double&gt;
+&amp;filt_vals,Tango::DevFloat *p_data, struct timeval &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>2812&nbsp;#endif</p>
+<p>2813</p>
+<p>2835&nbsp;#ifdef _TG_WINDOWS_</p>
+<p>2836&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a002bc27747f35517048b5b87169c52c8">push_event</a>
+(string attr_name,vector&lt;string&gt; &amp;filt_names,vector&lt;double&gt;
+&amp;filt_vals,Tango::DevDouble *p_data, struct _timeb &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>2837&nbsp;#else</p>
+<p>2838&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a002bc27747f35517048b5b87169c52c8">push_event</a>
+(string attr_name,vector&lt;string&gt; &amp;filt_names,vector&lt;double&gt;
+&amp;filt_vals,Tango::DevDouble *p_data, struct timeval &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>2839&nbsp;#endif</p>
+<p>2840</p>
+<p>2862&nbsp;#ifdef _TG_WINDOWS_</p>
+<p>2863&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a002bc27747f35517048b5b87169c52c8">push_event</a>
+(string attr_name,vector&lt;string&gt; &amp;filt_names,vector&lt;double&gt;
+&amp;filt_vals,Tango::DevString *p_data, struct _timeb &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>2864&nbsp;#else</p>
+<p>2865&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a002bc27747f35517048b5b87169c52c8">push_event</a>
+(string attr_name,vector&lt;string&gt; &amp;filt_names,vector&lt;double&gt;
+&amp;filt_vals,Tango::DevString *p_data, struct timeval &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>2866&nbsp;#endif</p>
+<p>2867</p>
+<p>2889&nbsp;#ifdef _TG_WINDOWS_</p>
+<p>2890&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a002bc27747f35517048b5b87169c52c8">push_event</a>
+(string attr_name,vector&lt;string&gt; &amp;filt_names,vector&lt;double&gt;
+&amp;filt_vals,Tango::DevBoolean *p_data, struct _timeb &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>2891&nbsp;#else</p>
+<p>2892&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a002bc27747f35517048b5b87169c52c8">push_event</a>
+(string attr_name,vector&lt;string&gt; &amp;filt_names,vector&lt;double&gt;
+&amp;filt_vals,Tango::DevBoolean *p_data, struct timeval &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>2893&nbsp;#endif</p>
+<p>2894</p>
+<p>2916&nbsp;#ifdef _TG_WINDOWS_</p>
+<p>2917&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a002bc27747f35517048b5b87169c52c8">push_event</a>
+(string attr_name,vector&lt;string&gt; &amp;filt_names,vector&lt;double&gt;
+&amp;filt_vals,Tango::DevUShort *p_data, struct _timeb &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>2918&nbsp;#else</p>
+<p>2919&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a002bc27747f35517048b5b87169c52c8">push_event</a>
+(string attr_name,vector&lt;string&gt; &amp;filt_names,vector&lt;double&gt;
+&amp;filt_vals,Tango::DevUShort *p_data, struct timeval &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>2920&nbsp;#endif</p>
+<p>2921</p>
+<p>2943&nbsp;#ifdef _TG_WINDOWS_</p>
+<p>2944&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a002bc27747f35517048b5b87169c52c8">push_event</a>
+(string attr_name,vector&lt;string&gt; &amp;filt_names,vector&lt;double&gt;
+&amp;filt_vals,Tango::DevUChar *p_data, struct _timeb &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>2945&nbsp;#else</p>
+<p>2946&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a002bc27747f35517048b5b87169c52c8">push_event</a>
+(string attr_name,vector&lt;string&gt; &amp;filt_names,vector&lt;double&gt;
+&amp;filt_vals,Tango::DevUChar *p_data, struct timeval &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>2947&nbsp;#endif</p>
+<p>2948</p>
+<p>2971&nbsp;#ifdef _TG_WINDOWS_</p>
+<p>2972&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a002bc27747f35517048b5b87169c52c8">push_event</a>
+(string attr_name,vector&lt;string&gt; &amp;filt_names,vector&lt;double&gt;
+&amp;filt_vals,Tango::DevULong *p_data, struct _timeb &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>2973&nbsp;#else</p>
+<p>2974&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a002bc27747f35517048b5b87169c52c8">push_event</a>
+(string attr_name,vector&lt;string&gt; &amp;filt_names,vector&lt;double&gt;
+&amp;filt_vals,Tango::DevULong *p_data, struct timeval &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>2975&nbsp;#endif</p>
+<p>2976</p>
+<p>2999&nbsp;#ifdef _TG_WINDOWS_</p>
+<p>3000&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a002bc27747f35517048b5b87169c52c8">push_event</a>
+(string attr_name,vector&lt;string&gt; &amp;filt_names,vector&lt;double&gt;
+&amp;filt_vals,Tango::DevULong64 *p_data, struct _timeb &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>3001&nbsp;#else</p>
+<p>3002&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a002bc27747f35517048b5b87169c52c8">push_event</a>
+(string attr_name,vector&lt;string&gt; &amp;filt_names,vector&lt;double&gt;
+&amp;filt_vals,Tango::DevULong64 *p_data, struct timeval &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>3003&nbsp;#endif</p>
+<p>3004</p>
+<p>3027&nbsp;#ifdef _TG_WINDOWS_</p>
+<p>3028&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a002bc27747f35517048b5b87169c52c8">push_event</a>
+(string attr_name,vector&lt;string&gt; &amp;filt_names,vector&lt;double&gt;
+&amp;filt_vals,Tango::DevState *p_data, struct _timeb &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>3029&nbsp;#else</p>
+<p>3030&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a002bc27747f35517048b5b87169c52c8">push_event</a>
+(string attr_name,vector&lt;string&gt; &amp;filt_names,vector&lt;double&gt;
+&amp;filt_vals,Tango::DevState *p_data, struct timeval &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>3031&nbsp;#endif</p>
+<p>3032</p>
+<p>3055&nbsp;#ifdef _TG_WINDOWS_</p>
+<p>3056&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a002bc27747f35517048b5b87169c52c8">push_event</a>
+(string attr_name,vector&lt;string&gt; &amp;filt_names,vector&lt;double&gt;
+&amp;filt_vals,Tango::DevEncoded *p_data, struct _timeb &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>3057&nbsp;#else</p>
+<p>3058&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a002bc27747f35517048b5b87169c52c8">push_event</a>
+(string attr_name,vector&lt;string&gt; &amp;filt_names,vector&lt;double&gt;
+&amp;filt_vals,Tango::DevEncoded *p_data, struct timeval &amp;t,
+Tango::AttrQuality qual, long x = 1,long y = 0,bool release = false);</p>
+<p>3059&nbsp;#endif</p>
+<p>3060</p>
+<p>3085&nbsp;#ifdef _TG_WINDOWS_</p>
+<p>3086&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a002bc27747f35517048b5b87169c52c8">push_event</a>
+(string attr_name,vector&lt;string&gt; &amp;filt_names,vector&lt;double&gt;
+&amp;filt_vals,Tango::DevString *p_str_data,Tango::DevUChar *p_data,
+long size, struct _timeb &amp;t, Tango::AttrQuality qual,bool release =
+false);</p>
+<p>3087&nbsp;#else</p>
+<p>3088&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a002bc27747f35517048b5b87169c52c8">push_event</a>
+(string attr_name,vector&lt;string&gt; &amp;filt_names,vector&lt;double&gt;
+&amp;filt_vals,Tango::DevString *p_str_data,Tango::DevUChar *p_data,
+long size, struct timeval &amp;t, Tango::AttrQuality qual,bool release =
+false);</p>
+<p>3089&nbsp;#endif</p>
+<p>3090</p>
+<p>3091</p>
+<p>3102&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#ae1ac32627a6ec783de529ddb26e5d900">set_data_ready_event</a>
+(string attr_name, bool implemented);</p>
+<p>3118&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a0de42a80d6d1fc464b142dae308671b4">push_data_ready_event</a>
+(const string &amp;attr_name,Tango::DevLong ctr = 0);</p>
+<p>3120</p>
+<p>3133&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#aedd422cbede721279f2bbac705e34017">push_pipe_event</a>
+(const string &amp;pipe_name, DevFailed *except);</p>
+<p>3148&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#aedd422cbede721279f2bbac705e34017">push_pipe_event</a>
+(const string
+&amp;pipe_name,<a class="reference external" href="../../df/dd9/classTango_1_1DevicePipeBlob.html">Tango::DevicePipeBlob</a>
+*p_data,bool reuse_it=false);</p>
+<p>3164&nbsp;#ifdef _TG_WINDOWS_</p>
+<p>3165&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#aedd422cbede721279f2bbac705e34017">push_pipe_event</a>
+(const string &amp;pipe_name,
+<a class="reference external" href="../../df/dd9/classTango_1_1DevicePipeBlob.html">Tango::DevicePipeBlob</a>
+*p_data, struct _timeb &amp;t,bool reuse_it=false);</p>
+<p>3166&nbsp;#else</p>
+<p>3167&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#aedd422cbede721279f2bbac705e34017">push_pipe_event</a>
+(const string &amp;pipe_name,
+<a class="reference external" href="../../df/dd9/classTango_1_1DevicePipeBlob.html">Tango::DevicePipeBlob</a>
+*p_data, struct timeval &amp;t,bool reuse_it=false);</p>
+<p>3168&nbsp;#endif</p>
+<p>3169</p>
+<p>3170</p>
+<p>3174&nbsp;#ifndef _TG_WINDOWS_</p>
+<p>3175</p>
+<p>3191&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a1066d2fe5f4d45bf12a38c667d02bdb8">register_signal</a>(long
+signo,bool own_handler = false);</p>
+<p>3192&nbsp;#else</p>
+<p>3193</p>
+<p>3205&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a1066d2fe5f4d45bf12a38c667d02bdb8">register_signal</a>(long
+signo);</p>
+<p>3206&nbsp;#endif</p>
+<p>3207</p>
+<p>3222&nbsp; void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a9bbea9d3b6cf43f467a56d8866b343ca">unregister_signal</a>(long
+signo);</p>
+<p>3223</p>
+<p>3233&nbsp; virtual void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a2f387fb75b3427fc661a4f9b829b1491">signal_handler</a>(long
+signo);</p>
+<p>3234</p>
+<p>3236</p>
+<p>3237&nbsp;//</p>
+<p>3238&nbsp;// Device class data members</p>
+<p>3239&nbsp;//</p>
+<p>3240</p>
+<p>3241&nbsp;protected:</p>
+<p>3242</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#afdc166bd02d4723a09861bfbbf285c77">3248</a>
+BlackBox
+*<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#afdc166bd02d4723a09861bfbbf285c77">blackbox_ptr</a>;</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#ac1b1c0e44d43f83e9b6a1633dbfe2967">3252</a>
+long
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#ac1b1c0e44d43f83e9b6a1633dbfe2967">blackbox_depth</a>;</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#af2649629d515c38fc5a19c44f07e2f40">3256</a>
+string
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#af2649629d515c38fc5a19c44f07e2f40">device_name</a>;</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a480f48ff00c9d1aa8bd406323967df7d">3260</a>
+string
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a480f48ff00c9d1aa8bd406323967df7d">desc</a>;</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#aa66233801c127f96878d701259739383">3264</a>
+string
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#aa66233801c127f96878d701259739383">device_status</a>;</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a214ba0a5741c52165869ae11219d414a">3268</a>
+Tango::DevState
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a214ba0a5741c52165869ae11219d414a">device_state</a>;</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#ab3bdf85a2faf1fe98ecd9253c1a51d77">3272</a>
+long
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#ab3bdf85a2faf1fe98ecd9253c1a51d77">version</a>;</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a103c3527a529f7a40ecadf227a8a7990">3276</a>
+<a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html">DeviceClass</a>
+*<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a103c3527a529f7a40ecadf227a8a7990">device_class</a>;</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#aed3e20a35c92335be9ba742abdd9d60b">3280</a>
+<a class="reference external" href="../../dc/d3b/classTango_1_1MultiAttribute.html">MultiAttribute</a>
+*<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#aed3e20a35c92335be9ba742abdd9d60b">dev_attr</a>;</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#ae063e45a3778e7241d74f7270461cbb4">3284</a>
+<a class="reference external" href="../../da/dbb/classTango_1_1DbDevice.html">DbDevice</a>
+*<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#ae063e45a3778e7241d74f7270461cbb4">db_dev</a>;</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a57b6296e483e01cb62ffdce4eca0261a">3288</a>
+string
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a57b6296e483e01cb62ffdce4eca0261a">adm_device_name</a>;</p>
+<p>3290</p>
+<p>3291</p>
+<p>3292&nbsp;public:</p>
+<p>3294</p>
+<p>3295&nbsp; typedef struct _FwdWrongConf</p>
+<p>3296&nbsp; {</p>
+<p>3297&nbsp; string att_name;</p>
+<p>3298&nbsp; string full_root_att_name;</p>
+<p>3299
+<a class="reference external" href="../../de/ddf/namespaceTango.html#a1e389712aae3f56c65cda947d965f8f3">FwdAttError</a>
+fae;</p>
+<p>3300&nbsp; }FwdWrongConf;</p>
+<p>3301</p>
+<p>3302&nbsp; virtual char *name();</p>
+<p>3303&nbsp; virtual char *adm_name();</p>
+<p>3304&nbsp; virtual char *description();</p>
+<p>3305&nbsp; virtual char *status();</p>
+<p>3306&nbsp; virtual Tango::DevState state();</p>
+<p>3307</p>
+<p>3308&nbsp; virtual CORBA::Any *command_inout(const char *in_cmd,const
+CORBA::Any &amp;in_data);</p>
+<p>3309&nbsp; virtual Tango::DevVarStringArray *black_box(CORBA::Long n);</p>
+<p>3310&nbsp; virtual Tango::DevCmdInfoList *command_list_query();</p>
+<p>3311&nbsp; virtual Tango::DevCmdInfo *command_query(const char *command);</p>
+<p>3312&nbsp; virtual Tango::DevInfo *info();</p>
+<p>3313&nbsp; virtual void ping();</p>
+<p>3314&nbsp; virtual Tango::AttributeConfigList* get_attribute_config(const
+Tango::DevVarStringArray&amp; names);</p>
+<p>3315&nbsp; virtual void set_attribute_config(const
+Tango::AttributeConfigList&amp; new_conf);</p>
+<p>3316&nbsp; virtual Tango::AttributeValueList* read_attributes(const
+Tango::DevVarStringArray&amp; names);</p>
+<p>3317&nbsp; virtual void write_attributes(const Tango::AttributeValueList&amp;
+values);</p>
+<p>3318</p>
+<p>3319</p>
+<p>3320&nbsp; void set_exported_flag(bool exp) {exported = exp;}</p>
+<p>3321&nbsp; bool get_exported_flag() {return exported;}</p>
+<p>3322</p>
+<p>3323&nbsp; void set_poll_ring_depth(long depth) {poll_ring_depth =
+depth;}</p>
+<p>3324&nbsp; long get_poll_ring_depth() {return poll_ring_depth;}</p>
+<p>3325</p>
+<p>3326&nbsp; void set_poll_old_factor(long fact) {poll_old_factor = fact;}</p>
+<p>3327&nbsp; long get_poll_old_factor() {return poll_old_factor;}</p>
+<p>3328</p>
+<p>3329&nbsp; void is_polled(bool poll) {polled = poll;}</p>
+<p>3330&nbsp; bool is_polled() {return polled;}</p>
+<p>3331</p>
+<p>3332&nbsp; vector&lt;string&gt; &amp;get_polled_cmd() {return polled_cmd;}</p>
+<p>3333&nbsp; vector&lt;string&gt; &amp;get_polled_attr() {return polled_attr;}</p>
+<p>3334&nbsp; vector&lt;string&gt; &amp;get_non_auto_polled_cmd() {return
+non_auto_polled_cmd;}</p>
+<p>3335&nbsp; vector&lt;string&gt; &amp;get_non_auto_polled_attr() {return
+non_auto_polled_attr;}</p>
+<p>3336&nbsp; vector&lt;PollObj *&gt; &amp;get_poll_obj_list() {return
+poll_obj_list;}</p>
+<p>3337&nbsp; void stop_polling(bool);</p>
+<p>3338&nbsp; void stop_polling() {stop_polling(true);}</p>
+<p>3339</p>
+<p>3340&nbsp; void check_command_exists(const string &amp;);</p>
+<p>3341&nbsp; Command *get_command(const string &amp;);</p>
+<p>3342</p>
+<p>3343&nbsp; string &amp;get_name_lower() {return device_name_lower;}</p>
+<p>3344</p>
+<p>3345&nbsp; TangoMonitor &amp;get_dev_monitor() {return only_one;}</p>
+<p>3346&nbsp; TangoMonitor &amp;get_poll_monitor() {return poll_mon;}</p>
+<p>3347&nbsp; TangoMonitor &amp;get_att_conf_monitor() {return att_conf_mon;}</p>
+<p>3348&nbsp; TangoMonitor &amp;get_pipe_conf_monitor() {return pipe_conf_mon;}</p>
+<p>3349</p>
+<p>3350&nbsp; long get_dev_idl_version() {return idl_version;}</p>
+<p>3351&nbsp; long get_cmd_poll_ring_depth(string &amp;);</p>
+<p>3352&nbsp; long get_attr_poll_ring_depth(string &amp;);</p>
+<p>3353&nbsp; vector&lt;long&gt; &amp;get_alarmed_not_read() {return alrmd_not_read;}</p>
+<p>3354&nbsp; void poll_lists_2_v5();</p>
+<p>3355</p>
+<p>3356&nbsp; bool is_py_device() {return py_device;}</p>
+<p>3357&nbsp; void set_py_device(bool py) {py_device=py;}</p>
+<p>3358</p>
+<p>3359&nbsp; Tango::client_addr *get_client_ident();</p>
+<p>3360&nbsp; void lock(client_addr *,int);</p>
+<p>3361&nbsp; void relock(client_addr *);</p>
+<p>3362&nbsp; Tango::DevLong unlock(bool);</p>
+<p>3363&nbsp; void basic_unlock(bool forced = false);</p>
+<p>3364&nbsp; bool valid_lock();</p>
+<p>3365&nbsp; Tango::DevVarLongStringArray *lock_status();</p>
+<p>3366</p>
+<p>3367&nbsp; bool is_device_locked() {return device_locked;}</p>
+<p>3368&nbsp; client_addr *get_locker() {return locker_client;}</p>
+<p>3369&nbsp; client_addr *get_old_locker() {return old_locker_client;}</p>
+<p>3370&nbsp; time_t get_locking_date() {return locking_date;}</p>
+<p>3371&nbsp; Tango::DevLong get_locking_ctr() {return lock_ctr;}</p>
+<p>3372&nbsp; Tango::DevLong get_lock_validity() {return lock_validity;}</p>
+<p>3373&nbsp; void clean_locker_ptrs()
+{locker_client=NULL;old_locker_client=NULL;}</p>
+<p>3374&nbsp; void set_locking_param(client_addr *,client_addr
+*,time_t,DevLong,DevLong);</p>
+<p>3375</p>
+<p>3376&nbsp; void set_alias_name_lower(string &amp;al) {alias_name_lower =
+al;}</p>
+<p>3377&nbsp; string &amp;get_alias_name_lower() {return alias_name_lower;}</p>
+<p>3378</p>
+<p>3379&nbsp; void push_att_conf_event(Attribute *);</p>
+<p>3380</p>
+<p>3381&nbsp; void data_into_net_object(Attribute
+&amp;,<a class="reference external" href="../../de/ddf/namespaceTango.html#a79122420bb8fc15b17138ff0da9bad7d">AttributeIdlData</a>
+&amp;,long,AttrWriteType,bool);</p>
+<p>3382&nbsp; void
+polled_data_into_net_object(<a class="reference external" href="../../de/ddf/namespaceTango.html#a79122420bb8fc15b17138ff0da9bad7d">AttributeIdlData</a>
+&amp;,long,long,long,PollObj *,const DevVarStringArray &amp;);</p>
+<p>3383</p>
+<p>3384&nbsp; int get_min_poll_period() {return min_poll_period;}</p>
+<p>3385&nbsp; vector&lt;string&gt; &amp;get_cmd_min_poll_period() {return
+cmd_min_poll_period;}</p>
+<p>3386&nbsp; vector&lt;string&gt; &amp;get_attr_min_poll_period() {return
+attr_min_poll_period;}</p>
+<p>3387</p>
+<p>3388&nbsp; void init_cmd_poll_ext_trig (string cmd_name);</p>
+<p>3389&nbsp; void init_attr_poll_ext_trig (string cmd_name);</p>
+<p>3390</p>
+<p>3391&nbsp; void set_run_att_conf_loop(bool val)
+{run_att_conf_loop=val;}</p>
+<p>3392&nbsp; vector&lt;string&gt; &amp;get_att_wrong_db_conf() {return
+att_wrong_db_conf;}</p>
+<p>3393&nbsp; void check_att_conf();</p>
+<p>3394&nbsp; bool is_alarm_state_forced() {return force_alarm_state;}</p>
+<p>3395&nbsp; vector&lt;string&gt; &amp;get_att_mem_failed() {return att_mem_failed;}</p>
+<p>3396</p>
+<p>3397&nbsp; vector&lt;FwdWrongConf&gt; &amp;get_fwd_att_wrong_conf() {return
+fwd_att_wrong_conf;}</p>
+<p>3398&nbsp; void rem_wrong_fwd_att(const string &amp;);</p>
+<p>3399&nbsp; void update_wrong_conf_att(const string
+&amp;,<a class="reference external" href="../../de/ddf/namespaceTango.html#a1e389712aae3f56c65cda947d965f8f3">FwdAttError</a>);</p>
+<p>3400</p>
+<p>3401&nbsp; void set_with_fwd_att(bool _b) {with_fwd_att=_b;}</p>
+<p>3402&nbsp; bool get_with_fwd_att() {return with_fwd_att;}</p>
+<p>3403</p>
+<p>3404&nbsp; void set_call_source(DevSource _s) {call_source=_s;}</p>
+<p>3405&nbsp; DevSource get_call_source() {return call_source;}</p>
+<p>3406</p>
+<p>3407&nbsp; vector&lt;Command *&gt; &amp;get_local_command_list() {return
+command_list;}</p>
+<p>3408&nbsp; Command &amp;get_local_cmd_by_name(const string &amp;);</p>
+<p>3409&nbsp; void remove_local_command(const string &amp;);</p>
+<p>3410</p>
+<p>3411&nbsp; void set_event_intr_change_subscription(time_t _t)
+{event_intr_change_subscription=_t;}</p>
+<p>3412&nbsp; time_t get_event_intr_change_subscription() {return
+event_intr_change_subscription;}</p>
+<p>3413&nbsp; void enable_intr_change_ev() {intr_change_ev = true;}</p>
+<p>3414&nbsp; void disable_intr_change_ev() {intr_change_ev = false;}</p>
+<p>3415&nbsp; bool is_intr_change_ev_enable() {return intr_change_ev;}</p>
+<p>3416</p>
+<p>3417&nbsp; void get_event_param(vector&lt;EventPar&gt; &amp;);</p>
+<p>3418&nbsp; void set_event_param(vector&lt;EventPar&gt; &amp;);</p>
+<p>3419</p>
+<p>3420&nbsp; void set_client_lib(int _l) {if
+(count(client_lib.begin(),client_lib.end(),_l)==0)client_lib.push_back(_l);}</p>
+<p>3421</p>
+<p>3422&nbsp;#ifdef TANGO_HAS_LOG4TANGO</p>
+<p>3423&nbsp; inline
+<a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html">log4tango::Logger</a>
+*get_logger(void)</p>
+<p>3424&nbsp; {return logger ? logger : get_logger_i();}</p>
+<p>3425</p>
+<p>3426&nbsp; void init_logger(void);</p>
+<p>3427&nbsp; void start_logging(void);</p>
+<p>3428&nbsp; void stop_logging(void);</p>
+<p>3429&nbsp;#endif // TANGO_HAS_LOG4TANGO</p>
+<p>3430</p>
+<p>3431</p>
+<p>3432&nbsp;private:</p>
+<p>3433</p>
+<p>3434&nbsp;//</p>
+<p>3435&nbsp;// The extension class</p>
+<p>3436&nbsp;//</p>
+<p>3437</p>
+<p>3438&nbsp; class DeviceImplExt</p>
+<p>3439&nbsp; {</p>
+<p>3440&nbsp; public:</p>
+<p>3441&nbsp; DeviceImplExt():alarm_state_user(0),alarm_state_kernel(0) {};</p>
+<p>3442</p>
+<p>3443&nbsp; time_t alarm_state_user;</p>
+<p>3444&nbsp; time_t alarm_state_kernel;</p>
+<p>3445&nbsp; };</p>
+<p>3446</p>
+<p>3447</p>
+<p>3448&nbsp;protected:</p>
+<p>3450&nbsp; void check_lock(const char *,const char *cmd = NULL);</p>
+<p>3451&nbsp; void throw_locked_exception(const char *meth);</p>
+<p>3452</p>
+<p>3453&nbsp; void init_cmd_poll_period();</p>
+<p>3454&nbsp; void init_attr_poll_period();</p>
+<p>3455&nbsp; void init_poll_no_db();</p>
+<p>3456</p>
+<p>3457&nbsp;#ifdef HAS_UNIQUE_PTR</p>
+<p>3458&nbsp; unique_ptr&lt;DeviceImplExt&gt; ext; // Class extension</p>
+<p>3459&nbsp;#else</p>
+<p>3460&nbsp; DeviceImplExt *ext;</p>
+<p>3461&nbsp;#endif</p>
+<p>3462</p>
+<p>3463&nbsp; DevVarShortArray dummy_short_att_value;</p>
+<p>3464&nbsp; DevVarLongArray dummy_long_att_value;</p>
+<p>3465&nbsp; DevVarLong64Array dummy_long64_att_value;</p>
+<p>3466&nbsp; DevVarFloatArray dummy_float_att_value;</p>
+<p>3467&nbsp; DevVarDoubleArray dummy_double_att_value;</p>
+<p>3468&nbsp; DevVarStringArray dummy_string_att_value;</p>
+<p>3469&nbsp; DevVarBooleanArray dummy_boolean_att_value;</p>
+<p>3470&nbsp; DevVarUShortArray dummy_ushort_att_value;</p>
+<p>3471&nbsp; DevVarCharArray dummy_uchar_att_value;</p>
+<p>3472&nbsp; DevVarULongArray dummy_ulong_att_value;</p>
+<p>3473&nbsp; DevVarULong64Array dummy_ulong64_att_value;</p>
+<p>3474&nbsp; DevVarStateArray dummy_state_att_value;</p>
+<p>3475&nbsp; DevVarEncodedArray dummy_encoded_att_value;</p>
+<p>3476</p>
+<p>3477&nbsp;//</p>
+<p>3478&nbsp;// Ported from the extension class</p>
+<p>3479&nbsp;//</p>
+<p>3480</p>
+<p>3481&nbsp;#ifdef TANGO_HAS_LOG4TANGO</p>
+<p>3482
+<a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html">log4tango::Logger</a>*
+logger;</p>
+<p>3483
+<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#aa708c09b6a19a8cc8a3b19631561ca99">log4tango::Level::Value</a>
+saved_log_level;</p>
+<p>3484&nbsp; size_t rft;</p>
+<p>3485&nbsp;#endif</p>
+<p>3486</p>
+<p>3487&nbsp; long poll_old_factor;</p>
+<p>3488&nbsp; long idl_version;</p>
+<p>3489</p>
+<p>3490&nbsp; bool exported;</p>
+<p>3491&nbsp; bool polled;</p>
+<p>3492&nbsp; long poll_ring_depth;</p>
+<p>3493&nbsp; vector&lt;string&gt; polled_cmd;</p>
+<p>3494&nbsp; vector&lt;string&gt; polled_attr;</p>
+<p>3495&nbsp; vector&lt;string&gt; non_auto_polled_cmd;</p>
+<p>3496&nbsp; vector&lt;string&gt; non_auto_polled_attr;</p>
+<p>3497&nbsp; vector&lt;PollObj *&gt; poll_obj_list;</p>
+<p>3498</p>
+<p>3499&nbsp; TangoMonitor only_one; // Device monitor</p>
+<p>3500&nbsp; Tango::DevState device_prev_state; // Device previous state</p>
+<p>3501&nbsp; string device_name_lower;</p>
+<p>3502</p>
+<p>3503&nbsp; vector&lt;string&gt; cmd_poll_ring_depth;</p>
+<p>3504&nbsp; vector&lt;string&gt; attr_poll_ring_depth;</p>
+<p>3505</p>
+<p>3506&nbsp; bool store_in_bb;</p>
+<p>3507&nbsp; TangoMonitor poll_mon; // Polling list monitor</p>
+<p>3508&nbsp; TangoMonitor att_conf_mon; // Attribute config monitor</p>
+<p>3509&nbsp; TangoMonitor pipe_conf_mon; // Pipe config monitor</p>
+<p>3510&nbsp; bool state_from_read;</p>
+<p>3511&nbsp; vector&lt;long&gt; alrmd_not_read;</p>
+<p>3512</p>
+<p>3513&nbsp; bool py_device;</p>
+<p>3514&nbsp; string alias_name_lower; // Alias name (if any)</p>
+<p>3515</p>
+<p>3516&nbsp; bool device_locked;</p>
+<p>3517&nbsp; client_addr *locker_client;</p>
+<p>3518&nbsp; client_addr *old_locker_client;</p>
+<p>3519&nbsp; DevLong lock_validity;</p>
+<p>3520&nbsp; time_t locking_date;</p>
+<p>3521&nbsp; string lock_stat;</p>
+<p>3522&nbsp; DevLong lock_ctr;</p>
+<p>3523</p>
+<p>3524&nbsp; long min_poll_period;</p>
+<p>3525&nbsp; vector&lt;string&gt; cmd_min_poll_period;</p>
+<p>3526&nbsp; vector&lt;string&gt; attr_min_poll_period;</p>
+<p>3527</p>
+<p>3528&nbsp; bool run_att_conf_loop;</p>
+<p>3529&nbsp; bool force_alarm_state;</p>
+<p>3530&nbsp; vector&lt;string&gt; att_wrong_db_conf;</p>
+<p>3531&nbsp; vector&lt;string&gt; att_mem_failed;</p>
+<p>3532&nbsp; vector&lt;FwdWrongConf&gt; fwd_att_wrong_conf;</p>
+<p>3533&nbsp; bool with_fwd_att;</p>
+<p>3534&nbsp; DevSource call_source;</p>
+<p>3535</p>
+<p>3536&nbsp; vector&lt;Command *&gt; command_list;</p>
+<p>3537&nbsp; time_t event_intr_change_subscription;</p>
+<p>3538&nbsp; bool intr_change_ev;</p>
+<p>3539</p>
+<p>3540&nbsp; TangoMonitor devintr_mon;</p>
+<p>3541&nbsp; ShDevIntrTh devintr_shared;</p>
+<p>3542&nbsp; DevIntrThread *devintr_thread;</p>
+<p>3543</p>
+<p>3544&nbsp; vector&lt;int&gt; client_lib; // Dev Intr change event client(s) IDL</p>
+<p>3545</p>
+<p>3546&nbsp;private:</p>
+<p>3547&nbsp;//</p>
+<p>3548&nbsp;// Private enum</p>
+<p>3549&nbsp;//</p>
+<p>3550</p>
+<p>3551&nbsp; typedef enum _AttErrorType</p>
+<p>3552&nbsp; {</p>
+<p>3553&nbsp; CONF = 0,</p>
+<p>3554&nbsp; MEM,</p>
+<p>3555&nbsp; FWD</p>
+<p>3556&nbsp; }AttErrorType;</p>
+<p>3557</p>
+<p>3558&nbsp; typedef enum _PipePropType</p>
+<p>3559&nbsp; {</p>
+<p>3560&nbsp; LABEL = 0,</p>
+<p>3561&nbsp; DESCRIPTION</p>
+<p>3562&nbsp; }PipePropType;</p>
+<p>3563</p>
+<p>3564&nbsp;//</p>
+<p>3565&nbsp;// Some private methods and variables</p>
+<p>3566&nbsp;//</p>
+<p>3567</p>
+<p>3568&nbsp; void get_dev_system_resource();</p>
+<p>3569&nbsp; void black_box_create();</p>
+<p>3570&nbsp; void real_ctor();</p>
+<p>3571&nbsp; void poll_object(const string
+&amp;,int,<a class="reference external" href="../../de/ddf/namespaceTango.html#ac5ffdb26e95e0c322c8ed79524ad9b6e">PollObjType</a>);</p>
+<p>3572&nbsp; void stop_poll_object(const string
+&amp;,<a class="reference external" href="../../de/ddf/namespaceTango.html#ac5ffdb26e95e0c322c8ed79524ad9b6e">PollObjType</a>);</p>
+<p>3573&nbsp; void att_conf_loop();</p>
+<p>3574&nbsp; void build_att_list_in_status_mess(size_t,AttErrorType);</p>
+<p>3575&nbsp; void lock_root_devices(int,bool);</p>
+<p>3576&nbsp; void push_dev_intr(bool);</p>
+<p>3577&nbsp; void end_pipe_config();</p>
+<p>3578&nbsp; void set_pipe_prop(vector&lt;PipeProperty&gt; &amp;,Pipe *,PipePropType);</p>
+<p>3579</p>
+<p>3580&nbsp;#ifdef TANGO_HAS_LOG4TANGO</p>
+<p>3581&nbsp; <a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html">log4tango::Logger</a>
+*get_logger_i (void);</p>
+<p>3582&nbsp;#endif</p>
+<p>3583</p>
+<p>3584&nbsp; string alarm_status;</p>
+<p>3585&nbsp; Tango::Device_var d_var;</p>
+<p>3586&nbsp; PortableServer::ObjectId_var obj_id;</p>
+<p>3587</p>
+<p>3588&nbsp;protected:</p>
+<p>3589&nbsp;};</p>
+<p>3590</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a2123f00afdfa638c31399eb10efefd66">3591</a>&nbsp;inline
+void
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a2123f00afdfa638c31399eb10efefd66">DeviceImpl::set_state</a>(const
+Tango::DevState &amp;new_state)</p>
+<p>3592&nbsp;{</p>
+<p>3593&nbsp; device_prev_state =
+<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a214ba0a5741c52165869ae11219d414a">device_state</a>;</p>
+<p>3594&nbsp; device_state = new_state;</p>
+<p>3595&nbsp; if (new_state == Tango::ALARM)</p>
+<p>3596&nbsp; ext-&gt;alarm_state_user = time(NULL);</p>
+<p>3597&nbsp; else</p>
+<p>3598&nbsp; ext-&gt;alarm_state_user = 0;</p>
+<p>3599&nbsp;}</p>
+<p>3600</p>
+<p><a class="reference external" href="../../db/de9/device_8h.html#ac89799415e9cd7a70591f72e48c58708">3601</a>&nbsp;#define
+DATA_IN_NET_OBJECT(A,B,C,D,E) \</p>
+<p>3602&nbsp; do \</p>
+<p>3603&nbsp; { \</p>
+<p>3604&nbsp; if (aid.data_5 != Tango_nullptr) \</p>
+<p>3605&nbsp; { \</p>
+<p>3606&nbsp; AttributeValue_5 &amp;att_val =
+polled_att-&gt;get_last_attr_value_5(false); \</p>
+<p>3607&nbsp; (*aid.data_5)[index].value.A(att_val.value.A()); \</p>
+<p>3608&nbsp; } \</p>
+<p>3609&nbsp; else if (aid.data_4 != Tango_nullptr) \</p>
+<p>3610&nbsp; { \</p>
+<p>3611&nbsp; if (vers &gt;= 5) \</p>
+<p>3612&nbsp; { \</p>
+<p>3613&nbsp; AttributeValue_5 &amp;att_val =
+polled_att-&gt;get_last_attr_value_5(false); \</p>
+<p>3614&nbsp; (*aid.data_4)[index].value.A(att_val.value.A()); \</p>
+<p>3615&nbsp; } \</p>
+<p>3616&nbsp; else \</p>
+<p>3617&nbsp; { \</p>
+<p>3618&nbsp; AttributeValue_4 &amp;att_val =
+polled_att-&gt;get_last_attr_value_4(false); \</p>
+<p>3619&nbsp; (*aid.data_4)[index].value.A(att_val.value.A()); \</p>
+<p>3620&nbsp; } \</p>
+<p>3621&nbsp; } \</p>
+<p>3622&nbsp; else \</p>
+<p>3623&nbsp; { \</p>
+<p>3624&nbsp; if (vers &gt;= 5) \</p>
+<p>3625&nbsp; { \</p>
+<p>3626&nbsp; AttributeValue_5 &amp;att_val =
+polled_att-&gt;get_last_attr_value_5(false); \</p>
+<p>3627&nbsp; B &amp;union_seq = att_val.value.A(); \</p>
+<p>3628&nbsp; D = new B(union_seq.length(), \</p>
+<p>3629&nbsp; union_seq.length(), \</p>
+<p>3630&nbsp; const_cast&lt;C *&gt;(union_seq.get_buffer()), \</p>
+<p>3631&nbsp; false); \</p>
+<p>3632&nbsp; } \</p>
+<p>3633&nbsp; else if (vers == 4) \</p>
+<p>3634&nbsp; { \</p>
+<p>3635&nbsp; AttributeValue_4 &amp;att_val =
+polled_att-&gt;get_last_attr_value_4(false); \</p>
+<p>3636&nbsp; B &amp;union_seq = att_val.value.A(); \</p>
+<p>3637&nbsp; D = new B(union_seq.length(), \</p>
+<p>3638&nbsp; union_seq.length(), \</p>
+<p>3639&nbsp; const_cast&lt;C *&gt;(union_seq.get_buffer()), \</p>
+<p>3640&nbsp; false); \</p>
+<p>3641&nbsp; } \</p>
+<p>3642&nbsp; else \</p>
+<p>3643&nbsp; { \</p>
+<p>3644&nbsp; AttributeValue_3 &amp;att_val =
+polled_att-&gt;get_last_attr_value_3(false); \</p>
+<p>3645&nbsp; att_val.value &gt;&gt;= E; \</p>
+<p>3646&nbsp; D = new B(E-&gt;length(), \</p>
+<p>3647&nbsp; E-&gt;length(), \</p>
+<p>3648&nbsp; const_cast&lt;C *&gt;(E-&gt;get_buffer()), \</p>
+<p>3649&nbsp; false); \</p>
+<p>3650&nbsp; } \</p>
+<p>3651&nbsp; (*aid.data_3)[index].value &lt;&lt;= D; \</p>
+<p>3652&nbsp; } \</p>
+<p>3653&nbsp; } \</p>
+<p>3654&nbsp; while (false)</p>
+<p>3655</p>
+<p>3656</p>
+<p>3657</p>
+<p><a class="reference external" href="../../db/de9/device_8h.html#a963d0fe11371931a236713f2d57114eb">3658</a>&nbsp;#define
+DATA_IN_OBJECT(A,B,C,D) \</p>
+<p>3659&nbsp; do \</p>
+<p>3660&nbsp; { \</p>
+<p>3661&nbsp; Tango::A *ptr = att.B(); \</p>
+<p>3662&nbsp; if (aid.data_5 != Tango_nullptr) \</p>
+<p>3663&nbsp; { \</p>
+<p>3664&nbsp; (*aid.data_5)[index].value.D(C); \</p>
+<p>3665&nbsp; A &amp;the_seq = (*aid.data_5)[index].value.D(); \</p>
+<p>3666
+the_seq.replace(ptr-&gt;length(),ptr-&gt;length(),ptr-&gt;get_buffer(),ptr-&gt;release());
+\</p>
+<p>3667&nbsp; if (ptr-&gt;release() == true) \</p>
+<p>3668&nbsp; ptr-&gt;get_buffer(true); \</p>
+<p>3669&nbsp; } \</p>
+<p>3670&nbsp; else if (aid.data_4 != Tango_nullptr) \</p>
+<p>3671&nbsp; { \</p>
+<p>3672&nbsp; (*aid.data_4)[index].value.D(C); \</p>
+<p>3673&nbsp; A &amp;the_seq = (*aid.data_4)[index].value.D(); \</p>
+<p>3674
+the_seq.replace(ptr-&gt;length(),ptr-&gt;length(),ptr-&gt;get_buffer(),ptr-&gt;release());
+\</p>
+<p>3675&nbsp; if (ptr-&gt;release() == true) \</p>
+<p>3676&nbsp; ptr-&gt;get_buffer(true); \</p>
+<p>3677&nbsp; } \</p>
+<p>3678&nbsp; else \</p>
+<p>3679&nbsp; { \</p>
+<p>3680&nbsp; (*aid.data_3)[index].value &lt;&lt;= *ptr; \</p>
+<p>3681&nbsp; } \</p>
+<p>3682&nbsp;\</p>
+<p>3683&nbsp; if (del_seq == true) \</p>
+<p>3684&nbsp; delete ptr; \</p>
+<p>3685&nbsp; } \</p>
+<p>3686&nbsp; while (false)</p>
+<p>3687</p>
+<p>3688</p>
+<p>3689</p>
+<p>3690&nbsp;} // End of Tango namespace</p>
+<p>3691</p>
+<p>3692&nbsp;#endif // _DEVICE_H</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#ae1ac32627a6ec783de529ddb26e5d900">Tango::DeviceImpl::set_data_ready_event</a></p>
+<p>void set_data_ready_event(string attr_name, bool implemented)</p>
+<p>Set an implemented flag for the attribute to indicate that the server
+fires data ready event for this...</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a6c789211496cd65dd417ea4fe633c85a">Tango::DeviceImpl::push_change_event</a></p>
+<p>void push_change_event(string attr_name, DevFailed *except=NULL)</p>
+<p>Push a change event for a state or status attribute or return an
+exception as change event for any at...</p>
+<p><a class="reference external" href="../../d4/deb/classTango_1_1Util.html">Tango::Util</a></p>
+<p>This class is a used to store TANGO device server process data and to
+provide the user with a set of ...</p>
+<p><strong>Definition:</strong> utils.h:153</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a64f3aafd381cd25bb562cdb4074932d9">Tango::DeviceImpl::add_command</a></p>
+<p>void add_command(Command *new_cmd, bool device=false)</p>
+<p>Add a new command to the device command list.</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a002bc27747f35517048b5b87169c52c8">Tango::DeviceImpl::push_event</a></p>
+<p>void push_event(string attr_name, vector&lt; string &gt; &amp;filt_names,
+vector&lt; double &gt; &amp;filt_vals, DevFailed *except=NULL)</p>
+<p>Push a user event for a state or status attribute or return an exception
+as user event for any attrib...</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a339ebeff825166048358919948782be8">Tango::DeviceImpl::get_device_attr</a></p>
+<p>MultiAttribute * get_device_attr()</p>
+<p>Get device multi attribute object.</p>
+<p><strong>Definition:</strong> device.h:260</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#ab1c6dfb1ea310030cd464f9091a2b8b0">Tango::DeviceImpl::append_status</a></p>
+<p>void append_status(const string &amp;stat, bool new_line=false)</p>
+<p>Appends a string to the device status.</p>
+<p><strong>Definition:</strong> device.h:206</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a11715eb4830c827fed3b0e5592cfd1a0">Tango::DeviceImpl::create_DevVarDoubleArray</a></p>
+<p>Tango::DevVarDoubleArray * create_DevVarDoubleArray(double *ptr, long
+length)</p>
+<p>Create a DevVarDoubleArray type.</p>
+<p><strong>Definition:</strong> device.h:795</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#ab7ccad84e75ab8e91ada91bb49a028ba">Tango::DeviceImpl::is_there_subscriber</a></p>
+<p>bool is_there_subscriber(const string &amp;att_name, EventType
+event_type)</p>
+<p>Check if there is subscriber(s) listening for the event.</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a4cdabe9798a15fab2e519f9c4471e32c">Tango::DeviceImpl::EventSupplier</a></p>
+<p>friend class Tango::EventSupplier</p>
+<p><strong>Definition:</strong> device.h:95</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a96a247ceb8f389dbb02e8e693847fcdf">Tango::DeviceImpl::poll_command</a></p>
+<p>void poll_command(const string &amp;cmd_name, int period)</p>
+<p>Start polling a command.</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#ab6434f2fd256b10b21ba38ba80b7231c">Tango::DeviceImpl::is_attribute_polled</a></p>
+<p>bool is_attribute_polled(const string &amp;att_name)</p>
+<p>Check if attribute is polled.</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#abfe5f92400f24bcfed94bc7a0d731233">Tango::DeviceImpl::set_device_attr</a></p>
+<p>void set_device_attr(MultiAttribute *ptr)</p>
+<p>Set device multi attribute object.</p>
+<p><strong>Definition:</strong> device.h:270</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a00f3e7b568926d1e09b1dff8f574979f">Tango::DeviceImpl::get_command_poll_period</a></p>
+<p>int get_command_poll_period(const string &amp;cmd_name)</p>
+<p>Get command polling period.</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#afaa3632ea04076bb5614a98ff944ef8c">Tango::DeviceImpl::init_device</a></p>
+<p>virtual void init_device()=0</p>
+<p>Intialise a device.</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a086fe46c88aed6e2aff70a9cb6c26e84">Tango::DeviceImpl::always_executed_hook</a></p>
+<p>virtual void always_executed_hook(void)</p>
+<p>Hook method.</p>
+<p><strong>Definition:</strong> device.h:455</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#ad08bf54e4603f07b21a522047626ffef">Tango::DeviceImpl::create_DevVarUShortArray</a></p>
+<p>Tango::DevVarUShortArray * create_DevVarUShortArray(unsigned short
+*ptr, long length)</p>
+<p>Create a DevVarUShortArray type.</p>
+<p><strong>Definition:</strong> device.h:811</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#acbf6090c2400d6c44a6474b458c58b36">Tango::DeviceImpl::stop_poll_command</a></p>
+<p>void stop_poll_command(const string &amp;cmd_name)</p>
+<p>Stop polling one command.</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a70d7f89e019fa63535ab7815a0cb4552">Tango::DeviceImpl::stop_poll_attribute</a></p>
+<p>void stop_poll_attribute(const string &amp;att_name)</p>
+<p>Stop polling one attribute.</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a9f130650c3a9da5190001adfbc2dc50c">Tango::DeviceImpl::add_attribute</a></p>
+<p>void add_attribute(Attr *new_attr)</p>
+<p>Add a new attribute to the device attribute list.</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a408b4dd2c4b27caf1ffdefdc5fdde784">Tango::DeviceImpl::create_DevVarULongArray</a></p>
+<p>Tango::DevVarULongArray * create_DevVarULongArray(DevULong *ptr, long
+length)</p>
+<p>Create a DevVarULongArray type.</p>
+<p><strong>Definition:</strong> device.h:828</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#aa66233801c127f96878d701259739383">Tango::DeviceImpl::device_status</a></p>
+<p>string device_status</p>
+<p>The device status.</p>
+<p><strong>Definition:</strong> device.h:3264</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#aa00f880d45531edc57cf3f070ce9e757">Tango::DeviceImpl::create_DevVarULong64Array</a></p>
+<p>Tango::DevVarULong64Array * create_DevVarULong64Array(DevULong64
+*ptr, long length)</p>
+<p>Create a DevVarULong64Array type.</p>
+<p><strong>Definition:</strong> device.h:846</p>
+<p><a class="reference external" href="../../da/dbb/classTango_1_1DbDevice.html">Tango::DbDevice</a></p>
+<p>A high level object for a device interface to the database.</p>
+<p><strong>Definition:</strong> dbapi.h:52</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a2902621019fa17e307d9093137d0d4e7">Tango::DeviceImpl::NoSyncModelTangoMonitor</a></p>
+<p>friend class Tango::NoSyncModelTangoMonitor</p>
+<p><strong>Definition:</strong> device.h:94</p>
+<p><a class="reference external" href="../../dc/d3b/classTango_1_1MultiAttribute.html">Tango::MultiAttribute</a></p>
+<p>There is one instance of this class for each device.</p>
+<p><strong>Definition:</strong> multiattribute.h:87</p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html">log4tango::Logger</a></p>
+<p><strong>Definition:</strong> Logger.hh:56</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a78a091f645e75c006f856adde52c1c50">Tango::DeviceImpl::create_DevVarLong64Array</a></p>
+<p>Tango::DevVarLong64Array * create_DevVarLong64Array(DevLong64 *ptr,
+long length)</p>
+<p>Create a DevVarLong64Array type.</p>
+<p><strong>Definition:</strong> device.h:763</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#af57cb03749073660df2f1515204d17aa">Tango::DeviceImpl::get_d_var</a></p>
+<p>Tango::Device_var get_d_var()</p>
+<p>Get the associated CORBA object reference.</p>
+<p><strong>Definition:</strong> device.h:302</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a38c76f8655cb5af13615b7a2ea89d1fe">Tango::DeviceImpl::EventSubscriptionChangeCmd</a></p>
+<p>friend class Tango::EventSubscriptionChangeCmd</p>
+<p><strong>Definition:</strong> device.h:96</p>
+<p><a class="reference external" href="../../d1/d45/group__Client.html#ga5366e2a8cedf5aab5be8835974f787c6">Tango::EventType</a></p>
+<p>EventType</p>
+<p>Possible event type.</p>
+<p><strong>Definition:</strong> tango_const.h:1089</p>
+<p><a class="reference external" href="../../df/dd9/classTango_1_1DevicePipeBlob.html">Tango::DevicePipeBlob</a></p>
+<p>A device pipe blob.</p>
+<p><strong>Definition:</strong> devapi.h:112</p>
+<p><a class="reference external" href="../../d6/dad/classTango_1_1Attribute.html">Tango::Attribute</a></p>
+<p>This class represents a Tango attribute.</p>
+<p><strong>Definition:</strong> attribute.h:163</p>
+<p><a class="reference external" href="../../de/ddf/namespaceTango.html">Tango</a></p>
+<hr class="docutils" />
+<p><strong>Definition:</strong> device.h:50</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#ac1b1c0e44d43f83e9b6a1633dbfe2967">Tango::DeviceImpl::blackbox_depth</a></p>
+<p>long blackbox_depth</p>
+<p>The device black box depth.</p>
+<p><strong>Definition:</strong> device.h:3252</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a0de42a80d6d1fc464b142dae308671b4">Tango::DeviceImpl::push_data_ready_event</a></p>
+<p>void push_data_ready_event(const string &amp;attr_name, Tango::DevLong
+ctr=0)</p>
+<p>Push a data ready event for the attribute with name specified as the
+first parameter.</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a051cb13d94de8492f37a9b5f48e38e56">Tango::DeviceImpl::get_prev_state</a></p>
+<p>Tango::DevState &amp; get_prev_state()</p>
+<p>Get device&#8217;s previous state.</p>
+<p><strong>Definition:</strong> device.h:225</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a1066d2fe5f4d45bf12a38c667d02bdb8">Tango::DeviceImpl::register_signal</a></p>
+<p>void register_signal(long signo, bool own_handler=false)</p>
+<p>Register a signal to be executed in a signal handler.</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#ac337fcab0f8fa8647e817a9aedc87f0c">Tango::DeviceImpl::get_name</a></p>
+<p>string &amp; get_name()</p>
+<p>Get device name.</p>
+<p><strong>Definition:</strong> device.h:240</p>
+<p><a class="reference external" href="../../df/da4/w__attribute_8h.html">w_attribute.h</a></p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#adc92cdf3a75da5ebc139b7bf7d9c7377">Tango::DeviceImpl::get_status</a></p>
+<p>string &amp; get_status()</p>
+<p>Get device status.</p>
+<p><strong>Definition:</strong> device.h:191</p>
+<p><a class="reference external" href="../../d3/d7c/attribute_8h.html">attribute.h</a></p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#af2649629d515c38fc5a19c44f07e2f40">Tango::DeviceImpl::device_name</a></p>
+<p>string device_name</p>
+<p>The device name.</p>
+<p><strong>Definition:</strong> device.h:3256</p>
+<p><a class="reference external" href="../../de/ddf/namespaceTango.html#a79122420bb8fc15b17138ff0da9bad7d">Tango::AttributeIdlData</a></p>
+<p>struct Tango::_AttributeIdlData AttributeIdlData</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#ae4071b4df6b9398e890d8dea51365383">Tango::DeviceImpl::set_d_var</a></p>
+<p>void set_d_var(Tango::Device_ptr d)</p>
+<p>Set the associated CORBA object reference.</p>
+<p><strong>Definition:</strong> device.h:291</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a480f48ff00c9d1aa8bd406323967df7d">Tango::DeviceImpl::desc</a></p>
+<p>string desc</p>
+<p>The device description.</p>
+<p><strong>Definition:</strong> device.h:3260</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#aa88509d4d6bba29d28a6c124cf0349a6">Tango::DeviceImpl::remove_attribute</a></p>
+<p>void remove_attribute(Attr *rem_attr, bool free_it=false, bool
+clean_db=true)</p>
+<p>Remove one attribute from the device attribute list.</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a214ba0a5741c52165869ae11219d414a">Tango::DeviceImpl::device_state</a></p>
+<p>Tango::DevState device_state</p>
+<p>The device state.</p>
+<p><strong>Definition:</strong> device.h:3268</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#ab3075b4e266562181c28d33be817ec0d">Tango::DeviceImpl::is_command_polled</a></p>
+<p>bool is_command_polled(const string &amp;cmd_name)</p>
+<p>Check if command is polled.</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#ad90289326211e05632a245a87bab11bb">Tango::DeviceImpl::set_archive_event</a></p>
+<p>void set_archive_event(string attr_name, bool implemented, bool
+detect=true)</p>
+<p>Set an implemented flag for the attribute to indicate that the server
+fires archive events manually...</p>
+<p><a class="reference external" href="../../d7/dfc/deviceclass_8h.html">deviceclass.h</a></p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#acc288d1cf858125abe0e6e4e154e9f43">Tango::DeviceImpl::set_change_event</a></p>
+<p>void set_change_event(string attr_name, bool implemented, bool
+detect=true)</p>
+<p>Set an implemented flag for the attribute to indicate that the server
+fires change events manually...</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#aa4c9e98e8b3fa64328eca74a4d1e07d3">Tango::DeviceImpl::create_DevVarShortArray</a></p>
+<p>Tango::DevVarShortArray * create_DevVarShortArray(short *ptr, long
+length)</p>
+<p>Create a DevVarShortArray type.</p>
+<p><strong>Definition:</strong> device.h:729</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#ab4b52ce4ebdfb338399dc146cc629529">Tango::DeviceImpl::get_attribute_poll_period</a></p>
+<p>int get_attribute_poll_period(const string &amp;att_name)</p>
+<p>Get attribute polling period.</p>
+<p><a class="reference external" href="../../de/ddf/namespaceTango.html#ac5ffdb26e95e0c322c8ed79524ad9b6e">Tango::PollObjType</a></p>
+<p>PollObjType</p>
+<p><strong>Definition:</strong> tango_const.h:944</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a5b53b4435a1ea8087849a9e505d70f2a">Tango::DeviceImpl::get_state</a></p>
+<p>Tango::DevState &amp; get_state()</p>
+<p>Get device state.</p>
+<p><strong>Definition:</strong> device.h:216</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a6a5e05c240b76db97a357703bdd30552">Tango::DeviceImpl::get_db_device</a></p>
+<p>DbDevice * get_db_device()</p>
+<p>Get a pointer to the associated DbDevice object.</p>
+<p><strong>Definition:</strong> utils.h:1203</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a5db64e22096acbd28c24e4c0eb91ae8f">Tango::DeviceImpl::push_archive_event</a></p>
+<p>void push_archive_event(string attr_name, DevFailed *except=NULL)</p>
+<p>Push an archive event for state or status attribute or push an exception
+as archive event for any att...</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a59b8a8053b36fe6eb5058342f77829ab">Tango::DeviceImpl::get_obj_id</a></p>
+<p>PortableServer::ObjectId_var &amp; get_obj_id()</p>
+<p>Get the associated CORBA object identifier.</p>
+<p><strong>Definition:</strong> device.h:322</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a9a5ffdab6150008e52d87ea4c38ee9ff">Tango::DeviceImpl::~DeviceImpl</a></p>
+<p>virtual ~DeviceImpl()</p>
+<p>The device desctructor.</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a0895eb0df1a110eba046df7200d86f48">Tango::DeviceImpl::_default_POA</a></p>
+<p>virtual PortableServer::POA_ptr _default_POA()</p>
+<p>Return device POA.</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a1b5f98bd245bd7e94403eaebc2913283">Tango::DeviceImpl::dev_state</a></p>
+<p>virtual Tango::DevState dev_state()</p>
+<p>Get device state.</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a5cd151bc1016a1e0aaee47df1949fc03">Tango::DeviceImpl::DeviceImpl</a></p>
+<p>DeviceImpl(DeviceClass *device_class, string &amp;dev_name)</p>
+<p>Constructs a newly allocated DeviceImpl object from its name.</p>
+<p><a class="reference external" href="../../d2/d1d/classTango_1_1Command.html">Tango::Command</a></p>
+<p>This class is a class representing a command in the TANGO device server
+pattern.</p>
+<p><strong>Definition:</strong> command.h:83</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a7aee6ee9fee2feb7f358972ec1677328">Tango::DeviceImpl::write_attr_hardware</a></p>
+<p>virtual void write_attr_hardware(vector&lt; long &gt; &amp;attr_list)</p>
+<p>Write the hardware for attributes.</p>
+<p><strong>Definition:</strong> device.h:503</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a934daa7bef5a3f01c50ba304006fdda4">Tango::DeviceImpl::read_attr_hardware</a></p>
+<p>virtual void read_attr_hardware(vector&lt; long &gt; &amp;attr_list)</p>
+<p>Read the hardware to return attribute value(s).</p>
+<p><strong>Definition:</strong> device.h:473</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html">Tango::DeviceImpl</a></p>
+<p>Base class for all TANGO device.</p>
+<p><strong>Definition:</strong> device.h:90</p>
+<p><a class="reference external" href="../../de/ddf/namespaceTango.html#a1e389712aae3f56c65cda947d965f8f3">Tango::FwdAttError</a></p>
+<p>enum Tango::_FwdAttError FwdAttError</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#abe7b41d84597f3e9327c2a8fdc2eff2b">Tango::DeviceImpl::create_DevVarStringArray</a></p>
+<p>Tango::DevVarStringArray * create_DevVarStringArray(char **ptr, long
+length)</p>
+<p>Create a DevVarStringArray type.</p>
+<p><strong>Definition:</strong> device.h:862</p>
+<p><a class="reference external" href="../../d5/dcd/classTango_1_1Attr.html">Tango::Attr</a></p>
+<p>User class to create a no dimension attribute object.</p>
+<p><strong>Definition:</strong> attrdesc.h:376</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a2f387fb75b3427fc661a4f9b829b1491">Tango::DeviceImpl::signal_handler</a></p>
+<p>virtual void signal_handler(long signo)</p>
+<p>Signal handler.</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#aa90445f0324fbdea288f7b41aa4a6790">Tango::DeviceImpl::AutoTangoMonitor</a></p>
+<p>friend class Tango::AutoTangoMonitor</p>
+<p><strong>Definition:</strong> device.h:93</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#ae063e45a3778e7241d74f7270461cbb4">Tango::DeviceImpl::db_dev</a></p>
+<p>DbDevice * db_dev</p>
+<p>Pointer to the associated DbDevice object.</p>
+<p><strong>Definition:</strong> device.h:3284</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a57b6296e483e01cb62ffdce4eca0261a">Tango::DeviceImpl::adm_device_name</a></p>
+<p>string adm_device_name</p>
+<p>The administration device name.</p>
+<p><strong>Definition:</strong> device.h:3288</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a54f9d94ef1072a6cb19ee472ccf044d7">Tango::DeviceImpl::set_status</a></p>
+<p>void set_status(const string &amp;new_status)</p>
+<p>Set device status.</p>
+<p><strong>Definition:</strong> device.h:198</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#aed3e20a35c92335be9ba742abdd9d60b">Tango::DeviceImpl::dev_attr</a></p>
+<p>MultiAttribute * dev_attr</p>
+<p>Pointer to the multi attribute object.</p>
+<p><strong>Definition:</strong> device.h:3280</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a9bbea9d3b6cf43f467a56d8866b343ca">Tango::DeviceImpl::unregister_signal</a></p>
+<p>void unregister_signal(long signo)</p>
+<p>Unregister a signal.</p>
+<p><a class="reference external" href="../../de/ddf/namespaceTango.html#ae1851ebaa91cbf1df9317e3f47f6190a">Tango::StatusNotSet</a></p>
+<p>const char *const StatusNotSet</p>
+<p><strong>Definition:</strong> tango_const.h:71</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#ab3bdf85a2faf1fe98ecd9253c1a51d77">Tango::DeviceImpl::version</a></p>
+<p>long version</p>
+<p>The device version.</p>
+<p><strong>Definition:</strong> device.h:3272</p>
+<p><a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#aa708c09b6a19a8cc8a3b19631561ca99">log4tango::Level::Value</a></p>
+<p>int Value</p>
+<p>The type of Level Values.</p>
+<p><strong>Definition:</strong> Level.hh:98</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#afcea586ff5d465e6f752fd256a66aeea">Tango::DeviceImpl::dev_status</a></p>
+<p>virtual Tango::ConstDevString dev_status()</p>
+<p>Get device status.</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#ab4b7bdcca9c83603da302783c86553bc">Tango::DeviceImpl::create_DevVarCharArray</a></p>
+<p>Tango::DevVarCharArray * create_DevVarCharArray(unsigned char *ptr,
+long length)</p>
+<p>Create a DevVarCharArray type.</p>
+<p><strong>Definition:</strong> device.h:713</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#ac2cf9bd6e0a5da8c121c65b068d36463">Tango::DeviceImpl::delete_device</a></p>
+<p>virtual void delete_device()</p>
+<p>Delete a device.</p>
+<p><strong>Definition:</strong> device.h:442</p>
+<p><a class="reference external" href="../../de/ddf/namespaceTango.html#a31a504495ecab5fd862cb6e60d40360c">Tango::ConstDevString</a></p>
+<p>const char * ConstDevString</p>
+<p><strong>Definition:</strong> tango_const.h:469</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a6a748b41d85396d38cd004a30a10bda1">Tango::DeviceImpl::poll_attribute</a></p>
+<p>void poll_attribute(const string &amp;att_name, int period)</p>
+<p>Start polling one attribute.</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a99aba4af5cd29838f50956a75427d5f7">Tango::DeviceImpl::set_obj_id</a></p>
+<p>void set_obj_id(PortableServer::ObjectId_var o)</p>
+<p>Set the associated CORBA object identifier.</p>
+<p><strong>Definition:</strong> device.h:312</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#aedd422cbede721279f2bbac705e34017">Tango::DeviceImpl::push_pipe_event</a></p>
+<p>void push_pipe_event(const string &amp;pipe_name, DevFailed *except)</p>
+<p>Push a pipe event with exception data as value The method needs the pipe
+name as input.</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a7c6302cff47fca241560187e1c178701">Tango::DeviceImpl::read_attr</a></p>
+<p>virtual void read_attr(Attribute &amp;attr)</p>
+<p>Set the attribute read value.</p>
+<p><strong>Definition:</strong> device.h:486</p>
+<p><a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html">Tango::DeviceClass</a></p>
+<p>Base class for all TANGO device-class class.</p>
+<p><strong>Definition:</strong> deviceclass.h:76</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a2123f00afdfa638c31399eb10efefd66">Tango::DeviceImpl::set_state</a></p>
+<p>void set_state(const Tango::DevState &amp;new_state)</p>
+<p>Set device state.</p>
+<p><strong>Definition:</strong> device.h:3591</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#ab0cee831dc51482a9b16f49406a796c4">Tango::DeviceImpl::create_DevVarFloatArray</a></p>
+<p>Tango::DevVarFloatArray * create_DevVarFloatArray(float *ptr, long
+length)</p>
+<p>Create a DevVarFloatArray type.</p>
+<p><strong>Definition:</strong> device.h:779</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a61fa9524c2eba31eba7ba9ff3b48ef0a">Tango::DeviceImpl::get_device_class</a></p>
+<p>DeviceClass * get_device_class()</p>
+<p>Get device class singleton.</p>
+<p><strong>Definition:</strong> device.h:250</p>
+<p><a class="reference external" href="../../d4/d18/attrdesc_8h.html">attrdesc.h</a></p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#a103c3527a529f7a40ecadf227a8a7990">Tango::DeviceImpl::device_class</a></p>
+<p>DeviceClass * device_class</p>
+<p>Pointer to the device-class object associated with the device.</p>
+<p><strong>Definition:</strong> device.h:3276</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#ac094cb1f6aaf9f8672e7a508ac561e6b">Tango::DeviceImpl::create_DevVarLongArray</a></p>
+<p>Tango::DevVarLongArray * create_DevVarLongArray(DevLong *ptr, long
+length)</p>
+<p>Create a DevVarLongArray type.</p>
+<p><strong>Definition:</strong> device.h:746</p>
+<p><a class="reference external" href="../../da/dd1/multiattribute_8h.html">multiattribute.h</a></p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#ae57fcb9d357314f6e4f159a62de3fb8d">Tango::DeviceImpl::remove_command</a></p>
+<p>void remove_command(Command *rem_cmd, bool free_it=false, bool
+clean_db=true)</p>
+<p>Remove one command from the device command list.</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#ac47d75934efad28b5668ee8b90df0999">Tango::DeviceImpl::get_polled_obj_by_type_name</a></p>
+<p>vector&lt; PollObj * &gt;::iterator
+get_polled_obj_by_type_name(Tango::PollObjType obj_type, const
+string &amp;obj_name)</p>
+<p>Retrieve a polled object from the polled object list.</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html#afdc166bd02d4723a09861bfbbf285c77">Tango::DeviceImpl::blackbox_ptr</a></p>
+<p>BlackBox * blackbox_ptr</p>
+<p>The device black box pointer.</p>
+<p><strong>Definition:</strong> device.h:3248</p>
+<ul class="simple">
+<li><a class="reference external" href="../../dir_93bc669b4520ad36068f344e109b7d17.html">include</a></li>
+<li><a class="reference external" href="../../dir_8ff48e8f3ef80891a9957ae5e9583431.html">tango</a></li>
+<li><a class="reference external" href="../../dir_53b28a22454594c5818f3f3f5a9fd698.html">server</a></li>
+<li><a class="reference external" href="../../db/de9/device_8h.html">device.h</a></li>
+<li>Generated on Fri Oct 7 2016 11:11:15 for Tango Core Classes Reference
+by <a class="reference external" href="http://www.doxygen.org/index.html"><img alt="doxygen" src="../../_images/doxygen316.png" /></a> 1.8.8</li>
+</ul>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/db/de9/device_8h_source.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, 3Controls.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.8</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+      |
+      <a href="../../_sources/db/de9/device_8h_source.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

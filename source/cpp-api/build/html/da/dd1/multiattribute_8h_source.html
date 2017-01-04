@@ -1,0 +1,471 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>&lt;no title&gt; &#8212; Tango Core Classes Reference Documentation 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="top" title="Tango Core Classes Reference Documentation 1.0 documentation" href="../../index.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><img alt="Logo" src="../../_images/logo281.jpg" /></td>
+<td>Tango Core Classes Reference &nbsp;9.2.5</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><a class="reference external" href="../../index.html">Main&nbsp;Page</a></li>
+<li><a class="reference external" href="../../pages.html">Related&nbsp;Pages</a></li>
+<li><a class="reference external" href="../../modules.html">Modules</a></li>
+<li><a class="reference external" href="../../namespaces.html">Namespaces</a></li>
+<li><a class="reference external" href="../../annotated.html">Classes</a></li>
+<li><a class="reference external" href="../../files.html">Files</a></li>
+<li><a class="reference external" href="../../files.html">File&nbsp;List</a></li>
+<li><a class="reference external" href="../../globals.html">File&nbsp;Members</a></li>
+</ul>
+<p>multiattribute.h</p>
+<p><a class="reference external" href="../../da/dd1/multiattribute_8h.html">Go to the documentation of this
+file.</a></p>
+<p>1&nbsp;//=============================================================================</p>
+<p>2&nbsp;//</p>
+<p>3&nbsp;// file : MultiAttribute.h</p>
+<p>4&nbsp;//</p>
+<p>5&nbsp;// description : Include file for the MultiAttribute class.</p>
+<p>6&nbsp;// Each device has one object of this class. All device</p>
+<p>7&nbsp;// attribute objects are stored in this class</p>
+<p>8&nbsp;//</p>
+<p>9&nbsp;// project : TANGO</p>
+<p>10&nbsp;//</p>
+<p>11&nbsp;// author(s) : A.Gotz + E.Taurel</p>
+<p>12&nbsp;//</p>
+<p>13&nbsp;// Copyright (C) :
+2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015</p>
+<p>14&nbsp;// European Synchrotron Radiation Facility</p>
+<p>15&nbsp;// BP 220, Grenoble 38043</p>
+<p>16&nbsp;// FRANCE</p>
+<p>17&nbsp;//</p>
+<p>18&nbsp;// This file is part of Tango.</p>
+<p>19&nbsp;//</p>
+<p>20&nbsp;// Tango is free software: you can redistribute it and/or modify</p>
+<p>21&nbsp;// it under the terms of the GNU Lesser General Public License as
+published by</p>
+<p>22&nbsp;// the Free Software Foundation, either version 3 of the License, or</p>
+<p>23&nbsp;// (at your option) any later version.</p>
+<p>24&nbsp;//</p>
+<p>25&nbsp;// Tango is distributed in the hope that it will be useful,</p>
+<p>26&nbsp;// but WITHOUT ANY WARRANTY; without even the implied warranty of</p>
+<p>27&nbsp;// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the</p>
+<p>28&nbsp;// GNU Lesser General Public License for more details.</p>
+<p>29&nbsp;//</p>
+<p>30&nbsp;// You should have received a copy of the GNU Lesser General Public
+License</p>
+<p>31&nbsp;// along with Tango. If not, see &lt;<a class="reference external" href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>&gt;.</p>
+<p>32&nbsp;//</p>
+<p>33&nbsp;// $Revision$</p>
+<p>34&nbsp;//</p>
+<p>35&nbsp;//</p>
+<p>36&nbsp;//=============================================================================</p>
+<p>37</p>
+<p>38&nbsp;#ifndef _MULTIATTRIBUTE_H</p>
+<p>39&nbsp;#define _MULTIATTRIBUTE_H</p>
+<p>40</p>
+<p>41&nbsp;#include &lt;tango.h&gt;</p>
+<p>42</p>
+<p>43&nbsp;namespace <a class="reference external" href="../../de/ddf/namespaceTango.html">Tango</a></p>
+<p>44&nbsp;{</p>
+<p>45</p>
+<p>46&nbsp;class AttrProperty;</p>
+<p>47&nbsp;class DeviceClass;</p>
+<p>48</p>
+<p><a class="reference external" href="../../de/d7e/structTango_1_1EventPar.html">49</a>&nbsp;struct
+<a class="reference external" href="../../de/d7e/structTango_1_1EventPar.html">EventPar</a></p>
+<p>50&nbsp;{</p>
+<p><a class="reference external" href="../../de/d7e/structTango_1_1EventPar.html#a7f8282b0fda96da968a7436431d80c4d">51</a>
+long
+<a class="reference external" href="../../de/d7e/structTango_1_1EventPar.html#a7f8282b0fda96da968a7436431d80c4d">attr_id</a>;</p>
+<p><a class="reference external" href="../../de/d7e/structTango_1_1EventPar.html#a96cc2d5fc3ca6f4166846014f499db4e">52</a>
+vector&lt;int&gt;
+<a class="reference external" href="../../de/d7e/structTango_1_1EventPar.html#a96cc2d5fc3ca6f4166846014f499db4e">change</a>;</p>
+<p><a class="reference external" href="../../de/d7e/structTango_1_1EventPar.html#a718fed22a39807fccab5f958aa0e77f8">53</a>
+vector&lt;int&gt;
+<a class="reference external" href="../../de/d7e/structTango_1_1EventPar.html#a718fed22a39807fccab5f958aa0e77f8">archive</a>;</p>
+<p><a class="reference external" href="../../de/d7e/structTango_1_1EventPar.html#a6d6102c967cc748de895ed3da36c9a37">54</a>
+bool
+<a class="reference external" href="../../de/d7e/structTango_1_1EventPar.html#a6d6102c967cc748de895ed3da36c9a37">quality</a>;</p>
+<p><a class="reference external" href="../../de/d7e/structTango_1_1EventPar.html#a28d3f4b2042725d7e7c5e8e8ce7becf7">55</a>
+vector&lt;int&gt;
+<a class="reference external" href="../../de/d7e/structTango_1_1EventPar.html#a28d3f4b2042725d7e7c5e8e8ce7becf7">periodic</a>;</p>
+<p><a class="reference external" href="../../de/d7e/structTango_1_1EventPar.html#a3e7fa324cd3f29916061fb214ad44eeb">56</a>
+vector&lt;int&gt;
+<a class="reference external" href="../../de/d7e/structTango_1_1EventPar.html#a3e7fa324cd3f29916061fb214ad44eeb">user</a>;</p>
+<p><a class="reference external" href="../../de/d7e/structTango_1_1EventPar.html#a6aeb1616d5afed922b9a5a58871ab55e">57</a>
+vector&lt;int&gt;
+<a class="reference external" href="../../de/d7e/structTango_1_1EventPar.html#a6aeb1616d5afed922b9a5a58871ab55e">att_conf</a>;</p>
+<p><a class="reference external" href="../../de/d7e/structTango_1_1EventPar.html#a3853d98c41a9b22db63816f291ece906">58</a>
+bool
+<a class="reference external" href="../../de/d7e/structTango_1_1EventPar.html#a3853d98c41a9b22db63816f291ece906">data_ready</a>;</p>
+<p><a class="reference external" href="../../de/d7e/structTango_1_1EventPar.html#ae600a66836d594cdb317a73a2792d5c0">59</a>
+bool
+<a class="reference external" href="../../de/d7e/structTango_1_1EventPar.html#ae600a66836d594cdb317a73a2792d5c0">dev_intr_change</a>;</p>
+<p><a class="reference external" href="../../de/d7e/structTango_1_1EventPar.html#ab31595ad7ebd9ab9eac44ba46932bd23">60</a>
+bool
+<a class="reference external" href="../../de/d7e/structTango_1_1EventPar.html#ab31595ad7ebd9ab9eac44ba46932bd23">notifd</a>;</p>
+<p><a class="reference external" href="../../de/d7e/structTango_1_1EventPar.html#a1b2ea6f3cab007a367c7317e1976d548">61</a>
+bool
+<a class="reference external" href="../../de/d7e/structTango_1_1EventPar.html#a1b2ea6f3cab007a367c7317e1976d548">zmq</a>;</p>
+<p>62&nbsp;};</p>
+<p>63</p>
+<p>64&nbsp;//=============================================================================</p>
+<p>65&nbsp;//</p>
+<p>66&nbsp;// The MultiAttribute class</p>
+<p>67&nbsp;//</p>
+<p>68&nbsp;//</p>
+<p>69&nbsp;// description : There is one instance of this class for each device.</p>
+<p>70&nbsp;// This is mainly a helper class. It maintains a vector</p>
+<p>71&nbsp;// of all the attribute for the device</p>
+<p>72&nbsp;//</p>
+<p>73&nbsp;//=============================================================================</p>
+<p>74</p>
+<p><a class="reference external" href="../../dc/d3b/classTango_1_1MultiAttribute.html">87</a>&nbsp;class
+<a class="reference external" href="../../dc/d3b/classTango_1_1MultiAttribute.html">MultiAttribute</a></p>
+<p>88&nbsp;{</p>
+<p>89&nbsp;public:</p>
+<p>106
+<a class="reference external" href="../../dc/d3b/classTango_1_1MultiAttribute.html#aafd0cc4e89eeef1687b827da72b2db34">MultiAttribute</a>(string
+&amp;dev_name,<a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html">DeviceClass</a>
+*dev_class,<a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html">DeviceImpl</a>
+*dev);</p>
+<p>108</p>
+<p>115
+<a class="reference external" href="../../dc/d3b/classTango_1_1MultiAttribute.html#ad0f2a8d4aaff4735c71456d7ef6ba440">~MultiAttribute</a>();</p>
+<p>117</p>
+<p>132&nbsp; <a class="reference external" href="../../d6/dad/classTango_1_1Attribute.html">Attribute</a>
+&amp;<a class="reference external" href="../../dc/d3b/classTango_1_1MultiAttribute.html#a7b35eb2625bb190393524de6971e2a84">get_attr_by_name</a>(const
+char *attr_name);</p>
+<p><a class="reference external" href="../../dc/d3b/classTango_1_1MultiAttribute.html#a30ec97afa15f663a53df8a07aab3b29f">142</a>
+<a class="reference external" href="../../d6/dad/classTango_1_1Attribute.html">Attribute</a>
+&amp;<a class="reference external" href="../../dc/d3b/classTango_1_1MultiAttribute.html#a30ec97afa15f663a53df8a07aab3b29f">get_attr_by_ind</a>(const
+long ind) {return
+*(<a class="reference external" href="../../dc/d3b/classTango_1_1MultiAttribute.html#aacf766c6cbdeef887e871ec408d80ff7">attr_list</a>[ind]);}</p>
+<p>155&nbsp; <a class="reference external" href="../../db/da8/classTango_1_1WAttribute.html">WAttribute</a>
+&amp;<a class="reference external" href="../../dc/d3b/classTango_1_1MultiAttribute.html#a3023529c543ed802a58c9e1eb2b12ff3">get_w_attr_by_name</a>(const
+char *attr_name);</p>
+<p><a class="reference external" href="../../dc/d3b/classTango_1_1MultiAttribute.html#a1e02cdb7576f1758143226efabcc374c">165</a>
+<a class="reference external" href="../../db/da8/classTango_1_1WAttribute.html">WAttribute</a>
+&amp;<a class="reference external" href="../../dc/d3b/classTango_1_1MultiAttribute.html#a1e02cdb7576f1758143226efabcc374c">get_w_attr_by_ind</a>(const
+long ind) {return
+static_cast&lt;<a class="reference external" href="../../db/da8/classTango_1_1WAttribute.html">WAttribute</a>
+&amp;&gt;(*(<a class="reference external" href="../../dc/d3b/classTango_1_1MultiAttribute.html#aacf766c6cbdeef887e871ec408d80ff7">attr_list</a>[ind]));}</p>
+<p>179&nbsp; long
+<a class="reference external" href="../../dc/d3b/classTango_1_1MultiAttribute.html#a63ae2f2c06d88bb8b641a37898fdefdf">get_attr_ind_by_name</a>(const
+char *attr_name);</p>
+<p><a class="reference external" href="../../dc/d3b/classTango_1_1MultiAttribute.html#a18553cf9309d7a92f2f8d1fe96b7c637">186</a>
+vector&lt;long&gt;
+&amp;<a class="reference external" href="../../dc/d3b/classTango_1_1MultiAttribute.html#a18553cf9309d7a92f2f8d1fe96b7c637">get_alarm_list</a>()
+{return
+<a class="reference external" href="../../dc/d3b/classTango_1_1MultiAttribute.html#a2ae4228c1bc367771a1c7add54c60ff2">alarm_attr_list</a>;}</p>
+<p><a class="reference external" href="../../dc/d3b/classTango_1_1MultiAttribute.html#a1eeb8abbdd3e3a44d60410758a0d0535">192</a>
+unsigned long
+<a class="reference external" href="../../dc/d3b/classTango_1_1MultiAttribute.html#a1eeb8abbdd3e3a44d60410758a0d0535">get_attr_nb</a>()
+{return (unsigned
+long)<a class="reference external" href="../../dc/d3b/classTango_1_1MultiAttribute.html#aacf766c6cbdeef887e871ec408d80ff7">attr_list</a>.size();}</p>
+<p>193</p>
+<p><a class="reference external" href="../../dc/d3b/classTango_1_1MultiAttribute.html#af25a9b37449cc1e596bd5154c710c8df">207</a>
+bool
+<a class="reference external" href="../../dc/d3b/classTango_1_1MultiAttribute.html#af25a9b37449cc1e596bd5154c710c8df">check_alarm</a>(const
+char *attr_name) {return
+<a class="reference external" href="../../dc/d3b/classTango_1_1MultiAttribute.html#a7b35eb2625bb190393524de6971e2a84">get_attr_by_name</a>(attr_name).<a class="reference external" href="../../d6/dad/classTango_1_1Attribute.html#a64b4a569c810258ae52a2acaadf15d55">check_alarm</a>();}</p>
+<p><a class="reference external" href="../../dc/d3b/classTango_1_1MultiAttribute.html#a11c6b528f663726ccc8b39f0e0ddf967">221</a>
+bool
+<a class="reference external" href="../../dc/d3b/classTango_1_1MultiAttribute.html#a11c6b528f663726ccc8b39f0e0ddf967">check_alarm</a>(const
+long ind) {return
+<a class="reference external" href="../../dc/d3b/classTango_1_1MultiAttribute.html#a30ec97afa15f663a53df8a07aab3b29f">get_attr_by_ind</a>(ind).<a class="reference external" href="../../d6/dad/classTango_1_1Attribute.html#a64b4a569c810258ae52a2acaadf15d55">check_alarm</a>();}</p>
+<p>235&nbsp; bool
+<a class="reference external" href="../../dc/d3b/classTango_1_1MultiAttribute.html#a4293e644ee659ccc6796f8bf4bea8e5a">check_alarm</a>();</p>
+<p>244&nbsp; void
+<a class="reference external" href="../../dc/d3b/classTango_1_1MultiAttribute.html#a5f848b890a266861a0dced1add52fe88">read_alarm</a>(string
+&amp;status);</p>
+<p><a class="reference external" href="../../dc/d3b/classTango_1_1MultiAttribute.html#a1cb698e75ba5417305de17409fbeb1b3">251</a>
+vector&lt;Attribute *&gt;
+&amp;<a class="reference external" href="../../dc/d3b/classTango_1_1MultiAttribute.html#a1cb698e75ba5417305de17409fbeb1b3">get_attribute_list</a>(){return
+<a class="reference external" href="../../dc/d3b/classTango_1_1MultiAttribute.html#aacf766c6cbdeef887e871ec408d80ff7">attr_list</a>;}</p>
+<p>253</p>
+<p>254&nbsp;protected:</p>
+<p><a class="reference external" href="../../dc/d3b/classTango_1_1MultiAttribute.html#aacf766c6cbdeef887e871ec408d80ff7">262</a>
+vector&lt;Attribute *&gt;
+<a class="reference external" href="../../dc/d3b/classTango_1_1MultiAttribute.html#aacf766c6cbdeef887e871ec408d80ff7">attr_list</a>;</p>
+<p><a class="reference external" href="../../dc/d3b/classTango_1_1MultiAttribute.html#aa256d20e115d7c13a17d82fa7fbdd2d5">268</a>
+vector&lt;long&gt;
+<a class="reference external" href="../../dc/d3b/classTango_1_1MultiAttribute.html#aa256d20e115d7c13a17d82fa7fbdd2d5">writable_attr_list</a>;</p>
+<p><a class="reference external" href="../../dc/d3b/classTango_1_1MultiAttribute.html#a2ae4228c1bc367771a1c7add54c60ff2">274</a>
+vector&lt;long&gt;
+<a class="reference external" href="../../dc/d3b/classTango_1_1MultiAttribute.html#a2ae4228c1bc367771a1c7add54c60ff2">alarm_attr_list</a>;</p>
+<p>276</p>
+<p>277&nbsp;public:</p>
+<p>279</p>
+<p>280&nbsp; void
+add_write_value(<a class="reference external" href="../../d6/dad/classTango_1_1Attribute.html">Attribute</a>
+&amp;);</p>
+<p>281&nbsp; void add_attribute(string
+&amp;,<a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html">DeviceClass</a>
+*,long);</p>
+<p>282&nbsp; void add_fwd_attribute(string
+&amp;,<a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html">DeviceClass</a>
+*,long,<a class="reference external" href="../../d5/dcd/classTango_1_1Attr.html">Attr</a> *);</p>
+<p>283&nbsp; void remove_attribute(string &amp;,bool);</p>
+<p>284&nbsp; vector&lt;long&gt; &amp;get_w_attr_list() {return
+<a class="reference external" href="../../dc/d3b/classTango_1_1MultiAttribute.html#aa256d20e115d7c13a17d82fa7fbdd2d5">writable_attr_list</a>;}</p>
+<p>285&nbsp; bool is_att_quality_alarmed();</p>
+<p>286&nbsp; void get_event_param(vector&lt;EventPar&gt; &amp;);</p>
+<p>287&nbsp; void set_event_param(vector&lt;EventPar&gt; &amp;);</p>
+<p>288&nbsp; void add_alarmed_quality_factor(string &amp;);</p>
+<p>289&nbsp; void add_default(vector&lt;AttrProperty&gt; &amp;,string &amp;,string &amp;,long);</p>
+<p>290&nbsp; void
+add_attr(<a class="reference external" href="../../d6/dad/classTango_1_1Attribute.html">Attribute</a>
+*att) {attr_list.push_back(att);}</p>
+<p>291&nbsp; void update(Attribute &amp;,string &amp;);</p>
+<p>292&nbsp; void check_idl_release(DeviceImpl *);</p>
+<p>293&nbsp; bool is_opt_prop(const string &amp;);</p>
+<p>294</p>
+<p>295&nbsp;private:</p>
+<p>296&nbsp; class MultiAttributeExt</p>
+<p>297&nbsp; {</p>
+<p>298&nbsp; };</p>
+<p>299</p>
+<p>300&nbsp; void concat(vector&lt;AttrProperty&gt; &amp;,vector&lt;AttrProperty&gt;
+&amp;,vector&lt;AttrProperty&gt; &amp;);</p>
+<p>301&nbsp; void add_user_default(vector&lt;AttrProperty&gt; &amp;,vector&lt;AttrProperty&gt;
+&amp;);</p>
+<p>302&nbsp; void check_associated(long,string &amp;);</p>
+<p>303</p>
+<p>304&nbsp;#ifdef HAS_UNIQUE_PTR</p>
+<p>305&nbsp; unique_ptr&lt;MultiAttributeExt&gt; ext; // Class extension</p>
+<p>306&nbsp;#else</p>
+<p>307&nbsp; MultiAttributeExt *ext;</p>
+<p>308&nbsp;#endif</p>
+<p>309&nbsp;};</p>
+<p>310</p>
+<p>311</p>
+<p>312&nbsp;} // End of Tango namespace</p>
+<p>313</p>
+<p>314&nbsp;#endif // _MULTIATTRIBUTE_H</p>
+<p><a class="reference external" href="../../dc/d3b/classTango_1_1MultiAttribute.html#a2ae4228c1bc367771a1c7add54c60ff2">Tango::MultiAttribute::alarm_attr_list</a></p>
+<p>vector&lt; long &gt; alarm_attr_list</p>
+<p>The list of attribute with an alarm level defined.</p>
+<p><strong>Definition:</strong> multiattribute.h:274</p>
+<p><a class="reference external" href="../../dc/d3b/classTango_1_1MultiAttribute.html#a3023529c543ed802a58c9e1eb2b12ff3">Tango::MultiAttribute::get_w_attr_by_name</a></p>
+<p>WAttribute &amp; get_w_attr_by_name(const char *attr_name)</p>
+<p>Get Writable Attribute object from its name.</p>
+<p><a class="reference external" href="../../dc/d3b/classTango_1_1MultiAttribute.html#a1cb698e75ba5417305de17409fbeb1b3">Tango::MultiAttribute::get_attribute_list</a></p>
+<p>vector&lt; Attribute * &gt; &amp; get_attribute_list()</p>
+<p>Get the vector of attribute objects.</p>
+<p><strong>Definition:</strong> multiattribute.h:251</p>
+<p><a class="reference external" href="../../dc/d3b/classTango_1_1MultiAttribute.html#a5f848b890a266861a0dced1add52fe88">Tango::MultiAttribute::read_alarm</a></p>
+<p>void read_alarm(string &amp;status)</p>
+<p>Add alarm message to device status.</p>
+<p><a class="reference external" href="../../de/d7e/structTango_1_1EventPar.html#a28d3f4b2042725d7e7c5e8e8ce7becf7">Tango::EventPar::periodic</a></p>
+<p>vector&lt; int &gt; periodic</p>
+<p><strong>Definition:</strong> multiattribute.h:55</p>
+<p><a class="reference external" href="../../dc/d3b/classTango_1_1MultiAttribute.html#af25a9b37449cc1e596bd5154c710c8df">Tango::MultiAttribute::check_alarm</a></p>
+<p>bool check_alarm(const char *attr_name)</p>
+<p>Check alarm for one attribute with a given name.</p>
+<p><strong>Definition:</strong> multiattribute.h:207</p>
+<p><a class="reference external" href="../../dc/d3b/classTango_1_1MultiAttribute.html#aacf766c6cbdeef887e871ec408d80ff7">Tango::MultiAttribute::attr_list</a></p>
+<p>vector&lt; Attribute * &gt; attr_list</p>
+<p>The Attribute objects vector.</p>
+<p><strong>Definition:</strong> multiattribute.h:262</p>
+<p><a class="reference external" href="../../dc/d3b/classTango_1_1MultiAttribute.html">Tango::MultiAttribute</a></p>
+<p>There is one instance of this class for each device.</p>
+<p><strong>Definition:</strong> multiattribute.h:87</p>
+<p><a class="reference external" href="../../de/d7e/structTango_1_1EventPar.html#a718fed22a39807fccab5f958aa0e77f8">Tango::EventPar::archive</a></p>
+<p>vector&lt; int &gt; archive</p>
+<p><strong>Definition:</strong> multiattribute.h:53</p>
+<p><a class="reference external" href="../../de/d7e/structTango_1_1EventPar.html#a3e7fa324cd3f29916061fb214ad44eeb">Tango::EventPar::user</a></p>
+<p>vector&lt; int &gt; user</p>
+<p><strong>Definition:</strong> multiattribute.h:56</p>
+<p><a class="reference external" href="../../de/d7e/structTango_1_1EventPar.html#a6d6102c967cc748de895ed3da36c9a37">Tango::EventPar::quality</a></p>
+<p>bool quality</p>
+<p><strong>Definition:</strong> multiattribute.h:54</p>
+<p><a class="reference external" href="../../d6/dad/classTango_1_1Attribute.html">Tango::Attribute</a></p>
+<p>This class represents a Tango attribute.</p>
+<p><strong>Definition:</strong> attribute.h:163</p>
+<p><a class="reference external" href="../../de/ddf/namespaceTango.html">Tango</a></p>
+<hr class="docutils" />
+<p><strong>Definition:</strong> device.h:50</p>
+<p><a class="reference external" href="../../de/d7e/structTango_1_1EventPar.html">Tango::EventPar</a></p>
+<p><strong>Definition:</strong> multiattribute.h:49</p>
+<p><a class="reference external" href="../../dc/d3b/classTango_1_1MultiAttribute.html#ad0f2a8d4aaff4735c71456d7ef6ba440">Tango::MultiAttribute::~MultiAttribute</a></p>
+<p>~MultiAttribute()</p>
+<p>The MultiAttribute desctructor.</p>
+<p><a class="reference external" href="../../de/d7e/structTango_1_1EventPar.html#ab31595ad7ebd9ab9eac44ba46932bd23">Tango::EventPar::notifd</a></p>
+<p>bool notifd</p>
+<p><strong>Definition:</strong> multiattribute.h:60</p>
+<p><a class="reference external" href="../../dc/d3b/classTango_1_1MultiAttribute.html#a4293e644ee659ccc6796f8bf4bea8e5a">Tango::MultiAttribute::check_alarm</a></p>
+<p>bool check_alarm()</p>
+<p>Check alarm on all attribute(s) with an alarm defined.</p>
+<p><a class="reference external" href="../../de/d7e/structTango_1_1EventPar.html#a96cc2d5fc3ca6f4166846014f499db4e">Tango::EventPar::change</a></p>
+<p>vector&lt; int &gt; change</p>
+<p><strong>Definition:</strong> multiattribute.h:52</p>
+<p><a class="reference external" href="../../de/d7e/structTango_1_1EventPar.html#a6aeb1616d5afed922b9a5a58871ab55e">Tango::EventPar::att_conf</a></p>
+<p>vector&lt; int &gt; att_conf</p>
+<p><strong>Definition:</strong> multiattribute.h:57</p>
+<p><a class="reference external" href="../../dc/d3b/classTango_1_1MultiAttribute.html#aafd0cc4e89eeef1687b827da72b2db34">Tango::MultiAttribute::MultiAttribute</a></p>
+<p>MultiAttribute(string &amp;dev_name, DeviceClass *dev_class, DeviceImpl
+*dev)</p>
+<p>Create a new MultiAttribute object.</p>
+<p><a class="reference external" href="../../db/da8/classTango_1_1WAttribute.html">Tango::WAttribute</a></p>
+<p>This class represents a writable attribute.</p>
+<p><strong>Definition:</strong> w_attribute.h:68</p>
+<p><a class="reference external" href="../../de/d7e/structTango_1_1EventPar.html#a1b2ea6f3cab007a367c7317e1976d548">Tango::EventPar::zmq</a></p>
+<p>bool zmq</p>
+<p><strong>Definition:</strong> multiattribute.h:61</p>
+<p><a class="reference external" href="../../d3/d62/classTango_1_1DeviceImpl.html">Tango::DeviceImpl</a></p>
+<p>Base class for all TANGO device.</p>
+<p><strong>Definition:</strong> device.h:90</p>
+<p><a class="reference external" href="../../d5/dcd/classTango_1_1Attr.html">Tango::Attr</a></p>
+<p>User class to create a no dimension attribute object.</p>
+<p><strong>Definition:</strong> attrdesc.h:376</p>
+<p><a class="reference external" href="../../dc/d3b/classTango_1_1MultiAttribute.html#a11c6b528f663726ccc8b39f0e0ddf967">Tango::MultiAttribute::check_alarm</a></p>
+<p>bool check_alarm(const long ind)</p>
+<p>Check alarm for one attribute from its index in the main attributes
+vector.</p>
+<p><strong>Definition:</strong> multiattribute.h:221</p>
+<p><a class="reference external" href="../../de/d7e/structTango_1_1EventPar.html#a7f8282b0fda96da968a7436431d80c4d">Tango::EventPar::attr_id</a></p>
+<p>long attr_id</p>
+<p><strong>Definition:</strong> multiattribute.h:51</p>
+<p><a class="reference external" href="../../de/d7e/structTango_1_1EventPar.html#ae600a66836d594cdb317a73a2792d5c0">Tango::EventPar::dev_intr_change</a></p>
+<p>bool dev_intr_change</p>
+<p><strong>Definition:</strong> multiattribute.h:59</p>
+<p><a class="reference external" href="../../de/d7e/structTango_1_1EventPar.html#a3853d98c41a9b22db63816f291ece906">Tango::EventPar::data_ready</a></p>
+<p>bool data_ready</p>
+<p><strong>Definition:</strong> multiattribute.h:58</p>
+<p><a class="reference external" href="../../dc/d3b/classTango_1_1MultiAttribute.html#aa256d20e115d7c13a17d82fa7fbdd2d5">Tango::MultiAttribute::writable_attr_list</a></p>
+<p>vector&lt; long &gt; writable_attr_list</p>
+<p>The list of writable attribute.</p>
+<p><strong>Definition:</strong> multiattribute.h:268</p>
+<p><a class="reference external" href="../../d6/dad/classTango_1_1Attribute.html#a64b4a569c810258ae52a2acaadf15d55">Tango::Attribute::check_alarm</a></p>
+<p>bool check_alarm()</p>
+<p>Check if the attribute read value is below/above the alarm level.</p>
+<p><a class="reference external" href="../../dc/d3b/classTango_1_1MultiAttribute.html#a1e02cdb7576f1758143226efabcc374c">Tango::MultiAttribute::get_w_attr_by_ind</a></p>
+<p>WAttribute &amp; get_w_attr_by_ind(const long ind)</p>
+<p>Get Writable Attribute object from its index.</p>
+<p><strong>Definition:</strong> multiattribute.h:165</p>
+<p><a class="reference external" href="../../dc/d3b/classTango_1_1MultiAttribute.html#a63ae2f2c06d88bb8b641a37898fdefdf">Tango::MultiAttribute::get_attr_ind_by_name</a></p>
+<p>long get_attr_ind_by_name(const char *attr_name)</p>
+<p>Get Attribute index into the main attribute vector from its name.</p>
+<p><a class="reference external" href="../../d4/dcd/classTango_1_1DeviceClass.html">Tango::DeviceClass</a></p>
+<p>Base class for all TANGO device-class class.</p>
+<p><strong>Definition:</strong> deviceclass.h:76</p>
+<p><a class="reference external" href="../../dc/d3b/classTango_1_1MultiAttribute.html#a7b35eb2625bb190393524de6971e2a84">Tango::MultiAttribute::get_attr_by_name</a></p>
+<p>Attribute &amp; get_attr_by_name(const char *attr_name)</p>
+<p>Get Attribute object from its name.</p>
+<p><a class="reference external" href="../../dc/d3b/classTango_1_1MultiAttribute.html#a1eeb8abbdd3e3a44d60410758a0d0535">Tango::MultiAttribute::get_attr_nb</a></p>
+<p>unsigned long get_attr_nb()</p>
+<p>Get attribute number.</p>
+<p><strong>Definition:</strong> multiattribute.h:192</p>
+<p><a class="reference external" href="../../dc/d3b/classTango_1_1MultiAttribute.html#a30ec97afa15f663a53df8a07aab3b29f">Tango::MultiAttribute::get_attr_by_ind</a></p>
+<p>Attribute &amp; get_attr_by_ind(const long ind)</p>
+<p>Get Attribute object from its index.</p>
+<p><strong>Definition:</strong> multiattribute.h:142</p>
+<p><a class="reference external" href="../../dc/d3b/classTango_1_1MultiAttribute.html#a18553cf9309d7a92f2f8d1fe96b7c637">Tango::MultiAttribute::get_alarm_list</a></p>
+<p>vector&lt; long &gt; &amp; get_alarm_list()</p>
+<p>Get list of attribute with an alarm level defined.</p>
+<p><strong>Definition:</strong> multiattribute.h:186</p>
+<ul class="simple">
+<li><a class="reference external" href="../../dir_93bc669b4520ad36068f344e109b7d17.html">include</a></li>
+<li><a class="reference external" href="../../dir_8ff48e8f3ef80891a9957ae5e9583431.html">tango</a></li>
+<li><a class="reference external" href="../../dir_53b28a22454594c5818f3f3f5a9fd698.html">server</a></li>
+<li><a class="reference external" href="../../da/dd1/multiattribute_8h.html">multiattribute.h</a></li>
+<li>Generated on Fri Oct 7 2016 11:11:15 for Tango Core Classes Reference
+by <a class="reference external" href="http://www.doxygen.org/index.html"><img alt="doxygen" src="../../_images/doxygen281.png" /></a> 1.8.8</li>
+</ul>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/da/dd1/multiattribute_8h_source.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, 3Controls.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.8</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+      |
+      <a href="../../_sources/da/dd1/multiattribute_8h_source.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

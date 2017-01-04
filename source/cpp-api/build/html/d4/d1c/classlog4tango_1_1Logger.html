@@ -1,0 +1,1450 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Public Member Functions &#8212; Tango Core Classes Reference Documentation 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="top" title="Tango Core Classes Reference Documentation 1.0 documentation" href="../../index.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><img alt="Logo" src="../../_images/logo107.jpg" /></td>
+<td>Tango Core Classes Reference &nbsp;9.2.5</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><a class="reference external" href="../../index.html">Main&nbsp;Page</a></li>
+<li><a class="reference external" href="../../pages.html">Related&nbsp;Pages</a></li>
+<li><a class="reference external" href="../../modules.html">Modules</a></li>
+<li><a class="reference external" href="../../namespaces.html">Namespaces</a></li>
+<li><a class="reference external" href="../../annotated.html">Classes</a></li>
+<li><a class="reference external" href="../../files.html">Files</a></li>
+<li><a class="reference external" href="../../annotated.html">Class&nbsp;List</a></li>
+<li><a class="reference external" href="../../inherits.html">Class&nbsp;Hierarchy</a></li>
+<li><a class="reference external" href="../../functions.html">Class&nbsp;Members</a></li>
+</ul>
+<p><a class="reference external" href="#pub-methods">Public Member Functions</a> | <a class="reference external" href="#pro-methods">Protected Member
+Functions</a> | <a class="reference external" href="../../de/daa/classlog4tango_1_1Logger-members.html">List of all
+members</a></p>
+<p>log4tango::Logger Class Reference</p>
+<p><code class="docutils literal"><span class="pre">#include</span> <span class="pre">&quot;Logger.hh&quot;</span></code></p>
+<p>Inheritance diagram for log4tango::Logger:</p>
+<p><img alt="Inheritance graph" src="../../_images/classlog4tango_1_1Logger__inherit__graph.png" /></p>
+<p>[<a class="reference external" href="../../graph_legend.html">legend</a>]</p>
+<p>Collaboration diagram for log4tango::Logger:</p>
+<p><img alt="Collaboration graph" src="../../_images/classlog4tango_1_1Logger__coll__graph.png" /></p>
+<p>[<a class="reference external" href="../../graph_legend.html">legend</a>]</p>
+<div class="section" id="public-member-functions">
+<h1>Public Member Functions<a class="headerlink" href="#public-member-functions" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#a26b45ebe00d0cbecda9d9f64f169922e">Logger</a>
+(const std::string &amp;name,
+<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#aa708c09b6a19a8cc8a3b19631561ca99">Level::Value</a>
+level=<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#ad9edd63020b6becc9aef8802c48eb461a955ee789684a2e9952b7e4f56b6bb74f">Level::OFF</a>)</p>
+<div class="line-block">
+<div class="line">Constructor. <a class="reference external" href="#a26b45ebe00d0cbecda9d9f64f169922e">More...</a></div>
+</div>
+<p>virtual</p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#a39fb5f0cb96762664150e4af657cd33a">~Logger</a>
+()</p>
+<div class="line-block">
+<div class="line">Destructor. <a class="reference external" href="#a39fb5f0cb96762664150e4af657cd33a">More...</a></div>
+</div>
+<p>void</p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#a86870349be1352d8c529e713acf51a0b">debug</a>
+(const char *string_format,...)</p>
+<div class="line-block">
+<div class="line">Log a message with debug level.</div>
+</div>
+<p><a class="reference external" href="#a86870349be1352d8c529e713acf51a0b">More...</a></p>
+<p>void</p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#acdeaf9ecda4f2fd1b6ac845e188b34d6">debug</a>
+(const std::string &amp;message)</p>
+<div class="line-block">
+<div class="line">Log a message with debug level.</div>
+</div>
+<p><a class="reference external" href="#acdeaf9ecda4f2fd1b6ac845e188b34d6">More...</a></p>
+<p><a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html">LoggerStream</a></p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#a652427a4aed5322eb189f7409498cd18">debug_stream</a>
+(void)</p>
+<div class="line-block">
+<div class="line">Return a</div>
+</div>
+<p><a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html">LoggerStream</a> with
+level DEBUG. <a class="reference external" href="#a652427a4aed5322eb189f7409498cd18">More...</a></p>
+<p>void</p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#ac9c2f129c56991f6bf7148ce5b7f1518">error</a>
+(const char *string_format,...)</p>
+<div class="line-block">
+<div class="line">Log a message with error level.</div>
+</div>
+<p><a class="reference external" href="#ac9c2f129c56991f6bf7148ce5b7f1518">More...</a></p>
+<p>void</p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#a7d587fb218937b9c525f5c48e5f0e230">error</a>
+(const std::string &amp;message)</p>
+<div class="line-block">
+<div class="line">Log a message with error level.</div>
+</div>
+<p><a class="reference external" href="#a7d587fb218937b9c525f5c48e5f0e230">More...</a></p>
+<p><a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html">LoggerStream</a></p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#a09c866cc0bfb1de324c676617234f4fd">error_stream</a>
+(void)</p>
+<div class="line-block">
+<div class="line">Return a</div>
+</div>
+<p><a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html">LoggerStream</a> with
+level ERROR. <a class="reference external" href="#a09c866cc0bfb1de324c676617234f4fd">More...</a></p>
+<p>void</p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#a4c8832412bde8329c5a69acd88e08b8c">fatal</a>
+(const char *string_format,...)</p>
+<div class="line-block">
+<div class="line">Log a message with fatal level.</div>
+</div>
+<p><a class="reference external" href="#a4c8832412bde8329c5a69acd88e08b8c">More...</a></p>
+<p>void</p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#a56287e6a0a500f74d9fd7bc09f612111">fatal</a>
+(const std::string &amp;message)</p>
+<div class="line-block">
+<div class="line">Log a message with fatal level.</div>
+</div>
+<p><a class="reference external" href="#a56287e6a0a500f74d9fd7bc09f612111">More...</a></p>
+<p><a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html">LoggerStream</a></p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#ae734bcc83b3b3687a073edaacd5c74f0">fatal_stream</a>
+(void)</p>
+<div class="line-block">
+<div class="line">Return a</div>
+</div>
+<p><a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html">LoggerStream</a> with
+level FATAL. <a class="reference external" href="#ae734bcc83b3b3687a073edaacd5c74f0">More...</a></p>
+<p><a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#aa708c09b6a19a8cc8a3b19631561ca99">Level::Value</a></p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#a0bfd7a54498aba29263cfb0dae55faff">get_level</a>
+() const</p>
+<div class="line-block">
+<div class="line">Returns the assigned</div>
+</div>
+<p><a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html">Level</a>, if any, for this
+<a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html">Logger</a>.
+<a class="reference external" href="#a0bfd7a54498aba29263cfb0dae55faff">More...</a></p>
+<p>const std::string &amp;</p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#abfe1c32b01e64c5f58f52812f898f170">get_name</a>
+() const</p>
+<div class="line-block">
+<div class="line">Return the logger name.</div>
+</div>
+<p><a class="reference external" href="#abfe1c32b01e64c5f58f52812f898f170">More...</a></p>
+<p><a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html">LoggerStream</a></p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#a34b294678a690630721e8824f16020de">get_stream</a>
+(<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#aa708c09b6a19a8cc8a3b19631561ca99">Level::Value</a>
+level, bool filter=true)</p>
+<div class="line-block">
+<div class="line">Return a</div>
+</div>
+<p><a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html">LoggerStream</a> with
+given <a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html">Level</a>.
+<a class="reference external" href="#a34b294678a690630721e8824f16020de">More...</a></p>
+<p>void</p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#adaba6152f4a39580d48bae035ac30778">info</a>
+(const char *string_format,...)</p>
+<div class="line-block">
+<div class="line">Log a message with info level.</div>
+</div>
+<p><a class="reference external" href="#adaba6152f4a39580d48bae035ac30778">More...</a></p>
+<p>void</p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#a987565b18e6ea9a2524d64c80759c2eb">info</a>
+(const std::string &amp;message)</p>
+<div class="line-block">
+<div class="line">Log a message with info level.</div>
+</div>
+<p><a class="reference external" href="#a987565b18e6ea9a2524d64c80759c2eb">More...</a></p>
+<p><a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html">LoggerStream</a></p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#a22a2fd4d13e70e352a5f47dd02d33342">info_stream</a>
+(void)</p>
+<div class="line-block">
+<div class="line">Return a</div>
+</div>
+<p><a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html">LoggerStream</a> with
+level INFO. <a class="reference external" href="#a22a2fd4d13e70e352a5f47dd02d33342">More...</a></p>
+<p>bool</p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#a6ce8b32ab06c6b77f8aac562dabf9c1f">is_debug_enabled</a>
+(void) const</p>
+<div class="line-block">
+<div class="line">Return true if the</div>
+</div>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html">Logger</a> will log
+messages with level DEBUG.
+<a class="reference external" href="#a6ce8b32ab06c6b77f8aac562dabf9c1f">More...</a></p>
+<p>bool</p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#ab2ec2debd2d3024293a0d873af8e86b3">is_error_enabled</a>
+(void) const</p>
+<div class="line-block">
+<div class="line">Return true if the</div>
+</div>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html">Logger</a> will log
+messages with level ERROR.
+<a class="reference external" href="#ab2ec2debd2d3024293a0d873af8e86b3">More...</a></p>
+<p>bool</p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#a16213b0ab5912487ad2eb62c4337900b">is_fatal_enabled</a>
+(void) const</p>
+<div class="line-block">
+<div class="line">Return true if the</div>
+</div>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html">Logger</a> will log
+messages with level FATAL.
+<a class="reference external" href="#a16213b0ab5912487ad2eb62c4337900b">More...</a></p>
+<p>bool</p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#af73279505009e650e615294711fe75fe">is_info_enabled</a>
+(void) const</p>
+<div class="line-block">
+<div class="line">Return true if the</div>
+</div>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html">Logger</a> will log
+messages with level INFO.
+<a class="reference external" href="#af73279505009e650e615294711fe75fe">More...</a></p>
+<p>bool</p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#a393cade41cee1267e49018f5b4f8fa67">is_level_enabled</a>
+(<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#aa708c09b6a19a8cc8a3b19631561ca99">Level::Value</a>
+level) const</p>
+<div class="line-block">
+<div class="line">Returns true if the level of the</div>
+</div>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html">Logger</a> is equal to or
+higher than given level.
+<a class="reference external" href="#a393cade41cee1267e49018f5b4f8fa67">More...</a></p>
+<p>bool</p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#ac48da8e8705775526b0d94f974dd158d">is_warn_enabled</a>
+(void) const</p>
+<div class="line-block">
+<div class="line">Return true if the</div>
+</div>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html">Logger</a> will log
+messages with level WARN.
+<a class="reference external" href="#ac48da8e8705775526b0d94f974dd158d">More...</a></p>
+<p>void</p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#aebe7a33e64c1dd47d908d5a1eec18545">log</a>
+(<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#aa708c09b6a19a8cc8a3b19631561ca99">Level::Value</a>
+level, const char *string_format,...)</p>
+<div class="line-block">
+<div class="line">Log a message with the specified level.</div>
+</div>
+<p><a class="reference external" href="#aebe7a33e64c1dd47d908d5a1eec18545">More...</a></p>
+<p>void</p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#afab624480348ae2bae502c72efeaf38e">log</a>
+(<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#aa708c09b6a19a8cc8a3b19631561ca99">Level::Value</a>
+level, const std::string &amp;message)</p>
+<div class="line-block">
+<div class="line">Log a message with the specified level.</div>
+</div>
+<p><a class="reference external" href="#afab624480348ae2bae502c72efeaf38e">More...</a></p>
+<p>void</p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#adc92f13df7647dbeac96120bbda218f4">log_unconditionally</a>
+(<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#aa708c09b6a19a8cc8a3b19631561ca99">Level::Value</a>
+level, const char *string_format,...)</p>
+<div class="line-block">
+<div class="line">Log a message with the specified level without level checking.</div>
+</div>
+<p><a class="reference external" href="#adc92f13df7647dbeac96120bbda218f4">More...</a></p>
+<p>void</p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#a8ee921e0f61dea06224b7b249e820470">log_unconditionally</a>
+(<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#aa708c09b6a19a8cc8a3b19631561ca99">Level::Value</a>
+level, const std::string &amp;message)</p>
+<div class="line-block">
+<div class="line">Log a message with the specified level without level checking.</div>
+</div>
+<p><a class="reference external" href="#a8ee921e0f61dea06224b7b249e820470">More...</a></p>
+<p>void</p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#aee3ae63ec9ebc6f2a2eb72c0ff3d2b34">set_level</a>
+(<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#aa708c09b6a19a8cc8a3b19631561ca99">Level::Value</a>
+level)</p>
+<div class="line-block">
+<div class="line">Set the level of this</div>
+</div>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html">Logger</a> (silently
+ignores invalid values) <a class="reference external" href="#aee3ae63ec9ebc6f2a2eb72c0ff3d2b34">More...</a></p>
+<p>void</p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#ab7a7dfad91aa2196ed91a607808f1061">warn</a>
+(const char *string_format,...)</p>
+<div class="line-block">
+<div class="line">Log a message with warn level.</div>
+</div>
+<p><a class="reference external" href="#ab7a7dfad91aa2196ed91a607808f1061">More...</a></p>
+<p>void</p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#a22646b15ebc33254f734e23280868345">warn</a>
+(const std::string &amp;message)</p>
+<div class="line-block">
+<div class="line">Log a message with warn level.</div>
+</div>
+<p><a class="reference external" href="#a22646b15ebc33254f734e23280868345">More...</a></p>
+<p><a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html">LoggerStream</a></p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#a223a0d6d82a1e054d07474e87b207bba">warn_stream</a>
+(void)</p>
+<div class="line-block">
+<div class="line">Return a</div>
+</div>
+<p><a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html">LoggerStream</a> with
+level WARN. <a class="reference external" href="#a223a0d6d82a1e054d07474e87b207bba">More...</a></p>
+<p><a href="#id1"><span class="problematic" id="id2">|</span></a>-<a href="#id3"><span class="problematic" id="id4">|</span></a>&nbsp;Public Member Functions inherited from
+<a class="reference external" href="../../d6/d89/classlog4tango_1_1AppenderAttachable.html">log4tango::AppenderAttachable</a></p>
+<p><a class="reference external" href="../../d6/d89/classlog4tango_1_1AppenderAttachable.html#a5b2a99851f2aa46162c9d51433887e18">AppenderAttachable</a>
+()</p>
+<div class="line-block">
+<div class="line">Constructor. <a class="reference external" href="#a5b2a99851f2aa46162c9d51433887e18">More...</a></div>
+</div>
+<p>virtual</p>
+<p><a class="reference external" href="../../d6/d89/classlog4tango_1_1AppenderAttachable.html#a5af097d444408db567e0c2202b10a158">~AppenderAttachable</a>
+()</p>
+<div class="line-block">
+<div class="line">Destructor. <a class="reference external" href="#a5af097d444408db567e0c2202b10a158">More...</a></div>
+</div>
+<p>void</p>
+<p><a class="reference external" href="../../d6/d89/classlog4tango_1_1AppenderAttachable.html#a04b4e410672579c6d8f698872f26866d">add_appender</a>
+(<a class="reference external" href="../../d7/dc4/classlog4tango_1_1Appender.html">Appender</a> *appender)</p>
+<div class="line-block">
+<div class="line">Adds an <a class="reference external" href="../../d7/dc4/classlog4tango_1_1Appender.html">Appender</a>.</div>
+</div>
+<p><a class="reference external" href="#a04b4e410672579c6d8f698872f26866d">More...</a></p>
+<p><a class="reference external" href="../../d4/db0/namespacelog4tango.html#a8fa9a70e20bab57912e721dd4d7dc917">AppenderList</a></p>
+<p><a class="reference external" href="../../d6/d89/classlog4tango_1_1AppenderAttachable.html#ac09cfee8ed24912f751c1b46502b91c3">get_all_appenders</a>
+(void)</p>
+<div class="line-block">
+<div class="line">Get all previously added appenders as a vector.</div>
+</div>
+<p><a class="reference external" href="#ac09cfee8ed24912f751c1b46502b91c3">More...</a></p>
+<p><a class="reference external" href="../../d7/dc4/classlog4tango_1_1Appender.html">Appender</a> *</p>
+<p><a class="reference external" href="../../d6/d89/classlog4tango_1_1AppenderAttachable.html#aef280962681b6de83bf759dee678f9ad">get_appender</a>
+(const std::string &amp;name)</p>
+<div class="line-block">
+<div class="line">Get an appender by name.</div>
+</div>
+<p><a class="reference external" href="#aef280962681b6de83bf759dee678f9ad">More...</a></p>
+<p>bool</p>
+<p><a class="reference external" href="../../d6/d89/classlog4tango_1_1AppenderAttachable.html#ad453ee78f746f781cdac768c57b8bd74">is_attached</a>
+(<a class="reference external" href="../../d7/dc4/classlog4tango_1_1Appender.html">Appender</a> *appender)</p>
+<div class="line-block">
+<div class="line">Returns true if the specified appender is in list of attached</div>
+</div>
+<p>appanders, false otherwise.
+<a class="reference external" href="#ad453ee78f746f781cdac768c57b8bd74">More...</a></p>
+<p>void</p>
+<p><a class="reference external" href="../../d6/d89/classlog4tango_1_1AppenderAttachable.html#a53e072db4ea8496e1fe68b0fa20b6f3b">remove_all_appenders</a>
+()</p>
+<div class="line-block">
+<div class="line">Removes all appenders for this</div>
+</div>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html">Logger</a>.
+<a class="reference external" href="#a53e072db4ea8496e1fe68b0fa20b6f3b">More...</a></p>
+<p>void</p>
+<p><a class="reference external" href="../../d6/d89/classlog4tango_1_1AppenderAttachable.html#a17009480a695669ed8e1611db6320ba9">remove_appender</a>
+(<a class="reference external" href="../../d7/dc4/classlog4tango_1_1Appender.html">Appender</a> *appender)</p>
+<div class="line-block">
+<div class="line">Remove the appender passed as parameter from the list of appenders.</div>
+</div>
+<p><a class="reference external" href="#a17009480a695669ed8e1611db6320ba9">More...</a></p>
+<p>void</p>
+<p><a class="reference external" href="../../d6/d89/classlog4tango_1_1AppenderAttachable.html#af662639b70264c826f88387c99294ba4">remove_appender</a>
+(const std::string &amp;name)</p>
+<div class="line-block">
+<div class="line">Remove the appender with the name passed as parameter from the list of</div>
+</div>
+<p>appenders. <a class="reference external" href="#af662639b70264c826f88387c99294ba4">More...</a></p>
+</div>
+<div class="section" id="protected-member-functions">
+<h1>Protected Member Functions<a class="headerlink" href="#protected-member-functions" title="Permalink to this headline">¶</a></h1>
+<p>void</p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#a44d8fa395ad922427bf417aee9c3ed79">call_appenders</a>
+(const
+<a class="reference external" href="../../d8/df2/structlog4tango_1_1LoggingEvent.html">LoggingEvent</a>
+&amp;event)</p>
+<div class="line-block">
+<div class="line">Call the appenders. <a class="reference external" href="#a44d8fa395ad922427bf417aee9c3ed79">More...</a></div>
+</div>
+<p><a href="#id5"><span class="problematic" id="id6">|</span></a>-<a href="#id7"><span class="problematic" id="id8">|</span></a>&nbsp;Protected Member Functions inherited from
+<a class="reference external" href="../../d6/d89/classlog4tango_1_1AppenderAttachable.html">log4tango::AppenderAttachable</a></p>
+<p><a class="reference external" href="../../d6/d89/classlog4tango_1_1AppenderAttachable.html#a74532446063d73d710678566a5b3fc57">AppenderAttachable</a>
+(const
+<a class="reference external" href="../../d6/d89/classlog4tango_1_1AppenderAttachable.html">AppenderAttachable</a>
+&amp;other)</p>
+<p><a class="reference external" href="../../d6/d89/classlog4tango_1_1AppenderAttachable.html">AppenderAttachable</a>
+&amp;</p>
+<p><a class="reference external" href="../../d6/d89/classlog4tango_1_1AppenderAttachable.html#a4cbf4bf5552db661c8f41c430db0e953">operator=</a>
+(const
+<a class="reference external" href="../../d6/d89/classlog4tango_1_1AppenderAttachable.html">AppenderAttachable</a>
+&amp;other)</p>
+</div>
+<div class="section" id="additional-inherited-members">
+<h1>Additional Inherited Members<a class="headerlink" href="#additional-inherited-members" title="Permalink to this headline">¶</a></h1>
+<p><a href="#id9"><span class="problematic" id="id10">|</span></a>-<a href="#id11"><span class="problematic" id="id12">|</span></a>&nbsp;Protected Attributes inherited from
+<a class="reference external" href="../../d6/d89/classlog4tango_1_1AppenderAttachable.html">log4tango::AppenderAttachable</a></p>
+<p><a class="reference external" href="../../d4/db0/namespacelog4tango.html#aaff7d7baaf61e3681dda76a0b72ef516">AppenderMap</a></p>
+<p><a class="reference external" href="../../d6/d89/classlog4tango_1_1AppenderAttachable.html#a1956c7e554f262cfecfc1a9de9145289">_appenders</a></p>
+<div class="line-block">
+<div class="line">Appenders repository. <a class="reference external" href="#a1956c7e554f262cfecfc1a9de9145289">More...</a></div>
+</div>
+<p><a class="reference external" href="../../d8/d70/classlog4tango_1_1threading_1_1Mutex.html">threading::Mutex</a></p>
+<p><a class="reference external" href="../../d6/d89/classlog4tango_1_1AppenderAttachable.html#a9390c8fc80202c4296f7ef10f08d13a5">_appendersMutex</a></p>
+<div class="line-block">
+<div class="line">A mutex to protect the repository against race conditions.</div>
+</div>
+<p><a class="reference external" href="#a9390c8fc80202c4296f7ef10f08d13a5">More...</a></p>
+</div>
+<div class="section" id="constructor-destructor-documentation">
+<h1>Constructor &amp; Destructor Documentation<a class="headerlink" href="#constructor-destructor-documentation" title="Permalink to this headline">¶</a></h1>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="3%" />
+<col width="61%" />
+<col width="18%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>log4tango::Logger::Logger</td>
+<td>(</td>
+<td>const std::string &amp;</td>
+<td><em>name</em>,</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#aa708c09b6a19a8cc8a3b19631561ca99">Level::Value</a></td>
+<td><em>level</em> = <code class="docutils literal"><span class="pre">Level::OFF</span></code></td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>)</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p>Constructor.</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="4%" />
+<col width="96%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>name</td>
+<td>the fully qualified name of this <a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html">Logger</a></td>
+</tr>
+<tr class="row-even"><td>level</td>
+<td>the level for this <a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html">Logger</a>. Defaults to <a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#ad9edd63020b6becc9aef8802c48eb461a955ee789684a2e9952b7e4f56b6bb74f">Level::OFF</a></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<p>References
+<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#ad9edd63020b6becc9aef8802c48eb461aa98b4453bf21b1af1c2d3d953887f393">log4tango::Level::DEBUG</a>,
+<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#ad9edd63020b6becc9aef8802c48eb461ae9f52151dce772e7a7ee87bc824b1fdf">log4tango::Level::ERROR</a>,
+<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#ad9edd63020b6becc9aef8802c48eb461a58fb50808d864278c4127f5c8ac5406c">log4tango::Level::FATAL</a>,
+<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#ad9edd63020b6becc9aef8802c48eb461ae666ceb60dfca43381816abf33e2cd1b">log4tango::Level::INFO</a>,
+and
+<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#ad9edd63020b6becc9aef8802c48eb461ab0dfb37a2ad73d7b7f53a460819a2cc3">log4tango::Level::WARN</a>.</p>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Destructor.</p>
+</div>
+<div class="section" id="member-function-documentation">
+<h1>Member Function Documentation<a class="headerlink" href="#member-function-documentation" title="Permalink to this headline">¶</a></h1>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Call the appenders.</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>event</td>
+<td>the LogginEvent to log.</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<p>References
+<a class="reference external" href="../../d6/d89/classlog4tango_1_1AppenderAttachable.html#a1956c7e554f262cfecfc1a9de9145289">log4tango::AppenderAttachable::_appenders</a>,
+<a class="reference external" href="../../d6/d89/classlog4tango_1_1AppenderAttachable.html#a9390c8fc80202c4296f7ef10f08d13a5">log4tango::AppenderAttachable::_appendersMutex</a>,
+and
+<a class="reference external" href="../../d6/d89/classlog4tango_1_1AppenderAttachable.html#a17009480a695669ed8e1611db6320ba9">log4tango::AppenderAttachable::remove_appender()</a>.</p>
+<p>Referenced by
+<a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#a8ee921e0f61dea06224b7b249e820470">log_unconditionally()</a>.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="43%" />
+<col width="6%" />
+<col width="23%" />
+<col width="27%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>void log4tango::Logger::debug</td>
+<td>(</td>
+<td>const char *</td>
+<td><em>string_format</em>,</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><em>...</em></td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>)</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p>Log a message with debug level.</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="33%" />
+<col width="67%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>string_format</td>
+<td>Format specifier for the log.</td>
+</tr>
+<tr class="row-even"><td>...</td>
+<td>The arguments for string_format</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<p>References
+<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#ad9edd63020b6becc9aef8802c48eb461aa98b4453bf21b1af1c2d3d953887f393">log4tango::Level::DEBUG</a>,
+<a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#a393cade41cee1267e49018f5b4f8fa67">is_level_enabled()</a>,
+<a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#adc92f13df7647dbeac96120bbda218f4">log_unconditionally()</a>,
+and
+<a class="reference external" href="../../d4/d04/classlog4tango_1_1StringUtil.html#a1588cfe00d2951f175025f949793f866">log4tango::StringUtil::vform()</a>.</p>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Log a message with debug level.</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="24%" />
+<col width="76%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>message</td>
+<td>string to write in the log file</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<p>References
+<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#ad9edd63020b6becc9aef8802c48eb461aa98b4453bf21b1af1c2d3d953887f393">log4tango::Level::DEBUG</a>.</p>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Return a
+<a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html">LoggerStream</a> with
+level DEBUG.</p>
+<dl class="docutils">
+<dt>Returns</dt>
+<dd>The
+<a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html">LoggerStream</a>.</dd>
+</dl>
+<p>References
+<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#ad9edd63020b6becc9aef8802c48eb461aa98b4453bf21b1af1c2d3d953887f393">log4tango::Level::DEBUG</a>.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="43%" />
+<col width="6%" />
+<col width="23%" />
+<col width="27%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>void log4tango::Logger::error</td>
+<td>(</td>
+<td>const char *</td>
+<td><em>string_format</em>,</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><em>...</em></td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>)</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p>Log a message with error level.</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="33%" />
+<col width="67%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>string_format</td>
+<td>Format specifier for the log.</td>
+</tr>
+<tr class="row-even"><td>...</td>
+<td>The arguments for string_format</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<p>References
+<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#ad9edd63020b6becc9aef8802c48eb461ae9f52151dce772e7a7ee87bc824b1fdf">log4tango::Level::ERROR</a>,
+<a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#a393cade41cee1267e49018f5b4f8fa67">is_level_enabled()</a>,
+<a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#adc92f13df7647dbeac96120bbda218f4">log_unconditionally()</a>,
+and
+<a class="reference external" href="../../d4/d04/classlog4tango_1_1StringUtil.html#a1588cfe00d2951f175025f949793f866">log4tango::StringUtil::vform()</a>.</p>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Log a message with error level.</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="24%" />
+<col width="76%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>message</td>
+<td>string to write in the log file</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<p>References
+<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#ad9edd63020b6becc9aef8802c48eb461ae9f52151dce772e7a7ee87bc824b1fdf">log4tango::Level::ERROR</a>.</p>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Return a
+<a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html">LoggerStream</a> with
+level ERROR.</p>
+<dl class="docutils">
+<dt>Returns</dt>
+<dd>The
+<a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html">LoggerStream</a>.</dd>
+</dl>
+<p>References
+<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#ad9edd63020b6becc9aef8802c48eb461ae9f52151dce772e7a7ee87bc824b1fdf">log4tango::Level::ERROR</a>.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="43%" />
+<col width="6%" />
+<col width="23%" />
+<col width="27%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>void log4tango::Logger::fatal</td>
+<td>(</td>
+<td>const char *</td>
+<td><em>string_format</em>,</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><em>...</em></td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>)</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p>Log a message with fatal level.</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="33%" />
+<col width="67%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>string_format</td>
+<td>Format specifier for the log.</td>
+</tr>
+<tr class="row-even"><td>...</td>
+<td>The arguments for string_format</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<p>References
+<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#ad9edd63020b6becc9aef8802c48eb461a58fb50808d864278c4127f5c8ac5406c">log4tango::Level::FATAL</a>,
+<a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#a393cade41cee1267e49018f5b4f8fa67">is_level_enabled()</a>,
+<a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#adc92f13df7647dbeac96120bbda218f4">log_unconditionally()</a>,
+and
+<a class="reference external" href="../../d4/d04/classlog4tango_1_1StringUtil.html#a1588cfe00d2951f175025f949793f866">log4tango::StringUtil::vform()</a>.</p>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Log a message with fatal level.</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="24%" />
+<col width="76%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>message</td>
+<td>string to write in the log file</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<p>References
+<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#ad9edd63020b6becc9aef8802c48eb461a58fb50808d864278c4127f5c8ac5406c">log4tango::Level::FATAL</a>.</p>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Return a
+<a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html">LoggerStream</a> with
+level FATAL.</p>
+<dl class="docutils">
+<dt>Returns</dt>
+<dd>The
+<a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html">LoggerStream</a>.</dd>
+</dl>
+<p>References
+<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#ad9edd63020b6becc9aef8802c48eb461a58fb50808d864278c4127f5c8ac5406c">log4tango::Level::FATAL</a>.</p>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Returns the assigned
+<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html">Level</a>, if any, for this
+<a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html">Logger</a>.</p>
+<dl class="docutils">
+<dt>Returns</dt>
+<dd><a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html">Level</a> - the assigned
+<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html">Level</a>, can be
+Level::NOTSET</dd>
+</dl>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Return the logger name.</p>
+<dl class="docutils">
+<dt>Returns</dt>
+<dd>The logger name.</dd>
+</dl>
+<p>Referenced by
+<a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#a8ee921e0f61dea06224b7b249e820470">log_unconditionally()</a>.</p>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Return a
+<a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html">LoggerStream</a> with
+given <a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html">Level</a>.</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="7%" />
+<col width="93%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>level</td>
+<td>The <a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html">Level</a> of the <a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html">LoggerStream</a>.</td>
+</tr>
+<tr class="row-even"><td>filter</td>
+<td>The filter flag</td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt>Returns</dt>
+<dd>The requested
+<a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html">LoggerStream</a>.</dd>
+</dl>
+<table border="1" class="docutils">
+<colgroup>
+<col width="42%" />
+<col width="7%" />
+<col width="24%" />
+<col width="28%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>void log4tango::Logger::info</td>
+<td>(</td>
+<td>const char *</td>
+<td><em>string_format</em>,</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><em>...</em></td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>)</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p>Log a message with info level.</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="33%" />
+<col width="67%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>string_format</td>
+<td>Format specifier for the log.</td>
+</tr>
+<tr class="row-even"><td>...</td>
+<td>The arguments for string_format</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<p>References
+<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#ad9edd63020b6becc9aef8802c48eb461ae666ceb60dfca43381816abf33e2cd1b">log4tango::Level::INFO</a>,
+<a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#a393cade41cee1267e49018f5b4f8fa67">is_level_enabled()</a>,
+<a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#adc92f13df7647dbeac96120bbda218f4">log_unconditionally()</a>,
+and
+<a class="reference external" href="../../d4/d04/classlog4tango_1_1StringUtil.html#a1588cfe00d2951f175025f949793f866">log4tango::StringUtil::vform()</a>.</p>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Log a message with info level.</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="24%" />
+<col width="76%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>message</td>
+<td>string to write in the log file</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<p>References
+<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#ad9edd63020b6becc9aef8802c48eb461ae666ceb60dfca43381816abf33e2cd1b">log4tango::Level::INFO</a>.</p>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Return a
+<a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html">LoggerStream</a> with
+level INFO.</p>
+<dl class="docutils">
+<dt>Returns</dt>
+<dd>The
+<a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html">LoggerStream</a>.</dd>
+</dl>
+<p>References
+<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#ad9edd63020b6becc9aef8802c48eb461ae666ceb60dfca43381816abf33e2cd1b">log4tango::Level::INFO</a>.</p>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Return true if the
+<a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html">Logger</a> will log
+messages with level DEBUG.</p>
+<dl class="docutils">
+<dt>Returns</dt>
+<dd>Whether the <a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html">Logger</a>
+will log.</dd>
+</dl>
+<p>References
+<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#ad9edd63020b6becc9aef8802c48eb461aa98b4453bf21b1af1c2d3d953887f393">log4tango::Level::DEBUG</a>.</p>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Return true if the
+<a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html">Logger</a> will log
+messages with level ERROR.</p>
+<dl class="docutils">
+<dt>Returns</dt>
+<dd>Whether the <a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html">Logger</a>
+will log.</dd>
+</dl>
+<p>References
+<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#ad9edd63020b6becc9aef8802c48eb461ae9f52151dce772e7a7ee87bc824b1fdf">log4tango::Level::ERROR</a>.</p>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Return true if the
+<a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html">Logger</a> will log
+messages with level FATAL.</p>
+<dl class="docutils">
+<dt>Returns</dt>
+<dd>Whether the <a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html">Logger</a>
+will log.</dd>
+</dl>
+<p>References
+<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#ad9edd63020b6becc9aef8802c48eb461a58fb50808d864278c4127f5c8ac5406c">log4tango::Level::FATAL</a>.</p>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Return true if the
+<a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html">Logger</a> will log
+messages with level INFO.</p>
+<dl class="docutils">
+<dt>Returns</dt>
+<dd>Whether the <a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html">Logger</a>
+will log.</dd>
+</dl>
+<p>References
+<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#ad9edd63020b6becc9aef8802c48eb461ae666ceb60dfca43381816abf33e2cd1b">log4tango::Level::INFO</a>.</p>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Returns true if the level of the
+<a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html">Logger</a> is equal to or
+higher than given level.</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="23%" />
+<col width="77%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>level</td>
+<td>The level to compare with.</td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt>Returns</dt>
+<dd>whether logging is enable for this level.</dd>
+</dl>
+<p>Referenced by
+<a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#a86870349be1352d8c529e713acf51a0b">debug()</a>,
+<a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#ac9c2f129c56991f6bf7148ce5b7f1518">error()</a>,
+<a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#a4c8832412bde8329c5a69acd88e08b8c">fatal()</a>,
+<a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#adaba6152f4a39580d48bae035ac30778">info()</a>,
+<a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#aebe7a33e64c1dd47d908d5a1eec18545">log()</a>,
+and
+<a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#ab7a7dfad91aa2196ed91a607808f1061">warn()</a>.</p>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Return true if the
+<a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html">Logger</a> will log
+messages with level WARN.</p>
+<dl class="docutils">
+<dt>Returns</dt>
+<dd>Whether the <a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html">Logger</a>
+will log.</dd>
+</dl>
+<p>References
+<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#ad9edd63020b6becc9aef8802c48eb461ab0dfb37a2ad73d7b7f53a460819a2cc3">log4tango::Level::WARN</a>.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="3%" />
+<col width="63%" />
+<col width="13%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>void log4tango::Logger::log</td>
+<td>(</td>
+<td><a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#aa708c09b6a19a8cc8a3b19631561ca99">Level::Value</a></td>
+<td><em>level</em>,</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>const char *</td>
+<td><em>string_format</em>,</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><em>...</em></td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>)</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p>Log a message with the specified level.</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="33%" />
+<col width="67%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>level</td>
+<td>The level of this log message.</td>
+</tr>
+<tr class="row-even"><td>string_format</td>
+<td>Format specifier for the log .</td>
+</tr>
+<tr class="row-odd"><td>...</td>
+<td>The arguments for string_format</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<p>References
+<a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#a393cade41cee1267e49018f5b4f8fa67">is_level_enabled()</a>,
+<a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#adc92f13df7647dbeac96120bbda218f4">log_unconditionally()</a>,
+and
+<a class="reference external" href="../../d4/d04/classlog4tango_1_1StringUtil.html#a1588cfe00d2951f175025f949793f866">log4tango::StringUtil::vform()</a>.</p>
+<p>Referenced by
+<a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html#a87e12557f4851fcbb9f4077e9a4d0d59">log4tango::LoggerStream::flush()</a>.</p>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Log a message with the specified level.</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="24%" />
+<col width="76%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>level</td>
+<td>The level of this log message.</td>
+</tr>
+<tr class="row-even"><td>message</td>
+<td>string to write in the log file</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="3%" />
+<col width="57%" />
+<col width="12%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>void log4tango::Logger::log_unconditionally</td>
+<td>(</td>
+<td><a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#aa708c09b6a19a8cc8a3b19631561ca99">Level::Value</a></td>
+<td><em>level</em>,</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>const char *</td>
+<td><em>string_format</em>,</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><em>...</em></td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>)</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p>Log a message with the specified level without level checking.</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="33%" />
+<col width="67%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>level</td>
+<td>The level of this log message.</td>
+</tr>
+<tr class="row-even"><td>string_format</td>
+<td>Format specifier for the log .</td>
+</tr>
+<tr class="row-odd"><td>...</td>
+<td>The arguments for string_format</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<p>References
+<a class="reference external" href="../../d4/d04/classlog4tango_1_1StringUtil.html#a1588cfe00d2951f175025f949793f866">log4tango::StringUtil::vform()</a>.</p>
+<p>Referenced by
+<a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#a86870349be1352d8c529e713acf51a0b">debug()</a>,
+<a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#ac9c2f129c56991f6bf7148ce5b7f1518">error()</a>,
+<a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#a4c8832412bde8329c5a69acd88e08b8c">fatal()</a>,
+<a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html#a87e12557f4851fcbb9f4077e9a4d0d59">log4tango::LoggerStream::flush()</a>,
+<a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#adaba6152f4a39580d48bae035ac30778">info()</a>,
+<a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#aebe7a33e64c1dd47d908d5a1eec18545">log()</a>,
+and
+<a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#ab7a7dfad91aa2196ed91a607808f1061">warn()</a>.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="29%" />
+<col width="3%" />
+<col width="60%" />
+<col width="8%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>void log4tango::Logger::log_unconditionally</td>
+<td>(</td>
+<td><a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#aa708c09b6a19a8cc8a3b19631561ca99">Level::Value</a></td>
+<td><em>level</em>,</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>const std::string &amp;</td>
+<td><em>message</em></td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>)</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p>Log a message with the specified level without level checking.</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="24%" />
+<col width="76%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>level</td>
+<td>The level of this log message.</td>
+</tr>
+<tr class="row-even"><td>message</td>
+<td>string to write in the log file</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<p>References
+<a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#a44d8fa395ad922427bf417aee9c3ed79">call_appenders()</a>,
+and
+<a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#abfe1c32b01e64c5f58f52812f898f170">get_name()</a>.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="23%" />
+<col width="3%" />
+<col width="61%" />
+<col width="7%" />
+<col width="3%" />
+<col width="2%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>void log4tango::Logger::set_level</td>
+<td>(</td>
+<td><a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#aa708c09b6a19a8cc8a3b19631561ca99">Level::Value</a></td>
+<td><em>level</em></td>
+<td>)</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p>Set the level of this
+<a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html">Logger</a> (silently
+ignores invalid values)</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>level</td>
+<td>The level to set.</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<p>References
+<a class="reference external" href="../../d6/d89/classlog4tango_1_1AppenderAttachable.html#a1956c7e554f262cfecfc1a9de9145289">log4tango::AppenderAttachable::_appenders</a>,
+<a class="reference external" href="../../d6/d89/classlog4tango_1_1AppenderAttachable.html#a9390c8fc80202c4296f7ef10f08d13a5">log4tango::AppenderAttachable::_appendersMutex</a>,
+<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#ad9edd63020b6becc9aef8802c48eb461aa98b4453bf21b1af1c2d3d953887f393">log4tango::Level::DEBUG</a>,
+and
+<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#ad9edd63020b6becc9aef8802c48eb461a955ee789684a2e9952b7e4f56b6bb74f">log4tango::Level::OFF</a>.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="42%" />
+<col width="7%" />
+<col width="24%" />
+<col width="28%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>void log4tango::Logger::warn</td>
+<td>(</td>
+<td>const char *</td>
+<td><em>string_format</em>,</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><em>...</em></td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>)</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p>Log a message with warn level.</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="33%" />
+<col width="67%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>string_format</td>
+<td>Format specifier for the log.</td>
+</tr>
+<tr class="row-even"><td>...</td>
+<td>The arguments for string_format</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<p>References
+<a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#a393cade41cee1267e49018f5b4f8fa67">is_level_enabled()</a>,
+<a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html#adc92f13df7647dbeac96120bbda218f4">log_unconditionally()</a>,
+<a class="reference external" href="../../d4/d04/classlog4tango_1_1StringUtil.html#a1588cfe00d2951f175025f949793f866">log4tango::StringUtil::vform()</a>,
+and
+<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#ad9edd63020b6becc9aef8802c48eb461ab0dfb37a2ad73d7b7f53a460819a2cc3">log4tango::Level::WARN</a>.</p>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Log a message with warn level.</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="24%" />
+<col width="76%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>message</td>
+<td>string to write in the log file</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<p>References
+<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#ad9edd63020b6becc9aef8802c48eb461ab0dfb37a2ad73d7b7f53a460819a2cc3">log4tango::Level::WARN</a>.</p>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Return a
+<a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html">LoggerStream</a> with
+level WARN.</p>
+<dl class="docutils">
+<dt>Returns</dt>
+<dd>The
+<a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html">LoggerStream</a>.</dd>
+</dl>
+<p>References
+<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#ad9edd63020b6becc9aef8802c48eb461ab0dfb37a2ad73d7b7f53a460819a2cc3">log4tango::Level::WARN</a>.</p>
+<hr class="docutils" />
+<p>The documentation for this class was generated from the following files:</p>
+<ul class="simple">
+<li><a class="reference external" href="../../d1/d13/Logger_8hh_source.html">Logger.hh</a></li>
+<li><a class="reference external" href="../../d9/df5/Logger_8cpp.html">Logger.cpp</a></li>
+<li><a class="reference external" href="../../d4/db0/namespacelog4tango.html">log4tango</a></li>
+<li><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html">Logger</a></li>
+<li>Generated on Fri Oct 7 2016 11:11:15 for Tango Core Classes Reference
+by <a class="reference external" href="http://www.doxygen.org/index.html"><img alt="doxygen" src="../../_images/doxygen107.png" /></a> 1.8.8</li>
+</ul>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Public Member Functions</a></li>
+<li><a class="reference internal" href="#protected-member-functions">Protected Member Functions</a></li>
+<li><a class="reference internal" href="#additional-inherited-members">Additional Inherited Members</a></li>
+<li><a class="reference internal" href="#constructor-destructor-documentation">Constructor &amp; Destructor Documentation</a></li>
+<li><a class="reference internal" href="#member-function-documentation">Member Function Documentation</a></li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/d4/d1c/classlog4tango_1_1Logger.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, 3Controls.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.8</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+      |
+      <a href="../../_sources/d4/d1c/classlog4tango_1_1Logger.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

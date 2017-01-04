@@ -1,0 +1,464 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Public Member Functions &#8212; Tango Core Classes Reference Documentation 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="top" title="Tango Core Classes Reference Documentation 1.0 documentation" href="../../index.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><img alt="Logo" src="../../_images/logo410.jpg" /></td>
+<td>Tango Core Classes Reference &nbsp;9.2.5</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><a class="reference external" href="../../index.html">Main&nbsp;Page</a></li>
+<li><a class="reference external" href="../../pages.html">Related&nbsp;Pages</a></li>
+<li><a class="reference external" href="../../modules.html">Modules</a></li>
+<li><a class="reference external" href="../../namespaces.html">Namespaces</a></li>
+<li><a class="reference external" href="../../annotated.html">Classes</a></li>
+<li><a class="reference external" href="../../files.html">Files</a></li>
+<li><a class="reference external" href="../../annotated.html">Class&nbsp;List</a></li>
+<li><a class="reference external" href="../../inherits.html">Class&nbsp;Hierarchy</a></li>
+<li><a class="reference external" href="../../functions.html">Class&nbsp;Members</a></li>
+</ul>
+<p><a class="reference external" href="../../d8/d83/classTango_1_1TimedCmdData-members.html">List of all
+members</a></p>
+<p>Tango::TimedCmdData&lt; T &gt; Class Template Reference</p>
+<p><a class="reference external" href="../../da/d64/group__Server.html">Server classes</a></p>
+<p>This class is used to store one element of a command history stack.
+<a class="reference external" href="../../df/db1/classTango_1_1TimedCmdData.html#details">More...</a></p>
+<div class="section" id="public-member-functions">
+<h1>Public Member Functions<a class="headerlink" href="#public-member-functions" title="Permalink to this headline">¶</a></h1>
+<p>Constructors</p>
+<p>Miscellaneous constructors</p>
+<p><a class="reference external" href="../../df/db1/classTango_1_1TimedCmdData.html#a52aa3bee7afb6e0947d805e498ee08ae">TimedCmdData</a>
+(T *p_data, time_t when)</p>
+<div class="line-block">
+<div class="line">Create a new</div>
+</div>
+<p><a class="reference external" href="../../df/db1/classTango_1_1TimedCmdData.html">TimedCmdData</a> object.
+<a class="reference external" href="#a52aa3bee7afb6e0947d805e498ee08ae">More...</a></p>
+<p><a class="reference external" href="../../df/db1/classTango_1_1TimedCmdData.html#a641bf7e089fd36a70d09cebef4d91c79">TimedCmdData</a>
+(T *p_data, bool rel, time_t when)</p>
+<div class="line-block">
+<div class="line">Create a new</div>
+</div>
+<p><a class="reference external" href="../../df/db1/classTango_1_1TimedCmdData.html">TimedCmdData</a> object
+with memory management. <a class="reference external" href="#a641bf7e089fd36a70d09cebef4d91c79">More...</a></p>
+<p><a class="reference external" href="../../df/db1/classTango_1_1TimedCmdData.html#ab61561536584807b6771cc7ab6db76e2">TimedCmdData</a>
+(T *p_data, struct timeval when)</p>
+<div class="line-block">
+<div class="line">Create a new</div>
+</div>
+<p><a class="reference external" href="../../df/db1/classTango_1_1TimedCmdData.html">TimedCmdData</a> object.
+<a class="reference external" href="#ab61561536584807b6771cc7ab6db76e2">More...</a></p>
+<p><a class="reference external" href="../../df/db1/classTango_1_1TimedCmdData.html#af7d4d705ed242a8dca60443987926e28">TimedCmdData</a>
+(T *p_data, bool rel, struct timeval when)</p>
+<div class="line-block">
+<div class="line">Create a new</div>
+</div>
+<p><a class="reference external" href="../../df/db1/classTango_1_1TimedCmdData.html">TimedCmdData</a> object
+with memory management. <a class="reference external" href="#af7d4d705ed242a8dca60443987926e28">More...</a></p>
+<p><a class="reference external" href="../../df/db1/classTango_1_1TimedCmdData.html#a8cc1733169352938edf8432bc4551222">TimedCmdData</a>
+(DevErrorList errs, time_t when)</p>
+<div class="line-block">
+<div class="line">Create a new</div>
+</div>
+<p><a class="reference external" href="../../df/db1/classTango_1_1TimedCmdData.html">TimedCmdData</a> object
+for errors. <a class="reference external" href="#a8cc1733169352938edf8432bc4551222">More...</a></p>
+<p><a class="reference external" href="../../df/db1/classTango_1_1TimedCmdData.html#a18999aecdf64d96fa704b7549c534dfe">TimedCmdData</a>
+(DevErrorList errs, timeval when)</p>
+<div class="line-block">
+<div class="line">Create a new</div>
+</div>
+<p><a class="reference external" href="../../df/db1/classTango_1_1TimedCmdData.html">TimedCmdData</a> object
+for errors. <a class="reference external" href="#a18999aecdf64d96fa704b7549c534dfe">More...</a></p>
+</div>
+<div class="section" id="detailed-description">
+<h1>Detailed Description<a class="headerlink" href="#detailed-description" title="Permalink to this headline">¶</a></h1>
+<dl class="docutils">
+<dt>template&lt;typename T&gt;</dt>
+<dd>class Tango::TimedCmdData&lt; T &gt;</dd>
+</dl>
+<hr class="docutils" />
+<p>This class is used to store one element of a command history stack.</p>
+<p>$Author$ $Revision$</p>
+</div>
+<div class="section" id="constructor-destructor-documentation">
+<h1>Constructor &amp; Destructor Documentation<a class="headerlink" href="#constructor-destructor-documentation" title="Permalink to this headline">¶</a></h1>
+<p>template&lt;typename T&gt;</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="83%" />
+<col width="3%" />
+<col width="7%" />
+<col width="8%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference external" href="../../df/db1/classTango_1_1TimedCmdData.html">Tango::TimedCmdData</a>&lt; T &gt;::<a class="reference external" href="../../df/db1/classTango_1_1TimedCmdData.html">TimedCmdData</a></td>
+<td>(</td>
+<td>T *</td>
+<td><em>p_data</em>,</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>time_t</td>
+<td><em>when</em></td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>)</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p>Create a new
+<a class="reference external" href="../../df/db1/classTango_1_1TimedCmdData.html">TimedCmdData</a> object.</p>
+<p>The memory pointed to by the <em>p_data</em> parameter will not be freed</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="22%" />
+<col width="78%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>p_data</td>
+<td>Pointer to the command result data</td>
+</tr>
+<tr class="row-even"><td>when</td>
+<td>The date</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<p>template&lt;typename T&gt;</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="83%" />
+<col width="3%" />
+<col width="7%" />
+<col width="8%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference external" href="../../df/db1/classTango_1_1TimedCmdData.html">Tango::TimedCmdData</a>&lt; T &gt;::<a class="reference external" href="../../df/db1/classTango_1_1TimedCmdData.html">TimedCmdData</a></td>
+<td>(</td>
+<td>T *</td>
+<td><em>p_data</em>,</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>bool</td>
+<td><em>rel</em>,</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>time_t</td>
+<td><em>when</em></td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>)</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p>Create a new
+<a class="reference external" href="../../df/db1/classTango_1_1TimedCmdData.html">TimedCmdData</a> object
+with memory management.</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="12%" />
+<col width="88%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>p_data</td>
+<td>Pointer to the command result data</td>
+</tr>
+<tr class="row-even"><td>rel</td>
+<td>Set to true if the memory pointed to by the <em>p_data</em> parameter must be freed</td>
+</tr>
+<tr class="row-odd"><td>when</td>
+<td>The date</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<p>template&lt;typename T&gt;</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="80%" />
+<col width="3%" />
+<col width="10%" />
+<col width="8%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference external" href="../../df/db1/classTango_1_1TimedCmdData.html">Tango::TimedCmdData</a>&lt; T &gt;::<a class="reference external" href="../../df/db1/classTango_1_1TimedCmdData.html">TimedCmdData</a></td>
+<td>(</td>
+<td>T *</td>
+<td><em>p_data</em>,</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>struct timeval</td>
+<td><em>when</em></td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>)</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p>Create a new
+<a class="reference external" href="../../df/db1/classTango_1_1TimedCmdData.html">TimedCmdData</a> object.</p>
+<p>The memory pointed to by the <em>p_data</em> parameter will not be freed</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="22%" />
+<col width="78%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>p_data</td>
+<td>Pointer to the command result data</td>
+</tr>
+<tr class="row-even"><td>when</td>
+<td>The date</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<p>template&lt;typename T&gt;</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="80%" />
+<col width="3%" />
+<col width="10%" />
+<col width="8%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference external" href="../../df/db1/classTango_1_1TimedCmdData.html">Tango::TimedCmdData</a>&lt; T &gt;::<a class="reference external" href="../../df/db1/classTango_1_1TimedCmdData.html">TimedCmdData</a></td>
+<td>(</td>
+<td>T *</td>
+<td><em>p_data</em>,</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>bool</td>
+<td><em>rel</em>,</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>struct timeval</td>
+<td><em>when</em></td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>)</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p>Create a new
+<a class="reference external" href="../../df/db1/classTango_1_1TimedCmdData.html">TimedCmdData</a> object
+with memory management.</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="12%" />
+<col width="88%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>p_data</td>
+<td>Pointer to the command result data</td>
+</tr>
+<tr class="row-even"><td>rel</td>
+<td>Set to true if the memory pointed to by the <em>p_data</em> parameter must be freed</td>
+</tr>
+<tr class="row-odd"><td>when</td>
+<td>The date</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<p>template&lt;typename T&gt;</p>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Create a new
+<a class="reference external" href="../../df/db1/classTango_1_1TimedCmdData.html">TimedCmdData</a> object
+for errors.</p>
+<p>The created
+<a class="reference external" href="../../df/db1/classTango_1_1TimedCmdData.html">TimedCmdData</a> is used
+to store command errors in the command history stack</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>errs</td>
+<td>The error stack</td>
+</tr>
+<tr class="row-even"><td>when</td>
+<td>The date</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<p>template&lt;typename T&gt;</p>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Create a new
+<a class="reference external" href="../../df/db1/classTango_1_1TimedCmdData.html">TimedCmdData</a> object
+for errors.</p>
+<p>The created
+<a class="reference external" href="../../df/db1/classTango_1_1TimedCmdData.html">TimedCmdData</a> is used
+to store command errors in the command history stack</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>errs</td>
+<td>The error stack</td>
+</tr>
+<tr class="row-even"><td>when</td>
+<td>The date</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<hr class="docutils" />
+<p>The documentation for this class was generated from the following file:</p>
+<ul class="simple">
+<li><a class="reference external" href="../../db/d17/pollext_8h_source.html">pollext.h</a></li>
+<li><a class="reference external" href="../../de/ddf/namespaceTango.html">Tango</a></li>
+<li><a class="reference external" href="../../df/db1/classTango_1_1TimedCmdData.html">TimedCmdData</a></li>
+<li>Generated on Fri Oct 7 2016 11:11:17 for Tango Core Classes Reference
+by <a class="reference external" href="http://www.doxygen.org/index.html"><img alt="doxygen" src="../../_images/doxygen410.png" /></a> 1.8.8</li>
+</ul>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Public Member Functions</a></li>
+<li><a class="reference internal" href="#detailed-description">Detailed Description</a></li>
+<li><a class="reference internal" href="#constructor-destructor-documentation">Constructor &amp; Destructor Documentation</a></li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/df/db1/classTango_1_1TimedCmdData.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, 3Controls.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.8</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+      |
+      <a href="../../_sources/df/db1/classTango_1_1TimedCmdData.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

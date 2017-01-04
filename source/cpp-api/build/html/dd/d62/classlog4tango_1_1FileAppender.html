@@ -1,0 +1,654 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Public Member Functions &#8212; Tango Core Classes Reference Documentation 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="top" title="Tango Core Classes Reference Documentation 1.0 documentation" href="../../index.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><img alt="Logo" src="../../_images/logo354.jpg" /></td>
+<td>Tango Core Classes Reference &nbsp;9.2.5</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><a class="reference external" href="../../index.html">Main&nbsp;Page</a></li>
+<li><a class="reference external" href="../../pages.html">Related&nbsp;Pages</a></li>
+<li><a class="reference external" href="../../modules.html">Modules</a></li>
+<li><a class="reference external" href="../../namespaces.html">Namespaces</a></li>
+<li><a class="reference external" href="../../annotated.html">Classes</a></li>
+<li><a class="reference external" href="../../files.html">Files</a></li>
+<li><a class="reference external" href="../../annotated.html">Class&nbsp;List</a></li>
+<li><a class="reference external" href="../../inherits.html">Class&nbsp;Hierarchy</a></li>
+<li><a class="reference external" href="../../functions.html">Class&nbsp;Members</a></li>
+</ul>
+<p><a class="reference external" href="#pub-methods">Public Member Functions</a> | <a class="reference external" href="#pro-methods">Protected Member
+Functions</a> | <a class="reference external" href="#pro-attribs">Protected Attributes</a>
+| <a class="reference external" href="../../de/dec/classlog4tango_1_1FileAppender-members.html">List of all
+members</a></p>
+<p>log4tango::FileAppender Class Reference</p>
+<p><code class="docutils literal"><span class="pre">#include</span> <span class="pre">&quot;FileAppender.hh&quot;</span></code></p>
+<p>Inheritance diagram for log4tango::FileAppender:</p>
+<p><img alt="Inheritance graph" src="../../_images/classlog4tango_1_1FileAppender__inherit__graph.png" /></p>
+<p>[<a class="reference external" href="../../graph_legend.html">legend</a>]</p>
+<p>Collaboration diagram for log4tango::FileAppender:</p>
+<p><img alt="Collaboration graph" src="../../_images/classlog4tango_1_1FileAppender__coll__graph.png" /></p>
+<p>[<a class="reference external" href="../../graph_legend.html">legend</a>]</p>
+<div class="section" id="public-member-functions">
+<h1>Public Member Functions<a class="headerlink" href="#public-member-functions" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="../../dd/d62/classlog4tango_1_1FileAppender.html#a43e09e7221ba060eb95252ee5461da95">FileAppender</a>
+(const std::string &amp;name, const std::string &amp;fileName, bool
+<a class="reference external" href="../../d7/dc4/classlog4tango_1_1Appender.html#acfb6f50c20043bd740b198dfbb4231ea">append</a>=true,
+<a class="reference external" href="../../d4/db0/namespacelog4tango.html#af02411cb691986e819f7fbf75872b81a">mode_t</a>
+mode=00644)</p>
+<div class="line-block">
+<div class="line">Constructs a</div>
+</div>
+<p><a class="reference external" href="../../dd/d62/classlog4tango_1_1FileAppender.html">FileAppender</a>.
+<a class="reference external" href="#a43e09e7221ba060eb95252ee5461da95">More...</a></p>
+<p><a class="reference external" href="../../dd/d62/classlog4tango_1_1FileAppender.html#ab4cba01161e7a5db14ab19b07d1397f9">FileAppender</a>
+(const std::string &amp;name, int fd)</p>
+<div class="line-block">
+<div class="line">Constructs a</div>
+</div>
+<p><a class="reference external" href="../../dd/d62/classlog4tango_1_1FileAppender.html">FileAppender</a> to
+an already open file descriptor.
+<a class="reference external" href="#ab4cba01161e7a5db14ab19b07d1397f9">More...</a></p>
+<p>virtual</p>
+<p><a class="reference external" href="../../dd/d62/classlog4tango_1_1FileAppender.html#a051e5c4850313d9fb3b4240c73d9f61c">~FileAppender</a>
+()</p>
+<div class="line-block">
+<div class="line">Destructor. <a class="reference external" href="#a051e5c4850313d9fb3b4240c73d9f61c">More...</a></div>
+</div>
+<p>virtual void</p>
+<p><a class="reference external" href="../../dd/d62/classlog4tango_1_1FileAppender.html#aa354da43ca498a14bdd83b8f8065589d">close</a>
+(void)</p>
+<div class="line-block">
+<div class="line">Closes the logfile. <a class="reference external" href="#aa354da43ca498a14bdd83b8f8065589d">More...</a></div>
+</div>
+<p>virtual bool</p>
+<p><a class="reference external" href="../../dd/d62/classlog4tango_1_1FileAppender.html#a1958ac2f7755b5415abe40dc00104d6f">get_append</a>
+(void) const</p>
+<div class="line-block">
+<div class="line">Gets the value of the &#8216;append&#8217; option.</div>
+</div>
+<p><a class="reference external" href="#a1958ac2f7755b5415abe40dc00104d6f">More...</a></p>
+<p>virtual
+<a class="reference external" href="../../d4/db0/namespacelog4tango.html#af02411cb691986e819f7fbf75872b81a">mode_t</a></p>
+<p><a class="reference external" href="../../dd/d62/classlog4tango_1_1FileAppender.html#ab7ebf728457c73d43b16725e048f1597">get_mode</a>
+() const</p>
+<div class="line-block">
+<div class="line">Gets the file open mode.</div>
+</div>
+<p><a class="reference external" href="#ab7ebf728457c73d43b16725e048f1597">More...</a></p>
+<p>virtual bool</p>
+<p><a class="reference external" href="../../dd/d62/classlog4tango_1_1FileAppender.html#a418db9eff584e38bd167dcd4e50df6c1">is_valid</a>
+(void) const</p>
+<div class="line-block">
+<div class="line">Check if the appender is valid.</div>
+</div>
+<p><a class="reference external" href="#a418db9eff584e38bd167dcd4e50df6c1">More...</a></p>
+<p>virtual bool</p>
+<p><a class="reference external" href="../../dd/d62/classlog4tango_1_1FileAppender.html#a17989960f7118b8628a93c69b10755ca">reopen</a>
+(void)</p>
+<div class="line-block">
+<div class="line">Reopens the logfile. <a class="reference external" href="#a17989960f7118b8628a93c69b10755ca">More...</a></div>
+</div>
+<p>virtual void</p>
+<p><a class="reference external" href="../../dd/d62/classlog4tango_1_1FileAppender.html#a2b73b4da440d31a0b2a4ee7a0016b87c">set_append</a>
+(bool
+<a class="reference external" href="../../d7/dc4/classlog4tango_1_1Appender.html#acfb6f50c20043bd740b198dfbb4231ea">append</a>)</p>
+<div class="line-block">
+<div class="line">Sets the append vs truncate flag.</div>
+</div>
+<p><a class="reference external" href="#a2b73b4da440d31a0b2a4ee7a0016b87c">More...</a></p>
+<p>virtual void</p>
+<p><a class="reference external" href="../../dd/d62/classlog4tango_1_1FileAppender.html#abf1747af681b0fa4ac760c364a5da1c6">set_mode</a>
+(<a class="reference external" href="../../d4/db0/namespacelog4tango.html#af02411cb691986e819f7fbf75872b81a">mode_t</a>
+mode)</p>
+<div class="line-block">
+<div class="line">Sets the file open mode.</div>
+</div>
+<p><a class="reference external" href="#abf1747af681b0fa4ac760c364a5da1c6">More...</a></p>
+<p><a href="#id1"><span class="problematic" id="id2">|</span></a>-<a href="#id3"><span class="problematic" id="id4">|</span></a>&nbsp;Public Member Functions inherited from
+<a class="reference external" href="../../d3/db6/classlog4tango_1_1LayoutAppender.html">log4tango::LayoutAppender</a></p>
+<p><a class="reference external" href="../../d3/db6/classlog4tango_1_1LayoutAppender.html#aae15fc6ce336d263386c6866ad569782">LayoutAppender</a>
+(const std::string &amp;name)</p>
+<p>virtual</p>
+<p><a class="reference external" href="../../d3/db6/classlog4tango_1_1LayoutAppender.html#a2822f627fd98e29db0a9a7c96377e81e">~LayoutAppender</a>
+()</p>
+<p>virtual bool</p>
+<p><a class="reference external" href="../../d3/db6/classlog4tango_1_1LayoutAppender.html#aed53ada140e2b10a63d4d836b0e22ba9">requires_layout</a>
+() const</p>
+<div class="line-block">
+<div class="line">Check if the appender uses a layout.</div>
+</div>
+<p><a class="reference external" href="#aed53ada140e2b10a63d4d836b0e22ba9">More...</a></p>
+<p>virtual void</p>
+<p><a class="reference external" href="../../d3/db6/classlog4tango_1_1LayoutAppender.html#ac3d2b08e933399a5dfc78dab2c208055">set_layout</a>
+(<a class="reference external" href="../../d7/da6/classlog4tango_1_1Layout.html">Layout</a> *layout=0)</p>
+<div class="line-block">
+<div class="line">Change the layout. <a class="reference external" href="#ac3d2b08e933399a5dfc78dab2c208055">More...</a></div>
+</div>
+<p><a href="#id5"><span class="problematic" id="id6">|</span></a>-<a href="#id7"><span class="problematic" id="id8">|</span></a>&nbsp;Public Member Functions inherited from
+<a class="reference external" href="../../d7/dc4/classlog4tango_1_1Appender.html">log4tango::Appender</a></p>
+<p>virtual</p>
+<p><a class="reference external" href="../../d7/dc4/classlog4tango_1_1Appender.html#a3951b12a37424e9418963680662388b1">~Appender</a>
+()</p>
+<div class="line-block">
+<div class="line">Destructor for</div>
+</div>
+<p><a class="reference external" href="../../d7/dc4/classlog4tango_1_1Appender.html">Appender</a>.
+<a class="reference external" href="#a3951b12a37424e9418963680662388b1">More...</a></p>
+<p>int</p>
+<p><a class="reference external" href="../../d7/dc4/classlog4tango_1_1Appender.html#acfb6f50c20043bd740b198dfbb4231ea">append</a>
+(const
+<a class="reference external" href="../../d8/df2/structlog4tango_1_1LoggingEvent.html">LoggingEvent</a>
+&amp;event)</p>
+<div class="line-block">
+<div class="line">Log in <a class="reference external" href="../../d7/dc4/classlog4tango_1_1Appender.html">Appender</a></div>
+</div>
+<p>specific way. <a class="reference external" href="#acfb6f50c20043bd740b198dfbb4231ea">More...</a></p>
+<p>const std::string &amp;</p>
+<p><a class="reference external" href="../../d7/dc4/classlog4tango_1_1Appender.html#ac02d43ef46297bcc9eb3e1442d00b58c">get_name</a>
+(void) const</p>
+<div class="line-block">
+<div class="line">Returns this appender name.</div>
+</div>
+<p><a class="reference external" href="#ac02d43ef46297bcc9eb3e1442d00b58c">More...</a></p>
+</div>
+<div class="section" id="protected-member-functions">
+<h1>Protected Member Functions<a class="headerlink" href="#protected-member-functions" title="Permalink to this headline">¶</a></h1>
+<p>virtual int</p>
+<p><a class="reference external" href="../../dd/d62/classlog4tango_1_1FileAppender.html#acc1e885ec09a9f206383284656a0079e">_append</a>
+(const
+<a class="reference external" href="../../d8/df2/structlog4tango_1_1LoggingEvent.html">LoggingEvent</a>
+&amp;event)</p>
+<div class="line-block">
+<div class="line">Log in <a class="reference external" href="../../d7/dc4/classlog4tango_1_1Appender.html">Appender</a></div>
+</div>
+<p>specific way. <a class="reference external" href="#acc1e885ec09a9f206383284656a0079e">More...</a></p>
+<p><a href="#id9"><span class="problematic" id="id10">|</span></a>-<a href="#id11"><span class="problematic" id="id12">|</span></a>&nbsp;Protected Member Functions inherited from
+<a class="reference external" href="../../d3/db6/classlog4tango_1_1LayoutAppender.html">log4tango::LayoutAppender</a></p>
+<p><a class="reference external" href="../../d7/da6/classlog4tango_1_1Layout.html">Layout</a> &amp;</p>
+<p><a class="reference external" href="../../d3/db6/classlog4tango_1_1LayoutAppender.html#a5b0903233dd0bb8ea2d6fc33a5b85cb0">get_layout</a>
+()</p>
+<p><a href="#id13"><span class="problematic" id="id14">|</span></a>-<a href="#id15"><span class="problematic" id="id16">|</span></a>&nbsp;Protected Member Functions inherited from
+<a class="reference external" href="../../d7/dc4/classlog4tango_1_1Appender.html">log4tango::Appender</a></p>
+<p><a class="reference external" href="../../d7/dc4/classlog4tango_1_1Appender.html#a16f9d0456a87ff10d57b02f7d5c2cc01">Appender</a>
+(const std::string &amp;name)</p>
+<div class="line-block">
+<div class="line">Constructor for</div>
+</div>
+<p><a class="reference external" href="../../d7/dc4/classlog4tango_1_1Appender.html">Appender</a>.
+<a class="reference external" href="#a16f9d0456a87ff10d57b02f7d5c2cc01">More...</a></p>
+<p>virtual void</p>
+<p><a class="reference external" href="../../d7/dc4/classlog4tango_1_1Appender.html#a3ee7b310ce4681a93e1f53bdcc02a15c">level_changed</a>
+(<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#aa708c09b6a19a8cc8a3b19631561ca99">Level::Value</a>
+new_level)</p>
+<div class="line-block">
+<div class="line">Inform an appender that its</div>
+</div>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html">Logger</a>&#8216;s logging level
+has changed. <a class="reference external" href="#a3ee7b310ce4681a93e1f53bdcc02a15c">More...</a></p>
+</div>
+<div class="section" id="protected-attributes">
+<h1>Protected Attributes<a class="headerlink" href="#protected-attributes" title="Permalink to this headline">¶</a></h1>
+<p>int</p>
+<p><a class="reference external" href="../../dd/d62/classlog4tango_1_1FileAppender.html#a04f8a77d3ad3aa7cdcaa8f6be93c5ab0">_fd</a></p>
+<p>const std::string</p>
+<p><a class="reference external" href="../../dd/d62/classlog4tango_1_1FileAppender.html#a7a21e40ff4eb363cc20678a4be99c93d">_file_name</a></p>
+<p>int</p>
+<p><a class="reference external" href="../../dd/d62/classlog4tango_1_1FileAppender.html#a6d4608df941bbaef01e82396bfc85cb2">_flags</a></p>
+<p><a class="reference external" href="../../d4/db0/namespacelog4tango.html#af02411cb691986e819f7fbf75872b81a">mode_t</a></p>
+<p><a class="reference external" href="../../dd/d62/classlog4tango_1_1FileAppender.html#a158481e2d508ad2615d78615a86e5206">_mode</a></p>
+</div>
+<div class="section" id="additional-inherited-members">
+<h1>Additional Inherited Members<a class="headerlink" href="#additional-inherited-members" title="Permalink to this headline">¶</a></h1>
+<p><a href="#id17"><span class="problematic" id="id18">|</span></a>-<a href="#id19"><span class="problematic" id="id20">|</span></a>&nbsp;Public Types inherited from
+<a class="reference external" href="../../d3/db6/classlog4tango_1_1LayoutAppender.html">log4tango::LayoutAppender</a></p>
+<p>typedef <a class="reference external" href="../../d7/da6/classlog4tango_1_1Layout.html">Layout</a></p>
+<p><a class="reference external" href="../../d3/db6/classlog4tango_1_1LayoutAppender.html#afff8b793c258c86701cbd1fe72925b49">DefaultLayoutType</a></p>
+</div>
+<div class="section" id="constructor-destructor-documentation">
+<h1>Constructor &amp; Destructor Documentation<a class="headerlink" href="#constructor-destructor-documentation" title="Permalink to this headline">¶</a></h1>
+<table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="3%" />
+<col width="56%" />
+<col width="15%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>log4tango::FileAppender::FileAppender</td>
+<td>(</td>
+<td>const std::string &amp;</td>
+<td><em>name</em>,</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>const std::string &amp;</td>
+<td><em>fileName</em>,</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>bool</td>
+<td><em>append</em> = <code class="docutils literal"><span class="pre">true</span></code>,</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><a class="reference external" href="../../d4/db0/namespacelog4tango.html#af02411cb691986e819f7fbf75872b81a">mode_t</a></td>
+<td><em>mode</em> = <code class="docutils literal"><span class="pre">00644</span></code></td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>)</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p>Constructs a
+<a class="reference external" href="../../dd/d62/classlog4tango_1_1FileAppender.html">FileAppender</a>.</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="7%" />
+<col width="93%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>name</td>
+<td>the name of the <a class="reference external" href="../../d7/dc4/classlog4tango_1_1Appender.html">Appender</a>.</td>
+</tr>
+<tr class="row-even"><td>fileName</td>
+<td>the name of the file to which the <a class="reference external" href="../../d7/dc4/classlog4tango_1_1Appender.html">Appender</a> has to log.</td>
+</tr>
+<tr class="row-odd"><td>append</td>
+<td>whether the <a class="reference external" href="../../d7/dc4/classlog4tango_1_1Appender.html">Appender</a> has to truncate the file or just append to it if it already exists. Defaults to &#8216;true&#8217;.</td>
+</tr>
+<tr class="row-even"><td>mode</td>
+<td>file mode to open the logfile with. Defaults to 00644.</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<p>References
+<a class="reference external" href="../../dd/d62/classlog4tango_1_1FileAppender.html#a04f8a77d3ad3aa7cdcaa8f6be93c5ab0">_fd</a>,
+<a class="reference external" href="../../dd/d62/classlog4tango_1_1FileAppender.html#a7a21e40ff4eb363cc20678a4be99c93d">_file_name</a>,
+<a class="reference external" href="../../dd/d62/classlog4tango_1_1FileAppender.html#a6d4608df941bbaef01e82396bfc85cb2">_flags</a>,
+and
+<a class="reference external" href="../../dd/d62/classlog4tango_1_1FileAppender.html#a158481e2d508ad2615d78615a86e5206">_mode</a>.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="51%" />
+<col width="6%" />
+<col width="30%" />
+<col width="14%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>log4tango::FileAppender::FileAppender</td>
+<td>(</td>
+<td>const std::string &amp;</td>
+<td><em>name</em>,</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>int</td>
+<td><em>fd</em></td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>)</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p>Constructs a
+<a class="reference external" href="../../dd/d62/classlog4tango_1_1FileAppender.html">FileAppender</a> to
+an already open file descriptor.</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="7%" />
+<col width="93%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>name</td>
+<td>the name of the <a class="reference external" href="../../d7/dc4/classlog4tango_1_1Appender.html">Appender</a>.</td>
+</tr>
+<tr class="row-even"><td>fd</td>
+<td>the file descriptor to which the <a class="reference external" href="../../d7/dc4/classlog4tango_1_1Appender.html">Appender</a> has to log.</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Destructor.</p>
+<p>References
+<a class="reference external" href="../../dd/d62/classlog4tango_1_1FileAppender.html#aa354da43ca498a14bdd83b8f8065589d">close()</a>.</p>
+</div>
+<div class="section" id="member-function-documentation">
+<h1>Member Function Documentation<a class="headerlink" href="#member-function-documentation" title="Permalink to this headline">¶</a></h1>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Log in <a class="reference external" href="../../d7/dc4/classlog4tango_1_1Appender.html">Appender</a>
+specific way.</p>
+<p>Subclasses of
+<a class="reference external" href="../../d7/dc4/classlog4tango_1_1Appender.html">Appender</a> should
+implement this method to perform actual logging.</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>event</td>
+<td>The <a class="reference external" href="../../d8/df2/structlog4tango_1_1LoggingEvent.html">LoggingEvent</a> to log.</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<p>Implements
+<a class="reference external" href="../../d7/dc4/classlog4tango_1_1Appender.html#a87739ce35cdc83e06dd4c55af28d3ac8">log4tango::Appender</a>.</p>
+<p>Reimplemented in
+<a class="reference external" href="../../d9/db4/classlog4tango_1_1RollingFileAppender.html#ad25a1bd45e1dffc755821acca3b958f2">log4tango::RollingFileAppender</a>.</p>
+<p>References
+<a class="reference external" href="../../dd/d62/classlog4tango_1_1FileAppender.html#a04f8a77d3ad3aa7cdcaa8f6be93c5ab0">_fd</a>,
+and
+<a class="reference external" href="../../d3/db6/classlog4tango_1_1LayoutAppender.html#a5b0903233dd0bb8ea2d6fc33a5b85cb0">log4tango::LayoutAppender::get_layout()</a>.</p>
+<p>Referenced by
+<a class="reference external" href="../../d9/db4/classlog4tango_1_1RollingFileAppender.html#ad25a1bd45e1dffc755821acca3b958f2">log4tango::RollingFileAppender::_append()</a>.</p>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Closes the logfile.</p>
+<p>Implements
+<a class="reference external" href="../../d7/dc4/classlog4tango_1_1Appender.html#adafebe465072844506448a35570f9c59">log4tango::Appender</a>.</p>
+<p>References
+<a class="reference external" href="../../dd/d62/classlog4tango_1_1FileAppender.html#a04f8a77d3ad3aa7cdcaa8f6be93c5ab0">_fd</a>.</p>
+<p>Referenced by
+<a class="reference external" href="../../dd/d62/classlog4tango_1_1FileAppender.html#a17989960f7118b8628a93c69b10755ca">reopen()</a>,
+<a class="reference external" href="../../d9/db4/classlog4tango_1_1RollingFileAppender.html#a137e08d9ff85d0b78c06be2323bd66c2">log4tango::RollingFileAppender::roll_over()</a>,
+and
+<a class="reference external" href="../../dd/d62/classlog4tango_1_1FileAppender.html#a051e5c4850313d9fb3b4240c73d9f61c">~FileAppender()</a>.</p>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Gets the value of the &#8216;append&#8217; option.</p>
+<p>References
+<a class="reference external" href="../../dd/d62/classlog4tango_1_1FileAppender.html#a6d4608df941bbaef01e82396bfc85cb2">_flags</a>.</p>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Gets the file open mode.</p>
+<p>References
+<a class="reference external" href="../../dd/d62/classlog4tango_1_1FileAppender.html#a158481e2d508ad2615d78615a86e5206">_mode</a>.</p>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Check if the appender is valid.</p>
+<dl class="docutils">
+<dt>Returns</dt>
+<dd>true if the appender is valid, false otherwise.</dd>
+</dl>
+<p>Reimplemented from
+<a class="reference external" href="../../d7/dc4/classlog4tango_1_1Appender.html#af8d183b5fdfc4b4affda75d1846d9270">log4tango::Appender</a>.</p>
+<p>References
+<a class="reference external" href="../../dd/d62/classlog4tango_1_1FileAppender.html#a04f8a77d3ad3aa7cdcaa8f6be93c5ab0">_fd</a>.</p>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Reopens the logfile.</p>
+<p>This can be useful for logfiles that are rotated externally, e.g. by
+logrotate. This method is a NOOP for FileAppenders that have been
+constructed with a file descriptor.</p>
+<dl class="docutils">
+<dt>Returns</dt>
+<dd>true if the reopen succeeded.</dd>
+</dl>
+<p>Reimplemented from
+<a class="reference external" href="../../d7/dc4/classlog4tango_1_1Appender.html#a1f853fae3eebe457698039e3aafb770a">log4tango::Appender</a>.</p>
+<p>References
+<a class="reference external" href="../../dd/d62/classlog4tango_1_1FileAppender.html#a04f8a77d3ad3aa7cdcaa8f6be93c5ab0">_fd</a>,
+<a class="reference external" href="../../dd/d62/classlog4tango_1_1FileAppender.html#a7a21e40ff4eb363cc20678a4be99c93d">_file_name</a>,
+<a class="reference external" href="../../dd/d62/classlog4tango_1_1FileAppender.html#a6d4608df941bbaef01e82396bfc85cb2">_flags</a>,
+<a class="reference external" href="../../dd/d62/classlog4tango_1_1FileAppender.html#a158481e2d508ad2615d78615a86e5206">_mode</a>,
+and
+<a class="reference external" href="../../dd/d62/classlog4tango_1_1FileAppender.html#aa354da43ca498a14bdd83b8f8065589d">close()</a>.</p>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Sets the append vs truncate flag.</p>
+<p>NB. currently the
+<a class="reference external" href="../../dd/d62/classlog4tango_1_1FileAppender.html">FileAppender</a>
+opens the logfile in the constructor. Therefore this method is too late
+to influence the first file opening. We&#8217;ll need something similar to
+log4j&#8217;s activateOptions().</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="21%" />
+<col width="79%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>append</td>
+<td>false to truncate, true to append</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<p>References
+<a class="reference external" href="../../dd/d62/classlog4tango_1_1FileAppender.html#a6d4608df941bbaef01e82396bfc85cb2">_flags</a>.</p>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Sets the file open mode.</p>
+<p>References
+<a class="reference external" href="../../dd/d62/classlog4tango_1_1FileAppender.html#a158481e2d508ad2615d78615a86e5206">_mode</a>.</p>
+</div>
+<div class="section" id="member-data-documentation">
+<h1>Member Data Documentation<a class="headerlink" href="#member-data-documentation" title="Permalink to this headline">¶</a></h1>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Referenced by
+<a class="reference external" href="../../d9/db4/classlog4tango_1_1RollingFileAppender.html#ad25a1bd45e1dffc755821acca3b958f2">log4tango::RollingFileAppender::_append()</a>,
+<a class="reference external" href="../../dd/d62/classlog4tango_1_1FileAppender.html#acc1e885ec09a9f206383284656a0079e">_append()</a>,
+<a class="reference external" href="../../dd/d62/classlog4tango_1_1FileAppender.html#aa354da43ca498a14bdd83b8f8065589d">close()</a>,
+<a class="reference external" href="../../dd/d62/classlog4tango_1_1FileAppender.html#a43e09e7221ba060eb95252ee5461da95">FileAppender()</a>,
+<a class="reference external" href="../../dd/d62/classlog4tango_1_1FileAppender.html#a418db9eff584e38bd167dcd4e50df6c1">is_valid()</a>,
+<a class="reference external" href="../../dd/d62/classlog4tango_1_1FileAppender.html#a17989960f7118b8628a93c69b10755ca">reopen()</a>,
+and
+<a class="reference external" href="../../d9/db4/classlog4tango_1_1RollingFileAppender.html#a137e08d9ff85d0b78c06be2323bd66c2">log4tango::RollingFileAppender::roll_over()</a>.</p>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Referenced by
+<a class="reference external" href="../../dd/d62/classlog4tango_1_1FileAppender.html#a43e09e7221ba060eb95252ee5461da95">FileAppender()</a>,
+<a class="reference external" href="../../dd/d62/classlog4tango_1_1FileAppender.html#a17989960f7118b8628a93c69b10755ca">reopen()</a>,
+and
+<a class="reference external" href="../../d9/db4/classlog4tango_1_1RollingFileAppender.html#a137e08d9ff85d0b78c06be2323bd66c2">log4tango::RollingFileAppender::roll_over()</a>.</p>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Referenced by
+<a class="reference external" href="../../dd/d62/classlog4tango_1_1FileAppender.html#a43e09e7221ba060eb95252ee5461da95">FileAppender()</a>,
+<a class="reference external" href="../../dd/d62/classlog4tango_1_1FileAppender.html#a1958ac2f7755b5415abe40dc00104d6f">get_append()</a>,
+<a class="reference external" href="../../dd/d62/classlog4tango_1_1FileAppender.html#a17989960f7118b8628a93c69b10755ca">reopen()</a>,
+<a class="reference external" href="../../d9/db4/classlog4tango_1_1RollingFileAppender.html#a137e08d9ff85d0b78c06be2323bd66c2">log4tango::RollingFileAppender::roll_over()</a>,
+and
+<a class="reference external" href="../../dd/d62/classlog4tango_1_1FileAppender.html#a2b73b4da440d31a0b2a4ee7a0016b87c">set_append()</a>.</p>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Referenced by
+<a class="reference external" href="../../dd/d62/classlog4tango_1_1FileAppender.html#a43e09e7221ba060eb95252ee5461da95">FileAppender()</a>,
+<a class="reference external" href="../../dd/d62/classlog4tango_1_1FileAppender.html#ab7ebf728457c73d43b16725e048f1597">get_mode()</a>,
+<a class="reference external" href="../../dd/d62/classlog4tango_1_1FileAppender.html#a17989960f7118b8628a93c69b10755ca">reopen()</a>,
+<a class="reference external" href="../../d9/db4/classlog4tango_1_1RollingFileAppender.html#a137e08d9ff85d0b78c06be2323bd66c2">log4tango::RollingFileAppender::roll_over()</a>,
+and
+<a class="reference external" href="../../dd/d62/classlog4tango_1_1FileAppender.html#abf1747af681b0fa4ac760c364a5da1c6">set_mode()</a>.</p>
+<hr class="docutils" />
+<p>The documentation for this class was generated from the following files:</p>
+<ul class="simple">
+<li><a class="reference external" href="../../dd/de6/FileAppender_8hh_source.html">FileAppender.hh</a></li>
+<li><a class="reference external" href="../../d2/d6d/FileAppender_8cpp.html">FileAppender.cpp</a></li>
+<li><a class="reference external" href="../../d4/db0/namespacelog4tango.html">log4tango</a></li>
+<li><a class="reference external" href="../../dd/d62/classlog4tango_1_1FileAppender.html">FileAppender</a></li>
+<li>Generated on Fri Oct 7 2016 11:11:15 for Tango Core Classes Reference
+by <a class="reference external" href="http://www.doxygen.org/index.html"><img alt="doxygen" src="../../_images/doxygen354.png" /></a> 1.8.8</li>
+</ul>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Public Member Functions</a></li>
+<li><a class="reference internal" href="#protected-member-functions">Protected Member Functions</a></li>
+<li><a class="reference internal" href="#protected-attributes">Protected Attributes</a></li>
+<li><a class="reference internal" href="#additional-inherited-members">Additional Inherited Members</a></li>
+<li><a class="reference internal" href="#constructor-destructor-documentation">Constructor &amp; Destructor Documentation</a></li>
+<li><a class="reference internal" href="#member-function-documentation">Member Function Documentation</a></li>
+<li><a class="reference internal" href="#member-data-documentation">Member Data Documentation</a></li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/dd/d62/classlog4tango_1_1FileAppender.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, 3Controls.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.8</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+      |
+      <a href="../../_sources/dd/d62/classlog4tango_1_1FileAppender.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

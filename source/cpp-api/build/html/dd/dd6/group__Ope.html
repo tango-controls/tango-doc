@@ -1,0 +1,910 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Functions &#8212; Tango Core Classes Reference Documentation 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="top" title="Tango Core Classes Reference Documentation 1.0 documentation" href="../../index.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><img alt="Logo" src="../../_images/logo362.jpg" /></td>
+<td>Tango Core Classes Reference &nbsp;9.2.5</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><a class="reference external" href="../../index.html">Main&nbsp;Page</a></li>
+<li><a class="reference external" href="../../pages.html">Related&nbsp;Pages</a></li>
+<li><a class="reference external" href="../../modules.html">Modules</a></li>
+<li><a class="reference external" href="../../namespaces.html">Namespaces</a></li>
+<li><a class="reference external" href="../../annotated.html">Classes</a></li>
+<li><a class="reference external" href="../../files.html">Files</a></li>
+</ul>
+<p><a class="reference external" href="#func-members">Functions</a></p>
+<p>Operator overloading functions</p>
+<p>Overloading of the &lt;&lt; operator between C++ vector and
+<a class="reference external" href="../../de/ddf/namespaceTango.html">Tango</a> types.
+<a class="reference external" href="#details">More...</a></p>
+<div class="section" id="functions">
+<h1>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h1>
+<p>void</p>
+<p><a class="reference external" href="../../dd/dd6/group__Ope.html#ga065f1fbeb02af4e92d4029235f2a186e">Tango::operator&lt;&lt;</a>
+(DevVarCharArray &amp;lval, const vector&lt; unsigned char &gt; &amp;rval)</p>
+<div class="line-block">
+<div class="line">Init a DevVarCharArray from a C++ vector of char(s).</div>
+</div>
+<p><a class="reference external" href="#ga065f1fbeb02af4e92d4029235f2a186e">More...</a></p>
+<p>void</p>
+<p><a class="reference external" href="../../dd/dd6/group__Ope.html#gae546232aa642350a7e19a4a5e4698289">Tango::operator&lt;&lt;</a>
+(vector&lt; unsigned char &gt; &amp;lval, const DevVarCharArray &amp;rval)</p>
+<div class="line-block">
+<div class="line">Init a C++ vector of char from a DevVarCharArray.</div>
+</div>
+<p><a class="reference external" href="#gae546232aa642350a7e19a4a5e4698289">More...</a></p>
+<p>void</p>
+<p><a class="reference external" href="../../dd/dd6/group__Ope.html#gaff6627037d30a75ace59447d67a0b0f1">Tango::operator&lt;&lt;</a>
+(DevVarShortArray &amp;lval, const vector&lt; short &gt; &amp;rval)</p>
+<div class="line-block">
+<div class="line">Init a DevVarShortArray from a C++ vector of short(s).</div>
+</div>
+<p><a class="reference external" href="#gaff6627037d30a75ace59447d67a0b0f1">More...</a></p>
+<p>void</p>
+<p><a class="reference external" href="../../dd/dd6/group__Ope.html#ga712cfcf813b0f2a0201ccf74343b05a5">Tango::operator&lt;&lt;</a>
+(vector&lt; short &gt; &amp;lval, const DevVarShortArray &amp;rval)</p>
+<div class="line-block">
+<div class="line">Init a C++ vector of short from a DevVarShortArray.</div>
+</div>
+<p><a class="reference external" href="#ga712cfcf813b0f2a0201ccf74343b05a5">More...</a></p>
+<p>void</p>
+<p><a class="reference external" href="../../dd/dd6/group__Ope.html#ga65fc9c8f67a267ecb0002c0169dbbf8e">Tango::operator&lt;&lt;</a>
+(DevVarLongArray &amp;lval, const vector&lt; DevLong &gt; &amp;rval)</p>
+<div class="line-block">
+<div class="line">Init a DevVarLongArray from a C++ vector of DevLong(s).</div>
+</div>
+<p><a class="reference external" href="#ga65fc9c8f67a267ecb0002c0169dbbf8e">More...</a></p>
+<p>void</p>
+<p><a class="reference external" href="../../dd/dd6/group__Ope.html#gaeb08b2bed8f7c2583e3457bc862dc6b0">Tango::operator&lt;&lt;</a>
+(vector&lt; DevLong &gt; &amp;lval, const DevVarLongArray &amp;rval)</p>
+<div class="line-block">
+<div class="line">Init a C++ vector of DevLong from a DevVarLongArray.</div>
+</div>
+<p><a class="reference external" href="#gaeb08b2bed8f7c2583e3457bc862dc6b0">More...</a></p>
+<p>void</p>
+<p><a class="reference external" href="../../dd/dd6/group__Ope.html#ga73604d8da674eeeb83248e3ec792cde2">Tango::operator&lt;&lt;</a>
+(DevVarLong64Array &amp;lval, const vector&lt; DevLong64 &gt; &amp;rval)</p>
+<div class="line-block">
+<div class="line">Init a DevVarLongArray from a C++ vector of DevLong64(s).</div>
+</div>
+<p><a class="reference external" href="#ga73604d8da674eeeb83248e3ec792cde2">More...</a></p>
+<p>void</p>
+<p><a class="reference external" href="../../dd/dd6/group__Ope.html#ga90a170909487d4e37dfcb485535e02cc">Tango::operator&lt;&lt;</a>
+(vector&lt; DevLong64 &gt; &amp;lval, const DevVarLong64Array &amp;rval)</p>
+<div class="line-block">
+<div class="line">Init a C++ vector of long from a DevVarLong64Array.</div>
+</div>
+<p><a class="reference external" href="#ga90a170909487d4e37dfcb485535e02cc">More...</a></p>
+<p>void</p>
+<p><a class="reference external" href="../../dd/dd6/group__Ope.html#gad4eb2b96584b07d3aaf2789c98c7eda6">Tango::operator&lt;&lt;</a>
+(DevVarFloatArray &amp;lval, const vector&lt; float &gt; &amp;rval)</p>
+<div class="line-block">
+<div class="line">Init a DevVarFloatArray from a C++ vector of float(s).</div>
+</div>
+<p><a class="reference external" href="#gad4eb2b96584b07d3aaf2789c98c7eda6">More...</a></p>
+<p>void</p>
+<p><a class="reference external" href="../../dd/dd6/group__Ope.html#ga94906cc22d983d10ddd78d24d176c6ae">Tango::operator&lt;&lt;</a>
+(vector&lt; float &gt; &amp;lval, const DevVarFloatArray &amp;rval)</p>
+<div class="line-block">
+<div class="line">Init a C++ vector of long from a DevVarFloatArray.</div>
+</div>
+<p><a class="reference external" href="#ga94906cc22d983d10ddd78d24d176c6ae">More...</a></p>
+<p>void</p>
+<p><a class="reference external" href="../../dd/dd6/group__Ope.html#gae27ef2508818f48fa4e04cdb4b36e072">Tango::operator&lt;&lt;</a>
+(DevVarDoubleArray &amp;lval, const vector&lt; double &gt; &amp;rval)</p>
+<div class="line-block">
+<div class="line">Init a DevVarDoubleArray from a C++ vector of double(s).</div>
+</div>
+<p><a class="reference external" href="#gae27ef2508818f48fa4e04cdb4b36e072">More...</a></p>
+<p>void</p>
+<p><a class="reference external" href="../../dd/dd6/group__Ope.html#gaba6e519930474d843b776205eebbe76f">Tango::operator&lt;&lt;</a>
+(vector&lt; double &gt; &amp;lval, const DevVarDoubleArray &amp;rval)</p>
+<div class="line-block">
+<div class="line">Init a C++ vector of long from a DevVarDoubleArray.</div>
+</div>
+<p><a class="reference external" href="#gaba6e519930474d843b776205eebbe76f">More...</a></p>
+<p>void</p>
+<p><a class="reference external" href="../../dd/dd6/group__Ope.html#ga8539aea7c8f1186903d21add572c80dd">Tango::operator&lt;&lt;</a>
+(DevVarBooleanArray &amp;lval, const vector&lt; bool &gt; &amp;rval)</p>
+<div class="line-block">
+<div class="line">Init a DevVarBooleanArray from a C++ vector of bool(s).</div>
+</div>
+<p><a class="reference external" href="#ga8539aea7c8f1186903d21add572c80dd">More...</a></p>
+<p>void</p>
+<p><a class="reference external" href="../../dd/dd6/group__Ope.html#ga42c9cb65c5ac6599ea46270175d4dbf0">Tango::operator&lt;&lt;</a>
+(vector&lt; bool &gt; &amp;lval, const DevVarBooleanArray &amp;rval)</p>
+<div class="line-block">
+<div class="line">Init a C++ vector of long from a DevVarBooleanArray.</div>
+</div>
+<p><a class="reference external" href="#ga42c9cb65c5ac6599ea46270175d4dbf0">More...</a></p>
+<p>void</p>
+<p><a class="reference external" href="../../dd/dd6/group__Ope.html#ga83003d5acb175dc5e2d0b9fbc170a3bc">Tango::operator&lt;&lt;</a>
+(DevVarUShortArray &amp;lval, const vector&lt; unsigned short &gt; &amp;rval)</p>
+<div class="line-block">
+<div class="line">Init a DevVarUShortArray from a C++ vector of unsigned short(s).</div>
+</div>
+<p><a class="reference external" href="#ga83003d5acb175dc5e2d0b9fbc170a3bc">More...</a></p>
+<p>void</p>
+<p><a class="reference external" href="../../dd/dd6/group__Ope.html#ga3edbea88319132f7a43f2500df0c0b90">Tango::operator&lt;&lt;</a>
+(vector&lt; unsigned short &gt; &amp;lval, const DevVarUShortArray &amp;rval)</p>
+<div class="line-block">
+<div class="line">Init a C++ vector of long from a DevVarUShortArray.</div>
+</div>
+<p><a class="reference external" href="#ga3edbea88319132f7a43f2500df0c0b90">More...</a></p>
+<p>void</p>
+<p><a class="reference external" href="../../dd/dd6/group__Ope.html#gab1bf84843fd0b81d282b17e29d209a2d">Tango::operator&lt;&lt;</a>
+(DevVarULongArray &amp;lval, const vector&lt; DevULong &gt; &amp;rval)</p>
+<div class="line-block">
+<div class="line">Init a DevVarULongArray from a C++ vector of DevULong(s).</div>
+</div>
+<p><a class="reference external" href="#gab1bf84843fd0b81d282b17e29d209a2d">More...</a></p>
+<p>void</p>
+<p><a class="reference external" href="../../dd/dd6/group__Ope.html#ga5f2f3b2eb5521d98b6e495ebaf038fca">Tango::operator&lt;&lt;</a>
+(vector&lt; DevULong &gt; &amp;lval, const DevVarULongArray &amp;rval)</p>
+<div class="line-block">
+<div class="line">Init a C++ vector of long from a DevVarULongArray.</div>
+</div>
+<p><a class="reference external" href="#ga5f2f3b2eb5521d98b6e495ebaf038fca">More...</a></p>
+<p>void</p>
+<p><a class="reference external" href="../../dd/dd6/group__Ope.html#ga4f134419f5595d6b2a8541e7077800f8">Tango::operator&lt;&lt;</a>
+(DevVarULong64Array &amp;lval, const vector&lt; DevULong64 &gt; &amp;rval)</p>
+<div class="line-block">
+<div class="line">Init a DevVarULong64Array from a C++ vector of DevULong64(s).</div>
+</div>
+<p><a class="reference external" href="#ga4f134419f5595d6b2a8541e7077800f8">More...</a></p>
+<p>void</p>
+<p><a class="reference external" href="../../dd/dd6/group__Ope.html#gaaa8f568d0165d5b64eb1aeec34a2919b">Tango::operator&lt;&lt;</a>
+(vector&lt; DevULong64 &gt; &amp;lval, const DevVarULong64Array &amp;rval)</p>
+<div class="line-block">
+<div class="line">Init a C++ vector of long from a DevVarULong64Array.</div>
+</div>
+<p><a class="reference external" href="#gaaa8f568d0165d5b64eb1aeec34a2919b">More...</a></p>
+<p>void</p>
+<p><a class="reference external" href="../../dd/dd6/group__Ope.html#gac29792db54cd10f9f2cc14c487012686">Tango::operator&lt;&lt;</a>
+(DevVarStringArray &amp;lval, const vector&lt; string &gt; &amp;rval)</p>
+<div class="line-block">
+<div class="line">Init a DevVarStringArray from a C++ vector of string(s).</div>
+</div>
+<p><a class="reference external" href="#gac29792db54cd10f9f2cc14c487012686">More...</a></p>
+<p>void</p>
+<p><a class="reference external" href="../../dd/dd6/group__Ope.html#gabfe49dc628f325d11dbbc592779bf53a">Tango::operator&lt;&lt;</a>
+(vector&lt; string &gt; &amp;lval, const DevVarStringArray &amp;rval)</p>
+<div class="line-block">
+<div class="line">Init a C++ vector of long from a DevVarStringArray.</div>
+</div>
+<p><a class="reference external" href="#gabfe49dc628f325d11dbbc592779bf53a">More...</a></p>
+<p>void</p>
+<p><a class="reference external" href="../../dd/dd6/group__Ope.html#ga8360391336ed746e606b04aa964cdb60">Tango::operator&lt;&lt;</a>
+(DevVarStateArray &amp;lval, const vector&lt; DevState &gt; &amp;rval)</p>
+<div class="line-block">
+<div class="line">Init a DevVarStateArray from a C++ vector of state(s).</div>
+</div>
+<p><a class="reference external" href="#ga8360391336ed746e606b04aa964cdb60">More...</a></p>
+<p>void</p>
+<p><a class="reference external" href="../../dd/dd6/group__Ope.html#ga646e70517216abcaaa2c6e47824a4bb7">Tango::operator&lt;&lt;</a>
+(vector&lt; DevState &gt; &amp;lval, const DevVarStateArray &amp;rval)</p>
+<div class="line-block">
+<div class="line">Init a C++ vector of long from a DevVarStateArray.</div>
+</div>
+<p><a class="reference external" href="#ga646e70517216abcaaa2c6e47824a4bb7">More...</a></p>
+</div>
+<div class="section" id="detailed-description">
+<h1>Detailed Description<a class="headerlink" href="#detailed-description" title="Permalink to this headline">¶</a></h1>
+<p>Overloading of the &lt;&lt; operator between C++ vector and
+<a class="reference external" href="../../de/ddf/namespaceTango.html">Tango</a> types.</p>
+</div>
+<div class="section" id="function-documentation">
+<h1>Function Documentation<a class="headerlink" href="#function-documentation" title="Permalink to this headline">¶</a></h1>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Init a DevVarCharArray from a C++ vector of char(s).</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="16%" />
+<col width="84%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>lval</td>
+<td>The DevVarCharArray to be initialised</td>
+</tr>
+<tr class="row-even"><td>rval</td>
+<td>The C++ vector</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Init a C++ vector of char from a DevVarCharArray.</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>lval</td>
+<td>The C++ vector to be initialised</td>
+</tr>
+<tr class="row-even"><td>rval</td>
+<td>The DevVarCharArray</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Init a DevVarShortArray from a C++ vector of short(s).</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="16%" />
+<col width="84%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>lval</td>
+<td>The DevVarShortArray to be initialised</td>
+</tr>
+<tr class="row-even"><td>rval</td>
+<td>The C++ vector</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Init a C++ vector of short from a DevVarShortArray.</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>lval</td>
+<td>The C++ vector to be initialised</td>
+</tr>
+<tr class="row-even"><td>rval</td>
+<td>The DevVarShortArray</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Init a DevVarLongArray from a C++ vector of DevLong(s).</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="16%" />
+<col width="84%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>lval</td>
+<td>The DevVarLongArray to be initialised</td>
+</tr>
+<tr class="row-even"><td>rval</td>
+<td>The C++ vector</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Init a C++ vector of DevLong from a DevVarLongArray.</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>lval</td>
+<td>The C++ vector to be initialised</td>
+</tr>
+<tr class="row-even"><td>rval</td>
+<td>The DevVarLongArray</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Init a DevVarLongArray from a C++ vector of DevLong64(s).</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="16%" />
+<col width="84%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>lval</td>
+<td>The DevVarLong64Array to be initialised</td>
+</tr>
+<tr class="row-even"><td>rval</td>
+<td>The C++ vector</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Init a C++ vector of long from a DevVarLong64Array.</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>lval</td>
+<td>The C++ vector to be initialised</td>
+</tr>
+<tr class="row-even"><td>rval</td>
+<td>The DevVarLong64Array</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Init a DevVarFloatArray from a C++ vector of float(s).</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="16%" />
+<col width="84%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>lval</td>
+<td>The DevVarFloatArray to be initialised</td>
+</tr>
+<tr class="row-even"><td>rval</td>
+<td>The C++ vector</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Init a C++ vector of long from a DevVarFloatArray.</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>lval</td>
+<td>The C++ vector to be initialised</td>
+</tr>
+<tr class="row-even"><td>rval</td>
+<td>The DevVarFloatArray</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Init a DevVarDoubleArray from a C++ vector of double(s).</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="16%" />
+<col width="84%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>lval</td>
+<td>The DevVarDoubleArray to be initialised</td>
+</tr>
+<tr class="row-even"><td>rval</td>
+<td>The C++ vector</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Init a C++ vector of long from a DevVarDoubleArray.</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>lval</td>
+<td>The C++ vector to be initialised</td>
+</tr>
+<tr class="row-even"><td>rval</td>
+<td>The DevVarDoubleArray</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Init a DevVarBooleanArray from a C++ vector of bool(s).</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="15%" />
+<col width="85%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>lval</td>
+<td>The DevVarBooleanArray to be initialised</td>
+</tr>
+<tr class="row-even"><td>rval</td>
+<td>The C++ vector</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Init a C++ vector of long from a DevVarBooleanArray.</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>lval</td>
+<td>The C++ vector to be initialised</td>
+</tr>
+<tr class="row-even"><td>rval</td>
+<td>The DevVarBooleanArray</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Init a DevVarUShortArray from a C++ vector of unsigned short(s).</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="16%" />
+<col width="84%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>lval</td>
+<td>The DevVarUShortArray to be initialised</td>
+</tr>
+<tr class="row-even"><td>rval</td>
+<td>The C++ vector</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Init a C++ vector of long from a DevVarUShortArray.</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>lval</td>
+<td>The C++ vector to be initialised</td>
+</tr>
+<tr class="row-even"><td>rval</td>
+<td>The DevVarUShortArray</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Init a DevVarULongArray from a C++ vector of DevULong(s).</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="16%" />
+<col width="84%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>lval</td>
+<td>The DevVarULongArray to be initialised</td>
+</tr>
+<tr class="row-even"><td>rval</td>
+<td>The C++ vector</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Init a C++ vector of long from a DevVarULongArray.</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>lval</td>
+<td>The C++ vector to be initialised</td>
+</tr>
+<tr class="row-even"><td>rval</td>
+<td>The DevVarULongArray</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Init a DevVarULong64Array from a C++ vector of DevULong64(s).</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="15%" />
+<col width="85%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>lval</td>
+<td>The DevVarULong64Array to be initialised</td>
+</tr>
+<tr class="row-even"><td>rval</td>
+<td>The C++ vector</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Init a C++ vector of long from a DevVarULong64Array.</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>lval</td>
+<td>The C++ vector to be initialised</td>
+</tr>
+<tr class="row-even"><td>rval</td>
+<td>The DevVarULong64Array</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Init a DevVarStringArray from a C++ vector of string(s).</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="16%" />
+<col width="84%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>lval</td>
+<td>The DevVarStringArray to be initialised</td>
+</tr>
+<tr class="row-even"><td>rval</td>
+<td>The C++ vector</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<p>References
+<a class="reference external" href="../../de/ddf/namespaceTango.html#aad612284f583ef74f309fa735c2ad5b0">Tango::string_dup()</a>.</p>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Init a C++ vector of long from a DevVarStringArray.</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>lval</td>
+<td>The C++ vector to be initialised</td>
+</tr>
+<tr class="row-even"><td>rval</td>
+<td>The DevVarStringArray</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Init a DevVarStateArray from a C++ vector of state(s).</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="16%" />
+<col width="84%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>lval</td>
+<td>The DevVarStateArray to be initialised</td>
+</tr>
+<tr class="row-even"><td>rval</td>
+<td>The C++ vector</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<table border="1" class="docutils">
+<colgroup>
+</colgroup>
+<tbody valign="top">
+</tbody>
+</table>
+<p>Init a C++ vector of long from a DevVarStateArray.</p>
+<dl class="docutils">
+<dt>Parameters</dt>
+<dd><table border="1" class="first last docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>lval</td>
+<td>The C++ vector to be initialised</td>
+</tr>
+<tr class="row-even"><td>rval</td>
+<td>The DevVarStateArray</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<ul class="simple">
+<li>Generated on Fri Oct 7 2016 11:11:15 for Tango Core Classes Reference
+by <a class="reference external" href="http://www.doxygen.org/index.html"><img alt="doxygen" src="../../_images/doxygen362.png" /></a> 1.8.8</li>
+</ul>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Functions</a></li>
+<li><a class="reference internal" href="#detailed-description">Detailed Description</a></li>
+<li><a class="reference internal" href="#function-documentation">Function Documentation</a></li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/dd/dd6/group__Ope.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, 3Controls.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.8</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+      |
+      <a href="../../_sources/dd/dd6/group__Ope.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

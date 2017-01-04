@@ -1,0 +1,929 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>&lt;no title&gt; &#8212; Tango Core Classes Reference Documentation 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="top" title="Tango Core Classes Reference Documentation 1.0 documentation" href="../../index.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><img alt="Logo" src="../../_images/logo105.jpg" /></td>
+<td>Tango Core Classes Reference &nbsp;9.2.5</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><a class="reference external" href="../../index.html">Main&nbsp;Page</a></li>
+<li><a class="reference external" href="../../pages.html">Related&nbsp;Pages</a></li>
+<li><a class="reference external" href="../../modules.html">Modules</a></li>
+<li><a class="reference external" href="../../namespaces.html">Namespaces</a></li>
+<li><a class="reference external" href="../../annotated.html">Classes</a></li>
+<li><a class="reference external" href="../../files.html">Files</a></li>
+<li><a class="reference external" href="../../files.html">File&nbsp;List</a></li>
+<li><a class="reference external" href="../../globals.html">File&nbsp;Members</a></li>
+</ul>
+<p>attrdesc.h</p>
+<p><a class="reference external" href="../../d4/d18/attrdesc_8h.html">Go to the documentation of this
+file.</a></p>
+<p>1&nbsp;//===================================================================================================================</p>
+<p>2&nbsp;//</p>
+<p>3&nbsp;// file : attrdesc.h</p>
+<p>4&nbsp;//</p>
+<p>5&nbsp;// description : Include file for the Attr classes hierarchy. Three
+classes are declared in this file :</p>
+<p>6&nbsp;// The Attr class</p>
+<p>7&nbsp;// The SpectrumAttr class</p>
+<p>8&nbsp;// The ImageAttr class</p>
+<p>9&nbsp;//</p>
+<p>10&nbsp;// project : TANGO</p>
+<p>11&nbsp;//</p>
+<p>12&nbsp;// author(s) : A.Gotz + E.Taurel</p>
+<p>13&nbsp;//</p>
+<p>14&nbsp;// Copyright (C) :
+2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015</p>
+<p>15&nbsp;// European Synchrotron Radiation Facility</p>
+<p>16&nbsp;// BP 220, Grenoble 38043</p>
+<p>17&nbsp;// FRANCE</p>
+<p>18&nbsp;//</p>
+<p>19&nbsp;// This file is part of Tango.</p>
+<p>20&nbsp;//</p>
+<p>21&nbsp;// Tango is free software: you can redistribute it and/or modify it
+under the terms of the GNU Lesser General Public</p>
+<p>22&nbsp;// License as published by the Free Software Foundation, either
+version 3 of the License, or</p>
+<p>23&nbsp;// (at your option) any later version.</p>
+<p>24&nbsp;//</p>
+<p>25&nbsp;// Tango is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty</p>
+<p>26&nbsp;// of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the</p>
+<p>27&nbsp;// GNU Lesser General Public License for more details.</p>
+<p>28&nbsp;//</p>
+<p>29&nbsp;// You should have received a copy of the GNU Lesser General Public
+License along with Tango.</p>
+<p>30&nbsp;// If not, see &lt;<a class="reference external" href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>&gt;.</p>
+<p>31&nbsp;//</p>
+<p>32&nbsp;// $Revision$</p>
+<p>33&nbsp;//</p>
+<p>34&nbsp;//===================================================================================================================</p>
+<p>35</p>
+<p>36&nbsp;#ifndef _ATTRDESC_H</p>
+<p>37&nbsp;#define _ATTRDESC_H</p>
+<p>38</p>
+<p>39&nbsp;#include &lt;tango.h&gt;</p>
+<p>40</p>
+<p>41&nbsp;namespace <a class="reference external" href="../../de/ddf/namespaceTango.html">Tango</a></p>
+<p>42&nbsp;{</p>
+<p>43</p>
+<p>44&nbsp;class AttrProperty;</p>
+<p>45&nbsp;class WAttribute;</p>
+<p>46</p>
+<p>47</p>
+<p><a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html">64</a>&nbsp;class
+<a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html">UserDefaultAttrProp</a></p>
+<p>65&nbsp;{</p>
+<p>66&nbsp;public:</p>
+<p>67</p>
+<p><a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html#a49c378598e36618e83ef92dcd7a5f15b">74</a>
+<a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html#a49c378598e36618e83ef92dcd7a5f15b">UserDefaultAttrProp</a>():ext(Tango_nullptr)
+{}</p>
+<p>76</p>
+<p><a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html#a570f0146ec61bdbb0a2115d905ea8547">84</a>
+void
+<a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html#a570f0146ec61bdbb0a2115d905ea8547">set_label</a>(const
+char *def_label)</p>
+<p>85&nbsp; {</p>
+<p>86&nbsp; label = def_label;</p>
+<p>87&nbsp; }</p>
+<p>88</p>
+<p><a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html#afde6b2d24224c6cd96e7fd25841134bc">94</a>
+void
+<a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html#afde6b2d24224c6cd96e7fd25841134bc">set_description</a>(const
+char *def_desc)</p>
+<p>95&nbsp; {</p>
+<p>96&nbsp; description = def_desc;</p>
+<p>97&nbsp; }</p>
+<p>98</p>
+<p><a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html#af8ffda78fc0157d31ac4c7e0c73982d3">104</a>
+void
+<a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html#af8ffda78fc0157d31ac4c7e0c73982d3">set_unit</a>(const
+char *def_unit)</p>
+<p>105&nbsp; {</p>
+<p>106&nbsp; unit = def_unit;</p>
+<p>107&nbsp; }</p>
+<p>108</p>
+<p><a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html#ac42a9899badbfb874167ebed8c83e940">114</a>
+void
+<a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html#ac42a9899badbfb874167ebed8c83e940">set_standard_unit</a>(const
+char *def_std_unit)</p>
+<p>115&nbsp; {</p>
+<p>116&nbsp; standard_unit = def_std_unit;</p>
+<p>117&nbsp; }</p>
+<p>118</p>
+<p><a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html#acfcfafe14aaf559a6f9dbd4da4a44070">124</a>
+void
+<a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html#acfcfafe14aaf559a6f9dbd4da4a44070">set_display_unit</a>(const
+char *def_disp_unit)</p>
+<p>125&nbsp; {</p>
+<p>126&nbsp; display_unit = def_disp_unit;</p>
+<p>127&nbsp; }</p>
+<p>128</p>
+<p><a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html#a72b9f9b0ca7a05bfa240fe3277ae6a07">134</a>
+void
+<a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html#a72b9f9b0ca7a05bfa240fe3277ae6a07">set_format</a>(const
+char *def_format)</p>
+<p>135&nbsp; {</p>
+<p>136&nbsp; format = def_format;</p>
+<p>137&nbsp; }</p>
+<p>138</p>
+<p><a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html#a0e4443532d4290042576edeee79b3778">144</a>
+void
+<a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html#a0e4443532d4290042576edeee79b3778">set_min_value</a>(const
+char *def_min_value)</p>
+<p>145&nbsp; {</p>
+<p>146&nbsp; min_value = def_min_value;</p>
+<p>147&nbsp; }</p>
+<p>148</p>
+<p><a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html#a38b3c0d094df7414b120a6824fd84092">154</a>
+void
+<a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html#a38b3c0d094df7414b120a6824fd84092">set_max_value</a>(const
+char *def_max_value)</p>
+<p>155&nbsp; {</p>
+<p>156&nbsp; max_value = def_max_value;</p>
+<p>157&nbsp; }</p>
+<p>158</p>
+<p><a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html#afede8f7057ccf59f46c7005cc8839db7">164</a>
+void
+<a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html#afede8f7057ccf59f46c7005cc8839db7">set_min_alarm</a>(const
+char *def_min_alarm)</p>
+<p>165&nbsp; {</p>
+<p>166&nbsp; min_alarm = def_min_alarm;</p>
+<p>167&nbsp; }</p>
+<p>168</p>
+<p><a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html#a79734b5413a902711c436e5af1448789">174</a>
+void
+<a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html#a79734b5413a902711c436e5af1448789">set_max_alarm</a>(const
+char *def_max_alarm)</p>
+<p>175&nbsp; {</p>
+<p>176&nbsp; max_alarm = def_max_alarm;</p>
+<p>177&nbsp; }</p>
+<p>178</p>
+<p><a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html#a6c95988f618cc16db4eb6c0db54c6534">184</a>
+void
+<a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html#a6c95988f618cc16db4eb6c0db54c6534">set_min_warning</a>(const
+char *def_min_warning)</p>
+<p>185&nbsp; {</p>
+<p>186&nbsp; min_warning = def_min_warning;</p>
+<p>187&nbsp; }</p>
+<p>188</p>
+<p><a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html#abf63a7abea9f43c5fcd1235fe9c7935c">194</a>
+void
+<a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html#abf63a7abea9f43c5fcd1235fe9c7935c">set_max_warning</a>(const
+char *def_max_warning)</p>
+<p>195&nbsp; {</p>
+<p>196&nbsp; max_warning = def_max_warning;</p>
+<p>197&nbsp; }</p>
+<p>198</p>
+<p><a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html#a254ef57c4a216d9bcd9287904017a266">204</a>
+void
+<a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html#a254ef57c4a216d9bcd9287904017a266">set_delta_t</a>(const
+char *def_delta_t)</p>
+<p>205&nbsp; {</p>
+<p>206&nbsp; delta_t = def_delta_t;</p>
+<p>207&nbsp; }</p>
+<p>208</p>
+<p><a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html#ad572a7f7d8cde3526fc430e041596b88">214</a>
+void
+<a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html#ad572a7f7d8cde3526fc430e041596b88">set_delta_val</a>(const
+char *def_delta_val)</p>
+<p>215&nbsp; {</p>
+<p>216&nbsp; delta_val = def_delta_val;</p>
+<p>217&nbsp; }</p>
+<p>218</p>
+<p><a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html#a783f09ff9ef28cbe33c799437bf98e53">224</a>
+void
+<a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html#a783f09ff9ef28cbe33c799437bf98e53">set_event_abs_change</a>(const
+char *def_abs_change)</p>
+<p>225&nbsp; {</p>
+<p>226&nbsp; abs_change = def_abs_change;</p>
+<p>227&nbsp; }</p>
+<p>228</p>
+<p><a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html#a8ed40e206170172ae7d46dc2cb1f9dc4">234</a>
+void
+<a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html#a8ed40e206170172ae7d46dc2cb1f9dc4">set_event_rel_change</a>(const
+char *def_rel_change)</p>
+<p>235&nbsp; {</p>
+<p>236&nbsp; rel_change = def_rel_change;</p>
+<p>237&nbsp; }</p>
+<p>238</p>
+<p><a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html#a9b5db76187d86e112e6999cb34987616">244</a>
+void
+<a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html#a9b5db76187d86e112e6999cb34987616">set_event_period</a>(const
+char *def_period)</p>
+<p>245&nbsp; {</p>
+<p>246&nbsp; period = def_period;</p>
+<p>247&nbsp; }</p>
+<p>248</p>
+<p><a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html#aa6bcd12e3c581ff4d85b3608ca900199">254</a>
+void
+<a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html#aa6bcd12e3c581ff4d85b3608ca900199">set_archive_event_abs_change</a>(const
+char *def_archive_abs_change)</p>
+<p>255&nbsp; {</p>
+<p>256&nbsp; archive_abs_change = def_archive_abs_change;</p>
+<p>257&nbsp; }</p>
+<p>258</p>
+<p><a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html#af66bf9dd5d2d61a6f3f0e2800d0138ff">264</a>
+void
+<a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html#af66bf9dd5d2d61a6f3f0e2800d0138ff">set_archive_event_rel_change</a>(const
+char *def_archive_rel_change)</p>
+<p>265&nbsp; {</p>
+<p>266&nbsp; archive_rel_change = def_archive_rel_change;</p>
+<p>267&nbsp; }</p>
+<p>268</p>
+<p><a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html#a26e889ad51bfe99d3c2442aeeb43b65c">274</a>
+void
+<a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html#a26e889ad51bfe99d3c2442aeeb43b65c">set_archive_event_period</a>(const
+char *def_archive_period)</p>
+<p>275&nbsp; {</p>
+<p>276&nbsp; archive_period = def_archive_period;</p>
+<p>277&nbsp; }</p>
+<p>278</p>
+<p><a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html#a12f0293d7ecf1d5c2451e30f1f333d6a">284</a>
+void
+<a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html#a12f0293d7ecf1d5c2451e30f1f333d6a">set_enum_labels</a>(vector&lt;string&gt;
+&amp;def_enum_labels)</p>
+<p>285&nbsp; {</p>
+<p>286&nbsp; for (size_t loop = 0;loop &lt; def_enum_labels.size();loop++)</p>
+<p>287&nbsp; {</p>
+<p>288&nbsp; enum_labels = enum_labels + def_enum_labels[loop];</p>
+<p>289&nbsp; if (loop != def_enum_labels.size() - 1)</p>
+<p>290&nbsp; enum_labels = enum_labels + &#8216;,&#8217;;</p>
+<p>291&nbsp; }</p>
+<p>292&nbsp; }</p>
+<p>294</p>
+<p>296
+~<a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html">UserDefaultAttrProp</a>()
+{}</p>
+<p>297</p>
+<p>298&nbsp; void set_abs_change(const char *def_abs_change)</p>
+<p>299&nbsp; {</p>
+<p>300
+<a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html#a783f09ff9ef28cbe33c799437bf98e53">set_event_abs_change</a>(def_abs_change);</p>
+<p>301&nbsp; }</p>
+<p>302</p>
+<p>303&nbsp; void set_rel_change(const char *def_rel_change)</p>
+<p>304&nbsp; {</p>
+<p>305
+<a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html#a8ed40e206170172ae7d46dc2cb1f9dc4">set_event_rel_change</a>(def_rel_change);</p>
+<p>306&nbsp; }</p>
+<p>307</p>
+<p>308&nbsp; void set_period(const char *def_period)</p>
+<p>309&nbsp; {</p>
+<p>310
+<a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html#a9b5db76187d86e112e6999cb34987616">set_event_period</a>(def_period);</p>
+<p>311&nbsp; }</p>
+<p>312</p>
+<p>313&nbsp; void set_archive_abs_change(const char
+*def_archive_abs_change)</p>
+<p>314&nbsp; {</p>
+<p>315
+<a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html#aa6bcd12e3c581ff4d85b3608ca900199">set_archive_event_abs_change</a>(def_archive_abs_change);</p>
+<p>316&nbsp; }</p>
+<p>317</p>
+<p>318&nbsp; void set_archive_rel_change(const char
+*def_archive_rel_change)</p>
+<p>319&nbsp; {</p>
+<p>320
+<a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html#af66bf9dd5d2d61a6f3f0e2800d0138ff">set_archive_event_rel_change</a>(def_archive_rel_change);</p>
+<p>321&nbsp; }</p>
+<p>322</p>
+<p>323&nbsp; void set_archive_period(const char *def_archive_period)</p>
+<p>324&nbsp; {</p>
+<p>325
+<a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html#a26e889ad51bfe99d3c2442aeeb43b65c">set_archive_event_period</a>(def_archive_period);</p>
+<p>326&nbsp; }</p>
+<p>327</p>
+<p>328&nbsp; string label;</p>
+<p>329&nbsp; string description;</p>
+<p>330&nbsp; string unit;</p>
+<p>331&nbsp; string standard_unit;</p>
+<p>332&nbsp; string display_unit;</p>
+<p>333&nbsp; string format;</p>
+<p>334&nbsp; string min_value;</p>
+<p>335&nbsp; string max_value;</p>
+<p>336&nbsp; string min_alarm;</p>
+<p>337&nbsp; string max_alarm;</p>
+<p>338&nbsp; string min_warning;</p>
+<p>339&nbsp; string max_warning;</p>
+<p>340&nbsp; string delta_val;</p>
+<p>341&nbsp; string delta_t;</p>
+<p>342&nbsp; string abs_change;</p>
+<p>343&nbsp; string rel_change;</p>
+<p>344&nbsp; string period;</p>
+<p>345&nbsp; string archive_abs_change;</p>
+<p>346&nbsp; string archive_rel_change;</p>
+<p>347&nbsp; string archive_period;</p>
+<p>348&nbsp; string enum_labels;</p>
+<p>349</p>
+<p>350&nbsp;private:</p>
+<p>351&nbsp; class UserDefaultAttrPropExt</p>
+<p>352&nbsp; {</p>
+<p>353&nbsp; };</p>
+<p>354</p>
+<p>355&nbsp;#ifdef HAS_UNIQUE_PTR</p>
+<p>356&nbsp; unique_ptr&lt;UserDefaultAttrPropExt&gt; ext; // Class extension</p>
+<p>357&nbsp;#else</p>
+<p>358&nbsp; UserDefaultAttrPropExt *ext;</p>
+<p>359&nbsp;#endif</p>
+<p>360&nbsp;};</p>
+<p>361</p>
+<p><a class="reference external" href="../../d5/dcd/classTango_1_1Attr.html">376</a>&nbsp;class
+<a class="reference external" href="../../d5/dcd/classTango_1_1Attr.html">Attr</a></p>
+<p>377&nbsp;{</p>
+<p>378&nbsp;public:</p>
+<p>379</p>
+<p>394
+<a class="reference external" href="../../d5/dcd/classTango_1_1Attr.html#a7333f0eab1956673be866f4c7a2d44e8">Attr</a>(const
+char *name,long data_type,</p>
+<p>395&nbsp; Tango::AttrWriteType w_type = Tango::READ,</p>
+<p>396&nbsp; const char *assoc =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#a49f7e5107a03b9a0d20982ea9393956b">AssocWritNotSpec</a>);</p>
+<p>397</p>
+<p>409
+<a class="reference external" href="../../d5/dcd/classTango_1_1Attr.html#a7333f0eab1956673be866f4c7a2d44e8">Attr</a>(const
+char *name,long data_type,Tango::DispLevel disp,</p>
+<p>410&nbsp; Tango::AttrWriteType w_type = Tango::READ,</p>
+<p>411&nbsp; const char *assoc =
+<a class="reference external" href="../../de/ddf/namespaceTango.html#a49f7e5107a03b9a0d20982ea9393956b">AssocWritNotSpec</a>);</p>
+<p>412</p>
+<p>413
+<a class="reference external" href="../../d5/dcd/classTango_1_1Attr.html#a7333f0eab1956673be866f4c7a2d44e8">Attr</a>(const
+char *name,Tango::DispLevel disp = Tango::OPERATOR);</p>
+<p>415</p>
+<p>422&nbsp; virtual
+<a class="reference external" href="../../d5/dcd/classTango_1_1Attr.html#af280714a1ec4254e7ad7009eb0e8feda">~Attr</a>();</p>
+<p>424</p>
+<p>432&nbsp; void
+<a class="reference external" href="../../d5/dcd/classTango_1_1Attr.html#acca03caaac31c20e746a276ab033c174">set_default_properties</a>(<a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html">UserDefaultAttrProp</a>
+&amp;prop);</p>
+<p><a class="reference external" href="../../d5/dcd/classTango_1_1Attr.html#a8f841afb6effc8384e49730550261378">438</a>
+void
+<a class="reference external" href="../../d5/dcd/classTango_1_1Attr.html#a8f841afb6effc8384e49730550261378">set_disp_level</a>(Tango::DispLevel
+level) {disp_level = level;}</p>
+<p><a class="reference external" href="../../d5/dcd/classTango_1_1Attr.html#a5d0e17f5a1ce7263482bb3df5090f91d">444</a>
+void
+<a class="reference external" href="../../d5/dcd/classTango_1_1Attr.html#a5d0e17f5a1ce7263482bb3df5090f91d">set_polling_period</a>(long
+update) {poll_period = update;}</p>
+<p>451&nbsp; void
+<a class="reference external" href="../../d5/dcd/classTango_1_1Attr.html#aac89c07e2033c13abf2222fd6cd089dc">set_memorized</a>();</p>
+<p><a class="reference external" href="../../d5/dcd/classTango_1_1Attr.html#a5c1d94ccc3bacb8d728cf836df737889">459</a>
+void
+<a class="reference external" href="../../d5/dcd/classTango_1_1Attr.html#a5c1d94ccc3bacb8d728cf836df737889">set_memorized_init</a>(bool
+write_on_init) {mem_init = write_on_init;}</p>
+<p><a class="reference external" href="../../d5/dcd/classTango_1_1Attr.html#a68801b4629667565b9cceb6fefa413d7">470</a>
+void
+<a class="reference external" href="../../d5/dcd/classTango_1_1Attr.html#a68801b4629667565b9cceb6fefa413d7">set_change_event</a>(bool
+implemented, bool detect)</p>
+<p>471&nbsp; {</p>
+<p>472&nbsp; fire_change_event = implemented;check_change_event = detect;</p>
+<p>473&nbsp; }</p>
+<p>474</p>
+<p><a class="reference external" href="../../d5/dcd/classTango_1_1Attr.html#a9269546f4b25a6395efe8b93bdb8d07f">480</a>
+bool
+<a class="reference external" href="../../d5/dcd/classTango_1_1Attr.html#a9269546f4b25a6395efe8b93bdb8d07f">is_change_event</a>()
+{return fire_change_event;}</p>
+<p><a class="reference external" href="../../d5/dcd/classTango_1_1Attr.html#a3001dc4d14cbdc62a914a15ff3a86e49">487</a>
+bool
+<a class="reference external" href="../../d5/dcd/classTango_1_1Attr.html#a3001dc4d14cbdc62a914a15ff3a86e49">is_check_change_criteria</a>()
+{return check_change_event;}</p>
+<p><a class="reference external" href="../../d5/dcd/classTango_1_1Attr.html#a6ba7dd409514e938cb2f530b767aa98c">498</a>
+void
+<a class="reference external" href="../../d5/dcd/classTango_1_1Attr.html#a6ba7dd409514e938cb2f530b767aa98c">set_archive_event</a>(bool
+implemented, bool detect)</p>
+<p>499&nbsp; {</p>
+<p>500&nbsp; fire_archive_event = implemented;check_archive_event = detect;</p>
+<p>501&nbsp; }</p>
+<p>502</p>
+<p><a class="reference external" href="../../d5/dcd/classTango_1_1Attr.html#aff00859f5da6a7f48e7abe079491f12c">508</a>
+bool
+<a class="reference external" href="../../d5/dcd/classTango_1_1Attr.html#aff00859f5da6a7f48e7abe079491f12c">is_archive_event</a>()
+{return fire_archive_event;}</p>
+<p><a class="reference external" href="../../d5/dcd/classTango_1_1Attr.html#a8aa3318fe49d403969a59fe000352be8">515</a>
+bool
+<a class="reference external" href="../../d5/dcd/classTango_1_1Attr.html#a8aa3318fe49d403969a59fe000352be8">is_check_archive_criteria</a>()
+{return check_archive_event;}</p>
+<p>516</p>
+<p><a class="reference external" href="../../d5/dcd/classTango_1_1Attr.html#a7e18250ed88d997b603b308212eb7362">522</a>
+void
+<a class="reference external" href="../../d5/dcd/classTango_1_1Attr.html#a7e18250ed88d997b603b308212eb7362">set_data_ready_event</a>(bool
+implemented) { fire_dr_event = implemented;}</p>
+<p><a class="reference external" href="../../d5/dcd/classTango_1_1Attr.html#aff3b774c27e61c3c2ae97ec81c30fcea">528</a>
+bool
+<a class="reference external" href="../../d5/dcd/classTango_1_1Attr.html#aff3b774c27e61c3c2ae97ec81c30fcea">is_data_ready_event</a>()
+{return fire_dr_event;}</p>
+<p>530</p>
+<p>532
+<a class="reference external" href="../../d5/dcd/classTango_1_1Attr.html#a7333f0eab1956673be866f4c7a2d44e8">Attr</a>(const
+<a class="reference external" href="../../d5/dcd/classTango_1_1Attr.html">Attr</a> &amp;);</p>
+<p>533&nbsp; string &amp;get_name() {return name;}</p>
+<p>534&nbsp; Tango::AttrDataFormat get_format() {return format;}</p>
+<p>535&nbsp; Tango::AttrWriteType get_writable() {return writable;}</p>
+<p>536&nbsp; long get_type() {return type;}</p>
+<p>537&nbsp; Tango::DispLevel get_disp_level() {return disp_level;}</p>
+<p>538&nbsp; long get_polling_period() {return poll_period;}</p>
+<p>539&nbsp; bool get_memorized() {return mem;}</p>
+<p>540&nbsp; bool get_memorized_init() {return mem_init;}</p>
+<p>541&nbsp; string &amp;get_assoc() {return assoc_name;}</p>
+<p>542&nbsp; const string &amp;get_cl_name() {return cl_name;}</p>
+<p>543&nbsp; void set_cl_name(const string &amp;cl) {cl_name = cl;}</p>
+<p>544&nbsp; bool is_assoc() {if (assoc_name !=
+<a class="reference external" href="../../de/ddf/namespaceTango.html#a49f7e5107a03b9a0d20982ea9393956b">AssocWritNotSpec</a>)return
+true;else return false;}</p>
+<p>545</p>
+<p>546&nbsp; vector&lt;AttrProperty&gt; &amp;get_class_properties() {return
+class_properties;}</p>
+<p>547&nbsp; vector&lt;AttrProperty&gt; &amp;get_user_default_properties() {return
+user_default_properties;}</p>
+<p>548&nbsp; void set_class_properties(vector&lt;AttrProperty&gt; &amp;in_prop)
+{class_properties=in_prop;}</p>
+<p>549&nbsp; void check_type();</p>
+<p>550</p>
+<p>551&nbsp; virtual bool is_fwd() {return false;}</p>
+<p>552</p>
+<p>553&nbsp; virtual void read(DeviceImpl *,Attribute &amp;) {};</p>
+<p>554&nbsp; virtual void write(DeviceImpl *,WAttribute &amp;) {};</p>
+<p>555&nbsp; virtual bool is_allowed(DeviceImpl
+*,<a class="reference external" href="../../de/ddf/namespaceTango.html#af86537193dcecd8a6710791fc2d4969d">AttReqType</a>)
+{return true;}</p>
+<p>556</p>
+<p>557&nbsp; virtual bool same_type(const type_info &amp;) {return false;}</p>
+<p>558&nbsp; virtual string get_enum_type() {return string(&#8220;Unknown&#8221;);}</p>
+<p>559</p>
+<p>560&nbsp;#ifndef TANGO_HAS_LOG4TANGO</p>
+<p>561&nbsp; friend ostream
+&amp;<a class="reference external" href="../../de/ddf/namespaceTango.html#aa688eba2e41c677db31e4805ae230cef">operator&lt;&lt;</a>(ostream
+&amp;,const
+<a class="reference external" href="../../d5/dcd/classTango_1_1Attr.html#a7333f0eab1956673be866f4c7a2d44e8">Attr</a>
+&amp;);</p>
+<p>562&nbsp;#endif</p>
+<p>563</p>
+<p>564&nbsp;protected:</p>
+<p>566&nbsp; string name;</p>
+<p>567&nbsp; Tango::AttrDataFormat format;</p>
+<p>568&nbsp; Tango::AttrWriteType writable;</p>
+<p>569&nbsp; long type;</p>
+<p>570&nbsp; string assoc_name;</p>
+<p>571&nbsp; bool mem;</p>
+<p>572&nbsp; bool mem_init;</p>
+<p>573</p>
+<p>574&nbsp;//</p>
+<p>575&nbsp;// Ported from the extension class</p>
+<p>576&nbsp;//</p>
+<p>577</p>
+<p>578&nbsp; Tango::DispLevel disp_level; // Display level</p>
+<p>579&nbsp; long poll_period; // Polling period</p>
+<p>580</p>
+<p>581&nbsp; bool fire_change_event;</p>
+<p>582&nbsp; bool fire_archive_event;</p>
+<p>583&nbsp; bool check_change_event;</p>
+<p>584&nbsp; bool check_archive_event;</p>
+<p>585&nbsp; bool fire_dr_event;</p>
+<p>586</p>
+<p>587&nbsp; vector&lt;AttrProperty&gt; class_properties;</p>
+<p>588&nbsp; vector&lt;AttrProperty&gt; user_default_properties;</p>
+<p>589</p>
+<p>590&nbsp; void convert_def_prop(const string &amp;, double &amp;);</p>
+<p>591&nbsp; void validate_def_prop(const string &amp;, const char *);</p>
+<p>592&nbsp; void validate_def_change_prop(const string &amp;, const char *);</p>
+<p>593&nbsp; void throw_incoherent_def_prop(const char *, const char *);</p>
+<p>594&nbsp; void throw_invalid_def_prop(const char *, const char *);</p>
+<p>595</p>
+<p>596&nbsp;private:</p>
+<p>597&nbsp; class AttrExt</p>
+<p>598&nbsp; {</p>
+<p>599&nbsp; public:</p>
+<p>600&nbsp; AttrExt() {}</p>
+<p>601&nbsp; };</p>
+<p>602</p>
+<p>603&nbsp;#ifdef HAS_UNIQUE_PTR</p>
+<p>604&nbsp; unique_ptr&lt;AttrExt&gt; ext; // Class extension</p>
+<p>605&nbsp;#else</p>
+<p>606&nbsp; AttrExt *ext;</p>
+<p>607&nbsp;#endif</p>
+<p>608</p>
+<p>609&nbsp; string cl_name;</p>
+<p>610&nbsp;};</p>
+<p>611</p>
+<p><a class="reference external" href="../../dd/de9/classTango_1_1SpectrumAttr.html">626</a>&nbsp;class
+<a class="reference external" href="../../dd/de9/classTango_1_1SpectrumAttr.html">SpectrumAttr</a>: public
+<a class="reference external" href="../../d5/dcd/classTango_1_1Attr.html">Attr</a></p>
+<p>627&nbsp;{</p>
+<p>628&nbsp;public:</p>
+<p>629</p>
+<p>643
+<a class="reference external" href="../../dd/de9/classTango_1_1SpectrumAttr.html#a7615edf64261435e3a422f5757aa0946">SpectrumAttr</a>(const
+char *name,long data_type,long
+<a class="reference external" href="../../dd/de9/classTango_1_1SpectrumAttr.html#a74073e0d76cabe94dac96d926a4dcff4">max_x</a>);</p>
+<p>644</p>
+<p>655
+<a class="reference external" href="../../dd/de9/classTango_1_1SpectrumAttr.html#a7615edf64261435e3a422f5757aa0946">SpectrumAttr</a>(const
+char *name,long data_type,Tango::AttrWriteType w_type,long max_x);</p>
+<p>656</p>
+<p>667
+<a class="reference external" href="../../dd/de9/classTango_1_1SpectrumAttr.html#a7615edf64261435e3a422f5757aa0946">SpectrumAttr</a>(const
+char *name,long data_type,long max_x,DispLevel level);</p>
+<p>668</p>
+<p>679
+<a class="reference external" href="../../dd/de9/classTango_1_1SpectrumAttr.html#a7615edf64261435e3a422f5757aa0946">SpectrumAttr</a>(const
+char *name,long data_type,Tango::AttrWriteType w_type,long
+max_x,DispLevel level);</p>
+<p>680</p>
+<p><a class="reference external" href="../../dd/de9/classTango_1_1SpectrumAttr.html#a9dcccb8a63b6343b1567098cc47cfb88">681</a>
+<a class="reference external" href="../../dd/de9/classTango_1_1SpectrumAttr.html#a9dcccb8a63b6343b1567098cc47cfb88">SpectrumAttr</a>(const
+char *_n):<a class="reference external" href="../../d5/dcd/classTango_1_1Attr.html">Attr</a>(_n) {}</p>
+<p>683</p>
+<p><a class="reference external" href="../../dd/de9/classTango_1_1SpectrumAttr.html#a2204d147fb74aac1efeff7ea9ea5c7be">690</a>
+<a class="reference external" href="../../dd/de9/classTango_1_1SpectrumAttr.html#a2204d147fb74aac1efeff7ea9ea5c7be">~SpectrumAttr</a>()
+{}</p>
+<p>692</p>
+<p>694
+<a class="reference external" href="../../dd/de9/classTango_1_1SpectrumAttr.html#a7615edf64261435e3a422f5757aa0946">SpectrumAttr</a>(const
+<a class="reference external" href="../../dd/de9/classTango_1_1SpectrumAttr.html">SpectrumAttr</a> &amp;);</p>
+<p>695&nbsp; long get_max_x() {return
+<a class="reference external" href="../../dd/de9/classTango_1_1SpectrumAttr.html#a74073e0d76cabe94dac96d926a4dcff4">max_x</a>;}</p>
+<p>696</p>
+<p>697&nbsp;protected:</p>
+<p><a class="reference external" href="../../dd/de9/classTango_1_1SpectrumAttr.html#a74073e0d76cabe94dac96d926a4dcff4">698</a>
+long
+<a class="reference external" href="../../dd/de9/classTango_1_1SpectrumAttr.html#a74073e0d76cabe94dac96d926a4dcff4">max_x</a>;</p>
+<p>699</p>
+<p>700&nbsp;private:</p>
+<p>701&nbsp; class SpectrumAttrExt</p>
+<p>702&nbsp; {</p>
+<p>703&nbsp; };</p>
+<p>704</p>
+<p>705&nbsp;#ifdef HAS_UNIQUE_PTR</p>
+<p>706&nbsp; unique_ptr&lt;SpectrumAttrExt&gt; ext; // Class extension</p>
+<p>707&nbsp;#else</p>
+<p>708&nbsp; SpectrumAttrExt *ext;</p>
+<p>709&nbsp;#endif</p>
+<p>710&nbsp;};</p>
+<p>711</p>
+<p>712</p>
+<p><a class="reference external" href="../../dd/dd1/classTango_1_1ImageAttr.html">727</a>&nbsp;class
+<a class="reference external" href="../../dd/dd1/classTango_1_1ImageAttr.html">ImageAttr</a>: public
+<a class="reference external" href="../../dd/de9/classTango_1_1SpectrumAttr.html">SpectrumAttr</a></p>
+<p>728&nbsp;{</p>
+<p>729&nbsp;public:</p>
+<p>730</p>
+<p>745
+<a class="reference external" href="../../dd/dd1/classTango_1_1ImageAttr.html#a4103de2b6a5f5bb187bcb6cdcfc210c5">ImageAttr</a>(const
+char *name,long data_type,long
+<a class="reference external" href="../../dd/de9/classTango_1_1SpectrumAttr.html#a74073e0d76cabe94dac96d926a4dcff4">max_x</a>,
+long max_y);</p>
+<p>746</p>
+<p>759
+<a class="reference external" href="../../dd/dd1/classTango_1_1ImageAttr.html#a4103de2b6a5f5bb187bcb6cdcfc210c5">ImageAttr</a>(const
+char *name,long data_type,Tango::AttrWriteType w_type,long max_x,
+long max_y);</p>
+<p>760</p>
+<p>772
+<a class="reference external" href="../../dd/dd1/classTango_1_1ImageAttr.html#a4103de2b6a5f5bb187bcb6cdcfc210c5">ImageAttr</a>(const
+char *name,long data_type,long max_x,</p>
+<p>773&nbsp; long max_y, Tango::DispLevel level);</p>
+<p>774</p>
+<p>787
+<a class="reference external" href="../../dd/dd1/classTango_1_1ImageAttr.html#a4103de2b6a5f5bb187bcb6cdcfc210c5">ImageAttr</a>(const
+char *name,long data_type,Tango::AttrWriteType w_type,</p>
+<p>788&nbsp; long max_x, long max_y, Tango::DispLevel level);</p>
+<p>789</p>
+<p><a class="reference external" href="../../dd/dd1/classTango_1_1ImageAttr.html#a941b6e0f0409f199c6b86a18c40fb8f0">790</a>
+<a class="reference external" href="../../dd/dd1/classTango_1_1ImageAttr.html#a941b6e0f0409f199c6b86a18c40fb8f0">ImageAttr</a>(const
+char
+*name):<a class="reference external" href="../../dd/de9/classTango_1_1SpectrumAttr.html">SpectrumAttr</a>(name)
+{}</p>
+<p>792</p>
+<p><a class="reference external" href="../../dd/dd1/classTango_1_1ImageAttr.html#a86703e9efdc8c59dba36821dbbda31f8">799</a>
+<a class="reference external" href="../../dd/dd1/classTango_1_1ImageAttr.html#a86703e9efdc8c59dba36821dbbda31f8">~ImageAttr</a>()
+{}</p>
+<p>801</p>
+<p>803
+<a class="reference external" href="../../dd/dd1/classTango_1_1ImageAttr.html#a4103de2b6a5f5bb187bcb6cdcfc210c5">ImageAttr</a>(const
+<a class="reference external" href="../../dd/dd1/classTango_1_1ImageAttr.html">ImageAttr</a> &amp;);</p>
+<p>804&nbsp; long get_max_y() {return max_y;}</p>
+<p>805</p>
+<p>806&nbsp;protected:</p>
+<p>808&nbsp; long max_y;</p>
+<p>809</p>
+<p>810&nbsp;private:</p>
+<p>811&nbsp; class ImageAttrExt</p>
+<p>812&nbsp; {</p>
+<p>813&nbsp; };</p>
+<p>814</p>
+<p>815&nbsp;#ifdef HAS_UNIQUE_PTR</p>
+<p>816&nbsp; unique_ptr&lt;ImageAttrExt&gt; ext; // Class extension</p>
+<p>817&nbsp;#else</p>
+<p>818&nbsp; ImageAttrExt *ext;</p>
+<p>819&nbsp;#endif</p>
+<p>820&nbsp;};</p>
+<p>821</p>
+<p>822&nbsp;} // End of Tango namespace</p>
+<p>823</p>
+<p>824&nbsp;#endif /* _ATTRDESC_H */</p>
+<p><a class="reference external" href="../../de/ddf/namespaceTango.html#aa688eba2e41c677db31e4805ae230cef">Tango::operator&lt;&lt;</a></p>
+<p>Pipe &amp; operator&lt;&lt;(Pipe &amp;, T &amp;)</p>
+<p><a class="reference external" href="../../dd/de9/classTango_1_1SpectrumAttr.html#a2204d147fb74aac1efeff7ea9ea5c7be">Tango::SpectrumAttr::~SpectrumAttr</a></p>
+<p>~SpectrumAttr()</p>
+<p>The object desctructor.</p>
+<p><strong>Definition:</strong> attrdesc.h:690</p>
+<p><a class="reference external" href="../../d5/dcd/classTango_1_1Attr.html#a9269546f4b25a6395efe8b93bdb8d07f">Tango::Attr::is_change_event</a></p>
+<p>bool is_change_event()</p>
+<p>Check if the change event is fired manually for this attribute.</p>
+<p><strong>Definition:</strong> attrdesc.h:480</p>
+<p><a class="reference external" href="../../d5/dcd/classTango_1_1Attr.html#a5d0e17f5a1ce7263482bb3df5090f91d">Tango::Attr::set_polling_period</a></p>
+<p>void set_polling_period(long update)</p>
+<p>Set the attribute polling update period.</p>
+<p><strong>Definition:</strong> attrdesc.h:444</p>
+<p><a class="reference external" href="../../d5/dcd/classTango_1_1Attr.html#aff00859f5da6a7f48e7abe079491f12c">Tango::Attr::is_archive_event</a></p>
+<p>bool is_archive_event()</p>
+<p>Check if the archive event is fired manually for this attribute.</p>
+<p><strong>Definition:</strong> attrdesc.h:508</p>
+<p><a class="reference external" href="../../d5/dcd/classTango_1_1Attr.html#a6ba7dd409514e938cb2f530b767aa98c">Tango::Attr::set_archive_event</a></p>
+<p>void set_archive_event(bool implemented, bool detect)</p>
+<p>Set a flag to indicate that the server fires archive events manually
+without the polling to be starte...</p>
+<p><strong>Definition:</strong> attrdesc.h:498</p>
+<p><a class="reference external" href="../../d5/dcd/classTango_1_1Attr.html#acca03caaac31c20e746a276ab033c174">Tango::Attr::set_default_properties</a></p>
+<p>void set_default_properties(UserDefaultAttrProp &amp;prop)</p>
+<p>Set default attribute properties.</p>
+<p><a class="reference external" href="../../d5/dcd/classTango_1_1Attr.html#a68801b4629667565b9cceb6fefa413d7">Tango::Attr::set_change_event</a></p>
+<p>void set_change_event(bool implemented, bool detect)</p>
+<p>Set a flag to indicate that the server fires change events manually
+without the polling to be started...</p>
+<p><strong>Definition:</strong> attrdesc.h:470</p>
+<p><a class="reference external" href="../../d5/dcd/classTango_1_1Attr.html#a7e18250ed88d997b603b308212eb7362">Tango::Attr::set_data_ready_event</a></p>
+<p>void set_data_ready_event(bool implemented)</p>
+<p>Set a flag to indicate that the server fires data ready events.</p>
+<p><strong>Definition:</strong> attrdesc.h:522</p>
+<p><a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html#a72b9f9b0ca7a05bfa240fe3277ae6a07">Tango::UserDefaultAttrProp::set_format</a></p>
+<p>void set_format(const char *def_format)</p>
+<p>Set default format property.</p>
+<p><strong>Definition:</strong> attrdesc.h:134</p>
+<p><a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html#ac42a9899badbfb874167ebed8c83e940">Tango::UserDefaultAttrProp::set_standard_unit</a></p>
+<p>void set_standard_unit(const char *def_std_unit)</p>
+<p>Set default standard unit property.</p>
+<p><strong>Definition:</strong> attrdesc.h:114</p>
+<p><a class="reference external" href="../../dd/dd1/classTango_1_1ImageAttr.html#a4103de2b6a5f5bb187bcb6cdcfc210c5">Tango::ImageAttr::ImageAttr</a></p>
+<p>ImageAttr(const char *name, long data_type, long max_x, long max_y)</p>
+<p>Constructs a newly allocated ImageAttr object.</p>
+<p><a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html#a9b5db76187d86e112e6999cb34987616">Tango::UserDefaultAttrProp::set_event_period</a></p>
+<p>void set_event_period(const char *def_period)</p>
+<p>Set default periodic event period property.</p>
+<p><strong>Definition:</strong> attrdesc.h:244</p>
+<p><a class="reference external" href="../../dd/dd1/classTango_1_1ImageAttr.html">Tango::ImageAttr</a></p>
+<p>User class to create a two dimensions attribute object.</p>
+<p><strong>Definition:</strong> attrdesc.h:727</p>
+<p><a class="reference external" href="../../d5/dcd/classTango_1_1Attr.html#a5c1d94ccc3bacb8d728cf836df737889">Tango::Attr::set_memorized_init</a></p>
+<p>void set_memorized_init(bool write_on_init)</p>
+<p>Set the initialisation flag for memorized attributes true = the setpoint
+value will be written to the...</p>
+<p><strong>Definition:</strong> attrdesc.h:459</p>
+<p><a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html#a783f09ff9ef28cbe33c799437bf98e53">Tango::UserDefaultAttrProp::set_event_abs_change</a></p>
+<p>void set_event_abs_change(const char *def_abs_change)</p>
+<p>Set default change event abs_change property.</p>
+<p><strong>Definition:</strong> attrdesc.h:224</p>
+<p><a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html#a254ef57c4a216d9bcd9287904017a266">Tango::UserDefaultAttrProp::set_delta_t</a></p>
+<p>void set_delta_t(const char *def_delta_t)</p>
+<p>Set default RDS alarm delta_t property.</p>
+<p><strong>Definition:</strong> attrdesc.h:204</p>
+<p><a class="reference external" href="../../de/ddf/namespaceTango.html">Tango</a></p>
+<hr class="docutils" />
+<p><strong>Definition:</strong> device.h:50</p>
+<p><a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html#a26e889ad51bfe99d3c2442aeeb43b65c">Tango::UserDefaultAttrProp::set_archive_event_period</a></p>
+<p>void set_archive_event_period(const char *def_archive_period)</p>
+<p>Set default archive event period property.</p>
+<p><strong>Definition:</strong> attrdesc.h:274</p>
+<p><a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html">Tango::UserDefaultAttrProp</a></p>
+<p>User class to set attribute default properties.</p>
+<p><strong>Definition:</strong> attrdesc.h:64</p>
+<p><a class="reference external" href="../../d5/dcd/classTango_1_1Attr.html#aac89c07e2033c13abf2222fd6cd089dc">Tango::Attr::set_memorized</a></p>
+<p>void set_memorized()</p>
+<p>Set the attribute as memorized in database (only for scalar and writable
+attribute) By default the se...</p>
+<p><a class="reference external" href="../../d5/dcd/classTango_1_1Attr.html#a7333f0eab1956673be866f4c7a2d44e8">Tango::Attr::Attr</a></p>
+<p>Attr(const char *name, long data_type, Tango::AttrWriteType
+w_type=Tango::READ, const char *assoc=AssocWritNotSpec)</p>
+<p>Constructs a newly allocated Attr object.</p>
+<p><a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html#a38b3c0d094df7414b120a6824fd84092">Tango::UserDefaultAttrProp::set_max_value</a></p>
+<p>void set_max_value(const char *def_max_value)</p>
+<p>Set default max_value property.</p>
+<p><strong>Definition:</strong> attrdesc.h:154</p>
+<p><a class="reference external" href="../../dd/de9/classTango_1_1SpectrumAttr.html">Tango::SpectrumAttr</a></p>
+<p>User class to create a one dimension attribute object.</p>
+<p><strong>Definition:</strong> attrdesc.h:626</p>
+<p><a class="reference external" href="../../d5/dcd/classTango_1_1Attr.html#a3001dc4d14cbdc62a914a15ff3a86e49">Tango::Attr::is_check_change_criteria</a></p>
+<p>bool is_check_change_criteria()</p>
+<p>Check if the change event criteria should be checked when firing the
+event manually.</p>
+<p><strong>Definition:</strong> attrdesc.h:487</p>
+<p><a class="reference external" href="../../d5/dcd/classTango_1_1Attr.html#a8f841afb6effc8384e49730550261378">Tango::Attr::set_disp_level</a></p>
+<p>void set_disp_level(Tango::DispLevel level)</p>
+<p>Set the attribute display level.</p>
+<p><strong>Definition:</strong> attrdesc.h:438</p>
+<p><a class="reference external" href="../../de/ddf/namespaceTango.html#a49f7e5107a03b9a0d20982ea9393956b">Tango::AssocWritNotSpec</a></p>
+<p>const char *const AssocWritNotSpec</p>
+<p><strong>Definition:</strong> tango_const.h:299</p>
+<p><a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html#abf63a7abea9f43c5fcd1235fe9c7935c">Tango::UserDefaultAttrProp::set_max_warning</a></p>
+<p>void set_max_warning(const char *def_max_warning)</p>
+<p>Set default max_warning property.</p>
+<p><strong>Definition:</strong> attrdesc.h:194</p>
+<p><a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html#a0e4443532d4290042576edeee79b3778">Tango::UserDefaultAttrProp::set_min_value</a></p>
+<p>void set_min_value(const char *def_min_value)</p>
+<p>Set default min_value property.</p>
+<p><strong>Definition:</strong> attrdesc.h:144</p>
+<p><a class="reference external" href="../../d5/dcd/classTango_1_1Attr.html#aff3b774c27e61c3c2ae97ec81c30fcea">Tango::Attr::is_data_ready_event</a></p>
+<p>bool is_data_ready_event()</p>
+<p>Check if the data ready event is fired for this attribute.</p>
+<p><strong>Definition:</strong> attrdesc.h:528</p>
+<p><a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html#a12f0293d7ecf1d5c2451e30f1f333d6a">Tango::UserDefaultAttrProp::set_enum_labels</a></p>
+<p>void set_enum_labels(vector&lt; string &gt; &amp;def_enum_labels)</p>
+<p>Set default enumeration labels.</p>
+<p><strong>Definition:</strong> attrdesc.h:284</p>
+<p><a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html#a6c95988f618cc16db4eb6c0db54c6534">Tango::UserDefaultAttrProp::set_min_warning</a></p>
+<p>void set_min_warning(const char *def_min_warning)</p>
+<p>Set default min_warning property.</p>
+<p><strong>Definition:</strong> attrdesc.h:184</p>
+<p><a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html#af66bf9dd5d2d61a6f3f0e2800d0138ff">Tango::UserDefaultAttrProp::set_archive_event_rel_change</a></p>
+<p>void set_archive_event_rel_change(const char
+*def_archive_rel_change)</p>
+<p>Set default archive event rel_change property.</p>
+<p><strong>Definition:</strong> attrdesc.h:264</p>
+<p><a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html#afde6b2d24224c6cd96e7fd25841134bc">Tango::UserDefaultAttrProp::set_description</a></p>
+<p>void set_description(const char *def_desc)</p>
+<p>Set default description property.</p>
+<p><strong>Definition:</strong> attrdesc.h:94</p>
+<p><a class="reference external" href="../../dd/de9/classTango_1_1SpectrumAttr.html#a7615edf64261435e3a422f5757aa0946">Tango::SpectrumAttr::SpectrumAttr</a></p>
+<p>SpectrumAttr(const char *name, long data_type, long max_x)</p>
+<p>Constructs a newly allocated SpectrumAttr object.</p>
+<p><a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html#af8ffda78fc0157d31ac4c7e0c73982d3">Tango::UserDefaultAttrProp::set_unit</a></p>
+<p>void set_unit(const char *def_unit)</p>
+<p>Set default unit property.</p>
+<p><strong>Definition:</strong> attrdesc.h:104</p>
+<p><a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html#a570f0146ec61bdbb0a2115d905ea8547">Tango::UserDefaultAttrProp::set_label</a></p>
+<p>void set_label(const char *def_label)</p>
+<p>Set default label property.</p>
+<p><strong>Definition:</strong> attrdesc.h:84</p>
+<p><a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html#ad572a7f7d8cde3526fc430e041596b88">Tango::UserDefaultAttrProp::set_delta_val</a></p>
+<p>void set_delta_val(const char *def_delta_val)</p>
+<p>Set default RDS alarm delta_val property.</p>
+<p><strong>Definition:</strong> attrdesc.h:214</p>
+<p><a class="reference external" href="../../d5/dcd/classTango_1_1Attr.html">Tango::Attr</a></p>
+<p>User class to create a no dimension attribute object.</p>
+<p><strong>Definition:</strong> attrdesc.h:376</p>
+<p><a class="reference external" href="../../dd/de9/classTango_1_1SpectrumAttr.html#a74073e0d76cabe94dac96d926a4dcff4">Tango::SpectrumAttr::max_x</a></p>
+<p>long max_x</p>
+<p><strong>Definition:</strong> attrdesc.h:698</p>
+<p><a class="reference external" href="../../de/ddf/namespaceTango.html#af86537193dcecd8a6710791fc2d4969d">Tango::AttReqType</a></p>
+<p>AttReqType</p>
+<p><strong>Definition:</strong> tango_const.h:971</p>
+<p><a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html#a49c378598e36618e83ef92dcd7a5f15b">Tango::UserDefaultAttrProp::UserDefaultAttrProp</a></p>
+<p>UserDefaultAttrProp()</p>
+<p>Constructs a newly allocated UserDefaultAttrProp object.</p>
+<p><strong>Definition:</strong> attrdesc.h:74</p>
+<p><a class="reference external" href="../../dd/dd1/classTango_1_1ImageAttr.html#a86703e9efdc8c59dba36821dbbda31f8">Tango::ImageAttr::~ImageAttr</a></p>
+<p>~ImageAttr()</p>
+<p>The object desctructor.</p>
+<p><strong>Definition:</strong> attrdesc.h:799</p>
+<p><a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html#afede8f7057ccf59f46c7005cc8839db7">Tango::UserDefaultAttrProp::set_min_alarm</a></p>
+<p>void set_min_alarm(const char *def_min_alarm)</p>
+<p>Set default min_alarm property.</p>
+<p><strong>Definition:</strong> attrdesc.h:164</p>
+<p><a class="reference external" href="../../dd/dd1/classTango_1_1ImageAttr.html#a941b6e0f0409f199c6b86a18c40fb8f0">Tango::ImageAttr::ImageAttr</a></p>
+<p>ImageAttr(const char *name)</p>
+<p><strong>Definition:</strong> attrdesc.h:790</p>
+<p><a class="reference external" href="../../d5/dcd/classTango_1_1Attr.html#a8aa3318fe49d403969a59fe000352be8">Tango::Attr::is_check_archive_criteria</a></p>
+<p>bool is_check_archive_criteria()</p>
+<p>Check if the archive event criteria should be checked when firing the
+event manually.</p>
+<p><strong>Definition:</strong> attrdesc.h:515</p>
+<p><a class="reference external" href="../../d5/dcd/classTango_1_1Attr.html#af280714a1ec4254e7ad7009eb0e8feda">Tango::Attr::~Attr</a></p>
+<p>virtual ~Attr()</p>
+<p>The object desctructor.</p>
+<p><a class="reference external" href="../../dd/de9/classTango_1_1SpectrumAttr.html#a9dcccb8a63b6343b1567098cc47cfb88">Tango::SpectrumAttr::SpectrumAttr</a></p>
+<p>SpectrumAttr(const char *_n)</p>
+<p><strong>Definition:</strong> attrdesc.h:681</p>
+<p><a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html#a8ed40e206170172ae7d46dc2cb1f9dc4">Tango::UserDefaultAttrProp::set_event_rel_change</a></p>
+<p>void set_event_rel_change(const char *def_rel_change)</p>
+<p>Set default change event rel_change property.</p>
+<p><strong>Definition:</strong> attrdesc.h:234</p>
+<p><a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html#aa6bcd12e3c581ff4d85b3608ca900199">Tango::UserDefaultAttrProp::set_archive_event_abs_change</a></p>
+<p>void set_archive_event_abs_change(const char
+*def_archive_abs_change)</p>
+<p>Set default archive event abs_change property.</p>
+<p><strong>Definition:</strong> attrdesc.h:254</p>
+<p><a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html#a79734b5413a902711c436e5af1448789">Tango::UserDefaultAttrProp::set_max_alarm</a></p>
+<p>void set_max_alarm(const char *def_max_alarm)</p>
+<p>Set default max_alarm property.</p>
+<p><strong>Definition:</strong> attrdesc.h:174</p>
+<p><a class="reference external" href="../../de/d9a/classTango_1_1UserDefaultAttrProp.html#acfcfafe14aaf559a6f9dbd4da4a44070">Tango::UserDefaultAttrProp::set_display_unit</a></p>
+<p>void set_display_unit(const char *def_disp_unit)</p>
+<p>Set default display unit property.</p>
+<p><strong>Definition:</strong> attrdesc.h:124</p>
+<ul class="simple">
+<li><a class="reference external" href="../../dir_93bc669b4520ad36068f344e109b7d17.html">include</a></li>
+<li><a class="reference external" href="../../dir_8ff48e8f3ef80891a9957ae5e9583431.html">tango</a></li>
+<li><a class="reference external" href="../../dir_53b28a22454594c5818f3f3f5a9fd698.html">server</a></li>
+<li><a class="reference external" href="../../d4/d18/attrdesc_8h.html">attrdesc.h</a></li>
+<li>Generated on Fri Oct 7 2016 11:11:15 for Tango Core Classes Reference
+by <a class="reference external" href="http://www.doxygen.org/index.html"><img alt="doxygen" src="../../_images/doxygen105.png" /></a> 1.8.8</li>
+</ul>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/d4/d18/attrdesc_8h_source.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, 3Controls.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.8</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+      |
+      <a href="../../_sources/d4/d18/attrdesc_8h_source.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

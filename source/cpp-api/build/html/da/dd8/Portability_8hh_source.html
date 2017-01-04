@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>&lt;no title&gt; &#8212; Tango Core Classes Reference Documentation 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="top" title="Tango Core Classes Reference Documentation 1.0 documentation" href="../../index.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><img alt="Logo" src="../../_images/logo282.jpg" /></td>
+<td>Tango Core Classes Reference &nbsp;9.2.5</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><a class="reference external" href="../../index.html">Main&nbsp;Page</a></li>
+<li><a class="reference external" href="../../pages.html">Related&nbsp;Pages</a></li>
+<li><a class="reference external" href="../../modules.html">Modules</a></li>
+<li><a class="reference external" href="../../namespaces.html">Namespaces</a></li>
+<li><a class="reference external" href="../../annotated.html">Classes</a></li>
+<li><a class="reference external" href="../../files.html">Files</a></li>
+<li><a class="reference external" href="../../files.html">File&nbsp;List</a></li>
+<li><a class="reference external" href="../../globals.html">File&nbsp;Members</a></li>
+</ul>
+<p>Portability.hh</p>
+<p><a class="reference external" href="../../da/dd8/Portability_8hh.html">Go to the documentation of this
+file.</a></p>
+<p>1&nbsp;//</p>
+<p>2&nbsp;// Portability.hh</p>
+<p>3&nbsp;//</p>
+<p>4&nbsp;// Copyright (C) : 2000 - 2002</p>
+<p>5&nbsp;// LifeLine Networks BV (www.lifeline.nl). All rights reserved.</p>
+<p>6&nbsp;// Bastiaan Bakker. All rights reserved.</p>
+<p>7&nbsp;//</p>
+<p>8&nbsp;// 2004,2005,2006,2007,2008,2009,2010,2011,2012</p>
+<p>9&nbsp;// Synchrotron SOLEIL</p>
+<p>10&nbsp;// L&#8217;Orme des Merisiers</p>
+<p>11&nbsp;// Saint-Aubin - BP 48 - France</p>
+<p>12&nbsp;//</p>
+<p>13&nbsp;// This file is part of log4tango.</p>
+<p>14&nbsp;//</p>
+<p>15&nbsp;// Log4ango is free software: you can redistribute it and/or modify</p>
+<p>16&nbsp;// it under the terms of the GNU Lesser General Public License as
+published by</p>
+<p>17&nbsp;// the Free Software Foundation, either version 3 of the License, or</p>
+<p>18&nbsp;// (at your option) any later version.</p>
+<p>19&nbsp;//</p>
+<p>20&nbsp;// Log4tango is distributed in the hope that it will be useful,</p>
+<p>21&nbsp;// but WITHOUT ANY WARRANTY; without even the implied warranty of</p>
+<p>22&nbsp;// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the</p>
+<p>23&nbsp;// GNU Lesser General Public License for more details.</p>
+<p>24&nbsp;//</p>
+<p>25&nbsp;// You should have received a copy of the GNU Lesser General Public
+License</p>
+<p>26&nbsp;// along with Log4Tango. If not, see &lt;<a class="reference external" href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>&gt;.</p>
+<p>27</p>
+<p>28&nbsp;#ifndef _LOG4TANGO_PORTABILITY_H</p>
+<p>29&nbsp;#define _LOG4TANGO_PORTABILITY_H</p>
+<p>30</p>
+<p>31&nbsp;#if defined (_MSC_VER) || defined(__BORLANDC__)</p>
+<p>32&nbsp;# include
+&lt;<a class="reference external" href="../../dc/d5c/config-win32_8h.html">log4tango/config-win32.h</a>&gt;</p>
+<p>33&nbsp;#else</p>
+<p>34&nbsp;# include &lt;log4tango/config.h&gt;</p>
+<p>35&nbsp;#endif</p>
+<p>36</p>
+<p>37&nbsp;#include &#8220;<a class="reference external" href="../../df/d5d/Export_8hh.html">Export.hh</a>&#8220;</p>
+<p>38</p>
+<p>39&nbsp;#if defined(_MSC_VER)</p>
+<p>40&nbsp;# pragma warning( disable : 4786 ) // 255 char debug symbol limit</p>
+<p>41&nbsp;# pragma warning( disable : 4290 ) // throw specifier not implemented</p>
+<p>42&nbsp;# pragma warning( disable : 4251 ) // &#8220;class XXX should be exported&#8221;</p>
+<p>43</p>
+<p>44&nbsp;#define LOG4TANGO_UNUSED(var) var</p>
+<p>45&nbsp;#else</p>
+<p>46&nbsp; #ifdef __GNUC__</p>
+<p>47&nbsp; #define LOG4TANGO_UNUSED(var) var __attribute__ ((unused))</p>
+<p>48&nbsp; #else</p>
+<p><a class="reference external" href="../../da/dd8/Portability_8hh.html#a3e82719800a6abe2ae163e2da6739661">49</a>
+#define LOG4TANGO_UNUSED(var) var</p>
+<p>50&nbsp; #endif</p>
+<p>51&nbsp;#endif</p>
+<p>52</p>
+<p>53&nbsp;#ifndef LOG4TANGO_HAVE_SSTREAM</p>
+<p>54&nbsp;#include &lt;strstream&gt;</p>
+<p>55&nbsp;namespace <a class="reference external" href="../../d8/dcc/namespacestd.html">std</a> {</p>
+<p><a class="reference external" href="../../d7/d24/classstd_1_1ostringstream.html">56</a>&nbsp; class
+<a class="reference external" href="../../df/d5d/Export_8hh.html#abb9e874b4244b6247ac9dbb62a2c7b8f">LOG4TANGO_EXPORT</a>
+<a class="reference external" href="../../d7/d24/classstd_1_1ostringstream.html">ostringstream</a> : public
+ostrstream {</p>
+<p>57&nbsp; public:</p>
+<p>58&nbsp; std::string str();</p>
+<p>59&nbsp; void str (const char*);</p>
+<p>60&nbsp; };</p>
+<p>61&nbsp;}</p>
+<p>62&nbsp;#endif // LOG4TANGO_HAVE_SSTREAM</p>
+<p>63</p>
+<p>64&nbsp;#endif // _LOG4TANGO_PORTABILITY_H</p>
+<p><a class="reference external" href="../../dc/d5c/config-win32_8h.html">config-win32.h</a></p>
+<p><a class="reference external" href="../../d8/dcc/namespacestd.html">std</a></p>
+<p><strong>Definition:</strong> LoggerStream.hh:178</p>
+<p><a class="reference external" href="../../df/d5d/Export_8hh.html#abb9e874b4244b6247ac9dbb62a2c7b8f">LOG4TANGO_EXPORT</a></p>
+<p>#define LOG4TANGO_EXPORT</p>
+<p><strong>Definition:</strong> Export.hh:38</p>
+<p><a class="reference external" href="../../df/d5d/Export_8hh.html">Export.hh</a></p>
+<p><a class="reference external" href="../../d7/d24/classstd_1_1ostringstream.html">std::ostringstream</a></p>
+<p><strong>Definition:</strong> Portability.hh:56</p>
+<ul class="simple">
+<li><a class="reference external" href="../../dir_93bc669b4520ad36068f344e109b7d17.html">include</a></li>
+<li><a class="reference external" href="../../dir_5a849e394260fc4e91409ef0349c0857.html">log4tango</a></li>
+<li><a class="reference external" href="../../da/dd8/Portability_8hh.html">Portability.hh</a></li>
+<li>Generated on Fri Oct 7 2016 11:11:15 for Tango Core Classes Reference
+by <a class="reference external" href="http://www.doxygen.org/index.html"><img alt="doxygen" src="../../_images/doxygen282.png" /></a> 1.8.8</li>
+</ul>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/da/dd8/Portability_8hh_source.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, 3Controls.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.8</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+      |
+      <a href="../../_sources/da/dd8/Portability_8hh_source.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

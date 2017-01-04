@@ -1,0 +1,398 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>&lt;no title&gt; &#8212; Tango Core Classes Reference Documentation 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="top" title="Tango Core Classes Reference Documentation 1.0 documentation" href="../../index.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><img alt="Logo" src="../../_images/logo71.jpg" /></td>
+<td>Tango Core Classes Reference &nbsp;9.2.5</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><a class="reference external" href="../../index.html">Main&nbsp;Page</a></li>
+<li><a class="reference external" href="../../pages.html">Related&nbsp;Pages</a></li>
+<li><a class="reference external" href="../../modules.html">Modules</a></li>
+<li><a class="reference external" href="../../namespaces.html">Namespaces</a></li>
+<li><a class="reference external" href="../../annotated.html">Classes</a></li>
+<li><a class="reference external" href="../../files.html">Files</a></li>
+<li><a class="reference external" href="../../files.html">File&nbsp;List</a></li>
+<li><a class="reference external" href="../../globals.html">File&nbsp;Members</a></li>
+</ul>
+<p>LoggerStream.hh</p>
+<p><a class="reference external" href="../../d2/de3/LoggerStream_8hh.html">Go to the documentation of this
+file.</a></p>
+<p>1&nbsp;//</p>
+<p>2&nbsp;// LoggerStream.hh</p>
+<p>3&nbsp;//</p>
+<p>4&nbsp;// Copyright (C) : 2000 - 2002</p>
+<p>5&nbsp;// LifeLine Networks BV (www.lifeline.nl). All rights reserved.</p>
+<p>6&nbsp;// Bastiaan Bakker. All rights reserved.</p>
+<p>7&nbsp;//</p>
+<p>8&nbsp;// 2004,2005,2006,2007,2008,2009,2010,2011,2012</p>
+<p>9&nbsp;// Synchrotron SOLEIL</p>
+<p>10&nbsp;// L&#8217;Orme des Merisiers</p>
+<p>11&nbsp;// Saint-Aubin - BP 48 - France</p>
+<p>12&nbsp;//</p>
+<p>13&nbsp;// This file is part of log4tango.</p>
+<p>14&nbsp;//</p>
+<p>15&nbsp;// Log4ango is free software: you can redistribute it and/or modify</p>
+<p>16&nbsp;// it under the terms of the GNU Lesser General Public License as
+published by</p>
+<p>17&nbsp;// the Free Software Foundation, either version 3 of the License, or</p>
+<p>18&nbsp;// (at your option) any later version.</p>
+<p>19&nbsp;//</p>
+<p>20&nbsp;// Log4tango is distributed in the hope that it will be useful,</p>
+<p>21&nbsp;// but WITHOUT ANY WARRANTY; without even the implied warranty of</p>
+<p>22&nbsp;// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the</p>
+<p>23&nbsp;// GNU Lesser General Public License for more details.</p>
+<p>24&nbsp;//</p>
+<p>25&nbsp;// You should have received a copy of the GNU Lesser General Public
+License</p>
+<p>26&nbsp;// along with Log4Tango. If not, see &lt;<a class="reference external" href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>&gt;.</p>
+<p>27</p>
+<p>28&nbsp;#ifndef _LOG4TANGO_LOGGER_STREAM_H</p>
+<p>29&nbsp;#define _LOG4TANGO_LOGGER_STREAM_H</p>
+<p>30</p>
+<p>31&nbsp;#include &#8220;<a class="reference external" href="../../da/dd8/Portability_8hh.html">Portability.hh</a>&#8220;</p>
+<p>32&nbsp;#include &#8220;<a class="reference external" href="../../d2/d33/Level_8hh.html">Level.hh</a>&#8220;</p>
+<p>33&nbsp;#ifdef LOG4TANGO_HAVE_SSTREAM</p>
+<p>34&nbsp;# include &lt;sstream&gt;</p>
+<p>35&nbsp;#endif</p>
+<p>36&nbsp;#include &#8220;<a class="reference external" href="../../d5/d64/LogSeparator_8hh.html">LogSeparator.hh</a>&#8220;</p>
+<p>37</p>
+<p>38&nbsp;namespace <a class="reference external" href="../../d4/db0/namespacelog4tango.html">log4tango</a> {</p>
+<p>39</p>
+<p>40&nbsp;//&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;</p>
+<p>41&nbsp;// FORWARD DECLARATION</p>
+<p>42&nbsp;//&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;</p>
+<p><a class="reference external" href="../../d4/db0/namespacelog4tango.html#a32cdd650c4bcacf2d8fbd74caae3205d">43</a>&nbsp;class
+<a class="reference external" href="../../df/d5d/Export_8hh.html#abb9e874b4244b6247ac9dbb62a2c7b8f">LOG4TANGO_EXPORT</a>
+<a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html">Logger</a>;</p>
+<p>44&nbsp;class
+<a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html">LoggerStream</a>;</p>
+<p>45</p>
+<p>46&nbsp;//&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;</p>
+<p>47&nbsp;// DEFINE WHAT IS A LS_TERMINATOR</p>
+<p>48&nbsp;//&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;</p>
+<p><a class="reference external" href="../../d4/db0/namespacelog4tango.html#ac25f18a9841eab936214ef50cdb08432">49</a>&nbsp;typedef
+<a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html">LoggerStream</a>&amp;
+(*ls_terminator)
+(<a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html">LoggerStream</a>&amp;);</p>
+<p>50</p>
+<p>51</p>
+<p><a class="reference external" href="../../d4/db0/namespacelog4tango.html#a84630cb1e3eb8ecf59cd78fe4b250806">52</a>&nbsp;typedef
+class std::ios_base&amp;(*StdIosFlag)(class std::ios_base&amp;);</p>
+<p>53</p>
+<p>54</p>
+<p>55&nbsp;//&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;</p>
+<p>56&nbsp;// class : LoggerStream</p>
+<p>57&nbsp;//&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;</p>
+<p><a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html">58</a>&nbsp;class
+<a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html">LoggerStream</a></p>
+<p>59&nbsp;{</p>
+<p>60&nbsp;public:</p>
+<p>61</p>
+<p>69
+<a class="reference external" href="../../df/d5d/Export_8hh.html#abb9e874b4244b6247ac9dbb62a2c7b8f">LOG4TANGO_EXPORT</a>
+<a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html#a4bb2fa44f562c0398b6706ce241dbf81">LoggerStream</a>(<a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html">Logger</a>&amp;
+logger,
+<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#aa708c09b6a19a8cc8a3b19631561ca99">Level::Value</a>
+level, bool filter = true);</p>
+<p>70</p>
+<p>74
+<a class="reference external" href="../../df/d5d/Export_8hh.html#abb9e874b4244b6247ac9dbb62a2c7b8f">LOG4TANGO_EXPORT</a>
+<a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html#a03bd5a5f9b171ac3e192f4e56c00d079">~LoggerStream</a>();</p>
+<p>75</p>
+<p><a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html#a0da2fad226c741bad936a1c260ecc780">80</a>
+inline
+<a class="reference external" href="../../df/d5d/Export_8hh.html#abb9e874b4244b6247ac9dbb62a2c7b8f">LOG4TANGO_EXPORT</a>
+<a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html">Logger</a>&amp;
+<a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html#a0da2fad226c741bad936a1c260ecc780">get_logger</a>
+(void) const {</p>
+<p>81&nbsp; return _logger;</p>
+<p>82&nbsp; };</p>
+<p>83</p>
+<p><a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html#ad1e16a5bcc3e33dab57644ffc6141d5d">88</a>
+inline
+<a class="reference external" href="../../df/d5d/Export_8hh.html#abb9e874b4244b6247ac9dbb62a2c7b8f">LOG4TANGO_EXPORT</a>
+<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#aa708c09b6a19a8cc8a3b19631561ca99">Level::Value</a>
+<a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html#ad1e16a5bcc3e33dab57644ffc6141d5d">get_level</a>
+(void) const {</p>
+<p>89&nbsp; return _level;</p>
+<p>90&nbsp; };</p>
+<p>91</p>
+<p><a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html#a70c248b1dd5d54626b4588d949bbd2fe">97</a>
+inline
+<a class="reference external" href="../../df/d5d/Export_8hh.html#abb9e874b4244b6247ac9dbb62a2c7b8f">LOG4TANGO_EXPORT</a>
+LoggerStream&amp;
+<a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html#a70c248b1dd5d54626b4588d949bbd2fe">operator&lt;&lt;</a>(<a class="reference external" href="../../da/dd8/Portability_8hh.html#a3e82719800a6abe2ae163e2da6739661">LOG4TANGO_UNUSED</a>(<a class="reference external" href="../../d3/dfe/classlog4tango_1_1LogInitiator.html">LogInitiator</a>&amp;
+i)) {</p>
+<p>98&nbsp; return *this;</p>
+<p>99&nbsp; }</p>
+<p>100</p>
+<p><a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html#ae7da2af43a07d6aff594f733a137b630">107</a>
+inline
+<a class="reference external" href="../../df/d5d/Export_8hh.html#abb9e874b4244b6247ac9dbb62a2c7b8f">LOG4TANGO_EXPORT</a>
+LoggerStream&amp;
+<a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html#a70c248b1dd5d54626b4588d949bbd2fe">operator&lt;&lt;</a>(<a class="reference external" href="../../da/dd8/Portability_8hh.html#a3e82719800a6abe2ae163e2da6739661">LOG4TANGO_UNUSED</a>(<a class="reference external" href="../../d0/d2f/classlog4tango_1_1LogSeparator.html">LogSeparator</a>&amp;
+s)) {</p>
+<p>108
+<a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html#a87e12557f4851fcbb9f4077e9a4d0d59">flush</a>();</p>
+<p>109&nbsp; return *this;</p>
+<p>110&nbsp; }</p>
+<p>111</p>
+<p><a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html#aa1d278ed6fc807a75e7f83daac063391">118</a>
+inline
+<a class="reference external" href="../../df/d5d/Export_8hh.html#abb9e874b4244b6247ac9dbb62a2c7b8f">LOG4TANGO_EXPORT</a>
+LoggerStream&amp;
+<a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html#a70c248b1dd5d54626b4588d949bbd2fe">operator&lt;&lt;</a>(<a class="reference external" href="../../da/dd8/Portability_8hh.html#a3e82719800a6abe2ae163e2da6739661">LOG4TANGO_UNUSED</a>(<a class="reference external" href="../../d4/db0/namespacelog4tango.html#ac25f18a9841eab936214ef50cdb08432">ls_terminator</a>
+endoflog)) {</p>
+<p>119
+<a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html#a87e12557f4851fcbb9f4077e9a4d0d59">flush</a>();</p>
+<p>120&nbsp; return *this;</p>
+<p>121&nbsp; }</p>
+<p>122</p>
+<p>127
+<a class="reference external" href="../../df/d5d/Export_8hh.html#abb9e874b4244b6247ac9dbb62a2c7b8f">LOG4TANGO_EXPORT</a>
+void
+<a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html#a87e12557f4851fcbb9f4077e9a4d0d59">flush</a>
+(void);</p>
+<p>128</p>
+<p>134&nbsp;#ifdef WIN32</p>
+<p>135&nbsp; inline
+<a class="reference external" href="../../df/d5d/Export_8hh.html#abb9e874b4244b6247ac9dbb62a2c7b8f">LOG4TANGO_EXPORT</a>
+LoggerStream&amp;
+<a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html#a70c248b1dd5d54626b4588d949bbd2fe">operator&lt;&lt;</a>(std::ios_base&amp;(_cdecl
+*_F)(std::ios_base&amp;)) {</p>
+<p>136&nbsp;#else</p>
+<p><a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html#af3dc8e4d367c118c86dc698b980fc0b2">137</a>
+inline
+<a class="reference external" href="../../df/d5d/Export_8hh.html#abb9e874b4244b6247ac9dbb62a2c7b8f">LOG4TANGO_EXPORT</a>
+LoggerStream&amp;
+<a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html#a70c248b1dd5d54626b4588d949bbd2fe">operator&lt;&lt;</a>(std::ios_base&amp;(*_F)(std::ios_base&amp;))
+{</p>
+<p>138&nbsp;#endif</p>
+<p>139&nbsp;#ifndef LOG4TANGO_HAVE_SSTREAM</p>
+<p>140&nbsp; if (!_buffer)</p>
+<p>141&nbsp; _buffer = new
+<a class="reference external" href="../../d7/d24/classstd_1_1ostringstream.html">std::ostringstream</a>;</p>
+<p>142&nbsp;#endif</p>
+<p>143&nbsp; if (_buffer)</p>
+<p>144&nbsp; (*_F)(*(std::ios_base *)(_buffer));</p>
+<p>145&nbsp; return *this;</p>
+<p>146&nbsp; }</p>
+<p>147</p>
+<p><a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html#a3aa83b092637a7f0e87c96cc87e655cd">153</a>
+template&lt;typename T&gt; LoggerStream&amp;
+<a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html#a70c248b1dd5d54626b4588d949bbd2fe">operator&lt;&lt;</a>(const
+T&amp; t) {</p>
+<p>154&nbsp; if (_level !=
+<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#ad9edd63020b6becc9aef8802c48eb461a955ee789684a2e9952b7e4f56b6bb74f">Level::OFF</a>)
+{</p>
+<p>155&nbsp;#ifndef LOG4TANGO_HAVE_SSTREAM</p>
+<p>156&nbsp; if (!_buffer)</p>
+<p>157&nbsp; _buffer = new
+<a class="reference external" href="../../d7/d24/classstd_1_1ostringstream.html">std::ostringstream</a>;</p>
+<p>158&nbsp;#endif</p>
+<p>159&nbsp; if (_buffer)</p>
+<p>160&nbsp; (*_buffer) &lt;&lt; t;</p>
+<p>161&nbsp; }</p>
+<p>162&nbsp; return *this;</p>
+<p>163&nbsp; }</p>
+<p>164</p>
+<p>165&nbsp;private:</p>
+<p>166</p>
+<p>167&nbsp; <a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html">Logger</a>&amp;
+_logger;</p>
+<p>168</p>
+<p>169
+<a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#aa708c09b6a19a8cc8a3b19631561ca99">Level::Value</a>
+_level;</p>
+<p>170</p>
+<p>171&nbsp; bool _filter;</p>
+<p>172</p>
+<p>173
+<a class="reference external" href="../../d7/d24/classstd_1_1ostringstream.html">std::ostringstream</a>*
+_buffer;</p>
+<p>174&nbsp;};</p>
+<p>175</p>
+<p>176&nbsp;} // namespace log4tango</p>
+<p>177</p>
+<p><a class="reference external" href="../../d8/dcc/namespacestd.html">178</a>&nbsp;namespace
+<a class="reference external" href="../../d8/dcc/namespacestd.html">std</a> {</p>
+<p>179&nbsp; //&#8211; A dummy &lt;ls_terminator&gt;</p>
+<p><a class="reference external" href="../../d8/dcc/namespacestd.html#a4639029cd5db5428c743a52d095356b9">180</a>
+inline
+<a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html">log4tango::LoggerStream</a>&amp;
+<a class="reference external" href="../../d8/dcc/namespacestd.html#a4639029cd5db5428c743a52d095356b9">endl</a>
+(<a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html">log4tango::LoggerStream</a>&amp;
+ls) {</p>
+<p>181&nbsp; return ls;</p>
+<p>182&nbsp; }</p>
+<p>183&nbsp;} // namespace std</p>
+<p>184</p>
+<p>185&nbsp;#endif // _LOG4TANGO_LOGGER_STREAM_H</p>
+<p><a class="reference external" href="../../d0/d2f/classlog4tango_1_1LogSeparator.html">log4tango::LogSeparator</a></p>
+<p><strong>Definition:</strong> LogSeparator.hh:46</p>
+<p><a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html#a87e12557f4851fcbb9f4077e9a4d0d59">log4tango::LoggerStream::flush</a></p>
+<p>LOG4TANGO_EXPORT void flush(void)</p>
+<p>Flush the contents of the stream buffer to the Logger and empties the
+buffer.</p>
+<p><strong>Definition:</strong> LoggerStream.cpp:59</p>
+<p><a class="reference external" href="../../d4/db0/namespacelog4tango.html">log4tango</a></p>
+<p><strong>Definition:</strong> Appender.hh:40</p>
+<p><a class="reference external" href="../../d3/dfe/classlog4tango_1_1LogInitiator.html">log4tango::LogInitiator</a></p>
+<p><strong>Definition:</strong> LogSeparator.hh:38</p>
+<p><a class="reference external" href="../../d8/dcc/namespacestd.html">std</a></p>
+<p><strong>Definition:</strong> LoggerStream.hh:178</p>
+<p><a class="reference external" href="../../d8/dcc/namespacestd.html#a4639029cd5db5428c743a52d095356b9">std::endl</a></p>
+<p>log4tango::LoggerStream &amp; endl(log4tango::LoggerStream &amp;ls)</p>
+<p><strong>Definition:</strong> LoggerStream.hh:180</p>
+<p><a class="reference external" href="../../d4/d1c/classlog4tango_1_1Logger.html">log4tango::Logger</a></p>
+<p><strong>Definition:</strong> Logger.hh:56</p>
+<p><a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html#a70c248b1dd5d54626b4588d949bbd2fe">log4tango::LoggerStream::operator&lt;&lt;</a></p>
+<p>LOG4TANGO_EXPORT LoggerStream &amp;
+operator&lt;&lt;(LOG4TANGO_UNUSED(LogInitiator &amp;i))</p>
+<p>Streams in a Initiator.</p>
+<p><strong>Definition:</strong> LoggerStream.hh:97</p>
+<p><a class="reference external" href="../../d2/d33/Level_8hh.html">Level.hh</a></p>
+<p><a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#ad9edd63020b6becc9aef8802c48eb461a955ee789684a2e9952b7e4f56b6bb74f">log4tango::Level::OFF</a></p>
+<p><strong>Definition:</strong> Level.hh:87</p>
+<p><a class="reference external" href="../../da/dd8/Portability_8hh.html">Portability.hh</a></p>
+<p><a class="reference external" href="../../df/d5d/Export_8hh.html#abb9e874b4244b6247ac9dbb62a2c7b8f">LOG4TANGO_EXPORT</a></p>
+<p>#define LOG4TANGO_EXPORT</p>
+<p><strong>Definition:</strong> Export.hh:38</p>
+<p><a class="reference external" href="../../d4/db0/namespacelog4tango.html#ac25f18a9841eab936214ef50cdb08432">log4tango::ls_terminator</a></p>
+<p>LoggerStream &amp;(* ls_terminator)(LoggerStream &amp;)</p>
+<p><strong>Definition:</strong> LoggerStream.hh:49</p>
+<p><a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html#a4bb2fa44f562c0398b6706ce241dbf81">log4tango::LoggerStream::LoggerStream</a></p>
+<p>LOG4TANGO_EXPORT LoggerStream(Logger &amp;logger, Level::Value level, bool
+filter=true)</p>
+<p>Construct a LoggerStream for given Logger with given level.</p>
+<p><strong>Definition:</strong> LoggerStream.cpp:39</p>
+<p><a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html">log4tango::LoggerStream</a></p>
+<p><strong>Definition:</strong> LoggerStream.hh:58</p>
+<p><a class="reference external" href="../../d5/d64/LogSeparator_8hh.html">LogSeparator.hh</a></p>
+<p><a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html#a0da2fad226c741bad936a1c260ecc780">log4tango::LoggerStream::get_logger</a></p>
+<p>LOG4TANGO_EXPORT Logger &amp; get_logger(void) const</p>
+<p>Returns the destination Logger for this stream.</p>
+<p><strong>Definition:</strong> LoggerStream.hh:80</p>
+<p><a class="reference external" href="../../d8/d0e/classlog4tango_1_1Level.html#aa708c09b6a19a8cc8a3b19631561ca99">log4tango::Level::Value</a></p>
+<p>int Value</p>
+<p>The type of Level Values.</p>
+<p><strong>Definition:</strong> Level.hh:98</p>
+<p><a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html#a03bd5a5f9b171ac3e192f4e56c00d079">log4tango::LoggerStream::~LoggerStream</a></p>
+<p>LOG4TANGO_EXPORT ~LoggerStream()</p>
+<p>Destructor for LoggerStream&amp;)</p>
+<p><strong>Definition:</strong> LoggerStream.cpp:48</p>
+<p><a class="reference external" href="../../d7/d24/classstd_1_1ostringstream.html">std::ostringstream</a></p>
+<p><strong>Definition:</strong> Portability.hh:56</p>
+<p><a class="reference external" href="../../d6/de1/classlog4tango_1_1LoggerStream.html#ad1e16a5bcc3e33dab57644ffc6141d5d">log4tango::LoggerStream::get_level</a></p>
+<p>LOG4TANGO_EXPORT Level::Value get_level(void) const</p>
+<p>Returns the level for this stream.</p>
+<p><strong>Definition:</strong> LoggerStream.hh:88</p>
+<p><a class="reference external" href="../../da/dd8/Portability_8hh.html#a3e82719800a6abe2ae163e2da6739661">LOG4TANGO_UNUSED</a></p>
+<p>#define LOG4TANGO_UNUSED(var)</p>
+<p><strong>Definition:</strong> Portability.hh:49</p>
+<ul class="simple">
+<li><a class="reference external" href="../../dir_93bc669b4520ad36068f344e109b7d17.html">include</a></li>
+<li><a class="reference external" href="../../dir_5a849e394260fc4e91409ef0349c0857.html">log4tango</a></li>
+<li><a class="reference external" href="../../d2/de3/LoggerStream_8hh.html">LoggerStream.hh</a></li>
+<li>Generated on Fri Oct 7 2016 11:11:15 for Tango Core Classes Reference
+by <a class="reference external" href="http://www.doxygen.org/index.html"><img alt="doxygen" src="../../_images/doxygen71.png" /></a> 1.8.8</li>
+</ul>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/d2/de3/LoggerStream_8hh_source.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, 3Controls.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.8</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+      |
+      <a href="../../_sources/d2/de3/LoggerStream_8hh_source.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

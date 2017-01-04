@@ -1,0 +1,874 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>&lt;no title&gt; &#8212; Tango Core Classes Reference Documentation 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="top" title="Tango Core Classes Reference Documentation 1.0 documentation" href="../../index.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><img alt="Logo" src="../../_images/logo289.jpg" /></td>
+<td>Tango Core Classes Reference &nbsp;9.2.5</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><a class="reference external" href="../../index.html">Main&nbsp;Page</a></li>
+<li><a class="reference external" href="../../pages.html">Related&nbsp;Pages</a></li>
+<li><a class="reference external" href="../../modules.html">Modules</a></li>
+<li><a class="reference external" href="../../namespaces.html">Namespaces</a></li>
+<li><a class="reference external" href="../../annotated.html">Classes</a></li>
+<li><a class="reference external" href="../../files.html">Files</a></li>
+<li><a class="reference external" href="../../files.html">File&nbsp;List</a></li>
+<li><a class="reference external" href="../../globals.html">File&nbsp;Members</a></li>
+</ul>
+<p>pollext.h</p>
+<p><a class="reference external" href="../../db/d17/pollext_8h.html">Go to the documentation of this file.</a></p>
+<p>1&nbsp;//=============================================================================</p>
+<p>2&nbsp;//</p>
+<p>3&nbsp;// file : PollExt.h</p>
+<p>4&nbsp;//</p>
+<p>5&nbsp;// description : Include for classes used by the method dedicated</p>
+<p>6&nbsp;// to fill the polling buffer for command or</p>
+<p>7&nbsp;// attributes.</p>
+<p>8&nbsp;//</p>
+<p>9&nbsp;// project : TANGO</p>
+<p>10&nbsp;//</p>
+<p>11&nbsp;// author(s) : E.Taurel</p>
+<p>12&nbsp;//</p>
+<p>13&nbsp;// Copyright (C) :
+2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015</p>
+<p>14&nbsp;// European Synchrotron Radiation Facility</p>
+<p>15&nbsp;// BP 220, Grenoble 38043</p>
+<p>16&nbsp;// FRANCE</p>
+<p>17&nbsp;//</p>
+<p>18&nbsp;// This file is part of Tango.</p>
+<p>19&nbsp;//</p>
+<p>20&nbsp;// Tango is free software: you can redistribute it and/or modify</p>
+<p>21&nbsp;// it under the terms of the GNU Lesser General Public License as
+published by</p>
+<p>22&nbsp;// the Free Software Foundation, either version 3 of the License, or</p>
+<p>23&nbsp;// (at your option) any later version.</p>
+<p>24&nbsp;//</p>
+<p>25&nbsp;// Tango is distributed in the hope that it will be useful,</p>
+<p>26&nbsp;// but WITHOUT ANY WARRANTY; without even the implied warranty of</p>
+<p>27&nbsp;// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the</p>
+<p>28&nbsp;// GNU Lesser General Public License for more details.</p>
+<p>29&nbsp;//</p>
+<p>30&nbsp;// You should have received a copy of the GNU Lesser General Public
+License</p>
+<p>31&nbsp;// along with Tango. If not, see &lt;<a class="reference external" href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>&gt;.</p>
+<p>32&nbsp;//</p>
+<p>33&nbsp;// $Revision: 15556</p>
+<p>34&nbsp;//</p>
+<p>35&nbsp;//=============================================================================</p>
+<p>36</p>
+<p>37&nbsp;#ifndef _POLLEXT_H</p>
+<p>38&nbsp;#define _POLLEXT_H</p>
+<p>39</p>
+<p>40&nbsp;#include &lt;tango.h&gt;</p>
+<p>41</p>
+<p>42&nbsp;namespace <a class="reference external" href="../../de/ddf/namespaceTango.html">Tango</a></p>
+<p>43&nbsp;{</p>
+<p>44</p>
+<p>45&nbsp;//=============================================================================</p>
+<p>46&nbsp;//</p>
+<p>47&nbsp;// Attribute related class</p>
+<p>48&nbsp;//</p>
+<p>49&nbsp;// description : These classes are used when the user want to fill</p>
+<p>50&nbsp;// attribute polling buffer</p>
+<p>51&nbsp;//</p>
+<p>52&nbsp;//=============================================================================</p>
+<p>53</p>
+<p>54&nbsp;//=============================================================================</p>
+<p>55&nbsp;//</p>
+<p>56&nbsp;// The AttrData class</p>
+<p>57&nbsp;//</p>
+<p>58&nbsp;//</p>
+<p>59&nbsp;// description : This class is used to store all the data needed to
+build</p>
+<p>60&nbsp;// an attribute value.</p>
+<p>61&nbsp;//</p>
+<p>62&nbsp;//=============================================================================</p>
+<p>63</p>
+<p><a class="reference external" href="../../db/d17/pollext_8h.html#a55ff6cf2d431f70c018dac5372bd3596">64</a>&nbsp;#define
+__CHECK_DIM() \</p>
+<p>65&nbsp; if ((x == 0) || (y == 0)) \</p>
+<p>66&nbsp; { \</p>
+<p>67&nbsp; Except::throw_exception((const char *)API_AttrOptProp, \</p>
+<p>68&nbsp; (const char *)&#8221;X or Y dimension cannot be 0 for image attribute&#8221;,
+\</p>
+<p>69&nbsp; (const char *)&#8221;AttrData::AttrData&#8221;); \</p>
+<p>70&nbsp; } \</p>
+<p>71&nbsp; else \</p>
+<p>72&nbsp; (void)0</p>
+<p>73</p>
+<p><a class="reference external" href="../../db/d17/pollext_8h.html#a6f3bb473425819c00929ff64ab7c4b74">74</a>&nbsp;#define
+__CHECK_DIM_X() \</p>
+<p>75&nbsp; if (x == 0) \</p>
+<p>76&nbsp; { \</p>
+<p>77&nbsp; Except::throw_exception((const char *)API_AttrOptProp, \</p>
+<p>78&nbsp; (const char *)&#8221;X dimension cannot be 0 for spectrum or image
+attribute&#8221;, \</p>
+<p>79&nbsp; (const char *)&#8221;AttrData::AttrData&#8221;); \</p>
+<p>80&nbsp; } \</p>
+<p>81&nbsp; else \</p>
+<p>82&nbsp; (void)0</p>
+<p>83</p>
+<p>84&nbsp;template &lt;typename T&gt;</p>
+<p><a class="reference external" href="../../d4/d7a/classTango_1_1AttrData.html">85</a>&nbsp;class
+<a class="reference external" href="../../d4/d7a/classTango_1_1AttrData.html">AttrData</a></p>
+<p>86&nbsp;{</p>
+<p>87&nbsp;public:</p>
+<p><a class="reference external" href="../../d4/d7a/classTango_1_1AttrData.html#a2226b793c3a7c4791a9839e5bfa2473f">88</a>
+const T
+*<a class="reference external" href="../../d4/d7a/classTango_1_1AttrData.html#a2226b793c3a7c4791a9839e5bfa2473f">ptr</a>;</p>
+<p><a class="reference external" href="../../d4/d7a/classTango_1_1AttrData.html#a51eecbb56d5db1c611ad459017cc03c2">89</a>
+Tango::AttrQuality
+<a class="reference external" href="../../d4/d7a/classTango_1_1AttrData.html#a51eecbb56d5db1c611ad459017cc03c2">qual</a>;</p>
+<p><a class="reference external" href="../../d4/d7a/classTango_1_1AttrData.html#a8e08e9668434a58b543989599dd82ecc">90</a>
+long
+<a class="reference external" href="../../d4/d7a/classTango_1_1AttrData.html#a8e08e9668434a58b543989599dd82ecc">x</a>;</p>
+<p><a class="reference external" href="../../d4/d7a/classTango_1_1AttrData.html#a32c887ce84b2549b5c597134a8f989a4">91</a>
+long
+<a class="reference external" href="../../d4/d7a/classTango_1_1AttrData.html#a32c887ce84b2549b5c597134a8f989a4">y</a>;</p>
+<p><a class="reference external" href="../../d4/d7a/classTango_1_1AttrData.html#abc8bb23d7b5e8b2c4c1bd1c67b16ef04">92</a>
+bool
+<a class="reference external" href="../../d4/d7a/classTango_1_1AttrData.html#abc8bb23d7b5e8b2c4c1bd1c67b16ef04">release</a>;</p>
+<p><a class="reference external" href="../../d4/d7a/classTango_1_1AttrData.html#aceb0e1fb88c6dd0be29bd7f8a4064611">93</a>
+DevErrorList
+<a class="reference external" href="../../d4/d7a/classTango_1_1AttrData.html#aceb0e1fb88c6dd0be29bd7f8a4064611">err</a>;</p>
+<p>94</p>
+<p><a class="reference external" href="../../d4/d7a/classTango_1_1AttrData.html#afaaa975dbd7e67efedfc0932d163d9ce">95</a>
+long
+<a class="reference external" href="../../d4/d7a/classTango_1_1AttrData.html#afaaa975dbd7e67efedfc0932d163d9ce">wr_x</a>;</p>
+<p><a class="reference external" href="../../d4/d7a/classTango_1_1AttrData.html#ac4720964bc4cfe1441dbc0e25c368d5a">96</a>
+long
+<a class="reference external" href="../../d4/d7a/classTango_1_1AttrData.html#ac4720964bc4cfe1441dbc0e25c368d5a">wr_y</a>;</p>
+<p><a class="reference external" href="../../d4/d7a/classTango_1_1AttrData.html#a0677f54f22a900522ffe72bd38cd530a">97</a>
+const T
+*<a class="reference external" href="../../d4/d7a/classTango_1_1AttrData.html#a0677f54f22a900522ffe72bd38cd530a">wr_ptr</a>;</p>
+<p>98</p>
+<p>99
+<a class="reference external" href="../../d4/d7a/classTango_1_1AttrData.html#a97d6362673f427ed067853bb30545dc9">AttrData</a>(const
+T *);</p>
+<p>100
+<a class="reference external" href="../../d4/d7a/classTango_1_1AttrData.html#a97d6362673f427ed067853bb30545dc9">AttrData</a>(const
+T *,Tango::AttrQuality);</p>
+<p>101
+<a class="reference external" href="../../d4/d7a/classTango_1_1AttrData.html#a97d6362673f427ed067853bb30545dc9">AttrData</a>(const
+T *,Tango::AttrQuality,bool);</p>
+<p>102
+<a class="reference external" href="../../d4/d7a/classTango_1_1AttrData.html#a97d6362673f427ed067853bb30545dc9">AttrData</a>(const
+T *,const T *);</p>
+<p>103
+<a class="reference external" href="../../d4/d7a/classTango_1_1AttrData.html#a97d6362673f427ed067853bb30545dc9">AttrData</a>(const
+T *,const T *,Tango::AttrQuality);</p>
+<p>104
+<a class="reference external" href="../../d4/d7a/classTango_1_1AttrData.html#a97d6362673f427ed067853bb30545dc9">AttrData</a>(const
+T *,const T *,Tango::AttrQuality,bool);</p>
+<p>105</p>
+<p>106&nbsp;// For spectrum</p>
+<p>107</p>
+<p>108
+<a class="reference external" href="../../d4/d7a/classTango_1_1AttrData.html#a97d6362673f427ed067853bb30545dc9">AttrData</a>(const
+T *,long);</p>
+<p>109
+<a class="reference external" href="../../d4/d7a/classTango_1_1AttrData.html#a97d6362673f427ed067853bb30545dc9">AttrData</a>(const
+T *,long,Tango::AttrQuality);</p>
+<p>110
+<a class="reference external" href="../../d4/d7a/classTango_1_1AttrData.html#a97d6362673f427ed067853bb30545dc9">AttrData</a>(const
+T *,long,Tango::AttrQuality,bool);</p>
+<p>111
+<a class="reference external" href="../../d4/d7a/classTango_1_1AttrData.html#a97d6362673f427ed067853bb30545dc9">AttrData</a>(const
+T *,long,const T *,long);</p>
+<p>112
+<a class="reference external" href="../../d4/d7a/classTango_1_1AttrData.html#a97d6362673f427ed067853bb30545dc9">AttrData</a>(const
+T *,long,const T *,long,Tango::AttrQuality);</p>
+<p>113
+<a class="reference external" href="../../d4/d7a/classTango_1_1AttrData.html#a97d6362673f427ed067853bb30545dc9">AttrData</a>(const
+T *,long,const T *,long,Tango::AttrQuality,bool);</p>
+<p>114</p>
+<p>115&nbsp;// For image</p>
+<p>116</p>
+<p>117
+<a class="reference external" href="../../d4/d7a/classTango_1_1AttrData.html#a97d6362673f427ed067853bb30545dc9">AttrData</a>(const
+T *,long,long);</p>
+<p>118
+<a class="reference external" href="../../d4/d7a/classTango_1_1AttrData.html#a97d6362673f427ed067853bb30545dc9">AttrData</a>(const
+T *,long,long,Tango::AttrQuality);</p>
+<p>119
+<a class="reference external" href="../../d4/d7a/classTango_1_1AttrData.html#a97d6362673f427ed067853bb30545dc9">AttrData</a>(const
+T *,long,long,Tango::AttrQuality,bool);</p>
+<p>120
+<a class="reference external" href="../../d4/d7a/classTango_1_1AttrData.html#a97d6362673f427ed067853bb30545dc9">AttrData</a>(const
+T *,long,long,const T *,long,long);</p>
+<p>121
+<a class="reference external" href="../../d4/d7a/classTango_1_1AttrData.html#a97d6362673f427ed067853bb30545dc9">AttrData</a>(const
+T *,long,long,const T *,long,long,Tango::AttrQuality);</p>
+<p>122
+<a class="reference external" href="../../d4/d7a/classTango_1_1AttrData.html#a97d6362673f427ed067853bb30545dc9">AttrData</a>(const
+T *,long,long,const T *,long,long,Tango::AttrQuality,bool);</p>
+<p>123</p>
+<p>124&nbsp;// For error</p>
+<p>125</p>
+<p><a class="reference external" href="../../d4/d7a/classTango_1_1AttrData.html#a91406bc4fd607acb4f3217980c3b5dd5">126</a>
+<a class="reference external" href="../../d4/d7a/classTango_1_1AttrData.html#a91406bc4fd607acb4f3217980c3b5dd5">AttrData</a>(DevErrorList
+&amp;e):
+ptr(NULL),x(0),y(0),release(false),err(e),wr_x(0),wr_y(0),wr_ptr(NULL)
+{}</p>
+<p>127&nbsp;};</p>
+<p>128</p>
+<p>129</p>
+<p>130&nbsp;//=============================================================================</p>
+<p>131&nbsp;//</p>
+<p>132&nbsp;// The TimedAttrData class</p>
+<p>133&nbsp;//</p>
+<p>134&nbsp;//</p>
+<p>135&nbsp;// description : This class inherits from the AttrData class and
+adds</p>
+<p>136&nbsp;// a date to all the data contains in the AttrData</p>
+<p>137&nbsp;// class</p>
+<p>138&nbsp;//</p>
+<p>139&nbsp;//=============================================================================</p>
+<p>140</p>
+<p>151&nbsp;template &lt;typename T&gt;</p>
+<p><a class="reference external" href="../../da/d12/classTango_1_1TimedAttrData.html">152</a>&nbsp;class
+<a class="reference external" href="../../da/d12/classTango_1_1TimedAttrData.html">TimedAttrData</a>:public
+<a class="reference external" href="../../d4/d7a/classTango_1_1AttrData.html">Tango::AttrData</a>&lt;T&gt;</p>
+<p>153&nbsp;{</p>
+<p>154&nbsp;public:</p>
+<p>155</p>
+<p>168
+<a class="reference external" href="../../da/d12/classTango_1_1TimedAttrData.html#a2d4169ef4a760ac37755aea53f9c5de8">TimedAttrData</a>(const
+T *p_data,time_t when);</p>
+<p>169</p>
+<p>180
+<a class="reference external" href="../../da/d12/classTango_1_1TimedAttrData.html#a2d4169ef4a760ac37755aea53f9c5de8">TimedAttrData</a>(const
+T *p_data,const T *p_wr_data,time_t when);</p>
+<p>181</p>
+<p>191
+<a class="reference external" href="../../da/d12/classTango_1_1TimedAttrData.html#a2d4169ef4a760ac37755aea53f9c5de8">TimedAttrData</a>(const
+T *p_data,Tango::AttrQuality
+<a class="reference external" href="../../d4/d7a/classTango_1_1AttrData.html#a51eecbb56d5db1c611ad459017cc03c2">qual</a>,time_t
+when);</p>
+<p>192</p>
+<p>203
+<a class="reference external" href="../../da/d12/classTango_1_1TimedAttrData.html#a2d4169ef4a760ac37755aea53f9c5de8">TimedAttrData</a>(const
+T *p_data,const T *p_wr_data,Tango::AttrQuality qual,time_t when);</p>
+<p>204</p>
+<p>213
+<a class="reference external" href="../../da/d12/classTango_1_1TimedAttrData.html#a2d4169ef4a760ac37755aea53f9c5de8">TimedAttrData</a>(const
+T *p_data,Tango::AttrQuality qual,bool rel,time_t when);</p>
+<p>223
+<a class="reference external" href="../../da/d12/classTango_1_1TimedAttrData.html#a2d4169ef4a760ac37755aea53f9c5de8">TimedAttrData</a>(const
+T *p_data,const T *p_wr_data,Tango::AttrQuality qual,bool
+rel,time_t when);</p>
+<p>224</p>
+<p>234
+<a class="reference external" href="../../da/d12/classTango_1_1TimedAttrData.html#a2d4169ef4a760ac37755aea53f9c5de8">TimedAttrData</a>(const
+T *p_data,struct timeval when);</p>
+<p>235</p>
+<p>246
+<a class="reference external" href="../../da/d12/classTango_1_1TimedAttrData.html#a2d4169ef4a760ac37755aea53f9c5de8">TimedAttrData</a>(const
+T *p_data,const T *p_wr_data,struct timeval when);</p>
+<p>247</p>
+<p>257
+<a class="reference external" href="../../da/d12/classTango_1_1TimedAttrData.html#a2d4169ef4a760ac37755aea53f9c5de8">TimedAttrData</a>(const
+T *p_data,Tango::AttrQuality qual,struct timeval when);</p>
+<p>258</p>
+<p>269
+<a class="reference external" href="../../da/d12/classTango_1_1TimedAttrData.html#a2d4169ef4a760ac37755aea53f9c5de8">TimedAttrData</a>(const
+T *p_data,const T *p_wr_data,Tango::AttrQuality qual,struct timeval
+when);</p>
+<p>270</p>
+<p>279
+<a class="reference external" href="../../da/d12/classTango_1_1TimedAttrData.html#a2d4169ef4a760ac37755aea53f9c5de8">TimedAttrData</a>(const
+T *p_data,Tango::AttrQuality qual,bool rel,struct timeval when);</p>
+<p>280</p>
+<p>290
+<a class="reference external" href="../../da/d12/classTango_1_1TimedAttrData.html#a2d4169ef4a760ac37755aea53f9c5de8">TimedAttrData</a>(const
+T *p_data,const T *p_wr_data,Tango::AttrQuality qual,bool
+rel,struct timeval when);</p>
+<p>292</p>
+<p>293</p>
+<p>294&nbsp;// For spectrum</p>
+<p>295</p>
+<p>296</p>
+<p>310
+<a class="reference external" href="../../da/d12/classTango_1_1TimedAttrData.html#a2d4169ef4a760ac37755aea53f9c5de8">TimedAttrData</a>(const
+T *p_data,long
+<a class="reference external" href="../../d4/d7a/classTango_1_1AttrData.html#a8e08e9668434a58b543989599dd82ecc">x</a>,time_t
+when);</p>
+<p>311</p>
+<p>324
+<a class="reference external" href="../../da/d12/classTango_1_1TimedAttrData.html#a2d4169ef4a760ac37755aea53f9c5de8">TimedAttrData</a>(const
+T *p_data,long x,const T *p_wr_data,long x_wr,time_t when);</p>
+<p>325</p>
+<p>336
+<a class="reference external" href="../../da/d12/classTango_1_1TimedAttrData.html#a2d4169ef4a760ac37755aea53f9c5de8">TimedAttrData</a>(const
+T *p_data,long x,Tango::AttrQuality qual,time_t when);</p>
+<p>337</p>
+<p>350
+<a class="reference external" href="../../da/d12/classTango_1_1TimedAttrData.html#a2d4169ef4a760ac37755aea53f9c5de8">TimedAttrData</a>(const
+T *p_data,long x,const T *p_wr_data,long x_wr,Tango::AttrQuality
+qual,time_t when);</p>
+<p>351</p>
+<p>361
+<a class="reference external" href="../../da/d12/classTango_1_1TimedAttrData.html#a2d4169ef4a760ac37755aea53f9c5de8">TimedAttrData</a>(const
+T *p_data,long x,Tango::AttrQuality qual,bool rel,time_t when);</p>
+<p>362</p>
+<p>374
+<a class="reference external" href="../../da/d12/classTango_1_1TimedAttrData.html#a2d4169ef4a760ac37755aea53f9c5de8">TimedAttrData</a>(const
+T *p_data,long x,const T *p_wr_data,long x_wr,Tango::AttrQuality
+qual,bool rel,time_t when);</p>
+<p>375</p>
+<p>386
+<a class="reference external" href="../../da/d12/classTango_1_1TimedAttrData.html#a2d4169ef4a760ac37755aea53f9c5de8">TimedAttrData</a>(const
+T *p_data,long x,struct timeval when);</p>
+<p>387</p>
+<p>400
+<a class="reference external" href="../../da/d12/classTango_1_1TimedAttrData.html#a2d4169ef4a760ac37755aea53f9c5de8">TimedAttrData</a>(const
+T *p_data,long x,const T *p_wr_data,long x_wr,struct timeval
+when);</p>
+<p>401</p>
+<p>412
+<a class="reference external" href="../../da/d12/classTango_1_1TimedAttrData.html#a2d4169ef4a760ac37755aea53f9c5de8">TimedAttrData</a>(const
+T *p_data,long x,Tango::AttrQuality qual,struct timeval when);</p>
+<p>413</p>
+<p>426
+<a class="reference external" href="../../da/d12/classTango_1_1TimedAttrData.html#a2d4169ef4a760ac37755aea53f9c5de8">TimedAttrData</a>(const
+T *p_data,long x,const T *p_wr_data,long x_wr,Tango::AttrQuality
+qual,struct timeval when);</p>
+<p>427</p>
+<p>437
+<a class="reference external" href="../../da/d12/classTango_1_1TimedAttrData.html#a2d4169ef4a760ac37755aea53f9c5de8">TimedAttrData</a>(const
+T *p_data,long x,Tango::AttrQuality qual,bool rel,struct timeval
+when);</p>
+<p>438</p>
+<p>450
+<a class="reference external" href="../../da/d12/classTango_1_1TimedAttrData.html#a2d4169ef4a760ac37755aea53f9c5de8">TimedAttrData</a>(const
+T *p_data,long x,const T *p_wr_data,long x_wr,Tango::AttrQuality
+qual,bool rel,struct timeval when);</p>
+<p>451</p>
+<p>453</p>
+<p>454</p>
+<p>455&nbsp;// For image</p>
+<p>456</p>
+<p>457</p>
+<p>472
+<a class="reference external" href="../../da/d12/classTango_1_1TimedAttrData.html#a2d4169ef4a760ac37755aea53f9c5de8">TimedAttrData</a>(const
+T *p_data,long x,long
+<a class="reference external" href="../../d4/d7a/classTango_1_1AttrData.html#a32c887ce84b2549b5c597134a8f989a4">y</a>,time_t
+when);</p>
+<p>473</p>
+<p>488
+<a class="reference external" href="../../da/d12/classTango_1_1TimedAttrData.html#a2d4169ef4a760ac37755aea53f9c5de8">TimedAttrData</a>(const
+T *p_data,long x,long y,const T *p_wr_data,long x_wr,long
+y_wr,time_t when);</p>
+<p>489</p>
+<p>501
+<a class="reference external" href="../../da/d12/classTango_1_1TimedAttrData.html#a2d4169ef4a760ac37755aea53f9c5de8">TimedAttrData</a>(const
+T *p_data,long x,long y,Tango::AttrQuality qual,time_t when);</p>
+<p>502</p>
+<p>517
+<a class="reference external" href="../../da/d12/classTango_1_1TimedAttrData.html#a2d4169ef4a760ac37755aea53f9c5de8">TimedAttrData</a>(const
+T *p_data,long x,long y,const T *p_wr_data,long x_wr,long
+y_wr,Tango::AttrQuality qual,time_t when);</p>
+<p>518</p>
+<p>529
+<a class="reference external" href="../../da/d12/classTango_1_1TimedAttrData.html#a2d4169ef4a760ac37755aea53f9c5de8">TimedAttrData</a>(const
+T *p_data,long x,long y,Tango::AttrQuality qual,bool rel,time_t
+when);</p>
+<p>530</p>
+<p>544
+<a class="reference external" href="../../da/d12/classTango_1_1TimedAttrData.html#a2d4169ef4a760ac37755aea53f9c5de8">TimedAttrData</a>(const
+T *p_data,long x,long y,const T *p_wr_data,long x_wr,long
+y_wr,Tango::AttrQuality qual,bool rel,time_t when);</p>
+<p>545</p>
+<p>557
+<a class="reference external" href="../../da/d12/classTango_1_1TimedAttrData.html#a2d4169ef4a760ac37755aea53f9c5de8">TimedAttrData</a>(const
+T *p_data,long x,long y,struct timeval when);</p>
+<p>558</p>
+<p>573
+<a class="reference external" href="../../da/d12/classTango_1_1TimedAttrData.html#a2d4169ef4a760ac37755aea53f9c5de8">TimedAttrData</a>(const
+T *p_data,long x,long y,const T *p_wr_data,long x_wr,long
+y_wr,struct timeval when);</p>
+<p>574</p>
+<p>586
+<a class="reference external" href="../../da/d12/classTango_1_1TimedAttrData.html#a2d4169ef4a760ac37755aea53f9c5de8">TimedAttrData</a>(const
+T *p_data,long x,long y,Tango::AttrQuality qual,struct timeval when);</p>
+<p>587</p>
+<p>602
+<a class="reference external" href="../../da/d12/classTango_1_1TimedAttrData.html#a2d4169ef4a760ac37755aea53f9c5de8">TimedAttrData</a>(const
+T *p_data,long x,long y,const T *p_wr_data,long x_wr,long
+y_wr,Tango::AttrQuality qual,struct timeval when);</p>
+<p>603</p>
+<p>614
+<a class="reference external" href="../../da/d12/classTango_1_1TimedAttrData.html#a2d4169ef4a760ac37755aea53f9c5de8">TimedAttrData</a>(const
+T *p_data,long x,long y,Tango::AttrQuality qual,bool rel,struct
+timeval when);</p>
+<p>615</p>
+<p>629
+<a class="reference external" href="../../da/d12/classTango_1_1TimedAttrData.html#a2d4169ef4a760ac37755aea53f9c5de8">TimedAttrData</a>(const
+T *p_data,long x,long y,const T *p_wr_data,long x_wr,long
+y_wr,Tango::AttrQuality qual,bool rel,struct timeval when);</p>
+<p>631</p>
+<p>632</p>
+<p>633</p>
+<p>634&nbsp;// For error</p>
+<p>635</p>
+<p>636</p>
+<p>649
+<a class="reference external" href="../../da/d12/classTango_1_1TimedAttrData.html#a2d4169ef4a760ac37755aea53f9c5de8">TimedAttrData</a>(DevErrorList
+&amp;errs,time_t when);</p>
+<p>650</p>
+<p>660
+<a class="reference external" href="../../da/d12/classTango_1_1TimedAttrData.html#a2d4169ef4a760ac37755aea53f9c5de8">TimedAttrData</a>(DevErrorList
+&amp;errs,timeval when);</p>
+<p>662</p>
+<p>664&nbsp; struct timeval t_val;</p>
+<p>665</p>
+<p>666&nbsp;#ifdef _TG_WINDOWS_</p>
+<p>667</p>
+<p>668
+<a class="reference external" href="../../da/d12/classTango_1_1TimedAttrData.html#a2d4169ef4a760ac37755aea53f9c5de8">TimedAttrData</a>(const
+T *p,struct _timeb t);</p>
+<p>669
+<a class="reference external" href="../../da/d12/classTango_1_1TimedAttrData.html#a2d4169ef4a760ac37755aea53f9c5de8">TimedAttrData</a>(const
+T *p,Tango::AttrQuality q,struct _timeb t);</p>
+<p>670
+<a class="reference external" href="../../da/d12/classTango_1_1TimedAttrData.html#a2d4169ef4a760ac37755aea53f9c5de8">TimedAttrData</a>(const
+T *p,Tango::AttrQuality q,bool rel,struct _timeb t);</p>
+<p>671</p>
+<p>672
+<a class="reference external" href="../../da/d12/classTango_1_1TimedAttrData.html#a2d4169ef4a760ac37755aea53f9c5de8">TimedAttrData</a>(const
+T *p,const T *p_wr_data,struct _timeb t);</p>
+<p>673
+<a class="reference external" href="../../da/d12/classTango_1_1TimedAttrData.html#a2d4169ef4a760ac37755aea53f9c5de8">TimedAttrData</a>(const
+T *p,const T *p_wr_data,Tango::AttrQuality q,struct _timeb t);</p>
+<p>674
+<a class="reference external" href="../../da/d12/classTango_1_1TimedAttrData.html#a2d4169ef4a760ac37755aea53f9c5de8">TimedAttrData</a>(const
+T *p,const T *p_wr_data,Tango::AttrQuality q,bool rel,struct _timeb
+t);</p>
+<p>675</p>
+<p>676
+<a class="reference external" href="../../da/d12/classTango_1_1TimedAttrData.html#a2d4169ef4a760ac37755aea53f9c5de8">TimedAttrData</a>(const
+T *p,long nb,struct _timeb t);</p>
+<p>677
+<a class="reference external" href="../../da/d12/classTango_1_1TimedAttrData.html#a2d4169ef4a760ac37755aea53f9c5de8">TimedAttrData</a>(const
+T *p,long nb,Tango::AttrQuality q,struct _timeb t);</p>
+<p>678
+<a class="reference external" href="../../da/d12/classTango_1_1TimedAttrData.html#a2d4169ef4a760ac37755aea53f9c5de8">TimedAttrData</a>(const
+T *p,long nb,Tango::AttrQuality q,bool rel,struct _timeb t);</p>
+<p>679</p>
+<p>680
+<a class="reference external" href="../../da/d12/classTango_1_1TimedAttrData.html#a2d4169ef4a760ac37755aea53f9c5de8">TimedAttrData</a>(const
+T *p,long nb,const T *p_wr_data,long nb_wr,struct _timeb t);</p>
+<p>681
+<a class="reference external" href="../../da/d12/classTango_1_1TimedAttrData.html#a2d4169ef4a760ac37755aea53f9c5de8">TimedAttrData</a>(const
+T *p,long nb,const T *p_wr_data,long nb_wr,Tango::AttrQuality
+q,struct _timeb t);</p>
+<p>682
+<a class="reference external" href="../../da/d12/classTango_1_1TimedAttrData.html#a2d4169ef4a760ac37755aea53f9c5de8">TimedAttrData</a>(const
+T *p,long nb,const T *p_wr_data,long nb_wr,Tango::AttrQuality
+q,bool rel,struct _timeb t);</p>
+<p>683</p>
+<p>684
+<a class="reference external" href="../../da/d12/classTango_1_1TimedAttrData.html#a2d4169ef4a760ac37755aea53f9c5de8">TimedAttrData</a>(const
+T *p,long nb,long nb2,struct _timeb t);</p>
+<p>685
+<a class="reference external" href="../../da/d12/classTango_1_1TimedAttrData.html#a2d4169ef4a760ac37755aea53f9c5de8">TimedAttrData</a>(const
+T *p,long nb,long nb2,Tango::AttrQuality q,struct _timeb t);</p>
+<p>686
+<a class="reference external" href="../../da/d12/classTango_1_1TimedAttrData.html#a2d4169ef4a760ac37755aea53f9c5de8">TimedAttrData</a>(const
+T *p,long nb,long nb2,Tango::AttrQuality q,bool rel,struct _timeb t);</p>
+<p>687</p>
+<p>688
+<a class="reference external" href="../../da/d12/classTango_1_1TimedAttrData.html#a2d4169ef4a760ac37755aea53f9c5de8">TimedAttrData</a>(const
+T *p,long nb,long nb2,const T *p_wr_data,long nb_wr,long
+nb2_wr,struct _timeb t);</p>
+<p>689
+<a class="reference external" href="../../da/d12/classTango_1_1TimedAttrData.html#a2d4169ef4a760ac37755aea53f9c5de8">TimedAttrData</a>(const
+T *p,long nb,long nb2,const T *p_wr_data,long nb_wr,long
+nb2_wr,Tango::AttrQuality q,struct _timeb t);</p>
+<p>690
+<a class="reference external" href="../../da/d12/classTango_1_1TimedAttrData.html#a2d4169ef4a760ac37755aea53f9c5de8">TimedAttrData</a>(const
+T *p,long nb,long nb2,const T *p_wr_data,long nb_wr,long
+nb2_wr,Tango::AttrQuality q,bool rel,struct _timeb t);</p>
+<p>691</p>
+<p>692&nbsp;#endif</p>
+<p>693</p>
+<p>694&nbsp;};</p>
+<p>695</p>
+<p>696</p>
+<p>697&nbsp;//=============================================================================</p>
+<p>698&nbsp;//</p>
+<p>699&nbsp;// The AttrHistoryStack class</p>
+<p>700&nbsp;//</p>
+<p>701&nbsp;//</p>
+<p>702&nbsp;// description : This class is simply a wrapper above a vector of</p>
+<p>703&nbsp;// TimedAttrData class. It is used to pass an attribute</p>
+<p>704&nbsp;// value history which will be stored in the polling</p>
+<p>705&nbsp;// buffer</p>
+<p>706&nbsp;//</p>
+<p>707&nbsp;//=============================================================================</p>
+<p>708</p>
+<p>721&nbsp;template &lt;typename T&gt;</p>
+<p><a class="reference external" href="../../d0/dcb/classTango_1_1AttrHistoryStack.html">722</a>&nbsp;class
+<a class="reference external" href="../../d0/dcb/classTango_1_1AttrHistoryStack.html">AttrHistoryStack</a></p>
+<p>723&nbsp;{</p>
+<p>724&nbsp;public:</p>
+<p>725</p>
+<p>733&nbsp; void
+<a class="reference external" href="../../d0/dcb/classTango_1_1AttrHistoryStack.html#a6356c9fc9d4dd06b941b8e4a36de1f90">push</a>(<a class="reference external" href="../../da/d12/classTango_1_1TimedAttrData.html">TimedAttrData&lt;T&gt;</a>
+const &amp;elt);</p>
+<p>734</p>
+<p><a class="reference external" href="../../d0/dcb/classTango_1_1AttrHistoryStack.html#a078798e0c374f134f0cfb315a515f028">740</a>
+size_t
+<a class="reference external" href="../../d0/dcb/classTango_1_1AttrHistoryStack.html#a078798e0c374f134f0cfb315a515f028">length</a>()
+{return hist.size();}</p>
+<p>741</p>
+<p><a class="reference external" href="../../d0/dcb/classTango_1_1AttrHistoryStack.html#afcf19d9e75e02341bb8533cc7c61df5e">747</a>
+void
+<a class="reference external" href="../../d0/dcb/classTango_1_1AttrHistoryStack.html#afcf19d9e75e02341bb8533cc7c61df5e">length</a>(long
+nb) {hist.reserve(nb);}</p>
+<p>748</p>
+<p><a class="reference external" href="../../d0/dcb/classTango_1_1AttrHistoryStack.html#aac60d22a112badcb3c27fb0b6c22eecd">752</a>
+void
+<a class="reference external" href="../../d0/dcb/classTango_1_1AttrHistoryStack.html#aac60d22a112badcb3c27fb0b6c22eecd">clear</a>()
+{hist.clear();}</p>
+<p>753</p>
+<p>759&nbsp; vector&lt;TimedAttrData&lt;T&gt; &gt;
+&amp;<a class="reference external" href="../../d0/dcb/classTango_1_1AttrHistoryStack.html#a73318d3db023c337bdbeae5fc743b3fd">get_data</a>();</p>
+<p>760</p>
+<p>762
+<a class="reference external" href="../../d0/dcb/classTango_1_1AttrHistoryStack.html">AttrHistoryStack</a>()
+{};</p>
+<p>763</p>
+<p>764&nbsp; vector&lt;Tango::TimedAttrData&lt;T&gt; &gt; hist;</p>
+<p>765&nbsp;};</p>
+<p>766</p>
+<p>767</p>
+<p>768&nbsp;//=============================================================================</p>
+<p>769&nbsp;//</p>
+<p>770&nbsp;// Command related class</p>
+<p>771&nbsp;//</p>
+<p>772&nbsp;// description : These classes are used when the user want to fill</p>
+<p>773&nbsp;// command polling buffer</p>
+<p>774&nbsp;//</p>
+<p>775&nbsp;//=============================================================================</p>
+<p>776</p>
+<p>777</p>
+<p>778&nbsp;//=============================================================================</p>
+<p>779&nbsp;//</p>
+<p>780&nbsp;// The TimedCmdData class</p>
+<p>781&nbsp;//</p>
+<p>782&nbsp;//</p>
+<p>783&nbsp;// description : This class is used to store all the data needed to
+build</p>
+<p>784&nbsp;// a command value plus a date.</p>
+<p>785&nbsp;//</p>
+<p>786&nbsp;//=============================================================================</p>
+<p>787</p>
+<p>798&nbsp;template &lt;typename T&gt;</p>
+<p><a class="reference external" href="../../df/db1/classTango_1_1TimedCmdData.html">799</a>&nbsp;class
+<a class="reference external" href="../../df/db1/classTango_1_1TimedCmdData.html">TimedCmdData</a></p>
+<p>800&nbsp;{</p>
+<p>801&nbsp;public:</p>
+<p>802</p>
+<p>815
+<a class="reference external" href="../../df/db1/classTango_1_1TimedCmdData.html#a52aa3bee7afb6e0947d805e498ee08ae">TimedCmdData</a>(T
+*p_data,time_t when);</p>
+<p>816</p>
+<p>825
+<a class="reference external" href="../../df/db1/classTango_1_1TimedCmdData.html#a52aa3bee7afb6e0947d805e498ee08ae">TimedCmdData</a>(T
+*p_data,bool rel,time_t when);</p>
+<p>826</p>
+<p>835
+<a class="reference external" href="../../df/db1/classTango_1_1TimedCmdData.html#a52aa3bee7afb6e0947d805e498ee08ae">TimedCmdData</a>(T
+*p_data,struct timeval when);</p>
+<p>836</p>
+<p>844
+<a class="reference external" href="../../df/db1/classTango_1_1TimedCmdData.html#a52aa3bee7afb6e0947d805e498ee08ae">TimedCmdData</a>(T
+*p_data,bool rel,struct timeval when);</p>
+<p>845</p>
+<p>846</p>
+<p><a class="reference external" href="../../df/db1/classTango_1_1TimedCmdData.html#a8cc1733169352938edf8432bc4551222">856</a>
+<a class="reference external" href="../../df/db1/classTango_1_1TimedCmdData.html#a8cc1733169352938edf8432bc4551222">TimedCmdData</a>(DevErrorList
+errs,time_t when): ptr(NULL),err(errs),release(false) {t_val.tv_sec =
+when;t_val.tv_usec = 0;}</p>
+<p><a class="reference external" href="../../df/db1/classTango_1_1TimedCmdData.html#a18999aecdf64d96fa704b7549c534dfe">866</a>
+<a class="reference external" href="../../df/db1/classTango_1_1TimedCmdData.html#a18999aecdf64d96fa704b7549c534dfe">TimedCmdData</a>(DevErrorList
+errs,timeval when): ptr(NULL),err(errs),t_val(when),release(false) {}</p>
+<p>868</p>
+<p>870</p>
+<p>871&nbsp; T *ptr;</p>
+<p>872&nbsp; DevErrorList err;</p>
+<p>873&nbsp; struct timeval t_val;</p>
+<p>874&nbsp; bool release;</p>
+<p>875</p>
+<p>876&nbsp;#ifdef _TG_WINDOWS_</p>
+<p>877
+<a class="reference external" href="../../df/db1/classTango_1_1TimedCmdData.html#a52aa3bee7afb6e0947d805e498ee08ae">TimedCmdData</a>(T
+*p,struct _timeb t);</p>
+<p>878
+<a class="reference external" href="../../df/db1/classTango_1_1TimedCmdData.html#a52aa3bee7afb6e0947d805e498ee08ae">TimedCmdData</a>(T
+*p,bool rel,struct _timeb t);</p>
+<p>879&nbsp;#endif</p>
+<p>880&nbsp;};</p>
+<p>881</p>
+<p>882</p>
+<p>883&nbsp;//=============================================================================</p>
+<p>884&nbsp;//</p>
+<p>885&nbsp;// The CmdHistoryStack class</p>
+<p>886&nbsp;//</p>
+<p>887&nbsp;//</p>
+<p>888&nbsp;// description : This class is simply a wrapper above a vector of</p>
+<p>889&nbsp;// TimedCmdData class. It is used to pass a command</p>
+<p>890&nbsp;// value history which will be stored in the polling</p>
+<p>891&nbsp;// buffer</p>
+<p>892&nbsp;//</p>
+<p>893&nbsp;//=============================================================================</p>
+<p>894</p>
+<p>895</p>
+<p>908&nbsp;template &lt;typename T&gt;</p>
+<p><a class="reference external" href="../../dc/d8f/classTango_1_1CmdHistoryStack.html">909</a>&nbsp;class
+<a class="reference external" href="../../dc/d8f/classTango_1_1CmdHistoryStack.html">CmdHistoryStack</a></p>
+<p>910&nbsp;{</p>
+<p>911&nbsp;public:</p>
+<p>912</p>
+<p>920&nbsp; void
+<a class="reference external" href="../../dc/d8f/classTango_1_1CmdHistoryStack.html#a355ba8abdd8a382b3c0aa09def8a57ca">push</a>(<a class="reference external" href="../../df/db1/classTango_1_1TimedCmdData.html">Tango::TimedCmdData&lt;T&gt;</a>
+const &amp;elt);</p>
+<p>921</p>
+<p><a class="reference external" href="../../dc/d8f/classTango_1_1CmdHistoryStack.html#a21c635342bfae43ae1db2e4e721b4b4f">927</a>
+size_t
+<a class="reference external" href="../../dc/d8f/classTango_1_1CmdHistoryStack.html#a21c635342bfae43ae1db2e4e721b4b4f">length</a>()
+{return hist.size();}</p>
+<p>928</p>
+<p><a class="reference external" href="../../dc/d8f/classTango_1_1CmdHistoryStack.html#ab9d2cfc6b3d8fca2a11ad3e7d2a47495">934</a>
+void
+<a class="reference external" href="../../dc/d8f/classTango_1_1CmdHistoryStack.html#ab9d2cfc6b3d8fca2a11ad3e7d2a47495">length</a>(long
+nb) {hist.reserve(nb);}</p>
+<p>935</p>
+<p><a class="reference external" href="../../dc/d8f/classTango_1_1CmdHistoryStack.html#ae4ac3a6bb53c0661656a3a885a56347c">939</a>
+void
+<a class="reference external" href="../../dc/d8f/classTango_1_1CmdHistoryStack.html#ae4ac3a6bb53c0661656a3a885a56347c">clear</a>()
+{hist.clear();}</p>
+<p>940</p>
+<p>946&nbsp; vector&lt;TimedCmdData&lt;T&gt; &gt;
+&amp;<a class="reference external" href="../../dc/d8f/classTango_1_1CmdHistoryStack.html#a60e2fac55007f4697ca68bc35a2a7fdc">get_data</a>();</p>
+<p>947</p>
+<p>949</p>
+<p>950
+<a class="reference external" href="../../dc/d8f/classTango_1_1CmdHistoryStack.html">CmdHistoryStack</a>()
+{};</p>
+<p>951</p>
+<p>952&nbsp; vector&lt;Tango::TimedCmdData&lt;T&gt; &gt; hist;</p>
+<p>953&nbsp;};</p>
+<p>954</p>
+<p>955</p>
+<p>956&nbsp;} // End of Tango namespace</p>
+<p>957</p>
+<p>958&nbsp;#endif /* _POLLOBJ_ */</p>
+<p><a class="reference external" href="../../d4/d7a/classTango_1_1AttrData.html#ac4720964bc4cfe1441dbc0e25c368d5a">Tango::AttrData::wr_y</a></p>
+<p>long wr_y</p>
+<p><strong>Definition:</strong> pollext.h:96</p>
+<p><a class="reference external" href="../../d4/d7a/classTango_1_1AttrData.html#aceb0e1fb88c6dd0be29bd7f8a4064611">Tango::AttrData::err</a></p>
+<p>DevErrorList err</p>
+<p><strong>Definition:</strong> pollext.h:93</p>
+<p><a class="reference external" href="../../d4/d7a/classTango_1_1AttrData.html#a2226b793c3a7c4791a9839e5bfa2473f">Tango::AttrData::ptr</a></p>
+<p>const T * ptr</p>
+<p><strong>Definition:</strong> pollext.h:88</p>
+<p><a class="reference external" href="../../dc/d8f/classTango_1_1CmdHistoryStack.html#ae4ac3a6bb53c0661656a3a885a56347c">Tango::CmdHistoryStack::clear</a></p>
+<p>void clear()</p>
+<p>Clear the stack.</p>
+<p><strong>Definition:</strong> pollext.h:939</p>
+<p><a class="reference external" href="../../dc/d8f/classTango_1_1CmdHistoryStack.html#a21c635342bfae43ae1db2e4e721b4b4f">Tango::CmdHistoryStack::length</a></p>
+<p>size_t length()</p>
+<p>Get stack depth.</p>
+<p><strong>Definition:</strong> pollext.h:927</p>
+<p><a class="reference external" href="../../da/d12/classTango_1_1TimedAttrData.html#a2d4169ef4a760ac37755aea53f9c5de8">Tango::TimedAttrData::TimedAttrData</a></p>
+<p>TimedAttrData(const T *p_data, time_t when)</p>
+<p>Create a new TimedAttrData object.</p>
+<p><a class="reference external" href="../../df/db1/classTango_1_1TimedCmdData.html">Tango::TimedCmdData</a></p>
+<p>This class is used to store one element of a command history stack.</p>
+<p><strong>Definition:</strong> pollext.h:799</p>
+<p><a class="reference external" href="../../dc/d8f/classTango_1_1CmdHistoryStack.html#a60e2fac55007f4697ca68bc35a2a7fdc">Tango::CmdHistoryStack::get_data</a></p>
+<p>vector&lt; TimedCmdData&lt; T &gt; &gt; &amp; get_data()</p>
+<p>Get stack data.</p>
+<p><a class="reference external" href="../../d0/dcb/classTango_1_1AttrHistoryStack.html">Tango::AttrHistoryStack</a></p>
+<p>This class is a used to pass an attribute value history when the user
+directly fills the attribute po...</p>
+<p><strong>Definition:</strong> pollext.h:722</p>
+<p><a class="reference external" href="../../d4/d7a/classTango_1_1AttrData.html#a32c887ce84b2549b5c597134a8f989a4">Tango::AttrData::y</a></p>
+<p>long y</p>
+<p><strong>Definition:</strong> pollext.h:91</p>
+<p><a class="reference external" href="../../df/db1/classTango_1_1TimedCmdData.html#a8cc1733169352938edf8432bc4551222">Tango::TimedCmdData::TimedCmdData</a></p>
+<p>TimedCmdData(DevErrorList errs, time_t when)</p>
+<p>Create a new TimedCmdData object for errors.</p>
+<p><strong>Definition:</strong> pollext.h:856</p>
+<p><a class="reference external" href="../../de/ddf/namespaceTango.html">Tango</a></p>
+<hr class="docutils" />
+<p><strong>Definition:</strong> device.h:50</p>
+<p><a class="reference external" href="../../df/db1/classTango_1_1TimedCmdData.html#a18999aecdf64d96fa704b7549c534dfe">Tango::TimedCmdData::TimedCmdData</a></p>
+<p>TimedCmdData(DevErrorList errs, timeval when)</p>
+<p>Create a new TimedCmdData object for errors.</p>
+<p><strong>Definition:</strong> pollext.h:866</p>
+<p><a class="reference external" href="../../df/db1/classTango_1_1TimedCmdData.html#a52aa3bee7afb6e0947d805e498ee08ae">Tango::TimedCmdData::TimedCmdData</a></p>
+<p>TimedCmdData(T *p_data, time_t when)</p>
+<p>Create a new TimedCmdData object.</p>
+<p><a class="reference external" href="../../d4/d7a/classTango_1_1AttrData.html#a97d6362673f427ed067853bb30545dc9">Tango::AttrData::AttrData</a></p>
+<p>AttrData(const T *)</p>
+<p><a class="reference external" href="../../dc/d8f/classTango_1_1CmdHistoryStack.html#a355ba8abdd8a382b3c0aa09def8a57ca">Tango::CmdHistoryStack::push</a></p>
+<p>void push(Tango::TimedCmdData&lt; T &gt; const &amp;elt)</p>
+<p>Store a new element in the stack.</p>
+<p><a class="reference external" href="../../d0/dcb/classTango_1_1AttrHistoryStack.html#a6356c9fc9d4dd06b941b8e4a36de1f90">Tango::AttrHistoryStack::push</a></p>
+<p>void push(TimedAttrData&lt; T &gt; const &amp;elt)</p>
+<p>Store a new element in the stack.</p>
+<p><a class="reference external" href="../../d0/dcb/classTango_1_1AttrHistoryStack.html#a73318d3db023c337bdbeae5fc743b3fd">Tango::AttrHistoryStack::get_data</a></p>
+<p>vector&lt; TimedAttrData&lt; T &gt; &gt; &amp; get_data()</p>
+<p>Get stack data.</p>
+<p><a class="reference external" href="../../d0/dcb/classTango_1_1AttrHistoryStack.html#aac60d22a112badcb3c27fb0b6c22eecd">Tango::AttrHistoryStack::clear</a></p>
+<p>void clear()</p>
+<p>Clear the stack.</p>
+<p><strong>Definition:</strong> pollext.h:752</p>
+<p><a class="reference external" href="../../d4/d7a/classTango_1_1AttrData.html#a51eecbb56d5db1c611ad459017cc03c2">Tango::AttrData::qual</a></p>
+<p>Tango::AttrQuality qual</p>
+<p><strong>Definition:</strong> pollext.h:89</p>
+<p><a class="reference external" href="../../d4/d7a/classTango_1_1AttrData.html#abc8bb23d7b5e8b2c4c1bd1c67b16ef04">Tango::AttrData::release</a></p>
+<p>bool release</p>
+<p><strong>Definition:</strong> pollext.h:92</p>
+<p><a class="reference external" href="../../d4/d7a/classTango_1_1AttrData.html#a8e08e9668434a58b543989599dd82ecc">Tango::AttrData::x</a></p>
+<p>long x</p>
+<p><strong>Definition:</strong> pollext.h:90</p>
+<p><a class="reference external" href="../../d4/d7a/classTango_1_1AttrData.html#a91406bc4fd607acb4f3217980c3b5dd5">Tango::AttrData::AttrData</a></p>
+<p>AttrData(DevErrorList &amp;e)</p>
+<p><strong>Definition:</strong> pollext.h:126</p>
+<p><a class="reference external" href="../../dc/d8f/classTango_1_1CmdHistoryStack.html#ab9d2cfc6b3d8fca2a11ad3e7d2a47495">Tango::CmdHistoryStack::length</a></p>
+<p>void length(long nb)</p>
+<p>Reserve memory for stack elements.</p>
+<p><strong>Definition:</strong> pollext.h:934</p>
+<p><a class="reference external" href="../../d0/dcb/classTango_1_1AttrHistoryStack.html#a078798e0c374f134f0cfb315a515f028">Tango::AttrHistoryStack::length</a></p>
+<p>size_t length()</p>
+<p>Get stack depth.</p>
+<p><strong>Definition:</strong> pollext.h:740</p>
+<p><a class="reference external" href="../../dc/d8f/classTango_1_1CmdHistoryStack.html">Tango::CmdHistoryStack</a></p>
+<p>This class is a used to pass a command result history when the user
+directly fills the command pollin...</p>
+<p><strong>Definition:</strong> pollext.h:909</p>
+<p><a class="reference external" href="../../d4/d7a/classTango_1_1AttrData.html">Tango::AttrData</a></p>
+<p><strong>Definition:</strong> pollext.h:85</p>
+<p><a class="reference external" href="../../d4/d7a/classTango_1_1AttrData.html#afaaa975dbd7e67efedfc0932d163d9ce">Tango::AttrData::wr_x</a></p>
+<p>long wr_x</p>
+<p><strong>Definition:</strong> pollext.h:95</p>
+<p><a class="reference external" href="../../da/d12/classTango_1_1TimedAttrData.html">Tango::TimedAttrData</a></p>
+<p>This class is used to store one element of an attribute history stack.</p>
+<p><strong>Definition:</strong> pollext.h:152</p>
+<p><a class="reference external" href="../../d0/dcb/classTango_1_1AttrHistoryStack.html#afcf19d9e75e02341bb8533cc7c61df5e">Tango::AttrHistoryStack::length</a></p>
+<p>void length(long nb)</p>
+<p>Reserve memory for stack elements.</p>
+<p><strong>Definition:</strong> pollext.h:747</p>
+<p><a class="reference external" href="../../d4/d7a/classTango_1_1AttrData.html#a0677f54f22a900522ffe72bd38cd530a">Tango::AttrData::wr_ptr</a></p>
+<p>const T * wr_ptr</p>
+<p><strong>Definition:</strong> pollext.h:97</p>
+<ul class="simple">
+<li><a class="reference external" href="../../dir_93bc669b4520ad36068f344e109b7d17.html">include</a></li>
+<li><a class="reference external" href="../../dir_8ff48e8f3ef80891a9957ae5e9583431.html">tango</a></li>
+<li><a class="reference external" href="../../dir_53b28a22454594c5818f3f3f5a9fd698.html">server</a></li>
+<li><a class="reference external" href="../../db/d17/pollext_8h.html">pollext.h</a></li>
+<li>Generated on Fri Oct 7 2016 11:11:15 for Tango Core Classes Reference
+by <a class="reference external" href="http://www.doxygen.org/index.html"><img alt="doxygen" src="../../_images/doxygen289.png" /></a> 1.8.8</li>
+</ul>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/db/d17/pollext_8h_source.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, 3Controls.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.8</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+      |
+      <a href="../../_sources/db/d17/pollext_8h_source.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
