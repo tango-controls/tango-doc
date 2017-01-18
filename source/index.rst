@@ -3,26 +3,27 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-.. image:: img/logo_tangocontrols.png
-    :align: center
 
 Welcome to Tango Controls documentation!
 ========================================
 
-Contents:
+How this documentation is organized
+-----------------------------------
 
-.. toctree::
-   :maxdepth: 1
+The documentation is organized in the following categories (some of them overlaps):
 
-   manual/index
-   ds-guide/index
-   java-server-guide/index
-   cpp-api/index
-   tango-on-windows
-   pytango-and-taurus-on-windows
-   glossary
+* :doc:`First steps </first-steps>` which will lead you through beginning with Tango Controls. This category includes
+  overview of Tango Controls concepts, procedures for installation and starting the system
+  as well as *Getting stated* tutorials.
+* :doc:`Reference </reference>` which provides you with all details of Tango Controls **Core** or **Kernel**.
+* :doc:`Tools and libraries </tools>`. Tango comes with lot of GUI, commandline and programing tools for its management,
+  GUI creations or connecting with other systems and applications.
 
+.. include:: first-steps.rst
 
+.. include:: reference.rst
+
+.. include:: tools.rst
 
 
 Indices and tables
