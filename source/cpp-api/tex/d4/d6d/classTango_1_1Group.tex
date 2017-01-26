@@ -1,0 +1,1172 @@
+\section{Tango\-:\-:Group Class Reference}
+\label{classTango_1_1Group}\index{Tango\-::\-Group@{Tango\-::\-Group}}
+
+
+High level class allowing the user to handle \doxyref{Tango}{p.}{de/ddf/namespaceTango} group.  
+
+
+
+
+Inheritance diagram for Tango\-:\-:Group\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=154pt]{d6/db2/classTango_1_1Group__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Tango\-:\-:Group\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=154pt]{d7/d74/classTango_1_1Group__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{Indent}{\bf Constructor and destructor}\par
+\begin{DoxyCompactItemize}
+\item 
+{\bf Group} (const std\-::string \&name)
+\begin{DoxyCompactList}\small\item\em Create a \doxyref{Group}{p.}{d4/d6d/classTango_1_1Group} instance. \end{DoxyCompactList}\item 
+virtual {\bf $\sim$\-Group} ()
+\begin{DoxyCompactList}\small\item\em Create a \doxyref{Group}{p.}{d4/d6d/classTango_1_1Group} instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Group management related methods}\par
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bf add} ({\bf Group} $\ast$group, int tmo\-\_\-ms=-\/1)
+\begin{DoxyCompactList}\small\item\em Attaches a (sub) group. \end{DoxyCompactList}\item 
+virtual void {\bf add} (const std\-::string \&pattern, int tmo\-\_\-ms=-\/1)
+\begin{DoxyCompactList}\small\item\em Attaches any device which name matches the specified pattern. \end{DoxyCompactList}\item 
+virtual void {\bf add} (const std\-::vector$<$ std\-::string $>$ \&patterns, int tmo\-\_\-ms=-\/1)
+\begin{DoxyCompactList}\small\item\em Attaches any device which name matches one of the specified pattern. \end{DoxyCompactList}\item 
+virtual void {\bf remove} (const std\-::string \&pattern, bool fwd=true)
+\begin{DoxyCompactList}\small\item\em Removes any group or device which name matches the specified pattern. \end{DoxyCompactList}\item 
+virtual void {\bf remove} (const std\-::vector$<$ std\-::string $>$ \&patterns, bool fwd=true)
+\begin{DoxyCompactList}\small\item\em Removes any group or device which name matches any of the specified patterns. \end{DoxyCompactList}\item 
+virtual void {\bf remove\-\_\-all} ()
+\begin{DoxyCompactList}\small\item\em Removes all elements in the group. \end{DoxyCompactList}\item 
+virtual bool {\bf contains} (const std\-::string \&pattern, bool fwd=true)
+\begin{DoxyCompactList}\small\item\em Check if the hierarchy contains groups and/or devices which name matches the specified pattern. \end{DoxyCompactList}\item 
+virtual Device\-Proxy $\ast$ {\bf get\-\_\-device} (const std\-::string \&device\-\_\-name)
+\begin{DoxyCompactList}\small\item\em Returns a reference to the specified device. \end{DoxyCompactList}\item 
+virtual Device\-Proxy $\ast$ {\bf get\-\_\-device} (long idx)
+\begin{DoxyCompactList}\small\item\em Returns a reference to the \char`\"{}idx-\/th\char`\"{} device in the hierarchy. \end{DoxyCompactList}\item 
+virtual Device\-Proxy $\ast$ {\bf operator[$\,$]} (long idx)
+\begin{DoxyCompactList}\small\item\em Returns a reference to the \char`\"{}idx-\/th\char`\"{} device in the hierarchy. \end{DoxyCompactList}\item 
+virtual {\bf Group} $\ast$ {\bf get\-\_\-group} (const std\-::string \&group\-\_\-name)
+\begin{DoxyCompactList}\small\item\em Returns a reference to the specified group. \end{DoxyCompactList}\item 
+long {\bf get\-\_\-size} (bool fwd=true)
+\begin{DoxyCompactList}\small\item\em Return the number of devices in the hierarchy. \end{DoxyCompactList}\item 
+std\-::vector$<$ std\-::string $>$ {\bf get\-\_\-device\-\_\-list} (bool fwd=true)
+\begin{DoxyCompactList}\small\item\em Returns the list of devices currently in the hierarchy. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{a la Deviceproxy interface}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool {\bf ping} (bool fwd=true)
+\begin{DoxyCompactList}\small\item\em Ping all devices in a group. \end{DoxyCompactList}\item 
+virtual void {\bf set\-\_\-timeout\-\_\-millis} (int tmo\-\_\-ms)
+\begin{DoxyCompactList}\small\item\em Set client side timeout for all devices in the group. \end{DoxyCompactList}\item 
+{\bf Group\-Cmd\-Reply\-List} {\bf command\-\_\-inout} (const std\-::string \&c, bool fwd=true)
+\begin{DoxyCompactList}\small\item\em Executes a \doxyref{Tango}{p.}{de/ddf/namespaceTango} command on a group. \end{DoxyCompactList}\item 
+{\bf Group\-Cmd\-Reply\-List} {\bf command\-\_\-inout} (const std\-::string \&c, const Device\-Data \&d, bool fwd=true)
+\begin{DoxyCompactList}\small\item\em Executes a \doxyref{Tango}{p.}{de/ddf/namespaceTango} command with the same input data on a group. \end{DoxyCompactList}\item 
+{\bf Group\-Cmd\-Reply\-List} {\bf command\-\_\-inout} (const std\-::string \&c, const std\-::vector$<$ Device\-Data $>$ \&d, bool fwd=true)
+\begin{DoxyCompactList}\small\item\em Executes a \doxyref{Tango}{p.}{de/ddf/namespaceTango} command with the different input data on a group (Using Device\-Data class instances) \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\{\bf Group\-Cmd\-Reply\-List} {\bf command\-\_\-inout} (const std\-::string \&c, const std\-::vector$<$ T $>$ \&d, bool fwd=true)
+\begin{DoxyCompactList}\small\item\em Executes a \doxyref{Tango}{p.}{de/ddf/namespaceTango} command with the different input data on a group. \end{DoxyCompactList}\item 
+long {\bf command\-\_\-inout\-\_\-asynch} (const std\-::string \&c, bool fgt=false, bool fwd=true)
+\begin{DoxyCompactList}\small\item\em Executes a \doxyref{Tango}{p.}{de/ddf/namespaceTango} command on each device in the group asynchronously. \end{DoxyCompactList}\item 
+long {\bf command\-\_\-inout\-\_\-asynch} (const std\-::string \&c, const Device\-Data \&d, bool fgt=false, bool fwd=true)
+\begin{DoxyCompactList}\small\item\em Executes a \doxyref{Tango}{p.}{de/ddf/namespaceTango} command with same input data on each device in the group asynchronously. \end{DoxyCompactList}\item 
+long {\bf command\-\_\-inout\-\_\-asynch} (const std\-::string \&c, const std\-::vector$<$ Device\-Data $>$ \&d, bool fgt=false, bool fwd=true)
+\begin{DoxyCompactList}\small\item\em Executes a \doxyref{Tango}{p.}{de/ddf/namespaceTango} command with different input data (using Device\-Data object) on each device in the group asynchronously. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\long {\bf command\-\_\-inout\-\_\-asynch} (const std\-::string \&c, const std\-::vector$<$ T $>$ \&d, bool fgt=false, bool fwd=true)
+\begin{DoxyCompactList}\small\item\em Executes a \doxyref{Tango}{p.}{de/ddf/namespaceTango} command with different input data on each device in the group asynchronously. \end{DoxyCompactList}\item 
+{\bf Group\-Cmd\-Reply\-List} {\bf command\-\_\-inout\-\_\-reply} (long req\-\_\-id, long tmo\-\_\-ms=0)
+\begin{DoxyCompactList}\small\item\em Returns the results of an asynchronous command. \end{DoxyCompactList}\item 
+{\bf Group\-Attr\-Reply\-List} {\bf read\-\_\-attribute} (const std\-::string \&a, bool fwd=true)
+\begin{DoxyCompactList}\small\item\em Reads an attribute on each device in the group. \end{DoxyCompactList}\item 
+{\bf Group\-Attr\-Reply\-List} {\bf read\-\_\-attributes} (const std\-::vector$<$ std\-::string $>$ \&al, bool fwd=true)
+\begin{DoxyCompactList}\small\item\em Reads several attributes on each device in the group. \end{DoxyCompactList}\item 
+long {\bf read\-\_\-attribute\-\_\-asynch} (const std\-::string \&a, bool fwd=true)
+\begin{DoxyCompactList}\small\item\em Reads an attribute on each device in the group asynchronously. \end{DoxyCompactList}\item 
+long {\bf read\-\_\-attributes\-\_\-asynch} (const std\-::vector$<$ std\-::string $>$ \&al, bool fwd=true)
+\begin{DoxyCompactList}\small\item\em Reads several attributes on each device in the group asynchronously. \end{DoxyCompactList}\item 
+{\bf Group\-Attr\-Reply\-List} {\bf read\-\_\-attribute\-\_\-reply} (long req\-\_\-id, long tmo\-\_\-ms=0)
+\begin{DoxyCompactList}\small\item\em Returns the results of an asynchronous attribute reading. \end{DoxyCompactList}\item 
+{\bf Group\-Attr\-Reply\-List} {\bf read\-\_\-attributes\-\_\-reply} (long req\-\_\-id, long tmo\-\_\-ms=0)
+\begin{DoxyCompactList}\small\item\em Returns the results of an asynchronous attributes reading. \end{DoxyCompactList}\item 
+{\bf Group\-Reply\-List} {\bf write\-\_\-attribute} (const Device\-Attribute \&d, bool fwd=true)
+\begin{DoxyCompactList}\small\item\em Writes an attribute on each device in the group. \end{DoxyCompactList}\item 
+{\bf Group\-Reply\-List} {\bf write\-\_\-attribute} (const std\-::vector$<$ Device\-Attribute $>$ \&d, bool fwd=true)
+\begin{DoxyCompactList}\small\item\em Writes several attributes on each device in the group (using Device\-Attribute) \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\{\bf Group\-Reply\-List} {\bf write\-\_\-attribute} (const std\-::string \&n, const std\-::vector$<$ T $>$ \&d, bool fwd=true)
+\begin{DoxyCompactList}\small\item\em Writes one attributes on each device in the group with specific value per device. \end{DoxyCompactList}\item 
+long {\bf write\-\_\-attribute\-\_\-asynch} (const Device\-Attribute \&d, bool fwd=true)
+\begin{DoxyCompactList}\small\item\em Writes an attribute on each device in the group asynchronously. \end{DoxyCompactList}\item 
+long {\bf write\-\_\-attribute\-\_\-asynch} (const std\-::vector$<$ Device\-Attribute $>$ \&d, bool fwd=true)
+\begin{DoxyCompactList}\small\item\em Writes several attributes on each device in the group asynchronously. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\long {\bf write\-\_\-attribute\-\_\-asynch} (const std\-::string \&a, const std\-::vector$<$ T $>$ \&d, bool fwd=true)
+\begin{DoxyCompactList}\small\item\em Writes an attribute on each device in the group asynchronously (Without Device\-Attribute data) \end{DoxyCompactList}\item 
+{\bf Group\-Reply\-List} {\bf write\-\_\-attribute\-\_\-reply} (long req\-\_\-id, long tmo\-\_\-ms=0)
+\begin{DoxyCompactList}\small\item\em Returns the acknowledgements of an asynchronous attribute writing. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+High level class allowing the user to handle \doxyref{Tango}{p.}{de/ddf/namespaceTango} group. 
+
+\$\-Author\$ \$\-Revision\$ 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Tango\-::\-Group@{Tango\-::\-Group}!Group@{Group}}
+\index{Group@{Group}!Tango::Group@{Tango\-::\-Group}}
+\subsubsection[{Group}]{\setlength{\rightskip}{0pt plus 5cm}Tango\-::\-Group\-::\-Group (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{name}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Group_aa1bcfe79af9522faa65449efb128fc3e}
+
+
+Create a \doxyref{Group}{p.}{d4/d6d/classTango_1_1Group} instance. 
+
+Instanciate an empty group. The group name allows retrieving a sub-\/group in the hierarchy.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The group name \\
+\hline
+\end{DoxyParams}
+\index{Tango\-::\-Group@{Tango\-::\-Group}!$\sim$\-Group@{$\sim$\-Group}}
+\index{$\sim$\-Group@{$\sim$\-Group}!Tango::Group@{Tango\-::\-Group}}
+\subsubsection[{$\sim$\-Group}]{\setlength{\rightskip}{0pt plus 5cm}virtual Tango\-::\-Group\-::$\sim$\-Group (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classTango_1_1Group_acd7a0b40d37852923131e9bce68dd9ff}
+
+
+Create a \doxyref{Group}{p.}{d4/d6d/classTango_1_1Group} instance. 
+
+Delete a group and all its elements. Be aware that a group always gets the ownership of its children and deletes themwhen it is itself deleted. Therefore, never try to delete a \doxyref{Group}{p.}{d4/d6d/classTango_1_1Group} (respectively a Device\-Proxy) returned by a call to {\itshape \doxyref{Tango\-::\-Group\-::get\-\_\-group()}{p.}{d4/d6d/classTango_1_1Group_a75ddf85f5805e6e99656cbe554ecf96e}} (respectively to {\itshape \doxyref{Tango\-::\-Group\-::get\-\_\-device()}{p.}{d4/d6d/classTango_1_1Group_adc7d5db7e814e378bf30f940865885b8}}). Use the {\itshape \doxyref{Tango\-::\-Group\-::remove()}{p.}{d4/d6d/classTango_1_1Group_acd7763925b6e27ccf237b13fa7f98009}} method instead. 
+
+\subsection{Member Function Documentation}
+\index{Tango\-::\-Group@{Tango\-::\-Group}!add@{add}}
+\index{add@{add}!Tango::Group@{Tango\-::\-Group}}
+\subsubsection[{add}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Tango\-::\-Group\-::add (
+\begin{DoxyParamCaption}
+\item[{{\bf Group} $\ast$}]{group, }
+\item[{int}]{tmo\-\_\-ms = {\ttfamily -\/1}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classTango_1_1Group_a2cbaa3bf6cecdb6fb33a387c79556e58}
+
+
+Attaches a (sub) group. 
+
+Be aware that a group always gets the ownership of its children and deletes them when it is itself deleted. Therefore, never try to delete a \doxyref{Group}{p.}{d4/d6d/classTango_1_1Group} attached to a \doxyref{Group}{p.}{d4/d6d/classTango_1_1Group}. Use the \doxyref{Group\-::remove()}{p.}{d4/d6d/classTango_1_1Group_acd7763925b6e27ccf237b13fa7f98009} method instead. If timeout\-\_\-ms parameter is different from -\/1, the client side timeout associated to each device composing the group added is set to timeout\-\_\-ms milliseconds. If timeout\-\_\-ms is -\/1, timeouts are not changed. This method does nothing if the specified group is already attached (i.\-e. it is silently ignored) and timeout\-\_\-ms = -\/1. If the specified group is already attached and timeout\-\_\-ms is different from -\/1, the client side timeout of each device composing the group given in parameter is set to timeout\-\_\-ms milliseconds.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em group} & The group to be attached \\
+\hline
+\mbox{\tt in}  & {\em tmo\-\_\-ms} & The timeout value \\
+\hline
+\end{DoxyParams}
+\index{Tango\-::\-Group@{Tango\-::\-Group}!add@{add}}
+\index{add@{add}!Tango::Group@{Tango\-::\-Group}}
+\subsubsection[{add}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Tango\-::\-Group\-::add (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{pattern, }
+\item[{int}]{tmo\-\_\-ms = {\ttfamily -\/1}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classTango_1_1Group_ad0cae4533d2ab5f218d6b65748f8374f}
+
+
+Attaches any device which name matches the specified pattern. 
+
+The pattern parameter can be a simple device name or a device name pattern (e.\-g. domain\-\_\-$\ast$ / family/ member\-\_\-$\ast$). This method first asks to the \doxyref{Tango}{p.}{de/ddf/namespaceTango} database the list of device names matching the pattern. Devices are then attached to the group in the order in which they are returned by the database. Any device already present in the hierarchy (i.\-e. a device belonging to the group or to one of its subgroups) is silently ignored but its client side timeout is set to timeout\-\_\-ms milliseconds if timeout\-\_\-ms is different from -\/1. Set the client side timeout of each device matching the specified pattern to timeout\-\_\-ms milliseconds if timeout\-\_\-ms is different from -\/1.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pattern} & The device selection pattern \\
+\hline
+\mbox{\tt in}  & {\em tmo\-\_\-ms} & The timeout value \\
+\hline
+\end{DoxyParams}
+\index{Tango\-::\-Group@{Tango\-::\-Group}!add@{add}}
+\index{add@{add}!Tango::Group@{Tango\-::\-Group}}
+\subsubsection[{add}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Tango\-::\-Group\-::add (
+\begin{DoxyParamCaption}
+\item[{const std\-::vector$<$ std\-::string $>$ \&}]{patterns, }
+\item[{int}]{tmo\-\_\-ms = {\ttfamily -\/1}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classTango_1_1Group_a633d0ced915368b8b084adb3a215cca5}
+
+
+Attaches any device which name matches one of the specified pattern. 
+
+The patterns parameter can be an array of device names and/or device name patterns. Thismethod first asks to the \doxyref{Tango}{p.}{de/ddf/namespaceTango} database the list of device namesmatching one the patterns. Devices are then attached to the group in the order in which they are returned by the database. Any device already present in the hierarchy (i.\-e. a device belonging to the group or to one of its subgroups), is silently ignored but its client side timeout is set to timeout\-\_\-ms milliseconds if timeout\-\_\-ms is different from -\/1. If timeout\-\_\-ms is different from -\/1, the client side timeouts of all devices matching the specified patterns are set to timeout\-\_\-ms milliseconds.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em patterns} & The device selection pattern list \\
+\hline
+\mbox{\tt in}  & {\em tmo\-\_\-ms} & The timeout value \\
+\hline
+\end{DoxyParams}
+\index{Tango\-::\-Group@{Tango\-::\-Group}!command\-\_\-inout@{command\-\_\-inout}}
+\index{command\-\_\-inout@{command\-\_\-inout}!Tango::Group@{Tango\-::\-Group}}
+\subsubsection[{command\-\_\-inout}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Group\-Cmd\-Reply\-List} Tango\-::\-Group\-::command\-\_\-inout (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{c, }
+\item[{bool}]{fwd = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Group_a8511861bcd0723b9e726e2bfaac6de3a}
+
+
+Executes a \doxyref{Tango}{p.}{de/ddf/namespaceTango} command on a group. 
+
+Executes a \doxyref{Tango}{p.}{de/ddf/namespaceTango} command on a group. This method is synchronous and does not return until replies are obtained or timeouts occurred. The parameter c is the name of the command. If fwd is set to true (the default), the request is also forwarded to subgroups. Otherwise, it is only applied to the local set of devices. \doxyref{Command}{p.}{d2/d1d/classTango_1_1Command} results are returned in a \doxyref{Group\-Cmd\-Reply\-List}{p.}{d8/d3d/classTango_1_1GroupCmdReplyList}. See Obtaining command result for details (Chapter 4.\-7.\-3.\-1 in {\tt Tango book}). See also Case 1 of executing a command (Chapter 4.\-7.\-3.\-2 in {\tt Tango book}) for an example.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em c} & The command name \\
+\hline
+\mbox{\tt in}  & {\em fwd} & The forward flag \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The group command result 
+\end{DoxyReturn}
+\index{Tango\-::\-Group@{Tango\-::\-Group}!command\-\_\-inout@{command\-\_\-inout}}
+\index{command\-\_\-inout@{command\-\_\-inout}!Tango::Group@{Tango\-::\-Group}}
+\subsubsection[{command\-\_\-inout}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Group\-Cmd\-Reply\-List} Tango\-::\-Group\-::command\-\_\-inout (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{c, }
+\item[{const Device\-Data \&}]{d, }
+\item[{bool}]{fwd = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Group_ab02f116ab2fcaed5850b0301dd8095a7}
+
+
+Executes a \doxyref{Tango}{p.}{de/ddf/namespaceTango} command with the same input data on a group. 
+
+Executes a \doxyref{Tango}{p.}{de/ddf/namespaceTango} command on each device in the group. This method is synchronous and does not return until replies are obtained or timeouts occurred. The parameter c is the name of the command. The second parameter d is a \doxyref{Tango}{p.}{de/ddf/namespaceTango} generic container for command carrying the command argument. See the Tango\-::\-Device\-Data documentation. If fwd is set to true (the default), the request is also forwarded to subgroups. Otherwise, it is only applied to the local set of devices. \doxyref{Command}{p.}{d2/d1d/classTango_1_1Command} results are returned in a \doxyref{Group\-Cmd\-Reply\-List}{p.}{d8/d3d/classTango_1_1GroupCmdReplyList}. See Obtaining command results (Chapter 4.\-7.\-3.\-1 in {\tt Tango book}) for details. See also Case 2 of executing a command (Chapter 4.\-7.\-3.\-4 in {\tt Tango book}) for an example.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em c} & The command name \\
+\hline
+\mbox{\tt in}  & {\em d} & The command data \\
+\hline
+\mbox{\tt in}  & {\em fwd} & The forward flag \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The group command result 
+\end{DoxyReturn}
+\index{Tango\-::\-Group@{Tango\-::\-Group}!command\-\_\-inout@{command\-\_\-inout}}
+\index{command\-\_\-inout@{command\-\_\-inout}!Tango::Group@{Tango\-::\-Group}}
+\subsubsection[{command\-\_\-inout}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Group\-Cmd\-Reply\-List} Tango\-::\-Group\-::command\-\_\-inout (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{c, }
+\item[{const std\-::vector$<$ Device\-Data $>$ \&}]{d, }
+\item[{bool}]{fwd = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Group_ae50c9d4d35e13d374dfc22afb6f6ab01}
+
+
+Executes a \doxyref{Tango}{p.}{de/ddf/namespaceTango} command with the different input data on a group (Using Device\-Data class instances) 
+
+Executes a \doxyref{Tango}{p.}{de/ddf/namespaceTango} command on each device in the group. This method is synchronous and does not return until replies are obtained or timeouts occurred. This implementation of command\-\_\-inout allows passing a specific input argument to each device in the group. In order to use this form of command\-\_\-inout, the user must have an \char`\"{}a priori\char`\"{} and \char`\"{}perfect\char`\"{} knowledge of the devices order in the group. \par
+ The parameter c is the name of the command. The std\-::vector d contains a specific argument value for each device in the group. Its size must equal Group\-::get\-\_\-size(fwd). Otherwise, an exception is thrown. The order of the argument values must follows the order of the devices in the group (d[0] =$>$ 1st device, d[1] =$>$ 2nd device and so on). If fwd is set to true (the default), the request is also forwarded to subgroups. Otherwise, it is only applied to the local set of devices. \doxyref{Command}{p.}{d2/d1d/classTango_1_1Command} results are returned in a \doxyref{Group\-Cmd\-Reply\-List}{p.}{d8/d3d/classTango_1_1GroupCmdReplyList}. See Obtaining command results (Chpater 4.\-7.\-3.\-1 in {\tt Tango book}) for details. See also Case 3 of executing a command (Chapter 4.\-7.\-3.\-5 in {\tt Tango book}) for an example of this special form of command\-\_\-inout.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em c} & The command name \\
+\hline
+\mbox{\tt in}  & {\em d} & The command data \\
+\hline
+\mbox{\tt in}  & {\em fwd} & The forward flag \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The group command result 
+\end{DoxyReturn}
+\index{Tango\-::\-Group@{Tango\-::\-Group}!command\-\_\-inout@{command\-\_\-inout}}
+\index{command\-\_\-inout@{command\-\_\-inout}!Tango::Group@{Tango\-::\-Group}}
+\subsubsection[{command\-\_\-inout}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf Group\-Cmd\-Reply\-List} Tango\-::\-Group\-::command\-\_\-inout (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{c, }
+\item[{const std\-::vector$<$ T $>$ \&}]{d, }
+\item[{bool}]{fwd = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Group_ad54f51f9f9bbac8ad686199245274bbf}
+
+
+Executes a \doxyref{Tango}{p.}{de/ddf/namespaceTango} command with the different input data on a group. 
+
+Executes a \doxyref{Tango}{p.}{de/ddf/namespaceTango} command on each device in the group. This method is synchronous and does not return until replies are obtained or timeouts occurred. This implementation of command\-\_\-inout allows passing a specific input argument to each device in the group. In order to use this form of command\-\_\-inout, the user must have an \char`\"{}a priori\char`\"{} and \char`\"{}perfect\char`\"{} knowledge of the devices order in the group. \par
+ The parameter c is the name of the command. The std\-::vector d contains a specific argument value for each device in the group. Since this method is a template, d is able to contain any \doxyref{Tango}{p.}{de/ddf/namespaceTango} command argument type. Its size must equal Group\-::get\-\_\-size(fwd). Otherwise, an exception is thrown. The order of the argument values must follows the order of the devices in the group (d[0] =$>$ 1st device, d[1] =$>$ 2nd device and so on). If fwd is set to true (the default), the request is also forwarded to subgroups. Otherwise, it is only applied to the local set of devices. \doxyref{Command}{p.}{d2/d1d/classTango_1_1Command} results are returned in a \doxyref{Group\-Cmd\-Reply\-List}{p.}{d8/d3d/classTango_1_1GroupCmdReplyList}. See Obtaining command results (Chpater 4.\-7.\-3.\-1 in {\tt Tango book}) for details. See also Case 3 of executing a command (Chapter 4.\-7.\-3.\-5 in {\tt Tango book}) for an example of this special form of command\-\_\-inout.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The command input data type \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em c} & The command name \\
+\hline
+\mbox{\tt in}  & {\em d} & The command data \\
+\hline
+\mbox{\tt in}  & {\em fwd} & The forward flag \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The group command result 
+\end{DoxyReturn}
+\index{Tango\-::\-Group@{Tango\-::\-Group}!command\-\_\-inout\-\_\-asynch@{command\-\_\-inout\-\_\-asynch}}
+\index{command\-\_\-inout\-\_\-asynch@{command\-\_\-inout\-\_\-asynch}!Tango::Group@{Tango\-::\-Group}}
+\subsubsection[{command\-\_\-inout\-\_\-asynch}]{\setlength{\rightskip}{0pt plus 5cm}long Tango\-::\-Group\-::command\-\_\-inout\-\_\-asynch (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{c, }
+\item[{bool}]{fgt = {\ttfamily false}, }
+\item[{bool}]{fwd = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Group_a53d95994ae0c6e3836e33f8acef6a038}
+
+
+Executes a \doxyref{Tango}{p.}{de/ddf/namespaceTango} command on each device in the group asynchronously. 
+
+Executes a \doxyref{Tango}{p.}{de/ddf/namespaceTango} command on each device in the group asynchronously. The method sends the request to all devices and returns immediately. Pass the returned request id to \doxyref{Group\-::command\-\_\-inout\-\_\-reply()}{p.}{d4/d6d/classTango_1_1Group_abed06d2a84d479a13c2e98781af748e8} to obtain the results. The parameter c is the name of the command. The parameter fgt is a fire and forget flag. If set to true, it means that no reply is expected (i.\-e. the caller does not care about it and will not even try to get it). A false default value is provided. If the parameter fwd is set to true (the default) request is forwarded to subgroups. Otherwise, it is only applied to the local set of devices. See Case 1 of Executing a command (Chapter 4.\-7.\-3.\-2 in {\tt Tango book}) for an example.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em c} & The command name \\
+\hline
+\mbox{\tt in}  & {\em fgt} & The command data \\
+\hline
+\mbox{\tt in}  & {\em fwd} & The forward flag \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The call identifier 
+\end{DoxyReturn}
+\index{Tango\-::\-Group@{Tango\-::\-Group}!command\-\_\-inout\-\_\-asynch@{command\-\_\-inout\-\_\-asynch}}
+\index{command\-\_\-inout\-\_\-asynch@{command\-\_\-inout\-\_\-asynch}!Tango::Group@{Tango\-::\-Group}}
+\subsubsection[{command\-\_\-inout\-\_\-asynch}]{\setlength{\rightskip}{0pt plus 5cm}long Tango\-::\-Group\-::command\-\_\-inout\-\_\-asynch (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{c, }
+\item[{const Device\-Data \&}]{d, }
+\item[{bool}]{fgt = {\ttfamily false}, }
+\item[{bool}]{fwd = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Group_a2bd15b110efd88ffa47233ba4244a273}
+
+
+Executes a \doxyref{Tango}{p.}{de/ddf/namespaceTango} command with same input data on each device in the group asynchronously. 
+
+Executes a \doxyref{Tango}{p.}{de/ddf/namespaceTango} command on each device in the group asynchronously. The method sends the request to all devices and returns immediately. Pass the returned request id to \doxyref{Group\-::command\-\_\-inout\-\_\-reply()}{p.}{d4/d6d/classTango_1_1Group_abed06d2a84d479a13c2e98781af748e8} to obtain the results. The parameter c is the name of the command. The second parameter d is a \doxyref{Tango}{p.}{de/ddf/namespaceTango} generic container for command carrying the command argument. See the Tango\-::\-Device\-Data documentation for details. The parameter fgt is a fire and forget flag. If set to true, it means that no reply is expected (i.\-e. the caller does not care about it and will not even try to get it). A false default value is provided. If the parameter fwd is set to true (the default) request is forwarded to subgroups. Otherwise, it is only applied to the local set of devices. See Case 2 of Executing a command (Chapter 4.\-7.\-3.\-4 in {\tt Tango book}) for an example.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em c} & The command name \\
+\hline
+\mbox{\tt in}  & {\em d} & The command input data \\
+\hline
+\mbox{\tt in}  & {\em fgt} & The command data \\
+\hline
+\mbox{\tt in}  & {\em fwd} & The forward flag \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The call identifier 
+\end{DoxyReturn}
+\index{Tango\-::\-Group@{Tango\-::\-Group}!command\-\_\-inout\-\_\-asynch@{command\-\_\-inout\-\_\-asynch}}
+\index{command\-\_\-inout\-\_\-asynch@{command\-\_\-inout\-\_\-asynch}!Tango::Group@{Tango\-::\-Group}}
+\subsubsection[{command\-\_\-inout\-\_\-asynch}]{\setlength{\rightskip}{0pt plus 5cm}long Tango\-::\-Group\-::command\-\_\-inout\-\_\-asynch (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{c, }
+\item[{const std\-::vector$<$ Device\-Data $>$ \&}]{d, }
+\item[{bool}]{fgt = {\ttfamily false}, }
+\item[{bool}]{fwd = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Group_a592a4fbe47296a6b27a142a38bbde6e8}
+
+
+Executes a \doxyref{Tango}{p.}{de/ddf/namespaceTango} command with different input data (using Device\-Data object) on each device in the group asynchronously. 
+
+Executes a \doxyref{Tango}{p.}{de/ddf/namespaceTango} command on each device in the group asynchronously. The method send the request to all devices and return immediately. Pass the returned request id to \doxyref{Group\-::command\-\_\-inout\-\_\-reply}{p.}{d4/d6d/classTango_1_1Group_abed06d2a84d479a13c2e98781af748e8} to obtain the results. This implementation of command\-\_\-inout allows passing a specific input argument to each device in the group. In order to use this form of command\-\_\-inout\-\_\-asynch, the user must have an \char`\"{}a priori\char`\"{} and \char`\"{}perfect\char`\"{} knowledge of the devices order in the group. The parameter c is the name of the command. The std\-::vector d contains a specific argument value for each device in the group. Its size must equal Group\-::get\-\_\-size(fwd). Otherwise, an exception is thrown. The order of the argument values must follows the order of the devices in the group (d[0] =$>$ 1st device, d[1] =$>$ 2nd device and so on). The parameter fgt is a fire and forget flag. If set to true, it means that no reply is expected (i.\-e. the caller does not care about it and will not even try to get it). A false default value is provided. If fwd is set to true (the default), the request is also forwarded to subgroups. Otherwise, it is only applied to the local set of devices. See Case 3 of Executing a command (Chapter 4.\-7.\-3.\-5 in {\tt Tango book}) for an example of this special form of command\-\_\-inout.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em c} & The command name \\
+\hline
+\mbox{\tt in}  & {\em d} & The command input data \\
+\hline
+\mbox{\tt in}  & {\em fgt} & The command data \\
+\hline
+\mbox{\tt in}  & {\em fwd} & The forward flag \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The call identifier 
+\end{DoxyReturn}
+\index{Tango\-::\-Group@{Tango\-::\-Group}!command\-\_\-inout\-\_\-asynch@{command\-\_\-inout\-\_\-asynch}}
+\index{command\-\_\-inout\-\_\-asynch@{command\-\_\-inout\-\_\-asynch}!Tango::Group@{Tango\-::\-Group}}
+\subsubsection[{command\-\_\-inout\-\_\-asynch}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ long Tango\-::\-Group\-::command\-\_\-inout\-\_\-asynch (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{c, }
+\item[{const std\-::vector$<$ T $>$ \&}]{d, }
+\item[{bool}]{fgt = {\ttfamily false}, }
+\item[{bool}]{fwd = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Group_a17b53cb8fb55e3b96d056cb9971aaab4}
+
+
+Executes a \doxyref{Tango}{p.}{de/ddf/namespaceTango} command with different input data on each device in the group asynchronously. 
+
+Executes a \doxyref{Tango}{p.}{de/ddf/namespaceTango} command on each device in the group asynchronously. The method send the request to all devices and return immediately. Pass the returned request id to \doxyref{Group\-::command\-\_\-inout\-\_\-reply}{p.}{d4/d6d/classTango_1_1Group_abed06d2a84d479a13c2e98781af748e8} to obtain the results. This implementation of command\-\_\-inout allows passing a specific input argument to each device in the group. In order to use this form of command\-\_\-inout\-\_\-asynch, the user must have an \char`\"{}a priori\char`\"{} and \char`\"{}perfect\char`\"{} knowledge of the devices order in the group. The parameter c is the name of the command. The std\-::vector d contains a specific argument value for each device in the group. Since it's a template data type, d is able to contain any \doxyref{Tango}{p.}{de/ddf/namespaceTango} command argument type. Its size must equal Group\-::get\-\_\-size(fwd). Otherwise, an exception is thrown. The order of the argument values must follows the order of the devices in the group (d[0] =$>$ 1st device, d[1] =$>$ 2nd device and so on). The parameter fgt is a fire and forget flag. If set to true, it means that no reply is expected (i.\-e. the caller does not care about it and will not even try to get it). A false default value is provided. If fwd is set to true (the default), the request is also forwarded to subgroups. Otherwise, it is only applied to the local set of devices. See Case 3 of Executing a command (Chapter 4.\-7.\-3.\-5 in {\tt Tango book}) for an example of this special form of command\-\_\-inout.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The command input data type \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em c} & The command name \\
+\hline
+\mbox{\tt in}  & {\em d} & The command input data \\
+\hline
+\mbox{\tt in}  & {\em fgt} & The command data \\
+\hline
+\mbox{\tt in}  & {\em fwd} & The forward flag \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The call identifier 
+\end{DoxyReturn}
+\index{Tango\-::\-Group@{Tango\-::\-Group}!command\-\_\-inout\-\_\-reply@{command\-\_\-inout\-\_\-reply}}
+\index{command\-\_\-inout\-\_\-reply@{command\-\_\-inout\-\_\-reply}!Tango::Group@{Tango\-::\-Group}}
+\subsubsection[{command\-\_\-inout\-\_\-reply}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Group\-Cmd\-Reply\-List} Tango\-::\-Group\-::command\-\_\-inout\-\_\-reply (
+\begin{DoxyParamCaption}
+\item[{long}]{req\-\_\-id, }
+\item[{long}]{tmo\-\_\-ms = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Group_abed06d2a84d479a13c2e98781af748e8}
+
+
+Returns the results of an asynchronous command. 
+
+Returns the results of an asynchronous command. The first parameter req\-\_\-id is a request identifier previously returned by one of the command\-\_\-inout\-\_\-asynch methods. For each device in the hierarchy, if the command result is not yet available, command\-\_\-inout\-\_\-replywait timeout\-\_\-ms milliseconds before throwing an exception. This exception will be part of the global reply. If timeout\-\_\-ms is set to 0, command\-\_\-inout\-\_\-reply waits \char`\"{}indefinitely\char`\"{}. \doxyref{Command}{p.}{d2/d1d/classTango_1_1Command} results are returned in a \doxyref{Group\-Cmd\-Reply\-List}{p.}{d8/d3d/classTango_1_1GroupCmdReplyList}. See Obtaining command results (Chapter 4.\-7.\-3.\-1 in {\tt Tango book}) for details.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em req\-\_\-id} & The request identifier \\
+\hline
+\mbox{\tt in}  & {\em tmo\-\_\-ms} & The timeout value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The group command result 
+\end{DoxyReturn}
+\index{Tango\-::\-Group@{Tango\-::\-Group}!contains@{contains}}
+\index{contains@{contains}!Tango::Group@{Tango\-::\-Group}}
+\subsubsection[{contains}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Tango\-::\-Group\-::contains (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{pattern, }
+\item[{bool}]{fwd = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classTango_1_1Group_a2885b00242d3a2d199836e48186dd71e}
+
+
+Check if the hierarchy contains groups and/or devices which name matches the specified pattern. 
+
+Returns true if the hierarchy contains groups and/or devices which name matches the specified pattern. Returns false otherwise. The pattern can be a fully qualified or simple group name, a device name or a device name pattern. If fwd is set to true (the default), the request is also forwarded to subgroups. Otherwise, it is only applied to the local set of elements.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pattern} & The device selection pattern \\
+\hline
+\mbox{\tt in}  & {\em fwd} & The forward flag \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the hierarchy contains the element 
+\end{DoxyReturn}
+
+
+Reimplemented from {\bf Tango\-::\-Group\-Element} \doxyref{}{p.}{df/d46/classTango_1_1GroupElement_a64f031e079125a08bdab73d21c906c86}.
+
+\index{Tango\-::\-Group@{Tango\-::\-Group}!get\-\_\-device@{get\-\_\-device}}
+\index{get\-\_\-device@{get\-\_\-device}!Tango::Group@{Tango\-::\-Group}}
+\subsubsection[{get\-\_\-device}]{\setlength{\rightskip}{0pt plus 5cm}virtual Device\-Proxy$\ast$ Tango\-::\-Group\-::get\-\_\-device (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{device\-\_\-name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classTango_1_1Group_adc7d5db7e814e378bf30f940865885b8}
+
+
+Returns a reference to the specified device. 
+
+Returns a reference to the specified device or N\-U\-L\-L if there is no device by that name in the group. This method may throw an exception in case the specified device belongs to the group but can’t be reached (not registered, down...). See example below. See also the Tango\-::\-Device\-Proxy class documentation for details. 
+\begin{DoxyCode}
+* \textcolor{keywordflow}{try}
+* \{
+*    Tango::DeviceProxy *dp = g->get\_device(\textcolor{stringliteral}{"my/device/01"});
+*    \textcolor{keywordflow}{if} (dp == 0)
+*    \{
+*       \textcolor{comment}{// my/device/01 does not belongs to the group}
+*    \}
+* \}
+* \textcolor{keywordflow}{catch} (\textcolor{keyword}{const} Tango::DevFailed &df)
+* \{
+*    \textcolor{comment}{// my/device/01 belongs to the group but can’t be reached}
+* \}
+* 
+\end{DoxyCode}
+ The request is systematically forwarded to subgroups (i.\-e. if no device named device\-\_\-name could be found in the local set of devices, the request is forwarded to subgroups). Be aware that a group always gets the ownership of its children and deletes them when it is itself deleted. Therefore, never try to delete a Device\-Proxy returned by the \doxyref{Group\-::get\-\_\-device()}{p.}{d4/d6d/classTango_1_1Group_adc7d5db7e814e378bf30f940865885b8}method. Use the \doxyref{Tango\-::\-Group\-::remove()}{p.}{d4/d6d/classTango_1_1Group_acd7763925b6e27ccf237b13fa7f98009} method instead.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em device\-\_\-name} & The device name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the hierarchy contains the element 
+\end{DoxyReturn}
+
+
+Implements {\bf Tango\-::\-Group\-Element} \doxyref{}{p.}{df/d46/classTango_1_1GroupElement_a78f61062a50404b224883dab23c08168}.
+
+\index{Tango\-::\-Group@{Tango\-::\-Group}!get\-\_\-device@{get\-\_\-device}}
+\index{get\-\_\-device@{get\-\_\-device}!Tango::Group@{Tango\-::\-Group}}
+\subsubsection[{get\-\_\-device}]{\setlength{\rightskip}{0pt plus 5cm}virtual Device\-Proxy$\ast$ Tango\-::\-Group\-::get\-\_\-device (
+\begin{DoxyParamCaption}
+\item[{long}]{idx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classTango_1_1Group_a29685f1ad173310c2cf695390cedd362}
+
+
+Returns a reference to the \char`\"{}idx-\/th\char`\"{} device in the hierarchy. 
+
+Returns a reference to the \char`\"{}idx-\/th\char`\"{} device in the hierarchy or N\-U\-L\-L if the hierarchy contains less than \char`\"{}idx\char`\"{} devices. This method may throw an exception in case the specified device belongs to the group but can’t be reached (not registered, down...). See previous example. See also the Tango\-::\-Device\-Proxy class documentation for details. The request is systematically forwarded to subgroups (i.\-e. if the local set of devices contains less than \char`\"{}idx\char`\"{} devices, the request is forwarded to subgroups). Be aware that a group always gets the ownership of its children and deletes them when it is itself deleted. Therefore, never try to delete a Device\-Proxy returned by the \doxyref{Group\-::get\-\_\-device()}{p.}{d4/d6d/classTango_1_1Group_adc7d5db7e814e378bf30f940865885b8}method. Use the \doxyref{Tango\-::\-Group\-::remove()}{p.}{d4/d6d/classTango_1_1Group_acd7763925b6e27ccf237b13fa7f98009} method instead.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em idx} & The device name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+device reference 
+\end{DoxyReturn}
+
+
+Implements {\bf Tango\-::\-Group\-Element} \doxyref{}{p.}{df/d46/classTango_1_1GroupElement_ab40d45bdf475f9e4ea51ab855e38bf91}.
+
+\index{Tango\-::\-Group@{Tango\-::\-Group}!get\-\_\-device\-\_\-list@{get\-\_\-device\-\_\-list}}
+\index{get\-\_\-device\-\_\-list@{get\-\_\-device\-\_\-list}!Tango::Group@{Tango\-::\-Group}}
+\subsubsection[{get\-\_\-device\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$std\-::string$>$ Tango\-::\-Group\-::get\-\_\-device\-\_\-list (
+\begin{DoxyParamCaption}
+\item[{bool}]{fwd = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Group_a35a3426e304c3d87607997261aff1d22}
+
+
+Returns the list of devices currently in the hierarchy. 
+
+Returns the list of devices currently in the hierarchy. If fwd is set to true (the default) the request is forwarded to subgroups. Otherwise, it is only applied to the local set of devices. Considering the following hierarchy\-: 
+\begin{DoxyCode}
+* g2->add(\textcolor{stringliteral}{"my/device/04"}); g2->add(\textcolor{stringliteral}{"my/device/05"});
+*
+* g4->add(\textcolor{stringliteral}{"my/device/08"}); g4->add(\textcolor{stringliteral}{"my/device/09"});
+*
+* g3->add(\textcolor{stringliteral}{"my/device/06"});
+* g3->addg(g4);
+* g3->add(\textcolor{stringliteral}{"my/device/07"});
+*
+* g1->add(\textcolor{stringliteral}{"my/device/01"});
+* g1->add(g2);
+* g1->add(\textcolor{stringliteral}{"my/device/03"});
+* g1->add(g3);
+* g1->add(\textcolor{stringliteral}{"my/device/02"});
+* 
+\end{DoxyCode}
+ The returned vector content depends on the value of the forward option. If set to true, the results will be organized as follows\-: 
+\begin{DoxyCode}
+* std::vector<std::string> dl = g1->get\_device\_list(\textcolor{keyword}{true});
+* 
+\end{DoxyCode}
+ dl[0] contains \char`\"{}my/device/01\char`\"{} which belongs to g1 \par
+ dl[1] contains \char`\"{}my/device/04\char`\"{} which belongs to g1.\-g2 \par
+ dl[2] contains \char`\"{}my/device/05\char`\"{} which belongs to g1.\-g2 \par
+ dl[3] contains \char`\"{}my/device/03\char`\"{} which belongs to g1 \par
+ dl[4] contains \char`\"{}my/device/06\char`\"{} which belongs to g1.\-g3 \par
+ dl[5] contains \char`\"{}my/device/08\char`\"{} which belongs to g1.\-g3.\-g4 \par
+ dl[6] contains \char`\"{}my/device/09\char`\"{} which belongs to g1.\-g3.\-g4 \par
+ dl[7] contains \char`\"{}my/device/07\char`\"{} which belongs to g1.\-g3 \par
+ dl[8] contains \char`\"{}my/device/02\char`\"{} which belongs to g1 \par
+ \par
+ If the forward option is set to false, the results are\-: 
+\begin{DoxyCode}
+* std::vector<std::string> dl = g1->get\_device\_list(\textcolor{keyword}{false});
+* 
+\end{DoxyCode}
+ dl[0] contains \char`\"{}my/device/01\char`\"{} which belongs to g1 \par
+ dl[1] contains \char`\"{}my/device/03\char`\"{} which belongs to g1 \par
+ dl[2] contains \char`\"{}my/device/02\char`\"{} which belongs to g1
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em fwd} & The forward flag \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+group size 
+\end{DoxyReturn}
+\index{Tango\-::\-Group@{Tango\-::\-Group}!get\-\_\-group@{get\-\_\-group}}
+\index{get\-\_\-group@{get\-\_\-group}!Tango::Group@{Tango\-::\-Group}}
+\subsubsection[{get\-\_\-group}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Group}$\ast$ Tango\-::\-Group\-::get\-\_\-group (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{group\-\_\-name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classTango_1_1Group_a75ddf85f5805e6e99656cbe554ecf96e}
+
+
+Returns a reference to the specified group. 
+
+Returns a reference to the specified group or N\-U\-L\-L if there is no group by that name. The group\-\_\-name can be a fully qualified name. Considering the following group\-: \begin{DoxyVerb}-> gauges
+   | -> cell-01
+   |     | -> penning
+   |     |     | -> ...
+   |     | -> pirani
+   |     |     | -> ...
+   | -> cell-02
+   |     | -> penning
+   |     |     | -> ...
+   |     | -> pirani
+   |     |     | -> ...
+   | -> cell-03
+   |     | -> ...\end{DoxyVerb}
+ A call to gauges-\/$>$get\-\_\-group(\char`\"{}penning\char`\"{}) returns the first group named \char`\"{}penning\char`\"{} in the hierarchy (i.\-e. gauges.\-cell-\/01.\-penning)while gauges-\/$>$get\-\_\-group("gauges.\-cell-\/02.\-penning”) returns the specified group. The request is systematically forwarded to subgroups (i.\-e. if no group named group\-\_\-name could be found in the local set of elements, the request is forwarded to subgroups). Be aware that a group always gets the ownership of its children and deletes them when it is itself deleted. Therefore, never try to delete a \doxyref{Group}{p.}{d4/d6d/classTango_1_1Group} returned by the \doxyref{Group\-::get\-\_\-group()}{p.}{d4/d6d/classTango_1_1Group_a75ddf85f5805e6e99656cbe554ecf96e} method. Use the \doxyref{Tango\-::\-Group\-::remove()}{p.}{d4/d6d/classTango_1_1Group_acd7763925b6e27ccf237b13fa7f98009} method instead.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em group\-\_\-name} & The group name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+group pointer 
+\end{DoxyReturn}
+\index{Tango\-::\-Group@{Tango\-::\-Group}!get\-\_\-size@{get\-\_\-size}}
+\index{get\-\_\-size@{get\-\_\-size}!Tango::Group@{Tango\-::\-Group}}
+\subsubsection[{get\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}long Tango\-::\-Group\-::get\-\_\-size (
+\begin{DoxyParamCaption}
+\item[{bool}]{fwd = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Group_a1afb6e934e20fb757538b873fef265e5}
+
+
+Return the number of devices in the hierarchy. 
+
+Return the number of devices in the hierarchy (respectively the number of device in the group) if the forward option is set to true (respectively set to false)
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em fwd} & The forward flag \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+group size 
+\end{DoxyReturn}
+\index{Tango\-::\-Group@{Tango\-::\-Group}!operator[$\,$]@{operator[]}}
+\index{operator[$\,$]@{operator[]}!Tango::Group@{Tango\-::\-Group}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}virtual Device\-Proxy$\ast$ Tango\-::\-Group\-::operator[$\,$] (
+\begin{DoxyParamCaption}
+\item[{long}]{idx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classTango_1_1Group_aea3b781cd10d28770cb584c55c065534}
+
+
+Returns a reference to the \char`\"{}idx-\/th\char`\"{} device in the hierarchy. 
+
+Returns a reference to the \char`\"{}idx-\/th\char`\"{} device in the hierarchy or N\-U\-L\-L if the hierarchy contains less than \char`\"{}idx\char`\"{} devices. See the Tango\-::\-Device\-Proxy class documentation for details. The request is systematically forwarded to subgroups (i.\-e. if the local set of devices contains less than \char`\"{}idx\char`\"{} devices, the request is forwarded to subgroups). Be aware that a group always gets the ownership of its children and deletes them when it is itself deleted. Therefore, never try to delete a Device\-Proxy returned by the \doxyref{Group\-::get\-\_\-device()}{p.}{d4/d6d/classTango_1_1Group_adc7d5db7e814e378bf30f940865885b8}method. Use the \doxyref{Tango\-::\-Group\-::remove()}{p.}{d4/d6d/classTango_1_1Group_acd7763925b6e27ccf237b13fa7f98009} method instead.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em idx} & The device name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+device reference 
+\end{DoxyReturn}
+
+
+Implements {\bf Tango\-::\-Group\-Element} \doxyref{}{p.}{df/d46/classTango_1_1GroupElement_aef54618c81a0042334be5c13d0326346}.
+
+\index{Tango\-::\-Group@{Tango\-::\-Group}!ping@{ping}}
+\index{ping@{ping}!Tango::Group@{Tango\-::\-Group}}
+\subsubsection[{ping}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Tango\-::\-Group\-::ping (
+\begin{DoxyParamCaption}
+\item[{bool}]{fwd = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classTango_1_1Group_aa7cd5c6f1be1a85c244c7a4ec99081ec}
+
+
+Ping all devices in a group. 
+
+Ping all devices in a group. This method returns true if all devices in the group are alive, false otherwise. If fwd is set to true (the default), the request is also forwarded to subgroups. Otherwise, it is only applied to the local set of devices.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em fwd} & The forward flag \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if all devices are alive 
+\end{DoxyReturn}
+
+
+Implements {\bf Tango\-::\-Group\-Element} \doxyref{}{p.}{df/d46/classTango_1_1GroupElement_ab004b0e82f6a7cd7db714ca42b3b1d8a}.
+
+\index{Tango\-::\-Group@{Tango\-::\-Group}!read\-\_\-attribute@{read\-\_\-attribute}}
+\index{read\-\_\-attribute@{read\-\_\-attribute}!Tango::Group@{Tango\-::\-Group}}
+\subsubsection[{read\-\_\-attribute}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Group\-Attr\-Reply\-List} Tango\-::\-Group\-::read\-\_\-attribute (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{a, }
+\item[{bool}]{fwd = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Group_a3c584b30ee4e69eed2de59cb548c4134}
+
+
+Reads an attribute on each device in the group. 
+
+Reads an attribute on each device in the group. This method is synchronous and does not return until replies are obtained or timeouts occurred. The parameter a is the name of the attribute to read. If fwd is set to true (the default) request is forwarded to subgroups. Otherwise, it is only applied to the local set of devices. \doxyref{Attribute}{p.}{d6/dad/classTango_1_1Attribute} values are returned in a \doxyref{Group\-Attr\-Reply\-List}{p.}{db/daa/classTango_1_1GroupAttrReplyList}. See Obtaining attribute values (Chapter 4.\-7.\-4.\-1 in {\tt Tango book}) for details. See also Reading an attribute (Chapter 4.\-7.\-4 in {\tt Tango book}) for an example.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a} & The attribute name \\
+\hline
+\mbox{\tt in}  & {\em fwd} & The forward flag \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The group attribute data 
+\end{DoxyReturn}
+\index{Tango\-::\-Group@{Tango\-::\-Group}!read\-\_\-attribute\-\_\-asynch@{read\-\_\-attribute\-\_\-asynch}}
+\index{read\-\_\-attribute\-\_\-asynch@{read\-\_\-attribute\-\_\-asynch}!Tango::Group@{Tango\-::\-Group}}
+\subsubsection[{read\-\_\-attribute\-\_\-asynch}]{\setlength{\rightskip}{0pt plus 5cm}long Tango\-::\-Group\-::read\-\_\-attribute\-\_\-asynch (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{a, }
+\item[{bool}]{fwd = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Group_a08fa50b55ebad69d6fd819f658703997}
+
+
+Reads an attribute on each device in the group asynchronously. 
+
+Reads an attribute on each device in the group asynchronously. The method sends the request to all devices and returns immediately. Pass the returned request id to \doxyref{Group\-::read\-\_\-attribute\-\_\-reply()}{p.}{d4/d6d/classTango_1_1Group_a9c580ba756e84843f29e126efb8c1986} to obtain the results. The parameter a is the name of the attribute to read. If fwd is set to true (the default) request is forwarded to subgroups. Otherwise, it is only applied to the local set of devices. The last parameter (rsv) is reserved for internal purpose and should not be modify. It may disappear in a near future. See Reading an attribute (Chapter 4.\-7.\-4 in {\tt Tango book}) for an example.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a} & The attribute name \\
+\hline
+\mbox{\tt in}  & {\em fwd} & The forward flag \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The call identifier 
+\end{DoxyReturn}
+\index{Tango\-::\-Group@{Tango\-::\-Group}!read\-\_\-attribute\-\_\-reply@{read\-\_\-attribute\-\_\-reply}}
+\index{read\-\_\-attribute\-\_\-reply@{read\-\_\-attribute\-\_\-reply}!Tango::Group@{Tango\-::\-Group}}
+\subsubsection[{read\-\_\-attribute\-\_\-reply}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Group\-Attr\-Reply\-List} Tango\-::\-Group\-::read\-\_\-attribute\-\_\-reply (
+\begin{DoxyParamCaption}
+\item[{long}]{req\-\_\-id, }
+\item[{long}]{tmo\-\_\-ms = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Group_a9c580ba756e84843f29e126efb8c1986}
+
+
+Returns the results of an asynchronous attribute reading. 
+
+Returns the results of an asynchronous attribute reading. The first parameter req\-\_\-id is a request identifier previously returned by read\-\_\-attribute\-\_\-asynch. For each device in the hierarchy, if the attribute value is not yet available, read\-\_\-attribute\-\_\-reply wait timeout\-\_\-ms milliseconds before throwing an exception. This exception will be part of the global reply. If timeout\-\_\-ms is set to 0, read\-\_\-attribute\-\_\-reply waits \char`\"{}indefinitely\char`\"{}. Replies are returned in a \doxyref{Group\-Attr\-Reply\-List}{p.}{db/daa/classTango_1_1GroupAttrReplyList}. See Obtaining attribute values (Chapter 4.\-7.\-4.\-1 in {\tt Tango book}) for details
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em req\-\_\-id} & The attribute name list \\
+\hline
+\mbox{\tt in}  & {\em tmo\-\_\-ms} & The timeout value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The group attribute data 
+\end{DoxyReturn}
+\index{Tango\-::\-Group@{Tango\-::\-Group}!read\-\_\-attributes@{read\-\_\-attributes}}
+\index{read\-\_\-attributes@{read\-\_\-attributes}!Tango::Group@{Tango\-::\-Group}}
+\subsubsection[{read\-\_\-attributes}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Group\-Attr\-Reply\-List} Tango\-::\-Group\-::read\-\_\-attributes (
+\begin{DoxyParamCaption}
+\item[{const std\-::vector$<$ std\-::string $>$ \&}]{al, }
+\item[{bool}]{fwd = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Group_ab4088df9970f1f1c7d6ae8c29563369f}
+
+
+Reads several attributes on each device in the group. 
+
+Reads several attributes on each device in the group. This method is synchronous and does not return until replies are obtained or timeouts occurred. The parameter al is the list of attributes to be read. If fwd is set to true (the default) request is forwarded to subgroups. Otherwise, it is only applied to the local set of devices. \doxyref{Attribute}{p.}{d6/dad/classTango_1_1Attribute} values are returned in a \doxyref{Group\-Attr\-Reply\-List}{p.}{db/daa/classTango_1_1GroupAttrReplyList}. See Obtaining attribute values (Chapter 4.\-7.\-4.\-1 in {\tt Tango book}) for details. See also Reading an attribute (Chapter 4.\-7.\-4 in {\tt Tango book}) for an example.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em al} & The attribute name list \\
+\hline
+\mbox{\tt in}  & {\em fwd} & The forward flag \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The group attribute data 
+\end{DoxyReturn}
+\index{Tango\-::\-Group@{Tango\-::\-Group}!read\-\_\-attributes\-\_\-asynch@{read\-\_\-attributes\-\_\-asynch}}
+\index{read\-\_\-attributes\-\_\-asynch@{read\-\_\-attributes\-\_\-asynch}!Tango::Group@{Tango\-::\-Group}}
+\subsubsection[{read\-\_\-attributes\-\_\-asynch}]{\setlength{\rightskip}{0pt plus 5cm}long Tango\-::\-Group\-::read\-\_\-attributes\-\_\-asynch (
+\begin{DoxyParamCaption}
+\item[{const std\-::vector$<$ std\-::string $>$ \&}]{al, }
+\item[{bool}]{fwd = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Group_a9431b4c0673e3824c31b00028e894d31}
+
+
+Reads several attributes on each device in the group asynchronously. 
+
+Reads several attribute on each device in the group asynchronously. The method sends the request to all devices and returns immediately. Pass the returned request id to \doxyref{Group\-::read\-\_\-attribute\-\_\-reply()}{p.}{d4/d6d/classTango_1_1Group_a9c580ba756e84843f29e126efb8c1986} to obtain the results. The parameter a is the name of the attribute to read. If fwd is set to true (the default) request is forwarded to subgroups. Otherwise, it is only applied to the local set of devices. The last parameter (rsv) is reserved for internal purpose and should not be modify. It may disappear in a near future. See Reading an attribute (Chapter 4.\-7.\-4 in {\tt Tango book}) for an example.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em al} & The attribute name list \\
+\hline
+\mbox{\tt in}  & {\em fwd} & The forward flag \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The call identifier 
+\end{DoxyReturn}
+\index{Tango\-::\-Group@{Tango\-::\-Group}!read\-\_\-attributes\-\_\-reply@{read\-\_\-attributes\-\_\-reply}}
+\index{read\-\_\-attributes\-\_\-reply@{read\-\_\-attributes\-\_\-reply}!Tango::Group@{Tango\-::\-Group}}
+\subsubsection[{read\-\_\-attributes\-\_\-reply}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Group\-Attr\-Reply\-List} Tango\-::\-Group\-::read\-\_\-attributes\-\_\-reply (
+\begin{DoxyParamCaption}
+\item[{long}]{req\-\_\-id, }
+\item[{long}]{tmo\-\_\-ms = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Group_ab1a83261058e5c52803e502c01380b79}
+
+
+Returns the results of an asynchronous attributes reading. 
+
+Returns the results of an asynchronous attributes reading. The first parameter req\-\_\-id is a request identifier previously returned by read\-\_\-attribute\-\_\-asynch. For each device in the hierarchy, if the attribute value is not yet available, read\-\_\-attribute\-\_\-reply wait timeout\-\_\-ms milliseconds before throwing an exception. This exception will be part of the global reply. If timeout\-\_\-ms is set to 0, read\-\_\-attribute\-\_\-reply waits \char`\"{}indefinitely\char`\"{}. Replies are returned in a \doxyref{Group\-Attr\-Reply\-List}{p.}{db/daa/classTango_1_1GroupAttrReplyList}. See Obtaining attribute values (Chapter 4.\-7.\-4.\-1 in {\tt Tango book}) for details
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em req\-\_\-id} & The attribute name list \\
+\hline
+\mbox{\tt in}  & {\em tmo\-\_\-ms} & The timeout value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The group attribute data 
+\end{DoxyReturn}
+\index{Tango\-::\-Group@{Tango\-::\-Group}!remove@{remove}}
+\index{remove@{remove}!Tango::Group@{Tango\-::\-Group}}
+\subsubsection[{remove}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Tango\-::\-Group\-::remove (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{pattern, }
+\item[{bool}]{fwd = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classTango_1_1Group_acd7763925b6e27ccf237b13fa7f98009}
+
+
+Removes any group or device which name matches the specified pattern. 
+
+The pattern parameter can be a group name, a device name or a device name pattern (e.\-g domain\-\_\-$\ast$ /family/member\-\_\-$\ast$). Since we can have groups with the same name in the hierarchy, a group name can be fully qualified to specify which group should be removed. Considering the following group\-: \begin{DoxyVerb} -> gauges
+    | -> cell-01
+    |     | -> penning
+    |     |     | -> ...
+    |     | -> pirani
+    |     |     | -> ...
+    | -> cell-02
+    |     | -> penning
+    |     |     | -> ...
+    |     | -> pirani
+    |     |     | -> ...
+    | -> cell-03
+    |     | -> ...\end{DoxyVerb}
+ A call to gauges-\/$>$remove(\char`\"{}penning\char`\"{}) will remove any group named \char`\"{}penning\char`\"{} in the hierarchy while gauges-\/$>$remove(\char`\"{}gauges.\-cell-\/02.\-penning\char`\"{}) will only remove the specified group. If fwd is set to true (the default), the remove request is also forwarded to subgroups. Otherwise, it is only applied to the local set of elements. For instance, the following code remove any stepper motor in the hierarchy\-: 
+\begin{DoxyCode}
+* root\_group->remove(\textcolor{stringliteral}{"*/stepper\_motor/*"});
+* 
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pattern} & The device selection pattern \\
+\hline
+\mbox{\tt in}  & {\em fwd} & The forward flag \\
+\hline
+\end{DoxyParams}
+\index{Tango\-::\-Group@{Tango\-::\-Group}!remove@{remove}}
+\index{remove@{remove}!Tango::Group@{Tango\-::\-Group}}
+\subsubsection[{remove}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Tango\-::\-Group\-::remove (
+\begin{DoxyParamCaption}
+\item[{const std\-::vector$<$ std\-::string $>$ \&}]{patterns, }
+\item[{bool}]{fwd = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classTango_1_1Group_a2561673c34638016106a6fba3c0b95ee}
+
+
+Removes any group or device which name matches any of the specified patterns. 
+
+The patterns parameter can be an array of group names and/or device names and/or device name patterns. Since we can have groups with the same name in the hierarchy, a group name can be fully qualified to specify which group should be removed. See previous method for details. If fwd is set to true (the default), the remove request is also forwarded to subgroups. Otherwise, it is only applied to the local set of elements.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em patterns} & The device selection patterns \\
+\hline
+\mbox{\tt in}  & {\em fwd} & The forward flag \\
+\hline
+\end{DoxyParams}
+\index{Tango\-::\-Group@{Tango\-::\-Group}!remove\-\_\-all@{remove\-\_\-all}}
+\index{remove\-\_\-all@{remove\-\_\-all}!Tango::Group@{Tango\-::\-Group}}
+\subsubsection[{remove\-\_\-all}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Tango\-::\-Group\-::remove\-\_\-all (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classTango_1_1Group_a12404b76c3e64df47467a1260591e7df}
+
+
+Removes all elements in the group. 
+
+Removes all elements in the group. After such a call, the group is empty. \index{Tango\-::\-Group@{Tango\-::\-Group}!set\-\_\-timeout\-\_\-millis@{set\-\_\-timeout\-\_\-millis}}
+\index{set\-\_\-timeout\-\_\-millis@{set\-\_\-timeout\-\_\-millis}!Tango::Group@{Tango\-::\-Group}}
+\subsubsection[{set\-\_\-timeout\-\_\-millis}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Tango\-::\-Group\-::set\-\_\-timeout\-\_\-millis (
+\begin{DoxyParamCaption}
+\item[{int}]{tmo\-\_\-ms}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classTango_1_1Group_a92242b89511557c3296480ee19b790b2}
+
+
+Set client side timeout for all devices in the group. 
+
+Set client side timeout for all devices composing the group in milliseconds. Any method which takes longer than this time to execute will throw an exception.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em tmo\-\_\-ms} & The timeout value \\
+\hline
+\end{DoxyParams}
+
+
+Implements {\bf Tango\-::\-Group\-Element} \doxyref{}{p.}{df/d46/classTango_1_1GroupElement_aa4ed03d3347901cecadbeff4c9b465a3}.
+
+\index{Tango\-::\-Group@{Tango\-::\-Group}!write\-\_\-attribute@{write\-\_\-attribute}}
+\index{write\-\_\-attribute@{write\-\_\-attribute}!Tango::Group@{Tango\-::\-Group}}
+\subsubsection[{write\-\_\-attribute}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Group\-Reply\-List} Tango\-::\-Group\-::write\-\_\-attribute (
+\begin{DoxyParamCaption}
+\item[{const Device\-Attribute \&}]{d, }
+\item[{bool}]{fwd = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Group_a64da6f972d7dca15b192c66226e3d4c7}
+
+
+Writes an attribute on each device in the group. 
+
+Writes an attribute on each device in the group. This method is synchronous and does not return until acknowledgements are obtained or timeouts occurred. The first parameter d is a \doxyref{Tango}{p.}{de/ddf/namespaceTango} generic container for attribute carrying both the attribute name and the value. See the Tango\-::\-Device\-Attribute documentation for details. If fwd is set to true (the default) request is forwarded to subgroups. Otherwise, it is only applied to the local set of devices. Acknowledgements are returned in a \doxyref{Group\-Reply\-List}{p.}{dc/d11/classTango_1_1GroupReplyList}. See Obtaining acknowledgements (Chapter 4.\-7.\-5.\-1 in {\tt Tango book}) for details. See also Case 1 of Writing an attribute (Chapter 4.\-7.\-5.\-2 in {\tt Tango book}) for an example.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em d} & The attribute name and value \\
+\hline
+\mbox{\tt in}  & {\em fwd} & The forward flag \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The group reply 
+\end{DoxyReturn}
+\index{Tango\-::\-Group@{Tango\-::\-Group}!write\-\_\-attribute@{write\-\_\-attribute}}
+\index{write\-\_\-attribute@{write\-\_\-attribute}!Tango::Group@{Tango\-::\-Group}}
+\subsubsection[{write\-\_\-attribute}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Group\-Reply\-List} Tango\-::\-Group\-::write\-\_\-attribute (
+\begin{DoxyParamCaption}
+\item[{const std\-::vector$<$ Device\-Attribute $>$ \&}]{d, }
+\item[{bool}]{fwd = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Group_ac05e427721de6903871b6c2dc505dec7}
+
+
+Writes several attributes on each device in the group (using Device\-Attribute) 
+
+Writes several attributes on each device in the group. This method is synchronous and does not return until acknowledgements are obtained or timeouts occurred. The first parameter d is a vector of \doxyref{Tango}{p.}{de/ddf/namespaceTango} generic container for attribute carrying both the attribute name and the value. See the Tango\-::\-Device\-Attribute documentation for details. If fwd is set to true (the default) request is forwarded to subgroups. Otherwise, it is only applied to the local set of devices. Acknowledgements are returned in a \doxyref{Group\-Reply\-List}{p.}{dc/d11/classTango_1_1GroupReplyList}. See Obtaining acknowledgements (Chapter 4.\-7.\-5.\-1 in {\tt Tango book}) for details. See also Case 2 of Writing an attribute (Chapter 4.\-7.\-5.\-3 in {\tt Tango book}) for an example.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em d} & The attribute names and values \\
+\hline
+\mbox{\tt in}  & {\em fwd} & The forward flag \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The group reply 
+\end{DoxyReturn}
+\index{Tango\-::\-Group@{Tango\-::\-Group}!write\-\_\-attribute@{write\-\_\-attribute}}
+\index{write\-\_\-attribute@{write\-\_\-attribute}!Tango::Group@{Tango\-::\-Group}}
+\subsubsection[{write\-\_\-attribute}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf Group\-Reply\-List} Tango\-::\-Group\-::write\-\_\-attribute (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{n, }
+\item[{const std\-::vector$<$ T $>$ \&}]{d, }
+\item[{bool}]{fwd = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Group_a5b513a1564a1a4f9e5482dfcef528d0c}
+
+
+Writes one attributes on each device in the group with specific value per device. 
+
+Writes an attribute on each device in the group. This method is synchronous and does not return until replies are obtained or timeouts occurred. This implementation of write\-\_\-attribute allows writing a specific value to each device in the group. In order to use this form of write\-\_\-attribute, the user must have an \char`\"{}a priori\char`\"{} and \char`\"{}perfect\char`\"{} knowledge of the devices order in the group. The parameter a is the name of the attribute. The std\-::vector d contains a specific value for each device in the group. Since this method is a template, d is able to contain any \doxyref{Tango}{p.}{de/ddf/namespaceTango} attribute type. Its size must equal Group\-::get\-\_\-size(fwd). Otherwise, an exception is thrown. The order of the attribute values must follows the order of the devices in the group (d[0] =$>$ 1st device, d[1] =$>$ 2nd device and so on). If fwd is set to true (the default) request is forwarded to subgroups. Otherwise, it is only applied to the local set of devices. Acknowledgements are returned in a \doxyref{Group\-Reply\-List}{p.}{dc/d11/classTango_1_1GroupReplyList}. See Obtaining acknowledgements (Chapter 4.\-7.\-5.\-1 in {\tt Tango book}) for details. See also Case 2 of Writing an attribute (Chapter 4.\-7.\-5.\-3 in {\tt Tango book}) for an example.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The attribute data type \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em n} & The attribute name \\
+\hline
+\mbox{\tt in}  & {\em d} & The attribute names and values \\
+\hline
+\mbox{\tt in}  & {\em fwd} & The forward flag \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The group reply 
+\end{DoxyReturn}
+
+
+References write\-\_\-attribute\-\_\-reply().
+
+\index{Tango\-::\-Group@{Tango\-::\-Group}!write\-\_\-attribute\-\_\-asynch@{write\-\_\-attribute\-\_\-asynch}}
+\index{write\-\_\-attribute\-\_\-asynch@{write\-\_\-attribute\-\_\-asynch}!Tango::Group@{Tango\-::\-Group}}
+\subsubsection[{write\-\_\-attribute\-\_\-asynch}]{\setlength{\rightskip}{0pt plus 5cm}long Tango\-::\-Group\-::write\-\_\-attribute\-\_\-asynch (
+\begin{DoxyParamCaption}
+\item[{const Device\-Attribute \&}]{d, }
+\item[{bool}]{fwd = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Group_a2ead1c134a086855da1e809aa8f13d03}
+
+
+Writes an attribute on each device in the group asynchronously. 
+
+Write an attribute on each device in the group asynchronously. The method sends the request to all devices and returns immediately. Pass the returned request id to \doxyref{Group\-::write\-\_\-attribute\-\_\-reply()}{p.}{d4/d6d/classTango_1_1Group_aa300f78715baea10d390b7e7489e0506} to obtain the acknowledgements. The first parameter d is a \doxyref{Tango}{p.}{de/ddf/namespaceTango} generic container for attribute carrying both the attribute name and the value. See the Tango\-::\-Device\-Attribute documentation for details. If fwd is set to true (the default) request is forwarded to subgroups. Otherwise, it is only applied to the local set of devices. See Case 1 of Writing an attribute (Chapter 4.\-7.\-5.\-2 in {\tt Tango book}) for an example.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em d} & The attribute name and value \\
+\hline
+\mbox{\tt in}  & {\em fwd} & The forward flag \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The call identifier 
+\end{DoxyReturn}
+\index{Tango\-::\-Group@{Tango\-::\-Group}!write\-\_\-attribute\-\_\-asynch@{write\-\_\-attribute\-\_\-asynch}}
+\index{write\-\_\-attribute\-\_\-asynch@{write\-\_\-attribute\-\_\-asynch}!Tango::Group@{Tango\-::\-Group}}
+\subsubsection[{write\-\_\-attribute\-\_\-asynch}]{\setlength{\rightskip}{0pt plus 5cm}long Tango\-::\-Group\-::write\-\_\-attribute\-\_\-asynch (
+\begin{DoxyParamCaption}
+\item[{const std\-::vector$<$ Device\-Attribute $>$ \&}]{d, }
+\item[{bool}]{fwd = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Group_a2edbe29d80b0c686840c01bac7304197}
+
+
+Writes several attributes on each device in the group asynchronously. 
+
+Write several attributes on each device in the group asynchronously. The method sends the request to all devices and returns immediately. Pass the returned request id to \doxyref{Group\-::write\-\_\-attribute\-\_\-reply()}{p.}{d4/d6d/classTango_1_1Group_aa300f78715baea10d390b7e7489e0506} to obtain the acknowledgements. The first parameter d is a vector of \doxyref{Tango}{p.}{de/ddf/namespaceTango} generic container for attribute carrying both the attribute name and the value. See the Tango\-::\-Device\-Attribute documentation for details. If fwd is set to true (the default) request is forwarded to subgroups. Otherwise, it is only applied to the local set of devices. See Case 1 of Writing an attribute (Chapter 4.\-7.\-5.\-2 in {\tt Tango book}) for an example.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em d} & The attribute name and value \\
+\hline
+\mbox{\tt in}  & {\em fwd} & The forward flag \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The call identifier 
+\end{DoxyReturn}
+\index{Tango\-::\-Group@{Tango\-::\-Group}!write\-\_\-attribute\-\_\-asynch@{write\-\_\-attribute\-\_\-asynch}}
+\index{write\-\_\-attribute\-\_\-asynch@{write\-\_\-attribute\-\_\-asynch}!Tango::Group@{Tango\-::\-Group}}
+\subsubsection[{write\-\_\-attribute\-\_\-asynch}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ long Tango\-::\-Group\-::write\-\_\-attribute\-\_\-asynch (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{a, }
+\item[{const std\-::vector$<$ T $>$ \&}]{d, }
+\item[{bool}]{fwd = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Group_a187f0b29e02bf82b74f21b55c4252d62}
+
+
+Writes an attribute on each device in the group asynchronously (Without Device\-Attribute data) 
+
+Writes an attribute on each device in the group asynchronously. The method sends the request to all devices and returns immediately. Pass the returned request id to \doxyref{Group\-::write\-\_\-attribute\-\_\-reply()}{p.}{d4/d6d/classTango_1_1Group_aa300f78715baea10d390b7e7489e0506} to obtain the acknowledgements. This implementation of write\-\_\-attribute\-\_\-asynch allows writing a specific value to each device in the group. In order to use this form of write\-\_\-attribute\-\_\-asynch, the user must have an \char`\"{}a priori\char`\"{} and \char`\"{}perfect\char`\"{} knowledge of the devices order in the group. The parameter a is the name of the attribute. The std\-::vector d contains a specific value for each device in the group. Since this method is a template, d is able to contain any \doxyref{Tango}{p.}{de/ddf/namespaceTango} attribute type. Its size must equal Group\-::get\-\_\-size(fwd). Otherwise, an exception is thrown. The order of the attribute values must follows the order of the devices in the group (d[0] =$>$ 1st device, d[1] =$>$ 2nd device and so on). If fwd is set to true (the default) request is forwarded to subgroups. Otherwise, it is only applied to the local set of devices. See Case2 of Writing an attribute (Chapter 4.\-7.\-5.\-3 in {\tt Tango book}) for an example.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The attribute data type \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a} & The attribute name \\
+\hline
+\mbox{\tt in}  & {\em d} & The attribute value(s) \\
+\hline
+\mbox{\tt in}  & {\em fwd} & The forward flag \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The call identifier 
+\end{DoxyReturn}
+\index{Tango\-::\-Group@{Tango\-::\-Group}!write\-\_\-attribute\-\_\-reply@{write\-\_\-attribute\-\_\-reply}}
+\index{write\-\_\-attribute\-\_\-reply@{write\-\_\-attribute\-\_\-reply}!Tango::Group@{Tango\-::\-Group}}
+\subsubsection[{write\-\_\-attribute\-\_\-reply}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Group\-Reply\-List} Tango\-::\-Group\-::write\-\_\-attribute\-\_\-reply (
+\begin{DoxyParamCaption}
+\item[{long}]{req\-\_\-id, }
+\item[{long}]{tmo\-\_\-ms = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Group_aa300f78715baea10d390b7e7489e0506}
+
+
+Returns the acknowledgements of an asynchronous attribute writing. 
+
+Returns the acknowledgements of an asynchronous attribute writing. The first parameter req\-\_\-id is a request identifier previously returned by one of the write\-\_\-attribute\-\_\-asynch implementation. For each device in the hierarchy, if the acknowledgement is not yet available, write\-\_\-attribute\-\_\-replywait timeout\-\_\-ms milliseconds before throwing an exception. This exception will be part of the global reply. If timeout\-\_\-ms is set to 0, write\-\_\-attribute\-\_\-reply waits \char`\"{}indefinitely\char`\"{}. Acknowledgements are returned in a \doxyref{Group\-Reply\-List}{p.}{dc/d11/classTango_1_1GroupReplyList}. See Obtaining acknowledgements (Chapter 4.\-7.\-5.\-1 in {\tt Tango book}) for details.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em req\-\_\-id} & The request identifier \\
+\hline
+\mbox{\tt in}  & {\em tmo\-\_\-ms} & The timeout value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The attribute writing acknowledgements 
+\end{DoxyReturn}
+
+
+Referenced by write\-\_\-attribute().
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+{\bf group.\-h}\end{DoxyCompactItemize}

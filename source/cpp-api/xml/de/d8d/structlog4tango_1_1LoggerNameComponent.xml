@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="de/d8d/structlog4tango_1_1LoggerNameComponent" kind="struct" prot="public">
+    <compoundname>log4tango::LoggerNameComponent</compoundname>
+    <basecompoundref refid="d0/d47/classlog4tango_1_1PatternLayout_1_1PatternComponent" prot="public" virt="non-virtual">log4tango::PatternLayout::PatternComponent</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="de/d8d/structlog4tango_1_1LoggerNameComponent_1abcb6e6c57d452e2804440995187d4f20" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int log4tango::LoggerNameComponent::_precision</definition>
+        <argsstring></argsstring>
+        <name>_precision</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/src/log4tango/PatternLayout.cpp" line="111" column="1" bodyfile="/home/tango/workspace/cppTango/src/log4tango/PatternLayout.cpp" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="de/d8d/structlog4tango_1_1LoggerNameComponent_1a13555ff814bd91e96ff0878da86d9313" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>log4tango::LoggerNameComponent::LoggerNameComponent</definition>
+        <argsstring>(std::string specifier)</argsstring>
+        <name>LoggerNameComponent</name>
+        <param>
+          <type>std::string</type>
+          <declname>specifier</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/src/log4tango/PatternLayout.cpp" line="80" column="1" bodyfile="/home/tango/workspace/cppTango/src/log4tango/PatternLayout.cpp" bodystart="80" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d8d/structlog4tango_1_1LoggerNameComponent_1a301d9825a65b8c88bdc2e2f00d73698a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void log4tango::LoggerNameComponent::append</definition>
+        <argsstring>(std::ostringstream &amp;out, const LoggingEvent &amp;event)</argsstring>
+        <name>append</name>
+        <reimplements refid="d0/d47/classlog4tango_1_1PatternLayout_1_1PatternComponent_1afb25822922b51144361faff5d6cdeaa8">append</reimplements>
+        <param>
+          <type><ref refid="d7/d24/classstd_1_1ostringstream" kindref="compound">std::ostringstream</ref> &amp;</type>
+          <declname>out</declname>
+        </param>
+        <param>
+          <type>const <ref refid="d8/df2/structlog4tango_1_1LoggingEvent" kindref="compound">LoggingEvent</ref> &amp;</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/src/log4tango/PatternLayout.cpp" line="93" column="1" bodyfile="/home/tango/workspace/cppTango/src/log4tango/PatternLayout.cpp" bodystart="93" bodyend="108"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1106">
+        <label>log4tango::PatternLayout::PatternComponent</label>
+        <link refid="d0/d47/classlog4tango_1_1PatternLayout_1_1PatternComponent"/>
+      </node>
+      <node id="1105">
+        <label>log4tango::LoggerNameComponent</label>
+        <link refid="de/d8d/structlog4tango_1_1LoggerNameComponent"/>
+        <childnode refid="1106" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1108">
+        <label>log4tango::PatternLayout::PatternComponent</label>
+        <link refid="d0/d47/classlog4tango_1_1PatternLayout_1_1PatternComponent"/>
+      </node>
+      <node id="1107">
+        <label>log4tango::LoggerNameComponent</label>
+        <link refid="de/d8d/structlog4tango_1_1LoggerNameComponent"/>
+        <childnode refid="1108" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/tango/workspace/cppTango/src/log4tango/PatternLayout.cpp" line="79" column="1" bodyfile="/home/tango/workspace/cppTango/src/log4tango/PatternLayout.cpp" bodystart="78" bodyend="112"/>
+    <listofallmembers>
+      <member refid="de/d8d/structlog4tango_1_1LoggerNameComponent_1abcb6e6c57d452e2804440995187d4f20" prot="private" virt="non-virtual"><scope>log4tango::LoggerNameComponent</scope><name>_precision</name></member>
+      <member refid="de/d8d/structlog4tango_1_1LoggerNameComponent_1a301d9825a65b8c88bdc2e2f00d73698a" prot="public" virt="virtual"><scope>log4tango::LoggerNameComponent</scope><name>append</name></member>
+      <member refid="de/d8d/structlog4tango_1_1LoggerNameComponent_1a13555ff814bd91e96ff0878da86d9313" prot="public" virt="non-virtual"><scope>log4tango::LoggerNameComponent</scope><name>LoggerNameComponent</name></member>
+      <member refid="d0/d47/classlog4tango_1_1PatternLayout_1_1PatternComponent_1adc8b8fe4a04939ecf6c440bf64ceaf80" prot="public" virt="virtual"><scope>log4tango::LoggerNameComponent</scope><name>~PatternComponent</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

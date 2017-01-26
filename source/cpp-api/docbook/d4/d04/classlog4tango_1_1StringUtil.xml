@@ -1,0 +1,169 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d4/d04/classlog4tango_1_1StringUtil">
+<title>log4tango::StringUtil class Reference</title>
+<para>
+    <programlisting>#include <link linkend="de/d24/StringUtil_8hh">&quot;StringUtil.hh&quot;</link></programlisting>
+</para>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static unsigned int <link linkend="d4/d04/classlog4tango_1_1StringUtil_1a0cbc8f98a127ba0cb36df3845e16405c">split</link> (
+std::vector&lt; std::string &gt; &amp; v, const std::string &amp; s, char delimiter, unsigned int maxSegments)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static unsigned int <link linkend="d4/d04/classlog4tango_1_1StringUtil_1aaefb28c23a501416d11eb8a0c41b5fd2">split</link> (
+T &amp; output, const std::string &amp; s, char delimiter, unsigned int maxSegments)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static std::string <link linkend="d4/d04/classlog4tango_1_1StringUtil_1a5b1f1af63d4ac9d16150d08f2af6ebbc">trim</link> (
+const std::string &amp; s)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static std::string <link linkend="d4/d04/classlog4tango_1_1StringUtil_1a1588cfe00d2951f175025f949793f866">vform</link> (
+const char * format, va_list args)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+            <section xml:id="d4/d04/classlog4tango_1_1StringUtil_1a0cbc8f98a127ba0cb36df3845e16405c">
+                <title>unsigned int log4tango::StringUtil::split (std::vector&lt; std::string &gt; &amp;v, const std::string &amp;s, char delimiter, unsigned int maxSegments=INT_MAX)</title> <emphasis>splits a string into a vector of string segments based on the
+given delimiter.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>v</entry>
+                                <entry>
+<para>The vector in which the segments will be stored. The vector will be emptied before storing the segments </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>s</entry>
+                                <entry>
+<para>The string to split into segments. </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>delimiter</entry>
+                                <entry>
+<para>The delimiter character </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>maxSegments</entry>
+                                <entry>
+<para>the maximum number of segments. Upon return v.size() &lt;= maxSegments. The string is scanned from left to right so v[maxSegments - 1] may contain a string containing the delimiter character. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>The actual number of segments (limited by maxSegments). </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="d4/d04/classlog4tango_1_1StringUtil_1aaefb28c23a501416d11eb8a0c41b5fd2">
+                <title>static unsigned int log4tango::StringUtil::split (T &amp;output, const std::string &amp;s, char delimiter, unsigned int maxSegments=INT_MAX)</title> <emphasis>splits a string into string segments based on the given delimiter
+and assigns the segments through an output_iterator.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>output</entry>
+                                <entry>
+<para>The output_iterator through which to assign the string segments. Typically this will be a back_insertion_iterator. </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>s</entry>
+                                <entry>
+<para>The string to split into segments. </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>delimiter</entry>
+                                <entry>
+<para>The delimiter character </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>maxSegments</entry>
+                                <entry>
+<para>The maximum number of segments. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>The actual number of segments (limited by maxSegments). </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="d4/d04/classlog4tango_1_1StringUtil_1a5b1f1af63d4ac9d16150d08f2af6ebbc">
+                <title>std::string log4tango::StringUtil::trim (const std::string &amp;s)</title> <emphasis>Returns a string identical to the given string but without leading
+or trailing HTABs or spaces.</emphasis>
+                
+            </section>
+            <section xml:id="d4/d04/classlog4tango_1_1StringUtil_1a1588cfe00d2951f175025f949793f866">
+                <title>std::string log4tango::StringUtil::vform (const char *format, va_list args)</title> <emphasis>Returns a string contructed from the a format specifier
+and a va_list of arguments, analogously to vprintf(3).</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>format</entry>
+                                <entry>
+<para>the format specifier. </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>args</entry>
+                                <entry>
+<para>the va_list of arguments. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+</section>

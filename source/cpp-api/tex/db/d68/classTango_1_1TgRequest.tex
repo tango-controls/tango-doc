@@ -1,0 +1,122 @@
+\section{Tango\-:\-:Tg\-Request Class Reference}
+\label{classTango_1_1TgRequest}\index{Tango\-::\-Tg\-Request@{Tango\-::\-Tg\-Request}}
+
+
+{\ttfamily \#include \char`\"{}devasyn.\-h\char`\"{}}
+
+
+
+Collaboration diagram for Tango\-:\-:Tg\-Request\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=138pt]{d6/d3f/classTango_1_1TgRequest__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf Req\-Type} \{ \\*
+{\bf C\-M\-D\-\_\-\-I\-N\-O\-U\-T}, 
+\\*
+{\bf R\-E\-A\-D\-\_\-\-A\-T\-T\-R}, 
+\\*
+{\bf W\-R\-I\-T\-E\-\_\-\-A\-T\-T\-R\-\_\-\-S\-I\-N\-G\-L\-E}, 
+\\*
+{\bf W\-R\-I\-T\-E\-\_\-\-A\-T\-T\-R}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Tg\-Request} (C\-O\-R\-B\-A\-::\-Request\-\_\-ptr re, {\bf Req\-Type} ty)
+\item 
+{\bf Tg\-Request} (C\-O\-R\-B\-A\-::\-Request\-\_\-ptr re, {\bf Req\-Type} ty, {\bf Call\-Back} $\ast$cb)
+\item 
+{\bf Tg\-Request} (Tango\-::\-Connection $\ast$con, {\bf Req\-Type} ty, {\bf Call\-Back} $\ast$cb)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf arrived}
+\item 
+{\bf Call\-Back} $\ast$ {\bf cb\-\_\-ptr}
+\item 
+Connection $\ast$ {\bf dev}
+\item 
+{\bf Req\-Type} {\bf req\-\_\-type}
+\item 
+C\-O\-R\-B\-A\-::\-Request\-\_\-ptr {\bf request}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Enumeration Documentation}
+\index{Tango\-::\-Tg\-Request@{Tango\-::\-Tg\-Request}!Req\-Type@{Req\-Type}}
+\index{Req\-Type@{Req\-Type}!Tango::TgRequest@{Tango\-::\-Tg\-Request}}
+\subsubsection[{Req\-Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Tango\-::\-Tg\-Request\-::\-Req\-Type}}\label{classTango_1_1TgRequest_a6ae144d0765e704695987f8b20255343}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{C\-M\-D\-\_\-\-I\-N\-O\-U\-T@{C\-M\-D\-\_\-\-I\-N\-O\-U\-T}!Tango\-::\-Tg\-Request@{Tango\-::\-Tg\-Request}}\index{Tango\-::\-Tg\-Request@{Tango\-::\-Tg\-Request}!C\-M\-D\-\_\-\-I\-N\-O\-U\-T@{C\-M\-D\-\_\-\-I\-N\-O\-U\-T}}\item[{\em 
+C\-M\-D\-\_\-\-I\-N\-O\-U\-T\label{classTango_1_1TgRequest_a6ae144d0765e704695987f8b20255343a04e80a438e091149063679db1a10ddb9}
+}]\index{R\-E\-A\-D\-\_\-\-A\-T\-T\-R@{R\-E\-A\-D\-\_\-\-A\-T\-T\-R}!Tango\-::\-Tg\-Request@{Tango\-::\-Tg\-Request}}\index{Tango\-::\-Tg\-Request@{Tango\-::\-Tg\-Request}!R\-E\-A\-D\-\_\-\-A\-T\-T\-R@{R\-E\-A\-D\-\_\-\-A\-T\-T\-R}}\item[{\em 
+R\-E\-A\-D\-\_\-\-A\-T\-T\-R\label{classTango_1_1TgRequest_a6ae144d0765e704695987f8b20255343a3466c21a6337f0cd76a5bbd90a566172}
+}]\index{W\-R\-I\-T\-E\-\_\-\-A\-T\-T\-R\-\_\-\-S\-I\-N\-G\-L\-E@{W\-R\-I\-T\-E\-\_\-\-A\-T\-T\-R\-\_\-\-S\-I\-N\-G\-L\-E}!Tango\-::\-Tg\-Request@{Tango\-::\-Tg\-Request}}\index{Tango\-::\-Tg\-Request@{Tango\-::\-Tg\-Request}!W\-R\-I\-T\-E\-\_\-\-A\-T\-T\-R\-\_\-\-S\-I\-N\-G\-L\-E@{W\-R\-I\-T\-E\-\_\-\-A\-T\-T\-R\-\_\-\-S\-I\-N\-G\-L\-E}}\item[{\em 
+W\-R\-I\-T\-E\-\_\-\-A\-T\-T\-R\-\_\-\-S\-I\-N\-G\-L\-E\label{classTango_1_1TgRequest_a6ae144d0765e704695987f8b20255343aa7268c071129d7da5e811bf37b8f2fcb}
+}]\index{W\-R\-I\-T\-E\-\_\-\-A\-T\-T\-R@{W\-R\-I\-T\-E\-\_\-\-A\-T\-T\-R}!Tango\-::\-Tg\-Request@{Tango\-::\-Tg\-Request}}\index{Tango\-::\-Tg\-Request@{Tango\-::\-Tg\-Request}!W\-R\-I\-T\-E\-\_\-\-A\-T\-T\-R@{W\-R\-I\-T\-E\-\_\-\-A\-T\-T\-R}}\item[{\em 
+W\-R\-I\-T\-E\-\_\-\-A\-T\-T\-R\label{classTango_1_1TgRequest_a6ae144d0765e704695987f8b20255343a82796f46c21ca154dc78089e2983de65}
+}]\end{description}
+\end{Desc}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Tango\-::\-Tg\-Request@{Tango\-::\-Tg\-Request}!Tg\-Request@{Tg\-Request}}
+\index{Tg\-Request@{Tg\-Request}!Tango::TgRequest@{Tango\-::\-Tg\-Request}}
+\subsubsection[{Tg\-Request}]{\setlength{\rightskip}{0pt plus 5cm}Tango\-::\-Tg\-Request\-::\-Tg\-Request (
+\begin{DoxyParamCaption}
+\item[{C\-O\-R\-B\-A\-::\-Request\-\_\-ptr}]{re, }
+\item[{{\bf Req\-Type}}]{ty}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTango_1_1TgRequest_aaff69a8c4221e4ac48febff3f9c6e3b6}
+\index{Tango\-::\-Tg\-Request@{Tango\-::\-Tg\-Request}!Tg\-Request@{Tg\-Request}}
+\index{Tg\-Request@{Tg\-Request}!Tango::TgRequest@{Tango\-::\-Tg\-Request}}
+\subsubsection[{Tg\-Request}]{\setlength{\rightskip}{0pt plus 5cm}Tango\-::\-Tg\-Request\-::\-Tg\-Request (
+\begin{DoxyParamCaption}
+\item[{C\-O\-R\-B\-A\-::\-Request\-\_\-ptr}]{re, }
+\item[{{\bf Req\-Type}}]{ty, }
+\item[{{\bf Call\-Back} $\ast$}]{cb}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTango_1_1TgRequest_ad17a7ebe95dc9bd2ed9e55409ada8059}
+\index{Tango\-::\-Tg\-Request@{Tango\-::\-Tg\-Request}!Tg\-Request@{Tg\-Request}}
+\index{Tg\-Request@{Tg\-Request}!Tango::TgRequest@{Tango\-::\-Tg\-Request}}
+\subsubsection[{Tg\-Request}]{\setlength{\rightskip}{0pt plus 5cm}Tango\-::\-Tg\-Request\-::\-Tg\-Request (
+\begin{DoxyParamCaption}
+\item[{Tango\-::\-Connection $\ast$}]{con, }
+\item[{{\bf Req\-Type}}]{ty, }
+\item[{{\bf Call\-Back} $\ast$}]{cb}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTango_1_1TgRequest_a3a6abdbc73d075711e9573909fbd0dba}
+
+
+\subsection{Member Data Documentation}
+\index{Tango\-::\-Tg\-Request@{Tango\-::\-Tg\-Request}!arrived@{arrived}}
+\index{arrived@{arrived}!Tango::TgRequest@{Tango\-::\-Tg\-Request}}
+\subsubsection[{arrived}]{\setlength{\rightskip}{0pt plus 5cm}bool Tango\-::\-Tg\-Request\-::arrived}\label{classTango_1_1TgRequest_ab6edfb4b709db11d6863eaf6b3d963fb}
+\index{Tango\-::\-Tg\-Request@{Tango\-::\-Tg\-Request}!cb\-\_\-ptr@{cb\-\_\-ptr}}
+\index{cb\-\_\-ptr@{cb\-\_\-ptr}!Tango::TgRequest@{Tango\-::\-Tg\-Request}}
+\subsubsection[{cb\-\_\-ptr}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Call\-Back}$\ast$ Tango\-::\-Tg\-Request\-::cb\-\_\-ptr}\label{classTango_1_1TgRequest_afa65b05a864aed9174755a819d8193a0}
+\index{Tango\-::\-Tg\-Request@{Tango\-::\-Tg\-Request}!dev@{dev}}
+\index{dev@{dev}!Tango::TgRequest@{Tango\-::\-Tg\-Request}}
+\subsubsection[{dev}]{\setlength{\rightskip}{0pt plus 5cm}Connection$\ast$ Tango\-::\-Tg\-Request\-::dev}\label{classTango_1_1TgRequest_a6600b476fa5be339ff010fe4f60d593b}
+\index{Tango\-::\-Tg\-Request@{Tango\-::\-Tg\-Request}!req\-\_\-type@{req\-\_\-type}}
+\index{req\-\_\-type@{req\-\_\-type}!Tango::TgRequest@{Tango\-::\-Tg\-Request}}
+\subsubsection[{req\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Req\-Type} Tango\-::\-Tg\-Request\-::req\-\_\-type}\label{classTango_1_1TgRequest_a17cf8b3659ac680ae34ab0d801daa163}
+\index{Tango\-::\-Tg\-Request@{Tango\-::\-Tg\-Request}!request@{request}}
+\index{request@{request}!Tango::TgRequest@{Tango\-::\-Tg\-Request}}
+\subsubsection[{request}]{\setlength{\rightskip}{0pt plus 5cm}C\-O\-R\-B\-A\-::\-Request\-\_\-ptr Tango\-::\-Tg\-Request\-::request}\label{classTango_1_1TgRequest_ac67ab29d677879fb006e4bbd434fef00}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+{\bf devasyn.\-h}\end{DoxyCompactItemize}

@@ -1,0 +1,1703 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="db/da8/classTango_1_1WAttribute">
+<title>Tango::WAttribute class Reference</title>
+        <simplesect>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d4/d22/classTango_1_1WAttribute_1_1WAttributeExt">Tango::WAttribute::WAttributeExt</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Constructors</title>
+      <description>
+<para>Miscellaneous constructors </para>
+</description>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="db/da8/classTango_1_1WAttribute_1ab08504608863f5dd88503e914d84027f">WAttribute</link> (
+vector&lt; AttrProperty &gt; &amp; prop_list, <link linkend="d5/dcd/classTango_1_1Attr">Attr</link> &amp; tmp_attr, string &amp; dev_name, long idx)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Destructor</title>
+      <description>
+<para>Only one desctructor is defined for this class </para>
+</description>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="db/da8/classTango_1_1WAttribute_1a9d46d82cb48de388e34671f1276b3723">~WAttribute</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Attribute configuration methods</title>
+      <description>
+<para>Miscellaneous methods dealing with attribute min and max value property </para>
+</description>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="db/da8/classTango_1_1WAttribute_1a07014d9f378998d66b12211ee78efe49">is_min_value</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1ae6f42c7b1ab74e7d6498aea31dbe90bc">set_min_value</link> (
+const T &amp; min_value)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1a1607b5b07321e6d1867fb7f8b78b56c9">set_min_value</link> (
+char * min_value)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1a6554f7bb0b05363282a11bb3ea2dd24f">set_min_value</link> (
+const char * min_value)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1a6cf44ad3c1cd92d3a3c72399c1905115">get_min_value</link> (
+T &amp; min_value)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="db/da8/classTango_1_1WAttribute_1a75be52f036f4e7e4a0de5f6418a10cfd">is_max_value</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1afad111e0f1db4e181a42739ef994bae9">set_max_value</link> (
+const T &amp; max_value)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1aa1108fe16975a87b4b4509a09d0949ac">set_max_value</link> (
+char * max_value)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1add92cf6bfc1d74c4dde4da7ec0fc10cf">set_max_value</link> (
+const char * max_value)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1a257f2909d2037875379471e1c05a0c20">get_max_value</link> (
+T &amp; max_value)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Get new value for attribute</title>
+      <description>
+<para>Miscellaneous method to retrieve from the <link linkend="db/da8/classTango_1_1WAttribute">WAttribute</link> object the new value for the attribute. </para>
+</description>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>long <link linkend="db/da8/classTango_1_1WAttribute_1a86f808b64fd05cc0a7912ede8a746503">get_write_value_length</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct timeval &amp; <link linkend="db/da8/classTango_1_1WAttribute_1a68956bf1b7eebe867fda36e338d8d34e">get_write_date</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1a534a115e8c1aebdb3c2553d706ab9eed">get_write_value</link> (
+Tango::DevShort &amp; val)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1ad6dd31d7f2e1d0b61a02d0cef36f3f40">get_write_value</link> (
+const Tango::DevShort *&amp; ptr)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1a9a4f1224a1413145f1217224846f6769">get_write_value</link> (
+Tango::DevLong &amp; val)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1adb5b6c5a41e64f332780d427b8dc6b48">get_write_value</link> (
+const Tango::DevLong *&amp; ptr)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1a1730f61d25e6c17b1f73f456c85b71b4">get_write_value</link> (
+Tango::DevLong64 &amp; val)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1a47d8dc15428a7af9a51568c3e3f14c88">get_write_value</link> (
+const Tango::DevLong64 *&amp; ptr)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1aaa70e99095ff936a466557500ce80d7c">get_write_value</link> (
+Tango::DevFloat &amp; val)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1affccdd1fa0fd1510c433ee646ca7d6b5">get_write_value</link> (
+const Tango::DevFloat *&amp; ptr)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1a5d3b6c042f4247f6875bd31b7131a504">get_write_value</link> (
+Tango::DevDouble &amp; val)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1a7ec8e0f56008cf8b7eb8081880d89088">get_write_value</link> (
+const Tango::DevDouble *&amp; ptr)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1af03e9a1cc30010efbc8d6f4f5a0a1e90">get_write_value</link> (
+Tango::DevString &amp; val)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1ad56e6c3da60658694a2109539ab21eb9">get_write_value</link> (
+const <link linkend="de/ddf/namespaceTango_1a31a504495ecab5fd862cb6e60d40360c">Tango::ConstDevString</link> *&amp; ptr)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1a450912b6c7d969e30a860b61e33feefc">get_write_value</link> (
+Tango::DevBoolean &amp; val)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1a0cbba0e559000c0f1219ab17f157a11d">get_write_value</link> (
+const Tango::DevBoolean *&amp; ptr)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1a6fe68e2c6d8a9554c7672d397d5552f8">get_write_value</link> (
+Tango::DevUShort &amp; val)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1a072b84cc51584a41264643264d5bb6c2">get_write_value</link> (
+const Tango::DevUShort *&amp; ptr)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1a4a89cf4ea54ec94c484c70bae6ceb75b">get_write_value</link> (
+Tango::DevUChar &amp; val)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1a4463f984b296692b9a949a940db4bf1d">get_write_value</link> (
+const Tango::DevUChar *&amp; ptr)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1a3d237324e8a665bd683072541739a535">get_write_value</link> (
+Tango::DevULong &amp; val)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1a2a2f07b43086da7db6969effac4f1d92">get_write_value</link> (
+const Tango::DevULong *&amp; ptr)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1af547b58cb53a0fd8aa50ab00c4fe6189">get_write_value</link> (
+Tango::DevULong64 &amp; val)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1af7cb9701c05c9d259a00ce971f78f819">get_write_value</link> (
+const Tango::DevULong64 *&amp; ptr)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1a51b4f9ded3cd084865544c278c2662c6">get_write_value</link> (
+Tango::DevState &amp; val)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1ae2cb72cb6cae7e768125ad46abab5cba">get_write_value</link> (
+const Tango::DevState *&amp; ptr)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1a735b032e880d25f09c026a1118e17027">get_write_value</link> (
+Tango::DevEncoded &amp; val)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1a4da04db21379786d29ab52d4ad5d154c">get_write_value</link> (
+const Tango::DevEncoded *&amp; ptr)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Set new value for attribute</title>
+      <description>
+<para>Miscellaneous method to set a <link linkend="db/da8/classTango_1_1WAttribute">WAttribute</link> value </para>
+</description>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1ac043703571819fa917837f1ec7487200">set_write_value</link> (
+Tango::DevShort val)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1ac8837082bd748c6a0df617be155bccb5">set_write_value</link> (
+Tango::DevShort * val, long x, long y)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1a5b18a2dc2f653a0083fee3f8ddd8cd07">set_write_value</link> (
+vector&lt; Tango::DevShort &gt; &amp; val, long x, long y)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1a6e67990a32fbd3cdf92fd443e58794da">set_write_value</link> (
+Tango::DevLong val)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1ac6ccda4e4e3d4f41729321d799ba129d">set_write_value</link> (
+Tango::DevLong * val, long x, long y)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1a702d60f6de8cf288b20718a5d050bba6">set_write_value</link> (
+vector&lt; Tango::DevLong &gt; &amp; val, long x, long y)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1af189acf4d580c8620bdcf53fff78dd7e">set_write_value</link> (
+Tango::DevLong64 val)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1ae612cf88f649f533e6a2a94ed70ba566">set_write_value</link> (
+Tango::DevLong64 * val, long x, long y)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1afd076c04de010e592f5b82ae4b942e1a">set_write_value</link> (
+vector&lt; Tango::DevLong64 &gt; &amp; val, long x, long y)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1a225893975628f79230a1babeec0920c9">set_write_value</link> (
+Tango::DevDouble val)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1af4fbbbf029ac57483ed71f791298d613">set_write_value</link> (
+Tango::DevDouble * val, long x, long y)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1a05a374c5d01bb17927f83539becd5f7c">set_write_value</link> (
+vector&lt; Tango::DevDouble &gt; &amp; val, long x, long y)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1ac352afe44c4875da164cf3e8b03e3674">set_write_value</link> (
+Tango::DevString val)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1af574b032aa6e39f3850937dc77bb66d6">set_write_value</link> (
+string &amp; val)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1a75962109e6a00f7dc26352a5f45c6189">set_write_value</link> (
+Tango::DevString * val, long x, long y)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1a24cb01f398049158618a90ab542d0a78">set_write_value</link> (
+vector&lt; string &gt; &amp; val, long x, long y)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1a6da3393da53b40b8752a41dc83d61244">set_write_value</link> (
+Tango::DevFloat val)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1a968e3ce78022bc4271e6282ea22d849b">set_write_value</link> (
+Tango::DevFloat * val, long x, long y)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1a5a92c8f5f3fcf61d5b2e6aa2a44ae254">set_write_value</link> (
+vector&lt; Tango::DevFloat &gt; &amp; val, long x, long y)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1a8948ff77fa43c7aae07319da46c6c9c7">set_write_value</link> (
+Tango::DevBoolean val)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1aa6ea91ce0efaff2157921a631c947832">set_write_value</link> (
+Tango::DevBoolean * val, long x, long y)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1a945408c7272400dd5f18a02d55f5556c">set_write_value</link> (
+vector&lt; Tango::DevBoolean &gt; &amp; val, long x, long y)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1a67160972ce80e9129185a12738764c9f">set_write_value</link> (
+Tango::DevUShort val)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1ae7b396f4d4826a55fbfe8a8e5411fec4">set_write_value</link> (
+Tango::DevUShort * val, long x, long y)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1a679baf66324b46a5c6148c4d33eaea0a">set_write_value</link> (
+vector&lt; Tango::DevUShort &gt; &amp; val, long x, long y)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1aedcbd30214591b860e54cc57a7f2d02a">set_write_value</link> (
+Tango::DevUChar val)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1ada02a5151c555b9003397eecb5615f46">set_write_value</link> (
+Tango::DevUChar * val, long x, long y)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1ad51eea3b5a0227e1bf757eee1056ee0b">set_write_value</link> (
+vector&lt; Tango::DevUChar &gt; &amp; val, long x, long y)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1af529e62052c10de946e2676280831dcf">set_write_value</link> (
+Tango::DevULong val)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1af8c1eb391707047ab73104e5cb7cb58b">set_write_value</link> (
+Tango::DevULong * val, long x, long y)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1a0a28b5dc44906444c6b3c2b876754c94">set_write_value</link> (
+vector&lt; Tango::DevULong &gt; &amp; val, long x, long y)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1adfbf95b83e7b9b629b5d90b7fdb27ec4">set_write_value</link> (
+Tango::DevULong64 val)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1affe0b225dd59ad4bf634d88cde687be1">set_write_value</link> (
+Tango::DevULong64 * val, long x, long y)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1aa635b4e37492454f43e37ca6ad876958">set_write_value</link> (
+vector&lt; Tango::DevULong64 &gt; &amp; val, long x, long y)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1a5391cdd7089db0435c485300bfaf0fcc">set_write_value</link> (
+Tango::DevState val)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1ae63794d119642e93f6c3637c37a2b3cf">set_write_value</link> (
+Tango::DevState * val, long x, long y)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1ae8fe8157bfa438e359e39cdc0093e0b2">set_write_value</link> (
+vector&lt; Tango::DevState &gt; &amp; val, long x, long y)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Tango::DevVarBooleanArray boolean_array_val</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const Tango::DevBoolean * boolean_ptr</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Tango::DevBoolean boolean_val</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Tango::DevState dev_state_val</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Tango::DevVarDoubleArray double_array_val</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const Tango::DevDouble * double_ptr</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Tango::DevDouble double_val</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const Tango::DevEncoded * encoded_ptr</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Tango::DevEncoded encoded_val</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Tango::DevVarFloatArray float_array_val</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const Tango::DevFloat * float_ptr</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Tango::DevFloat float_val</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Tango::DevVarLong64Array long64_array_val</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const Tango::DevLong64 * long64_ptr</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Tango::DevLong64 long64_val</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Tango::DevVarLongArray long_array_val</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const Tango::DevLong * long_ptr</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Tango::DevLong long_val</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>DevErrorList mem_exception</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string mem_value</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool mem_write_failed</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool memorized</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool memorized_init</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Tango::DevBoolean old_boolean_val</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Tango::DevState old_dev_state_val</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Tango::DevDouble old_double_val</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Tango::DevEncoded old_encoded_val</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Tango::DevFloat old_float_val</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Tango::DevLong64 old_long64_val</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Tango::DevLong old_long_val</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Tango::DevShort old_short_val</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Tango::DevString old_str_val</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Tango::DevUChar old_uchar_val</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Tango::DevULong64 old_ulong64_val</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Tango::DevULong old_ulong_val</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Tango::DevUShort old_ushort_val</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Tango::DevVarShortArray short_array_val</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const Tango::DevShort * short_ptr</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Tango::DevShort short_val</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Tango::DevVarStateArray state_array_val</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const Tango::DevState * state_ptr</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Tango::DevVarStringArray str_array_val</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const Tango::ConstDevString * str_ptr</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Tango::DevString str_val</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool string_allocated</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Tango::DevVarCharArray uchar_array_val</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const Tango::DevUChar * uchar_ptr</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Tango::DevUChar uchar_val</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Tango::DevVarULong64Array ulong64_array_val</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const Tango::DevULong64 * ulong64_ptr</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Tango::DevULong64 ulong64_val</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Tango::DevVarULongArray ulong_array_val</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const Tango::DevULong * ulong_ptr</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Tango::DevULong ulong_val</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Tango::DevVarUShortArray ushort_array_val</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const Tango::DevUShort * ushort_ptr</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Tango::DevUShort ushort_val</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool uswv</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>long w_dim_x</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>long w_dim_y</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>WAttributeExt * w_ext</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct timeval write_date</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1a6c8c53928c9df5d8bb078a7f6b67ab0f">check_length</link> (
+const unsigned int nb_data, unsigned long x, unsigned long y)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1ae9a3006cb18d63177f7b6298df9087b1">check_min_max</link> (
+const unsigned int, const T1 &amp; , const T2 &amp; , const T2 &amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual bool <link linkend="db/da8/classTango_1_1WAttribute_1ada8f9bf8948327a3a98e77306f0c49dd">check_rds_alarm</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1a27920e9584d150bd154648bf5646d1fa">check_type</link> (
+T &amp; , const string &amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1a767dda3d52e04a823481de50be8fbdc5">check_written_value</link> (
+const CORBA::Any &amp; , unsigned long, unsigned long)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1a33f4e8cfc23cd4f516deb03fe24e3c4c">check_written_value</link> (
+const DevVarEncodedArray &amp; , unsigned long, unsigned long)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1a3aeca1d8285a765f69757ee9795bbb2e">check_written_value</link> (
+const AttrValUnion &amp; , unsigned long, unsigned long)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1a9c0eea8fe156ee7e7fbde9eda8e25560">clear_mem_exception</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1a7bb104818e0d729b17ba49f17f835f1b">copy_data</link> (
+const CORBA::Any &amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1a62fa7f5c2617c1ff69eec6e0174be367">copy_data</link> (
+const Tango::AttrValUnion &amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Tango::DevVarBooleanArray * <link linkend="db/da8/classTango_1_1WAttribute_1aa0a13c2346e541be62a009e85730b992">get_last_written_boo</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Tango::DevVarDoubleArray * <link linkend="db/da8/classTango_1_1WAttribute_1aa45bc625aa075313db92103df6c5372f">get_last_written_db</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Tango::DevEncoded &amp; <link linkend="db/da8/classTango_1_1WAttribute_1a4e4a228d1183e098a7a52a5f98e214d4">get_last_written_encoded</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Tango::DevVarFloatArray * <link linkend="db/da8/classTango_1_1WAttribute_1afc14c3273a7d7cbdc0f3cdde8674d662">get_last_written_fl</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Tango::DevVarLongArray * <link linkend="db/da8/classTango_1_1WAttribute_1ac60e37858002fe8fa86955247aa34b17">get_last_written_lg</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Tango::DevVarLong64Array * <link linkend="db/da8/classTango_1_1WAttribute_1a446d14bb3258813b26bd2bce8a7da632">get_last_written_lg64</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Tango::DevVarShortArray * <link linkend="db/da8/classTango_1_1WAttribute_1a885e2e56f006c8226a18b0fd418cff1d">get_last_written_sh</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Tango::DevVarStateArray * <link linkend="db/da8/classTango_1_1WAttribute_1a74f6c8e02a8e1fb438dfd62ee16f2450">get_last_written_state</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Tango::DevVarStringArray * <link linkend="db/da8/classTango_1_1WAttribute_1ac3cef31dead7622cd0cdd3dc0b82992c">get_last_written_str</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Tango::DevVarCharArray * <link linkend="db/da8/classTango_1_1WAttribute_1a04d52a41ed1eb7674e712632c91428ad">get_last_written_uch</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Tango::DevVarULongArray * <link linkend="db/da8/classTango_1_1WAttribute_1a167480674c156c33fb3c0e07f0ba9262">get_last_written_ulg</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Tango::DevVarULong64Array * <link linkend="db/da8/classTango_1_1WAttribute_1a41c6d99f8292ad2773bd9185ec3f2bdc">get_last_written_ulg64</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Tango::DevVarUShortArray * <link linkend="db/da8/classTango_1_1WAttribute_1a81b16ccc260a69083a0de92190c9f935">get_last_written_ush</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>DevErrorList &amp; <link linkend="db/da8/classTango_1_1WAttribute_1a14f9b1a4d33bef8e16f70616ba8b4797">get_mem_exception</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string &amp; <link linkend="db/da8/classTango_1_1WAttribute_1ad171ac8b3f2026920c13516d2ad7b4df">get_mem_value</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="db/da8/classTango_1_1WAttribute_1a6c0fa00b845a0660cc3589e5c2be4820">get_mem_write_failed</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="db/da8/classTango_1_1WAttribute_1a2e3b5ed2e6917bbeb1ff94c0ab9807ec">get_memorized</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="db/da8/classTango_1_1WAttribute_1ac3a5aab4dd21553758d2e1bde10c9669">get_memorized_init</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="db/da8/classTango_1_1WAttribute_1ac342a9f89c35bd94933262c97ff3155e">get_user_set_write_value</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>long <link linkend="db/da8/classTango_1_1WAttribute_1ada51a1d20a65ba3456120e4d51698494">get_w_dim_x</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>long <link linkend="db/da8/classTango_1_1WAttribute_1a01bd3afc7afa9519a4ecdabd8c648a55">get_w_dim_y</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1a3fa4443d2b51d742f2d2f8a52ee03fad">get_write_value</link> (
+T &amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1a333bac0622cf0b4bcbb7c7e75d9a9cd4">get_write_value</link> (
+const T *&amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="db/da8/classTango_1_1WAttribute_1a0cfd53365c8f5ab1d83e3d4f448b4548">is_memorized</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="db/da8/classTango_1_1WAttribute_1a2fc2dd2bb0c96a016b6f7b48312ba97c">is_memorized_init</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="db/da8/classTango_1_1WAttribute_1adc6fb89e3c5c1e1943f297247f1515f2">mem_value_below_above</link> (
+<link linkend="de/ddf/namespaceTango_1a804009a0e85b66c708a8b42b6a93fb1e">MinMaxValueCheck</link> , string &amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1a7760082990eb39e0625e5b519e1991c3">rollback</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1ab6c468c4220dbf88d0cfbe313895a47a">set_mem_exception</link> (
+const DevErrorList &amp; df)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1aa91da4af90453b0aa201b6f9017b230b">set_mem_value</link> (
+const string &amp; new_val)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1a0de64379a1ccbf0b050ffe992f5f99a6">set_mem_write_failed</link> (
+bool bo)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1ac7c7767c099d16151681b7793c1f5c9b">set_memorized</link> (
+bool mem)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1a33a2f8641b63854e4476f6b6bba33101">set_memorized_init</link> (
+bool mem_init)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual void <link linkend="db/da8/classTango_1_1WAttribute_1af06220620d11fcde593a839e1e15e713">set_rvalue</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1afb2d78ae89c495f1435df30780f79834">set_user_set_write_value</link> (
+bool val)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1a910915253d44d4cc4ffa8fed73e7e1a1">set_write_value</link> (
+T )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1adff009d1d2d0c888d2eb40c011df204a">set_write_value</link> (
+T * , long , long )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1aee5a21d17df6732b18a732fd71873941">set_write_value</link> (
+vector&lt; T &gt; &amp; , long , long )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1aa66b69cc61721d2a73ba63c4726af935">set_write_value</link> (
+Tango::DevEncoded * , long x, long y)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="db/da8/classTango_1_1WAttribute_1afe304f1704bc3053730b6161b4abfe72">set_written_date</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Brief Description</title>
+
+<para>This class represents a writable attribute. </para>
+    </simplesect>
+        <simplesect>
+            <title>Detailed Description</title>
+
+<para>It inherits from the <link linkend="d6/dad/classTango_1_1Attribute">Attribute</link> class and only add what is specific to writable attribute.</para>
+
+<para>$Author$ $Revision$ </para>
+                <para>Definition at line 69 of file w_attribute.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>w_attribute.h</para></listitem></itemizedlist></para>
+        </simplesect>
+            <section xml:id="db/da8/classTango_1_1WAttribute_1a6c8c53928c9df5d8bb078a7f6b67ab0f">
+                <title>void Tango::WAttribute::check_length (const unsigned int nb_data, unsigned long x, unsigned long y)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/da8/classTango_1_1WAttribute_1ae9a3006cb18d63177f7b6298df9087b1">
+                <title>void Tango::WAttribute::check_min_max (const unsigned int, const T1 &amp;, const T2 &amp;, const T2 &amp;)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/da8/classTango_1_1WAttribute_1ada8f9bf8948327a3a98e77306f0c49dd">
+                <title>virtual bool Tango::WAttribute::check_rds_alarm ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/da8/classTango_1_1WAttribute_1a27920e9584d150bd154648bf5646d1fa">
+                <title>void Tango::WAttribute::check_type (T &amp;, const string &amp;)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/da8/classTango_1_1WAttribute_1a767dda3d52e04a823481de50be8fbdc5">
+                <title>void Tango::WAttribute::check_written_value (const CORBA::Any &amp;, unsigned long, unsigned long)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/da8/classTango_1_1WAttribute_1a33f4e8cfc23cd4f516deb03fe24e3c4c">
+                <title>void Tango::WAttribute::check_written_value (const DevVarEncodedArray &amp;, unsigned long, unsigned long)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/da8/classTango_1_1WAttribute_1a3aeca1d8285a765f69757ee9795bbb2e">
+                <title>void Tango::WAttribute::check_written_value (const AttrValUnion &amp;, unsigned long, unsigned long)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/da8/classTango_1_1WAttribute_1a9c0eea8fe156ee7e7fbde9eda8e25560">
+                <title>void Tango::WAttribute::clear_mem_exception ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/da8/classTango_1_1WAttribute_1a7bb104818e0d729b17ba49f17f835f1b">
+                <title>void Tango::WAttribute::copy_data (const CORBA::Any &amp;)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/da8/classTango_1_1WAttribute_1a62fa7f5c2617c1ff69eec6e0174be367">
+                <title>void Tango::WAttribute::copy_data (const Tango::AttrValUnion &amp;)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/da8/classTango_1_1WAttribute_1aa0a13c2346e541be62a009e85730b992">
+                <title>Tango::DevVarBooleanArray* Tango::WAttribute::get_last_written_boo ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/da8/classTango_1_1WAttribute_1aa45bc625aa075313db92103df6c5372f">
+                <title>Tango::DevVarDoubleArray* Tango::WAttribute::get_last_written_db ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/da8/classTango_1_1WAttribute_1a4e4a228d1183e098a7a52a5f98e214d4">
+                <title>Tango::DevEncoded&amp; Tango::WAttribute::get_last_written_encoded ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/da8/classTango_1_1WAttribute_1afc14c3273a7d7cbdc0f3cdde8674d662">
+                <title>Tango::DevVarFloatArray* Tango::WAttribute::get_last_written_fl ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/da8/classTango_1_1WAttribute_1ac60e37858002fe8fa86955247aa34b17">
+                <title>Tango::DevVarLongArray* Tango::WAttribute::get_last_written_lg ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/da8/classTango_1_1WAttribute_1a446d14bb3258813b26bd2bce8a7da632">
+                <title>Tango::DevVarLong64Array* Tango::WAttribute::get_last_written_lg64 ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/da8/classTango_1_1WAttribute_1a885e2e56f006c8226a18b0fd418cff1d">
+                <title>Tango::DevVarShortArray* Tango::WAttribute::get_last_written_sh ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/da8/classTango_1_1WAttribute_1a74f6c8e02a8e1fb438dfd62ee16f2450">
+                <title>Tango::DevVarStateArray* Tango::WAttribute::get_last_written_state ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/da8/classTango_1_1WAttribute_1ac3cef31dead7622cd0cdd3dc0b82992c">
+                <title>Tango::DevVarStringArray* Tango::WAttribute::get_last_written_str ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/da8/classTango_1_1WAttribute_1a04d52a41ed1eb7674e712632c91428ad">
+                <title>Tango::DevVarCharArray* Tango::WAttribute::get_last_written_uch ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/da8/classTango_1_1WAttribute_1a167480674c156c33fb3c0e07f0ba9262">
+                <title>Tango::DevVarULongArray* Tango::WAttribute::get_last_written_ulg ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/da8/classTango_1_1WAttribute_1a41c6d99f8292ad2773bd9185ec3f2bdc">
+                <title>Tango::DevVarULong64Array* Tango::WAttribute::get_last_written_ulg64 ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/da8/classTango_1_1WAttribute_1a81b16ccc260a69083a0de92190c9f935">
+                <title>Tango::DevVarUShortArray* Tango::WAttribute::get_last_written_ush ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/da8/classTango_1_1WAttribute_1a14f9b1a4d33bef8e16f70616ba8b4797">
+                <title>DevErrorList&amp; Tango::WAttribute::get_mem_exception ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/da8/classTango_1_1WAttribute_1ad171ac8b3f2026920c13516d2ad7b4df">
+                <title>string&amp; Tango::WAttribute::get_mem_value ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/da8/classTango_1_1WAttribute_1a6c0fa00b845a0660cc3589e5c2be4820">
+                <title>bool Tango::WAttribute::get_mem_write_failed ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/da8/classTango_1_1WAttribute_1a2e3b5ed2e6917bbeb1ff94c0ab9807ec">
+                <title>bool Tango::WAttribute::get_memorized ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/da8/classTango_1_1WAttribute_1ac3a5aab4dd21553758d2e1bde10c9669">
+                <title>bool Tango::WAttribute::get_memorized_init ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/da8/classTango_1_1WAttribute_1ac342a9f89c35bd94933262c97ff3155e">
+                <title>bool Tango::WAttribute::get_user_set_write_value ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/da8/classTango_1_1WAttribute_1ada51a1d20a65ba3456120e4d51698494">
+                <title>long Tango::WAttribute::get_w_dim_x ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/da8/classTango_1_1WAttribute_1a01bd3afc7afa9519a4ecdabd8c648a55">
+                <title>long Tango::WAttribute::get_w_dim_y ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/da8/classTango_1_1WAttribute_1a3fa4443d2b51d742f2d2f8a52ee03fad">
+                <title>void Tango::WAttribute::get_write_value (T &amp;)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/da8/classTango_1_1WAttribute_1a333bac0622cf0b4bcbb7c7e75d9a9cd4">
+                <title>void Tango::WAttribute::get_write_value (const T *&amp;)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/da8/classTango_1_1WAttribute_1a0cfd53365c8f5ab1d83e3d4f448b4548">
+                <title>bool Tango::WAttribute::is_memorized ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/da8/classTango_1_1WAttribute_1a2fc2dd2bb0c96a016b6f7b48312ba97c">
+                <title>bool Tango::WAttribute::is_memorized_init ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/da8/classTango_1_1WAttribute_1adc6fb89e3c5c1e1943f297247f1515f2">
+                <title>bool Tango::WAttribute::mem_value_below_above (MinMaxValueCheck, string &amp;)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/da8/classTango_1_1WAttribute_1a7760082990eb39e0625e5b519e1991c3">
+                <title>void Tango::WAttribute::rollback ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/da8/classTango_1_1WAttribute_1ab6c468c4220dbf88d0cfbe313895a47a">
+                <title>void Tango::WAttribute::set_mem_exception (const DevErrorList &amp;df)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/da8/classTango_1_1WAttribute_1aa91da4af90453b0aa201b6f9017b230b">
+                <title>void Tango::WAttribute::set_mem_value (const string &amp;new_val)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/da8/classTango_1_1WAttribute_1a0de64379a1ccbf0b050ffe992f5f99a6">
+                <title>void Tango::WAttribute::set_mem_write_failed (bool bo)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/da8/classTango_1_1WAttribute_1ac7c7767c099d16151681b7793c1f5c9b">
+                <title>void Tango::WAttribute::set_memorized (bool mem)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/da8/classTango_1_1WAttribute_1a33a2f8641b63854e4476f6b6bba33101">
+                <title>void Tango::WAttribute::set_memorized_init (bool mem_init)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/da8/classTango_1_1WAttribute_1af06220620d11fcde593a839e1e15e713">
+                <title>virtual void Tango::WAttribute::set_rvalue ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/da8/classTango_1_1WAttribute_1afb2d78ae89c495f1435df30780f79834">
+                <title>void Tango::WAttribute::set_user_set_write_value (bool val)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/da8/classTango_1_1WAttribute_1a910915253d44d4cc4ffa8fed73e7e1a1">
+                <title>void Tango::WAttribute::set_write_value (T)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/da8/classTango_1_1WAttribute_1adff009d1d2d0c888d2eb40c011df204a">
+                <title>void Tango::WAttribute::set_write_value (T *, long, long)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/da8/classTango_1_1WAttribute_1aee5a21d17df6732b18a732fd71873941">
+                <title>void Tango::WAttribute::set_write_value (vector&lt; T &gt; &amp;, long, long)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/da8/classTango_1_1WAttribute_1aa66b69cc61721d2a73ba63c4726af935">
+                <title>void Tango::WAttribute::set_write_value (Tango::DevEncoded *, long x=1, long y=0)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/da8/classTango_1_1WAttribute_1afe304f1704bc3053730b6161b4abfe72">
+                <title>void Tango::WAttribute::set_written_date ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

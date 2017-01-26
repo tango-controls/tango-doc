@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="d0/d96/classTango_1_1DeviceClass_1_1DeviceClassExt" kind="class" prot="private">
+    <compoundname>Tango::DeviceClass::DeviceClassExt</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="d0/d96/classTango_1_1DeviceClass_1_1DeviceClassExt_1a2ccf43b961d0cc8e481122f6222c30de" prot="public" static="no" mutable="no">
+        <type>map&lt; string, vector&lt; <ref refid="d8/d14/classTango_1_1Pipe" kindref="compound">Pipe</ref> * &gt; &gt;</type>
+        <definition>map&lt;string,vector&lt;Pipe *&gt; &gt; Tango::DeviceClass::DeviceClassExt::dev_pipe_list</definition>
+        <argsstring></argsstring>
+        <name>dev_pipe_list</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="497" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" bodystart="495" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d0/d96/classTango_1_1DeviceClass_1_1DeviceClassExt_1ac841a19e7f97896520af94b2d2f2f5df" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Tango::DeviceClass::DeviceClassExt::DeviceClassExt</definition>
+        <argsstring>()</argsstring>
+        <name>DeviceClassExt</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="495" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" bodystart="495" bodyend="495"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="493" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" bodystart="492" bodyend="498"/>
+    <listofallmembers>
+      <member refid="d0/d96/classTango_1_1DeviceClass_1_1DeviceClassExt_1a2ccf43b961d0cc8e481122f6222c30de" prot="public" virt="non-virtual"><scope>Tango::DeviceClass::DeviceClassExt</scope><name>dev_pipe_list</name></member>
+      <member refid="d0/d96/classTango_1_1DeviceClass_1_1DeviceClassExt_1ac841a19e7f97896520af94b2d2f2f5df" prot="public" virt="non-virtual"><scope>Tango::DeviceClass::DeviceClassExt</scope><name>DeviceClassExt</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

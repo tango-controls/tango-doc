@@ -1,0 +1,1015 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="de/d9a/classTango_1_1UserDefaultAttrProp" kind="class" prot="public">
+    <compoundname>Tango::UserDefaultAttrProp</compoundname>
+    <innerclass refid="d4/d12/classTango_1_1UserDefaultAttrProp_1_1UserDefaultAttrPropExt" prot="private">Tango::UserDefaultAttrProp::UserDefaultAttrPropExt</innerclass>
+      <sectiondef kind="user-defined">
+      <header>Constructor</header>
+      <description><para>Only one constructor is defined for this class </para></description>
+      <memberdef kind="function" id="de/d9a/classTango_1_1UserDefaultAttrProp_1a49c378598e36618e83ef92dcd7a5f15b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Tango::UserDefaultAttrProp::UserDefaultAttrProp</definition>
+        <argsstring>()</argsstring>
+        <name>UserDefaultAttrProp</name>
+        <briefdescription>
+<para>Constructs a newly allocated <ref refid="de/d9a/classTango_1_1UserDefaultAttrProp" kindref="compound">UserDefaultAttrProp</ref> object. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" line="74" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" bodystart="74" bodyend="74"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Set default property methods</header>
+      <memberdef kind="function" id="de/d9a/classTango_1_1UserDefaultAttrProp_1a570f0146ec61bdbb0a2115d905ea8547" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::UserDefaultAttrProp::set_label</definition>
+        <argsstring>(const char *def_label)</argsstring>
+        <name>set_label</name>
+        <param>
+          <type>const char *</type>
+          <declname>def_label</declname>
+        </param>
+        <briefdescription>
+<para>Set default label property. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>def_label</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The user default label property </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" line="84" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" bodystart="84" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d9a/classTango_1_1UserDefaultAttrProp_1afde6b2d24224c6cd96e7fd25841134bc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::UserDefaultAttrProp::set_description</definition>
+        <argsstring>(const char *def_desc)</argsstring>
+        <name>set_description</name>
+        <param>
+          <type>const char *</type>
+          <declname>def_desc</declname>
+        </param>
+        <briefdescription>
+<para>Set default description property. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>def_desc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The user default description property </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" line="94" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" bodystart="94" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d9a/classTango_1_1UserDefaultAttrProp_1af8ffda78fc0157d31ac4c7e0c73982d3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::UserDefaultAttrProp::set_unit</definition>
+        <argsstring>(const char *def_unit)</argsstring>
+        <name>set_unit</name>
+        <param>
+          <type>const char *</type>
+          <declname>def_unit</declname>
+        </param>
+        <briefdescription>
+<para>Set default unit property. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>def_unit</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The user default unit property </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" line="104" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" bodystart="104" bodyend="107"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d9a/classTango_1_1UserDefaultAttrProp_1ac42a9899badbfb874167ebed8c83e940" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::UserDefaultAttrProp::set_standard_unit</definition>
+        <argsstring>(const char *def_std_unit)</argsstring>
+        <name>set_standard_unit</name>
+        <param>
+          <type>const char *</type>
+          <declname>def_std_unit</declname>
+        </param>
+        <briefdescription>
+<para>Set default standard unit property. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>def_std_unit</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The user default standard unit property </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" line="114" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" bodystart="114" bodyend="117"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d9a/classTango_1_1UserDefaultAttrProp_1acfcfafe14aaf559a6f9dbd4da4a44070" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::UserDefaultAttrProp::set_display_unit</definition>
+        <argsstring>(const char *def_disp_unit)</argsstring>
+        <name>set_display_unit</name>
+        <param>
+          <type>const char *</type>
+          <declname>def_disp_unit</declname>
+        </param>
+        <briefdescription>
+<para>Set default display unit property. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>def_disp_unit</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The user default display unit property </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" line="124" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" bodystart="124" bodyend="127"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d9a/classTango_1_1UserDefaultAttrProp_1a72b9f9b0ca7a05bfa240fe3277ae6a07" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::UserDefaultAttrProp::set_format</definition>
+        <argsstring>(const char *def_format)</argsstring>
+        <name>set_format</name>
+        <param>
+          <type>const char *</type>
+          <declname>def_format</declname>
+        </param>
+        <briefdescription>
+<para>Set default format property. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>def_format</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The user default format property </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" line="134" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" bodystart="134" bodyend="137"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d9a/classTango_1_1UserDefaultAttrProp_1a0e4443532d4290042576edeee79b3778" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::UserDefaultAttrProp::set_min_value</definition>
+        <argsstring>(const char *def_min_value)</argsstring>
+        <name>set_min_value</name>
+        <param>
+          <type>const char *</type>
+          <declname>def_min_value</declname>
+        </param>
+        <briefdescription>
+<para>Set default min_value property. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>def_min_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The user default min_value property </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" line="144" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" bodystart="144" bodyend="147"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d9a/classTango_1_1UserDefaultAttrProp_1a38b3c0d094df7414b120a6824fd84092" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::UserDefaultAttrProp::set_max_value</definition>
+        <argsstring>(const char *def_max_value)</argsstring>
+        <name>set_max_value</name>
+        <param>
+          <type>const char *</type>
+          <declname>def_max_value</declname>
+        </param>
+        <briefdescription>
+<para>Set default max_value property. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>def_max_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The user default max_value property </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" line="154" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" bodystart="154" bodyend="157"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d9a/classTango_1_1UserDefaultAttrProp_1afede8f7057ccf59f46c7005cc8839db7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::UserDefaultAttrProp::set_min_alarm</definition>
+        <argsstring>(const char *def_min_alarm)</argsstring>
+        <name>set_min_alarm</name>
+        <param>
+          <type>const char *</type>
+          <declname>def_min_alarm</declname>
+        </param>
+        <briefdescription>
+<para>Set default min_alarm property. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>def_min_alarm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The user default min_alarm property </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" line="164" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" bodystart="164" bodyend="167"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d9a/classTango_1_1UserDefaultAttrProp_1a79734b5413a902711c436e5af1448789" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::UserDefaultAttrProp::set_max_alarm</definition>
+        <argsstring>(const char *def_max_alarm)</argsstring>
+        <name>set_max_alarm</name>
+        <param>
+          <type>const char *</type>
+          <declname>def_max_alarm</declname>
+        </param>
+        <briefdescription>
+<para>Set default max_alarm property. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>def_max_alarm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The user default max_alarm property </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" line="174" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" bodystart="174" bodyend="177"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d9a/classTango_1_1UserDefaultAttrProp_1a6c95988f618cc16db4eb6c0db54c6534" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::UserDefaultAttrProp::set_min_warning</definition>
+        <argsstring>(const char *def_min_warning)</argsstring>
+        <name>set_min_warning</name>
+        <param>
+          <type>const char *</type>
+          <declname>def_min_warning</declname>
+        </param>
+        <briefdescription>
+<para>Set default min_warning property. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>def_min_warning</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The user default min_warning property </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" line="184" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" bodystart="184" bodyend="187"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d9a/classTango_1_1UserDefaultAttrProp_1abf63a7abea9f43c5fcd1235fe9c7935c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::UserDefaultAttrProp::set_max_warning</definition>
+        <argsstring>(const char *def_max_warning)</argsstring>
+        <name>set_max_warning</name>
+        <param>
+          <type>const char *</type>
+          <declname>def_max_warning</declname>
+        </param>
+        <briefdescription>
+<para>Set default max_warning property. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>def_max_warning</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The user default max_warning property </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" line="194" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" bodystart="194" bodyend="197"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d9a/classTango_1_1UserDefaultAttrProp_1a254ef57c4a216d9bcd9287904017a266" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::UserDefaultAttrProp::set_delta_t</definition>
+        <argsstring>(const char *def_delta_t)</argsstring>
+        <name>set_delta_t</name>
+        <param>
+          <type>const char *</type>
+          <declname>def_delta_t</declname>
+        </param>
+        <briefdescription>
+<para>Set default RDS alarm delta_t property. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>def_delta_t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The user default RDS alarm delta_t property </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" line="204" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" bodystart="204" bodyend="207"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d9a/classTango_1_1UserDefaultAttrProp_1ad572a7f7d8cde3526fc430e041596b88" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::UserDefaultAttrProp::set_delta_val</definition>
+        <argsstring>(const char *def_delta_val)</argsstring>
+        <name>set_delta_val</name>
+        <param>
+          <type>const char *</type>
+          <declname>def_delta_val</declname>
+        </param>
+        <briefdescription>
+<para>Set default RDS alarm delta_val property. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>def_delta_val</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The user default RDS alarm delta_val property </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" line="214" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" bodystart="214" bodyend="217"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d9a/classTango_1_1UserDefaultAttrProp_1a783f09ff9ef28cbe33c799437bf98e53" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::UserDefaultAttrProp::set_event_abs_change</definition>
+        <argsstring>(const char *def_abs_change)</argsstring>
+        <name>set_event_abs_change</name>
+        <param>
+          <type>const char *</type>
+          <declname>def_abs_change</declname>
+        </param>
+        <briefdescription>
+<para>Set default change event abs_change property. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>def_abs_change</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The user default change event abs_change property </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" line="224" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" bodystart="224" bodyend="227"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d9a/classTango_1_1UserDefaultAttrProp_1a8ed40e206170172ae7d46dc2cb1f9dc4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::UserDefaultAttrProp::set_event_rel_change</definition>
+        <argsstring>(const char *def_rel_change)</argsstring>
+        <name>set_event_rel_change</name>
+        <param>
+          <type>const char *</type>
+          <declname>def_rel_change</declname>
+        </param>
+        <briefdescription>
+<para>Set default change event rel_change property. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>def_rel_change</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The user default change event rel_change property </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" line="234" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" bodystart="234" bodyend="237"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d9a/classTango_1_1UserDefaultAttrProp_1a9b5db76187d86e112e6999cb34987616" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::UserDefaultAttrProp::set_event_period</definition>
+        <argsstring>(const char *def_period)</argsstring>
+        <name>set_event_period</name>
+        <param>
+          <type>const char *</type>
+          <declname>def_period</declname>
+        </param>
+        <briefdescription>
+<para>Set default periodic event period property. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>def_period</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The user default periodic event period property </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" line="244" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" bodystart="244" bodyend="247"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d9a/classTango_1_1UserDefaultAttrProp_1aa6bcd12e3c581ff4d85b3608ca900199" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::UserDefaultAttrProp::set_archive_event_abs_change</definition>
+        <argsstring>(const char *def_archive_abs_change)</argsstring>
+        <name>set_archive_event_abs_change</name>
+        <param>
+          <type>const char *</type>
+          <declname>def_archive_abs_change</declname>
+        </param>
+        <briefdescription>
+<para>Set default archive event abs_change property. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>def_archive_abs_change</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The user default archive event abs_change property </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" line="254" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" bodystart="254" bodyend="257"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d9a/classTango_1_1UserDefaultAttrProp_1af66bf9dd5d2d61a6f3f0e2800d0138ff" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::UserDefaultAttrProp::set_archive_event_rel_change</definition>
+        <argsstring>(const char *def_archive_rel_change)</argsstring>
+        <name>set_archive_event_rel_change</name>
+        <param>
+          <type>const char *</type>
+          <declname>def_archive_rel_change</declname>
+        </param>
+        <briefdescription>
+<para>Set default archive event rel_change property. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>def_archive_rel_change</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The user default archive event rel_change property </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" line="264" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" bodystart="264" bodyend="267"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d9a/classTango_1_1UserDefaultAttrProp_1a26e889ad51bfe99d3c2442aeeb43b65c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::UserDefaultAttrProp::set_archive_event_period</definition>
+        <argsstring>(const char *def_archive_period)</argsstring>
+        <name>set_archive_event_period</name>
+        <param>
+          <type>const char *</type>
+          <declname>def_archive_period</declname>
+        </param>
+        <briefdescription>
+<para>Set default archive event period property. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>def_archive_period</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The user default archive event period property </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" line="274" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" bodystart="274" bodyend="277"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d9a/classTango_1_1UserDefaultAttrProp_1a12f0293d7ecf1d5c2451e30f1f333d6a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::UserDefaultAttrProp::set_enum_labels</definition>
+        <argsstring>(vector&lt; string &gt; &amp;def_enum_labels)</argsstring>
+        <name>set_enum_labels</name>
+        <param>
+          <type>vector&lt; string &gt; &amp;</type>
+          <declname>def_enum_labels</declname>
+        </param>
+        <briefdescription>
+<para>Set default enumeration labels. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>def_enum_labels</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The enumeration labels </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" line="284" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" bodystart="284" bodyend="292"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="de/d9a/classTango_1_1UserDefaultAttrProp_1aa266f8abd394ce2a52cd164d47a7c588" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Tango::UserDefaultAttrProp::abs_change</definition>
+        <argsstring></argsstring>
+        <name>abs_change</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" line="342" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" bodystart="342" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="de/d9a/classTango_1_1UserDefaultAttrProp_1a5021dc66923561f241564dfc66de3417" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Tango::UserDefaultAttrProp::archive_abs_change</definition>
+        <argsstring></argsstring>
+        <name>archive_abs_change</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" line="345" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" bodystart="345" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="de/d9a/classTango_1_1UserDefaultAttrProp_1a859b780bbb793d6577bbf4d9fbaad88d" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Tango::UserDefaultAttrProp::archive_period</definition>
+        <argsstring></argsstring>
+        <name>archive_period</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" line="347" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" bodystart="347" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="de/d9a/classTango_1_1UserDefaultAttrProp_1a3deda65263b731ff6095c41162f63586" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Tango::UserDefaultAttrProp::archive_rel_change</definition>
+        <argsstring></argsstring>
+        <name>archive_rel_change</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" line="346" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" bodystart="346" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="de/d9a/classTango_1_1UserDefaultAttrProp_1a184e2bc47b63e1e126abec6ced6720ef" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Tango::UserDefaultAttrProp::delta_t</definition>
+        <argsstring></argsstring>
+        <name>delta_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" line="341" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" bodystart="341" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="de/d9a/classTango_1_1UserDefaultAttrProp_1ab0cb1ccaaf1f837c5159c1d99d941509" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Tango::UserDefaultAttrProp::delta_val</definition>
+        <argsstring></argsstring>
+        <name>delta_val</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" line="340" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" bodystart="340" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="de/d9a/classTango_1_1UserDefaultAttrProp_1a4053d5d702832edfa020d3e80b65f5d5" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Tango::UserDefaultAttrProp::description</definition>
+        <argsstring></argsstring>
+        <name>description</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" line="329" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" bodystart="329" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="de/d9a/classTango_1_1UserDefaultAttrProp_1a08dcfa969c76ae73e77bc5323885e339" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Tango::UserDefaultAttrProp::display_unit</definition>
+        <argsstring></argsstring>
+        <name>display_unit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" line="332" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" bodystart="332" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="de/d9a/classTango_1_1UserDefaultAttrProp_1a169378cbb98c1ea1908e55d83bb342b3" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Tango::UserDefaultAttrProp::enum_labels</definition>
+        <argsstring></argsstring>
+        <name>enum_labels</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" line="348" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" bodystart="348" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="de/d9a/classTango_1_1UserDefaultAttrProp_1a15ede1a0e2570473f75c4c686b67f7af" prot="private" static="no" mutable="no">
+        <type>UserDefaultAttrPropExt *</type>
+        <definition>UserDefaultAttrPropExt* Tango::UserDefaultAttrProp::ext</definition>
+        <argsstring></argsstring>
+        <name>ext</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" line="358" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" bodystart="358" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="de/d9a/classTango_1_1UserDefaultAttrProp_1af614c87747c825b8b423949cd67435f1" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Tango::UserDefaultAttrProp::format</definition>
+        <argsstring></argsstring>
+        <name>format</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" line="333" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" bodystart="333" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="de/d9a/classTango_1_1UserDefaultAttrProp_1ac9d011d661976eb41961334e826eeed3" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Tango::UserDefaultAttrProp::label</definition>
+        <argsstring></argsstring>
+        <name>label</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" line="328" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" bodystart="328" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="de/d9a/classTango_1_1UserDefaultAttrProp_1a5526ca2e6eaa33471343896780cbc174" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Tango::UserDefaultAttrProp::max_alarm</definition>
+        <argsstring></argsstring>
+        <name>max_alarm</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" line="337" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" bodystart="337" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="de/d9a/classTango_1_1UserDefaultAttrProp_1a406e4ad122b0f8594d55e81c86944c8f" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Tango::UserDefaultAttrProp::max_value</definition>
+        <argsstring></argsstring>
+        <name>max_value</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" line="335" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" bodystart="335" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="de/d9a/classTango_1_1UserDefaultAttrProp_1aee882ae9571721d5333bf72470b016a8" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Tango::UserDefaultAttrProp::max_warning</definition>
+        <argsstring></argsstring>
+        <name>max_warning</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" line="339" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" bodystart="339" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="de/d9a/classTango_1_1UserDefaultAttrProp_1a57331f4b1a4f26609685ab331d475686" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Tango::UserDefaultAttrProp::min_alarm</definition>
+        <argsstring></argsstring>
+        <name>min_alarm</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" line="336" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" bodystart="336" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="de/d9a/classTango_1_1UserDefaultAttrProp_1a59a673ff6182c57461de28c7d845493b" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Tango::UserDefaultAttrProp::min_value</definition>
+        <argsstring></argsstring>
+        <name>min_value</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" line="334" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" bodystart="334" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="de/d9a/classTango_1_1UserDefaultAttrProp_1a602d54399a5a034ef2afd2a532468ba8" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Tango::UserDefaultAttrProp::min_warning</definition>
+        <argsstring></argsstring>
+        <name>min_warning</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" line="338" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" bodystart="338" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="de/d9a/classTango_1_1UserDefaultAttrProp_1a5fbec42b1c7c9cecc04dfa71cd1bd769" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Tango::UserDefaultAttrProp::period</definition>
+        <argsstring></argsstring>
+        <name>period</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" line="344" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" bodystart="344" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="de/d9a/classTango_1_1UserDefaultAttrProp_1a6f14153b75c549d3781f40336755e1c9" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Tango::UserDefaultAttrProp::rel_change</definition>
+        <argsstring></argsstring>
+        <name>rel_change</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" line="343" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" bodystart="343" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="de/d9a/classTango_1_1UserDefaultAttrProp_1a34c7e2d9fc4314ae2f8c8ed98ea6f0ba" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Tango::UserDefaultAttrProp::standard_unit</definition>
+        <argsstring></argsstring>
+        <name>standard_unit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" line="331" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" bodystart="331" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="de/d9a/classTango_1_1UserDefaultAttrProp_1a566d82f3ce25bad02fd9202316106493" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Tango::UserDefaultAttrProp::unit</definition>
+        <argsstring></argsstring>
+        <name>unit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" line="330" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" bodystart="330" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="de/d9a/classTango_1_1UserDefaultAttrProp_1a261a7f6c1a7f08d7e0b5ccfd5d95a320" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Tango::UserDefaultAttrProp::~UserDefaultAttrProp</definition>
+        <argsstring>()</argsstring>
+        <name>~UserDefaultAttrProp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" line="296" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" bodystart="296" bodyend="296"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d9a/classTango_1_1UserDefaultAttrProp_1aaab71403746f72cc8111add956423746" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::UserDefaultAttrProp::set_abs_change</definition>
+        <argsstring>(const char *def_abs_change)</argsstring>
+        <name>set_abs_change</name>
+        <param>
+          <type>const char *</type>
+          <declname>def_abs_change</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" line="298" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" bodystart="298" bodyend="301"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d9a/classTango_1_1UserDefaultAttrProp_1ae2189ea9eb4a8869a8ca62be555d97d6" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::UserDefaultAttrProp::set_archive_abs_change</definition>
+        <argsstring>(const char *def_archive_abs_change)</argsstring>
+        <name>set_archive_abs_change</name>
+        <param>
+          <type>const char *</type>
+          <declname>def_archive_abs_change</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" line="313" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" bodystart="313" bodyend="316"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d9a/classTango_1_1UserDefaultAttrProp_1a85c77938b9f62048cc5d0f6b22e3b692" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::UserDefaultAttrProp::set_archive_period</definition>
+        <argsstring>(const char *def_archive_period)</argsstring>
+        <name>set_archive_period</name>
+        <param>
+          <type>const char *</type>
+          <declname>def_archive_period</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" line="323" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" bodystart="323" bodyend="326"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d9a/classTango_1_1UserDefaultAttrProp_1adbb7e1da844bfeb3ed47b697377cd96d" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::UserDefaultAttrProp::set_archive_rel_change</definition>
+        <argsstring>(const char *def_archive_rel_change)</argsstring>
+        <name>set_archive_rel_change</name>
+        <param>
+          <type>const char *</type>
+          <declname>def_archive_rel_change</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" line="318" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" bodystart="318" bodyend="321"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d9a/classTango_1_1UserDefaultAttrProp_1a715e944cf2d7012e2b836eac35d35a1d" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::UserDefaultAttrProp::set_period</definition>
+        <argsstring>(const char *def_period)</argsstring>
+        <name>set_period</name>
+        <param>
+          <type>const char *</type>
+          <declname>def_period</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" line="308" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" bodystart="308" bodyend="311"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d9a/classTango_1_1UserDefaultAttrProp_1aa6467c92a22bc56618cb2b86031111af" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::UserDefaultAttrProp::set_rel_change</definition>
+        <argsstring>(const char *def_rel_change)</argsstring>
+        <name>set_rel_change</name>
+        <param>
+          <type>const char *</type>
+          <declname>def_rel_change</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" line="303" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" bodystart="303" bodyend="306"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>User class to set attribute default properties. </para>    </briefdescription>
+    <detaileddescription>
+<para>This class is used to set attribute default properties. Three levels of attributes properties setting are implemented within <ref refid="de/ddf/namespaceTango" kindref="compound">Tango</ref>. The highest property setting level is the database. Then the user default (set using this <ref refid="de/d9a/classTango_1_1UserDefaultAttrProp" kindref="compound">UserDefaultAttrProp</ref> class) and finally a <ref refid="de/ddf/namespaceTango" kindref="compound">Tango</ref> library default value</para><para>$Author$ $Revision$ </para>    </detaileddescription>
+    <location file="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" line="65" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrdesc.h" bodystart="64" bodyend="360"/>
+    <listofallmembers>
+      <member refid="de/d9a/classTango_1_1UserDefaultAttrProp_1aa266f8abd394ce2a52cd164d47a7c588" prot="private" virt="non-virtual"><scope>Tango::UserDefaultAttrProp</scope><name>abs_change</name></member>
+      <member refid="de/d9a/classTango_1_1UserDefaultAttrProp_1a5021dc66923561f241564dfc66de3417" prot="private" virt="non-virtual"><scope>Tango::UserDefaultAttrProp</scope><name>archive_abs_change</name></member>
+      <member refid="de/d9a/classTango_1_1UserDefaultAttrProp_1a859b780bbb793d6577bbf4d9fbaad88d" prot="private" virt="non-virtual"><scope>Tango::UserDefaultAttrProp</scope><name>archive_period</name></member>
+      <member refid="de/d9a/classTango_1_1UserDefaultAttrProp_1a3deda65263b731ff6095c41162f63586" prot="private" virt="non-virtual"><scope>Tango::UserDefaultAttrProp</scope><name>archive_rel_change</name></member>
+      <member refid="de/d9a/classTango_1_1UserDefaultAttrProp_1a184e2bc47b63e1e126abec6ced6720ef" prot="private" virt="non-virtual"><scope>Tango::UserDefaultAttrProp</scope><name>delta_t</name></member>
+      <member refid="de/d9a/classTango_1_1UserDefaultAttrProp_1ab0cb1ccaaf1f837c5159c1d99d941509" prot="private" virt="non-virtual"><scope>Tango::UserDefaultAttrProp</scope><name>delta_val</name></member>
+      <member refid="de/d9a/classTango_1_1UserDefaultAttrProp_1a4053d5d702832edfa020d3e80b65f5d5" prot="private" virt="non-virtual"><scope>Tango::UserDefaultAttrProp</scope><name>description</name></member>
+      <member refid="de/d9a/classTango_1_1UserDefaultAttrProp_1a08dcfa969c76ae73e77bc5323885e339" prot="private" virt="non-virtual"><scope>Tango::UserDefaultAttrProp</scope><name>display_unit</name></member>
+      <member refid="de/d9a/classTango_1_1UserDefaultAttrProp_1a169378cbb98c1ea1908e55d83bb342b3" prot="private" virt="non-virtual"><scope>Tango::UserDefaultAttrProp</scope><name>enum_labels</name></member>
+      <member refid="de/d9a/classTango_1_1UserDefaultAttrProp_1a15ede1a0e2570473f75c4c686b67f7af" prot="private" virt="non-virtual"><scope>Tango::UserDefaultAttrProp</scope><name>ext</name></member>
+      <member refid="de/d9a/classTango_1_1UserDefaultAttrProp_1af614c87747c825b8b423949cd67435f1" prot="private" virt="non-virtual"><scope>Tango::UserDefaultAttrProp</scope><name>format</name></member>
+      <member refid="de/d9a/classTango_1_1UserDefaultAttrProp_1ac9d011d661976eb41961334e826eeed3" prot="private" virt="non-virtual"><scope>Tango::UserDefaultAttrProp</scope><name>label</name></member>
+      <member refid="de/d9a/classTango_1_1UserDefaultAttrProp_1a5526ca2e6eaa33471343896780cbc174" prot="private" virt="non-virtual"><scope>Tango::UserDefaultAttrProp</scope><name>max_alarm</name></member>
+      <member refid="de/d9a/classTango_1_1UserDefaultAttrProp_1a406e4ad122b0f8594d55e81c86944c8f" prot="private" virt="non-virtual"><scope>Tango::UserDefaultAttrProp</scope><name>max_value</name></member>
+      <member refid="de/d9a/classTango_1_1UserDefaultAttrProp_1aee882ae9571721d5333bf72470b016a8" prot="private" virt="non-virtual"><scope>Tango::UserDefaultAttrProp</scope><name>max_warning</name></member>
+      <member refid="de/d9a/classTango_1_1UserDefaultAttrProp_1a57331f4b1a4f26609685ab331d475686" prot="private" virt="non-virtual"><scope>Tango::UserDefaultAttrProp</scope><name>min_alarm</name></member>
+      <member refid="de/d9a/classTango_1_1UserDefaultAttrProp_1a59a673ff6182c57461de28c7d845493b" prot="private" virt="non-virtual"><scope>Tango::UserDefaultAttrProp</scope><name>min_value</name></member>
+      <member refid="de/d9a/classTango_1_1UserDefaultAttrProp_1a602d54399a5a034ef2afd2a532468ba8" prot="private" virt="non-virtual"><scope>Tango::UserDefaultAttrProp</scope><name>min_warning</name></member>
+      <member refid="de/d9a/classTango_1_1UserDefaultAttrProp_1a5fbec42b1c7c9cecc04dfa71cd1bd769" prot="private" virt="non-virtual"><scope>Tango::UserDefaultAttrProp</scope><name>period</name></member>
+      <member refid="de/d9a/classTango_1_1UserDefaultAttrProp_1a6f14153b75c549d3781f40336755e1c9" prot="private" virt="non-virtual"><scope>Tango::UserDefaultAttrProp</scope><name>rel_change</name></member>
+      <member refid="de/d9a/classTango_1_1UserDefaultAttrProp_1aaab71403746f72cc8111add956423746" prot="private" virt="non-virtual"><scope>Tango::UserDefaultAttrProp</scope><name>set_abs_change</name></member>
+      <member refid="de/d9a/classTango_1_1UserDefaultAttrProp_1ae2189ea9eb4a8869a8ca62be555d97d6" prot="private" virt="non-virtual"><scope>Tango::UserDefaultAttrProp</scope><name>set_archive_abs_change</name></member>
+      <member refid="de/d9a/classTango_1_1UserDefaultAttrProp_1aa6bcd12e3c581ff4d85b3608ca900199" prot="public" virt="non-virtual"><scope>Tango::UserDefaultAttrProp</scope><name>set_archive_event_abs_change</name></member>
+      <member refid="de/d9a/classTango_1_1UserDefaultAttrProp_1a26e889ad51bfe99d3c2442aeeb43b65c" prot="public" virt="non-virtual"><scope>Tango::UserDefaultAttrProp</scope><name>set_archive_event_period</name></member>
+      <member refid="de/d9a/classTango_1_1UserDefaultAttrProp_1af66bf9dd5d2d61a6f3f0e2800d0138ff" prot="public" virt="non-virtual"><scope>Tango::UserDefaultAttrProp</scope><name>set_archive_event_rel_change</name></member>
+      <member refid="de/d9a/classTango_1_1UserDefaultAttrProp_1a85c77938b9f62048cc5d0f6b22e3b692" prot="private" virt="non-virtual"><scope>Tango::UserDefaultAttrProp</scope><name>set_archive_period</name></member>
+      <member refid="de/d9a/classTango_1_1UserDefaultAttrProp_1adbb7e1da844bfeb3ed47b697377cd96d" prot="private" virt="non-virtual"><scope>Tango::UserDefaultAttrProp</scope><name>set_archive_rel_change</name></member>
+      <member refid="de/d9a/classTango_1_1UserDefaultAttrProp_1a254ef57c4a216d9bcd9287904017a266" prot="public" virt="non-virtual"><scope>Tango::UserDefaultAttrProp</scope><name>set_delta_t</name></member>
+      <member refid="de/d9a/classTango_1_1UserDefaultAttrProp_1ad572a7f7d8cde3526fc430e041596b88" prot="public" virt="non-virtual"><scope>Tango::UserDefaultAttrProp</scope><name>set_delta_val</name></member>
+      <member refid="de/d9a/classTango_1_1UserDefaultAttrProp_1afde6b2d24224c6cd96e7fd25841134bc" prot="public" virt="non-virtual"><scope>Tango::UserDefaultAttrProp</scope><name>set_description</name></member>
+      <member refid="de/d9a/classTango_1_1UserDefaultAttrProp_1acfcfafe14aaf559a6f9dbd4da4a44070" prot="public" virt="non-virtual"><scope>Tango::UserDefaultAttrProp</scope><name>set_display_unit</name></member>
+      <member refid="de/d9a/classTango_1_1UserDefaultAttrProp_1a12f0293d7ecf1d5c2451e30f1f333d6a" prot="public" virt="non-virtual"><scope>Tango::UserDefaultAttrProp</scope><name>set_enum_labels</name></member>
+      <member refid="de/d9a/classTango_1_1UserDefaultAttrProp_1a783f09ff9ef28cbe33c799437bf98e53" prot="public" virt="non-virtual"><scope>Tango::UserDefaultAttrProp</scope><name>set_event_abs_change</name></member>
+      <member refid="de/d9a/classTango_1_1UserDefaultAttrProp_1a9b5db76187d86e112e6999cb34987616" prot="public" virt="non-virtual"><scope>Tango::UserDefaultAttrProp</scope><name>set_event_period</name></member>
+      <member refid="de/d9a/classTango_1_1UserDefaultAttrProp_1a8ed40e206170172ae7d46dc2cb1f9dc4" prot="public" virt="non-virtual"><scope>Tango::UserDefaultAttrProp</scope><name>set_event_rel_change</name></member>
+      <member refid="de/d9a/classTango_1_1UserDefaultAttrProp_1a72b9f9b0ca7a05bfa240fe3277ae6a07" prot="public" virt="non-virtual"><scope>Tango::UserDefaultAttrProp</scope><name>set_format</name></member>
+      <member refid="de/d9a/classTango_1_1UserDefaultAttrProp_1a570f0146ec61bdbb0a2115d905ea8547" prot="public" virt="non-virtual"><scope>Tango::UserDefaultAttrProp</scope><name>set_label</name></member>
+      <member refid="de/d9a/classTango_1_1UserDefaultAttrProp_1a79734b5413a902711c436e5af1448789" prot="public" virt="non-virtual"><scope>Tango::UserDefaultAttrProp</scope><name>set_max_alarm</name></member>
+      <member refid="de/d9a/classTango_1_1UserDefaultAttrProp_1a38b3c0d094df7414b120a6824fd84092" prot="public" virt="non-virtual"><scope>Tango::UserDefaultAttrProp</scope><name>set_max_value</name></member>
+      <member refid="de/d9a/classTango_1_1UserDefaultAttrProp_1abf63a7abea9f43c5fcd1235fe9c7935c" prot="public" virt="non-virtual"><scope>Tango::UserDefaultAttrProp</scope><name>set_max_warning</name></member>
+      <member refid="de/d9a/classTango_1_1UserDefaultAttrProp_1afede8f7057ccf59f46c7005cc8839db7" prot="public" virt="non-virtual"><scope>Tango::UserDefaultAttrProp</scope><name>set_min_alarm</name></member>
+      <member refid="de/d9a/classTango_1_1UserDefaultAttrProp_1a0e4443532d4290042576edeee79b3778" prot="public" virt="non-virtual"><scope>Tango::UserDefaultAttrProp</scope><name>set_min_value</name></member>
+      <member refid="de/d9a/classTango_1_1UserDefaultAttrProp_1a6c95988f618cc16db4eb6c0db54c6534" prot="public" virt="non-virtual"><scope>Tango::UserDefaultAttrProp</scope><name>set_min_warning</name></member>
+      <member refid="de/d9a/classTango_1_1UserDefaultAttrProp_1a715e944cf2d7012e2b836eac35d35a1d" prot="private" virt="non-virtual"><scope>Tango::UserDefaultAttrProp</scope><name>set_period</name></member>
+      <member refid="de/d9a/classTango_1_1UserDefaultAttrProp_1aa6467c92a22bc56618cb2b86031111af" prot="private" virt="non-virtual"><scope>Tango::UserDefaultAttrProp</scope><name>set_rel_change</name></member>
+      <member refid="de/d9a/classTango_1_1UserDefaultAttrProp_1ac42a9899badbfb874167ebed8c83e940" prot="public" virt="non-virtual"><scope>Tango::UserDefaultAttrProp</scope><name>set_standard_unit</name></member>
+      <member refid="de/d9a/classTango_1_1UserDefaultAttrProp_1af8ffda78fc0157d31ac4c7e0c73982d3" prot="public" virt="non-virtual"><scope>Tango::UserDefaultAttrProp</scope><name>set_unit</name></member>
+      <member refid="de/d9a/classTango_1_1UserDefaultAttrProp_1a34c7e2d9fc4314ae2f8c8ed98ea6f0ba" prot="private" virt="non-virtual"><scope>Tango::UserDefaultAttrProp</scope><name>standard_unit</name></member>
+      <member refid="de/d9a/classTango_1_1UserDefaultAttrProp_1a566d82f3ce25bad02fd9202316106493" prot="private" virt="non-virtual"><scope>Tango::UserDefaultAttrProp</scope><name>unit</name></member>
+      <member refid="de/d9a/classTango_1_1UserDefaultAttrProp_1a49c378598e36618e83ef92dcd7a5f15b" prot="public" virt="non-virtual"><scope>Tango::UserDefaultAttrProp</scope><name>UserDefaultAttrProp</name></member>
+      <member refid="de/d9a/classTango_1_1UserDefaultAttrProp_1a261a7f6c1a7f08d7e0b5ccfd5d95a320" prot="private" virt="non-virtual"><scope>Tango::UserDefaultAttrProp</scope><name>~UserDefaultAttrProp</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

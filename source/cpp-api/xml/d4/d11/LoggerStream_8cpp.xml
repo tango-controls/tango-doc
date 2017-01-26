@@ -1,0 +1,276 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="d4/d11/LoggerStream_8cpp" kind="file">
+    <compoundname>LoggerStream.cpp</compoundname>
+    <includes refid="da/dc7/PortabilityImpl_8hh" local="yes">PortabilityImpl.hh</includes>
+    <includes refid="d2/de3/LoggerStream_8hh" local="no">log4tango/LoggerStream.hh</includes>
+    <includes refid="d1/d13/Logger_8hh" local="no">log4tango/Logger.hh</includes>
+    <incdepgraph>
+      <node id="1843">
+        <label>log4tango/Logger.hh</label>
+        <link refid="d1/d13/Logger_8hh"/>
+        <childnode refid="1834" relation="include">
+        </childnode>
+        <childnode refid="1844" relation="include">
+        </childnode>
+        <childnode refid="1853" relation="include">
+        </childnode>
+        <childnode refid="1839" relation="include">
+        </childnode>
+        <childnode refid="1838" relation="include">
+        </childnode>
+      </node>
+      <node id="1853">
+        <label>LoggingEvent.hh</label>
+        <link refid="d2/d60/LoggingEvent_8hh"/>
+        <childnode refid="1834" relation="include">
+        </childnode>
+        <childnode refid="1840" relation="include">
+        </childnode>
+        <childnode refid="1839" relation="include">
+        </childnode>
+        <childnode refid="1854" relation="include">
+        </childnode>
+      </node>
+      <node id="1837">
+        <label>strstream</label>
+      </node>
+      <node id="1844">
+        <label>AppenderAttachable.hh</label>
+        <link refid="d6/d73/AppenderAttachable_8hh"/>
+        <childnode refid="1834" relation="include">
+        </childnode>
+        <childnode refid="1845" relation="include">
+        </childnode>
+        <childnode refid="1846" relation="include">
+        </childnode>
+        <childnode refid="1847" relation="include">
+        </childnode>
+        <childnode refid="1850" relation="include">
+        </childnode>
+      </node>
+      <node id="1836">
+        <label>Export.hh</label>
+        <link refid="df/d5d/Export_8hh"/>
+      </node>
+      <node id="1841">
+        <label>stdexcept</label>
+      </node>
+      <node id="1839">
+        <label>Level.hh</label>
+        <link refid="d2/d33/Level_8hh"/>
+        <childnode refid="1834" relation="include">
+        </childnode>
+        <childnode refid="1840" relation="include">
+        </childnode>
+        <childnode refid="1841" relation="include">
+        </childnode>
+      </node>
+      <node id="1834">
+        <label>log4tango/Portability.hh</label>
+        <link refid="da/dd8/Portability_8hh"/>
+        <childnode refid="1835" relation="include">
+        </childnode>
+        <childnode refid="1836" relation="include">
+        </childnode>
+        <childnode refid="1837" relation="include">
+        </childnode>
+      </node>
+      <node id="1840">
+        <label>string</label>
+      </node>
+      <node id="1845">
+        <label>map</label>
+      </node>
+      <node id="1854">
+        <label>TimeStamp.hh</label>
+        <link refid="db/d7c/TimeStamp_8hh"/>
+        <childnode refid="1834" relation="include">
+        </childnode>
+      </node>
+      <node id="1835">
+        <label>log4tango/config.h</label>
+      </node>
+      <node id="1850">
+        <label>threading/Threading.hh</label>
+        <link refid="d6/d51/Threading_8hh"/>
+        <childnode refid="1834" relation="include">
+        </childnode>
+        <childnode refid="1851" relation="include">
+        </childnode>
+      </node>
+      <node id="1846">
+        <label>vector</label>
+      </node>
+      <node id="1832">
+        <label>LoggerStream.cpp</label>
+        <link refid="LoggerStream.cpp"/>
+        <childnode refid="1833" relation="include">
+        </childnode>
+        <childnode refid="1838" relation="include">
+        </childnode>
+        <childnode refid="1843" relation="include">
+        </childnode>
+      </node>
+      <node id="1842">
+        <label>LogSeparator.hh</label>
+        <link refid="d5/d64/LogSeparator_8hh"/>
+        <childnode refid="1834" relation="include">
+        </childnode>
+      </node>
+      <node id="1849">
+        <label>Layout.hh</label>
+        <link refid="db/da8/Layout_8hh"/>
+        <childnode refid="1834" relation="include">
+        </childnode>
+        <childnode refid="1850" relation="include">
+        </childnode>
+        <childnode refid="1853" relation="include">
+        </childnode>
+        <childnode refid="1840" relation="include">
+        </childnode>
+      </node>
+      <node id="1848">
+        <label>set</label>
+      </node>
+      <node id="1847">
+        <label>Appender.hh</label>
+        <link refid="d2/d5c/Appender_8hh"/>
+        <childnode refid="1834" relation="include">
+        </childnode>
+        <childnode refid="1840" relation="include">
+        </childnode>
+        <childnode refid="1845" relation="include">
+        </childnode>
+        <childnode refid="1848" relation="include">
+        </childnode>
+        <childnode refid="1839" relation="include">
+        </childnode>
+        <childnode refid="1849" relation="include">
+        </childnode>
+        <childnode refid="1853" relation="include">
+        </childnode>
+        <childnode refid="1850" relation="include">
+        </childnode>
+      </node>
+      <node id="1852">
+        <label>stdio.h</label>
+      </node>
+      <node id="1833">
+        <label>PortabilityImpl.hh</label>
+        <link refid="da/dc7/PortabilityImpl_8hh"/>
+        <childnode refid="1834" relation="include">
+        </childnode>
+      </node>
+      <node id="1851">
+        <label>log4tango/threading/DummyThreads.hh</label>
+        <link refid="d7/d68/DummyThreads_8hh"/>
+        <childnode refid="1834" relation="include">
+        </childnode>
+        <childnode refid="1852" relation="include">
+        </childnode>
+        <childnode refid="1840" relation="include">
+        </childnode>
+      </node>
+      <node id="1838">
+        <label>log4tango/LoggerStream.hh</label>
+        <link refid="d2/de3/LoggerStream_8hh"/>
+        <childnode refid="1834" relation="include">
+        </childnode>
+        <childnode refid="1839" relation="include">
+        </childnode>
+        <childnode refid="1842" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="d4/db0/namespacelog4tango">log4tango</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>LoggerStream.cpp</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>(C)<sp/>:<sp/><sp/>2000<sp/>-<sp/>2002</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>LifeLine<sp/>Networks<sp/>BV<sp/>(www.lifeline.nl).<sp/>All<sp/>rights<sp/>reserved.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Bastiaan<sp/>Bakker.<sp/>All<sp/>rights<sp/>reserved.<sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2004,2005,2006,2007,2008,2009,2010,2011,2012</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Synchrotron<sp/>SOLEIL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>L&apos;Orme<sp/>des<sp/>Merisiers</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Saint-Aubin<sp/>-<sp/>BP<sp/>48<sp/>-<sp/>France</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">//<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>log4tango.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Log4ango<sp/>is<sp/>free<sp/>software:<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">//<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">//<sp/>the<sp/>Free<sp/>Software<sp/>Foundation,<sp/>either<sp/>version<sp/>3<sp/>of<sp/>the<sp/>License,<sp/>or</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">//<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment">//<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Log4tango<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">//<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="comment">//<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="comment">//<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="comment">//<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="comment">//<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="comment">//<sp/>along<sp/>with<sp/>Log4Tango.<sp/><sp/>If<sp/>not,<sp/>see<sp/>&lt;http://www.gnu.org/licenses/&gt;.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="da/dc7/PortabilityImpl_8hh" kindref="compound">PortabilityImpl.hh</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>LOG4TANGO_HAVE_UNISTD_H</highlight></codeline>
+<codeline lineno="31"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#<sp/><sp/>include<sp/>&lt;unistd.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="33"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="d2/de3/LoggerStream_8hh" kindref="compound">log4tango/LoggerStream.hh</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="d1/d13/Logger_8hh" kindref="compound">log4tango/Logger.hh</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">log4tango<sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="d6/de1/classlog4tango_1_1LoggerStream_1a4bb2fa44f562c0398b6706ce241dbf81" refkind="member"><highlight class="normal"><ref refid="d6/de1/classlog4tango_1_1LoggerStream_1a4bb2fa44f562c0398b6706ce241dbf81" kindref="member">LoggerStream::LoggerStream</ref><sp/>(<ref refid="d4/d1c/classlog4tango_1_1Logger" kindref="compound">Logger</ref>&amp;<sp/>logger,<sp/><ref refid="d8/d0e/classlog4tango_1_1Level_1aa708c09b6a19a8cc8a3b19631561ca99" kindref="member">Level::Value</ref><sp/>level,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>filter)<sp/></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/>:<sp/>_logger(logger),</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>_level(level),</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>_filter(filter),</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>_buffer(new<sp/>std::ostringstream)</highlight></codeline>
+<codeline lineno="44"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="d6/de1/classlog4tango_1_1LoggerStream_1a03bd5a5f9b171ac3e192f4e56c00d079" refkind="member"><highlight class="normal"><ref refid="d6/de1/classlog4tango_1_1LoggerStream_1a03bd5a5f9b171ac3e192f4e56c00d079" kindref="member">LoggerStream::~LoggerStream</ref>()<sp/></highlight></codeline>
+<codeline lineno="49"><highlight class="normal">{<sp/></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><ref refid="d6/de1/classlog4tango_1_1LoggerStream_1a87e12557f4851fcbb9f4077e9a4d0d59" kindref="member">flush</ref>();</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>LOG4TANGO_HAVE_SSTREAM</highlight></codeline>
+<codeline lineno="52"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(_buffer)<sp/>{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>_buffer;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>_buffer<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="57"><highlight class="preprocessor"></highlight><highlight class="normal">}</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59" refid="d6/de1/classlog4tango_1_1LoggerStream_1a87e12557f4851fcbb9f4077e9a4d0d59" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d6/de1/classlog4tango_1_1LoggerStream_1a87e12557f4851fcbb9f4077e9a4d0d59" kindref="member">LoggerStream::flush</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/></highlight></codeline>
+<codeline lineno="60"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>LOG4TANGO_HAVE_SSTREAM</highlight></codeline>
+<codeline lineno="62"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(_buffer<sp/>&amp;&amp;<sp/>_buffer-&gt;tellp()<sp/>&gt;<sp/>0)</highlight></codeline>
+<codeline lineno="63"><highlight class="normal">#</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(_buffer<sp/>&amp;&amp;<sp/>_buffer-&gt;pcount())</highlight></codeline>
+<codeline lineno="65"><highlight class="normal">#endif</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(_filter)<sp/>{</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>_logger.<ref refid="d4/d1c/classlog4tango_1_1Logger_1aebe7a33e64c1dd47d908d5a1eec18545" kindref="member">log</ref>(_level,<sp/>_buffer-&gt;<ref refid="d7/d24/classstd_1_1ostringstream_1a8acec234b9393fb5ee0d9c8f7bbb6cb4" kindref="member">str</ref>());</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>_logger.<ref refid="d4/d1c/classlog4tango_1_1Logger_1adc92f13df7647dbeac96120bbda218f4" kindref="member">log_unconditionally</ref>(_level,<sp/>_buffer-&gt;<ref refid="d7/d24/classstd_1_1ostringstream_1a8acec234b9393fb5ee0d9c8f7bbb6cb4" kindref="member">str</ref>());</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>LOG4TANGO_HAVE_SSTREAM</highlight></codeline>
+<codeline lineno="73"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/>_buffer-&gt;<ref refid="d7/d24/classstd_1_1ostringstream_1a8acec234b9393fb5ee0d9c8f7bbb6cb4" kindref="member">str</ref>(</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight></codeline>
+<codeline lineno="75"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>_buffer;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>_buffer<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="78"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="79"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>log4tango</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/tango/workspace/cppTango/src/log4tango/LoggerStream.cpp"/>
+  </compounddef>
+</doxygen>

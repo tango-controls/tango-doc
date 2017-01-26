@@ -1,0 +1,149 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="d3/d60/classlog4tango_1_1threading_1_1ScopedLock" kind="class" prot="public">
+    <compoundname>log4tango::threading::ScopedLock</compoundname>
+    <includes refid="db/d37/MSThreads_8hh" local="yes">MSThreads.hh</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d3/d60/classlog4tango_1_1threading_1_1ScopedLock_1a45437eec018e63afe1b745f2b3bce09f" prot="private" static="no" mutable="no">
+        <type>LPCRITICAL_SECTION</type>
+        <definition>LPCRITICAL_SECTION log4tango::threading::ScopedLock::_criticalSection</definition>
+        <argsstring></argsstring>
+        <name>_criticalSection</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/threading/MSThreads.hh" line="117" column="1" bodyfile="/home/tango/workspace/cppTango/include/log4tango/threading/MSThreads.hh" bodystart="117" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/d60/classlog4tango_1_1threading_1_1ScopedLock_1aa3c8db4cd22ea6c931f95a6ffd7143c9" prot="private" static="no" mutable="no">
+        <type><ref refid="d8/d70/classlog4tango_1_1threading_1_1Mutex" kindref="compound">Mutex</ref> &amp;</type>
+        <definition>Mutex&amp; log4tango::threading::ScopedLock::_mutex</definition>
+        <argsstring></argsstring>
+        <name>_mutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/threading/PThreads.hh" line="78" column="1" bodyfile="/home/tango/workspace/cppTango/include/log4tango/threading/PThreads.hh" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d3/d60/classlog4tango_1_1threading_1_1ScopedLock_1a3c6e5abbb0fada2b3ea6432bd19862dd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>log4tango::threading::ScopedLock::ScopedLock</definition>
+        <argsstring>(Mutex &amp;m)</argsstring>
+        <name>ScopedLock</name>
+        <param>
+          <type><ref refid="d8/d70/classlog4tango_1_1threading_1_1Mutex" kindref="compound">Mutex</ref> &amp;</type>
+          <declname>m</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/threading/PThreads.hh" line="81" column="1" bodyfile="/home/tango/workspace/cppTango/include/log4tango/threading/PThreads.hh" bodystart="81" bodyend="83"/>
+        <references refid="d8/d70/classlog4tango_1_1threading_1_1Mutex_1a121bae8bb2ca8d412983fbb303441ed0" compoundref="d0/d6c/PThreads_8hh" startline="63" endline="65">log4tango::threading::Mutex::lock</references>
+      </memberdef>
+      <memberdef kind="function" id="d3/d60/classlog4tango_1_1threading_1_1ScopedLock_1aa11d7d68ced4dc20f5577a264797e9a1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>log4tango::threading::ScopedLock::ScopedLock</definition>
+        <argsstring>(Mutex &amp;mutex)</argsstring>
+        <name>ScopedLock</name>
+        <param>
+          <type><ref refid="d8/d70/classlog4tango_1_1threading_1_1Mutex" kindref="compound">Mutex</ref> &amp;</type>
+          <declname>mutex</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/threading/MSThreads.hh" line="104" column="1" bodyfile="/home/tango/workspace/cppTango/include/log4tango/threading/MSThreads.hh" bodystart="104" bodyend="107"/>
+        <references refid="d8/d70/classlog4tango_1_1threading_1_1Mutex_1ac0dff8ce594fd638931141d431b5117a" compoundref="db/d37/MSThreads_8hh" startline="86" endline="88">log4tango::threading::Mutex::get_critical_section</references>
+      </memberdef>
+      <memberdef kind="function" id="d3/d60/classlog4tango_1_1threading_1_1ScopedLock_1ab03de73986f5bb51e7e40d5725e725bb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>log4tango::threading::ScopedLock::~ScopedLock</definition>
+        <argsstring>()</argsstring>
+        <name>~ScopedLock</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/threading/PThreads.hh" line="85" column="1" bodyfile="/home/tango/workspace/cppTango/include/log4tango/threading/PThreads.hh" bodystart="85" bodyend="87"/>
+        <references refid="d8/d70/classlog4tango_1_1threading_1_1Mutex_1a0689618bc67462cc3646e86de6b5f261" compoundref="d0/d6c/PThreads_8hh" startline="67" endline="69">log4tango::threading::Mutex::unlock</references>
+      </memberdef>
+      <memberdef kind="function" id="d3/d60/classlog4tango_1_1threading_1_1ScopedLock_1ab03de73986f5bb51e7e40d5725e725bb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>log4tango::threading::ScopedLock::~ScopedLock</definition>
+        <argsstring>()</argsstring>
+        <name>~ScopedLock</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/threading/MSThreads.hh" line="109" column="1" bodyfile="/home/tango/workspace/cppTango/include/log4tango/threading/MSThreads.hh" bodystart="109" bodyend="111"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="d3/d60/classlog4tango_1_1threading_1_1ScopedLock_1ad2f3c49424982c357f1cbd7518781cf5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>log4tango::threading::ScopedLock::ScopedLock</definition>
+        <argsstring>(const ScopedLock &amp;)</argsstring>
+        <name>ScopedLock</name>
+        <param>
+          <type>const <ref refid="d3/d60/classlog4tango_1_1threading_1_1ScopedLock" kindref="compound">ScopedLock</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/threading/MSThreads.hh" line="114" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d60/classlog4tango_1_1threading_1_1ScopedLock_1a9ebeda5de1da3f5ee0c8355c17af7c6c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d3/d60/classlog4tango_1_1threading_1_1ScopedLock" kindref="compound">ScopedLock</ref></type>
+        <definition>ScopedLock log4tango::threading::ScopedLock::operator=</definition>
+        <argsstring>(const ScopedLock &amp;)</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="d3/d60/classlog4tango_1_1threading_1_1ScopedLock" kindref="compound">ScopedLock</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/threading/MSThreads.hh" line="115" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/tango/workspace/cppTango/include/log4tango/threading/MSThreads.hh" line="101" column="1" bodyfile="/home/tango/workspace/cppTango/include/log4tango/threading/MSThreads.hh" bodystart="100" bodyend="118"/>
+    <listofallmembers>
+      <member refid="d3/d60/classlog4tango_1_1threading_1_1ScopedLock_1a45437eec018e63afe1b745f2b3bce09f" prot="private" virt="non-virtual"><scope>log4tango::threading::ScopedLock</scope><name>_criticalSection</name></member>
+      <member refid="d3/d60/classlog4tango_1_1threading_1_1ScopedLock_1aa3c8db4cd22ea6c931f95a6ffd7143c9" prot="private" virt="non-virtual"><scope>log4tango::threading::ScopedLock</scope><name>_mutex</name></member>
+      <member refid="d3/d60/classlog4tango_1_1threading_1_1ScopedLock_1a9ebeda5de1da3f5ee0c8355c17af7c6c" prot="private" virt="non-virtual"><scope>log4tango::threading::ScopedLock</scope><name>operator=</name></member>
+      <member refid="d3/d60/classlog4tango_1_1threading_1_1ScopedLock_1aa11d7d68ced4dc20f5577a264797e9a1" prot="public" virt="non-virtual"><scope>log4tango::threading::ScopedLock</scope><name>ScopedLock</name></member>
+      <member refid="d3/d60/classlog4tango_1_1threading_1_1ScopedLock_1ad2f3c49424982c357f1cbd7518781cf5" prot="private" virt="non-virtual"><scope>log4tango::threading::ScopedLock</scope><name>ScopedLock</name></member>
+      <member refid="d3/d60/classlog4tango_1_1threading_1_1ScopedLock_1a3c6e5abbb0fada2b3ea6432bd19862dd" prot="public" virt="non-virtual"><scope>log4tango::threading::ScopedLock</scope><name>ScopedLock</name></member>
+      <member refid="d3/d60/classlog4tango_1_1threading_1_1ScopedLock_1ab03de73986f5bb51e7e40d5725e725bb" prot="public" virt="non-virtual"><scope>log4tango::threading::ScopedLock</scope><name>~ScopedLock</name></member>
+      <member refid="d3/d60/classlog4tango_1_1threading_1_1ScopedLock_1ab03de73986f5bb51e7e40d5725e725bb" prot="public" virt="non-virtual"><scope>log4tango::threading::ScopedLock</scope><name>~ScopedLock</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

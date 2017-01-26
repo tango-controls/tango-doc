@@ -1,0 +1,163 @@
+\section{Tango\-:\-:Db\-Server Class Reference}
+\label{classTango_1_1DbServer}\index{Tango\-::\-Db\-Server@{Tango\-::\-Db\-Server}}
+
+
+A database object for a device server which can be used to query or modify server database information.  
+
+
+\subsection*{Public Member Functions}
+\begin{Indent}{\bf Constructors}\par
+\begin{DoxyCompactItemize}
+\item 
+{\bf Db\-Server} (string server\-\_\-name)
+\begin{DoxyCompactList}\small\item\em Create a \doxyref{Db\-Server}{p.}{d6/deb/classTango_1_1DbServer} instance. \end{DoxyCompactList}\item 
+{\bf Db\-Server} (string server\-\_\-name, Database $\ast$db)
+\begin{DoxyCompactList}\small\item\em Create a \doxyref{Db\-Server}{p.}{d6/deb/classTango_1_1DbServer} instance using a specified database. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Server oriented methods}\par
+\begin{DoxyCompactItemize}
+\item 
+void {\bf add\-\_\-server} ({\bf Db\-Dev\-Infos} \&serv)
+\begin{DoxyCompactList}\small\item\em Add a device server process into the database. \end{DoxyCompactList}\item 
+void {\bf delete\-\_\-server} ()
+\begin{DoxyCompactList}\small\item\em Delete the device server from database. \end{DoxyCompactList}\item 
+void {\bf export\-\_\-server} ({\bf Db\-Dev\-Export\-Infos} \&serv)
+\begin{DoxyCompactList}\small\item\em Export all device server devices in database. \end{DoxyCompactList}\item 
+void {\bf unexport\-\_\-server} ()
+\begin{DoxyCompactList}\small\item\em Mark all devices belonging to the device server as un-\/exported. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+A database object for a device server which can be used to query or modify server database information. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Tango\-::\-Db\-Server@{Tango\-::\-Db\-Server}!Db\-Server@{Db\-Server}}
+\index{Db\-Server@{Db\-Server}!Tango::DbServer@{Tango\-::\-Db\-Server}}
+\subsubsection[{Db\-Server}]{\setlength{\rightskip}{0pt plus 5cm}Tango\-::\-Db\-Server\-::\-Db\-Server (
+\begin{DoxyParamCaption}
+\item[{string}]{server\-\_\-name}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1DbServer_ab9441c6d68940385163e1fc677a6a76e}
+
+
+Create a \doxyref{Db\-Server}{p.}{d6/deb/classTango_1_1DbServer} instance. 
+
+A constructor for a \doxyref{Db\-Server}{p.}{d6/deb/classTango_1_1DbServer} object for a server in the T\-A\-N\-G\-O database specified by the T\-A\-N\-G\-O\-\_\-\-H\-O\-S\-T environment variable.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em server\-\_\-name} & The device server name \\
+\hline
+\end{DoxyParams}
+\index{Tango\-::\-Db\-Server@{Tango\-::\-Db\-Server}!Db\-Server@{Db\-Server}}
+\index{Db\-Server@{Db\-Server}!Tango::DbServer@{Tango\-::\-Db\-Server}}
+\subsubsection[{Db\-Server}]{\setlength{\rightskip}{0pt plus 5cm}Tango\-::\-Db\-Server\-::\-Db\-Server (
+\begin{DoxyParamCaption}
+\item[{string}]{server\-\_\-name, }
+\item[{Database $\ast$}]{db}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1DbServer_a46869a3535ccf390b099be5bef844a6d}
+
+
+Create a \doxyref{Db\-Server}{p.}{d6/deb/classTango_1_1DbServer} instance using a specified database. 
+
+A constructor for a \doxyref{Db\-Server}{p.}{d6/deb/classTango_1_1DbServer} object for the server in the specified database. This method reuses the Database supplied by the programmer
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em server\-\_\-name} & The device server name \\
+\hline
+\mbox{\tt in}  & {\em db} & The database object \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{Tango\-::\-Db\-Server@{Tango\-::\-Db\-Server}!add\-\_\-server@{add\-\_\-server}}
+\index{add\-\_\-server@{add\-\_\-server}!Tango::DbServer@{Tango\-::\-Db\-Server}}
+\subsubsection[{add\-\_\-server}]{\setlength{\rightskip}{0pt plus 5cm}void Tango\-::\-Db\-Server\-::add\-\_\-server (
+\begin{DoxyParamCaption}
+\item[{{\bf Db\-Dev\-Infos} \&}]{serv}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1DbServer_a0196639724a8fd1d93385ef37a5d0ac4}
+
+
+Add a device server process into the database. 
+
+Add a group of devices to the database. The device names, server names and classes are specified in the vector of \doxyref{Db\-Dev\-Info}{p.}{dd/d01/classTango_1_1DbDevInfo} structures
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em serv} & Device server process data\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Connection\-Failed,Communnication\-Failed,Dev\-Failed} & from device \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Db\-Server@{Tango\-::\-Db\-Server}!delete\-\_\-server@{delete\-\_\-server}}
+\index{delete\-\_\-server@{delete\-\_\-server}!Tango::DbServer@{Tango\-::\-Db\-Server}}
+\subsubsection[{delete\-\_\-server}]{\setlength{\rightskip}{0pt plus 5cm}void Tango\-::\-Db\-Server\-::delete\-\_\-server (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1DbServer_acf053de664387ae38d07afff93433d60}
+
+
+Delete the device server from database. 
+
+Delete the device server and its associated devices from the database.
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Connection\-Failed,Communnication\-Failed,Dev\-Failed} & from device \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Db\-Server@{Tango\-::\-Db\-Server}!export\-\_\-server@{export\-\_\-server}}
+\index{export\-\_\-server@{export\-\_\-server}!Tango::DbServer@{Tango\-::\-Db\-Server}}
+\subsubsection[{export\-\_\-server}]{\setlength{\rightskip}{0pt plus 5cm}void Tango\-::\-Db\-Server\-::export\-\_\-server (
+\begin{DoxyParamCaption}
+\item[{{\bf Db\-Dev\-Export\-Infos} \&}]{serv}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1DbServer_ae1c4289e123c4a30dd51102186f1aa6d}
+
+
+Export all device server devices in database. 
+
+Export a group of device to the database. The device names, I\-O\-R, class, server name, pid etc. are specified in the vector of \doxyref{Db\-Dev\-Export\-Info}{p.}{d6/d4b/classTango_1_1DbDevExportInfo} structures.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em serv} & Devices information\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Connection\-Failed,Communnication\-Failed,Dev\-Failed} & from device \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Db\-Server@{Tango\-::\-Db\-Server}!unexport\-\_\-server@{unexport\-\_\-server}}
+\index{unexport\-\_\-server@{unexport\-\_\-server}!Tango::DbServer@{Tango\-::\-Db\-Server}}
+\subsubsection[{unexport\-\_\-server}]{\setlength{\rightskip}{0pt plus 5cm}void Tango\-::\-Db\-Server\-::unexport\-\_\-server (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1DbServer_a7ec946b0a31e7fb26b126063315e52bc}
+
+
+Mark all devices belonging to the device server as un-\/exported. 
+
+Mark all the devices exported by the server as un-\/exported.
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Connection\-Failed,Communnication\-Failed,Dev\-Failed} & from device \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+{\bf dbapi.\-h}\end{DoxyCompactItemize}

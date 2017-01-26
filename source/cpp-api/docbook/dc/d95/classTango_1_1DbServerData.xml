@@ -1,0 +1,286 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="dc/d95/classTango_1_1DbServerData">
+<title>Tango::DbServerData class Reference</title>
+        <simplesect>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d0/d57/structTango_1_1DbServerData_1_1TangoAttribute">Tango::DbServerData::TangoAttribute</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="db/d41/structTango_1_1DbServerData_1_1TangoClass">Tango::DbServerData::TangoClass</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="df/d41/structTango_1_1DbServerData_1_1TangoDevice">Tango::DbServerData::TangoDevice</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="da/d75/structTango_1_1DbServerData_1_1TangoPipe">Tango::DbServerData::TangoPipe</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d6/dca/structTango_1_1DbServerData_1_1TangoProperty">Tango::DbServerData::TangoProperty</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>vector&lt; TangoClass &gt; classes</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string full_server_name</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="dc/d95/classTango_1_1DbServerData_1accb08ddda5ac5cc6cd02b81366f93e22">~DbServerData</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dc/d95/classTango_1_1DbServerData_1ac5c939805baa70bec618ab3bd8657f2f">create_server</link> (
+Database * )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>vector&lt; TangoClass &gt; &amp; <link linkend="dc/d95/classTango_1_1DbServerData_1aa6f5740c4ce8bc9d4815c3cb6b814b68">get_classes</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const string &amp; <link linkend="dc/d95/classTango_1_1DbServerData_1a4a1cfa7c3869a4919692490d1e39daa0">get_name</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dc/d95/classTango_1_1DbServerData_1a225f08a3c3f710835395cf5fd304c7cb">put_properties</link> (
+Database * )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="dc/d95/classTango_1_1DbServerData_1a9091f7e8303cb507cd6d571ab6901cbf">DbServerData</link> (
+const string &amp; ds_exec_name, const string &amp; ds_inst_name)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="dc/d95/classTango_1_1DbServerData_1a19dd1e256705a4ba7aae9a7e696c6a7b">already_exist</link> (
+const string &amp; tg_host)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dc/d95/classTango_1_1DbServerData_1a642eaefe3d22329cb415d6893a388c9d">put_in_database</link> (
+const string &amp; tg_host)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dc/d95/classTango_1_1DbServerData_1a8d0f3027d2c152939a7cc7a0129c7e73">remove</link> (
+const string &amp; tg_host)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dc/d95/classTango_1_1DbServerData_1a71c4b877ede37ab729a172da7668872b">remove</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Brief Description</title>
+
+<para>Class used to move/copy a complete device server process database configuration from one <link linkend="de/ddf/namespaceTango">Tango</link> host to another. </para>
+    </simplesect>
+            <section xml:id="dc/d95/classTango_1_1DbServerData_1accb08ddda5ac5cc6cd02b81366f93e22">
+                <title>Tango::DbServerData::~DbServerData ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dc/d95/classTango_1_1DbServerData_1ac5c939805baa70bec618ab3bd8657f2f">
+                <title>void Tango::DbServerData::create_server (Database *)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dc/d95/classTango_1_1DbServerData_1aa6f5740c4ce8bc9d4815c3cb6b814b68">
+                <title>vector&lt;TangoClass&gt;&amp; Tango::DbServerData::get_classes ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dc/d95/classTango_1_1DbServerData_1a4a1cfa7c3869a4919692490d1e39daa0">
+                <title>const string&amp; Tango::DbServerData::get_name ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dc/d95/classTango_1_1DbServerData_1a225f08a3c3f710835395cf5fd304c7cb">
+                <title>void Tango::DbServerData::put_properties (Database *)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dc/d95/classTango_1_1DbServerData_1a9091f7e8303cb507cd6d571ab6901cbf">
+                <title>Tango::DbServerData::DbServerData (const string &amp;ds_exec_name, const string &amp;ds_inst_name)</title> <emphasis>Create a DbServerData instance.</emphasis>
+                
+<para>A constructor for a <link linkend="dc/d95/classTango_1_1DbServerData">DbServerData</link> object for a device server process defined in the TANGO database specified by the TANGO_HOST environment variable</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>ds_exec_name</entry>
+                                <entry>
+<para>The device server process executable name </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>ds_inst_name</entry>
+                                <entry>
+<para>The device server process instance name </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+            <section xml:id="dc/d95/classTango_1_1DbServerData_1a19dd1e256705a4ba7aae9a7e696c6a7b">
+                <title>bool Tango::DbServerData::already_exist (const string &amp;tg_host)</title> <emphasis>Check if device(s) already defined.</emphasis>
+                
+<para>Return true if one of the device defined in the device server process with configuration in this instance is already defined in the database defined by the <link linkend="de/ddf/namespaceTango">Tango</link> host given as parameter</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>tg_host</entry>
+                                <entry>
+<para>The tango host </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>Boolean set to true if one of the device server device is defined in the <link linkend="de/ddf/namespaceTango">Tango</link> host given as parameter </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="dc/d95/classTango_1_1DbServerData_1a642eaefe3d22329cb415d6893a388c9d">
+                <title>void Tango::DbServerData::put_in_database (const string &amp;tg_host)</title> <emphasis>Put device server database configuration in new Tango host.</emphasis>
+                
+<para>Store the device server process database configuration in the database specified by the given <link linkend="de/ddf/namespaceTango">Tango</link> host parameter</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>tg_host</entry>
+                                <entry>
+<para>The tango host </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+            <section xml:id="dc/d95/classTango_1_1DbServerData_1a8d0f3027d2c152939a7cc7a0129c7e73">
+                <title>void Tango::DbServerData::remove (const string &amp;tg_host)</title> <emphasis>Remove device server database configuration from Tango host.</emphasis>
+                
+<para>Remove the device server process database configuration from the database specified by the given <link linkend="de/ddf/namespaceTango">Tango</link> host parameter</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>tg_host</entry>
+                                <entry>
+<para>The tango host </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+            <section xml:id="dc/d95/classTango_1_1DbServerData_1a71c4b877ede37ab729a172da7668872b">
+                <title>void Tango::DbServerData::remove ()</title> <emphasis>Remove device server database configuration from default Tango host.</emphasis>
+                
+<para>Remove the device server process database configuration from the database specified by the environment variable TANGO_HOST </para>
+
+            </section>
+</section>

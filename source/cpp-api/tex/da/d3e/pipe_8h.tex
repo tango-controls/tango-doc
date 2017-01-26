@@ -1,0 +1,61 @@
+\section{pipe.\-h File Reference}
+\label{pipe_8h}\index{pipe.\-h@{pipe.\-h}}
+{\ttfamily \#include $<$tango.\-h$>$}\\*
+{\ttfamily \#include $<$stdarg.\-h$>$}\\*
+Include dependency graph for pipe.\-h\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=160pt]{d4/d0f/pipe_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Tango\-::\-Pipe}
+\begin{DoxyCompactList}\small\item\em This class is a class representing a pipe in the T\-A\-N\-G\-O device server pattern. \end{DoxyCompactList}\item 
+struct {\bf Tango\-::\-Wanted\-Pipe$<$ A1, A2, R $>$}
+\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Tango}
+\begin{DoxyCompactList}\small\item\em ============================================================================= \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bf P\-I\-P\-E\-\_\-\-C\-H\-E\-C\-K\-\_\-\-P\-T\-R}(A, B, C)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\Pipe \& {\bf Tango\-::operator$<$$<$} (Pipe \&, T \&)
+\item 
+{\footnotesize template$<$typename T $>$ }\\Pipe \& {\bf Tango\-::operator$<$$<$} (Pipe \&, T $\ast$)
+\item 
+{\footnotesize template$<$typename T $>$ }\\Pipe \& {\bf Tango\-::operator$<$$<$} (Pipe \&, Data\-Element$<$ T $>$ \&)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{pipe.\-h@{pipe.\-h}!P\-I\-P\-E\-\_\-\-C\-H\-E\-C\-K\-\_\-\-P\-T\-R@{P\-I\-P\-E\-\_\-\-C\-H\-E\-C\-K\-\_\-\-P\-T\-R}}
+\index{P\-I\-P\-E\-\_\-\-C\-H\-E\-C\-K\-\_\-\-P\-T\-R@{P\-I\-P\-E\-\_\-\-C\-H\-E\-C\-K\-\_\-\-P\-T\-R}!pipe.h@{pipe.\-h}}
+\subsubsection[{P\-I\-P\-E\-\_\-\-C\-H\-E\-C\-K\-\_\-\-P\-T\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-I\-P\-E\-\_\-\-C\-H\-E\-C\-K\-\_\-\-P\-T\-R(
+\begin{DoxyParamCaption}
+\item[{}]{A, }
+\item[{}]{B, }
+\item[{}]{C}
+\end{DoxyParamCaption}
+)}\label{pipe_8h_a137d9d2c4e4a865274b4fbbb0327cb4b}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{if} (A == NULL) \(\backslash\)
+    \{ \(\backslash\)
+        stringstream o; \(\backslash\)
+        o << \textcolor{stringliteral}{"Data pointer for pipe "} << B << \textcolor{stringliteral}{", data element "} << C << \textcolor{stringliteral}{" is NULL!"}; \(\backslash\)
+        Except::throw\_exception(API_PipeOptProp,o.str(),\textcolor{stringliteral}{"Pipe::set\_value()"}); \(\backslash\)
+    \} \(\backslash\)
+    else \(\backslash\)
+        (void)0
+\end{DoxyCode}

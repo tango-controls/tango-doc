@@ -1,0 +1,166 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d0/dcb/classTango_1_1AttrHistoryStack">
+<title>Tango::AttrHistoryStack class Reference</title>
+    <templateparamlist>
+      <param>
+        <type>typename</type>
+        <declname>T</declname>
+        <defname>T</defname>
+      </param>
+    </templateparamlist>
+        <simplesect>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>vector&lt; Tango::TimedAttrData&lt; T &gt; &gt; hist</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d0/dcb/classTango_1_1AttrHistoryStack_1aac60d22a112badcb3c27fb0b6c22eecd">clear</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>vector&lt; <link linkend="da/d12/classTango_1_1TimedAttrData">TimedAttrData</link>&lt; T &gt; &gt; &amp; <link linkend="d0/dcb/classTango_1_1AttrHistoryStack_1a73318d3db023c337bdbeae5fc743b3fd">get_data</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="d0/dcb/classTango_1_1AttrHistoryStack_1a078798e0c374f134f0cfb315a515f028">length</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d0/dcb/classTango_1_1AttrHistoryStack_1afcf19d9e75e02341bb8533cc7c61df5e">length</link> (
+long nb)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d0/dcb/classTango_1_1AttrHistoryStack_1a6356c9fc9d4dd06b941b8e4a36de1f90">push</link> (
+<link linkend="da/d12/classTango_1_1TimedAttrData">TimedAttrData</link>&lt; T &gt; const &amp; elt)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d0/dcb/classTango_1_1AttrHistoryStack_1a29ff76ad581f4979e18bf566b2ad7326">AttrHistoryStack</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Brief Description</title>
+
+<para>This class is a used to pass an attribute value history when the user directly fills the attribute polling buffer. </para>
+    </simplesect>
+        <simplesect>
+            <title>Detailed Description</title>
+
+<para>Each element in this stack will be used to store one element of the attribute polling buffer</para>
+
+<para>$Author$ $Revision$ </para>
+                <para>Definition at line 723 of file pollext.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>pollext.h</para></listitem></itemizedlist></para>
+        </simplesect>
+            <section xml:id="d0/dcb/classTango_1_1AttrHistoryStack_1aac60d22a112badcb3c27fb0b6c22eecd">
+                <title>void Tango::AttrHistoryStack&lt; T &gt;::clear ()</title> <emphasis>Clear the stack.</emphasis>
+                
+            </section>
+            <section xml:id="d0/dcb/classTango_1_1AttrHistoryStack_1a73318d3db023c337bdbeae5fc743b3fd">
+                <title>vector&lt;TimedAttrData&lt;T&gt; &gt;&amp; Tango::AttrHistoryStack&lt; T &gt;::get_data ()</title> <emphasis>Get stack data.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>The stack itself </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="d0/dcb/classTango_1_1AttrHistoryStack_1a078798e0c374f134f0cfb315a515f028">
+                <title>size_t Tango::AttrHistoryStack&lt; T &gt;::length ()</title> <emphasis>Get stack depth.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>The stack depth </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="d0/dcb/classTango_1_1AttrHistoryStack_1afcf19d9e75e02341bb8533cc7c61df5e">
+                <title>void Tango::AttrHistoryStack&lt; T &gt;::length (long nb)</title> <emphasis>Reserve memory for stack elements.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>nb</entry>
+                                <entry>
+<para>The stack element number </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+            <section xml:id="d0/dcb/classTango_1_1AttrHistoryStack_1a6356c9fc9d4dd06b941b8e4a36de1f90">
+                <title>void Tango::AttrHistoryStack&lt; T &gt;::push (TimedAttrData&lt; T &gt; const &amp;elt)</title> <emphasis>Store a new element in the stack.</emphasis>
+                
+<para>This method stores a new element in the stack</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>elt</entry>
+                                <entry>
+<para>The new element </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+            <section xml:id="d0/dcb/classTango_1_1AttrHistoryStack_1a29ff76ad581f4979e18bf566b2ad7326">
+                <title>Tango::AttrHistoryStack&lt; T &gt;::AttrHistoryStack ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

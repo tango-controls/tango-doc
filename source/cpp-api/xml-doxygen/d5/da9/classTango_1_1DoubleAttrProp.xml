@@ -1,0 +1,515 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="d5/da9/classTango_1_1DoubleAttrProp" kind="class" prot="public">
+    <compoundname>Tango::DoubleAttrProp</compoundname>
+    <innerclass refid="dc/d58/classTango_1_1DoubleAttrProp_1_1DoubleAttrPropExt" prot="private">Tango::DoubleAttrProp::DoubleAttrPropExt</innerclass>
+    <templateparamlist>
+      <param>
+        <type>typename</type>
+        <declname>T</declname>
+        <defname>T</defname>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="user-defined">
+      <header>Constructors</header>
+      <description><para>Miscellaneous constructors </para></description>
+      <memberdef kind="function" id="d5/da9/classTango_1_1DoubleAttrProp_1a58dbe78d028188ea0dbee8a9a49be716" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Tango::DoubleAttrProp&lt; T &gt;::DoubleAttrProp</definition>
+        <argsstring>()</argsstring>
+        <name>DoubleAttrProp</name>
+        <briefdescription>
+<para>Default constructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attrprop.h" line="281" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrprop.h" bodystart="281" bodyend="281"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/da9/classTango_1_1DoubleAttrProp_1a5d8275415ddccba96ff4131c0bf0d27d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Tango::DoubleAttrProp&lt; T &gt;::DoubleAttrProp</definition>
+        <argsstring>(const vector&lt; T &gt; &amp;values)</argsstring>
+        <name>DoubleAttrProp</name>
+        <param>
+          <type>const vector&lt; T &gt; &amp;</type>
+          <declname>values</declname>
+        </param>
+        <briefdescription>
+<para>Create a new <ref refid="d5/da9/classTango_1_1DoubleAttrProp" kindref="compound">DoubleAttrProp</ref> object. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>values</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A vector containing two values of the compound attribute property. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attrprop.h" line="288" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrprop.h" bodystart="288" bodyend="299"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/da9/classTango_1_1DoubleAttrProp_1af5c16f185a3d4eb11fb8dcc21bf63531" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Tango::DoubleAttrProp&lt; T &gt;::DoubleAttrProp</definition>
+        <argsstring>(const T &amp;value)</argsstring>
+        <name>DoubleAttrProp</name>
+        <param>
+          <type>const T &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Create a new <ref refid="d5/da9/classTango_1_1DoubleAttrProp" kindref="compound">DoubleAttrProp</ref> object. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The figure assigned to both values of the compound attribute property. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attrprop.h" line="305" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrprop.h" bodystart="305" bodyend="311"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/da9/classTango_1_1DoubleAttrProp_1a3a44186496c84b194a9f382e87aeb93e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Tango::DoubleAttrProp&lt; T &gt;::DoubleAttrProp</definition>
+        <argsstring>(const char *value_str)</argsstring>
+        <name>DoubleAttrProp</name>
+        <param>
+          <type>const char *</type>
+          <declname>value_str</declname>
+        </param>
+        <briefdescription>
+<para>Create a new <ref refid="d5/da9/classTango_1_1DoubleAttrProp" kindref="compound">DoubleAttrProp</ref> object. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value_str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The &apos;C string&apos; representation of values of the compound attribute property. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attrprop.h" line="317" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrprop.h" bodystart="317" bodyend="317"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/da9/classTango_1_1DoubleAttrProp_1a84c375bcf6a1640bd4ba2499f158a887" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Tango::DoubleAttrProp&lt; T &gt;::DoubleAttrProp</definition>
+        <argsstring>(const string &amp;value_str)</argsstring>
+        <name>DoubleAttrProp</name>
+        <param>
+          <type>const string &amp;</type>
+          <declname>value_str</declname>
+        </param>
+        <briefdescription>
+<para>Create a new <ref refid="d5/da9/classTango_1_1DoubleAttrProp" kindref="compound">DoubleAttrProp</ref> object. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value_str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The string representation of values of the compound attribute property. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attrprop.h" line="323" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrprop.h" bodystart="323" bodyend="323"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Assignment operators</header>
+      <description><para>These operators allow to assign the values of the compound attribute property by providing the values or their string representations. </para></description>
+      <memberdef kind="function" id="d5/da9/classTango_1_1DoubleAttrProp_1a8a6f518ac4cb3a3eef014d9633cf555b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="d5/da9/classTango_1_1DoubleAttrProp" kindref="compound">DoubleAttrProp</ref> &amp;</type>
+        <definition>DoubleAttrProp&amp; Tango::DoubleAttrProp&lt; T &gt;::operator=</definition>
+        <argsstring>(const vector&lt; T &gt; &amp;values)</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const vector&lt; T &gt; &amp;</type>
+          <declname>values</declname>
+        </param>
+        <briefdescription>
+<para>Assign the values of the compound attribute property. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>values</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A vector containing compound attribute property values.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="d5/da9/classTango_1_1DoubleAttrProp" kindref="compound">DoubleAttrProp</ref> object with both values of the compound attribute property and their string representation set. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attrprop.h" line="339" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrprop.h" bodystart="339" bodyend="353"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/da9/classTango_1_1DoubleAttrProp_1a0bdf79b7a455c4f1aa4521dd6955a347" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="d5/da9/classTango_1_1DoubleAttrProp" kindref="compound">DoubleAttrProp</ref> &amp;</type>
+        <definition>DoubleAttrProp&amp; Tango::DoubleAttrProp&lt; T &gt;::operator=</definition>
+        <argsstring>(const T &amp;value)</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const T &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Assign the values of the compound attribute property. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A figure representing both values of the compound attribute property.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="d5/da9/classTango_1_1DoubleAttrProp" kindref="compound">DoubleAttrProp</ref> object with both values of the compound attribute property and their string representation set. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attrprop.h" line="362" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrprop.h" bodystart="362" bodyend="374"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/da9/classTango_1_1DoubleAttrProp_1ad69387bb6bb54b0629c2bcc3ed0aca68" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="d5/da9/classTango_1_1DoubleAttrProp" kindref="compound">DoubleAttrProp</ref> &amp;</type>
+        <definition>DoubleAttrProp&amp; Tango::DoubleAttrProp&lt; T &gt;::operator=</definition>
+        <argsstring>(const char *value_str)</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const char *</type>
+          <declname>value_str</declname>
+        </param>
+        <briefdescription>
+<para>Assign the values of the compound attribute property. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value_str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A &apos;C string&apos; representation of values of the compound attribute property.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="d5/da9/classTango_1_1DoubleAttrProp" kindref="compound">DoubleAttrProp</ref> object with string representation of values of the compound attribute property set. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attrprop.h" line="383" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrprop.h" bodystart="383" bodyend="388"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/da9/classTango_1_1DoubleAttrProp_1a3e3be7efdf813e9e831f7394d42c0003" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="d5/da9/classTango_1_1DoubleAttrProp" kindref="compound">DoubleAttrProp</ref> &amp;</type>
+        <definition>DoubleAttrProp&amp; Tango::DoubleAttrProp&lt; T &gt;::operator=</definition>
+        <argsstring>(const string &amp;value_str)</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const string &amp;</type>
+          <declname>value_str</declname>
+        </param>
+        <briefdescription>
+<para>Assign the values of the compound attribute property. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value_str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A string representation of values of the compound attribute property.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="d5/da9/classTango_1_1DoubleAttrProp" kindref="compound">DoubleAttrProp</ref> object with string representation of values of the compound attribute property set. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attrprop.h" line="397" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrprop.h" bodystart="397" bodyend="402"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Get/Set object members.</header>
+      <description><para>These methods allow the external world to get/set <ref refid="d5/da9/classTango_1_1DoubleAttrProp" kindref="compound">DoubleAttrProp</ref> instance data members </para></description>
+      <memberdef kind="function" id="d5/da9/classTango_1_1DoubleAttrProp_1a377133f8bb35b0c6609fd0fe024d84c6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>vector&lt; T &gt;</type>
+        <definition>vector&lt;T&gt; Tango::DoubleAttrProp&lt; T &gt;::get_val</definition>
+        <argsstring>()</argsstring>
+        <name>get_val</name>
+        <briefdescription>
+<para>Get the vector containing the compound attribute property values. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The vector containing the compound attribute property values. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attrprop.h" line="415" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrprop.h" bodystart="415" bodyend="423"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/da9/classTango_1_1DoubleAttrProp_1a378c84beef01e53519bc1b0702335e59" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>string &amp;</type>
+        <definition>string&amp; Tango::DoubleAttrProp&lt; T &gt;::get_str</definition>
+        <argsstring>()</argsstring>
+        <name>get_str</name>
+        <briefdescription>
+<para>Get string representation of the compound attribute property values. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The string representation of the compound attribute property values. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attrprop.h" line="429" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrprop.h" bodystart="429" bodyend="429"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/da9/classTango_1_1DoubleAttrProp_1a9b06476772a06ddcf045a5097bba15cb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::DoubleAttrProp&lt; T &gt;::set_val</definition>
+        <argsstring>(const vector&lt; T &gt; &amp;values)</argsstring>
+        <name>set_val</name>
+        <param>
+          <type>const vector&lt; T &gt; &amp;</type>
+          <declname>values</declname>
+        </param>
+        <briefdescription>
+<para>Set the compound attribute property values. </para>        </briefdescription>
+        <detaileddescription>
+<para>The values are automatically converted to their string representation.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>values</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vector containing the compound attribute property values. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attrprop.h" line="437" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrprop.h" bodystart="437" bodyend="450"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/da9/classTango_1_1DoubleAttrProp_1a18a9eb0323895a5011a97b8854d51678" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::DoubleAttrProp&lt; T &gt;::set_val</definition>
+        <argsstring>(const T &amp;value)</argsstring>
+        <name>set_val</name>
+        <param>
+          <type>const T &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Set the compound attribute property values. </para>        </briefdescription>
+        <detaileddescription>
+<para>The figure provided is set for both values of the compound attribute property and is automatically converted to its string representation.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The figure representing both values of the compound attribute property. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attrprop.h" line="459" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrprop.h" bodystart="459" bodyend="467"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/da9/classTango_1_1DoubleAttrProp_1a680efb91abb5de604a811ebac5dafb5a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::DoubleAttrProp&lt; T &gt;::set_str</definition>
+        <argsstring>(const char *value_str)</argsstring>
+        <name>set_str</name>
+        <param>
+          <type>const char *</type>
+          <declname>value_str</declname>
+        </param>
+        <briefdescription>
+<para>Set string representation of the compound attribute property values. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value_str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The &apos;C string&apos; representation of the compound attribute property values. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attrprop.h" line="473" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrprop.h" bodystart="473" bodyend="473"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/da9/classTango_1_1DoubleAttrProp_1aed5483824956e3eb5fe40462331a5f91" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::DoubleAttrProp&lt; T &gt;::set_str</definition>
+        <argsstring>(const string &amp;value_str)</argsstring>
+        <name>set_str</name>
+        <param>
+          <type>const string &amp;</type>
+          <declname>value_str</declname>
+        </param>
+        <briefdescription>
+<para>Set string representation of the compound attribute property values. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value_str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The string representation of the compound attribute property values. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attrprop.h" line="479" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrprop.h" bodystart="479" bodyend="479"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Check method</header>
+      <description><para>A method returning a boolean flag set to true if the compound attribute property values have been assigned. </para></description>
+      <memberdef kind="function" id="d5/da9/classTango_1_1DoubleAttrProp_1a75cbfd41ce00381a7a89c10b259fda8d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Tango::DoubleAttrProp&lt; T &gt;::is_val</definition>
+        <argsstring>()</argsstring>
+        <name>is_val</name>
+        <briefdescription>
+<para>Check if the compound attribute property values have been assigned. </para>        </briefdescription>
+        <detaileddescription>
+<para>This method returns a boolean set to true if the compound attribute property values have been assigned.</para><para><simplesect kind="return"><para>A boolean set to true if the compound attribute property values have been assigned </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attrprop.h" line="495" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrprop.h" bodystart="495" bodyend="495"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d5/da9/classTango_1_1DoubleAttrProp_1a6b9682c70c76dd6345a86b48fe1a2abc" prot="private" static="no" mutable="no">
+        <type>DoubleAttrPropExt *</type>
+        <definition>DoubleAttrPropExt* Tango::DoubleAttrProp&lt; T &gt;::ext</definition>
+        <argsstring></argsstring>
+        <name>ext</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attrprop.h" line="523" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrprop.h" bodystart="523" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d5/da9/classTango_1_1DoubleAttrProp_1af6171e993ebdacf8baaf6929b5f15e39" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Tango::DoubleAttrProp&lt; T &gt;::is_value</definition>
+        <argsstring></argsstring>
+        <name>is_value</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attrprop.h" line="512" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrprop.h" bodystart="512" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d5/da9/classTango_1_1DoubleAttrProp_1aaec2228eae4fe45b7afdb1721b0abeba" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Tango::DoubleAttrProp&lt; T &gt;::str</definition>
+        <argsstring></argsstring>
+        <name>str</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attrprop.h" line="511" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrprop.h" bodystart="511" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d5/da9/classTango_1_1DoubleAttrProp_1ac98326e7e2cda7cb2dda28fd9e7935fb" prot="private" static="no" mutable="no">
+        <type>vector&lt; T &gt;</type>
+        <definition>vector&lt;T&gt; Tango::DoubleAttrProp&lt; T &gt;::val</definition>
+        <argsstring></argsstring>
+        <name>val</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attrprop.h" line="510" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrprop.h" bodystart="510" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="d5/da9/classTango_1_1DoubleAttrProp_1ac833d247841506563cd3cc2ccdf661b5" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Tango::DoubleAttrProp&lt; T &gt;::operator const char *</definition>
+        <argsstring>()</argsstring>
+        <name>operator const char *</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attrprop.h" line="504" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrprop.h" bodystart="504" bodyend="507"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/da9/classTango_1_1DoubleAttrProp_1aed8afe80cb72202cf6adc96c0fb0f46c" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Tango::DoubleAttrProp&lt; T &gt;::operator string</definition>
+        <argsstring>()</argsstring>
+        <name>operator string</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attrprop.h" line="500" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrprop.h" bodystart="500" bodyend="503"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This class represents a <ref refid="de/ddf/namespaceTango" kindref="compound">Tango</ref> compound attribute property which consists of two values. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="rcs"><title>Author:</title><para>trogucki </para></simplesect>
+<simplesect kind="rcs"><title>Revision:</title><para>19431 </para></simplesect>
+</para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="961">
+        <label>Tango::DoubleAttrProp&lt; T &gt;</label>
+        <link refid="d5/da9/classTango_1_1DoubleAttrProp"/>
+      </node>
+      <node id="962">
+        <label>Tango::DoubleAttrProp&lt; DevDouble &gt;</label>
+        <link refid="d5/da9/classTango_1_1DoubleAttrProp"/>
+        <childnode refid="961" relation="template-instance">
+          <edgelabel>&lt; DevDouble &gt;</edgelabel>
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="/home/tango/workspace/cppTango/include/tango/server/attrprop.h" line="273" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attrprop.h" bodystart="272" bodyend="525"/>
+    <listofallmembers>
+      <member refid="d5/da9/classTango_1_1DoubleAttrProp_1a58dbe78d028188ea0dbee8a9a49be716" prot="public" virt="non-virtual"><scope>Tango::DoubleAttrProp</scope><name>DoubleAttrProp</name></member>
+      <member refid="d5/da9/classTango_1_1DoubleAttrProp_1a5d8275415ddccba96ff4131c0bf0d27d" prot="public" virt="non-virtual"><scope>Tango::DoubleAttrProp</scope><name>DoubleAttrProp</name></member>
+      <member refid="d5/da9/classTango_1_1DoubleAttrProp_1af5c16f185a3d4eb11fb8dcc21bf63531" prot="public" virt="non-virtual"><scope>Tango::DoubleAttrProp</scope><name>DoubleAttrProp</name></member>
+      <member refid="d5/da9/classTango_1_1DoubleAttrProp_1a3a44186496c84b194a9f382e87aeb93e" prot="public" virt="non-virtual"><scope>Tango::DoubleAttrProp</scope><name>DoubleAttrProp</name></member>
+      <member refid="d5/da9/classTango_1_1DoubleAttrProp_1a84c375bcf6a1640bd4ba2499f158a887" prot="public" virt="non-virtual"><scope>Tango::DoubleAttrProp</scope><name>DoubleAttrProp</name></member>
+      <member refid="d5/da9/classTango_1_1DoubleAttrProp_1a6b9682c70c76dd6345a86b48fe1a2abc" prot="private" virt="non-virtual"><scope>Tango::DoubleAttrProp</scope><name>ext</name></member>
+      <member refid="d5/da9/classTango_1_1DoubleAttrProp_1a378c84beef01e53519bc1b0702335e59" prot="public" virt="non-virtual"><scope>Tango::DoubleAttrProp</scope><name>get_str</name></member>
+      <member refid="d5/da9/classTango_1_1DoubleAttrProp_1a377133f8bb35b0c6609fd0fe024d84c6" prot="public" virt="non-virtual"><scope>Tango::DoubleAttrProp</scope><name>get_val</name></member>
+      <member refid="d5/da9/classTango_1_1DoubleAttrProp_1a75cbfd41ce00381a7a89c10b259fda8d" prot="public" virt="non-virtual"><scope>Tango::DoubleAttrProp</scope><name>is_val</name></member>
+      <member refid="d5/da9/classTango_1_1DoubleAttrProp_1af6171e993ebdacf8baaf6929b5f15e39" prot="private" virt="non-virtual"><scope>Tango::DoubleAttrProp</scope><name>is_value</name></member>
+      <member refid="d5/da9/classTango_1_1DoubleAttrProp_1ac833d247841506563cd3cc2ccdf661b5" prot="private" virt="non-virtual"><scope>Tango::DoubleAttrProp</scope><name>operator const char *</name></member>
+      <member refid="d5/da9/classTango_1_1DoubleAttrProp_1aed8afe80cb72202cf6adc96c0fb0f46c" prot="private" virt="non-virtual"><scope>Tango::DoubleAttrProp</scope><name>operator string</name></member>
+      <member refid="d5/da9/classTango_1_1DoubleAttrProp_1a8a6f518ac4cb3a3eef014d9633cf555b" prot="public" virt="non-virtual"><scope>Tango::DoubleAttrProp</scope><name>operator=</name></member>
+      <member refid="d5/da9/classTango_1_1DoubleAttrProp_1a0bdf79b7a455c4f1aa4521dd6955a347" prot="public" virt="non-virtual"><scope>Tango::DoubleAttrProp</scope><name>operator=</name></member>
+      <member refid="d5/da9/classTango_1_1DoubleAttrProp_1ad69387bb6bb54b0629c2bcc3ed0aca68" prot="public" virt="non-virtual"><scope>Tango::DoubleAttrProp</scope><name>operator=</name></member>
+      <member refid="d5/da9/classTango_1_1DoubleAttrProp_1a3e3be7efdf813e9e831f7394d42c0003" prot="public" virt="non-virtual"><scope>Tango::DoubleAttrProp</scope><name>operator=</name></member>
+      <member refid="d5/da9/classTango_1_1DoubleAttrProp_1a680efb91abb5de604a811ebac5dafb5a" prot="public" virt="non-virtual"><scope>Tango::DoubleAttrProp</scope><name>set_str</name></member>
+      <member refid="d5/da9/classTango_1_1DoubleAttrProp_1aed5483824956e3eb5fe40462331a5f91" prot="public" virt="non-virtual"><scope>Tango::DoubleAttrProp</scope><name>set_str</name></member>
+      <member refid="d5/da9/classTango_1_1DoubleAttrProp_1a9b06476772a06ddcf045a5097bba15cb" prot="public" virt="non-virtual"><scope>Tango::DoubleAttrProp</scope><name>set_val</name></member>
+      <member refid="d5/da9/classTango_1_1DoubleAttrProp_1a18a9eb0323895a5011a97b8854d51678" prot="public" virt="non-virtual"><scope>Tango::DoubleAttrProp</scope><name>set_val</name></member>
+      <member refid="d5/da9/classTango_1_1DoubleAttrProp_1aaec2228eae4fe45b7afdb1721b0abeba" prot="private" virt="non-virtual"><scope>Tango::DoubleAttrProp</scope><name>str</name></member>
+      <member refid="d5/da9/classTango_1_1DoubleAttrProp_1ac98326e7e2cda7cb2dda28fd9e7935fb" prot="private" virt="non-virtual"><scope>Tango::DoubleAttrProp</scope><name>val</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

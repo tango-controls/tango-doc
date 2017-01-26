@@ -1,0 +1,166 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="dc/d38/classTango_1_1DbClass">
+<title>Tango::DbClass class Reference</title>
+        <simplesect>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d2/d90/classTango_1_1DbClass_1_1DbClassExt">Tango::DbClass::DbClassExt</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Constructors</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="dc/d38/classTango_1_1DbClass_1afc0cd676677e89b14f27318588f64d23">DbClass</link> (
+string class_name)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="dc/d38/classTango_1_1DbClass_1ab3cc824aa4a5dd46a97254019a4e9600">DbClass</link> (
+string class_name, Database * db)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Property oriented methods</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dc/d38/classTango_1_1DbClass_1a08aa0ec6b718aefca1cdafc3430d0159">get_property</link> (
+<link linkend="de/ddf/namespaceTango_1a99fa459235396b406532406b562984c0">DbData</link> &amp; db)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dc/d38/classTango_1_1DbClass_1a276eeccb2af23e7223109e94f57d9484">put_property</link> (
+<link linkend="de/ddf/namespaceTango_1a99fa459235396b406532406b562984c0">DbData</link> &amp; db)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dc/d38/classTango_1_1DbClass_1a77a1ff9ebf5a4e5cbaa71802275f4c6d">delete_property</link> (
+<link linkend="de/ddf/namespaceTango_1a99fa459235396b406532406b562984c0">DbData</link> &amp; db)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dc/d38/classTango_1_1DbClass_1a5c9d03bef93ac135659016c4be4e23a8">get_attribute_property</link> (
+<link linkend="de/ddf/namespaceTango_1a99fa459235396b406532406b562984c0">DbData</link> &amp; db)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dc/d38/classTango_1_1DbClass_1a068555bb06fa9510e1ae0f81bd4e06ff">put_attribute_property</link> (
+<link linkend="de/ddf/namespaceTango_1a99fa459235396b406532406b562984c0">DbData</link> &amp; db)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dc/d38/classTango_1_1DbClass_1af5ca60df7812776e82a8136fb88deda5">delete_attribute_property</link> (
+<link linkend="de/ddf/namespaceTango_1a99fa459235396b406532406b562984c0">DbData</link> &amp; db)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dc/d38/classTango_1_1DbClass_1a59644325189626fe4a34282d68398089">get_pipe_property</link> (
+<link linkend="de/ddf/namespaceTango_1a99fa459235396b406532406b562984c0">DbData</link> &amp; db)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dc/d38/classTango_1_1DbClass_1a3c28ab0e673e20431db58f7dadbe219c">put_pipe_property</link> (
+<link linkend="de/ddf/namespaceTango_1a99fa459235396b406532406b562984c0">DbData</link> &amp; db)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dc/d38/classTango_1_1DbClass_1ad076695e963147713d893e2145d46656">delete_pipe_property</link> (
+<link linkend="de/ddf/namespaceTango_1a99fa459235396b406532406b562984c0">DbData</link> &amp; db)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int db_ind</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Database * dbase</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>DbClassExt * ext</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool ext_dbase</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string name</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="dc/d38/classTango_1_1DbClass_1ad4ffb575394beae8ff34bfe7563f5a47">~DbClass</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Brief Description</title>
+
+<para>A database object for a class which can be used to query or modify class properties. </para>
+    </simplesect>
+            <section xml:id="dc/d38/classTango_1_1DbClass_1ad4ffb575394beae8ff34bfe7563f5a47">
+                <title>Tango::DbClass::~DbClass ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

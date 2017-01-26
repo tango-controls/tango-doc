@@ -1,0 +1,55 @@
+\section{w\-\_\-attribute.\-h File Reference}
+\label{w__attribute_8h}\index{w\-\_\-attribute.\-h@{w\-\_\-attribute.\-h}}
+{\ttfamily \#include $<$tango.\-h$>$}\\*
+{\ttfamily \#include $<$tango/server/attrdesc.\-h$>$}\\*
+{\ttfamily \#include $<$functional$>$}\\*
+{\ttfamily \#include $<$time.\-h$>$}\\*
+Include dependency graph for w\-\_\-attribute.\-h\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{d6/d85/w__attribute_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=114pt]{da/d9e/w__attribute_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Tango\-::\-W\-Attribute}
+\begin{DoxyCompactList}\small\item\em This class represents a writable attribute. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Tango}
+\begin{DoxyCompactList}\small\item\em ============================================================================= \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bf C\-O\-M\-P\-U\-T\-E\-\_\-\-T\-I\-M\-E\-\_\-\-D\-I\-F\-F}(R\-E\-S\-U\-L\-T, B\-E\-F\-O\-R\-E, A\-F\-T\-E\-R)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{w\-\_\-attribute.\-h@{w\-\_\-attribute.\-h}!C\-O\-M\-P\-U\-T\-E\-\_\-\-T\-I\-M\-E\-\_\-\-D\-I\-F\-F@{C\-O\-M\-P\-U\-T\-E\-\_\-\-T\-I\-M\-E\-\_\-\-D\-I\-F\-F}}
+\index{C\-O\-M\-P\-U\-T\-E\-\_\-\-T\-I\-M\-E\-\_\-\-D\-I\-F\-F@{C\-O\-M\-P\-U\-T\-E\-\_\-\-T\-I\-M\-E\-\_\-\-D\-I\-F\-F}!w_attribute.h@{w\-\_\-attribute.\-h}}
+\subsubsection[{C\-O\-M\-P\-U\-T\-E\-\_\-\-T\-I\-M\-E\-\_\-\-D\-I\-F\-F}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-O\-M\-P\-U\-T\-E\-\_\-\-T\-I\-M\-E\-\_\-\-D\-I\-F\-F(
+\begin{DoxyParamCaption}
+\item[{}]{R\-E\-S\-U\-L\-T, }
+\item[{}]{B\-E\-F\-O\-R\-E, }
+\item[{}]{A\-F\-T\-E\-R}
+\end{DoxyParamCaption}
+)}\label{w__attribute_8h_a7f9db7493b5ca2f9c2b7b18d118f2891}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\textcolor{keywordtype}{long} bef = ((BEFORE.tv\_sec - 1095000000) * 1000) + (BEFORE.tv\_usec / 1000); \(\backslash\)
+long after = ((AFTER.tv\_sec - 1095000000) * 1000) + (AFTER.tv\_usec / 1000); \(\backslash\)
+RESULT = after - bef;
+\end{DoxyCode}

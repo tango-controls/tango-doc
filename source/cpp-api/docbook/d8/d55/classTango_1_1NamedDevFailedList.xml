@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d8/d55/classTango_1_1NamedDevFailedList">
+<title>Tango::NamedDevFailedList class Reference</title>
+        <simplesect>
+            <title>Public Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>vector&lt; NamedDevFailed &gt; err_list<para><emphasis>There is one element in this vector for each attribute which failed during its writing.</emphasis></para></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d8/d55/classTango_1_1NamedDevFailedList_1a3956dbf7ffa91df81efda72c4a1f6ab2">call_failed</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="d8/d55/classTango_1_1NamedDevFailedList_1ab158860b2498a2ac2c2c0b019d04108f">get_faulty_attr_nb</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d8/d55/classTango_1_1NamedDevFailedList_1afd2e3573af86305a0615556d4845a737">NamedDevFailedList</link> (
+const Tango::MultiDevFailed &amp; , string , const char * , const char * )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d8/d55/classTango_1_1NamedDevFailedList_1ac337101d8aca94e7a16364de9d7dda5c">NamedDevFailedList</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Brief Description</title>
+
+<para>An exception class. </para>
+    </simplesect>
+        <simplesect>
+            <title>Detailed Description</title>
+
+<para>This class is used as exception for the DeviceProxy::write_attribute call()</para>
+
+<para>$Author$ $Revision$ </para>
+                <para>Definition at line 80 of file apiexcept.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>apiexcept.h</para></listitem></itemizedlist></para>
+        </simplesect>
+            <section xml:id="d8/d55/classTango_1_1NamedDevFailedList_1a3956dbf7ffa91df81efda72c4a1f6ab2">
+                <title>bool Tango::NamedDevFailedList::call_failed ()</title> <emphasis>Check if the call failed.</emphasis>
+                
+<para>This method returns true if at least one attribute failed during the call</para>
+
+<para><formalpara><title>Returns: </title>
+
+<para>A boolean set to true if the call failed for at least one attribute </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="d8/d55/classTango_1_1NamedDevFailedList_1ab158860b2498a2ac2c2c0b019d04108f">
+                <title>size_t Tango::NamedDevFailedList::get_faulty_attr_nb ()</title> <emphasis>Get faulty attribute number.</emphasis>
+                
+<para>Returns the number of attributes which failed during the write_attribute call.</para>
+
+<para><formalpara><title>Returns: </title>
+
+<para>The number of attribute(s) which fail during the write_attribute call </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="d8/d55/classTango_1_1NamedDevFailedList_1afd2e3573af86305a0615556d4845a737">
+                <title>Tango::NamedDevFailedList::NamedDevFailedList (const Tango::MultiDevFailed &amp;, string, const char *, const char *)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d8/d55/classTango_1_1NamedDevFailedList_1ac337101d8aca94e7a16364de9d7dda5c">
+                <title>Tango::NamedDevFailedList::NamedDevFailedList ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

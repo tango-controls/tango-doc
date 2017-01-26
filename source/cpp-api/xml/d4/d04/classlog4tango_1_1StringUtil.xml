@@ -1,0 +1,206 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="d4/d04/classlog4tango_1_1StringUtil" kind="class" prot="public">
+    <compoundname>log4tango::StringUtil</compoundname>
+    <includes refid="de/d24/StringUtil_8hh" local="yes">StringUtil.hh</includes>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="d4/d04/classlog4tango_1_1StringUtil_1a0cbc8f98a127ba0cb36df3845e16405c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int log4tango::StringUtil::split</definition>
+        <argsstring>(std::vector&lt; std::string &gt; &amp;v, const std::string &amp;s, char delimiter, unsigned int maxSegments=INT_MAX)</argsstring>
+        <name>split</name>
+        <param>
+          <type>std::vector&lt; std::string &gt; &amp;</type>
+          <declname>v</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>delimiter</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>maxSegments</declname>
+          <defval>INT_MAX</defval>
+        </param>
+        <briefdescription>
+<para>splits a string into a vector of string segments based on the given delimiter. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vector in which the segments will be stored. The vector will be emptied before storing the segments </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The string to split into segments. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>delimiter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The delimiter character </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>maxSegments</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the maximum number of segments. Upon return v.size() &lt;= maxSegments. The string is scanned from left to right so v[maxSegments - 1] may contain a string containing the delimiter character. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The actual number of segments (limited by maxSegments). </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/src/log4tango/StringUtil.hh" line="70" column="1" bodyfile="/home/tango/workspace/cppTango/src/log4tango/StringUtil.cpp" bodystart="98" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d04/classlog4tango_1_1StringUtil_1aaefb28c23a501416d11eb8a0c41b5fd2" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>unsigned int</type>
+        <definition>static unsigned int log4tango::StringUtil::split</definition>
+        <argsstring>(T &amp;output, const std::string &amp;s, char delimiter, unsigned int maxSegments=INT_MAX)</argsstring>
+        <name>split</name>
+        <param>
+          <type>T &amp;</type>
+          <declname>output</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>delimiter</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>maxSegments</declname>
+          <defval>INT_MAX</defval>
+        </param>
+        <briefdescription>
+<para>splits a string into string segments based on the given delimiter and assigns the segments through an output_iterator. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>output</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The output_iterator through which to assign the string segments. Typically this will be a back_insertion_iterator. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The string to split into segments. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>delimiter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The delimiter character </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>maxSegments</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The maximum number of segments. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The actual number of segments (limited by maxSegments). </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/src/log4tango/StringUtil.hh" line="85" column="1" bodyfile="/home/tango/workspace/cppTango/src/log4tango/StringUtil.hh" bodystart="85" bodyend="101"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d04/classlog4tango_1_1StringUtil_1a5b1f1af63d4ac9d16150d08f2af6ebbc" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string log4tango::StringUtil::trim</definition>
+        <argsstring>(const std::string &amp;s)</argsstring>
+        <name>trim</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+<para>Returns a string identical to the given string but without leading or trailing HTABs or spaces. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/src/log4tango/StringUtil.hh" line="55" column="1" bodyfile="/home/tango/workspace/cppTango/src/log4tango/StringUtil.cpp" bodystart="81" bodyend="96"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d04/classlog4tango_1_1StringUtil_1a1588cfe00d2951f175025f949793f866" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string log4tango::StringUtil::vform</definition>
+        <argsstring>(const char *format, va_list args)</argsstring>
+        <name>vform</name>
+        <param>
+          <type>const char *</type>
+          <declname>format</declname>
+        </param>
+        <param>
+          <type>va_list</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+<para>Returns a string contructed from the a format specifier and a va_list of arguments, analogously to vprintf(3). </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>format</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the format specifier. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the va_list of arguments. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/src/log4tango/StringUtil.hh" line="49" column="1" bodyfile="/home/tango/workspace/cppTango/src/log4tango/StringUtil.cpp" bodystart="57" bodyend="79"/>
+        <references refid="da/dfc/StringUtil_8cpp_1ac2e4f48c3da557e8b268aee96009e135" compoundref="da/dfc/StringUtil_8cpp" startline="50">VSNPRINTF</references>
+        <referencedby refid="d4/d1c/classlog4tango_1_1Logger_1a86870349be1352d8c529e713acf51a0b" compoundref="d9/df5/Logger_8cpp" startline="150" endline="157">log4tango::Logger::debug</referencedby>
+        <referencedby refid="d4/d1c/classlog4tango_1_1Logger_1ac9c2f129c56991f6bf7148ce5b7f1518" compoundref="d9/df5/Logger_8cpp" startline="177" endline="184">log4tango::Logger::error</referencedby>
+        <referencedby refid="d4/d1c/classlog4tango_1_1Logger_1a4c8832412bde8329c5a69acd88e08b8c" compoundref="d9/df5/Logger_8cpp" startline="186" endline="193">log4tango::Logger::fatal</referencedby>
+        <referencedby refid="d4/d1c/classlog4tango_1_1Logger_1adaba6152f4a39580d48bae035ac30778" compoundref="d9/df5/Logger_8cpp" startline="159" endline="166">log4tango::Logger::info</referencedby>
+        <referencedby refid="d4/d1c/classlog4tango_1_1Logger_1aebe7a33e64c1dd47d908d5a1eec18545" compoundref="d9/df5/Logger_8cpp" startline="140" endline="148">log4tango::Logger::log</referencedby>
+        <referencedby refid="d4/d1c/classlog4tango_1_1Logger_1adc92f13df7647dbeac96120bbda218f4" compoundref="d9/df5/Logger_8cpp" startline="120" endline="127">log4tango::Logger::log_unconditionally</referencedby>
+        <referencedby refid="d4/d1c/classlog4tango_1_1Logger_1ab7a7dfad91aa2196ed91a607808f1061" compoundref="d9/df5/Logger_8cpp" startline="168" endline="175">log4tango::Logger::warn</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/tango/workspace/cppTango/src/log4tango/StringUtil.hh" line="40" column="1" bodyfile="/home/tango/workspace/cppTango/src/log4tango/StringUtil.hh" bodystart="39" bodyend="102"/>
+    <listofallmembers>
+      <member refid="d4/d04/classlog4tango_1_1StringUtil_1a0cbc8f98a127ba0cb36df3845e16405c" prot="public" virt="non-virtual"><scope>log4tango::StringUtil</scope><name>split</name></member>
+      <member refid="d4/d04/classlog4tango_1_1StringUtil_1aaefb28c23a501416d11eb8a0c41b5fd2" prot="public" virt="non-virtual"><scope>log4tango::StringUtil</scope><name>split</name></member>
+      <member refid="d4/d04/classlog4tango_1_1StringUtil_1a5b1f1af63d4ac9d16150d08f2af6ebbc" prot="public" virt="non-virtual"><scope>log4tango::StringUtil</scope><name>trim</name></member>
+      <member refid="d4/d04/classlog4tango_1_1StringUtil_1a1588cfe00d2951f175025f949793f866" prot="public" virt="non-virtual"><scope>log4tango::StringUtil</scope><name>vform</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

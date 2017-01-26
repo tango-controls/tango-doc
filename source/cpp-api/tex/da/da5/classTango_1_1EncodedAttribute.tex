@@ -1,0 +1,327 @@
+\section{Tango\-:\-:Encoded\-Attribute Class Reference}
+\label{classTango_1_1EncodedAttribute}\index{Tango\-::\-Encoded\-Attribute@{Tango\-::\-Encoded\-Attribute}}
+
+
+This class provides method to deal with Tango\-::\-Dev\-Encoded attribute format.  
+
+
+\subsection*{Public Member Functions}
+\begin{Indent}{\bf Constructors}\par
+{\em Miscellaneous constructors }\begin{DoxyCompactItemize}
+\item 
+{\bf Encoded\-Attribute} ()
+\begin{DoxyCompactList}\small\item\em Create a new \doxyref{Encoded\-Attribute}{p.}{da/da5/classTango_1_1EncodedAttribute} object. \end{DoxyCompactList}\item 
+{\bf Encoded\-Attribute} (int buf\-\_\-pool\-\_\-size, bool serialization=false)
+\begin{DoxyCompactList}\small\item\em Create a new \doxyref{Encoded\-Attribute}{p.}{da/da5/classTango_1_1EncodedAttribute} object with a user defined buffer pool. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Destructor}\par
+{\em Only one desctructor is defined for this class }\begin{DoxyCompactItemize}
+\item 
+{\bf $\sim$\-Encoded\-Attribute} ()
+\begin{DoxyCompactList}\small\item\em The attribute desctructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Image Encoding Methods}\par
+\begin{DoxyCompactItemize}
+\item 
+void {\bf encode\-\_\-jpeg\-\_\-gray8} (unsigned char $\ast$gray8, int width, int height, double quality)
+\begin{DoxyCompactList}\small\item\em Encode a 8 bit grayscale image as J\-P\-E\-G format. \end{DoxyCompactList}\item 
+void {\bf encode\-\_\-jpeg\-\_\-rgb32} (unsigned char $\ast$rgb32, int width, int height, double quality)
+\begin{DoxyCompactList}\small\item\em Encode a 32 bit rgb color image as J\-P\-E\-G format. \end{DoxyCompactList}\item 
+void {\bf encode\-\_\-jpeg\-\_\-rgb24} (unsigned char $\ast$rgb24, int width, int height, double quality)
+\begin{DoxyCompactList}\small\item\em Encode a 24 bit rgb color image as J\-P\-E\-G format. \end{DoxyCompactList}\item 
+void {\bf encode\-\_\-gray8} (unsigned char $\ast$gray8, int width, int height)
+\begin{DoxyCompactList}\small\item\em Encode a 8 bit grayscale image (no compression) \end{DoxyCompactList}\item 
+void {\bf encode\-\_\-gray16} (unsigned short $\ast$gray16, int width, int height)
+\begin{DoxyCompactList}\small\item\em Encode a 16 bit grayscale image (no compression) \end{DoxyCompactList}\item 
+void {\bf encode\-\_\-rgb24} (unsigned char $\ast$rgb24, int width, int height)
+\begin{DoxyCompactList}\small\item\em Encode a 24 bit color image (no compression) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Image Decoding Methods}\par
+\begin{DoxyCompactItemize}
+\item 
+void {\bf decode\-\_\-rgb32} (Device\-Attribute $\ast$attr, int $\ast$width, int $\ast$height, unsigned char $\ast$$\ast$rgb32)
+\begin{DoxyCompactList}\small\item\em Decode a color image (J\-P\-E\-G\-\_\-\-R\-G\-B or R\-G\-B24) and returns a 32 bits R\-G\-B image. \end{DoxyCompactList}\item 
+void {\bf decode\-\_\-gray8} (Device\-Attribute $\ast$attr, int $\ast$width, int $\ast$height, unsigned char $\ast$$\ast$gray8)
+\begin{DoxyCompactList}\small\item\em Decode a 8 bits grayscale image (J\-P\-E\-G\-\_\-\-G\-R\-A\-Y8 or G\-R\-A\-Y8) and returns a 8 bits gray scale image. \end{DoxyCompactList}\item 
+void {\bf decode\-\_\-gray16} (Device\-Attribute $\ast$attr, int $\ast$width, int $\ast$height, unsigned short $\ast$$\ast$gray16)
+\begin{DoxyCompactList}\small\item\em Decode a 16 bits grayscale image (G\-R\-A\-Y16) and returns a 16 bits gray scale image. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+This class provides method to deal with Tango\-::\-Dev\-Encoded attribute format. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Tango\-::\-Encoded\-Attribute@{Tango\-::\-Encoded\-Attribute}!Encoded\-Attribute@{Encoded\-Attribute}}
+\index{Encoded\-Attribute@{Encoded\-Attribute}!Tango::EncodedAttribute@{Tango\-::\-Encoded\-Attribute}}
+\subsubsection[{Encoded\-Attribute}]{\setlength{\rightskip}{0pt plus 5cm}Tango\-::\-Encoded\-Attribute\-::\-Encoded\-Attribute (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1EncodedAttribute_a2d44e9152c929390d51fd631f5e31d37}
+
+
+Create a new \doxyref{Encoded\-Attribute}{p.}{da/da5/classTango_1_1EncodedAttribute} object. 
+
+\index{Tango\-::\-Encoded\-Attribute@{Tango\-::\-Encoded\-Attribute}!Encoded\-Attribute@{Encoded\-Attribute}}
+\index{Encoded\-Attribute@{Encoded\-Attribute}!Tango::EncodedAttribute@{Tango\-::\-Encoded\-Attribute}}
+\subsubsection[{Encoded\-Attribute}]{\setlength{\rightskip}{0pt plus 5cm}Tango\-::\-Encoded\-Attribute\-::\-Encoded\-Attribute (
+\begin{DoxyParamCaption}
+\item[{int}]{buf\-\_\-pool\-\_\-size, }
+\item[{bool}]{serialization = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1EncodedAttribute_a63df51e7343e74e6f10253f6fd69a8ea}
+
+
+Create a new \doxyref{Encoded\-Attribute}{p.}{da/da5/classTango_1_1EncodedAttribute} object with a user defined buffer pool. 
+
+This constructor allows the user to define the size of the buffer pool used to store the encoded images. This buffer pool is managed as a circular pool. A different buffer is used each time an image is encoded. The last used buffer is then passed to the attribute with the attribute\-::set\-\_\-value() method
+
+
+\begin{DoxyParams}{Parameters}
+{\em buf\-\_\-pool\-\_\-size} & Buffer pool size \\
+\hline
+{\em serialization} & Set to true if the instance manage the data buffer serialization \\
+\hline
+\end{DoxyParams}
+\index{Tango\-::\-Encoded\-Attribute@{Tango\-::\-Encoded\-Attribute}!$\sim$\-Encoded\-Attribute@{$\sim$\-Encoded\-Attribute}}
+\index{$\sim$\-Encoded\-Attribute@{$\sim$\-Encoded\-Attribute}!Tango::EncodedAttribute@{Tango\-::\-Encoded\-Attribute}}
+\subsubsection[{$\sim$\-Encoded\-Attribute}]{\setlength{\rightskip}{0pt plus 5cm}Tango\-::\-Encoded\-Attribute\-::$\sim$\-Encoded\-Attribute (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1EncodedAttribute_a6e013aa1fbfaa40971b3db1a32c17970}
+
+
+The attribute desctructor. 
+
+
+
+\subsection{Member Function Documentation}
+\index{Tango\-::\-Encoded\-Attribute@{Tango\-::\-Encoded\-Attribute}!decode\-\_\-gray16@{decode\-\_\-gray16}}
+\index{decode\-\_\-gray16@{decode\-\_\-gray16}!Tango::EncodedAttribute@{Tango\-::\-Encoded\-Attribute}}
+\subsubsection[{decode\-\_\-gray16}]{\setlength{\rightskip}{0pt plus 5cm}void Tango\-::\-Encoded\-Attribute\-::decode\-\_\-gray16 (
+\begin{DoxyParamCaption}
+\item[{Device\-Attribute $\ast$}]{attr, }
+\item[{int $\ast$}]{width, }
+\item[{int $\ast$}]{height, }
+\item[{unsigned short $\ast$$\ast$}]{gray16}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1EncodedAttribute_a76fef5a1583210da6f06d7e3fe5bf7bb}
+
+
+Decode a 16 bits grayscale image (G\-R\-A\-Y16) and returns a 16 bits gray scale image. 
+
+Throws Dev\-Failed in case of failure.
+
+
+\begin{DoxyParams}{Parameters}
+{\em attr} & Device\-Attribute that contains the image \\
+\hline
+{\em width} & Width of the image \\
+\hline
+{\em height} & Height of the image \\
+\hline
+{\em gray16} & Image (memory allocated by the function) \\
+\hline
+\end{DoxyParams}
+\index{Tango\-::\-Encoded\-Attribute@{Tango\-::\-Encoded\-Attribute}!decode\-\_\-gray8@{decode\-\_\-gray8}}
+\index{decode\-\_\-gray8@{decode\-\_\-gray8}!Tango::EncodedAttribute@{Tango\-::\-Encoded\-Attribute}}
+\subsubsection[{decode\-\_\-gray8}]{\setlength{\rightskip}{0pt plus 5cm}void Tango\-::\-Encoded\-Attribute\-::decode\-\_\-gray8 (
+\begin{DoxyParamCaption}
+\item[{Device\-Attribute $\ast$}]{attr, }
+\item[{int $\ast$}]{width, }
+\item[{int $\ast$}]{height, }
+\item[{unsigned char $\ast$$\ast$}]{gray8}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1EncodedAttribute_ae12a9771857f2fecbebd3b9381213ab5}
+
+
+Decode a 8 bits grayscale image (J\-P\-E\-G\-\_\-\-G\-R\-A\-Y8 or G\-R\-A\-Y8) and returns a 8 bits gray scale image. 
+
+Throws Dev\-Failed in case of failure.
+
+
+\begin{DoxyParams}{Parameters}
+{\em attr} & Device\-Attribute that contains the image \\
+\hline
+{\em width} & Width of the image \\
+\hline
+{\em height} & Height of the image \\
+\hline
+{\em gray8} & Image (memory allocated by the function) \\
+\hline
+\end{DoxyParams}
+\index{Tango\-::\-Encoded\-Attribute@{Tango\-::\-Encoded\-Attribute}!decode\-\_\-rgb32@{decode\-\_\-rgb32}}
+\index{decode\-\_\-rgb32@{decode\-\_\-rgb32}!Tango::EncodedAttribute@{Tango\-::\-Encoded\-Attribute}}
+\subsubsection[{decode\-\_\-rgb32}]{\setlength{\rightskip}{0pt plus 5cm}void Tango\-::\-Encoded\-Attribute\-::decode\-\_\-rgb32 (
+\begin{DoxyParamCaption}
+\item[{Device\-Attribute $\ast$}]{attr, }
+\item[{int $\ast$}]{width, }
+\item[{int $\ast$}]{height, }
+\item[{unsigned char $\ast$$\ast$}]{rgb32}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1EncodedAttribute_a0a64f653b5fe0049cb04daf0740c4755}
+
+
+Decode a color image (J\-P\-E\-G\-\_\-\-R\-G\-B or R\-G\-B24) and returns a 32 bits R\-G\-B image. 
+
+Throws Dev\-Failed in case of failure.
+
+
+\begin{DoxyParams}{Parameters}
+{\em attr} & Device\-Attribute that contains the image \\
+\hline
+{\em width} & Width of the image \\
+\hline
+{\em height} & Height of the image \\
+\hline
+{\em rgb32} & Image (memory allocated by the function) \\
+\hline
+\end{DoxyParams}
+\index{Tango\-::\-Encoded\-Attribute@{Tango\-::\-Encoded\-Attribute}!encode\-\_\-gray16@{encode\-\_\-gray16}}
+\index{encode\-\_\-gray16@{encode\-\_\-gray16}!Tango::EncodedAttribute@{Tango\-::\-Encoded\-Attribute}}
+\subsubsection[{encode\-\_\-gray16}]{\setlength{\rightskip}{0pt plus 5cm}void Tango\-::\-Encoded\-Attribute\-::encode\-\_\-gray16 (
+\begin{DoxyParamCaption}
+\item[{unsigned short $\ast$}]{gray16, }
+\item[{int}]{width, }
+\item[{int}]{height}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1EncodedAttribute_aa67d49c4b99bd6e91e80138acca7a1a4}
+
+
+Encode a 16 bit grayscale image (no compression) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em gray16} & Array of 16bit gray sample \\
+\hline
+{\em width} & The image width \\
+\hline
+{\em height} & The image height \\
+\hline
+\end{DoxyParams}
+\index{Tango\-::\-Encoded\-Attribute@{Tango\-::\-Encoded\-Attribute}!encode\-\_\-gray8@{encode\-\_\-gray8}}
+\index{encode\-\_\-gray8@{encode\-\_\-gray8}!Tango::EncodedAttribute@{Tango\-::\-Encoded\-Attribute}}
+\subsubsection[{encode\-\_\-gray8}]{\setlength{\rightskip}{0pt plus 5cm}void Tango\-::\-Encoded\-Attribute\-::encode\-\_\-gray8 (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{gray8, }
+\item[{int}]{width, }
+\item[{int}]{height}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1EncodedAttribute_a0aeecda296c64b53ab43317e94e6ac35}
+
+
+Encode a 8 bit grayscale image (no compression) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em gray8} & Array of 8bit gray sample \\
+\hline
+{\em width} & The image width \\
+\hline
+{\em height} & The image height \\
+\hline
+\end{DoxyParams}
+\index{Tango\-::\-Encoded\-Attribute@{Tango\-::\-Encoded\-Attribute}!encode\-\_\-jpeg\-\_\-gray8@{encode\-\_\-jpeg\-\_\-gray8}}
+\index{encode\-\_\-jpeg\-\_\-gray8@{encode\-\_\-jpeg\-\_\-gray8}!Tango::EncodedAttribute@{Tango\-::\-Encoded\-Attribute}}
+\subsubsection[{encode\-\_\-jpeg\-\_\-gray8}]{\setlength{\rightskip}{0pt plus 5cm}void Tango\-::\-Encoded\-Attribute\-::encode\-\_\-jpeg\-\_\-gray8 (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{gray8, }
+\item[{int}]{width, }
+\item[{int}]{height, }
+\item[{double}]{quality}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1EncodedAttribute_a7a98013fc1577c67127c0cca9b192b88}
+
+
+Encode a 8 bit grayscale image as J\-P\-E\-G format. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em gray8} & Array of 8bit gray sample \\
+\hline
+{\em width} & The image width \\
+\hline
+{\em height} & The image height \\
+\hline
+{\em quality} & Quality of J\-P\-E\-G (0=poor quality 100=max quality) \\
+\hline
+\end{DoxyParams}
+\index{Tango\-::\-Encoded\-Attribute@{Tango\-::\-Encoded\-Attribute}!encode\-\_\-jpeg\-\_\-rgb24@{encode\-\_\-jpeg\-\_\-rgb24}}
+\index{encode\-\_\-jpeg\-\_\-rgb24@{encode\-\_\-jpeg\-\_\-rgb24}!Tango::EncodedAttribute@{Tango\-::\-Encoded\-Attribute}}
+\subsubsection[{encode\-\_\-jpeg\-\_\-rgb24}]{\setlength{\rightskip}{0pt plus 5cm}void Tango\-::\-Encoded\-Attribute\-::encode\-\_\-jpeg\-\_\-rgb24 (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{rgb24, }
+\item[{int}]{width, }
+\item[{int}]{height, }
+\item[{double}]{quality}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1EncodedAttribute_a2bf74ff1635f2d3120dd0cdbef5e0c00}
+
+
+Encode a 24 bit rgb color image as J\-P\-E\-G format. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rgb24} & Array of 32bit R\-G\-B sample (R\-G\-B\-R\-G\-B...) \\
+\hline
+{\em width} & The image width \\
+\hline
+{\em height} & The image height \\
+\hline
+{\em quality} & Quality of J\-P\-E\-G (0=poor quality 100=max quality) \\
+\hline
+\end{DoxyParams}
+\index{Tango\-::\-Encoded\-Attribute@{Tango\-::\-Encoded\-Attribute}!encode\-\_\-jpeg\-\_\-rgb32@{encode\-\_\-jpeg\-\_\-rgb32}}
+\index{encode\-\_\-jpeg\-\_\-rgb32@{encode\-\_\-jpeg\-\_\-rgb32}!Tango::EncodedAttribute@{Tango\-::\-Encoded\-Attribute}}
+\subsubsection[{encode\-\_\-jpeg\-\_\-rgb32}]{\setlength{\rightskip}{0pt plus 5cm}void Tango\-::\-Encoded\-Attribute\-::encode\-\_\-jpeg\-\_\-rgb32 (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{rgb32, }
+\item[{int}]{width, }
+\item[{int}]{height, }
+\item[{double}]{quality}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1EncodedAttribute_afd6be02fbf49d3f7823679d190eea0a1}
+
+
+Encode a 32 bit rgb color image as J\-P\-E\-G format. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rgb32} & Array of 32bit R\-G\-B sample (R\-G\-B0\-R\-G\-B0...) \\
+\hline
+{\em width} & The image width \\
+\hline
+{\em height} & The image height \\
+\hline
+{\em quality} & Quality of J\-P\-E\-G (0=poor quality 100=max quality) \\
+\hline
+\end{DoxyParams}
+\index{Tango\-::\-Encoded\-Attribute@{Tango\-::\-Encoded\-Attribute}!encode\-\_\-rgb24@{encode\-\_\-rgb24}}
+\index{encode\-\_\-rgb24@{encode\-\_\-rgb24}!Tango::EncodedAttribute@{Tango\-::\-Encoded\-Attribute}}
+\subsubsection[{encode\-\_\-rgb24}]{\setlength{\rightskip}{0pt plus 5cm}void Tango\-::\-Encoded\-Attribute\-::encode\-\_\-rgb24 (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{rgb24, }
+\item[{int}]{width, }
+\item[{int}]{height}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1EncodedAttribute_a8c0850a138718cf1a1513c20c1e58844}
+
+
+Encode a 24 bit color image (no compression) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rgb24} & Array of 24bit R\-G\-B sample \\
+\hline
+{\em width} & The image width \\
+\hline
+{\em height} & The image height \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+{\bf encoded\-\_\-attribute.\-h}\end{DoxyCompactItemize}

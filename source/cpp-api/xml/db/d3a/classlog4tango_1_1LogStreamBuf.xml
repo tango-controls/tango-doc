@@ -1,0 +1,217 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="db/d3a/classlog4tango_1_1LogStreamBuf" kind="class" prot="public">
+    <compoundname>log4tango::LogStreamBuf</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">streambuf</basecompoundref>
+    <includes refid="d7/dff/LogStreambuf_8hh" local="yes">LogStreambuf.hh</includes>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="db/d3a/classlog4tango_1_1LogStreamBuf_1aabe1238b9c317325110868340635ff1f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend class</type>
+        <definition>friend class LogStream</definition>
+        <argsstring></argsstring>
+        <name>LogStream</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/LogStreambuf.hh" line="46" column="1" bodyfile="/home/tango/workspace/cppTango/include/log4tango/LogStreambuf.hh" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="db/d3a/classlog4tango_1_1LogStreamBuf_1a511b8f40349892030384fdee962853b9" prot="private" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* log4tango::LogStreamBuf::_buffer</definition>
+        <argsstring></argsstring>
+        <name>_buffer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/LogStreambuf.hh" line="68" column="1" bodyfile="/home/tango/workspace/cppTango/include/log4tango/LogStreambuf.hh" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="db/d3a/classlog4tango_1_1LogStreamBuf_1a309daec9bf45544a1f83cc56ae93a353" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool log4tango::LogStreamBuf::_filter</definition>
+        <argsstring></argsstring>
+        <name>_filter</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/LogStreambuf.hh" line="74" column="1" bodyfile="/home/tango/workspace/cppTango/include/log4tango/LogStreambuf.hh" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="db/d3a/classlog4tango_1_1LogStreamBuf_1a3b92d98981d5bccce2295e09bc176c10" prot="private" static="no" mutable="no">
+        <type><ref refid="d8/d0e/classlog4tango_1_1Level_1aa708c09b6a19a8cc8a3b19631561ca99" kindref="member">Level::Value</ref></type>
+        <definition>Level::Value log4tango::LogStreamBuf::_level</definition>
+        <argsstring></argsstring>
+        <name>_level</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/LogStreambuf.hh" line="72" column="1" bodyfile="/home/tango/workspace/cppTango/include/log4tango/LogStreambuf.hh" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="db/d3a/classlog4tango_1_1LogStreamBuf_1ab36e384ac87c8685471eb7521ff2de0c" prot="private" static="no" mutable="no">
+        <type><ref refid="d4/d1c/classlog4tango_1_1Logger" kindref="compound">Logger</ref> *</type>
+        <definition>Logger* log4tango::LogStreamBuf::_logger</definition>
+        <argsstring></argsstring>
+        <name>_logger</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/LogStreambuf.hh" line="70" column="1" bodyfile="/home/tango/workspace/cppTango/include/log4tango/LogStreambuf.hh" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="db/d3a/classlog4tango_1_1LogStreamBuf_1a3d3bf3a4ff2e95b8767ad2d49826ae47" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>log4tango::LogStreamBuf::LogStreamBuf</definition>
+        <argsstring>(Logger *logger, Level::Value level, bool filter=true, size_t bsize=kDEFAULT_BUFFER_SIZE)</argsstring>
+        <name>LogStreamBuf</name>
+        <param>
+          <type><ref refid="d4/d1c/classlog4tango_1_1Logger" kindref="compound">Logger</ref> *</type>
+          <declname>logger</declname>
+        </param>
+        <param>
+          <type><ref refid="d8/d0e/classlog4tango_1_1Level_1aa708c09b6a19a8cc8a3b19631561ca99" kindref="member">Level::Value</ref></type>
+          <declname>level</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>filter</declname>
+          <defval>true</defval>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>bsize</declname>
+          <defval><ref refid="d7/dff/LogStreambuf_8hh_1a17303732aa74827e074fb65d980902af" kindref="member">kDEFAULT_BUFFER_SIZE</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/LogStreambuf.hh" line="50" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="db/d3a/classlog4tango_1_1LogStreamBuf_1a818fd0a949e1cebc7f4f8217621e71c8" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual log4tango::LogStreamBuf::~LogStreamBuf</definition>
+        <argsstring>()</argsstring>
+        <name>~LogStreamBuf</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/LogStreambuf.hh" line="55" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="db/d3a/classlog4tango_1_1LogStreamBuf_1a82692bb5af1c37e3a73079de23f5308e" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>int</type>
+        <definition>virtual int log4tango::LogStreamBuf::sync</definition>
+        <argsstring>(void)</argsstring>
+        <name>sync</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/LogStreambuf.hh" line="62" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="db/d3a/classlog4tango_1_1LogStreamBuf_1a24ee38a6bb7e46f4cfe1b23ee4893f80" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>std::streamsize</type>
+        <definition>virtual std::streamsize log4tango::LogStreamBuf::xsputn</definition>
+        <argsstring>(const char *, std::streamsize)</argsstring>
+        <name>xsputn</name>
+        <param>
+          <type>const char *</type>
+        </param>
+        <param>
+          <type>std::streamsize</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/LogStreambuf.hh" line="59" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="db/d3a/classlog4tango_1_1LogStreamBuf_1aeb3b1169c88277dd454266e811440b21" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int log4tango::LogStreamBuf::flush_buffer</definition>
+        <argsstring>(void)</argsstring>
+        <name>flush_buffer</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/LogStreambuf.hh" line="66" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1121">
+        <label>log4tango::LogStreamBuf</label>
+        <link refid="db/d3a/classlog4tango_1_1LogStreamBuf"/>
+        <childnode refid="1122" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1122">
+        <label>std::streambuf</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1123">
+        <label>log4tango::LogStreamBuf</label>
+        <link refid="db/d3a/classlog4tango_1_1LogStreamBuf"/>
+        <childnode refid="1124" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1124">
+        <label>std::streambuf</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/tango/workspace/cppTango/include/log4tango/LogStreambuf.hh" line="45" column="1" bodyfile="/home/tango/workspace/cppTango/include/log4tango/LogStreambuf.hh" bodystart="44" bodyend="75"/>
+    <listofallmembers>
+      <member refid="db/d3a/classlog4tango_1_1LogStreamBuf_1a511b8f40349892030384fdee962853b9" prot="private" virt="non-virtual"><scope>log4tango::LogStreamBuf</scope><name>_buffer</name></member>
+      <member refid="db/d3a/classlog4tango_1_1LogStreamBuf_1a309daec9bf45544a1f83cc56ae93a353" prot="private" virt="non-virtual"><scope>log4tango::LogStreamBuf</scope><name>_filter</name></member>
+      <member refid="db/d3a/classlog4tango_1_1LogStreamBuf_1a3b92d98981d5bccce2295e09bc176c10" prot="private" virt="non-virtual"><scope>log4tango::LogStreamBuf</scope><name>_level</name></member>
+      <member refid="db/d3a/classlog4tango_1_1LogStreamBuf_1ab36e384ac87c8685471eb7521ff2de0c" prot="private" virt="non-virtual"><scope>log4tango::LogStreamBuf</scope><name>_logger</name></member>
+      <member refid="db/d3a/classlog4tango_1_1LogStreamBuf_1aeb3b1169c88277dd454266e811440b21" prot="private" virt="non-virtual"><scope>log4tango::LogStreamBuf</scope><name>flush_buffer</name></member>
+      <member refid="db/d3a/classlog4tango_1_1LogStreamBuf_1aabe1238b9c317325110868340635ff1f" prot="private" virt="non-virtual"><scope>log4tango::LogStreamBuf</scope><name>LogStream</name></member>
+      <member refid="db/d3a/classlog4tango_1_1LogStreamBuf_1a3d3bf3a4ff2e95b8767ad2d49826ae47" prot="public" virt="non-virtual"><scope>log4tango::LogStreamBuf</scope><name>LogStreamBuf</name></member>
+      <member refid="db/d3a/classlog4tango_1_1LogStreamBuf_1a82692bb5af1c37e3a73079de23f5308e" prot="protected" virt="virtual"><scope>log4tango::LogStreamBuf</scope><name>sync</name></member>
+      <member refid="db/d3a/classlog4tango_1_1LogStreamBuf_1a24ee38a6bb7e46f4cfe1b23ee4893f80" prot="protected" virt="virtual"><scope>log4tango::LogStreamBuf</scope><name>xsputn</name></member>
+      <member refid="db/d3a/classlog4tango_1_1LogStreamBuf_1a818fd0a949e1cebc7f4f8217621e71c8" prot="public" virt="virtual"><scope>log4tango::LogStreamBuf</scope><name>~LogStreamBuf</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

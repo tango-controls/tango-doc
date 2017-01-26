@@ -1,0 +1,1930 @@
+\section{tango\-\_\-const.\-h File Reference}
+\label{tango__const_8h}\index{tango\-\_\-const.\-h@{tango\-\_\-const.\-h}}
+This graph shows which files directly or indirectly include this file\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=161pt]{dd/d73/tango__const_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf Tango\-::\-\_\-\-Attribute\-Idl\-Data}
+\item 
+struct {\bf Tango\-::\-\_\-\-Opt\-Attr\-Prop}
+\item 
+struct {\bf Tango\-::\-\_\-\-Poll\-Device}
+\item 
+struct {\bf Tango\-::\-\_\-\-Send\-Event\-Type}
+\item 
+struct {\bf Tango\-::ranges\-\_\-const2type$<$ Cmd\-Arg\-Type $>$}
+\item 
+struct {\bf Tango\-::ranges\-\_\-type2const$<$ T $>$}
+\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Tango}
+\begin{DoxyCompactList}\small\item\em ============================================================================= \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bf R\-A\-N\-G\-E\-S\-\_\-\-T\-Y\-P\-E2\-C\-O\-N\-S\-T}(type, constant)
+\item 
+\#define {\bf T\-A\-N\-G\-O\-\_\-\-B\-A\-S\-E\-\_\-\-C\-L\-A\-S\-S}~{\bf Tango\-::\-Device\-\_\-5\-Impl}
+\item 
+\#define {\bf T\-A\-N\-G\-O\-\_\-\-V\-E\-R\-S\-I\-O\-N\-\_\-\-M\-A\-J\-O\-R}~9
+\item 
+\#define {\bf T\-A\-N\-G\-O\-\_\-\-V\-E\-R\-S\-I\-O\-N\-\_\-\-M\-I\-N\-O\-R}~2
+\item 
+\#define {\bf T\-A\-N\-G\-O\-\_\-\-V\-E\-R\-S\-I\-O\-N\-\_\-\-P\-A\-T\-C\-H}~5
+\item 
+\#define {\bf T\-B\-S}(s)~\#s
+\item 
+\#define {\bf X\-T\-B\-S}(s)~{\bf T\-B\-S}(s)
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \\*
+{\bf Tango\-::\-\_\-\-Attribute\-Idl\-Data} {\bf Tango\-::\-Attribute\-Idl\-Data}
+\item 
+typedef Dev\-Boolean(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Bo\-\_\-\-Cmd\-Meth\-Ptr} )()
+\item 
+typedef Dev\-Boolean(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Bo\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Bo} )(Dev\-Boolean)
+\item 
+typedef Dev\-Boolean(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Bo\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Ch\-A} )(const Dev\-Var\-Char\-Array $\ast$)
+\item 
+typedef Dev\-Boolean(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Bo\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Db} )(Dev\-Double)
+\item 
+typedef Dev\-Boolean(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Bo\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Db\-A} )(const Dev\-Var\-Double\-Array $\ast$)
+\item 
+typedef Dev\-Boolean(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Bo\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-D\-S\-A} )(const Dev\-Var\-Double\-String\-Array $\ast$)
+\item 
+typedef Dev\-Boolean(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Bo\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Fl} )(Dev\-Float)
+\item 
+typedef Dev\-Boolean(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Bo\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Fl\-A} )(const Dev\-Var\-Float\-Array $\ast$)
+\item 
+typedef Dev\-Boolean(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Bo\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Lg} )(Dev\-Long)
+\item 
+typedef Dev\-Boolean(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Bo\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Lg\-A} )(const Dev\-Var\-Long\-Array $\ast$)
+\item 
+typedef Dev\-Boolean(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Bo\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-L\-S\-A} )(const Dev\-Var\-Long\-String\-Array $\ast$)
+\item 
+typedef Dev\-Boolean(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Bo\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Sh} )(Dev\-Short)
+\item 
+typedef Dev\-Boolean(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Bo\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Sh\-A} )(const Dev\-Var\-Short\-Array $\ast$)
+\item 
+typedef Dev\-Boolean(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Bo\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Sta} )(Dev\-State)
+\item 
+typedef Dev\-Boolean(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Bo\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Str} )(Dev\-String)
+\item 
+typedef Dev\-Boolean(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Bo\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Str\-A} )(const Dev\-Var\-String\-Array $\ast$)
+\item 
+typedef Dev\-Boolean(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Bo\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-L} )(Dev\-U\-Long)
+\item 
+typedef Dev\-Boolean(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Bo\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-L\-A} )(const Dev\-Var\-U\-Long\-Array $\ast$)
+\item 
+typedef Dev\-Boolean(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Bo\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-S} )(Dev\-U\-Short)
+\item 
+typedef Dev\-Boolean(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Bo\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-S\-A} )(const Dev\-Var\-U\-Short\-Array $\ast$)
+\item 
+typedef Dev\-Var\-Char\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Ch\-A\-\_\-\-Cmd\-Meth\-Ptr} )()
+\item 
+typedef Dev\-Var\-Char\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Ch\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Bo} )(Dev\-Boolean)
+\item 
+typedef Dev\-Var\-Char\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Ch\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Ch\-A} )(const Dev\-Var\-Char\-Array $\ast$)
+\item 
+typedef Dev\-Var\-Char\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Ch\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Db} )(Dev\-Double)
+\item 
+typedef Dev\-Var\-Char\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Ch\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Db\-A} )(const Dev\-Var\-Double\-Array $\ast$)
+\item 
+typedef Dev\-Var\-Char\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Ch\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-D\-S\-A} )(const Dev\-Var\-Double\-String\-Array $\ast$)
+\item 
+typedef Dev\-Var\-Char\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Ch\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Fl} )(Dev\-Float)
+\item 
+typedef Dev\-Var\-Char\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Ch\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Fl\-A} )(const Dev\-Var\-Float\-Array $\ast$)
+\item 
+typedef Dev\-Var\-Char\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Ch\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Lg} )(Dev\-Long)
+\item 
+typedef Dev\-Var\-Char\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Ch\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Lg\-A} )(const Dev\-Var\-Long\-Array $\ast$)
+\item 
+typedef Dev\-Var\-Char\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Ch\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-L\-S\-A} )(const Dev\-Var\-Long\-String\-Array $\ast$)
+\item 
+typedef Dev\-Var\-Char\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Ch\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Sh} )(Dev\-Short)
+\item 
+typedef Dev\-Var\-Char\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Ch\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Sh\-A} )(const Dev\-Var\-Short\-Array $\ast$)
+\item 
+typedef Dev\-Var\-Char\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Ch\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Sta} )(Dev\-State)
+\item 
+typedef Dev\-Var\-Char\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Ch\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Str} )(Dev\-String)
+\item 
+typedef Dev\-Var\-Char\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Ch\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Str\-A} )(const Dev\-Var\-String\-Array $\ast$)
+\item 
+typedef Dev\-Var\-Char\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Ch\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-L} )(Dev\-U\-Long)
+\item 
+typedef Dev\-Var\-Char\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Ch\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-L\-A} )(const Dev\-Var\-U\-Long\-Array $\ast$)
+\item 
+typedef Dev\-Var\-Char\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Ch\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-S} )(Dev\-U\-Short)
+\item 
+typedef Dev\-Var\-Char\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Ch\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-S\-A} )(const Dev\-Var\-U\-Short\-Array $\ast$)
+\item 
+typedef void(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Cmd\-Meth\-Ptr} )()
+\item 
+typedef void(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Cmd\-Meth\-Ptr\-\_\-\-Bo} )(Dev\-Boolean)
+\item 
+typedef void(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Cmd\-Meth\-Ptr\-\_\-\-Ch\-A} )(const Dev\-Var\-Char\-Array $\ast$)
+\item 
+typedef void(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Cmd\-Meth\-Ptr\-\_\-\-Db} )(Dev\-Double)
+\item 
+typedef void(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Cmd\-Meth\-Ptr\-\_\-\-Db\-A} )(const Dev\-Var\-Double\-Array $\ast$)
+\item 
+typedef void(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Cmd\-Meth\-Ptr\-\_\-\-D\-S\-A} )(const Dev\-Var\-Double\-String\-Array $\ast$)
+\item 
+typedef void(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Cmd\-Meth\-Ptr\-\_\-\-Fl} )(Dev\-Float)
+\item 
+typedef void(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Cmd\-Meth\-Ptr\-\_\-\-Fl\-A} )(const Dev\-Var\-Float\-Array $\ast$)
+\item 
+typedef void(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Cmd\-Meth\-Ptr\-\_\-\-Lg} )(Dev\-Long)
+\item 
+typedef void(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Cmd\-Meth\-Ptr\-\_\-\-Lg\-A} )(const Dev\-Var\-Long\-Array $\ast$)
+\item 
+typedef void(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Cmd\-Meth\-Ptr\-\_\-\-L\-S\-A} )(const Dev\-Var\-Long\-String\-Array $\ast$)
+\item 
+typedef void(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Cmd\-Meth\-Ptr\-\_\-\-Sh} )(Dev\-Short)
+\item 
+typedef void(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Cmd\-Meth\-Ptr\-\_\-\-Sh\-A} )(const Dev\-Var\-Short\-Array $\ast$)
+\item 
+typedef void(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Cmd\-Meth\-Ptr\-\_\-\-Sta} )(Dev\-State)
+\item 
+typedef void(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Cmd\-Meth\-Ptr\-\_\-\-Str} )(Dev\-String)
+\item 
+typedef void(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Cmd\-Meth\-Ptr\-\_\-\-Str\-A} )(const Dev\-Var\-String\-Array $\ast$)
+\item 
+typedef void(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Cmd\-Meth\-Ptr\-\_\-\-U\-L} )(Dev\-U\-Long)
+\item 
+typedef void(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Cmd\-Meth\-Ptr\-\_\-\-U\-L\-A} )(const Dev\-Var\-U\-Long\-Array $\ast$)
+\item 
+typedef void(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Cmd\-Meth\-Ptr\-\_\-\-U\-S} )(Dev\-U\-Short)
+\item 
+typedef void(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Cmd\-Meth\-Ptr\-\_\-\-U\-S\-A} )(const Dev\-Var\-U\-Short\-Array $\ast$)
+\item 
+typedef const char $\ast$ {\bf Tango\-::\-Const\-Dev\-String}
+\item 
+typedef Dev\-Double(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Db\-\_\-\-Cmd\-Meth\-Ptr} )()
+\item 
+typedef Dev\-Double(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Db\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Bo} )(Dev\-Boolean)
+\item 
+typedef Dev\-Double(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Db\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Ch\-A} )(const Dev\-Var\-Char\-Array $\ast$)
+\item 
+typedef Dev\-Double(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Db\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Db} )(Dev\-Double)
+\item 
+typedef Dev\-Double(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Db\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Db\-A} )(const Dev\-Var\-Double\-Array $\ast$)
+\item 
+typedef Dev\-Double(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Db\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-D\-S\-A} )(const Dev\-Var\-Double\-String\-Array $\ast$)
+\item 
+typedef Dev\-Double(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Db\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Fl} )(Dev\-Float)
+\item 
+typedef Dev\-Double(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Db\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Fl\-A} )(const Dev\-Var\-Float\-Array $\ast$)
+\item 
+typedef Dev\-Double(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Db\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Lg} )(Dev\-Long)
+\item 
+typedef Dev\-Double(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Db\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Lg\-A} )(const Dev\-Var\-Long\-Array $\ast$)
+\item 
+typedef Dev\-Double(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Db\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-L\-S\-A} )(const Dev\-Var\-Long\-String\-Array $\ast$)
+\item 
+typedef Dev\-Double(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Db\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Sh} )(Dev\-Short)
+\item 
+typedef Dev\-Double(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Db\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Sh\-A} )(const Dev\-Var\-Short\-Array $\ast$)
+\item 
+typedef Dev\-Double(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Db\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Sta} )(Dev\-State)
+\item 
+typedef Dev\-Double(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Db\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Str} )(Dev\-String)
+\item 
+typedef Dev\-Double(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Db\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Str\-A} )(const Dev\-Var\-String\-Array $\ast$)
+\item 
+typedef Dev\-Double(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Db\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-L} )(Dev\-U\-Long)
+\item 
+typedef Dev\-Double(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Db\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-L\-A} )(const Dev\-Var\-U\-Long\-Array $\ast$)
+\item 
+typedef Dev\-Double(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Db\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-S} )(Dev\-U\-Short)
+\item 
+typedef Dev\-Double(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Db\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-S\-A} )(const Dev\-Var\-U\-Short\-Array $\ast$)
+\item 
+typedef Dev\-Var\-Double\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Db\-A\-\_\-\-Cmd\-Meth\-Ptr} )()
+\item 
+typedef Dev\-Var\-Double\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Db\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Bo} )(Dev\-Boolean)
+\item 
+typedef Dev\-Var\-Double\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Db\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Ch\-A} )(const Dev\-Var\-Char\-Array $\ast$)
+\item 
+typedef Dev\-Var\-Double\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Db\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Db} )(Dev\-Double)
+\item 
+typedef Dev\-Var\-Double\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Db\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Db\-A} )(const Dev\-Var\-Double\-Array $\ast$)
+\item 
+typedef Dev\-Var\-Double\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Db\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-D\-S\-A} )(const Dev\-Var\-Double\-String\-Array $\ast$)
+\item 
+typedef Dev\-Var\-Double\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Db\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Fl} )(Dev\-Float)
+\item 
+typedef Dev\-Var\-Double\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Db\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Fl\-A} )(const Dev\-Var\-Float\-Array $\ast$)
+\item 
+typedef Dev\-Var\-Double\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Db\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Lg} )(Dev\-Long)
+\item 
+typedef Dev\-Var\-Double\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Db\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Lg\-A} )(const Dev\-Var\-Long\-Array $\ast$)
+\item 
+typedef Dev\-Var\-Double\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Db\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-L\-S\-A} )(const Dev\-Var\-Long\-String\-Array $\ast$)
+\item 
+typedef Dev\-Var\-Double\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Db\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Sh} )(Dev\-Short)
+\item 
+typedef Dev\-Var\-Double\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Db\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Sh\-A} )(const Dev\-Var\-Short\-Array $\ast$)
+\item 
+typedef Dev\-Var\-Double\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Db\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Sta} )(Dev\-State)
+\item 
+typedef Dev\-Var\-Double\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Db\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Str} )(Dev\-String)
+\item 
+typedef Dev\-Var\-Double\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Db\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Str\-A} )(const Dev\-Var\-String\-Array $\ast$)
+\item 
+typedef Dev\-Var\-Double\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Db\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-L} )(Dev\-U\-Long)
+\item 
+typedef Dev\-Var\-Double\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Db\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-L\-A} )(const Dev\-Var\-U\-Long\-Array $\ast$)
+\item 
+typedef Dev\-Var\-Double\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Db\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-S} )(Dev\-U\-Short)
+\item 
+typedef Dev\-Var\-Double\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Db\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-S\-A} )(const Dev\-Var\-U\-Short\-Array $\ast$)
+\item 
+typedef Dev\-Short {\bf Tango\-::\-Dev\-Enum}
+\item 
+typedef Dev\-Var\-Char\-Array {\bf Tango\-::\-Dev\-Var\-U\-Char\-Array}
+\item 
+typedef \\*
+Dev\-Var\-Double\-String\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-D\-S\-A\-\_\-\-Cmd\-Meth\-Ptr} )()
+\item 
+typedef \\*
+Dev\-Var\-Double\-String\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-D\-S\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Bo} )(Dev\-Boolean)
+\item 
+typedef \\*
+Dev\-Var\-Double\-String\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-D\-S\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Ch\-A} )(const Dev\-Var\-Char\-Array $\ast$)
+\item 
+typedef \\*
+Dev\-Var\-Double\-String\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-D\-S\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Db} )(Dev\-Double)
+\item 
+typedef \\*
+Dev\-Var\-Double\-String\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-D\-S\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Db\-A} )(const Dev\-Var\-Double\-Array $\ast$)
+\item 
+typedef \\*
+Dev\-Var\-Double\-String\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-D\-S\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-D\-S\-A} )(const Dev\-Var\-Double\-String\-Array $\ast$)
+\item 
+typedef \\*
+Dev\-Var\-Double\-String\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-D\-S\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Fl} )(Dev\-Float)
+\item 
+typedef \\*
+Dev\-Var\-Double\-String\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-D\-S\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Fl\-A} )(const Dev\-Var\-Float\-Array $\ast$)
+\item 
+typedef \\*
+Dev\-Var\-Double\-String\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-D\-S\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Lg} )(Dev\-Long)
+\item 
+typedef \\*
+Dev\-Var\-Double\-String\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-D\-S\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Lg\-A} )(const Dev\-Var\-Long\-Array $\ast$)
+\item 
+typedef \\*
+Dev\-Var\-Double\-String\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-D\-S\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-L\-S\-A} )(const Dev\-Var\-Long\-String\-Array $\ast$)
+\item 
+typedef \\*
+Dev\-Var\-Double\-String\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-D\-S\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Sh} )(Dev\-Short)
+\item 
+typedef \\*
+Dev\-Var\-Double\-String\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-D\-S\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Sh\-A} )(const Dev\-Var\-Short\-Array $\ast$)
+\item 
+typedef \\*
+Dev\-Var\-Double\-String\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-D\-S\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Sta} )(Dev\-State)
+\item 
+typedef \\*
+Dev\-Var\-Double\-String\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-D\-S\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Str} )(Dev\-String)
+\item 
+typedef \\*
+Dev\-Var\-Double\-String\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-D\-S\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Str\-A} )(const Dev\-Var\-String\-Array $\ast$)
+\item 
+typedef \\*
+Dev\-Var\-Double\-String\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-D\-S\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-L} )(Dev\-U\-Long)
+\item 
+typedef \\*
+Dev\-Var\-Double\-String\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-D\-S\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-L\-A} )(const Dev\-Var\-U\-Long\-Array $\ast$)
+\item 
+typedef \\*
+Dev\-Var\-Double\-String\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-D\-S\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-S} )(Dev\-U\-Short)
+\item 
+typedef \\*
+Dev\-Var\-Double\-String\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-D\-S\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-S\-A} )(const Dev\-Var\-U\-Short\-Array $\ast$)
+\item 
+typedef Dev\-Float(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Fl\-\_\-\-Cmd\-Meth\-Ptr} )()
+\item 
+typedef Dev\-Float(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Fl\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Bo} )(Dev\-Boolean)
+\item 
+typedef Dev\-Float(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Fl\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Ch\-A} )(const Dev\-Var\-Char\-Array $\ast$)
+\item 
+typedef Dev\-Float(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Fl\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Db} )(Dev\-Double)
+\item 
+typedef Dev\-Float(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Fl\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Db\-A} )(const Dev\-Var\-Double\-Array $\ast$)
+\item 
+typedef Dev\-Float(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Fl\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-D\-S\-A} )(const Dev\-Var\-Double\-String\-Array $\ast$)
+\item 
+typedef Dev\-Float(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Fl\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Fl} )(Dev\-Float)
+\item 
+typedef Dev\-Float(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Fl\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Fl\-A} )(const Dev\-Var\-Float\-Array $\ast$)
+\item 
+typedef Dev\-Float(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Fl\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Lg} )(Dev\-Long)
+\item 
+typedef Dev\-Float(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Fl\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Lg\-A} )(const Dev\-Var\-Long\-Array $\ast$)
+\item 
+typedef Dev\-Float(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Fl\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-L\-S\-A} )(const Dev\-Var\-Long\-String\-Array $\ast$)
+\item 
+typedef Dev\-Float(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Fl\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Sh} )(Dev\-Short)
+\item 
+typedef Dev\-Float(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Fl\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Sh\-A} )(const Dev\-Var\-Short\-Array $\ast$)
+\item 
+typedef Dev\-Float(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Fl\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Sta} )(Dev\-State)
+\item 
+typedef Dev\-Float(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Fl\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Str} )(Dev\-String)
+\item 
+typedef Dev\-Float(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Fl\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Str\-A} )(const Dev\-Var\-String\-Array $\ast$)
+\item 
+typedef Dev\-Float(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Fl\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-L} )(Dev\-U\-Long)
+\item 
+typedef Dev\-Float(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Fl\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-L\-A} )(const Dev\-Var\-U\-Long\-Array $\ast$)
+\item 
+typedef Dev\-Float(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Fl\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-S} )(Dev\-U\-Short)
+\item 
+typedef Dev\-Float(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Fl\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-S\-A} )(const Dev\-Var\-U\-Short\-Array $\ast$)
+\item 
+typedef Dev\-Var\-Float\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Fl\-A\-\_\-\-Cmd\-Meth\-Ptr} )()
+\item 
+typedef Dev\-Var\-Float\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Fl\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Bo} )(Dev\-Boolean)
+\item 
+typedef Dev\-Var\-Float\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Fl\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Ch\-A} )(const Dev\-Var\-Char\-Array $\ast$)
+\item 
+typedef Dev\-Var\-Float\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Fl\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Db} )(Dev\-Double)
+\item 
+typedef Dev\-Var\-Float\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Fl\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Db\-A} )(const Dev\-Var\-Double\-Array $\ast$)
+\item 
+typedef Dev\-Var\-Float\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Fl\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-D\-S\-A} )(const Dev\-Var\-Double\-String\-Array $\ast$)
+\item 
+typedef Dev\-Var\-Float\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Fl\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Fl} )(Dev\-Float)
+\item 
+typedef Dev\-Var\-Float\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Fl\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Fl\-A} )(const Dev\-Var\-Float\-Array $\ast$)
+\item 
+typedef Dev\-Var\-Float\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Fl\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Lg} )(Dev\-Long)
+\item 
+typedef Dev\-Var\-Float\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Fl\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Lg\-A} )(const Dev\-Var\-Long\-Array $\ast$)
+\item 
+typedef Dev\-Var\-Float\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Fl\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-L\-S\-A} )(const Dev\-Var\-Long\-String\-Array $\ast$)
+\item 
+typedef Dev\-Var\-Float\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Fl\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Sh} )(Dev\-Short)
+\item 
+typedef Dev\-Var\-Float\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Fl\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Sh\-A} )(const Dev\-Var\-Short\-Array $\ast$)
+\item 
+typedef Dev\-Var\-Float\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Fl\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Sta} )(Dev\-State)
+\item 
+typedef Dev\-Var\-Float\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Fl\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Str} )(Dev\-String)
+\item 
+typedef Dev\-Var\-Float\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Fl\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Str\-A} )(const Dev\-Var\-String\-Array $\ast$)
+\item 
+typedef Dev\-Var\-Float\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Fl\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-L} )(Dev\-U\-Long)
+\item 
+typedef Dev\-Var\-Float\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Fl\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-L\-A} )(const Dev\-Var\-U\-Long\-Array $\ast$)
+\item 
+typedef Dev\-Var\-Float\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Fl\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-S} )(Dev\-U\-Short)
+\item 
+typedef Dev\-Var\-Float\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Fl\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-S\-A} )(const Dev\-Var\-U\-Short\-Array $\ast$)
+\item 
+typedef enum {\bf Tango\-::\-\_\-\-Fwd\-Att\-Error} {\bf Tango\-::\-Fwd\-Att\-Error}
+\item 
+typedef Dev\-Long(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Lg\-\_\-\-Cmd\-Meth\-Ptr} )()
+\item 
+typedef Dev\-Long(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Lg\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Bo} )(Dev\-Boolean)
+\item 
+typedef Dev\-Long(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Lg\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Ch\-A} )(const Dev\-Var\-Char\-Array $\ast$)
+\item 
+typedef Dev\-Long(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Lg\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Db} )(Dev\-Double)
+\item 
+typedef Dev\-Long(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Lg\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Db\-A} )(const Dev\-Var\-Double\-Array $\ast$)
+\item 
+typedef Dev\-Long(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Lg\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-D\-S\-A} )(const Dev\-Var\-Double\-String\-Array $\ast$)
+\item 
+typedef Dev\-Long(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Lg\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Fl} )(Dev\-Float)
+\item 
+typedef Dev\-Long(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Lg\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Fl\-A} )(const Dev\-Var\-Float\-Array $\ast$)
+\item 
+typedef Dev\-Long(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Lg\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Lg} )(Dev\-Long)
+\item 
+typedef Dev\-Long(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Lg\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Lg\-A} )(const Dev\-Var\-Long\-Array $\ast$)
+\item 
+typedef Dev\-Long(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Lg\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-L\-S\-A} )(const Dev\-Var\-Long\-String\-Array $\ast$)
+\item 
+typedef Dev\-Long(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Lg\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Sh} )(Dev\-Short)
+\item 
+typedef Dev\-Long(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Lg\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Sh\-A} )(const Dev\-Var\-Short\-Array $\ast$)
+\item 
+typedef Dev\-Long(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Lg\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Sta} )(Dev\-State)
+\item 
+typedef Dev\-Long(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Lg\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Str} )(Dev\-String)
+\item 
+typedef Dev\-Long(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Lg\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Str\-A} )(const Dev\-Var\-String\-Array $\ast$)
+\item 
+typedef Dev\-Long(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Lg\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-L} )(Dev\-U\-Long)
+\item 
+typedef Dev\-Long(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Lg\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-L\-A} )(const Dev\-Var\-U\-Long\-Array $\ast$)
+\item 
+typedef Dev\-Long(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Lg\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-S} )(Dev\-U\-Short)
+\item 
+typedef Dev\-Long(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Lg\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-S\-A} )(const Dev\-Var\-U\-Short\-Array $\ast$)
+\item 
+typedef Dev\-Var\-Long\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Lg\-A\-\_\-\-Cmd\-Meth\-Ptr} )()
+\item 
+typedef Dev\-Var\-Long\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Lg\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Bo} )(Dev\-Boolean)
+\item 
+typedef Dev\-Var\-Long\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Lg\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Ch\-A} )(const Dev\-Var\-Char\-Array $\ast$)
+\item 
+typedef Dev\-Var\-Long\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Lg\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Db} )(Dev\-Double)
+\item 
+typedef Dev\-Var\-Long\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Lg\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Db\-A} )(const Dev\-Var\-Double\-Array $\ast$)
+\item 
+typedef Dev\-Var\-Long\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Lg\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-D\-S\-A} )(const Dev\-Var\-Double\-String\-Array $\ast$)
+\item 
+typedef Dev\-Var\-Long\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Lg\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Fl} )(Dev\-Float)
+\item 
+typedef Dev\-Var\-Long\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Lg\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Fl\-A} )(const Dev\-Var\-Float\-Array $\ast$)
+\item 
+typedef Dev\-Var\-Long\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Lg\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Lg} )(Dev\-Long)
+\item 
+typedef Dev\-Var\-Long\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Lg\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Lg\-A} )(const Dev\-Var\-Long\-Array $\ast$)
+\item 
+typedef Dev\-Var\-Long\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Lg\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-L\-S\-A} )(const Dev\-Var\-Long\-String\-Array $\ast$)
+\item 
+typedef Dev\-Var\-Long\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Lg\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Sh} )(Dev\-Short)
+\item 
+typedef Dev\-Var\-Long\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Lg\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Sh\-A} )(const Dev\-Var\-Short\-Array $\ast$)
+\item 
+typedef Dev\-Var\-Long\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Lg\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Sta} )(Dev\-State)
+\item 
+typedef Dev\-Var\-Long\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Lg\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Str} )(Dev\-String)
+\item 
+typedef Dev\-Var\-Long\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Lg\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Str\-A} )(const Dev\-Var\-String\-Array $\ast$)
+\item 
+typedef Dev\-Var\-Long\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Lg\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-L} )(Dev\-U\-Long)
+\item 
+typedef Dev\-Var\-Long\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Lg\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-L\-A} )(const Dev\-Var\-U\-Long\-Array $\ast$)
+\item 
+typedef Dev\-Var\-Long\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Lg\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-S} )(Dev\-U\-Short)
+\item 
+typedef Dev\-Var\-Long\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Lg\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-S\-A} )(const Dev\-Var\-U\-Short\-Array $\ast$)
+\item 
+typedef Dev\-Var\-Long\-String\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-L\-S\-A\-\_\-\-Cmd\-Meth\-Ptr} )()
+\item 
+typedef Dev\-Var\-Long\-String\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-L\-S\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Bo} )(Dev\-Boolean)
+\item 
+typedef Dev\-Var\-Long\-String\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-L\-S\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Ch\-A} )(const Dev\-Var\-Char\-Array $\ast$)
+\item 
+typedef Dev\-Var\-Long\-String\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-L\-S\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Db} )(Dev\-Double)
+\item 
+typedef Dev\-Var\-Long\-String\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-L\-S\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Db\-A} )(const Dev\-Var\-Double\-Array $\ast$)
+\item 
+typedef Dev\-Var\-Long\-String\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-L\-S\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-D\-S\-A} )(const Dev\-Var\-Double\-String\-Array $\ast$)
+\item 
+typedef Dev\-Var\-Long\-String\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-L\-S\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Fl} )(Dev\-Float)
+\item 
+typedef Dev\-Var\-Long\-String\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-L\-S\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Fl\-A} )(const Dev\-Var\-Float\-Array $\ast$)
+\item 
+typedef Dev\-Var\-Long\-String\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-L\-S\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Lg} )(Dev\-Long)
+\item 
+typedef Dev\-Var\-Long\-String\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-L\-S\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Lg\-A} )(const Dev\-Var\-Long\-Array $\ast$)
+\item 
+typedef Dev\-Var\-Long\-String\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-L\-S\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-L\-S\-A} )(const Dev\-Var\-Long\-String\-Array $\ast$)
+\item 
+typedef Dev\-Var\-Long\-String\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-L\-S\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Sh} )(Dev\-Short)
+\item 
+typedef Dev\-Var\-Long\-String\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-L\-S\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Sh\-A} )(const Dev\-Var\-Short\-Array $\ast$)
+\item 
+typedef Dev\-Var\-Long\-String\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-L\-S\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Sta} )(Dev\-State)
+\item 
+typedef Dev\-Var\-Long\-String\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-L\-S\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Str} )(Dev\-String)
+\item 
+typedef Dev\-Var\-Long\-String\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-L\-S\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Str\-A} )(const Dev\-Var\-String\-Array $\ast$)
+\item 
+typedef Dev\-Var\-Long\-String\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-L\-S\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-L} )(Dev\-U\-Long)
+\item 
+typedef Dev\-Var\-Long\-String\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-L\-S\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-L\-A} )(const Dev\-Var\-U\-Long\-Array $\ast$)
+\item 
+typedef Dev\-Var\-Long\-String\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-L\-S\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-S} )(Dev\-U\-Short)
+\item 
+typedef Dev\-Var\-Long\-String\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-L\-S\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-S\-A} )(const Dev\-Var\-U\-Short\-Array $\ast$)
+\item 
+typedef struct {\bf Tango\-::\-\_\-\-Opt\-Attr\-Prop} {\bf Tango\-::\-Opt\-Attr\-Prop}
+\item 
+typedef Att\-Req\-Type {\bf Tango\-::\-Pipe\-Req\-Type}
+\item 
+typedef struct {\bf Tango\-::\-\_\-\-Poll\-Device} {\bf Tango\-::\-Poll\-Device}
+\item 
+typedef struct \\*
+{\bf Tango\-::\-\_\-\-Send\-Event\-Type} {\bf Tango\-::\-Send\-Event\-Type}
+\item 
+typedef Dev\-Short(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Sh\-\_\-\-Cmd\-Meth\-Ptr} )()
+\item 
+typedef Dev\-Short(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Sh\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Bo} )(Dev\-Boolean)
+\item 
+typedef Dev\-Short(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Sh\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Ch\-A} )(const Dev\-Var\-Char\-Array $\ast$)
+\item 
+typedef Dev\-Short(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Sh\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Db} )(Dev\-Double)
+\item 
+typedef Dev\-Short(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Sh\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Db\-A} )(const Dev\-Var\-Double\-Array $\ast$)
+\item 
+typedef Dev\-Short(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Sh\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-D\-S\-A} )(const Dev\-Var\-Double\-String\-Array $\ast$)
+\item 
+typedef Dev\-Short(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Sh\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Fl} )(Dev\-Float)
+\item 
+typedef Dev\-Short(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Sh\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Fl\-A} )(const Dev\-Var\-Float\-Array $\ast$)
+\item 
+typedef Dev\-Short(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Sh\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Lg} )(Dev\-Long)
+\item 
+typedef Dev\-Short(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Sh\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Lg\-A} )(const Dev\-Var\-Long\-Array $\ast$)
+\item 
+typedef Dev\-Short(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Sh\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-L\-S\-A} )(const Dev\-Var\-Long\-String\-Array $\ast$)
+\item 
+typedef Dev\-Short(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Sh\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Sh} )(Dev\-Short)
+\item 
+typedef Dev\-Short(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Sh\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Sh\-A} )(const Dev\-Var\-Short\-Array $\ast$)
+\item 
+typedef Dev\-Short(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Sh\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Sta} )(Dev\-State)
+\item 
+typedef Dev\-Short(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Sh\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Str} )(Dev\-String)
+\item 
+typedef Dev\-Short(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Sh\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Str\-A} )(const Dev\-Var\-String\-Array $\ast$)
+\item 
+typedef Dev\-Short(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Sh\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-L} )(Dev\-U\-Long)
+\item 
+typedef Dev\-Short(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Sh\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-L\-A} )(const Dev\-Var\-U\-Long\-Array $\ast$)
+\item 
+typedef Dev\-Short(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Sh\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-S} )(Dev\-U\-Short)
+\item 
+typedef Dev\-Short(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Sh\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-S\-A} )(const Dev\-Var\-U\-Short\-Array $\ast$)
+\item 
+typedef Dev\-Var\-Short\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Sh\-A\-\_\-\-Cmd\-Meth\-Ptr} )()
+\item 
+typedef Dev\-Var\-Short\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Sh\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Bo} )(Dev\-Boolean)
+\item 
+typedef Dev\-Var\-Short\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Sh\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Ch\-A} )(const Dev\-Var\-Char\-Array $\ast$)
+\item 
+typedef Dev\-Var\-Short\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Sh\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Db} )(Dev\-Double)
+\item 
+typedef Dev\-Var\-Short\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Sh\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Db\-A} )(const Dev\-Var\-Double\-Array $\ast$)
+\item 
+typedef Dev\-Var\-Short\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Sh\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-D\-S\-A} )(const Dev\-Var\-Double\-String\-Array $\ast$)
+\item 
+typedef Dev\-Var\-Short\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Sh\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Fl} )(Dev\-Float)
+\item 
+typedef Dev\-Var\-Short\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Sh\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Fl\-A} )(const Dev\-Var\-Float\-Array $\ast$)
+\item 
+typedef Dev\-Var\-Short\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Sh\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Lg} )(Dev\-Long)
+\item 
+typedef Dev\-Var\-Short\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Sh\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Lg\-A} )(const Dev\-Var\-Long\-Array $\ast$)
+\item 
+typedef Dev\-Var\-Short\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Sh\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-L\-S\-A} )(const Dev\-Var\-Long\-String\-Array $\ast$)
+\item 
+typedef Dev\-Var\-Short\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Sh\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Sh} )(Dev\-Short)
+\item 
+typedef Dev\-Var\-Short\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Sh\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Sh\-A} )(const Dev\-Var\-Short\-Array $\ast$)
+\item 
+typedef Dev\-Var\-Short\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Sh\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Sta} )(Dev\-State)
+\item 
+typedef Dev\-Var\-Short\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Sh\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Str} )(Dev\-String)
+\item 
+typedef Dev\-Var\-Short\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Sh\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Str\-A} )(const Dev\-Var\-String\-Array $\ast$)
+\item 
+typedef Dev\-Var\-Short\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Sh\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-L} )(Dev\-U\-Long)
+\item 
+typedef Dev\-Var\-Short\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Sh\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-L\-A} )(const Dev\-Var\-U\-Long\-Array $\ast$)
+\item 
+typedef Dev\-Var\-Short\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Sh\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-S} )(Dev\-U\-Short)
+\item 
+typedef Dev\-Var\-Short\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Sh\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-S\-A} )(const Dev\-Var\-U\-Short\-Array $\ast$)
+\item 
+typedef Dev\-State(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Sta\-\_\-\-Cmd\-Meth\-Ptr} )()
+\item 
+typedef Dev\-State $\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Sta\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Bo} )(Dev\-Boolean)
+\item 
+typedef Dev\-State $\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Sta\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Ch\-A} )(const Dev\-Var\-Char\-Array $\ast$)
+\item 
+typedef Dev\-State $\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Sta\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Db} )(Dev\-Double)
+\item 
+typedef Dev\-State $\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Sta\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Db\-A} )(const Dev\-Var\-Double\-Array $\ast$)
+\item 
+typedef Dev\-State $\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Sta\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-D\-S\-A} )(const Dev\-Var\-Double\-String\-Array $\ast$)
+\item 
+typedef Dev\-State $\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Sta\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Fl} )(Dev\-Float)
+\item 
+typedef Dev\-State $\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Sta\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Fl\-A} )(const Dev\-Var\-Float\-Array $\ast$)
+\item 
+typedef Dev\-State $\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Sta\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Lg} )(Dev\-Long)
+\item 
+typedef Dev\-State $\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Sta\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Lg\-A} )(const Dev\-Var\-Long\-Array $\ast$)
+\item 
+typedef Dev\-State $\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Sta\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-L\-S\-A} )(const Dev\-Var\-Long\-String\-Array $\ast$)
+\item 
+typedef Dev\-State $\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Sta\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Sh} )(Dev\-Short)
+\item 
+typedef Dev\-State $\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Sta\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Sh\-A} )(const Dev\-Var\-Short\-Array $\ast$)
+\item 
+typedef Dev\-State $\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Sta\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Sta} )(Dev\-State)
+\item 
+typedef Dev\-State $\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Sta\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Str} )(Dev\-String)
+\item 
+typedef Dev\-State $\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Sta\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Str\-A} )(const Dev\-Var\-String\-Array $\ast$)
+\item 
+typedef Dev\-State $\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Sta\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-L} )(Dev\-U\-Long)
+\item 
+typedef Dev\-State $\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Sta\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-L\-A} )(const Dev\-Var\-U\-Long\-Array $\ast$)
+\item 
+typedef Dev\-State $\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Sta\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-S} )(Dev\-U\-Short)
+\item 
+typedef Dev\-State $\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Sta\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-S\-A} )(const Dev\-Var\-U\-Short\-Array $\ast$)
+\item 
+typedef bool(Device\-Impl\-::$\ast$ {\bf Tango\-::\-State\-Meth\-Ptr} )(const C\-O\-R\-B\-A\-::\-Any \&)
+\item 
+typedef Dev\-String(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Str\-\_\-\-Cmd\-Meth\-Ptr} )()
+\item 
+typedef Dev\-String(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Str\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Bo} )(Dev\-Boolean)
+\item 
+typedef Dev\-String(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Str\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Ch\-A} )(const Dev\-Var\-Char\-Array $\ast$)
+\item 
+typedef Dev\-String(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Str\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Db} )(Dev\-Double)
+\item 
+typedef Dev\-String(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Str\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Db\-A} )(const Dev\-Var\-Double\-Array $\ast$)
+\item 
+typedef Dev\-String(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Str\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-D\-S\-A} )(const Dev\-Var\-Double\-String\-Array $\ast$)
+\item 
+typedef Dev\-String(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Str\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Fl} )(Dev\-Float)
+\item 
+typedef Dev\-String(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Str\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Fl\-A} )(const Dev\-Var\-Float\-Array $\ast$)
+\item 
+typedef Dev\-String(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Str\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Lg} )(Dev\-Long)
+\item 
+typedef Dev\-String(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Str\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Lg\-A} )(const Dev\-Var\-Long\-Array $\ast$)
+\item 
+typedef Dev\-String(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Str\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-L\-S\-A} )(const Dev\-Var\-Long\-String\-Array $\ast$)
+\item 
+typedef Dev\-String(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Str\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Sh} )(Dev\-Short)
+\item 
+typedef Dev\-String(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Str\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Sh\-A} )(const Dev\-Var\-Short\-Array $\ast$)
+\item 
+typedef Dev\-String(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Str\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Sta} )(Dev\-State)
+\item 
+typedef Dev\-String(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Str\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Str} )(Dev\-String)
+\item 
+typedef Dev\-String(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Str\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Str\-A} )(const Dev\-Var\-String\-Array $\ast$)
+\item 
+typedef Dev\-String(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Str\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-L} )(Dev\-U\-Long)
+\item 
+typedef Dev\-String(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Str\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-L\-A} )(const Dev\-Var\-U\-Long\-Array $\ast$)
+\item 
+typedef Dev\-String(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Str\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-S} )(Dev\-U\-Short)
+\item 
+typedef Dev\-String(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Str\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-S\-A} )(const Dev\-Var\-U\-Short\-Array $\ast$)
+\item 
+typedef Dev\-Var\-String\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Str\-A\-\_\-\-Cmd\-Meth\-Ptr} )()
+\item 
+typedef Dev\-Var\-String\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Str\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Bo} )(Dev\-Boolean)
+\item 
+typedef Dev\-Var\-String\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Str\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Ch\-A} )(const Dev\-Var\-Char\-Array $\ast$)
+\item 
+typedef Dev\-Var\-String\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Str\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Db} )(Dev\-Double)
+\item 
+typedef Dev\-Var\-String\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Str\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Db\-A} )(const Dev\-Var\-Double\-Array $\ast$)
+\item 
+typedef Dev\-Var\-String\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Str\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-D\-S\-A} )(const Dev\-Var\-Double\-String\-Array $\ast$)
+\item 
+typedef Dev\-Var\-String\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Str\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Fl} )(Dev\-Float)
+\item 
+typedef Dev\-Var\-String\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Str\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Fl\-A} )(const Dev\-Var\-Float\-Array $\ast$)
+\item 
+typedef Dev\-Var\-String\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Str\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Lg} )(Dev\-Long)
+\item 
+typedef Dev\-Var\-String\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Str\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Lg\-A} )(const Dev\-Var\-Long\-Array $\ast$)
+\item 
+typedef Dev\-Var\-String\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Str\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-L\-S\-A} )(const Dev\-Var\-Long\-String\-Array $\ast$)
+\item 
+typedef Dev\-Var\-String\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Str\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Sh} )(Dev\-Short)
+\item 
+typedef Dev\-Var\-String\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Str\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Sh\-A} )(const Dev\-Var\-Short\-Array $\ast$)
+\item 
+typedef Dev\-Var\-String\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Str\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Sta} )(Dev\-State)
+\item 
+typedef Dev\-Var\-String\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Str\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Str} )(Dev\-String)
+\item 
+typedef Dev\-Var\-String\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Str\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Str\-A} )(const Dev\-Var\-String\-Array $\ast$)
+\item 
+typedef Dev\-Var\-String\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Str\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-L} )(Dev\-U\-Long)
+\item 
+typedef Dev\-Var\-String\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Str\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-L\-A} )(const Dev\-Var\-U\-Long\-Array $\ast$)
+\item 
+typedef Dev\-Var\-String\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Str\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-S} )(Dev\-U\-Short)
+\item 
+typedef Dev\-Var\-String\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-Str\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-S\-A} )(const Dev\-Var\-U\-Short\-Array $\ast$)
+\item 
+typedef Dev\-U\-Long(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-L\-\_\-\-Cmd\-Meth\-Ptr} )()
+\item 
+typedef Dev\-U\-Long(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-L\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Bo} )(Dev\-Boolean)
+\item 
+typedef Dev\-U\-Long(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-L\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Ch\-A} )(const Dev\-Var\-Char\-Array $\ast$)
+\item 
+typedef Dev\-U\-Long(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-L\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Db} )(Dev\-Double)
+\item 
+typedef Dev\-U\-Long(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-L\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Db\-A} )(const Dev\-Var\-Double\-Array $\ast$)
+\item 
+typedef Dev\-U\-Long(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-L\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-D\-S\-A} )(const Dev\-Var\-Double\-String\-Array $\ast$)
+\item 
+typedef Dev\-U\-Long(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-L\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Fl} )(Dev\-Float)
+\item 
+typedef Dev\-U\-Long(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-L\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Fl\-A} )(const Dev\-Var\-Float\-Array $\ast$)
+\item 
+typedef Dev\-U\-Long(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-L\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Lg} )(Dev\-Long)
+\item 
+typedef Dev\-U\-Long(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-L\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Lg\-A} )(const Dev\-Var\-Long\-Array $\ast$)
+\item 
+typedef Dev\-U\-Long(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-L\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-L\-S\-A} )(const Dev\-Var\-Long\-String\-Array $\ast$)
+\item 
+typedef Dev\-U\-Long(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-L\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Sh} )(Dev\-Short)
+\item 
+typedef Dev\-U\-Long(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-L\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Sh\-A} )(const Dev\-Var\-Short\-Array $\ast$)
+\item 
+typedef Dev\-U\-Long(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-L\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Sta} )(Dev\-State)
+\item 
+typedef Dev\-U\-Long(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-L\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Str} )(Dev\-String)
+\item 
+typedef Dev\-U\-Long(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-L\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Str\-A} )(const Dev\-Var\-String\-Array $\ast$)
+\item 
+typedef Dev\-U\-Long(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-L\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-L} )(Dev\-U\-Long)
+\item 
+typedef Dev\-U\-Long(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-L\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-L\-A} )(const Dev\-Var\-U\-Long\-Array $\ast$)
+\item 
+typedef Dev\-U\-Long(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-L\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-S} )(Dev\-U\-Short)
+\item 
+typedef Dev\-U\-Long(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-L\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-S\-A} )(const Dev\-Var\-U\-Short\-Array $\ast$)
+\item 
+typedef Dev\-Var\-U\-Long\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-L\-A\-\_\-\-Cmd\-Meth\-Ptr} )()
+\item 
+typedef Dev\-Var\-U\-Long\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-L\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Bo} )(Dev\-Boolean)
+\item 
+typedef Dev\-Var\-U\-Long\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-L\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Ch\-A} )(const Dev\-Var\-Char\-Array $\ast$)
+\item 
+typedef Dev\-Var\-U\-Long\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-L\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Db} )(Dev\-Double)
+\item 
+typedef Dev\-Var\-U\-Long\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-L\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Db\-A} )(const Dev\-Var\-Double\-Array $\ast$)
+\item 
+typedef Dev\-Var\-U\-Long\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-L\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-D\-S\-A} )(const Dev\-Var\-Double\-String\-Array $\ast$)
+\item 
+typedef Dev\-Var\-U\-Long\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-L\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Fl} )(Dev\-Float)
+\item 
+typedef Dev\-Var\-U\-Long\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-L\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Fl\-A} )(const Dev\-Var\-Float\-Array $\ast$)
+\item 
+typedef Dev\-Var\-U\-Long\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-L\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Lg} )(Dev\-Long)
+\item 
+typedef Dev\-Var\-U\-Long\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-L\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Lg\-A} )(const Dev\-Var\-Long\-Array $\ast$)
+\item 
+typedef Dev\-Var\-U\-Long\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-L\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-L\-S\-A} )(const Dev\-Var\-Long\-String\-Array $\ast$)
+\item 
+typedef Dev\-Var\-U\-Long\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-L\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Sh} )(Dev\-Short)
+\item 
+typedef Dev\-Var\-U\-Long\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-L\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Sh\-A} )(const Dev\-Var\-Short\-Array $\ast$)
+\item 
+typedef Dev\-Var\-U\-Long\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-L\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Sta} )(Dev\-State)
+\item 
+typedef Dev\-Var\-U\-Long\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-L\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Str} )(Dev\-String)
+\item 
+typedef Dev\-Var\-U\-Long\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-L\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Str\-A} )(const Dev\-Var\-String\-Array $\ast$)
+\item 
+typedef Dev\-Var\-U\-Long\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-L\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-L} )(Dev\-U\-Long)
+\item 
+typedef Dev\-Var\-U\-Long\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-L\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-L\-A} )(const Dev\-Var\-U\-Long\-Array $\ast$)
+\item 
+typedef Dev\-Var\-U\-Long\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-L\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-S} )(Dev\-U\-Short)
+\item 
+typedef Dev\-Var\-U\-Long\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-L\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-S\-A} )(const Dev\-Var\-U\-Short\-Array $\ast$)
+\item 
+typedef Dev\-U\-Short(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-S\-\_\-\-Cmd\-Meth\-Ptr} )()
+\item 
+typedef Dev\-U\-Short(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-S\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Bo} )(Dev\-Boolean)
+\item 
+typedef Dev\-U\-Short(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-S\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Ch\-A} )(const Dev\-Var\-Char\-Array $\ast$)
+\item 
+typedef Dev\-U\-Short(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-S\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Db} )(Dev\-Double)
+\item 
+typedef Dev\-U\-Short(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-S\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Db\-A} )(const Dev\-Var\-Double\-Array $\ast$)
+\item 
+typedef Dev\-U\-Short(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-S\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-D\-S\-A} )(const Dev\-Var\-Double\-String\-Array $\ast$)
+\item 
+typedef Dev\-U\-Short(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-S\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Fl} )(Dev\-Float)
+\item 
+typedef Dev\-U\-Short(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-S\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Fl\-A} )(const Dev\-Var\-Float\-Array $\ast$)
+\item 
+typedef Dev\-U\-Short(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-S\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Lg} )(Dev\-Long)
+\item 
+typedef Dev\-U\-Short(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-S\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Lg\-A} )(const Dev\-Var\-Long\-Array $\ast$)
+\item 
+typedef Dev\-U\-Short(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-S\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-L\-S\-A} )(const Dev\-Var\-Long\-String\-Array $\ast$)
+\item 
+typedef Dev\-U\-Short(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-S\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Sh} )(Dev\-Short)
+\item 
+typedef Dev\-U\-Short(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-S\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Sh\-A} )(const Dev\-Var\-Short\-Array $\ast$)
+\item 
+typedef Dev\-U\-Short(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-S\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Sta} )(Dev\-State)
+\item 
+typedef Dev\-U\-Short(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-S\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Str} )(Dev\-String)
+\item 
+typedef Dev\-U\-Short(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-S\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Str\-A} )(const Dev\-Var\-String\-Array $\ast$)
+\item 
+typedef Dev\-U\-Short(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-S\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-L} )(Dev\-U\-Long)
+\item 
+typedef Dev\-U\-Short(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-S\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-L\-A} )(const Dev\-Var\-U\-Long\-Array $\ast$)
+\item 
+typedef Dev\-U\-Short(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-S\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-S} )(Dev\-U\-Short)
+\item 
+typedef Dev\-U\-Short(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-S\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-S\-A} )(const Dev\-Var\-U\-Short\-Array $\ast$)
+\item 
+typedef Dev\-Var\-U\-Short\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-S\-A\-\_\-\-Cmd\-Meth\-Ptr} )()
+\item 
+typedef Dev\-Var\-U\-Short\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-S\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Bo} )(Dev\-Boolean)
+\item 
+typedef Dev\-Var\-U\-Short\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-S\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Ch\-A} )(const Dev\-Var\-Char\-Array $\ast$)
+\item 
+typedef Dev\-Var\-U\-Short\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-S\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Db} )(Dev\-Double)
+\item 
+typedef Dev\-Var\-U\-Short\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-S\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Db\-A} )(const Dev\-Var\-Double\-Array $\ast$)
+\item 
+typedef Dev\-Var\-U\-Short\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-S\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-D\-S\-A} )(const Dev\-Var\-Double\-String\-Array $\ast$)
+\item 
+typedef Dev\-Var\-U\-Short\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-S\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Fl} )(Dev\-Float)
+\item 
+typedef Dev\-Var\-U\-Short\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-S\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Fl\-A} )(const Dev\-Var\-Float\-Array $\ast$)
+\item 
+typedef Dev\-Var\-U\-Short\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-S\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Lg} )(Dev\-Long)
+\item 
+typedef Dev\-Var\-U\-Short\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-S\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Lg\-A} )(const Dev\-Var\-Long\-Array $\ast$)
+\item 
+typedef Dev\-Var\-U\-Short\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-S\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-L\-S\-A} )(const Dev\-Var\-Long\-String\-Array $\ast$)
+\item 
+typedef Dev\-Var\-U\-Short\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-S\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Sh} )(Dev\-Short)
+\item 
+typedef Dev\-Var\-U\-Short\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-S\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Sh\-A} )(const Dev\-Var\-Short\-Array $\ast$)
+\item 
+typedef Dev\-Var\-U\-Short\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-S\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Sta} )(Dev\-State)
+\item 
+typedef Dev\-Var\-U\-Short\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-S\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Str} )(Dev\-String)
+\item 
+typedef Dev\-Var\-U\-Short\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-S\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-Str\-A} )(const Dev\-Var\-String\-Array $\ast$)
+\item 
+typedef Dev\-Var\-U\-Short\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-S\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-L} )(Dev\-U\-Long)
+\item 
+typedef Dev\-Var\-U\-Short\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-S\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-L\-A} )(const Dev\-Var\-U\-Long\-Array $\ast$)
+\item 
+typedef Dev\-Var\-U\-Short\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-S\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-S} )(Dev\-U\-Short)
+\item 
+typedef Dev\-Var\-U\-Short\-Array \\*
+$\ast$(Device\-Impl\-::$\ast$ {\bf Tango\-::\-U\-S\-A\-\_\-\-Cmd\-Meth\-Ptr\-\_\-\-U\-S\-A} )(const Dev\-Var\-U\-Short\-Array $\ast$)
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf Tango\-::\-\_\-\-Fwd\-Att\-Error} \{ \\*
+{\bf Tango\-::\-F\-W\-D\-\_\-\-N\-O\-\_\-\-E\-R\-R\-O\-R} = 0, 
+\\*
+{\bf Tango\-::\-F\-W\-D\-\_\-\-W\-R\-O\-N\-G\-\_\-\-A\-T\-T\-R}, 
+\\*
+{\bf Tango\-::\-F\-W\-D\-\_\-\-W\-R\-O\-N\-G\-\_\-\-D\-E\-V}, 
+\\*
+{\bf Tango\-::\-F\-W\-D\-\_\-\-R\-O\-O\-T\-\_\-\-D\-E\-V\-\_\-\-L\-O\-C\-A\-L\-\_\-\-D\-E\-V}, 
+\\*
+{\bf Tango\-::\-F\-W\-D\-\_\-\-M\-I\-S\-S\-I\-N\-G\-\_\-\-R\-O\-O\-T}, 
+\\*
+{\bf Tango\-::\-F\-W\-D\-\_\-\-W\-R\-O\-N\-G\-\_\-\-S\-Y\-N\-T\-A\-X}, 
+\\*
+{\bf Tango\-::\-F\-W\-D\-\_\-\-R\-O\-O\-T\-\_\-\-D\-E\-V\-\_\-\-N\-O\-T\-\_\-\-S\-T\-A\-R\-T\-E\-D}, 
+\\*
+{\bf Tango\-::\-F\-W\-D\-\_\-\-D\-O\-U\-B\-L\-E\-\_\-\-U\-S\-E\-D}, 
+\\*
+{\bf Tango\-::\-F\-W\-D\-\_\-\-T\-O\-O\-\_\-\-O\-L\-D\-\_\-\-L\-O\-C\-A\-L\-\_\-\-D\-E\-V\-I\-C\-E}, 
+\\*
+{\bf Tango\-::\-F\-W\-D\-\_\-\-T\-O\-O\-\_\-\-O\-L\-D\-\_\-\-R\-O\-O\-T\-\_\-\-D\-E\-V\-I\-C\-E}, 
+\\*
+{\bf Tango\-::\-F\-W\-D\-\_\-\-C\-O\-N\-F\-\_\-\-L\-O\-O\-P}, 
+\\*
+{\bf Tango\-::\-F\-W\-D\-\_\-\-E\-R\-R\-\_\-\-U\-N\-K\-N\-O\-W\-N}
+ \}
+\item 
+enum {\bf Tango\-::\-Access\-Control\-Type} \{ \\*
+{\bf Tango\-::\-A\-C\-C\-E\-S\-S\-\_\-\-R\-E\-A\-D} = 0, 
+\\*
+{\bf Tango\-::\-A\-C\-C\-E\-S\-S\-\_\-\-W\-R\-I\-T\-E}
+ \}
+\item 
+enum {\bf Tango\-::\-Att\-Req\-Type} \{ \\*
+{\bf Tango\-::\-R\-E\-A\-D\-\_\-\-R\-E\-Q} = 0, 
+\\*
+{\bf Tango\-::\-W\-R\-I\-T\-E\-\_\-\-R\-E\-Q}
+ \}
+\item 
+enum {\bf Tango\-::\-Attr\-Serial\-Model} \{ \\*
+{\bf Tango\-::\-A\-T\-T\-R\-\_\-\-N\-O\-\_\-\-S\-Y\-N\-C} =0, 
+\\*
+{\bf Tango\-::\-A\-T\-T\-R\-\_\-\-B\-Y\-\_\-\-K\-E\-R\-N\-E\-L}, 
+\\*
+{\bf Tango\-::\-A\-T\-T\-R\-\_\-\-B\-Y\-\_\-\-U\-S\-E\-R}
+ \}
+\item 
+enum {\bf Tango\-::\-Channel\-Type} \{ \\*
+{\bf Tango\-::\-Z\-M\-Q} = 0, 
+\\*
+{\bf Tango\-::\-N\-O\-T\-I\-F\-D}
+ \}
+\item 
+enum {\bf Tango\-::\-Cmd\-Arg\-Type} \{ \\*
+{\bf Tango\-::\-D\-E\-V\-\_\-\-V\-O\-I\-D} = 0, 
+\\*
+{\bf Tango\-::\-D\-E\-V\-\_\-\-B\-O\-O\-L\-E\-A\-N}, 
+\\*
+{\bf Tango\-::\-D\-E\-V\-\_\-\-S\-H\-O\-R\-T}, 
+\\*
+{\bf Tango\-::\-D\-E\-V\-\_\-\-L\-O\-N\-G}, 
+\\*
+{\bf Tango\-::\-D\-E\-V\-\_\-\-F\-L\-O\-A\-T}, 
+\\*
+{\bf Tango\-::\-D\-E\-V\-\_\-\-D\-O\-U\-B\-L\-E}, 
+\\*
+{\bf Tango\-::\-D\-E\-V\-\_\-\-U\-S\-H\-O\-R\-T}, 
+\\*
+{\bf Tango\-::\-D\-E\-V\-\_\-\-U\-L\-O\-N\-G}, 
+\\*
+{\bf Tango\-::\-D\-E\-V\-\_\-\-S\-T\-R\-I\-N\-G}, 
+\\*
+{\bf Tango\-::\-D\-E\-V\-V\-A\-R\-\_\-\-C\-H\-A\-R\-A\-R\-R\-A\-Y}, 
+\\*
+{\bf Tango\-::\-D\-E\-V\-V\-A\-R\-\_\-\-S\-H\-O\-R\-T\-A\-R\-R\-A\-Y}, 
+\\*
+{\bf Tango\-::\-D\-E\-V\-V\-A\-R\-\_\-\-L\-O\-N\-G\-A\-R\-R\-A\-Y}, 
+\\*
+{\bf Tango\-::\-D\-E\-V\-V\-A\-R\-\_\-\-F\-L\-O\-A\-T\-A\-R\-R\-A\-Y}, 
+\\*
+{\bf Tango\-::\-D\-E\-V\-V\-A\-R\-\_\-\-D\-O\-U\-B\-L\-E\-A\-R\-R\-A\-Y}, 
+\\*
+{\bf Tango\-::\-D\-E\-V\-V\-A\-R\-\_\-\-U\-S\-H\-O\-R\-T\-A\-R\-R\-A\-Y}, 
+\\*
+{\bf Tango\-::\-D\-E\-V\-V\-A\-R\-\_\-\-U\-L\-O\-N\-G\-A\-R\-R\-A\-Y}, 
+\\*
+{\bf Tango\-::\-D\-E\-V\-V\-A\-R\-\_\-\-S\-T\-R\-I\-N\-G\-A\-R\-R\-A\-Y}, 
+\\*
+{\bf Tango\-::\-D\-E\-V\-V\-A\-R\-\_\-\-L\-O\-N\-G\-S\-T\-R\-I\-N\-G\-A\-R\-R\-A\-Y}, 
+\\*
+{\bf Tango\-::\-D\-E\-V\-V\-A\-R\-\_\-\-D\-O\-U\-B\-L\-E\-S\-T\-R\-I\-N\-G\-A\-R\-R\-A\-Y}, 
+\\*
+{\bf Tango\-::\-D\-E\-V\-\_\-\-S\-T\-A\-T\-E}, 
+\\*
+{\bf Tango\-::\-C\-O\-N\-S\-T\-\_\-\-D\-E\-V\-\_\-\-S\-T\-R\-I\-N\-G}, 
+\\*
+{\bf Tango\-::\-D\-E\-V\-V\-A\-R\-\_\-\-B\-O\-O\-L\-E\-A\-N\-A\-R\-R\-A\-Y}, 
+\\*
+{\bf Tango\-::\-D\-E\-V\-\_\-\-U\-C\-H\-A\-R}, 
+\\*
+{\bf Tango\-::\-D\-E\-V\-\_\-\-L\-O\-N\-G64}, 
+\\*
+{\bf Tango\-::\-D\-E\-V\-\_\-\-U\-L\-O\-N\-G64}, 
+\\*
+{\bf Tango\-::\-D\-E\-V\-V\-A\-R\-\_\-\-L\-O\-N\-G64\-A\-R\-R\-A\-Y}, 
+\\*
+{\bf Tango\-::\-D\-E\-V\-V\-A\-R\-\_\-\-U\-L\-O\-N\-G64\-A\-R\-R\-A\-Y}, 
+\\*
+{\bf Tango\-::\-D\-E\-V\-\_\-\-I\-N\-T}, 
+\\*
+{\bf Tango\-::\-D\-E\-V\-\_\-\-E\-N\-C\-O\-D\-E\-D}, 
+\\*
+{\bf Tango\-::\-D\-E\-V\-\_\-\-E\-N\-U\-M}, 
+\\*
+{\bf Tango\-::\-D\-E\-V\-\_\-\-P\-I\-P\-E\-\_\-\-B\-L\-O\-B}, 
+\\*
+{\bf Tango\-::\-D\-E\-V\-V\-A\-R\-\_\-\-S\-T\-A\-T\-E\-A\-R\-R\-A\-Y}, 
+\\*
+{\bf Tango\-::\-D\-A\-T\-A\-\_\-\-T\-Y\-P\-E\-\_\-\-U\-N\-K\-N\-O\-W\-N} = 100
+ \}
+\item 
+enum {\bf Tango\-::\-Error\-Management\-Type} \{ \\*
+{\bf Tango\-::\-A\-B\-O\-R\-T\-\_\-\-O\-N\-\_\-\-E\-R\-R\-O\-R} =0, 
+\\*
+{\bf Tango\-::\-C\-O\-N\-T\-I\-N\-U\-E\-\_\-\-O\-N\-\_\-\-E\-R\-R\-O\-R}, 
+\\*
+{\bf Tango\-::num\-Error\-Management\-Type}
+ \}
+\begin{DoxyCompactList}\small\item\em Possible error management with write\-\_\-read\-\_\-attribute call. \end{DoxyCompactList}\item 
+enum {\bf Tango\-::\-Event\-Type} \{ \\*
+{\bf Tango\-::\-C\-H\-A\-N\-G\-E\-\_\-\-E\-V\-E\-N\-T} =0, 
+\\*
+{\bf Tango\-::\-Q\-U\-A\-L\-I\-T\-Y\-\_\-\-E\-V\-E\-N\-T}, 
+\\*
+{\bf Tango\-::\-P\-E\-R\-I\-O\-D\-I\-C\-\_\-\-E\-V\-E\-N\-T}, 
+\\*
+{\bf Tango\-::\-A\-R\-C\-H\-I\-V\-E\-\_\-\-E\-V\-E\-N\-T}, 
+\\*
+{\bf Tango\-::\-U\-S\-E\-R\-\_\-\-E\-V\-E\-N\-T}, 
+\\*
+{\bf Tango\-::\-A\-T\-T\-R\-\_\-\-C\-O\-N\-F\-\_\-\-E\-V\-E\-N\-T}, 
+\\*
+{\bf Tango\-::\-D\-A\-T\-A\-\_\-\-R\-E\-A\-D\-Y\-\_\-\-E\-V\-E\-N\-T}, 
+\\*
+{\bf Tango\-::\-I\-N\-T\-E\-R\-F\-A\-C\-E\-\_\-\-C\-H\-A\-N\-G\-E\-\_\-\-E\-V\-E\-N\-T}, 
+\\*
+{\bf Tango\-::\-P\-I\-P\-E\-\_\-\-E\-V\-E\-N\-T}, 
+\\*
+{\bf Tango\-::num\-Event\-Type}
+ \}
+\begin{DoxyCompactList}\small\item\em Possible event type. \end{DoxyCompactList}\item 
+enum {\bf Tango\-::\-Keep\-Alive\-Cmd\-Code} \{ {\bf Tango\-::\-E\-X\-I\-T\-\_\-\-T\-H} = 0
+ \}
+\item 
+enum {\bf Tango\-::\-Lock\-Cmd\-Code} \{ \\*
+{\bf Tango\-::\-L\-O\-C\-K\-\_\-\-A\-D\-D\-\_\-\-D\-E\-V} = 0, 
+\\*
+{\bf Tango\-::\-L\-O\-C\-K\-\_\-\-R\-E\-M\-\_\-\-D\-E\-V}, 
+\\*
+{\bf Tango\-::\-L\-O\-C\-K\-\_\-\-U\-N\-L\-O\-C\-K\-\_\-\-A\-L\-L\-\_\-\-E\-X\-I\-T}, 
+\\*
+{\bf Tango\-::\-L\-O\-C\-K\-\_\-\-E\-X\-I\-T}
+ \}
+\item 
+enum {\bf Tango\-::\-Log\-Level} \{ \\*
+{\bf Tango\-::\-L\-O\-G\-\_\-\-O\-F\-F} = 0, 
+\\*
+{\bf Tango\-::\-L\-O\-G\-\_\-\-F\-A\-T\-A\-L}, 
+\\*
+{\bf Tango\-::\-L\-O\-G\-\_\-\-E\-R\-R\-O\-R}, 
+\\*
+{\bf Tango\-::\-L\-O\-G\-\_\-\-W\-A\-R\-N}, 
+\\*
+{\bf Tango\-::\-L\-O\-G\-\_\-\-I\-N\-F\-O}, 
+\\*
+{\bf Tango\-::\-L\-O\-G\-\_\-\-D\-E\-B\-U\-G}
+ \}
+\item 
+enum {\bf Tango\-::\-Log\-Target} \{ \\*
+{\bf Tango\-::\-L\-O\-G\-\_\-\-C\-O\-N\-S\-O\-L\-E} = 0, 
+\\*
+{\bf Tango\-::\-L\-O\-G\-\_\-\-F\-I\-L\-E}, 
+\\*
+{\bf Tango\-::\-L\-O\-G\-\_\-\-D\-E\-V\-I\-C\-E}
+ \}
+\item 
+enum {\bf Tango\-::\-Mess\-Box\-Type} \{ \\*
+{\bf Tango\-::\-S\-T\-O\-P} = 0, 
+\\*
+{\bf Tango\-::\-I\-N\-F\-O}
+ \}
+\item 
+enum {\bf Tango\-::\-Min\-Max\-Value\-Check} \{ \\*
+{\bf Tango\-::\-M\-I\-N} = 0, 
+\\*
+{\bf Tango\-::\-M\-A\-X}
+ \}
+\item 
+enum {\bf Tango\-::\-Pipe\-Serial\-Model} \{ \\*
+{\bf Tango\-::\-P\-I\-P\-E\-\_\-\-N\-O\-\_\-\-S\-Y\-N\-C} =0, 
+\\*
+{\bf Tango\-::\-P\-I\-P\-E\-\_\-\-B\-Y\-\_\-\-K\-E\-R\-N\-E\-L}, 
+\\*
+{\bf Tango\-::\-P\-I\-P\-E\-\_\-\-B\-Y\-\_\-\-U\-S\-E\-R}
+ \}
+\item 
+enum {\bf Tango\-::\-Poll\-Cmd\-Code} \{ \\*
+{\bf Tango\-::\-P\-O\-L\-L\-\_\-\-A\-D\-D\-\_\-\-O\-B\-J} = 0, 
+\\*
+{\bf Tango\-::\-P\-O\-L\-L\-\_\-\-R\-E\-M\-\_\-\-O\-B\-J}, 
+\\*
+{\bf Tango\-::\-P\-O\-L\-L\-\_\-\-S\-T\-A\-R\-T}, 
+\\*
+{\bf Tango\-::\-P\-O\-L\-L\-\_\-\-S\-T\-O\-P}, 
+\\*
+{\bf Tango\-::\-P\-O\-L\-L\-\_\-\-U\-P\-D\-\_\-\-P\-E\-R\-I\-O\-D}, 
+\\*
+{\bf Tango\-::\-P\-O\-L\-L\-\_\-\-R\-E\-M\-\_\-\-D\-E\-V}, 
+\\*
+{\bf Tango\-::\-P\-O\-L\-L\-\_\-\-E\-X\-I\-T}, 
+\\*
+{\bf Tango\-::\-P\-O\-L\-L\-\_\-\-R\-E\-M\-\_\-\-E\-X\-T\-\_\-\-T\-R\-I\-G\-\_\-\-O\-B\-J}, 
+\\*
+{\bf Tango\-::\-P\-O\-L\-L\-\_\-\-A\-D\-D\-\_\-\-H\-E\-A\-R\-T\-B\-E\-A\-T}, 
+\\*
+{\bf Tango\-::\-P\-O\-L\-L\-\_\-\-R\-E\-M\-\_\-\-H\-E\-A\-R\-T\-B\-E\-A\-T}
+ \}
+\item 
+enum {\bf Tango\-::\-Poll\-Obj\-Type} \{ \\*
+{\bf Tango\-::\-P\-O\-L\-L\-\_\-\-C\-M\-D} = 0, 
+\\*
+{\bf Tango\-::\-P\-O\-L\-L\-\_\-\-A\-T\-T\-R}, 
+\\*
+{\bf Tango\-::\-E\-V\-E\-N\-T\-\_\-\-H\-E\-A\-R\-T\-B\-E\-A\-T}, 
+\\*
+{\bf Tango\-::\-S\-T\-O\-R\-E\-\_\-\-S\-U\-B\-D\-E\-V}
+ \}
+\item 
+enum {\bf Tango\-::\-Serial\-Model} \{ \\*
+{\bf Tango\-::\-B\-Y\-\_\-\-D\-E\-V\-I\-C\-E} = 0, 
+\\*
+{\bf Tango\-::\-B\-Y\-\_\-\-C\-L\-A\-S\-S}, 
+\\*
+{\bf Tango\-::\-B\-Y\-\_\-\-P\-R\-O\-C\-E\-S\-S}, 
+\\*
+{\bf Tango\-::\-N\-O\-\_\-\-S\-Y\-N\-C}
+ \}
+\item 
+enum {\bf Tango\-::\-Zmq\-Cmd\-Code} \{ \\*
+{\bf Tango\-::\-Z\-M\-Q\-\_\-\-E\-N\-D} = 0, 
+\\*
+{\bf Tango\-::\-Z\-M\-Q\-\_\-\-C\-O\-N\-N\-E\-C\-T\-\_\-\-H\-E\-A\-R\-T\-B\-E\-A\-T}, 
+\\*
+{\bf Tango\-::\-Z\-M\-Q\-\_\-\-D\-I\-S\-C\-O\-N\-N\-E\-C\-T\-\_\-\-H\-E\-A\-R\-T\-B\-E\-A\-T}, 
+\\*
+{\bf Tango\-::\-Z\-M\-Q\-\_\-\-C\-O\-N\-N\-E\-C\-T\-\_\-\-E\-V\-E\-N\-T}, 
+\\*
+{\bf Tango\-::\-Z\-M\-Q\-\_\-\-D\-I\-S\-C\-O\-N\-N\-E\-C\-T\-\_\-\-E\-V\-E\-N\-T}, 
+\\*
+{\bf Tango\-::\-Z\-M\-Q\-\_\-\-C\-O\-N\-N\-E\-C\-T\-\_\-\-M\-C\-A\-S\-T\-\_\-\-E\-V\-E\-N\-T}, 
+\\*
+{\bf Tango\-::\-Z\-M\-Q\-\_\-\-D\-E\-L\-A\-Y\-\_\-\-E\-V\-E\-N\-T}, 
+\\*
+{\bf Tango\-::\-Z\-M\-Q\-\_\-\-R\-E\-L\-E\-A\-S\-E\-\_\-\-E\-V\-E\-N\-T}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-C\-C\-E\-S\-S\-\_\-\-S\-E\-R\-V\-I\-C\-E} = \char`\"{}Access\-Control\char`\"{}
+\item 
+const int {\bf Tango\-::\-A\-L\-L\-\_\-\-E\-V\-E\-N\-T\-S} = 0
+\item 
+const char $\ast$const {\bf Tango\-::\-All\-Attr} = \char`\"{}All attributes\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-All\-Attr\-\_\-3} = \char`\"{}All attributes\-\_\-3\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-All\-Cmd} = \char`\"{}All commands\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-All\-Pipe} = \char`\"{}All pipes\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-Alrm\-Value\-Not\-Spec} = \char`\"{}Not specified\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Already\-Polled} = \char`\"{}A\-P\-I\-\_\-\-Already\-Polled\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Asyn\-Reply\-Not\-Arrived} = \char`\"{}A\-P\-I\-\_\-\-Asyn\-Reply\-Not\-Arrived\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Attr\-Config} = \char`\"{}A\-P\-I\-\_\-\-Attr\-Config\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Attr\-Event\-Prop} = \char`\"{}A\-P\-I\-\_\-\-Attr\-Event\-Prop\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Attribute\-Failed} = \char`\"{}A\-P\-I\-\_\-\-Attribute\-Failed\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Attribute\-Not\-Data\-Ready\-Enabled} = \char`\"{}A\-P\-I\-\_\-\-Attribute\-Not\-Data\-Ready\-Enabled\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Attribute\-Polling\-Not\-Started} = \char`\"{}A\-P\-I\-\_\-\-Attribute\-Polling\-Not\-Started\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Attr\-Incorrect\-Data\-Number} = \char`\"{}A\-P\-I\-\_\-\-Attr\-Incorrect\-Data\-Number\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Attr\-No\-Alarm} = \char`\"{}A\-P\-I\-\_\-\-Attr\-No\-Alarm\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Attr\-Not\-Allowed} = \char`\"{}A\-P\-I\-\_\-\-Attr\-Not\-Allowed\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Attr\-Not\-Found} = \char`\"{}A\-P\-I\-\_\-\-Attr\-Not\-Found\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Attr\-Not\-Polled} = \char`\"{}A\-P\-I\-\_\-\-Attr\-Not\-Polled\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Attr\-Not\-Writable} = \char`\"{}A\-P\-I\-\_\-\-Attr\-Not\-Writable\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Attr\-Opt\-Prop} = \char`\"{}A\-P\-I\-\_\-\-Attr\-Opt\-Prop\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Attr\-Prop\-Value\-Not\-Set} = \char`\"{}A\-P\-I\-\_\-\-Attr\-Prop\-Value\-Not\-Set\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Attr\-Value\-Not\-Set} = \char`\"{}A\-P\-I\-\_\-\-Attr\-Value\-Not\-Set\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Attr\-Wrong\-Defined} = \char`\"{}A\-P\-I\-\_\-\-Attr\-Wrong\-Defined\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Attr\-Wrong\-Mem\-Value} = \char`\"{}A\-P\-I\-\_\-\-Attr\-Wrong\-Mem\-Value\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Bad\-Asyn\-Req\-Type} = \char`\"{}A\-P\-I\-\_\-\-Bad\-Asyn\-Req\-Type\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Bad\-Configuration\-Property} = \char`\"{}A\-P\-I\-\_\-\-Bad\-Configuration\-Property\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Black\-Box\-Argument} = \char`\"{}A\-P\-I\-\_\-\-Black\-Box\-Argument\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Black\-Box\-Empty} = \char`\"{}A\-P\-I\-\_\-\-Black\-Box\-Empty\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Cannot\-Check\-Access\-Control} = \char`\"{}A\-P\-I\-\_\-\-Cannot\-Check\-Access\-Control\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Cannot\-Open\-File} = \char`\"{}A\-P\-I\-\_\-\-Cannot\-Open\-File\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Cant\-Activate\-P\-O\-A\-Manager} = \char`\"{}A\-P\-I\-\_\-\-Cant\-Activate\-P\-O\-A\-Manager\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Cant\-Connect\-To\-Device} = \char`\"{}A\-P\-I\-\_\-\-Cant\-Connect\-To\-Device\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Cant\-Create\-Class\-Poa} = \char`\"{}A\-P\-I\-\_\-\-Cant\-Create\-Class\-Poa\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Cant\-Create\-Locking\-Thread} = \char`\"{}A\-P\-I\-\_\-\-Cant\-Create\-Locking\-Thread\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Cant\-Destroy\-Device} = \char`\"{}A\-P\-I\-\_\-\-Cant\-Destroy\-Device\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Cant\-Find\-Locking\-Thread} = \char`\"{}A\-P\-I\-\_\-\-Cant\-Find\-Locking\-Thread\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Cant\-Get\-Client\-Ident} = \char`\"{}A\-P\-I\-\_\-\-Cant\-Get\-Client\-Ident\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Cant\-Get\-Dev\-Object\-Id} = \char`\"{}A\-P\-I\-\_\-\-Cant\-Get\-Dev\-Object\-Id\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Cant\-Install\-Signal} = \char`\"{}A\-P\-I\-\_\-\-Cant\-Install\-Signal\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Cant\-Retrieve\-Class} = \char`\"{}A\-P\-I\-\_\-\-Cant\-Retrieve\-Class\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Cant\-Retrieve\-Class\-List} = \char`\"{}A\-P\-I\-\_\-\-Cant\-Retrieve\-Class\-List\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Cant\-Store\-Device\-Class} = \char`\"{}A\-P\-I\-\_\-\-Cant\-Store\-Device\-Class\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Class\-Not\-Found} = \char`\"{}A\-P\-I\-\_\-\-Class\-Not\-Found\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Cmd\-Argument\-Type\-Not\-Supported} = \char`\"{}A\-P\-I\-\_\-\-Cmd\-Argument\-Type\-Not\-Supported\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Cmd\-Not\-Polled} = \char`\"{}A\-P\-I\-\_\-\-Cmd\-Not\-Polled\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Command\-Failed} = \char`\"{}A\-P\-I\-\_\-\-Command\-Failed\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Command\-Not\-Allowed} = \char`\"{}A\-P\-I\-\_\-\-Command\-Not\-Allowed\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Command\-Not\-Found} = \char`\"{}A\-P\-I\-\_\-\-Command\-Not\-Found\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Command\-Timed\-Out} = \char`\"{}A\-P\-I\-\_\-\-Command\-Timed\-Out\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Connection\-Failed} = \char`\"{}A\-P\-I\-\_\-\-Connection\-Failed\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Corba\-Sys\-Exception} = \char`\"{}A\-P\-I\-\_\-\-Corba\-Sys\-Exception\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Corrupted\-Database} = \char`\"{}A\-P\-I\-\_\-\-Corrupted\-Database\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Database\-Access} = \char`\"{}A\-P\-I\-\_\-\-Database\-Access\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Database\-Cache\-Access} = \char`\"{}A\-P\-I\-\_\-\-Database\-Cache\-Access\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Database\-File\-Error} = \char`\"{}A\-P\-I\-\_\-\-Database\-File\-Error\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Decode\-Err} = \char`\"{}A\-P\-I\-\_\-\-Decode\-Err\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Deprecated\-Command} = \char`\"{}A\-P\-I\-\_\-\-Deprecated\-Command\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Device\-Locked} = \char`\"{}A\-P\-I\-\_\-\-Device\-Locked\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Device\-Not\-Exported} = \char`\"{}A\-P\-I\-\_\-\-Device\-Not\-Exported\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Device\-Not\-Found} = \char`\"{}A\-P\-I\-\_\-\-Device\-Not\-Found\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Device\-Not\-Locked} = \char`\"{}A\-P\-I\-\_\-\-Device\-Not\-Locked\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Device\-Not\-Polled} = \char`\"{}A\-P\-I\-\_\-\-Device\-Not\-Polled\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Device\-Unlockable} = \char`\"{}A\-P\-I\-\_\-\-Device\-Unlockable\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Device\-Unlocked} = \char`\"{}A\-P\-I\-\_\-\-Device\-Unlocked\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-D\-Server\-Class\-Not\-Initialised} = \char`\"{}A\-P\-I\-\_\-\-D\-Server\-Class\-Not\-Initialised\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-D\-S\-Failed\-Registering\-Event} = \char`\"{}A\-P\-I\-\_\-\-D\-S\-Failed\-Registering\-Event\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Empty\-Data\-Element} = \char`\"{}A\-P\-I\-\_\-\-Empty\-Data\-Element\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Empty\-Device\-Attribute} = \char`\"{}A\-P\-I\-\_\-\-Empty\-Device\-Attribute\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Event\-Consumer} = \char`\"{}A\-P\-I\-\_\-\-Event\-Consumer\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Event\-Properties\-Not\-Set} = \char`\"{}A\-P\-I\-\_\-\-Event\-Properties\-Not\-Set\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Event\-Queues} = \char`\"{}A\-P\-I\-\_\-\-Event\-Queues\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Event\-Supplier\-Not\-Constructed} = \char`\"{}A\-P\-I\-\_\-\-Event\-Supplier\-Not\-Constructed\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Fwd\-Attr\-Inconsistency} = \char`\"{}A\-P\-I\-\_\-\-Fwd\-Attr\-Inconsistency\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Fwd\-Attr\-Not\-Configured} = \char`\"{}A\-P\-I\-\_\-\-Fwd\-Attr\-Not\-Configured\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Incoherent\-Db\-Data} = \char`\"{}A\-P\-I\-\_\-\-Incoherent\-Db\-Data\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Incoherent\-Dev\-Data} = \char`\"{}A\-P\-I\-\_\-\-Incoherent\-Dev\-Data\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Incoherent\-Values} = \char`\"{}A\-P\-I\-\_\-\-Incoherent\-Values\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Incompatible\-Argument\-Type} = \char`\"{}A\-P\-I\-\_\-\-Incompatible\-Argument\-Type\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Incompatible\-Attr\-Data\-Type} = \char`\"{}A\-P\-I\-\_\-\-Incompatible\-Attr\-Data\-Type\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Incompatible\-Cmd\-Argument\-Type} = \char`\"{}A\-P\-I\-\_\-\-Incompatible\-Cmd\-Argument\-Type\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Init\-Method\-Not\-Found} = \char`\"{}A\-P\-I\-\_\-\-Init\-Method\-Not\-Found\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Init\-Not\-Public} = \char`\"{}A\-P\-I\-\_\-\-Init\-Not\-Public\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Init\-Throws\-Exception} = \char`\"{}A\-P\-I\-\_\-\-Init\-Throws\-Exception\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Internal\-Error} = \char`\"{}A\-P\-I\-\_\-\-Internal\-Error\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Invalid\-Args} = \char`\"{}A\-P\-I\-\_\-\-Invalid\-Args\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Java\-Runtime\-Security\-Exception} = \char`\"{}A\-P\-I\-\_\-\-Java\-Runtime\-Security\-Exception\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Mem\-Att\-Failed\-During\-Init} = \char`\"{}A\-P\-I\-\_\-\-Mem\-Att\-Failed\-During\-Init\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Memory\-Allocation} = \char`\"{}A\-P\-I\-\_\-\-Memory\-Allocation\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Method\-Argument} = \char`\"{}A\-P\-I\-\_\-\-Method\-Argument\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Method\-Not\-Found} = \char`\"{}A\-P\-I\-\_\-\-Method\-Not\-Found\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Missed\-Events} = \char`\"{}A\-P\-I\-\_\-\-Missed\-Events\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-No\-Data\-Yet} = \char`\"{}A\-P\-I\-\_\-\-No\-Data\-Yet\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Non\-Database\-Device} = \char`\"{}A\-P\-I\-\_\-\-Non\-Database\-Device\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Notification\-Service\-Failed} = \char`\"{}A\-P\-I\-\_\-\-Notification\-Service\-Failed\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Not\-Supported} = \char`\"{}A\-P\-I\-\_\-\-Not\-Supported\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Not\-Supported\-Feature} = \char`\"{}A\-P\-I\-\_\-\-Not\-Supported\-Feature\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Not\-Updated\-Any\-More} = \char`\"{}A\-P\-I\-\_\-\-Not\-Updated\-Any\-More\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Nt\-Debug\-Window\-Error} = \char`\"{}A\-P\-I\-\_\-\-Nt\-Debug\-Window\-Error\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Overloading\-Not\-Supported} = \char`\"{}A\-P\-I\-\_\-\-Overloading\-Not\-Supported\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Pipe\-Data\-Elt\-Not\-Found} = \char`\"{}A\-P\-I\-\_\-\-Pipe\-Data\-Elt\-Not\-Found\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Pipe\-Duplicate\-D\-E\-Name} = \char`\"{}A\-P\-I\-\_\-\-Pipe\-Duplicate\-D\-E\-Name\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Pipe\-Failed} = \char`\"{}A\-P\-I\-\_\-\-Pipe\-Failed\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Pipe\-No\-Data\-Element} = \char`\"{}A\-P\-I\-\_\-\-Pipe\-No\-Data\-Element\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Pipe\-Not\-Allowed} = \char`\"{}A\-P\-I\-\_\-\-Pipe\-Not\-Allowed\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Pipe\-Not\-Found} = \char`\"{}A\-P\-I\-\_\-\-Pipe\-Not\-Found\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Pipe\-Not\-Writable} = \char`\"{}A\-P\-I\-\_\-\-Pipe\-Not\-Writable\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Pipe\-Opt\-Prop} = \char`\"{}A\-P\-I\-\_\-\-Pipe\-Opt\-Prop\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Pipe\-Value\-Not\-Set} = \char`\"{}A\-P\-I\-\_\-\-Pipe\-Value\-Not\-Set\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Pipe\-Wrong\-Arg} = \char`\"{}A\-P\-I\-\_\-\-Pipe\-Wrong\-Arg\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Pipe\-Wrong\-Arg\-Number} = \char`\"{}A\-P\-I\-\_\-\-Pipe\-Wrong\-Arg\-Number\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Polled\-Device\-Not\-In\-Pool\-Conf} = \char`\"{}A\-P\-I\-\_\-\-Polled\-Device\-Not\-In\-Pool\-Conf\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Polled\-Device\-Not\-In\-Pool\-Map} = \char`\"{}A\-P\-I\-\_\-\-Polled\-Device\-Not\-In\-Pool\-Map\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Polling\-Thread\-Not\-Found} = \char`\"{}A\-P\-I\-\_\-\-Polling\-Thread\-Not\-Found\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Poll\-Obj\-Not\-Found} = \char`\"{}A\-P\-I\-\_\-\-Poll\-Obj\-Not\-Found\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Poll\-Ring\-Buffer\-Empty} = \char`\"{}A\-P\-I\-\_\-\-Poll\-Ring\-Buffer\-Empty\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Read\-Only\-Mode} = \char`\"{}A\-P\-I\-\_\-\-Read\-Only\-Mode\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Root\-Attr\-Failed} = \char`\"{}A\-P\-I\-\_\-\-Root\-Attr\-Failed\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Shutdown\-In\-Progress} = \char`\"{}A\-P\-I\-\_\-\-Shutdown\-In\-Progress\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Signal\-Out\-Of\-Range} = \char`\"{}A\-P\-I\-\_\-\-Signal\-Out\-Of\-Range\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Startup\-Sequence} = \char`\"{}A\-P\-I\-\_\-\-Startup\-Sequence\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Std\-Exception} = \char`\"{}A\-P\-I\-\_\-\-Std\-Exception\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-System\-Call\-Failed} = \char`\"{}A\-P\-I\-\_\-\-System\-Call\-Failed\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Tango\-Host\-Not\-Set} = \char`\"{}A\-P\-I\-\_\-\-Tango\-Host\-Not\-Set\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Unsupported\-Feature} = \char`\"{}A\-P\-I\-\_\-\-Unsupported\-Feature\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-W\-Attr\-Outside\-Limit} = \char`\"{}A\-P\-I\-\_\-\-W\-Attr\-Outside\-Limit\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Wizard\-Conf\-Error} = \char`\"{}A\-P\-I\-\_\-\-Wizard\-Conf\-Error\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Wrong\-Attribute\-Name\-Syntax} = \char`\"{}A\-P\-I\-\_\-\-Wrong\-Attribute\-Name\-Syntax\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Wrong\-Cmd\-Line\-Args} = \char`\"{}A\-P\-I\-\_\-\-Wrong\-Cmd\-Line\-Args\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Wrong\-Device\-Name\-Syntax} = \char`\"{}A\-P\-I\-\_\-\-Wrong\-Device\-Name\-Syntax\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Wrong\-Event\-Data} = \char`\"{}A\-P\-I\-\_\-\-Wrong\-Event\-Data\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Wrong\-Format} = \char`\"{}A\-P\-I\-\_\-\-Wrong\-Format\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Wrong\-History\-Data\-Buffer} = \char`\"{}A\-P\-I\-\_\-\-Wrong\-History\-Data\-Buffer\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Wrong\-Locking\-Status} = \char`\"{}A\-P\-I\-\_\-\-Wrong\-Locking\-Status\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Wrong\-Number\-Of\-Args} = \char`\"{}A\-P\-I\-\_\-\-Wrong\-Number\-Of\-Args\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Zmq\-Failed} = \char`\"{}A\-P\-I\-\_\-\-Zmq\-Failed\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-P\-I\-\_\-\-Zmq\-Init\-Failed} = \char`\"{}A\-P\-I\-\_\-\-Zmq\-Init\-Failed\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-A\-R\-R\-A\-Y\-\_\-\-P\-I\-P\-E} = \char`\"{}Array\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-Assoc\-Writ\-Not\-Spec} = \char`\"{}None\char`\"{}
+\item 
+const int {\bf Tango\-::\-A\-T\-T\-\_\-\-C\-O\-N\-F\-\_\-\-R\-E\-L\-\_\-\-N\-B} = 1
+\item 
+const int {\bf Tango\-::\-C\-L\-N\-T\-\_\-\-T\-I\-M\-E\-O\-U\-T} = 3000
+\item 
+const char $\ast$const {\bf Tango\-::\-C\-L\-N\-T\-\_\-\-T\-I\-M\-E\-O\-U\-T\-\_\-\-S\-T\-R} = \char`\"{}3000\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-Cmd\-Arg\-Type\-Name} [$\,$]
+\item 
+const char $\ast$const {\bf Tango\-::\-C\-O\-N\-F\-\_\-\-T\-Y\-P\-E\-\_\-\-E\-V\-E\-N\-T} = Event\-Name[A\-T\-T\-R\-\_\-\-C\-O\-N\-F\-\_\-\-E\-V\-E\-N\-T]
+\item 
+const char $\ast$const {\bf Tango\-::\-C\-O\-N\-T\-R\-O\-L\-\_\-\-S\-Y\-S\-T\-E\-M} = \char`\"{}Ctrl\-System\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-C\-T\-R\-L\-\_\-\-S\-O\-C\-K\-\_\-\-E\-N\-D\-P\-O\-I\-N\-T} = \char`\"{}inproc\-://control\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-D\-A\-T\-A\-\_\-\-R\-E\-A\-D\-Y\-\_\-\-T\-Y\-P\-E\-\_\-\-E\-V\-E\-N\-T} = Event\-Name[D\-A\-T\-A\-\_\-\-R\-E\-A\-D\-Y\-\_\-\-E\-V\-E\-N\-T]
+\item 
+const char $\ast$const {\bf Tango\-::\-D\-A\-T\-A\-B\-A\-S\-E\-\_\-\-C\-L\-A\-S\-S} = \char`\"{}Data\-Base\char`\"{}
+\item 
+const int {\bf Tango\-::\-D\-B\-\_\-\-C\-O\-N\-N\-E\-C\-T\-\_\-\-T\-I\-M\-E\-O\-U\-T} = 25000
+\item 
+const int {\bf Tango\-::\-D\-B\-\_\-\-R\-E\-C\-O\-N\-N\-E\-C\-T\-\_\-\-T\-I\-M\-E\-O\-U\-T} = 20000
+\item 
+const int {\bf Tango\-::\-D\-B\-\_\-\-S\-T\-A\-R\-T\-\_\-\-P\-H\-A\-S\-E\-\_\-\-R\-E\-T\-R\-I\-E\-S} = 3
+\item 
+const int {\bf Tango\-::\-D\-B\-\_\-\-T\-I\-M\-E\-O\-U\-T} = 13000
+\item 
+const char $\ast$const {\bf Tango\-::\-Db\-Obj\-Name} = \char`\"{}database\char`\"{}
+\item 
+const int {\bf Tango\-::\-D\-E\-F\-A\-U\-L\-T\-\_\-\-E\-V\-E\-N\-T\-\_\-\-P\-E\-R\-I\-O\-D} = 1000
+\item 
+const int {\bf Tango\-::\-D\-E\-F\-A\-U\-L\-T\-\_\-\-L\-O\-C\-K\-\_\-\-V\-A\-L\-I\-D\-I\-T\-Y} = 10
+\item 
+const char $\ast$const {\bf Tango\-::\-D\-E\-F\-A\-U\-L\-T\-\_\-\-O\-M\-N\-I\-\_\-\-C\-O\-N\-F\-\_\-\-F\-I\-L\-E} = \char`\"{}/etc/omni\-O\-R\-B.\-cfg\char`\"{}
+\item 
+const int {\bf Tango\-::\-D\-E\-F\-A\-U\-L\-T\-\_\-\-P\-O\-L\-L\-\_\-\-O\-L\-D\-\_\-\-F\-A\-C\-T\-O\-R} = 4
+\item 
+const int {\bf Tango\-::\-D\-E\-F\-A\-U\-L\-T\-\_\-\-P\-O\-L\-L\-I\-N\-G\-\_\-\-T\-H\-R\-E\-A\-D\-S\-\_\-\-P\-O\-O\-L\-\_\-\-S\-I\-Z\-E} = 1
+\item 
+const int {\bf Tango\-::\-D\-E\-F\-A\-U\-L\-T\-\_\-\-T\-I\-M\-E\-O\-U\-T} = 3200
+\item 
+const int {\bf Tango\-::\-Default\-Black\-Box\-Depth} = 50
+\item 
+const char $\ast$const {\bf Tango\-::\-Default\-Doc\-Url} = \char`\"{}http\-://www.\-tango-\/controls.\-org\char`\"{}
+\item 
+const int {\bf Tango\-::\-Default\-Max\-Seq} = 20
+\item 
+const int {\bf Tango\-::\-Default\-Poll\-Ring\-Depth} = 10
+\item 
+const bool {\bf Tango\-::\-Default\-Writ\-Attr\-Prop} = false
+\item 
+const double {\bf Tango\-::\-D\-E\-L\-T\-A\-\_\-\-P\-E\-R\-I\-O\-D\-I\-C} = 0.\-98
+\item 
+const int {\bf Tango\-::\-D\-E\-L\-T\-A\-\_\-\-P\-E\-R\-I\-O\-D\-I\-C\-\_\-\-L\-O\-N\-G} = 100
+\item 
+const int {\bf Tango\-::\-D\-E\-L\-T\-A\-\_\-\-T} = 1002000000
+\item 
+const char $\ast$const {\bf Tango\-::\-Desc\-Not\-Spec} = \char`\"{}No description\char`\"{}
+\item 
+const int {\bf Tango\-::\-D\-E\-V\-\_\-\-I\-N\-T\-R\-\_\-\-T\-H\-R\-E\-A\-D\-\_\-\-S\-L\-E\-E\-P\-\_\-\-T\-I\-M\-E} = 50
+\item 
+const char $\ast$const {\bf Tango\-::\-D\-E\-V\-I\-C\-E\-\_\-\-U\-N\-L\-O\-C\-K\-E\-D\-\_\-\-R\-E\-A\-S\-O\-N} = \char`\"{}A\-P\-I\-\_\-\-Device\-Unlocked\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-Dev\-State\-Name} [$\,$]
+\item 
+const int {\bf Tango\-::\-Dev\-Version} = 5
+\item 
+const double {\bf Tango\-::\-D\-I\-S\-C\-A\-R\-D\-\_\-\-T\-H\-R\-E\-S\-H\-O\-L\-D} = 0.\-02
+\item 
+const char $\ast$const {\bf Tango\-::\-Disp\-Unit\-Not\-Spec} = \char`\"{}No display unit\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-D\-S\-Device\-Domain} = \char`\"{}dserver\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-Env\-Variable} = \char`\"{}T\-A\-N\-G\-O\-\_\-\-H\-O\-S\-T\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-E\-V\-E\-N\-T\-\_\-\-C\-O\-M\-P\-A\-T} = \char`\"{}idl\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-E\-V\-E\-N\-T\-\_\-\-C\-O\-M\-P\-A\-T\-\_\-\-I\-D\-L5} = \char`\"{}idl5\-\_\-\char`\"{}
+\item 
+const int {\bf Tango\-::\-E\-V\-E\-N\-T\-\_\-\-C\-O\-M\-P\-A\-T\-\_\-\-I\-D\-L5\-\_\-\-S\-I\-Z\-E} = 5
+\item 
+const int {\bf Tango\-::\-E\-V\-E\-N\-T\-\_\-\-H\-E\-A\-R\-T\-B\-E\-A\-T\-\_\-\-P\-E\-R\-I\-O\-D} = 10
+\item 
+const char $\ast$const {\bf Tango\-::\-E\-V\-E\-N\-T\-\_\-\-M\-E\-T\-H\-O\-D\-\_\-\-N\-A\-M\-E} = \char`\"{}push\-\_\-zmq\-\_\-event\char`\"{}
+\item 
+const int {\bf Tango\-::\-E\-V\-E\-N\-T\-\_\-\-R\-E\-S\-U\-B\-S\-C\-R\-I\-B\-E\-\_\-\-P\-E\-R\-I\-O\-D} = 600
+\item 
+const char $\ast$const {\bf Tango\-::\-Event\-Name} [$\,$]
+\item 
+const char $\ast$const {\bf Tango\-::\-Format\-Not\-Spec} = Format\-Not\-Spec\-\_\-\-F\-L
+\item 
+const char $\ast$const {\bf Tango\-::\-Format\-Not\-Spec\-\_\-\-F\-L} = \char`\"{}\%6.\-2f\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-Format\-Not\-Spec\-\_\-\-I\-N\-T} = \char`\"{}\%d\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-Format\-Not\-Spec\-\_\-\-S\-T\-R} = \char`\"{}\%s\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-H\-E\-A\-R\-T\-B\-E\-A\-T} = \char`\"{}Event heartbeat\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-H\-E\-A\-R\-T\-B\-E\-A\-T\-\_\-\-E\-V\-E\-N\-T\-\_\-\-N\-A\-M\-E} = \char`\"{}heartbeat\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-H\-E\-A\-R\-T\-B\-E\-A\-T\-\_\-\-M\-E\-T\-H\-O\-D\-\_\-\-N\-A\-M\-E} = \char`\"{}push\-\_\-heartbeat\-\_\-event\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-Initial\-Output} = \char`\"{}Initial Output\char`\"{}
+\item 
+const size\-\_\-t {\bf Tango\-::k\-Default\-Rolling\-Threshold} = 20 $\ast$ 1024
+\item 
+const char $\ast$const {\bf Tango\-::k\-Log\-Target\-Console} = \char`\"{}console\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::k\-Log\-Target\-Device} = \char`\"{}device\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::k\-Log\-Target\-File} = \char`\"{}file\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::k\-Log\-Target\-Sep} = \char`\"{}\-::\char`\"{}
+\item 
+const size\-\_\-t {\bf Tango\-::k\-Max\-Rolling\-Threshold} = 1024 $\ast$ 1024
+\item 
+const size\-\_\-t {\bf Tango\-::k\-Min\-Rolling\-Threshold} = 500
+\item 
+const char $\ast$const {\bf Tango\-::\-Label\-Not\-Spec} = \char`\"{}No label\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-L\-O\-C\-A\-L\-\_\-\-P\-O\-L\-L\-\_\-\-R\-E\-Q\-U\-E\-S\-T} = \char`\"{}\-\_\-local\char`\"{}
+\item 
+const int {\bf Tango\-::\-L\-O\-C\-A\-L\-\_\-\-R\-E\-Q\-U\-E\-S\-T\-\_\-\-S\-T\-R\-\_\-\-S\-I\-Z\-E} = 6
+\item 
+const int {\bf Tango\-::\-M\-A\-X\-\_\-\-D\-A\-T\-A\-\_\-\-E\-L\-T\-\_\-\-I\-N\-\_\-\-P\-I\-P\-E\-\_\-\-B\-L\-O\-B} = 20
+\item 
+const char $\ast$const {\bf Tango\-::\-M\-A\-X\-\_\-\-G\-I\-O\-P\-\_\-\-P\-E\-R\-\_\-\-S\-E\-R\-V\-E\-R} = \char`\"{}128\char`\"{}
+\item 
+const int {\bf Tango\-::\-M\-A\-X\-\_\-\-S\-O\-C\-K\-E\-T\-\_\-\-S\-U\-B} = 10
+\item 
+const char $\ast$const {\bf Tango\-::\-M\-A\-X\-\_\-\-T\-R\-A\-N\-S\-F\-E\-R\-\_\-\-S\-I\-Z\-E} = \char`\"{}268435456\char`\"{}
+\item 
+const int {\bf Tango\-::\-Max\-Dev\-Prop\-Length} = 255
+\item 
+const unsigned int {\bf Tango\-::\-Max\-Server\-Name\-Length} = 255
+\item 
+const int {\bf Tango\-::\-M\-C\-A\-S\-T\-\_\-\-H\-O\-P\-S} = 5
+\item 
+const char $\ast$const {\bf Tango\-::\-M\-C\-A\-S\-T\-\_\-\-P\-R\-O\-T} = \char`\"{}epgm\-://\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-Mem\-Attr\-Prop\-Name} = \char`\"{}\-\_\-\-\_\-value\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-Mem\-Not\-Used} = \char`\"{}Not used yet\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-Mess\-Box\-Title} = \char`\"{}Tango Device Server\char`\"{}
+\item 
+const int {\bf Tango\-::\-M\-I\-N\-\_\-\-D\-E\-L\-T\-A\-\_\-\-W\-O\-R\-K} = 20000
+\item 
+const int {\bf Tango\-::\-M\-I\-N\-\_\-\-I\-D\-L\-\_\-\-C\-O\-N\-F5} = 5
+\item 
+const int {\bf Tango\-::\-M\-I\-N\-\_\-\-I\-D\-L\-\_\-\-D\-E\-V\-\_\-\-I\-N\-T\-R} = 5
+\item 
+const int {\bf Tango\-::\-M\-I\-N\-\_\-\-L\-O\-C\-K\-\_\-\-V\-A\-L\-I\-D\-I\-T\-Y} = 2
+\item 
+const int {\bf Tango\-::\-M\-I\-N\-\_\-\-P\-O\-L\-L\-\_\-\-P\-E\-R\-I\-O\-D} = 5
+\item 
+const int {\bf Tango\-::\-N\-A\-R\-R\-O\-W\-\_\-\-C\-L\-N\-T\-\_\-\-T\-I\-M\-E\-O\-U\-T} = 100
+\item 
+const char $\ast$const {\bf Tango\-::\-No\-Class} = \char`\"{}noclass\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-Not\-A\-Number} = \char`\"{}Na\-N\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-N\-O\-T\-I\-F\-D\-\_\-\-C\-H\-A\-N\-N\-E\-L} = \char`\"{}notifd\-\_\-channel\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-Not\-Set} = \char`\"{}Uninitialised\char`\"{}
+\item 
+const int {\bf Tango\-::\-O\-N\-E\-\_\-\-S\-E\-C\-O\-N\-D} = 1000000
+\item 
+const int {\bf Tango\-::\-P\-G\-M\-\_\-\-I\-V\-L} = 20 $\ast$ 1000
+\item 
+const int {\bf Tango\-::\-P\-G\-M\-\_\-\-R\-A\-T\-E} = 80 $\ast$ 1024
+\item 
+const int {\bf Tango\-::\-P\-O\-L\-L\-\_\-\-L\-O\-O\-P\-\_\-\-N\-B} = 500
+\item 
+const char $\ast$const {\bf Tango\-::\-Poll\-Attribute} = \char`\"{}attribute\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-Poll\-Command} = \char`\"{}command\char`\"{}
+\item 
+const int {\bf Tango\-::\-P\-U\-B\-\_\-\-H\-W\-M} = 1000
+\item 
+const int {\bf Tango\-::\-R\-E\-C\-O\-N\-N\-E\-C\-T\-I\-O\-N\-\_\-\-D\-E\-L\-A\-Y} = 1000
+\item 
+const char $\ast$const {\bf Tango\-::\-Res\-Not\-Defined} = \char`\"{}0\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-Root\-Att\-Not\-Def} = \char`\"{}Not defined\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-Root\-Attr\-Prop\-Name} = \char`\"{}\-\_\-\-\_\-root\-\_\-att\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-S\-C\-A\-L\-A\-R\-\_\-\-P\-I\-P\-E} = \char`\"{}Scalar\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-S\-E\-R\-V\-I\-C\-E\-\_\-\-P\-R\-O\-P\-\_\-\-N\-A\-M\-E} = \char`\"{}Services\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-Status\-Not\-Set} = \char`\"{}Not initialised\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-Std\-Unit\-Not\-Spec} = \char`\"{}No standard unit\char`\"{}
+\item 
+const int {\bf Tango\-::\-S\-U\-B\-\_\-\-H\-W\-M} = 1000
+\item 
+const int {\bf Tango\-::\-S\-U\-B\-\_\-\-S\-E\-N\-D\-\_\-\-H\-W\-M} = 10000
+\item 
+const int {\bf Tango\-::\-T\-A\-N\-G\-O\-\_\-\-F\-L\-O\-A\-T\-\_\-\-P\-R\-E\-C\-I\-S\-I\-O\-N} = 15
+\item 
+const char $\ast$const {\bf Tango\-::\-T\-A\-N\-G\-O\-\_\-\-P\-Y\-\_\-\-M\-O\-D\-\_\-\-N\-A\-M\-E} = \char`\"{}\-\_\-\-Py\-Tango.\-pyd\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-T\-A\-N\-G\-O\-\_\-\-R\-C\-\_\-\-F\-I\-L\-E} = \char`\"{}/etc/tangorc\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-Tango\-Host\-Not\-Set} = \char`\"{}Undef\char`\"{}
+\item 
+const int {\bf Tango\-::\-T\-G\-\_\-\-I\-M\-P\-\_\-\-M\-I\-N\-O\-R\-\_\-\-D\-E\-V\-F\-A\-I\-L\-E\-D} = 11
+\item 
+const int {\bf Tango\-::\-T\-G\-\_\-\-I\-M\-P\-\_\-\-M\-I\-N\-O\-R\-\_\-\-N\-O\-N\-\_\-\-D\-E\-V\-F\-A\-I\-L\-E\-D} = 12
+\item 
+const int {\bf Tango\-::\-T\-G\-\_\-\-I\-M\-P\-\_\-\-M\-I\-N\-O\-R\-\_\-\-T\-O} = 10
+\item 
+const char $\ast$const {\bf Tango\-::\-T\-G\-\_\-\-L\-O\-C\-A\-L\-\_\-\-H\-O\-S\-T} = \char`\"{}localhost\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-Tg\-Lib\-Major\-Vers} = {\bf X\-T\-B\-S}({\bf T\-A\-N\-G\-O\-\_\-\-V\-E\-R\-S\-I\-O\-N\-\_\-\-M\-A\-J\-O\-R})
+\item 
+const char $\ast$const {\bf Tango\-::\-Tg\-Lib\-Vers} = {\bf X\-T\-B\-S}({\bf T\-A\-N\-G\-O\-\_\-\-V\-E\-R\-S\-I\-O\-N\-\_\-\-M\-A\-J\-O\-R.\-T\-A\-N\-G\-O\-\_\-\-V\-E\-R\-S\-I\-O\-N\-\_\-\-M\-I\-N\-O\-R.\-T\-A\-N\-G\-O\-\_\-\-V\-E\-R\-S\-I\-O\-N\-\_\-\-P\-A\-T\-C\-H})
+\item 
+const int {\bf Tango\-::\-Tg\-Lib\-Vers\-Nb} = {\bf T\-A\-N\-G\-O\-\_\-\-V\-E\-R\-S\-I\-O\-N\-\_\-\-M\-A\-J\-O\-R}$\ast$10000 + {\bf T\-A\-N\-G\-O\-\_\-\-V\-E\-R\-S\-I\-O\-N\-\_\-\-M\-I\-N\-O\-R}$\ast$100 + {\bf T\-A\-N\-G\-O\-\_\-\-V\-E\-R\-S\-I\-O\-N\-\_\-\-P\-A\-T\-C\-H}
+\item 
+const int {\bf Tango\-::\-T\-I\-M\-E\-\_\-\-H\-E\-A\-R\-T\-B\-E\-A\-T} = 2000
+\item 
+const char $\ast$const {\bf Tango\-::\-Unit\-Not\-Spec} = \char`\"{}\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-U\-S\-E\-R\-\_\-\-E\-N\-V\-\_\-\-V\-A\-R\-\_\-\-F\-I\-L\-E} = \char`\"{}.tangorc\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-W\-I\-N\-D\-O\-W\-S\-\_\-\-E\-N\-V\-\_\-\-V\-A\-R\-\_\-\-F\-I\-L\-E} = \char`\"{}tangorc\char`\"{}
+\item 
+const char $\ast$const {\bf Tango\-::\-Windows\-Env\-Variable} = \char`\"{}T\-A\-N\-G\-O\-\_\-\-R\-O\-O\-T\char`\"{}
+\item 
+const int {\bf Tango\-::\-Z\-M\-Q\-\_\-\-E\-V\-E\-N\-T\-\_\-\-P\-R\-O\-T\-\_\-\-V\-E\-R\-S\-I\-O\-N} = 1
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{tango\-\_\-const.\-h@{tango\-\_\-const.\-h}!R\-A\-N\-G\-E\-S\-\_\-\-T\-Y\-P\-E2\-C\-O\-N\-S\-T@{R\-A\-N\-G\-E\-S\-\_\-\-T\-Y\-P\-E2\-C\-O\-N\-S\-T}}
+\index{R\-A\-N\-G\-E\-S\-\_\-\-T\-Y\-P\-E2\-C\-O\-N\-S\-T@{R\-A\-N\-G\-E\-S\-\_\-\-T\-Y\-P\-E2\-C\-O\-N\-S\-T}!tango_const.h@{tango\-\_\-const.\-h}}
+\subsubsection[{R\-A\-N\-G\-E\-S\-\_\-\-T\-Y\-P\-E2\-C\-O\-N\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-A\-N\-G\-E\-S\-\_\-\-T\-Y\-P\-E2\-C\-O\-N\-S\-T(
+\begin{DoxyParamCaption}
+\item[{}]{type, }
+\item[{}]{constant}
+\end{DoxyParamCaption}
+)}\label{tango__const_8h_a296aaf5dc2f56ffa36c10c00ac960708}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\textcolor{keyword}{template} <> \(\backslash\)
+    struct ranges\_type2const<type> \(\backslash\)
+    \{ \(\backslash\)
+        static CmdArgType enu; \(\backslash\)
+        TANGO\_CXX11\_ABI \textcolor{keyword}{static} \textcolor{keywordtype}{string} str; \(\backslash\)
+    \}; \
+	CmdArgType ranges\_type2const<type>::enu = constant; \(\backslash\)
+    TANGO\_CXX11\_ABI \textcolor{keywordtype}{string} ranges\_type2const<type>::str = #type; \(\backslash\)
+    template<> \(\backslash\)
+    struct ranges\_const2type<Tango::constant> \(\backslash\)
+    \{ \(\backslash\)
+        typedef type Type; \(\backslash\)
+        TANGO\_CXX11\_ABI \textcolor{keyword}{static} \textcolor{keywordtype}{string} str; \(\backslash\)
+    \}; \(\backslash\)
+    TANGO\_CXX11\_ABI \textcolor{keywordtype}{string} ranges\_const2type<Tango::constant>::str = #type;
+\end{DoxyCode}
+\index{tango\-\_\-const.\-h@{tango\-\_\-const.\-h}!T\-A\-N\-G\-O\-\_\-\-B\-A\-S\-E\-\_\-\-C\-L\-A\-S\-S@{T\-A\-N\-G\-O\-\_\-\-B\-A\-S\-E\-\_\-\-C\-L\-A\-S\-S}}
+\index{T\-A\-N\-G\-O\-\_\-\-B\-A\-S\-E\-\_\-\-C\-L\-A\-S\-S@{T\-A\-N\-G\-O\-\_\-\-B\-A\-S\-E\-\_\-\-C\-L\-A\-S\-S}!tango_const.h@{tango\-\_\-const.\-h}}
+\subsubsection[{T\-A\-N\-G\-O\-\_\-\-B\-A\-S\-E\-\_\-\-C\-L\-A\-S\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-A\-N\-G\-O\-\_\-\-B\-A\-S\-E\-\_\-\-C\-L\-A\-S\-S~{\bf Tango\-::\-Device\-\_\-5\-Impl}}\label{tango__const_8h_a06713a84dc7dbebed1e9fcc0c960caf0}
+\index{tango\-\_\-const.\-h@{tango\-\_\-const.\-h}!T\-A\-N\-G\-O\-\_\-\-V\-E\-R\-S\-I\-O\-N\-\_\-\-M\-A\-J\-O\-R@{T\-A\-N\-G\-O\-\_\-\-V\-E\-R\-S\-I\-O\-N\-\_\-\-M\-A\-J\-O\-R}}
+\index{T\-A\-N\-G\-O\-\_\-\-V\-E\-R\-S\-I\-O\-N\-\_\-\-M\-A\-J\-O\-R@{T\-A\-N\-G\-O\-\_\-\-V\-E\-R\-S\-I\-O\-N\-\_\-\-M\-A\-J\-O\-R}!tango_const.h@{tango\-\_\-const.\-h}}
+\subsubsection[{T\-A\-N\-G\-O\-\_\-\-V\-E\-R\-S\-I\-O\-N\-\_\-\-M\-A\-J\-O\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-A\-N\-G\-O\-\_\-\-V\-E\-R\-S\-I\-O\-N\-\_\-\-M\-A\-J\-O\-R~9}\label{tango__const_8h_a0d461e2c51f30bb4bd9c5bfc0ddd0d95}
+\index{tango\-\_\-const.\-h@{tango\-\_\-const.\-h}!T\-A\-N\-G\-O\-\_\-\-V\-E\-R\-S\-I\-O\-N\-\_\-\-M\-I\-N\-O\-R@{T\-A\-N\-G\-O\-\_\-\-V\-E\-R\-S\-I\-O\-N\-\_\-\-M\-I\-N\-O\-R}}
+\index{T\-A\-N\-G\-O\-\_\-\-V\-E\-R\-S\-I\-O\-N\-\_\-\-M\-I\-N\-O\-R@{T\-A\-N\-G\-O\-\_\-\-V\-E\-R\-S\-I\-O\-N\-\_\-\-M\-I\-N\-O\-R}!tango_const.h@{tango\-\_\-const.\-h}}
+\subsubsection[{T\-A\-N\-G\-O\-\_\-\-V\-E\-R\-S\-I\-O\-N\-\_\-\-M\-I\-N\-O\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-A\-N\-G\-O\-\_\-\-V\-E\-R\-S\-I\-O\-N\-\_\-\-M\-I\-N\-O\-R~2}\label{tango__const_8h_a4e5ff4bd2809f455d91c21c9b7d0dae6}
+\index{tango\-\_\-const.\-h@{tango\-\_\-const.\-h}!T\-A\-N\-G\-O\-\_\-\-V\-E\-R\-S\-I\-O\-N\-\_\-\-P\-A\-T\-C\-H@{T\-A\-N\-G\-O\-\_\-\-V\-E\-R\-S\-I\-O\-N\-\_\-\-P\-A\-T\-C\-H}}
+\index{T\-A\-N\-G\-O\-\_\-\-V\-E\-R\-S\-I\-O\-N\-\_\-\-P\-A\-T\-C\-H@{T\-A\-N\-G\-O\-\_\-\-V\-E\-R\-S\-I\-O\-N\-\_\-\-P\-A\-T\-C\-H}!tango_const.h@{tango\-\_\-const.\-h}}
+\subsubsection[{T\-A\-N\-G\-O\-\_\-\-V\-E\-R\-S\-I\-O\-N\-\_\-\-P\-A\-T\-C\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-A\-N\-G\-O\-\_\-\-V\-E\-R\-S\-I\-O\-N\-\_\-\-P\-A\-T\-C\-H~5}\label{tango__const_8h_afe8ee17b8359ff561a5372c15114d465}
+\index{tango\-\_\-const.\-h@{tango\-\_\-const.\-h}!T\-B\-S@{T\-B\-S}}
+\index{T\-B\-S@{T\-B\-S}!tango_const.h@{tango\-\_\-const.\-h}}
+\subsubsection[{T\-B\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-B\-S(
+\begin{DoxyParamCaption}
+\item[{}]{s}
+\end{DoxyParamCaption}
+)~\#s}\label{tango__const_8h_aff6d5e6e29fea1b22c39408543862a08}
+\index{tango\-\_\-const.\-h@{tango\-\_\-const.\-h}!X\-T\-B\-S@{X\-T\-B\-S}}
+\index{X\-T\-B\-S@{X\-T\-B\-S}!tango_const.h@{tango\-\_\-const.\-h}}
+\subsubsection[{X\-T\-B\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define X\-T\-B\-S(
+\begin{DoxyParamCaption}
+\item[{}]{s}
+\end{DoxyParamCaption}
+)~{\bf T\-B\-S}(s)}\label{tango__const_8h_a88e47bbac6db5d5f19eb30896129765c}

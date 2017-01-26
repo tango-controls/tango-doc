@@ -1,0 +1,107 @@
+\section{Tango\-:\-:Device\-Attribute\-History Class Reference}
+\label{classTango_1_1DeviceAttributeHistory}\index{Tango\-::\-Device\-Attribute\-History@{Tango\-::\-Device\-Attribute\-History}}
+
+
+Fundamental type for receiving data from device attribute polling buffers.  
+
+
+
+
+Inheritance diagram for Tango\-:\-:Device\-Attribute\-History\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{d6/d9c/classTango_1_1DeviceAttributeHistory__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Tango\-:\-:Device\-Attribute\-History\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{dc/d16/classTango_1_1DeviceAttributeHistory__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf has\-\_\-failed} ()
+\begin{DoxyCompactList}\small\item\em Check if the record was a failure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+ostream \& {\bf operator$<$$<$} (ostream \&str, {\bf Device\-Attribute\-History} \&dah)
+\begin{DoxyCompactList}\small\item\em Print a \doxyref{Device\-Attribute\-History}{p.}{d8/d41/classTango_1_1DeviceAttributeHistory} instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Fundamental type for receiving data from device attribute polling buffers. 
+
+This is the fundamental type for receiving data from device attribute polling buffers. This class inherits from the Tango\-::\-Device\-Attribute class. One instance of this class is created for each attribute result history. Within this class, you find the attribute result data or the exception parameters and a flag indicating if the attribute has failed when it was invoked by the device server polling thread. For history calls, it is not possible to returns attribute error as exception. See chapter on Advanced Features in the {\tt Tango book} for all details regarding device polling.
+
+\$\-Author\$ \$\-Revision\$ 
+
+\subsection{Member Function Documentation}
+\index{Tango\-::\-Device\-Attribute\-History@{Tango\-::\-Device\-Attribute\-History}!has\-\_\-failed@{has\-\_\-failed}}
+\index{has\-\_\-failed@{has\-\_\-failed}!Tango::DeviceAttributeHistory@{Tango\-::\-Device\-Attribute\-History}}
+\subsubsection[{has\-\_\-failed}]{\setlength{\rightskip}{0pt plus 5cm}bool Tango\-::\-Device\-Attribute\-History\-::has\-\_\-failed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTango_1_1DeviceAttributeHistory_a29502710f173c46c03a6334f0498899e}
+
+
+Check if the record was a failure. 
+
+Returns a boolean set to true if the record in the polling buffer was a failure
+
+\begin{DoxyReturn}{Returns}
+A boolean set to true if the record was a failure 
+\end{DoxyReturn}
+
+
+\subsection{Friends And Related Function Documentation}
+\index{Tango\-::\-Device\-Attribute\-History@{Tango\-::\-Device\-Attribute\-History}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Tango::DeviceAttributeHistory@{Tango\-::\-Device\-Attribute\-History}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{ostream \&}]{str, }
+\item[{{\bf Device\-Attribute\-History} \&}]{dah}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\label{classTango_1_1DeviceAttributeHistory_a641d6e2a068adc24811acc267e13486a}
+
+
+Print a \doxyref{Device\-Attribute\-History}{p.}{d8/d41/classTango_1_1DeviceAttributeHistory} instance. 
+
+Is an utility function to easily print the contents of a \doxyref{Device\-Attribute\-History}{p.}{d8/d41/classTango_1_1DeviceAttributeHistory} object. This function knows all types which could be inserted in a \doxyref{Device\-Attribute\-History}{p.}{d8/d41/classTango_1_1DeviceAttributeHistory} object and print them accordingly. It also in case the attribute returned an error. 
+\begin{DoxyCode}
+* DeviceProxy *dev = \textcolor{keyword}{new} DeviceProxy(“...”);
+* \textcolor{keywordtype}{int} hist\_depth = 4;
+* vector<DeviceAttributeHistory> *hist;
+
+* hist = dev->attribute\_history(“MyAttribute”,hist\_depth);
+
+* \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0;i < hist\_depth;i++)
+* \{
+*    cout << (*hist)[i] << endl;
+* \}
+* \textcolor{keyword}{delete} hist;
+* 
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em str} & The printing stream \\
+\hline
+\mbox{\tt in}  & {\em dah} & The instance to be printed \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+{\bf devapi.\-h}\end{DoxyCompactItemize}

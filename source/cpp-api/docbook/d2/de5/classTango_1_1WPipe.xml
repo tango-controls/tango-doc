@@ -1,0 +1,159 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d2/de5/classTango_1_1WPipe">
+<title>Tango::WPipe class Reference</title>
+        <simplesect>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="db/de2/classTango_1_1WPipe_1_1WPipeExt">Tango::WPipe::WPipeExt</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Constructors</title>
+      <description>
+<para>Miscellaneous constructors </para>
+</description>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d2/de5/classTango_1_1WPipe_1a55a5cb58749f6c67f8f40680ef51271e">WPipe</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d2/de5/classTango_1_1WPipe_1aa9fe1ddc4d121fa3201088dae345d6ee">WPipe</link> (
+const string &amp; na, const Tango::DispLevel level)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Destructor</title>
+      <description>
+<para>Only one desctructor is defined for this class </para>
+</description>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="d2/de5/classTango_1_1WPipe_1ab90cc0267c8765c2db3c2c0a41a291c2">~WPipe</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Get/Set methods.</title>
+      <description>
+<para>Methods to get the value of the data blob transported by the pipe </para>
+</description>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string <link linkend="d2/de5/classTango_1_1WPipe_1afdae25b4ab3382578c2ada89da569698">get_root_blob_name</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Extracting data from a WPipe</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d2/de5/classTango_1_1WPipe">WPipe</link> &amp; <link linkend="d2/de5/classTango_1_1WPipe_1a8373577b75416aea0045dab9d6a0e79f">operator&gt;&gt;</link> (
+short &amp; datum)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="d2/de5/classTango_1_1WPipe_1a490dc17dc154629d22e09356bba2160e">get_data_elt_nb</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>vector&lt; string &gt; <link linkend="d2/de5/classTango_1_1WPipe_1a6a13a4ae4253177e1b19c5921a61066b">get_data_elt_names</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string <link linkend="d2/de5/classTango_1_1WPipe_1aefa6c951693649873f76f93729ba58b0">get_data_elt_name</link> (
+size_t ind)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="d2/de5/classTango_1_1WPipe_1a921bd7f37da698a6a39247756a873a68">get_data_elt_type</link> (
+size_t ind)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>WPipeExt * w_ext</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d2/de5/classTango_1_1WPipe">WPipe</link> &amp; <link linkend="d2/de5/classTango_1_1WPipe_1a8f0a875a16c946397b9234e6fc0083d1">operator[]</link> (
+const string &amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual void <link linkend="d2/de5/classTango_1_1WPipe_1a21937e53bf171ce54573071c28048bda">write</link> (
+<link linkend="d3/d62/classTango_1_1DeviceImpl">DeviceImpl</link> * )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Brief Description</title>
+
+<para>This class is a class representing a writable pipe in the TANGO device server pattern. </para>
+    </simplesect>
+        <simplesect>
+            <title>Detailed Description</title>
+
+<para>It is an base class. It is the a root class for pipe related classes.</para>
+
+<para>$Author$ $Revision$ </para>
+                <para>Definition at line 53 of file w_pipe.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>w_pipe.h</para></listitem></itemizedlist></para>
+        </simplesect>
+            <section xml:id="d2/de5/classTango_1_1WPipe_1a8f0a875a16c946397b9234e6fc0083d1">
+                <title>WPipe&amp; Tango::WPipe::operator[] (const string &amp;)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d2/de5/classTango_1_1WPipe_1a21937e53bf171ce54573071c28048bda">
+                <title>virtual void Tango::WPipe::write (DeviceImpl *)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

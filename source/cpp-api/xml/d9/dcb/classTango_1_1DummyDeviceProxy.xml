@@ -1,0 +1,151 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="d9/dcb/classTango_1_1DummyDeviceProxy" kind="class" prot="public">
+    <compoundname>Tango::DummyDeviceProxy</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Connection</basecompoundref>
+    <includes refid="d9/ddc/devapi_8h" local="yes">devapi.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d9/dcb/classTango_1_1DummyDeviceProxy_1a208e369e11d5e1d945b123ec217dc16d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Tango::DummyDeviceProxy::DummyDeviceProxy</definition>
+        <argsstring>()</argsstring>
+        <name>DummyDeviceProxy</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/devapi.h" line="783" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/devapi.h" bodystart="783" bodyend="783"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/dcb/classTango_1_1DummyDeviceProxy_1af1b4aeeda9976c31d43bf0629c0c2e87" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>string</type>
+        <definition>virtual string Tango::DummyDeviceProxy::build_corba_name</definition>
+        <argsstring>()</argsstring>
+        <name>build_corba_name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/devapi.h" line="786" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/devapi.h" bodystart="786" bodyend="786"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/dcb/classTango_1_1DummyDeviceProxy_1a95f30faa9de8e4fb82f65b6689da1a08" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>string</type>
+        <definition>virtual string Tango::DummyDeviceProxy::dev_name</definition>
+        <argsstring>()</argsstring>
+        <name>dev_name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/devapi.h" line="790" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/devapi.h" bodystart="790" bodyend="790"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/dcb/classTango_1_1DummyDeviceProxy_1ae1aeac6ff92474063cc58a531b2c6d09" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>string</type>
+        <definition>virtual string Tango::DummyDeviceProxy::get_corba_name</definition>
+        <argsstring>(bool)</argsstring>
+        <name>get_corba_name</name>
+        <param>
+          <type>bool</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/devapi.h" line="785" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/devapi.h" bodystart="785" bodyend="785"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/dcb/classTango_1_1DummyDeviceProxy_1ad6fb4f3237b716ee6e53417317a2984a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int Tango::DummyDeviceProxy::get_env_var</definition>
+        <argsstring>(const char *cc, string &amp;str_ref)</argsstring>
+        <name>get_env_var</name>
+        <param>
+          <type>const char *</type>
+          <declname>cc</declname>
+        </param>
+        <param>
+          <type>string &amp;</type>
+          <declname>str_ref</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/devapi.h" line="792" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/devapi.h" bodystart="792" bodyend="792"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/dcb/classTango_1_1DummyDeviceProxy_1a2901b3e72b2928c0c0fb0bd2674990e4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>int</type>
+        <definition>virtual int Tango::DummyDeviceProxy::get_lock_ctr</definition>
+        <argsstring>()</argsstring>
+        <name>get_lock_ctr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/devapi.h" line="787" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/devapi.h" bodystart="787" bodyend="787"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/dcb/classTango_1_1DummyDeviceProxy_1a06125348959666fb0774765b8d49f15d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Tango::DummyDeviceProxy::set_lock_ctr</definition>
+        <argsstring>(int)</argsstring>
+        <name>set_lock_ctr</name>
+        <param>
+          <type>int</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/devapi.h" line="788" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/devapi.h" bodystart="788" bodyend="788"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="966">
+        <label>Tango::DummyDeviceProxy</label>
+        <link refid="d9/dcb/classTango_1_1DummyDeviceProxy"/>
+        <childnode refid="967" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="967">
+        <label>Tango::Connection</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="968">
+        <label>Tango::DummyDeviceProxy</label>
+        <link refid="d9/dcb/classTango_1_1DummyDeviceProxy"/>
+        <childnode refid="969" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="969">
+        <label>Tango::Connection</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/tango/workspace/cppTango/include/tango/client/devapi.h" line="781" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/devapi.h" bodystart="780" bodyend="793"/>
+    <listofallmembers>
+      <member refid="d9/dcb/classTango_1_1DummyDeviceProxy_1af1b4aeeda9976c31d43bf0629c0c2e87" prot="public" virt="virtual"><scope>Tango::DummyDeviceProxy</scope><name>build_corba_name</name></member>
+      <member refid="d9/dcb/classTango_1_1DummyDeviceProxy_1a95f30faa9de8e4fb82f65b6689da1a08" prot="public" virt="virtual"><scope>Tango::DummyDeviceProxy</scope><name>dev_name</name></member>
+      <member refid="d9/dcb/classTango_1_1DummyDeviceProxy_1a208e369e11d5e1d945b123ec217dc16d" prot="public" virt="non-virtual"><scope>Tango::DummyDeviceProxy</scope><name>DummyDeviceProxy</name></member>
+      <member refid="d9/dcb/classTango_1_1DummyDeviceProxy_1ae1aeac6ff92474063cc58a531b2c6d09" prot="public" virt="virtual"><scope>Tango::DummyDeviceProxy</scope><name>get_corba_name</name></member>
+      <member refid="d9/dcb/classTango_1_1DummyDeviceProxy_1ad6fb4f3237b716ee6e53417317a2984a" prot="public" virt="non-virtual"><scope>Tango::DummyDeviceProxy</scope><name>get_env_var</name></member>
+      <member refid="d9/dcb/classTango_1_1DummyDeviceProxy_1a2901b3e72b2928c0c0fb0bd2674990e4" prot="public" virt="virtual"><scope>Tango::DummyDeviceProxy</scope><name>get_lock_ctr</name></member>
+      <member refid="d9/dcb/classTango_1_1DummyDeviceProxy_1a06125348959666fb0774765b8d49f15d" prot="public" virt="virtual"><scope>Tango::DummyDeviceProxy</scope><name>set_lock_ctr</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

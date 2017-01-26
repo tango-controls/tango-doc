@@ -1,0 +1,270 @@
+\section{attribute.\-h File Reference}
+\label{attribute_8h}\index{attribute.\-h@{attribute.\-h}}
+{\ttfamily \#include $<$tango.\-h$>$}\\*
+{\ttfamily \#include $<$tango/server/attrdesc.\-h$>$}\\*
+{\ttfamily \#include $<$tango/server/fwdattrdesc.\-h$>$}\\*
+{\ttfamily \#include $<$tango/server/encoded\-\_\-attribute.\-h$>$}\\*
+{\ttfamily \#include $<$functional$>$}\\*
+{\ttfamily \#include $<$time.\-h$>$}\\*
+{\ttfamily \#include $<$iterator$>$}\\*
+Include dependency graph for attribute.\-h\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d89/attribute_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=161pt]{d0/d7a/attribute_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+union {\bf Tango\-::\-\_\-\-Attr\-\_\-\-Check\-Val}
+\item 
+union {\bf Tango\-::\-\_\-\-Attr\-\_\-\-Value}
+\item 
+class {\bf Tango\-::\-Attribute}
+\begin{DoxyCompactList}\small\item\em This class represents a \doxyref{Tango}{p.}{de/ddf/namespaceTango} attribute. \end{DoxyCompactList}\item 
+struct {\bf Tango\-::last\-\_\-attr\-\_\-value}
+\item 
+struct {\bf Tango\-::\-Wanted\-Attr$<$ A1, A2, R $>$}
+\item 
+struct {\bf Tango\-::\-Wanted\-Prop$<$ A1, A2, R $>$}
+\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Tango}
+\begin{DoxyCompactList}\small\item\em ============================================================================= \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bf C\-H\-E\-C\-K\-\_\-\-P\-T\-R}(A, B)
+\item 
+\#define {\bf G\-I\-V\-E\-\_\-\-A\-T\-T\-\_\-\-M\-U\-T\-E\-X}(A, B, C)
+\item 
+\#define {\bf G\-I\-V\-E\-\_\-\-A\-T\-T\-\_\-\-M\-U\-T\-E\-X\-\_\-5}(A, B, C)
+\item 
+\#define {\bf G\-I\-V\-E\-\_\-\-U\-S\-E\-R\-\_\-\-A\-T\-T\-\_\-\-M\-U\-T\-E\-X}(A, B, C)
+\item 
+\#define {\bf G\-I\-V\-E\-\_\-\-U\-S\-E\-R\-\_\-\-A\-T\-T\-\_\-\-M\-U\-T\-E\-X\-\_\-5}(A, B, C)
+\item 
+\#define {\bf M\-E\-M\-\_\-\-S\-T\-R\-E\-A\-M\-\_\-2\-\_\-\-C\-O\-R\-B\-A}(A, B)
+\item 
+\#define {\bf R\-E\-L\-\_\-\-A\-T\-T\-\_\-\-M\-U\-T\-E\-X}(A, B, C)
+\item 
+\#define {\bf R\-E\-L\-\_\-\-A\-T\-T\-\_\-\-M\-U\-T\-E\-X\-\_\-5}(A, B, C)
+\item 
+\#define {\bf S\-A\-F\-E\-\_\-\-D\-E\-L\-E\-T\-E}(ptr)
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef union {\bf Tango\-::\-\_\-\-Attr\-\_\-\-Check\-Val} {\bf Tango\-::\-Attr\-\_\-\-Check\-Val}
+\item 
+typedef union {\bf Tango\-::\-\_\-\-Attr\-\_\-\-Value} {\bf Tango\-::\-Attr\-\_\-\-Value}
+\item 
+typedef struct \\*
+{\bf Tango\-::last\-\_\-attr\-\_\-value} {\bf Tango\-::\-Last\-Attr\-Value}
+\item 
+typedef enum {\bf Tango\-::prop\-\_\-type} {\bf Tango\-::\-Prop\-Type}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf Tango\-::prop\-\_\-type} \{ \\*
+{\bf Tango\-::\-M\-I\-N\-\_\-\-V\-A\-L\-U\-E} = 0, 
+\\*
+{\bf Tango\-::\-M\-A\-X\-\_\-\-V\-A\-L\-U\-E}, 
+\\*
+{\bf Tango\-::\-M\-I\-N\-\_\-\-W\-A\-R\-N\-I\-N\-G}, 
+\\*
+{\bf Tango\-::\-M\-A\-X\-\_\-\-W\-A\-R\-N\-I\-N\-G}, 
+\\*
+{\bf Tango\-::\-M\-I\-N\-\_\-\-A\-L\-A\-R\-M}, 
+\\*
+{\bf Tango\-::\-M\-A\-X\-\_\-\-A\-L\-A\-R\-M}
+ \}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{attribute.\-h@{attribute.\-h}!C\-H\-E\-C\-K\-\_\-\-P\-T\-R@{C\-H\-E\-C\-K\-\_\-\-P\-T\-R}}
+\index{C\-H\-E\-C\-K\-\_\-\-P\-T\-R@{C\-H\-E\-C\-K\-\_\-\-P\-T\-R}!attribute.h@{attribute.\-h}}
+\subsubsection[{C\-H\-E\-C\-K\-\_\-\-P\-T\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-H\-E\-C\-K\-\_\-\-P\-T\-R(
+\begin{DoxyParamCaption}
+\item[{}]{A, }
+\item[{}]{B}
+\end{DoxyParamCaption}
+)}\label{attribute_8h_a86080a0078b929bc35e2d8c044d0a4dd}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{if} (A == NULL) \(\backslash\)
+    \{ \(\backslash\)
+        stringstream o; \(\backslash\)
+        o << \textcolor{stringliteral}{"Data pointer for attribute "} << B << \textcolor{stringliteral}{" is NULL!"}; \(\backslash\)
+        Except::throw\_exception(API_AttrOptProp,o.str(),\textcolor{stringliteral}{"Attribute::set\_value()"}); \(\backslash\)
+    \} \(\backslash\)
+    else \(\backslash\)
+        (void)0
+\end{DoxyCode}
+\index{attribute.\-h@{attribute.\-h}!G\-I\-V\-E\-\_\-\-A\-T\-T\-\_\-\-M\-U\-T\-E\-X@{G\-I\-V\-E\-\_\-\-A\-T\-T\-\_\-\-M\-U\-T\-E\-X}}
+\index{G\-I\-V\-E\-\_\-\-A\-T\-T\-\_\-\-M\-U\-T\-E\-X@{G\-I\-V\-E\-\_\-\-A\-T\-T\-\_\-\-M\-U\-T\-E\-X}!attribute.h@{attribute.\-h}}
+\subsubsection[{G\-I\-V\-E\-\_\-\-A\-T\-T\-\_\-\-M\-U\-T\-E\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\-I\-V\-E\-\_\-\-A\-T\-T\-\_\-\-M\-U\-T\-E\-X(
+\begin{DoxyParamCaption}
+\item[{}]{A, }
+\item[{}]{B, }
+\item[{}]{C}
+\end{DoxyParamCaption}
+)}\label{attribute_8h_a49a84efc29860d9ab37801ffad2161aa}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{if} (\textcolor{keyword}{true}) \(\backslash\)
+    \{\(\backslash\)
+        Tango::AttributeValue\_4 *tmp\_ptr = &((*A)[B]); \(\backslash\)
+        (tmp\_ptr)->set\_attr\_mutex(C.get\_attr\_mutex()); \(\backslash\)
+    \} \(\backslash\)
+    else \(\backslash\)
+        (void)0
+\end{DoxyCode}
+\index{attribute.\-h@{attribute.\-h}!G\-I\-V\-E\-\_\-\-A\-T\-T\-\_\-\-M\-U\-T\-E\-X\-\_\-5@{G\-I\-V\-E\-\_\-\-A\-T\-T\-\_\-\-M\-U\-T\-E\-X\-\_\-5}}
+\index{G\-I\-V\-E\-\_\-\-A\-T\-T\-\_\-\-M\-U\-T\-E\-X\-\_\-5@{G\-I\-V\-E\-\_\-\-A\-T\-T\-\_\-\-M\-U\-T\-E\-X\-\_\-5}!attribute.h@{attribute.\-h}}
+\subsubsection[{G\-I\-V\-E\-\_\-\-A\-T\-T\-\_\-\-M\-U\-T\-E\-X\-\_\-5}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\-I\-V\-E\-\_\-\-A\-T\-T\-\_\-\-M\-U\-T\-E\-X\-\_\-5(
+\begin{DoxyParamCaption}
+\item[{}]{A, }
+\item[{}]{B, }
+\item[{}]{C}
+\end{DoxyParamCaption}
+)}\label{attribute_8h_af0f93f7328b3a53b5ecd014d616a92d1}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{if} (\textcolor{keyword}{true}) \(\backslash\)
+    \{\(\backslash\)
+        Tango::AttributeValue\_5 *tmp\_ptr = &((*A)[B]); \(\backslash\)
+        (tmp\_ptr)->set\_attr\_mutex(C.get\_attr\_mutex()); \(\backslash\)
+    \} \(\backslash\)
+    else \(\backslash\)
+        (void)0
+\end{DoxyCode}
+\index{attribute.\-h@{attribute.\-h}!G\-I\-V\-E\-\_\-\-U\-S\-E\-R\-\_\-\-A\-T\-T\-\_\-\-M\-U\-T\-E\-X@{G\-I\-V\-E\-\_\-\-U\-S\-E\-R\-\_\-\-A\-T\-T\-\_\-\-M\-U\-T\-E\-X}}
+\index{G\-I\-V\-E\-\_\-\-U\-S\-E\-R\-\_\-\-A\-T\-T\-\_\-\-M\-U\-T\-E\-X@{G\-I\-V\-E\-\_\-\-U\-S\-E\-R\-\_\-\-A\-T\-T\-\_\-\-M\-U\-T\-E\-X}!attribute.h@{attribute.\-h}}
+\subsubsection[{G\-I\-V\-E\-\_\-\-U\-S\-E\-R\-\_\-\-A\-T\-T\-\_\-\-M\-U\-T\-E\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\-I\-V\-E\-\_\-\-U\-S\-E\-R\-\_\-\-A\-T\-T\-\_\-\-M\-U\-T\-E\-X(
+\begin{DoxyParamCaption}
+\item[{}]{A, }
+\item[{}]{B, }
+\item[{}]{C}
+\end{DoxyParamCaption}
+)}\label{attribute_8h_afff88d532747db2961039390b82fea31}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{if} (\textcolor{keyword}{true}) \(\backslash\)
+    \{ \(\backslash\)
+        Tango::AttributeValue\_4 *tmp\_ptr = &((*A)[B]); \(\backslash\)
+        (tmp\_ptr)->set\_attr\_mutex(C.get\_user\_attr\_mutex()); \(\backslash\)
+    \} \(\backslash\)
+    else \(\backslash\)
+        (void)0
+\end{DoxyCode}
+\index{attribute.\-h@{attribute.\-h}!G\-I\-V\-E\-\_\-\-U\-S\-E\-R\-\_\-\-A\-T\-T\-\_\-\-M\-U\-T\-E\-X\-\_\-5@{G\-I\-V\-E\-\_\-\-U\-S\-E\-R\-\_\-\-A\-T\-T\-\_\-\-M\-U\-T\-E\-X\-\_\-5}}
+\index{G\-I\-V\-E\-\_\-\-U\-S\-E\-R\-\_\-\-A\-T\-T\-\_\-\-M\-U\-T\-E\-X\-\_\-5@{G\-I\-V\-E\-\_\-\-U\-S\-E\-R\-\_\-\-A\-T\-T\-\_\-\-M\-U\-T\-E\-X\-\_\-5}!attribute.h@{attribute.\-h}}
+\subsubsection[{G\-I\-V\-E\-\_\-\-U\-S\-E\-R\-\_\-\-A\-T\-T\-\_\-\-M\-U\-T\-E\-X\-\_\-5}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\-I\-V\-E\-\_\-\-U\-S\-E\-R\-\_\-\-A\-T\-T\-\_\-\-M\-U\-T\-E\-X\-\_\-5(
+\begin{DoxyParamCaption}
+\item[{}]{A, }
+\item[{}]{B, }
+\item[{}]{C}
+\end{DoxyParamCaption}
+)}\label{attribute_8h_a0a7e572bb744b8fcb4db86c3e740d421}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{if} (\textcolor{keyword}{true}) \(\backslash\)
+    \{ \(\backslash\)
+        Tango::AttributeValue\_5 *tmp\_ptr = &((*A)[B]); \(\backslash\)
+        (tmp\_ptr)->set\_attr\_mutex(C.get\_user\_attr\_mutex()); \(\backslash\)
+    \} \(\backslash\)
+    else \(\backslash\)
+        (void)0
+\end{DoxyCode}
+\index{attribute.\-h@{attribute.\-h}!M\-E\-M\-\_\-\-S\-T\-R\-E\-A\-M\-\_\-2\-\_\-\-C\-O\-R\-B\-A@{M\-E\-M\-\_\-\-S\-T\-R\-E\-A\-M\-\_\-2\-\_\-\-C\-O\-R\-B\-A}}
+\index{M\-E\-M\-\_\-\-S\-T\-R\-E\-A\-M\-\_\-2\-\_\-\-C\-O\-R\-B\-A@{M\-E\-M\-\_\-\-S\-T\-R\-E\-A\-M\-\_\-2\-\_\-\-C\-O\-R\-B\-A}!attribute.h@{attribute.\-h}}
+\subsubsection[{M\-E\-M\-\_\-\-S\-T\-R\-E\-A\-M\-\_\-2\-\_\-\-C\-O\-R\-B\-A}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-E\-M\-\_\-\-S\-T\-R\-E\-A\-M\-\_\-2\-\_\-\-C\-O\-R\-B\-A(
+\begin{DoxyParamCaption}
+\item[{}]{A, }
+\item[{}]{B}
+\end{DoxyParamCaption}
+)}\label{attribute_8h_a05862c978fd6420159002c5979f82e9b}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{if} (\textcolor{keyword}{true}) \(\backslash\)
+    \{ \(\backslash\)
+        string s = B.str(); \(\backslash\)
+        A = Tango::string\_dup(s.c\_str()); \(\backslash\)
+        B.str(\textcolor{stringliteral}{""}); \(\backslash\)
+        B.clear(); \(\backslash\)
+    \} \(\backslash\)
+    else \(\backslash\)
+        (void)0
+\end{DoxyCode}
+\index{attribute.\-h@{attribute.\-h}!R\-E\-L\-\_\-\-A\-T\-T\-\_\-\-M\-U\-T\-E\-X@{R\-E\-L\-\_\-\-A\-T\-T\-\_\-\-M\-U\-T\-E\-X}}
+\index{R\-E\-L\-\_\-\-A\-T\-T\-\_\-\-M\-U\-T\-E\-X@{R\-E\-L\-\_\-\-A\-T\-T\-\_\-\-M\-U\-T\-E\-X}!attribute.h@{attribute.\-h}}
+\subsubsection[{R\-E\-L\-\_\-\-A\-T\-T\-\_\-\-M\-U\-T\-E\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-E\-L\-\_\-\-A\-T\-T\-\_\-\-M\-U\-T\-E\-X(
+\begin{DoxyParamCaption}
+\item[{}]{A, }
+\item[{}]{B, }
+\item[{}]{C}
+\end{DoxyParamCaption}
+)}\label{attribute_8h_afc98311131c866e04e8eae8cffabb32c}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{if} (C.get\_attr\_serial\_model() != ATTR_NO_SYNC) \(\backslash\)
+    \{ \(\backslash\)
+        Tango::AttributeValue\_4 *tmp\_ptr = &((*A)[B]); \(\backslash\)
+        (tmp\_ptr)->rel\_attr\_mutex(); \(\backslash\)
+    \} \(\backslash\)
+    else \(\backslash\)
+        (void)0
+\end{DoxyCode}
+\index{attribute.\-h@{attribute.\-h}!R\-E\-L\-\_\-\-A\-T\-T\-\_\-\-M\-U\-T\-E\-X\-\_\-5@{R\-E\-L\-\_\-\-A\-T\-T\-\_\-\-M\-U\-T\-E\-X\-\_\-5}}
+\index{R\-E\-L\-\_\-\-A\-T\-T\-\_\-\-M\-U\-T\-E\-X\-\_\-5@{R\-E\-L\-\_\-\-A\-T\-T\-\_\-\-M\-U\-T\-E\-X\-\_\-5}!attribute.h@{attribute.\-h}}
+\subsubsection[{R\-E\-L\-\_\-\-A\-T\-T\-\_\-\-M\-U\-T\-E\-X\-\_\-5}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-E\-L\-\_\-\-A\-T\-T\-\_\-\-M\-U\-T\-E\-X\-\_\-5(
+\begin{DoxyParamCaption}
+\item[{}]{A, }
+\item[{}]{B, }
+\item[{}]{C}
+\end{DoxyParamCaption}
+)}\label{attribute_8h_a3672a37cceae0d096fe1866444aca1f8}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{if} (C.get\_attr\_serial\_model() != ATTR_NO_SYNC) \(\backslash\)
+    \{ \(\backslash\)
+        Tango::AttributeValue\_5 *tmp\_ptr = &((*A)[B]); \(\backslash\)
+        (tmp\_ptr)->rel\_attr\_mutex(); \(\backslash\)
+    \} \(\backslash\)
+    else \(\backslash\)
+        (void)0
+\end{DoxyCode}
+\index{attribute.\-h@{attribute.\-h}!S\-A\-F\-E\-\_\-\-D\-E\-L\-E\-T\-E@{S\-A\-F\-E\-\_\-\-D\-E\-L\-E\-T\-E}}
+\index{S\-A\-F\-E\-\_\-\-D\-E\-L\-E\-T\-E@{S\-A\-F\-E\-\_\-\-D\-E\-L\-E\-T\-E}!attribute.h@{attribute.\-h}}
+\subsubsection[{S\-A\-F\-E\-\_\-\-D\-E\-L\-E\-T\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-A\-F\-E\-\_\-\-D\-E\-L\-E\-T\-E(
+\begin{DoxyParamCaption}
+\item[{}]{ptr}
+\end{DoxyParamCaption}
+)}\label{attribute_8h_ad45c5447fa213228e8493458c1770e91}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{if} (release == \textcolor{keyword}{true}) \(\backslash\)
+    \{ \(\backslash\)
+        if (is\_fwd\_att() == \textcolor{keyword}{true}) \(\backslash\)
+            delete [] ptr; \(\backslash\)
+        else \(\backslash\)
+            delete ptr; \(\backslash\)
+    \} \(\backslash\)
+    else \(\backslash\)
+        (void)0
+\end{DoxyCode}

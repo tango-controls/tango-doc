@@ -1,0 +1,757 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d3/d0f/classTango_1_1DbDatum">
+<title>Tango::DbDatum class Reference</title>
+        <simplesect>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="de/d64/classTango_1_1DbDatum_1_1DbDatumExt">Tango::DbDatum::DbDatumExt</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Constructors</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d3/d0f/classTango_1_1DbDatum_1aeff53e61f2fa3a42ac930113af6b9f0c">DbDatum</link> (
+string name)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d3/d0f/classTango_1_1DbDatum_1af66b0aadb93b23168cb56d81d61baf48">DbDatum</link> (
+const char * name)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Operators overloading</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d3/d0f/classTango_1_1DbDatum_1a66304a562149bdb6d89858cbca65729e">operator&lt;&lt;</link> (
+bool val)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d3/d0f/classTango_1_1DbDatum_1afd6ed9a2e6b129bcc9ae26e16ae4ef0b">operator&gt;&gt;</link> (
+bool &amp; val)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Exception related methods methods</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d3/d0f/classTango_1_1DbDatum_1adce60a23dccf7f08f1fc7f81cbc783f0">exceptions</link> (
+bitset&lt; DbDatum::numFlags &gt; fl)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bitset&lt; DbDatum::numFlags &gt; <link linkend="d3/d0f/classTango_1_1DbDatum_1a332a7e23267e200c786a5b8486916205">exceptions</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d3/d0f/classTango_1_1DbDatum_1a6c4f542a1f33e2ff5e7f2e16aded5679">reset_exceptions</link> (
+except_flags fl)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d3/d0f/classTango_1_1DbDatum_1aff8fbe5d2dd3c816b1ff24c55fb1295a">set_exceptions</link> (
+except_flags fl)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Miscellaneous methods</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d3/d0f/classTango_1_1DbDatum_1aead8e1ceb14215958af0c4202d973e54">is_empty</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>enum <link linkend="d3/d0f/classTango_1_1DbDatum_1aad97d9168efee0c36044153ed667b1b2">except_flags</link>{<link linkend="d3/d0f/classTango_1_1DbDatum_1aad97d9168efee0c36044153ed667b1b2a1d27b2e9a1261bce3937b4896ff53d60">isempty_flag</link>, <link linkend="d3/d0f/classTango_1_1DbDatum_1aad97d9168efee0c36044153ed667b1b2a51cffb433f735e242b0fce00d5a82f8f">wrongtype_flag</link>, <link linkend="d3/d0f/classTango_1_1DbDatum_1aad97d9168efee0c36044153ed667b1b2aa03b0870669e263ce4d8873aa262aa4e">numFlags</link>}</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bitset&lt; numFlags &gt; exceptions_flags</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>DbDatumExt * ext</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string name</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int value_size</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>vector&lt; string &gt; value_string</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int value_type</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d3/d0f/classTango_1_1DbDatum_1a460b5da07767c99af568f145ed6d71a0">DbDatum</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d3/d0f/classTango_1_1DbDatum_1a4d3d20a71e57a4e777c87bc1285e8fcb">DbDatum</link> (
+const <link linkend="d3/d0f/classTango_1_1DbDatum">DbDatum</link> &amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d3/d0f/classTango_1_1DbDatum_1a9ac82569924e7e825261bee3f26287da">~DbDatum</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d3/d0f/classTango_1_1DbDatum_1ac614cd260423e8988b7df463470259fe">operator&lt;&lt;</link> (
+short )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d3/d0f/classTango_1_1DbDatum_1a1583ce3c2330fcf47d7c5e9d5d19cad0">operator&lt;&lt;</link> (
+unsigned char)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d3/d0f/classTango_1_1DbDatum_1acd1628791b532b567ec8e1b774699e6d">operator&lt;&lt;</link> (
+unsigned short)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d3/d0f/classTango_1_1DbDatum_1a072704741d32172e2cee4dcb69b362de">operator&lt;&lt;</link> (
+DevLong )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d3/d0f/classTango_1_1DbDatum_1a2dd2abc8947329108b7533bddee3956f">operator&lt;&lt;</link> (
+DevULong )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d3/d0f/classTango_1_1DbDatum_1a9e13a7d291f282f185b65e0bccfe74ca">operator&lt;&lt;</link> (
+DevLong64 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d3/d0f/classTango_1_1DbDatum_1a61d056399909846963324441e7144763">operator&lt;&lt;</link> (
+DevULong64 )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d3/d0f/classTango_1_1DbDatum_1afda12245adaab9276415a147c3459c97">operator&lt;&lt;</link> (
+float )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d3/d0f/classTango_1_1DbDatum_1ad98e81a2ca9c78822ae47cb534649aab">operator&lt;&lt;</link> (
+double )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d3/d0f/classTango_1_1DbDatum_1a7fc65ee2932cee9a9897f6b69e19c65c">operator&lt;&lt;</link> (
+char * )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d3/d0f/classTango_1_1DbDatum_1a6de9f979f05bd36b118cf6fa985cc647">operator&lt;&lt;</link> (
+const char * )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d3/d0f/classTango_1_1DbDatum_1a8ddf35377f3cc39c4de74b8f6b193110">operator&lt;&lt;</link> (
+string &amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d3/d0f/classTango_1_1DbDatum_1a026642fbc42f407db5d6c681006d735b">operator&lt;&lt;</link> (
+vector&lt; string &gt; &amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d3/d0f/classTango_1_1DbDatum_1a200eca5d901922c64a743c47e47af3bd">operator&lt;&lt;</link> (
+vector&lt; short &gt; &amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d3/d0f/classTango_1_1DbDatum_1aa8f08943ba71a33ecddbe568079e2b66">operator&lt;&lt;</link> (
+vector&lt; unsigned short &gt; &amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d3/d0f/classTango_1_1DbDatum_1a7bd57d12f9057527ead3d577e90d5ad8">operator&lt;&lt;</link> (
+vector&lt; DevLong &gt; &amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d3/d0f/classTango_1_1DbDatum_1a5b4cde800b2b996181e96cdb29348524">operator&lt;&lt;</link> (
+vector&lt; DevULong &gt; &amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d3/d0f/classTango_1_1DbDatum_1aa83956e4ddffc0e1119ac589539c86f7">operator&lt;&lt;</link> (
+vector&lt; DevLong64 &gt; &amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d3/d0f/classTango_1_1DbDatum_1aa65dbd11e826873b7d50cafb58f2ec35">operator&lt;&lt;</link> (
+vector&lt; DevULong64 &gt; &amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d3/d0f/classTango_1_1DbDatum_1a6685016df99bf74ff881e03ff6ea694d">operator&lt;&lt;</link> (
+vector&lt; float &gt; &amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d3/d0f/classTango_1_1DbDatum_1ae94b5a029dcd723cee950f2cc21acee4">operator&lt;&lt;</link> (
+vector&lt; double &gt; &amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d3/d0f/classTango_1_1DbDatum">DbDatum</link> &amp; <link linkend="d3/d0f/classTango_1_1DbDatum_1aa3bbbc15a89a1245f51f679ef1a5c86e">operator=</link> (
+const <link linkend="d3/d0f/classTango_1_1DbDatum">DbDatum</link> &amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d3/d0f/classTango_1_1DbDatum_1a7c8b177f067d501d077f0c7acaf87839">operator&gt;&gt;</link> (
+short &amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d3/d0f/classTango_1_1DbDatum_1a384d1a8be78431e041de1601359845c4">operator&gt;&gt;</link> (
+unsigned char &amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d3/d0f/classTango_1_1DbDatum_1aca8d8ad898457a4430db3b50b857990d">operator&gt;&gt;</link> (
+unsigned short &amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d3/d0f/classTango_1_1DbDatum_1a94cba158bc9c312f75187384f70e6ebe">operator&gt;&gt;</link> (
+DevLong &amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d3/d0f/classTango_1_1DbDatum_1a30e5d345e25236c17cd8fd5ccff950c6">operator&gt;&gt;</link> (
+DevULong &amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d3/d0f/classTango_1_1DbDatum_1aaa60f04b772ba2b56053871e28026f14">operator&gt;&gt;</link> (
+DevLong64 &amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d3/d0f/classTango_1_1DbDatum_1ac55dde85fae0330dbdf162662bdf0f08">operator&gt;&gt;</link> (
+DevULong64 &amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d3/d0f/classTango_1_1DbDatum_1a63939fbe33ed4de5a07587fe705a8dc6">operator&gt;&gt;</link> (
+float &amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d3/d0f/classTango_1_1DbDatum_1a19398e9de020e8b72a07757567091418">operator&gt;&gt;</link> (
+double &amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d3/d0f/classTango_1_1DbDatum_1a41d1e86478a9d86742b6b3a3cf34c21b">operator&gt;&gt;</link> (
+const char *&amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d3/d0f/classTango_1_1DbDatum_1ad4a2479446fd133b8b26320b4e0bda5a">operator&gt;&gt;</link> (
+string &amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d3/d0f/classTango_1_1DbDatum_1ae9636a15a0d663da426f6451ef6b1cc3">operator&gt;&gt;</link> (
+vector&lt; string &gt; &amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d3/d0f/classTango_1_1DbDatum_1a4ff5af8f7e374d8d9718af32d29c240c">operator&gt;&gt;</link> (
+vector&lt; short &gt; &amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d3/d0f/classTango_1_1DbDatum_1ae092383ef8fd6e4999dc0b56739a74fc">operator&gt;&gt;</link> (
+vector&lt; unsigned short &gt; &amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d3/d0f/classTango_1_1DbDatum_1a210500ca5c26be3fc0c63d3c079beef4">operator&gt;&gt;</link> (
+vector&lt; DevLong &gt; &amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d3/d0f/classTango_1_1DbDatum_1a7b79536a34d26e1781b38efe6564ec01">operator&gt;&gt;</link> (
+vector&lt; DevULong &gt; &amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d3/d0f/classTango_1_1DbDatum_1a6bbed6376a7cdc25b2e5d639a377aa2a">operator&gt;&gt;</link> (
+vector&lt; DevLong64 &gt; &amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d3/d0f/classTango_1_1DbDatum_1a3984aaa151c987894976a69b140b1728">operator&gt;&gt;</link> (
+vector&lt; DevULong64 &gt; &amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d3/d0f/classTango_1_1DbDatum_1af491f9f2e4d913b45a814ad794f348b6">operator&gt;&gt;</link> (
+vector&lt; float &gt; &amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d3/d0f/classTango_1_1DbDatum_1a0b52369354096147284cc64d8da7f143">operator&gt;&gt;</link> (
+vector&lt; double &gt; &amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="d3/d0f/classTango_1_1DbDatum_1a1d5a9ccc30b9259af52aaae3ca946a70">size</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Brief Description</title>
+
+<para>A database value. </para>
+    </simplesect>
+        <simplesect>
+            <title>Detailed Description</title>
+
+<para>A single database value which has a name, type, address and value and methods for inserting and extracting C++ native types. This is the fundamental type for specifying database properties. Every property has a name and has one or more values associated with it. The values can be inserted and extracted using the operators &lt;&lt; and &gt;&gt; respectively. A status flag indicates if there is data in the <link linkend="d3/d0f/classTango_1_1DbDatum">DbDatum</link> object or not. An additional flag allows the user to activate exceptions. </para>
+                <para>Definition at line 453 of file dbapi.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>dbapi.h</para></listitem></itemizedlist></para>
+        </simplesect>
+            <section xml:id="d3/d0f/classTango_1_1DbDatum_1aad97d9168efee0c36044153ed667b1b2">
+               <title>enum except_flags </title>
+               
+               <formalpara>
+                    <title>Enumerator:</title>
+                    <variablelist>
+                        <varlistentry xml:id="d3/d0f/classTango_1_1DbDatum_1aad97d9168efee0c36044153ed667b1b2a1d27b2e9a1261bce3937b4896ff53d60">
+                            <term>isempty_flag</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d3/d0f/classTango_1_1DbDatum_1aad97d9168efee0c36044153ed667b1b2a51cffb433f735e242b0fce00d5a82f8f">
+                            <term>wrongtype_flag</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d3/d0f/classTango_1_1DbDatum_1aad97d9168efee0c36044153ed667b1b2aa03b0870669e263ce4d8873aa262aa4e">
+                            <term>numFlags</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                     </variablelist>
+                </formalpara>
+                <para>Definition at line 457 of file dbapi.h
+                    <programlisting>
+{
+isempty_flag, 
+wrongtype_flag, 
+numFlags, 
+}except_flags;
+                    </programlisting>
+                </para>
+            </section>
+            <section xml:id="d3/d0f/classTango_1_1DbDatum_1a460b5da07767c99af568f145ed6d71a0">
+                <title>Tango::DbDatum::DbDatum ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d0f/classTango_1_1DbDatum_1a4d3d20a71e57a4e777c87bc1285e8fcb">
+                <title>Tango::DbDatum::DbDatum (const DbDatum &amp;)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d0f/classTango_1_1DbDatum_1a9ac82569924e7e825261bee3f26287da">
+                <title>Tango::DbDatum::~DbDatum ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d0f/classTango_1_1DbDatum_1ac614cd260423e8988b7df463470259fe">
+                <title>void Tango::DbDatum::operator&lt;&lt; (short)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d0f/classTango_1_1DbDatum_1a1583ce3c2330fcf47d7c5e9d5d19cad0">
+                <title>void Tango::DbDatum::operator&lt;&lt; (unsigned char)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d0f/classTango_1_1DbDatum_1acd1628791b532b567ec8e1b774699e6d">
+                <title>void Tango::DbDatum::operator&lt;&lt; (unsigned short)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d0f/classTango_1_1DbDatum_1a072704741d32172e2cee4dcb69b362de">
+                <title>void Tango::DbDatum::operator&lt;&lt; (DevLong)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d0f/classTango_1_1DbDatum_1a2dd2abc8947329108b7533bddee3956f">
+                <title>void Tango::DbDatum::operator&lt;&lt; (DevULong)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d0f/classTango_1_1DbDatum_1a9e13a7d291f282f185b65e0bccfe74ca">
+                <title>void Tango::DbDatum::operator&lt;&lt; (DevLong64)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d0f/classTango_1_1DbDatum_1a61d056399909846963324441e7144763">
+                <title>void Tango::DbDatum::operator&lt;&lt; (DevULong64)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d0f/classTango_1_1DbDatum_1afda12245adaab9276415a147c3459c97">
+                <title>void Tango::DbDatum::operator&lt;&lt; (float)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d0f/classTango_1_1DbDatum_1ad98e81a2ca9c78822ae47cb534649aab">
+                <title>void Tango::DbDatum::operator&lt;&lt; (double)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d0f/classTango_1_1DbDatum_1a7fc65ee2932cee9a9897f6b69e19c65c">
+                <title>void Tango::DbDatum::operator&lt;&lt; (char *)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d0f/classTango_1_1DbDatum_1a6de9f979f05bd36b118cf6fa985cc647">
+                <title>void Tango::DbDatum::operator&lt;&lt; (const char *)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d0f/classTango_1_1DbDatum_1a8ddf35377f3cc39c4de74b8f6b193110">
+                <title>void Tango::DbDatum::operator&lt;&lt; (string &amp;)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d0f/classTango_1_1DbDatum_1a026642fbc42f407db5d6c681006d735b">
+                <title>void Tango::DbDatum::operator&lt;&lt; (vector&lt; string &gt; &amp;)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d0f/classTango_1_1DbDatum_1a200eca5d901922c64a743c47e47af3bd">
+                <title>void Tango::DbDatum::operator&lt;&lt; (vector&lt; short &gt; &amp;)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d0f/classTango_1_1DbDatum_1aa8f08943ba71a33ecddbe568079e2b66">
+                <title>void Tango::DbDatum::operator&lt;&lt; (vector&lt; unsigned short &gt; &amp;)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d0f/classTango_1_1DbDatum_1a7bd57d12f9057527ead3d577e90d5ad8">
+                <title>void Tango::DbDatum::operator&lt;&lt; (vector&lt; DevLong &gt; &amp;)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d0f/classTango_1_1DbDatum_1a5b4cde800b2b996181e96cdb29348524">
+                <title>void Tango::DbDatum::operator&lt;&lt; (vector&lt; DevULong &gt; &amp;)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d0f/classTango_1_1DbDatum_1aa83956e4ddffc0e1119ac589539c86f7">
+                <title>void Tango::DbDatum::operator&lt;&lt; (vector&lt; DevLong64 &gt; &amp;)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d0f/classTango_1_1DbDatum_1aa65dbd11e826873b7d50cafb58f2ec35">
+                <title>void Tango::DbDatum::operator&lt;&lt; (vector&lt; DevULong64 &gt; &amp;)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d0f/classTango_1_1DbDatum_1a6685016df99bf74ff881e03ff6ea694d">
+                <title>void Tango::DbDatum::operator&lt;&lt; (vector&lt; float &gt; &amp;)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d0f/classTango_1_1DbDatum_1ae94b5a029dcd723cee950f2cc21acee4">
+                <title>void Tango::DbDatum::operator&lt;&lt; (vector&lt; double &gt; &amp;)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d0f/classTango_1_1DbDatum_1aa3bbbc15a89a1245f51f679ef1a5c86e">
+                <title>DbDatum&amp; Tango::DbDatum::operator= (const DbDatum &amp;)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d0f/classTango_1_1DbDatum_1a7c8b177f067d501d077f0c7acaf87839">
+                <title>bool Tango::DbDatum::operator&gt;&gt; (short &amp;)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d0f/classTango_1_1DbDatum_1a384d1a8be78431e041de1601359845c4">
+                <title>bool Tango::DbDatum::operator&gt;&gt; (unsigned char &amp;)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d0f/classTango_1_1DbDatum_1aca8d8ad898457a4430db3b50b857990d">
+                <title>bool Tango::DbDatum::operator&gt;&gt; (unsigned short &amp;)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d0f/classTango_1_1DbDatum_1a94cba158bc9c312f75187384f70e6ebe">
+                <title>bool Tango::DbDatum::operator&gt;&gt; (DevLong &amp;)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d0f/classTango_1_1DbDatum_1a30e5d345e25236c17cd8fd5ccff950c6">
+                <title>bool Tango::DbDatum::operator&gt;&gt; (DevULong &amp;)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d0f/classTango_1_1DbDatum_1aaa60f04b772ba2b56053871e28026f14">
+                <title>bool Tango::DbDatum::operator&gt;&gt; (DevLong64 &amp;)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d0f/classTango_1_1DbDatum_1ac55dde85fae0330dbdf162662bdf0f08">
+                <title>bool Tango::DbDatum::operator&gt;&gt; (DevULong64 &amp;)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d0f/classTango_1_1DbDatum_1a63939fbe33ed4de5a07587fe705a8dc6">
+                <title>bool Tango::DbDatum::operator&gt;&gt; (float &amp;)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d0f/classTango_1_1DbDatum_1a19398e9de020e8b72a07757567091418">
+                <title>bool Tango::DbDatum::operator&gt;&gt; (double &amp;)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d0f/classTango_1_1DbDatum_1a41d1e86478a9d86742b6b3a3cf34c21b">
+                <title>bool Tango::DbDatum::operator&gt;&gt; (const char *&amp;)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d0f/classTango_1_1DbDatum_1ad4a2479446fd133b8b26320b4e0bda5a">
+                <title>bool Tango::DbDatum::operator&gt;&gt; (string &amp;)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d0f/classTango_1_1DbDatum_1ae9636a15a0d663da426f6451ef6b1cc3">
+                <title>bool Tango::DbDatum::operator&gt;&gt; (vector&lt; string &gt; &amp;)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d0f/classTango_1_1DbDatum_1a4ff5af8f7e374d8d9718af32d29c240c">
+                <title>bool Tango::DbDatum::operator&gt;&gt; (vector&lt; short &gt; &amp;)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d0f/classTango_1_1DbDatum_1ae092383ef8fd6e4999dc0b56739a74fc">
+                <title>bool Tango::DbDatum::operator&gt;&gt; (vector&lt; unsigned short &gt; &amp;)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d0f/classTango_1_1DbDatum_1a210500ca5c26be3fc0c63d3c079beef4">
+                <title>bool Tango::DbDatum::operator&gt;&gt; (vector&lt; DevLong &gt; &amp;)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d0f/classTango_1_1DbDatum_1a7b79536a34d26e1781b38efe6564ec01">
+                <title>bool Tango::DbDatum::operator&gt;&gt; (vector&lt; DevULong &gt; &amp;)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d0f/classTango_1_1DbDatum_1a6bbed6376a7cdc25b2e5d639a377aa2a">
+                <title>bool Tango::DbDatum::operator&gt;&gt; (vector&lt; DevLong64 &gt; &amp;)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d0f/classTango_1_1DbDatum_1a3984aaa151c987894976a69b140b1728">
+                <title>bool Tango::DbDatum::operator&gt;&gt; (vector&lt; DevULong64 &gt; &amp;)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d0f/classTango_1_1DbDatum_1af491f9f2e4d913b45a814ad794f348b6">
+                <title>bool Tango::DbDatum::operator&gt;&gt; (vector&lt; float &gt; &amp;)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d0f/classTango_1_1DbDatum_1a0b52369354096147284cc64d8da7f143">
+                <title>bool Tango::DbDatum::operator&gt;&gt; (vector&lt; double &gt; &amp;)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d0f/classTango_1_1DbDatum_1a1d5a9ccc30b9259af52aaae3ca946a70">
+                <title>size_t Tango::DbDatum::size ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

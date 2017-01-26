@@ -1,0 +1,1608 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="d4/dcd/classTango_1_1DeviceClass" kind="class" prot="public" abstract="yes">
+    <compoundname>Tango::DeviceClass</compoundname>
+    <innerclass refid="d0/d96/classTango_1_1DeviceClass_1_1DeviceClassExt" prot="private">Tango::DeviceClass::DeviceClassExt</innerclass>
+      <sectiondef kind="user-defined">
+      <header>Destructor</header>
+      <description><para>Only one desctructor is defined for this class </para></description>
+      <memberdef kind="function" id="d4/dcd/classTango_1_1DeviceClass_1ae3f6389d6cd5f8d9a4a0d503b1b39859" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual Tango::DeviceClass::~DeviceClass</definition>
+        <argsstring>()</argsstring>
+        <name>~DeviceClass</name>
+        <briefdescription>
+<para>The device destructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="93" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Miscellaneous methods</header>
+      <memberdef kind="function" id="d4/dcd/classTango_1_1DeviceClass_1ac69ec5233cd47d4e73bcc51ac280a9d2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>CORBA::Any *</type>
+        <definition>CORBA::Any* Tango::DeviceClass::command_handler</definition>
+        <argsstring>(DeviceImpl *device, string &amp;command, const CORBA::Any &amp;in_any)</argsstring>
+        <name>command_handler</name>
+        <param>
+          <type><ref refid="d3/d62/classTango_1_1DeviceImpl" kindref="compound">DeviceImpl</ref> *</type>
+          <declname>device</declname>
+        </param>
+        <param>
+          <type>string &amp;</type>
+          <declname>command</declname>
+        </param>
+        <param>
+          <type>const CORBA::Any &amp;</type>
+          <declname>in_any</declname>
+        </param>
+        <briefdescription>
+<para>Execute a command. </para>        </briefdescription>
+        <detaileddescription>
+<para>It looks for the correct command object in the command object vector. If the command is found, it invoke the <emphasis>always_executed_hook</emphasis> method. Check if the command is allowed by invoking the <emphasis>is_allowed</emphasis> method If the command is allowed, invokes the <emphasis>execute</emphasis> method.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>device</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The device on which the command must be executed </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>command</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The command name </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>in_any</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The command input data still packed in a CORBA Any object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A CORBA Any object with the output data packed in </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>DevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the command is not found, if the command is not allowed in the actual device state and re-throws of all the exception thrown by the <emphasis>always_executed_hook</emphasis>, <emphasis>is_alloed</emphasis> and <emphasis>execute</emphasis> methods. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="117" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/dcd/classTango_1_1DeviceClass_1ac86eef5f7d53b5291a034f7bb6fd289a" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Tango::DeviceClass::command_factory</definition>
+        <argsstring>()=0</argsstring>
+        <name>command_factory</name>
+        <briefdescription>
+<para>Create command objects for all command supported by this class of device. </para>        </briefdescription>
+        <detaileddescription>
+<para>In the <ref refid="d4/dcd/classTango_1_1DeviceClass" kindref="compound">DeviceClass</ref> class, this method is pure abstract and must be defined in sub-class. Its rule is to create the command object and to store them in a vector of command objects </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="127" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/dcd/classTango_1_1DeviceClass_1a0ea1a3848a3d59f55a6734772859c4ec" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Tango::DeviceClass::attribute_factory</definition>
+        <argsstring>(vector&lt; Attr * &gt; &amp;)</argsstring>
+        <name>attribute_factory</name>
+        <param>
+          <type>vector&lt; <ref refid="d5/dcd/classTango_1_1Attr" kindref="compound">Attr</ref> * &gt; &amp;</type>
+        </param>
+        <briefdescription>
+<para>Create all the attributes name supported by this class of device. </para>        </briefdescription>
+        <detaileddescription>
+<para>In the <ref refid="d4/dcd/classTango_1_1DeviceClass" kindref="compound">DeviceClass</ref> class, this method does nothing and must be re-defined in sub-class if the sub-class supports attributes. Its rule is to create and store the supported attributes in a vector. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="136" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" bodystart="136" bodyend="136"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/dcd/classTango_1_1DeviceClass_1a09321e4257b799709d77f40ace03242a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Tango::DeviceClass::pipe_factory</definition>
+        <argsstring>()</argsstring>
+        <name>pipe_factory</name>
+        <briefdescription>
+<para>Create all the pipes supported by this class of device. </para>        </briefdescription>
+        <detaileddescription>
+<para>In the <ref refid="d4/dcd/classTango_1_1DeviceClass" kindref="compound">DeviceClass</ref> class, this method does nothing and must be re-defined in sub-class if the sub-class supports pipes. Its rule is to create and store the supported pipes in a vector. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="145" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" bodystart="145" bodyend="145"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/dcd/classTango_1_1DeviceClass_1afe62dc15b693afaabae6ccab09e759b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Tango::DeviceClass::device_factory</definition>
+        <argsstring>(const Tango::DevVarStringArray *dev_list)=0</argsstring>
+        <name>device_factory</name>
+        <param>
+          <type>const Tango::DevVarStringArray *</type>
+          <declname>dev_list</declname>
+        </param>
+        <briefdescription>
+<para>Create device(s). </para>        </briefdescription>
+        <detaileddescription>
+<para>In the <ref refid="d4/dcd/classTango_1_1DeviceClass" kindref="compound">DeviceClass</ref> class, this method is pure abstract and must be defined in sub-class. Its rule is to create all the class devices and to store them in a vector of device</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dev_list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The device name list </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>DevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>This method does not throw exception but a redefined method can. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="160" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/dcd/classTango_1_1DeviceClass_1a2596f49733e5dc80d52d8d240f4f83cd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Tango::DeviceClass::device_name_factory</definition>
+        <argsstring>(vector&lt; string &gt; &amp;list)</argsstring>
+        <name>device_name_factory</name>
+        <param>
+          <type>vector&lt; string &gt; &amp;</type>
+          <declname>list</declname>
+        </param>
+        <briefdescription>
+<para>Create device(s) name list (for no database device server). </para>        </briefdescription>
+        <detaileddescription>
+<para>This method can be re-defined in <ref refid="d4/dcd/classTango_1_1DeviceClass" kindref="compound">DeviceClass</ref> sub-class for device server started without database. Its rule is to initialise class device name. The default method does nothing.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to the device name list </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="172" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" bodystart="172" bodyend="172"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/dcd/classTango_1_1DeviceClass_1af8a87e707a19e473b0f959b7203c1c5d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::DeviceClass::device_destroyer</definition>
+        <argsstring>(const string &amp;dev_name)</argsstring>
+        <name>device_destroyer</name>
+        <param>
+          <type>const string &amp;</type>
+          <declname>dev_name</declname>
+        </param>
+        <briefdescription>
+<para>Delete device. </para>        </briefdescription>
+        <detaileddescription>
+<para>The rule of this method is to delete a device from the running server belonging to the <ref refid="de/ddf/namespaceTango" kindref="compound">Tango</ref> class. It does change anything in the database</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dev_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to the device name </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="184" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/dcd/classTango_1_1DeviceClass_1adfd9b083e3d9a923ef44fc67d71e103c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::DeviceClass::device_destroyer</definition>
+        <argsstring>(const char *dev_name)</argsstring>
+        <name>device_destroyer</name>
+        <param>
+          <type>const char *</type>
+          <declname>dev_name</declname>
+        </param>
+        <briefdescription>
+<para>Delete device. </para>        </briefdescription>
+        <detaileddescription>
+<para>The rule of this method is to delete a device from the running device belonging to the <ref refid="de/ddf/namespaceTango" kindref="compound">Tango</ref> class. It does change anything in the database</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dev_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to the device name </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="196" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Get/Set object members.</header>
+      <description><para>These methods allows the external world to get/set <ref refid="d3/d62/classTango_1_1DeviceImpl" kindref="compound">DeviceImpl</ref> instance data members </para></description>
+      <memberdef kind="function" id="d4/dcd/classTango_1_1DeviceClass_1a0577ce350035604373496d5d1fceee39" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>string &amp;</type>
+        <definition>string&amp; Tango::DeviceClass::get_name</definition>
+        <argsstring>()</argsstring>
+        <name>get_name</name>
+        <briefdescription>
+<para>Get the TANGO device class name. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The TANGO device class name </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="210" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" bodystart="210" bodyend="210"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/dcd/classTango_1_1DeviceClass_1a66c9909cee0aba6e337d4b80ff1396c0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>string &amp;</type>
+        <definition>string&amp; Tango::DeviceClass::get_doc_url</definition>
+        <argsstring>()</argsstring>
+        <name>get_doc_url</name>
+        <briefdescription>
+<para>Get the TANGO device class documentation URL. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The TANGO device class documentation </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="216" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" bodystart="216" bodyend="216"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/dcd/classTango_1_1DeviceClass_1aca6317feaf809a2f18d0c28a6ae9df53" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>string &amp;</type>
+        <definition>string&amp; Tango::DeviceClass::get_type</definition>
+        <argsstring>()</argsstring>
+        <name>get_type</name>
+        <briefdescription>
+<para>Get the TANGO device type name. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The TANGO device type name </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="222" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" bodystart="222" bodyend="222"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/dcd/classTango_1_1DeviceClass_1ad6359a7f1e9677b65102224b84d0cb98" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>vector&lt; <ref refid="d3/d62/classTango_1_1DeviceImpl" kindref="compound">DeviceImpl</ref> * &gt; &amp;</type>
+        <definition>vector&lt;DeviceImpl *&gt;&amp; Tango::DeviceClass::get_device_list</definition>
+        <argsstring>()</argsstring>
+        <name>get_device_list</name>
+        <briefdescription>
+<para>Get the device object vector. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A reference to the device vector </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="228" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" bodystart="228" bodyend="228"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/dcd/classTango_1_1DeviceClass_1a9e37d56d78b31cbc5c767f65c1b2117f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>vector&lt; <ref refid="d2/d1d/classTango_1_1Command" kindref="compound">Command</ref> * &gt; &amp;</type>
+        <definition>vector&lt;Command *&gt;&amp; Tango::DeviceClass::get_command_list</definition>
+        <argsstring>()</argsstring>
+        <name>get_command_list</name>
+        <briefdescription>
+<para>Get the command object vector. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A reference to the command vector </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="234" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" bodystart="234" bodyend="234"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/dcd/classTango_1_1DeviceClass_1a88e327ee5c4220a0b46fb69546fbec85" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>vector&lt; <ref refid="d8/d14/classTango_1_1Pipe" kindref="compound">Pipe</ref> * &gt; &amp;</type>
+        <definition>vector&lt;Pipe *&gt;&amp; Tango::DeviceClass::get_pipe_list</definition>
+        <argsstring>(const string &amp;dev_name)</argsstring>
+        <name>get_pipe_list</name>
+        <param>
+          <type>const string &amp;</type>
+          <declname>dev_name</declname>
+        </param>
+        <briefdescription>
+<para>Get the pipe object vector. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dev_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The device name</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A reference to the pipe vector containing all device pipes </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="242" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/dcd/classTango_1_1DeviceClass_1ab5bd55dc59ca01c0de65150ebac12829" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d2/d1d/classTango_1_1Command" kindref="compound">Command</ref> &amp;</type>
+        <definition>Command&amp; Tango::DeviceClass::get_cmd_by_name</definition>
+        <argsstring>(const string &amp;)</argsstring>
+        <name>get_cmd_by_name</name>
+        <param>
+          <type>const string &amp;</type>
+        </param>
+        <briefdescription>
+<para>Get a reference to a command object. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A reference to the command object </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="248" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/dcd/classTango_1_1DeviceClass_1af22a059467b590ec821873c9271eca76" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d8/d14/classTango_1_1Pipe" kindref="compound">Pipe</ref> &amp;</type>
+        <definition>Pipe&amp; Tango::DeviceClass::get_pipe_by_name</definition>
+        <argsstring>(const string &amp;pipe_name, const string &amp;dev_name)</argsstring>
+        <name>get_pipe_by_name</name>
+        <param>
+          <type>const string &amp;</type>
+          <declname>pipe_name</declname>
+        </param>
+        <param>
+          <type>const string &amp;</type>
+          <declname>dev_name</declname>
+        </param>
+        <briefdescription>
+<para>Get a reference to a pipe object. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pipe_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The pipe name </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dev_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The device name</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A reference to the pipe object </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="257" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/dcd/classTango_1_1DeviceClass_1a0782567b9fa64959d5a3e41cdc893a6a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="dc/d38/classTango_1_1DbClass" kindref="compound">DbClass</ref> *</type>
+        <definition>DbClass* Tango::DeviceClass::get_db_class</definition>
+        <argsstring>()</argsstring>
+        <name>get_db_class</name>
+        <briefdescription>
+<para>Get a pointer to the associated <ref refid="dc/d38/classTango_1_1DbClass" kindref="compound">DbClass</ref> object. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Pointer to the DbClas object </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="264" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" bodystart="264" bodyend="264"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/dcd/classTango_1_1DeviceClass_1a82ce643e9668e99ab16c56f484e6284b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>MultiClassAttribute *</type>
+        <definition>MultiClassAttribute* Tango::DeviceClass::get_class_attr</definition>
+        <argsstring>()</argsstring>
+        <name>get_class_attr</name>
+        <briefdescription>
+<para>Get a pointer to the class attributes object. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A pointer to the instance of the MultiClassAttribute </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="270" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" bodystart="270" bodyend="270"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/dcd/classTango_1_1DeviceClass_1a2a9c1c29d9d4dbf07d44630a5f729ee7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>MultiClassPipe *</type>
+        <definition>MultiClassPipe* Tango::DeviceClass::get_class_pipe</definition>
+        <argsstring>()</argsstring>
+        <name>get_class_pipe</name>
+        <briefdescription>
+<para>Get a pointer to the class pipes object. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A pointer to the instance of the MultiClassPipe </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="276" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" bodystart="276" bodyend="276"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/dcd/classTango_1_1DeviceClass_1ac51857831a8313233a91ec7baa91aff1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::DeviceClass::set_type</definition>
+        <argsstring>(string &amp;dev_type)</argsstring>
+        <name>set_type</name>
+        <param>
+          <type>string &amp;</type>
+          <declname>dev_type</declname>
+        </param>
+        <briefdescription>
+<para>Set the TANGO device type name. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dev_type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new TANGO device type name </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="282" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" bodystart="282" bodyend="282"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/dcd/classTango_1_1DeviceClass_1af84e5725fbc6e5d97219c3cdc9169ed9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::DeviceClass::set_type</definition>
+        <argsstring>(const char *dev_type)</argsstring>
+        <name>set_type</name>
+        <param>
+          <type>const char *</type>
+          <declname>dev_type</declname>
+        </param>
+        <briefdescription>
+<para>Set the TANGO device type name. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dev_type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new TANGO device type name </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="288" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" bodystart="288" bodyend="288"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Signal related methods</header>
+      <description><para>These methods allow a signal management at device level </para></description>
+      <memberdef kind="function" id="d4/dcd/classTango_1_1DeviceClass_1acbcd3e21052bd117ec2ef7aa0ccccb3e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::DeviceClass::register_signal</definition>
+        <argsstring>(long signo, bool own_handler=false)</argsstring>
+        <name>register_signal</name>
+        <param>
+          <type>long</type>
+          <declname>signo</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>own_handler</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Register a signal. </para>        </briefdescription>
+        <detaileddescription>
+<para>Register this class as class to be informed when signal signo is sent to to the device server process. This method is available only under Linux.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>signo</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The signal number </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>own_handler</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A boolean set to true if you want the device signal handler to be executed in its own handler instead of being executed by the signal thread. If this parameter is set to true, care should be taken on how the handler is written. A default false value is provided * </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>DevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown if the signal number is out of range or if the operating system failed to register a signal for the process. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="325" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/dcd/classTango_1_1DeviceClass_1aa3ea36c4bc496245b84592f424043df7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::DeviceClass::unregister_signal</definition>
+        <argsstring>(long signo)</argsstring>
+        <name>unregister_signal</name>
+        <param>
+          <type>long</type>
+          <declname>signo</declname>
+        </param>
+        <briefdescription>
+<para>Unregister a signal. </para>        </briefdescription>
+        <detaileddescription>
+<para>Unregister this class as class to be informed when signal signo is sent to to the device server process</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>signo</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The signal number </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>DevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown if the signal number is out of range or if the operating system failed to unregister a signal for the process. Unregister a device for a signal number for a device not previously registered is not an error. This simply will do nothing. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="342" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/dcd/classTango_1_1DeviceClass_1a18b1c69d52e63e73cf6a844ee348da4a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Tango::DeviceClass::signal_handler</definition>
+        <argsstring>(long signo)</argsstring>
+        <name>signal_handler</name>
+        <param>
+          <type>long</type>
+          <declname>signo</declname>
+        </param>
+        <briefdescription>
+<para>Signal handler. </para>        </briefdescription>
+        <detaileddescription>
+<para>The method executed when the signal arrived in the device server process. This method is defined as virtual and then, can be redefined following device class needs.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>signo</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The signal number </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="353" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Constructor</header>
+      <description><para>Only one constructot for this class which is a singleton </para></description>
+      <memberdef kind="function" id="d4/dcd/classTango_1_1DeviceClass_1a053d5cd241d3c4e16aab72547c79c86f" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::DeviceClass::DeviceClass</definition>
+        <argsstring>(string &amp;s)</argsstring>
+        <name>DeviceClass</name>
+        <param>
+          <type>string &amp;</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+<para>Construct a newly allocated <ref refid="d4/dcd/classTango_1_1DeviceClass" kindref="compound">DeviceClass</ref> object. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="de/ddf/namespaceTango" kindref="compound">Tango</ref> device class name </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="367" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Miscellaneous protected methods</header>
+      <memberdef kind="function" id="d4/dcd/classTango_1_1DeviceClass_1a80c2d408c01346850d29b45541c7f740" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::DeviceClass::export_device</definition>
+        <argsstring>(DeviceImpl *dev, const char *corba_dev_name=&quot;Unused&quot;)</argsstring>
+        <name>export_device</name>
+        <param>
+          <type><ref refid="d3/d62/classTango_1_1DeviceImpl" kindref="compound">DeviceImpl</ref> *</type>
+          <declname>dev</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>corba_dev_name</declname>
+          <defval>&quot;Unused&quot;</defval>
+        </param>
+        <briefdescription>
+<para>Export a device. </para>        </briefdescription>
+        <detaileddescription>
+<para>Associate the servant to a CORBA object and send device network parameter to TANGO database. The main parameter sent to database is the CORBA object stringified device IOR.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The device to be exported (CORBA servant) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>corba_dev_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name to be used in the CORBA object key. This parameter does not need to be set in most of cases and has a default value. It is used for special device server like the database device server. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>DevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the command sent to the database failed. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="387" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/dcd/classTango_1_1DeviceClass_1abffecec6eb34eebaa56e8297e2999204" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::DeviceClass::set_default_command</definition>
+        <argsstring>(Command *cmd)</argsstring>
+        <name>set_default_command</name>
+        <param>
+          <type><ref refid="d2/d1d/classTango_1_1Command" kindref="compound">Command</ref> *</type>
+          <declname>cmd</declname>
+        </param>
+        <briefdescription>
+<para>Set a <ref refid="de/ddf/namespaceTango" kindref="compound">Tango</ref> classs default command. </para>        </briefdescription>
+        <detaileddescription>
+<para>Define one command to be the <ref refid="de/ddf/namespaceTango" kindref="compound">Tango</ref> class default command The default command is the command which will be exceuted when an unknown command is sent to one of the <ref refid="de/ddf/namespaceTango" kindref="compound">Tango</ref> class device By default, there is no default class</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>cmd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The command object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="400" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" bodystart="400" bodyend="400"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Class data members</header>
+      <memberdef kind="variable" id="d4/dcd/classTango_1_1DeviceClass_1a17e2d247caf604ac2f2ab8f69ec4261c" prot="protected" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Tango::DeviceClass::name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <briefdescription>
+<para>The TANGO device class name. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="408" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" bodystart="408" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/dcd/classTango_1_1DeviceClass_1a19e2e40c4a095e6f002fc8367d98cdff" prot="protected" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Tango::DeviceClass::doc_url</definition>
+        <argsstring></argsstring>
+        <name>doc_url</name>
+        <briefdescription>
+<para>The TANGO device class documentation URL. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="412" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" bodystart="412" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/dcd/classTango_1_1DeviceClass_1a04a29a0cd699e1100f9d69e7b6202039" prot="protected" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Tango::DeviceClass::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <briefdescription>
+<para>The TANGO device type name. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="416" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" bodystart="416" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/dcd/classTango_1_1DeviceClass_1ac7c054f57761e8fdf84660008d1070b5" prot="protected" static="no" mutable="no">
+        <type>vector&lt; <ref refid="d2/d1d/classTango_1_1Command" kindref="compound">Command</ref> * &gt;</type>
+        <definition>vector&lt;Command *&gt; Tango::DeviceClass::command_list</definition>
+        <argsstring></argsstring>
+        <name>command_list</name>
+        <briefdescription>
+<para>The command(s) list. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="420" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" bodystart="420" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/dcd/classTango_1_1DeviceClass_1add35f135439357ce2815140a6e5ebb89" prot="protected" static="no" mutable="no">
+        <type>vector&lt; <ref refid="d3/d62/classTango_1_1DeviceImpl" kindref="compound">DeviceImpl</ref> * &gt;</type>
+        <definition>vector&lt;DeviceImpl *&gt; Tango::DeviceClass::device_list</definition>
+        <argsstring></argsstring>
+        <name>device_list</name>
+        <briefdescription>
+<para>The device(s) list. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="424" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" bodystart="424" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/dcd/classTango_1_1DeviceClass_1a94b87afbec24955aca456718488485ed" prot="protected" static="no" mutable="no">
+        <type><ref refid="dc/d38/classTango_1_1DbClass" kindref="compound">DbClass</ref> *</type>
+        <definition>DbClass* Tango::DeviceClass::db_class</definition>
+        <argsstring></argsstring>
+        <name>db_class</name>
+        <briefdescription>
+<para>The associated <ref refid="dc/d38/classTango_1_1DbClass" kindref="compound">DbClass</ref> object. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="428" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" bodystart="428" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/dcd/classTango_1_1DeviceClass_1a4430e4458d46045ebd5a19ed472e2c59" prot="protected" static="no" mutable="no">
+        <type>MultiClassAttribute *</type>
+        <definition>MultiClassAttribute* Tango::DeviceClass::class_attr</definition>
+        <argsstring></argsstring>
+        <name>class_attr</name>
+        <briefdescription>
+<para>Pointer to the class multi attribute object. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="432" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" bodystart="432" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/dcd/classTango_1_1DeviceClass_1ab664e50fbdb4a0843f11477011e962f8" prot="protected" static="no" mutable="no">
+        <type>MultiClassPipe *</type>
+        <definition>MultiClassPipe* Tango::DeviceClass::class_pipe</definition>
+        <argsstring></argsstring>
+        <name>class_pipe</name>
+        <briefdescription>
+<para>Pointer to the class multi pipe object. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="436" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" bodystart="436" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/dcd/classTango_1_1DeviceClass_1a2626f63ac4db19102480950a815fb549" prot="protected" static="no" mutable="no">
+        <type>vector&lt; <ref refid="d8/d14/classTango_1_1Pipe" kindref="compound">Pipe</ref> * &gt;</type>
+        <definition>vector&lt;Pipe *&gt; Tango::DeviceClass::pipe_list</definition>
+        <argsstring></argsstring>
+        <name>pipe_list</name>
+        <briefdescription>
+<para>The pipe(s) list. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="440" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" bodystart="440" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="d4/dcd/classTango_1_1DeviceClass_1aa90445f0324fbdea288f7b41aa4a6790" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend class</type>
+        <definition>friend class Tango::AutoTangoMonitor</definition>
+        <argsstring></argsstring>
+        <name>Tango::AutoTangoMonitor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="84" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d4/dcd/classTango_1_1DeviceClass_1a4bd0a6a2de1d5e5b11450590fe817eea" prot="private" static="no" mutable="no">
+        <type>vector&lt; string &gt;</type>
+        <definition>vector&lt;string&gt; Tango::DeviceClass::allowed_cmds</definition>
+        <argsstring></argsstring>
+        <name>allowed_cmds</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="506" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" bodystart="506" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/dcd/classTango_1_1DeviceClass_1acaa561e3fe754061e645732c2d5ffa21" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Tango::DeviceClass::cvs_location</definition>
+        <argsstring></argsstring>
+        <name>cvs_location</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="521" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" bodystart="521" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/dcd/classTango_1_1DeviceClass_1a19a30f179cf59585cb69267697c323ce" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Tango::DeviceClass::cvs_tag</definition>
+        <argsstring></argsstring>
+        <name>cvs_tag</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="520" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" bodystart="520" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/dcd/classTango_1_1DeviceClass_1aa2776957857b4ce7bb9bd890318836f9" prot="private" static="no" mutable="no">
+        <type><ref refid="d2/d1d/classTango_1_1Command" kindref="compound">Command</ref> *</type>
+        <definition>Command* Tango::DeviceClass::default_cmd</definition>
+        <argsstring></argsstring>
+        <name>default_cmd</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="522" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" bodystart="522" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/dcd/classTango_1_1DeviceClass_1aeceb96cf1e66d214749f5b12922f8764" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Tango::DeviceClass::device_factory_done</definition>
+        <argsstring></argsstring>
+        <name>device_factory_done</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="526" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" bodystart="526" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/dcd/classTango_1_1DeviceClass_1a576d10110b6b68ac44c8743c3aa731f4" prot="private" static="no" mutable="no">
+        <type>DeviceClassExt *</type>
+        <definition>DeviceClassExt* Tango::DeviceClass::ext</definition>
+        <argsstring></argsstring>
+        <name>ext</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="511" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" bodystart="511" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/dcd/classTango_1_1DeviceClass_1a7192fec4491724187309c03079c7af15" prot="private" static="no" mutable="no">
+        <type>vector&lt; string &gt;</type>
+        <definition>vector&lt;string&gt; Tango::DeviceClass::nodb_name_list</definition>
+        <argsstring></argsstring>
+        <name>nodb_name_list</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="518" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" bodystart="518" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/dcd/classTango_1_1DeviceClass_1a028633c7f6341e0d6614fbed80821983" prot="private" static="no" mutable="no">
+        <type>TangoMonitor</type>
+        <definition>TangoMonitor Tango::DeviceClass::only_one</definition>
+        <argsstring></argsstring>
+        <name>only_one</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="519" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" bodystart="519" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/dcd/classTango_1_1DeviceClass_1aecd6752875e059584d63c9770b70a54c" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Tango::DeviceClass::py_class</definition>
+        <argsstring></argsstring>
+        <name>py_class</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="523" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" bodystart="523" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/dcd/classTango_1_1DeviceClass_1ae6b4ab171e18803332e7cb3980b656b4" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Tango::DeviceClass::svn_location</definition>
+        <argsstring></argsstring>
+        <name>svn_location</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="525" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" bodystart="525" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/dcd/classTango_1_1DeviceClass_1a4714c27233b6c6230afdc4b0b09b1791" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Tango::DeviceClass::svn_tag</definition>
+        <argsstring></argsstring>
+        <name>svn_tag</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="524" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" bodystart="524" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/dcd/classTango_1_1DeviceClass_1aa5f2b4c1d0f589c2eee40530f7d91cf0" prot="private" static="no" mutable="no">
+        <type>vector&lt; string &gt;</type>
+        <definition>vector&lt;string&gt; Tango::DeviceClass::wiz_class_prop</definition>
+        <argsstring></argsstring>
+        <name>wiz_class_prop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="503" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" bodystart="503" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/dcd/classTango_1_1DeviceClass_1a2366155e0c74e3c5decdf8f300b506b7" prot="private" static="no" mutable="no">
+        <type>vector&lt; string &gt;</type>
+        <definition>vector&lt;string&gt; Tango::DeviceClass::wiz_dev_prop</definition>
+        <argsstring></argsstring>
+        <name>wiz_dev_prop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="504" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" bodystart="504" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="d4/dcd/classTango_1_1DeviceClass_1ae2fbedb235f9c5cac2dad060808d3f89" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::DeviceClass::add_device</definition>
+        <argsstring>(DeviceImpl *dev)</argsstring>
+        <name>add_device</name>
+        <param>
+          <type><ref refid="d3/d62/classTango_1_1DeviceImpl" kindref="compound">DeviceImpl</ref> *</type>
+          <declname>dev</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="466" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" bodystart="466" bodyend="466"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/dcd/classTango_1_1DeviceClass_1a579bd2bac2cb3d2b4368cc84cfe27c77" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::DeviceClass::add_wiz_class_prop</definition>
+        <argsstring>(string &amp;name, string &amp;desc, string &amp;def)</argsstring>
+        <name>add_wiz_class_prop</name>
+        <param>
+          <type>string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>string &amp;</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>string &amp;</type>
+          <declname>def</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="451" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/dcd/classTango_1_1DeviceClass_1a969bde365f29e99a4e0aa15ba3e8f1bb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::DeviceClass::add_wiz_class_prop</definition>
+        <argsstring>(string &amp;name, string &amp;desc)</argsstring>
+        <name>add_wiz_class_prop</name>
+        <param>
+          <type>string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>string &amp;</type>
+          <declname>desc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="452" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/dcd/classTango_1_1DeviceClass_1a14af2a462bbe103b1ce8916c98e6e3f7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::DeviceClass::add_wiz_dev_prop</definition>
+        <argsstring>(string &amp;name, string &amp;desc, string &amp;def)</argsstring>
+        <name>add_wiz_dev_prop</name>
+        <param>
+          <type>string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>string &amp;</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>string &amp;</type>
+          <declname>def</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="448" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/dcd/classTango_1_1DeviceClass_1ac451f92034c0311b08bc1d1e99b0e666" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::DeviceClass::add_wiz_dev_prop</definition>
+        <argsstring>(string &amp;name, string &amp;desc)</argsstring>
+        <name>add_wiz_dev_prop</name>
+        <param>
+          <type>string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>string &amp;</type>
+          <declname>desc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="449" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/dcd/classTango_1_1DeviceClass_1a8386257fa9593d099ecf20c3599376b3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::DeviceClass::check_att_conf</definition>
+        <argsstring>()</argsstring>
+        <name>check_att_conf</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="479" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/dcd/classTango_1_1DeviceClass_1af45dafa21f83d483505979d35eff1475" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::DeviceClass::create_device_pipe</definition>
+        <argsstring>(DeviceClass *, DeviceImpl *)</argsstring>
+        <name>create_device_pipe</name>
+        <param>
+          <type><ref refid="d4/dcd/classTango_1_1DeviceClass" kindref="compound">DeviceClass</ref> *</type>
+        </param>
+        <param>
+          <type><ref refid="d3/d62/classTango_1_1DeviceImpl" kindref="compound">DeviceImpl</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="484" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/dcd/classTango_1_1DeviceClass_1ad706459dc900a92162728710d84d887a" prot="private" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Tango::DeviceClass::delete_class</definition>
+        <argsstring>()</argsstring>
+        <name>delete_class</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="471" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" bodystart="471" bodyend="471"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/dcd/classTango_1_1DeviceClass_1ac742d97e261e555440eebfb870e6673b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::DeviceClass::delete_dev</definition>
+        <argsstring>(long idx, Tango::Util *tg, PortableServer::POA_ptr r_poa)</argsstring>
+        <name>delete_dev</name>
+        <param>
+          <type>long</type>
+          <declname>idx</declname>
+        </param>
+        <param>
+          <type><ref refid="d4/deb/classTango_1_1Util" kindref="compound">Tango::Util</ref> *</type>
+          <declname>tg</declname>
+        </param>
+        <param>
+          <type>PortableServer::POA_ptr</type>
+          <declname>r_poa</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="467" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/dcd/classTango_1_1DeviceClass_1afbefdf12a70bfb6a0eaf1aaab91936f2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::DeviceClass::get_class_system_resource</definition>
+        <argsstring>()</argsstring>
+        <name>get_class_system_resource</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="500" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/dcd/classTango_1_1DeviceClass_1a89239d8476aebee5f526f956e85c318d" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>string &amp;</type>
+        <definition>string&amp; Tango::DeviceClass::get_cvs_location</definition>
+        <argsstring>()</argsstring>
+        <name>get_cvs_location</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="458" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" bodystart="458" bodyend="458"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/dcd/classTango_1_1DeviceClass_1a4d2facafc35d81e2d83d4bba640f197f" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>string &amp;</type>
+        <definition>string&amp; Tango::DeviceClass::get_cvs_tag</definition>
+        <argsstring>()</argsstring>
+        <name>get_cvs_tag</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="457" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" bodystart="457" bodyend="457"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/dcd/classTango_1_1DeviceClass_1aeb6e11cb8e7ea0840754ce5ec5c6dc34" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="d2/d1d/classTango_1_1Command" kindref="compound">Command</ref> *</type>
+        <definition>Command* Tango::DeviceClass::get_default_command</definition>
+        <argsstring>()</argsstring>
+        <name>get_default_command</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="489" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" bodystart="489" bodyend="489"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/dcd/classTango_1_1DeviceClass_1ae71bf93cbe81bbc8d2be5e0285bb0c58" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Tango::DeviceClass::get_device_factory_done</definition>
+        <argsstring>()</argsstring>
+        <name>get_device_factory_done</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="476" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" bodystart="476" bodyend="476"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/dcd/classTango_1_1DeviceClass_1aa4ce9902a3498249a44d761934b3a677" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::DeviceClass::get_mcast_event</definition>
+        <argsstring>(DServer *)</argsstring>
+        <name>get_mcast_event</name>
+        <param>
+          <type>DServer *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="472" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/dcd/classTango_1_1DeviceClass_1abe4ffd5ecaefa2ed2bbfc62e24ef77e9" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>vector&lt; string &gt; &amp;</type>
+        <definition>vector&lt;string&gt;&amp; Tango::DeviceClass::get_nodb_name_list</definition>
+        <argsstring>()</argsstring>
+        <name>get_nodb_name_list</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="445" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" bodystart="445" bodyend="445"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/dcd/classTango_1_1DeviceClass_1add90407645d4fb1faab847b3f3270eff" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>vector&lt; <ref refid="d8/d14/classTango_1_1Pipe" kindref="compound">Pipe</ref> * &gt; &amp;</type>
+        <definition>vector&lt;Pipe *&gt;&amp; Tango::DeviceClass::get_pipe_list</definition>
+        <argsstring>()</argsstring>
+        <name>get_pipe_list</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="485" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" bodystart="485" bodyend="485"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/dcd/classTango_1_1DeviceClass_1afa824cca89d68f5977b5af86c7762889" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>string &amp;</type>
+        <definition>string&amp; Tango::DeviceClass::get_svn_location</definition>
+        <argsstring>()</argsstring>
+        <name>get_svn_location</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="461" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" bodystart="461" bodyend="461"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/dcd/classTango_1_1DeviceClass_1aa88ffa49157b3e0d874002d52a1ac97c" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>string &amp;</type>
+        <definition>string&amp; Tango::DeviceClass::get_svn_tag</definition>
+        <argsstring>()</argsstring>
+        <name>get_svn_tag</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="460" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" bodystart="460" bodyend="460"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/dcd/classTango_1_1DeviceClass_1ac0263662ab15c0585c54774885297bbf" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>vector&lt; string &gt; &amp;</type>
+        <definition>vector&lt;string&gt;&amp; Tango::DeviceClass::get_wiz_class_prop</definition>
+        <argsstring>()</argsstring>
+        <name>get_wiz_class_prop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="454" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" bodystart="454" bodyend="454"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/dcd/classTango_1_1DeviceClass_1a849407ebfd91afdc0bf9b5c3ea210bfc" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>vector&lt; string &gt; &amp;</type>
+        <definition>vector&lt;string&gt;&amp; Tango::DeviceClass::get_wiz_dev_prop</definition>
+        <argsstring>()</argsstring>
+        <name>get_wiz_dev_prop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="455" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" bodystart="455" bodyend="455"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/dcd/classTango_1_1DeviceClass_1a6593e811d869eb45edc982a26072b5dc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Tango::DeviceClass::is_command_allowed</definition>
+        <argsstring>(const char *)</argsstring>
+        <name>is_command_allowed</name>
+        <param>
+          <type>const char *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="474" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/dcd/classTango_1_1DeviceClass_1a951f6053b5a7875e9d881a8972a546cc" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Tango::DeviceClass::is_py_class</definition>
+        <argsstring>()</argsstring>
+        <name>is_py_class</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="469" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" bodystart="469" bodyend="469"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/dcd/classTango_1_1DeviceClass_1a343ddecfd7b1c68114df447787835458" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::DeviceClass::release_devices_mon</definition>
+        <argsstring>()</argsstring>
+        <name>release_devices_mon</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="480" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/dcd/classTango_1_1DeviceClass_1acdea2df0d97491f761b9b92f46c989f2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::DeviceClass::remove_command</definition>
+        <argsstring>(const string &amp;)</argsstring>
+        <name>remove_command</name>
+        <param>
+          <type>const string &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="482" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/dcd/classTango_1_1DeviceClass_1ac87dc0ad2b8f7d39022e648479a9853c" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::DeviceClass::set_cvs_location</definition>
+        <argsstring>(string &amp;str)</argsstring>
+        <name>set_cvs_location</name>
+        <param>
+          <type>string &amp;</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="464" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" bodystart="464" bodyend="464"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/dcd/classTango_1_1DeviceClass_1a8d584bb73556e18cbb34209c65ecb35a" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::DeviceClass::set_cvs_tag</definition>
+        <argsstring>(string &amp;str)</argsstring>
+        <name>set_cvs_tag</name>
+        <param>
+          <type>string &amp;</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="463" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" bodystart="463" bodyend="463"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/dcd/classTango_1_1DeviceClass_1a6420a3efe776c5468e6a4c6933480769" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::DeviceClass::set_device_factory_done</definition>
+        <argsstring>(bool val)</argsstring>
+        <name>set_device_factory_done</name>
+        <param>
+          <type>bool</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="477" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" bodystart="477" bodyend="477"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/dcd/classTango_1_1DeviceClass_1a740922f69ec7b8a0e31a72df41271d17" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::DeviceClass::set_memorized_values</definition>
+        <argsstring>(bool flag, long idx=0, bool from_init=false)</argsstring>
+        <name>set_memorized_values</name>
+        <param>
+          <type>bool</type>
+          <declname>flag</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>idx</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>from_init</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="446" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/dcd/classTango_1_1DeviceClass_1af07421e957342a9e09dd75805045685b" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::DeviceClass::set_py_class</definition>
+        <argsstring>(bool py)</argsstring>
+        <name>set_py_class</name>
+        <param>
+          <type>bool</type>
+          <declname>py</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="470" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" bodystart="470" bodyend="470"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/dcd/classTango_1_1DeviceClass_1a648495ec08f8d0a12819a69fb6a0342a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::DeviceClass::throw_mem_value</definition>
+        <argsstring>(DeviceImpl *, Attribute &amp;)</argsstring>
+        <name>throw_mem_value</name>
+        <param>
+          <type><ref refid="d3/d62/classTango_1_1DeviceImpl" kindref="compound">DeviceImpl</ref> *</type>
+        </param>
+        <param>
+          <type><ref refid="d6/dad/classTango_1_1Attribute" kindref="compound">Attribute</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="501" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Base class for all TANGO device-class class. </para>    </briefdescription>
+    <detaileddescription>
+<para>A TANGO device-class class is a class where is stored all data/method common to all devices of a TANGO device class</para><para>$Author$ $Revision$ </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="932">
+        <label>Tango::DeviceClass</label>
+        <link refid="d4/dcd/classTango_1_1DeviceClass"/>
+        <childnode refid="933" relation="usage">
+          <edgelabel>db_class</edgelabel>
+        </childnode>
+      </node>
+      <node id="933">
+        <label>Tango::DbClass</label>
+        <link refid="dc/d38/classTango_1_1DbClass"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" line="83" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/deviceclass.h" bodystart="76" bodyend="527"/>
+    <listofallmembers>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1ae2fbedb235f9c5cac2dad060808d3f89" prot="private" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>add_device</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1a579bd2bac2cb3d2b4368cc84cfe27c77" prot="private" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>add_wiz_class_prop</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1a969bde365f29e99a4e0aa15ba3e8f1bb" prot="private" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>add_wiz_class_prop</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1a14af2a462bbe103b1ce8916c98e6e3f7" prot="private" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>add_wiz_dev_prop</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1ac451f92034c0311b08bc1d1e99b0e666" prot="private" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>add_wiz_dev_prop</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1a4bd0a6a2de1d5e5b11450590fe817eea" prot="private" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>allowed_cmds</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1a0ea1a3848a3d59f55a6734772859c4ec" prot="public" virt="virtual"><scope>Tango::DeviceClass</scope><name>attribute_factory</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1a8386257fa9593d099ecf20c3599376b3" prot="private" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>check_att_conf</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1a4430e4458d46045ebd5a19ed472e2c59" prot="protected" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>class_attr</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1ab664e50fbdb4a0843f11477011e962f8" prot="protected" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>class_pipe</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1ac86eef5f7d53b5291a034f7bb6fd289a" prot="public" virt="pure-virtual"><scope>Tango::DeviceClass</scope><name>command_factory</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1ac69ec5233cd47d4e73bcc51ac280a9d2" prot="public" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>command_handler</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1ac7c054f57761e8fdf84660008d1070b5" prot="protected" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>command_list</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1af45dafa21f83d483505979d35eff1475" prot="private" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>create_device_pipe</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1acaa561e3fe754061e645732c2d5ffa21" prot="private" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>cvs_location</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1a19a30f179cf59585cb69267697c323ce" prot="private" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>cvs_tag</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1a94b87afbec24955aca456718488485ed" prot="protected" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>db_class</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1aa2776957857b4ce7bb9bd890318836f9" prot="private" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>default_cmd</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1ad706459dc900a92162728710d84d887a" prot="private" virt="virtual"><scope>Tango::DeviceClass</scope><name>delete_class</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1ac742d97e261e555440eebfb870e6673b" prot="private" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>delete_dev</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1af8a87e707a19e473b0f959b7203c1c5d" prot="public" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>device_destroyer</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1adfd9b083e3d9a923ef44fc67d71e103c" prot="public" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>device_destroyer</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1afe62dc15b693afaabae6ccab09e759b1" prot="public" virt="pure-virtual"><scope>Tango::DeviceClass</scope><name>device_factory</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1aeceb96cf1e66d214749f5b12922f8764" prot="private" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>device_factory_done</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1add35f135439357ce2815140a6e5ebb89" prot="protected" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>device_list</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1a2596f49733e5dc80d52d8d240f4f83cd" prot="public" virt="virtual"><scope>Tango::DeviceClass</scope><name>device_name_factory</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1a053d5cd241d3c4e16aab72547c79c86f" prot="protected" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>DeviceClass</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1a19e2e40c4a095e6f002fc8367d98cdff" prot="protected" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>doc_url</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1a80c2d408c01346850d29b45541c7f740" prot="protected" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>export_device</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1a576d10110b6b68ac44c8743c3aa731f4" prot="private" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>ext</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1a82ce643e9668e99ab16c56f484e6284b" prot="public" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>get_class_attr</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1a2a9c1c29d9d4dbf07d44630a5f729ee7" prot="public" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>get_class_pipe</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1afbefdf12a70bfb6a0eaf1aaab91936f2" prot="private" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>get_class_system_resource</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1ab5bd55dc59ca01c0de65150ebac12829" prot="public" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>get_cmd_by_name</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1a9e37d56d78b31cbc5c767f65c1b2117f" prot="public" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>get_command_list</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1a89239d8476aebee5f526f956e85c318d" prot="private" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>get_cvs_location</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1a4d2facafc35d81e2d83d4bba640f197f" prot="private" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>get_cvs_tag</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1a0782567b9fa64959d5a3e41cdc893a6a" prot="public" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>get_db_class</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1aeb6e11cb8e7ea0840754ce5ec5c6dc34" prot="private" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>get_default_command</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1ae71bf93cbe81bbc8d2be5e0285bb0c58" prot="private" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>get_device_factory_done</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1ad6359a7f1e9677b65102224b84d0cb98" prot="public" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>get_device_list</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1a66c9909cee0aba6e337d4b80ff1396c0" prot="public" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>get_doc_url</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1aa4ce9902a3498249a44d761934b3a677" prot="private" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>get_mcast_event</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1a0577ce350035604373496d5d1fceee39" prot="public" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>get_name</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1abe4ffd5ecaefa2ed2bbfc62e24ef77e9" prot="private" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>get_nodb_name_list</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1af22a059467b590ec821873c9271eca76" prot="public" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>get_pipe_by_name</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1a88e327ee5c4220a0b46fb69546fbec85" prot="public" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>get_pipe_list</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1add90407645d4fb1faab847b3f3270eff" prot="private" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>get_pipe_list</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1afa824cca89d68f5977b5af86c7762889" prot="private" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>get_svn_location</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1aa88ffa49157b3e0d874002d52a1ac97c" prot="private" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>get_svn_tag</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1aca6317feaf809a2f18d0c28a6ae9df53" prot="public" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>get_type</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1ac0263662ab15c0585c54774885297bbf" prot="private" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>get_wiz_class_prop</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1a849407ebfd91afdc0bf9b5c3ea210bfc" prot="private" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>get_wiz_dev_prop</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1a6593e811d869eb45edc982a26072b5dc" prot="private" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>is_command_allowed</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1a951f6053b5a7875e9d881a8972a546cc" prot="private" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>is_py_class</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1a17e2d247caf604ac2f2ab8f69ec4261c" prot="protected" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>name</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1a7192fec4491724187309c03079c7af15" prot="private" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>nodb_name_list</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1a028633c7f6341e0d6614fbed80821983" prot="private" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>only_one</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1a09321e4257b799709d77f40ace03242a" prot="public" virt="virtual"><scope>Tango::DeviceClass</scope><name>pipe_factory</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1a2626f63ac4db19102480950a815fb549" prot="protected" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>pipe_list</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1aecd6752875e059584d63c9770b70a54c" prot="private" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>py_class</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1acbcd3e21052bd117ec2ef7aa0ccccb3e" prot="public" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>register_signal</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1a343ddecfd7b1c68114df447787835458" prot="private" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>release_devices_mon</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1acdea2df0d97491f761b9b92f46c989f2" prot="private" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>remove_command</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1ac87dc0ad2b8f7d39022e648479a9853c" prot="private" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>set_cvs_location</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1a8d584bb73556e18cbb34209c65ecb35a" prot="private" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>set_cvs_tag</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1abffecec6eb34eebaa56e8297e2999204" prot="protected" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>set_default_command</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1a6420a3efe776c5468e6a4c6933480769" prot="private" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>set_device_factory_done</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1a740922f69ec7b8a0e31a72df41271d17" prot="private" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>set_memorized_values</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1af07421e957342a9e09dd75805045685b" prot="private" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>set_py_class</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1ac51857831a8313233a91ec7baa91aff1" prot="public" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>set_type</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1af84e5725fbc6e5d97219c3cdc9169ed9" prot="public" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>set_type</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1a18b1c69d52e63e73cf6a844ee348da4a" prot="public" virt="virtual"><scope>Tango::DeviceClass</scope><name>signal_handler</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1ae6b4ab171e18803332e7cb3980b656b4" prot="private" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>svn_location</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1a4714c27233b6c6230afdc4b0b09b1791" prot="private" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>svn_tag</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1aa90445f0324fbdea288f7b41aa4a6790" prot="public" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>Tango::AutoTangoMonitor</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1a648495ec08f8d0a12819a69fb6a0342a" prot="private" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>throw_mem_value</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1a04a29a0cd699e1100f9d69e7b6202039" prot="protected" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>type</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1aa3ea36c4bc496245b84592f424043df7" prot="public" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>unregister_signal</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1aa5f2b4c1d0f589c2eee40530f7d91cf0" prot="private" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>wiz_class_prop</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1a2366155e0c74e3c5decdf8f300b506b7" prot="private" virt="non-virtual"><scope>Tango::DeviceClass</scope><name>wiz_dev_prop</name></member>
+      <member refid="d4/dcd/classTango_1_1DeviceClass_1ae3f6389d6cd5f8d9a4a0d503b1b39859" prot="public" virt="virtual"><scope>Tango::DeviceClass</scope><name>~DeviceClass</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

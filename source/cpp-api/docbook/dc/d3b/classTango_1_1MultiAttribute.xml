@@ -1,0 +1,397 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="dc/d3b/classTango_1_1MultiAttribute">
+<title>Tango::MultiAttribute class Reference</title>
+        <simplesect>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d6/da3/classTango_1_1MultiAttribute_1_1MultiAttributeExt">Tango::MultiAttribute::MultiAttributeExt</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Constructor</title>
+      <description>
+<para>Only one constructor is defined for this class </para>
+</description>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="dc/d3b/classTango_1_1MultiAttribute_1aafd0cc4e89eeef1687b827da72b2db34">MultiAttribute</link> (
+string &amp; dev_name, <link linkend="d4/dcd/classTango_1_1DeviceClass">DeviceClass</link> * dev_class, <link linkend="d3/d62/classTango_1_1DeviceImpl">DeviceImpl</link> * dev)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Destructor</title>
+      <description>
+<para>Only one desctructor is defined for this class </para>
+</description>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="dc/d3b/classTango_1_1MultiAttribute_1ad0f2a8d4aaff4735c71456d7ef6ba440">~MultiAttribute</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Miscellaneous methods</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d6/dad/classTango_1_1Attribute">Attribute</link> &amp; <link linkend="dc/d3b/classTango_1_1MultiAttribute_1a7b35eb2625bb190393524de6971e2a84">get_attr_by_name</link> (
+const char * attr_name)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d6/dad/classTango_1_1Attribute">Attribute</link> &amp; <link linkend="dc/d3b/classTango_1_1MultiAttribute_1a30ec97afa15f663a53df8a07aab3b29f">get_attr_by_ind</link> (
+const long ind)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="db/da8/classTango_1_1WAttribute">WAttribute</link> &amp; <link linkend="dc/d3b/classTango_1_1MultiAttribute_1a3023529c543ed802a58c9e1eb2b12ff3">get_w_attr_by_name</link> (
+const char * attr_name)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="db/da8/classTango_1_1WAttribute">WAttribute</link> &amp; <link linkend="dc/d3b/classTango_1_1MultiAttribute_1a1e02cdb7576f1758143226efabcc374c">get_w_attr_by_ind</link> (
+const long ind)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>long <link linkend="dc/d3b/classTango_1_1MultiAttribute_1a63ae2f2c06d88bb8b641a37898fdefdf">get_attr_ind_by_name</link> (
+const char * attr_name)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>vector&lt; long &gt; &amp; <link linkend="dc/d3b/classTango_1_1MultiAttribute_1a18553cf9309d7a92f2f8d1fe96b7c637">get_alarm_list</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>unsigned long <link linkend="dc/d3b/classTango_1_1MultiAttribute_1a1eeb8abbdd3e3a44d60410758a0d0535">get_attr_nb</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="dc/d3b/classTango_1_1MultiAttribute_1af25a9b37449cc1e596bd5154c710c8df">check_alarm</link> (
+const char * attr_name)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="dc/d3b/classTango_1_1MultiAttribute_1a11c6b528f663726ccc8b39f0e0ddf967">check_alarm</link> (
+const long ind)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="dc/d3b/classTango_1_1MultiAttribute_1a4293e644ee659ccc6796f8bf4bea8e5a">check_alarm</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dc/d3b/classTango_1_1MultiAttribute_1a5f848b890a266861a0dced1add52fe88">read_alarm</link> (
+string &amp; status)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>vector&lt; <link linkend="d6/dad/classTango_1_1Attribute">Attribute</link> * &gt; &amp; <link linkend="dc/d3b/classTango_1_1MultiAttribute_1a1cb698e75ba5417305de17409fbeb1b3">get_attribute_list</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Class data members</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>vector&lt; Attribute * &gt; attr_list<para><emphasis>The Attribute objects vector.</emphasis></para></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>vector&lt; long &gt; writable_attr_list<para><emphasis>The list of writable attribute.</emphasis></para></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>vector&lt; long &gt; alarm_attr_list<para><emphasis>The list of attribute with an alarm level defined.</emphasis></para></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>MultiAttributeExt * ext</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dc/d3b/classTango_1_1MultiAttribute_1a95091c53ee7404dd757be541965f7c95">add_alarmed_quality_factor</link> (
+string &amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dc/d3b/classTango_1_1MultiAttribute_1aa45aa9fcd379b2eba8134541c5116264">add_attr</link> (
+<link linkend="d6/dad/classTango_1_1Attribute">Attribute</link> * att)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dc/d3b/classTango_1_1MultiAttribute_1a555fcdf815c09724c852dea0d4e1631f">add_attribute</link> (
+string &amp; , <link linkend="d4/dcd/classTango_1_1DeviceClass">DeviceClass</link> * , long )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dc/d3b/classTango_1_1MultiAttribute_1ad09aad97add1704bb699d6e5cdbc9c3a">add_default</link> (
+vector&lt; AttrProperty &gt; &amp; , string &amp; , string &amp; , long )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dc/d3b/classTango_1_1MultiAttribute_1acc710dc04d2ae7ffedb79add0daa4aa2">add_fwd_attribute</link> (
+string &amp; , <link linkend="d4/dcd/classTango_1_1DeviceClass">DeviceClass</link> * , long , <link linkend="d5/dcd/classTango_1_1Attr">Attr</link> * )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dc/d3b/classTango_1_1MultiAttribute_1a61d870789064363a386aab22c019d9ee">add_user_default</link> (
+vector&lt; AttrProperty &gt; &amp; , vector&lt; AttrProperty &gt; &amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dc/d3b/classTango_1_1MultiAttribute_1a97dce822ddff978e682e56dc934bd760">add_write_value</link> (
+<link linkend="d6/dad/classTango_1_1Attribute">Attribute</link> &amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dc/d3b/classTango_1_1MultiAttribute_1aa546d38d824da82a1796f8aeb84ad0e7">check_associated</link> (
+long , string &amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dc/d3b/classTango_1_1MultiAttribute_1a430ee85e264196d64162c6f05df5b882">check_idl_release</link> (
+<link linkend="d3/d62/classTango_1_1DeviceImpl">DeviceImpl</link> * )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dc/d3b/classTango_1_1MultiAttribute_1ad5770f678a807f5f8097d9e9fa29e377">concat</link> (
+vector&lt; AttrProperty &gt; &amp; , vector&lt; AttrProperty &gt; &amp; , vector&lt; AttrProperty &gt; &amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dc/d3b/classTango_1_1MultiAttribute_1ae254983aaca796072bc03f903789cc8d">get_event_param</link> (
+vector&lt; <link linkend="de/d7e/structTango_1_1EventPar">EventPar</link> &gt; &amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>vector&lt; long &gt; &amp; <link linkend="dc/d3b/classTango_1_1MultiAttribute_1a0dcea1b5e151d7393eb2241f5fe674e2">get_w_attr_list</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="dc/d3b/classTango_1_1MultiAttribute_1a402917514ec2e3a355e3c04dda37b43d">is_att_quality_alarmed</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="dc/d3b/classTango_1_1MultiAttribute_1ad22baba0b347dae867a7132f76fab509">is_opt_prop</link> (
+const string &amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dc/d3b/classTango_1_1MultiAttribute_1aaa2cbc47b1ef6730b45df28ceb0eab9b">remove_attribute</link> (
+string &amp; , bool )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dc/d3b/classTango_1_1MultiAttribute_1a1ac83656d0df14dba6c4a4365749164e">set_event_param</link> (
+vector&lt; <link linkend="de/d7e/structTango_1_1EventPar">EventPar</link> &gt; &amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dc/d3b/classTango_1_1MultiAttribute_1a2d3d69c43c52df3a1817f30ab6eb5ac2">update</link> (
+<link linkend="d6/dad/classTango_1_1Attribute">Attribute</link> &amp; , string &amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Brief Description</title>
+
+<para>There is one instance of this class for each device. </para>
+    </simplesect>
+        <simplesect>
+            <title>Detailed Description</title>
+
+<para>This class is mainly an aggregate of <link linkend="d6/dad/classTango_1_1Attribute">Attribute</link> or <link linkend="db/da8/classTango_1_1WAttribute">WAttribute</link> objects. It eases management of multiple attributes</para>
+
+<para>$Author$ $Revision$ </para>
+                <para>Definition at line 88 of file multiattribute.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>multiattribute.h</para></listitem></itemizedlist></para>
+        </simplesect>
+            <section xml:id="dc/d3b/classTango_1_1MultiAttribute_1a95091c53ee7404dd757be541965f7c95">
+                <title>void Tango::MultiAttribute::add_alarmed_quality_factor (string &amp;)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dc/d3b/classTango_1_1MultiAttribute_1aa45aa9fcd379b2eba8134541c5116264">
+                <title>void Tango::MultiAttribute::add_attr (Attribute *att)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dc/d3b/classTango_1_1MultiAttribute_1a555fcdf815c09724c852dea0d4e1631f">
+                <title>void Tango::MultiAttribute::add_attribute (string &amp;, DeviceClass *, long)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dc/d3b/classTango_1_1MultiAttribute_1ad09aad97add1704bb699d6e5cdbc9c3a">
+                <title>void Tango::MultiAttribute::add_default (vector&lt; AttrProperty &gt; &amp;, string &amp;, string &amp;, long)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dc/d3b/classTango_1_1MultiAttribute_1acc710dc04d2ae7ffedb79add0daa4aa2">
+                <title>void Tango::MultiAttribute::add_fwd_attribute (string &amp;, DeviceClass *, long, Attr *)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dc/d3b/classTango_1_1MultiAttribute_1a61d870789064363a386aab22c019d9ee">
+                <title>void Tango::MultiAttribute::add_user_default (vector&lt; AttrProperty &gt; &amp;, vector&lt; AttrProperty &gt; &amp;)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dc/d3b/classTango_1_1MultiAttribute_1a97dce822ddff978e682e56dc934bd760">
+                <title>void Tango::MultiAttribute::add_write_value (Attribute &amp;)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dc/d3b/classTango_1_1MultiAttribute_1aa546d38d824da82a1796f8aeb84ad0e7">
+                <title>void Tango::MultiAttribute::check_associated (long, string &amp;)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dc/d3b/classTango_1_1MultiAttribute_1a430ee85e264196d64162c6f05df5b882">
+                <title>void Tango::MultiAttribute::check_idl_release (DeviceImpl *)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dc/d3b/classTango_1_1MultiAttribute_1ad5770f678a807f5f8097d9e9fa29e377">
+                <title>void Tango::MultiAttribute::concat (vector&lt; AttrProperty &gt; &amp;, vector&lt; AttrProperty &gt; &amp;, vector&lt; AttrProperty &gt; &amp;)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dc/d3b/classTango_1_1MultiAttribute_1ae254983aaca796072bc03f903789cc8d">
+                <title>void Tango::MultiAttribute::get_event_param (vector&lt; EventPar &gt; &amp;)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dc/d3b/classTango_1_1MultiAttribute_1a0dcea1b5e151d7393eb2241f5fe674e2">
+                <title>vector&lt;long&gt;&amp; Tango::MultiAttribute::get_w_attr_list ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dc/d3b/classTango_1_1MultiAttribute_1a402917514ec2e3a355e3c04dda37b43d">
+                <title>bool Tango::MultiAttribute::is_att_quality_alarmed ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dc/d3b/classTango_1_1MultiAttribute_1ad22baba0b347dae867a7132f76fab509">
+                <title>bool Tango::MultiAttribute::is_opt_prop (const string &amp;)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dc/d3b/classTango_1_1MultiAttribute_1aaa2cbc47b1ef6730b45df28ceb0eab9b">
+                <title>void Tango::MultiAttribute::remove_attribute (string &amp;, bool)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dc/d3b/classTango_1_1MultiAttribute_1a1ac83656d0df14dba6c4a4365749164e">
+                <title>void Tango::MultiAttribute::set_event_param (vector&lt; EventPar &gt; &amp;)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dc/d3b/classTango_1_1MultiAttribute_1a2d3d69c43c52df3a1817f30ab6eb5ac2">
+                <title>void Tango::MultiAttribute::update (Attribute &amp;, string &amp;)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

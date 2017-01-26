@@ -1,0 +1,134 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="df/d41/structTango_1_1DbServerData_1_1TangoDevice">
+<title>Tango::DbServerData::TangoDevice struct Reference</title>
+        <simplesect>
+            <title>Public Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>vector&lt; TangoAttribute &gt; attributes</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string name</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>vector&lt; TangoPipe &gt; pipes</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>vector&lt; TangoProperty &gt; properties</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="df/d41/structTango_1_1DbServerData_1_1TangoDevice_1a5ee7eb6e383f62878c8e6207752f4674">TangoDevice</link> (
+string &amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>vector&lt; TangoAttribute &gt; &amp; <link linkend="df/d41/structTango_1_1DbServerData_1_1TangoDevice_1a0e1ef364296102a2ca09d9b9bd8878e1">get_attributes</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string <link linkend="df/d41/structTango_1_1DbServerData_1_1TangoDevice_1a4cdd375613841eedf0c448841f2e4908">get_name</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>vector&lt; TangoPipe &gt; &amp; <link linkend="df/d41/structTango_1_1DbServerData_1_1TangoDevice_1a087ff5f84421c2eba0e41850d1c2b90e">get_pipes</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>vector&lt; TangoProperty &gt; &amp; <link linkend="df/d41/structTango_1_1DbServerData_1_1TangoDevice_1a766c5979849d2a3b185f6cc94b8de3cc">get_properties</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="df/d41/structTango_1_1DbServerData_1_1TangoDevice_1af757ee592b7ac3186f43d3ae9fe150ac">put_attribute_properties</link> (
+Database * )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="df/d41/structTango_1_1DbServerData_1_1TangoDevice_1a12214a9af1268bf4e4f6a8bd286d4ca3">put_pipe_properties</link> (
+Database * )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="df/d41/structTango_1_1DbServerData_1_1TangoDevice_1a935ef5fcde88955965c0960a5a896261">put_properties</link> (
+Database * )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+            <section xml:id="df/d41/structTango_1_1DbServerData_1_1TangoDevice_1a5ee7eb6e383f62878c8e6207752f4674">
+                <title>Tango::DbServerData::TangoDevice::TangoDevice (string &amp;)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="df/d41/structTango_1_1DbServerData_1_1TangoDevice_1a0e1ef364296102a2ca09d9b9bd8878e1">
+                <title>vector&lt;TangoAttribute&gt;&amp; Tango::DbServerData::TangoDevice::get_attributes ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="df/d41/structTango_1_1DbServerData_1_1TangoDevice_1a4cdd375613841eedf0c448841f2e4908">
+                <title>string Tango::DbServerData::TangoDevice::get_name ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="df/d41/structTango_1_1DbServerData_1_1TangoDevice_1a087ff5f84421c2eba0e41850d1c2b90e">
+                <title>vector&lt;TangoPipe&gt;&amp; Tango::DbServerData::TangoDevice::get_pipes ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="df/d41/structTango_1_1DbServerData_1_1TangoDevice_1a766c5979849d2a3b185f6cc94b8de3cc">
+                <title>vector&lt;TangoProperty&gt;&amp; Tango::DbServerData::TangoDevice::get_properties ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="df/d41/structTango_1_1DbServerData_1_1TangoDevice_1af757ee592b7ac3186f43d3ae9fe150ac">
+                <title>void Tango::DbServerData::TangoDevice::put_attribute_properties (Database *)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="df/d41/structTango_1_1DbServerData_1_1TangoDevice_1a12214a9af1268bf4e4f6a8bd286d4ca3">
+                <title>void Tango::DbServerData::TangoDevice::put_pipe_properties (Database *)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="df/d41/structTango_1_1DbServerData_1_1TangoDevice_1a935ef5fcde88955965c0960a5a896261">
+                <title>void Tango::DbServerData::TangoDevice::put_properties (Database *)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

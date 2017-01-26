@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d2/d7c/classlog4tango_1_1XMLLayout">
+<title>log4tango::XMLLayout class Reference</title>
+<para>
+    <programlisting>#include <link linkend="d3/d7f/XmlLayout_8hh">&quot;XmlLayout.hh&quot;</link></programlisting>
+</para>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d2/d7c/classlog4tango_1_1XMLLayout_1a27faf76c0e6a9c82b18e50fdb305421d">XMLLayout</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="d2/d7c/classlog4tango_1_1XMLLayout_1a89c2134f5e03dc2e62b16f490bd38ede">~XMLLayout</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual std::string <link linkend="d2/d7c/classlog4tango_1_1XMLLayout_1a0f455c8af4768383dc989923eddc72f3">format</link> (
+const <link linkend="d8/df2/structlog4tango_1_1LoggingEvent">LoggingEvent</link> &amp; event)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d2/d7c/classlog4tango_1_1XMLLayout_1a9d6653078a8d6853acf3183ad3439737">appendEscapingCDATA</link> (
+std::string buf, std::string str)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Brief Description</title>
+
+<para><link linkend="d2/d7c/classlog4tango_1_1XMLLayout">XMLLayout</link> is a simple fixed format <link linkend="d7/da6/classlog4tango_1_1Layout">Layout</link> implementation. </para>
+    </simplesect>
+            <section xml:id="d2/d7c/classlog4tango_1_1XMLLayout_1a27faf76c0e6a9c82b18e50fdb305421d">
+                <title>log4tango::XMLLayout::XMLLayout ()</title> <emphasis>Ctor.</emphasis>
+                
+            </section>
+            <section xml:id="d2/d7c/classlog4tango_1_1XMLLayout_1a89c2134f5e03dc2e62b16f490bd38ede">
+                <title>log4tango::XMLLayout::~XMLLayout ()</title> <emphasis>Dtor.</emphasis>
+                
+            </section>
+            <section xml:id="d2/d7c/classlog4tango_1_1XMLLayout_1a0f455c8af4768383dc989923eddc72f3">
+                <title>std::string log4tango::XMLLayout::format (const LoggingEvent &amp;event)</title> <emphasis>Formats the LoggingEvent in XML.</emphasis>
+                
+            </section>
+            <section xml:id="d2/d7c/classlog4tango_1_1XMLLayout_1a9d6653078a8d6853acf3183ad3439737">
+                <title>void log4tango::XMLLayout::appendEscapingCDATA (std::string buf, std::string str)</title> <emphasis>Ensures that embeded CDEnd strings (]]&gt;) are handled properly.</emphasis>
+                
+            </section>
+</section>

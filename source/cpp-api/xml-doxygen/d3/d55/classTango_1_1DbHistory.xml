@@ -1,0 +1,247 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="d3/d55/classTango_1_1DbHistory" kind="class" prot="public">
+    <compoundname>Tango::DbHistory</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d3/d55/classTango_1_1DbHistory_1a8c091d882baffd922d9888919bcd12d0" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Tango::DbHistory::attname</definition>
+        <argsstring></argsstring>
+        <name>attname</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="782" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" bodystart="782" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/d55/classTango_1_1DbHistory_1ab857aa9e549addb79ac39dcd6ef7a9b9" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Tango::DbHistory::date</definition>
+        <argsstring></argsstring>
+        <name>date</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="784" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" bodystart="784" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/d55/classTango_1_1DbHistory_1a61a873ee9d0157c033cf10ae52ef9399" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Tango::DbHistory::deleted</definition>
+        <argsstring></argsstring>
+        <name>deleted</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="785" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" bodystart="785" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/d55/classTango_1_1DbHistory_1a22edff48ecd9580a79c7b4549263ac00" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Tango::DbHistory::propname</definition>
+        <argsstring></argsstring>
+        <name>propname</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="781" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" bodystart="781" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/d55/classTango_1_1DbHistory_1aee33edae6defccffd8a836796ec12383" prot="private" static="no" mutable="no">
+        <type><ref refid="d3/d0f/classTango_1_1DbDatum" kindref="compound">DbDatum</ref></type>
+        <definition>DbDatum Tango::DbHistory::value</definition>
+        <argsstring></argsstring>
+        <name>value</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="783" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" bodystart="783" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d3/d55/classTango_1_1DbHistory_1a3d4ba889f2f79659906ef989c4e16033" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::DbHistory::DbHistory</definition>
+        <argsstring>(string, string, vector&lt; string &gt; &amp;)</argsstring>
+        <name>DbHistory</name>
+        <param>
+          <type>string</type>
+        </param>
+        <param>
+          <type>string</type>
+        </param>
+        <param>
+          <type>vector&lt; string &gt; &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="741" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d55/classTango_1_1DbHistory_1a4325dc938449fb06f09f680a834d7b46" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::DbHistory::DbHistory</definition>
+        <argsstring>(string, string, string, vector&lt; string &gt; &amp;)</argsstring>
+        <name>DbHistory</name>
+        <param>
+          <type>string</type>
+        </param>
+        <param>
+          <type>string</type>
+        </param>
+        <param>
+          <type>string</type>
+        </param>
+        <param>
+          <type>vector&lt; string &gt; &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="742" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d55/classTango_1_1DbHistory_1a0f532f6d49c60c914253c2bf419b8c0e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>string</type>
+        <definition>string Tango::DbHistory::get_attribute_name</definition>
+        <argsstring>()</argsstring>
+        <name>get_attribute_name</name>
+        <briefdescription>
+<para>Get attribute name. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The attribute name </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="759" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d55/classTango_1_1DbHistory_1a6fbe1f96e256cf130a6c7ad82de81f17" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>string</type>
+        <definition>string Tango::DbHistory::get_date</definition>
+        <argsstring>()</argsstring>
+        <name>get_date</name>
+        <briefdescription>
+<para>Get change date. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The date </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="765" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d55/classTango_1_1DbHistory_1a80c1a81fae093feb44370c1a2d0796d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>string</type>
+        <definition>string Tango::DbHistory::get_name</definition>
+        <argsstring>()</argsstring>
+        <name>get_name</name>
+        <briefdescription>
+<para>Get property name. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The property name </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="753" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d55/classTango_1_1DbHistory_1ab11812600a09b269cab0d419e01d075a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d3/d0f/classTango_1_1DbDatum" kindref="compound">DbDatum</ref></type>
+        <definition>DbDatum Tango::DbHistory::get_value</definition>
+        <argsstring>()</argsstring>
+        <name>get_value</name>
+        <briefdescription>
+<para>Get value. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The property value </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="771" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d55/classTango_1_1DbHistory_1a946c37f983f5d9dc5465a1e9e6ed2332" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Tango::DbHistory::is_deleted</definition>
+        <argsstring>()</argsstring>
+        <name>is_deleted</name>
+        <briefdescription>
+<para>Get property deleted flag. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The property deleted flag </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="777" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="d3/d55/classTango_1_1DbHistory_1a2176d4a2fd8d0d3d465cdb8f70ad41d8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>string</type>
+        <definition>string Tango::DbHistory::format_mysql_date</definition>
+        <argsstring>(string)</argsstring>
+        <name>format_mysql_date</name>
+        <param>
+          <type>string</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="787" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d55/classTango_1_1DbHistory_1a2ee1aa4e36fcabac1ea3fd20ee203e80" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::DbHistory::make_db_datum</definition>
+        <argsstring>(vector&lt; string &gt; &amp;)</argsstring>
+        <name>make_db_datum</name>
+        <param>
+          <type>vector&lt; string &gt; &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="788" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Class used to retrieve database object history. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="734" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" bodystart="733" bodyend="789"/>
+    <listofallmembers>
+      <member refid="d3/d55/classTango_1_1DbHistory_1a8c091d882baffd922d9888919bcd12d0" prot="private" virt="non-virtual"><scope>Tango::DbHistory</scope><name>attname</name></member>
+      <member refid="d3/d55/classTango_1_1DbHistory_1ab857aa9e549addb79ac39dcd6ef7a9b9" prot="private" virt="non-virtual"><scope>Tango::DbHistory</scope><name>date</name></member>
+      <member refid="d3/d55/classTango_1_1DbHistory_1a3d4ba889f2f79659906ef989c4e16033" prot="public" virt="non-virtual"><scope>Tango::DbHistory</scope><name>DbHistory</name></member>
+      <member refid="d3/d55/classTango_1_1DbHistory_1a4325dc938449fb06f09f680a834d7b46" prot="public" virt="non-virtual"><scope>Tango::DbHistory</scope><name>DbHistory</name></member>
+      <member refid="d3/d55/classTango_1_1DbHistory_1a61a873ee9d0157c033cf10ae52ef9399" prot="private" virt="non-virtual"><scope>Tango::DbHistory</scope><name>deleted</name></member>
+      <member refid="d3/d55/classTango_1_1DbHistory_1a2176d4a2fd8d0d3d465cdb8f70ad41d8" prot="private" virt="non-virtual"><scope>Tango::DbHistory</scope><name>format_mysql_date</name></member>
+      <member refid="d3/d55/classTango_1_1DbHistory_1a0f532f6d49c60c914253c2bf419b8c0e" prot="public" virt="non-virtual"><scope>Tango::DbHistory</scope><name>get_attribute_name</name></member>
+      <member refid="d3/d55/classTango_1_1DbHistory_1a6fbe1f96e256cf130a6c7ad82de81f17" prot="public" virt="non-virtual"><scope>Tango::DbHistory</scope><name>get_date</name></member>
+      <member refid="d3/d55/classTango_1_1DbHistory_1a80c1a81fae093feb44370c1a2d0796d1" prot="public" virt="non-virtual"><scope>Tango::DbHistory</scope><name>get_name</name></member>
+      <member refid="d3/d55/classTango_1_1DbHistory_1ab11812600a09b269cab0d419e01d075a" prot="public" virt="non-virtual"><scope>Tango::DbHistory</scope><name>get_value</name></member>
+      <member refid="d3/d55/classTango_1_1DbHistory_1a946c37f983f5d9dc5465a1e9e6ed2332" prot="public" virt="non-virtual"><scope>Tango::DbHistory</scope><name>is_deleted</name></member>
+      <member refid="d3/d55/classTango_1_1DbHistory_1a2ee1aa4e36fcabac1ea3fd20ee203e80" prot="private" virt="non-virtual"><scope>Tango::DbHistory</scope><name>make_db_datum</name></member>
+      <member refid="d3/d55/classTango_1_1DbHistory_1a22edff48ecd9580a79c7b4549263ac00" prot="private" virt="non-virtual"><scope>Tango::DbHistory</scope><name>propname</name></member>
+      <member refid="d3/d55/classTango_1_1DbHistory_1aee33edae6defccffd8a836796ec12383" prot="private" virt="non-virtual"><scope>Tango::DbHistory</scope><name>value</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

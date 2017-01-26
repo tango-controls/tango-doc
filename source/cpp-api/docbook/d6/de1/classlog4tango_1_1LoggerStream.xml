@@ -1,0 +1,321 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d6/de1/classlog4tango_1_1LoggerStream">
+<title>log4tango::LoggerStream class Reference</title>
+<para>
+    <programlisting>#include <link linkend="d2/de3/LoggerStream_8hh">&quot;LoggerStream.hh&quot;</link></programlisting>
+</para>
+        <simplesect>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>std::ostringstream * _buffer</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool _filter</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Level::Value _level</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Logger &amp; _logger</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="df/d5d/Export_8hh_1abb9e874b4244b6247ac9dbb62a2c7b8f">LOG4TANGO_EXPORT</link> <link linkend="d6/de1/classlog4tango_1_1LoggerStream_1a4bb2fa44f562c0398b6706ce241dbf81">LoggerStream</link> (
+<link linkend="d4/d1c/classlog4tango_1_1Logger">Logger</link> &amp; logger, <link linkend="d8/d0e/classlog4tango_1_1Level_1aa708c09b6a19a8cc8a3b19631561ca99">Level::Value</link> level, bool filter)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="df/d5d/Export_8hh_1abb9e874b4244b6247ac9dbb62a2c7b8f">LOG4TANGO_EXPORT</link> <link linkend="d6/de1/classlog4tango_1_1LoggerStream_1a03bd5a5f9b171ac3e192f4e56c00d079">~LoggerStream</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="df/d5d/Export_8hh_1abb9e874b4244b6247ac9dbb62a2c7b8f">LOG4TANGO_EXPORT</link> void <link linkend="d6/de1/classlog4tango_1_1LoggerStream_1a87e12557f4851fcbb9f4077e9a4d0d59">flush</link> (
+void )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="df/d5d/Export_8hh_1abb9e874b4244b6247ac9dbb62a2c7b8f">LOG4TANGO_EXPORT</link> <link linkend="d8/d0e/classlog4tango_1_1Level_1aa708c09b6a19a8cc8a3b19631561ca99">Level::Value</link> <link linkend="d6/de1/classlog4tango_1_1LoggerStream_1ad1e16a5bcc3e33dab57644ffc6141d5d">get_level</link> (
+void )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="df/d5d/Export_8hh_1abb9e874b4244b6247ac9dbb62a2c7b8f">LOG4TANGO_EXPORT</link> <link linkend="d4/d1c/classlog4tango_1_1Logger">Logger</link> &amp; <link linkend="d6/de1/classlog4tango_1_1LoggerStream_1a0da2fad226c741bad936a1c260ecc780">get_logger</link> (
+void )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="df/d5d/Export_8hh_1abb9e874b4244b6247ac9dbb62a2c7b8f">LOG4TANGO_EXPORT</link> <link linkend="d6/de1/classlog4tango_1_1LoggerStream">LoggerStream</link> &amp; <link linkend="d6/de1/classlog4tango_1_1LoggerStream_1a70c248b1dd5d54626b4588d949bbd2fe">operator&lt;&lt;</link> (
+<link linkend="da/dd8/Portability_8hh_1a3e82719800a6abe2ae163e2da6739661">LOG4TANGO_UNUSED</link>(<link linkend="d3/dfe/classlog4tango_1_1LogInitiator">LogInitiator</link> &amp;i) )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="df/d5d/Export_8hh_1abb9e874b4244b6247ac9dbb62a2c7b8f">LOG4TANGO_EXPORT</link> <link linkend="d6/de1/classlog4tango_1_1LoggerStream">LoggerStream</link> &amp; <link linkend="d6/de1/classlog4tango_1_1LoggerStream_1ae7da2af43a07d6aff594f733a137b630">operator&lt;&lt;</link> (
+<link linkend="da/dd8/Portability_8hh_1a3e82719800a6abe2ae163e2da6739661">LOG4TANGO_UNUSED</link>(<link linkend="d0/d2f/classlog4tango_1_1LogSeparator">LogSeparator</link> &amp;s) )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="df/d5d/Export_8hh_1abb9e874b4244b6247ac9dbb62a2c7b8f">LOG4TANGO_EXPORT</link> <link linkend="d6/de1/classlog4tango_1_1LoggerStream">LoggerStream</link> &amp; <link linkend="d6/de1/classlog4tango_1_1LoggerStream_1aa1d278ed6fc807a75e7f83daac063391">operator&lt;&lt;</link> (
+<link linkend="da/dd8/Portability_8hh_1a3e82719800a6abe2ae163e2da6739661">LOG4TANGO_UNUSED</link>(<link linkend="d4/db0/namespacelog4tango_1ac25f18a9841eab936214ef50cdb08432">ls_terminator</link> endoflog) )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="df/d5d/Export_8hh_1abb9e874b4244b6247ac9dbb62a2c7b8f">LOG4TANGO_EXPORT</link> <link linkend="d6/de1/classlog4tango_1_1LoggerStream">LoggerStream</link> &amp; <link linkend="d6/de1/classlog4tango_1_1LoggerStream_1af3dc8e4d367c118c86dc698b980fc0b2">operator&lt;&lt;</link> (
+std::ios_base &amp;(*)(std::ios_base &amp;) _F)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d6/de1/classlog4tango_1_1LoggerStream">LoggerStream</link> &amp; <link linkend="d6/de1/classlog4tango_1_1LoggerStream_1a3aa83b092637a7f0e87c96cc87e655cd">operator&lt;&lt;</link> (
+const T &amp; t)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+            <section xml:id="d6/de1/classlog4tango_1_1LoggerStream_1a4bb2fa44f562c0398b6706ce241dbf81">
+                <title>log4tango::LoggerStream::LoggerStream (Logger &amp;logger, Level::Value level, bool filter=true)</title> <emphasis>Construct a LoggerStream for given Logger with given level.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>logger</entry>
+                                <entry>
+<para>The logger this stream will send log messages to. </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>level</entry>
+                                <entry>
+<para>The level the log messages will get or Level::NOTSET to silently discard any streamed in messages. </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>filter</entry>
+                                <entry>
+<para>The filter flag </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+            <section xml:id="d6/de1/classlog4tango_1_1LoggerStream_1a03bd5a5f9b171ac3e192f4e56c00d079">
+                <title>log4tango::LoggerStream::~LoggerStream ()</title> <emphasis>Destructor for LoggerStream&amp;)</emphasis>
+                
+            </section>
+            <section xml:id="d6/de1/classlog4tango_1_1LoggerStream_1a87e12557f4851fcbb9f4077e9a4d0d59">
+                <title>void log4tango::LoggerStream::flush (void)</title> <emphasis>Flush the contents of the stream buffer to the Logger and
+empties the buffer.</emphasis>
+                
+            </section>
+            <section xml:id="d6/de1/classlog4tango_1_1LoggerStream_1ad1e16a5bcc3e33dab57644ffc6141d5d">
+                <title>LOG4TANGO_EXPORT Level::Value log4tango::LoggerStream::get_level (void) const </title> <emphasis>Returns the level for this stream.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>The level. </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="d6/de1/classlog4tango_1_1LoggerStream_1a0da2fad226c741bad936a1c260ecc780">
+                <title>LOG4TANGO_EXPORT Logger&amp; log4tango::LoggerStream::get_logger (void) const </title> <emphasis>Returns the destination Logger for this stream.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>The <link linkend="d4/d1c/classlog4tango_1_1Logger">Logger</link>. </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="d6/de1/classlog4tango_1_1LoggerStream_1a70c248b1dd5d54626b4588d949bbd2fe">
+                <title>LOG4TANGO_EXPORT LoggerStream&amp; log4tango::LoggerStream::operator&lt;&lt; (LOG4TANGO_UNUSED(LogInitiator &amp;i))</title> <emphasis>Streams in a Initiator.</emphasis>
+                
+<para>Just a trick to return a ref to self. 
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>i</entry>
+                                <entry>
+<para>The log initiator </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>A reference to itself. </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="d6/de1/classlog4tango_1_1LoggerStream_1ae7da2af43a07d6aff594f733a137b630">
+                <title>LOG4TANGO_EXPORT LoggerStream&amp; log4tango::LoggerStream::operator&lt;&lt; (LOG4TANGO_UNUSED(LogSeparator &amp;s))</title> <emphasis>Streams in a Separator.Sends the contents of the stream buffer
+to the Logger with set level and empties the buffer.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>s</entry>
+                                <entry>
+<para>The log separator </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>A reference to itself. </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="d6/de1/classlog4tango_1_1LoggerStream_1aa1d278ed6fc807a75e7f83daac063391">
+                <title>LOG4TANGO_EXPORT LoggerStream&amp; log4tango::LoggerStream::operator&lt;&lt; (LOG4TANGO_UNUSED(ls_terminator endoflog))</title> <emphasis>Streams in a ls_manipulator.</emphasis>
+                
+<para>Sends the contents of the stream buffer to the <link linkend="d4/d1c/classlog4tango_1_1Logger">Logger</link> with set level and empties the buffer. 
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>endoflog</entry>
+                                <entry>
+<para>The log terminator </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>A reference to itself. </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="d6/de1/classlog4tango_1_1LoggerStream_1af3dc8e4d367c118c86dc698b980fc0b2">
+                <title>LOG4TANGO_EXPORT LoggerStream&amp; log4tango::LoggerStream::operator&lt;&lt; (std::ios_base &amp;(*_F)(std::ios_base &amp;))</title> <emphasis>Streams in a std stream manipulator.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>_F</entry>
+                                <entry>
+<para>the manipulator function </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>a reference to self. </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="d6/de1/classlog4tango_1_1LoggerStream_1a3aa83b092637a7f0e87c96cc87e655cd">
+                <title>LoggerStream&amp; log4tango::LoggerStream::operator&lt;&lt; (const T &amp;t)</title> <emphasis>Stream in arbitrary types and objects.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>t</entry>
+                                <entry>
+<para>The value or object to stream in. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>A reference to itself. </para>
+</formalpara>
+</para>
+
+            </section>
+</section>

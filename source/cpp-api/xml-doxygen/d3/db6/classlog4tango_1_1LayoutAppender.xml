@@ -1,0 +1,188 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="d3/db6/classlog4tango_1_1LayoutAppender" kind="class" prot="public">
+    <compoundname>log4tango::LayoutAppender</compoundname>
+    <basecompoundref refid="d7/dc4/classlog4tango_1_1Appender" prot="public" virt="non-virtual">log4tango::Appender</basecompoundref>
+    <derivedcompoundref refid="dd/d62/classlog4tango_1_1FileAppender" prot="public" virt="non-virtual">log4tango::FileAppender</derivedcompoundref>
+    <derivedcompoundref refid="df/d37/classlog4tango_1_1OstreamAppender" prot="public" virt="non-virtual">log4tango::OstreamAppender</derivedcompoundref>
+    <includes refid="d3/da3/LayoutAppender_8hh" local="yes">LayoutAppender.hh</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="d3/db6/classlog4tango_1_1LayoutAppender_1afff8b793c258c86701cbd1fe72925b49" prot="public" static="no">
+        <type><ref refid="d7/da6/classlog4tango_1_1Layout" kindref="compound">Layout</ref></type>
+        <definition>typedef Layout log4tango::LayoutAppender::DefaultLayoutType</definition>
+        <argsstring></argsstring>
+        <name>DefaultLayoutType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/LayoutAppender.hh" line="45" column="1" bodyfile="/home/tango/workspace/cppTango/include/log4tango/LayoutAppender.hh" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d3/db6/classlog4tango_1_1LayoutAppender_1a4b225dac7b189ef386b7cb3b8db047f0" prot="private" static="no" mutable="no">
+        <type><ref refid="d7/da6/classlog4tango_1_1Layout" kindref="compound">Layout</ref> *</type>
+        <definition>Layout* log4tango::LayoutAppender::_layout</definition>
+        <argsstring></argsstring>
+        <name>_layout</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/LayoutAppender.hh" line="60" column="1" bodyfile="/home/tango/workspace/cppTango/include/log4tango/LayoutAppender.hh" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d3/db6/classlog4tango_1_1LayoutAppender_1aae15fc6ce336d263386c6866ad569782" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>log4tango::LayoutAppender::LayoutAppender</definition>
+        <argsstring>(const std::string &amp;name)</argsstring>
+        <name>LayoutAppender</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/LayoutAppender.hh" line="47" column="1" bodyfile="/home/tango/workspace/cppTango/src/log4tango/LayoutAppender.cpp" bodystart="33" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/db6/classlog4tango_1_1LayoutAppender_1a2822f627fd98e29db0a9a7c96377e81e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>log4tango::LayoutAppender::~LayoutAppender</definition>
+        <argsstring>()</argsstring>
+        <name>~LayoutAppender</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/LayoutAppender.hh" line="49" column="1" bodyfile="/home/tango/workspace/cppTango/src/log4tango/LayoutAppender.cpp" bodystart="39" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/db6/classlog4tango_1_1LayoutAppender_1aed53ada140e2b10a63d4d836b0e22ba9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool log4tango::LayoutAppender::requires_layout</definition>
+        <argsstring>() const </argsstring>
+        <name>requires_layout</name>
+        <reimplements refid="d7/dc4/classlog4tango_1_1Appender_1a049da1b0fa6609c29d5b8d8cae0fee7b">requires_layout</reimplements>
+        <briefdescription>
+<para>Check if the appender uses a layout. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if the appender implementation requires a layout. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/LayoutAppender.hh" line="51" column="1" bodyfile="/home/tango/workspace/cppTango/src/log4tango/LayoutAppender.cpp" bodystart="47" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/db6/classlog4tango_1_1LayoutAppender_1ac3d2b08e933399a5dfc78dab2c208055" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void log4tango::LayoutAppender::set_layout</definition>
+        <argsstring>(Layout *layout=0)</argsstring>
+        <name>set_layout</name>
+        <reimplements refid="d7/dc4/classlog4tango_1_1Appender_1a445f9f26db03e3f54ac2afdb9d594c1b">set_layout</reimplements>
+        <param>
+          <type><ref refid="d7/da6/classlog4tango_1_1Layout" kindref="compound">Layout</ref> *</type>
+          <declname>layout</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>Change the layout. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/LayoutAppender.hh" line="53" column="1" bodyfile="/home/tango/workspace/cppTango/src/log4tango/LayoutAppender.cpp" bodystart="52" bodyend="61"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="d3/db6/classlog4tango_1_1LayoutAppender_1a5b0903233dd0bb8ea2d6fc33a5b85cb0" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d7/da6/classlog4tango_1_1Layout" kindref="compound">Layout</ref> &amp;</type>
+        <definition>Layout &amp; log4tango::LayoutAppender::get_layout</definition>
+        <argsstring>()</argsstring>
+        <name>get_layout</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/LayoutAppender.hh" line="57" column="1" bodyfile="/home/tango/workspace/cppTango/src/log4tango/LayoutAppender.cpp" bodystart="63" bodyend="65"/>
+        <referencedby refid="df/d37/classlog4tango_1_1OstreamAppender_1a90001f5d7e7ef88b5492e6154d90aa86" compoundref="da/dc0/OstreamAppender_8cpp" startline="52" endline="59">log4tango::OstreamAppender::_append</referencedby>
+        <referencedby refid="dd/d62/classlog4tango_1_1FileAppender_1acc1e885ec09a9f206383284656a0079e" compoundref="d2/d6d/FileAppender_8cpp" startline="108" endline="115">log4tango::FileAppender::_append</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1081">
+        <label>log4tango::LayoutAppender</label>
+        <link refid="d3/db6/classlog4tango_1_1LayoutAppender"/>
+        <childnode refid="1082" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1085">
+        <label>log4tango::OstreamAppender</label>
+        <link refid="df/d37/classlog4tango_1_1OstreamAppender"/>
+        <childnode refid="1081" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1084">
+        <label>log4tango::RollingFileAppender</label>
+        <link refid="d9/db4/classlog4tango_1_1RollingFileAppender"/>
+        <childnode refid="1083" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1083">
+        <label>log4tango::FileAppender</label>
+        <link refid="dd/d62/classlog4tango_1_1FileAppender"/>
+        <childnode refid="1081" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1082">
+        <label>log4tango::Appender</label>
+        <link refid="d7/dc4/classlog4tango_1_1Appender"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1086">
+        <label>log4tango::LayoutAppender</label>
+        <link refid="d3/db6/classlog4tango_1_1LayoutAppender"/>
+        <childnode refid="1087" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1087">
+        <label>log4tango::Appender</label>
+        <link refid="d7/dc4/classlog4tango_1_1Appender"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/tango/workspace/cppTango/include/log4tango/LayoutAppender.hh" line="42" column="1" bodyfile="/home/tango/workspace/cppTango/include/log4tango/LayoutAppender.hh" bodystart="41" bodyend="61"/>
+    <listofallmembers>
+      <member refid="d7/dc4/classlog4tango_1_1Appender_1a87739ce35cdc83e06dd4c55af28d3ac8" prot="protected" virt="pure-virtual"><scope>log4tango::LayoutAppender</scope><name>_append</name></member>
+      <member refid="d3/db6/classlog4tango_1_1LayoutAppender_1a4b225dac7b189ef386b7cb3b8db047f0" prot="private" virt="non-virtual"><scope>log4tango::LayoutAppender</scope><name>_layout</name></member>
+      <member refid="d7/dc4/classlog4tango_1_1Appender_1acfb6f50c20043bd740b198dfbb4231ea" prot="public" virt="non-virtual"><scope>log4tango::LayoutAppender</scope><name>append</name></member>
+      <member refid="d7/dc4/classlog4tango_1_1Appender_1a16f9d0456a87ff10d57b02f7d5c2cc01" prot="protected" virt="non-virtual"><scope>log4tango::LayoutAppender</scope><name>Appender</name></member>
+      <member refid="d7/dc4/classlog4tango_1_1Appender_1adafebe465072844506448a35570f9c59" prot="public" virt="pure-virtual"><scope>log4tango::LayoutAppender</scope><name>close</name></member>
+      <member refid="d3/db6/classlog4tango_1_1LayoutAppender_1afff8b793c258c86701cbd1fe72925b49" prot="public" virt="non-virtual"><scope>log4tango::LayoutAppender</scope><name>DefaultLayoutType</name></member>
+      <member refid="d3/db6/classlog4tango_1_1LayoutAppender_1a5b0903233dd0bb8ea2d6fc33a5b85cb0" prot="protected" virt="non-virtual"><scope>log4tango::LayoutAppender</scope><name>get_layout</name></member>
+      <member refid="d7/dc4/classlog4tango_1_1Appender_1ac02d43ef46297bcc9eb3e1442d00b58c" prot="public" virt="non-virtual"><scope>log4tango::LayoutAppender</scope><name>get_name</name></member>
+      <member refid="d7/dc4/classlog4tango_1_1Appender_1af8d183b5fdfc4b4affda75d1846d9270" prot="public" virt="virtual"><scope>log4tango::LayoutAppender</scope><name>is_valid</name></member>
+      <member refid="d3/db6/classlog4tango_1_1LayoutAppender_1aae15fc6ce336d263386c6866ad569782" prot="public" virt="non-virtual"><scope>log4tango::LayoutAppender</scope><name>LayoutAppender</name></member>
+      <member refid="d7/dc4/classlog4tango_1_1Appender_1a3ee7b310ce4681a93e1f53bdcc02a15c" prot="protected" virt="virtual"><scope>log4tango::LayoutAppender</scope><name>level_changed</name></member>
+      <member refid="d7/dc4/classlog4tango_1_1Appender_1a1f853fae3eebe457698039e3aafb770a" prot="public" virt="virtual"><scope>log4tango::LayoutAppender</scope><name>reopen</name></member>
+      <member refid="d3/db6/classlog4tango_1_1LayoutAppender_1aed53ada140e2b10a63d4d836b0e22ba9" prot="public" virt="virtual"><scope>log4tango::LayoutAppender</scope><name>requires_layout</name></member>
+      <member refid="d3/db6/classlog4tango_1_1LayoutAppender_1ac3d2b08e933399a5dfc78dab2c208055" prot="public" virt="virtual"><scope>log4tango::LayoutAppender</scope><name>set_layout</name></member>
+      <member refid="d7/dc4/classlog4tango_1_1Appender_1a3951b12a37424e9418963680662388b1" prot="public" virt="virtual"><scope>log4tango::LayoutAppender</scope><name>~Appender</name></member>
+      <member refid="d3/db6/classlog4tango_1_1LayoutAppender_1a2822f627fd98e29db0a9a7c96377e81e" prot="public" virt="virtual"><scope>log4tango::LayoutAppender</scope><name>~LayoutAppender</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d3/db6/classlog4tango_1_1LayoutAppender">
+<title>log4tango::LayoutAppender class Reference</title>
+<para>
+    <programlisting>#include <link linkend="d3/da3/LayoutAppender_8hh">&quot;LayoutAppender.hh&quot;</link></programlisting>
+</para>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef <link linkend="d7/da6/classlog4tango_1_1Layout">Layout</link>  <link linkend="d3/db6/classlog4tango_1_1LayoutAppender_1afff8b793c258c86701cbd1fe72925b49">DefaultLayoutType</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Layout * _layout</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d3/db6/classlog4tango_1_1LayoutAppender_1aae15fc6ce336d263386c6866ad569782">LayoutAppender</link> (
+const std::string &amp; name)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="d3/db6/classlog4tango_1_1LayoutAppender_1a2822f627fd98e29db0a9a7c96377e81e">~LayoutAppender</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual bool <link linkend="d3/db6/classlog4tango_1_1LayoutAppender_1aed53ada140e2b10a63d4d836b0e22ba9">requires_layout</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual void <link linkend="d3/db6/classlog4tango_1_1LayoutAppender_1ac3d2b08e933399a5dfc78dab2c208055">set_layout</link> (
+<link linkend="d7/da6/classlog4tango_1_1Layout">Layout</link> * layout)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d7/da6/classlog4tango_1_1Layout">Layout</link> &amp; <link linkend="d3/db6/classlog4tango_1_1LayoutAppender_1a5b0903233dd0bb8ea2d6fc33a5b85cb0">get_layout</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+            <section xml:id="d3/db6/classlog4tango_1_1LayoutAppender_1afff8b793c258c86701cbd1fe72925b49">
+                <title>typedef Layout log4tango::LayoutAppender::DefaultLayoutType</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/db6/classlog4tango_1_1LayoutAppender_1aae15fc6ce336d263386c6866ad569782">
+                <title>log4tango::LayoutAppender::LayoutAppender (const std::string &amp;name)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/db6/classlog4tango_1_1LayoutAppender_1a2822f627fd98e29db0a9a7c96377e81e">
+                <title>log4tango::LayoutAppender::~LayoutAppender ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/db6/classlog4tango_1_1LayoutAppender_1aed53ada140e2b10a63d4d836b0e22ba9">
+                <title>bool log4tango::LayoutAppender::requires_layout () const </title> <emphasis>Check if the appender uses a layout.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>true if the appender implementation requires a layout. </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="d3/db6/classlog4tango_1_1LayoutAppender_1ac3d2b08e933399a5dfc78dab2c208055">
+                <title>void log4tango::LayoutAppender::set_layout (Layout *layout=0)</title> <emphasis>Change the layout.</emphasis>
+                
+            </section>
+            <section xml:id="d3/db6/classlog4tango_1_1LayoutAppender_1a5b0903233dd0bb8ea2d6fc33a5b85cb0">
+                <title>Layout &amp; log4tango::LayoutAppender::get_layout ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

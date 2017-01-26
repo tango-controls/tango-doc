@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="d5/d25/structTango_1_1__AttributeIdlData" kind="struct" prot="public">
+    <compoundname>Tango::_AttributeIdlData</compoundname>
+    <includes refid="d4/d13/tango__const_8h" local="yes">tango_const.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="d5/d25/structTango_1_1__AttributeIdlData_1a03bac30bf53110ff13a43eb9680a4eba" prot="public" static="no" mutable="no">
+        <type>AttributeValueList_3 *</type>
+        <definition>AttributeValueList_3* Tango::_AttributeIdlData::data_3</definition>
+        <argsstring></argsstring>
+        <name>data_3</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/tango_const.h" line="1203" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/tango_const.h" bodystart="1203" bodyend="-1"/>
+        <referencedby refid="d5/d25/structTango_1_1__AttributeIdlData_1a2ff3b5fe9d2aaabee6a955858245d838" compoundref="d4/d13/tango__const_8h" startline="1207" endline="1212">_AttributeIdlData</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="d5/d25/structTango_1_1__AttributeIdlData_1a58571556b9a60dd44c88fd9b07730d5e" prot="public" static="no" mutable="no">
+        <type>AttributeValueList_4 *</type>
+        <definition>AttributeValueList_4* Tango::_AttributeIdlData::data_4</definition>
+        <argsstring></argsstring>
+        <name>data_4</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/tango_const.h" line="1204" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/tango_const.h" bodystart="1204" bodyend="-1"/>
+        <referencedby refid="d5/d25/structTango_1_1__AttributeIdlData_1a2ff3b5fe9d2aaabee6a955858245d838" compoundref="d4/d13/tango__const_8h" startline="1207" endline="1212">_AttributeIdlData</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="d5/d25/structTango_1_1__AttributeIdlData_1a703cd1e84b0aed154afc5a80b96bd39d" prot="public" static="no" mutable="no">
+        <type>AttributeValueList_5 *</type>
+        <definition>AttributeValueList_5* Tango::_AttributeIdlData::data_5</definition>
+        <argsstring></argsstring>
+        <name>data_5</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/tango_const.h" line="1205" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/tango_const.h" bodystart="1205" bodyend="-1"/>
+        <referencedby refid="d5/d25/structTango_1_1__AttributeIdlData_1a2ff3b5fe9d2aaabee6a955858245d838" compoundref="d4/d13/tango__const_8h" startline="1207" endline="1212">_AttributeIdlData</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d5/d25/structTango_1_1__AttributeIdlData_1a2ff3b5fe9d2aaabee6a955858245d838" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Tango::_AttributeIdlData::_AttributeIdlData</definition>
+        <argsstring>()</argsstring>
+        <name>_AttributeIdlData</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/tango_const.h" line="1207" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/tango_const.h" bodystart="1207" bodyend="1212"/>
+        <references refid="d5/d25/structTango_1_1__AttributeIdlData_1a03bac30bf53110ff13a43eb9680a4eba" compoundref="d4/d13/tango__const_8h" startline="1203">data_3</references>
+        <references refid="d5/d25/structTango_1_1__AttributeIdlData_1a58571556b9a60dd44c88fd9b07730d5e" compoundref="d4/d13/tango__const_8h" startline="1204">data_4</references>
+        <references refid="d5/d25/structTango_1_1__AttributeIdlData_1a703cd1e84b0aed154afc5a80b96bd39d" compoundref="d4/d13/tango__const_8h" startline="1205">data_5</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/tango/workspace/cppTango/include/tango/server/tango_const.h" line="1202" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/tango_const.h" bodystart="1201" bodyend="1213"/>
+    <listofallmembers>
+      <member refid="d5/d25/structTango_1_1__AttributeIdlData_1a2ff3b5fe9d2aaabee6a955858245d838" prot="public" virt="non-virtual"><scope>Tango::_AttributeIdlData</scope><name>_AttributeIdlData</name></member>
+      <member refid="d5/d25/structTango_1_1__AttributeIdlData_1a03bac30bf53110ff13a43eb9680a4eba" prot="public" virt="non-virtual"><scope>Tango::_AttributeIdlData</scope><name>data_3</name></member>
+      <member refid="d5/d25/structTango_1_1__AttributeIdlData_1a58571556b9a60dd44c88fd9b07730d5e" prot="public" virt="non-virtual"><scope>Tango::_AttributeIdlData</scope><name>data_4</name></member>
+      <member refid="d5/d25/structTango_1_1__AttributeIdlData_1a703cd1e84b0aed154afc5a80b96bd39d" prot="public" virt="non-virtual"><scope>Tango::_AttributeIdlData</scope><name>data_5</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

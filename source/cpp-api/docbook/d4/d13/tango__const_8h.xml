@@ -1,0 +1,129 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d4/d13/tango__const_8h">
+    <title>tango_const.h File Reference</title>
+        <simplesect>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d5/d25/structTango_1_1__AttributeIdlData">Tango::_AttributeIdlData</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d7/d60/structTango_1_1__OptAttrProp">Tango::_OptAttrProp</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d6/d66/structTango_1_1__PollDevice">Tango::_PollDevice</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d3/db5/structTango_1_1__SendEventType">Tango::_SendEventType</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="db/d9e/structTango_1_1ranges__const2type">Tango::ranges_const2type</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="df/d08/structTango_1_1ranges__type2const">Tango::ranges_type2const</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title> Namespaces </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="de/ddf/namespaceTango">Tango</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Defines</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d4/d13/tango__const_8h_1a296aaf5dc2f56ffa36c10c00ac960708">RANGES_TYPE2CONST</link> template &lt;&gt; \
+	struct ranges_type2const&lt;type&gt; \
+	{ \
+		static CmdArgType enu; \
+		TANGO_CXX11_ABI static string str; \
+	}; \
+	CmdArgType ranges_type2const&lt;type&gt;::enu = constant; \
+	TANGO_CXX11_ABI string ranges_type2const&lt;type&gt;::str = #type; \
+	template&lt;&gt; \
+	struct ranges_const2type&lt;Tango::constant&gt; \
+	{ \
+		typedef type Type; \
+		TANGO_CXX11_ABI static string str; \
+	}; \
+	TANGO_CXX11_ABI string ranges_const2type&lt;Tango::constant&gt;::str = #type;</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d4/d13/tango__const_8h_1a06713a84dc7dbebed1e9fcc0c960caf0">TANGO_BASE_CLASS</link> <link linkend="d5/d94/classTango_1_1Device__5Impl">Tango::Device_5Impl</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d4/d13/tango__const_8h_1a0d461e2c51f30bb4bd9c5bfc0ddd0d95">TANGO_VERSION_MAJOR</link> 9</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d4/d13/tango__const_8h_1a4e5ff4bd2809f455d91c21c9b7d0dae6">TANGO_VERSION_MINOR</link> 2</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d4/d13/tango__const_8h_1afe8ee17b8359ff561a5372c15114d465">TANGO_VERSION_PATCH</link> 5</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d4/d13/tango__const_8h_1aff6d5e6e29fea1b22c39408543862a08">TBS</link> #s</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d4/d13/tango__const_8h_1a88e47bbac6db5d5f19eb30896129765c">XTBS</link> <link linkend="d4/d13/tango__const_8h_1aff6d5e6e29fea1b22c39408543862a08">TBS</link>(s)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file /home/tango/workspace/cppTango/include/tango/server/tango_const.h</para>
+    </simplesect>
+</section>

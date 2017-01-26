@@ -1,0 +1,920 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="d3/d9c/classTango_1_1DbServerCache" kind="class" prot="public">
+    <compoundname>Tango::DbServerCache</compoundname>
+    <includes refid="dc/df8/dbapi_8h" local="yes">dbapi.h</includes>
+    <innerclass refid="d8/deb/structTango_1_1DbServerCache_1_1AttPropEltIdx" prot="public">Tango::DbServerCache::AttPropEltIdx</innerclass>
+    <innerclass refid="de/d56/structTango_1_1DbServerCache_1_1ClassEltIdx" prot="public">Tango::DbServerCache::ClassEltIdx</innerclass>
+    <innerclass refid="d0/d8d/structTango_1_1DbServerCache_1_1DevEltIdx" prot="public">Tango::DbServerCache::DevEltIdx</innerclass>
+    <innerclass refid="dd/dd7/structTango_1_1DbServerCache_1_1EltIdx" prot="public">Tango::DbServerCache::EltIdx</innerclass>
+    <innerclass refid="d4/d22/structTango_1_1DbServerCache_1_1PropEltIdx" prot="public">Tango::DbServerCache::PropEltIdx</innerclass>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d3/d9c/classTango_1_1DbServerCache_1a7fd80bada512247f0aeda7fd8c96b96c" prot="private" static="no" mutable="no">
+        <type><ref refid="d4/d22/structTango_1_1DbServerCache_1_1PropEltIdx" kindref="compound">PropEltIdx</ref></type>
+        <definition>PropEltIdx Tango::DbServerCache::adm_dev_prop</definition>
+        <argsstring></argsstring>
+        <name>adm_dev_prop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="999" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" bodystart="999" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/d9c/classTango_1_1DbServerCache_1a1f57bf710531b1f8a966798a9beb6113" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Tango::DbServerCache::class_nb</definition>
+        <argsstring></argsstring>
+        <name>class_nb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="1000" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" bodystart="1000" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/d9c/classTango_1_1DbServerCache_1abeb39236eb23c3108470cf157137fc64" prot="private" static="no" mutable="no">
+        <type><ref refid="de/d56/structTango_1_1DbServerCache_1_1ClassEltIdx" kindref="compound">ClassEltIdx</ref> *</type>
+        <definition>ClassEltIdx* Tango::DbServerCache::classes_idx</definition>
+        <argsstring></argsstring>
+        <name>classes_idx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="1001" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" bodystart="1001" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/d9c/classTango_1_1DbServerCache_1aff7ac1f79f0670fd8ca77d41e1f86bf5" prot="private" static="no" mutable="no">
+        <type><ref refid="d4/d22/structTango_1_1DbServerCache_1_1PropEltIdx" kindref="compound">PropEltIdx</ref></type>
+        <definition>PropEltIdx Tango::DbServerCache::ctrl_serv_prop</definition>
+        <argsstring></argsstring>
+        <name>ctrl_serv_prop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="996" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" bodystart="996" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/d9c/classTango_1_1DbServerCache_1ac4f078fd32db14a031c953b0af39e094" prot="private" static="no" mutable="no">
+        <type>const DevVarStringArray *</type>
+        <definition>const DevVarStringArray* Tango::DbServerCache::data_list</definition>
+        <argsstring></argsstring>
+        <name>data_list</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="988" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" bodystart="988" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/d9c/classTango_1_1DbServerCache_1a2f84c5ff4c17dc01b193dd79b1002849" prot="private" static="no" mutable="no">
+        <type><ref refid="d4/d22/structTango_1_1DbServerCache_1_1PropEltIdx" kindref="compound">PropEltIdx</ref></type>
+        <definition>PropEltIdx Tango::DbServerCache::Default_prop</definition>
+        <argsstring></argsstring>
+        <name>Default_prop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="998" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" bodystart="998" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/d9c/classTango_1_1DbServerCache_1ae7d62925d32a0d3bc11fdc976b4c8242" prot="private" static="no" mutable="no">
+        <type><ref refid="d4/d22/structTango_1_1DbServerCache_1_1PropEltIdx" kindref="compound">PropEltIdx</ref></type>
+        <definition>PropEltIdx Tango::DbServerCache::DServer_class_prop</definition>
+        <argsstring></argsstring>
+        <name>DServer_class_prop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="997" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" bodystart="997" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/d9c/classTango_1_1DbServerCache_1a51a5be114f907181ce0848d97fbfc937" prot="private" static="no" mutable="no">
+        <type><ref refid="dd/dd7/structTango_1_1DbServerCache_1_1EltIdx" kindref="compound">EltIdx</ref></type>
+        <definition>EltIdx Tango::DbServerCache::imp_adm</definition>
+        <argsstring></argsstring>
+        <name>imp_adm</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="992" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" bodystart="992" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/d9c/classTango_1_1DbServerCache_1a66898fd1fd2b1e9cbdbc85441196f5a2" prot="private" static="no" mutable="no">
+        <type>DevVarLongStringArray</type>
+        <definition>DevVarLongStringArray Tango::DbServerCache::imp_adm_data</definition>
+        <argsstring></argsstring>
+        <name>imp_adm_data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="1003" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" bodystart="1003" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/d9c/classTango_1_1DbServerCache_1ab275951d56778a65f622f778d6e646fe" prot="private" static="no" mutable="no">
+        <type><ref refid="dd/dd7/structTango_1_1DbServerCache_1_1EltIdx" kindref="compound">EltIdx</ref></type>
+        <definition>EltIdx Tango::DbServerCache::imp_adm_event</definition>
+        <argsstring></argsstring>
+        <name>imp_adm_event</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="994" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" bodystart="994" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/d9c/classTango_1_1DbServerCache_1ac0cd8c5f8283036072df714d96fda987" prot="private" static="no" mutable="no">
+        <type>DevVarLongStringArray</type>
+        <definition>DevVarLongStringArray Tango::DbServerCache::imp_adm_event_data</definition>
+        <argsstring></argsstring>
+        <name>imp_adm_event_data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="1005" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" bodystart="1005" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/d9c/classTango_1_1DbServerCache_1ad6cacdbbc441a0c02b44b9a109f57832" prot="private" static="no" mutable="no">
+        <type><ref refid="dd/dd7/structTango_1_1DbServerCache_1_1EltIdx" kindref="compound">EltIdx</ref></type>
+        <definition>EltIdx Tango::DbServerCache::imp_notifd_event</definition>
+        <argsstring></argsstring>
+        <name>imp_notifd_event</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="993" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" bodystart="993" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/d9c/classTango_1_1DbServerCache_1a83c2163940265a762a09f3ae0853ac7f" prot="private" static="no" mutable="no">
+        <type>DevVarLongStringArray</type>
+        <definition>DevVarLongStringArray Tango::DbServerCache::imp_notifd_event_data</definition>
+        <argsstring></argsstring>
+        <name>imp_notifd_event_data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="1004" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" bodystart="1004" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/d9c/classTango_1_1DbServerCache_1a6990deb1cbc6fa3cfcd59ac80270e737" prot="private" static="no" mutable="no">
+        <type><ref refid="dd/dd7/structTango_1_1DbServerCache_1_1EltIdx" kindref="compound">EltIdx</ref></type>
+        <definition>EltIdx Tango::DbServerCache::imp_tac</definition>
+        <argsstring></argsstring>
+        <name>imp_tac</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="995" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" bodystart="995" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/d9c/classTango_1_1DbServerCache_1acde4a81371e5c5e8a63a575f443fb4bb" prot="private" static="no" mutable="no">
+        <type>DevVarLongStringArray</type>
+        <definition>DevVarLongStringArray Tango::DbServerCache::imp_tac_data</definition>
+        <argsstring></argsstring>
+        <name>imp_tac_data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="1006" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" bodystart="1006" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/d9c/classTango_1_1DbServerCache_1a3e4944064d298bfd136435f7c4bf4a9b" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Tango::DbServerCache::n_data</definition>
+        <argsstring></argsstring>
+        <name>n_data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="989" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" bodystart="989" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/d9c/classTango_1_1DbServerCache_1a0dba6496f63fbe063525b31f22fc3cb2" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Tango::DbServerCache::proc_release</definition>
+        <argsstring></argsstring>
+        <name>proc_release</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="990" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" bodystart="990" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/d9c/classTango_1_1DbServerCache_1a14a39ab5b83922270aaac35f59fd1db5" prot="private" static="no" mutable="no">
+        <type>CORBA::Any_var</type>
+        <definition>CORBA::Any_var Tango::DbServerCache::received</definition>
+        <argsstring></argsstring>
+        <name>received</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="987" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" bodystart="987" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/d9c/classTango_1_1DbServerCache_1aff28ca330a56ed3c974bf6401c4a8217" prot="private" static="no" mutable="no">
+        <type>DevVarStringArray</type>
+        <definition>DevVarStringArray Tango::DbServerCache::ret_dev_list</definition>
+        <argsstring></argsstring>
+        <name>ret_dev_list</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="1008" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" bodystart="1008" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/d9c/classTango_1_1DbServerCache_1ab179d4591c2497a979e0954fc5882bdc" prot="private" static="no" mutable="no">
+        <type>DevVarStringArray</type>
+        <definition>DevVarStringArray Tango::DbServerCache::ret_obj_att_prop</definition>
+        <argsstring></argsstring>
+        <name>ret_obj_att_prop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="1009" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" bodystart="1009" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/d9c/classTango_1_1DbServerCache_1a3c3ed2d9b8c35c43c4d32f0d91bb45b2" prot="private" static="no" mutable="no">
+        <type>DevVarStringArray</type>
+        <definition>DevVarStringArray Tango::DbServerCache::ret_obj_pipe_prop</definition>
+        <argsstring></argsstring>
+        <name>ret_obj_pipe_prop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="1010" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" bodystart="1010" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/d9c/classTango_1_1DbServerCache_1a30bd9693bab347c0abafebd6f070852f" prot="private" static="no" mutable="no">
+        <type>DevVarStringArray</type>
+        <definition>DevVarStringArray Tango::DbServerCache::ret_obj_prop</definition>
+        <argsstring></argsstring>
+        <name>ret_obj_prop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="1007" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" bodystart="1007" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/d9c/classTango_1_1DbServerCache_1ace77d0464a6f1431f5b810e414c84932" prot="private" static="no" mutable="no">
+        <type>DevVarStringArray</type>
+        <definition>DevVarStringArray Tango::DbServerCache::ret_prop_list</definition>
+        <argsstring></argsstring>
+        <name>ret_prop_list</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="1011" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" bodystart="1011" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d3/d9c/classTango_1_1DbServerCache_1ac4367efe4048d5f000757c416a0ca2ce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::DbServerCache::DbServerCache</definition>
+        <argsstring>(Database *, string &amp;, string &amp;)</argsstring>
+        <name>DbServerCache</name>
+        <param>
+          <type>Database *</type>
+        </param>
+        <param>
+          <type>string &amp;</type>
+        </param>
+        <param>
+          <type>string &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="949" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d9c/classTango_1_1DbServerCache_1a879e63fd1e796202e25fe1811d2a0b3c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::DbServerCache::~DbServerCache</definition>
+        <argsstring>()</argsstring>
+        <name>~DbServerCache</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="950" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d9c/classTango_1_1DbServerCache_1a6f3388bbc156eb81639f43ed58c16957" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="d4/d22/structTango_1_1DbServerCache_1_1PropEltIdx" kindref="compound">PropEltIdx</ref> &amp;</type>
+        <definition>const PropEltIdx&amp; Tango::DbServerCache::get_adm_dev_prop</definition>
+        <argsstring>()</argsstring>
+        <name>get_adm_dev_prop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="971" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" bodystart="971" bodyend="971"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d9c/classTango_1_1DbServerCache_1a1d51ab1060c7869ef9949a8e6f01bf78" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const DevVarStringArray *</type>
+        <definition>const DevVarStringArray* Tango::DbServerCache::get_class_att_property</definition>
+        <argsstring>(DevVarStringArray *)</argsstring>
+        <name>get_class_att_property</name>
+        <param>
+          <type>DevVarStringArray *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="958" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d9c/classTango_1_1DbServerCache_1a6fb218ae51715acd591cbe1866600273" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int Tango::DbServerCache::get_class_nb</definition>
+        <argsstring>()</argsstring>
+        <name>get_class_nb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="973" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" bodystart="973" bodyend="973"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d9c/classTango_1_1DbServerCache_1a8fc512292286a0a123509cc69d520d78" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const DevVarStringArray *</type>
+        <definition>const DevVarStringArray* Tango::DbServerCache::get_class_pipe_property</definition>
+        <argsstring>(DevVarStringArray *)</argsstring>
+        <name>get_class_pipe_property</name>
+        <param>
+          <type>DevVarStringArray *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="962" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d9c/classTango_1_1DbServerCache_1a9e08aa049f7eada2d4cd53629a7fbeec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const DevVarStringArray *</type>
+        <definition>const DevVarStringArray* Tango::DbServerCache::get_class_property</definition>
+        <argsstring>(DevVarStringArray *)</argsstring>
+        <name>get_class_property</name>
+        <param>
+          <type>DevVarStringArray *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="955" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d9c/classTango_1_1DbServerCache_1a698cc95655debad33c798aed2029ca43" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="de/d56/structTango_1_1DbServerCache_1_1ClassEltIdx" kindref="compound">ClassEltIdx</ref> *</type>
+        <definition>const ClassEltIdx* Tango::DbServerCache::get_classes_elt</definition>
+        <argsstring>()</argsstring>
+        <name>get_classes_elt</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="974" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" bodystart="974" bodyend="974"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d9c/classTango_1_1DbServerCache_1a5b8b573b77b996c3a5e65ed91c726323" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="d4/d22/structTango_1_1DbServerCache_1_1PropEltIdx" kindref="compound">PropEltIdx</ref> &amp;</type>
+        <definition>const PropEltIdx&amp; Tango::DbServerCache::get_ctrl_serv_prop</definition>
+        <argsstring>()</argsstring>
+        <name>get_ctrl_serv_prop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="972" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" bodystart="972" bodyend="972"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d9c/classTango_1_1DbServerCache_1a563ac0a97a4264997f91a255ba5e9aa6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int Tango::DbServerCache::get_data_nb</definition>
+        <argsstring>()</argsstring>
+        <name>get_data_nb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="975" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" bodystart="975" bodyend="975"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d9c/classTango_1_1DbServerCache_1aba3e6ed06dada57a8e28f41db77a36c3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="d4/d22/structTango_1_1DbServerCache_1_1PropEltIdx" kindref="compound">PropEltIdx</ref> &amp;</type>
+        <definition>const PropEltIdx&amp; Tango::DbServerCache::get_Default_prop</definition>
+        <argsstring>()</argsstring>
+        <name>get_Default_prop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="970" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" bodystart="970" bodyend="970"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d9c/classTango_1_1DbServerCache_1a741c66aa44b53aabd6d02938a39d6665" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const DevVarStringArray *</type>
+        <definition>const DevVarStringArray* Tango::DbServerCache::get_dev_att_property</definition>
+        <argsstring>(DevVarStringArray *)</argsstring>
+        <name>get_dev_att_property</name>
+        <param>
+          <type>DevVarStringArray *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="959" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d9c/classTango_1_1DbServerCache_1a43c0e6184ae0ac2e37b81b527260eaef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const DevVarStringArray *</type>
+        <definition>const DevVarStringArray* Tango::DbServerCache::get_dev_list</definition>
+        <argsstring>(DevVarStringArray *)</argsstring>
+        <name>get_dev_list</name>
+        <param>
+          <type>DevVarStringArray *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="957" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d9c/classTango_1_1DbServerCache_1ae768e8e04cd75dfee203f0b1181a6f76" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const DevVarStringArray *</type>
+        <definition>const DevVarStringArray* Tango::DbServerCache::get_dev_pipe_property</definition>
+        <argsstring>(DevVarStringArray *)</argsstring>
+        <name>get_dev_pipe_property</name>
+        <param>
+          <type>DevVarStringArray *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="963" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d9c/classTango_1_1DbServerCache_1a585a7cff4d7258c732648302e4c7b014" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const DevVarStringArray *</type>
+        <definition>const DevVarStringArray* Tango::DbServerCache::get_dev_property</definition>
+        <argsstring>(DevVarStringArray *)</argsstring>
+        <name>get_dev_property</name>
+        <param>
+          <type>DevVarStringArray *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="956" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d9c/classTango_1_1DbServerCache_1aca3f498aa2cf7f21cca6010f99c8cad9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const DevVarStringArray *</type>
+        <definition>const DevVarStringArray* Tango::DbServerCache::get_device_property_list</definition>
+        <argsstring>(DevVarStringArray *)</argsstring>
+        <name>get_device_property_list</name>
+        <param>
+          <type>DevVarStringArray *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="961" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d9c/classTango_1_1DbServerCache_1aa1264b373e8a7ffa06fea2d669077283" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="d4/d22/structTango_1_1DbServerCache_1_1PropEltIdx" kindref="compound">PropEltIdx</ref> &amp;</type>
+        <definition>const PropEltIdx&amp; Tango::DbServerCache::get_DServer_class_prop</definition>
+        <argsstring>()</argsstring>
+        <name>get_DServer_class_prop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="969" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" bodystart="969" bodyend="969"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d9c/classTango_1_1DbServerCache_1ace05512b3c0ed14098351cefc5de755f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="dd/dd7/structTango_1_1DbServerCache_1_1EltIdx" kindref="compound">EltIdx</ref> &amp;</type>
+        <definition>const EltIdx&amp; Tango::DbServerCache::get_imp_adm_event</definition>
+        <argsstring>()</argsstring>
+        <name>get_imp_adm_event</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="968" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" bodystart="968" bodyend="968"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d9c/classTango_1_1DbServerCache_1aec240b67c7bae7eeac3a55f7cfe99bae" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="dd/dd7/structTango_1_1DbServerCache_1_1EltIdx" kindref="compound">EltIdx</ref> &amp;</type>
+        <definition>const EltIdx&amp; Tango::DbServerCache::get_imp_dat</definition>
+        <argsstring>()</argsstring>
+        <name>get_imp_dat</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="966" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" bodystart="966" bodyend="966"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d9c/classTango_1_1DbServerCache_1a545fc2b0346c24f12336bde2f2879e54" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="dd/dd7/structTango_1_1DbServerCache_1_1EltIdx" kindref="compound">EltIdx</ref> &amp;</type>
+        <definition>const EltIdx&amp; Tango::DbServerCache::get_imp_notifd_event</definition>
+        <argsstring>()</argsstring>
+        <name>get_imp_notifd_event</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="967" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" bodystart="967" bodyend="967"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d9c/classTango_1_1DbServerCache_1ab243d19bed9da9e884594881354dcbac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const DevVarStringArray *</type>
+        <definition>const DevVarStringArray* Tango::DbServerCache::get_obj_property</definition>
+        <argsstring>(DevVarStringArray *)</argsstring>
+        <name>get_obj_property</name>
+        <param>
+          <type>DevVarStringArray *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="960" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d9c/classTango_1_1DbServerCache_1ac9cd0f9b6e07d3155b932f241e1d7a59" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const DevVarLongStringArray *</type>
+        <definition>const DevVarLongStringArray* Tango::DbServerCache::import_adm_dev</definition>
+        <argsstring>()</argsstring>
+        <name>import_adm_dev</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="952" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d9c/classTango_1_1DbServerCache_1aebde4557fffeb5937fc720964e676413" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const DevVarLongStringArray *</type>
+        <definition>const DevVarLongStringArray* Tango::DbServerCache::import_adm_event</definition>
+        <argsstring>()</argsstring>
+        <name>import_adm_event</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="954" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d9c/classTango_1_1DbServerCache_1a18e8f5e8f1b43b4d3849e10fd4e13d83" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const DevVarLongStringArray *</type>
+        <definition>const DevVarLongStringArray* Tango::DbServerCache::import_notifd_event</definition>
+        <argsstring>()</argsstring>
+        <name>import_notifd_event</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="953" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d9c/classTango_1_1DbServerCache_1ac88bfa9af0e4706f9c2e9de6a7cd2b5c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const DevVarLongStringArray *</type>
+        <definition>const DevVarLongStringArray* Tango::DbServerCache::import_tac_dev</definition>
+        <argsstring>(string &amp;)</argsstring>
+        <name>import_tac_dev</name>
+        <param>
+          <type>string &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="964" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="d3/d9c/classTango_1_1DbServerCache_1a656fefc2d31d5a8f54e1d3ab9903c9c7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Tango::DbServerCache::find_class</definition>
+        <argsstring>(DevString)</argsstring>
+        <name>find_class</name>
+        <param>
+          <type>DevString</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="982" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d9c/classTango_1_1DbServerCache_1a9175dc40b97093f3f69ae3a2b56a2294" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Tango::DbServerCache::find_dev_att</definition>
+        <argsstring>(DevString, int &amp;, int &amp;)</argsstring>
+        <name>find_dev_att</name>
+        <param>
+          <type>DevString</type>
+        </param>
+        <param>
+          <type>int &amp;</type>
+        </param>
+        <param>
+          <type>int &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="983" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d9c/classTango_1_1DbServerCache_1a9ee437c66eb395bd3685a7c8e5e1ef1b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Tango::DbServerCache::find_obj</definition>
+        <argsstring>(DevString obj_name, int &amp;)</argsstring>
+        <name>find_obj</name>
+        <param>
+          <type>DevString</type>
+          <declname>obj_name</declname>
+        </param>
+        <param>
+          <type>int &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="984" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d9c/classTango_1_1DbServerCache_1ae090d7f79ab33c7b09261e2485803a16" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::DbServerCache::get_obj_prop</definition>
+        <argsstring>(DevVarStringArray *, PropEltIdx &amp;, bool dev_prop=false)</argsstring>
+        <name>get_obj_prop</name>
+        <param>
+          <type>DevVarStringArray *</type>
+        </param>
+        <param>
+          <type><ref refid="d4/d22/structTango_1_1DbServerCache_1_1PropEltIdx" kindref="compound">PropEltIdx</ref> &amp;</type>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>dev_prop</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="981" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d9c/classTango_1_1DbServerCache_1adc1d517f2be8ec99c0e483febe64e86d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::DbServerCache::get_obj_prop_list</definition>
+        <argsstring>(DevVarStringArray *, PropEltIdx &amp;)</argsstring>
+        <name>get_obj_prop_list</name>
+        <param>
+          <type>DevVarStringArray *</type>
+        </param>
+        <param>
+          <type><ref refid="d4/d22/structTango_1_1DbServerCache_1_1PropEltIdx" kindref="compound">PropEltIdx</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="985" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d9c/classTango_1_1DbServerCache_1ae196100bcb7e292daa406ee02d2316ea" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::DbServerCache::prop_att_indexes</definition>
+        <argsstring>(int &amp;, int &amp;, AttPropEltIdx &amp;, const DevVarStringArray *)</argsstring>
+        <name>prop_att_indexes</name>
+        <param>
+          <type>int &amp;</type>
+        </param>
+        <param>
+          <type>int &amp;</type>
+        </param>
+        <param>
+          <type><ref refid="d8/deb/structTango_1_1DbServerCache_1_1AttPropEltIdx" kindref="compound">AttPropEltIdx</ref> &amp;</type>
+        </param>
+        <param>
+          <type>const DevVarStringArray *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="979" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d9c/classTango_1_1DbServerCache_1aec08eacc21b50fe02c6e6b9766e66260" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::DbServerCache::prop_indexes</definition>
+        <argsstring>(int &amp;, int &amp;, PropEltIdx &amp;, const DevVarStringArray *)</argsstring>
+        <name>prop_indexes</name>
+        <param>
+          <type>int &amp;</type>
+        </param>
+        <param>
+          <type>int &amp;</type>
+        </param>
+        <param>
+          <type><ref refid="d4/d22/structTango_1_1DbServerCache_1_1PropEltIdx" kindref="compound">PropEltIdx</ref> &amp;</type>
+        </param>
+        <param>
+          <type>const DevVarStringArray *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="978" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d9c/classTango_1_1DbServerCache_1a2ee29564bcd5d835b503e5beaf253ba8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::DbServerCache::prop_pipe_indexes</definition>
+        <argsstring>(int &amp;, int &amp;, AttPropEltIdx &amp;, const DevVarStringArray *)</argsstring>
+        <name>prop_pipe_indexes</name>
+        <param>
+          <type>int &amp;</type>
+        </param>
+        <param>
+          <type>int &amp;</type>
+        </param>
+        <param>
+          <type><ref refid="d8/deb/structTango_1_1DbServerCache_1_1AttPropEltIdx" kindref="compound">AttPropEltIdx</ref> &amp;</type>
+        </param>
+        <param>
+          <type>const DevVarStringArray *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="980" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="908" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" bodystart="907" bodyend="1012"/>
+    <listofallmembers>
+      <member refid="d3/d9c/classTango_1_1DbServerCache_1a7fd80bada512247f0aeda7fd8c96b96c" prot="private" virt="non-virtual"><scope>Tango::DbServerCache</scope><name>adm_dev_prop</name></member>
+      <member refid="d3/d9c/classTango_1_1DbServerCache_1a1f57bf710531b1f8a966798a9beb6113" prot="private" virt="non-virtual"><scope>Tango::DbServerCache</scope><name>class_nb</name></member>
+      <member refid="d3/d9c/classTango_1_1DbServerCache_1abeb39236eb23c3108470cf157137fc64" prot="private" virt="non-virtual"><scope>Tango::DbServerCache</scope><name>classes_idx</name></member>
+      <member refid="d3/d9c/classTango_1_1DbServerCache_1aff7ac1f79f0670fd8ca77d41e1f86bf5" prot="private" virt="non-virtual"><scope>Tango::DbServerCache</scope><name>ctrl_serv_prop</name></member>
+      <member refid="d3/d9c/classTango_1_1DbServerCache_1ac4f078fd32db14a031c953b0af39e094" prot="private" virt="non-virtual"><scope>Tango::DbServerCache</scope><name>data_list</name></member>
+      <member refid="d3/d9c/classTango_1_1DbServerCache_1ac4367efe4048d5f000757c416a0ca2ce" prot="public" virt="non-virtual"><scope>Tango::DbServerCache</scope><name>DbServerCache</name></member>
+      <member refid="d3/d9c/classTango_1_1DbServerCache_1a2f84c5ff4c17dc01b193dd79b1002849" prot="private" virt="non-virtual"><scope>Tango::DbServerCache</scope><name>Default_prop</name></member>
+      <member refid="d3/d9c/classTango_1_1DbServerCache_1ae7d62925d32a0d3bc11fdc976b4c8242" prot="private" virt="non-virtual"><scope>Tango::DbServerCache</scope><name>DServer_class_prop</name></member>
+      <member refid="d3/d9c/classTango_1_1DbServerCache_1a656fefc2d31d5a8f54e1d3ab9903c9c7" prot="private" virt="non-virtual"><scope>Tango::DbServerCache</scope><name>find_class</name></member>
+      <member refid="d3/d9c/classTango_1_1DbServerCache_1a9175dc40b97093f3f69ae3a2b56a2294" prot="private" virt="non-virtual"><scope>Tango::DbServerCache</scope><name>find_dev_att</name></member>
+      <member refid="d3/d9c/classTango_1_1DbServerCache_1a9ee437c66eb395bd3685a7c8e5e1ef1b" prot="private" virt="non-virtual"><scope>Tango::DbServerCache</scope><name>find_obj</name></member>
+      <member refid="d3/d9c/classTango_1_1DbServerCache_1a6f3388bbc156eb81639f43ed58c16957" prot="public" virt="non-virtual"><scope>Tango::DbServerCache</scope><name>get_adm_dev_prop</name></member>
+      <member refid="d3/d9c/classTango_1_1DbServerCache_1a1d51ab1060c7869ef9949a8e6f01bf78" prot="public" virt="non-virtual"><scope>Tango::DbServerCache</scope><name>get_class_att_property</name></member>
+      <member refid="d3/d9c/classTango_1_1DbServerCache_1a6fb218ae51715acd591cbe1866600273" prot="public" virt="non-virtual"><scope>Tango::DbServerCache</scope><name>get_class_nb</name></member>
+      <member refid="d3/d9c/classTango_1_1DbServerCache_1a8fc512292286a0a123509cc69d520d78" prot="public" virt="non-virtual"><scope>Tango::DbServerCache</scope><name>get_class_pipe_property</name></member>
+      <member refid="d3/d9c/classTango_1_1DbServerCache_1a9e08aa049f7eada2d4cd53629a7fbeec" prot="public" virt="non-virtual"><scope>Tango::DbServerCache</scope><name>get_class_property</name></member>
+      <member refid="d3/d9c/classTango_1_1DbServerCache_1a698cc95655debad33c798aed2029ca43" prot="public" virt="non-virtual"><scope>Tango::DbServerCache</scope><name>get_classes_elt</name></member>
+      <member refid="d3/d9c/classTango_1_1DbServerCache_1a5b8b573b77b996c3a5e65ed91c726323" prot="public" virt="non-virtual"><scope>Tango::DbServerCache</scope><name>get_ctrl_serv_prop</name></member>
+      <member refid="d3/d9c/classTango_1_1DbServerCache_1a563ac0a97a4264997f91a255ba5e9aa6" prot="public" virt="non-virtual"><scope>Tango::DbServerCache</scope><name>get_data_nb</name></member>
+      <member refid="d3/d9c/classTango_1_1DbServerCache_1aba3e6ed06dada57a8e28f41db77a36c3" prot="public" virt="non-virtual"><scope>Tango::DbServerCache</scope><name>get_Default_prop</name></member>
+      <member refid="d3/d9c/classTango_1_1DbServerCache_1a741c66aa44b53aabd6d02938a39d6665" prot="public" virt="non-virtual"><scope>Tango::DbServerCache</scope><name>get_dev_att_property</name></member>
+      <member refid="d3/d9c/classTango_1_1DbServerCache_1a43c0e6184ae0ac2e37b81b527260eaef" prot="public" virt="non-virtual"><scope>Tango::DbServerCache</scope><name>get_dev_list</name></member>
+      <member refid="d3/d9c/classTango_1_1DbServerCache_1ae768e8e04cd75dfee203f0b1181a6f76" prot="public" virt="non-virtual"><scope>Tango::DbServerCache</scope><name>get_dev_pipe_property</name></member>
+      <member refid="d3/d9c/classTango_1_1DbServerCache_1a585a7cff4d7258c732648302e4c7b014" prot="public" virt="non-virtual"><scope>Tango::DbServerCache</scope><name>get_dev_property</name></member>
+      <member refid="d3/d9c/classTango_1_1DbServerCache_1aca3f498aa2cf7f21cca6010f99c8cad9" prot="public" virt="non-virtual"><scope>Tango::DbServerCache</scope><name>get_device_property_list</name></member>
+      <member refid="d3/d9c/classTango_1_1DbServerCache_1aa1264b373e8a7ffa06fea2d669077283" prot="public" virt="non-virtual"><scope>Tango::DbServerCache</scope><name>get_DServer_class_prop</name></member>
+      <member refid="d3/d9c/classTango_1_1DbServerCache_1ace05512b3c0ed14098351cefc5de755f" prot="public" virt="non-virtual"><scope>Tango::DbServerCache</scope><name>get_imp_adm_event</name></member>
+      <member refid="d3/d9c/classTango_1_1DbServerCache_1aec240b67c7bae7eeac3a55f7cfe99bae" prot="public" virt="non-virtual"><scope>Tango::DbServerCache</scope><name>get_imp_dat</name></member>
+      <member refid="d3/d9c/classTango_1_1DbServerCache_1a545fc2b0346c24f12336bde2f2879e54" prot="public" virt="non-virtual"><scope>Tango::DbServerCache</scope><name>get_imp_notifd_event</name></member>
+      <member refid="d3/d9c/classTango_1_1DbServerCache_1ae090d7f79ab33c7b09261e2485803a16" prot="private" virt="non-virtual"><scope>Tango::DbServerCache</scope><name>get_obj_prop</name></member>
+      <member refid="d3/d9c/classTango_1_1DbServerCache_1adc1d517f2be8ec99c0e483febe64e86d" prot="private" virt="non-virtual"><scope>Tango::DbServerCache</scope><name>get_obj_prop_list</name></member>
+      <member refid="d3/d9c/classTango_1_1DbServerCache_1ab243d19bed9da9e884594881354dcbac" prot="public" virt="non-virtual"><scope>Tango::DbServerCache</scope><name>get_obj_property</name></member>
+      <member refid="d3/d9c/classTango_1_1DbServerCache_1a51a5be114f907181ce0848d97fbfc937" prot="private" virt="non-virtual"><scope>Tango::DbServerCache</scope><name>imp_adm</name></member>
+      <member refid="d3/d9c/classTango_1_1DbServerCache_1a66898fd1fd2b1e9cbdbc85441196f5a2" prot="private" virt="non-virtual"><scope>Tango::DbServerCache</scope><name>imp_adm_data</name></member>
+      <member refid="d3/d9c/classTango_1_1DbServerCache_1ab275951d56778a65f622f778d6e646fe" prot="private" virt="non-virtual"><scope>Tango::DbServerCache</scope><name>imp_adm_event</name></member>
+      <member refid="d3/d9c/classTango_1_1DbServerCache_1ac0cd8c5f8283036072df714d96fda987" prot="private" virt="non-virtual"><scope>Tango::DbServerCache</scope><name>imp_adm_event_data</name></member>
+      <member refid="d3/d9c/classTango_1_1DbServerCache_1ad6cacdbbc441a0c02b44b9a109f57832" prot="private" virt="non-virtual"><scope>Tango::DbServerCache</scope><name>imp_notifd_event</name></member>
+      <member refid="d3/d9c/classTango_1_1DbServerCache_1a83c2163940265a762a09f3ae0853ac7f" prot="private" virt="non-virtual"><scope>Tango::DbServerCache</scope><name>imp_notifd_event_data</name></member>
+      <member refid="d3/d9c/classTango_1_1DbServerCache_1a6990deb1cbc6fa3cfcd59ac80270e737" prot="private" virt="non-virtual"><scope>Tango::DbServerCache</scope><name>imp_tac</name></member>
+      <member refid="d3/d9c/classTango_1_1DbServerCache_1acde4a81371e5c5e8a63a575f443fb4bb" prot="private" virt="non-virtual"><scope>Tango::DbServerCache</scope><name>imp_tac_data</name></member>
+      <member refid="d3/d9c/classTango_1_1DbServerCache_1ac9cd0f9b6e07d3155b932f241e1d7a59" prot="public" virt="non-virtual"><scope>Tango::DbServerCache</scope><name>import_adm_dev</name></member>
+      <member refid="d3/d9c/classTango_1_1DbServerCache_1aebde4557fffeb5937fc720964e676413" prot="public" virt="non-virtual"><scope>Tango::DbServerCache</scope><name>import_adm_event</name></member>
+      <member refid="d3/d9c/classTango_1_1DbServerCache_1a18e8f5e8f1b43b4d3849e10fd4e13d83" prot="public" virt="non-virtual"><scope>Tango::DbServerCache</scope><name>import_notifd_event</name></member>
+      <member refid="d3/d9c/classTango_1_1DbServerCache_1ac88bfa9af0e4706f9c2e9de6a7cd2b5c" prot="public" virt="non-virtual"><scope>Tango::DbServerCache</scope><name>import_tac_dev</name></member>
+      <member refid="d3/d9c/classTango_1_1DbServerCache_1a3e4944064d298bfd136435f7c4bf4a9b" prot="private" virt="non-virtual"><scope>Tango::DbServerCache</scope><name>n_data</name></member>
+      <member refid="d3/d9c/classTango_1_1DbServerCache_1a0dba6496f63fbe063525b31f22fc3cb2" prot="private" virt="non-virtual"><scope>Tango::DbServerCache</scope><name>proc_release</name></member>
+      <member refid="d3/d9c/classTango_1_1DbServerCache_1ae196100bcb7e292daa406ee02d2316ea" prot="private" virt="non-virtual"><scope>Tango::DbServerCache</scope><name>prop_att_indexes</name></member>
+      <member refid="d3/d9c/classTango_1_1DbServerCache_1aec08eacc21b50fe02c6e6b9766e66260" prot="private" virt="non-virtual"><scope>Tango::DbServerCache</scope><name>prop_indexes</name></member>
+      <member refid="d3/d9c/classTango_1_1DbServerCache_1a2ee29564bcd5d835b503e5beaf253ba8" prot="private" virt="non-virtual"><scope>Tango::DbServerCache</scope><name>prop_pipe_indexes</name></member>
+      <member refid="d3/d9c/classTango_1_1DbServerCache_1a14a39ab5b83922270aaac35f59fd1db5" prot="private" virt="non-virtual"><scope>Tango::DbServerCache</scope><name>received</name></member>
+      <member refid="d3/d9c/classTango_1_1DbServerCache_1aff28ca330a56ed3c974bf6401c4a8217" prot="private" virt="non-virtual"><scope>Tango::DbServerCache</scope><name>ret_dev_list</name></member>
+      <member refid="d3/d9c/classTango_1_1DbServerCache_1ab179d4591c2497a979e0954fc5882bdc" prot="private" virt="non-virtual"><scope>Tango::DbServerCache</scope><name>ret_obj_att_prop</name></member>
+      <member refid="d3/d9c/classTango_1_1DbServerCache_1a3c3ed2d9b8c35c43c4d32f0d91bb45b2" prot="private" virt="non-virtual"><scope>Tango::DbServerCache</scope><name>ret_obj_pipe_prop</name></member>
+      <member refid="d3/d9c/classTango_1_1DbServerCache_1a30bd9693bab347c0abafebd6f070852f" prot="private" virt="non-virtual"><scope>Tango::DbServerCache</scope><name>ret_obj_prop</name></member>
+      <member refid="d3/d9c/classTango_1_1DbServerCache_1ace77d0464a6f1431f5b810e414c84932" prot="private" virt="non-virtual"><scope>Tango::DbServerCache</scope><name>ret_prop_list</name></member>
+      <member refid="d3/d9c/classTango_1_1DbServerCache_1a879e63fd1e796202e25fe1811d2a0b3c" prot="public" virt="non-virtual"><scope>Tango::DbServerCache</scope><name>~DbServerCache</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,358 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex" kind="class" prot="public">
+    <compoundname>log4tango::threading::RecursiveMutex</compoundname>
+    <includes refid="db/d37/MSThreads_8hh" local="yes">MSThreads.hh</includes>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1a84a463cd8c14c629e9449a1ab16aecfb" prot="protected" static="no" mutable="no">
+        <type>pthread_mutex_t</type>
+        <definition>pthread_mutex_t log4tango::threading::RecursiveMutex::guard_</definition>
+        <argsstring></argsstring>
+        <name>guard_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/threading/PThreads.hh" line="120" column="1" bodyfile="/home/tango/workspace/cppTango/include/log4tango/threading/PThreads.hh" bodystart="120" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1aba88d437ae0d89daf73d46488b45b06d" prot="protected" static="no" mutable="no">
+        <type>CRITICAL_SECTION</type>
+        <definition>CRITICAL_SECTION log4tango::threading::RecursiveMutex::guard_</definition>
+        <argsstring></argsstring>
+        <name>guard_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/threading/MSThreads.hh" line="169" column="1" bodyfile="/home/tango/workspace/cppTango/include/log4tango/threading/MSThreads.hh" bodystart="169" bodyend="-1"/>
+        <referencedby refid="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1ab25b75795eeed61c179ba00d3b9cd4e0" compoundref="db/d37/MSThreads_8hh" startline="142" endline="146">lock</referencedby>
+        <referencedby refid="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1a7bb6f1bb4ca7072b24bda6321e196fc8" compoundref="db/d37/MSThreads_8hh" startline="127" endline="129">RecursiveMutex</referencedby>
+        <referencedby refid="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1a35bcfd9220d32eb5d8974acde72e9820" compoundref="db/d37/MSThreads_8hh" startline="153" endline="157">unlock</referencedby>
+        <referencedby refid="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1ae8ca497191c6f8ac476f50fe5172f777" compoundref="db/d37/MSThreads_8hh" startline="159" endline="165">unlockn</referencedby>
+        <referencedby refid="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1a7210fe141d367494415cf8b580910fdf" compoundref="db/d37/MSThreads_8hh" startline="132" endline="134">~RecursiveMutex</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1abafc328ab69204599821730c657c3cba" prot="protected" static="no" mutable="no">
+        <type>pthread_cond_t</type>
+        <definition>pthread_cond_t log4tango::threading::RecursiveMutex::mutex_available_</definition>
+        <argsstring></argsstring>
+        <name>mutex_available_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/threading/PThreads.hh" line="124" column="1" bodyfile="/home/tango/workspace/cppTango/include/log4tango/threading/PThreads.hh" bodystart="124" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1a250f8710b6c7abf919d42368f734a3ac" prot="private" static="no" mutable="no">
+        <type>pthread_t</type>
+        <definition>pthread_t log4tango::threading::RecursiveMutex::owner_id_</definition>
+        <argsstring></argsstring>
+        <name>owner_id_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/threading/PThreads.hh" line="131" column="1" bodyfile="/home/tango/workspace/cppTango/include/log4tango/threading/PThreads.hh" bodystart="131" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1a847b6fd7063b746825c5bf5bb2d4ea3b" prot="private" static="no" mutable="no">
+        <type>long</type>
+        <definition>long log4tango::threading::RecursiveMutex::recursion_level_</definition>
+        <argsstring></argsstring>
+        <name>recursion_level_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/threading/PThreads.hh" line="128" column="1" bodyfile="/home/tango/workspace/cppTango/include/log4tango/threading/PThreads.hh" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1aa3420339aa3fb716af904c5227f6f2b0" prot="private" static="no" mutable="no">
+        <type>unsigned long</type>
+        <definition>unsigned long log4tango::threading::RecursiveMutex::recursion_level_</definition>
+        <argsstring></argsstring>
+        <name>recursion_level_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/threading/MSThreads.hh" line="173" column="1" bodyfile="/home/tango/workspace/cppTango/include/log4tango/threading/MSThreads.hh" bodystart="173" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1a7bb6f1bb4ca7072b24bda6321e196fc8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>log4tango::threading::RecursiveMutex::RecursiveMutex</definition>
+        <argsstring>(void)</argsstring>
+        <name>RecursiveMutex</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/threading/PThreads.hh" line="97" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1a7bb6f1bb4ca7072b24bda6321e196fc8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>log4tango::threading::RecursiveMutex::RecursiveMutex</definition>
+        <argsstring>(void)</argsstring>
+        <name>RecursiveMutex</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/threading/MSThreads.hh" line="127" column="1" bodyfile="/home/tango/workspace/cppTango/include/log4tango/threading/MSThreads.hh" bodystart="127" bodyend="129"/>
+        <references refid="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1aba88d437ae0d89daf73d46488b45b06d" compoundref="db/d37/MSThreads_8hh" startline="169">guard_</references>
+      </memberdef>
+      <memberdef kind="function" id="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1a7210fe141d367494415cf8b580910fdf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>log4tango::threading::RecursiveMutex::~RecursiveMutex</definition>
+        <argsstring>(void)</argsstring>
+        <name>~RecursiveMutex</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/threading/PThreads.hh" line="100" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1a7210fe141d367494415cf8b580910fdf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>log4tango::threading::RecursiveMutex::~RecursiveMutex</definition>
+        <argsstring>(void)</argsstring>
+        <name>~RecursiveMutex</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/threading/MSThreads.hh" line="132" column="1" bodyfile="/home/tango/workspace/cppTango/include/log4tango/threading/MSThreads.hh" bodystart="132" bodyend="134"/>
+        <references refid="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1aba88d437ae0d89daf73d46488b45b06d" compoundref="db/d37/MSThreads_8hh" startline="169">guard_</references>
+      </memberdef>
+      <memberdef kind="function" id="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1ab25b75795eeed61c179ba00d3b9cd4e0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int log4tango::threading::RecursiveMutex::lock</definition>
+        <argsstring>(long timeout_=0)</argsstring>
+        <name>lock</name>
+        <param>
+          <type>long</type>
+          <declname>timeout_</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/threading/PThreads.hh" line="108" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1ab25b75795eeed61c179ba00d3b9cd4e0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int log4tango::threading::RecursiveMutex::lock</definition>
+        <argsstring>(long timeout_=0)</argsstring>
+        <name>lock</name>
+        <param>
+          <type>long</type>
+          <declname>timeout_</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/threading/MSThreads.hh" line="142" column="1" bodyfile="/home/tango/workspace/cppTango/include/log4tango/threading/MSThreads.hh" bodystart="142" bodyend="146"/>
+        <references refid="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1aba88d437ae0d89daf73d46488b45b06d" compoundref="db/d37/MSThreads_8hh" startline="169">guard_</references>
+      </memberdef>
+      <memberdef kind="function" id="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1a35bcfd9220d32eb5d8974acde72e9820" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void log4tango::threading::RecursiveMutex::unlock</definition>
+        <argsstring>(void)</argsstring>
+        <name>unlock</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/threading/PThreads.hh" line="115" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1a35bcfd9220d32eb5d8974acde72e9820" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void log4tango::threading::RecursiveMutex::unlock</definition>
+        <argsstring>(void)</argsstring>
+        <name>unlock</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/threading/MSThreads.hh" line="153" column="1" bodyfile="/home/tango/workspace/cppTango/include/log4tango/threading/MSThreads.hh" bodystart="153" bodyend="157"/>
+        <references refid="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1aba88d437ae0d89daf73d46488b45b06d" compoundref="db/d37/MSThreads_8hh" startline="169">guard_</references>
+      </memberdef>
+      <memberdef kind="function" id="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1ae8ca497191c6f8ac476f50fe5172f777" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void log4tango::threading::RecursiveMutex::unlockn</definition>
+        <argsstring>(void)</argsstring>
+        <name>unlockn</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/threading/PThreads.hh" line="116" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1ae8ca497191c6f8ac476f50fe5172f777" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void log4tango::threading::RecursiveMutex::unlockn</definition>
+        <argsstring>(void)</argsstring>
+        <name>unlockn</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/threading/MSThreads.hh" line="159" column="1" bodyfile="/home/tango/workspace/cppTango/include/log4tango/threading/MSThreads.hh" bodystart="159" bodyend="165"/>
+        <references refid="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1aba88d437ae0d89daf73d46488b45b06d" compoundref="db/d37/MSThreads_8hh" startline="169">guard_</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1aa03e57774c0e5e21bead4c1623c68a20" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>log4tango::threading::RecursiveMutex::RecursiveMutex</definition>
+        <argsstring>(const RecursiveMutex &amp;)</argsstring>
+        <name>RecursiveMutex</name>
+        <param>
+          <type>const <ref refid="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex" kindref="compound">RecursiveMutex</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/threading/PThreads.hh" line="134" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1aa03e57774c0e5e21bead4c1623c68a20" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>log4tango::threading::RecursiveMutex::RecursiveMutex</definition>
+        <argsstring>(const RecursiveMutex &amp;)</argsstring>
+        <name>RecursiveMutex</name>
+        <param>
+          <type>const <ref refid="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex" kindref="compound">RecursiveMutex</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/threading/MSThreads.hh" line="176" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1ace000e0199c147e68feaa07ac814e72d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex" kindref="compound">RecursiveMutex</ref> &amp;</type>
+        <definition>RecursiveMutex&amp; log4tango::threading::RecursiveMutex::operator=</definition>
+        <argsstring>(const RecursiveMutex &amp;)</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex" kindref="compound">RecursiveMutex</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/threading/PThreads.hh" line="135" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1ace000e0199c147e68feaa07ac814e72d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex" kindref="compound">RecursiveMutex</ref> &amp;</type>
+        <definition>RecursiveMutex&amp; log4tango::threading::RecursiveMutex::operator=</definition>
+        <argsstring>(const RecursiveMutex &amp;)</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex" kindref="compound">RecursiveMutex</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/threading/MSThreads.hh" line="177" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/tango/workspace/cppTango/include/log4tango/threading/MSThreads.hh" line="124" column="1" bodyfile="/home/tango/workspace/cppTango/include/log4tango/threading/MSThreads.hh" bodystart="123" bodyend="178"/>
+    <listofallmembers>
+      <member refid="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1aba88d437ae0d89daf73d46488b45b06d" prot="protected" virt="non-virtual"><scope>log4tango::threading::RecursiveMutex</scope><name>guard_</name></member>
+      <member refid="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1a84a463cd8c14c629e9449a1ab16aecfb" prot="protected" virt="non-virtual"><scope>log4tango::threading::RecursiveMutex</scope><name>guard_</name></member>
+      <member refid="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1ab25b75795eeed61c179ba00d3b9cd4e0" prot="public" virt="non-virtual"><scope>log4tango::threading::RecursiveMutex</scope><name>lock</name></member>
+      <member refid="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1ab25b75795eeed61c179ba00d3b9cd4e0" prot="public" virt="non-virtual"><scope>log4tango::threading::RecursiveMutex</scope><name>lock</name></member>
+      <member refid="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1abafc328ab69204599821730c657c3cba" prot="protected" virt="non-virtual"><scope>log4tango::threading::RecursiveMutex</scope><name>mutex_available_</name></member>
+      <member refid="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1ace000e0199c147e68feaa07ac814e72d" prot="private" virt="non-virtual"><scope>log4tango::threading::RecursiveMutex</scope><name>operator=</name></member>
+      <member refid="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1ace000e0199c147e68feaa07ac814e72d" prot="private" virt="non-virtual"><scope>log4tango::threading::RecursiveMutex</scope><name>operator=</name></member>
+      <member refid="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1a250f8710b6c7abf919d42368f734a3ac" prot="private" virt="non-virtual"><scope>log4tango::threading::RecursiveMutex</scope><name>owner_id_</name></member>
+      <member refid="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1aa3420339aa3fb716af904c5227f6f2b0" prot="private" virt="non-virtual"><scope>log4tango::threading::RecursiveMutex</scope><name>recursion_level_</name></member>
+      <member refid="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1a847b6fd7063b746825c5bf5bb2d4ea3b" prot="private" virt="non-virtual"><scope>log4tango::threading::RecursiveMutex</scope><name>recursion_level_</name></member>
+      <member refid="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1a7bb6f1bb4ca7072b24bda6321e196fc8" prot="public" virt="non-virtual"><scope>log4tango::threading::RecursiveMutex</scope><name>RecursiveMutex</name></member>
+      <member refid="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1aa03e57774c0e5e21bead4c1623c68a20" prot="private" virt="non-virtual"><scope>log4tango::threading::RecursiveMutex</scope><name>RecursiveMutex</name></member>
+      <member refid="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1a7bb6f1bb4ca7072b24bda6321e196fc8" prot="public" virt="non-virtual"><scope>log4tango::threading::RecursiveMutex</scope><name>RecursiveMutex</name></member>
+      <member refid="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1aa03e57774c0e5e21bead4c1623c68a20" prot="private" virt="non-virtual"><scope>log4tango::threading::RecursiveMutex</scope><name>RecursiveMutex</name></member>
+      <member refid="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1a35bcfd9220d32eb5d8974acde72e9820" prot="public" virt="non-virtual"><scope>log4tango::threading::RecursiveMutex</scope><name>unlock</name></member>
+      <member refid="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1a35bcfd9220d32eb5d8974acde72e9820" prot="public" virt="non-virtual"><scope>log4tango::threading::RecursiveMutex</scope><name>unlock</name></member>
+      <member refid="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1ae8ca497191c6f8ac476f50fe5172f777" prot="public" virt="non-virtual"><scope>log4tango::threading::RecursiveMutex</scope><name>unlockn</name></member>
+      <member refid="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1ae8ca497191c6f8ac476f50fe5172f777" prot="public" virt="non-virtual"><scope>log4tango::threading::RecursiveMutex</scope><name>unlockn</name></member>
+      <member refid="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1a7210fe141d367494415cf8b580910fdf" prot="public" virt="non-virtual"><scope>log4tango::threading::RecursiveMutex</scope><name>~RecursiveMutex</name></member>
+      <member refid="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1a7210fe141d367494415cf8b580910fdf" prot="public" virt="non-virtual"><scope>log4tango::threading::RecursiveMutex</scope><name>~RecursiveMutex</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

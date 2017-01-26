@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="d6/df9/structlog4tango_1_1MillisSinceEpochComponent" kind="struct" prot="public">
+    <compoundname>log4tango::MillisSinceEpochComponent</compoundname>
+    <basecompoundref refid="d0/d47/classlog4tango_1_1PatternLayout_1_1PatternComponent" prot="public" virt="non-virtual">log4tango::PatternLayout::PatternComponent</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d6/df9/structlog4tango_1_1MillisSinceEpochComponent_1aa27fd154cf9ab295aaa7f4b81f60a182" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void log4tango::MillisSinceEpochComponent::append</definition>
+        <argsstring>(std::ostringstream &amp;out, const LoggingEvent &amp;event)</argsstring>
+        <name>append</name>
+        <reimplements refid="d0/d47/classlog4tango_1_1PatternLayout_1_1PatternComponent_1afb25822922b51144361faff5d6cdeaa8">append</reimplements>
+        <param>
+          <type><ref refid="d7/d24/classstd_1_1ostringstream" kindref="compound">std::ostringstream</ref> &amp;</type>
+          <declname>out</declname>
+        </param>
+        <param>
+          <type>const <ref refid="d8/df2/structlog4tango_1_1LoggingEvent" kindref="compound">LoggingEvent</ref> &amp;</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/src/log4tango/PatternLayout.cpp" line="213" column="1" bodyfile="/home/tango/workspace/cppTango/src/log4tango/PatternLayout.cpp" bodystart="213" bodyend="232"/>
+        <references refid="d2/df5/classlog4tango_1_1TimeStamp_1ad78de0eb6ff9d25cc00e24ad5aab16e2" compoundref="db/d7c/TimeStamp_8hh" startline="76" endline="78">log4tango::TimeStamp::get_milliseconds</references>
+        <references refid="d2/df5/classlog4tango_1_1TimeStamp_1a94972a4ed5baac6f19536289ad12a890" compoundref="db/d7c/TimeStamp_8hh" startline="68" endline="70">log4tango::TimeStamp::get_seconds</references>
+        <references refid="d2/df5/classlog4tango_1_1TimeStamp_1a8aff592396c6987d1b0008fd7308346a" compoundref="db/d7c/TimeStamp_8hh" startline="93" endline="95">log4tango::TimeStamp::get_start_time</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1129">
+        <label>log4tango::MillisSinceEpochComponent</label>
+        <link refid="d6/df9/structlog4tango_1_1MillisSinceEpochComponent"/>
+        <childnode refid="1130" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1130">
+        <label>log4tango::PatternLayout::PatternComponent</label>
+        <link refid="d0/d47/classlog4tango_1_1PatternLayout_1_1PatternComponent"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1131">
+        <label>log4tango::MillisSinceEpochComponent</label>
+        <link refid="d6/df9/structlog4tango_1_1MillisSinceEpochComponent"/>
+        <childnode refid="1132" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1132">
+        <label>log4tango::PatternLayout::PatternComponent</label>
+        <link refid="d0/d47/classlog4tango_1_1PatternLayout_1_1PatternComponent"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/tango/workspace/cppTango/src/log4tango/PatternLayout.cpp" line="212" column="1" bodyfile="/home/tango/workspace/cppTango/src/log4tango/PatternLayout.cpp" bodystart="212" bodyend="233"/>
+    <listofallmembers>
+      <member refid="d6/df9/structlog4tango_1_1MillisSinceEpochComponent_1aa27fd154cf9ab295aaa7f4b81f60a182" prot="public" virt="virtual"><scope>log4tango::MillisSinceEpochComponent</scope><name>append</name></member>
+      <member refid="d0/d47/classlog4tango_1_1PatternLayout_1_1PatternComponent_1adc8b8fe4a04939ecf6c440bf64ceaf80" prot="public" virt="virtual"><scope>log4tango::MillisSinceEpochComponent</scope><name>~PatternComponent</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

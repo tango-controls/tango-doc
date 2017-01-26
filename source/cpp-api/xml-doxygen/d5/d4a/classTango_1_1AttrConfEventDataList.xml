@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="d5/d4a/classTango_1_1AttrConfEventDataList" kind="class" prot="public">
+    <compoundname>Tango::AttrConfEventDataList</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">std::vector&lt; AttrConfEventData * &gt;</basecompoundref>
+    <includes refid="dd/d20/event_8h" local="yes">event.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d5/d4a/classTango_1_1AttrConfEventDataList_1a4f05996e7c728cbe81a3d9c7537681b9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Tango::AttrConfEventDataList::AttrConfEventDataList</definition>
+        <argsstring>()</argsstring>
+        <name>AttrConfEventDataList</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/event.h" line="223" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/event.h" bodystart="223" bodyend="223"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d4a/classTango_1_1AttrConfEventDataList_1aded16cd8d6444b0eeafebdb718c34d90" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Tango::AttrConfEventDataList::~AttrConfEventDataList</definition>
+        <argsstring>()</argsstring>
+        <name>~AttrConfEventDataList</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/event.h" line="224" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/event.h" bodystart="224" bodyend="234"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d4a/classTango_1_1AttrConfEventDataList_1a2bdc684a5056ac4c891e904e088c520e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::AttrConfEventDataList::clear</definition>
+        <argsstring>()</argsstring>
+        <name>clear</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/event.h" line="235" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/event.h" bodystart="235" bodyend="247"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="694">
+        <label>std::vector&lt; AttrConfEventData * &gt;</label>
+      </node>
+      <node id="693">
+        <label>Tango::AttrConfEventDataList</label>
+        <link refid="d5/d4a/classTango_1_1AttrConfEventDataList"/>
+        <childnode refid="694" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="696">
+        <label>std::vector&lt; AttrConfEventData * &gt;</label>
+      </node>
+      <node id="695">
+        <label>Tango::AttrConfEventDataList</label>
+        <link refid="d5/d4a/classTango_1_1AttrConfEventDataList"/>
+        <childnode refid="696" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/tango/workspace/cppTango/include/tango/client/event.h" line="221" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/event.h" bodystart="220" bodyend="248"/>
+    <listofallmembers>
+      <member refid="d5/d4a/classTango_1_1AttrConfEventDataList_1a4f05996e7c728cbe81a3d9c7537681b9" prot="public" virt="non-virtual"><scope>Tango::AttrConfEventDataList</scope><name>AttrConfEventDataList</name></member>
+      <member refid="d5/d4a/classTango_1_1AttrConfEventDataList_1a2bdc684a5056ac4c891e904e088c520e" prot="public" virt="non-virtual"><scope>Tango::AttrConfEventDataList</scope><name>clear</name></member>
+      <member refid="d5/d4a/classTango_1_1AttrConfEventDataList_1aded16cd8d6444b0eeafebdb718c34d90" prot="public" virt="non-virtual"><scope>Tango::AttrConfEventDataList</scope><name>~AttrConfEventDataList</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

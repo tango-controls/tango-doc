@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="df/d27/classTango_1_1DbProperty" kind="class" prot="public">
+    <compoundname>Tango::DbProperty</compoundname>
+    <includes refid="dc/df8/dbapi_8h" local="yes">dbapi.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="df/d27/classTango_1_1DbProperty_1a0e9973b256db4999d35b287f975ce3be" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::DbProperty::DbProperty</definition>
+        <argsstring>(string)</argsstring>
+        <name>DbProperty</name>
+        <param>
+          <type>string</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="113" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d27/classTango_1_1DbProperty_1acdaf2dd1e45d255b093433469ac02255" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::DbProperty::~DbProperty</definition>
+        <argsstring>()</argsstring>
+        <name>~DbProperty</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="114" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d27/classTango_1_1DbProperty_1a52db2462b53e220154ecb645d14922a3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::DbProperty::delete_</definition>
+        <argsstring>(DbData &amp;)</argsstring>
+        <name>delete_</name>
+        <param>
+          <type><ref refid="de/ddf/namespaceTango_1a99fa459235396b406532406b562984c0" kindref="member">DbData</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="120" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d27/classTango_1_1DbProperty_1abaccb7d4e4253980d4048d1e8cd866a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::DbProperty::get</definition>
+        <argsstring>(DbData &amp;)</argsstring>
+        <name>get</name>
+        <param>
+          <type><ref refid="de/ddf/namespaceTango_1a99fa459235396b406532406b562984c0" kindref="member">DbData</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="118" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d27/classTango_1_1DbProperty_1a8e774daf7444880892d851739345db43" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::DbProperty::put</definition>
+        <argsstring>(DbData &amp;)</argsstring>
+        <name>put</name>
+        <param>
+          <type><ref refid="de/ddf/namespaceTango_1a99fa459235396b406532406b562984c0" kindref="member">DbData</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="119" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="111" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" bodystart="110" bodyend="121"/>
+    <listofallmembers>
+      <member refid="df/d27/classTango_1_1DbProperty_1a0e9973b256db4999d35b287f975ce3be" prot="public" virt="non-virtual"><scope>Tango::DbProperty</scope><name>DbProperty</name></member>
+      <member refid="df/d27/classTango_1_1DbProperty_1a52db2462b53e220154ecb645d14922a3" prot="public" virt="non-virtual"><scope>Tango::DbProperty</scope><name>delete_</name></member>
+      <member refid="df/d27/classTango_1_1DbProperty_1abaccb7d4e4253980d4048d1e8cd866a1" prot="public" virt="non-virtual"><scope>Tango::DbProperty</scope><name>get</name></member>
+      <member refid="df/d27/classTango_1_1DbProperty_1a8e774daf7444880892d851739345db43" prot="public" virt="non-virtual"><scope>Tango::DbProperty</scope><name>put</name></member>
+      <member refid="df/d27/classTango_1_1DbProperty_1acdaf2dd1e45d255b093433469ac02255" prot="public" virt="non-virtual"><scope>Tango::DbProperty</scope><name>~DbProperty</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

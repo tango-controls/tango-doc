@@ -1,0 +1,94 @@
+\section{log4tango\-:\-:Log\-Stream\-Buf Class Reference}
+\label{classlog4tango_1_1LogStreamBuf}\index{log4tango\-::\-Log\-Stream\-Buf@{log4tango\-::\-Log\-Stream\-Buf}}
+
+
+{\ttfamily \#include \char`\"{}Log\-Streambuf.\-hh\char`\"{}}
+
+
+
+Inheritance diagram for log4tango\-:\-:Log\-Stream\-Buf\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=168pt]{d4/d10/classlog4tango_1_1LogStreamBuf__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for log4tango\-:\-:Log\-Stream\-Buf\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=168pt]{d3/db6/classlog4tango_1_1LogStreamBuf__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Log\-Stream\-Buf} ({\bf Logger} $\ast$logger, {\bf Level\-::\-Value} level, bool filter=true, size\-\_\-t bsize={\bf k\-D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E})
+\item 
+virtual {\bf $\sim$\-Log\-Stream\-Buf} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual int {\bf sync} (void)
+\item 
+virtual std\-::streamsize {\bf xsputn} (const char $\ast$, std\-::streamsize)
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Log\-Stream}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{log4tango\-::\-Log\-Stream\-Buf@{log4tango\-::\-Log\-Stream\-Buf}!Log\-Stream\-Buf@{Log\-Stream\-Buf}}
+\index{Log\-Stream\-Buf@{Log\-Stream\-Buf}!log4tango::LogStreamBuf@{log4tango\-::\-Log\-Stream\-Buf}}
+\subsubsection[{Log\-Stream\-Buf}]{\setlength{\rightskip}{0pt plus 5cm}log4tango\-::\-Log\-Stream\-Buf\-::\-Log\-Stream\-Buf (
+\begin{DoxyParamCaption}
+\item[{{\bf Logger} $\ast$}]{logger, }
+\item[{{\bf Level\-::\-Value}}]{level, }
+\item[{bool}]{filter = {\ttfamily true}, }
+\item[{size\-\_\-t}]{bsize = {\ttfamily {\bf k\-D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E}}}
+\end{DoxyParamCaption}
+)}\label{classlog4tango_1_1LogStreamBuf_a3d3bf3a4ff2e95b8767ad2d49826ae47}
+\index{log4tango\-::\-Log\-Stream\-Buf@{log4tango\-::\-Log\-Stream\-Buf}!$\sim$\-Log\-Stream\-Buf@{$\sim$\-Log\-Stream\-Buf}}
+\index{$\sim$\-Log\-Stream\-Buf@{$\sim$\-Log\-Stream\-Buf}!log4tango::LogStreamBuf@{log4tango\-::\-Log\-Stream\-Buf}}
+\subsubsection[{$\sim$\-Log\-Stream\-Buf}]{\setlength{\rightskip}{0pt plus 5cm}virtual log4tango\-::\-Log\-Stream\-Buf\-::$\sim$\-Log\-Stream\-Buf (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classlog4tango_1_1LogStreamBuf_a818fd0a949e1cebc7f4f8217621e71c8}
+
+
+\subsection{Member Function Documentation}
+\index{log4tango\-::\-Log\-Stream\-Buf@{log4tango\-::\-Log\-Stream\-Buf}!sync@{sync}}
+\index{sync@{sync}!log4tango::LogStreamBuf@{log4tango\-::\-Log\-Stream\-Buf}}
+\subsubsection[{sync}]{\setlength{\rightskip}{0pt plus 5cm}virtual int log4tango\-::\-Log\-Stream\-Buf\-::sync (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classlog4tango_1_1LogStreamBuf_a82692bb5af1c37e3a73079de23f5308e}
+\index{log4tango\-::\-Log\-Stream\-Buf@{log4tango\-::\-Log\-Stream\-Buf}!xsputn@{xsputn}}
+\index{xsputn@{xsputn}!log4tango::LogStreamBuf@{log4tango\-::\-Log\-Stream\-Buf}}
+\subsubsection[{xsputn}]{\setlength{\rightskip}{0pt plus 5cm}virtual std\-::streamsize log4tango\-::\-Log\-Stream\-Buf\-::xsputn (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{, }
+\item[{std\-::streamsize}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classlog4tango_1_1LogStreamBuf_a24ee38a6bb7e46f4cfe1b23ee4893f80}
+
+
+\subsection{Friends And Related Function Documentation}
+\index{log4tango\-::\-Log\-Stream\-Buf@{log4tango\-::\-Log\-Stream\-Buf}!Log\-Stream@{Log\-Stream}}
+\index{Log\-Stream@{Log\-Stream}!log4tango::LogStreamBuf@{log4tango\-::\-Log\-Stream\-Buf}}
+\subsubsection[{Log\-Stream}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Log\-Stream}\hspace{0.3cm}{\ttfamily [friend]}}\label{classlog4tango_1_1LogStreamBuf_aabe1238b9c317325110868340635ff1f}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+{\bf Log\-Streambuf.\-hh}\end{DoxyCompactItemize}

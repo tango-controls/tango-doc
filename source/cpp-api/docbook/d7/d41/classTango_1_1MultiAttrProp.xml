@@ -1,0 +1,216 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d7/d41/classTango_1_1MultiAttrProp">
+<title>Tango::MultiAttrProp class Reference</title>
+        <simplesect>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="df/dce/classTango_1_1MultiAttrProp_1_1MultiAttrPropExt">Tango::MultiAttrProp::MultiAttrPropExt</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <templateparamlist>
+      <param>
+        <type>typename</type>
+        <declname>T</declname>
+        <defname>T</defname>
+      </param>
+    </templateparamlist>
+        <simplesect>
+            <title>Constructors</title>
+      <description>
+<para>Miscellaneous constructors </para>
+</description>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d7/d41/classTango_1_1MultiAttrProp_1a54da16eb6216e7833e4fd0a7c6f2ad5a">MultiAttrProp</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Class data members</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string label<para><emphasis>Attribute label.</emphasis></para></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string description<para><emphasis>Attribute description.</emphasis></para></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string unit<para><emphasis>Attribute unit.</emphasis></para></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string standard_unit<para><emphasis>Attribute standard_unit.</emphasis></para></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string display_unit<para><emphasis>Attribute display_unit.</emphasis></para></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string format<para><emphasis>Attribute format.</emphasis></para></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>AttrProp&lt; T &gt; min_value<para><emphasis>Attribute min_value.</emphasis></para></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>AttrProp&lt; T &gt; max_value<para><emphasis>Attribute max_value.</emphasis></para></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>AttrProp&lt; T &gt; min_alarm<para><emphasis>Attribute min_alarm.</emphasis></para></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>AttrProp&lt; T &gt; max_alarm<para><emphasis>Attribute max_alarm.</emphasis></para></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>AttrProp&lt; T &gt; min_warning<para><emphasis>Attribute min_warning.</emphasis></para></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>AttrProp&lt; T &gt; max_warning<para><emphasis>Attribute max_warning.</emphasis></para></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>AttrProp&lt; DevLong &gt; delta_t<para><emphasis>Attribute delta_t.</emphasis></para></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>AttrProp&lt; T &gt; delta_val<para><emphasis>Attribute delta_val.</emphasis></para></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>AttrProp&lt; DevLong &gt; event_period<para><emphasis>Attribute event_period.</emphasis></para></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>AttrProp&lt; DevLong &gt; archive_period<para><emphasis>Attribute archive_period.</emphasis></para></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>DoubleAttrProp&lt; DevDouble &gt; rel_change<para><emphasis>Attribute rel_change.</emphasis></para></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>DoubleAttrProp&lt; DevDouble &gt; abs_change<para><emphasis>Attribute abs_change.</emphasis></para></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>DoubleAttrProp&lt; DevDouble &gt; archive_rel_change<para><emphasis>Attribute archive_rel_change.</emphasis></para></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>DoubleAttrProp&lt; DevDouble &gt; archive_abs_change<para><emphasis>Attribute archive_abs_change.</emphasis></para></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>vector&lt; string &gt; enum_labels<para><emphasis>Enumeration labels (For DevEnum data type)</emphasis></para></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>MultiAttrPropExt * ext</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Brief Description</title>
+
+<para>This class represents <link linkend="de/ddf/namespaceTango">Tango</link> modifiable attribute properties grouped in one object to facilitate setting and getting attribute properties in one go. </para>
+    </simplesect>
+        <simplesect>
+            <title>Detailed Description</title>
+
+<para><formalpara><title></title>
+<title>Author:</title>
+<para>trogucki </para>
+</formalpara>
+<formalpara><title></title>
+<title>Revision:</title>
+<para>19431 </para>
+</formalpara>
+</para>
+                <para>Definition at line 548 of file attrprop.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>attrprop.h</para></listitem></itemizedlist></para>
+        </simplesect>
+</section>

@@ -1,0 +1,729 @@
+\section{Tango\-:\-:Templ\-Command Class Reference}
+\label{classTango_1_1TemplCommand}\index{Tango\-::\-Templ\-Command@{Tango\-::\-Templ\-Command}}
+
+
+This class is a class representing a command in the template command model without input or output parameter.  
+
+
+
+
+Inheritance diagram for Tango\-:\-:Templ\-Command\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/df6/classTango_1_1TemplCommand__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Tango\-:\-:Templ\-Command\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=162pt]{d3/d35/classTango_1_1TemplCommand__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Templ\-Command} (const char $\ast$)
+\item 
+{\bf Templ\-Command} (string \&)
+\item 
+{\bf Templ\-Command} (const char $\ast$, Tango\-::\-Disp\-Level)
+\item 
+{\bf Templ\-Command} (string \&, Tango\-::\-Disp\-Level)
+\item 
+{\bf Templ\-Command} (const char $\ast$, const char $\ast$, const char $\ast$)
+\item 
+{\bf Templ\-Command} (string \&, string \&, string \&)
+\item 
+{\bf Templ\-Command} (const char $\ast$, const char $\ast$, const char $\ast$, Disp\-Level)
+\item 
+{\bf Templ\-Command} (string \&, string \&, string \&, Disp\-Level)
+\end{DoxyCompactItemize}
+\begin{Indent}{\bf Constructors}\par
+{\em Miscellaneous constructors }\begin{DoxyCompactItemize}
+\item 
+{\bf Templ\-Command} ()
+\begin{DoxyCompactList}\small\item\em Constructs a newly allocated \doxyref{Command}{p.}{d2/d1d/classTango_1_1Command} object. \end{DoxyCompactList}\item 
+{\bf Templ\-Command} (const char $\ast$cmd\-\_\-name, void(Device\-Impl\-::$\ast$exe\-\_\-method)())
+\begin{DoxyCompactList}\small\item\em Constructs a newly allocated \doxyref{Templ\-Command}{p.}{de/de1/classTango_1_1TemplCommand} object for a command with a name and an execution method. \end{DoxyCompactList}\item 
+{\bf Templ\-Command} (string \&cmd\-\_\-name, void(Device\-Impl\-::$\ast$exe\-\_\-method)())
+\begin{DoxyCompactList}\small\item\em Constructs a newly allocated \doxyref{Templ\-Command}{p.}{de/de1/classTango_1_1TemplCommand} object for a command with a name and an execution method. \end{DoxyCompactList}\item 
+{\bf Templ\-Command} (const char $\ast$cmd\-\_\-name, void(Device\-Impl\-::$\ast$exe\-\_\-method)(), bool(Device\-Impl\-::$\ast$state\-\_\-method)(const C\-O\-R\-B\-A\-::\-Any \&))
+\begin{DoxyCompactList}\small\item\em Constructs a newly allocated \doxyref{Templ\-Command}{p.}{de/de1/classTango_1_1TemplCommand} object for a command with a name, an execution method and a command allowed method. \end{DoxyCompactList}\item 
+{\bf Templ\-Command} (string \&cmd\-\_\-name, void(Device\-Impl\-::$\ast$exe\-\_\-method)(), bool(Device\-Impl\-::$\ast$state\-\_\-method)(const C\-O\-R\-B\-A\-::\-Any \&))
+\begin{DoxyCompactList}\small\item\em Constructs a newly allocated \doxyref{Templ\-Command}{p.}{de/de1/classTango_1_1TemplCommand} object for a command with a name, an execution method and a command allowed method. \end{DoxyCompactList}\item 
+{\bf Templ\-Command} (const char $\ast$cmd\-\_\-name, void(Device\-Impl\-::$\ast$exe\-\_\-method)(), const char $\ast$in\-\_\-desc, const char $\ast$out\-\_\-desc)
+\begin{DoxyCompactList}\small\item\em Constructs a newly allocated \doxyref{Templ\-Command}{p.}{de/de1/classTango_1_1TemplCommand} object for a command with a name, an execution method and a description for the input and output command parameters. \end{DoxyCompactList}\item 
+{\bf Templ\-Command} (string \&cmd\-\_\-name, void(Device\-Impl\-::$\ast$exe\-\_\-method)(), string \&in\-\_\-desc, string \&out\-\_\-desc)
+\begin{DoxyCompactList}\small\item\em Constructs a newly allocated \doxyref{Templ\-Command}{p.}{de/de1/classTango_1_1TemplCommand} object for a command with a name, an execution method and a description for the input and output command parameters. \end{DoxyCompactList}\item 
+{\bf Templ\-Command} (const char $\ast$cmd\-\_\-name, void(Device\-Impl\-::$\ast$exe\-\_\-method)(), bool(Device\-Impl\-::$\ast$state\-\_\-method)(const C\-O\-R\-B\-A\-::\-Any \&), const char $\ast$in\-\_\-desc, const char $\ast$out\-\_\-desc)
+\begin{DoxyCompactList}\small\item\em Constructs a newly allocated \doxyref{Templ\-Command}{p.}{de/de1/classTango_1_1TemplCommand} object for a command with a name, an execution method, a command allowed method and a description for the input and output command parameters. \end{DoxyCompactList}\item 
+{\bf Templ\-Command} (string \&cmd\-\_\-name, void(Device\-Impl\-::$\ast$exe\-\_\-method)(), bool(Device\-Impl\-::$\ast$state\-\_\-method)(const C\-O\-R\-B\-A\-::\-Any \&), string \&in\-\_\-desc, string \&out\-\_\-desc)
+\begin{DoxyCompactList}\small\item\em Constructs a newly allocated \doxyref{Templ\-Command}{p.}{de/de1/classTango_1_1TemplCommand} object for a command with a name, an execution method, a command allowed method and a description for the input and output command parameters. \end{DoxyCompactList}\item 
+{\bf Templ\-Command} (const char $\ast$cmd\-\_\-name, void(Device\-Impl\-::$\ast$exe\-\_\-method)(), Tango\-::\-Disp\-Level level)
+\begin{DoxyCompactList}\small\item\em Constructs a newly allocated \doxyref{Templ\-Command}{p.}{de/de1/classTango_1_1TemplCommand} object for a command with a name and an execution method. \end{DoxyCompactList}\item 
+{\bf Templ\-Command} (string \&cmd\-\_\-name, void(Device\-Impl\-::$\ast$exe\-\_\-method)(), Tango\-::\-Disp\-Level level)
+\begin{DoxyCompactList}\small\item\em Constructs a newly allocated \doxyref{Templ\-Command}{p.}{de/de1/classTango_1_1TemplCommand} object for a command with a name and an execution method. \end{DoxyCompactList}\item 
+{\bf Templ\-Command} (const char $\ast$cmd\-\_\-name, void(Device\-Impl\-::$\ast$exe\-\_\-method)(), bool(Device\-Impl\-::$\ast$state\-\_\-method)(const C\-O\-R\-B\-A\-::\-Any \&), Tango\-::\-Disp\-Level level)
+\begin{DoxyCompactList}\small\item\em Constructs a newly allocated \doxyref{Templ\-Command}{p.}{de/de1/classTango_1_1TemplCommand} object for a command with a name, an execution method and a command allowed method. \end{DoxyCompactList}\item 
+{\bf Templ\-Command} (string \&cmd\-\_\-name, void(Device\-Impl\-::$\ast$exe\-\_\-method)(), bool(Device\-Impl\-::$\ast$state\-\_\-method)(const C\-O\-R\-B\-A\-::\-Any \&), Tango\-::\-Disp\-Level level)
+\begin{DoxyCompactList}\small\item\em Constructs a newly allocated \doxyref{Templ\-Command}{p.}{de/de1/classTango_1_1TemplCommand} object for a command with a name, an execution method and a command allowed method. \end{DoxyCompactList}\item 
+{\bf Templ\-Command} (const char $\ast$cmd\-\_\-name, void(Device\-Impl\-::$\ast$exe\-\_\-method)(), const char $\ast$in\-\_\-desc, const char $\ast$out\-\_\-desc, Tango\-::\-Disp\-Level level)
+\begin{DoxyCompactList}\small\item\em Constructs a newly allocated \doxyref{Templ\-Command}{p.}{de/de1/classTango_1_1TemplCommand} object for a command with a name, an execution method and a description for the input and output command parameters. \end{DoxyCompactList}\item 
+{\bf Templ\-Command} (string \&cmd\-\_\-name, void(Device\-Impl\-::$\ast$exe\-\_\-method)(), string \&in\-\_\-desc, string \&out\-\_\-desc, Tango\-::\-Disp\-Level level)
+\begin{DoxyCompactList}\small\item\em Constructs a newly allocated \doxyref{Templ\-Command}{p.}{de/de1/classTango_1_1TemplCommand} object for a command with a name, an execution method and a description for the input and output command parameters. \end{DoxyCompactList}\item 
+{\bf Templ\-Command} (const char $\ast$cmd\-\_\-name, void(Device\-Impl\-::$\ast$exe\-\_\-method)(), bool(Device\-Impl\-::$\ast$state\-\_\-method)(const C\-O\-R\-B\-A\-::\-Any \&), const char $\ast$in\-\_\-desc, const char $\ast$out\-\_\-desc, Tango\-::\-Disp\-Level level)
+\begin{DoxyCompactList}\small\item\em Constructs a newly allocated \doxyref{Templ\-Command}{p.}{de/de1/classTango_1_1TemplCommand} object for a command with a name, an execution method, a command allowed method and a description for the input and output command parameters. \end{DoxyCompactList}\item 
+{\bf Templ\-Command} (string \&cmd\-\_\-name, void(Device\-Impl\-::$\ast$exe\-\_\-method)(), bool(Device\-Impl\-::$\ast$state\-\_\-method)(const C\-O\-R\-B\-A\-::\-Any \&), string \&in\-\_\-desc, string \&out\-\_\-desc, Tango\-::\-Disp\-Level level)
+\begin{DoxyCompactList}\small\item\em Constructs a newly allocated \doxyref{Templ\-Command}{p.}{de/de1/classTango_1_1TemplCommand} object for a command with a name, an execution method, a command allowed method and a description for the input and output command parameters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Miscellaneous methods}\par
+\begin{DoxyCompactItemize}
+\item 
+void {\bf set\-\_\-type} (const type\-\_\-info \&data\-\_\-type, {\bf Tango\-::\-Cmd\-Arg\-Type} \&type)
+\begin{DoxyCompactList}\small\item\em Choose the correct T\-A\-N\-G\-O data type constant according to data type. \end{DoxyCompactList}\item 
+C\-O\-R\-B\-A\-::\-Any $\ast$ {\bf execute} ({\bf Device\-Impl} $\ast$dev, const C\-O\-R\-B\-A\-::\-Any \&in\-\_\-any)
+\begin{DoxyCompactList}\small\item\em Invoke the command execution method given at object creation time. \end{DoxyCompactList}\item 
+bool {\bf is\-\_\-allowed} ({\bf Device\-Impl} $\ast$dev, const C\-O\-R\-B\-A\-::\-Any \&in\-\_\-any)
+\begin{DoxyCompactList}\small\item\em Invoke the command allowed method given at object creation time. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Protected Attributes}
+\begin{Indent}{\bf Class data members}\par
+\begin{DoxyCompactItemize}
+\item 
+bool(Device\-Impl\-::$\ast$ {\bf allowed\-\_\-ptr} )(const C\-O\-R\-B\-A\-::\-Any \&)
+\begin{DoxyCompactList}\small\item\em The command allowed method object reference. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+This class is a class representing a command in the template command model without input or output parameter. 
+
+\$\-Author\$ \$\-Revision\$ 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Tango\-::\-Templ\-Command@{Tango\-::\-Templ\-Command}!Templ\-Command@{Templ\-Command}}
+\index{Templ\-Command@{Templ\-Command}!Tango::TemplCommand@{Tango\-::\-Templ\-Command}}
+\subsubsection[{Templ\-Command}]{\setlength{\rightskip}{0pt plus 5cm}Tango\-::\-Templ\-Command\-::\-Templ\-Command (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTango_1_1TemplCommand_a7a162c71679b1bb2ea3fc11db8b149bc}
+
+
+Constructs a newly allocated \doxyref{Command}{p.}{d2/d1d/classTango_1_1Command} object. 
+
+The default constructor \index{Tango\-::\-Templ\-Command@{Tango\-::\-Templ\-Command}!Templ\-Command@{Templ\-Command}}
+\index{Templ\-Command@{Templ\-Command}!Tango::TemplCommand@{Tango\-::\-Templ\-Command}}
+\subsubsection[{Templ\-Command}]{\setlength{\rightskip}{0pt plus 5cm}Tango\-::\-Templ\-Command\-::\-Templ\-Command (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{cmd\-\_\-name, }
+\item[{void(Device\-Impl\-::$\ast$)()}]{exe\-\_\-method}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1TemplCommand_a4f42709104cd27eeb848a27ff44e6373}
+
+
+Constructs a newly allocated \doxyref{Templ\-Command}{p.}{de/de1/classTango_1_1TemplCommand} object for a command with a name and an execution method. 
+
+This constructor set the command input and output type to \doxyref{Tango\-::\-D\-E\-V\-\_\-\-V\-O\-I\-D}{p.}{de/ddf/namespaceTango_a86ed7ac243c13a7813f08c3b899af170ae2d6e5fed693c328c4065339b843470b}. The input and output parameter description are set to the default String \char`\"{}\-Uninitialised\char`\"{}. The command display level is set to O\-P\-E\-R\-A\-T\-O\-R.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cmd\-\_\-name} & The command name \\
+\hline
+{\em exe\-\_\-method} & Pointer to the command execution method \\
+\hline
+\end{DoxyParams}
+\index{Tango\-::\-Templ\-Command@{Tango\-::\-Templ\-Command}!Templ\-Command@{Templ\-Command}}
+\index{Templ\-Command@{Templ\-Command}!Tango::TemplCommand@{Tango\-::\-Templ\-Command}}
+\subsubsection[{Templ\-Command}]{\setlength{\rightskip}{0pt plus 5cm}Tango\-::\-Templ\-Command\-::\-Templ\-Command (
+\begin{DoxyParamCaption}
+\item[{string \&}]{cmd\-\_\-name, }
+\item[{void(Device\-Impl\-::$\ast$)()}]{exe\-\_\-method}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1TemplCommand_a85c470b753e39501dcc643d2d24bb4c1}
+
+
+Constructs a newly allocated \doxyref{Templ\-Command}{p.}{de/de1/classTango_1_1TemplCommand} object for a command with a name and an execution method. 
+
+This constructor set the command input and output type to \doxyref{Tango\-::\-D\-E\-V\-\_\-\-V\-O\-I\-D}{p.}{de/ddf/namespaceTango_a86ed7ac243c13a7813f08c3b899af170ae2d6e5fed693c328c4065339b843470b}. The input and output parameter description are set to the default String \char`\"{}\-Uninitialised\char`\"{}. The command display level is set to O\-P\-E\-R\-A\-T\-O\-R.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cmd\-\_\-name} & The command name \\
+\hline
+{\em exe\-\_\-method} & Pointer to the command execution method \\
+\hline
+\end{DoxyParams}
+\index{Tango\-::\-Templ\-Command@{Tango\-::\-Templ\-Command}!Templ\-Command@{Templ\-Command}}
+\index{Templ\-Command@{Templ\-Command}!Tango::TemplCommand@{Tango\-::\-Templ\-Command}}
+\subsubsection[{Templ\-Command}]{\setlength{\rightskip}{0pt plus 5cm}Tango\-::\-Templ\-Command\-::\-Templ\-Command (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{cmd\-\_\-name, }
+\item[{void(Device\-Impl\-::$\ast$)()}]{exe\-\_\-method, }
+\item[{bool(Device\-Impl\-::$\ast$)(const C\-O\-R\-B\-A\-::\-Any \&)}]{state\-\_\-method}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1TemplCommand_aec6ec7d8e294853794e0751506094820}
+
+
+Constructs a newly allocated \doxyref{Templ\-Command}{p.}{de/de1/classTango_1_1TemplCommand} object for a command with a name, an execution method and a command allowed method. 
+
+This constructor set the command input and output type to \doxyref{Tango\-::\-D\-E\-V\-\_\-\-V\-O\-I\-D}{p.}{de/ddf/namespaceTango_a86ed7ac243c13a7813f08c3b899af170ae2d6e5fed693c328c4065339b843470b} The input and output parameter description are set to the default String \char`\"{}\-Uninitialised\char`\"{}. The command display level is set to O\-P\-E\-R\-A\-T\-O\-R.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cmd\-\_\-name} & The command name \\
+\hline
+{\em exe\-\_\-method} & Pointer to the command execution method \\
+\hline
+{\em state\-\_\-method} & Pointer to the command allowed method \\
+\hline
+\end{DoxyParams}
+\index{Tango\-::\-Templ\-Command@{Tango\-::\-Templ\-Command}!Templ\-Command@{Templ\-Command}}
+\index{Templ\-Command@{Templ\-Command}!Tango::TemplCommand@{Tango\-::\-Templ\-Command}}
+\subsubsection[{Templ\-Command}]{\setlength{\rightskip}{0pt plus 5cm}Tango\-::\-Templ\-Command\-::\-Templ\-Command (
+\begin{DoxyParamCaption}
+\item[{string \&}]{cmd\-\_\-name, }
+\item[{void(Device\-Impl\-::$\ast$)()}]{exe\-\_\-method, }
+\item[{bool(Device\-Impl\-::$\ast$)(const C\-O\-R\-B\-A\-::\-Any \&)}]{state\-\_\-method}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1TemplCommand_aa501b4eeed5924c7b6b27b2d9a4f596a}
+
+
+Constructs a newly allocated \doxyref{Templ\-Command}{p.}{de/de1/classTango_1_1TemplCommand} object for a command with a name, an execution method and a command allowed method. 
+
+This constructor set the command input and output type to \doxyref{Tango\-::\-D\-E\-V\-\_\-\-V\-O\-I\-D}{p.}{de/ddf/namespaceTango_a86ed7ac243c13a7813f08c3b899af170ae2d6e5fed693c328c4065339b843470b} The input and output parameter description are set to the default String \char`\"{}\-Uninitialised\char`\"{}. The command display level is set to O\-P\-E\-R\-A\-T\-O\-R.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cmd\-\_\-name} & The command name \\
+\hline
+{\em exe\-\_\-method} & Pointer to the command execution method \\
+\hline
+{\em state\-\_\-method} & Pointer to the command allowed method \\
+\hline
+\end{DoxyParams}
+\index{Tango\-::\-Templ\-Command@{Tango\-::\-Templ\-Command}!Templ\-Command@{Templ\-Command}}
+\index{Templ\-Command@{Templ\-Command}!Tango::TemplCommand@{Tango\-::\-Templ\-Command}}
+\subsubsection[{Templ\-Command}]{\setlength{\rightskip}{0pt plus 5cm}Tango\-::\-Templ\-Command\-::\-Templ\-Command (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{cmd\-\_\-name, }
+\item[{void(Device\-Impl\-::$\ast$)()}]{exe\-\_\-method, }
+\item[{const char $\ast$}]{in\-\_\-desc, }
+\item[{const char $\ast$}]{out\-\_\-desc}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1TemplCommand_ac0572e0a8e56d8e0257eac2fca17eded}
+
+
+Constructs a newly allocated \doxyref{Templ\-Command}{p.}{de/de1/classTango_1_1TemplCommand} object for a command with a name, an execution method and a description for the input and output command parameters. 
+
+The command display level is set to O\-P\-E\-R\-A\-T\-O\-R.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cmd\-\_\-name} & The command name \\
+\hline
+{\em exe\-\_\-method} & Pointer to the command execution method \\
+\hline
+{\em in\-\_\-desc} & The command input parameter description \\
+\hline
+{\em out\-\_\-desc} & The command output parameter description \\
+\hline
+\end{DoxyParams}
+\index{Tango\-::\-Templ\-Command@{Tango\-::\-Templ\-Command}!Templ\-Command@{Templ\-Command}}
+\index{Templ\-Command@{Templ\-Command}!Tango::TemplCommand@{Tango\-::\-Templ\-Command}}
+\subsubsection[{Templ\-Command}]{\setlength{\rightskip}{0pt plus 5cm}Tango\-::\-Templ\-Command\-::\-Templ\-Command (
+\begin{DoxyParamCaption}
+\item[{string \&}]{cmd\-\_\-name, }
+\item[{void(Device\-Impl\-::$\ast$)()}]{exe\-\_\-method, }
+\item[{string \&}]{in\-\_\-desc, }
+\item[{string \&}]{out\-\_\-desc}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1TemplCommand_a5761d50fa8cea0e8d0390c2fbeb323e9}
+
+
+Constructs a newly allocated \doxyref{Templ\-Command}{p.}{de/de1/classTango_1_1TemplCommand} object for a command with a name, an execution method and a description for the input and output command parameters. 
+
+The command display level is set to O\-P\-E\-R\-A\-T\-O\-R.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cmd\-\_\-name} & The command name \\
+\hline
+{\em exe\-\_\-method} & Pointer to the command execution method \\
+\hline
+{\em in\-\_\-desc} & The command input parameter description \\
+\hline
+{\em out\-\_\-desc} & The command output parameter description \\
+\hline
+\end{DoxyParams}
+\index{Tango\-::\-Templ\-Command@{Tango\-::\-Templ\-Command}!Templ\-Command@{Templ\-Command}}
+\index{Templ\-Command@{Templ\-Command}!Tango::TemplCommand@{Tango\-::\-Templ\-Command}}
+\subsubsection[{Templ\-Command}]{\setlength{\rightskip}{0pt plus 5cm}Tango\-::\-Templ\-Command\-::\-Templ\-Command (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{cmd\-\_\-name, }
+\item[{void(Device\-Impl\-::$\ast$)()}]{exe\-\_\-method, }
+\item[{bool(Device\-Impl\-::$\ast$)(const C\-O\-R\-B\-A\-::\-Any \&)}]{state\-\_\-method, }
+\item[{const char $\ast$}]{in\-\_\-desc, }
+\item[{const char $\ast$}]{out\-\_\-desc}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1TemplCommand_ae7aeba83c3f09dbd37cd09dbbb2ce065}
+
+
+Constructs a newly allocated \doxyref{Templ\-Command}{p.}{de/de1/classTango_1_1TemplCommand} object for a command with a name, an execution method, a command allowed method and a description for the input and output command parameters. 
+
+This constructor set the command input and output type to \doxyref{Tango\-::\-D\-E\-V\-\_\-\-V\-O\-I\-D}{p.}{de/ddf/namespaceTango_a86ed7ac243c13a7813f08c3b899af170ae2d6e5fed693c328c4065339b843470b}. The command display level is set to O\-P\-E\-R\-A\-T\-O\-R.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cmd\-\_\-name} & The command name \\
+\hline
+{\em exe\-\_\-method} & Pointer to the command execution method \\
+\hline
+{\em state\-\_\-method} & Pointer to the command allowed method \\
+\hline
+{\em in\-\_\-desc} & The command input parameter description \\
+\hline
+{\em out\-\_\-desc} & The command output parameter description \\
+\hline
+\end{DoxyParams}
+\index{Tango\-::\-Templ\-Command@{Tango\-::\-Templ\-Command}!Templ\-Command@{Templ\-Command}}
+\index{Templ\-Command@{Templ\-Command}!Tango::TemplCommand@{Tango\-::\-Templ\-Command}}
+\subsubsection[{Templ\-Command}]{\setlength{\rightskip}{0pt plus 5cm}Tango\-::\-Templ\-Command\-::\-Templ\-Command (
+\begin{DoxyParamCaption}
+\item[{string \&}]{cmd\-\_\-name, }
+\item[{void(Device\-Impl\-::$\ast$)()}]{exe\-\_\-method, }
+\item[{bool(Device\-Impl\-::$\ast$)(const C\-O\-R\-B\-A\-::\-Any \&)}]{state\-\_\-method, }
+\item[{string \&}]{in\-\_\-desc, }
+\item[{string \&}]{out\-\_\-desc}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1TemplCommand_afe02e04d7b0962f0c1a90d3e1407d192}
+
+
+Constructs a newly allocated \doxyref{Templ\-Command}{p.}{de/de1/classTango_1_1TemplCommand} object for a command with a name, an execution method, a command allowed method and a description for the input and output command parameters. 
+
+This constructor set the command input and output type to \doxyref{Tango\-::\-D\-E\-V\-\_\-\-V\-O\-I\-D}{p.}{de/ddf/namespaceTango_a86ed7ac243c13a7813f08c3b899af170ae2d6e5fed693c328c4065339b843470b}. The command display level is set to O\-P\-E\-R\-A\-T\-O\-R.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cmd\-\_\-name} & The command name \\
+\hline
+{\em exe\-\_\-method} & Pointer to the command execution method \\
+\hline
+{\em state\-\_\-method} & Pointer to the command allowed method \\
+\hline
+{\em in\-\_\-desc} & The command input parameter description \\
+\hline
+{\em out\-\_\-desc} & The command output parameter description \\
+\hline
+\end{DoxyParams}
+\index{Tango\-::\-Templ\-Command@{Tango\-::\-Templ\-Command}!Templ\-Command@{Templ\-Command}}
+\index{Templ\-Command@{Templ\-Command}!Tango::TemplCommand@{Tango\-::\-Templ\-Command}}
+\subsubsection[{Templ\-Command}]{\setlength{\rightskip}{0pt plus 5cm}Tango\-::\-Templ\-Command\-::\-Templ\-Command (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{cmd\-\_\-name, }
+\item[{void(Device\-Impl\-::$\ast$)()}]{exe\-\_\-method, }
+\item[{Tango\-::\-Disp\-Level}]{level}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1TemplCommand_a913bafce3c537f63d7c4b1d8bdfa06a8}
+
+
+Constructs a newly allocated \doxyref{Templ\-Command}{p.}{de/de1/classTango_1_1TemplCommand} object for a command with a name and an execution method. 
+
+This constructor set the command input and output type to \doxyref{Tango\-::\-D\-E\-V\-\_\-\-V\-O\-I\-D}{p.}{de/ddf/namespaceTango_a86ed7ac243c13a7813f08c3b899af170ae2d6e5fed693c328c4065339b843470b}. The input and output parameter description are set to the default String \char`\"{}\-Uninitialised\char`\"{}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cmd\-\_\-name} & The command name \\
+\hline
+{\em exe\-\_\-method} & Pointer to the command execution method \\
+\hline
+{\em level} & The command display level \\
+\hline
+\end{DoxyParams}
+\index{Tango\-::\-Templ\-Command@{Tango\-::\-Templ\-Command}!Templ\-Command@{Templ\-Command}}
+\index{Templ\-Command@{Templ\-Command}!Tango::TemplCommand@{Tango\-::\-Templ\-Command}}
+\subsubsection[{Templ\-Command}]{\setlength{\rightskip}{0pt plus 5cm}Tango\-::\-Templ\-Command\-::\-Templ\-Command (
+\begin{DoxyParamCaption}
+\item[{string \&}]{cmd\-\_\-name, }
+\item[{void(Device\-Impl\-::$\ast$)()}]{exe\-\_\-method, }
+\item[{Tango\-::\-Disp\-Level}]{level}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1TemplCommand_a8dce45fed70a6a7413e343097717aec4}
+
+
+Constructs a newly allocated \doxyref{Templ\-Command}{p.}{de/de1/classTango_1_1TemplCommand} object for a command with a name and an execution method. 
+
+This constructor set the command input and output type to \doxyref{Tango\-::\-D\-E\-V\-\_\-\-V\-O\-I\-D}{p.}{de/ddf/namespaceTango_a86ed7ac243c13a7813f08c3b899af170ae2d6e5fed693c328c4065339b843470b}. The input and output parameter description are set to the default String \char`\"{}\-Uninitialised\char`\"{}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cmd\-\_\-name} & The command name \\
+\hline
+{\em exe\-\_\-method} & Pointer to the command execution method \\
+\hline
+{\em level} & The command display level \\
+\hline
+\end{DoxyParams}
+\index{Tango\-::\-Templ\-Command@{Tango\-::\-Templ\-Command}!Templ\-Command@{Templ\-Command}}
+\index{Templ\-Command@{Templ\-Command}!Tango::TemplCommand@{Tango\-::\-Templ\-Command}}
+\subsubsection[{Templ\-Command}]{\setlength{\rightskip}{0pt plus 5cm}Tango\-::\-Templ\-Command\-::\-Templ\-Command (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{cmd\-\_\-name, }
+\item[{void(Device\-Impl\-::$\ast$)()}]{exe\-\_\-method, }
+\item[{bool(Device\-Impl\-::$\ast$)(const C\-O\-R\-B\-A\-::\-Any \&)}]{state\-\_\-method, }
+\item[{Tango\-::\-Disp\-Level}]{level}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1TemplCommand_a672bee0db4d93ae7cc61b4f4addf5363}
+
+
+Constructs a newly allocated \doxyref{Templ\-Command}{p.}{de/de1/classTango_1_1TemplCommand} object for a command with a name, an execution method and a command allowed method. 
+
+This constructor set the command input and output type to \doxyref{Tango\-::\-D\-E\-V\-\_\-\-V\-O\-I\-D}{p.}{de/ddf/namespaceTango_a86ed7ac243c13a7813f08c3b899af170ae2d6e5fed693c328c4065339b843470b} The input and output parameter description are set to the default String \char`\"{}\-Uninitialised\char`\"{}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cmd\-\_\-name} & The command name \\
+\hline
+{\em exe\-\_\-method} & Pointer to the command execution method \\
+\hline
+{\em state\-\_\-method} & Pointer to the command allowed method \\
+\hline
+{\em level} & The command display level \\
+\hline
+\end{DoxyParams}
+\index{Tango\-::\-Templ\-Command@{Tango\-::\-Templ\-Command}!Templ\-Command@{Templ\-Command}}
+\index{Templ\-Command@{Templ\-Command}!Tango::TemplCommand@{Tango\-::\-Templ\-Command}}
+\subsubsection[{Templ\-Command}]{\setlength{\rightskip}{0pt plus 5cm}Tango\-::\-Templ\-Command\-::\-Templ\-Command (
+\begin{DoxyParamCaption}
+\item[{string \&}]{cmd\-\_\-name, }
+\item[{void(Device\-Impl\-::$\ast$)()}]{exe\-\_\-method, }
+\item[{bool(Device\-Impl\-::$\ast$)(const C\-O\-R\-B\-A\-::\-Any \&)}]{state\-\_\-method, }
+\item[{Tango\-::\-Disp\-Level}]{level}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1TemplCommand_a7377dcddc8b874cc7aa791b341be199c}
+
+
+Constructs a newly allocated \doxyref{Templ\-Command}{p.}{de/de1/classTango_1_1TemplCommand} object for a command with a name, an execution method and a command allowed method. 
+
+This constructor set the command input and output type to \doxyref{Tango\-::\-D\-E\-V\-\_\-\-V\-O\-I\-D}{p.}{de/ddf/namespaceTango_a86ed7ac243c13a7813f08c3b899af170ae2d6e5fed693c328c4065339b843470b} The input and output parameter description are set to the default String \char`\"{}\-Uninitialised\char`\"{}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cmd\-\_\-name} & The command name \\
+\hline
+{\em exe\-\_\-method} & Pointer to the command execution method \\
+\hline
+{\em state\-\_\-method} & Pointer to the command allowed method \\
+\hline
+{\em level} & The command display level \\
+\hline
+\end{DoxyParams}
+\index{Tango\-::\-Templ\-Command@{Tango\-::\-Templ\-Command}!Templ\-Command@{Templ\-Command}}
+\index{Templ\-Command@{Templ\-Command}!Tango::TemplCommand@{Tango\-::\-Templ\-Command}}
+\subsubsection[{Templ\-Command}]{\setlength{\rightskip}{0pt plus 5cm}Tango\-::\-Templ\-Command\-::\-Templ\-Command (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{cmd\-\_\-name, }
+\item[{void(Device\-Impl\-::$\ast$)()}]{exe\-\_\-method, }
+\item[{const char $\ast$}]{in\-\_\-desc, }
+\item[{const char $\ast$}]{out\-\_\-desc, }
+\item[{Tango\-::\-Disp\-Level}]{level}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1TemplCommand_a9499afc773335b2217eab990d15aab53}
+
+
+Constructs a newly allocated \doxyref{Templ\-Command}{p.}{de/de1/classTango_1_1TemplCommand} object for a command with a name, an execution method and a description for the input and output command parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cmd\-\_\-name} & The command name \\
+\hline
+{\em exe\-\_\-method} & Pointer to the command execution method \\
+\hline
+{\em in\-\_\-desc} & The command input parameter description \\
+\hline
+{\em out\-\_\-desc} & The command output parameter description \\
+\hline
+{\em level} & The command display level \\
+\hline
+\end{DoxyParams}
+\index{Tango\-::\-Templ\-Command@{Tango\-::\-Templ\-Command}!Templ\-Command@{Templ\-Command}}
+\index{Templ\-Command@{Templ\-Command}!Tango::TemplCommand@{Tango\-::\-Templ\-Command}}
+\subsubsection[{Templ\-Command}]{\setlength{\rightskip}{0pt plus 5cm}Tango\-::\-Templ\-Command\-::\-Templ\-Command (
+\begin{DoxyParamCaption}
+\item[{string \&}]{cmd\-\_\-name, }
+\item[{void(Device\-Impl\-::$\ast$)()}]{exe\-\_\-method, }
+\item[{string \&}]{in\-\_\-desc, }
+\item[{string \&}]{out\-\_\-desc, }
+\item[{Tango\-::\-Disp\-Level}]{level}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1TemplCommand_a6555e408ea4516e7b7423d1c48a27358}
+
+
+Constructs a newly allocated \doxyref{Templ\-Command}{p.}{de/de1/classTango_1_1TemplCommand} object for a command with a name, an execution method and a description for the input and output command parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cmd\-\_\-name} & The command name \\
+\hline
+{\em exe\-\_\-method} & Pointer to the command execution method \\
+\hline
+{\em in\-\_\-desc} & The command input parameter description \\
+\hline
+{\em out\-\_\-desc} & The command output parameter description \\
+\hline
+{\em level} & The command display level \\
+\hline
+\end{DoxyParams}
+\index{Tango\-::\-Templ\-Command@{Tango\-::\-Templ\-Command}!Templ\-Command@{Templ\-Command}}
+\index{Templ\-Command@{Templ\-Command}!Tango::TemplCommand@{Tango\-::\-Templ\-Command}}
+\subsubsection[{Templ\-Command}]{\setlength{\rightskip}{0pt plus 5cm}Tango\-::\-Templ\-Command\-::\-Templ\-Command (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{cmd\-\_\-name, }
+\item[{void(Device\-Impl\-::$\ast$)()}]{exe\-\_\-method, }
+\item[{bool(Device\-Impl\-::$\ast$)(const C\-O\-R\-B\-A\-::\-Any \&)}]{state\-\_\-method, }
+\item[{const char $\ast$}]{in\-\_\-desc, }
+\item[{const char $\ast$}]{out\-\_\-desc, }
+\item[{Tango\-::\-Disp\-Level}]{level}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1TemplCommand_a90fef4d7838f8ee6ae045831467ce598}
+
+
+Constructs a newly allocated \doxyref{Templ\-Command}{p.}{de/de1/classTango_1_1TemplCommand} object for a command with a name, an execution method, a command allowed method and a description for the input and output command parameters. 
+
+This constructor set the command input and output type to \doxyref{Tango\-::\-D\-E\-V\-\_\-\-V\-O\-I\-D}{p.}{de/ddf/namespaceTango_a86ed7ac243c13a7813f08c3b899af170ae2d6e5fed693c328c4065339b843470b}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cmd\-\_\-name} & The command name \\
+\hline
+{\em exe\-\_\-method} & Pointer to the command execution method \\
+\hline
+{\em state\-\_\-method} & Pointer to the command allowed method \\
+\hline
+{\em in\-\_\-desc} & The command input parameter description \\
+\hline
+{\em out\-\_\-desc} & The command output parameter description \\
+\hline
+{\em level} & The command display level \\
+\hline
+\end{DoxyParams}
+\index{Tango\-::\-Templ\-Command@{Tango\-::\-Templ\-Command}!Templ\-Command@{Templ\-Command}}
+\index{Templ\-Command@{Templ\-Command}!Tango::TemplCommand@{Tango\-::\-Templ\-Command}}
+\subsubsection[{Templ\-Command}]{\setlength{\rightskip}{0pt plus 5cm}Tango\-::\-Templ\-Command\-::\-Templ\-Command (
+\begin{DoxyParamCaption}
+\item[{string \&}]{cmd\-\_\-name, }
+\item[{void(Device\-Impl\-::$\ast$)()}]{exe\-\_\-method, }
+\item[{bool(Device\-Impl\-::$\ast$)(const C\-O\-R\-B\-A\-::\-Any \&)}]{state\-\_\-method, }
+\item[{string \&}]{in\-\_\-desc, }
+\item[{string \&}]{out\-\_\-desc, }
+\item[{Tango\-::\-Disp\-Level}]{level}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1TemplCommand_a8f48d5f24579df210d585604444cb629}
+
+
+Constructs a newly allocated \doxyref{Templ\-Command}{p.}{de/de1/classTango_1_1TemplCommand} object for a command with a name, an execution method, a command allowed method and a description for the input and output command parameters. 
+
+This constructor set the command input and output type to \doxyref{Tango\-::\-D\-E\-V\-\_\-\-V\-O\-I\-D}{p.}{de/ddf/namespaceTango_a86ed7ac243c13a7813f08c3b899af170ae2d6e5fed693c328c4065339b843470b}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cmd\-\_\-name} & The command name \\
+\hline
+{\em exe\-\_\-method} & Pointer to the command execution method \\
+\hline
+{\em state\-\_\-method} & Pointer to the command allowed method \\
+\hline
+{\em in\-\_\-desc} & The command input parameter description \\
+\hline
+{\em out\-\_\-desc} & The command output parameter description \\
+\hline
+{\em level} & The command display level \\
+\hline
+\end{DoxyParams}
+\index{Tango\-::\-Templ\-Command@{Tango\-::\-Templ\-Command}!Templ\-Command@{Templ\-Command}}
+\index{Templ\-Command@{Templ\-Command}!Tango::TemplCommand@{Tango\-::\-Templ\-Command}}
+\subsubsection[{Templ\-Command}]{\setlength{\rightskip}{0pt plus 5cm}Tango\-::\-Templ\-Command\-::\-Templ\-Command (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1TemplCommand_a3b58b596866ab711e4983d32ff9553e4}
+\index{Tango\-::\-Templ\-Command@{Tango\-::\-Templ\-Command}!Templ\-Command@{Templ\-Command}}
+\index{Templ\-Command@{Templ\-Command}!Tango::TemplCommand@{Tango\-::\-Templ\-Command}}
+\subsubsection[{Templ\-Command}]{\setlength{\rightskip}{0pt plus 5cm}Tango\-::\-Templ\-Command\-::\-Templ\-Command (
+\begin{DoxyParamCaption}
+\item[{string \&}]{}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1TemplCommand_ac07fac7fb6ce5181b6b7f17accb718d1}
+\index{Tango\-::\-Templ\-Command@{Tango\-::\-Templ\-Command}!Templ\-Command@{Templ\-Command}}
+\index{Templ\-Command@{Templ\-Command}!Tango::TemplCommand@{Tango\-::\-Templ\-Command}}
+\subsubsection[{Templ\-Command}]{\setlength{\rightskip}{0pt plus 5cm}Tango\-::\-Templ\-Command\-::\-Templ\-Command (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{, }
+\item[{Tango\-::\-Disp\-Level}]{}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1TemplCommand_a7ef3cdac0079f8eb30a28c7d9e97bc68}
+\index{Tango\-::\-Templ\-Command@{Tango\-::\-Templ\-Command}!Templ\-Command@{Templ\-Command}}
+\index{Templ\-Command@{Templ\-Command}!Tango::TemplCommand@{Tango\-::\-Templ\-Command}}
+\subsubsection[{Templ\-Command}]{\setlength{\rightskip}{0pt plus 5cm}Tango\-::\-Templ\-Command\-::\-Templ\-Command (
+\begin{DoxyParamCaption}
+\item[{string \&}]{, }
+\item[{Tango\-::\-Disp\-Level}]{}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1TemplCommand_ab24af318162958fe8dbe1ff9975a7008}
+\index{Tango\-::\-Templ\-Command@{Tango\-::\-Templ\-Command}!Templ\-Command@{Templ\-Command}}
+\index{Templ\-Command@{Templ\-Command}!Tango::TemplCommand@{Tango\-::\-Templ\-Command}}
+\subsubsection[{Templ\-Command}]{\setlength{\rightskip}{0pt plus 5cm}Tango\-::\-Templ\-Command\-::\-Templ\-Command (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{, }
+\item[{const char $\ast$}]{, }
+\item[{const char $\ast$}]{}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1TemplCommand_a28603d382f1ffe0b9499f017ee3e2e51}
+\index{Tango\-::\-Templ\-Command@{Tango\-::\-Templ\-Command}!Templ\-Command@{Templ\-Command}}
+\index{Templ\-Command@{Templ\-Command}!Tango::TemplCommand@{Tango\-::\-Templ\-Command}}
+\subsubsection[{Templ\-Command}]{\setlength{\rightskip}{0pt plus 5cm}Tango\-::\-Templ\-Command\-::\-Templ\-Command (
+\begin{DoxyParamCaption}
+\item[{string \&}]{, }
+\item[{string \&}]{, }
+\item[{string \&}]{}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1TemplCommand_adafbaa8fc788b22d18706db99c929fbd}
+\index{Tango\-::\-Templ\-Command@{Tango\-::\-Templ\-Command}!Templ\-Command@{Templ\-Command}}
+\index{Templ\-Command@{Templ\-Command}!Tango::TemplCommand@{Tango\-::\-Templ\-Command}}
+\subsubsection[{Templ\-Command}]{\setlength{\rightskip}{0pt plus 5cm}Tango\-::\-Templ\-Command\-::\-Templ\-Command (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{, }
+\item[{const char $\ast$}]{, }
+\item[{const char $\ast$}]{, }
+\item[{Disp\-Level}]{}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1TemplCommand_a92a9f351d1a503761acd6d2c1e2b2982}
+\index{Tango\-::\-Templ\-Command@{Tango\-::\-Templ\-Command}!Templ\-Command@{Templ\-Command}}
+\index{Templ\-Command@{Templ\-Command}!Tango::TemplCommand@{Tango\-::\-Templ\-Command}}
+\subsubsection[{Templ\-Command}]{\setlength{\rightskip}{0pt plus 5cm}Tango\-::\-Templ\-Command\-::\-Templ\-Command (
+\begin{DoxyParamCaption}
+\item[{string \&}]{, }
+\item[{string \&}]{, }
+\item[{string \&}]{, }
+\item[{Disp\-Level}]{}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1TemplCommand_ad5ac8566cca4a4fb11898a4f913c114b}
+
+
+\subsection{Member Function Documentation}
+\index{Tango\-::\-Templ\-Command@{Tango\-::\-Templ\-Command}!execute@{execute}}
+\index{execute@{execute}!Tango::TemplCommand@{Tango\-::\-Templ\-Command}}
+\subsubsection[{execute}]{\setlength{\rightskip}{0pt plus 5cm}C\-O\-R\-B\-A\-::\-Any$\ast$ Tango\-::\-Templ\-Command\-::execute (
+\begin{DoxyParamCaption}
+\item[{{\bf Device\-Impl} $\ast$}]{dev, }
+\item[{const C\-O\-R\-B\-A\-::\-Any \&}]{in\-\_\-any}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classTango_1_1TemplCommand_ac0f9217e1c13600d3ba449ceb6a25cd3}
+
+
+Invoke the command execution method given at object creation time. 
+
+This method is automatically called by the T\-A\-N\-G\-O core classes when the associated command is requested by a client.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dev} & The device on which the command must be executed \\
+\hline
+{\em in\-\_\-any} & The incoming data still packed in a C\-O\-R\-B\-A Any object. For command created with this \doxyref{Templ\-Command}{p.}{de/de1/classTango_1_1TemplCommand} class, this Any object does not contain usefull data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The C\-O\-R\-B\-A Any object returned to the client. For command created with this \doxyref{Templ\-Command}{p.}{de/de1/classTango_1_1TemplCommand} class, this any object does not contain data. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Dev\-Failed} & If the execution method failed Click {\tt here} to read {\bfseries Dev\-Failed} exception specification \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements {\bf Tango\-::\-Command} \doxyref{}{p.}{d2/d1d/classTango_1_1Command_a24505e18425086e1c6b84d7ba1f92503}.
+
+
+
+Reimplemented in {\bf Tango\-::\-Templ\-Command\-Out$<$ O\-U\-T\-A\-R\-G $>$} \doxyref{}{p.}{d3/d87/classTango_1_1TemplCommandOut_a4afcfcf600912c43d7e1ae6fc410fae3}, {\bf Tango\-::\-Templ\-Command\-In$<$ I\-N\-A\-R\-G $>$} \doxyref{}{p.}{d2/d50/classTango_1_1TemplCommandIn_a13a44e57280e667e24e14bdf58a24181}, and {\bf Tango\-::\-Templ\-Command\-In\-Out$<$ I\-N\-A\-R\-G, O\-U\-T\-A\-R\-G $>$} \doxyref{}{p.}{db/dbb/classTango_1_1TemplCommandInOut_ac5639e9122031a8e57887ff3411bb482}.
+
+\index{Tango\-::\-Templ\-Command@{Tango\-::\-Templ\-Command}!is\-\_\-allowed@{is\-\_\-allowed}}
+\index{is\-\_\-allowed@{is\-\_\-allowed}!Tango::TemplCommand@{Tango\-::\-Templ\-Command}}
+\subsubsection[{is\-\_\-allowed}]{\setlength{\rightskip}{0pt plus 5cm}bool Tango\-::\-Templ\-Command\-::is\-\_\-allowed (
+\begin{DoxyParamCaption}
+\item[{{\bf Device\-Impl} $\ast$}]{dev, }
+\item[{const C\-O\-R\-B\-A\-::\-Any \&}]{in\-\_\-any}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classTango_1_1TemplCommand_a203f6dc3223fd20f230af555e34848fd}
+
+
+Invoke the command allowed method given at object creation time. 
+
+This method is automtically called by the T\-A\-N\-G\-O core classes when the associated command is requested by a client to check if the command is allowed in the actual device state. If the user give a command allowed method at object creation time, this method will be invoked.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dev} & The device on which the command must be executed \\
+\hline
+{\em in\-\_\-any} & The incoming data still packed in a C\-O\-R\-B\-A Any object. For command created with this \doxyref{Templ\-Command}{p.}{de/de1/classTango_1_1TemplCommand} class, this Any object does not contain data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A boolean set to true is the command is allowed. Otherwise, the return value is false. This return value is always set to true if the user does not supply a method to be excuted. If a method has been supplied, the return value is the value returned by the user supplied mehod. 
+\end{DoxyReturn}
+
+
+Reimplemented from {\bf Tango\-::\-Command} \doxyref{}{p.}{d2/d1d/classTango_1_1Command_af634fd436701aca40fbcdaeb5d4691b1}.
+
+\index{Tango\-::\-Templ\-Command@{Tango\-::\-Templ\-Command}!set\-\_\-type@{set\-\_\-type}}
+\index{set\-\_\-type@{set\-\_\-type}!Tango::TemplCommand@{Tango\-::\-Templ\-Command}}
+\subsubsection[{set\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}void Tango\-::\-Templ\-Command\-::set\-\_\-type (
+\begin{DoxyParamCaption}
+\item[{const type\-\_\-info \&}]{data\-\_\-type, }
+\item[{{\bf Tango\-::\-Cmd\-Arg\-Type} \&}]{type}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1TemplCommand_a95ab85ef01d98875e631a0fc40d1d414}
+
+
+Choose the correct T\-A\-N\-G\-O data type constant according to data type. 
+
+The T\-A\-N\-G\-O constant is determined using the type\-\_\-info object passed as first argument of the method. This data is compared to each defined \doxyref{Tango}{p.}{de/ddf/namespaceTango} type.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data\-\_\-type} & The type to be analysed \\
+\hline
+{\em type} & A reference where \doxyref{Tango}{p.}{de/ddf/namespaceTango} data type constant must be stored \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Dev\-Failed} & If the type is not a \doxyref{Tango}{p.}{de/ddf/namespaceTango} data type Click {\tt here} to read {\bfseries Dev\-Failed} exception specification \\
+\hline
+\end{DoxyExceptions}
+
+
+\subsection{Member Data Documentation}
+\index{Tango\-::\-Templ\-Command@{Tango\-::\-Templ\-Command}!allowed\-\_\-ptr@{allowed\-\_\-ptr}}
+\index{allowed\-\_\-ptr@{allowed\-\_\-ptr}!Tango::TemplCommand@{Tango\-::\-Templ\-Command}}
+\subsubsection[{allowed\-\_\-ptr}]{\setlength{\rightskip}{0pt plus 5cm}bool(Device\-Impl\-::$\ast$ Tango\-::\-Templ\-Command\-::allowed\-\_\-ptr)(const C\-O\-R\-B\-A\-::\-Any \&)\hspace{0.3cm}{\ttfamily [protected]}}\label{classTango_1_1TemplCommand_a1e3db2bfcf9cb38f76d4465ac575db5a}
+
+
+The command allowed method object reference. 
+
+
+
+Referenced by Tango\-::\-Templ\-Command\-In$<$ I\-N\-A\-R\-G $>$\-::\-Templ\-Command\-In(), Tango\-::\-Templ\-Command\-In\-Out$<$ I\-N\-A\-R\-G, O\-U\-T\-A\-R\-G $>$\-::\-Templ\-Command\-In\-Out(), and Tango\-::\-Templ\-Command\-Out$<$ O\-U\-T\-A\-R\-G $>$\-::\-Templ\-Command\-Out().
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+{\bf command.\-h}\end{DoxyCompactItemize}

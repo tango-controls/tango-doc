@@ -1,0 +1,387 @@
+\section{Tango\-:\-:Device\-\_\-2\-Impl Class Reference}
+\label{classTango_1_1Device__2Impl}\index{Tango\-::\-Device\-\_\-2\-Impl@{Tango\-::\-Device\-\_\-2\-Impl}}
+
+
+Base class for all T\-A\-N\-G\-O device since version 2.  
+
+
+
+
+Inheritance diagram for Tango\-:\-:Device\-\_\-2\-Impl\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{da/d12/classTango_1_1Device__2Impl__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Tango\-:\-:Device\-\_\-2\-Impl\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d54/classTango_1_1Device__2Impl__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{Indent}{\bf Constructors}\par
+{\em Miscellaneous constructors }\begin{DoxyCompactItemize}
+\item 
+{\bf Device\-\_\-2\-Impl} ({\bf Device\-Class} $\ast${\bf device\-\_\-class}, string \&dev\-\_\-name)
+\begin{DoxyCompactList}\small\item\em Constructs a newly allocated \doxyref{Device\-\_\-2\-Impl}{p.}{d8/dbf/classTango_1_1Device__2Impl} object from its name. \end{DoxyCompactList}\item 
+{\bf Device\-\_\-2\-Impl} ({\bf Device\-Class} $\ast${\bf device\-\_\-class}, string \&dev\-\_\-name, string \&{\bf desc})
+\begin{DoxyCompactList}\small\item\em Constructs a newly allocated \doxyref{Device\-\_\-2\-Impl}{p.}{d8/dbf/classTango_1_1Device__2Impl} object from its name and its description. \end{DoxyCompactList}\item 
+{\bf Device\-\_\-2\-Impl} ({\bf Device\-Class} $\ast${\bf device\-\_\-class}, string \&dev\-\_\-name, string \&{\bf desc}, Tango\-::\-Dev\-State {\bf dev\-\_\-state}, string \&{\bf dev\-\_\-status})
+\begin{DoxyCompactList}\small\item\em Constructs a newly allocated \doxyref{Device\-\_\-2\-Impl}{p.}{d8/dbf/classTango_1_1Device__2Impl} object from all its creation parameters. \end{DoxyCompactList}\item 
+{\bf Device\-\_\-2\-Impl} ({\bf Device\-Class} $\ast${\bf device\-\_\-class}, const char $\ast$dev\-\_\-name, const char $\ast${\bf desc}=\char`\"{}A T\-A\-N\-G\-O device\char`\"{}, Tango\-::\-Dev\-State {\bf dev\-\_\-state}=Tango\-::\-U\-N\-K\-N\-O\-W\-N, const char $\ast${\bf dev\-\_\-status}={\bf Status\-Not\-Set})
+\begin{DoxyCompactList}\small\item\em Constructs a newly allocated \doxyref{Device\-\_\-2\-Impl}{p.}{d8/dbf/classTango_1_1Device__2Impl} object from all its creation parameters with some default values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Destructor}\par
+{\em Only one desctructor is defined for this class }\begin{DoxyCompactItemize}
+\item 
+virtual {\bf $\sim$\-Device\-\_\-2\-Impl} ()
+\begin{DoxyCompactList}\small\item\em The device desctructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf C\-O\-R\-B\-A operation methods}\par
+{\em Method defined to implement T\-A\-N\-G\-O device C\-O\-R\-B\-A operation }\begin{DoxyCompactItemize}
+\item 
+virtual C\-O\-R\-B\-A\-::\-Any $\ast$ {\bf command\-\_\-inout\-\_\-2} (const char $\ast$in\-\_\-cmd, const C\-O\-R\-B\-A\-::\-Any \&in\-\_\-data, Tango\-::\-Dev\-Source source)
+\begin{DoxyCompactList}\small\item\em Execute a command. \end{DoxyCompactList}\item 
+virtual Tango\-::\-Dev\-Cmd\-Info\-List\-\_\-2 $\ast$ {\bf command\-\_\-list\-\_\-query\-\_\-2} ()
+\begin{DoxyCompactList}\small\item\em Get device command list. \end{DoxyCompactList}\item 
+virtual Tango\-::\-Dev\-Cmd\-Info\-\_\-2 $\ast$ {\bf command\-\_\-query\-\_\-2} (const char $\ast$command)
+\begin{DoxyCompactList}\small\item\em Get command info. \end{DoxyCompactList}\item 
+virtual Tango\-::\-Attribute\-Value\-List $\ast$ {\bf read\-\_\-attributes\-\_\-2} (const Tango\-::\-Dev\-Var\-String\-Array \&names, Tango\-::\-Dev\-Source source)
+\begin{DoxyCompactList}\small\item\em Read attribute(s) value. \end{DoxyCompactList}\item 
+virtual \\*
+Tango\-::\-Attribute\-Config\-List\-\_\-2 $\ast$ {\bf get\-\_\-attribute\-\_\-config\-\_\-2} (const Tango\-::\-Dev\-Var\-String\-Array \&names)  throw (\-Tango\-::\-Dev\-Failed, C\-O\-R\-B\-A\-::\-System\-Exception)
+\begin{DoxyCompactList}\small\item\em Get attribute(s) configuration. \end{DoxyCompactList}\item 
+virtual Tango\-::\-Dev\-Attr\-History\-List $\ast$ {\bf read\-\_\-attribute\-\_\-history\-\_\-2} (const char $\ast$name, Dev\-Long n)  throw (\-Tango\-::\-Dev\-Failed, C\-O\-R\-B\-A\-::\-System\-Exception)
+\begin{DoxyCompactList}\small\item\em Read attribute value history. \end{DoxyCompactList}\item 
+virtual Tango\-::\-Dev\-Cmd\-History\-List $\ast$ {\bf command\-\_\-inout\-\_\-history\-\_\-2} (const char $\ast$command, Dev\-Long n)  throw (\-Tango\-::\-Dev\-Failed, C\-O\-R\-B\-A\-::\-System\-Exception)
+\begin{DoxyCompactList}\small\item\em Read command value history. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Base class for all T\-A\-N\-G\-O device since version 2. 
+
+This class inherits from \doxyref{Device\-Impl}{p.}{d3/d62/classTango_1_1DeviceImpl} class which itself inherits from C\-O\-R\-B\-A classes where all the network layer is implemented. This class has been created since release 2 of \doxyref{Tango}{p.}{de/ddf/namespaceTango} library where the I\-D\-L \doxyref{Tango}{p.}{de/ddf/namespaceTango} module has been modified in order to create a Device\-\_\-2 interface which inherits from the original Device interface
+
+\$\-Author\$ \$\-Revision\$ 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Tango\-::\-Device\-\_\-2\-Impl@{Tango\-::\-Device\-\_\-2\-Impl}!Device\-\_\-2\-Impl@{Device\-\_\-2\-Impl}}
+\index{Device\-\_\-2\-Impl@{Device\-\_\-2\-Impl}!Tango::Device_2Impl@{Tango\-::\-Device\-\_\-2\-Impl}}
+\subsubsection[{Device\-\_\-2\-Impl}]{\setlength{\rightskip}{0pt plus 5cm}Tango\-::\-Device\-\_\-2\-Impl\-::\-Device\-\_\-2\-Impl (
+\begin{DoxyParamCaption}
+\item[{{\bf Device\-Class} $\ast$}]{device\-\_\-class, }
+\item[{string \&}]{dev\-\_\-name}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Device__2Impl_a6d7f50b5fec343f584298c5263822854}
+
+
+Constructs a newly allocated \doxyref{Device\-\_\-2\-Impl}{p.}{d8/dbf/classTango_1_1Device__2Impl} object from its name. 
+
+The device description field is set to {\itshape A \doxyref{Tango}{p.}{de/ddf/namespaceTango} device}. The device state is set to unknown and the device status is set to {\bfseries Not Initialised}
+
+
+\begin{DoxyParams}{Parameters}
+{\em device\-\_\-class} & Pointer to the device class object \\
+\hline
+{\em dev\-\_\-name} & The device name \\
+\hline
+\end{DoxyParams}
+\index{Tango\-::\-Device\-\_\-2\-Impl@{Tango\-::\-Device\-\_\-2\-Impl}!Device\-\_\-2\-Impl@{Device\-\_\-2\-Impl}}
+\index{Device\-\_\-2\-Impl@{Device\-\_\-2\-Impl}!Tango::Device_2Impl@{Tango\-::\-Device\-\_\-2\-Impl}}
+\subsubsection[{Device\-\_\-2\-Impl}]{\setlength{\rightskip}{0pt plus 5cm}Tango\-::\-Device\-\_\-2\-Impl\-::\-Device\-\_\-2\-Impl (
+\begin{DoxyParamCaption}
+\item[{{\bf Device\-Class} $\ast$}]{device\-\_\-class, }
+\item[{string \&}]{dev\-\_\-name, }
+\item[{string \&}]{desc}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Device__2Impl_ad90287b9ce6a16a656aad0d0f3ce10b8}
+
+
+Constructs a newly allocated \doxyref{Device\-\_\-2\-Impl}{p.}{d8/dbf/classTango_1_1Device__2Impl} object from its name and its description. 
+
+The device state is set to unknown and the device status is set to {\itshape Not Initialised}
+
+
+\begin{DoxyParams}{Parameters}
+{\em device\-\_\-class} & Pointer to the device class object \\
+\hline
+{\em dev\-\_\-name} & The device name \\
+\hline
+{\em desc} & The device description \\
+\hline
+\end{DoxyParams}
+\index{Tango\-::\-Device\-\_\-2\-Impl@{Tango\-::\-Device\-\_\-2\-Impl}!Device\-\_\-2\-Impl@{Device\-\_\-2\-Impl}}
+\index{Device\-\_\-2\-Impl@{Device\-\_\-2\-Impl}!Tango::Device_2Impl@{Tango\-::\-Device\-\_\-2\-Impl}}
+\subsubsection[{Device\-\_\-2\-Impl}]{\setlength{\rightskip}{0pt plus 5cm}Tango\-::\-Device\-\_\-2\-Impl\-::\-Device\-\_\-2\-Impl (
+\begin{DoxyParamCaption}
+\item[{{\bf Device\-Class} $\ast$}]{device\-\_\-class, }
+\item[{string \&}]{dev\-\_\-name, }
+\item[{string \&}]{desc, }
+\item[{Tango\-::\-Dev\-State}]{dev\-\_\-state, }
+\item[{string \&}]{dev\-\_\-status}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Device__2Impl_ad0e74e2158f49e61d5d5db908f5aec69}
+
+
+Constructs a newly allocated \doxyref{Device\-\_\-2\-Impl}{p.}{d8/dbf/classTango_1_1Device__2Impl} object from all its creation parameters. 
+
+The device is constructed from its name, its description, an original state and status
+
+
+\begin{DoxyParams}{Parameters}
+{\em device\-\_\-class} & Pointer to the device class object \\
+\hline
+{\em dev\-\_\-name} & The device name \\
+\hline
+{\em desc} & The device description \\
+\hline
+{\em dev\-\_\-state} & The device initial state \\
+\hline
+{\em dev\-\_\-status} & The device initial status \\
+\hline
+\end{DoxyParams}
+\index{Tango\-::\-Device\-\_\-2\-Impl@{Tango\-::\-Device\-\_\-2\-Impl}!Device\-\_\-2\-Impl@{Device\-\_\-2\-Impl}}
+\index{Device\-\_\-2\-Impl@{Device\-\_\-2\-Impl}!Tango::Device_2Impl@{Tango\-::\-Device\-\_\-2\-Impl}}
+\subsubsection[{Device\-\_\-2\-Impl}]{\setlength{\rightskip}{0pt plus 5cm}Tango\-::\-Device\-\_\-2\-Impl\-::\-Device\-\_\-2\-Impl (
+\begin{DoxyParamCaption}
+\item[{{\bf Device\-Class} $\ast$}]{device\-\_\-class, }
+\item[{const char $\ast$}]{dev\-\_\-name, }
+\item[{const char $\ast$}]{desc = {\ttfamily \char`\"{}A~TANGO~device\char`\"{}}, }
+\item[{Tango\-::\-Dev\-State}]{dev\-\_\-state = {\ttfamily Tango\-:\-:UNKNOWN}, }
+\item[{const char $\ast$}]{dev\-\_\-status = {\ttfamily {\bf Status\-Not\-Set}}}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Device__2Impl_a0093f572273fc5464e562665b454e9db}
+
+
+Constructs a newly allocated \doxyref{Device\-\_\-2\-Impl}{p.}{d8/dbf/classTango_1_1Device__2Impl} object from all its creation parameters with some default values. 
+
+The device is constructed from its name, its description, an original state and status. This constructor defined default values for the description, state and status parameters. The default device description is {\itshape A T\-A\-N\-G\-O device}. The default device state is {\itshape U\-N\-K\-N\-O\-W\-N} and the default device status is {\itshape Not initialised}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em device\-\_\-class} & Pointer to the device class object \\
+\hline
+{\em dev\-\_\-name} & The device name \\
+\hline
+{\em desc} & The device desc \\
+\hline
+{\em dev\-\_\-state} & The device initial state \\
+\hline
+{\em dev\-\_\-status} & The device initial status \\
+\hline
+\end{DoxyParams}
+\index{Tango\-::\-Device\-\_\-2\-Impl@{Tango\-::\-Device\-\_\-2\-Impl}!$\sim$\-Device\-\_\-2\-Impl@{$\sim$\-Device\-\_\-2\-Impl}}
+\index{$\sim$\-Device\-\_\-2\-Impl@{$\sim$\-Device\-\_\-2\-Impl}!Tango::Device_2Impl@{Tango\-::\-Device\-\_\-2\-Impl}}
+\subsubsection[{$\sim$\-Device\-\_\-2\-Impl}]{\setlength{\rightskip}{0pt plus 5cm}virtual Tango\-::\-Device\-\_\-2\-Impl\-::$\sim$\-Device\-\_\-2\-Impl (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classTango_1_1Device__2Impl_afaefae8635cff0da56608f4bc38aa6da}
+
+
+The device desctructor. 
+
+
+
+\subsection{Member Function Documentation}
+\index{Tango\-::\-Device\-\_\-2\-Impl@{Tango\-::\-Device\-\_\-2\-Impl}!command\-\_\-inout\-\_\-2@{command\-\_\-inout\-\_\-2}}
+\index{command\-\_\-inout\-\_\-2@{command\-\_\-inout\-\_\-2}!Tango::Device_2Impl@{Tango\-::\-Device\-\_\-2\-Impl}}
+\subsubsection[{command\-\_\-inout\-\_\-2}]{\setlength{\rightskip}{0pt plus 5cm}virtual C\-O\-R\-B\-A\-::\-Any$\ast$ Tango\-::\-Device\-\_\-2\-Impl\-::command\-\_\-inout\-\_\-2 (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{in\-\_\-cmd, }
+\item[{const C\-O\-R\-B\-A\-::\-Any \&}]{in\-\_\-data, }
+\item[{Tango\-::\-Dev\-Source}]{source}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classTango_1_1Device__2Impl_a4348a6f642052b9eeaca07b34877f3e7}
+
+
+Execute a command. 
+
+It's the master method executed when a \char`\"{}command\-\_\-inout\-\_\-2\char`\"{} C\-O\-R\-B\-A operation is requested by a client. It updates the device black-\/box, call the T\-A\-N\-G\-O command handler and returned the output Any
+
+
+\begin{DoxyParams}{Parameters}
+{\em in\-\_\-cmd} & The command name \\
+\hline
+{\em in\-\_\-data} & The command input data packed in a C\-O\-R\-B\-A Any \\
+\hline
+{\em source} & The data source. This parameter is new in \doxyref{Tango}{p.}{de/ddf/namespaceTango} release 2. It allows a client to choose the data source between the device itself or the data cache for polled command. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The command output data packed in a C\-O\-R\-B\-A Any object 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Dev\-Failed} & Re-\/throw of the exception thrown by the command\-\_\-handler method. Click {\tt here} to read {\bfseries Dev\-Failed} exception specification \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Device\-\_\-2\-Impl@{Tango\-::\-Device\-\_\-2\-Impl}!command\-\_\-inout\-\_\-history\-\_\-2@{command\-\_\-inout\-\_\-history\-\_\-2}}
+\index{command\-\_\-inout\-\_\-history\-\_\-2@{command\-\_\-inout\-\_\-history\-\_\-2}!Tango::Device_2Impl@{Tango\-::\-Device\-\_\-2\-Impl}}
+\subsubsection[{command\-\_\-inout\-\_\-history\-\_\-2}]{\setlength{\rightskip}{0pt plus 5cm}virtual Tango\-::\-Dev\-Cmd\-History\-List$\ast$ Tango\-::\-Device\-\_\-2\-Impl\-::command\-\_\-inout\-\_\-history\-\_\-2 (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{command, }
+\item[{Dev\-Long}]{n}
+\end{DoxyParamCaption}
+) throw  Tango\-::\-Dev\-Failed, C\-O\-R\-B\-A\-::\-System\-Exception) \hspace{0.3cm}{\ttfamily [virtual]}}\label{classTango_1_1Device__2Impl_a418ccb8015d1319130c9fe040b71121b}
+
+
+Read command value history. 
+
+Invoked when the client request the command\-\_\-inout\-\_\-history\-\_\-2 C\-O\-R\-B\-A operation. This operation allows a client to retrieve command return value history for polled command. The depth of the history is limited to the depth of the device server internal polling buffer. It returns to the client one Dev\-Cmd\-History structure for each record.
+
+
+\begin{DoxyParams}{Parameters}
+{\em command} & The command name \\
+\hline
+{\em n} & The record number. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A sequence of Dev\-Cmd\-History structure. One structure is initialised for each record with the command return value (in an Any), the date and in case of the command returns an error when it was read, the Dev\-Errors data. Click {\tt here} to read {\bfseries Dev\-Cmd\-History} structure definition. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Dev\-Failed} & Thrown if the attribute does not exist or is not polled. Click {\tt here} to read {\bfseries Dev\-Failed} exception specification \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Device\-\_\-2\-Impl@{Tango\-::\-Device\-\_\-2\-Impl}!command\-\_\-list\-\_\-query\-\_\-2@{command\-\_\-list\-\_\-query\-\_\-2}}
+\index{command\-\_\-list\-\_\-query\-\_\-2@{command\-\_\-list\-\_\-query\-\_\-2}!Tango::Device_2Impl@{Tango\-::\-Device\-\_\-2\-Impl}}
+\subsubsection[{command\-\_\-list\-\_\-query\-\_\-2}]{\setlength{\rightskip}{0pt plus 5cm}virtual Tango\-::\-Dev\-Cmd\-Info\-List\-\_\-2$\ast$ Tango\-::\-Device\-\_\-2\-Impl\-::command\-\_\-list\-\_\-query\-\_\-2 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classTango_1_1Device__2Impl_ac71c8dc3ed7116437c00370abc992968}
+
+
+Get device command list. 
+
+Invoked when the client request the command\-\_\-list\-\_\-query\-\_\-2 C\-O\-R\-B\-A operation. It updates the device black box and returns an array of Dev\-Cmd\-Info\-\_\-2 object with one object for each command.
+
+\begin{DoxyReturn}{Returns}
+The device command list. One Dev\-Cmd\-Info\-\_\-2 is initialised for each device command. Since \doxyref{Tango}{p.}{de/ddf/namespaceTango} release 2, the command display level field has been added to this structure 
+\end{DoxyReturn}
+\index{Tango\-::\-Device\-\_\-2\-Impl@{Tango\-::\-Device\-\_\-2\-Impl}!command\-\_\-query\-\_\-2@{command\-\_\-query\-\_\-2}}
+\index{command\-\_\-query\-\_\-2@{command\-\_\-query\-\_\-2}!Tango::Device_2Impl@{Tango\-::\-Device\-\_\-2\-Impl}}
+\subsubsection[{command\-\_\-query\-\_\-2}]{\setlength{\rightskip}{0pt plus 5cm}virtual Tango\-::\-Dev\-Cmd\-Info\-\_\-2$\ast$ Tango\-::\-Device\-\_\-2\-Impl\-::command\-\_\-query\-\_\-2 (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{command}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classTango_1_1Device__2Impl_afa99e1bb14a0decaa40ab43b46f3fea1}
+
+
+Get command info. 
+
+Invoked when the client request the command\-\_\-query\-\_\-2 C\-O\-R\-B\-A operation. It updates the device black box and returns a Dev\-Cmd\-Info\-\_\-2 object for the command with name passed to the method as parameter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em command} & The command name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A Dev\-Cmd\-Info\-\_\-2 initialised for the wanted command. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Dev\-Failed} & Thrown if the command does not exist. Since \doxyref{Tango}{p.}{de/ddf/namespaceTango} release 2, the command display level field has been added to this structure. Click {\tt here} to read {\bfseries Dev\-Failed} exception specification \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Device\-\_\-2\-Impl@{Tango\-::\-Device\-\_\-2\-Impl}!get\-\_\-attribute\-\_\-config\-\_\-2@{get\-\_\-attribute\-\_\-config\-\_\-2}}
+\index{get\-\_\-attribute\-\_\-config\-\_\-2@{get\-\_\-attribute\-\_\-config\-\_\-2}!Tango::Device_2Impl@{Tango\-::\-Device\-\_\-2\-Impl}}
+\subsubsection[{get\-\_\-attribute\-\_\-config\-\_\-2}]{\setlength{\rightskip}{0pt plus 5cm}virtual Tango\-::\-Attribute\-Config\-List\-\_\-2$\ast$ Tango\-::\-Device\-\_\-2\-Impl\-::get\-\_\-attribute\-\_\-config\-\_\-2 (
+\begin{DoxyParamCaption}
+\item[{const Tango\-::\-Dev\-Var\-String\-Array \&}]{names}
+\end{DoxyParamCaption}
+) throw  Tango\-::\-Dev\-Failed, C\-O\-R\-B\-A\-::\-System\-Exception) \hspace{0.3cm}{\ttfamily [virtual]}}\label{classTango_1_1Device__2Impl_a80ba13a4e11a42c6aba434389cf8812b}
+
+
+Get attribute(s) configuration. 
+
+Invoked when the client request the get\-\_\-attribute\-\_\-config\-\_\-2 C\-O\-R\-B\-A operation. It returns to the client one Attribute\-Config\-\_\-2 structure for each wanted attribute. All the attribute properties value are returned in this Attribute\-Config\-\_\-2 structure. Since \doxyref{Tango}{p.}{de/ddf/namespaceTango} release 2, the attribute display level field has been added to this structure.
+
+
+\begin{DoxyParams}{Parameters}
+{\em names} & The attribute(s) name list \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A sequence of Attribute\-Config\-\_\-2 structure. One structure is initialised for each wanted attribute. Click {\tt here} to read {\bfseries Attribute\-Config\-\_\-2} structure specification.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Dev\-Failed} & Thrown if the attribute does not exist. Click {\tt here} to read {\bfseries Dev\-Failed} exception specification \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Device\-\_\-2\-Impl@{Tango\-::\-Device\-\_\-2\-Impl}!read\-\_\-attribute\-\_\-history\-\_\-2@{read\-\_\-attribute\-\_\-history\-\_\-2}}
+\index{read\-\_\-attribute\-\_\-history\-\_\-2@{read\-\_\-attribute\-\_\-history\-\_\-2}!Tango::Device_2Impl@{Tango\-::\-Device\-\_\-2\-Impl}}
+\subsubsection[{read\-\_\-attribute\-\_\-history\-\_\-2}]{\setlength{\rightskip}{0pt plus 5cm}virtual Tango\-::\-Dev\-Attr\-History\-List$\ast$ Tango\-::\-Device\-\_\-2\-Impl\-::read\-\_\-attribute\-\_\-history\-\_\-2 (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name, }
+\item[{Dev\-Long}]{n}
+\end{DoxyParamCaption}
+) throw  Tango\-::\-Dev\-Failed, C\-O\-R\-B\-A\-::\-System\-Exception) \hspace{0.3cm}{\ttfamily [virtual]}}\label{classTango_1_1Device__2Impl_a8f89727d69733be88e44453a7c97d3a8}
+
+
+Read attribute value history. 
+
+Invoked when the client request the read\-\_\-attribute\-\_\-history\-\_\-2 C\-O\-R\-B\-A operation. This operation allows a client to retrieve attribute value history for polled attribute. The depth of the history is limited to the depth of the device server internal polling buffer. It returns to the client one Dev\-Attr\-History structure for each record.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The attribute name \\
+\hline
+{\em n} & The record number. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A sequence of Dev\-Attr\-History structure. One structure is initialised for each record with the attribute value, the date and in case of the attribute returns an error when it was read, the Dev\-Errors data. Click {\tt here} to read {\bfseries Dev\-Attr\-History} structure definition. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Dev\-Failed} & Thrown if the attribute does not exist or is not polled. Click {\tt here} to read {\bfseries Dev\-Failed} exception specification \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Device\-\_\-2\-Impl@{Tango\-::\-Device\-\_\-2\-Impl}!read\-\_\-attributes\-\_\-2@{read\-\_\-attributes\-\_\-2}}
+\index{read\-\_\-attributes\-\_\-2@{read\-\_\-attributes\-\_\-2}!Tango::Device_2Impl@{Tango\-::\-Device\-\_\-2\-Impl}}
+\subsubsection[{read\-\_\-attributes\-\_\-2}]{\setlength{\rightskip}{0pt plus 5cm}virtual Tango\-::\-Attribute\-Value\-List$\ast$ Tango\-::\-Device\-\_\-2\-Impl\-::read\-\_\-attributes\-\_\-2 (
+\begin{DoxyParamCaption}
+\item[{const Tango\-::\-Dev\-Var\-String\-Array \&}]{names, }
+\item[{Tango\-::\-Dev\-Source}]{source}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classTango_1_1Device__2Impl_ae4a337540c05d540b69b1332aeae7444}
+
+
+Read attribute(s) value. 
+
+Invoked when the client request the read\-\_\-attributes\-\_\-2 C\-O\-R\-B\-A operation. It returns to the client one Attribute\-Value structure for each wanted attribute.
+
+
+\begin{DoxyParams}{Parameters}
+{\em names} & The attribute(s) name list \\
+\hline
+{\em source} & The data source. This parameter is new in \doxyref{Tango}{p.}{de/ddf/namespaceTango} release 2. It allows a client to choose the data source between the device itself or the data cache for polled attribute. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A sequence of Attribute\-Value structure. One structure is initialised for each wanted attribute with the attribute value, the date and the attribute value quality. Click {\tt here} to read {\bfseries Attribute\-Value} structure definition. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Dev\-Failed} & Thrown if the attribute does not exist. Click {\tt here} to read {\bfseries Dev\-Failed} exception specification \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+{\bf device\-\_\-2.\-h}\end{DoxyCompactItemize}

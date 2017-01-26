@@ -1,0 +1,2361 @@
+\section{Tango\-:\-:Command Class Reference}
+\label{classTango_1_1Command}\index{Tango\-::\-Command@{Tango\-::\-Command}}
+
+
+This class is a class representing a command in the T\-A\-N\-G\-O device server pattern.  
+
+
+
+
+Inheritance diagram for Tango\-:\-:Command\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/db1/classTango_1_1Command__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{Indent}{\bf Constructors}\par
+{\em Miscellaneous constructors }\begin{DoxyCompactItemize}
+\item 
+{\bf Command} ()
+\begin{DoxyCompactList}\small\item\em Constructs a newly allocated \doxyref{Command}{p.}{d2/d1d/classTango_1_1Command} object. \end{DoxyCompactList}\item 
+{\bf Command} (const char $\ast$s, {\bf Tango\-::\-Cmd\-Arg\-Type} in, {\bf Tango\-::\-Cmd\-Arg\-Type} out)
+\begin{DoxyCompactList}\small\item\em Constructs a newly allocated \doxyref{Command}{p.}{d2/d1d/classTango_1_1Command} object for a command from its name and its input and output parameter types. \end{DoxyCompactList}\item 
+{\bf Command} (string \&s, {\bf Tango\-::\-Cmd\-Arg\-Type} in, {\bf Tango\-::\-Cmd\-Arg\-Type} out)
+\begin{DoxyCompactList}\small\item\em Constructs a newly allocated \doxyref{Command}{p.}{d2/d1d/classTango_1_1Command} object for a command from its name and its input and output parameter types. \end{DoxyCompactList}\item 
+{\bf Command} (const char $\ast$s, {\bf Tango\-::\-Cmd\-Arg\-Type} in, {\bf Tango\-::\-Cmd\-Arg\-Type} out, const char $\ast$in\-\_\-desc, const char $\ast$out\-\_\-desc)
+\begin{DoxyCompactList}\small\item\em Constructs a newly allocated \doxyref{Command}{p.}{d2/d1d/classTango_1_1Command} object for a command from its name, its input and output parameter types plus parameters description The command display level is set to O\-P\-E\-R\-A\-T\-O\-R. \end{DoxyCompactList}\item 
+{\bf Command} (string \&s, {\bf Tango\-::\-Cmd\-Arg\-Type} in, {\bf Tango\-::\-Cmd\-Arg\-Type} out, string \&in\-\_\-desc, string \&out\-\_\-desc)
+\begin{DoxyCompactList}\small\item\em Constructs a newly allocated \doxyref{Command}{p.}{d2/d1d/classTango_1_1Command} object for a command from its name, its input and output parameter types plus parameters description The command display level is set to O\-P\-E\-R\-A\-T\-O\-R. \end{DoxyCompactList}\item 
+{\bf Command} (const char $\ast$s, {\bf Tango\-::\-Cmd\-Arg\-Type} in, {\bf Tango\-::\-Cmd\-Arg\-Type} out, Tango\-::\-Disp\-Level level)
+\begin{DoxyCompactList}\small\item\em Constructs a newly allocated \doxyref{Command}{p.}{d2/d1d/classTango_1_1Command} object for a command from its name and its input and output parameter types. \end{DoxyCompactList}\item 
+{\bf Command} (string \&s, {\bf Tango\-::\-Cmd\-Arg\-Type} in, {\bf Tango\-::\-Cmd\-Arg\-Type} out, Tango\-::\-Disp\-Level level)
+\begin{DoxyCompactList}\small\item\em Constructs a newly allocated \doxyref{Command}{p.}{d2/d1d/classTango_1_1Command} object for a command from its name and its input and output parameter types. \end{DoxyCompactList}\item 
+{\bf Command} (const char $\ast$s, {\bf Tango\-::\-Cmd\-Arg\-Type} in, {\bf Tango\-::\-Cmd\-Arg\-Type} out, const char $\ast$in\-\_\-desc, const char $\ast$out\-\_\-desc, Tango\-::\-Disp\-Level level)
+\begin{DoxyCompactList}\small\item\em Constructs a newly allocated \doxyref{Command}{p.}{d2/d1d/classTango_1_1Command} object for a command from its name, its input and output parameter types plus parameters description. \end{DoxyCompactList}\item 
+{\bf Command} (string \&s, {\bf Tango\-::\-Cmd\-Arg\-Type} in, {\bf Tango\-::\-Cmd\-Arg\-Type} out, string \&in\-\_\-desc, string \&out\-\_\-desc, Tango\-::\-Disp\-Level level)
+\begin{DoxyCompactList}\small\item\em Constructs a newly allocated \doxyref{Command}{p.}{d2/d1d/classTango_1_1Command} object for a command from its name, its input and output parameter types plus parameters description. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Destructor}\par
+{\em Only one desctructor is defined for this class }\begin{DoxyCompactItemize}
+\item 
+virtual {\bf $\sim$\-Command} ()
+\begin{DoxyCompactList}\small\item\em The object desctructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Miscellaneous methods}\par
+\begin{DoxyCompactItemize}
+\item 
+virtual C\-O\-R\-B\-A\-::\-Any $\ast$ {\bf execute} ({\bf Device\-Impl} $\ast$dev, const C\-O\-R\-B\-A\-::\-Any \&in\-\_\-any)=0
+\begin{DoxyCompactList}\small\item\em Execute the command. \end{DoxyCompactList}\item 
+virtual bool {\bf is\-\_\-allowed} ({\bf Device\-Impl} $\ast$dev, const C\-O\-R\-B\-A\-::\-Any \&in\-\_\-any)
+\begin{DoxyCompactList}\small\item\em Check if the command is allowed in the actual device state. \end{DoxyCompactList}\item 
+virtual void {\bf init\-\_\-types} ()
+\begin{DoxyCompactList}\small\item\em Init command parameters type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Get/\-Set object members.}\par
+{\em These methods allows the external world to get/set \doxyref{Device\-Impl}{p.}{d3/d62/classTango_1_1DeviceImpl} instance data members }\begin{DoxyCompactItemize}
+\item 
+string \& {\bf get\-\_\-name} ()
+\begin{DoxyCompactList}\small\item\em Return the command name. \end{DoxyCompactList}\item 
+void {\bf set\-\_\-name} (string \&new\-\_\-name)
+\begin{DoxyCompactList}\small\item\em Set the command name. \end{DoxyCompactList}\item 
+string \& {\bf get\-\_\-lower\-\_\-name} ()
+\begin{DoxyCompactList}\small\item\em Return the command name in lower case letters. \end{DoxyCompactList}\item 
+{\bf Tango\-::\-Cmd\-Arg\-Type} {\bf get\-\_\-in\-\_\-type} ()
+\begin{DoxyCompactList}\small\item\em Return the input parameter type. \end{DoxyCompactList}\item 
+{\bf Tango\-::\-Cmd\-Arg\-Type} {\bf get\-\_\-out\-\_\-type} ()
+\begin{DoxyCompactList}\small\item\em Return the output parameter type. \end{DoxyCompactList}\item 
+string \& {\bf get\-\_\-in\-\_\-type\-\_\-desc} ()
+\begin{DoxyCompactList}\small\item\em Return the input parameter description. \end{DoxyCompactList}\item 
+string \& {\bf get\-\_\-out\-\_\-type\-\_\-desc} ()
+\begin{DoxyCompactList}\small\item\em Return the output parameter description. \end{DoxyCompactList}\item 
+Tango\-::\-Disp\-Level {\bf get\-\_\-disp\-\_\-level} ()
+\begin{DoxyCompactList}\small\item\em Return the command display level. \end{DoxyCompactList}\item 
+void {\bf set\-\_\-in\-\_\-type\-\_\-desc} (const char $\ast$desc)
+\begin{DoxyCompactList}\small\item\em Set the input parameter description field. \end{DoxyCompactList}\item 
+void {\bf set\-\_\-in\-\_\-type\-\_\-desc} (string \&desc)
+\begin{DoxyCompactList}\small\item\em Set the input parameter description field. \end{DoxyCompactList}\item 
+void {\bf set\-\_\-out\-\_\-type\-\_\-desc} (const char $\ast$desc)
+\begin{DoxyCompactList}\small\item\em Set the output parameter description field. \end{DoxyCompactList}\item 
+void {\bf set\-\_\-out\-\_\-type\-\_\-desc} (string \&desc)
+\begin{DoxyCompactList}\small\item\em Set the output parameter description field. \end{DoxyCompactList}\item 
+void {\bf set\-\_\-disp\-\_\-level} (Tango\-::\-Disp\-Level level)
+\begin{DoxyCompactList}\small\item\em Set the command display level. \end{DoxyCompactList}\item 
+void {\bf set\-\_\-polling\-\_\-period} (long per)
+\begin{DoxyCompactList}\small\item\em Set the command polling period. \end{DoxyCompactList}\item 
+long {\bf get\-\_\-polling\-\_\-period} ()
+\begin{DoxyCompactList}\small\item\em Get the command polling period. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Extract methods.}\par
+{\em All these methods extract data from the C\-O\-R\-B\-A Any object received as command input data }\begin{DoxyCompactItemize}
+\item 
+void {\bf extract} (const C\-O\-R\-B\-A\-::\-Any \&in, Tango\-::\-Dev\-Boolean \&data)
+\begin{DoxyCompactList}\small\item\em Extract a boolean data from a C\-O\-R\-B\-A Any object. \end{DoxyCompactList}\item 
+void {\bf extract} (const C\-O\-R\-B\-A\-::\-Any \&in, Tango\-::\-Dev\-Short \&data)
+\begin{DoxyCompactList}\small\item\em Extract a short data from a C\-O\-R\-B\-A Any object. \end{DoxyCompactList}\item 
+void {\bf extract} (const C\-O\-R\-B\-A\-::\-Any \&in, Tango\-::\-Dev\-Long \&data)
+\begin{DoxyCompactList}\small\item\em Extract a long data from a C\-O\-R\-B\-A Any object. \end{DoxyCompactList}\item 
+void {\bf extract} (const C\-O\-R\-B\-A\-::\-Any \&in, Tango\-::\-Dev\-Long64 \&data)
+\begin{DoxyCompactList}\small\item\em Extract a 64 bits long data from a C\-O\-R\-B\-A Any object. \end{DoxyCompactList}\item 
+void {\bf extract} (const C\-O\-R\-B\-A\-::\-Any \&in, Tango\-::\-Dev\-Float \&data)
+\begin{DoxyCompactList}\small\item\em Extract a float data from a C\-O\-R\-B\-A Any object. \end{DoxyCompactList}\item 
+void {\bf extract} (const C\-O\-R\-B\-A\-::\-Any \&in, Tango\-::\-Dev\-Double \&data)
+\begin{DoxyCompactList}\small\item\em Extract a double data from a C\-O\-R\-B\-A Any object. \end{DoxyCompactList}\item 
+void {\bf extract} (const C\-O\-R\-B\-A\-::\-Any \&in, Tango\-::\-Dev\-U\-Short \&data)
+\begin{DoxyCompactList}\small\item\em Extract an unsigned short data from a C\-O\-R\-B\-A Any object. \end{DoxyCompactList}\item 
+void {\bf extract} (const C\-O\-R\-B\-A\-::\-Any \&in, Tango\-::\-Dev\-U\-Long \&data)
+\begin{DoxyCompactList}\small\item\em Extract an unsigned long data from a C\-O\-R\-B\-A Any object. \end{DoxyCompactList}\item 
+void {\bf extract} (const C\-O\-R\-B\-A\-::\-Any \&in, Tango\-::\-Dev\-U\-Long64 \&data)
+\begin{DoxyCompactList}\small\item\em Extract an unsigned 64 bits long data from a C\-O\-R\-B\-A Any object. \end{DoxyCompactList}\item 
+void {\bf extract} (const C\-O\-R\-B\-A\-::\-Any \&in, Tango\-::\-Dev\-String \&data)
+\begin{DoxyCompactList}\small\item\em Extract a string from a C\-O\-R\-B\-A Any object. \end{DoxyCompactList}\item 
+void {\bf extract} (const C\-O\-R\-B\-A\-::\-Any \&in, const char $\ast$\&data)
+\begin{DoxyCompactList}\small\item\em Extract a const string from a C\-O\-R\-B\-A Any object. \end{DoxyCompactList}\item 
+void {\bf extract} (const C\-O\-R\-B\-A\-::\-Any \&in, const Tango\-::\-Dev\-Var\-Char\-Array $\ast$\&data)
+\begin{DoxyCompactList}\small\item\em Extract a char array from a C\-O\-R\-B\-A Any object. \end{DoxyCompactList}\item 
+void {\bf extract} (const C\-O\-R\-B\-A\-::\-Any \&in, const Tango\-::\-Dev\-Var\-Short\-Array $\ast$\&data)
+\begin{DoxyCompactList}\small\item\em Extract a short array from a C\-O\-R\-B\-A Any object. \end{DoxyCompactList}\item 
+void {\bf extract} (const C\-O\-R\-B\-A\-::\-Any \&in, const Tango\-::\-Dev\-Var\-Long\-Array $\ast$\&data)
+\begin{DoxyCompactList}\small\item\em Extract a long array from a C\-O\-R\-B\-A Any object. \end{DoxyCompactList}\item 
+void {\bf extract} (const C\-O\-R\-B\-A\-::\-Any \&in, const Tango\-::\-Dev\-Var\-Long64\-Array $\ast$\&data)
+\begin{DoxyCompactList}\small\item\em Extract a 64 bits long array from a C\-O\-R\-B\-A Any object. \end{DoxyCompactList}\item 
+void {\bf extract} (const C\-O\-R\-B\-A\-::\-Any \&in, const Tango\-::\-Dev\-Var\-Float\-Array $\ast$\&data)
+\begin{DoxyCompactList}\small\item\em Extract a float array from a C\-O\-R\-B\-A Any object. \end{DoxyCompactList}\item 
+void {\bf extract} (const C\-O\-R\-B\-A\-::\-Any \&in, const Tango\-::\-Dev\-Var\-Double\-Array $\ast$\&data)
+\begin{DoxyCompactList}\small\item\em Extract a double array from a C\-O\-R\-B\-A Any object. \end{DoxyCompactList}\item 
+void {\bf extract} (const C\-O\-R\-B\-A\-::\-Any \&in, const Tango\-::\-Dev\-Var\-U\-Short\-Array $\ast$\&data)
+\begin{DoxyCompactList}\small\item\em Extract a unsigned short array from a C\-O\-R\-B\-A Any object. \end{DoxyCompactList}\item 
+void {\bf extract} (const C\-O\-R\-B\-A\-::\-Any \&in, const Tango\-::\-Dev\-Var\-U\-Long\-Array $\ast$\&data)
+\begin{DoxyCompactList}\small\item\em Extract a unsigned long array from a C\-O\-R\-B\-A Any object. \end{DoxyCompactList}\item 
+void {\bf extract} (const C\-O\-R\-B\-A\-::\-Any \&in, const Tango\-::\-Dev\-Var\-U\-Long64\-Array $\ast$\&data)
+\begin{DoxyCompactList}\small\item\em Extract a unsigned 64 bits long array from a C\-O\-R\-B\-A Any object. \end{DoxyCompactList}\item 
+void {\bf extract} (const C\-O\-R\-B\-A\-::\-Any \&in, const Tango\-::\-Dev\-Var\-String\-Array $\ast$\&data)
+\begin{DoxyCompactList}\small\item\em Extract a string array from a C\-O\-R\-B\-A Any object. \end{DoxyCompactList}\item 
+void {\bf extract} (const C\-O\-R\-B\-A\-::\-Any \&in, const Tango\-::\-Dev\-Var\-Long\-String\-Array $\ast$\&data)
+\begin{DoxyCompactList}\small\item\em Extract a Dev\-Var\-Long\-String\-Array data from a C\-O\-R\-B\-A Any object. \end{DoxyCompactList}\item 
+void {\bf extract} (const C\-O\-R\-B\-A\-::\-Any \&in, const Tango\-::\-Dev\-Var\-Double\-String\-Array $\ast$\&data)
+\begin{DoxyCompactList}\small\item\em Extract a Dev\-Var\-Double\-String\-Array data from a C\-O\-R\-B\-A Any object. \end{DoxyCompactList}\item 
+void {\bf extract} (const C\-O\-R\-B\-A\-::\-Any \&in, Tango\-::\-Dev\-State \&data)
+\begin{DoxyCompactList}\small\item\em Extract a \doxyref{Tango}{p.}{de/ddf/namespaceTango} device state data from a C\-O\-R\-B\-A Any object. \end{DoxyCompactList}\item 
+void {\bf extract} (const C\-O\-R\-B\-A\-::\-Any \&in, const Tango\-::\-Dev\-Encoded $\ast$\&data)
+\begin{DoxyCompactList}\small\item\em Extract a \doxyref{Tango}{p.}{de/ddf/namespaceTango} Dev\-Encoded data from a C\-O\-R\-B\-A Any object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Insert methods.}\par
+{\em All these methods create a C\-O\-R\-B\-A Any object and insert data into this object }\begin{DoxyCompactItemize}
+\item 
+C\-O\-R\-B\-A\-::\-Any $\ast$ {\bf insert} ()
+\begin{DoxyCompactList}\small\item\em Create an empty C\-O\-R\-B\-A Any object. \end{DoxyCompactList}\item 
+C\-O\-R\-B\-A\-::\-Any $\ast$ {\bf insert} (Tango\-::\-Dev\-Boolean data)
+\begin{DoxyCompactList}\small\item\em Create a C\-O\-R\-B\-A Any object and insert a Tango\-::\-Dev\-Boolean data in it. \end{DoxyCompactList}\item 
+C\-O\-R\-B\-A\-::\-Any $\ast$ {\bf insert} (Tango\-::\-Dev\-Short data)
+\begin{DoxyCompactList}\small\item\em Create a C\-O\-R\-B\-A Any object and insert a Tango\-::\-Dev\-Short data in it. \end{DoxyCompactList}\item 
+C\-O\-R\-B\-A\-::\-Any $\ast$ {\bf insert} (Tango\-::\-Dev\-Long data)
+\begin{DoxyCompactList}\small\item\em Create a C\-O\-R\-B\-A Any object and insert a Tango\-::\-Dev\-Long data in it. \end{DoxyCompactList}\item 
+C\-O\-R\-B\-A\-::\-Any $\ast$ {\bf insert} (Tango\-::\-Dev\-Long64 data)
+\begin{DoxyCompactList}\small\item\em Create a C\-O\-R\-B\-A Any object and insert a Tango\-::\-Dev\-Long64 data in it. \end{DoxyCompactList}\item 
+C\-O\-R\-B\-A\-::\-Any $\ast$ {\bf insert} (Tango\-::\-Dev\-Float data)
+\begin{DoxyCompactList}\small\item\em Create a C\-O\-R\-B\-A Any object and insert a Tango\-::\-Dev\-Float data in it. \end{DoxyCompactList}\item 
+C\-O\-R\-B\-A\-::\-Any $\ast$ {\bf insert} (Tango\-::\-Dev\-Double data)
+\begin{DoxyCompactList}\small\item\em Create a C\-O\-R\-B\-A Any object and insert a Tango\-::\-Dev\-Double data in it. \end{DoxyCompactList}\item 
+C\-O\-R\-B\-A\-::\-Any $\ast$ {\bf insert} (Tango\-::\-Dev\-U\-Short data)
+\begin{DoxyCompactList}\small\item\em Create a C\-O\-R\-B\-A Any object and insert a Tango\-::\-Dev\-U\-Short data in it. \end{DoxyCompactList}\item 
+C\-O\-R\-B\-A\-::\-Any $\ast$ {\bf insert} (Tango\-::\-Dev\-U\-Long data)
+\begin{DoxyCompactList}\small\item\em Create a C\-O\-R\-B\-A Any object and insert a Tango\-::\-Dev\-U\-Long data in it. \end{DoxyCompactList}\item 
+C\-O\-R\-B\-A\-::\-Any $\ast$ {\bf insert} (Tango\-::\-Dev\-U\-Long64 data)
+\begin{DoxyCompactList}\small\item\em Create a C\-O\-R\-B\-A Any object and insert a Tango\-::\-Dev\-U\-Long64 data in it. \end{DoxyCompactList}\item 
+C\-O\-R\-B\-A\-::\-Any $\ast$ {\bf insert} (Tango\-::\-Dev\-String data)
+\begin{DoxyCompactList}\small\item\em Create a C\-O\-R\-B\-A Any object and insert a Tango\-::\-Dev\-String data in it. \end{DoxyCompactList}\item 
+C\-O\-R\-B\-A\-::\-Any $\ast$ {\bf insert} (const char $\ast$data)
+\begin{DoxyCompactList}\small\item\em Create a C\-O\-R\-B\-A Any object and insert a Tango\-::\-Dev\-String data in it. \end{DoxyCompactList}\item 
+C\-O\-R\-B\-A\-::\-Any $\ast$ {\bf insert} (Tango\-::\-Dev\-Var\-Char\-Array \&data)
+\begin{DoxyCompactList}\small\item\em Create a C\-O\-R\-B\-A Any object and insert a Tango\-::\-Dev\-Var\-Char\-Array data in it. \end{DoxyCompactList}\item 
+C\-O\-R\-B\-A\-::\-Any $\ast$ {\bf insert} (Tango\-::\-Dev\-Var\-Char\-Array $\ast$data)
+\begin{DoxyCompactList}\small\item\em Create a C\-O\-R\-B\-A Any object and insert a Tango\-::\-Dev\-Var\-Char\-Array data in it. \end{DoxyCompactList}\item 
+C\-O\-R\-B\-A\-::\-Any $\ast$ {\bf insert} (Tango\-::\-Dev\-Var\-Short\-Array \&data)
+\begin{DoxyCompactList}\small\item\em Create a C\-O\-R\-B\-A Any object and insert a Tango\-::\-Dev\-Var\-Short\-Array data in it. \end{DoxyCompactList}\item 
+C\-O\-R\-B\-A\-::\-Any $\ast$ {\bf insert} (Tango\-::\-Dev\-Var\-Short\-Array $\ast$data)
+\begin{DoxyCompactList}\small\item\em Create a C\-O\-R\-B\-A Any object and insert a Tango\-::\-Dev\-Var\-Short\-Array data in it. \end{DoxyCompactList}\item 
+C\-O\-R\-B\-A\-::\-Any $\ast$ {\bf insert} (Tango\-::\-Dev\-Var\-Long\-Array \&data)
+\begin{DoxyCompactList}\small\item\em Create a C\-O\-R\-B\-A Any object and insert a Tango\-::\-Dev\-Var\-Long\-Array data in it. \end{DoxyCompactList}\item 
+C\-O\-R\-B\-A\-::\-Any $\ast$ {\bf insert} (Tango\-::\-Dev\-Var\-Long\-Array $\ast$data)
+\begin{DoxyCompactList}\small\item\em Create a C\-O\-R\-B\-A Any object and insert a Tango\-::\-Dev\-Var\-Long\-Array data in it. \end{DoxyCompactList}\item 
+C\-O\-R\-B\-A\-::\-Any $\ast$ {\bf insert} (Tango\-::\-Dev\-Var\-Long64\-Array \&data)
+\begin{DoxyCompactList}\small\item\em Create a C\-O\-R\-B\-A Any object and insert a Tango\-::\-Dev\-Var\-Long64\-Array data in it. \end{DoxyCompactList}\item 
+C\-O\-R\-B\-A\-::\-Any $\ast$ {\bf insert} (Tango\-::\-Dev\-Var\-Long64\-Array $\ast$data)
+\begin{DoxyCompactList}\small\item\em Create a C\-O\-R\-B\-A Any object and insert a Tango\-::\-Dev\-Var\-Long64\-Array data in it. \end{DoxyCompactList}\item 
+C\-O\-R\-B\-A\-::\-Any $\ast$ {\bf insert} (Tango\-::\-Dev\-Var\-Float\-Array \&data)
+\begin{DoxyCompactList}\small\item\em Create a C\-O\-R\-B\-A Any object and insert a Tango\-::\-Dev\-Var\-Float\-Array data in it. \end{DoxyCompactList}\item 
+C\-O\-R\-B\-A\-::\-Any $\ast$ {\bf insert} (Tango\-::\-Dev\-Var\-Float\-Array $\ast$data)
+\begin{DoxyCompactList}\small\item\em Create a C\-O\-R\-B\-A Any object and insert a Tango\-::\-Dev\-Var\-Float\-Array data in it. \end{DoxyCompactList}\item 
+C\-O\-R\-B\-A\-::\-Any $\ast$ {\bf insert} (Tango\-::\-Dev\-Var\-Double\-Array \&data)
+\begin{DoxyCompactList}\small\item\em Create a C\-O\-R\-B\-A Any object and insert a Tango\-::\-Dev\-Var\-Double\-Array data in it. \end{DoxyCompactList}\item 
+C\-O\-R\-B\-A\-::\-Any $\ast$ {\bf insert} (Tango\-::\-Dev\-Var\-Double\-Array $\ast$data)
+\begin{DoxyCompactList}\small\item\em Create a C\-O\-R\-B\-A C\-O\-R\-B\-A\-::\-Any object and insert a Tango\-::\-Dev\-Var\-Double\-Array data in it. \end{DoxyCompactList}\item 
+C\-O\-R\-B\-A\-::\-Any $\ast$ {\bf insert} (Tango\-::\-Dev\-Var\-U\-Short\-Array \&data)
+\begin{DoxyCompactList}\small\item\em Create a C\-O\-R\-B\-A Any object and insert a Tango\-::\-Dev\-Var\-U\-Short\-Array data in it. \end{DoxyCompactList}\item 
+C\-O\-R\-B\-A\-::\-Any $\ast$ {\bf insert} (Tango\-::\-Dev\-Var\-U\-Short\-Array $\ast$data)
+\begin{DoxyCompactList}\small\item\em Create a C\-O\-R\-B\-A Any object and insert a Tango\-::\-Dev\-Var\-U\-Short\-Array data in it. \end{DoxyCompactList}\item 
+C\-O\-R\-B\-A\-::\-Any $\ast$ {\bf insert} (Tango\-::\-Dev\-Var\-U\-Long\-Array \&data)
+\begin{DoxyCompactList}\small\item\em Create a C\-O\-R\-B\-A Any object and insert a Tango\-::\-Dev\-Var\-U\-Long\-Array data in it. \end{DoxyCompactList}\item 
+C\-O\-R\-B\-A\-::\-Any $\ast$ {\bf insert} (Tango\-::\-Dev\-Var\-U\-Long\-Array $\ast$data)
+\begin{DoxyCompactList}\small\item\em Create a C\-O\-R\-B\-A Any object and insert a Tango\-::\-Dev\-Var\-U\-Long\-Array data in it. \end{DoxyCompactList}\item 
+C\-O\-R\-B\-A\-::\-Any $\ast$ {\bf insert} (Tango\-::\-Dev\-Var\-U\-Long64\-Array \&data)
+\begin{DoxyCompactList}\small\item\em Create a C\-O\-R\-B\-A Any object and insert a Tango\-::\-Dev\-Var\-U\-Long64\-Array data in it. \end{DoxyCompactList}\item 
+C\-O\-R\-B\-A\-::\-Any $\ast$ {\bf insert} (Tango\-::\-Dev\-Var\-U\-Long64\-Array $\ast$data)
+\begin{DoxyCompactList}\small\item\em Create a C\-O\-R\-B\-A Any object and insert a Tango\-::\-Dev\-Var\-U\-Long64\-Array data in it. \end{DoxyCompactList}\item 
+C\-O\-R\-B\-A\-::\-Any $\ast$ {\bf insert} (Tango\-::\-Dev\-Var\-String\-Array \&data)
+\begin{DoxyCompactList}\small\item\em Create a C\-O\-R\-B\-A Any object and insert a Tango\-::\-Dev\-Var\-String\-Array data in it. \end{DoxyCompactList}\item 
+C\-O\-R\-B\-A\-::\-Any $\ast$ {\bf insert} (Tango\-::\-Dev\-Var\-String\-Array $\ast$data)
+\begin{DoxyCompactList}\small\item\em Create a C\-O\-R\-B\-A Any object and insert a Tango\-::\-Dev\-Var\-String\-Array data in it. \end{DoxyCompactList}\item 
+C\-O\-R\-B\-A\-::\-Any $\ast$ {\bf insert} (Tango\-::\-Dev\-Var\-Long\-String\-Array \&data)
+\begin{DoxyCompactList}\small\item\em Create a C\-O\-R\-B\-A Any object and insert a Tango\-::\-Dev\-Var\-Long\-String\-Array data in it. \end{DoxyCompactList}\item 
+C\-O\-R\-B\-A\-::\-Any $\ast$ {\bf insert} (Tango\-::\-Dev\-Var\-Long\-String\-Array $\ast$data)
+\begin{DoxyCompactList}\small\item\em Create a C\-O\-R\-B\-A Any object and insert a Tango\-::\-Dev\-Var\-Long\-String\-Array data in it. \end{DoxyCompactList}\item 
+C\-O\-R\-B\-A\-::\-Any $\ast$ {\bf insert} (Tango\-::\-Dev\-Var\-Double\-String\-Array \&data)
+\begin{DoxyCompactList}\small\item\em Create a C\-O\-R\-B\-A Any object and insert a Tango\-::\-Dev\-Var\-Double\-String\-Array data in it. \end{DoxyCompactList}\item 
+C\-O\-R\-B\-A\-::\-Any $\ast$ {\bf insert} (Tango\-::\-Dev\-Var\-Double\-String\-Array $\ast$data)
+\begin{DoxyCompactList}\small\item\em Create a C\-O\-R\-B\-A Any object and insert a Tango\-::\-Dev\-Var\-Double\-String\-Array data in it. \end{DoxyCompactList}\item 
+C\-O\-R\-B\-A\-::\-Any $\ast$ {\bf insert} (Tango\-::\-Dev\-State data)
+\begin{DoxyCompactList}\small\item\em Create a C\-O\-R\-B\-A Any object and insert a Tango\-::\-Dev\-State data in it. \end{DoxyCompactList}\item 
+C\-O\-R\-B\-A\-::\-Any $\ast$ {\bf insert} (Tango\-::\-Dev\-Encoded $\ast$data)
+\begin{DoxyCompactList}\small\item\em Create a C\-O\-R\-B\-A Any object and insert a Tango\-::\-Dev\-Encoded data in it. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Protected Attributes}
+\begin{Indent}{\bf Class data members}\par
+\begin{DoxyCompactItemize}
+\item 
+string {\bf name}
+\begin{DoxyCompactList}\small\item\em The command name. \end{DoxyCompactList}\item 
+string {\bf lower\-\_\-name}
+\begin{DoxyCompactList}\small\item\em The command name in lower case. \end{DoxyCompactList}\item 
+{\bf Tango\-::\-Cmd\-Arg\-Type} {\bf in\-\_\-type}
+\begin{DoxyCompactList}\small\item\em The command input parameter type. \end{DoxyCompactList}\item 
+{\bf Tango\-::\-Cmd\-Arg\-Type} {\bf out\-\_\-type}
+\begin{DoxyCompactList}\small\item\em The command output parameter type. \end{DoxyCompactList}\item 
+string {\bf in\-\_\-type\-\_\-desc}
+\begin{DoxyCompactList}\small\item\em The command input parameter description. \end{DoxyCompactList}\item 
+string {\bf out\-\_\-type\-\_\-desc}
+\begin{DoxyCompactList}\small\item\em The command output parameter type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+This class is a class representing a command in the T\-A\-N\-G\-O device server pattern. 
+
+it is an abstract class. It is the root class for all command related classes for command implemented with the inheritance model or with the template command model
+
+\$\-Author\$ \$\-Revision\$ 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!Command@{Command}}
+\index{Command@{Command}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{Command}]{\setlength{\rightskip}{0pt plus 5cm}Tango\-::\-Command\-::\-Command (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTango_1_1Command_ac8aee54ed6b9c883f39a5a15a075c15f}
+
+
+Constructs a newly allocated \doxyref{Command}{p.}{d2/d1d/classTango_1_1Command} object. 
+
+The default constructor \index{Tango\-::\-Command@{Tango\-::\-Command}!Command@{Command}}
+\index{Command@{Command}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{Command}]{\setlength{\rightskip}{0pt plus 5cm}Tango\-::\-Command\-::\-Command (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s, }
+\item[{{\bf Tango\-::\-Cmd\-Arg\-Type}}]{in, }
+\item[{{\bf Tango\-::\-Cmd\-Arg\-Type}}]{out}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Command_a3598206398bf3cb500d88bee3a1c76f4}
+
+
+Constructs a newly allocated \doxyref{Command}{p.}{d2/d1d/classTango_1_1Command} object for a command from its name and its input and output parameter types. 
+
+The input and output parameter description are set to the default String \char`\"{}\-Uninitialised\char`\"{}. The command display level is set to O\-P\-E\-R\-A\-T\-O\-R.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The command name \\
+\hline
+{\em in} & The command input parameter type \\
+\hline
+{\em out} & The command output parameter type \\
+\hline
+\end{DoxyParams}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!Command@{Command}}
+\index{Command@{Command}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{Command}]{\setlength{\rightskip}{0pt plus 5cm}Tango\-::\-Command\-::\-Command (
+\begin{DoxyParamCaption}
+\item[{string \&}]{s, }
+\item[{{\bf Tango\-::\-Cmd\-Arg\-Type}}]{in, }
+\item[{{\bf Tango\-::\-Cmd\-Arg\-Type}}]{out}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Command_af4b7d2ad7aa06b60eb273d9214b34af9}
+
+
+Constructs a newly allocated \doxyref{Command}{p.}{d2/d1d/classTango_1_1Command} object for a command from its name and its input and output parameter types. 
+
+The input and output parameter description are set to the default String \char`\"{}\-Uninitialised\char`\"{}. The command display level is set to O\-P\-E\-R\-A\-T\-O\-R.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The command name \\
+\hline
+{\em in} & The command input parameter type \\
+\hline
+{\em out} & The command output parameter type \\
+\hline
+\end{DoxyParams}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!Command@{Command}}
+\index{Command@{Command}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{Command}]{\setlength{\rightskip}{0pt plus 5cm}Tango\-::\-Command\-::\-Command (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s, }
+\item[{{\bf Tango\-::\-Cmd\-Arg\-Type}}]{in, }
+\item[{{\bf Tango\-::\-Cmd\-Arg\-Type}}]{out, }
+\item[{const char $\ast$}]{in\-\_\-desc, }
+\item[{const char $\ast$}]{out\-\_\-desc}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Command_ac4e9596ebbf8ced45a8383185cbbeae4}
+
+
+Constructs a newly allocated \doxyref{Command}{p.}{d2/d1d/classTango_1_1Command} object for a command from its name, its input and output parameter types plus parameters description The command display level is set to O\-P\-E\-R\-A\-T\-O\-R. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The command name \\
+\hline
+{\em in} & The command input parameter type \\
+\hline
+{\em out} & The command output parameter type \\
+\hline
+{\em in\-\_\-desc} & The input parameter description \\
+\hline
+{\em out\-\_\-desc} & The output parameter description \\
+\hline
+\end{DoxyParams}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!Command@{Command}}
+\index{Command@{Command}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{Command}]{\setlength{\rightskip}{0pt plus 5cm}Tango\-::\-Command\-::\-Command (
+\begin{DoxyParamCaption}
+\item[{string \&}]{s, }
+\item[{{\bf Tango\-::\-Cmd\-Arg\-Type}}]{in, }
+\item[{{\bf Tango\-::\-Cmd\-Arg\-Type}}]{out, }
+\item[{string \&}]{in\-\_\-desc, }
+\item[{string \&}]{out\-\_\-desc}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Command_a291c62e3e6d852b8c116b7b27c927a64}
+
+
+Constructs a newly allocated \doxyref{Command}{p.}{d2/d1d/classTango_1_1Command} object for a command from its name, its input and output parameter types plus parameters description The command display level is set to O\-P\-E\-R\-A\-T\-O\-R. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The command name \\
+\hline
+{\em in} & The command input parameter type \\
+\hline
+{\em out} & The command output parameter type \\
+\hline
+{\em in\-\_\-desc} & The input parameter description \\
+\hline
+{\em out\-\_\-desc} & The output parameter description \\
+\hline
+\end{DoxyParams}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!Command@{Command}}
+\index{Command@{Command}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{Command}]{\setlength{\rightskip}{0pt plus 5cm}Tango\-::\-Command\-::\-Command (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s, }
+\item[{{\bf Tango\-::\-Cmd\-Arg\-Type}}]{in, }
+\item[{{\bf Tango\-::\-Cmd\-Arg\-Type}}]{out, }
+\item[{Tango\-::\-Disp\-Level}]{level}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Command_accaebfd69dc12dd6212a9228724c63a6}
+
+
+Constructs a newly allocated \doxyref{Command}{p.}{d2/d1d/classTango_1_1Command} object for a command from its name and its input and output parameter types. 
+
+The input and output parameter description are set to the default String \char`\"{}\-Uninitialised\char`\"{}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The command name \\
+\hline
+{\em in} & The command input parameter type \\
+\hline
+{\em out} & The command output parameter type \\
+\hline
+{\em level} & The command display level \\
+\hline
+\end{DoxyParams}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!Command@{Command}}
+\index{Command@{Command}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{Command}]{\setlength{\rightskip}{0pt plus 5cm}Tango\-::\-Command\-::\-Command (
+\begin{DoxyParamCaption}
+\item[{string \&}]{s, }
+\item[{{\bf Tango\-::\-Cmd\-Arg\-Type}}]{in, }
+\item[{{\bf Tango\-::\-Cmd\-Arg\-Type}}]{out, }
+\item[{Tango\-::\-Disp\-Level}]{level}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Command_a99b6f06c975ad890fcb8f551ca6a42a7}
+
+
+Constructs a newly allocated \doxyref{Command}{p.}{d2/d1d/classTango_1_1Command} object for a command from its name and its input and output parameter types. 
+
+The input and output parameter description are set to the default String \char`\"{}\-Uninitialised\char`\"{}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The command name \\
+\hline
+{\em in} & The command input parameter type \\
+\hline
+{\em out} & The command output parameter type \\
+\hline
+{\em level} & The command display level \\
+\hline
+\end{DoxyParams}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!Command@{Command}}
+\index{Command@{Command}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{Command}]{\setlength{\rightskip}{0pt plus 5cm}Tango\-::\-Command\-::\-Command (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s, }
+\item[{{\bf Tango\-::\-Cmd\-Arg\-Type}}]{in, }
+\item[{{\bf Tango\-::\-Cmd\-Arg\-Type}}]{out, }
+\item[{const char $\ast$}]{in\-\_\-desc, }
+\item[{const char $\ast$}]{out\-\_\-desc, }
+\item[{Tango\-::\-Disp\-Level}]{level}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Command_a34f9bd55d6766d58bc783000cfc3e908}
+
+
+Constructs a newly allocated \doxyref{Command}{p.}{d2/d1d/classTango_1_1Command} object for a command from its name, its input and output parameter types plus parameters description. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The command name \\
+\hline
+{\em in} & The command input parameter type \\
+\hline
+{\em out} & The command output parameter type \\
+\hline
+{\em in\-\_\-desc} & The input parameter description \\
+\hline
+{\em out\-\_\-desc} & The output parameter description \\
+\hline
+{\em level} & The command display level \\
+\hline
+\end{DoxyParams}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!Command@{Command}}
+\index{Command@{Command}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{Command}]{\setlength{\rightskip}{0pt plus 5cm}Tango\-::\-Command\-::\-Command (
+\begin{DoxyParamCaption}
+\item[{string \&}]{s, }
+\item[{{\bf Tango\-::\-Cmd\-Arg\-Type}}]{in, }
+\item[{{\bf Tango\-::\-Cmd\-Arg\-Type}}]{out, }
+\item[{string \&}]{in\-\_\-desc, }
+\item[{string \&}]{out\-\_\-desc, }
+\item[{Tango\-::\-Disp\-Level}]{level}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Command_a892d20cd88adcf27ccb7a5483027c856}
+
+
+Constructs a newly allocated \doxyref{Command}{p.}{d2/d1d/classTango_1_1Command} object for a command from its name, its input and output parameter types plus parameters description. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The command name \\
+\hline
+{\em in} & The command input parameter type \\
+\hline
+{\em out} & The command output parameter type \\
+\hline
+{\em in\-\_\-desc} & The input parameter description \\
+\hline
+{\em out\-\_\-desc} & The output parameter description \\
+\hline
+{\em level} & The command display level \\
+\hline
+\end{DoxyParams}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!$\sim$\-Command@{$\sim$\-Command}}
+\index{$\sim$\-Command@{$\sim$\-Command}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{$\sim$\-Command}]{\setlength{\rightskip}{0pt plus 5cm}virtual Tango\-::\-Command\-::$\sim$\-Command (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classTango_1_1Command_a05ff827c05911f69e56e3835345f5e84}
+
+
+The object desctructor. 
+
+
+
+\subsection{Member Function Documentation}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!execute@{execute}}
+\index{execute@{execute}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{execute}]{\setlength{\rightskip}{0pt plus 5cm}virtual C\-O\-R\-B\-A\-::\-Any$\ast$ Tango\-::\-Command\-::execute (
+\begin{DoxyParamCaption}
+\item[{{\bf Device\-Impl} $\ast$}]{dev, }
+\item[{const C\-O\-R\-B\-A\-::\-Any \&}]{in\-\_\-any}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classTango_1_1Command_a24505e18425086e1c6b84d7ba1f92503}
+
+
+Execute the command. 
+
+This method is automtically called by the T\-A\-N\-G\-O core classes when the associated command is requested by a client. This method is abstract and must be redefined in each sub-\/class
+
+
+\begin{DoxyParams}{Parameters}
+{\em dev} & The device on which the command must be executed \\
+\hline
+{\em in\-\_\-any} & The incoming data still packed in a C\-O\-R\-B\-A Any object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The C\-O\-R\-B\-A Any object returned to the client. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Dev\-Failed} & If the execution method failed. Click {\tt here} to read {\bfseries Dev\-Failed} exception specification \\
+\hline
+\end{DoxyExceptions}
+
+
+Implemented in {\bf Tango\-::\-Templ\-Command\-Out$<$ O\-U\-T\-A\-R\-G $>$} \doxyref{}{p.}{d3/d87/classTango_1_1TemplCommandOut_a4afcfcf600912c43d7e1ae6fc410fae3}, {\bf Tango\-::\-Templ\-Command\-In$<$ I\-N\-A\-R\-G $>$} \doxyref{}{p.}{d2/d50/classTango_1_1TemplCommandIn_a13a44e57280e667e24e14bdf58a24181}, {\bf Tango\-::\-Templ\-Command\-In\-Out$<$ I\-N\-A\-R\-G, O\-U\-T\-A\-R\-G $>$} \doxyref{}{p.}{db/dbb/classTango_1_1TemplCommandInOut_ac5639e9122031a8e57887ff3411bb482}, and {\bf Tango\-::\-Templ\-Command} \doxyref{}{p.}{de/de1/classTango_1_1TemplCommand_ac0f9217e1c13600d3ba449ceb6a25cd3}.
+
+\index{Tango\-::\-Command@{Tango\-::\-Command}!extract@{extract}}
+\index{extract@{extract}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{extract}]{\setlength{\rightskip}{0pt plus 5cm}void Tango\-::\-Command\-::extract (
+\begin{DoxyParamCaption}
+\item[{const C\-O\-R\-B\-A\-::\-Any \&}]{in, }
+\item[{Tango\-::\-Dev\-Boolean \&}]{data}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Command_aa8a75d6b22f8fd09e07d46982855d233}
+
+
+Extract a boolean data from a C\-O\-R\-B\-A Any object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & The C\-O\-R\-B\-A Any object \\
+\hline
+{\em data} & Reference to the extracted boolean data \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Dev\-Failed} & If the Any object does not contains a data of the waited type. Click {\tt here} to read {\bfseries Dev\-Failed} exception specification \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!extract@{extract}}
+\index{extract@{extract}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{extract}]{\setlength{\rightskip}{0pt plus 5cm}void Tango\-::\-Command\-::extract (
+\begin{DoxyParamCaption}
+\item[{const C\-O\-R\-B\-A\-::\-Any \&}]{in, }
+\item[{Tango\-::\-Dev\-Short \&}]{data}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Command_af279abb75028ddd1d96950963fad06eb}
+
+
+Extract a short data from a C\-O\-R\-B\-A Any object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & The C\-O\-R\-B\-A Any object \\
+\hline
+{\em data} & Reference to the extracted short data \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Dev\-Failed} & If the Any object does not contains a data of the waited type. Click {\tt here} to read {\bfseries Dev\-Failed} exception specification \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!extract@{extract}}
+\index{extract@{extract}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{extract}]{\setlength{\rightskip}{0pt plus 5cm}void Tango\-::\-Command\-::extract (
+\begin{DoxyParamCaption}
+\item[{const C\-O\-R\-B\-A\-::\-Any \&}]{in, }
+\item[{Tango\-::\-Dev\-Long \&}]{data}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Command_a1c95b781a6cf51bc330d89228a9e6526}
+
+
+Extract a long data from a C\-O\-R\-B\-A Any object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & The C\-O\-R\-B\-A Any object \\
+\hline
+{\em data} & Reference to the extracted long data \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Dev\-Failed} & If the Any object does not contains a data of the waited type. Click {\tt here} to read {\bfseries Dev\-Failed} exception specification \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!extract@{extract}}
+\index{extract@{extract}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{extract}]{\setlength{\rightskip}{0pt plus 5cm}void Tango\-::\-Command\-::extract (
+\begin{DoxyParamCaption}
+\item[{const C\-O\-R\-B\-A\-::\-Any \&}]{in, }
+\item[{Tango\-::\-Dev\-Long64 \&}]{data}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Command_a14a8016a57b8828deda2530119d650f3}
+
+
+Extract a 64 bits long data from a C\-O\-R\-B\-A Any object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & The C\-O\-R\-B\-A Any object \\
+\hline
+{\em data} & Reference to the extracted 64 bits long data \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Dev\-Failed} & If the Any object does not contains a data of the waited type. Click {\tt here} to read {\bfseries Dev\-Failed} exception specification \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!extract@{extract}}
+\index{extract@{extract}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{extract}]{\setlength{\rightskip}{0pt plus 5cm}void Tango\-::\-Command\-::extract (
+\begin{DoxyParamCaption}
+\item[{const C\-O\-R\-B\-A\-::\-Any \&}]{in, }
+\item[{Tango\-::\-Dev\-Float \&}]{data}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Command_aeb2d6fcfa3acf6d4031af18884d22da7}
+
+
+Extract a float data from a C\-O\-R\-B\-A Any object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & The C\-O\-R\-B\-A Any object \\
+\hline
+{\em data} & Reference to the extracted float data \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Dev\-Failed} & If the Any object does not contains a data of the waited type. Click {\tt here} to read {\bfseries Dev\-Failed} exception specification \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!extract@{extract}}
+\index{extract@{extract}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{extract}]{\setlength{\rightskip}{0pt plus 5cm}void Tango\-::\-Command\-::extract (
+\begin{DoxyParamCaption}
+\item[{const C\-O\-R\-B\-A\-::\-Any \&}]{in, }
+\item[{Tango\-::\-Dev\-Double \&}]{data}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Command_af920614d03b5e1df3d7c7d74019ddc0e}
+
+
+Extract a double data from a C\-O\-R\-B\-A Any object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & The C\-O\-R\-B\-A Any object \\
+\hline
+{\em data} & Reference to the extracted double data \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Dev\-Failed} & If the Any object does not contains a data of the waited type. Click {\tt here} to read {\bfseries Dev\-Failed} exception specification \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!extract@{extract}}
+\index{extract@{extract}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{extract}]{\setlength{\rightskip}{0pt plus 5cm}void Tango\-::\-Command\-::extract (
+\begin{DoxyParamCaption}
+\item[{const C\-O\-R\-B\-A\-::\-Any \&}]{in, }
+\item[{Tango\-::\-Dev\-U\-Short \&}]{data}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Command_a56cd878bc00bd6ca125b55e63d87528e}
+
+
+Extract an unsigned short data from a C\-O\-R\-B\-A Any object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & The C\-O\-R\-B\-A Any object \\
+\hline
+{\em data} & Reference to the extracted unsigned short data \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Dev\-Failed} & If the Any object does not contanis a data of the waited type. Click {\tt here} to read {\bfseries Dev\-Failed} exception specification \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!extract@{extract}}
+\index{extract@{extract}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{extract}]{\setlength{\rightskip}{0pt plus 5cm}void Tango\-::\-Command\-::extract (
+\begin{DoxyParamCaption}
+\item[{const C\-O\-R\-B\-A\-::\-Any \&}]{in, }
+\item[{Tango\-::\-Dev\-U\-Long \&}]{data}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Command_ad728692954b432d7eacdaaef88b23e34}
+
+
+Extract an unsigned long data from a C\-O\-R\-B\-A Any object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & The C\-O\-R\-B\-A Any object \\
+\hline
+{\em data} & Reference to the extracted unsigned long data \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Dev\-Failed} & If the Any object does not contanis a data of the waited type. Click {\tt here} to read {\bfseries Dev\-Failed} exception specification \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!extract@{extract}}
+\index{extract@{extract}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{extract}]{\setlength{\rightskip}{0pt plus 5cm}void Tango\-::\-Command\-::extract (
+\begin{DoxyParamCaption}
+\item[{const C\-O\-R\-B\-A\-::\-Any \&}]{in, }
+\item[{Tango\-::\-Dev\-U\-Long64 \&}]{data}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Command_aa0cef124e525bf10049e549381d92e2d}
+
+
+Extract an unsigned 64 bits long data from a C\-O\-R\-B\-A Any object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & The C\-O\-R\-B\-A Any object \\
+\hline
+{\em data} & Reference to the extracted unsigned 64 bits long data \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Dev\-Failed} & If the Any object does not contanis a data of the waited type. Click {\tt here} to read {\bfseries Dev\-Failed} exception specification \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!extract@{extract}}
+\index{extract@{extract}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{extract}]{\setlength{\rightskip}{0pt plus 5cm}void Tango\-::\-Command\-::extract (
+\begin{DoxyParamCaption}
+\item[{const C\-O\-R\-B\-A\-::\-Any \&}]{in, }
+\item[{Tango\-::\-Dev\-String \&}]{data}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Command_a422a40ed06a240af34d47ad01c82caee}
+
+
+Extract a string from a C\-O\-R\-B\-A Any object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & The C\-O\-R\-B\-A Any object \\
+\hline
+{\em data} & Reference to the extracted string data \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Dev\-Failed} & If the Any object does not contains a data of the waited type. Click {\tt here} to read {\bfseries Dev\-Failed} exception specification \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!extract@{extract}}
+\index{extract@{extract}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{extract}]{\setlength{\rightskip}{0pt plus 5cm}void Tango\-::\-Command\-::extract (
+\begin{DoxyParamCaption}
+\item[{const C\-O\-R\-B\-A\-::\-Any \&}]{in, }
+\item[{const char $\ast$\&}]{data}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Command_ac7af73b7e2addf8e28a4286b9f454957}
+
+
+Extract a const string from a C\-O\-R\-B\-A Any object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & The C\-O\-R\-B\-A Any object \\
+\hline
+{\em data} & Reference to the extracted string data \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Dev\-Failed} & If the Any object does not contains a data of the waited type. Click {\tt here} to read {\bfseries Dev\-Failed} exception specification \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!extract@{extract}}
+\index{extract@{extract}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{extract}]{\setlength{\rightskip}{0pt plus 5cm}void Tango\-::\-Command\-::extract (
+\begin{DoxyParamCaption}
+\item[{const C\-O\-R\-B\-A\-::\-Any \&}]{in, }
+\item[{const Tango\-::\-Dev\-Var\-Char\-Array $\ast$\&}]{data}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Command_ae350209b019e0e27b72da229b701cfcb}
+
+
+Extract a char array from a C\-O\-R\-B\-A Any object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & The C\-O\-R\-B\-A Any object \\
+\hline
+{\em data} & Reference to the extracted char array \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Dev\-Failed} & If the Any object does not contains a data of the waited type. Click {\tt here} to read {\bfseries Dev\-Failed} exception specification \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!extract@{extract}}
+\index{extract@{extract}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{extract}]{\setlength{\rightskip}{0pt plus 5cm}void Tango\-::\-Command\-::extract (
+\begin{DoxyParamCaption}
+\item[{const C\-O\-R\-B\-A\-::\-Any \&}]{in, }
+\item[{const Tango\-::\-Dev\-Var\-Short\-Array $\ast$\&}]{data}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Command_a3431556a6fc4fa01552f29b82cce7a8f}
+
+
+Extract a short array from a C\-O\-R\-B\-A Any object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & The C\-O\-R\-B\-A Any object \\
+\hline
+{\em data} & Reference to the extracted short array \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Dev\-Failed} & If the Any object does not contains a data of the waited type. Click {\tt here} to read {\bfseries Dev\-Failed} exception specification \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!extract@{extract}}
+\index{extract@{extract}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{extract}]{\setlength{\rightskip}{0pt plus 5cm}void Tango\-::\-Command\-::extract (
+\begin{DoxyParamCaption}
+\item[{const C\-O\-R\-B\-A\-::\-Any \&}]{in, }
+\item[{const Tango\-::\-Dev\-Var\-Long\-Array $\ast$\&}]{data}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Command_a490eab9fa4a80f25a9ee4b032c3cd3a8}
+
+
+Extract a long array from a C\-O\-R\-B\-A Any object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & The C\-O\-R\-B\-A Any object \\
+\hline
+{\em data} & Reference to the extracted long array \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Dev\-Failed} & If the Any object does not contains a data of the waited type. Click {\tt here} to read {\bfseries Dev\-Failed} exception specification \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!extract@{extract}}
+\index{extract@{extract}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{extract}]{\setlength{\rightskip}{0pt plus 5cm}void Tango\-::\-Command\-::extract (
+\begin{DoxyParamCaption}
+\item[{const C\-O\-R\-B\-A\-::\-Any \&}]{in, }
+\item[{const Tango\-::\-Dev\-Var\-Long64\-Array $\ast$\&}]{data}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Command_a5cd810f135a01c1872c03245d2636c1f}
+
+
+Extract a 64 bits long array from a C\-O\-R\-B\-A Any object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & The C\-O\-R\-B\-A Any object \\
+\hline
+{\em data} & Reference to the extracted 64 bits long array \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Dev\-Failed} & If the Any object does not contains a data of the waited type. Click {\tt here} to read {\bfseries Dev\-Failed} exception specification \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!extract@{extract}}
+\index{extract@{extract}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{extract}]{\setlength{\rightskip}{0pt plus 5cm}void Tango\-::\-Command\-::extract (
+\begin{DoxyParamCaption}
+\item[{const C\-O\-R\-B\-A\-::\-Any \&}]{in, }
+\item[{const Tango\-::\-Dev\-Var\-Float\-Array $\ast$\&}]{data}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Command_a71bce528c2210b2599afc8c656af333d}
+
+
+Extract a float array from a C\-O\-R\-B\-A Any object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & The C\-O\-R\-B\-A Any object \\
+\hline
+{\em data} & Reference to the extracted float array \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Dev\-Failed} & If the Any object does not contains a data of the waited type. Click {\tt here} to read {\bfseries Dev\-Failed} exception specification \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!extract@{extract}}
+\index{extract@{extract}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{extract}]{\setlength{\rightskip}{0pt plus 5cm}void Tango\-::\-Command\-::extract (
+\begin{DoxyParamCaption}
+\item[{const C\-O\-R\-B\-A\-::\-Any \&}]{in, }
+\item[{const Tango\-::\-Dev\-Var\-Double\-Array $\ast$\&}]{data}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Command_ab965311c14dafd6dc1d6e52af4378c62}
+
+
+Extract a double array from a C\-O\-R\-B\-A Any object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & The C\-O\-R\-B\-A Any object \\
+\hline
+{\em data} & Reference to the extracted double array \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Dev\-Failed} & If the Any object does not contains a data of the waited type. Click {\tt here} to read {\bfseries Dev\-Failed} exception specification \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!extract@{extract}}
+\index{extract@{extract}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{extract}]{\setlength{\rightskip}{0pt plus 5cm}void Tango\-::\-Command\-::extract (
+\begin{DoxyParamCaption}
+\item[{const C\-O\-R\-B\-A\-::\-Any \&}]{in, }
+\item[{const Tango\-::\-Dev\-Var\-U\-Short\-Array $\ast$\&}]{data}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Command_a1ab6c6ec18eb1cba2fee960c66cd8817}
+
+
+Extract a unsigned short array from a C\-O\-R\-B\-A Any object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & The C\-O\-R\-B\-A Any object \\
+\hline
+{\em data} & Reference to the extracted unsigned char array \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Dev\-Failed} & If the Any object does not contains a data of the waited type. Click {\tt here} to read {\bfseries Dev\-Failed} exception specification \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!extract@{extract}}
+\index{extract@{extract}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{extract}]{\setlength{\rightskip}{0pt plus 5cm}void Tango\-::\-Command\-::extract (
+\begin{DoxyParamCaption}
+\item[{const C\-O\-R\-B\-A\-::\-Any \&}]{in, }
+\item[{const Tango\-::\-Dev\-Var\-U\-Long\-Array $\ast$\&}]{data}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Command_af21e73695aa983ae0ce584008db56208}
+
+
+Extract a unsigned long array from a C\-O\-R\-B\-A Any object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & The C\-O\-R\-B\-A Any object \\
+\hline
+{\em data} & Reference to the extracted unsigned long array \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Dev\-Failed} & If the Any object does not contains a data of the waited type. Click {\tt here} to read {\bfseries Dev\-Failed} exception specification \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!extract@{extract}}
+\index{extract@{extract}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{extract}]{\setlength{\rightskip}{0pt plus 5cm}void Tango\-::\-Command\-::extract (
+\begin{DoxyParamCaption}
+\item[{const C\-O\-R\-B\-A\-::\-Any \&}]{in, }
+\item[{const Tango\-::\-Dev\-Var\-U\-Long64\-Array $\ast$\&}]{data}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Command_a1d4f0266427dc4ef7cfbeaf931771553}
+
+
+Extract a unsigned 64 bits long array from a C\-O\-R\-B\-A Any object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & The C\-O\-R\-B\-A Any object \\
+\hline
+{\em data} & Reference to the extracted unsigned 64 bits long array \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Dev\-Failed} & If the Any object does not contains a data of the waited type. Click {\tt here} to read {\bfseries Dev\-Failed} exception specification \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!extract@{extract}}
+\index{extract@{extract}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{extract}]{\setlength{\rightskip}{0pt plus 5cm}void Tango\-::\-Command\-::extract (
+\begin{DoxyParamCaption}
+\item[{const C\-O\-R\-B\-A\-::\-Any \&}]{in, }
+\item[{const Tango\-::\-Dev\-Var\-String\-Array $\ast$\&}]{data}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Command_a80c2ff23d561a93f06ea7a869734de4a}
+
+
+Extract a string array from a C\-O\-R\-B\-A Any object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & The C\-O\-R\-B\-A Any object \\
+\hline
+{\em data} & Reference to the extracted string array \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Dev\-Failed} & If the Any object does not contains a data of the waited type. Click {\tt here} to read {\bfseries Dev\-Failed} exception specification \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!extract@{extract}}
+\index{extract@{extract}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{extract}]{\setlength{\rightskip}{0pt plus 5cm}void Tango\-::\-Command\-::extract (
+\begin{DoxyParamCaption}
+\item[{const C\-O\-R\-B\-A\-::\-Any \&}]{in, }
+\item[{const Tango\-::\-Dev\-Var\-Long\-String\-Array $\ast$\&}]{data}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Command_a048a55e9d37d70f3e1120b37c730baab}
+
+
+Extract a Dev\-Var\-Long\-String\-Array data from a C\-O\-R\-B\-A Any object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & The C\-O\-R\-B\-A Any object \\
+\hline
+{\em data} & Reference to the extracted Dev\-Var\-Long\-String\-Array data \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Dev\-Failed} & If the Any object does not contains a data of the waited type. Click {\tt here} to read {\bfseries Dev\-Failed} exception specification \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!extract@{extract}}
+\index{extract@{extract}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{extract}]{\setlength{\rightskip}{0pt plus 5cm}void Tango\-::\-Command\-::extract (
+\begin{DoxyParamCaption}
+\item[{const C\-O\-R\-B\-A\-::\-Any \&}]{in, }
+\item[{const Tango\-::\-Dev\-Var\-Double\-String\-Array $\ast$\&}]{data}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Command_ab1ee52c490c42f9a0727d778892bdc3c}
+
+
+Extract a Dev\-Var\-Double\-String\-Array data from a C\-O\-R\-B\-A Any object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & The C\-O\-R\-B\-A Any object \\
+\hline
+{\em data} & Reference to the extracted Dev\-Var\-Double\-String\-Array data \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Dev\-Failed} & If the Any object does not contains a data of the waited type. Click {\tt here} to read {\bfseries Dev\-Failed} exception specification \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!extract@{extract}}
+\index{extract@{extract}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{extract}]{\setlength{\rightskip}{0pt plus 5cm}void Tango\-::\-Command\-::extract (
+\begin{DoxyParamCaption}
+\item[{const C\-O\-R\-B\-A\-::\-Any \&}]{in, }
+\item[{Tango\-::\-Dev\-State \&}]{data}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Command_acb2054505f53b0b638b3aab737289e8d}
+
+
+Extract a \doxyref{Tango}{p.}{de/ddf/namespaceTango} device state data from a C\-O\-R\-B\-A Any object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & The C\-O\-R\-B\-A Any object \\
+\hline
+{\em data} & Reference to the extracted device state data \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Dev\-Failed} & If the Any object does not contains a data of the waited type. Click {\tt here} to read {\bfseries Dev\-Failed} exception specification \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!extract@{extract}}
+\index{extract@{extract}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{extract}]{\setlength{\rightskip}{0pt plus 5cm}void Tango\-::\-Command\-::extract (
+\begin{DoxyParamCaption}
+\item[{const C\-O\-R\-B\-A\-::\-Any \&}]{in, }
+\item[{const Tango\-::\-Dev\-Encoded $\ast$\&}]{data}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Command_a1cc83923947f3305ddcc4980767121ea}
+
+
+Extract a \doxyref{Tango}{p.}{de/ddf/namespaceTango} Dev\-Encoded data from a C\-O\-R\-B\-A Any object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & The C\-O\-R\-B\-A Any object \\
+\hline
+{\em data} & Reference to the extracted Dev\-Encoded data \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Dev\-Failed} & If the Any object does not contains a data of the waited type. Click {\tt here} to read {\bfseries Dev\-Failed} exception specification \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!get\-\_\-disp\-\_\-level@{get\-\_\-disp\-\_\-level}}
+\index{get\-\_\-disp\-\_\-level@{get\-\_\-disp\-\_\-level}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{get\-\_\-disp\-\_\-level}]{\setlength{\rightskip}{0pt plus 5cm}Tango\-::\-Disp\-Level Tango\-::\-Command\-::get\-\_\-disp\-\_\-level (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTango_1_1Command_a943bac0451ccabcb2e093911a6cf852f}
+
+
+Return the command display level. 
+
+\begin{DoxyReturn}{Returns}
+The command display level 
+\end{DoxyReturn}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!get\-\_\-in\-\_\-type@{get\-\_\-in\-\_\-type}}
+\index{get\-\_\-in\-\_\-type@{get\-\_\-in\-\_\-type}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{get\-\_\-in\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Tango\-::\-Cmd\-Arg\-Type} Tango\-::\-Command\-::get\-\_\-in\-\_\-type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTango_1_1Command_a66cba1d14a421998571b5d871e31c155}
+
+
+Return the input parameter type. 
+
+\begin{DoxyReturn}{Returns}
+The input parameter type 
+\end{DoxyReturn}
+
+
+References in\-\_\-type.
+
+\index{Tango\-::\-Command@{Tango\-::\-Command}!get\-\_\-in\-\_\-type\-\_\-desc@{get\-\_\-in\-\_\-type\-\_\-desc}}
+\index{get\-\_\-in\-\_\-type\-\_\-desc@{get\-\_\-in\-\_\-type\-\_\-desc}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{get\-\_\-in\-\_\-type\-\_\-desc}]{\setlength{\rightskip}{0pt plus 5cm}string\& Tango\-::\-Command\-::get\-\_\-in\-\_\-type\-\_\-desc (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTango_1_1Command_ae36c1e09f7be85f9bf88fbbf68ca436e}
+
+
+Return the input parameter description. 
+
+\begin{DoxyReturn}{Returns}
+The input parameter description 
+\end{DoxyReturn}
+
+
+References in\-\_\-type\-\_\-desc.
+
+\index{Tango\-::\-Command@{Tango\-::\-Command}!get\-\_\-lower\-\_\-name@{get\-\_\-lower\-\_\-name}}
+\index{get\-\_\-lower\-\_\-name@{get\-\_\-lower\-\_\-name}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{get\-\_\-lower\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}string\& Tango\-::\-Command\-::get\-\_\-lower\-\_\-name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTango_1_1Command_a92e8a62375817d7e812132e49ee27dc3}
+
+
+Return the command name in lower case letters. 
+
+\begin{DoxyReturn}{Returns}
+The command name 
+\end{DoxyReturn}
+
+
+References lower\-\_\-name.
+
+\index{Tango\-::\-Command@{Tango\-::\-Command}!get\-\_\-name@{get\-\_\-name}}
+\index{get\-\_\-name@{get\-\_\-name}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{get\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}string\& Tango\-::\-Command\-::get\-\_\-name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTango_1_1Command_aa6bfd85b7ee91b2c492fce5938fdaebe}
+
+
+Return the command name. 
+
+\begin{DoxyReturn}{Returns}
+The command name 
+\end{DoxyReturn}
+
+
+References name.
+
+\index{Tango\-::\-Command@{Tango\-::\-Command}!get\-\_\-out\-\_\-type@{get\-\_\-out\-\_\-type}}
+\index{get\-\_\-out\-\_\-type@{get\-\_\-out\-\_\-type}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{get\-\_\-out\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Tango\-::\-Cmd\-Arg\-Type} Tango\-::\-Command\-::get\-\_\-out\-\_\-type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTango_1_1Command_ad2b89784882a915431128712973939ee}
+
+
+Return the output parameter type. 
+
+\begin{DoxyReturn}{Returns}
+The output parameter type 
+\end{DoxyReturn}
+
+
+References out\-\_\-type.
+
+\index{Tango\-::\-Command@{Tango\-::\-Command}!get\-\_\-out\-\_\-type\-\_\-desc@{get\-\_\-out\-\_\-type\-\_\-desc}}
+\index{get\-\_\-out\-\_\-type\-\_\-desc@{get\-\_\-out\-\_\-type\-\_\-desc}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{get\-\_\-out\-\_\-type\-\_\-desc}]{\setlength{\rightskip}{0pt plus 5cm}string\& Tango\-::\-Command\-::get\-\_\-out\-\_\-type\-\_\-desc (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTango_1_1Command_a32334cc5b6977f362a6ea50da4924653}
+
+
+Return the output parameter description. 
+
+\begin{DoxyReturn}{Returns}
+The output parameter description 
+\end{DoxyReturn}
+
+
+References out\-\_\-type\-\_\-desc.
+
+\index{Tango\-::\-Command@{Tango\-::\-Command}!get\-\_\-polling\-\_\-period@{get\-\_\-polling\-\_\-period}}
+\index{get\-\_\-polling\-\_\-period@{get\-\_\-polling\-\_\-period}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{get\-\_\-polling\-\_\-period}]{\setlength{\rightskip}{0pt plus 5cm}long Tango\-::\-Command\-::get\-\_\-polling\-\_\-period (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTango_1_1Command_a1e60dcb1a8a89eb7e6596a2f0ecd87a7}
+
+
+Get the command polling period. 
+
+\begin{DoxyReturn}{Returns}
+The command polling period (in m\-S) 
+\end{DoxyReturn}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!init\-\_\-types@{init\-\_\-types}}
+\index{init\-\_\-types@{init\-\_\-types}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{init\-\_\-types}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Tango\-::\-Command\-::init\-\_\-types (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classTango_1_1Command_a9cd12d4e02a35bfdb896a7cc89fc7eb0}
+
+
+Init command parameters type. 
+
+This method is used only for command implemented using the \doxyref{Tango}{p.}{de/ddf/namespaceTango} template command model. In this base class, it does nothing and is re-\/define in sub-\/classes. 
+
+Reimplemented in {\bf Tango\-::\-Templ\-Command\-Out$<$ O\-U\-T\-A\-R\-G $>$} \doxyref{}{p.}{d3/d87/classTango_1_1TemplCommandOut_a1b5ec68cc6e225868dc3d56186eb7605}, {\bf Tango\-::\-Templ\-Command\-In$<$ I\-N\-A\-R\-G $>$} \doxyref{}{p.}{d2/d50/classTango_1_1TemplCommandIn_af3e93eb4babf25ea9552dc0e8f0789c3}, and {\bf Tango\-::\-Templ\-Command\-In\-Out$<$ I\-N\-A\-R\-G, O\-U\-T\-A\-R\-G $>$} \doxyref{}{p.}{db/dbb/classTango_1_1TemplCommandInOut_a9d173fb2b7578838e94f9a94d6d98757}.
+
+\index{Tango\-::\-Command@{Tango\-::\-Command}!insert@{insert}}
+\index{insert@{insert}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{insert}]{\setlength{\rightskip}{0pt plus 5cm}C\-O\-R\-B\-A\-::\-Any$\ast$ Tango\-::\-Command\-::insert (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Command_a665614cc771db2aeeef0f5a0ac1a1903}
+
+
+Create an empty C\-O\-R\-B\-A Any object. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Dev\-Failed} & If the Any object creation failed. Click {\tt here} to read {\bfseries Dev\-Failed} exception specification \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!insert@{insert}}
+\index{insert@{insert}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{insert}]{\setlength{\rightskip}{0pt plus 5cm}C\-O\-R\-B\-A\-::\-Any$\ast$ Tango\-::\-Command\-::insert (
+\begin{DoxyParamCaption}
+\item[{Tango\-::\-Dev\-Boolean}]{data}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Command_a7c8f1595a81d800beb9845377716c29a}
+
+
+Create a C\-O\-R\-B\-A Any object and insert a Tango\-::\-Dev\-Boolean data in it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The data to be inserted into the Any object \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Dev\-Failed} & If the Any object creation failed. Click {\tt here} to read {\bfseries Dev\-Failed} exception specification \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!insert@{insert}}
+\index{insert@{insert}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{insert}]{\setlength{\rightskip}{0pt plus 5cm}C\-O\-R\-B\-A\-::\-Any$\ast$ Tango\-::\-Command\-::insert (
+\begin{DoxyParamCaption}
+\item[{Tango\-::\-Dev\-Short}]{data}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Command_ab515b6bc55aedf12258d5487589f7eb6}
+
+
+Create a C\-O\-R\-B\-A Any object and insert a Tango\-::\-Dev\-Short data in it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The data to be inserted into the Any object \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Dev\-Failed} & If the Any object creation failed. Click {\tt here} to read {\bfseries Dev\-Failed} exception specification \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!insert@{insert}}
+\index{insert@{insert}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{insert}]{\setlength{\rightskip}{0pt plus 5cm}C\-O\-R\-B\-A\-::\-Any$\ast$ Tango\-::\-Command\-::insert (
+\begin{DoxyParamCaption}
+\item[{Tango\-::\-Dev\-Long}]{data}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Command_ac7d5016d95647f8a68fef9e15bffbe90}
+
+
+Create a C\-O\-R\-B\-A Any object and insert a Tango\-::\-Dev\-Long data in it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The data to be inserted into the Any object \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Dev\-Failed} & If the Any object creation failed. Click {\tt here} to read {\bfseries Dev\-Failed} exception specification \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!insert@{insert}}
+\index{insert@{insert}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{insert}]{\setlength{\rightskip}{0pt plus 5cm}C\-O\-R\-B\-A\-::\-Any$\ast$ Tango\-::\-Command\-::insert (
+\begin{DoxyParamCaption}
+\item[{Tango\-::\-Dev\-Long64}]{data}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Command_ac1488aec40ba1e78d7cd1b3dc426f9b6}
+
+
+Create a C\-O\-R\-B\-A Any object and insert a Tango\-::\-Dev\-Long64 data in it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The data to be inserted into the Any object \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Dev\-Failed} & If the Any object creation failed. Click {\tt here} to read {\bfseries Dev\-Failed} exception specification \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!insert@{insert}}
+\index{insert@{insert}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{insert}]{\setlength{\rightskip}{0pt plus 5cm}C\-O\-R\-B\-A\-::\-Any$\ast$ Tango\-::\-Command\-::insert (
+\begin{DoxyParamCaption}
+\item[{Tango\-::\-Dev\-Float}]{data}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Command_a5f3653dc4a432fea2fb66c7e7dc2e136}
+
+
+Create a C\-O\-R\-B\-A Any object and insert a Tango\-::\-Dev\-Float data in it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The data to be inserted into the Any object \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Dev\-Failed} & If the Any object creation failed. Click {\tt here} to read {\bfseries Dev\-Failed} exception specification \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!insert@{insert}}
+\index{insert@{insert}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{insert}]{\setlength{\rightskip}{0pt plus 5cm}C\-O\-R\-B\-A\-::\-Any$\ast$ Tango\-::\-Command\-::insert (
+\begin{DoxyParamCaption}
+\item[{Tango\-::\-Dev\-Double}]{data}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Command_aa7b766f514c72b9da575685673ceb77c}
+
+
+Create a C\-O\-R\-B\-A Any object and insert a Tango\-::\-Dev\-Double data in it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The data to be inserted into the Any object \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Dev\-Failed} & If the Any object creation failed. Click {\tt here} to read {\bfseries Dev\-Failed} exception specification \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!insert@{insert}}
+\index{insert@{insert}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{insert}]{\setlength{\rightskip}{0pt plus 5cm}C\-O\-R\-B\-A\-::\-Any$\ast$ Tango\-::\-Command\-::insert (
+\begin{DoxyParamCaption}
+\item[{Tango\-::\-Dev\-U\-Short}]{data}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Command_a3b7333363e69cd16b89fdfcdd54cab3c}
+
+
+Create a C\-O\-R\-B\-A Any object and insert a Tango\-::\-Dev\-U\-Short data in it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The data to be inserted into the Any object \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Dev\-Failed} & If the Any object creation failed. Click {\tt here} to read {\bfseries Dev\-Failed} exception specification \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!insert@{insert}}
+\index{insert@{insert}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{insert}]{\setlength{\rightskip}{0pt plus 5cm}C\-O\-R\-B\-A\-::\-Any$\ast$ Tango\-::\-Command\-::insert (
+\begin{DoxyParamCaption}
+\item[{Tango\-::\-Dev\-U\-Long}]{data}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Command_a8a9a2a06e2afcf9b1824bbe2ba2687ff}
+
+
+Create a C\-O\-R\-B\-A Any object and insert a Tango\-::\-Dev\-U\-Long data in it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The data to be inserted into the Any object \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Dev\-Failed} & If the Any object creation failed. Click {\tt here} to read {\bfseries Dev\-Failed} exception specification \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!insert@{insert}}
+\index{insert@{insert}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{insert}]{\setlength{\rightskip}{0pt plus 5cm}C\-O\-R\-B\-A\-::\-Any$\ast$ Tango\-::\-Command\-::insert (
+\begin{DoxyParamCaption}
+\item[{Tango\-::\-Dev\-U\-Long64}]{data}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Command_a2a2c6e4f5434446cf3a1aec4412b7b0f}
+
+
+Create a C\-O\-R\-B\-A Any object and insert a Tango\-::\-Dev\-U\-Long64 data in it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The data to be inserted into the Any object \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Dev\-Failed} & If the Any object creation failed. Click {\tt here} to read {\bfseries Dev\-Failed} exception specification \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!insert@{insert}}
+\index{insert@{insert}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{insert}]{\setlength{\rightskip}{0pt plus 5cm}C\-O\-R\-B\-A\-::\-Any$\ast$ Tango\-::\-Command\-::insert (
+\begin{DoxyParamCaption}
+\item[{Tango\-::\-Dev\-String}]{data}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Command_a06b833d3639d8f24d8f5cfb7480c94bb}
+
+
+Create a C\-O\-R\-B\-A Any object and insert a Tango\-::\-Dev\-String data in it. 
+
+This method will also de-\/allocate the string passed as parameter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The string to be inserted into the Any object \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Dev\-Failed} & If the Any object creation failed. Click {\tt here} to read {\bfseries Dev\-Failed} exception specification \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!insert@{insert}}
+\index{insert@{insert}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{insert}]{\setlength{\rightskip}{0pt plus 5cm}C\-O\-R\-B\-A\-::\-Any$\ast$ Tango\-::\-Command\-::insert (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{data}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Command_a6c16c497b7eef06ed4ff880ce02d5894}
+
+
+Create a C\-O\-R\-B\-A Any object and insert a Tango\-::\-Dev\-String data in it. 
+
+Te parameter type is char $\ast$ and not Tango\-::\-Dev\-String because the const C++ modifier applied to a Tango\-::\-Dev\-String make the pointer constant and not the pointed to characters to be constant.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The string to be inserted into the Any object \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Dev\-Failed} & If the Any object creation failed. Click {\tt here} to read {\bfseries Dev\-Failed} exception specification \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!insert@{insert}}
+\index{insert@{insert}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{insert}]{\setlength{\rightskip}{0pt plus 5cm}C\-O\-R\-B\-A\-::\-Any$\ast$ Tango\-::\-Command\-::insert (
+\begin{DoxyParamCaption}
+\item[{Tango\-::\-Dev\-Var\-Char\-Array \&}]{data}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Command_a4c5c0bc9b364c5d2f377143597aec833}
+
+
+Create a C\-O\-R\-B\-A Any object and insert a Tango\-::\-Dev\-Var\-Char\-Array data in it. 
+
+This method will do a {\bfseries deep copy} of the array into the Any object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The array to be inserted into the Any object \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Dev\-Failed} & If the Any object creation failed. Click {\tt here} to read {\bfseries Dev\-Failed} exception specification \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!insert@{insert}}
+\index{insert@{insert}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{insert}]{\setlength{\rightskip}{0pt plus 5cm}C\-O\-R\-B\-A\-::\-Any$\ast$ Tango\-::\-Command\-::insert (
+\begin{DoxyParamCaption}
+\item[{Tango\-::\-Dev\-Var\-Char\-Array $\ast$}]{data}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Command_aa7457591f2ef2b110535fc8e9bff81aa}
+
+
+Create a C\-O\-R\-B\-A Any object and insert a Tango\-::\-Dev\-Var\-Char\-Array data in it. 
+
+This method {\bfseries consumes} the memory used by the array. When the C\-O\-R\-B\-A layer will destroy the Any object, the memory alloacted for the array will also be freed. This is the recommended method to insert Tango\-::\-Dev\-Var\-Char\-Array data type into a C\-O\-R\-B\-A Any object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The array to be inserted into the Any object \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Dev\-Failed} & If the Any object creation failed. Click {\tt here} to read {\bfseries Dev\-Failed} exception specification \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!insert@{insert}}
+\index{insert@{insert}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{insert}]{\setlength{\rightskip}{0pt plus 5cm}C\-O\-R\-B\-A\-::\-Any$\ast$ Tango\-::\-Command\-::insert (
+\begin{DoxyParamCaption}
+\item[{Tango\-::\-Dev\-Var\-Short\-Array \&}]{data}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Command_a42fcd1d6068dee4f2640be160afe8af6}
+
+
+Create a C\-O\-R\-B\-A Any object and insert a Tango\-::\-Dev\-Var\-Short\-Array data in it. 
+
+This method will do a {\bfseries deep copy} of the array into the Any object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The array to be inserted into the Any object \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Dev\-Failed} & If the Any object creation failed. Click {\tt here} to read {\bfseries Dev\-Failed} exception specification \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!insert@{insert}}
+\index{insert@{insert}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{insert}]{\setlength{\rightskip}{0pt plus 5cm}C\-O\-R\-B\-A\-::\-Any$\ast$ Tango\-::\-Command\-::insert (
+\begin{DoxyParamCaption}
+\item[{Tango\-::\-Dev\-Var\-Short\-Array $\ast$}]{data}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Command_a37ddcc3509f439e9994d985310075a69}
+
+
+Create a C\-O\-R\-B\-A Any object and insert a Tango\-::\-Dev\-Var\-Short\-Array data in it. 
+
+This method {\bfseries consumes} the memory used by the array. When the C\-O\-R\-B\-A layer will destroy the Any object, the memory alloacted for the array will also be freed. This is the recommended method to insert Tango\-::\-Dev\-Var\-Short\-Array data type into a C\-O\-R\-B\-A Any object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The array to be inserted into the Any object \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Dev\-Failed} & If the Any object creation failed. Click {\tt here} to read {\bfseries Dev\-Failed} exception specification \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!insert@{insert}}
+\index{insert@{insert}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{insert}]{\setlength{\rightskip}{0pt plus 5cm}C\-O\-R\-B\-A\-::\-Any$\ast$ Tango\-::\-Command\-::insert (
+\begin{DoxyParamCaption}
+\item[{Tango\-::\-Dev\-Var\-Long\-Array \&}]{data}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Command_a7d8c4de9c8010994f58d0571b4bf9863}
+
+
+Create a C\-O\-R\-B\-A Any object and insert a Tango\-::\-Dev\-Var\-Long\-Array data in it. 
+
+This method will do a {\bfseries deep copy} of the array into the Any object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The array to be inserted into the Any object \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Dev\-Failed} & If the Any object creation failed. Click {\tt here} to read {\bfseries Dev\-Failed} exception specification \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!insert@{insert}}
+\index{insert@{insert}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{insert}]{\setlength{\rightskip}{0pt plus 5cm}C\-O\-R\-B\-A\-::\-Any$\ast$ Tango\-::\-Command\-::insert (
+\begin{DoxyParamCaption}
+\item[{Tango\-::\-Dev\-Var\-Long\-Array $\ast$}]{data}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Command_a1f1ddff524fd99c2878062a4c3f451ea}
+
+
+Create a C\-O\-R\-B\-A Any object and insert a Tango\-::\-Dev\-Var\-Long\-Array data in it. 
+
+This method {\bfseries consumes} the memory used by the array. When the C\-O\-R\-B\-A layer will destroy the Any object, the memory alloacted for the array will also be freed. This is the recommended method to insert Tango\-::\-Dev\-Var\-Long\-Array data type into a C\-O\-R\-B\-A Any object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The array to be inserted into the Any object \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Dev\-Failed} & If the Any object creation failed. Click {\tt here} to read {\bfseries Dev\-Failed} exception specification \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!insert@{insert}}
+\index{insert@{insert}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{insert}]{\setlength{\rightskip}{0pt plus 5cm}C\-O\-R\-B\-A\-::\-Any$\ast$ Tango\-::\-Command\-::insert (
+\begin{DoxyParamCaption}
+\item[{Tango\-::\-Dev\-Var\-Long64\-Array \&}]{data}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Command_a1961e3fa4dd9f3b4034b01b896936b01}
+
+
+Create a C\-O\-R\-B\-A Any object and insert a Tango\-::\-Dev\-Var\-Long64\-Array data in it. 
+
+This method will do a {\bfseries deep copy} of the array into the Any object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The array to be inserted into the Any object \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Dev\-Failed} & If the Any object creation failed. Click {\tt here} to read {\bfseries Dev\-Failed} exception specification \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!insert@{insert}}
+\index{insert@{insert}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{insert}]{\setlength{\rightskip}{0pt plus 5cm}C\-O\-R\-B\-A\-::\-Any$\ast$ Tango\-::\-Command\-::insert (
+\begin{DoxyParamCaption}
+\item[{Tango\-::\-Dev\-Var\-Long64\-Array $\ast$}]{data}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Command_aaebcc600e513cc5370ee2c827c401da1}
+
+
+Create a C\-O\-R\-B\-A Any object and insert a Tango\-::\-Dev\-Var\-Long64\-Array data in it. 
+
+This method {\bfseries consumes} the memory used by the array. When the C\-O\-R\-B\-A layer will destroy the Any object, the memory alloacted for the array will also be freed. This is the recommended method to insert Tango\-::\-Dev\-Var\-Long\-Array data type into a C\-O\-R\-B\-A Any object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The array to be inserted into the Any object \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Dev\-Failed} & If the Any object creation failed. Click {\tt here} to read {\bfseries Dev\-Failed} exception specification \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!insert@{insert}}
+\index{insert@{insert}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{insert}]{\setlength{\rightskip}{0pt plus 5cm}C\-O\-R\-B\-A\-::\-Any$\ast$ Tango\-::\-Command\-::insert (
+\begin{DoxyParamCaption}
+\item[{Tango\-::\-Dev\-Var\-Float\-Array \&}]{data}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Command_acb1861ed6136daedc511ad7fac6cbd47}
+
+
+Create a C\-O\-R\-B\-A Any object and insert a Tango\-::\-Dev\-Var\-Float\-Array data in it. 
+
+This method will do a {\bfseries deep copy} of the array into the Any object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The array to be inserted into the Any object \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Dev\-Failed} & If the Any object creation failed. Click {\tt here} to read {\bfseries Dev\-Failed} exception specification \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!insert@{insert}}
+\index{insert@{insert}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{insert}]{\setlength{\rightskip}{0pt plus 5cm}C\-O\-R\-B\-A\-::\-Any$\ast$ Tango\-::\-Command\-::insert (
+\begin{DoxyParamCaption}
+\item[{Tango\-::\-Dev\-Var\-Float\-Array $\ast$}]{data}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Command_adb44f35e4d13c44f3ca855c8d4ca82fd}
+
+
+Create a C\-O\-R\-B\-A Any object and insert a Tango\-::\-Dev\-Var\-Float\-Array data in it. 
+
+This method {\bfseries consumes} the memory used by the array. When the C\-O\-R\-B\-A layer will destroy the Any object, the memory alloacted for the array will also be freed. This is the recommended method to insert Tango\-::\-Dev\-Var\-Float\-Array data type into a C\-O\-R\-B\-A Any object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The array to be inserted into the Any object \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Dev\-Failed} & If the Any object creation failed. Click {\tt here} to read {\bfseries Dev\-Failed} exception specification \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!insert@{insert}}
+\index{insert@{insert}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{insert}]{\setlength{\rightskip}{0pt plus 5cm}C\-O\-R\-B\-A\-::\-Any$\ast$ Tango\-::\-Command\-::insert (
+\begin{DoxyParamCaption}
+\item[{Tango\-::\-Dev\-Var\-Double\-Array \&}]{data}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Command_a93be182d51d3cf48c1bde5effe7e75a8}
+
+
+Create a C\-O\-R\-B\-A Any object and insert a Tango\-::\-Dev\-Var\-Double\-Array data in it. 
+
+This method will do a {\bfseries deep copy} of the array into the Any object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The array to be inserted into the Any object \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Dev\-Failed} & If the Any object creation failed. Click {\tt here} to read {\bfseries Dev\-Failed} exception specification \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!insert@{insert}}
+\index{insert@{insert}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{insert}]{\setlength{\rightskip}{0pt plus 5cm}C\-O\-R\-B\-A\-::\-Any$\ast$ Tango\-::\-Command\-::insert (
+\begin{DoxyParamCaption}
+\item[{Tango\-::\-Dev\-Var\-Double\-Array $\ast$}]{data}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Command_a6ed55e2aa4d58c6cdd79e610a1364238}
+
+
+Create a C\-O\-R\-B\-A C\-O\-R\-B\-A\-::\-Any object and insert a Tango\-::\-Dev\-Var\-Double\-Array data in it. 
+
+This method {\bfseries consumes} the memory used by the array. When the C\-O\-R\-B\-A layer will destroy the Any object, the memory alloacted for the array will also be freed. This is the recommended method to insert Tango\-::\-Dev\-Var\-Double\-Array data type into a C\-O\-R\-B\-A Any object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The array to be inserted into the Any object \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Dev\-Failed} & If the Any object creation failed. Click {\tt here} to read {\bfseries Dev\-Failed} exception specification \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!insert@{insert}}
+\index{insert@{insert}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{insert}]{\setlength{\rightskip}{0pt plus 5cm}C\-O\-R\-B\-A\-::\-Any$\ast$ Tango\-::\-Command\-::insert (
+\begin{DoxyParamCaption}
+\item[{Tango\-::\-Dev\-Var\-U\-Short\-Array \&}]{data}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Command_a36a523ad2ca65bf8d60f571fcc465f0b}
+
+
+Create a C\-O\-R\-B\-A Any object and insert a Tango\-::\-Dev\-Var\-U\-Short\-Array data in it. 
+
+This method will do a {\bfseries deep copy} of the array into the Any object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The array to be inserted into the Any object \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Dev\-Failed} & If the Any object creation failed. Click {\tt here} to read {\bfseries Dev\-Failed} exception specification \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!insert@{insert}}
+\index{insert@{insert}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{insert}]{\setlength{\rightskip}{0pt plus 5cm}C\-O\-R\-B\-A\-::\-Any$\ast$ Tango\-::\-Command\-::insert (
+\begin{DoxyParamCaption}
+\item[{Tango\-::\-Dev\-Var\-U\-Short\-Array $\ast$}]{data}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Command_a2ffc06bc6da1dc9021bdf736a9e48312}
+
+
+Create a C\-O\-R\-B\-A Any object and insert a Tango\-::\-Dev\-Var\-U\-Short\-Array data in it. 
+
+This method {\bfseries consumes} the memory used by the array. When the C\-O\-R\-B\-A layer will destroy the Any object, the memory alloacted for the array will also be freed. This is the recommended method to insert Tango\-::\-Dev\-Var\-U\-Short\-Array data type into a C\-O\-R\-B\-A Any object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The array to be inserted into the Any object \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Dev\-Failed} & If the Any object creation failed. Click {\tt here} to read {\bfseries Dev\-Failed} exception specification \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!insert@{insert}}
+\index{insert@{insert}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{insert}]{\setlength{\rightskip}{0pt plus 5cm}C\-O\-R\-B\-A\-::\-Any$\ast$ Tango\-::\-Command\-::insert (
+\begin{DoxyParamCaption}
+\item[{Tango\-::\-Dev\-Var\-U\-Long\-Array \&}]{data}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Command_afee3e64ef79c31468ee691bec989e02f}
+
+
+Create a C\-O\-R\-B\-A Any object and insert a Tango\-::\-Dev\-Var\-U\-Long\-Array data in it. 
+
+This method will do a {\bfseries deep copy} of the array into the Any object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The array to be inserted into the Any object \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Dev\-Failed} & If the Any object creation failed. Click {\tt here} to read {\bfseries Dev\-Failed} exception specification \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!insert@{insert}}
+\index{insert@{insert}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{insert}]{\setlength{\rightskip}{0pt plus 5cm}C\-O\-R\-B\-A\-::\-Any$\ast$ Tango\-::\-Command\-::insert (
+\begin{DoxyParamCaption}
+\item[{Tango\-::\-Dev\-Var\-U\-Long\-Array $\ast$}]{data}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Command_a2825c793c7d4fb598ab4d4161d332943}
+
+
+Create a C\-O\-R\-B\-A Any object and insert a Tango\-::\-Dev\-Var\-U\-Long\-Array data in it. 
+
+This method {\bfseries consumes} the memory used by the array. When the C\-O\-R\-B\-A layer will destroy the Any object, the memory alloacted for the array will also be freed. This is the recommended method to insert Tango\-::\-Dev\-Var\-U\-Long\-Array data type into a C\-O\-R\-B\-A Any object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The array to be inserted into the Any object \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Dev\-Failed} & If the Any object creation failed. Click {\tt here} to read {\bfseries Dev\-Failed} exception specification \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!insert@{insert}}
+\index{insert@{insert}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{insert}]{\setlength{\rightskip}{0pt plus 5cm}C\-O\-R\-B\-A\-::\-Any$\ast$ Tango\-::\-Command\-::insert (
+\begin{DoxyParamCaption}
+\item[{Tango\-::\-Dev\-Var\-U\-Long64\-Array \&}]{data}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Command_ad18d9ad16a986040425e13c3f96e64dd}
+
+
+Create a C\-O\-R\-B\-A Any object and insert a Tango\-::\-Dev\-Var\-U\-Long64\-Array data in it. 
+
+This method will do a {\bfseries deep copy} of the array into the Any object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The array to be inserted into the Any object \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Dev\-Failed} & If the Any object creation failed. Click {\tt here} to read {\bfseries Dev\-Failed} exception specification \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!insert@{insert}}
+\index{insert@{insert}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{insert}]{\setlength{\rightskip}{0pt plus 5cm}C\-O\-R\-B\-A\-::\-Any$\ast$ Tango\-::\-Command\-::insert (
+\begin{DoxyParamCaption}
+\item[{Tango\-::\-Dev\-Var\-U\-Long64\-Array $\ast$}]{data}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Command_a5905a365cafebb13ff514c0526ab1a35}
+
+
+Create a C\-O\-R\-B\-A Any object and insert a Tango\-::\-Dev\-Var\-U\-Long64\-Array data in it. 
+
+This method {\bfseries consumes} the memory used by the array. When the C\-O\-R\-B\-A layer will destroy the Any object, the memory alloacted for the array will also be freed. This is the recommended method to insert Tango\-::\-Dev\-Var\-U\-Long\-Array data type into a C\-O\-R\-B\-A Any object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The array to be inserted into the Any object \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Dev\-Failed} & If the Any object creation failed. Click {\tt here} to read {\bfseries Dev\-Failed} exception specification \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!insert@{insert}}
+\index{insert@{insert}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{insert}]{\setlength{\rightskip}{0pt plus 5cm}C\-O\-R\-B\-A\-::\-Any$\ast$ Tango\-::\-Command\-::insert (
+\begin{DoxyParamCaption}
+\item[{Tango\-::\-Dev\-Var\-String\-Array \&}]{data}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Command_a759ae1a8f289ea77001650e0dd9dc73b}
+
+
+Create a C\-O\-R\-B\-A Any object and insert a Tango\-::\-Dev\-Var\-String\-Array data in it. 
+
+This method will do a {\bfseries deep copy} of the array into the Any object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The array to be inserted into the Any object \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Dev\-Failed} & If the Any object creation failed. Click {\tt here} to read {\bfseries Dev\-Failed} exception specification \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!insert@{insert}}
+\index{insert@{insert}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{insert}]{\setlength{\rightskip}{0pt plus 5cm}C\-O\-R\-B\-A\-::\-Any$\ast$ Tango\-::\-Command\-::insert (
+\begin{DoxyParamCaption}
+\item[{Tango\-::\-Dev\-Var\-String\-Array $\ast$}]{data}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Command_a14366c96e3d99893fb8daac9fb6639c1}
+
+
+Create a C\-O\-R\-B\-A Any object and insert a Tango\-::\-Dev\-Var\-String\-Array data in it. 
+
+This method {\bfseries consumes} the memory used by the array. When the C\-O\-R\-B\-A layer will destroy the Any object, the memory alloacted for the array will also be freed. This is the recommended method to insert Tango\-::\-Dev\-Var\-String\-Array data type into a C\-O\-R\-B\-A Any object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The array to be inserted into the Any object \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Dev\-Failed} & If the Any object creation failed. Click {\tt here} to read {\bfseries Dev\-Failed} exception specification \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!insert@{insert}}
+\index{insert@{insert}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{insert}]{\setlength{\rightskip}{0pt plus 5cm}C\-O\-R\-B\-A\-::\-Any$\ast$ Tango\-::\-Command\-::insert (
+\begin{DoxyParamCaption}
+\item[{Tango\-::\-Dev\-Var\-Long\-String\-Array \&}]{data}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Command_a72142fc4ebb29ff2b176cbbdae61034a}
+
+
+Create a C\-O\-R\-B\-A Any object and insert a Tango\-::\-Dev\-Var\-Long\-String\-Array data in it. 
+
+This method will do a {\bfseries deep copy} of the array into the Any object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The array to be inserted into the Any object \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Dev\-Failed} & If the Any object creation failed. Click {\tt here} to read {\bfseries Dev\-Failed} exception specification \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!insert@{insert}}
+\index{insert@{insert}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{insert}]{\setlength{\rightskip}{0pt plus 5cm}C\-O\-R\-B\-A\-::\-Any$\ast$ Tango\-::\-Command\-::insert (
+\begin{DoxyParamCaption}
+\item[{Tango\-::\-Dev\-Var\-Long\-String\-Array $\ast$}]{data}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Command_a2678ebf879cf014aa55fff6f2bdc10bb}
+
+
+Create a C\-O\-R\-B\-A Any object and insert a Tango\-::\-Dev\-Var\-Long\-String\-Array data in it. 
+
+This method {\bfseries consumes} the memory used by the array. When the C\-O\-R\-B\-A layer will destroy the Any object, the memory alloacted for the array will also be freed. This is the recommended method to insert Tango\-::\-Dev\-Var\-Long\-String\-Array data type into a C\-O\-R\-B\-A Any object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The array to be inserted into the Any object \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Dev\-Failed} & If the Any object creation failed. Click {\tt here} to read {\bfseries Dev\-Failed} exception specification \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!insert@{insert}}
+\index{insert@{insert}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{insert}]{\setlength{\rightskip}{0pt plus 5cm}C\-O\-R\-B\-A\-::\-Any$\ast$ Tango\-::\-Command\-::insert (
+\begin{DoxyParamCaption}
+\item[{Tango\-::\-Dev\-Var\-Double\-String\-Array \&}]{data}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Command_ab44d0a90519efd1f357ca0875d98f4e7}
+
+
+Create a C\-O\-R\-B\-A Any object and insert a Tango\-::\-Dev\-Var\-Double\-String\-Array data in it. 
+
+This method will do a {\bfseries deep copy} of the array into the Any object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The array to be inserted into the Any object \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Dev\-Failed} & If the Any object creation failed. Click {\tt here} to read {\bfseries Dev\-Failed} exception specification \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!insert@{insert}}
+\index{insert@{insert}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{insert}]{\setlength{\rightskip}{0pt plus 5cm}C\-O\-R\-B\-A\-::\-Any$\ast$ Tango\-::\-Command\-::insert (
+\begin{DoxyParamCaption}
+\item[{Tango\-::\-Dev\-Var\-Double\-String\-Array $\ast$}]{data}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Command_afe5aa741af2de317e44cdafe65e2f3a4}
+
+
+Create a C\-O\-R\-B\-A Any object and insert a Tango\-::\-Dev\-Var\-Double\-String\-Array data in it. 
+
+This method {\bfseries consumes} the memory used by the array. When the C\-O\-R\-B\-A layer will destroy the Any object, the memory alloacted for the array will also be freed. This is the recommended method to insert Tango\-::\-Dev\-Var\-Double\-String\-Array data type into a C\-O\-R\-B\-A Any object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The array to be inserted into the Any object \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Dev\-Failed} & If the Any object creation failed. Click {\tt here} to read {\bfseries Dev\-Failed} exception specification \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!insert@{insert}}
+\index{insert@{insert}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{insert}]{\setlength{\rightskip}{0pt plus 5cm}C\-O\-R\-B\-A\-::\-Any$\ast$ Tango\-::\-Command\-::insert (
+\begin{DoxyParamCaption}
+\item[{Tango\-::\-Dev\-State}]{data}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Command_af4c02c4968ea0fa878424507d6edb8d3}
+
+
+Create a C\-O\-R\-B\-A Any object and insert a Tango\-::\-Dev\-State data in it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The data to be inserted into the Any object \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Dev\-Failed} & If the Any object creation failed. Click {\tt here} to read {\bfseries Dev\-Failed} exception specification \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!insert@{insert}}
+\index{insert@{insert}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{insert}]{\setlength{\rightskip}{0pt plus 5cm}C\-O\-R\-B\-A\-::\-Any$\ast$ Tango\-::\-Command\-::insert (
+\begin{DoxyParamCaption}
+\item[{Tango\-::\-Dev\-Encoded $\ast$}]{data}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Command_a21a6cda05b9c4182c7d0ef2e6bb01c0a}
+
+
+Create a C\-O\-R\-B\-A Any object and insert a Tango\-::\-Dev\-Encoded data in it. 
+
+This method {\bfseries consumes} the memory used by the array. When the C\-O\-R\-B\-A layer will destroy the Any object, the memory alloacted for the array will also be freed. This is the recommended method to insert Tango\-::\-Dev\-Var\-Double\-String\-Array data type into a C\-O\-R\-B\-A Any object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The array to be inserted into the Any object \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Dev\-Failed} & If the Any object creation failed. Click {\tt here} to read {\bfseries Dev\-Failed} exception specification \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!is\-\_\-allowed@{is\-\_\-allowed}}
+\index{is\-\_\-allowed@{is\-\_\-allowed}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{is\-\_\-allowed}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Tango\-::\-Command\-::is\-\_\-allowed (
+\begin{DoxyParamCaption}
+\item[{{\bf Device\-Impl} $\ast$}]{dev, }
+\item[{const C\-O\-R\-B\-A\-::\-Any \&}]{in\-\_\-any}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classTango_1_1Command_af634fd436701aca40fbcdaeb5d4691b1}
+
+
+Check if the command is allowed in the actual device state. 
+
+This method is automtically called by the T\-A\-N\-G\-O core classes when the associated command is requested by a client to check if the command is allowed in the actual device state. This method is the default is\-\_\-allowed method which always allows the command to be executed. It is possible to re-\/define it if this default behaviour does not fulfill the device needs.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dev} & The device on which the command must be executed \\
+\hline
+{\em in\-\_\-any} & The incoming data still packed in a C\-O\-R\-B\-A Any object. This data is passed to this method in case it is necessary to take the command allowed decision \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A boolean set to true is the command is allowed. Otherwise, the return value is false. 
+\end{DoxyReturn}
+
+
+Reimplemented in {\bf Tango\-::\-Templ\-Command} \doxyref{}{p.}{de/de1/classTango_1_1TemplCommand_a203f6dc3223fd20f230af555e34848fd}.
+
+\index{Tango\-::\-Command@{Tango\-::\-Command}!set\-\_\-disp\-\_\-level@{set\-\_\-disp\-\_\-level}}
+\index{set\-\_\-disp\-\_\-level@{set\-\_\-disp\-\_\-level}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{set\-\_\-disp\-\_\-level}]{\setlength{\rightskip}{0pt plus 5cm}void Tango\-::\-Command\-::set\-\_\-disp\-\_\-level (
+\begin{DoxyParamCaption}
+\item[{Tango\-::\-Disp\-Level}]{level}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTango_1_1Command_a9108e06b866948d8ea6a5de2cde80853}
+
+
+Set the command display level. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & The command display level \\
+\hline
+\end{DoxyParams}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!set\-\_\-in\-\_\-type\-\_\-desc@{set\-\_\-in\-\_\-type\-\_\-desc}}
+\index{set\-\_\-in\-\_\-type\-\_\-desc@{set\-\_\-in\-\_\-type\-\_\-desc}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{set\-\_\-in\-\_\-type\-\_\-desc}]{\setlength{\rightskip}{0pt plus 5cm}void Tango\-::\-Command\-::set\-\_\-in\-\_\-type\-\_\-desc (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{desc}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTango_1_1Command_a47b22bb3cdfdc732c84a07b6db753aba}
+
+
+Set the input parameter description field. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em desc} & The input parameter description \\
+\hline
+\end{DoxyParams}
+
+
+References in\-\_\-type\-\_\-desc.
+
+\index{Tango\-::\-Command@{Tango\-::\-Command}!set\-\_\-in\-\_\-type\-\_\-desc@{set\-\_\-in\-\_\-type\-\_\-desc}}
+\index{set\-\_\-in\-\_\-type\-\_\-desc@{set\-\_\-in\-\_\-type\-\_\-desc}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{set\-\_\-in\-\_\-type\-\_\-desc}]{\setlength{\rightskip}{0pt plus 5cm}void Tango\-::\-Command\-::set\-\_\-in\-\_\-type\-\_\-desc (
+\begin{DoxyParamCaption}
+\item[{string \&}]{desc}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTango_1_1Command_aeb1db497ea77211071a7fd11cb2c9900}
+
+
+Set the input parameter description field. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em desc} & The input parameter description \\
+\hline
+\end{DoxyParams}
+
+
+References in\-\_\-type\-\_\-desc.
+
+\index{Tango\-::\-Command@{Tango\-::\-Command}!set\-\_\-name@{set\-\_\-name}}
+\index{set\-\_\-name@{set\-\_\-name}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{set\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}void Tango\-::\-Command\-::set\-\_\-name (
+\begin{DoxyParamCaption}
+\item[{string \&}]{new\-\_\-name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTango_1_1Command_a13a2bbf037579b576dcee0bc9b55d8f2}
+
+
+Set the command name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\-\_\-name} & The new command name \\
+\hline
+\end{DoxyParams}
+
+
+References name.
+
+\index{Tango\-::\-Command@{Tango\-::\-Command}!set\-\_\-out\-\_\-type\-\_\-desc@{set\-\_\-out\-\_\-type\-\_\-desc}}
+\index{set\-\_\-out\-\_\-type\-\_\-desc@{set\-\_\-out\-\_\-type\-\_\-desc}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{set\-\_\-out\-\_\-type\-\_\-desc}]{\setlength{\rightskip}{0pt plus 5cm}void Tango\-::\-Command\-::set\-\_\-out\-\_\-type\-\_\-desc (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{desc}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTango_1_1Command_af421f59ba21cb3300d8ed5cdc28114ad}
+
+
+Set the output parameter description field. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em desc} & The output parameter description \\
+\hline
+\end{DoxyParams}
+
+
+References out\-\_\-type\-\_\-desc.
+
+\index{Tango\-::\-Command@{Tango\-::\-Command}!set\-\_\-out\-\_\-type\-\_\-desc@{set\-\_\-out\-\_\-type\-\_\-desc}}
+\index{set\-\_\-out\-\_\-type\-\_\-desc@{set\-\_\-out\-\_\-type\-\_\-desc}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{set\-\_\-out\-\_\-type\-\_\-desc}]{\setlength{\rightskip}{0pt plus 5cm}void Tango\-::\-Command\-::set\-\_\-out\-\_\-type\-\_\-desc (
+\begin{DoxyParamCaption}
+\item[{string \&}]{desc}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTango_1_1Command_a98bb11a3d9c82fd2e4bbde0ed28d3dcf}
+
+
+Set the output parameter description field. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em desc} & The output parameter description \\
+\hline
+\end{DoxyParams}
+
+
+References out\-\_\-type\-\_\-desc.
+
+\index{Tango\-::\-Command@{Tango\-::\-Command}!set\-\_\-polling\-\_\-period@{set\-\_\-polling\-\_\-period}}
+\index{set\-\_\-polling\-\_\-period@{set\-\_\-polling\-\_\-period}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{set\-\_\-polling\-\_\-period}]{\setlength{\rightskip}{0pt plus 5cm}void Tango\-::\-Command\-::set\-\_\-polling\-\_\-period (
+\begin{DoxyParamCaption}
+\item[{long}]{per}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTango_1_1Command_af8270bde5b9e4b9826419eabb8f8a3ec}
+
+
+Set the command polling period. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em per} & The command polling period (in m\-S) \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\index{Tango\-::\-Command@{Tango\-::\-Command}!in\-\_\-type@{in\-\_\-type}}
+\index{in\-\_\-type@{in\-\_\-type}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{in\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Tango\-::\-Cmd\-Arg\-Type} Tango\-::\-Command\-::in\-\_\-type\hspace{0.3cm}{\ttfamily [protected]}}\label{classTango_1_1Command_aea59b62f46dc56304b2f99fa05a70109}
+
+
+The command input parameter type. 
+
+
+
+Referenced by get\-\_\-in\-\_\-type().
+
+\index{Tango\-::\-Command@{Tango\-::\-Command}!in\-\_\-type\-\_\-desc@{in\-\_\-type\-\_\-desc}}
+\index{in\-\_\-type\-\_\-desc@{in\-\_\-type\-\_\-desc}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{in\-\_\-type\-\_\-desc}]{\setlength{\rightskip}{0pt plus 5cm}string Tango\-::\-Command\-::in\-\_\-type\-\_\-desc\hspace{0.3cm}{\ttfamily [protected]}}\label{classTango_1_1Command_abe71e67349296d10e641bf246a258fd7}
+
+
+The command input parameter description. 
+
+
+
+Referenced by get\-\_\-in\-\_\-type\-\_\-desc(), and set\-\_\-in\-\_\-type\-\_\-desc().
+
+\index{Tango\-::\-Command@{Tango\-::\-Command}!lower\-\_\-name@{lower\-\_\-name}}
+\index{lower\-\_\-name@{lower\-\_\-name}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{lower\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}string Tango\-::\-Command\-::lower\-\_\-name\hspace{0.3cm}{\ttfamily [protected]}}\label{classTango_1_1Command_a7187d828d36d73bc501bb9ab69772c44}
+
+
+The command name in lower case. 
+
+
+
+Referenced by get\-\_\-lower\-\_\-name().
+
+\index{Tango\-::\-Command@{Tango\-::\-Command}!name@{name}}
+\index{name@{name}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}string Tango\-::\-Command\-::name\hspace{0.3cm}{\ttfamily [protected]}}\label{classTango_1_1Command_afd9067bb0dcbcf46ca658ce7710ae025}
+
+
+The command name. 
+
+
+
+Referenced by get\-\_\-name(), and set\-\_\-name().
+
+\index{Tango\-::\-Command@{Tango\-::\-Command}!out\-\_\-type@{out\-\_\-type}}
+\index{out\-\_\-type@{out\-\_\-type}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{out\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Tango\-::\-Cmd\-Arg\-Type} Tango\-::\-Command\-::out\-\_\-type\hspace{0.3cm}{\ttfamily [protected]}}\label{classTango_1_1Command_a61071f19ab2f13b56d820c71bb6635b2}
+
+
+The command output parameter type. 
+
+
+
+Referenced by get\-\_\-out\-\_\-type().
+
+\index{Tango\-::\-Command@{Tango\-::\-Command}!out\-\_\-type\-\_\-desc@{out\-\_\-type\-\_\-desc}}
+\index{out\-\_\-type\-\_\-desc@{out\-\_\-type\-\_\-desc}!Tango::Command@{Tango\-::\-Command}}
+\subsubsection[{out\-\_\-type\-\_\-desc}]{\setlength{\rightskip}{0pt plus 5cm}string Tango\-::\-Command\-::out\-\_\-type\-\_\-desc\hspace{0.3cm}{\ttfamily [protected]}}\label{classTango_1_1Command_a835b44d92d834adfb87606ba5073cb15}
+
+
+The command output parameter type. 
+
+
+
+Referenced by get\-\_\-out\-\_\-type\-\_\-desc(), and set\-\_\-out\-\_\-type\-\_\-desc().
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+{\bf command.\-h}\end{DoxyCompactItemize}

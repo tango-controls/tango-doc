@@ -1,0 +1,241 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="d8/d0d/classTango_1_1PipeEventData" kind="class" prot="public">
+    <compoundname>Tango::PipeEventData</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d8/d0d/classTango_1_1PipeEventData_1a8567d96dd4ef317223598cbbf03a6cdd" prot="private" static="no" mutable="no">
+        <type>Tango::TimeVal</type>
+        <definition>Tango::TimeVal Tango::PipeEventData::reception_date</definition>
+        <argsstring></argsstring>
+        <name>reception_date</name>
+        <briefdescription>
+<para>The date when the event arrived. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/event.h" line="452" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/event.h" bodystart="452" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="d8/d0d/classTango_1_1PipeEventData_1ad858aeea852abd28dd5fbfd7193fc463" prot="public" static="no" mutable="no">
+        <type>DeviceProxy *</type>
+        <definition>DeviceProxy* Tango::PipeEventData::device</definition>
+        <argsstring></argsstring>
+        <name>device</name>
+        <briefdescription>
+<para>The DeviceProxy object on which the call was executed. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/event.h" line="456" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/event.h" bodystart="456" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d8/d0d/classTango_1_1PipeEventData_1a85b367c351c624ef0cb36f877b47980a" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Tango::PipeEventData::err</definition>
+        <argsstring></argsstring>
+        <name>err</name>
+        <briefdescription>
+<para>A boolean flag set to true if the request failed. False otherwise. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/event.h" line="460" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/event.h" bodystart="460" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d8/d0d/classTango_1_1PipeEventData_1aefe334e6f2283326ff11f0ec3a46a2ec" prot="public" static="no" mutable="no">
+        <type>DevErrorList</type>
+        <definition>DevErrorList Tango::PipeEventData::errors</definition>
+        <argsstring></argsstring>
+        <name>errors</name>
+        <briefdescription>
+<para>The error stack. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/event.h" line="461" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/event.h" bodystart="461" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d8/d0d/classTango_1_1PipeEventData_1a4920be1cb5e2d932f68962a4dcb7fb71" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Tango::PipeEventData::event</definition>
+        <argsstring></argsstring>
+        <name>event</name>
+        <briefdescription>
+<para>The event name. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/event.h" line="458" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/event.h" bodystart="458" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d8/d0d/classTango_1_1PipeEventData_1a13fb52ff7d823781399a34d4f8aa9e0f" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Tango::PipeEventData::pipe_name</definition>
+        <argsstring></argsstring>
+        <name>pipe_name</name>
+        <briefdescription>
+<para>The pipe name. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/event.h" line="457" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/event.h" bodystart="457" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d8/d0d/classTango_1_1PipeEventData_1a742f0f346a553510d3f6d1560d78ba2a" prot="public" static="no" mutable="no">
+        <type>DevicePipe *</type>
+        <definition>DevicePipe* Tango::PipeEventData::pipe_value</definition>
+        <argsstring></argsstring>
+        <name>pipe_value</name>
+        <briefdescription>
+<para>The pipe data. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/event.h" line="459" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/event.h" bodystart="459" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="d8/d0d/classTango_1_1PipeEventData_1acb3bafc76302a42cf9ba34bd3639b401" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Tango::PipeEventData::PipeEventData</definition>
+        <argsstring>()</argsstring>
+        <name>PipeEventData</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/event.h" line="443" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/event.h" bodystart="443" bodyend="443"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/d0d/classTango_1_1PipeEventData_1ada84e9e309df7eece4e6d28e508c1e8d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::PipeEventData::PipeEventData</definition>
+        <argsstring>(DeviceProxy *dev, string &amp;nam, string &amp;evt, Tango::DevicePipe *pipe_value_in, DevErrorList &amp;errors_in)</argsstring>
+        <name>PipeEventData</name>
+        <param>
+          <type>DeviceProxy *</type>
+          <declname>dev</declname>
+        </param>
+        <param>
+          <type>string &amp;</type>
+          <declname>nam</declname>
+        </param>
+        <param>
+          <type>string &amp;</type>
+          <declname>evt</declname>
+        </param>
+        <param>
+          <type>Tango::DevicePipe *</type>
+          <declname>pipe_value_in</declname>
+        </param>
+        <param>
+          <type>DevErrorList &amp;</type>
+          <declname>errors_in</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/event.h" line="444" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/d0d/classTango_1_1PipeEventData_1adf9450d25b8bb8fb48577a4ea2192f10" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::PipeEventData::PipeEventData</definition>
+        <argsstring>(const PipeEventData &amp;)</argsstring>
+        <name>PipeEventData</name>
+        <param>
+          <type>const <ref refid="d8/d0d/classTango_1_1PipeEventData" kindref="compound">PipeEventData</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/event.h" line="447" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/d0d/classTango_1_1PipeEventData_1a42c0d7e51a79e9a5a73ad702660bc3dd" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::PipeEventData::~PipeEventData</definition>
+        <argsstring>()</argsstring>
+        <name>~PipeEventData</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/event.h" line="446" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/d0d/classTango_1_1PipeEventData_1ab8ad7987005663f28a152d46d0fa88fe" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Tango::TimeVal &amp;</type>
+        <definition>Tango::TimeVal&amp; Tango::PipeEventData::get_date</definition>
+        <argsstring>()</argsstring>
+        <name>get_date</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/event.h" line="453" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/event.h" bodystart="453" bodyend="453"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/d0d/classTango_1_1PipeEventData_1ac9ba4f45cf595505a12e448dc28d23b3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d8/d0d/classTango_1_1PipeEventData" kindref="compound">PipeEventData</ref> &amp;</type>
+        <definition>PipeEventData&amp; Tango::PipeEventData::operator=</definition>
+        <argsstring>(const PipeEventData &amp;)</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="d8/d0d/classTango_1_1PipeEventData" kindref="compound">PipeEventData</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/event.h" line="448" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/d0d/classTango_1_1PipeEventData_1a4fcba9e2fec5ec6e860fe6b1db7390f6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::PipeEventData::set_time</definition>
+        <argsstring>()</argsstring>
+        <name>set_time</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/event.h" line="464" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="d8/d14/classTango_1_1Pipe" kindref="compound">Pipe</ref> event callback execution data. </para>    </briefdescription>
+    <detaileddescription>
+<para>This class is used to pass data to the callback method when a pipe event is sent to the client</para><para>$Author$ $Revision$ </para>    </detaileddescription>
+    <location file="/home/tango/workspace/cppTango/include/tango/client/event.h" line="440" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/event.h" bodystart="439" bodyend="465"/>
+    <listofallmembers>
+      <member refid="d8/d0d/classTango_1_1PipeEventData_1ad858aeea852abd28dd5fbfd7193fc463" prot="public" virt="non-virtual"><scope>Tango::PipeEventData</scope><name>device</name></member>
+      <member refid="d8/d0d/classTango_1_1PipeEventData_1a85b367c351c624ef0cb36f877b47980a" prot="public" virt="non-virtual"><scope>Tango::PipeEventData</scope><name>err</name></member>
+      <member refid="d8/d0d/classTango_1_1PipeEventData_1aefe334e6f2283326ff11f0ec3a46a2ec" prot="public" virt="non-virtual"><scope>Tango::PipeEventData</scope><name>errors</name></member>
+      <member refid="d8/d0d/classTango_1_1PipeEventData_1a4920be1cb5e2d932f68962a4dcb7fb71" prot="public" virt="non-virtual"><scope>Tango::PipeEventData</scope><name>event</name></member>
+      <member refid="d8/d0d/classTango_1_1PipeEventData_1ab8ad7987005663f28a152d46d0fa88fe" prot="private" virt="non-virtual"><scope>Tango::PipeEventData</scope><name>get_date</name></member>
+      <member refid="d8/d0d/classTango_1_1PipeEventData_1ac9ba4f45cf595505a12e448dc28d23b3" prot="private" virt="non-virtual"><scope>Tango::PipeEventData</scope><name>operator=</name></member>
+      <member refid="d8/d0d/classTango_1_1PipeEventData_1a13fb52ff7d823781399a34d4f8aa9e0f" prot="public" virt="non-virtual"><scope>Tango::PipeEventData</scope><name>pipe_name</name></member>
+      <member refid="d8/d0d/classTango_1_1PipeEventData_1a742f0f346a553510d3f6d1560d78ba2a" prot="public" virt="non-virtual"><scope>Tango::PipeEventData</scope><name>pipe_value</name></member>
+      <member refid="d8/d0d/classTango_1_1PipeEventData_1acb3bafc76302a42cf9ba34bd3639b401" prot="private" virt="non-virtual"><scope>Tango::PipeEventData</scope><name>PipeEventData</name></member>
+      <member refid="d8/d0d/classTango_1_1PipeEventData_1ada84e9e309df7eece4e6d28e508c1e8d" prot="private" virt="non-virtual"><scope>Tango::PipeEventData</scope><name>PipeEventData</name></member>
+      <member refid="d8/d0d/classTango_1_1PipeEventData_1adf9450d25b8bb8fb48577a4ea2192f10" prot="private" virt="non-virtual"><scope>Tango::PipeEventData</scope><name>PipeEventData</name></member>
+      <member refid="d8/d0d/classTango_1_1PipeEventData_1a8567d96dd4ef317223598cbbf03a6cdd" prot="private" virt="non-virtual"><scope>Tango::PipeEventData</scope><name>reception_date</name></member>
+      <member refid="d8/d0d/classTango_1_1PipeEventData_1a4fcba9e2fec5ec6e860fe6b1db7390f6" prot="private" virt="non-virtual"><scope>Tango::PipeEventData</scope><name>set_time</name></member>
+      <member refid="d8/d0d/classTango_1_1PipeEventData_1a42c0d7e51a79e9a5a73ad702660bc3dd" prot="private" virt="non-virtual"><scope>Tango::PipeEventData</scope><name>~PipeEventData</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

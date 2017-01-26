@@ -1,0 +1,481 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="d1/d56/group__Eas" kind="group">
+    <compoundname>Eas</compoundname>
+    <title>Easy printing operator overloading functions</title>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="d1/d56/group__Eas_1ga213256d883d58b4b92b68ad4206aa7f7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>ostream &amp;</type>
+        <definition>ostream&amp; Tango::operator&lt;&lt;</definition>
+        <argsstring>(ostream &amp;lval, const DevVarCharArray &amp;rval)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>ostream &amp;</type>
+          <declname>lval</declname>
+        </param>
+        <param>
+          <type>const DevVarCharArray &amp;</type>
+          <declname>rval</declname>
+        </param>
+        <briefdescription>
+<para>Print a DevVarCharArray. </para>        </briefdescription>
+        <detaileddescription>
+<para>One line is printed for each sequence element.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lval</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The C++ stream used for printing </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rval</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The DevVarCharArray sequence to be printed </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/seqvec.h" line="553" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d56/group__Eas_1ga0634c13c03f416bc6ed40eb9a0e3aa61" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>ostream &amp;</type>
+        <definition>ostream&amp; Tango::operator&lt;&lt;</definition>
+        <argsstring>(ostream &amp;lval, const DevVarShortArray &amp;rval)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>ostream &amp;</type>
+          <declname>lval</declname>
+        </param>
+        <param>
+          <type>const DevVarShortArray &amp;</type>
+          <declname>rval</declname>
+        </param>
+        <briefdescription>
+<para>Print a DevVarShortArray. </para>        </briefdescription>
+        <detaileddescription>
+<para>One line is printed for each sequence element.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lval</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The C++ stream used for printing </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rval</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The DevVarShortArray sequence to be printed </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/seqvec.h" line="562" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d56/group__Eas_1ga526a3b02fee65f31055a344ae05c253f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>ostream &amp;</type>
+        <definition>ostream&amp; Tango::operator&lt;&lt;</definition>
+        <argsstring>(ostream &amp;lval, const DevVarLongArray &amp;rval)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>ostream &amp;</type>
+          <declname>lval</declname>
+        </param>
+        <param>
+          <type>const DevVarLongArray &amp;</type>
+          <declname>rval</declname>
+        </param>
+        <briefdescription>
+<para>Print a DevVarLongArray. </para>        </briefdescription>
+        <detaileddescription>
+<para>One line is printed for each sequence element.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lval</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The C++ stream used for printing </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rval</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The DevVarLongArray sequence to be printed </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/seqvec.h" line="571" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d56/group__Eas_1ga2cb69bb8fa47ffeeea6faaa5e54573d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>ostream &amp;</type>
+        <definition>ostream&amp; Tango::operator&lt;&lt;</definition>
+        <argsstring>(ostream &amp;lval, const DevVarLong64Array &amp;rval)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>ostream &amp;</type>
+          <declname>lval</declname>
+        </param>
+        <param>
+          <type>const DevVarLong64Array &amp;</type>
+          <declname>rval</declname>
+        </param>
+        <briefdescription>
+<para>Print a DevVarLong64Array. </para>        </briefdescription>
+        <detaileddescription>
+<para>One line is printed for each sequence element.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lval</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The C++ stream used for printing </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rval</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The DevVarLong64Array sequence to be printed </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/seqvec.h" line="580" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d56/group__Eas_1gab83d969cc0c817f26f238606131fd148" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>ostream &amp;</type>
+        <definition>ostream&amp; Tango::operator&lt;&lt;</definition>
+        <argsstring>(ostream &amp;lval, const DevVarFloatArray &amp;rval)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>ostream &amp;</type>
+          <declname>lval</declname>
+        </param>
+        <param>
+          <type>const DevVarFloatArray &amp;</type>
+          <declname>rval</declname>
+        </param>
+        <briefdescription>
+<para>Print a DevVarFloatArray. </para>        </briefdescription>
+        <detaileddescription>
+<para>One line is printed for each sequence element.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lval</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The C++ stream used for printing </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rval</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The DevVarFloatArray sequence to be printed </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/seqvec.h" line="589" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d56/group__Eas_1ga631fd756fea5395eb31839fd6bb7f2da" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>ostream &amp;</type>
+        <definition>ostream&amp; Tango::operator&lt;&lt;</definition>
+        <argsstring>(ostream &amp;lval, const DevVarDoubleArray &amp;rval)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>ostream &amp;</type>
+          <declname>lval</declname>
+        </param>
+        <param>
+          <type>const DevVarDoubleArray &amp;</type>
+          <declname>rval</declname>
+        </param>
+        <briefdescription>
+<para>Print a DevVarDoubleArray. </para>        </briefdescription>
+        <detaileddescription>
+<para>One line is printed for each sequence element.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lval</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The C++ stream used for printing </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rval</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The DevVarDoubleArray sequence to be printed </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/seqvec.h" line="598" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d56/group__Eas_1ga27f592e1a0289f21e241c34a238f1520" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>ostream &amp;</type>
+        <definition>ostream&amp; Tango::operator&lt;&lt;</definition>
+        <argsstring>(ostream &amp;lval, const DevVarBooleanArray &amp;rval)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>ostream &amp;</type>
+          <declname>lval</declname>
+        </param>
+        <param>
+          <type>const DevVarBooleanArray &amp;</type>
+          <declname>rval</declname>
+        </param>
+        <briefdescription>
+<para>Print a DevVarBooleanArray. </para>        </briefdescription>
+        <detaileddescription>
+<para>One line is printed for each sequence element.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lval</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The C++ stream used for printing </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rval</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The DevVarBooleanArray sequence to be printed </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/seqvec.h" line="607" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d56/group__Eas_1ga3a28058540000f30efe42a7b6988b2cd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>ostream &amp;</type>
+        <definition>ostream&amp; Tango::operator&lt;&lt;</definition>
+        <argsstring>(ostream &amp;lval, const DevVarUShortArray &amp;rval)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>ostream &amp;</type>
+          <declname>lval</declname>
+        </param>
+        <param>
+          <type>const DevVarUShortArray &amp;</type>
+          <declname>rval</declname>
+        </param>
+        <briefdescription>
+<para>Print a DevVarUShortArray. </para>        </briefdescription>
+        <detaileddescription>
+<para>One line is printed for each sequence element.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lval</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The C++ stream used for printing </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rval</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The DevVarUShortArray sequence to be printed </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/seqvec.h" line="616" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d56/group__Eas_1gaaf5d2a8d0926a629c8ffe5d8814e933f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>ostream &amp;</type>
+        <definition>ostream&amp; Tango::operator&lt;&lt;</definition>
+        <argsstring>(ostream &amp;lval, const DevVarULongArray &amp;rval)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>ostream &amp;</type>
+          <declname>lval</declname>
+        </param>
+        <param>
+          <type>const DevVarULongArray &amp;</type>
+          <declname>rval</declname>
+        </param>
+        <briefdescription>
+<para>Print a DevVarULongArray. </para>        </briefdescription>
+        <detaileddescription>
+<para>One line is printed for each sequence element.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lval</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The C++ stream used for printing </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rval</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The DevVarULongArray sequence to be printed </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/seqvec.h" line="625" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d56/group__Eas_1ga2bf34aa1481440d055ec63beee55076c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>ostream &amp;</type>
+        <definition>ostream&amp; Tango::operator&lt;&lt;</definition>
+        <argsstring>(ostream &amp;lval, const DevVarULong64Array &amp;rval)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>ostream &amp;</type>
+          <declname>lval</declname>
+        </param>
+        <param>
+          <type>const DevVarULong64Array &amp;</type>
+          <declname>rval</declname>
+        </param>
+        <briefdescription>
+<para>Print a DevVarULong64Array. </para>        </briefdescription>
+        <detaileddescription>
+<para>One line is printed for each sequence element.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lval</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The C++ stream used for printing </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rval</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The DevVarULong64Array sequence to be printed </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/seqvec.h" line="634" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d56/group__Eas_1ga0b8be84caf7997aeb9fbe51fc0a781f7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>ostream &amp;</type>
+        <definition>ostream&amp; Tango::operator&lt;&lt;</definition>
+        <argsstring>(ostream &amp;lval, const DevVarStringArray &amp;rval)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>ostream &amp;</type>
+          <declname>lval</declname>
+        </param>
+        <param>
+          <type>const DevVarStringArray &amp;</type>
+          <declname>rval</declname>
+        </param>
+        <briefdescription>
+<para>Print a DevVarStringArray. </para>        </briefdescription>
+        <detaileddescription>
+<para>One line is printed for each sequence element.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lval</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The C++ stream used for printing </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rval</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The DevVarStringArray sequence to be printed </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/seqvec.h" line="643" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d56/group__Eas_1gacf5f7184cbe21f4e68cd235343ed63a3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>ostream &amp;</type>
+        <definition>ostream&amp; Tango::operator&lt;&lt;</definition>
+        <argsstring>(ostream &amp;lval, const DevVarStateArray &amp;rval)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>ostream &amp;</type>
+          <declname>lval</declname>
+        </param>
+        <param>
+          <type>const DevVarStateArray &amp;</type>
+          <declname>rval</declname>
+        </param>
+        <briefdescription>
+<para>Print a DevVarStateArray. </para>        </briefdescription>
+        <detaileddescription>
+<para>One line is printed for each sequence element.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lval</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The C++ stream used for printing </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rval</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The DevVarStateArray sequence to be printed </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/seqvec.h" line="652" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d56/group__Eas_1gade367a22d3a0c1b38afbf2339dc6b5e6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>ostream &amp;</type>
+        <definition>ostream&amp; Tango::operator&lt;&lt;</definition>
+        <argsstring>(ostream &amp;lval, const DevVarEncodedArray &amp;rval)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>ostream &amp;</type>
+          <declname>lval</declname>
+        </param>
+        <param>
+          <type>const DevVarEncodedArray &amp;</type>
+          <declname>rval</declname>
+        </param>
+        <briefdescription>
+<para>Print a DevVarEncodedArray. </para>        </briefdescription>
+        <detaileddescription>
+<para>One line is printed for each sequence element.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lval</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The C++ stream used for printing </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rval</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The DevVarEncodedArray sequence to be printed </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/seqvec.h" line="661" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Overloading of the &lt;&lt; operator between C++ ostream and some <ref refid="de/ddf/namespaceTango" kindref="compound">Tango</ref> types. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

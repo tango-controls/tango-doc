@@ -1,0 +1,153 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="dc/dd9/classTango_1_1Device__4Impl">
+<title>Tango::Device_4Impl class Reference</title>
+        <simplesect>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d5/d84/classTango_1_1Device__4Impl_1_1Device__4ImplExt">Tango::Device_4Impl::Device_4ImplExt</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Constructors</title>
+      <description>
+<para>Miscellaneous constructors </para>
+</description>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="dc/dd9/classTango_1_1Device__4Impl_1ac4fc7cd8a4256fa15d1a91b9040e7f68">Device_4Impl</link> (
+<link linkend="d4/dcd/classTango_1_1DeviceClass">DeviceClass</link> * device_class, string &amp; dev_name)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="dc/dd9/classTango_1_1Device__4Impl_1ac065aec658bab72b62b0b3546d700e44">Device_4Impl</link> (
+<link linkend="d4/dcd/classTango_1_1DeviceClass">DeviceClass</link> * device_class, string &amp; dev_name, string &amp; desc)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="dc/dd9/classTango_1_1Device__4Impl_1aea4538fbbca23294bddfcac3c442259c">Device_4Impl</link> (
+<link linkend="d4/dcd/classTango_1_1DeviceClass">DeviceClass</link> * device_class, string &amp; dev_name, string &amp; desc, Tango::DevState dev_state, string &amp; dev_status)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="dc/dd9/classTango_1_1Device__4Impl_1a996a80ca514898f8a31f40dc6e08baf0">Device_4Impl</link> (
+<link linkend="d4/dcd/classTango_1_1DeviceClass">DeviceClass</link> * device_class, const char * dev_name, const char * desc, Tango::DevState dev_state, const char * dev_status)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Destructor</title>
+      <description>
+<para>Only one desctructor is defined for this class </para>
+</description>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="dc/dd9/classTango_1_1Device__4Impl_1af254d0190336648b899e031eba61160a">~Device_4Impl</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>CORBA operation methods</title>
+      <description>
+<para>Method defined to implement TANGO device CORBA operation </para>
+</description>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual Tango::DevAttrHistory_4 * <link linkend="dc/dd9/classTango_1_1Device__4Impl_1a7a0149c0d9d22ebc68af3e6aae66c26e">read_attribute_history_4</link> (
+const char * name, DevLong n)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual Tango::DevCmdHistory_4 * <link linkend="dc/dd9/classTango_1_1Device__4Impl_1a6c3490726c00bc7d33ea833e1b923690">command_inout_history_4</link> (
+const char * command, DevLong n)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual CORBA::Any * <link linkend="dc/dd9/classTango_1_1Device__4Impl_1a4844c56133a99f6e6d1f5155475fb184">command_inout_4</link> (
+const char * in_cmd, const CORBA::Any &amp; in_data, Tango::DevSource source, const Tango::ClntIdent &amp; cl_ident)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual Tango::AttributeValueList_4 * <link linkend="dc/dd9/classTango_1_1Device__4Impl_1ab617c665fa91c17f56e07f4afdd5f3f3">read_attributes_4</link> (
+const Tango::DevVarStringArray &amp; names, Tango::DevSource source, const Tango::ClntIdent &amp; cl_ident)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual void <link linkend="dc/dd9/classTango_1_1Device__4Impl_1ac7bea03a2b3b6ab988962155736a9335">write_attributes_4</link> (
+const Tango::AttributeValueList_4 &amp; values, const Tango::ClntIdent &amp; cl_ident)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual void <link linkend="dc/dd9/classTango_1_1Device__4Impl_1a43f5bb3a3cffe1595f33603278a298bd">set_attribute_config_4</link> (
+const Tango::AttributeConfigList_3 &amp; new_conf, const Tango::ClntIdent &amp; cl_ident)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual Tango::AttributeValueList_4 * <link linkend="dc/dd9/classTango_1_1Device__4Impl_1a0785c4039f78b824a128ee16bd26dbee">write_read_attributes_4</link> (
+const Tango::AttributeValueList_4 &amp; values, const Tango::ClntIdent &amp; cl_ident)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Device_4ImplExt * ext_4</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Brief Description</title>
+
+<para>Base class for all TANGO device since version 4. </para>
+    </simplesect>
+        <simplesect>
+            <title>Detailed Description</title>
+
+<para>This class inherits from <link linkend="d3/d62/classTango_1_1DeviceImpl">DeviceImpl</link> class which itself inherits from CORBA classes where all the network layer is implemented. This class has been created since release 7 of <link linkend="de/ddf/namespaceTango">Tango</link> library where the IDL <link linkend="de/ddf/namespaceTango">Tango</link> module has been modified in order to create a Device_4 interface which inherits from the original Device interface</para>
+
+<para>$Author$ $Revision$ </para>
+                <para>Definition at line 80 of file device_4.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>device_4.h</para></listitem></itemizedlist></para>
+        </simplesect>
+</section>

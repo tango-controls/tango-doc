@@ -1,0 +1,761 @@
+\section{log4tango\-:\-:Logger Class Reference}
+\label{classlog4tango_1_1Logger}\index{log4tango\-::\-Logger@{log4tango\-::\-Logger}}
+
+
+{\ttfamily \#include \char`\"{}Logger.\-hh\char`\"{}}
+
+
+
+Inheritance diagram for log4tango\-:\-:Logger\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=194pt]{dd/dc1/classlog4tango_1_1Logger__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for log4tango\-:\-:Logger\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=194pt]{de/d0f/classlog4tango_1_1Logger__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Logger} (const std\-::string \&name, {\bf Level\-::\-Value} level={\bf Level\-::\-O\-F\-F})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual {\bf $\sim$\-Logger} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void {\bf debug} (const char $\ast$string\-\_\-format,...)
+\begin{DoxyCompactList}\small\item\em Log a message with debug level. \end{DoxyCompactList}\item 
+void {\bf debug} (const std\-::string \&message)
+\begin{DoxyCompactList}\small\item\em Log a message with debug level. \end{DoxyCompactList}\item 
+{\bf Logger\-Stream} {\bf debug\-\_\-stream} (void)
+\begin{DoxyCompactList}\small\item\em Return a \doxyref{Logger\-Stream}{p.}{d6/de1/classlog4tango_1_1LoggerStream} with level D\-E\-B\-U\-G. \end{DoxyCompactList}\item 
+void {\bf error} (const char $\ast$string\-\_\-format,...)
+\begin{DoxyCompactList}\small\item\em Log a message with error level. \end{DoxyCompactList}\item 
+void {\bf error} (const std\-::string \&message)
+\begin{DoxyCompactList}\small\item\em Log a message with error level. \end{DoxyCompactList}\item 
+{\bf Logger\-Stream} {\bf error\-\_\-stream} (void)
+\begin{DoxyCompactList}\small\item\em Return a \doxyref{Logger\-Stream}{p.}{d6/de1/classlog4tango_1_1LoggerStream} with level E\-R\-R\-O\-R. \end{DoxyCompactList}\item 
+void {\bf fatal} (const char $\ast$string\-\_\-format,...)
+\begin{DoxyCompactList}\small\item\em Log a message with fatal level. \end{DoxyCompactList}\item 
+void {\bf fatal} (const std\-::string \&message)
+\begin{DoxyCompactList}\small\item\em Log a message with fatal level. \end{DoxyCompactList}\item 
+{\bf Logger\-Stream} {\bf fatal\-\_\-stream} (void)
+\begin{DoxyCompactList}\small\item\em Return a \doxyref{Logger\-Stream}{p.}{d6/de1/classlog4tango_1_1LoggerStream} with level F\-A\-T\-A\-L. \end{DoxyCompactList}\item 
+{\bf Level\-::\-Value} {\bf get\-\_\-level} () const 
+\begin{DoxyCompactList}\small\item\em Returns the assigned \doxyref{Level}{p.}{d8/d0e/classlog4tango_1_1Level}, if any, for this \doxyref{Logger}{p.}{d4/d1c/classlog4tango_1_1Logger}. \end{DoxyCompactList}\item 
+const std\-::string \& {\bf get\-\_\-name} () const 
+\begin{DoxyCompactList}\small\item\em Return the logger name. \end{DoxyCompactList}\item 
+{\bf Logger\-Stream} {\bf get\-\_\-stream} ({\bf Level\-::\-Value} level, bool filter=true)
+\begin{DoxyCompactList}\small\item\em Return a \doxyref{Logger\-Stream}{p.}{d6/de1/classlog4tango_1_1LoggerStream} with given \doxyref{Level}{p.}{d8/d0e/classlog4tango_1_1Level}. \end{DoxyCompactList}\item 
+void {\bf info} (const char $\ast$string\-\_\-format,...)
+\begin{DoxyCompactList}\small\item\em Log a message with info level. \end{DoxyCompactList}\item 
+void {\bf info} (const std\-::string \&message)
+\begin{DoxyCompactList}\small\item\em Log a message with info level. \end{DoxyCompactList}\item 
+{\bf Logger\-Stream} {\bf info\-\_\-stream} (void)
+\begin{DoxyCompactList}\small\item\em Return a \doxyref{Logger\-Stream}{p.}{d6/de1/classlog4tango_1_1LoggerStream} with level I\-N\-F\-O. \end{DoxyCompactList}\item 
+bool {\bf is\-\_\-debug\-\_\-enabled} (void) const 
+\begin{DoxyCompactList}\small\item\em Return true if the \doxyref{Logger}{p.}{d4/d1c/classlog4tango_1_1Logger} will log messages with level D\-E\-B\-U\-G. \end{DoxyCompactList}\item 
+bool {\bf is\-\_\-error\-\_\-enabled} (void) const 
+\begin{DoxyCompactList}\small\item\em Return true if the \doxyref{Logger}{p.}{d4/d1c/classlog4tango_1_1Logger} will log messages with level E\-R\-R\-O\-R. \end{DoxyCompactList}\item 
+bool {\bf is\-\_\-fatal\-\_\-enabled} (void) const 
+\begin{DoxyCompactList}\small\item\em Return true if the \doxyref{Logger}{p.}{d4/d1c/classlog4tango_1_1Logger} will log messages with level F\-A\-T\-A\-L. \end{DoxyCompactList}\item 
+bool {\bf is\-\_\-info\-\_\-enabled} (void) const 
+\begin{DoxyCompactList}\small\item\em Return true if the \doxyref{Logger}{p.}{d4/d1c/classlog4tango_1_1Logger} will log messages with level I\-N\-F\-O. \end{DoxyCompactList}\item 
+bool {\bf is\-\_\-level\-\_\-enabled} ({\bf Level\-::\-Value} level) const 
+\begin{DoxyCompactList}\small\item\em Returns true if the level of the \doxyref{Logger}{p.}{d4/d1c/classlog4tango_1_1Logger} is equal to or higher than given level. \end{DoxyCompactList}\item 
+bool {\bf is\-\_\-warn\-\_\-enabled} (void) const 
+\begin{DoxyCompactList}\small\item\em Return true if the \doxyref{Logger}{p.}{d4/d1c/classlog4tango_1_1Logger} will log messages with level W\-A\-R\-N. \end{DoxyCompactList}\item 
+void {\bf log} ({\bf Level\-::\-Value} level, const char $\ast$string\-\_\-format,...)
+\begin{DoxyCompactList}\small\item\em Log a message with the specified level. \end{DoxyCompactList}\item 
+void {\bf log} ({\bf Level\-::\-Value} level, const std\-::string \&message)
+\begin{DoxyCompactList}\small\item\em Log a message with the specified level. \end{DoxyCompactList}\item 
+void {\bf log\-\_\-unconditionally} ({\bf Level\-::\-Value} level, const char $\ast$string\-\_\-format,...)
+\begin{DoxyCompactList}\small\item\em Log a message with the specified level without level checking. \end{DoxyCompactList}\item 
+void {\bf log\-\_\-unconditionally} ({\bf Level\-::\-Value} level, const std\-::string \&message)
+\begin{DoxyCompactList}\small\item\em Log a message with the specified level without level checking. \end{DoxyCompactList}\item 
+void {\bf set\-\_\-level} ({\bf Level\-::\-Value} level)
+\begin{DoxyCompactList}\small\item\em Set the level of this \doxyref{Logger}{p.}{d4/d1c/classlog4tango_1_1Logger} (silently ignores invalid values) \end{DoxyCompactList}\item 
+void {\bf warn} (const char $\ast$string\-\_\-format,...)
+\begin{DoxyCompactList}\small\item\em Log a message with warn level. \end{DoxyCompactList}\item 
+void {\bf warn} (const std\-::string \&message)
+\begin{DoxyCompactList}\small\item\em Log a message with warn level. \end{DoxyCompactList}\item 
+{\bf Logger\-Stream} {\bf warn\-\_\-stream} (void)
+\begin{DoxyCompactList}\small\item\em Return a \doxyref{Logger\-Stream}{p.}{d6/de1/classlog4tango_1_1LoggerStream} with level W\-A\-R\-N. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf call\-\_\-appenders} (const {\bf Logging\-Event} \&event)
+\begin{DoxyCompactList}\small\item\em Call the appenders. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{log4tango\-::\-Logger@{log4tango\-::\-Logger}!Logger@{Logger}}
+\index{Logger@{Logger}!log4tango::Logger@{log4tango\-::\-Logger}}
+\subsubsection[{Logger}]{\setlength{\rightskip}{0pt plus 5cm}log4tango\-::\-Logger\-::\-Logger (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{name, }
+\item[{{\bf Level\-::\-Value}}]{level = {\ttfamily {\bf Level\-::\-O\-F\-F}}}
+\end{DoxyParamCaption}
+)}\label{classlog4tango_1_1Logger_a26b45ebe00d0cbecda9d9f64f169922e}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & the fully qualified name of this \doxyref{Logger}{p.}{d4/d1c/classlog4tango_1_1Logger} \\
+\hline
+{\em level} & the level for this \doxyref{Logger}{p.}{d4/d1c/classlog4tango_1_1Logger}. Defaults to \doxyref{Level\-::\-O\-F\-F}{p.}{d8/d0e/classlog4tango_1_1Level_ad9edd63020b6becc9aef8802c48eb461a955ee789684a2e9952b7e4f56b6bb74f} \\
+\hline
+\end{DoxyParams}
+
+
+References log4tango\-::\-Level\-::\-D\-E\-B\-U\-G, log4tango\-::\-Level\-::\-E\-R\-R\-O\-R, log4tango\-::\-Level\-::\-F\-A\-T\-A\-L, log4tango\-::\-Level\-::\-I\-N\-F\-O, and log4tango\-::\-Level\-::\-W\-A\-R\-N.
+
+\index{log4tango\-::\-Logger@{log4tango\-::\-Logger}!$\sim$\-Logger@{$\sim$\-Logger}}
+\index{$\sim$\-Logger@{$\sim$\-Logger}!log4tango::Logger@{log4tango\-::\-Logger}}
+\subsubsection[{$\sim$\-Logger}]{\setlength{\rightskip}{0pt plus 5cm}log4tango\-::\-Logger\-::$\sim$\-Logger (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classlog4tango_1_1Logger_a39fb5f0cb96762664150e4af657cd33a}
+
+
+Destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\index{log4tango\-::\-Logger@{log4tango\-::\-Logger}!call\-\_\-appenders@{call\-\_\-appenders}}
+\index{call\-\_\-appenders@{call\-\_\-appenders}!log4tango::Logger@{log4tango\-::\-Logger}}
+\subsubsection[{call\-\_\-appenders}]{\setlength{\rightskip}{0pt plus 5cm}void log4tango\-::\-Logger\-::call\-\_\-appenders (
+\begin{DoxyParamCaption}
+\item[{const {\bf Logging\-Event} \&}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classlog4tango_1_1Logger_a44d8fa395ad922427bf417aee9c3ed79}
+
+
+Call the appenders. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & the Loggin\-Event to log. \\
+\hline
+\end{DoxyParams}
+
+
+References log4tango\-::\-Appender\-Attachable\-::\-\_\-appenders, log4tango\-::\-Appender\-Attachable\-::\-\_\-appenders\-Mutex, and log4tango\-::\-Appender\-Attachable\-::remove\-\_\-appender().
+
+
+
+Referenced by log\-\_\-unconditionally().
+
+\index{log4tango\-::\-Logger@{log4tango\-::\-Logger}!debug@{debug}}
+\index{debug@{debug}!log4tango::Logger@{log4tango\-::\-Logger}}
+\subsubsection[{debug}]{\setlength{\rightskip}{0pt plus 5cm}void log4tango\-::\-Logger\-::debug (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{string\-\_\-format, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}\label{classlog4tango_1_1Logger_a86870349be1352d8c529e713acf51a0b}
+
+
+Log a message with debug level. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string\-\_\-format} & Format specifier for the log. \\
+\hline
+{\em ...} & The arguments for string\-\_\-format \\
+\hline
+\end{DoxyParams}
+
+
+References log4tango\-::\-Level\-::\-D\-E\-B\-U\-G, is\-\_\-level\-\_\-enabled(), log\-\_\-unconditionally(), and log4tango\-::\-String\-Util\-::vform().
+
+\index{log4tango\-::\-Logger@{log4tango\-::\-Logger}!debug@{debug}}
+\index{debug@{debug}!log4tango::Logger@{log4tango\-::\-Logger}}
+\subsubsection[{debug}]{\setlength{\rightskip}{0pt plus 5cm}void log4tango\-::\-Logger\-::debug (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{message}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classlog4tango_1_1Logger_acdeaf9ecda4f2fd1b6ac845e188b34d6}
+
+
+Log a message with debug level. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & string to write in the log file \\
+\hline
+\end{DoxyParams}
+
+
+References log4tango\-::\-Level\-::\-D\-E\-B\-U\-G.
+
+\index{log4tango\-::\-Logger@{log4tango\-::\-Logger}!debug\-\_\-stream@{debug\-\_\-stream}}
+\index{debug\-\_\-stream@{debug\-\_\-stream}!log4tango::Logger@{log4tango\-::\-Logger}}
+\subsubsection[{debug\-\_\-stream}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Logger\-Stream} log4tango\-::\-Logger\-::debug\-\_\-stream (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classlog4tango_1_1Logger_a652427a4aed5322eb189f7409498cd18}
+
+
+Return a \doxyref{Logger\-Stream}{p.}{d6/de1/classlog4tango_1_1LoggerStream} with level D\-E\-B\-U\-G. 
+
+\begin{DoxyReturn}{Returns}
+The \doxyref{Logger\-Stream}{p.}{d6/de1/classlog4tango_1_1LoggerStream}. 
+\end{DoxyReturn}
+
+
+References log4tango\-::\-Level\-::\-D\-E\-B\-U\-G.
+
+\index{log4tango\-::\-Logger@{log4tango\-::\-Logger}!error@{error}}
+\index{error@{error}!log4tango::Logger@{log4tango\-::\-Logger}}
+\subsubsection[{error}]{\setlength{\rightskip}{0pt plus 5cm}void log4tango\-::\-Logger\-::error (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{string\-\_\-format, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}\label{classlog4tango_1_1Logger_ac9c2f129c56991f6bf7148ce5b7f1518}
+
+
+Log a message with error level. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string\-\_\-format} & Format specifier for the log. \\
+\hline
+{\em ...} & The arguments for string\-\_\-format \\
+\hline
+\end{DoxyParams}
+
+
+References log4tango\-::\-Level\-::\-E\-R\-R\-O\-R, is\-\_\-level\-\_\-enabled(), log\-\_\-unconditionally(), and log4tango\-::\-String\-Util\-::vform().
+
+\index{log4tango\-::\-Logger@{log4tango\-::\-Logger}!error@{error}}
+\index{error@{error}!log4tango::Logger@{log4tango\-::\-Logger}}
+\subsubsection[{error}]{\setlength{\rightskip}{0pt plus 5cm}void log4tango\-::\-Logger\-::error (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{message}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classlog4tango_1_1Logger_a7d587fb218937b9c525f5c48e5f0e230}
+
+
+Log a message with error level. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & string to write in the log file \\
+\hline
+\end{DoxyParams}
+
+
+References log4tango\-::\-Level\-::\-E\-R\-R\-O\-R.
+
+\index{log4tango\-::\-Logger@{log4tango\-::\-Logger}!error\-\_\-stream@{error\-\_\-stream}}
+\index{error\-\_\-stream@{error\-\_\-stream}!log4tango::Logger@{log4tango\-::\-Logger}}
+\subsubsection[{error\-\_\-stream}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Logger\-Stream} log4tango\-::\-Logger\-::error\-\_\-stream (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classlog4tango_1_1Logger_a09c866cc0bfb1de324c676617234f4fd}
+
+
+Return a \doxyref{Logger\-Stream}{p.}{d6/de1/classlog4tango_1_1LoggerStream} with level E\-R\-R\-O\-R. 
+
+\begin{DoxyReturn}{Returns}
+The \doxyref{Logger\-Stream}{p.}{d6/de1/classlog4tango_1_1LoggerStream}. 
+\end{DoxyReturn}
+
+
+References log4tango\-::\-Level\-::\-E\-R\-R\-O\-R.
+
+\index{log4tango\-::\-Logger@{log4tango\-::\-Logger}!fatal@{fatal}}
+\index{fatal@{fatal}!log4tango::Logger@{log4tango\-::\-Logger}}
+\subsubsection[{fatal}]{\setlength{\rightskip}{0pt plus 5cm}void log4tango\-::\-Logger\-::fatal (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{string\-\_\-format, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}\label{classlog4tango_1_1Logger_a4c8832412bde8329c5a69acd88e08b8c}
+
+
+Log a message with fatal level. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string\-\_\-format} & Format specifier for the log. \\
+\hline
+{\em ...} & The arguments for string\-\_\-format \\
+\hline
+\end{DoxyParams}
+
+
+References log4tango\-::\-Level\-::\-F\-A\-T\-A\-L, is\-\_\-level\-\_\-enabled(), log\-\_\-unconditionally(), and log4tango\-::\-String\-Util\-::vform().
+
+\index{log4tango\-::\-Logger@{log4tango\-::\-Logger}!fatal@{fatal}}
+\index{fatal@{fatal}!log4tango::Logger@{log4tango\-::\-Logger}}
+\subsubsection[{fatal}]{\setlength{\rightskip}{0pt plus 5cm}void log4tango\-::\-Logger\-::fatal (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{message}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classlog4tango_1_1Logger_a56287e6a0a500f74d9fd7bc09f612111}
+
+
+Log a message with fatal level. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & string to write in the log file \\
+\hline
+\end{DoxyParams}
+
+
+References log4tango\-::\-Level\-::\-F\-A\-T\-A\-L.
+
+\index{log4tango\-::\-Logger@{log4tango\-::\-Logger}!fatal\-\_\-stream@{fatal\-\_\-stream}}
+\index{fatal\-\_\-stream@{fatal\-\_\-stream}!log4tango::Logger@{log4tango\-::\-Logger}}
+\subsubsection[{fatal\-\_\-stream}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Logger\-Stream} log4tango\-::\-Logger\-::fatal\-\_\-stream (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classlog4tango_1_1Logger_ae734bcc83b3b3687a073edaacd5c74f0}
+
+
+Return a \doxyref{Logger\-Stream}{p.}{d6/de1/classlog4tango_1_1LoggerStream} with level F\-A\-T\-A\-L. 
+
+\begin{DoxyReturn}{Returns}
+The \doxyref{Logger\-Stream}{p.}{d6/de1/classlog4tango_1_1LoggerStream}. 
+\end{DoxyReturn}
+
+
+References log4tango\-::\-Level\-::\-F\-A\-T\-A\-L.
+
+\index{log4tango\-::\-Logger@{log4tango\-::\-Logger}!get\-\_\-level@{get\-\_\-level}}
+\index{get\-\_\-level@{get\-\_\-level}!log4tango::Logger@{log4tango\-::\-Logger}}
+\subsubsection[{get\-\_\-level}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Level\-::\-Value} log4tango\-::\-Logger\-::get\-\_\-level (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classlog4tango_1_1Logger_a0bfd7a54498aba29263cfb0dae55faff}
+
+
+Returns the assigned \doxyref{Level}{p.}{d8/d0e/classlog4tango_1_1Level}, if any, for this \doxyref{Logger}{p.}{d4/d1c/classlog4tango_1_1Logger}. 
+
+\begin{DoxyReturn}{Returns}
+\doxyref{Level}{p.}{d8/d0e/classlog4tango_1_1Level} -\/ the assigned \doxyref{Level}{p.}{d8/d0e/classlog4tango_1_1Level}, can be Level\-::\-N\-O\-T\-S\-E\-T 
+\end{DoxyReturn}
+\index{log4tango\-::\-Logger@{log4tango\-::\-Logger}!get\-\_\-name@{get\-\_\-name}}
+\index{get\-\_\-name@{get\-\_\-name}!log4tango::Logger@{log4tango\-::\-Logger}}
+\subsubsection[{get\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::string\& log4tango\-::\-Logger\-::get\-\_\-name (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classlog4tango_1_1Logger_abfe1c32b01e64c5f58f52812f898f170}
+
+
+Return the logger name. 
+
+\begin{DoxyReturn}{Returns}
+The logger name. 
+\end{DoxyReturn}
+
+
+Referenced by log\-\_\-unconditionally().
+
+\index{log4tango\-::\-Logger@{log4tango\-::\-Logger}!get\-\_\-stream@{get\-\_\-stream}}
+\index{get\-\_\-stream@{get\-\_\-stream}!log4tango::Logger@{log4tango\-::\-Logger}}
+\subsubsection[{get\-\_\-stream}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Logger\-Stream} log4tango\-::\-Logger\-::get\-\_\-stream (
+\begin{DoxyParamCaption}
+\item[{{\bf Level\-::\-Value}}]{level, }
+\item[{bool}]{filter = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classlog4tango_1_1Logger_a34b294678a690630721e8824f16020de}
+
+
+Return a \doxyref{Logger\-Stream}{p.}{d6/de1/classlog4tango_1_1LoggerStream} with given \doxyref{Level}{p.}{d8/d0e/classlog4tango_1_1Level}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & The \doxyref{Level}{p.}{d8/d0e/classlog4tango_1_1Level} of the \doxyref{Logger\-Stream}{p.}{d6/de1/classlog4tango_1_1LoggerStream}. \\
+\hline
+{\em filter} & The filter flag \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The requested \doxyref{Logger\-Stream}{p.}{d6/de1/classlog4tango_1_1LoggerStream}. 
+\end{DoxyReturn}
+\index{log4tango\-::\-Logger@{log4tango\-::\-Logger}!info@{info}}
+\index{info@{info}!log4tango::Logger@{log4tango\-::\-Logger}}
+\subsubsection[{info}]{\setlength{\rightskip}{0pt plus 5cm}void log4tango\-::\-Logger\-::info (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{string\-\_\-format, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}\label{classlog4tango_1_1Logger_adaba6152f4a39580d48bae035ac30778}
+
+
+Log a message with info level. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string\-\_\-format} & Format specifier for the log. \\
+\hline
+{\em ...} & The arguments for string\-\_\-format \\
+\hline
+\end{DoxyParams}
+
+
+References log4tango\-::\-Level\-::\-I\-N\-F\-O, is\-\_\-level\-\_\-enabled(), log\-\_\-unconditionally(), and log4tango\-::\-String\-Util\-::vform().
+
+\index{log4tango\-::\-Logger@{log4tango\-::\-Logger}!info@{info}}
+\index{info@{info}!log4tango::Logger@{log4tango\-::\-Logger}}
+\subsubsection[{info}]{\setlength{\rightskip}{0pt plus 5cm}void log4tango\-::\-Logger\-::info (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{message}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classlog4tango_1_1Logger_a987565b18e6ea9a2524d64c80759c2eb}
+
+
+Log a message with info level. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & string to write in the log file \\
+\hline
+\end{DoxyParams}
+
+
+References log4tango\-::\-Level\-::\-I\-N\-F\-O.
+
+\index{log4tango\-::\-Logger@{log4tango\-::\-Logger}!info\-\_\-stream@{info\-\_\-stream}}
+\index{info\-\_\-stream@{info\-\_\-stream}!log4tango::Logger@{log4tango\-::\-Logger}}
+\subsubsection[{info\-\_\-stream}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Logger\-Stream} log4tango\-::\-Logger\-::info\-\_\-stream (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classlog4tango_1_1Logger_a22a2fd4d13e70e352a5f47dd02d33342}
+
+
+Return a \doxyref{Logger\-Stream}{p.}{d6/de1/classlog4tango_1_1LoggerStream} with level I\-N\-F\-O. 
+
+\begin{DoxyReturn}{Returns}
+The \doxyref{Logger\-Stream}{p.}{d6/de1/classlog4tango_1_1LoggerStream}. 
+\end{DoxyReturn}
+
+
+References log4tango\-::\-Level\-::\-I\-N\-F\-O.
+
+\index{log4tango\-::\-Logger@{log4tango\-::\-Logger}!is\-\_\-debug\-\_\-enabled@{is\-\_\-debug\-\_\-enabled}}
+\index{is\-\_\-debug\-\_\-enabled@{is\-\_\-debug\-\_\-enabled}!log4tango::Logger@{log4tango\-::\-Logger}}
+\subsubsection[{is\-\_\-debug\-\_\-enabled}]{\setlength{\rightskip}{0pt plus 5cm}bool log4tango\-::\-Logger\-::is\-\_\-debug\-\_\-enabled (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classlog4tango_1_1Logger_a6ce8b32ab06c6b77f8aac562dabf9c1f}
+
+
+Return true if the \doxyref{Logger}{p.}{d4/d1c/classlog4tango_1_1Logger} will log messages with level D\-E\-B\-U\-G. 
+
+\begin{DoxyReturn}{Returns}
+Whether the \doxyref{Logger}{p.}{d4/d1c/classlog4tango_1_1Logger} will log. 
+\end{DoxyReturn}
+
+
+References log4tango\-::\-Level\-::\-D\-E\-B\-U\-G.
+
+\index{log4tango\-::\-Logger@{log4tango\-::\-Logger}!is\-\_\-error\-\_\-enabled@{is\-\_\-error\-\_\-enabled}}
+\index{is\-\_\-error\-\_\-enabled@{is\-\_\-error\-\_\-enabled}!log4tango::Logger@{log4tango\-::\-Logger}}
+\subsubsection[{is\-\_\-error\-\_\-enabled}]{\setlength{\rightskip}{0pt plus 5cm}bool log4tango\-::\-Logger\-::is\-\_\-error\-\_\-enabled (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classlog4tango_1_1Logger_ab2ec2debd2d3024293a0d873af8e86b3}
+
+
+Return true if the \doxyref{Logger}{p.}{d4/d1c/classlog4tango_1_1Logger} will log messages with level E\-R\-R\-O\-R. 
+
+\begin{DoxyReturn}{Returns}
+Whether the \doxyref{Logger}{p.}{d4/d1c/classlog4tango_1_1Logger} will log. 
+\end{DoxyReturn}
+
+
+References log4tango\-::\-Level\-::\-E\-R\-R\-O\-R.
+
+\index{log4tango\-::\-Logger@{log4tango\-::\-Logger}!is\-\_\-fatal\-\_\-enabled@{is\-\_\-fatal\-\_\-enabled}}
+\index{is\-\_\-fatal\-\_\-enabled@{is\-\_\-fatal\-\_\-enabled}!log4tango::Logger@{log4tango\-::\-Logger}}
+\subsubsection[{is\-\_\-fatal\-\_\-enabled}]{\setlength{\rightskip}{0pt plus 5cm}bool log4tango\-::\-Logger\-::is\-\_\-fatal\-\_\-enabled (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classlog4tango_1_1Logger_a16213b0ab5912487ad2eb62c4337900b}
+
+
+Return true if the \doxyref{Logger}{p.}{d4/d1c/classlog4tango_1_1Logger} will log messages with level F\-A\-T\-A\-L. 
+
+\begin{DoxyReturn}{Returns}
+Whether the \doxyref{Logger}{p.}{d4/d1c/classlog4tango_1_1Logger} will log. 
+\end{DoxyReturn}
+
+
+References log4tango\-::\-Level\-::\-F\-A\-T\-A\-L.
+
+\index{log4tango\-::\-Logger@{log4tango\-::\-Logger}!is\-\_\-info\-\_\-enabled@{is\-\_\-info\-\_\-enabled}}
+\index{is\-\_\-info\-\_\-enabled@{is\-\_\-info\-\_\-enabled}!log4tango::Logger@{log4tango\-::\-Logger}}
+\subsubsection[{is\-\_\-info\-\_\-enabled}]{\setlength{\rightskip}{0pt plus 5cm}bool log4tango\-::\-Logger\-::is\-\_\-info\-\_\-enabled (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classlog4tango_1_1Logger_af73279505009e650e615294711fe75fe}
+
+
+Return true if the \doxyref{Logger}{p.}{d4/d1c/classlog4tango_1_1Logger} will log messages with level I\-N\-F\-O. 
+
+\begin{DoxyReturn}{Returns}
+Whether the \doxyref{Logger}{p.}{d4/d1c/classlog4tango_1_1Logger} will log. 
+\end{DoxyReturn}
+
+
+References log4tango\-::\-Level\-::\-I\-N\-F\-O.
+
+\index{log4tango\-::\-Logger@{log4tango\-::\-Logger}!is\-\_\-level\-\_\-enabled@{is\-\_\-level\-\_\-enabled}}
+\index{is\-\_\-level\-\_\-enabled@{is\-\_\-level\-\_\-enabled}!log4tango::Logger@{log4tango\-::\-Logger}}
+\subsubsection[{is\-\_\-level\-\_\-enabled}]{\setlength{\rightskip}{0pt plus 5cm}bool log4tango\-::\-Logger\-::is\-\_\-level\-\_\-enabled (
+\begin{DoxyParamCaption}
+\item[{{\bf Level\-::\-Value}}]{level}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classlog4tango_1_1Logger_a393cade41cee1267e49018f5b4f8fa67}
+
+
+Returns true if the level of the \doxyref{Logger}{p.}{d4/d1c/classlog4tango_1_1Logger} is equal to or higher than given level. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & The level to compare with. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether logging is enable for this level. 
+\end{DoxyReturn}
+
+
+Referenced by debug(), error(), fatal(), info(), log(), and warn().
+
+\index{log4tango\-::\-Logger@{log4tango\-::\-Logger}!is\-\_\-warn\-\_\-enabled@{is\-\_\-warn\-\_\-enabled}}
+\index{is\-\_\-warn\-\_\-enabled@{is\-\_\-warn\-\_\-enabled}!log4tango::Logger@{log4tango\-::\-Logger}}
+\subsubsection[{is\-\_\-warn\-\_\-enabled}]{\setlength{\rightskip}{0pt plus 5cm}bool log4tango\-::\-Logger\-::is\-\_\-warn\-\_\-enabled (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classlog4tango_1_1Logger_ac48da8e8705775526b0d94f974dd158d}
+
+
+Return true if the \doxyref{Logger}{p.}{d4/d1c/classlog4tango_1_1Logger} will log messages with level W\-A\-R\-N. 
+
+\begin{DoxyReturn}{Returns}
+Whether the \doxyref{Logger}{p.}{d4/d1c/classlog4tango_1_1Logger} will log. 
+\end{DoxyReturn}
+
+
+References log4tango\-::\-Level\-::\-W\-A\-R\-N.
+
+\index{log4tango\-::\-Logger@{log4tango\-::\-Logger}!log@{log}}
+\index{log@{log}!log4tango::Logger@{log4tango\-::\-Logger}}
+\subsubsection[{log}]{\setlength{\rightskip}{0pt plus 5cm}void log4tango\-::\-Logger\-::log (
+\begin{DoxyParamCaption}
+\item[{{\bf Level\-::\-Value}}]{level, }
+\item[{const char $\ast$}]{string\-\_\-format, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}\label{classlog4tango_1_1Logger_aebe7a33e64c1dd47d908d5a1eec18545}
+
+
+Log a message with the specified level. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & The level of this log message. \\
+\hline
+{\em string\-\_\-format} & Format specifier for the log . \\
+\hline
+{\em ...} & The arguments for string\-\_\-format \\
+\hline
+\end{DoxyParams}
+
+
+References is\-\_\-level\-\_\-enabled(), log\-\_\-unconditionally(), and log4tango\-::\-String\-Util\-::vform().
+
+
+
+Referenced by log4tango\-::\-Logger\-Stream\-::flush().
+
+\index{log4tango\-::\-Logger@{log4tango\-::\-Logger}!log@{log}}
+\index{log@{log}!log4tango::Logger@{log4tango\-::\-Logger}}
+\subsubsection[{log}]{\setlength{\rightskip}{0pt plus 5cm}void log4tango\-::\-Logger\-::log (
+\begin{DoxyParamCaption}
+\item[{{\bf Level\-::\-Value}}]{level, }
+\item[{const std\-::string \&}]{message}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classlog4tango_1_1Logger_afab624480348ae2bae502c72efeaf38e}
+
+
+Log a message with the specified level. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & The level of this log message. \\
+\hline
+{\em message} & string to write in the log file \\
+\hline
+\end{DoxyParams}
+\index{log4tango\-::\-Logger@{log4tango\-::\-Logger}!log\-\_\-unconditionally@{log\-\_\-unconditionally}}
+\index{log\-\_\-unconditionally@{log\-\_\-unconditionally}!log4tango::Logger@{log4tango\-::\-Logger}}
+\subsubsection[{log\-\_\-unconditionally}]{\setlength{\rightskip}{0pt plus 5cm}void log4tango\-::\-Logger\-::log\-\_\-unconditionally (
+\begin{DoxyParamCaption}
+\item[{{\bf Level\-::\-Value}}]{level, }
+\item[{const char $\ast$}]{string\-\_\-format, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}\label{classlog4tango_1_1Logger_adc92f13df7647dbeac96120bbda218f4}
+
+
+Log a message with the specified level without level checking. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & The level of this log message. \\
+\hline
+{\em string\-\_\-format} & Format specifier for the log . \\
+\hline
+{\em ...} & The arguments for string\-\_\-format \\
+\hline
+\end{DoxyParams}
+
+
+References log4tango\-::\-String\-Util\-::vform().
+
+
+
+Referenced by debug(), error(), fatal(), log4tango\-::\-Logger\-Stream\-::flush(), info(), log(), and warn().
+
+\index{log4tango\-::\-Logger@{log4tango\-::\-Logger}!log\-\_\-unconditionally@{log\-\_\-unconditionally}}
+\index{log\-\_\-unconditionally@{log\-\_\-unconditionally}!log4tango::Logger@{log4tango\-::\-Logger}}
+\subsubsection[{log\-\_\-unconditionally}]{\setlength{\rightskip}{0pt plus 5cm}void log4tango\-::\-Logger\-::log\-\_\-unconditionally (
+\begin{DoxyParamCaption}
+\item[{{\bf Level\-::\-Value}}]{level, }
+\item[{const std\-::string \&}]{message}
+\end{DoxyParamCaption}
+)}\label{classlog4tango_1_1Logger_a8ee921e0f61dea06224b7b249e820470}
+
+
+Log a message with the specified level without level checking. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & The level of this log message. \\
+\hline
+{\em message} & string to write in the log file \\
+\hline
+\end{DoxyParams}
+
+
+References call\-\_\-appenders(), and get\-\_\-name().
+
+\index{log4tango\-::\-Logger@{log4tango\-::\-Logger}!set\-\_\-level@{set\-\_\-level}}
+\index{set\-\_\-level@{set\-\_\-level}!log4tango::Logger@{log4tango\-::\-Logger}}
+\subsubsection[{set\-\_\-level}]{\setlength{\rightskip}{0pt plus 5cm}void log4tango\-::\-Logger\-::set\-\_\-level (
+\begin{DoxyParamCaption}
+\item[{{\bf Level\-::\-Value}}]{level}
+\end{DoxyParamCaption}
+)}\label{classlog4tango_1_1Logger_aee3ae63ec9ebc6f2a2eb72c0ff3d2b34}
+
+
+Set the level of this \doxyref{Logger}{p.}{d4/d1c/classlog4tango_1_1Logger} (silently ignores invalid values) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & The level to set. \\
+\hline
+\end{DoxyParams}
+
+
+References log4tango\-::\-Appender\-Attachable\-::\-\_\-appenders, log4tango\-::\-Appender\-Attachable\-::\-\_\-appenders\-Mutex, log4tango\-::\-Level\-::\-D\-E\-B\-U\-G, and log4tango\-::\-Level\-::\-O\-F\-F.
+
+\index{log4tango\-::\-Logger@{log4tango\-::\-Logger}!warn@{warn}}
+\index{warn@{warn}!log4tango::Logger@{log4tango\-::\-Logger}}
+\subsubsection[{warn}]{\setlength{\rightskip}{0pt plus 5cm}void log4tango\-::\-Logger\-::warn (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{string\-\_\-format, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}\label{classlog4tango_1_1Logger_ab7a7dfad91aa2196ed91a607808f1061}
+
+
+Log a message with warn level. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string\-\_\-format} & Format specifier for the log. \\
+\hline
+{\em ...} & The arguments for string\-\_\-format \\
+\hline
+\end{DoxyParams}
+
+
+References is\-\_\-level\-\_\-enabled(), log\-\_\-unconditionally(), log4tango\-::\-String\-Util\-::vform(), and log4tango\-::\-Level\-::\-W\-A\-R\-N.
+
+\index{log4tango\-::\-Logger@{log4tango\-::\-Logger}!warn@{warn}}
+\index{warn@{warn}!log4tango::Logger@{log4tango\-::\-Logger}}
+\subsubsection[{warn}]{\setlength{\rightskip}{0pt plus 5cm}void log4tango\-::\-Logger\-::warn (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{message}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classlog4tango_1_1Logger_a22646b15ebc33254f734e23280868345}
+
+
+Log a message with warn level. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & string to write in the log file \\
+\hline
+\end{DoxyParams}
+
+
+References log4tango\-::\-Level\-::\-W\-A\-R\-N.
+
+\index{log4tango\-::\-Logger@{log4tango\-::\-Logger}!warn\-\_\-stream@{warn\-\_\-stream}}
+\index{warn\-\_\-stream@{warn\-\_\-stream}!log4tango::Logger@{log4tango\-::\-Logger}}
+\subsubsection[{warn\-\_\-stream}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Logger\-Stream} log4tango\-::\-Logger\-::warn\-\_\-stream (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classlog4tango_1_1Logger_a223a0d6d82a1e054d07474e87b207bba}
+
+
+Return a \doxyref{Logger\-Stream}{p.}{d6/de1/classlog4tango_1_1LoggerStream} with level W\-A\-R\-N. 
+
+\begin{DoxyReturn}{Returns}
+The \doxyref{Logger\-Stream}{p.}{d6/de1/classlog4tango_1_1LoggerStream}. 
+\end{DoxyReturn}
+
+
+References log4tango\-::\-Level\-::\-W\-A\-R\-N.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+{\bf Logger.\-hh}\item 
+{\bf Logger.\-cpp}\end{DoxyCompactItemize}

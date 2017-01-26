@@ -1,0 +1,286 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="d4/ded/classTango_1_1CallBack" kind="class" prot="public">
+    <compoundname>Tango::CallBack</compoundname>
+    <innerclass refid="dd/de7/classTango_1_1CallBack_1_1CallBackExt" prot="private">Tango::CallBack::CallBackExt</innerclass>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="d4/ded/classTango_1_1CallBack_1a1267d53ae947792829a0db311573ae18" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend class</type>
+        <definition>friend class EventConsumer</definition>
+        <argsstring></argsstring>
+        <name>EventConsumer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/devasyn.h" line="237" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/devasyn.h" bodystart="237" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="friend" id="d4/ded/classTango_1_1CallBack_1aa6907ff9f96d034b806902f0627d9dcb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend class</type>
+        <definition>friend class EventConsumerKeepAliveThread</definition>
+        <argsstring></argsstring>
+        <name>EventConsumerKeepAliveThread</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/devasyn.h" line="238" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/devasyn.h" bodystart="238" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d4/ded/classTango_1_1CallBack_1a401df7c46b784b613456fc29a618c05d" prot="private" static="no" mutable="no">
+        <type>CallBackExt *</type>
+        <definition>CallBackExt* Tango::CallBack::ext</definition>
+        <argsstring></argsstring>
+        <name>ext</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/devasyn.h" line="342" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/devasyn.h" bodystart="342" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d4/ded/classTango_1_1CallBack_1a47a4fc0fca26863bd7b31e6f1e978f72" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Tango::CallBack::attr_read</definition>
+        <argsstring>(AttrReadEvent *are)</argsstring>
+        <name>attr_read</name>
+        <param>
+          <type><ref refid="dc/d42/classTango_1_1AttrReadEvent" kindref="compound">AttrReadEvent</ref> *</type>
+          <declname>are</declname>
+        </param>
+        <briefdescription>
+<para>Asynchronous read attribute execution callback method. </para>        </briefdescription>
+        <detaileddescription>
+<para>This method is defined as being empty and must be overloaded by the user when the asynchronous callback model is used. This is the method which will be executed when the server reply from a read_attribute(s) is received in both push and pull sub-mode.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>are</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The read attribute data </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/devasyn.h" line="261" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/devasyn.h" bodystart="261" bodyend="261"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/ded/classTango_1_1CallBack_1a352e653238bb6ecb134fa36d4adb44bc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Tango::CallBack::attr_written</definition>
+        <argsstring>(AttrWrittenEvent *awe)</argsstring>
+        <name>attr_written</name>
+        <param>
+          <type><ref refid="da/d7f/classTango_1_1AttrWrittenEvent" kindref="compound">AttrWrittenEvent</ref> *</type>
+          <declname>awe</declname>
+        </param>
+        <briefdescription>
+<para>Asynchronous write attribute execution callback method. </para>        </briefdescription>
+        <detaileddescription>
+<para>This method is defined as being empty and must be overloaded by the user when the asynchronous callback model is used. This is the method which will be executed when the server reply from a write_attribute(s) is received in both push and pull sub-mode.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>awe</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The write attribute data </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/devasyn.h" line="271" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/devasyn.h" bodystart="271" bodyend="271"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/ded/classTango_1_1CallBack_1a9a39818975ee8f46755209a62ffed5f7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Tango::CallBack::cmd_ended</definition>
+        <argsstring>(CmdDoneEvent *cde)</argsstring>
+        <name>cmd_ended</name>
+        <param>
+          <type><ref refid="dc/d43/classTango_1_1CmdDoneEvent" kindref="compound">CmdDoneEvent</ref> *</type>
+          <declname>cde</declname>
+        </param>
+        <briefdescription>
+<para>Asynchronous command execution callback method. </para>        </briefdescription>
+        <detaileddescription>
+<para>This method is defined as being empty and must be overloaded by the user when the asynchronous callback model is used. This is the method which will be executed when the server reply from a command_inout is received in both push and pull sub-mode.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>cde</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The command data </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/devasyn.h" line="251" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/devasyn.h" bodystart="251" bodyend="251"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/ded/classTango_1_1CallBack_1a6a794901a14f08b1cda918e1d18acce9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Tango::CallBack::push_event</definition>
+        <argsstring>(EventData *ed)</argsstring>
+        <name>push_event</name>
+        <param>
+          <type><ref refid="d7/d5f/classTango_1_1EventData" kindref="compound">EventData</ref> *</type>
+          <declname>ed</declname>
+        </param>
+        <briefdescription>
+<para>Event callback method. </para>        </briefdescription>
+        <detaileddescription>
+<para>This method is defined as being empty and must be overloaded by the user when events are used. This is the method which will be executed when the server send event(s) to the client.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The event data </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/devasyn.h" line="280" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/devasyn.h" bodystart="280" bodyend="280"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/ded/classTango_1_1CallBack_1a5d1dc656f3a7f50df6860f01fac4f32e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Tango::CallBack::push_event</definition>
+        <argsstring>(AttrConfEventData *ace)</argsstring>
+        <name>push_event</name>
+        <param>
+          <type><ref refid="d9/da1/classTango_1_1AttrConfEventData" kindref="compound">AttrConfEventData</ref> *</type>
+          <declname>ace</declname>
+        </param>
+        <briefdescription>
+<para>attribute configuration change event callback method </para>        </briefdescription>
+        <detaileddescription>
+<para>This method is defined as being empty and must be overloaded by the user when events are used. This is the method which will be executed when the server send attribute configuration change event(s) to the client.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ace</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute configuration change event data </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/devasyn.h" line="290" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/devasyn.h" bodystart="290" bodyend="290"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/ded/classTango_1_1CallBack_1abab8a359a1e492e12a21b3dab7b93501" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Tango::CallBack::push_event</definition>
+        <argsstring>(DataReadyEventData *dre)</argsstring>
+        <name>push_event</name>
+        <param>
+          <type><ref refid="df/d39/classTango_1_1DataReadyEventData" kindref="compound">DataReadyEventData</ref> *</type>
+          <declname>dre</declname>
+        </param>
+        <briefdescription>
+<para>Data ready event callback method. </para>        </briefdescription>
+        <detaileddescription>
+<para>This method is defined as being empty and must be overloaded by the user when events are used. This is the method which will be executed when the server send attribute data ready event(s) to the client.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dre</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The data ready event data </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/devasyn.h" line="299" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/devasyn.h" bodystart="299" bodyend="299"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/ded/classTango_1_1CallBack_1acf0ff8451e6fd851f8724237d4fad4a8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Tango::CallBack::push_event</definition>
+        <argsstring>(DevIntrChangeEventData *dic)</argsstring>
+        <name>push_event</name>
+        <param>
+          <type><ref refid="db/d47/classTango_1_1DevIntrChangeEventData" kindref="compound">DevIntrChangeEventData</ref> *</type>
+          <declname>dic</declname>
+        </param>
+        <briefdescription>
+<para>Device interface change event callback method. </para>        </briefdescription>
+        <detaileddescription>
+<para>This method is defined as being empty and must be overloaded by the user when events are used. This is the method which will be executed when the server send device interface change event(s) to the client.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dic</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The device interface change event data </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/devasyn.h" line="308" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/devasyn.h" bodystart="308" bodyend="308"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/ded/classTango_1_1CallBack_1aac4aa49f209d8db18ce415f2a1a5d13d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Tango::CallBack::push_event</definition>
+        <argsstring>(PipeEventData *ped)</argsstring>
+        <name>push_event</name>
+        <param>
+          <type><ref refid="d8/d0d/classTango_1_1PipeEventData" kindref="compound">PipeEventData</ref> *</type>
+          <declname>ped</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="d8/d14/classTango_1_1Pipe" kindref="compound">Pipe</ref> event callback method. </para>        </briefdescription>
+        <detaileddescription>
+<para>This method is defined as being empty and must be overloaded by the user when events are used. This is the method which will be executed when the server send pipe event(s) to the client.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ped</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The pipe event data </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/devasyn.h" line="317" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/devasyn.h" bodystart="317" bodyend="317"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="d4/ded/classTango_1_1CallBack_1a976a34a2581d81db52965b6c05fc202e" prot="private" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual Tango::CallBack::~CallBack</definition>
+        <argsstring>()</argsstring>
+        <name>~CallBack</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/devasyn.h" line="330" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/devasyn.h" bodystart="330" bodyend="330"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Event and asynchronous (callback model) calls base class. </para>    </briefdescription>
+    <detaileddescription>
+<para>When using the event push model (callback automatically executed), there are some cases (same callback used for events coming from different devices hosted in device server process running on different hosts) where the callback method could be executed concurently by different threads started by the ORB. The user has to code his callback method in a thread safe manner.</para><para>$Author$ $Revision$ </para>    </detaileddescription>
+    <location file="/home/tango/workspace/cppTango/include/tango/client/devasyn.h" line="235" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/devasyn.h" bodystart="234" bodyend="344"/>
+    <listofallmembers>
+      <member refid="d4/ded/classTango_1_1CallBack_1a47a4fc0fca26863bd7b31e6f1e978f72" prot="public" virt="virtual"><scope>Tango::CallBack</scope><name>attr_read</name></member>
+      <member refid="d4/ded/classTango_1_1CallBack_1a352e653238bb6ecb134fa36d4adb44bc" prot="public" virt="virtual"><scope>Tango::CallBack</scope><name>attr_written</name></member>
+      <member refid="d4/ded/classTango_1_1CallBack_1a9a39818975ee8f46755209a62ffed5f7" prot="public" virt="virtual"><scope>Tango::CallBack</scope><name>cmd_ended</name></member>
+      <member refid="d4/ded/classTango_1_1CallBack_1a1267d53ae947792829a0db311573ae18" prot="private" virt="non-virtual"><scope>Tango::CallBack</scope><name>EventConsumer</name></member>
+      <member refid="d4/ded/classTango_1_1CallBack_1aa6907ff9f96d034b806902f0627d9dcb" prot="private" virt="non-virtual"><scope>Tango::CallBack</scope><name>EventConsumerKeepAliveThread</name></member>
+      <member refid="d4/ded/classTango_1_1CallBack_1a401df7c46b784b613456fc29a618c05d" prot="private" virt="non-virtual"><scope>Tango::CallBack</scope><name>ext</name></member>
+      <member refid="d4/ded/classTango_1_1CallBack_1a6a794901a14f08b1cda918e1d18acce9" prot="public" virt="virtual"><scope>Tango::CallBack</scope><name>push_event</name></member>
+      <member refid="d4/ded/classTango_1_1CallBack_1a5d1dc656f3a7f50df6860f01fac4f32e" prot="public" virt="virtual"><scope>Tango::CallBack</scope><name>push_event</name></member>
+      <member refid="d4/ded/classTango_1_1CallBack_1abab8a359a1e492e12a21b3dab7b93501" prot="public" virt="virtual"><scope>Tango::CallBack</scope><name>push_event</name></member>
+      <member refid="d4/ded/classTango_1_1CallBack_1acf0ff8451e6fd851f8724237d4fad4a8" prot="public" virt="virtual"><scope>Tango::CallBack</scope><name>push_event</name></member>
+      <member refid="d4/ded/classTango_1_1CallBack_1aac4aa49f209d8db18ce415f2a1a5d13d" prot="public" virt="virtual"><scope>Tango::CallBack</scope><name>push_event</name></member>
+      <member refid="d4/ded/classTango_1_1CallBack_1a976a34a2581d81db52965b6c05fc202e" prot="private" virt="virtual"><scope>Tango::CallBack</scope><name>~CallBack</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

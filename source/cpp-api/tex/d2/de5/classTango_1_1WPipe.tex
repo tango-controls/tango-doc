@@ -1,0 +1,255 @@
+\section{Tango\-:\-:W\-Pipe Class Reference}
+\label{classTango_1_1WPipe}\index{Tango\-::\-W\-Pipe@{Tango\-::\-W\-Pipe}}
+
+
+This class is a class representing a writable pipe in the T\-A\-N\-G\-O device server pattern.  
+
+
+
+
+Inheritance diagram for Tango\-:\-:W\-Pipe\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=120pt]{da/dbe/classTango_1_1WPipe__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Tango\-:\-:W\-Pipe\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=120pt]{d9/d93/classTango_1_1WPipe__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{Indent}{\bf Constructors}\par
+{\em Miscellaneous constructors }\begin{DoxyCompactItemize}
+\item 
+{\bf W\-Pipe} ()
+\begin{DoxyCompactList}\small\item\em Constructs a newly allocated \doxyref{W\-Pipe}{p.}{d2/de5/classTango_1_1WPipe} object. \end{DoxyCompactList}\item 
+{\bf W\-Pipe} (const string \&na, const Tango\-::\-Disp\-Level level)
+\begin{DoxyCompactList}\small\item\em Constructs a newly allocated \doxyref{W\-Pipe}{p.}{d2/de5/classTango_1_1WPipe} object from its name, its description, its label and its display level. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Destructor}\par
+{\em Only one desctructor is defined for this class }\begin{DoxyCompactItemize}
+\item 
+virtual {\bf $\sim$\-W\-Pipe} ()
+\begin{DoxyCompactList}\small\item\em The object desctructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Get/\-Set methods.}\par
+{\em Methods to get the value of the data blob transported by the pipe }\begin{DoxyCompactItemize}
+\item 
+string {\bf get\-\_\-root\-\_\-blob\-\_\-name} ()
+\begin{DoxyCompactList}\small\item\em Get root blob name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Extracting data from a W\-Pipe}\par
+\begin{DoxyCompactItemize}
+\item 
+{\bf W\-Pipe} \& {\bf operator$>$$>$} (short \&datum)
+\begin{DoxyCompactList}\small\item\em Extract data from a device pipe. \end{DoxyCompactList}\item 
+size\-\_\-t {\bf get\-\_\-data\-\_\-elt\-\_\-nb} ()
+\begin{DoxyCompactList}\small\item\em Get root blob data element number. \end{DoxyCompactList}\item 
+vector$<$ string $>$ {\bf get\-\_\-data\-\_\-elt\-\_\-names} ()
+\begin{DoxyCompactList}\small\item\em Get root blob data elements name. \end{DoxyCompactList}\item 
+string {\bf get\-\_\-data\-\_\-elt\-\_\-name} (size\-\_\-t ind)
+\begin{DoxyCompactList}\small\item\em Get root blob data element name. \end{DoxyCompactList}\item 
+int {\bf get\-\_\-data\-\_\-elt\-\_\-type} (size\-\_\-t ind)
+\begin{DoxyCompactList}\small\item\em Get root blob data element value type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This class is a class representing a writable pipe in the T\-A\-N\-G\-O device server pattern. 
+
+It is an base class. It is the a root class for pipe related classes.
+
+\$\-Author\$ \$\-Revision\$ 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Tango\-::\-W\-Pipe@{Tango\-::\-W\-Pipe}!W\-Pipe@{W\-Pipe}}
+\index{W\-Pipe@{W\-Pipe}!Tango::WPipe@{Tango\-::\-W\-Pipe}}
+\subsubsection[{W\-Pipe}]{\setlength{\rightskip}{0pt plus 5cm}Tango\-::\-W\-Pipe\-::\-W\-Pipe (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTango_1_1WPipe_a55a5cb58749f6c67f8f40680ef51271e}
+
+
+Constructs a newly allocated \doxyref{W\-Pipe}{p.}{d2/de5/classTango_1_1WPipe} object. 
+
+The default constructor \index{Tango\-::\-W\-Pipe@{Tango\-::\-W\-Pipe}!W\-Pipe@{W\-Pipe}}
+\index{W\-Pipe@{W\-Pipe}!Tango::WPipe@{Tango\-::\-W\-Pipe}}
+\subsubsection[{W\-Pipe}]{\setlength{\rightskip}{0pt plus 5cm}Tango\-::\-W\-Pipe\-::\-W\-Pipe (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{na, }
+\item[{const Tango\-::\-Disp\-Level}]{level}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1WPipe_aa9fe1ddc4d121fa3201088dae345d6ee}
+
+
+Constructs a newly allocated \doxyref{W\-Pipe}{p.}{d2/de5/classTango_1_1WPipe} object from its name, its description, its label and its display level. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em na} & The pipe name \\
+\hline
+{\em level} & The pipe display level \\
+\hline
+\end{DoxyParams}
+\index{Tango\-::\-W\-Pipe@{Tango\-::\-W\-Pipe}!$\sim$\-W\-Pipe@{$\sim$\-W\-Pipe}}
+\index{$\sim$\-W\-Pipe@{$\sim$\-W\-Pipe}!Tango::WPipe@{Tango\-::\-W\-Pipe}}
+\subsubsection[{$\sim$\-W\-Pipe}]{\setlength{\rightskip}{0pt plus 5cm}virtual Tango\-::\-W\-Pipe\-::$\sim$\-W\-Pipe (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classTango_1_1WPipe_ab90cc0267c8765c2db3c2c0a41a291c2}
+
+
+The object desctructor. 
+
+
+
+\subsection{Member Function Documentation}
+\index{Tango\-::\-W\-Pipe@{Tango\-::\-W\-Pipe}!get\-\_\-data\-\_\-elt\-\_\-name@{get\-\_\-data\-\_\-elt\-\_\-name}}
+\index{get\-\_\-data\-\_\-elt\-\_\-name@{get\-\_\-data\-\_\-elt\-\_\-name}!Tango::WPipe@{Tango\-::\-W\-Pipe}}
+\subsubsection[{get\-\_\-data\-\_\-elt\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}string Tango\-::\-W\-Pipe\-::get\-\_\-data\-\_\-elt\-\_\-name (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{ind}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTango_1_1WPipe_aefa6c951693649873f76f93729ba58b0}
+
+
+Get root blob data element name. 
+
+Get the root blob data element name for a single data element
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ind} & The data element index within the root blob \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The root blob data element name 
+\end{DoxyReturn}
+
+
+References Tango\-::\-Pipe\-::the\-\_\-blob.
+
+\index{Tango\-::\-W\-Pipe@{Tango\-::\-W\-Pipe}!get\-\_\-data\-\_\-elt\-\_\-names@{get\-\_\-data\-\_\-elt\-\_\-names}}
+\index{get\-\_\-data\-\_\-elt\-\_\-names@{get\-\_\-data\-\_\-elt\-\_\-names}!Tango::WPipe@{Tango\-::\-W\-Pipe}}
+\subsubsection[{get\-\_\-data\-\_\-elt\-\_\-names}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$string$>$ Tango\-::\-W\-Pipe\-::get\-\_\-data\-\_\-elt\-\_\-names (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTango_1_1WPipe_a6a13a4ae4253177e1b19c5921a61066b}
+
+
+Get root blob data elements name. 
+
+Get the root blob data elements name
+
+\begin{DoxyReturn}{Returns}
+The root blob data elements name 
+\end{DoxyReturn}
+
+
+References Tango\-::\-Pipe\-::the\-\_\-blob.
+
+\index{Tango\-::\-W\-Pipe@{Tango\-::\-W\-Pipe}!get\-\_\-data\-\_\-elt\-\_\-nb@{get\-\_\-data\-\_\-elt\-\_\-nb}}
+\index{get\-\_\-data\-\_\-elt\-\_\-nb@{get\-\_\-data\-\_\-elt\-\_\-nb}!Tango::WPipe@{Tango\-::\-W\-Pipe}}
+\subsubsection[{get\-\_\-data\-\_\-elt\-\_\-nb}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t Tango\-::\-W\-Pipe\-::get\-\_\-data\-\_\-elt\-\_\-nb (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTango_1_1WPipe_a490dc17dc154629d22e09356bba2160e}
+
+
+Get root blob data element number. 
+
+Get the root blob data element number
+
+\begin{DoxyReturn}{Returns}
+The root blob data element number 
+\end{DoxyReturn}
+
+
+References Tango\-::\-Pipe\-::the\-\_\-blob.
+
+\index{Tango\-::\-W\-Pipe@{Tango\-::\-W\-Pipe}!get\-\_\-data\-\_\-elt\-\_\-type@{get\-\_\-data\-\_\-elt\-\_\-type}}
+\index{get\-\_\-data\-\_\-elt\-\_\-type@{get\-\_\-data\-\_\-elt\-\_\-type}!Tango::WPipe@{Tango\-::\-W\-Pipe}}
+\subsubsection[{get\-\_\-data\-\_\-elt\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}int Tango\-::\-W\-Pipe\-::get\-\_\-data\-\_\-elt\-\_\-type (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{ind}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTango_1_1WPipe_a921bd7f37da698a6a39247756a873a68}
+
+
+Get root blob data element value type. 
+
+Get the root blob data element value type for a single data element
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ind} & The data element index within the root blob \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The blob data element value type 
+\end{DoxyReturn}
+
+
+References Tango\-::\-Pipe\-::the\-\_\-blob.
+
+\index{Tango\-::\-W\-Pipe@{Tango\-::\-W\-Pipe}!get\-\_\-root\-\_\-blob\-\_\-name@{get\-\_\-root\-\_\-blob\-\_\-name}}
+\index{get\-\_\-root\-\_\-blob\-\_\-name@{get\-\_\-root\-\_\-blob\-\_\-name}!Tango::WPipe@{Tango\-::\-W\-Pipe}}
+\subsubsection[{get\-\_\-root\-\_\-blob\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}string Tango\-::\-W\-Pipe\-::get\-\_\-root\-\_\-blob\-\_\-name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTango_1_1WPipe_afdae25b4ab3382578c2ada89da569698}
+
+
+Get root blob name. 
+
+Get the root blob name
+
+\begin{DoxyReturn}{Returns}
+The root blob name 
+\end{DoxyReturn}
+
+
+References Tango\-::\-Pipe\-::the\-\_\-blob.
+
+\index{Tango\-::\-W\-Pipe@{Tango\-::\-W\-Pipe}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!Tango::WPipe@{Tango\-::\-W\-Pipe}}
+\subsubsection[{operator$>$$>$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf W\-Pipe}\& Tango\-::\-W\-Pipe\-::operator$>$$>$ (
+\begin{DoxyParamCaption}
+\item[{short \&}]{datum}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1WPipe_a8373577b75416aea0045dab9d6a0e79f}
+
+
+Extract data from a device pipe. 
+
+Extracting data from a \doxyref{W\-Pipe}{p.}{d2/de5/classTango_1_1WPipe} instance is simlar to extracting data from a Device\-Pipe\-Blob class instance. See doc of Device\-Pipe\-Blob class extraction methods (Device\-Pipe\-Blob\-::operator$>$$>$) to get a complete documentation on how to extract data from a \doxyref{W\-Pipe}{p.}{d2/de5/classTango_1_1WPipe}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em datum} & The pipe data \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Wrong\-Data} & if requested \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+{\bf w\-\_\-pipe.\-h}\end{DoxyCompactItemize}

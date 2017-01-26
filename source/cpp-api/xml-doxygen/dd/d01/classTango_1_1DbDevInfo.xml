@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="dd/d01/classTango_1_1DbDevInfo" kind="class" prot="public">
+    <compoundname>Tango::DbDevInfo</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="dd/d01/classTango_1_1DbDevInfo_1adb109d7fbbcf158b4c78331429c82617" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Tango::DbDevInfo::_class</definition>
+        <argsstring></argsstring>
+        <name>_class</name>
+        <briefdescription>
+<para>The device class name. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="808" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" bodystart="808" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dd/d01/classTango_1_1DbDevInfo_1a4d8d4ec738f75c08e8e8b8a2215b249a" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Tango::DbDevInfo::name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <briefdescription>
+<para>The device name. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="807" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" bodystart="807" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dd/d01/classTango_1_1DbDevInfo_1ad890203d5a47fa9c16f9a0475ea17912" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Tango::DbDevInfo::server</definition>
+        <argsstring></argsstring>
+        <name>server</name>
+        <briefdescription>
+<para>The full device server process name. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="809" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" bodystart="809" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Device information for Database device creation. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="805" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" bodystart="804" bodyend="810"/>
+    <listofallmembers>
+      <member refid="dd/d01/classTango_1_1DbDevInfo_1adb109d7fbbcf158b4c78331429c82617" prot="public" virt="non-virtual"><scope>Tango::DbDevInfo</scope><name>_class</name></member>
+      <member refid="dd/d01/classTango_1_1DbDevInfo_1a4d8d4ec738f75c08e8e8b8a2215b249a" prot="public" virt="non-virtual"><scope>Tango::DbDevInfo</scope><name>name</name></member>
+      <member refid="dd/d01/classTango_1_1DbDevInfo_1ad890203d5a47fa9c16f9a0475ea17912" prot="public" virt="non-virtual"><scope>Tango::DbDevInfo</scope><name>server</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

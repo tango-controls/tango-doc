@@ -1,0 +1,229 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex">
+<title>log4tango::threading::RecursiveMutex class Reference</title>
+<para>
+    <programlisting>#include <link linkend="db/d37/MSThreads_8hh">&quot;MSThreads.hh&quot;</link></programlisting>
+</para>
+        <simplesect>
+            <title>Protected Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>pthread_mutex_t guard_</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>CRITICAL_SECTION guard_</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>pthread_cond_t mutex_available_</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>pthread_t owner_id_</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>long recursion_level_</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>unsigned long recursion_level_</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1a7bb6f1bb4ca7072b24bda6321e196fc8">RecursiveMutex</link> (
+void )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1a7bb6f1bb4ca7072b24bda6321e196fc8">RecursiveMutex</link> (
+void )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1a7210fe141d367494415cf8b580910fdf">~RecursiveMutex</link> (
+void )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1a7210fe141d367494415cf8b580910fdf">~RecursiveMutex</link> (
+void )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1ab25b75795eeed61c179ba00d3b9cd4e0">lock</link> (
+long timeout_)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1ab25b75795eeed61c179ba00d3b9cd4e0">lock</link> (
+long timeout_)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1a35bcfd9220d32eb5d8974acde72e9820">unlock</link> (
+void )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1a35bcfd9220d32eb5d8974acde72e9820">unlock</link> (
+void )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1ae8ca497191c6f8ac476f50fe5172f777">unlockn</link> (
+void )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1ae8ca497191c6f8ac476f50fe5172f777">unlockn</link> (
+void )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1aa03e57774c0e5e21bead4c1623c68a20">RecursiveMutex</link> (
+const <link linkend="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex">RecursiveMutex</link> &amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1aa03e57774c0e5e21bead4c1623c68a20">RecursiveMutex</link> (
+const <link linkend="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex">RecursiveMutex</link> &amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex">RecursiveMutex</link> &amp; <link linkend="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1ace000e0199c147e68feaa07ac814e72d">operator=</link> (
+const <link linkend="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex">RecursiveMutex</link> &amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex">RecursiveMutex</link> &amp; <link linkend="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1ace000e0199c147e68feaa07ac814e72d">operator=</link> (
+const <link linkend="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex">RecursiveMutex</link> &amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+            <section xml:id="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1a7bb6f1bb4ca7072b24bda6321e196fc8">
+                <title>log4tango::threading::RecursiveMutex::RecursiveMutex (void)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1a7bb6f1bb4ca7072b24bda6321e196fc8">
+                <title>log4tango::threading::RecursiveMutex::RecursiveMutex (void)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1a7210fe141d367494415cf8b580910fdf">
+                <title>log4tango::threading::RecursiveMutex::~RecursiveMutex (void)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1a7210fe141d367494415cf8b580910fdf">
+                <title>log4tango::threading::RecursiveMutex::~RecursiveMutex (void)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1ab25b75795eeed61c179ba00d3b9cd4e0">
+                <title>int log4tango::threading::RecursiveMutex::lock (long timeout_=0)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1ab25b75795eeed61c179ba00d3b9cd4e0">
+                <title>int log4tango::threading::RecursiveMutex::lock (long timeout_=0)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1a35bcfd9220d32eb5d8974acde72e9820">
+                <title>void log4tango::threading::RecursiveMutex::unlock (void)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1a35bcfd9220d32eb5d8974acde72e9820">
+                <title>void log4tango::threading::RecursiveMutex::unlock (void)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1ae8ca497191c6f8ac476f50fe5172f777">
+                <title>void log4tango::threading::RecursiveMutex::unlockn (void)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1ae8ca497191c6f8ac476f50fe5172f777">
+                <title>void log4tango::threading::RecursiveMutex::unlockn (void)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1aa03e57774c0e5e21bead4c1623c68a20">
+                <title>log4tango::threading::RecursiveMutex::RecursiveMutex (const RecursiveMutex &amp;)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1aa03e57774c0e5e21bead4c1623c68a20">
+                <title>log4tango::threading::RecursiveMutex::RecursiveMutex (const RecursiveMutex &amp;)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1ace000e0199c147e68feaa07ac814e72d">
+                <title>RecursiveMutex&amp; log4tango::threading::RecursiveMutex::operator= (const RecursiveMutex &amp;)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="df/d2c/classlog4tango_1_1threading_1_1RecursiveMutex_1ace000e0199c147e68feaa07ac814e72d">
+                <title>RecursiveMutex&amp; log4tango::threading::RecursiveMutex::operator= (const RecursiveMutex &amp;)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

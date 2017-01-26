@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="dc/d42/classTango_1_1AttrReadEvent">
+<title>Tango::AttrReadEvent class Reference</title>
+        <simplesect>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="dd/de5/classTango_1_1AttrReadEvent_1_1AttrReadEventExt">Tango::AttrReadEvent::AttrReadEventExt</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Public Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>vector&lt; DeviceAttribute &gt; * argout<para><emphasis>The attribute data.</emphasis></para></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>vector&lt; string &gt; &amp; attr_names<para><emphasis>The attribute name list.</emphasis></para></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Tango::DeviceProxy * device<para><emphasis>The DeviceProxy object on which the call was executed.</emphasis></para></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool err<para><emphasis>A boolean flag set to true if the request failed. False otherwise.</emphasis></para></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>DevErrorList &amp; errors<para><emphasis>The error stack.</emphasis></para></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>AttrReadEventExt * ext</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="dc/d42/classTango_1_1AttrReadEvent_1a5dede482e5979faf51f0afa3c3e0d777">AttrReadEvent</link> (
+DeviceProxy * dev, vector&lt; string &gt; &amp; att_names, vector&lt; DeviceAttribute &gt; * arg, DevErrorList &amp; err_in)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Brief Description</title>
+
+<para>Asynchronous read attribute execution callback data. </para>
+    </simplesect>
+        <simplesect>
+            <title>Detailed Description</title>
+
+<para>This class is used to pass data to the callback method in asynchronous callback model for read_attribute(s) execution</para>
+
+<para>$Author$ $Revision$ </para>
+                <para>Definition at line 130 of file devasyn.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>devasyn.h</para></listitem></itemizedlist></para>
+        </simplesect>
+            <section xml:id="dc/d42/classTango_1_1AttrReadEvent_1a5dede482e5979faf51f0afa3c3e0d777">
+                <title>Tango::AttrReadEvent::AttrReadEvent (DeviceProxy *dev, vector&lt; string &gt; &amp;att_names, vector&lt; DeviceAttribute &gt; *arg, DevErrorList &amp;err_in)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

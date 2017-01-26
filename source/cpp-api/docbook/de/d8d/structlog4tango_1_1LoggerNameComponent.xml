@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="de/d8d/structlog4tango_1_1LoggerNameComponent">
+<title>log4tango::LoggerNameComponent struct Reference</title>
+        <simplesect>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int _precision</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="de/d8d/structlog4tango_1_1LoggerNameComponent_1a13555ff814bd91e96ff0878da86d9313">LoggerNameComponent</link> (
+std::string specifier)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual void <link linkend="de/d8d/structlog4tango_1_1LoggerNameComponent_1a301d9825a65b8c88bdc2e2f00d73698a">append</link> (
+<link linkend="d7/d24/classstd_1_1ostringstream">std::ostringstream</link> &amp; out, const <link linkend="d8/df2/structlog4tango_1_1LoggingEvent">LoggingEvent</link> &amp; event)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+            <section xml:id="de/d8d/structlog4tango_1_1LoggerNameComponent_1a13555ff814bd91e96ff0878da86d9313">
+                <title>log4tango::LoggerNameComponent::LoggerNameComponent (std::string specifier)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="de/d8d/structlog4tango_1_1LoggerNameComponent_1a301d9825a65b8c88bdc2e2f00d73698a">
+                <title>virtual void log4tango::LoggerNameComponent::append (std::ostringstream &amp;out, const LoggingEvent &amp;event)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

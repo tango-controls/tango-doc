@@ -1,0 +1,611 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d3/d9c/classTango_1_1DbServerCache">
+<title>Tango::DbServerCache class Reference</title>
+<para>
+    <programlisting>#include <link linkend="dc/df8/dbapi_8h">&quot;dbapi.h&quot;</link></programlisting>
+</para>
+        <simplesect>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d8/deb/structTango_1_1DbServerCache_1_1AttPropEltIdx">Tango::DbServerCache::AttPropEltIdx</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="de/d56/structTango_1_1DbServerCache_1_1ClassEltIdx">Tango::DbServerCache::ClassEltIdx</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d0/d8d/structTango_1_1DbServerCache_1_1DevEltIdx">Tango::DbServerCache::DevEltIdx</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="dd/dd7/structTango_1_1DbServerCache_1_1EltIdx">Tango::DbServerCache::EltIdx</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d4/d22/structTango_1_1DbServerCache_1_1PropEltIdx">Tango::DbServerCache::PropEltIdx</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>PropEltIdx adm_dev_prop</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int class_nb</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>ClassEltIdx * classes_idx</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>PropEltIdx ctrl_serv_prop</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const DevVarStringArray * data_list</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>PropEltIdx Default_prop</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>PropEltIdx DServer_class_prop</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>EltIdx imp_adm</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>DevVarLongStringArray imp_adm_data</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>EltIdx imp_adm_event</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>DevVarLongStringArray imp_adm_event_data</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>EltIdx imp_notifd_event</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>DevVarLongStringArray imp_notifd_event_data</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>EltIdx imp_tac</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>DevVarLongStringArray imp_tac_data</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int n_data</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int proc_release</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>CORBA::Any_var received</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>DevVarStringArray ret_dev_list</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>DevVarStringArray ret_obj_att_prop</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>DevVarStringArray ret_obj_pipe_prop</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>DevVarStringArray ret_obj_prop</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>DevVarStringArray ret_prop_list</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d3/d9c/classTango_1_1DbServerCache_1ac4367efe4048d5f000757c416a0ca2ce">DbServerCache</link> (
+Database * , string &amp; , string &amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d3/d9c/classTango_1_1DbServerCache_1a879e63fd1e796202e25fe1811d2a0b3c">~DbServerCache</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const <link linkend="d4/d22/structTango_1_1DbServerCache_1_1PropEltIdx">PropEltIdx</link> &amp; <link linkend="d3/d9c/classTango_1_1DbServerCache_1a6f3388bbc156eb81639f43ed58c16957">get_adm_dev_prop</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const DevVarStringArray * <link linkend="d3/d9c/classTango_1_1DbServerCache_1a1d51ab1060c7869ef9949a8e6f01bf78">get_class_att_property</link> (
+DevVarStringArray * )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="d3/d9c/classTango_1_1DbServerCache_1a6fb218ae51715acd591cbe1866600273">get_class_nb</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const DevVarStringArray * <link linkend="d3/d9c/classTango_1_1DbServerCache_1a8fc512292286a0a123509cc69d520d78">get_class_pipe_property</link> (
+DevVarStringArray * )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const DevVarStringArray * <link linkend="d3/d9c/classTango_1_1DbServerCache_1a9e08aa049f7eada2d4cd53629a7fbeec">get_class_property</link> (
+DevVarStringArray * )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const <link linkend="de/d56/structTango_1_1DbServerCache_1_1ClassEltIdx">ClassEltIdx</link> * <link linkend="d3/d9c/classTango_1_1DbServerCache_1a698cc95655debad33c798aed2029ca43">get_classes_elt</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const <link linkend="d4/d22/structTango_1_1DbServerCache_1_1PropEltIdx">PropEltIdx</link> &amp; <link linkend="d3/d9c/classTango_1_1DbServerCache_1a5b8b573b77b996c3a5e65ed91c726323">get_ctrl_serv_prop</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="d3/d9c/classTango_1_1DbServerCache_1a563ac0a97a4264997f91a255ba5e9aa6">get_data_nb</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const <link linkend="d4/d22/structTango_1_1DbServerCache_1_1PropEltIdx">PropEltIdx</link> &amp; <link linkend="d3/d9c/classTango_1_1DbServerCache_1aba3e6ed06dada57a8e28f41db77a36c3">get_Default_prop</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const DevVarStringArray * <link linkend="d3/d9c/classTango_1_1DbServerCache_1a741c66aa44b53aabd6d02938a39d6665">get_dev_att_property</link> (
+DevVarStringArray * )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const DevVarStringArray * <link linkend="d3/d9c/classTango_1_1DbServerCache_1a43c0e6184ae0ac2e37b81b527260eaef">get_dev_list</link> (
+DevVarStringArray * )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const DevVarStringArray * <link linkend="d3/d9c/classTango_1_1DbServerCache_1ae768e8e04cd75dfee203f0b1181a6f76">get_dev_pipe_property</link> (
+DevVarStringArray * )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const DevVarStringArray * <link linkend="d3/d9c/classTango_1_1DbServerCache_1a585a7cff4d7258c732648302e4c7b014">get_dev_property</link> (
+DevVarStringArray * )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const DevVarStringArray * <link linkend="d3/d9c/classTango_1_1DbServerCache_1aca3f498aa2cf7f21cca6010f99c8cad9">get_device_property_list</link> (
+DevVarStringArray * )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const <link linkend="d4/d22/structTango_1_1DbServerCache_1_1PropEltIdx">PropEltIdx</link> &amp; <link linkend="d3/d9c/classTango_1_1DbServerCache_1aa1264b373e8a7ffa06fea2d669077283">get_DServer_class_prop</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const <link linkend="dd/dd7/structTango_1_1DbServerCache_1_1EltIdx">EltIdx</link> &amp; <link linkend="d3/d9c/classTango_1_1DbServerCache_1ace05512b3c0ed14098351cefc5de755f">get_imp_adm_event</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const <link linkend="dd/dd7/structTango_1_1DbServerCache_1_1EltIdx">EltIdx</link> &amp; <link linkend="d3/d9c/classTango_1_1DbServerCache_1aec240b67c7bae7eeac3a55f7cfe99bae">get_imp_dat</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const <link linkend="dd/dd7/structTango_1_1DbServerCache_1_1EltIdx">EltIdx</link> &amp; <link linkend="d3/d9c/classTango_1_1DbServerCache_1a545fc2b0346c24f12336bde2f2879e54">get_imp_notifd_event</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const DevVarStringArray * <link linkend="d3/d9c/classTango_1_1DbServerCache_1ab243d19bed9da9e884594881354dcbac">get_obj_property</link> (
+DevVarStringArray * )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const DevVarLongStringArray * <link linkend="d3/d9c/classTango_1_1DbServerCache_1ac9cd0f9b6e07d3155b932f241e1d7a59">import_adm_dev</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const DevVarLongStringArray * <link linkend="d3/d9c/classTango_1_1DbServerCache_1aebde4557fffeb5937fc720964e676413">import_adm_event</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const DevVarLongStringArray * <link linkend="d3/d9c/classTango_1_1DbServerCache_1a18e8f5e8f1b43b4d3849e10fd4e13d83">import_notifd_event</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const DevVarLongStringArray * <link linkend="d3/d9c/classTango_1_1DbServerCache_1ac88bfa9af0e4706f9c2e9de6a7cd2b5c">import_tac_dev</link> (
+string &amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="d3/d9c/classTango_1_1DbServerCache_1a656fefc2d31d5a8f54e1d3ab9903c9c7">find_class</link> (
+DevString )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="d3/d9c/classTango_1_1DbServerCache_1a9175dc40b97093f3f69ae3a2b56a2294">find_dev_att</link> (
+DevString , int &amp; , int &amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="d3/d9c/classTango_1_1DbServerCache_1a9ee437c66eb395bd3685a7c8e5e1ef1b">find_obj</link> (
+DevString obj_name, int &amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d3/d9c/classTango_1_1DbServerCache_1ae090d7f79ab33c7b09261e2485803a16">get_obj_prop</link> (
+DevVarStringArray * , <link linkend="d4/d22/structTango_1_1DbServerCache_1_1PropEltIdx">PropEltIdx</link> &amp; , bool dev_prop)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d3/d9c/classTango_1_1DbServerCache_1adc1d517f2be8ec99c0e483febe64e86d">get_obj_prop_list</link> (
+DevVarStringArray * , <link linkend="d4/d22/structTango_1_1DbServerCache_1_1PropEltIdx">PropEltIdx</link> &amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d3/d9c/classTango_1_1DbServerCache_1ae196100bcb7e292daa406ee02d2316ea">prop_att_indexes</link> (
+int &amp; , int &amp; , <link linkend="d8/deb/structTango_1_1DbServerCache_1_1AttPropEltIdx">AttPropEltIdx</link> &amp; , const DevVarStringArray * )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d3/d9c/classTango_1_1DbServerCache_1aec08eacc21b50fe02c6e6b9766e66260">prop_indexes</link> (
+int &amp; , int &amp; , <link linkend="d4/d22/structTango_1_1DbServerCache_1_1PropEltIdx">PropEltIdx</link> &amp; , const DevVarStringArray * )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d3/d9c/classTango_1_1DbServerCache_1a2ee29564bcd5d835b503e5beaf253ba8">prop_pipe_indexes</link> (
+int &amp; , int &amp; , <link linkend="d8/deb/structTango_1_1DbServerCache_1_1AttPropEltIdx">AttPropEltIdx</link> &amp; , const DevVarStringArray * )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+            <section xml:id="d3/d9c/classTango_1_1DbServerCache_1ac4367efe4048d5f000757c416a0ca2ce">
+                <title>Tango::DbServerCache::DbServerCache (Database *, string &amp;, string &amp;)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d9c/classTango_1_1DbServerCache_1a879e63fd1e796202e25fe1811d2a0b3c">
+                <title>Tango::DbServerCache::~DbServerCache ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d9c/classTango_1_1DbServerCache_1a6f3388bbc156eb81639f43ed58c16957">
+                <title>const PropEltIdx&amp; Tango::DbServerCache::get_adm_dev_prop ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d9c/classTango_1_1DbServerCache_1a1d51ab1060c7869ef9949a8e6f01bf78">
+                <title>const DevVarStringArray* Tango::DbServerCache::get_class_att_property (DevVarStringArray *)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d9c/classTango_1_1DbServerCache_1a6fb218ae51715acd591cbe1866600273">
+                <title>int Tango::DbServerCache::get_class_nb ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d9c/classTango_1_1DbServerCache_1a8fc512292286a0a123509cc69d520d78">
+                <title>const DevVarStringArray* Tango::DbServerCache::get_class_pipe_property (DevVarStringArray *)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d9c/classTango_1_1DbServerCache_1a9e08aa049f7eada2d4cd53629a7fbeec">
+                <title>const DevVarStringArray* Tango::DbServerCache::get_class_property (DevVarStringArray *)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d9c/classTango_1_1DbServerCache_1a698cc95655debad33c798aed2029ca43">
+                <title>const ClassEltIdx* Tango::DbServerCache::get_classes_elt ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d9c/classTango_1_1DbServerCache_1a5b8b573b77b996c3a5e65ed91c726323">
+                <title>const PropEltIdx&amp; Tango::DbServerCache::get_ctrl_serv_prop ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d9c/classTango_1_1DbServerCache_1a563ac0a97a4264997f91a255ba5e9aa6">
+                <title>int Tango::DbServerCache::get_data_nb ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d9c/classTango_1_1DbServerCache_1aba3e6ed06dada57a8e28f41db77a36c3">
+                <title>const PropEltIdx&amp; Tango::DbServerCache::get_Default_prop ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d9c/classTango_1_1DbServerCache_1a741c66aa44b53aabd6d02938a39d6665">
+                <title>const DevVarStringArray* Tango::DbServerCache::get_dev_att_property (DevVarStringArray *)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d9c/classTango_1_1DbServerCache_1a43c0e6184ae0ac2e37b81b527260eaef">
+                <title>const DevVarStringArray* Tango::DbServerCache::get_dev_list (DevVarStringArray *)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d9c/classTango_1_1DbServerCache_1ae768e8e04cd75dfee203f0b1181a6f76">
+                <title>const DevVarStringArray* Tango::DbServerCache::get_dev_pipe_property (DevVarStringArray *)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d9c/classTango_1_1DbServerCache_1a585a7cff4d7258c732648302e4c7b014">
+                <title>const DevVarStringArray* Tango::DbServerCache::get_dev_property (DevVarStringArray *)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d9c/classTango_1_1DbServerCache_1aca3f498aa2cf7f21cca6010f99c8cad9">
+                <title>const DevVarStringArray* Tango::DbServerCache::get_device_property_list (DevVarStringArray *)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d9c/classTango_1_1DbServerCache_1aa1264b373e8a7ffa06fea2d669077283">
+                <title>const PropEltIdx&amp; Tango::DbServerCache::get_DServer_class_prop ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d9c/classTango_1_1DbServerCache_1ace05512b3c0ed14098351cefc5de755f">
+                <title>const EltIdx&amp; Tango::DbServerCache::get_imp_adm_event ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d9c/classTango_1_1DbServerCache_1aec240b67c7bae7eeac3a55f7cfe99bae">
+                <title>const EltIdx&amp; Tango::DbServerCache::get_imp_dat ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d9c/classTango_1_1DbServerCache_1a545fc2b0346c24f12336bde2f2879e54">
+                <title>const EltIdx&amp; Tango::DbServerCache::get_imp_notifd_event ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d9c/classTango_1_1DbServerCache_1ab243d19bed9da9e884594881354dcbac">
+                <title>const DevVarStringArray* Tango::DbServerCache::get_obj_property (DevVarStringArray *)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d9c/classTango_1_1DbServerCache_1ac9cd0f9b6e07d3155b932f241e1d7a59">
+                <title>const DevVarLongStringArray* Tango::DbServerCache::import_adm_dev ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d9c/classTango_1_1DbServerCache_1aebde4557fffeb5937fc720964e676413">
+                <title>const DevVarLongStringArray* Tango::DbServerCache::import_adm_event ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d9c/classTango_1_1DbServerCache_1a18e8f5e8f1b43b4d3849e10fd4e13d83">
+                <title>const DevVarLongStringArray* Tango::DbServerCache::import_notifd_event ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d9c/classTango_1_1DbServerCache_1ac88bfa9af0e4706f9c2e9de6a7cd2b5c">
+                <title>const DevVarLongStringArray* Tango::DbServerCache::import_tac_dev (string &amp;)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d9c/classTango_1_1DbServerCache_1a656fefc2d31d5a8f54e1d3ab9903c9c7">
+                <title>int Tango::DbServerCache::find_class (DevString)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d9c/classTango_1_1DbServerCache_1a9175dc40b97093f3f69ae3a2b56a2294">
+                <title>int Tango::DbServerCache::find_dev_att (DevString, int &amp;, int &amp;)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d9c/classTango_1_1DbServerCache_1a9ee437c66eb395bd3685a7c8e5e1ef1b">
+                <title>int Tango::DbServerCache::find_obj (DevString obj_name, int &amp;)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d9c/classTango_1_1DbServerCache_1ae090d7f79ab33c7b09261e2485803a16">
+                <title>void Tango::DbServerCache::get_obj_prop (DevVarStringArray *, PropEltIdx &amp;, bool dev_prop=false)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d9c/classTango_1_1DbServerCache_1adc1d517f2be8ec99c0e483febe64e86d">
+                <title>void Tango::DbServerCache::get_obj_prop_list (DevVarStringArray *, PropEltIdx &amp;)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d9c/classTango_1_1DbServerCache_1ae196100bcb7e292daa406ee02d2316ea">
+                <title>void Tango::DbServerCache::prop_att_indexes (int &amp;, int &amp;, AttPropEltIdx &amp;, const DevVarStringArray *)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d9c/classTango_1_1DbServerCache_1aec08eacc21b50fe02c6e6b9766e66260">
+                <title>void Tango::DbServerCache::prop_indexes (int &amp;, int &amp;, PropEltIdx &amp;, const DevVarStringArray *)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d9c/classTango_1_1DbServerCache_1a2ee29564bcd5d835b503e5beaf253ba8">
+                <title>void Tango::DbServerCache::prop_pipe_indexes (int &amp;, int &amp;, AttPropEltIdx &amp;, const DevVarStringArray *)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

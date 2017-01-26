@@ -1,0 +1,91 @@
+\section{log4tango\-:\-:Log\-Stream Class Reference}
+\label{classlog4tango_1_1LogStream}\index{log4tango\-::\-Log\-Stream@{log4tango\-::\-Log\-Stream}}
+
+
+{\ttfamily \#include \char`\"{}Log\-Stream.\-hh\char`\"{}}
+
+
+
+Collaboration diagram for log4tango\-:\-:Log\-Stream\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=154pt]{d1/d6e/classlog4tango_1_1LogStream__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Log\-Stream} ({\bf Log\-Stream\-Buf} $\ast$stream\-\_\-buf)
+\item 
+virtual {\bf $\sim$\-Log\-Stream} ()
+\item 
+{\bf Log\-Stream} \& {\bf operator$<$$<$} (const {\bf Log\-Initiator} \&)
+\item 
+{\footnotesize template$<$typename T $>$ }\\{\bf Log\-Stream} \& {\bf operator$<$$<$} (const T \&t)
+\item 
+{\bf Log\-Stream} \& {\bf operator$<$$<$} ({\bf Log\-Separator} \&)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::ostream {\bf \-\_\-ostream}
+\item 
+{\bf threading\-::\-Recursive\-Mutex} {\bf \-\_\-rmutex}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{log4tango\-::\-Log\-Stream@{log4tango\-::\-Log\-Stream}!Log\-Stream@{Log\-Stream}}
+\index{Log\-Stream@{Log\-Stream}!log4tango::LogStream@{log4tango\-::\-Log\-Stream}}
+\subsubsection[{Log\-Stream}]{\setlength{\rightskip}{0pt plus 5cm}log4tango\-::\-Log\-Stream\-::\-Log\-Stream (
+\begin{DoxyParamCaption}
+\item[{{\bf Log\-Stream\-Buf} $\ast$}]{stream\-\_\-buf}
+\end{DoxyParamCaption}
+)}\label{classlog4tango_1_1LogStream_a4bc7ffb9c5829c5db8ed1af5bcf94bb0}
+\index{log4tango\-::\-Log\-Stream@{log4tango\-::\-Log\-Stream}!$\sim$\-Log\-Stream@{$\sim$\-Log\-Stream}}
+\index{$\sim$\-Log\-Stream@{$\sim$\-Log\-Stream}!log4tango::LogStream@{log4tango\-::\-Log\-Stream}}
+\subsubsection[{$\sim$\-Log\-Stream}]{\setlength{\rightskip}{0pt plus 5cm}virtual log4tango\-::\-Log\-Stream\-::$\sim$\-Log\-Stream (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classlog4tango_1_1LogStream_a2f4d7a4910bece964dd45dec4f874369}
+
+
+\subsection{Member Function Documentation}
+\index{log4tango\-::\-Log\-Stream@{log4tango\-::\-Log\-Stream}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!log4tango::LogStream@{log4tango\-::\-Log\-Stream}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Log\-Stream}\& log4tango\-::\-Log\-Stream\-::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Log\-Initiator} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classlog4tango_1_1LogStream_a183f7f962965a0330300f5a1b6a58d2d}
+\index{log4tango\-::\-Log\-Stream@{log4tango\-::\-Log\-Stream}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!log4tango::LogStream@{log4tango\-::\-Log\-Stream}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf Log\-Stream}\& log4tango\-::\-Log\-Stream\-::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{t}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classlog4tango_1_1LogStream_a63227c36b86838d90f78b6afeacff5a1}
+\index{log4tango\-::\-Log\-Stream@{log4tango\-::\-Log\-Stream}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!log4tango::LogStream@{log4tango\-::\-Log\-Stream}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Log\-Stream}\& log4tango\-::\-Log\-Stream\-::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{{\bf Log\-Separator} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classlog4tango_1_1LogStream_ab46b78902a2d887f039c79239a4d4e43}
+
+
+\subsection{Member Data Documentation}
+\index{log4tango\-::\-Log\-Stream@{log4tango\-::\-Log\-Stream}!\-\_\-ostream@{\-\_\-ostream}}
+\index{\-\_\-ostream@{\-\_\-ostream}!log4tango::LogStream@{log4tango\-::\-Log\-Stream}}
+\subsubsection[{\-\_\-ostream}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ostream log4tango\-::\-Log\-Stream\-::\-\_\-ostream\hspace{0.3cm}{\ttfamily [protected]}}\label{classlog4tango_1_1LogStream_a56e910c1670fcc56dc3ccf665fb7d686}
+\index{log4tango\-::\-Log\-Stream@{log4tango\-::\-Log\-Stream}!\-\_\-rmutex@{\-\_\-rmutex}}
+\index{\-\_\-rmutex@{\-\_\-rmutex}!log4tango::LogStream@{log4tango\-::\-Log\-Stream}}
+\subsubsection[{\-\_\-rmutex}]{\setlength{\rightskip}{0pt plus 5cm}{\bf threading\-::\-Recursive\-Mutex} log4tango\-::\-Log\-Stream\-::\-\_\-rmutex\hspace{0.3cm}{\ttfamily [protected]}}\label{classlog4tango_1_1LogStream_a809fbebb6eac303284d9348eee8c25e3}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+{\bf Log\-Stream.\-hh}\end{DoxyCompactItemize}

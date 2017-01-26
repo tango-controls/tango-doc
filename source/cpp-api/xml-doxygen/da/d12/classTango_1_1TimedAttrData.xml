@@ -1,0 +1,2695 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="da/d12/classTango_1_1TimedAttrData" kind="class" prot="public">
+    <compoundname>Tango::TimedAttrData</compoundname>
+    <basecompoundref refid="d4/d7a/classTango_1_1AttrData" prot="public" virt="non-virtual">Tango::AttrData&lt; T &gt;</basecompoundref>
+    <templateparamlist>
+      <param>
+        <type>typename</type>
+        <declname>T</declname>
+        <defname>T</defname>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="user-defined">
+      <header>Miscellaneous constructors for scalar attribute</header>
+      <memberdef kind="function" id="da/d12/classTango_1_1TimedAttrData_1a2d4169ef4a760ac37755aea53f9c5de8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::TimedAttrData&lt; T &gt;::TimedAttrData</definition>
+        <argsstring>(const T *p_data, time_t when)</argsstring>
+        <name>TimedAttrData</name>
+        <param>
+          <type>const T *</type>
+          <declname>p_data</declname>
+        </param>
+        <param>
+          <type>time_t</type>
+          <declname>when</declname>
+        </param>
+        <briefdescription>
+<para>Create a new <ref refid="da/d12/classTango_1_1TimedAttrData" kindref="compound">TimedAttrData</ref> object. </para>        </briefdescription>
+        <detaileddescription>
+<para>The memory pointed to by the <emphasis>p_data</emphasis> parameter will not be freed The attribute quality factor will be set to ATTR_VALID</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the attribute value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>when</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The date </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/pollext.h" line="168" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d12/classTango_1_1TimedAttrData_1a3f141191cabfb22c0d472968ca78010f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::TimedAttrData&lt; T &gt;::TimedAttrData</definition>
+        <argsstring>(const T *p_data, const T *p_wr_data, time_t when)</argsstring>
+        <name>TimedAttrData</name>
+        <param>
+          <type>const T *</type>
+          <declname>p_data</declname>
+        </param>
+        <param>
+          <type>const T *</type>
+          <declname>p_wr_data</declname>
+        </param>
+        <param>
+          <type>time_t</type>
+          <declname>when</declname>
+        </param>
+        <briefdescription>
+<para>Create a new <ref refid="da/d12/classTango_1_1TimedAttrData" kindref="compound">TimedAttrData</ref> object for a R/W attribute. </para>        </briefdescription>
+        <detaileddescription>
+<para>The memory pointed to by the <emphasis>p_data</emphasis> and <emphasis>p_wr_data</emphasis> parameters will not be freed The attribute quality factor will be set to ATTR_VALID</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the attribute value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_wr_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the written part of the attribute value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>when</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The date </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/pollext.h" line="180" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d12/classTango_1_1TimedAttrData_1a5b4fbde2e8e1147285c8489d15cb37e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::TimedAttrData&lt; T &gt;::TimedAttrData</definition>
+        <argsstring>(const T *p_data, Tango::AttrQuality qual, time_t when)</argsstring>
+        <name>TimedAttrData</name>
+        <param>
+          <type>const T *</type>
+          <declname>p_data</declname>
+        </param>
+        <param>
+          <type>Tango::AttrQuality</type>
+          <declname>qual</declname>
+        </param>
+        <param>
+          <type>time_t</type>
+          <declname>when</declname>
+        </param>
+        <briefdescription>
+<para>Create a new <ref refid="da/d12/classTango_1_1TimedAttrData" kindref="compound">TimedAttrData</ref> object. </para>        </briefdescription>
+        <detaileddescription>
+<para>The memory pointed to by the <emphasis>p_data</emphasis> parameter will not be freed</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the attribute value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>qual</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute quality factor </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>when</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The date </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/pollext.h" line="191" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d12/classTango_1_1TimedAttrData_1a49f601bb51212d75870f0b4319a4a795" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::TimedAttrData&lt; T &gt;::TimedAttrData</definition>
+        <argsstring>(const T *p_data, const T *p_wr_data, Tango::AttrQuality qual, time_t when)</argsstring>
+        <name>TimedAttrData</name>
+        <param>
+          <type>const T *</type>
+          <declname>p_data</declname>
+        </param>
+        <param>
+          <type>const T *</type>
+          <declname>p_wr_data</declname>
+        </param>
+        <param>
+          <type>Tango::AttrQuality</type>
+          <declname>qual</declname>
+        </param>
+        <param>
+          <type>time_t</type>
+          <declname>when</declname>
+        </param>
+        <briefdescription>
+<para>Create a new <ref refid="da/d12/classTango_1_1TimedAttrData" kindref="compound">TimedAttrData</ref> object for a R/W attribute. </para>        </briefdescription>
+        <detaileddescription>
+<para>The memory pointed to by the <emphasis>p_data</emphasis> and <emphasis>p_wr_data</emphasis> parameters will not be freed</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the attribute value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_wr_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the written part of the attribute value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>qual</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute quality factor </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>when</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The date </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/pollext.h" line="203" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d12/classTango_1_1TimedAttrData_1aadf938e45266eca4a828cbbf653c752b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::TimedAttrData&lt; T &gt;::TimedAttrData</definition>
+        <argsstring>(const T *p_data, Tango::AttrQuality qual, bool rel, time_t when)</argsstring>
+        <name>TimedAttrData</name>
+        <param>
+          <type>const T *</type>
+          <declname>p_data</declname>
+        </param>
+        <param>
+          <type>Tango::AttrQuality</type>
+          <declname>qual</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>rel</declname>
+        </param>
+        <param>
+          <type>time_t</type>
+          <declname>when</declname>
+        </param>
+        <briefdescription>
+<para>Create a new <ref refid="da/d12/classTango_1_1TimedAttrData" kindref="compound">TimedAttrData</ref> object. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the attribute value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>qual</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute quality factor </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Set to true if the memory pointed to by the <emphasis>p_data</emphasis> parameter must be freed </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>when</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The date </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/pollext.h" line="213" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d12/classTango_1_1TimedAttrData_1ac165c5c9f094cba4cadf32bd8947b469" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::TimedAttrData&lt; T &gt;::TimedAttrData</definition>
+        <argsstring>(const T *p_data, const T *p_wr_data, Tango::AttrQuality qual, bool rel, time_t when)</argsstring>
+        <name>TimedAttrData</name>
+        <param>
+          <type>const T *</type>
+          <declname>p_data</declname>
+        </param>
+        <param>
+          <type>const T *</type>
+          <declname>p_wr_data</declname>
+        </param>
+        <param>
+          <type>Tango::AttrQuality</type>
+          <declname>qual</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>rel</declname>
+        </param>
+        <param>
+          <type>time_t</type>
+          <declname>when</declname>
+        </param>
+        <briefdescription>
+<para>Create a new <ref refid="da/d12/classTango_1_1TimedAttrData" kindref="compound">TimedAttrData</ref> object for a R/W attribute. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the attribute value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_wr_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the written part of the attribute value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>qual</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute quality factor </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Set to true if the memory pointed to by the <emphasis>p_data</emphasis> and <emphasis>p_wr_data</emphasis> parameters must be freed </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>when</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The date </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/pollext.h" line="223" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d12/classTango_1_1TimedAttrData_1ad302f54d4d70c534bdf50466a5719c55" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::TimedAttrData&lt; T &gt;::TimedAttrData</definition>
+        <argsstring>(const T *p_data, struct timeval when)</argsstring>
+        <name>TimedAttrData</name>
+        <param>
+          <type>const T *</type>
+          <declname>p_data</declname>
+        </param>
+        <param>
+          <type>struct timeval</type>
+          <declname>when</declname>
+        </param>
+        <briefdescription>
+<para>Create a new <ref refid="da/d12/classTango_1_1TimedAttrData" kindref="compound">TimedAttrData</ref> object. </para>        </briefdescription>
+        <detaileddescription>
+<para>The memory pointed to by the <emphasis>p_data</emphasis> parameter will not be freed The attribute quality factor will be set to ATTR_VALID</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the attribute value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>when</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The date </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/pollext.h" line="234" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d12/classTango_1_1TimedAttrData_1ae060ee002aff45f67590f1f1fa61d35b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::TimedAttrData&lt; T &gt;::TimedAttrData</definition>
+        <argsstring>(const T *p_data, const T *p_wr_data, struct timeval when)</argsstring>
+        <name>TimedAttrData</name>
+        <param>
+          <type>const T *</type>
+          <declname>p_data</declname>
+        </param>
+        <param>
+          <type>const T *</type>
+          <declname>p_wr_data</declname>
+        </param>
+        <param>
+          <type>struct timeval</type>
+          <declname>when</declname>
+        </param>
+        <briefdescription>
+<para>Create a new <ref refid="da/d12/classTango_1_1TimedAttrData" kindref="compound">TimedAttrData</ref> object for a R/W attribute. </para>        </briefdescription>
+        <detaileddescription>
+<para>The memory pointed to by the <emphasis>p_data</emphasis> and <emphasis>p_wr_data</emphasis> parameters will not be freed The attribute quality factor will be set to ATTR_VALID</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the attribute value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_wr_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the written part of the attribute value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>when</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The date </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/pollext.h" line="246" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d12/classTango_1_1TimedAttrData_1a21807ab571c0766770a3ff5e77bae3d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::TimedAttrData&lt; T &gt;::TimedAttrData</definition>
+        <argsstring>(const T *p_data, Tango::AttrQuality qual, struct timeval when)</argsstring>
+        <name>TimedAttrData</name>
+        <param>
+          <type>const T *</type>
+          <declname>p_data</declname>
+        </param>
+        <param>
+          <type>Tango::AttrQuality</type>
+          <declname>qual</declname>
+        </param>
+        <param>
+          <type>struct timeval</type>
+          <declname>when</declname>
+        </param>
+        <briefdescription>
+<para>Create a new <ref refid="da/d12/classTango_1_1TimedAttrData" kindref="compound">TimedAttrData</ref> object. </para>        </briefdescription>
+        <detaileddescription>
+<para>The memory pointed to by the <emphasis>p_data</emphasis> parameter will not be freed</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the attribute value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>qual</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute quality factor </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>when</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The date </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/pollext.h" line="257" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d12/classTango_1_1TimedAttrData_1accd5bf91bd215da16f89f548b1a8a175" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::TimedAttrData&lt; T &gt;::TimedAttrData</definition>
+        <argsstring>(const T *p_data, const T *p_wr_data, Tango::AttrQuality qual, struct timeval when)</argsstring>
+        <name>TimedAttrData</name>
+        <param>
+          <type>const T *</type>
+          <declname>p_data</declname>
+        </param>
+        <param>
+          <type>const T *</type>
+          <declname>p_wr_data</declname>
+        </param>
+        <param>
+          <type>Tango::AttrQuality</type>
+          <declname>qual</declname>
+        </param>
+        <param>
+          <type>struct timeval</type>
+          <declname>when</declname>
+        </param>
+        <briefdescription>
+<para>Create a new <ref refid="da/d12/classTango_1_1TimedAttrData" kindref="compound">TimedAttrData</ref> object for a R/W attribute. </para>        </briefdescription>
+        <detaileddescription>
+<para>The memory pointed to by the <emphasis>p_data</emphasis> and <emphasis>p_wr_data</emphasis> parameters will not be freed</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the attribute value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_wr_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the written part of the attribute value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>qual</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute quality factor </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>when</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The date </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/pollext.h" line="269" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d12/classTango_1_1TimedAttrData_1ae0d7a1f16bb0a9f9588c423b69bad81e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::TimedAttrData&lt; T &gt;::TimedAttrData</definition>
+        <argsstring>(const T *p_data, Tango::AttrQuality qual, bool rel, struct timeval when)</argsstring>
+        <name>TimedAttrData</name>
+        <param>
+          <type>const T *</type>
+          <declname>p_data</declname>
+        </param>
+        <param>
+          <type>Tango::AttrQuality</type>
+          <declname>qual</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>rel</declname>
+        </param>
+        <param>
+          <type>struct timeval</type>
+          <declname>when</declname>
+        </param>
+        <briefdescription>
+<para>Create a new <ref refid="da/d12/classTango_1_1TimedAttrData" kindref="compound">TimedAttrData</ref> object. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the attribute value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>qual</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute quality factor </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Set to true if the memory pointed to by the <emphasis>p_data</emphasis> parameter must be freed </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>when</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The date </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/pollext.h" line="279" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d12/classTango_1_1TimedAttrData_1a813e4a279f6af2c4e519ce9cbc4b6cd5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::TimedAttrData&lt; T &gt;::TimedAttrData</definition>
+        <argsstring>(const T *p_data, const T *p_wr_data, Tango::AttrQuality qual, bool rel, struct timeval when)</argsstring>
+        <name>TimedAttrData</name>
+        <param>
+          <type>const T *</type>
+          <declname>p_data</declname>
+        </param>
+        <param>
+          <type>const T *</type>
+          <declname>p_wr_data</declname>
+        </param>
+        <param>
+          <type>Tango::AttrQuality</type>
+          <declname>qual</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>rel</declname>
+        </param>
+        <param>
+          <type>struct timeval</type>
+          <declname>when</declname>
+        </param>
+        <briefdescription>
+<para>Create a new <ref refid="da/d12/classTango_1_1TimedAttrData" kindref="compound">TimedAttrData</ref> object for a R/W attribute. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the attribute value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_wr_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the written part of the attribute value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>qual</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute quality factor </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Set to true if the memory pointed to by the <emphasis>p_data</emphasis> and <emphasis>p_wr_data</emphasis> parameters must be freed </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>when</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The date </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/pollext.h" line="290" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Miscellaneous constructors for spectrum attribute</header>
+      <memberdef kind="function" id="da/d12/classTango_1_1TimedAttrData_1a172705abeceda80074eb21daf80a7d63" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::TimedAttrData&lt; T &gt;::TimedAttrData</definition>
+        <argsstring>(const T *p_data, long x, time_t when)</argsstring>
+        <name>TimedAttrData</name>
+        <param>
+          <type>const T *</type>
+          <declname>p_data</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>time_t</type>
+          <declname>when</declname>
+        </param>
+        <briefdescription>
+<para>Create a new <ref refid="da/d12/classTango_1_1TimedAttrData" kindref="compound">TimedAttrData</ref> object. </para>        </briefdescription>
+        <detaileddescription>
+<para>The memory pointed to by the <emphasis>p_data</emphasis> parameter will not be freed The attribute quality factor will be set to ATTR_VALID</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the attribute value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute x length </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>when</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The date </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/pollext.h" line="310" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d12/classTango_1_1TimedAttrData_1a0a3a74a999370bc1c9086f0c734e5f8f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::TimedAttrData&lt; T &gt;::TimedAttrData</definition>
+        <argsstring>(const T *p_data, long x, const T *p_wr_data, long x_wr, time_t when)</argsstring>
+        <name>TimedAttrData</name>
+        <param>
+          <type>const T *</type>
+          <declname>p_data</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>const T *</type>
+          <declname>p_wr_data</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>x_wr</declname>
+        </param>
+        <param>
+          <type>time_t</type>
+          <declname>when</declname>
+        </param>
+        <briefdescription>
+<para>Create a new <ref refid="da/d12/classTango_1_1TimedAttrData" kindref="compound">TimedAttrData</ref> object for a R/W attribute. </para>        </briefdescription>
+        <detaileddescription>
+<para>The memory pointed to by the <emphasis>p_data</emphasis> and <emphasis>p_wr_data</emphasis> parameters will not be freed The attribute quality factor will be set to ATTR_VALID</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the attribute value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute x length </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_wr_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the written part of the attribute value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>x_wr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute written part x length </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>when</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The date </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/pollext.h" line="324" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d12/classTango_1_1TimedAttrData_1a0325f0beaf8b469637e4c91e1e33d1a8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::TimedAttrData&lt; T &gt;::TimedAttrData</definition>
+        <argsstring>(const T *p_data, long x, Tango::AttrQuality qual, time_t when)</argsstring>
+        <name>TimedAttrData</name>
+        <param>
+          <type>const T *</type>
+          <declname>p_data</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>Tango::AttrQuality</type>
+          <declname>qual</declname>
+        </param>
+        <param>
+          <type>time_t</type>
+          <declname>when</declname>
+        </param>
+        <briefdescription>
+<para>Create a new <ref refid="da/d12/classTango_1_1TimedAttrData" kindref="compound">TimedAttrData</ref> object. </para>        </briefdescription>
+        <detaileddescription>
+<para>The memory pointed to by the <emphasis>p_data</emphasis> parameter will not be freed</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the attribute value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute x length </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>qual</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute quality factor </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>when</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The date </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/pollext.h" line="336" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d12/classTango_1_1TimedAttrData_1a40805ec38830616c3b97ed213c8a8193" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::TimedAttrData&lt; T &gt;::TimedAttrData</definition>
+        <argsstring>(const T *p_data, long x, const T *p_wr_data, long x_wr, Tango::AttrQuality qual, time_t when)</argsstring>
+        <name>TimedAttrData</name>
+        <param>
+          <type>const T *</type>
+          <declname>p_data</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>const T *</type>
+          <declname>p_wr_data</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>x_wr</declname>
+        </param>
+        <param>
+          <type>Tango::AttrQuality</type>
+          <declname>qual</declname>
+        </param>
+        <param>
+          <type>time_t</type>
+          <declname>when</declname>
+        </param>
+        <briefdescription>
+<para>Create a new <ref refid="da/d12/classTango_1_1TimedAttrData" kindref="compound">TimedAttrData</ref> object for a R/W attribute. </para>        </briefdescription>
+        <detaileddescription>
+<para>The memory pointed to by the <emphasis>p_data</emphasis> and <emphasis>p_wr_data</emphasis> parameters will not be freed</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the attribute value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute x length </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_wr_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the written part of the attribute value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>x_wr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute written part x length </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>qual</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute quality factor </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>when</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The date </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/pollext.h" line="350" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d12/classTango_1_1TimedAttrData_1a03898ae2fc843b772b16ff17a80befb1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::TimedAttrData&lt; T &gt;::TimedAttrData</definition>
+        <argsstring>(const T *p_data, long x, Tango::AttrQuality qual, bool rel, time_t when)</argsstring>
+        <name>TimedAttrData</name>
+        <param>
+          <type>const T *</type>
+          <declname>p_data</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>Tango::AttrQuality</type>
+          <declname>qual</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>rel</declname>
+        </param>
+        <param>
+          <type>time_t</type>
+          <declname>when</declname>
+        </param>
+        <briefdescription>
+<para>Create a new <ref refid="da/d12/classTango_1_1TimedAttrData" kindref="compound">TimedAttrData</ref> object. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the attribute value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute x length </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>qual</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute quality factor </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Set to true if the memory pointed to by the <emphasis>p_data</emphasis> parameter must be freed </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>when</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The date </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/pollext.h" line="361" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d12/classTango_1_1TimedAttrData_1a93fc81581fdb0e9a762d46275a24f1eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::TimedAttrData&lt; T &gt;::TimedAttrData</definition>
+        <argsstring>(const T *p_data, long x, const T *p_wr_data, long x_wr, Tango::AttrQuality qual, bool rel, time_t when)</argsstring>
+        <name>TimedAttrData</name>
+        <param>
+          <type>const T *</type>
+          <declname>p_data</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>const T *</type>
+          <declname>p_wr_data</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>x_wr</declname>
+        </param>
+        <param>
+          <type>Tango::AttrQuality</type>
+          <declname>qual</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>rel</declname>
+        </param>
+        <param>
+          <type>time_t</type>
+          <declname>when</declname>
+        </param>
+        <briefdescription>
+<para>Create a new <ref refid="da/d12/classTango_1_1TimedAttrData" kindref="compound">TimedAttrData</ref> object for a R/W attribute. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the attribute value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute x length </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_wr_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the written part of the attribute value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>x_wr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute written part x length </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>qual</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute quality factor </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Set to true if the memory pointed to by the <emphasis>p_data</emphasis> and <emphasis>p_wr_data</emphasis> parameters must be freed </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>when</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The date </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/pollext.h" line="374" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d12/classTango_1_1TimedAttrData_1a8656fb5f0a393b01b5296184ec551e14" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::TimedAttrData&lt; T &gt;::TimedAttrData</definition>
+        <argsstring>(const T *p_data, long x, struct timeval when)</argsstring>
+        <name>TimedAttrData</name>
+        <param>
+          <type>const T *</type>
+          <declname>p_data</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>struct timeval</type>
+          <declname>when</declname>
+        </param>
+        <briefdescription>
+<para>Create a new <ref refid="da/d12/classTango_1_1TimedAttrData" kindref="compound">TimedAttrData</ref> object. </para>        </briefdescription>
+        <detaileddescription>
+<para>The memory pointed to by the <emphasis>p_data</emphasis> parameter will not be freed The attribute quality factor will be set to ATTR_VALID</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the attribute value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute x length </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>when</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The date </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/pollext.h" line="386" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d12/classTango_1_1TimedAttrData_1a4bb287b0748db345ea2b8162cbf78c38" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::TimedAttrData&lt; T &gt;::TimedAttrData</definition>
+        <argsstring>(const T *p_data, long x, const T *p_wr_data, long x_wr, struct timeval when)</argsstring>
+        <name>TimedAttrData</name>
+        <param>
+          <type>const T *</type>
+          <declname>p_data</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>const T *</type>
+          <declname>p_wr_data</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>x_wr</declname>
+        </param>
+        <param>
+          <type>struct timeval</type>
+          <declname>when</declname>
+        </param>
+        <briefdescription>
+<para>Create a new <ref refid="da/d12/classTango_1_1TimedAttrData" kindref="compound">TimedAttrData</ref> object for a R/W attribute. </para>        </briefdescription>
+        <detaileddescription>
+<para>The memory pointed to by the <emphasis>p_data</emphasis> and <emphasis>p_wr_data</emphasis> parameters will not be freed The attribute quality factor will be set to ATTR_VALID</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the attribute value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute x length </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_wr_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the written part of the attribute value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>x_wr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute written part x length </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>when</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The date </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/pollext.h" line="400" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d12/classTango_1_1TimedAttrData_1ab31e6d4572d06f1d737c83ab724a749b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::TimedAttrData&lt; T &gt;::TimedAttrData</definition>
+        <argsstring>(const T *p_data, long x, Tango::AttrQuality qual, struct timeval when)</argsstring>
+        <name>TimedAttrData</name>
+        <param>
+          <type>const T *</type>
+          <declname>p_data</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>Tango::AttrQuality</type>
+          <declname>qual</declname>
+        </param>
+        <param>
+          <type>struct timeval</type>
+          <declname>when</declname>
+        </param>
+        <briefdescription>
+<para>Create a new <ref refid="da/d12/classTango_1_1TimedAttrData" kindref="compound">TimedAttrData</ref> object. </para>        </briefdescription>
+        <detaileddescription>
+<para>The memory pointed to by the <emphasis>p_data</emphasis> parameter will not be freed</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the attribute value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute x length </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>qual</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute quality factor </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>when</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The date </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/pollext.h" line="412" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d12/classTango_1_1TimedAttrData_1abaa2cc0289526f4f1fc6b2a4819097ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::TimedAttrData&lt; T &gt;::TimedAttrData</definition>
+        <argsstring>(const T *p_data, long x, const T *p_wr_data, long x_wr, Tango::AttrQuality qual, struct timeval when)</argsstring>
+        <name>TimedAttrData</name>
+        <param>
+          <type>const T *</type>
+          <declname>p_data</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>const T *</type>
+          <declname>p_wr_data</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>x_wr</declname>
+        </param>
+        <param>
+          <type>Tango::AttrQuality</type>
+          <declname>qual</declname>
+        </param>
+        <param>
+          <type>struct timeval</type>
+          <declname>when</declname>
+        </param>
+        <briefdescription>
+<para>Create a new <ref refid="da/d12/classTango_1_1TimedAttrData" kindref="compound">TimedAttrData</ref> object for a R/W attribute. </para>        </briefdescription>
+        <detaileddescription>
+<para>The memory pointed to by the <emphasis>p_data</emphasis> and <emphasis>p_wr_data</emphasis> parameters will not be freed</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the attribute value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute x length </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_wr_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the written part of the attribute value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>x_wr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute written part x length </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>qual</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute quality factor </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>when</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The date </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/pollext.h" line="426" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d12/classTango_1_1TimedAttrData_1af109ad029acf390960952d2eaa34df33" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::TimedAttrData&lt; T &gt;::TimedAttrData</definition>
+        <argsstring>(const T *p_data, long x, Tango::AttrQuality qual, bool rel, struct timeval when)</argsstring>
+        <name>TimedAttrData</name>
+        <param>
+          <type>const T *</type>
+          <declname>p_data</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>Tango::AttrQuality</type>
+          <declname>qual</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>rel</declname>
+        </param>
+        <param>
+          <type>struct timeval</type>
+          <declname>when</declname>
+        </param>
+        <briefdescription>
+<para>Create a new <ref refid="da/d12/classTango_1_1TimedAttrData" kindref="compound">TimedAttrData</ref> object. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the attribute value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute x length </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>qual</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute quality factor </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Set to true if the memory pointed to by the <emphasis>p_data</emphasis> parameter must be freed </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>when</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The date </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/pollext.h" line="437" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d12/classTango_1_1TimedAttrData_1a274182798f9747dc21f1ac5541993ae8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::TimedAttrData&lt; T &gt;::TimedAttrData</definition>
+        <argsstring>(const T *p_data, long x, const T *p_wr_data, long x_wr, Tango::AttrQuality qual, bool rel, struct timeval when)</argsstring>
+        <name>TimedAttrData</name>
+        <param>
+          <type>const T *</type>
+          <declname>p_data</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>const T *</type>
+          <declname>p_wr_data</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>x_wr</declname>
+        </param>
+        <param>
+          <type>Tango::AttrQuality</type>
+          <declname>qual</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>rel</declname>
+        </param>
+        <param>
+          <type>struct timeval</type>
+          <declname>when</declname>
+        </param>
+        <briefdescription>
+<para>Create a new <ref refid="da/d12/classTango_1_1TimedAttrData" kindref="compound">TimedAttrData</ref> object for a R/W attribute. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the attribute value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute x length </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_wr_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the written part of the attribute value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>x_wr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute written part x length </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>qual</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute quality factor </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Set to true if the memory pointed to by the <emphasis>p_data</emphasis> and <emphasis>p_wr_data</emphasis> parameters must be freed </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>when</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The date </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/pollext.h" line="450" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Miscellaneous constructors for image attribute</header>
+      <memberdef kind="function" id="da/d12/classTango_1_1TimedAttrData_1a9657cdf98f7daf2d4503eb2997485b64" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::TimedAttrData&lt; T &gt;::TimedAttrData</definition>
+        <argsstring>(const T *p_data, long x, long y, time_t when)</argsstring>
+        <name>TimedAttrData</name>
+        <param>
+          <type>const T *</type>
+          <declname>p_data</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>time_t</type>
+          <declname>when</declname>
+        </param>
+        <briefdescription>
+<para>Create a new <ref refid="da/d12/classTango_1_1TimedAttrData" kindref="compound">TimedAttrData</ref> object. </para>        </briefdescription>
+        <detaileddescription>
+<para>The memory pointed to by the <emphasis>p_data</emphasis> parameter will not be freed The attribute quality factor will be set to ATTR_VALID</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the attribute value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute x length </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute y length </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>when</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The date </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/pollext.h" line="472" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d12/classTango_1_1TimedAttrData_1aa4c8599532109015ec2393cc6d56d0b0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::TimedAttrData&lt; T &gt;::TimedAttrData</definition>
+        <argsstring>(const T *p_data, long x, long y, const T *p_wr_data, long x_wr, long y_wr, time_t when)</argsstring>
+        <name>TimedAttrData</name>
+        <param>
+          <type>const T *</type>
+          <declname>p_data</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>const T *</type>
+          <declname>p_wr_data</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>x_wr</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>y_wr</declname>
+        </param>
+        <param>
+          <type>time_t</type>
+          <declname>when</declname>
+        </param>
+        <briefdescription>
+<para>Create a new <ref refid="da/d12/classTango_1_1TimedAttrData" kindref="compound">TimedAttrData</ref> object for a R/W attribute. </para>        </briefdescription>
+        <detaileddescription>
+<para>The memory pointed to by the <emphasis>p_data</emphasis> and <emphasis>p_wr_data</emphasis> parameters will not be freed The attribute quality factor will be set to ATTR_VALID</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the attribute value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute x length </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute y length </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_wr_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the written part of the attribute value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>x_wr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute written part x length </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y_wr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute written part y length </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>when</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The date </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/pollext.h" line="488" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d12/classTango_1_1TimedAttrData_1ad399b03ab42777930915e841a477a9b0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::TimedAttrData&lt; T &gt;::TimedAttrData</definition>
+        <argsstring>(const T *p_data, long x, long y, Tango::AttrQuality qual, time_t when)</argsstring>
+        <name>TimedAttrData</name>
+        <param>
+          <type>const T *</type>
+          <declname>p_data</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>Tango::AttrQuality</type>
+          <declname>qual</declname>
+        </param>
+        <param>
+          <type>time_t</type>
+          <declname>when</declname>
+        </param>
+        <briefdescription>
+<para>Create a new <ref refid="da/d12/classTango_1_1TimedAttrData" kindref="compound">TimedAttrData</ref> object. </para>        </briefdescription>
+        <detaileddescription>
+<para>The memory pointed to by the <emphasis>p_data</emphasis> parameter will not be freed</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the attribute value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute x length </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute y length </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>qual</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute quality factor </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>when</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The date </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/pollext.h" line="501" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d12/classTango_1_1TimedAttrData_1a817a35162cd7bb5de957fb5ff05b80e4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::TimedAttrData&lt; T &gt;::TimedAttrData</definition>
+        <argsstring>(const T *p_data, long x, long y, const T *p_wr_data, long x_wr, long y_wr, Tango::AttrQuality qual, time_t when)</argsstring>
+        <name>TimedAttrData</name>
+        <param>
+          <type>const T *</type>
+          <declname>p_data</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>const T *</type>
+          <declname>p_wr_data</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>x_wr</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>y_wr</declname>
+        </param>
+        <param>
+          <type>Tango::AttrQuality</type>
+          <declname>qual</declname>
+        </param>
+        <param>
+          <type>time_t</type>
+          <declname>when</declname>
+        </param>
+        <briefdescription>
+<para>Create a new <ref refid="da/d12/classTango_1_1TimedAttrData" kindref="compound">TimedAttrData</ref> object for a R/W attribute. </para>        </briefdescription>
+        <detaileddescription>
+<para>The memory pointed to by the <emphasis>p_data</emphasis> and <emphasis>p_wr_data</emphasis> parameters will not be freed</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the attribute value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute x length </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute y length </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_wr_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the written part of the attribute value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>x_wr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute written part x length </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y_wr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute written part y length </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>qual</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute quality factor </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>when</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The date </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/pollext.h" line="517" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d12/classTango_1_1TimedAttrData_1aa6a402171eb2a57350f77d4e62cd073b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::TimedAttrData&lt; T &gt;::TimedAttrData</definition>
+        <argsstring>(const T *p_data, long x, long y, Tango::AttrQuality qual, bool rel, time_t when)</argsstring>
+        <name>TimedAttrData</name>
+        <param>
+          <type>const T *</type>
+          <declname>p_data</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>Tango::AttrQuality</type>
+          <declname>qual</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>rel</declname>
+        </param>
+        <param>
+          <type>time_t</type>
+          <declname>when</declname>
+        </param>
+        <briefdescription>
+<para>Create a new <ref refid="da/d12/classTango_1_1TimedAttrData" kindref="compound">TimedAttrData</ref> object. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the attribute value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute x length </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute y length </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>qual</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute quality factor </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Set to true if the memory pointed to by the <emphasis>p_data</emphasis> parameter must be freed </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>when</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The date </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/pollext.h" line="529" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d12/classTango_1_1TimedAttrData_1a3e44fa81a94702b8c4e3709a826ed24a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::TimedAttrData&lt; T &gt;::TimedAttrData</definition>
+        <argsstring>(const T *p_data, long x, long y, const T *p_wr_data, long x_wr, long y_wr, Tango::AttrQuality qual, bool rel, time_t when)</argsstring>
+        <name>TimedAttrData</name>
+        <param>
+          <type>const T *</type>
+          <declname>p_data</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>const T *</type>
+          <declname>p_wr_data</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>x_wr</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>y_wr</declname>
+        </param>
+        <param>
+          <type>Tango::AttrQuality</type>
+          <declname>qual</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>rel</declname>
+        </param>
+        <param>
+          <type>time_t</type>
+          <declname>when</declname>
+        </param>
+        <briefdescription>
+<para>Create a new <ref refid="da/d12/classTango_1_1TimedAttrData" kindref="compound">TimedAttrData</ref> object for a R/W attribute. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the attribute value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute x length </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute y length </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_wr_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the written part of the attribute value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>x_wr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute written part x length </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y_wr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute written part y length </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>qual</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute quality factor </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Set to true if the memory pointed to by the <emphasis>p_data</emphasis> and <emphasis>p_wr_data</emphasis> parameters must be freed </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>when</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The date </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/pollext.h" line="544" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d12/classTango_1_1TimedAttrData_1a26c2a4fbbd27bc92c6a61ab062954c1b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::TimedAttrData&lt; T &gt;::TimedAttrData</definition>
+        <argsstring>(const T *p_data, long x, long y, struct timeval when)</argsstring>
+        <name>TimedAttrData</name>
+        <param>
+          <type>const T *</type>
+          <declname>p_data</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>struct timeval</type>
+          <declname>when</declname>
+        </param>
+        <briefdescription>
+<para>Create a new <ref refid="da/d12/classTango_1_1TimedAttrData" kindref="compound">TimedAttrData</ref> object. </para>        </briefdescription>
+        <detaileddescription>
+<para>The memory pointed to by the <emphasis>p_data</emphasis> parameter will not be freed The attribute quality factor will be set to ATTR_VALID</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the attribute value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute x length </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute y length </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>when</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The date </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/pollext.h" line="557" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d12/classTango_1_1TimedAttrData_1a1853de77aff71717a14f72c6ce9caaa7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::TimedAttrData&lt; T &gt;::TimedAttrData</definition>
+        <argsstring>(const T *p_data, long x, long y, const T *p_wr_data, long x_wr, long y_wr, struct timeval when)</argsstring>
+        <name>TimedAttrData</name>
+        <param>
+          <type>const T *</type>
+          <declname>p_data</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>const T *</type>
+          <declname>p_wr_data</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>x_wr</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>y_wr</declname>
+        </param>
+        <param>
+          <type>struct timeval</type>
+          <declname>when</declname>
+        </param>
+        <briefdescription>
+<para>Create a new <ref refid="da/d12/classTango_1_1TimedAttrData" kindref="compound">TimedAttrData</ref> object for a R/W attribute. </para>        </briefdescription>
+        <detaileddescription>
+<para>The memory pointed to by the <emphasis>p_data</emphasis> and <emphasis>p_wr_data</emphasis> parameters will not be freed The attribute quality factor will be set to ATTR_VALID</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the attribute value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute x length </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute y length </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_wr_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the written part of the attribute value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>x_wr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute written part x length </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y_wr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute written part y length </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>when</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The date </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/pollext.h" line="573" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d12/classTango_1_1TimedAttrData_1af4f5186582aec35104a81cb2eb847e8c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::TimedAttrData&lt; T &gt;::TimedAttrData</definition>
+        <argsstring>(const T *p_data, long x, long y, Tango::AttrQuality qual, struct timeval when)</argsstring>
+        <name>TimedAttrData</name>
+        <param>
+          <type>const T *</type>
+          <declname>p_data</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>Tango::AttrQuality</type>
+          <declname>qual</declname>
+        </param>
+        <param>
+          <type>struct timeval</type>
+          <declname>when</declname>
+        </param>
+        <briefdescription>
+<para>Create a new <ref refid="da/d12/classTango_1_1TimedAttrData" kindref="compound">TimedAttrData</ref> object. </para>        </briefdescription>
+        <detaileddescription>
+<para>The memory pointed to by the <emphasis>p_data</emphasis> parameter will not be freed</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the attribute value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute x length </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute y length </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>qual</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute quality factor </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>when</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The date </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/pollext.h" line="586" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d12/classTango_1_1TimedAttrData_1a88488896f84cd62f714512b33de6dff1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::TimedAttrData&lt; T &gt;::TimedAttrData</definition>
+        <argsstring>(const T *p_data, long x, long y, const T *p_wr_data, long x_wr, long y_wr, Tango::AttrQuality qual, struct timeval when)</argsstring>
+        <name>TimedAttrData</name>
+        <param>
+          <type>const T *</type>
+          <declname>p_data</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>const T *</type>
+          <declname>p_wr_data</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>x_wr</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>y_wr</declname>
+        </param>
+        <param>
+          <type>Tango::AttrQuality</type>
+          <declname>qual</declname>
+        </param>
+        <param>
+          <type>struct timeval</type>
+          <declname>when</declname>
+        </param>
+        <briefdescription>
+<para>Create a new <ref refid="da/d12/classTango_1_1TimedAttrData" kindref="compound">TimedAttrData</ref> object for a R/W attribute. </para>        </briefdescription>
+        <detaileddescription>
+<para>The memory pointed to by the <emphasis>p_data</emphasis> and <emphasis>p_wr_data</emphasis> parameters will not be freed</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the attribute value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute x length </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute y length </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_wr_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the written part of the attribute value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>x_wr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute written part x length </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y_wr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute written part y length </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>qual</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute quality factor </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>when</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The date </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/pollext.h" line="602" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d12/classTango_1_1TimedAttrData_1ab9ce89a140afbbb6061f1444da0d8996" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::TimedAttrData&lt; T &gt;::TimedAttrData</definition>
+        <argsstring>(const T *p_data, long x, long y, Tango::AttrQuality qual, bool rel, struct timeval when)</argsstring>
+        <name>TimedAttrData</name>
+        <param>
+          <type>const T *</type>
+          <declname>p_data</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>Tango::AttrQuality</type>
+          <declname>qual</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>rel</declname>
+        </param>
+        <param>
+          <type>struct timeval</type>
+          <declname>when</declname>
+        </param>
+        <briefdescription>
+<para>Create a new <ref refid="da/d12/classTango_1_1TimedAttrData" kindref="compound">TimedAttrData</ref> object. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the attribute value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute x length </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute y length </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>qual</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute quality factor </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Set to true if the memory pointed to by the <emphasis>p_data</emphasis> parameter must be freed </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>when</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The date </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/pollext.h" line="614" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d12/classTango_1_1TimedAttrData_1a95330dc8f32bac365450639712600785" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::TimedAttrData&lt; T &gt;::TimedAttrData</definition>
+        <argsstring>(const T *p_data, long x, long y, const T *p_wr_data, long x_wr, long y_wr, Tango::AttrQuality qual, bool rel, struct timeval when)</argsstring>
+        <name>TimedAttrData</name>
+        <param>
+          <type>const T *</type>
+          <declname>p_data</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>const T *</type>
+          <declname>p_wr_data</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>x_wr</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>y_wr</declname>
+        </param>
+        <param>
+          <type>Tango::AttrQuality</type>
+          <declname>qual</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>rel</declname>
+        </param>
+        <param>
+          <type>struct timeval</type>
+          <declname>when</declname>
+        </param>
+        <briefdescription>
+<para>Create a new <ref refid="da/d12/classTango_1_1TimedAttrData" kindref="compound">TimedAttrData</ref> object for a R/W attribute. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the attribute value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute x length </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute y length </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_wr_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the written part of the attribute value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>x_wr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute written part x length </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y_wr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute written part y length </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>qual</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute quality factor </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Set to true if the memory pointed to by the <emphasis>p_data</emphasis> abd <emphasis>p_wr_data</emphasis> parameters must be freed </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>when</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The date </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/pollext.h" line="629" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Miscellaneous constructors for errors</header>
+      <memberdef kind="function" id="da/d12/classTango_1_1TimedAttrData_1a941a405e2f77f182adbac4e2736276cb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::TimedAttrData&lt; T &gt;::TimedAttrData</definition>
+        <argsstring>(DevErrorList &amp;errs, time_t when)</argsstring>
+        <name>TimedAttrData</name>
+        <param>
+          <type>DevErrorList &amp;</type>
+          <declname>errs</declname>
+        </param>
+        <param>
+          <type>time_t</type>
+          <declname>when</declname>
+        </param>
+        <briefdescription>
+<para>Create a new <ref refid="da/d12/classTango_1_1TimedAttrData" kindref="compound">TimedAttrData</ref> object for errors. </para>        </briefdescription>
+        <detaileddescription>
+<para>The created <ref refid="da/d12/classTango_1_1TimedAttrData" kindref="compound">TimedAttrData</ref> is used to store attribute errors in the attribute history stack</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>errs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The error stack </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>when</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The date </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/pollext.h" line="649" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d12/classTango_1_1TimedAttrData_1a152bf703a398c86e681916585b416a6a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::TimedAttrData&lt; T &gt;::TimedAttrData</definition>
+        <argsstring>(DevErrorList &amp;errs, timeval when)</argsstring>
+        <name>TimedAttrData</name>
+        <param>
+          <type>DevErrorList &amp;</type>
+          <declname>errs</declname>
+        </param>
+        <param>
+          <type>timeval</type>
+          <declname>when</declname>
+        </param>
+        <briefdescription>
+<para>Create a new <ref refid="da/d12/classTango_1_1TimedAttrData" kindref="compound">TimedAttrData</ref> object for errors. </para>        </briefdescription>
+        <detaileddescription>
+<para>The created <ref refid="da/d12/classTango_1_1TimedAttrData" kindref="compound">TimedAttrData</ref> is used to store attribute errors in the attribute history stack</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>errs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The error stack </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>when</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The date </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/pollext.h" line="660" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="da/d12/classTango_1_1TimedAttrData_1a4638aa93ef8d5499e17673b4cefb7c0c" prot="private" static="no" mutable="no">
+        <type>struct timeval</type>
+        <definition>struct timeval Tango::TimedAttrData&lt; T &gt;::t_val</definition>
+        <argsstring></argsstring>
+        <name>t_val</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/pollext.h" line="660" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/pollext.h" bodystart="664" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This class is used to store one element of an attribute history stack. </para>    </briefdescription>
+    <detaileddescription>
+<para>$Author$ $Revision$ </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="1306">
+        <label>Tango::TimedAttrData&lt; T &gt;</label>
+        <link refid="da/d12/classTango_1_1TimedAttrData"/>
+        <childnode refid="1307" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1307">
+        <label>Tango::AttrData&lt; T &gt;</label>
+        <link refid="d4/d7a/classTango_1_1AttrData"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1308">
+        <label>Tango::TimedAttrData&lt; T &gt;</label>
+        <link refid="da/d12/classTango_1_1TimedAttrData"/>
+        <childnode refid="1309" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1309">
+        <label>Tango::AttrData&lt; T &gt;</label>
+        <link refid="d4/d7a/classTango_1_1AttrData"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/tango/workspace/cppTango/include/tango/server/pollext.h" line="153" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/pollext.h" bodystart="152" bodyend="694"/>
+    <listofallmembers>
+      <member refid="d4/d7a/classTango_1_1AttrData_1a97d6362673f427ed067853bb30545dc9" prot="public" virt="non-virtual"><scope>Tango::TimedAttrData</scope><name>AttrData</name></member>
+      <member refid="d4/d7a/classTango_1_1AttrData_1a35477beee075a315c5118430162e3959" prot="public" virt="non-virtual"><scope>Tango::TimedAttrData</scope><name>AttrData</name></member>
+      <member refid="d4/d7a/classTango_1_1AttrData_1af1ba132401121168a2a75dc9a6ccb43d" prot="public" virt="non-virtual"><scope>Tango::TimedAttrData</scope><name>AttrData</name></member>
+      <member refid="d4/d7a/classTango_1_1AttrData_1a09ec5a2d0a49dae4154c0c65c1ea7467" prot="public" virt="non-virtual"><scope>Tango::TimedAttrData</scope><name>AttrData</name></member>
+      <member refid="d4/d7a/classTango_1_1AttrData_1a23f77731b9643f850b82550051e7f3fc" prot="public" virt="non-virtual"><scope>Tango::TimedAttrData</scope><name>AttrData</name></member>
+      <member refid="d4/d7a/classTango_1_1AttrData_1a7c2cc5ed211c0160bb5c39bc552eb6c2" prot="public" virt="non-virtual"><scope>Tango::TimedAttrData</scope><name>AttrData</name></member>
+      <member refid="d4/d7a/classTango_1_1AttrData_1ac6934d712c617ed7ca14fe752287a86f" prot="public" virt="non-virtual"><scope>Tango::TimedAttrData</scope><name>AttrData</name></member>
+      <member refid="d4/d7a/classTango_1_1AttrData_1af70c92f305dab9345b21f140e2aab14c" prot="public" virt="non-virtual"><scope>Tango::TimedAttrData</scope><name>AttrData</name></member>
+      <member refid="d4/d7a/classTango_1_1AttrData_1aefe26194ddcd73f753cda5f77e57efd5" prot="public" virt="non-virtual"><scope>Tango::TimedAttrData</scope><name>AttrData</name></member>
+      <member refid="d4/d7a/classTango_1_1AttrData_1a991650baf427403a53a2215786823c05" prot="public" virt="non-virtual"><scope>Tango::TimedAttrData</scope><name>AttrData</name></member>
+      <member refid="d4/d7a/classTango_1_1AttrData_1ace6844f8fa2dae824a4d3708fed31d65" prot="public" virt="non-virtual"><scope>Tango::TimedAttrData</scope><name>AttrData</name></member>
+      <member refid="d4/d7a/classTango_1_1AttrData_1a0a1e3c95b2c91413a9c98f9456d64fc2" prot="public" virt="non-virtual"><scope>Tango::TimedAttrData</scope><name>AttrData</name></member>
+      <member refid="d4/d7a/classTango_1_1AttrData_1a932366bb0fa645b0a217ffd5aab39d0e" prot="public" virt="non-virtual"><scope>Tango::TimedAttrData</scope><name>AttrData</name></member>
+      <member refid="d4/d7a/classTango_1_1AttrData_1a1f12cb1988acd991de591cb79a0ee5cc" prot="public" virt="non-virtual"><scope>Tango::TimedAttrData</scope><name>AttrData</name></member>
+      <member refid="d4/d7a/classTango_1_1AttrData_1af9d47850f3a6927772cd51aedf14c55c" prot="public" virt="non-virtual"><scope>Tango::TimedAttrData</scope><name>AttrData</name></member>
+      <member refid="d4/d7a/classTango_1_1AttrData_1ace0ed907fa69d41fdb582f2256ccb20a" prot="public" virt="non-virtual"><scope>Tango::TimedAttrData</scope><name>AttrData</name></member>
+      <member refid="d4/d7a/classTango_1_1AttrData_1a6254034efb611e0ae19bbf294694c4af" prot="public" virt="non-virtual"><scope>Tango::TimedAttrData</scope><name>AttrData</name></member>
+      <member refid="d4/d7a/classTango_1_1AttrData_1af353a8ab0ced284a769a69d2ddf8a621" prot="public" virt="non-virtual"><scope>Tango::TimedAttrData</scope><name>AttrData</name></member>
+      <member refid="d4/d7a/classTango_1_1AttrData_1a91406bc4fd607acb4f3217980c3b5dd5" prot="public" virt="non-virtual"><scope>Tango::TimedAttrData</scope><name>AttrData</name></member>
+      <member refid="d4/d7a/classTango_1_1AttrData_1aceb0e1fb88c6dd0be29bd7f8a4064611" prot="public" virt="non-virtual"><scope>Tango::TimedAttrData</scope><name>err</name></member>
+      <member refid="d4/d7a/classTango_1_1AttrData_1a2226b793c3a7c4791a9839e5bfa2473f" prot="public" virt="non-virtual"><scope>Tango::TimedAttrData</scope><name>ptr</name></member>
+      <member refid="d4/d7a/classTango_1_1AttrData_1a51eecbb56d5db1c611ad459017cc03c2" prot="public" virt="non-virtual"><scope>Tango::TimedAttrData</scope><name>qual</name></member>
+      <member refid="d4/d7a/classTango_1_1AttrData_1abc8bb23d7b5e8b2c4c1bd1c67b16ef04" prot="public" virt="non-virtual"><scope>Tango::TimedAttrData</scope><name>release</name></member>
+      <member refid="da/d12/classTango_1_1TimedAttrData_1a4638aa93ef8d5499e17673b4cefb7c0c" prot="private" virt="non-virtual"><scope>Tango::TimedAttrData</scope><name>t_val</name></member>
+      <member refid="da/d12/classTango_1_1TimedAttrData_1a2d4169ef4a760ac37755aea53f9c5de8" prot="public" virt="non-virtual"><scope>Tango::TimedAttrData</scope><name>TimedAttrData</name></member>
+      <member refid="da/d12/classTango_1_1TimedAttrData_1a3f141191cabfb22c0d472968ca78010f" prot="public" virt="non-virtual"><scope>Tango::TimedAttrData</scope><name>TimedAttrData</name></member>
+      <member refid="da/d12/classTango_1_1TimedAttrData_1a5b4fbde2e8e1147285c8489d15cb37e1" prot="public" virt="non-virtual"><scope>Tango::TimedAttrData</scope><name>TimedAttrData</name></member>
+      <member refid="da/d12/classTango_1_1TimedAttrData_1a49f601bb51212d75870f0b4319a4a795" prot="public" virt="non-virtual"><scope>Tango::TimedAttrData</scope><name>TimedAttrData</name></member>
+      <member refid="da/d12/classTango_1_1TimedAttrData_1aadf938e45266eca4a828cbbf653c752b" prot="public" virt="non-virtual"><scope>Tango::TimedAttrData</scope><name>TimedAttrData</name></member>
+      <member refid="da/d12/classTango_1_1TimedAttrData_1ac165c5c9f094cba4cadf32bd8947b469" prot="public" virt="non-virtual"><scope>Tango::TimedAttrData</scope><name>TimedAttrData</name></member>
+      <member refid="da/d12/classTango_1_1TimedAttrData_1ad302f54d4d70c534bdf50466a5719c55" prot="public" virt="non-virtual"><scope>Tango::TimedAttrData</scope><name>TimedAttrData</name></member>
+      <member refid="da/d12/classTango_1_1TimedAttrData_1ae060ee002aff45f67590f1f1fa61d35b" prot="public" virt="non-virtual"><scope>Tango::TimedAttrData</scope><name>TimedAttrData</name></member>
+      <member refid="da/d12/classTango_1_1TimedAttrData_1a21807ab571c0766770a3ff5e77bae3d5" prot="public" virt="non-virtual"><scope>Tango::TimedAttrData</scope><name>TimedAttrData</name></member>
+      <member refid="da/d12/classTango_1_1TimedAttrData_1accd5bf91bd215da16f89f548b1a8a175" prot="public" virt="non-virtual"><scope>Tango::TimedAttrData</scope><name>TimedAttrData</name></member>
+      <member refid="da/d12/classTango_1_1TimedAttrData_1ae0d7a1f16bb0a9f9588c423b69bad81e" prot="public" virt="non-virtual"><scope>Tango::TimedAttrData</scope><name>TimedAttrData</name></member>
+      <member refid="da/d12/classTango_1_1TimedAttrData_1a813e4a279f6af2c4e519ce9cbc4b6cd5" prot="public" virt="non-virtual"><scope>Tango::TimedAttrData</scope><name>TimedAttrData</name></member>
+      <member refid="da/d12/classTango_1_1TimedAttrData_1a172705abeceda80074eb21daf80a7d63" prot="public" virt="non-virtual"><scope>Tango::TimedAttrData</scope><name>TimedAttrData</name></member>
+      <member refid="da/d12/classTango_1_1TimedAttrData_1a0a3a74a999370bc1c9086f0c734e5f8f" prot="public" virt="non-virtual"><scope>Tango::TimedAttrData</scope><name>TimedAttrData</name></member>
+      <member refid="da/d12/classTango_1_1TimedAttrData_1a0325f0beaf8b469637e4c91e1e33d1a8" prot="public" virt="non-virtual"><scope>Tango::TimedAttrData</scope><name>TimedAttrData</name></member>
+      <member refid="da/d12/classTango_1_1TimedAttrData_1a40805ec38830616c3b97ed213c8a8193" prot="public" virt="non-virtual"><scope>Tango::TimedAttrData</scope><name>TimedAttrData</name></member>
+      <member refid="da/d12/classTango_1_1TimedAttrData_1a03898ae2fc843b772b16ff17a80befb1" prot="public" virt="non-virtual"><scope>Tango::TimedAttrData</scope><name>TimedAttrData</name></member>
+      <member refid="da/d12/classTango_1_1TimedAttrData_1a93fc81581fdb0e9a762d46275a24f1eb" prot="public" virt="non-virtual"><scope>Tango::TimedAttrData</scope><name>TimedAttrData</name></member>
+      <member refid="da/d12/classTango_1_1TimedAttrData_1a8656fb5f0a393b01b5296184ec551e14" prot="public" virt="non-virtual"><scope>Tango::TimedAttrData</scope><name>TimedAttrData</name></member>
+      <member refid="da/d12/classTango_1_1TimedAttrData_1a4bb287b0748db345ea2b8162cbf78c38" prot="public" virt="non-virtual"><scope>Tango::TimedAttrData</scope><name>TimedAttrData</name></member>
+      <member refid="da/d12/classTango_1_1TimedAttrData_1ab31e6d4572d06f1d737c83ab724a749b" prot="public" virt="non-virtual"><scope>Tango::TimedAttrData</scope><name>TimedAttrData</name></member>
+      <member refid="da/d12/classTango_1_1TimedAttrData_1abaa2cc0289526f4f1fc6b2a4819097ff" prot="public" virt="non-virtual"><scope>Tango::TimedAttrData</scope><name>TimedAttrData</name></member>
+      <member refid="da/d12/classTango_1_1TimedAttrData_1af109ad029acf390960952d2eaa34df33" prot="public" virt="non-virtual"><scope>Tango::TimedAttrData</scope><name>TimedAttrData</name></member>
+      <member refid="da/d12/classTango_1_1TimedAttrData_1a274182798f9747dc21f1ac5541993ae8" prot="public" virt="non-virtual"><scope>Tango::TimedAttrData</scope><name>TimedAttrData</name></member>
+      <member refid="da/d12/classTango_1_1TimedAttrData_1a9657cdf98f7daf2d4503eb2997485b64" prot="public" virt="non-virtual"><scope>Tango::TimedAttrData</scope><name>TimedAttrData</name></member>
+      <member refid="da/d12/classTango_1_1TimedAttrData_1aa4c8599532109015ec2393cc6d56d0b0" prot="public" virt="non-virtual"><scope>Tango::TimedAttrData</scope><name>TimedAttrData</name></member>
+      <member refid="da/d12/classTango_1_1TimedAttrData_1ad399b03ab42777930915e841a477a9b0" prot="public" virt="non-virtual"><scope>Tango::TimedAttrData</scope><name>TimedAttrData</name></member>
+      <member refid="da/d12/classTango_1_1TimedAttrData_1a817a35162cd7bb5de957fb5ff05b80e4" prot="public" virt="non-virtual"><scope>Tango::TimedAttrData</scope><name>TimedAttrData</name></member>
+      <member refid="da/d12/classTango_1_1TimedAttrData_1aa6a402171eb2a57350f77d4e62cd073b" prot="public" virt="non-virtual"><scope>Tango::TimedAttrData</scope><name>TimedAttrData</name></member>
+      <member refid="da/d12/classTango_1_1TimedAttrData_1a3e44fa81a94702b8c4e3709a826ed24a" prot="public" virt="non-virtual"><scope>Tango::TimedAttrData</scope><name>TimedAttrData</name></member>
+      <member refid="da/d12/classTango_1_1TimedAttrData_1a26c2a4fbbd27bc92c6a61ab062954c1b" prot="public" virt="non-virtual"><scope>Tango::TimedAttrData</scope><name>TimedAttrData</name></member>
+      <member refid="da/d12/classTango_1_1TimedAttrData_1a1853de77aff71717a14f72c6ce9caaa7" prot="public" virt="non-virtual"><scope>Tango::TimedAttrData</scope><name>TimedAttrData</name></member>
+      <member refid="da/d12/classTango_1_1TimedAttrData_1af4f5186582aec35104a81cb2eb847e8c" prot="public" virt="non-virtual"><scope>Tango::TimedAttrData</scope><name>TimedAttrData</name></member>
+      <member refid="da/d12/classTango_1_1TimedAttrData_1a88488896f84cd62f714512b33de6dff1" prot="public" virt="non-virtual"><scope>Tango::TimedAttrData</scope><name>TimedAttrData</name></member>
+      <member refid="da/d12/classTango_1_1TimedAttrData_1ab9ce89a140afbbb6061f1444da0d8996" prot="public" virt="non-virtual"><scope>Tango::TimedAttrData</scope><name>TimedAttrData</name></member>
+      <member refid="da/d12/classTango_1_1TimedAttrData_1a95330dc8f32bac365450639712600785" prot="public" virt="non-virtual"><scope>Tango::TimedAttrData</scope><name>TimedAttrData</name></member>
+      <member refid="da/d12/classTango_1_1TimedAttrData_1a941a405e2f77f182adbac4e2736276cb" prot="public" virt="non-virtual"><scope>Tango::TimedAttrData</scope><name>TimedAttrData</name></member>
+      <member refid="da/d12/classTango_1_1TimedAttrData_1a152bf703a398c86e681916585b416a6a" prot="public" virt="non-virtual"><scope>Tango::TimedAttrData</scope><name>TimedAttrData</name></member>
+      <member refid="d4/d7a/classTango_1_1AttrData_1a0677f54f22a900522ffe72bd38cd530a" prot="public" virt="non-virtual"><scope>Tango::TimedAttrData</scope><name>wr_ptr</name></member>
+      <member refid="d4/d7a/classTango_1_1AttrData_1afaaa975dbd7e67efedfc0932d163d9ce" prot="public" virt="non-virtual"><scope>Tango::TimedAttrData</scope><name>wr_x</name></member>
+      <member refid="d4/d7a/classTango_1_1AttrData_1ac4720964bc4cfe1441dbc0e25c368d5a" prot="public" virt="non-virtual"><scope>Tango::TimedAttrData</scope><name>wr_y</name></member>
+      <member refid="d4/d7a/classTango_1_1AttrData_1a8e08e9668434a58b543989599dd82ecc" prot="public" virt="non-virtual"><scope>Tango::TimedAttrData</scope><name>x</name></member>
+      <member refid="d4/d7a/classTango_1_1AttrData_1a32c887ce84b2549b5c597134a8f989a4" prot="public" virt="non-virtual"><scope>Tango::TimedAttrData</scope><name>y</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

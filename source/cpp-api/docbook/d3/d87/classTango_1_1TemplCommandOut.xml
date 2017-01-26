@@ -1,0 +1,223 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d3/d87/classTango_1_1TemplCommandOut">
+<title>Tango::TemplCommandOut class Reference</title>
+        <simplesect>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="de/d23/classTango_1_1TemplCommandOut_1_1TemplCommandOutExt">Tango::TemplCommandOut::TemplCommandOutExt</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <templateparamlist>
+      <param>
+        <type>typename OUTARG</type>
+      </param>
+    </templateparamlist>
+        <simplesect>
+            <title>Constructors</title>
+      <description>
+<para>Miscellaneous constructors </para>
+</description>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d3/d87/classTango_1_1TemplCommandOut_1af068c10a1723d67577d8c7c0f6a7b5aa">TemplCommandOut</link> (
+const char * cmd_name, OUTARG(DeviceImpl::*)() exe_method)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d3/d87/classTango_1_1TemplCommandOut_1adaf597eba94b56ab2ba93c4d6a69f205">TemplCommandOut</link> (
+string &amp; cmd_name, OUTARG(DeviceImpl::*)() exe_method)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d3/d87/classTango_1_1TemplCommandOut_1a9e5293459cb6ed33331fbb290eaec9c9">TemplCommandOut</link> (
+const char * cmd_name, OUTARG(DeviceImpl::*)() exe_method, bool(DeviceImpl::*)(const CORBA::Any &amp;) state_method)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d3/d87/classTango_1_1TemplCommandOut_1a5673152dfc935f450caea8d1d2a22e52">TemplCommandOut</link> (
+string &amp; cmd_name, OUTARG(DeviceImpl::*)() exe_method, bool(DeviceImpl::*)(const CORBA::Any &amp;) state_method)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d3/d87/classTango_1_1TemplCommandOut_1abb25bf3e3ad5c6789d76cd8dc5e36867">TemplCommandOut</link> (
+const char * cmd_name, OUTARG(DeviceImpl::*)() exe_method, const char * in_desc, const char * out_desc)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d3/d87/classTango_1_1TemplCommandOut_1a09f46f5af2dd7d2a7315309259975a76">TemplCommandOut</link> (
+string &amp; cmd_name, OUTARG(DeviceImpl::*)() exe_method, string &amp; in_desc, string &amp; out_desc)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d3/d87/classTango_1_1TemplCommandOut_1a6690c380e46526d17fe488226fd0c861">TemplCommandOut</link> (
+const char * cmd_name, OUTARG(DeviceImpl::*)() exe_method, bool(DeviceImpl::*)(const CORBA::Any &amp;) state_method, const char * in_desc, const char * out_desc)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d3/d87/classTango_1_1TemplCommandOut_1ab45fcaab09c05a24788e40f8a8c7a671">TemplCommandOut</link> (
+string &amp; cmd_name, OUTARG(DeviceImpl::*)() exe_method, bool(DeviceImpl::*)(const CORBA::Any &amp;) state_method, string &amp; in_desc, string &amp; out_desc)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d3/d87/classTango_1_1TemplCommandOut_1ab1994f704a66631bc3fea790074749fe">TemplCommandOut</link> (
+const char * cmd_name, OUTARG(DeviceImpl::*)() exe_method, Tango::DispLevel level)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d3/d87/classTango_1_1TemplCommandOut_1a8a73c454b3a5920c3b6a6067c6aca35f">TemplCommandOut</link> (
+string &amp; cmd_name, OUTARG(DeviceImpl::*)() exe_method, Tango::DispLevel level)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d3/d87/classTango_1_1TemplCommandOut_1aa38e3d4d0b6fb395da911ccb80997209">TemplCommandOut</link> (
+const char * cmd_name, OUTARG(DeviceImpl::*)() exe_method, bool(DeviceImpl::*)(const CORBA::Any &amp;) state_method, Tango::DispLevel level)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d3/d87/classTango_1_1TemplCommandOut_1ad11ab11480631f2e48117681b2f4fb26">TemplCommandOut</link> (
+string &amp; cmd_name, OUTARG(DeviceImpl::*)() exe_method, bool(DeviceImpl::*)(const CORBA::Any &amp;) state_method, Tango::DispLevel level)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d3/d87/classTango_1_1TemplCommandOut_1a9005d432b9156bcf1aa91f175f383a20">TemplCommandOut</link> (
+const char * cmd_name, OUTARG(DeviceImpl::*)() exe_method, const char * in_desc, const char * out_desc, Tango::DispLevel level)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d3/d87/classTango_1_1TemplCommandOut_1a67307221fb947ce222040eaaf6b2a808">TemplCommandOut</link> (
+string &amp; cmd_name, OUTARG(DeviceImpl::*)() exe_method, string &amp; in_desc, string &amp; out_desc, Tango::DispLevel level)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d3/d87/classTango_1_1TemplCommandOut_1aaf3bef1d3b665788994dee565404e4a6">TemplCommandOut</link> (
+const char * cmd_name, OUTARG(DeviceImpl::*)() exe_method, bool(DeviceImpl::*)(const CORBA::Any &amp;) state_method, const char * in_desc, const char * out_desc, Tango::DispLevel level)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d3/d87/classTango_1_1TemplCommandOut_1a66580fc7ec414d46ef45dafb3556bc63">TemplCommandOut</link> (
+string &amp; cmd_name, OUTARG(DeviceImpl::*)() exe_method, bool(DeviceImpl::*)(const CORBA::Any &amp;) state_method, string &amp; in_desc, string &amp; out_desc, Tango::DispLevel level)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Miscellaneous methods</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d3/d87/classTango_1_1TemplCommandOut_1a1b5ec68cc6e225868dc3d56186eb7605">init_types</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>CORBA::Any * <link linkend="d3/d87/classTango_1_1TemplCommandOut_1a4afcfcf600912c43d7e1ae6fc410fae3">execute</link> (
+<link linkend="d3/d62/classTango_1_1DeviceImpl">DeviceImpl</link> * dev, const CORBA::Any &amp; in_any)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>OUTARG(DeviceImpl::* exe_ptr_out)()</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>TemplCommandOutExt * ext</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d3/d87/classTango_1_1TemplCommandOut_1a0eb5dbc7eb79c6d8cb72f979cc4a557e">~TemplCommandOut</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Brief Description</title>
+
+<para>This class is a class representing a command in the template command model with output parameter but without input parameter. </para>
+    </simplesect>
+        <simplesect>
+            <title>Detailed Description</title>
+
+<para>The class template parameter (called OUTARG) is the command output parameter type. </para>
+
+<para>Synopsis : template &lt;typename outarg&gt;=&quot;&quot;&gt; class <link linkend="d3/d87/classTango_1_1TemplCommandOut">TemplCommandOut</link>:public <link linkend="de/de1/classTango_1_1TemplCommand">TemplCommand</link>;</para>
+
+<para>Usage : new <link linkend="d3/d87/classTango_1_1TemplCommandOut_1af068c10a1723d67577d8c7c0f6a7b5aa">TemplCommandOut&lt;Tango::DevLong&gt;</link>(...);</para>
+
+<para>$Author$ $Revision$ </para>
+                <para>Definition at line 2758 of file command.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>command.h</para></listitem></itemizedlist></para>
+        </simplesect>
+            <section xml:id="d3/d87/classTango_1_1TemplCommandOut_1a0eb5dbc7eb79c6d8cb72f979cc4a557e">
+                <title>Tango::TemplCommandOut&lt; OUTARG &gt;::~TemplCommandOut ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

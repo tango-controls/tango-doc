@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="db/dbc/structTango_1_1Attribute_1_1__AttPropDb" kind="struct" prot="private">
+    <compoundname>Tango::Attribute::_AttPropDb</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="db/dbc/structTango_1_1Attribute_1_1__AttPropDb_1aa94bcd38b9a7693024f1cd8cd785f4c0" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Tango::Attribute::_AttPropDb::db_value</definition>
+        <argsstring></argsstring>
+        <name>db_value</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attribute.h" line="201" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attribute.h" bodystart="201" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="db/dbc/structTango_1_1Attribute_1_1__AttPropDb_1a149e6cb95ad6837a57afa71c7760a55a" prot="public" static="no" mutable="no">
+        <type>vector&lt; double &gt;</type>
+        <definition>vector&lt;double&gt; Tango::Attribute::_AttPropDb::db_value_db</definition>
+        <argsstring></argsstring>
+        <name>db_value_db</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attribute.h" line="202" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attribute.h" bodystart="202" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="db/dbc/structTango_1_1Attribute_1_1__AttPropDb_1a75bc79729b4699e0eaa4caa1a008d18b" prot="public" static="no" mutable="no">
+        <type>vector&lt; string &gt;</type>
+        <definition>vector&lt;string&gt; Tango::Attribute::_AttPropDb::db_value_v_str</definition>
+        <argsstring></argsstring>
+        <name>db_value_v_str</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attribute.h" line="203" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attribute.h" bodystart="203" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="db/dbc/structTango_1_1Attribute_1_1__AttPropDb_1a669553db9520a720e42011ff416e04ec" prot="public" static="no" mutable="no">
+        <type>DbAction</type>
+        <definition>DbAction Tango::Attribute::_AttPropDb::dba</definition>
+        <argsstring></argsstring>
+        <name>dba</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attribute.h" line="200" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attribute.h" bodystart="200" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="db/dbc/structTango_1_1Attribute_1_1__AttPropDb_1a2ca60ace0f6667d7e6d531ce53fa59d1" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Tango::Attribute::_AttPropDb::name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/attribute.h" line="199" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attribute.h" bodystart="199" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/tango/workspace/cppTango/include/tango/server/attribute.h" line="198" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/attribute.h" bodystart="197" bodyend="204"/>
+    <listofallmembers>
+      <member refid="db/dbc/structTango_1_1Attribute_1_1__AttPropDb_1aa94bcd38b9a7693024f1cd8cd785f4c0" prot="public" virt="non-virtual"><scope>Tango::Attribute::_AttPropDb</scope><name>db_value</name></member>
+      <member refid="db/dbc/structTango_1_1Attribute_1_1__AttPropDb_1a149e6cb95ad6837a57afa71c7760a55a" prot="public" virt="non-virtual"><scope>Tango::Attribute::_AttPropDb</scope><name>db_value_db</name></member>
+      <member refid="db/dbc/structTango_1_1Attribute_1_1__AttPropDb_1a75bc79729b4699e0eaa4caa1a008d18b" prot="public" virt="non-virtual"><scope>Tango::Attribute::_AttPropDb</scope><name>db_value_v_str</name></member>
+      <member refid="db/dbc/structTango_1_1Attribute_1_1__AttPropDb_1a669553db9520a720e42011ff416e04ec" prot="public" virt="non-virtual"><scope>Tango::Attribute::_AttPropDb</scope><name>dba</name></member>
+      <member refid="db/dbc/structTango_1_1Attribute_1_1__AttPropDb_1a2ca60ace0f6667d7e6d531ce53fa59d1" prot="public" virt="non-virtual"><scope>Tango::Attribute::_AttPropDb</scope><name>name</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,95 @@
+\section{device.\-h File Reference}
+\label{device_8h}\index{device.\-h@{device.\-h}}
+{\ttfamily \#include $<$tango.\-h$>$}\\*
+{\ttfamily \#include $<$tango/server/blackbox.\-h$>$}\\*
+{\ttfamily \#include $<$tango/server/classattribute.\-h$>$}\\*
+{\ttfamily \#include $<$tango/server/classpipe.\-h$>$}\\*
+{\ttfamily \#include $<$tango/server/attrdesc.\-h$>$}\\*
+{\ttfamily \#include $<$tango/server/attribute.\-h$>$}\\*
+{\ttfamily \#include $<$tango/server/w\-\_\-attribute.\-h$>$}\\*
+{\ttfamily \#include $<$tango/server/fwdattribute.\-h$>$}\\*
+{\ttfamily \#include $<$tango/server/multiattribute.\-h$>$}\\*
+{\ttfamily \#include $<$tango/server/pollobj.\-h$>$}\\*
+{\ttfamily \#include $<$tango/server/deviceclass.\-h$>$}\\*
+{\ttfamily \#include $<$tango/server/devintr.\-h$>$}\\*
+{\ttfamily \#include $<$tango/server/dintrthread.\-h$>$}\\*
+Include dependency graph for device.\-h\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d97/device_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Tango\-::\-Device\-Impl}
+\begin{DoxyCompactList}\small\item\em Base class for all T\-A\-N\-G\-O device. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Tango}
+\begin{DoxyCompactList}\small\item\em ============================================================================= \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bf D\-A\-T\-A\-\_\-\-I\-N\-\_\-\-N\-E\-T\-\_\-\-O\-B\-J\-E\-C\-T}(A, B, C, D, E)
+\item 
+\#define {\bf D\-A\-T\-A\-\_\-\-I\-N\-\_\-\-O\-B\-J\-E\-C\-T}(A, B, C, D)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{device.\-h@{device.\-h}!D\-A\-T\-A\-\_\-\-I\-N\-\_\-\-N\-E\-T\-\_\-\-O\-B\-J\-E\-C\-T@{D\-A\-T\-A\-\_\-\-I\-N\-\_\-\-N\-E\-T\-\_\-\-O\-B\-J\-E\-C\-T}}
+\index{D\-A\-T\-A\-\_\-\-I\-N\-\_\-\-N\-E\-T\-\_\-\-O\-B\-J\-E\-C\-T@{D\-A\-T\-A\-\_\-\-I\-N\-\_\-\-N\-E\-T\-\_\-\-O\-B\-J\-E\-C\-T}!device.h@{device.\-h}}
+\subsubsection[{D\-A\-T\-A\-\_\-\-I\-N\-\_\-\-N\-E\-T\-\_\-\-O\-B\-J\-E\-C\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-A\-T\-A\-\_\-\-I\-N\-\_\-\-N\-E\-T\-\_\-\-O\-B\-J\-E\-C\-T(
+\begin{DoxyParamCaption}
+\item[{}]{A, }
+\item[{}]{B, }
+\item[{}]{C, }
+\item[{}]{D, }
+\item[{}]{E}
+\end{DoxyParamCaption}
+)}\label{device_8h_ac89799415e9cd7a70591f72e48c58708}
+\index{device.\-h@{device.\-h}!D\-A\-T\-A\-\_\-\-I\-N\-\_\-\-O\-B\-J\-E\-C\-T@{D\-A\-T\-A\-\_\-\-I\-N\-\_\-\-O\-B\-J\-E\-C\-T}}
+\index{D\-A\-T\-A\-\_\-\-I\-N\-\_\-\-O\-B\-J\-E\-C\-T@{D\-A\-T\-A\-\_\-\-I\-N\-\_\-\-O\-B\-J\-E\-C\-T}!device.h@{device.\-h}}
+\subsubsection[{D\-A\-T\-A\-\_\-\-I\-N\-\_\-\-O\-B\-J\-E\-C\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-A\-T\-A\-\_\-\-I\-N\-\_\-\-O\-B\-J\-E\-C\-T(
+\begin{DoxyParamCaption}
+\item[{}]{A, }
+\item[{}]{B, }
+\item[{}]{C, }
+\item[{}]{D}
+\end{DoxyParamCaption}
+)}\label{device_8h_a963d0fe11371931a236713f2d57114eb}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \(\backslash\)
+    \{ \(\backslash\)
+        Tango::A *ptr = att.B(); \(\backslash\)
+        if (aid.data\_5 != Tango\_nullptr) \(\backslash\)
+        \{ \(\backslash\)
+            (*aid.data\_5)[index].value.D(C); \(\backslash\)
+            A &the\_seq = (*aid.data\_5)[index].value.D(); \(\backslash\)
+            the\_seq.replace(ptr->length(),ptr->length(),ptr->get\_buffer(),ptr->release()); \(\backslash\)
+            if (ptr->release() == \textcolor{keyword}{true}) \(\backslash\)
+                ptr->get\_buffer(\textcolor{keyword}{true}); \(\backslash\)
+        \} \(\backslash\)
+        else \textcolor{keywordflow}{if} (aid.data\_4 != Tango\_nullptr) \(\backslash\)
+        \{ \(\backslash\)
+            (*aid.data\_4)[index].value.D(C); \(\backslash\)
+            A &the\_seq = (*aid.data\_4)[index].value.D(); \(\backslash\)
+            the\_seq.replace(ptr->length(),ptr->length(),ptr->get\_buffer(),ptr->release()); \(\backslash\)
+            if (ptr->release() == \textcolor{keyword}{true}) \(\backslash\)
+                ptr->get\_buffer(\textcolor{keyword}{true}); \(\backslash\)
+        \} \(\backslash\)
+        else \(\backslash\)
+        \{ \(\backslash\)
+            (*aid.data\_3)[index].value <<= *ptr; \(\backslash\)
+        \} \(\backslash\)
+\(\backslash\)
+        if (del\_seq == \textcolor{keyword}{true}) \(\backslash\)
+            delete ptr; \(\backslash\)
+    \} \(\backslash\)
+    while (\textcolor{keyword}{false})
+\end{DoxyCode}

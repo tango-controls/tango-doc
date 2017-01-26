@@ -1,0 +1,150 @@
+\section{log4tango\-:\-:Ostream\-Appender Class Reference}
+\label{classlog4tango_1_1OstreamAppender}\index{log4tango\-::\-Ostream\-Appender@{log4tango\-::\-Ostream\-Appender}}
+
+
+{\ttfamily \#include \char`\"{}Ostream\-Appender.\-hh\char`\"{}}
+
+
+
+Inheritance diagram for log4tango\-:\-:Ostream\-Appender\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{d6/dff/classlog4tango_1_1OstreamAppender__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for log4tango\-:\-:Ostream\-Appender\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{d8/d80/classlog4tango_1_1OstreamAppender__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Ostream\-Appender} (const std\-::string \&name, std\-::ostream $\ast$stream)
+\item 
+virtual {\bf $\sim$\-Ostream\-Appender} ()
+\item 
+virtual void {\bf close} ()
+\begin{DoxyCompactList}\small\item\em Release any resources allocated within the appender such as file handles, network connections, etc. \end{DoxyCompactList}\item 
+virtual bool {\bf reopen} ()
+\begin{DoxyCompactList}\small\item\em Reopens the output destination of this \doxyref{Appender}{p.}{d7/dc4/classlog4tango_1_1Appender}, e.\-g. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual int {\bf \-\_\-append} (const {\bf Logging\-Event} \&event)
+\begin{DoxyCompactList}\small\item\em Log in \doxyref{Appender}{p.}{d7/dc4/classlog4tango_1_1Appender} specific way. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::ostream $\ast$ {\bf \-\_\-stream}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{log4tango\-::\-Ostream\-Appender@{log4tango\-::\-Ostream\-Appender}!Ostream\-Appender@{Ostream\-Appender}}
+\index{Ostream\-Appender@{Ostream\-Appender}!log4tango::OstreamAppender@{log4tango\-::\-Ostream\-Appender}}
+\subsubsection[{Ostream\-Appender}]{\setlength{\rightskip}{0pt plus 5cm}log4tango\-::\-Ostream\-Appender\-::\-Ostream\-Appender (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{name, }
+\item[{std\-::ostream $\ast$}]{stream}
+\end{DoxyParamCaption}
+)}\label{classlog4tango_1_1OstreamAppender_a8a12ee99972317e420641f9cbc02974a}
+\index{log4tango\-::\-Ostream\-Appender@{log4tango\-::\-Ostream\-Appender}!$\sim$\-Ostream\-Appender@{$\sim$\-Ostream\-Appender}}
+\index{$\sim$\-Ostream\-Appender@{$\sim$\-Ostream\-Appender}!log4tango::OstreamAppender@{log4tango\-::\-Ostream\-Appender}}
+\subsubsection[{$\sim$\-Ostream\-Appender}]{\setlength{\rightskip}{0pt plus 5cm}log4tango\-::\-Ostream\-Appender\-::$\sim$\-Ostream\-Appender (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classlog4tango_1_1OstreamAppender_ade995645915820003be7b1e2461bb072}
+
+
+References close().
+
+
+
+\subsection{Member Function Documentation}
+\index{log4tango\-::\-Ostream\-Appender@{log4tango\-::\-Ostream\-Appender}!\-\_\-append@{\-\_\-append}}
+\index{\-\_\-append@{\-\_\-append}!log4tango::OstreamAppender@{log4tango\-::\-Ostream\-Appender}}
+\subsubsection[{\-\_\-append}]{\setlength{\rightskip}{0pt plus 5cm}int log4tango\-::\-Ostream\-Appender\-::\-\_\-append (
+\begin{DoxyParamCaption}
+\item[{const {\bf Logging\-Event} \&}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classlog4tango_1_1OstreamAppender_a90001f5d7e7ef88b5492e6154d90aa86}
+
+
+Log in \doxyref{Appender}{p.}{d7/dc4/classlog4tango_1_1Appender} specific way. 
+
+Subclasses of \doxyref{Appender}{p.}{d7/dc4/classlog4tango_1_1Appender} should implement this method to perform actual logging. 
+\begin{DoxyParams}{Parameters}
+{\em event} & The \doxyref{Logging\-Event}{p.}{d8/df2/structlog4tango_1_1LoggingEvent} to log. \\
+\hline
+\end{DoxyParams}
+
+
+Implements {\bf log4tango\-::\-Appender} \doxyref{}{p.}{d7/dc4/classlog4tango_1_1Appender_a87739ce35cdc83e06dd4c55af28d3ac8}.
+
+
+
+References \-\_\-stream, std\-::endl(), log4tango\-::\-Layout\-::format(), and log4tango\-::\-Layout\-Appender\-::get\-\_\-layout().
+
+\index{log4tango\-::\-Ostream\-Appender@{log4tango\-::\-Ostream\-Appender}!close@{close}}
+\index{close@{close}!log4tango::OstreamAppender@{log4tango\-::\-Ostream\-Appender}}
+\subsubsection[{close}]{\setlength{\rightskip}{0pt plus 5cm}void log4tango\-::\-Ostream\-Appender\-::close (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classlog4tango_1_1OstreamAppender_a6a805af756881eb7ba69de21c60780a1}
+
+
+Release any resources allocated within the appender such as file handles, network connections, etc. 
+
+
+
+Implements {\bf log4tango\-::\-Appender} \doxyref{}{p.}{d7/dc4/classlog4tango_1_1Appender_adafebe465072844506448a35570f9c59}.
+
+
+
+Referenced by $\sim$\-Ostream\-Appender().
+
+\index{log4tango\-::\-Ostream\-Appender@{log4tango\-::\-Ostream\-Appender}!reopen@{reopen}}
+\index{reopen@{reopen}!log4tango::OstreamAppender@{log4tango\-::\-Ostream\-Appender}}
+\subsubsection[{reopen}]{\setlength{\rightskip}{0pt plus 5cm}bool log4tango\-::\-Ostream\-Appender\-::reopen (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classlog4tango_1_1OstreamAppender_ac07a12e667d34c7560a690cf35851ec8}
+
+
+Reopens the output destination of this \doxyref{Appender}{p.}{d7/dc4/classlog4tango_1_1Appender}, e.\-g. 
+
+the logfile or T\-C\-P socket. \begin{DoxyReturn}{Returns}
+false if an error occured during reopening, true otherwise. 
+\end{DoxyReturn}
+
+
+Reimplemented from {\bf log4tango\-::\-Appender} \doxyref{}{p.}{d7/dc4/classlog4tango_1_1Appender_a1f853fae3eebe457698039e3aafb770a}.
+
+
+
+\subsection{Member Data Documentation}
+\index{log4tango\-::\-Ostream\-Appender@{log4tango\-::\-Ostream\-Appender}!\-\_\-stream@{\-\_\-stream}}
+\index{\-\_\-stream@{\-\_\-stream}!log4tango::OstreamAppender@{log4tango\-::\-Ostream\-Appender}}
+\subsubsection[{\-\_\-stream}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ostream$\ast$ log4tango\-::\-Ostream\-Appender\-::\-\_\-stream\hspace{0.3cm}{\ttfamily [protected]}}\label{classlog4tango_1_1OstreamAppender_ac8b44c1711e080e46488853a6ed8967f}
+
+
+Referenced by \-\_\-append().
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+{\bf Ostream\-Appender.\-hh}\item 
+{\bf Ostream\-Appender.\-cpp}\end{DoxyCompactItemize}

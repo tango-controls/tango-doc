@@ -1,0 +1,300 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="dc/df8/dbapi_8h">
+    <title>dbapi.h File Reference</title>
+    <programlisting>#include &lt;vector&gt;</programlisting>
+    <programlisting>#include &lt;errno.h&gt;</programlisting>
+    <programlisting>#include &lt;tango/client/devapi.h&gt;</programlisting>
+    <programlisting>#include &quot;Database.h&quot;</programlisting>
+    <programlisting>#include &quot;DbDevice.h&quot;</programlisting>
+        <simplesect>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d8/deb/structTango_1_1DbServerCache_1_1AttPropEltIdx">Tango::DbServerCache::AttPropEltIdx</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="de/d56/structTango_1_1DbServerCache_1_1ClassEltIdx">Tango::DbServerCache::ClassEltIdx</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d3/d25/classTango_1_1DbAttribute">Tango::DbAttribute</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="dc/d38/classTango_1_1DbClass">Tango::DbClass</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d2/d90/classTango_1_1DbClass_1_1DbClassExt">Tango::DbClass::DbClassExt</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d3/d0f/classTango_1_1DbDatum">Tango::DbDatum</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="de/d64/classTango_1_1DbDatum_1_1DbDatumExt">Tango::DbDatum::DbDatumExt</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d6/d4b/classTango_1_1DbDevExportInfo">Tango::DbDevExportInfo</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d3/d6d/classTango_1_1DbDevFullInfo">Tango::DbDevFullInfo</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d0/d4b/classTango_1_1DbDevImportInfo">Tango::DbDevImportInfo</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="dd/d01/classTango_1_1DbDevInfo">Tango::DbDevInfo</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d3/d55/classTango_1_1DbHistory">Tango::DbHistory</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="df/d27/classTango_1_1DbProperty">Tango::DbProperty</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d6/deb/classTango_1_1DbServer">Tango::DbServer</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d3/d9c/classTango_1_1DbServerCache">Tango::DbServerCache</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="dc/d95/classTango_1_1DbServerData">Tango::DbServerData</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d4/dd2/classTango_1_1DbServer_1_1DbServerExt">Tango::DbServer::DbServerExt</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="db/dad/classTango_1_1DbServerInfo">Tango::DbServerInfo</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d0/d8d/structTango_1_1DbServerCache_1_1DevEltIdx">Tango::DbServerCache::DevEltIdx</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="dd/dd7/structTango_1_1DbServerCache_1_1EltIdx">Tango::DbServerCache::EltIdx</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d4/d22/structTango_1_1DbServerCache_1_1PropEltIdx">Tango::DbServerCache::PropEltIdx</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d0/d57/structTango_1_1DbServerData_1_1TangoAttribute">Tango::DbServerData::TangoAttribute</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="db/d41/structTango_1_1DbServerData_1_1TangoClass">Tango::DbServerData::TangoClass</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="df/d41/structTango_1_1DbServerData_1_1TangoDevice">Tango::DbServerData::TangoDevice</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="da/d75/structTango_1_1DbServerData_1_1TangoPipe">Tango::DbServerData::TangoPipe</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d6/dca/structTango_1_1DbServerData_1_1TangoProperty">Tango::DbServerData::TangoProperty</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title> Namespaces </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="de/ddf/namespaceTango">Tango</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Defines</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="dc/df8/dbapi_8h_1a4982ee044887994e11e6b73dce645581">CALL_DB_SERVER</link> { \
+		bool retry_mac = true; \
+		long db_retries = 0; \
+		if (db_tg != NULL) \
+		{ \
+			if (db_tg-&gt;is_svr_starting() == true) \
+				db_retries = DB_START_PHASE_RETRIES; \
+		} \
+		while (retry_mac == true) \
+		{ \
+			try \
+			{ \
+				RET = command_inout(NAME,SEND); \
+				retry_mac = false; \
+			} \
+			<link linkend="dc/df8/dbapi_8h_1a1001977b4dfc9f70af5f20d97ed8743d">MANAGE_EXCEPT</link>(NAME) \
+		} \
+	}</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="dc/df8/dbapi_8h_1a85ea3965d82f35e14eba1d170a127a0f">CALL_DB_SERVER_NO_RET</link> { \
+		bool retry_mac = true; \
+		long db_retries = 0; \
+		if (db_tg != NULL) \
+		{ \
+			if (db_tg-&gt;is_svr_starting() == true) \
+				db_retries = DB_START_PHASE_RETRIES; \
+		} \
+		while (retry_mac == true) \
+		{ \
+			try \
+			{ \
+				command_inout(NAME,SEND); \
+				retry_mac = false; \
+			} \
+			<link linkend="dc/df8/dbapi_8h_1a1001977b4dfc9f70af5f20d97ed8743d">MANAGE_EXCEPT</link>(NAME) \
+		} \
+	}</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="dc/df8/dbapi_8h_1a1001977b4dfc9f70af5f20d97ed8743d">MANAGE_EXCEPT</link> catch (Tango::CommunicationFailed &amp;e) \
+	{ \
+		if (e.errors.length() &gt;= 2) \
+		{ \
+			if (::strcmp(e.errors[1].reason.in(),&quot;API_DeviceTimedOut&quot;) == 0) \
+			{ \
+				if (db_retries != 0) \
+				{ \
+					db_retries--; \
+					if (db_retries == 0) \
+						throw; \
+				} \
+				else \
+					throw; \
+			} \
+			else \
+				throw; \
+		} \
+		else \
+			throw; \
+	}</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="dc/df8/dbapi_8h_1acee1075bda717b32291b054853f14d22">POGO_DESC</link> &quot;Description&quot;</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="dc/df8/dbapi_8h_1a96ad2363140145a75cffbf2f84407d56">POGO_TITLE</link> &quot;ProjectTitle&quot;</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file /home/tango/workspace/cppTango/include/tango/client/dbapi.h</para>
+    </simplesect>
+</section>

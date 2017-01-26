@@ -1,0 +1,123 @@
+\section{Tango\-:\-:Db\-Server\-Data Class Reference}
+\label{classTango_1_1DbServerData}\index{Tango\-::\-Db\-Server\-Data@{Tango\-::\-Db\-Server\-Data}}
+
+
+Class used to move/copy a complete device server process database configuration from one \doxyref{Tango}{p.}{de/ddf/namespaceTango} host to another.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Db\-Server\-Data} (const string \&ds\-\_\-exec\-\_\-name, const string \&ds\-\_\-inst\-\_\-name)
+\begin{DoxyCompactList}\small\item\em Create a \doxyref{Db\-Server\-Data}{p.}{dc/d95/classTango_1_1DbServerData} instance. \end{DoxyCompactList}\item 
+bool {\bf already\-\_\-exist} (const string \&tg\-\_\-host)
+\begin{DoxyCompactList}\small\item\em Check if device(s) already defined. \end{DoxyCompactList}\item 
+void {\bf put\-\_\-in\-\_\-database} (const string \&tg\-\_\-host)
+\begin{DoxyCompactList}\small\item\em Put device server database configuration in new \doxyref{Tango}{p.}{de/ddf/namespaceTango} host. \end{DoxyCompactList}\item 
+void {\bf remove} (const string \&tg\-\_\-host)
+\begin{DoxyCompactList}\small\item\em Remove device server database configuration from \doxyref{Tango}{p.}{de/ddf/namespaceTango} host. \end{DoxyCompactList}\item 
+void {\bf remove} ()
+\begin{DoxyCompactList}\small\item\em Remove device server database configuration from default \doxyref{Tango}{p.}{de/ddf/namespaceTango} host. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class used to move/copy a complete device server process database configuration from one \doxyref{Tango}{p.}{de/ddf/namespaceTango} host to another. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Tango\-::\-Db\-Server\-Data@{Tango\-::\-Db\-Server\-Data}!Db\-Server\-Data@{Db\-Server\-Data}}
+\index{Db\-Server\-Data@{Db\-Server\-Data}!Tango::DbServerData@{Tango\-::\-Db\-Server\-Data}}
+\subsubsection[{Db\-Server\-Data}]{\setlength{\rightskip}{0pt plus 5cm}Tango\-::\-Db\-Server\-Data\-::\-Db\-Server\-Data (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{ds\-\_\-exec\-\_\-name, }
+\item[{const string \&}]{ds\-\_\-inst\-\_\-name}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1DbServerData_a9091f7e8303cb507cd6d571ab6901cbf}
+
+
+Create a \doxyref{Db\-Server\-Data}{p.}{dc/d95/classTango_1_1DbServerData} instance. 
+
+A constructor for a \doxyref{Db\-Server\-Data}{p.}{dc/d95/classTango_1_1DbServerData} object for a device server process defined in the T\-A\-N\-G\-O database specified by the T\-A\-N\-G\-O\-\_\-\-H\-O\-S\-T environment variable
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ds\-\_\-exec\-\_\-name} & The device server process executable name \\
+\hline
+\mbox{\tt in}  & {\em ds\-\_\-inst\-\_\-name} & The device server process instance name \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{Tango\-::\-Db\-Server\-Data@{Tango\-::\-Db\-Server\-Data}!already\-\_\-exist@{already\-\_\-exist}}
+\index{already\-\_\-exist@{already\-\_\-exist}!Tango::DbServerData@{Tango\-::\-Db\-Server\-Data}}
+\subsubsection[{already\-\_\-exist}]{\setlength{\rightskip}{0pt plus 5cm}bool Tango\-::\-Db\-Server\-Data\-::already\-\_\-exist (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{tg\-\_\-host}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1DbServerData_a19dd1e256705a4ba7aae9a7e696c6a7b}
+
+
+Check if device(s) already defined. 
+
+Return true if one of the device defined in the device server process with configuration in this instance is already defined in the database defined by the \doxyref{Tango}{p.}{de/ddf/namespaceTango} host given as parameter
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em tg\-\_\-host} & The tango host \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Boolean set to true if one of the device server device is defined in the \doxyref{Tango}{p.}{de/ddf/namespaceTango} host given as parameter 
+\end{DoxyReturn}
+\index{Tango\-::\-Db\-Server\-Data@{Tango\-::\-Db\-Server\-Data}!put\-\_\-in\-\_\-database@{put\-\_\-in\-\_\-database}}
+\index{put\-\_\-in\-\_\-database@{put\-\_\-in\-\_\-database}!Tango::DbServerData@{Tango\-::\-Db\-Server\-Data}}
+\subsubsection[{put\-\_\-in\-\_\-database}]{\setlength{\rightskip}{0pt plus 5cm}void Tango\-::\-Db\-Server\-Data\-::put\-\_\-in\-\_\-database (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{tg\-\_\-host}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1DbServerData_a642eaefe3d22329cb415d6893a388c9d}
+
+
+Put device server database configuration in new \doxyref{Tango}{p.}{de/ddf/namespaceTango} host. 
+
+Store the device server process database configuration in the database specified by the given \doxyref{Tango}{p.}{de/ddf/namespaceTango} host parameter
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em tg\-\_\-host} & The tango host \\
+\hline
+\end{DoxyParams}
+\index{Tango\-::\-Db\-Server\-Data@{Tango\-::\-Db\-Server\-Data}!remove@{remove}}
+\index{remove@{remove}!Tango::DbServerData@{Tango\-::\-Db\-Server\-Data}}
+\subsubsection[{remove}]{\setlength{\rightskip}{0pt plus 5cm}void Tango\-::\-Db\-Server\-Data\-::remove (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{tg\-\_\-host}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1DbServerData_a8d0f3027d2c152939a7cc7a0129c7e73}
+
+
+Remove device server database configuration from \doxyref{Tango}{p.}{de/ddf/namespaceTango} host. 
+
+Remove the device server process database configuration from the database specified by the given \doxyref{Tango}{p.}{de/ddf/namespaceTango} host parameter
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em tg\-\_\-host} & The tango host \\
+\hline
+\end{DoxyParams}
+\index{Tango\-::\-Db\-Server\-Data@{Tango\-::\-Db\-Server\-Data}!remove@{remove}}
+\index{remove@{remove}!Tango::DbServerData@{Tango\-::\-Db\-Server\-Data}}
+\subsubsection[{remove}]{\setlength{\rightskip}{0pt plus 5cm}void Tango\-::\-Db\-Server\-Data\-::remove (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1DbServerData_a71c4b877ede37ab729a172da7668872b}
+
+
+Remove device server database configuration from default \doxyref{Tango}{p.}{de/ddf/namespaceTango} host. 
+
+Remove the device server process database configuration from the database specified by the environment variable T\-A\-N\-G\-O\-\_\-\-H\-O\-S\-T 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+{\bf dbapi.\-h}\end{DoxyCompactItemize}

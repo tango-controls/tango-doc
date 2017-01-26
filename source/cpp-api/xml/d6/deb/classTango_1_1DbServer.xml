@@ -1,0 +1,305 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="d6/deb/classTango_1_1DbServer" kind="class" prot="public">
+    <compoundname>Tango::DbServer</compoundname>
+    <innerclass refid="d4/dd2/classTango_1_1DbServer_1_1DbServerExt" prot="private">Tango::DbServer::DbServerExt</innerclass>
+      <sectiondef kind="user-defined">
+      <header>Constructors</header>
+      <memberdef kind="function" id="d6/deb/classTango_1_1DbServer_1ab9441c6d68940385163e1fc677a6a76e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::DbServer::DbServer</definition>
+        <argsstring>(string server_name)</argsstring>
+        <name>DbServer</name>
+        <param>
+          <type>string</type>
+          <declname>server_name</declname>
+        </param>
+        <briefdescription>
+<para>Create a <ref refid="d6/deb/classTango_1_1DbServer" kindref="compound">DbServer</ref> instance. </para>        </briefdescription>
+        <detaileddescription>
+<para>A constructor for a <ref refid="d6/deb/classTango_1_1DbServer" kindref="compound">DbServer</ref> object for a server in the TANGO database specified by the TANGO_HOST environment variable.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">server_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The device server name </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="198" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/deb/classTango_1_1DbServer_1a46869a3535ccf390b099be5bef844a6d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::DbServer::DbServer</definition>
+        <argsstring>(string server_name, Database *db)</argsstring>
+        <name>DbServer</name>
+        <param>
+          <type>string</type>
+          <declname>server_name</declname>
+        </param>
+        <param>
+          <type>Database *</type>
+          <declname>db</declname>
+        </param>
+        <briefdescription>
+<para>Create a <ref refid="d6/deb/classTango_1_1DbServer" kindref="compound">DbServer</ref> instance using a specified database. </para>        </briefdescription>
+        <detaileddescription>
+<para>A constructor for a <ref refid="d6/deb/classTango_1_1DbServer" kindref="compound">DbServer</ref> object for the server in the specified database. This method reuses the Database supplied by the programmer</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">server_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The device server name </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">db</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The database object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="209" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Server oriented methods</header>
+      <memberdef kind="function" id="d6/deb/classTango_1_1DbServer_1a0196639724a8fd1d93385ef37a5d0ac4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::DbServer::add_server</definition>
+        <argsstring>(DbDevInfos &amp;serv)</argsstring>
+        <name>add_server</name>
+        <param>
+          <type><ref refid="de/ddf/namespaceTango_1aaec13f55a8cc1c657fc9966bfba00b0c" kindref="member">DbDevInfos</ref> &amp;</type>
+          <declname>serv</declname>
+        </param>
+        <briefdescription>
+<para>Add a device server process into the database. </para>        </briefdescription>
+        <detaileddescription>
+<para>Add a group of devices to the database. The device names, server names and classes are specified in the vector of <ref refid="dd/d01/classTango_1_1DbDevInfo" kindref="compound">DbDevInfo</ref> structures</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">serv</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Device server process data</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>ConnectionFailed</parametername>
+<parametername>CommunnicationFailed</parametername>
+<parametername>DevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>from device </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="226" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/deb/classTango_1_1DbServer_1acf053de664387ae38d07afff93433d60" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::DbServer::delete_server</definition>
+        <argsstring>()</argsstring>
+        <name>delete_server</name>
+        <briefdescription>
+<para>Delete the device server from database. </para>        </briefdescription>
+        <detaileddescription>
+<para>Delete the device server and its associated devices from the database.</para><para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>ConnectionFailed</parametername>
+<parametername>CommunnicationFailed</parametername>
+<parametername>DevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>from device </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="234" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/deb/classTango_1_1DbServer_1ae1c4289e123c4a30dd51102186f1aa6d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::DbServer::export_server</definition>
+        <argsstring>(DbDevExportInfos &amp;serv)</argsstring>
+        <name>export_server</name>
+        <param>
+          <type><ref refid="de/ddf/namespaceTango_1a7823670207a406676f96c82f1b73bd28" kindref="member">DbDevExportInfos</ref> &amp;</type>
+          <declname>serv</declname>
+        </param>
+        <briefdescription>
+<para>Export all device server devices in database. </para>        </briefdescription>
+        <detaileddescription>
+<para>Export a group of device to the database. The device names, IOR, class, server name, pid etc. are specified in the vector of <ref refid="d6/d4b/classTango_1_1DbDevExportInfo" kindref="compound">DbDevExportInfo</ref> structures.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">serv</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Devices information</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>ConnectionFailed</parametername>
+<parametername>CommunnicationFailed</parametername>
+<parametername>DevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>from device </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="245" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/deb/classTango_1_1DbServer_1a7ec946b0a31e7fb26b126063315e52bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::DbServer::unexport_server</definition>
+        <argsstring>()</argsstring>
+        <name>unexport_server</name>
+        <briefdescription>
+<para>Mark all devices belonging to the device server as un-exported. </para>        </briefdescription>
+        <detaileddescription>
+<para>Mark all the devices exported by the server as un-exported.</para><para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>ConnectionFailed</parametername>
+<parametername>CommunnicationFailed</parametername>
+<parametername>DevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>from device </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="253" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d6/deb/classTango_1_1DbServer_1aa4f3b04e345d232796689305459742b3" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Tango::DbServer::db_ind</definition>
+        <argsstring></argsstring>
+        <name>db_ind</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="171" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" bodystart="171" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d6/deb/classTango_1_1DbServer_1ad508a04fc5d2c84a86205befbfced488" prot="private" static="no" mutable="no">
+        <type>Database *</type>
+        <definition>Database* Tango::DbServer::dbase</definition>
+        <argsstring></argsstring>
+        <name>dbase</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="170" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" bodystart="170" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d6/deb/classTango_1_1DbServer_1a7f40bc054a0e41b7ca0f1cedd35a15f6" prot="private" static="no" mutable="no">
+        <type>DbServerExt *</type>
+        <definition>DbServerExt* Tango::DbServer::ext</definition>
+        <argsstring></argsstring>
+        <name>ext</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="183" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" bodystart="183" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d6/deb/classTango_1_1DbServer_1ad87f71581af92139b201d08f47ce28cd" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Tango::DbServer::ext_dbase</definition>
+        <argsstring></argsstring>
+        <name>ext_dbase</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="172" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" bodystart="172" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d6/deb/classTango_1_1DbServer_1ab36bca37fdae45f07e2d74cf16593bfa" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Tango::DbServer::name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="169" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" bodystart="169" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="d6/deb/classTango_1_1DbServer_1a7c1775424ad530741801792d26f88c4b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::DbServer::~DbServer</definition>
+        <argsstring>()</argsstring>
+        <name>~DbServer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="257" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/deb/classTango_1_1DbServer_1a3c1837f8d3a325ec2e6389c6b15d5602" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="db/dad/classTango_1_1DbServerInfo" kindref="compound">DbServerInfo</ref></type>
+        <definition>DbServerInfo Tango::DbServer::get_server_info</definition>
+        <argsstring>()</argsstring>
+        <name>get_server_info</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="259" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A database object for a device server which can be used to query or modify server database information. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="167" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" bodystart="166" bodyend="260"/>
+    <listofallmembers>
+      <member refid="d6/deb/classTango_1_1DbServer_1a0196639724a8fd1d93385ef37a5d0ac4" prot="public" virt="non-virtual"><scope>Tango::DbServer</scope><name>add_server</name></member>
+      <member refid="d6/deb/classTango_1_1DbServer_1aa4f3b04e345d232796689305459742b3" prot="private" virt="non-virtual"><scope>Tango::DbServer</scope><name>db_ind</name></member>
+      <member refid="d6/deb/classTango_1_1DbServer_1ad508a04fc5d2c84a86205befbfced488" prot="private" virt="non-virtual"><scope>Tango::DbServer</scope><name>dbase</name></member>
+      <member refid="d6/deb/classTango_1_1DbServer_1ab9441c6d68940385163e1fc677a6a76e" prot="public" virt="non-virtual"><scope>Tango::DbServer</scope><name>DbServer</name></member>
+      <member refid="d6/deb/classTango_1_1DbServer_1a46869a3535ccf390b099be5bef844a6d" prot="public" virt="non-virtual"><scope>Tango::DbServer</scope><name>DbServer</name></member>
+      <member refid="d6/deb/classTango_1_1DbServer_1acf053de664387ae38d07afff93433d60" prot="public" virt="non-virtual"><scope>Tango::DbServer</scope><name>delete_server</name></member>
+      <member refid="d6/deb/classTango_1_1DbServer_1ae1c4289e123c4a30dd51102186f1aa6d" prot="public" virt="non-virtual"><scope>Tango::DbServer</scope><name>export_server</name></member>
+      <member refid="d6/deb/classTango_1_1DbServer_1a7f40bc054a0e41b7ca0f1cedd35a15f6" prot="private" virt="non-virtual"><scope>Tango::DbServer</scope><name>ext</name></member>
+      <member refid="d6/deb/classTango_1_1DbServer_1ad87f71581af92139b201d08f47ce28cd" prot="private" virt="non-virtual"><scope>Tango::DbServer</scope><name>ext_dbase</name></member>
+      <member refid="d6/deb/classTango_1_1DbServer_1a3c1837f8d3a325ec2e6389c6b15d5602" prot="private" virt="non-virtual"><scope>Tango::DbServer</scope><name>get_server_info</name></member>
+      <member refid="d6/deb/classTango_1_1DbServer_1ab36bca37fdae45f07e2d74cf16593bfa" prot="private" virt="non-virtual"><scope>Tango::DbServer</scope><name>name</name></member>
+      <member refid="d6/deb/classTango_1_1DbServer_1a7ec946b0a31e7fb26b126063315e52bc" prot="public" virt="non-virtual"><scope>Tango::DbServer</scope><name>unexport_server</name></member>
+      <member refid="d6/deb/classTango_1_1DbServer_1a7c1775424ad530741801792d26f88c4b" prot="private" virt="non-virtual"><scope>Tango::DbServer</scope><name>~DbServer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

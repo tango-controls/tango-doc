@@ -1,0 +1,159 @@
+\section{log4tango\-:\-:Logging\-Event Struct Reference}
+\label{structlog4tango_1_1LoggingEvent}\index{log4tango\-::\-Logging\-Event@{log4tango\-::\-Logging\-Event}}
+
+
+The internal representation of logging events.  
+
+
+
+
+{\ttfamily \#include \char`\"{}Logging\-Event.\-hh\char`\"{}}
+
+
+
+Collaboration diagram for log4tango\-:\-:Logging\-Event\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=236pt]{d7/d06/structlog4tango_1_1LoggingEvent__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Logging\-Event} (const std\-::string \&logger, const std\-::string \&{\bf message}, {\bf Level\-::\-Value} {\bf level})
+\begin{DoxyCompactList}\small\item\em Instantiate a \doxyref{Logging\-Event}{p.}{d8/df2/structlog4tango_1_1LoggingEvent} from the supplied parameters. \end{DoxyCompactList}\item 
+{\bf Logging\-Event} (const {\bf Logging\-Event} \&event)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Level\-::\-Value} {\bf level}
+\begin{DoxyCompactList}\small\item\em \doxyref{Level}{p.}{d8/d0e/classlog4tango_1_1Level} of logging event. \end{DoxyCompactList}\item 
+const std\-::string {\bf logger\-\_\-name}
+\begin{DoxyCompactList}\small\item\em The logger name. \end{DoxyCompactList}\item 
+const std\-::string {\bf message}
+\begin{DoxyCompactList}\small\item\em The application supplied message of logging event. \end{DoxyCompactList}\item 
+long {\bf thread\-\_\-id}
+\begin{DoxyCompactList}\small\item\em id of thread in which this logging event was generated \end{DoxyCompactList}\item 
+std\-::string {\bf thread\-\_\-name}
+\begin{DoxyCompactList}\small\item\em Name of thread in which this logging event was generated. \end{DoxyCompactList}\item 
+{\bf Time\-Stamp} {\bf timestamp}
+\begin{DoxyCompactList}\small\item\em The number of seconds elapsed since the epoch (1/1/1970 00\-:00\-:00 U\-T\-C) until logging event was created. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The internal representation of logging events. 
+
+When a affirmative logging decision is made a {\ttfamily \doxyref{Logging\-Event}{p.}{d8/df2/structlog4tango_1_1LoggingEvent}} instance is created. This instance is passed around the different \doxyref{log4tango}{p.}{d4/db0/namespacelog4tango} components.
+
+This class is of concern to those wishing to extend \doxyref{log4tango}{p.}{d4/db0/namespacelog4tango}. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{log4tango\-::\-Logging\-Event@{log4tango\-::\-Logging\-Event}!Logging\-Event@{Logging\-Event}}
+\index{Logging\-Event@{Logging\-Event}!log4tango::LoggingEvent@{log4tango\-::\-Logging\-Event}}
+\subsubsection[{Logging\-Event}]{\setlength{\rightskip}{0pt plus 5cm}log4tango\-::\-Logging\-Event\-::\-Logging\-Event (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{logger, }
+\item[{const std\-::string \&}]{message, }
+\item[{{\bf Level\-::\-Value}}]{level}
+\end{DoxyParamCaption}
+)}\label{structlog4tango_1_1LoggingEvent_a5508a7ec66fe15b218370660fbe80523}
+
+
+Instantiate a \doxyref{Logging\-Event}{p.}{d8/df2/structlog4tango_1_1LoggingEvent} from the supplied parameters. 
+
+Except {\ttfamily time\-Stamp} all the other fields of {\ttfamily \doxyref{Logging\-Event}{p.}{d8/df2/structlog4tango_1_1LoggingEvent}} are filled when actually needed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em logger} & The logger of this event. \\
+\hline
+{\em message} & The message of this event. \\
+\hline
+{\em level} & The level of this event. \\
+\hline
+\end{DoxyParams}
+
+
+References log4tango\-::threading\-::thread\-\_\-id(), and thread\-\_\-id.
+
+\index{log4tango\-::\-Logging\-Event@{log4tango\-::\-Logging\-Event}!Logging\-Event@{Logging\-Event}}
+\index{Logging\-Event@{Logging\-Event}!log4tango::LoggingEvent@{log4tango\-::\-Logging\-Event}}
+\subsubsection[{Logging\-Event}]{\setlength{\rightskip}{0pt plus 5cm}log4tango\-::\-Logging\-Event\-::\-Logging\-Event (
+\begin{DoxyParamCaption}
+\item[{const {\bf Logging\-Event} \&}]{event}
+\end{DoxyParamCaption}
+)}\label{structlog4tango_1_1LoggingEvent_a9b414a63d12f72ea848423ee0a44b583}
+
+
+Copy constructor. 
+
+
+
+\subsection{Member Data Documentation}
+\index{log4tango\-::\-Logging\-Event@{log4tango\-::\-Logging\-Event}!level@{level}}
+\index{level@{level}!log4tango::LoggingEvent@{log4tango\-::\-Logging\-Event}}
+\subsubsection[{level}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Level\-::\-Value} log4tango\-::\-Logging\-Event\-::level}\label{structlog4tango_1_1LoggingEvent_a669d5dbcaf34dff9ad9ec7578856a550}
+
+
+\doxyref{Level}{p.}{d8/d0e/classlog4tango_1_1Level} of logging event. 
+
+
+
+Referenced by log4tango\-::\-Level\-Component\-::append(), log4tango\-::\-X\-M\-L\-Layout\-::format(), and log4tango\-::\-Layout\-::format().
+
+\index{log4tango\-::\-Logging\-Event@{log4tango\-::\-Logging\-Event}!logger\-\_\-name@{logger\-\_\-name}}
+\index{logger\-\_\-name@{logger\-\_\-name}!log4tango::LoggingEvent@{log4tango\-::\-Logging\-Event}}
+\subsubsection[{logger\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::string log4tango\-::\-Logging\-Event\-::logger\-\_\-name}\label{structlog4tango_1_1LoggingEvent_af3e2d7c25fb876601d7a009cfef40905}
+
+
+The logger name. 
+
+
+
+Referenced by log4tango\-::\-X\-M\-L\-Layout\-::format().
+
+\index{log4tango\-::\-Logging\-Event@{log4tango\-::\-Logging\-Event}!message@{message}}
+\index{message@{message}!log4tango::LoggingEvent@{log4tango\-::\-Logging\-Event}}
+\subsubsection[{message}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::string log4tango\-::\-Logging\-Event\-::message}\label{structlog4tango_1_1LoggingEvent_ab2a64b1de2ffe194eb4050840bbb7e90}
+
+
+The application supplied message of logging event. 
+
+
+
+Referenced by log4tango\-::\-X\-M\-L\-Layout\-::format().
+
+\index{log4tango\-::\-Logging\-Event@{log4tango\-::\-Logging\-Event}!thread\-\_\-id@{thread\-\_\-id}}
+\index{thread\-\_\-id@{thread\-\_\-id}!log4tango::LoggingEvent@{log4tango\-::\-Logging\-Event}}
+\subsubsection[{thread\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}long log4tango\-::\-Logging\-Event\-::thread\-\_\-id}\label{structlog4tango_1_1LoggingEvent_ad811ff7b6b12fcefce201d91a95f6c75}
+
+
+id of thread in which this logging event was generated 
+
+
+
+Referenced by Logging\-Event().
+
+\index{log4tango\-::\-Logging\-Event@{log4tango\-::\-Logging\-Event}!thread\-\_\-name@{thread\-\_\-name}}
+\index{thread\-\_\-name@{thread\-\_\-name}!log4tango::LoggingEvent@{log4tango\-::\-Logging\-Event}}
+\subsubsection[{thread\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string log4tango\-::\-Logging\-Event\-::thread\-\_\-name}\label{structlog4tango_1_1LoggingEvent_a6819a2b7cfcdc27390f2cbaa0ff4dcd1}
+
+
+Name of thread in which this logging event was generated. 
+
+\index{log4tango\-::\-Logging\-Event@{log4tango\-::\-Logging\-Event}!timestamp@{timestamp}}
+\index{timestamp@{timestamp}!log4tango::LoggingEvent@{log4tango\-::\-Logging\-Event}}
+\subsubsection[{timestamp}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Time\-Stamp} log4tango\-::\-Logging\-Event\-::timestamp}\label{structlog4tango_1_1LoggingEvent_a69f17c639dea4fdca9db9a05f7cf810b}
+
+
+The number of seconds elapsed since the epoch (1/1/1970 00\-:00\-:00 U\-T\-C) until logging event was created. 
+
+
+
+The documentation for this struct was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+{\bf Logging\-Event.\-hh}\item 
+{\bf Logging\-Event.\-cpp}\end{DoxyCompactItemize}

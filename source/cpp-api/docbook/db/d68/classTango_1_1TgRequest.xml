@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="db/d68/classTango_1_1TgRequest">
+<title>Tango::TgRequest class Reference</title>
+<para>
+    <programlisting>#include <link linkend="db/d02/devasyn_8h">&quot;devasyn.h&quot;</link></programlisting>
+</para>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>enum <link linkend="db/d68/classTango_1_1TgRequest_1a6ae144d0765e704695987f8b20255343">ReqType</link>{<link linkend="db/d68/classTango_1_1TgRequest_1a6ae144d0765e704695987f8b20255343a04e80a438e091149063679db1a10ddb9">CMD_INOUT</link>, <link linkend="db/d68/classTango_1_1TgRequest_1a6ae144d0765e704695987f8b20255343a3466c21a6337f0cd76a5bbd90a566172">READ_ATTR</link>, <link linkend="db/d68/classTango_1_1TgRequest_1a6ae144d0765e704695987f8b20255343aa7268c071129d7da5e811bf37b8f2fcb">WRITE_ATTR_SINGLE</link>, <link linkend="db/d68/classTango_1_1TgRequest_1a6ae144d0765e704695987f8b20255343a82796f46c21ca154dc78089e2983de65">WRITE_ATTR</link>}</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Public Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool arrived</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>CallBack * cb_ptr</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Connection * dev</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>ReqType req_type</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>CORBA::Request_ptr request</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="db/d68/classTango_1_1TgRequest_1aaff69a8c4221e4ac48febff3f9c6e3b6">TgRequest</link> (
+CORBA::Request_ptr re, <link linkend="db/d68/classTango_1_1TgRequest_1a6ae144d0765e704695987f8b20255343">ReqType</link> ty)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="db/d68/classTango_1_1TgRequest_1ad17a7ebe95dc9bd2ed9e55409ada8059">TgRequest</link> (
+CORBA::Request_ptr re, <link linkend="db/d68/classTango_1_1TgRequest_1a6ae144d0765e704695987f8b20255343">ReqType</link> ty, <link linkend="d4/ded/classTango_1_1CallBack">CallBack</link> * cb)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="db/d68/classTango_1_1TgRequest_1a3a6abdbc73d075711e9573909fbd0dba">TgRequest</link> (
+Tango::Connection * con, <link linkend="db/d68/classTango_1_1TgRequest_1a6ae144d0765e704695987f8b20255343">ReqType</link> ty, <link linkend="d4/ded/classTango_1_1CallBack">CallBack</link> * cb)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+            <section xml:id="db/d68/classTango_1_1TgRequest_1a6ae144d0765e704695987f8b20255343">
+               <title>enum ReqType </title>
+               
+               <formalpara>
+                    <title>Enumerator:</title>
+                    <variablelist>
+                        <varlistentry xml:id="db/d68/classTango_1_1TgRequest_1a6ae144d0765e704695987f8b20255343a04e80a438e091149063679db1a10ddb9">
+                            <term>CMD_INOUT</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="db/d68/classTango_1_1TgRequest_1a6ae144d0765e704695987f8b20255343a3466c21a6337f0cd76a5bbd90a566172">
+                            <term>READ_ATTR</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="db/d68/classTango_1_1TgRequest_1a6ae144d0765e704695987f8b20255343aa7268c071129d7da5e811bf37b8f2fcb">
+                            <term>WRITE_ATTR_SINGLE</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="db/d68/classTango_1_1TgRequest_1a6ae144d0765e704695987f8b20255343a82796f46c21ca154dc78089e2983de65">
+                            <term>WRITE_ATTR</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                     </variablelist>
+                </formalpara>
+                <para>Definition at line 361 of file devasyn.h
+                    <programlisting>
+{
+CMD_INOUT, 
+READ_ATTR, 
+WRITE_ATTR_SINGLE, 
+WRITE_ATTR, 
+}ReqType;
+                    </programlisting>
+                </para>
+            </section>
+            <section xml:id="db/d68/classTango_1_1TgRequest_1aaff69a8c4221e4ac48febff3f9c6e3b6">
+                <title>Tango::TgRequest::TgRequest (CORBA::Request_ptr re, ReqType ty)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/d68/classTango_1_1TgRequest_1ad17a7ebe95dc9bd2ed9e55409ada8059">
+                <title>Tango::TgRequest::TgRequest (CORBA::Request_ptr re, ReqType ty, CallBack *cb)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="db/d68/classTango_1_1TgRequest_1a3a6abdbc73d075711e9573909fbd0dba">
+                <title>Tango::TgRequest::TgRequest (Tango::Connection *con, ReqType ty, CallBack *cb)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

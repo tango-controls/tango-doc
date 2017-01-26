@@ -1,0 +1,458 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="de/d9a/classTango_1_1UserDefaultAttrProp">
+<title>Tango::UserDefaultAttrProp class Reference</title>
+        <simplesect>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d4/d12/classTango_1_1UserDefaultAttrProp_1_1UserDefaultAttrPropExt">Tango::UserDefaultAttrProp::UserDefaultAttrPropExt</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Constructor</title>
+      <description>
+<para>Only one constructor is defined for this class </para>
+</description>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="de/d9a/classTango_1_1UserDefaultAttrProp_1a49c378598e36618e83ef92dcd7a5f15b">UserDefaultAttrProp</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Set default property methods</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="de/d9a/classTango_1_1UserDefaultAttrProp_1a570f0146ec61bdbb0a2115d905ea8547">set_label</link> (
+const char * def_label)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="de/d9a/classTango_1_1UserDefaultAttrProp_1afde6b2d24224c6cd96e7fd25841134bc">set_description</link> (
+const char * def_desc)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="de/d9a/classTango_1_1UserDefaultAttrProp_1af8ffda78fc0157d31ac4c7e0c73982d3">set_unit</link> (
+const char * def_unit)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="de/d9a/classTango_1_1UserDefaultAttrProp_1ac42a9899badbfb874167ebed8c83e940">set_standard_unit</link> (
+const char * def_std_unit)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="de/d9a/classTango_1_1UserDefaultAttrProp_1acfcfafe14aaf559a6f9dbd4da4a44070">set_display_unit</link> (
+const char * def_disp_unit)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="de/d9a/classTango_1_1UserDefaultAttrProp_1a72b9f9b0ca7a05bfa240fe3277ae6a07">set_format</link> (
+const char * def_format)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="de/d9a/classTango_1_1UserDefaultAttrProp_1a0e4443532d4290042576edeee79b3778">set_min_value</link> (
+const char * def_min_value)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="de/d9a/classTango_1_1UserDefaultAttrProp_1a38b3c0d094df7414b120a6824fd84092">set_max_value</link> (
+const char * def_max_value)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="de/d9a/classTango_1_1UserDefaultAttrProp_1afede8f7057ccf59f46c7005cc8839db7">set_min_alarm</link> (
+const char * def_min_alarm)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="de/d9a/classTango_1_1UserDefaultAttrProp_1a79734b5413a902711c436e5af1448789">set_max_alarm</link> (
+const char * def_max_alarm)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="de/d9a/classTango_1_1UserDefaultAttrProp_1a6c95988f618cc16db4eb6c0db54c6534">set_min_warning</link> (
+const char * def_min_warning)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="de/d9a/classTango_1_1UserDefaultAttrProp_1abf63a7abea9f43c5fcd1235fe9c7935c">set_max_warning</link> (
+const char * def_max_warning)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="de/d9a/classTango_1_1UserDefaultAttrProp_1a254ef57c4a216d9bcd9287904017a266">set_delta_t</link> (
+const char * def_delta_t)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="de/d9a/classTango_1_1UserDefaultAttrProp_1ad572a7f7d8cde3526fc430e041596b88">set_delta_val</link> (
+const char * def_delta_val)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="de/d9a/classTango_1_1UserDefaultAttrProp_1a783f09ff9ef28cbe33c799437bf98e53">set_event_abs_change</link> (
+const char * def_abs_change)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="de/d9a/classTango_1_1UserDefaultAttrProp_1a8ed40e206170172ae7d46dc2cb1f9dc4">set_event_rel_change</link> (
+const char * def_rel_change)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="de/d9a/classTango_1_1UserDefaultAttrProp_1a9b5db76187d86e112e6999cb34987616">set_event_period</link> (
+const char * def_period)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="de/d9a/classTango_1_1UserDefaultAttrProp_1aa6bcd12e3c581ff4d85b3608ca900199">set_archive_event_abs_change</link> (
+const char * def_archive_abs_change)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="de/d9a/classTango_1_1UserDefaultAttrProp_1af66bf9dd5d2d61a6f3f0e2800d0138ff">set_archive_event_rel_change</link> (
+const char * def_archive_rel_change)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="de/d9a/classTango_1_1UserDefaultAttrProp_1a26e889ad51bfe99d3c2442aeeb43b65c">set_archive_event_period</link> (
+const char * def_archive_period)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="de/d9a/classTango_1_1UserDefaultAttrProp_1a12f0293d7ecf1d5c2451e30f1f333d6a">set_enum_labels</link> (
+vector&lt; string &gt; &amp; def_enum_labels)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string abs_change</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string archive_abs_change</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string archive_period</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string archive_rel_change</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string delta_t</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string delta_val</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string description</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string display_unit</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string enum_labels</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>UserDefaultAttrPropExt * ext</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string format</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string label</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string max_alarm</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string max_value</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string max_warning</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string min_alarm</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string min_value</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string min_warning</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string period</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string rel_change</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string standard_unit</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string unit</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="de/d9a/classTango_1_1UserDefaultAttrProp_1a261a7f6c1a7f08d7e0b5ccfd5d95a320">~UserDefaultAttrProp</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="de/d9a/classTango_1_1UserDefaultAttrProp_1aaab71403746f72cc8111add956423746">set_abs_change</link> (
+const char * def_abs_change)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="de/d9a/classTango_1_1UserDefaultAttrProp_1ae2189ea9eb4a8869a8ca62be555d97d6">set_archive_abs_change</link> (
+const char * def_archive_abs_change)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="de/d9a/classTango_1_1UserDefaultAttrProp_1a85c77938b9f62048cc5d0f6b22e3b692">set_archive_period</link> (
+const char * def_archive_period)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="de/d9a/classTango_1_1UserDefaultAttrProp_1adbb7e1da844bfeb3ed47b697377cd96d">set_archive_rel_change</link> (
+const char * def_archive_rel_change)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="de/d9a/classTango_1_1UserDefaultAttrProp_1a715e944cf2d7012e2b836eac35d35a1d">set_period</link> (
+const char * def_period)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="de/d9a/classTango_1_1UserDefaultAttrProp_1aa6467c92a22bc56618cb2b86031111af">set_rel_change</link> (
+const char * def_rel_change)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Brief Description</title>
+
+<para>User class to set attribute default properties. </para>
+    </simplesect>
+        <simplesect>
+            <title>Detailed Description</title>
+
+<para>This class is used to set attribute default properties. Three levels of attributes properties setting are implemented within <link linkend="de/ddf/namespaceTango">Tango</link>. The highest property setting level is the database. Then the user default (set using this <link linkend="de/d9a/classTango_1_1UserDefaultAttrProp">UserDefaultAttrProp</link> class) and finally a <link linkend="de/ddf/namespaceTango">Tango</link> library default value</para>
+
+<para>$Author$ $Revision$ </para>
+                <para>Definition at line 65 of file attrdesc.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>attrdesc.h</para></listitem></itemizedlist></para>
+        </simplesect>
+            <section xml:id="de/d9a/classTango_1_1UserDefaultAttrProp_1a261a7f6c1a7f08d7e0b5ccfd5d95a320">
+                <title>Tango::UserDefaultAttrProp::~UserDefaultAttrProp ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="de/d9a/classTango_1_1UserDefaultAttrProp_1aaab71403746f72cc8111add956423746">
+                <title>void Tango::UserDefaultAttrProp::set_abs_change (const char *def_abs_change)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="de/d9a/classTango_1_1UserDefaultAttrProp_1ae2189ea9eb4a8869a8ca62be555d97d6">
+                <title>void Tango::UserDefaultAttrProp::set_archive_abs_change (const char *def_archive_abs_change)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="de/d9a/classTango_1_1UserDefaultAttrProp_1a85c77938b9f62048cc5d0f6b22e3b692">
+                <title>void Tango::UserDefaultAttrProp::set_archive_period (const char *def_archive_period)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="de/d9a/classTango_1_1UserDefaultAttrProp_1adbb7e1da844bfeb3ed47b697377cd96d">
+                <title>void Tango::UserDefaultAttrProp::set_archive_rel_change (const char *def_archive_rel_change)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="de/d9a/classTango_1_1UserDefaultAttrProp_1a715e944cf2d7012e2b836eac35d35a1d">
+                <title>void Tango::UserDefaultAttrProp::set_period (const char *def_period)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="de/d9a/classTango_1_1UserDefaultAttrProp_1aa6467c92a22bc56618cb2b86031111af">
+                <title>void Tango::UserDefaultAttrProp::set_rel_change (const char *def_rel_change)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

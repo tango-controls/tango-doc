@@ -1,0 +1,572 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d1/d45/group__Client">
+    <title>Client classes</title>
+        <simplesect>
+            <title>Detailed Description</title>
+        </simplesect>
+        <simplesect>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d1/d29/structTango_1_1ArchiveEventInfo">Tango::ArchiveEventInfo</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d9/da1/classTango_1_1AttrConfEventData">Tango::AttrConfEventData</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d0/d4a/structTango_1_1AttributeAlarmInfo">Tango::AttributeAlarmInfo</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="da/dce/structTango_1_1AttributeEventInfo">Tango::AttributeEventInfo</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="df/dab/structTango_1_1AttributeInfo">Tango::AttributeInfo</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d3/d71/structTango_1_1AttributeInfoEx">Tango::AttributeInfoEx</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="dc/d42/classTango_1_1AttrReadEvent">Tango::AttrReadEvent</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="da/d7f/classTango_1_1AttrWrittenEvent">Tango::AttrWrittenEvent</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d4/ded/classTango_1_1CallBack">Tango::CallBack</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d9/d49/structTango_1_1ChangeEventInfo">Tango::ChangeEventInfo</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="dc/d43/classTango_1_1CmdDoneEvent">Tango::CmdDoneEvent</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d3/d96/structTango_1_1CommandInfo">Tango::CommandInfo</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="df/d39/classTango_1_1DataReadyEventData">Tango::DataReadyEventData</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d8/d41/classTango_1_1DeviceAttributeHistory">Tango::DeviceAttributeHistory</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d8/dc0/classTango_1_1DeviceDataHistory">Tango::DeviceDataHistory</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="db/d47/classTango_1_1DevIntrChangeEventData">Tango::DevIntrChangeEventData</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d7/d5f/classTango_1_1EventData">Tango::EventData</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="df/d37/classTango_1_1Except">Tango::Except</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="dc/d08/classTango_1_1NamedDevFailed">Tango::NamedDevFailed</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d8/d55/classTango_1_1NamedDevFailedList">Tango::NamedDevFailedList</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d6/d55/structTango_1_1PeriodicEventInfo">Tango::PeriodicEventInfo</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d8/d0d/classTango_1_1PipeEventData">Tango::PipeEventData</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Modules</title>
+    </simplesect>
+    <para>
+        <itemizedlist>
+            <listitem><para><link linkend="d3/d48/group__DBase">Database Client classes</link></para></listitem>
+            <listitem><para><link linkend="db/dc1/group__Grp">Group Client classes</link></para></listitem>
+        </itemizedlist>
+    </para>
+        <simplesect>
+            <title>Enumerations</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>enum <link linkend="d1/d45/group__Client_1ga76ad081a56687025de62cf1cbaf48124">_AttrMemorizedType</link>{<link linkend="d1/d45/group__Client_1gga76ad081a56687025de62cf1cbaf48124abf2e9bbaf87fc8c3446b88b7422c86b7">NOT_KNOWN</link>, <link linkend="d1/d45/group__Client_1gga76ad081a56687025de62cf1cbaf48124a77d085684a448679e0729b6b444b2639">NONE</link>, <link linkend="d1/d45/group__Client_1gga76ad081a56687025de62cf1cbaf48124a1c81faba262469013aee0d8dd975f378">MEMORIZED</link>, <link linkend="d1/d45/group__Client_1gga76ad081a56687025de62cf1cbaf48124a12c0889f5b2cd005995da692bbc1e3ae">MEMORIZED_WRITE_INIT</link>}</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>enum <link linkend="d1/d45/group__Client_1ga6c80e2130b95642d5c39ee8db7a25620">asyn_req_type</link>{<link linkend="d1/d45/group__Client_1gga6c80e2130b95642d5c39ee8db7a25620a0c8c20bdddc6ba94c2c8465da593e80c">POLLING</link>, <link linkend="d1/d45/group__Client_1gga6c80e2130b95642d5c39ee8db7a25620a0d735acd8a950dd8379589f3b3a392c1">CALL_BACK</link>, <link linkend="d1/d45/group__Client_1gga6c80e2130b95642d5c39ee8db7a25620a5f52f099a007030f3d4bca03801df6e7">ALL_ASYNCH</link>}</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>enum <link linkend="d1/d45/group__Client_1ga3a5254b5c0c8de0c71c18bad2bd742bc">cb_sub_model</link>{<link linkend="d1/d45/group__Client_1gga3a5254b5c0c8de0c71c18bad2bd742bca776212fa9631a1e9b40990653ea37f87">PUSH_CALLBACK</link>, <link linkend="d1/d45/group__Client_1gga3a5254b5c0c8de0c71c18bad2bd742bca3542fc1395bd94ac0429ee11ea9e1275">PULL_CALLBACK</link>}</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>enum <link linkend="d1/d45/group__Client_1gac36915c08d6722e33f71f00b3b1d2ff0">ErrorManagementType</link>{<link linkend="d1/d45/group__Client_1ggac36915c08d6722e33f71f00b3b1d2ff0a6665e08e2a44c93d713463e87c3ce840">ABORT_ON_ERROR</link>==0, <link linkend="d1/d45/group__Client_1ggac36915c08d6722e33f71f00b3b1d2ff0affe786884b0ac7bd7e6a4a623fd84e04">CONTINUE_ON_ERROR</link>, <link linkend="d1/d45/group__Client_1ggac36915c08d6722e33f71f00b3b1d2ff0a0c53bbbc2ee4f2b367971b8ffebdb9f6">numErrorManagementType</link>}</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>enum <link linkend="d1/d45/group__Client_1ga5366e2a8cedf5aab5be8835974f787c6">EventType</link>{<link linkend="d1/d45/group__Client_1gga5366e2a8cedf5aab5be8835974f787c6a65a4e38e653bfce94ecc77f071e71eaf">CHANGE_EVENT</link>==0, <link linkend="d1/d45/group__Client_1gga5366e2a8cedf5aab5be8835974f787c6a2e5f1c2696e76501860ed84e06fdfa9b">QUALITY_EVENT</link>, <link linkend="d1/d45/group__Client_1gga5366e2a8cedf5aab5be8835974f787c6a56db5ee0e5d86d9a5e629c55edff2a83">PERIODIC_EVENT</link>, <link linkend="d1/d45/group__Client_1gga5366e2a8cedf5aab5be8835974f787c6a2420bb7fba51c4471791ad71422a6bd4">ARCHIVE_EVENT</link>, <link linkend="d1/d45/group__Client_1gga5366e2a8cedf5aab5be8835974f787c6a24368c57cf5b762b7351edb9d21afd48">USER_EVENT</link>, <link linkend="d1/d45/group__Client_1gga5366e2a8cedf5aab5be8835974f787c6ab955c951d7aac96b5c46f108f7d7ef18">ATTR_CONF_EVENT</link>, <link linkend="d1/d45/group__Client_1gga5366e2a8cedf5aab5be8835974f787c6a3f5f44f764a22bdb1bd809c711e9eefd">DATA_READY_EVENT</link>, <link linkend="d1/d45/group__Client_1gga5366e2a8cedf5aab5be8835974f787c6af0c6101bccdea12e40f8d6eb1b1ca7a3">INTERFACE_CHANGE_EVENT</link>, <link linkend="d1/d45/group__Client_1gga5366e2a8cedf5aab5be8835974f787c6add5e7619e42d25779bb3376e8f5cdb24">PIPE_EVENT</link>, <link linkend="d1/d45/group__Client_1gga5366e2a8cedf5aab5be8835974f787c6a0078fc3dc8b18ff1b352fd96edae5ba9">numEventType</link>}</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Typedefs</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef struct <link linkend="d1/d29/structTango_1_1ArchiveEventInfo">Tango::ArchiveEventInfo</link>  <link linkend="d1/d45/group__Client_1gab8f7b8df963f9f5ebaffc09a56d3c8fd">ArchiveEventInfo</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef struct <link linkend="d0/d4a/structTango_1_1AttributeAlarmInfo">Tango::AttributeAlarmInfo</link>  <link linkend="d1/d45/group__Client_1gafdc7d8c6105f15ed67af99a635ed5ed3">AttributeAlarmInfo</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef struct <link linkend="da/dce/structTango_1_1AttributeEventInfo">Tango::AttributeEventInfo</link>  <link linkend="d1/d45/group__Client_1ga2eca83288646ea6457c831b9b5dc790f">AttributeEventInfo</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef <link linkend="df/dab/structTango_1_1AttributeInfo">Tango::AttributeInfo</link>  <link linkend="d1/d45/group__Client_1ga9dc2b6859660163e9fe2508b116b413d">AttributeInfo</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef <link linkend="d3/d71/structTango_1_1AttributeInfoEx">Tango::AttributeInfoEx</link>  <link linkend="d1/d45/group__Client_1ga3858f1f9b771edf092aa87ef677dd6c9">AttributeInfoEx</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef vector&lt; AttributeInfoEx &gt;  <link linkend="d1/d45/group__Client_1ga7175e05437edf640b8e555d1a601335c">AttributeInfoListEx</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef enum <link linkend="d1/d45/group__Client_1ga76ad081a56687025de62cf1cbaf48124">Tango::_AttrMemorizedType</link>  <link linkend="d1/d45/group__Client_1ga84b78e55dbad67c8eacf6bd539875391">AttrMemorizedType</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef struct <link linkend="d9/d49/structTango_1_1ChangeEventInfo">Tango::ChangeEventInfo</link>  <link linkend="d1/d45/group__Client_1gab1f1f2448538c5b0c87785417f06d26c">ChangeEventInfo</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef <link linkend="d3/d96/structTango_1_1CommandInfo">Tango::CommandInfo</link>  <link linkend="d1/d45/group__Client_1ga6e0cdefe1e0e3729940f724f38931d49">CommandInfo</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef vector&lt; CommandInfo &gt;  <link linkend="d1/d45/group__Client_1ga702913bccb1c2d427d7a6f046602d657">CommandInfoList</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef struct <link linkend="d6/d55/structTango_1_1PeriodicEventInfo">Tango::PeriodicEventInfo</link>  <link linkend="d1/d45/group__Client_1ga985b2d49b3ff8fecaad78ce1b9eae519">PeriodicEventInfo</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <section>
+            <title>Enumeration Type documentation</title>
+            <section xml:id="d1/d45/group__Client_1ga76ad081a56687025de62cf1cbaf48124">
+               <title>enum _AttrMemorizedType </title>
+               
+               <formalpara>
+                    <title>Enumerator:</title>
+                    <variablelist>
+                        <varlistentry xml:id="d1/d45/group__Client_1gga76ad081a56687025de62cf1cbaf48124abf2e9bbaf87fc8c3446b88b7422c86b7">
+                            <term>NOT_KNOWN</term>
+                            <listitem>
+                                <para>Device too old to  get this info.</para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/d45/group__Client_1gga76ad081a56687025de62cf1cbaf48124a77d085684a448679e0729b6b444b2639">
+                            <term>NONE</term>
+                            <listitem>
+                                <para>The attribute is not memorized.</para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/d45/group__Client_1gga76ad081a56687025de62cf1cbaf48124a1c81faba262469013aee0d8dd975f378">
+                            <term>MEMORIZED</term>
+                            <listitem>
+                                <para>Memorized attribute.</para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/d45/group__Client_1gga76ad081a56687025de62cf1cbaf48124a12c0889f5b2cd005995da692bbc1e3ae">
+                            <term>MEMORIZED_WRITE_INIT</term>
+                            <listitem>
+                                <para>Memorized attribute with memorized value writen at initialization.</para>
+                            </listitem>
+                        </varlistentry>
+                     </variablelist>
+                </formalpara>
+                <para>Definition at line 322 of file devapi.h
+                    <programlisting>
+{
+NOT_KNOWN, 
+NONE, 
+MEMORIZED, 
+MEMORIZED_WRITE_INIT, 
+}_AttrMemorizedType;
+                    </programlisting>
+                </para>
+            </section>
+            <section xml:id="d1/d45/group__Client_1ga6c80e2130b95642d5c39ee8db7a25620">
+               <title>enum asyn_req_type </title>
+               
+               <formalpara>
+                    <title>Enumerator:</title>
+                    <variablelist>
+                        <varlistentry xml:id="d1/d45/group__Client_1gga6c80e2130b95642d5c39ee8db7a25620a0c8c20bdddc6ba94c2c8465da593e80c">
+                            <term>POLLING</term>
+                            <listitem>
+                                <para>Polling mode request.</para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/d45/group__Client_1gga6c80e2130b95642d5c39ee8db7a25620a0d735acd8a950dd8379589f3b3a392c1">
+                            <term>CALL_BACK</term>
+                            <listitem>
+                                <para>Callback mode request.</para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/d45/group__Client_1gga6c80e2130b95642d5c39ee8db7a25620a5f52f099a007030f3d4bca03801df6e7">
+                            <term>ALL_ASYNCH</term>
+                            <listitem>
+                                <para>All request.</para>
+                            </listitem>
+                        </varlistentry>
+                     </variablelist>
+                </formalpara>
+                <para>Definition at line 409 of file devapi.h
+                    <programlisting>
+{
+POLLING, 
+CALL_BACK, 
+ALL_ASYNCH, 
+}asyn_req_type;
+                    </programlisting>
+                </para>
+            </section>
+            <section xml:id="d1/d45/group__Client_1ga3a5254b5c0c8de0c71c18bad2bd742bc">
+               <title>enum cb_sub_model </title>
+               
+               <formalpara>
+                    <title>Enumerator:</title>
+                    <variablelist>
+                        <varlistentry xml:id="d1/d45/group__Client_1gga3a5254b5c0c8de0c71c18bad2bd742bca776212fa9631a1e9b40990653ea37f87">
+                            <term>PUSH_CALLBACK</term>
+                            <listitem>
+                                <para>Callback push model.</para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/d45/group__Client_1gga3a5254b5c0c8de0c71c18bad2bd742bca3542fc1395bd94ac0429ee11ea9e1275">
+                            <term>PULL_CALLBACK</term>
+                            <listitem>
+                                <para>Callback pull model.</para>
+                            </listitem>
+                        </varlistentry>
+                     </variablelist>
+                </formalpara>
+                <para>Definition at line 421 of file devapi.h
+                    <programlisting>
+{
+PUSH_CALLBACK, 
+PULL_CALLBACK, 
+}cb_sub_model;
+                    </programlisting>
+                </para>
+            </section>
+            <section xml:id="d1/d45/group__Client_1gac36915c08d6722e33f71f00b3b1d2ff0">
+               <title>enum ErrorManagementType </title>
+               
+               <formalpara>
+                    <title>Enumerator:</title>
+                    <variablelist>
+                        <varlistentry xml:id="d1/d45/group__Client_1ggac36915c08d6722e33f71f00b3b1d2ff0a6665e08e2a44c93d713463e87c3ce840">
+                            <term>ABORT_ON_ERROR</term>
+                            <listitem>
+                                <para>Do not read attribute(s) if one of the written attribute(s) failed.</para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/d45/group__Client_1ggac36915c08d6722e33f71f00b3b1d2ff0affe786884b0ac7bd7e6a4a623fd84e04">
+                            <term>CONTINUE_ON_ERROR</term>
+                            <listitem>
+                                <para>Read attribute(s) even if one of the written attribute(s) failed.</para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/d45/group__Client_1ggac36915c08d6722e33f71f00b3b1d2ff0a0c53bbbc2ee4f2b367971b8ffebdb9f6">
+                            <term>numErrorManagementType</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                     </variablelist>
+                </formalpara>
+                <para>Definition at line 1131 of file tango_const.h
+                    <programlisting>
+{
+ABORT_ON_ERROR==0, 
+CONTINUE_ON_ERROR, 
+numErrorManagementType, 
+}ErrorManagementType;
+                    </programlisting>
+                </para>
+            </section>
+            <section xml:id="d1/d45/group__Client_1ga5366e2a8cedf5aab5be8835974f787c6">
+               <title>enum EventType </title>
+               
+               <formalpara>
+                    <title>Enumerator:</title>
+                    <variablelist>
+                        <varlistentry xml:id="d1/d45/group__Client_1gga5366e2a8cedf5aab5be8835974f787c6a65a4e38e653bfce94ecc77f071e71eaf">
+                            <term>CHANGE_EVENT</term>
+                            <listitem>
+                                <para>Change event.</para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/d45/group__Client_1gga5366e2a8cedf5aab5be8835974f787c6a2e5f1c2696e76501860ed84e06fdfa9b">
+                            <term>QUALITY_EVENT</term>
+                            <listitem>
+                                <para>Quality change event (deprecated - do not use)</para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/d45/group__Client_1gga5366e2a8cedf5aab5be8835974f787c6a56db5ee0e5d86d9a5e629c55edff2a83">
+                            <term>PERIODIC_EVENT</term>
+                            <listitem>
+                                <para>Periodic event.</para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/d45/group__Client_1gga5366e2a8cedf5aab5be8835974f787c6a2420bb7fba51c4471791ad71422a6bd4">
+                            <term>ARCHIVE_EVENT</term>
+                            <listitem>
+                                <para>Archive event.</para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/d45/group__Client_1gga5366e2a8cedf5aab5be8835974f787c6a24368c57cf5b762b7351edb9d21afd48">
+                            <term>USER_EVENT</term>
+                            <listitem>
+                                <para>User event.</para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/d45/group__Client_1gga5366e2a8cedf5aab5be8835974f787c6ab955c951d7aac96b5c46f108f7d7ef18">
+                            <term>ATTR_CONF_EVENT</term>
+                            <listitem>
+                                <para>Attribute configuration change event.</para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/d45/group__Client_1gga5366e2a8cedf5aab5be8835974f787c6a3f5f44f764a22bdb1bd809c711e9eefd">
+                            <term>DATA_READY_EVENT</term>
+                            <listitem>
+                                <para>Data ready event.</para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/d45/group__Client_1gga5366e2a8cedf5aab5be8835974f787c6af0c6101bccdea12e40f8d6eb1b1ca7a3">
+                            <term>INTERFACE_CHANGE_EVENT</term>
+                            <listitem>
+                                <para>Device interface change event.</para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/d45/group__Client_1gga5366e2a8cedf5aab5be8835974f787c6add5e7619e42d25779bb3376e8f5cdb24">
+                            <term>PIPE_EVENT</term>
+                            <listitem>
+                                <para>Device pipe event.</para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d1/d45/group__Client_1gga5366e2a8cedf5aab5be8835974f787c6a0078fc3dc8b18ff1b352fd96edae5ba9">
+                            <term>numEventType</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                     </variablelist>
+                </formalpara>
+                <para>Definition at line 1082 of file tango_const.h
+                    <programlisting>
+{
+CHANGE_EVENT==0, 
+QUALITY_EVENT, 
+PERIODIC_EVENT, 
+ARCHIVE_EVENT, 
+USER_EVENT, 
+ATTR_CONF_EVENT, 
+DATA_READY_EVENT, 
+INTERFACE_CHANGE_EVENT, 
+PIPE_EVENT, 
+numEventType, 
+}EventType;
+                    </programlisting>
+                </para>
+            </section>
+        </section>
+        <section>
+            <title>Typedef Documentation</title>
+            <section xml:id="d1/d45/group__Client_1gab8f7b8df963f9f5ebaffc09a56d3c8fd">
+                <title>typedef struct Tango::ArchiveEventInfo  Tango::ArchiveEventInfo</title> <emphasis>Attribute archive event configuration.</emphasis>
+                
+            </section>
+            <section xml:id="d1/d45/group__Client_1gafdc7d8c6105f15ed67af99a635ed5ed3">
+                <title>typedef struct Tango::AttributeAlarmInfo  Tango::AttributeAlarmInfo</title> <emphasis>Attribute alarms configuration.</emphasis>
+                
+            </section>
+            <section xml:id="d1/d45/group__Client_1ga2eca83288646ea6457c831b9b5dc790f">
+                <title>typedef struct Tango::AttributeEventInfo  Tango::AttributeEventInfo</title> <emphasis>Attribute event configuration.</emphasis>
+                
+            </section>
+            <section xml:id="d1/d45/group__Client_1ga9dc2b6859660163e9fe2508b116b413d">
+                <title>typedef  Tango::AttributeInfo  Tango::AttributeInfo</title> <emphasis>Attribute configuration data extension.</emphasis>
+                
+            </section>
+            <section xml:id="d1/d45/group__Client_1ga3858f1f9b771edf092aa87ef677dd6c9">
+                <title>typedef  Tango::AttributeInfoEx  Tango::AttributeInfoEx</title> <emphasis>Extended attribute configuration data.</emphasis>
+                
+            </section>
+            <section xml:id="d1/d45/group__Client_1ga7175e05437edf640b8e555d1a601335c">
+                <title>typedef vector&lt;AttributeInfoEx&gt; Tango::AttributeInfoListEx</title> <emphasis>vector of AttributeInfoEx structure</emphasis>
+                
+            </section>
+            <section xml:id="d1/d45/group__Client_1ga84b78e55dbad67c8eacf6bd539875391">
+                <title>typedef enum Tango::_AttrMemorizedType  Tango::AttrMemorizedType</title> <emphasis>Possible memorized attribute type.</emphasis>
+                
+            </section>
+            <section xml:id="d1/d45/group__Client_1gab1f1f2448538c5b0c87785417f06d26c">
+                <title>typedef struct Tango::ChangeEventInfo  Tango::ChangeEventInfo</title> <emphasis>Attribute change event configuration.</emphasis>
+                
+            </section>
+            <section xml:id="d1/d45/group__Client_1ga6e0cdefe1e0e3729940f724f38931d49">
+                <title>typedef  Tango::CommandInfo  Tango::CommandInfo</title> <emphasis>Command information data extension.</emphasis>
+                
+            </section>
+            <section xml:id="d1/d45/group__Client_1ga702913bccb1c2d427d7a6f046602d657">
+                <title>typedef vector&lt;CommandInfo&gt; Tango::CommandInfoList</title> <emphasis>A vector of CommandInfo structure.</emphasis>
+                
+            </section>
+            <section xml:id="d1/d45/group__Client_1ga985b2d49b3ff8fecaad78ce1b9eae519">
+                <title>typedef struct Tango::PeriodicEventInfo  Tango::PeriodicEventInfo</title> <emphasis>Attribute periodic event configuration.</emphasis>
+                
+            </section>
+        </section>
+<xi:include href="d3/d48/group__DBase.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="db/dc1/group__Grp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+</section>

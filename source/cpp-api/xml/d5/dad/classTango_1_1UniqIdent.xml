@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="d5/dad/classTango_1_1UniqIdent" kind="class" prot="public">
+    <compoundname>Tango::UniqIdent</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">omni_mutex</basecompoundref>
+    <includes refid="db/d02/devasyn_8h" local="yes">devasyn.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="d5/dad/classTango_1_1UniqIdent_1a5e162225e409d439ebb8d92976511651" prot="public" static="no" mutable="no">
+        <type>long</type>
+        <definition>long Tango::UniqIdent::ctr</definition>
+        <argsstring></argsstring>
+        <name>ctr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/devasyn.h" line="354" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/devasyn.h" bodystart="354" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d5/dad/classTango_1_1UniqIdent_1af52963f388bed708e8725889a9139fab" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Tango::UniqIdent::UniqIdent</definition>
+        <argsstring>()</argsstring>
+        <name>UniqIdent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/devasyn.h" line="351" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/devasyn.h" bodystart="351" bodyend="351"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/dad/classTango_1_1UniqIdent_1aafd90488ed0f2161d8f705886008ba46" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>long</type>
+        <definition>long Tango::UniqIdent::get_ident</definition>
+        <argsstring>()</argsstring>
+        <name>get_ident</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/devasyn.h" line="352" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/devasyn.h" bodystart="352" bodyend="352"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1318">
+        <label>Tango::UniqIdent</label>
+        <link refid="d5/dad/classTango_1_1UniqIdent"/>
+        <childnode refid="1319" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1319">
+        <label>omni_mutex</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1320">
+        <label>Tango::UniqIdent</label>
+        <link refid="d5/dad/classTango_1_1UniqIdent"/>
+        <childnode refid="1321" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1321">
+        <label>omni_mutex</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/tango/workspace/cppTango/include/tango/client/devasyn.h" line="349" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/devasyn.h" bodystart="348" bodyend="355"/>
+    <listofallmembers>
+      <member refid="d5/dad/classTango_1_1UniqIdent_1a5e162225e409d439ebb8d92976511651" prot="public" virt="non-virtual"><scope>Tango::UniqIdent</scope><name>ctr</name></member>
+      <member refid="d5/dad/classTango_1_1UniqIdent_1aafd90488ed0f2161d8f705886008ba46" prot="public" virt="non-virtual"><scope>Tango::UniqIdent</scope><name>get_ident</name></member>
+      <member refid="d5/dad/classTango_1_1UniqIdent_1af52963f388bed708e8725889a9139fab" prot="public" virt="non-virtual"><scope>Tango::UniqIdent</scope><name>UniqIdent</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

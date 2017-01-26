@@ -1,0 +1,168 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d8/d0e/classlog4tango_1_1Level">
+<title>log4tango::Level class Reference</title>
+<para>
+    <programlisting>#include <link linkend="d2/d33/Level_8hh">&quot;Level.hh&quot;</link></programlisting>
+</para>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>enum <link linkend="d8/d0e/classlog4tango_1_1Level_1ad9edd63020b6becc9aef8802c48eb461">LevelLevel</link>{<link linkend="d8/d0e/classlog4tango_1_1Level_1ad9edd63020b6becc9aef8802c48eb461a955ee789684a2e9952b7e4f56b6bb74f">OFF</link>==  100, <link linkend="d8/d0e/classlog4tango_1_1Level_1ad9edd63020b6becc9aef8802c48eb461a58fb50808d864278c4127f5c8ac5406c">FATAL</link>==  200, <link linkend="d8/d0e/classlog4tango_1_1Level_1ad9edd63020b6becc9aef8802c48eb461ae9f52151dce772e7a7ee87bc824b1fdf">ERROR</link>==  300, <link linkend="d8/d0e/classlog4tango_1_1Level_1ad9edd63020b6becc9aef8802c48eb461ab0dfb37a2ad73d7b7f53a460819a2cc3">WARN</link>==  400, <link linkend="d8/d0e/classlog4tango_1_1Level_1ad9edd63020b6becc9aef8802c48eb461ae666ceb60dfca43381816abf33e2cd1b">INFO</link>==  500, <link linkend="d8/d0e/classlog4tango_1_1Level_1ad9edd63020b6becc9aef8802c48eb461aa98b4453bf21b1af1c2d3d953887f393">DEBUG</link>==  600}</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef int  <link linkend="d8/d0e/classlog4tango_1_1Level_1aa708c09b6a19a8cc8a3b19631561ca99">Value</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static const std::string &amp; <link linkend="d8/d0e/classlog4tango_1_1Level_1a613426ab63e991eed00912c0dfd870c0">get_name</link> (
+<link linkend="d8/d0e/classlog4tango_1_1Level_1aa708c09b6a19a8cc8a3b19631561ca99">Value</link> level)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static <link linkend="d8/d0e/classlog4tango_1_1Level_1aa708c09b6a19a8cc8a3b19631561ca99">Value</link> <link linkend="d8/d0e/classlog4tango_1_1Level_1acb4420eb3aa2761f405a08c5f6a00ae1">get_value</link> (
+const std::string &amp; level_name)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+            <section xml:id="d8/d0e/classlog4tango_1_1Level_1ad9edd63020b6becc9aef8802c48eb461">
+               <title>enum LevelLevel </title>
+               
+               <formalpara>
+                    <title>Enumerator:</title>
+                    <variablelist>
+                        <varlistentry xml:id="d8/d0e/classlog4tango_1_1Level_1ad9edd63020b6becc9aef8802c48eb461a955ee789684a2e9952b7e4f56b6bb74f">
+                            <term>OFF</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d8/d0e/classlog4tango_1_1Level_1ad9edd63020b6becc9aef8802c48eb461a58fb50808d864278c4127f5c8ac5406c">
+                            <term>FATAL</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d8/d0e/classlog4tango_1_1Level_1ad9edd63020b6becc9aef8802c48eb461ae9f52151dce772e7a7ee87bc824b1fdf">
+                            <term>ERROR</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d8/d0e/classlog4tango_1_1Level_1ad9edd63020b6becc9aef8802c48eb461ab0dfb37a2ad73d7b7f53a460819a2cc3">
+                            <term>WARN</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d8/d0e/classlog4tango_1_1Level_1ad9edd63020b6becc9aef8802c48eb461ae666ceb60dfca43381816abf33e2cd1b">
+                            <term>INFO</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="d8/d0e/classlog4tango_1_1Level_1ad9edd63020b6becc9aef8802c48eb461aa98b4453bf21b1af1c2d3d953887f393">
+                            <term>DEBUG</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                     </variablelist>
+                </formalpara>
+                <para>Definition at line 86 of file Level.hh
+                    <programlisting>
+{
+OFF==  100, 
+FATAL==  200, 
+ERROR==  300, 
+WARN==  400, 
+INFO==  500, 
+DEBUG==  600, 
+}LevelLevel;
+                    </programlisting>
+                </para>
+            </section>
+            <section xml:id="d8/d0e/classlog4tango_1_1Level_1aa708c09b6a19a8cc8a3b19631561ca99">
+                <title>typedef int log4tango::Level::Value</title> <emphasis>The type of Level Values.</emphasis>
+                
+            </section>
+            <section xml:id="d8/d0e/classlog4tango_1_1Level_1a613426ab63e991eed00912c0dfd870c0">
+                <title>const std::string &amp; log4tango::Level::get_name (Value level)</title> <emphasis>Returns the name of the given level value.</emphasis>
+                
+<para>Currently, if the value is not one of the LevelLevel values, the method returns the name of the largest level smaller the given value. 
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>level</entry>
+                                <entry>
+<para>the numeric value of the level. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>a string representing the name of the level. </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="d8/d0e/classlog4tango_1_1Level_1acb4420eb3aa2761f405a08c5f6a00ae1">
+                <title>Level::Value log4tango::Level::get_value (const std::string &amp;level_name)</title> <emphasis>Returns the value of the given level name.</emphasis>
+                
+<para>This can be either one of &quot;OFF&quot;, &quot;ERRROR&quot;, ... or a decimal string representation of the value, e.g. &apos;500&apos; for DEBUG. 
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>level_name</entry>
+                                <entry>
+<para>the string containing the the of the level </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>the value corresponding with the level name </para>
+</formalpara>
+exception                            <row>
+                                <entry>std::invalid_argument</entry>
+                                <entry>
+<para>if the level_name does not correspond with a known <link linkend="d8/d0e/classlog4tango_1_1Level">Level</link> name or a number </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+</section>

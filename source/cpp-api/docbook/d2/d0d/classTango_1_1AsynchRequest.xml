@@ -1,0 +1,122 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d2/d0d/classTango_1_1AsynchRequest">
+<title>Tango::AsynchRequest class Reference</title>
+<para>
+    <programlisting>#include <link linkend="d9/dd1/group_8h">&quot;group.h&quot;</link></programlisting>
+</para>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool group_element_enabled_m</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>std::vector&lt; std::string &gt; obj_names</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>DevFailed rq_ex</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>long rq_id</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d2/d0d/classTango_1_1AsynchRequest_1a3e7880f845044a536121f702b5521270">AsynchRequest</link> (
+long _rid, const std::string &amp; _obj_name, bool ge_enabled)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d2/d0d/classTango_1_1AsynchRequest_1a383a9c0102ddd1126e7470840779bff1">AsynchRequest</link> (
+long _rid, const std::vector&lt; std::string &gt; &amp; _obj_names, bool ge_enabled)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d2/d0d/classTango_1_1AsynchRequest_1a26b3a914e0dfff3db69ab6d645358080">AsynchRequest</link> (
+long _rid, const std::string &amp; _obj_name, const DevFailed &amp; _df)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d2/d0d/classTango_1_1AsynchRequest_1a802862507d2cbd9ff8d54a1d029a6d27">AsynchRequest</link> (
+long _rid, const std::vector&lt; std::string &gt; &amp; _obj_names, const DevFailed &amp; _df)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="d2/d0d/classTango_1_1AsynchRequest_1ae6f806d0204ff49ced628dca1e651acd">~AsynchRequest</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d2/d0d/classTango_1_1AsynchRequest_1ac4de9d1f09f1fbdaddd2204c6e77506e">group_element_enabled</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+            <section xml:id="d2/d0d/classTango_1_1AsynchRequest_1a3e7880f845044a536121f702b5521270">
+                <title>Tango::AsynchRequest::AsynchRequest (long _rid, const std::string &amp;_obj_name, bool ge_enabled=true)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d2/d0d/classTango_1_1AsynchRequest_1a383a9c0102ddd1126e7470840779bff1">
+                <title>Tango::AsynchRequest::AsynchRequest (long _rid, const std::vector&lt; std::string &gt; &amp;_obj_names, bool ge_enabled=true)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d2/d0d/classTango_1_1AsynchRequest_1a26b3a914e0dfff3db69ab6d645358080">
+                <title>Tango::AsynchRequest::AsynchRequest (long _rid, const std::string &amp;_obj_name, const DevFailed &amp;_df)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d2/d0d/classTango_1_1AsynchRequest_1a802862507d2cbd9ff8d54a1d029a6d27">
+                <title>Tango::AsynchRequest::AsynchRequest (long _rid, const std::vector&lt; std::string &gt; &amp;_obj_names, const DevFailed &amp;_df)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d2/d0d/classTango_1_1AsynchRequest_1ae6f806d0204ff49ced628dca1e651acd">
+                <title>virtual Tango::AsynchRequest::~AsynchRequest ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d2/d0d/classTango_1_1AsynchRequest_1ac4de9d1f09f1fbdaddd2204c6e77506e">
+                <title>bool Tango::AsynchRequest::group_element_enabled () const </title> <emphasis></emphasis>
+                
+            </section>
+</section>

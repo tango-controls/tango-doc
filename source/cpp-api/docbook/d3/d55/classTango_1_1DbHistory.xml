@@ -1,0 +1,191 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d3/d55/classTango_1_1DbHistory">
+<title>Tango::DbHistory class Reference</title>
+        <simplesect>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string attname</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string date</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool deleted</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string propname</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>DbDatum value</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d3/d55/classTango_1_1DbHistory_1a3d4ba889f2f79659906ef989c4e16033">DbHistory</link> (
+string , string , vector&lt; string &gt; &amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d3/d55/classTango_1_1DbHistory_1a4325dc938449fb06f09f680a834d7b46">DbHistory</link> (
+string , string , string , vector&lt; string &gt; &amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string <link linkend="d3/d55/classTango_1_1DbHistory_1a0f532f6d49c60c914253c2bf419b8c0e">get_attribute_name</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string <link linkend="d3/d55/classTango_1_1DbHistory_1a6fbe1f96e256cf130a6c7ad82de81f17">get_date</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string <link linkend="d3/d55/classTango_1_1DbHistory_1a80c1a81fae093feb44370c1a2d0796d1">get_name</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="d3/d0f/classTango_1_1DbDatum">DbDatum</link> <link linkend="d3/d55/classTango_1_1DbHistory_1ab11812600a09b269cab0d419e01d075a">get_value</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d3/d55/classTango_1_1DbHistory_1a946c37f983f5d9dc5465a1e9e6ed2332">is_deleted</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string <link linkend="d3/d55/classTango_1_1DbHistory_1a2176d4a2fd8d0d3d465cdb8f70ad41d8">format_mysql_date</link> (
+string )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d3/d55/classTango_1_1DbHistory_1a2ee1aa4e36fcabac1ea3fd20ee203e80">make_db_datum</link> (
+vector&lt; string &gt; &amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Brief Description</title>
+
+<para>Class used to retrieve database object history. </para>
+    </simplesect>
+            <section xml:id="d3/d55/classTango_1_1DbHistory_1a3d4ba889f2f79659906ef989c4e16033">
+                <title>Tango::DbHistory::DbHistory (string, string, vector&lt; string &gt; &amp;)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d55/classTango_1_1DbHistory_1a4325dc938449fb06f09f680a834d7b46">
+                <title>Tango::DbHistory::DbHistory (string, string, string, vector&lt; string &gt; &amp;)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d55/classTango_1_1DbHistory_1a0f532f6d49c60c914253c2bf419b8c0e">
+                <title>string Tango::DbHistory::get_attribute_name ()</title> <emphasis>Get attribute name.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>The attribute name </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="d3/d55/classTango_1_1DbHistory_1a6fbe1f96e256cf130a6c7ad82de81f17">
+                <title>string Tango::DbHistory::get_date ()</title> <emphasis>Get change date.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>The date </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="d3/d55/classTango_1_1DbHistory_1a80c1a81fae093feb44370c1a2d0796d1">
+                <title>string Tango::DbHistory::get_name ()</title> <emphasis>Get property name.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>The property name </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="d3/d55/classTango_1_1DbHistory_1ab11812600a09b269cab0d419e01d075a">
+                <title>DbDatum Tango::DbHistory::get_value ()</title> <emphasis>Get value.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>The property value </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="d3/d55/classTango_1_1DbHistory_1a946c37f983f5d9dc5465a1e9e6ed2332">
+                <title>bool Tango::DbHistory::is_deleted ()</title> <emphasis>Get property deleted flag.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>The property deleted flag </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="d3/d55/classTango_1_1DbHistory_1a2176d4a2fd8d0d3d465cdb8f70ad41d8">
+                <title>string Tango::DbHistory::format_mysql_date (string)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d3/d55/classTango_1_1DbHistory_1a2ee1aa4e36fcabac1ea3fd20ee203e80">
+                <title>void Tango::DbHistory::make_db_datum (vector&lt; string &gt; &amp;)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

@@ -1,0 +1,191 @@
+\section{log4tango\-:\-:Time\-Stamp Class Reference}
+\label{classlog4tango_1_1TimeStamp}\index{log4tango\-::\-Time\-Stamp@{log4tango\-::\-Time\-Stamp}}
+
+
+{\ttfamily \#include \char`\"{}Time\-Stamp.\-hh\char`\"{}}
+
+
+
+Collaboration diagram for log4tango\-:\-:Time\-Stamp\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{d7/db6/classlog4tango_1_1TimeStamp__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Time\-Stamp} ()
+\begin{DoxyCompactList}\small\item\em Constructs a \doxyref{Time\-Stamp}{p.}{d2/df5/classlog4tango_1_1TimeStamp} representing 'now'. \end{DoxyCompactList}\item 
+{\bf Time\-Stamp} (const {\bf Time\-Stamp} \&t)
+\begin{DoxyCompactList}\small\item\em Copy Constructor. \end{DoxyCompactList}\item 
+{\bf Time\-Stamp} (unsigned int seconds, unsigned int microseconds=0)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxyref{Time\-Stamp}{p.}{d2/df5/classlog4tango_1_1TimeStamp} representing the given offset since the epoch ( 00\-:00\-:00 1970/1/1 U\-T\-C). \end{DoxyCompactList}\item 
+int {\bf get\-\_\-microseconds} (void) const 
+\begin{DoxyCompactList}\small\item\em Returns the subsecond part of the \doxyref{Time\-Stamp}{p.}{d2/df5/classlog4tango_1_1TimeStamp} in microseconds. \end{DoxyCompactList}\item 
+int {\bf get\-\_\-milliseconds} (void) const 
+\begin{DoxyCompactList}\small\item\em Returns the 'subseconds' part of the \doxyref{Time\-Stamp}{p.}{d2/df5/classlog4tango_1_1TimeStamp} in milliseconds, \doxyref{get\-\_\-milliseconds()}{p.}{d2/df5/classlog4tango_1_1TimeStamp_ad78de0eb6ff9d25cc00e24ad5aab16e2} == \doxyref{get\-\_\-microseconds()}{p.}{d2/df5/classlog4tango_1_1TimeStamp_a646294685da8d31451cbfd5b86780b98} / 1000. \end{DoxyCompactList}\item 
+int {\bf get\-\_\-seconds} (void) const 
+\begin{DoxyCompactList}\small\item\em Returns the 'seconds' part of the \doxyref{Time\-Stamp}{p.}{d2/df5/classlog4tango_1_1TimeStamp}. \end{DoxyCompactList}\item 
+void {\bf operator=} (const {\bf Time\-Stamp} \&t)
+\begin{DoxyCompactList}\small\item\em Operator=. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static const {\bf Time\-Stamp} \& {\bf get\-\_\-start\-\_\-time} (void)
+\begin{DoxyCompactList}\small\item\em Returns a \doxyref{Time\-Stamp}{p.}{d2/df5/classlog4tango_1_1TimeStamp} representing the time at which the application started. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int {\bf \-\_\-micro\-\_\-seconds}
+\item 
+int {\bf \-\_\-seconds}
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf Time\-Stamp} {\bf \-\_\-start\-\_\-stamp}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{log4tango\-::\-Time\-Stamp@{log4tango\-::\-Time\-Stamp}!Time\-Stamp@{Time\-Stamp}}
+\index{Time\-Stamp@{Time\-Stamp}!log4tango::TimeStamp@{log4tango\-::\-Time\-Stamp}}
+\subsubsection[{Time\-Stamp}]{\setlength{\rightskip}{0pt plus 5cm}log4tango\-::\-Time\-Stamp\-::\-Time\-Stamp (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classlog4tango_1_1TimeStamp_af1fae2606fdd64acb5e4b797d9d6958a}
+
+
+Constructs a \doxyref{Time\-Stamp}{p.}{d2/df5/classlog4tango_1_1TimeStamp} representing 'now'. 
+
+
+
+References \-\_\-micro\-\_\-seconds, and \-\_\-seconds.
+
+\index{log4tango\-::\-Time\-Stamp@{log4tango\-::\-Time\-Stamp}!Time\-Stamp@{Time\-Stamp}}
+\index{Time\-Stamp@{Time\-Stamp}!log4tango::TimeStamp@{log4tango\-::\-Time\-Stamp}}
+\subsubsection[{Time\-Stamp}]{\setlength{\rightskip}{0pt plus 5cm}log4tango\-::\-Time\-Stamp\-::\-Time\-Stamp (
+\begin{DoxyParamCaption}
+\item[{const {\bf Time\-Stamp} \&}]{t}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classlog4tango_1_1TimeStamp_acfd54cdae6f10111d7e0eb127962055c}
+
+
+Copy Constructor. 
+
+\index{log4tango\-::\-Time\-Stamp@{log4tango\-::\-Time\-Stamp}!Time\-Stamp@{Time\-Stamp}}
+\index{Time\-Stamp@{Time\-Stamp}!log4tango::TimeStamp@{log4tango\-::\-Time\-Stamp}}
+\subsubsection[{Time\-Stamp}]{\setlength{\rightskip}{0pt plus 5cm}log4tango\-::\-Time\-Stamp\-::\-Time\-Stamp (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{seconds, }
+\item[{unsigned int}]{microseconds = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classlog4tango_1_1TimeStamp_a953a716e551afe5d1af84994c42462dd}
+
+
+Constructs a \doxyref{Time\-Stamp}{p.}{d2/df5/classlog4tango_1_1TimeStamp} representing the given offset since the epoch ( 00\-:00\-:00 1970/1/1 U\-T\-C). 
+
+
+
+\subsection{Member Function Documentation}
+\index{log4tango\-::\-Time\-Stamp@{log4tango\-::\-Time\-Stamp}!get\-\_\-microseconds@{get\-\_\-microseconds}}
+\index{get\-\_\-microseconds@{get\-\_\-microseconds}!log4tango::TimeStamp@{log4tango\-::\-Time\-Stamp}}
+\subsubsection[{get\-\_\-microseconds}]{\setlength{\rightskip}{0pt plus 5cm}int log4tango\-::\-Time\-Stamp\-::get\-\_\-microseconds (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classlog4tango_1_1TimeStamp_a646294685da8d31451cbfd5b86780b98}
+
+
+Returns the subsecond part of the \doxyref{Time\-Stamp}{p.}{d2/df5/classlog4tango_1_1TimeStamp} in microseconds. 
+
+The actual precision of this value depends on the platform and may be in the order of milliseconds rather than microseconds. \index{log4tango\-::\-Time\-Stamp@{log4tango\-::\-Time\-Stamp}!get\-\_\-milliseconds@{get\-\_\-milliseconds}}
+\index{get\-\_\-milliseconds@{get\-\_\-milliseconds}!log4tango::TimeStamp@{log4tango\-::\-Time\-Stamp}}
+\subsubsection[{get\-\_\-milliseconds}]{\setlength{\rightskip}{0pt plus 5cm}int log4tango\-::\-Time\-Stamp\-::get\-\_\-milliseconds (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classlog4tango_1_1TimeStamp_ad78de0eb6ff9d25cc00e24ad5aab16e2}
+
+
+Returns the 'subseconds' part of the \doxyref{Time\-Stamp}{p.}{d2/df5/classlog4tango_1_1TimeStamp} in milliseconds, \doxyref{get\-\_\-milliseconds()}{p.}{d2/df5/classlog4tango_1_1TimeStamp_ad78de0eb6ff9d25cc00e24ad5aab16e2} == \doxyref{get\-\_\-microseconds()}{p.}{d2/df5/classlog4tango_1_1TimeStamp_a646294685da8d31451cbfd5b86780b98} / 1000. 
+
+
+
+Referenced by log4tango\-::\-Millis\-Since\-Epoch\-Component\-::append().
+
+\index{log4tango\-::\-Time\-Stamp@{log4tango\-::\-Time\-Stamp}!get\-\_\-seconds@{get\-\_\-seconds}}
+\index{get\-\_\-seconds@{get\-\_\-seconds}!log4tango::TimeStamp@{log4tango\-::\-Time\-Stamp}}
+\subsubsection[{get\-\_\-seconds}]{\setlength{\rightskip}{0pt plus 5cm}int log4tango\-::\-Time\-Stamp\-::get\-\_\-seconds (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classlog4tango_1_1TimeStamp_a94972a4ed5baac6f19536289ad12a890}
+
+
+Returns the 'seconds' part of the \doxyref{Time\-Stamp}{p.}{d2/df5/classlog4tango_1_1TimeStamp}. 
+
+
+
+Referenced by log4tango\-::\-Millis\-Since\-Epoch\-Component\-::append().
+
+\index{log4tango\-::\-Time\-Stamp@{log4tango\-::\-Time\-Stamp}!get\-\_\-start\-\_\-time@{get\-\_\-start\-\_\-time}}
+\index{get\-\_\-start\-\_\-time@{get\-\_\-start\-\_\-time}!log4tango::TimeStamp@{log4tango\-::\-Time\-Stamp}}
+\subsubsection[{get\-\_\-start\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}static const {\bf Time\-Stamp}\& log4tango\-::\-Time\-Stamp\-::get\-\_\-start\-\_\-time (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{classlog4tango_1_1TimeStamp_a8aff592396c6987d1b0008fd7308346a}
+
+
+Returns a \doxyref{Time\-Stamp}{p.}{d2/df5/classlog4tango_1_1TimeStamp} representing the time at which the application started. 
+
+
+
+Referenced by log4tango\-::\-Millis\-Since\-Epoch\-Component\-::append().
+
+\index{log4tango\-::\-Time\-Stamp@{log4tango\-::\-Time\-Stamp}!operator=@{operator=}}
+\index{operator=@{operator=}!log4tango::TimeStamp@{log4tango\-::\-Time\-Stamp}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}void log4tango\-::\-Time\-Stamp\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Time\-Stamp} \&}]{t}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classlog4tango_1_1TimeStamp_a916933860753832c2b1444b3faa0dfcd}
+
+
+Operator=. 
+
+
+
+References \-\_\-micro\-\_\-seconds, and \-\_\-seconds.
+
+
+
+\subsection{Member Data Documentation}
+\index{log4tango\-::\-Time\-Stamp@{log4tango\-::\-Time\-Stamp}!\-\_\-micro\-\_\-seconds@{\-\_\-micro\-\_\-seconds}}
+\index{\-\_\-micro\-\_\-seconds@{\-\_\-micro\-\_\-seconds}!log4tango::TimeStamp@{log4tango\-::\-Time\-Stamp}}
+\subsubsection[{\-\_\-micro\-\_\-seconds}]{\setlength{\rightskip}{0pt plus 5cm}int log4tango\-::\-Time\-Stamp\-::\-\_\-micro\-\_\-seconds\hspace{0.3cm}{\ttfamily [protected]}}\label{classlog4tango_1_1TimeStamp_a1cb0ccf43153e649547fbd1172e95650}
+
+
+Referenced by operator=(), and Time\-Stamp().
+
+\index{log4tango\-::\-Time\-Stamp@{log4tango\-::\-Time\-Stamp}!\-\_\-seconds@{\-\_\-seconds}}
+\index{\-\_\-seconds@{\-\_\-seconds}!log4tango::TimeStamp@{log4tango\-::\-Time\-Stamp}}
+\subsubsection[{\-\_\-seconds}]{\setlength{\rightskip}{0pt plus 5cm}int log4tango\-::\-Time\-Stamp\-::\-\_\-seconds\hspace{0.3cm}{\ttfamily [protected]}}\label{classlog4tango_1_1TimeStamp_a100e29832bd2fb44135cb556234e07ea}
+
+
+Referenced by operator=(), and Time\-Stamp().
+
+\index{log4tango\-::\-Time\-Stamp@{log4tango\-::\-Time\-Stamp}!\-\_\-start\-\_\-stamp@{\-\_\-start\-\_\-stamp}}
+\index{\-\_\-start\-\_\-stamp@{\-\_\-start\-\_\-stamp}!log4tango::TimeStamp@{log4tango\-::\-Time\-Stamp}}
+\subsubsection[{\-\_\-start\-\_\-stamp}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Time\-Stamp} log4tango\-::\-Time\-Stamp\-::\-\_\-start\-\_\-stamp\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\label{classlog4tango_1_1TimeStamp_ae5498e41fd84e2a0f49bb7640ccec9ec}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+{\bf Time\-Stamp.\-hh}\item 
+{\bf Time\-Stamp.\-cpp}\end{DoxyCompactItemize}

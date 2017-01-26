@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d9/dcb/classTango_1_1DummyDeviceProxy">
+<title>Tango::DummyDeviceProxy class Reference</title>
+<para>
+    <programlisting>#include <link linkend="d9/ddc/devapi_8h">&quot;devapi.h&quot;</link></programlisting>
+</para>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d9/dcb/classTango_1_1DummyDeviceProxy_1a208e369e11d5e1d945b123ec217dc16d">DummyDeviceProxy</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual string <link linkend="d9/dcb/classTango_1_1DummyDeviceProxy_1af1b4aeeda9976c31d43bf0629c0c2e87">build_corba_name</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual string <link linkend="d9/dcb/classTango_1_1DummyDeviceProxy_1a95f30faa9de8e4fb82f65b6689da1a08">dev_name</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual string <link linkend="d9/dcb/classTango_1_1DummyDeviceProxy_1ae1aeac6ff92474063cc58a531b2c6d09">get_corba_name</link> (
+bool )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="d9/dcb/classTango_1_1DummyDeviceProxy_1ad6fb4f3237b716ee6e53417317a2984a">get_env_var</link> (
+const char * cc, string &amp; str_ref)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual int <link linkend="d9/dcb/classTango_1_1DummyDeviceProxy_1a2901b3e72b2928c0c0fb0bd2674990e4">get_lock_ctr</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual void <link linkend="d9/dcb/classTango_1_1DummyDeviceProxy_1a06125348959666fb0774765b8d49f15d">set_lock_ctr</link> (
+int )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+            <section xml:id="d9/dcb/classTango_1_1DummyDeviceProxy_1a208e369e11d5e1d945b123ec217dc16d">
+                <title>Tango::DummyDeviceProxy::DummyDeviceProxy ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d9/dcb/classTango_1_1DummyDeviceProxy_1af1b4aeeda9976c31d43bf0629c0c2e87">
+                <title>virtual string Tango::DummyDeviceProxy::build_corba_name ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d9/dcb/classTango_1_1DummyDeviceProxy_1a95f30faa9de8e4fb82f65b6689da1a08">
+                <title>virtual string Tango::DummyDeviceProxy::dev_name ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d9/dcb/classTango_1_1DummyDeviceProxy_1ae1aeac6ff92474063cc58a531b2c6d09">
+                <title>virtual string Tango::DummyDeviceProxy::get_corba_name (bool)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d9/dcb/classTango_1_1DummyDeviceProxy_1ad6fb4f3237b716ee6e53417317a2984a">
+                <title>int Tango::DummyDeviceProxy::get_env_var (const char *cc, string &amp;str_ref)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d9/dcb/classTango_1_1DummyDeviceProxy_1a2901b3e72b2928c0c0fb0bd2674990e4">
+                <title>virtual int Tango::DummyDeviceProxy::get_lock_ctr ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d9/dcb/classTango_1_1DummyDeviceProxy_1a06125348959666fb0774765b8d49f15d">
+                <title>virtual void Tango::DummyDeviceProxy::set_lock_ctr (int)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

@@ -1,0 +1,294 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d6/daa/classTango_1_1FwdAttr">
+<title>Tango::FwdAttr class Reference</title>
+        <simplesect>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d0/d24/classTango_1_1FwdAttr_1_1FwdAttrExt">Tango::FwdAttr::FwdAttrExt</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Constructors</title>
+      <description>
+<para>Only one constructor is defined for this class </para>
+</description>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d6/daa/classTango_1_1FwdAttr_1a9a241a7b91325152d9cb29e339ed816d">FwdAttr</link> (
+const string &amp; name, const string &amp; root_attribute)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Miscellaneous methods</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d6/daa/classTango_1_1FwdAttr_1a4e03c27d8edac79cb48a9f2cb0170359">set_default_properties</link> (
+<link linkend="d0/d19/classTango_1_1UserDefaultFwdAttrProp">UserDefaultFwdAttrProp</link> &amp; prop)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>FwdAttError err_kind</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>FwdAttrExt * ext</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string full_root_att</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string fwd_dev_name</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string fwd_root_att</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool fwd_wrongly_conf</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d6/daa/classTango_1_1FwdAttr_1ac78e7d92ef2169d2313425ad132262ba">FwdAttr</link> (
+const <link linkend="d6/daa/classTango_1_1FwdAttr">FwdAttr</link> &amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="de/ddf/namespaceTango_1a1e389712aae3f56c65cda947d965f8f3">FwdAttError</link> <link linkend="d6/daa/classTango_1_1FwdAttr_1a48cbf90d51a8b755f640ae6b7d19c48f">get_err_kind</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string &amp; <link linkend="d6/daa/classTango_1_1FwdAttr_1af75eb5a786f1ec31fa9422b6fb9b1b47">get_full_root_att</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string &amp; <link linkend="d6/daa/classTango_1_1FwdAttr_1aced66514b216b46027d6877a27d91f4a">get_fwd_dev_name</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string &amp; <link linkend="d6/daa/classTango_1_1FwdAttr_1a4e81d107c5f354f2fc110052fad39a8c">get_fwd_root_att</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string &amp; <link linkend="d6/daa/classTango_1_1FwdAttr_1a46c4c949ca5654162e58632d6f978fb8">get_label_from_default_properties</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d6/daa/classTango_1_1FwdAttr_1afead319117d43a7514b5704ad97abb87">get_root_conf</link> (
+string &amp; , <link linkend="d3/d62/classTango_1_1DeviceImpl">DeviceImpl</link> * )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual void <link linkend="d6/daa/classTango_1_1FwdAttr_1a357444606cbda446592735a0c45c9ec3">init_conf</link> (
+<link linkend="d9/da1/classTango_1_1AttrConfEventData">AttrConfEventData</link> * )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual bool <link linkend="d6/daa/classTango_1_1FwdAttr_1a1dcfaeba5b1fcb7dd5ade3c06cdeaa52">is_allowed</link> (
+<link linkend="d3/d62/classTango_1_1DeviceImpl">DeviceImpl</link> * , <link linkend="de/ddf/namespaceTango_1af86537193dcecd8a6710791fc2d4969d">AttReqType</link> )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d6/daa/classTango_1_1FwdAttr_1ae884ec4c51335980b8fee2fc6783d988">is_correctly_configured</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual bool <link linkend="d6/daa/classTango_1_1FwdAttr_1afa327e92681846e6bc85ecb46b5f856f">is_fwd</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual void <link linkend="d6/daa/classTango_1_1FwdAttr_1aa195596e380dbbac3b02e81225c9142e">read</link> (
+<link linkend="d3/d62/classTango_1_1DeviceImpl">DeviceImpl</link> * , <link linkend="d6/dad/classTango_1_1Attribute">Attribute</link> &amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d6/daa/classTango_1_1FwdAttr_1a9539bfccfee28d94f7ee07cacfa39f6f">remove_useless_prop</link> (
+vector&lt; AttrProperty &gt; &amp; , string &amp; , <link linkend="dc/d3b/classTango_1_1MultiAttribute">MultiAttribute</link> * )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d6/daa/classTango_1_1FwdAttr_1a9ec1799a74804f4129f0fd5f1b366ae9">set_err_kind</link> (
+<link linkend="de/ddf/namespaceTango_1a1e389712aae3f56c65cda947d965f8f3">FwdAttError</link> _e)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d6/daa/classTango_1_1FwdAttr_1a9802a15237e40325f6a58ddcf642a920">validate_fwd_att</link> (
+vector&lt; AttrProperty &gt; &amp; , const string &amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual void <link linkend="d6/daa/classTango_1_1FwdAttr_1a5179d014bf4ca45bf6cb24c8b5bf168c">write</link> (
+<link linkend="d3/d62/classTango_1_1DeviceImpl">DeviceImpl</link> * , <link linkend="db/da8/classTango_1_1WAttribute">WAttribute</link> &amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Brief Description</title>
+
+<para>User class to create a forwarded attribute object. </para>
+    </simplesect>
+        <simplesect>
+            <title>Detailed Description</title>
+
+<para>Information from this class and information fetched out from the <link linkend="de/ddf/namespaceTango">Tango</link> database allows the <link linkend="de/ddf/namespaceTango">Tango</link> core software to create the FwdAttribute object for the forwarded attribute created by the user.</para>
+
+<para>$Author$ $Revision$ </para>
+                <para>Definition at line 118 of file fwdattrdesc.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>fwdattrdesc.h</para></listitem></itemizedlist></para>
+        </simplesect>
+            <section xml:id="d6/daa/classTango_1_1FwdAttr_1ac78e7d92ef2169d2313425ad132262ba">
+                <title>Tango::FwdAttr::FwdAttr (const FwdAttr &amp;)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d6/daa/classTango_1_1FwdAttr_1a48cbf90d51a8b755f640ae6b7d19c48f">
+                <title>FwdAttError Tango::FwdAttr::get_err_kind ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d6/daa/classTango_1_1FwdAttr_1af75eb5a786f1ec31fa9422b6fb9b1b47">
+                <title>string&amp; Tango::FwdAttr::get_full_root_att ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d6/daa/classTango_1_1FwdAttr_1aced66514b216b46027d6877a27d91f4a">
+                <title>string&amp; Tango::FwdAttr::get_fwd_dev_name ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d6/daa/classTango_1_1FwdAttr_1a4e81d107c5f354f2fc110052fad39a8c">
+                <title>string&amp; Tango::FwdAttr::get_fwd_root_att ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d6/daa/classTango_1_1FwdAttr_1a46c4c949ca5654162e58632d6f978fb8">
+                <title>string&amp; Tango::FwdAttr::get_label_from_default_properties ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d6/daa/classTango_1_1FwdAttr_1afead319117d43a7514b5704ad97abb87">
+                <title>void Tango::FwdAttr::get_root_conf (string &amp;, DeviceImpl *)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d6/daa/classTango_1_1FwdAttr_1a357444606cbda446592735a0c45c9ec3">
+                <title>virtual void Tango::FwdAttr::init_conf (AttrConfEventData *)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d6/daa/classTango_1_1FwdAttr_1a1dcfaeba5b1fcb7dd5ade3c06cdeaa52">
+                <title>virtual bool Tango::FwdAttr::is_allowed (DeviceImpl *, AttReqType)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d6/daa/classTango_1_1FwdAttr_1ae884ec4c51335980b8fee2fc6783d988">
+                <title>bool Tango::FwdAttr::is_correctly_configured ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d6/daa/classTango_1_1FwdAttr_1afa327e92681846e6bc85ecb46b5f856f">
+                <title>virtual bool Tango::FwdAttr::is_fwd ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d6/daa/classTango_1_1FwdAttr_1aa195596e380dbbac3b02e81225c9142e">
+                <title>virtual void Tango::FwdAttr::read (DeviceImpl *, Attribute &amp;)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d6/daa/classTango_1_1FwdAttr_1a9539bfccfee28d94f7ee07cacfa39f6f">
+                <title>void Tango::FwdAttr::remove_useless_prop (vector&lt; AttrProperty &gt; &amp;, string &amp;, MultiAttribute *)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d6/daa/classTango_1_1FwdAttr_1a9ec1799a74804f4129f0fd5f1b366ae9">
+                <title>void Tango::FwdAttr::set_err_kind (FwdAttError _e)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d6/daa/classTango_1_1FwdAttr_1a9802a15237e40325f6a58ddcf642a920">
+                <title>bool Tango::FwdAttr::validate_fwd_att (vector&lt; AttrProperty &gt; &amp;, const string &amp;)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d6/daa/classTango_1_1FwdAttr_1a5179d014bf4ca45bf6cb24c8b5bf168c">
+                <title>virtual void Tango::FwdAttr::write (DeviceImpl *, WAttribute &amp;)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

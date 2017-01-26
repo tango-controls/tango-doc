@@ -1,0 +1,120 @@
+\section{log4tango\-:\-:String\-Util Class Reference}
+\label{classlog4tango_1_1StringUtil}\index{log4tango\-::\-String\-Util@{log4tango\-::\-String\-Util}}
+
+
+{\ttfamily \#include \char`\"{}String\-Util.\-hh\char`\"{}}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static unsigned int {\bf split} (std\-::vector$<$ std\-::string $>$ \&v, const std\-::string \&s, char delimiter, unsigned int max\-Segments=I\-N\-T\-\_\-\-M\-A\-X)
+\begin{DoxyCompactList}\small\item\em splits a string into a vector of string segments based on the given delimiter. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\static unsigned int {\bf split} (T \&output, const std\-::string \&s, char delimiter, unsigned int max\-Segments=I\-N\-T\-\_\-\-M\-A\-X)
+\begin{DoxyCompactList}\small\item\em splits a string into string segments based on the given delimiter and assigns the segments through an output\-\_\-iterator. \end{DoxyCompactList}\item 
+static std\-::string {\bf trim} (const std\-::string \&s)
+\begin{DoxyCompactList}\small\item\em Returns a string identical to the given string but without leading or trailing H\-T\-A\-Bs or spaces. \end{DoxyCompactList}\item 
+static std\-::string {\bf vform} (const char $\ast$format, va\-\_\-list args)
+\begin{DoxyCompactList}\small\item\em Returns a string contructed from the a format specifier and a va\-\_\-list of arguments, analogously to vprintf(3). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\index{log4tango\-::\-String\-Util@{log4tango\-::\-String\-Util}!split@{split}}
+\index{split@{split}!log4tango::StringUtil@{log4tango\-::\-String\-Util}}
+\subsubsection[{split}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int log4tango\-::\-String\-Util\-::split (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ std\-::string $>$ \&}]{v, }
+\item[{const std\-::string \&}]{s, }
+\item[{char}]{delimiter, }
+\item[{unsigned int}]{max\-Segments = {\ttfamily INT\-\_\-MAX}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classlog4tango_1_1StringUtil_a0cbc8f98a127ba0cb36df3845e16405c}
+
+
+splits a string into a vector of string segments based on the given delimiter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & The vector in which the segments will be stored. The vector will be emptied before storing the segments \\
+\hline
+{\em s} & The string to split into segments. \\
+\hline
+{\em delimiter} & The delimiter character \\
+\hline
+{\em max\-Segments} & the maximum number of segments. Upon return v.\-size() $<$= max\-Segments. The string is scanned from left to right so v[max\-Segments -\/ 1] may contain a string containing the delimiter character. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The actual number of segments (limited by max\-Segments). 
+\end{DoxyReturn}
+\index{log4tango\-::\-String\-Util@{log4tango\-::\-String\-Util}!split@{split}}
+\index{split@{split}!log4tango::StringUtil@{log4tango\-::\-String\-Util}}
+\subsubsection[{split}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ static unsigned int log4tango\-::\-String\-Util\-::split (
+\begin{DoxyParamCaption}
+\item[{T \&}]{output, }
+\item[{const std\-::string \&}]{s, }
+\item[{char}]{delimiter, }
+\item[{unsigned int}]{max\-Segments = {\ttfamily INT\-\_\-MAX}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{classlog4tango_1_1StringUtil_aaefb28c23a501416d11eb8a0c41b5fd2}
+
+
+splits a string into string segments based on the given delimiter and assigns the segments through an output\-\_\-iterator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em output} & The output\-\_\-iterator through which to assign the string segments. Typically this will be a back\-\_\-insertion\-\_\-iterator. \\
+\hline
+{\em s} & The string to split into segments. \\
+\hline
+{\em delimiter} & The delimiter character \\
+\hline
+{\em max\-Segments} & The maximum number of segments. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The actual number of segments (limited by max\-Segments). 
+\end{DoxyReturn}
+\index{log4tango\-::\-String\-Util@{log4tango\-::\-String\-Util}!trim@{trim}}
+\index{trim@{trim}!log4tango::StringUtil@{log4tango\-::\-String\-Util}}
+\subsubsection[{trim}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string log4tango\-::\-String\-Util\-::trim (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{s}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classlog4tango_1_1StringUtil_a5b1f1af63d4ac9d16150d08f2af6ebbc}
+
+
+Returns a string identical to the given string but without leading or trailing H\-T\-A\-Bs or spaces. 
+
+\index{log4tango\-::\-String\-Util@{log4tango\-::\-String\-Util}!vform@{vform}}
+\index{vform@{vform}!log4tango::StringUtil@{log4tango\-::\-String\-Util}}
+\subsubsection[{vform}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string log4tango\-::\-String\-Util\-::vform (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{format, }
+\item[{va\-\_\-list}]{args}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classlog4tango_1_1StringUtil_a1588cfe00d2951f175025f949793f866}
+
+
+Returns a string contructed from the a format specifier and a va\-\_\-list of arguments, analogously to vprintf(3). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em format} & the format specifier. \\
+\hline
+{\em args} & the va\-\_\-list of arguments. \\
+\hline
+\end{DoxyParams}
+
+
+References V\-S\-N\-P\-R\-I\-N\-T\-F.
+
+
+
+Referenced by log4tango\-::\-Logger\-::debug(), log4tango\-::\-Logger\-::error(), log4tango\-::\-Logger\-::fatal(), log4tango\-::\-Logger\-::info(), log4tango\-::\-Logger\-::log(), log4tango\-::\-Logger\-::log\-\_\-unconditionally(), and log4tango\-::\-Logger\-::warn().
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+{\bf String\-Util.\-hh}\item 
+{\bf String\-Util.\-cpp}\end{DoxyCompactItemize}

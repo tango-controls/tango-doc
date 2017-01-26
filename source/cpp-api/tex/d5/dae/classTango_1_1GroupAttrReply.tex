@@ -1,0 +1,85 @@
+\section{Tango\-:\-:Group\-Attr\-Reply Class Reference}
+\label{classTango_1_1GroupAttrReply}\index{Tango\-::\-Group\-Attr\-Reply@{Tango\-::\-Group\-Attr\-Reply}}
+
+
+Single element group reply for a read attribute execution.  
+
+
+
+
+Inheritance diagram for Tango\-:\-:Group\-Attr\-Reply\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=158pt]{df/dc0/classTango_1_1GroupAttrReply__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Tango\-:\-:Group\-Attr\-Reply\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=158pt]{d1/d11/classTango_1_1GroupAttrReply__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Device\-Attribute \& {\bf get\-\_\-data} ()
+\begin{DoxyCompactList}\small\item\em Get attribute data. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\bool {\bf operator$>$$>$} (T \&dest)
+\begin{DoxyCompactList}\small\item\em Get attribute data and extract them. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Single element group reply for a read attribute execution. 
+
+\$\-Author\$ \$\-Revision\$ 
+
+\subsection{Member Function Documentation}
+\index{Tango\-::\-Group\-Attr\-Reply@{Tango\-::\-Group\-Attr\-Reply}!get\-\_\-data@{get\-\_\-data}}
+\index{get\-\_\-data@{get\-\_\-data}!Tango::GroupAttrReply@{Tango\-::\-Group\-Attr\-Reply}}
+\subsubsection[{get\-\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}Device\-Attribute\& Tango\-::\-Group\-Attr\-Reply\-::get\-\_\-data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1GroupAttrReply_adac0b677ce81ec7e66f3c53872adea86}
+
+
+Get attribute data. 
+
+Get attribute data for a device member of a group hierarchy
+
+\begin{DoxyReturn}{Returns}
+The attribute data 
+\end{DoxyReturn}
+\index{Tango\-::\-Group\-Attr\-Reply@{Tango\-::\-Group\-Attr\-Reply}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!Tango::GroupAttrReply@{Tango\-::\-Group\-Attr\-Reply}}
+\subsubsection[{operator$>$$>$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ bool Tango\-::\-Group\-Attr\-Reply\-::operator$>$$>$ (
+\begin{DoxyParamCaption}
+\item[{T \&}]{dest}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1GroupAttrReply_a421f7a196fc46f20b76a2124da30de95}
+
+
+Get attribute data and extract them. 
+
+Get attribute data for a device member of a group hierarchy and extract them in the provided variable
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em dest} & The variable in which the data should be extracted \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Flag set to true if the extraction succeeds 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+{\bf group.\-h}\end{DoxyCompactItemize}

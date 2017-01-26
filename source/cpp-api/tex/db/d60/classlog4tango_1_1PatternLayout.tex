@@ -1,0 +1,180 @@
+\section{log4tango\-:\-:Pattern\-Layout Class Reference}
+\label{classlog4tango_1_1PatternLayout}\index{log4tango\-::\-Pattern\-Layout@{log4tango\-::\-Pattern\-Layout}}
+
+
+{\ttfamily \#include \char`\"{}Pattern\-Layout.\-hh\char`\"{}}
+
+
+
+Inheritance diagram for log4tango\-:\-:Pattern\-Layout\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{da/de6/classlog4tango_1_1PatternLayout__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for log4tango\-:\-:Pattern\-Layout\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{d0/d1d/classlog4tango_1_1PatternLayout__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Pattern\-Component}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Pattern\-Layout} ()
+\item 
+virtual {\bf $\sim$\-Pattern\-Layout} ()
+\item 
+virtual void {\bf clear\-\_\-conversion\-\_\-pattern} ()
+\item 
+virtual std\-::string {\bf format} (const {\bf Logging\-Event} \&event)
+\begin{DoxyCompactList}\small\item\em Formats the \doxyref{Logging\-Event}{p.}{d8/df2/structlog4tango_1_1LoggingEvent} in the style set by the set\-\_\-conversion\-\_\-pattern call. \end{DoxyCompactList}\item 
+virtual std\-::string {\bf get\-\_\-conversion\-\_\-pattern} () const 
+\item 
+virtual int {\bf set\-\_\-conversion\-\_\-pattern} (const std\-::string \&conversion\-Pattern)
+\begin{DoxyCompactList}\small\item\em Sets the format of log lines handled by this \doxyref{Pattern\-Layout}{p.}{db/d60/classlog4tango_1_1PatternLayout}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const char $\ast$ {\bf B\-A\-S\-I\-C\-\_\-\-C\-O\-N\-V\-E\-R\-S\-I\-O\-N\-\_\-\-P\-A\-T\-T\-E\-R\-N} = \char`\"{}\%R \%p \%c \%m\%n\char`\"{}
+\begin{DoxyCompactList}\small\item\em A conversion pattern equivalent to the Basic\-Layout. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{log4tango\-::\-Pattern\-Layout@{log4tango\-::\-Pattern\-Layout}!Pattern\-Layout@{Pattern\-Layout}}
+\index{Pattern\-Layout@{Pattern\-Layout}!log4tango::PatternLayout@{log4tango\-::\-Pattern\-Layout}}
+\subsubsection[{Pattern\-Layout}]{\setlength{\rightskip}{0pt plus 5cm}log4tango\-::\-Pattern\-Layout\-::\-Pattern\-Layout (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classlog4tango_1_1PatternLayout_a16f0799306962ff3fc4eeda8ca4d7e2b}
+
+
+References B\-A\-S\-I\-C\-\_\-\-C\-O\-N\-V\-E\-R\-S\-I\-O\-N\-\_\-\-P\-A\-T\-T\-E\-R\-N, and set\-\_\-conversion\-\_\-pattern().
+
+\index{log4tango\-::\-Pattern\-Layout@{log4tango\-::\-Pattern\-Layout}!$\sim$\-Pattern\-Layout@{$\sim$\-Pattern\-Layout}}
+\index{$\sim$\-Pattern\-Layout@{$\sim$\-Pattern\-Layout}!log4tango::PatternLayout@{log4tango\-::\-Pattern\-Layout}}
+\subsubsection[{$\sim$\-Pattern\-Layout}]{\setlength{\rightskip}{0pt plus 5cm}log4tango\-::\-Pattern\-Layout\-::$\sim$\-Pattern\-Layout (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classlog4tango_1_1PatternLayout_a6a7d2df88df11eba3b9d800cbcbaf8f4}
+
+
+References clear\-\_\-conversion\-\_\-pattern().
+
+
+
+\subsection{Member Function Documentation}
+\index{log4tango\-::\-Pattern\-Layout@{log4tango\-::\-Pattern\-Layout}!clear\-\_\-conversion\-\_\-pattern@{clear\-\_\-conversion\-\_\-pattern}}
+\index{clear\-\_\-conversion\-\_\-pattern@{clear\-\_\-conversion\-\_\-pattern}!log4tango::PatternLayout@{log4tango\-::\-Pattern\-Layout}}
+\subsubsection[{clear\-\_\-conversion\-\_\-pattern}]{\setlength{\rightskip}{0pt plus 5cm}void log4tango\-::\-Pattern\-Layout\-::clear\-\_\-conversion\-\_\-pattern (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classlog4tango_1_1PatternLayout_a668d59b015305affebfbefef0cedb4b9}
+
+
+Referenced by set\-\_\-conversion\-\_\-pattern(), and $\sim$\-Pattern\-Layout().
+
+\index{log4tango\-::\-Pattern\-Layout@{log4tango\-::\-Pattern\-Layout}!format@{format}}
+\index{format@{format}!log4tango::PatternLayout@{log4tango\-::\-Pattern\-Layout}}
+\subsubsection[{format}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string log4tango\-::\-Pattern\-Layout\-::format (
+\begin{DoxyParamCaption}
+\item[{const {\bf Logging\-Event} \&}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classlog4tango_1_1PatternLayout_a127f7708ad24a3290d3c6cbe29257020}
+
+
+Formats the \doxyref{Logging\-Event}{p.}{d8/df2/structlog4tango_1_1LoggingEvent} in the style set by the set\-\_\-conversion\-\_\-pattern call. 
+
+By default, set to \char`\"{}\%\%m\%\%n\char`\"{} 
+
+Reimplemented from {\bf log4tango\-::\-Layout} \doxyref{}{p.}{d7/da6/classlog4tango_1_1Layout_a0ade719b2ab1ce512aca5699f136eb8b}.
+
+
+
+References std\-::ostringstream\-::str().
+
+\index{log4tango\-::\-Pattern\-Layout@{log4tango\-::\-Pattern\-Layout}!get\-\_\-conversion\-\_\-pattern@{get\-\_\-conversion\-\_\-pattern}}
+\index{get\-\_\-conversion\-\_\-pattern@{get\-\_\-conversion\-\_\-pattern}!log4tango::PatternLayout@{log4tango\-::\-Pattern\-Layout}}
+\subsubsection[{get\-\_\-conversion\-\_\-pattern}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string log4tango\-::\-Pattern\-Layout\-::get\-\_\-conversion\-\_\-pattern (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{classlog4tango_1_1PatternLayout_ae99540a294a8d2e3c230f11bc6ed82bc}
+\index{log4tango\-::\-Pattern\-Layout@{log4tango\-::\-Pattern\-Layout}!set\-\_\-conversion\-\_\-pattern@{set\-\_\-conversion\-\_\-pattern}}
+\index{set\-\_\-conversion\-\_\-pattern@{set\-\_\-conversion\-\_\-pattern}!log4tango::PatternLayout@{log4tango\-::\-Pattern\-Layout}}
+\subsubsection[{set\-\_\-conversion\-\_\-pattern}]{\setlength{\rightskip}{0pt plus 5cm}int log4tango\-::\-Pattern\-Layout\-::set\-\_\-conversion\-\_\-pattern (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{conversion\-Pattern}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classlog4tango_1_1PatternLayout_a0a893fc5d34dad85771c45cd081c932b}
+
+
+Sets the format of log lines handled by this \doxyref{Pattern\-Layout}{p.}{db/d60/classlog4tango_1_1PatternLayout}. 
+
+By default, set to \char`\"{}\%\%m\%\%n\char`\"{}.\par
+ Format characters are as follows\-:\par
+ 
+\begin{DoxyItemize}
+\item {\bfseries \%\%\%\%} -\/ a single percent sign 
+\item {\bfseries \%c} -\/ the logger 
+\item {\bfseries \%d} -\/ the date\par
+ Date format\-: The date format character may be followed by a date format specifier enclosed between braces. For example, \%d\{\%H\-:\%M\-:\%S,\%l\} or \%d\{\%d \%m \%Y \%H\-:\%M\-:\%S,\%l\}. If no date format specifier is given then the following format is used\-: \char`\"{}\-Wed Jan 02 02\-:03\-:55 1980\char`\"{}. The date format specifier admits the same syntax as the A\-N\-S\-I C function strftime, with 1 addition. The addition is the specifier \%l for milliseconds, padded with zeros to make 3 digits. 
+\item {\bfseries \%m} -\/ the message 
+\item {\bfseries \%n} -\/ the platform specific line separator 
+\item {\bfseries \%p} -\/ the level 
+\item {\bfseries \%r} -\/ milliseconds since this layout was created. 
+\item {\bfseries \%R} -\/ seconds since Jan 1, 1970 
+\item {\bfseries \%u} -\/ clock ticks since process start 
+\item {\bfseries \%x} -\/ the N\-D\-C 
+\end{DoxyItemize}
+\begin{DoxyParams}{Parameters}
+{\em conversion\-Pattern} & the conversion pattern \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Configure\-Failure} & if the pattern is invalid \\
+\hline
+\end{DoxyExceptions}
+
+
+References clear\-\_\-conversion\-\_\-pattern(), std\-::endl(), and std\-::ostringstream\-::str().
+
+
+
+Referenced by Pattern\-Layout().
+
+
+
+\subsection{Member Data Documentation}
+\index{log4tango\-::\-Pattern\-Layout@{log4tango\-::\-Pattern\-Layout}!B\-A\-S\-I\-C\-\_\-\-C\-O\-N\-V\-E\-R\-S\-I\-O\-N\-\_\-\-P\-A\-T\-T\-E\-R\-N@{B\-A\-S\-I\-C\-\_\-\-C\-O\-N\-V\-E\-R\-S\-I\-O\-N\-\_\-\-P\-A\-T\-T\-E\-R\-N}}
+\index{B\-A\-S\-I\-C\-\_\-\-C\-O\-N\-V\-E\-R\-S\-I\-O\-N\-\_\-\-P\-A\-T\-T\-E\-R\-N@{B\-A\-S\-I\-C\-\_\-\-C\-O\-N\-V\-E\-R\-S\-I\-O\-N\-\_\-\-P\-A\-T\-T\-E\-R\-N}!log4tango::PatternLayout@{log4tango\-::\-Pattern\-Layout}}
+\subsubsection[{B\-A\-S\-I\-C\-\_\-\-C\-O\-N\-V\-E\-R\-S\-I\-O\-N\-\_\-\-P\-A\-T\-T\-E\-R\-N}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ log4tango\-::\-Pattern\-Layout\-::\-B\-A\-S\-I\-C\-\_\-\-C\-O\-N\-V\-E\-R\-S\-I\-O\-N\-\_\-\-P\-A\-T\-T\-E\-R\-N = \char`\"{}\%R \%p \%c \%m\%n\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}\label{classlog4tango_1_1PatternLayout_a8d601a7465e1e7c5b83fc87a1a68cd37}
+
+
+A conversion pattern equivalent to the Basic\-Layout. 
+
+
+
+Referenced by Pattern\-Layout().
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+{\bf Pattern\-Layout.\-hh}\item 
+{\bf Pattern\-Layout.\-cpp}\end{DoxyCompactItemize}

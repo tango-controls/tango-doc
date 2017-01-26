@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="dc/d08/classTango_1_1NamedDevFailed">
+<title>Tango::NamedDevFailed class Reference</title>
+        <simplesect>
+            <title>Public Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>DevErrorList err_stack<para><emphasis>The error stack.</emphasis></para></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>long idx_in_call<para><emphasis>Index in the write_attributes method parameter vector of the attribute which failed.</emphasis></para></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string name<para><emphasis>The name of the attribute which fails.</emphasis></para></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="dc/d08/classTango_1_1NamedDevFailed_1aa70edd795b4350fd88962d33b3b792a8">NamedDevFailed</link> (
+const DevErrorList &amp; err, const string &amp; na, long idx)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="dc/d08/classTango_1_1NamedDevFailed_1aa8a33469f18c5608d083f8fd9db9fe7f">NamedDevFailed</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Brief Description</title>
+
+<para>An exception class. </para>
+    </simplesect>
+        <simplesect>
+            <title>Detailed Description</title>
+
+<para>This class is used as exception for the DeviceProxy::write_attribute call()</para>
+
+<para>$Author$ $Revision$ </para>
+                <para>Definition at line 55 of file apiexcept.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>apiexcept.h</para></listitem></itemizedlist></para>
+        </simplesect>
+            <section xml:id="dc/d08/classTango_1_1NamedDevFailed_1aa70edd795b4350fd88962d33b3b792a8">
+                <title>Tango::NamedDevFailed::NamedDevFailed (const DevErrorList &amp;err, const string &amp;na, long idx)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="dc/d08/classTango_1_1NamedDevFailed_1aa8a33469f18c5608d083f8fd9db9fe7f">
+                <title>Tango::NamedDevFailed::NamedDevFailed ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

@@ -1,0 +1,248 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d9/d33/classTango_1_1GroupCmdReply">
+<title>Tango::GroupCmdReply class Reference</title>
+        <simplesect>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>DeviceData data_m</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d9/d33/classTango_1_1GroupCmdReply_1a9cf634ed5b382835d6f58dcbb8b096d1">GroupCmdReply</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d9/d33/classTango_1_1GroupCmdReply_1acf1c8ae68c547e6cc6750d1131f4c4c0">GroupCmdReply</link> (
+const <link linkend="d9/d33/classTango_1_1GroupCmdReply">GroupCmdReply</link> &amp; src)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d9/d33/classTango_1_1GroupCmdReply_1acc10f5fc772708b7bc3ccbe94d6629d6">GroupCmdReply</link> (
+const std::string &amp; dev_name, const std::string &amp; obj_name, const DeviceData &amp; data)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d9/d33/classTango_1_1GroupCmdReply_1a599b1423511d516e0add9182dc01eceb">GroupCmdReply</link> (
+const std::string &amp; dev_name, const std::string &amp; obj_name, const DevFailed &amp; exception)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d9/d33/classTango_1_1GroupCmdReply_1a5f8b9eaeaa8f19d7f9be912ae88a71da">GroupCmdReply</link> (
+const std::string &amp; dev_name, const std::string &amp; obj_name, bool group_element_enabled)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="d9/d33/classTango_1_1GroupCmdReply_1ae637b04159b1685bd99043b11b537b1d">~GroupCmdReply</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d9/d33/classTango_1_1GroupCmdReply_1a4beaeb6d71fa2cd825828718d36d20a4">extract</link> (
+std::vector&lt; DevLong &gt; &amp; vl, std::vector&lt; std::string &gt; &amp; vs)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d9/d33/classTango_1_1GroupCmdReply_1a26604a69a810a3c5f221c648ec523204">extract</link> (
+std::vector&lt; double &gt; &amp; vd, std::vector&lt; std::string &gt; &amp; vs)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>DeviceData &amp; <link linkend="d9/d33/classTango_1_1GroupCmdReply_1ab753e25a85ec8ca6b96f61d4d3a2c0fd">get_data</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d9/d33/classTango_1_1GroupCmdReply_1a54b600d46c948acd7d1943f6d9738943">operator&gt;&gt;</link> (
+T &amp; dest)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Brief Description</title>
+
+<para>Single element group reply for a command execution. </para>
+    </simplesect>
+        <simplesect>
+            <title>Detailed Description</title>
+
+<para>$Author$ $Revision$ </para>
+                <para>Definition at line 252 of file group.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>group.h</para></listitem></itemizedlist></para>
+        </simplesect>
+            <section xml:id="d9/d33/classTango_1_1GroupCmdReply_1a9cf634ed5b382835d6f58dcbb8b096d1">
+                <title>Tango::GroupCmdReply::GroupCmdReply ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d9/d33/classTango_1_1GroupCmdReply_1acf1c8ae68c547e6cc6750d1131f4c4c0">
+                <title>Tango::GroupCmdReply::GroupCmdReply (const GroupCmdReply &amp;src)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d9/d33/classTango_1_1GroupCmdReply_1acc10f5fc772708b7bc3ccbe94d6629d6">
+                <title>Tango::GroupCmdReply::GroupCmdReply (const std::string &amp;dev_name, const std::string &amp;obj_name, const DeviceData &amp;data)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d9/d33/classTango_1_1GroupCmdReply_1a599b1423511d516e0add9182dc01eceb">
+                <title>Tango::GroupCmdReply::GroupCmdReply (const std::string &amp;dev_name, const std::string &amp;obj_name, const DevFailed &amp;exception)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d9/d33/classTango_1_1GroupCmdReply_1a5f8b9eaeaa8f19d7f9be912ae88a71da">
+                <title>Tango::GroupCmdReply::GroupCmdReply (const std::string &amp;dev_name, const std::string &amp;obj_name, bool group_element_enabled)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d9/d33/classTango_1_1GroupCmdReply_1ae637b04159b1685bd99043b11b537b1d">
+                <title>virtual Tango::GroupCmdReply::~GroupCmdReply ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d9/d33/classTango_1_1GroupCmdReply_1a4beaeb6d71fa2cd825828718d36d20a4">
+                <title>bool Tango::GroupCmdReply::extract (std::vector&lt; DevLong &gt; &amp;vl, std::vector&lt; std::string &gt; &amp;vs)</title> <emphasis>Get command data and extract them (DevVarLongStringArray)</emphasis>
+                
+<para>Get command result for a device member of a group hierarchy and extract them in the provided variable in case the command returns a data of the DevVarLongStringArray type</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>vl</entry>
+                                <entry>
+<para>The array of DevLong part of the DevVarLongStringArray </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>vs</entry>
+                                <entry>
+<para>The array of string part of the DevVarLongStringArray data </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>Flag set to true if the extraction succeeds </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="d9/d33/classTango_1_1GroupCmdReply_1a26604a69a810a3c5f221c648ec523204">
+                <title>bool Tango::GroupCmdReply::extract (std::vector&lt; double &gt; &amp;vd, std::vector&lt; std::string &gt; &amp;vs)</title> <emphasis>Get command data and extract them (DevVarDoubleStringArray)</emphasis>
+                
+<para>Get command result for a device member of a group hierarchy and extract them in the provided variable in case the command returns a data of the DevVarDoubleStringArray type</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>vd</entry>
+                                <entry>
+<para>The array of DevDouble part of the DevVarDoubleStringArray </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>vs</entry>
+                                <entry>
+<para>The array of string part of the DevVarDoubleStringArray data </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>Flag set to true if the extraction succeeds </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="d9/d33/classTango_1_1GroupCmdReply_1ab753e25a85ec8ca6b96f61d4d3a2c0fd">
+                <title>DeviceData&amp; Tango::GroupCmdReply::get_data ()</title> <emphasis>Get command data.</emphasis>
+                
+<para>Get command result for a device member of a group hierarchy</para>
+
+<para><formalpara><title>Returns: </title>
+
+<para>The command data </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="d9/d33/classTango_1_1GroupCmdReply_1a54b600d46c948acd7d1943f6d9738943">
+                <title>bool Tango::GroupCmdReply::operator&gt;&gt; (T &amp;dest)</title> <emphasis>Get command data and extract them.</emphasis>
+                
+<para>Get command result for a device member of a group hierarchy and extract them in the provided variable</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>dest</entry>
+                                <entry>
+<para>The variable in which the data should be extracted </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>Flag set to true if the extraction succeeds </para>
+</formalpara>
+</para>
+
+            </section>
+</section>

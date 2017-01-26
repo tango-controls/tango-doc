@@ -1,0 +1,289 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d4/d49/classTango_1_1AsynReq">
+<title>Tango::AsynReq class Reference</title>
+<para>
+    <programlisting>#include <link linkend="db/d02/devasyn_8h">&quot;devasyn.h&quot;</link></programlisting>
+</para>
+        <simplesect>
+            <title>Protected Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>map&lt; long, TgRequest &gt; asyn_poll_req_table</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>vector&lt; long &gt; cancelled_request</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>multimap&lt; Connection *, TgRequest &gt; cb_dev_table</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>map&lt; CORBA::Request_ptr, TgRequest &gt; cb_req_table</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>UniqIdent * ui_ptr</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>omni_condition cond</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d4/d49/classTango_1_1AsynReq_1aaf398fa29d8dd69b8a3e8140bc064ac4">AsynReq</link> (
+<link linkend="d5/dad/classTango_1_1UniqIdent">UniqIdent</link> * ptr)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d4/d49/classTango_1_1AsynReq_1a561d72b073445ffa393fa2b488cdb102">~AsynReq</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>multimap&lt; Connection *, <link linkend="db/d68/classTango_1_1TgRequest">TgRequest</link> &gt; &amp; <link linkend="d4/d49/classTango_1_1AsynReq_1a0ee69f2ee61f7c3cb9832b5d65ba175a">get_cb_dev_table</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="d4/d49/classTango_1_1AsynReq_1a2382aa029446ce932fc1806d27a79c86">get_cb_request_nb</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="d4/d49/classTango_1_1AsynReq_1a64026d73695274edd8dbac838eb5a7ee">get_cb_request_nb_i</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="db/d68/classTango_1_1TgRequest">TgRequest</link> &amp; <link linkend="d4/d49/classTango_1_1AsynReq_1a9de6e680c82fd2ac9d1538776f99b5a5">get_request</link> (
+long )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="db/d68/classTango_1_1TgRequest">TgRequest</link> &amp; <link linkend="d4/d49/classTango_1_1AsynReq_1a4fa87aa8a5640f5427007cd2129e0ded">get_request</link> (
+CORBA::Request_ptr )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="db/d68/classTango_1_1TgRequest">TgRequest</link> * <link linkend="d4/d49/classTango_1_1AsynReq_1a901a0ae5ca92ba8acb569bad51a484db">get_request</link> (
+Tango::Connection * )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="d4/d49/classTango_1_1AsynReq_1ab2cd39f7e22d7379c3ec231f1a4f8996">get_request_nb</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d4/d49/classTango_1_1AsynReq_1ac91b6715021db4fa7bb28b92aaa23406">mark_all_polling_as_cancelled</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d4/d49/classTango_1_1AsynReq_1ac0a32d6e0c8d635df346aac051a8615f">mark_as_arrived</link> (
+CORBA::Request_ptr req)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d4/d49/classTango_1_1AsynReq_1a3cde8cb1ad774abd7fff49926b87463d">mark_as_cancelled</link> (
+long )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d4/d49/classTango_1_1AsynReq_1aa9d3d8a412dc929eaf113712d9c59920">remove_request</link> (
+long )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d4/d49/classTango_1_1AsynReq_1a02d44133a3d5cb73718d7fbc7ab1fed4">remove_request</link> (
+Connection * , CORBA::Request_ptr )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d4/d49/classTango_1_1AsynReq_1add4662104ae067eb6a30cd4227d49798">signal</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>long <link linkend="d4/d49/classTango_1_1AsynReq_1a82faaad48a857ef000a71f3ca9ac0480">store_request</link> (
+CORBA::Request_ptr , <link linkend="db/d68/classTango_1_1TgRequest_1a6ae144d0765e704695987f8b20255343">TgRequest::ReqType</link> )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d4/d49/classTango_1_1AsynReq_1a928d3b29e270467b7b522bd410426513">store_request</link> (
+CORBA::Request_ptr , <link linkend="d4/ded/classTango_1_1CallBack">CallBack</link> * , Connection * , <link linkend="db/d68/classTango_1_1TgRequest_1a6ae144d0765e704695987f8b20255343">TgRequest::ReqType</link> )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d4/d49/classTango_1_1AsynReq_1ad7570fa623931b56985d6bcd69c4a564">wait</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d4/d49/classTango_1_1AsynReq_1af97080aaa6af47c6c7a64e473f11013b">remove_cancelled_request</link> (
+long )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+            <section xml:id="d4/d49/classTango_1_1AsynReq_1aaf398fa29d8dd69b8a3e8140bc064ac4">
+                <title>Tango::AsynReq::AsynReq (UniqIdent *ptr)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/d49/classTango_1_1AsynReq_1a561d72b073445ffa393fa2b488cdb102">
+                <title>Tango::AsynReq::~AsynReq ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/d49/classTango_1_1AsynReq_1a0ee69f2ee61f7c3cb9832b5d65ba175a">
+                <title>multimap&lt;Connection *,TgRequest&gt;&amp; Tango::AsynReq::get_cb_dev_table ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/d49/classTango_1_1AsynReq_1a2382aa029446ce932fc1806d27a79c86">
+                <title>size_t Tango::AsynReq::get_cb_request_nb ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/d49/classTango_1_1AsynReq_1a64026d73695274edd8dbac838eb5a7ee">
+                <title>size_t Tango::AsynReq::get_cb_request_nb_i ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/d49/classTango_1_1AsynReq_1a9de6e680c82fd2ac9d1538776f99b5a5">
+                <title>TgRequest&amp; Tango::AsynReq::get_request (long)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/d49/classTango_1_1AsynReq_1a4fa87aa8a5640f5427007cd2129e0ded">
+                <title>TgRequest&amp; Tango::AsynReq::get_request (CORBA::Request_ptr)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/d49/classTango_1_1AsynReq_1a901a0ae5ca92ba8acb569bad51a484db">
+                <title>TgRequest* Tango::AsynReq::get_request (Tango::Connection *)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/d49/classTango_1_1AsynReq_1ab2cd39f7e22d7379c3ec231f1a4f8996">
+                <title>size_t Tango::AsynReq::get_request_nb ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/d49/classTango_1_1AsynReq_1ac91b6715021db4fa7bb28b92aaa23406">
+                <title>void Tango::AsynReq::mark_all_polling_as_cancelled ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/d49/classTango_1_1AsynReq_1ac0a32d6e0c8d635df346aac051a8615f">
+                <title>void Tango::AsynReq::mark_as_arrived (CORBA::Request_ptr req)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/d49/classTango_1_1AsynReq_1a3cde8cb1ad774abd7fff49926b87463d">
+                <title>void Tango::AsynReq::mark_as_cancelled (long)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/d49/classTango_1_1AsynReq_1aa9d3d8a412dc929eaf113712d9c59920">
+                <title>void Tango::AsynReq::remove_request (long)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/d49/classTango_1_1AsynReq_1a02d44133a3d5cb73718d7fbc7ab1fed4">
+                <title>void Tango::AsynReq::remove_request (Connection *, CORBA::Request_ptr)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/d49/classTango_1_1AsynReq_1add4662104ae067eb6a30cd4227d49798">
+                <title>void Tango::AsynReq::signal ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/d49/classTango_1_1AsynReq_1a82faaad48a857ef000a71f3ca9ac0480">
+                <title>long Tango::AsynReq::store_request (CORBA::Request_ptr, TgRequest::ReqType)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/d49/classTango_1_1AsynReq_1a928d3b29e270467b7b522bd410426513">
+                <title>void Tango::AsynReq::store_request (CORBA::Request_ptr, CallBack *, Connection *, TgRequest::ReqType)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/d49/classTango_1_1AsynReq_1ad7570fa623931b56985d6bcd69c4a564">
+                <title>void Tango::AsynReq::wait ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d4/d49/classTango_1_1AsynReq_1af97080aaa6af47c6c7a64e473f11013b">
+                <title>bool Tango::AsynReq::remove_cancelled_request (long)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

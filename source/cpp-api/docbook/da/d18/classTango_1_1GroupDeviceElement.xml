@@ -1,0 +1,393 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="da/d18/classTango_1_1GroupDeviceElement">
+<title>Tango::GroupDeviceElement class Reference</title>
+<para>
+    <programlisting>#include <link linkend="d9/dd1/group_8h">&quot;group.h&quot;</link></programlisting>
+</para>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>AsynchRequestRep arp</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>DeviceProxy * dp</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual void <link linkend="da/d18/classTango_1_1GroupDeviceElement_1a14f1b125cf6cf5eae91c1a06cadc41a9">dump</link> (
+int indent_level)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual void <link linkend="da/d18/classTango_1_1GroupDeviceElement_1a93d666ca9b3ba59abcf1feb86a111390">dump</link> (
+TangoSys_OMemStream &amp; oms, int indent_level)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual DeviceProxy * <link linkend="da/d18/classTango_1_1GroupDeviceElement_1a5abe1c9a7c93eb66bca1e756833fdadd">get_device</link> (
+const std::string &amp; n)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual DeviceProxy * <link linkend="da/d18/classTango_1_1GroupDeviceElement_1acb1f9c6754c2dfc7b902bd0e90d3dfc1">get_device</link> (
+long idx)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual bool <link linkend="da/d18/classTango_1_1GroupDeviceElement_1af229babcc705fac5bf51edd7715a3496">is_connected</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual DeviceProxy * <link linkend="da/d18/classTango_1_1GroupDeviceElement_1a8230a10f49f459944de457deaf2d8915">operator[]</link> (
+long idx)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual bool <link linkend="da/d18/classTango_1_1GroupDeviceElement_1a326af717a2dde9c75f60ab0ed6b35c2f">ping</link> (
+bool fwd)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual void <link linkend="da/d18/classTango_1_1GroupDeviceElement_1a7e318af767b4030e04d3104e318da0b5">set_timeout_millis</link> (
+int tmo_ms)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="da/d18/classTango_1_1GroupDeviceElement_1a87cf34e20168d34dfaee9a2a86674da1">GroupDeviceElement</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="da/d18/classTango_1_1GroupDeviceElement_1a8549d3fd9d7067100e8b8bfc73400680">GroupDeviceElement</link> (
+const <link linkend="da/d18/classTango_1_1GroupDeviceElement">GroupDeviceElement</link> &amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="da/d18/classTango_1_1GroupDeviceElement_1af3096652053d8a8a63d88076638c8842">GroupDeviceElement</link> (
+const std::string &amp; name)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="da/d18/classTango_1_1GroupDeviceElement_1a89ce67bbd56aee44af50fe1d46275634">GroupDeviceElement</link> (
+const std::string &amp; name, int tmo_ms)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="da/d18/classTango_1_1GroupDeviceElement_1afc4501b3e1597fb6bfbaeb4d69c8587b">~GroupDeviceElement</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual long <link linkend="da/d18/classTango_1_1GroupDeviceElement_1a7f9eee0d00b0ba49b73f627298f6fc2c">command_inout_asynch_i</link> (
+const std::string &amp; c, bool fgt, bool fwd, long ari)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual long <link linkend="da/d18/classTango_1_1GroupDeviceElement_1a27046ece8cf056a45300d057225c50fe">command_inout_asynch_i</link> (
+const std::string &amp; c, const DeviceData &amp; d, bool fgt, bool fwd, long ari)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="d8/d3d/classTango_1_1GroupCmdReplyList">GroupCmdReplyList</link> <link linkend="da/d18/classTango_1_1GroupDeviceElement_1adb4a5f1d10f81cb7b43a316a95abd742">command_inout_reply_i</link> (
+long req_id, long tmo_ms)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>DeviceProxy * <link linkend="da/d18/classTango_1_1GroupDeviceElement_1a31a51da51f47fd5a676bb18fbeed685f">connect</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>DeviceProxy * <link linkend="da/d18/classTango_1_1GroupDeviceElement_1ad2d469f6b28cc21ed7d3fa4eda284c0d">dev_proxy</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="da/d18/classTango_1_1GroupDeviceElement_1a20d79a7ad497f24cedb90271e6132a8c">disconnect</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual long <link linkend="da/d18/classTango_1_1GroupDeviceElement_1a27bf80fab15a62a93382ddb9da9f998a">get_size_i</link> (
+bool fwd)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual bool <link linkend="da/d18/classTango_1_1GroupDeviceElement_1ae2edd7908a8d531ee102dc0901cbf4e9">is_device_i</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual bool <link linkend="da/d18/classTango_1_1GroupDeviceElement_1a488f7b6e280ed4f64da0b8baf7fcf189">is_group_i</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="da/d18/classTango_1_1GroupDeviceElement">GroupDeviceElement</link> &amp; <link linkend="da/d18/classTango_1_1GroupDeviceElement_1a4d42e81896d04a4217ce80878debc87a">operator=</link> (
+const <link linkend="da/d18/classTango_1_1GroupDeviceElement">GroupDeviceElement</link> &amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual long <link linkend="da/d18/classTango_1_1GroupDeviceElement_1aa35d7d19d1c7a3b96050c5f9b76555c4">read_attribute_asynch_i</link> (
+const std::string &amp; a, bool fwd, long ari)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="db/daa/classTango_1_1GroupAttrReplyList">GroupAttrReplyList</link> <link linkend="da/d18/classTango_1_1GroupDeviceElement_1afe12864711294bc8ab82e74260a7f798">read_attribute_reply_i</link> (
+long req_id, long tmo_ms)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual long <link linkend="da/d18/classTango_1_1GroupDeviceElement_1abaa22739321bc43a04f1245a295882c6">read_attributes_asynch_i</link> (
+const std::vector&lt; std::string &gt; &amp; al, bool fwd, long ari)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="db/daa/classTango_1_1GroupAttrReplyList">GroupAttrReplyList</link> <link linkend="da/d18/classTango_1_1GroupDeviceElement_1ae98c0c967dc0e6b4579f4fd8d3d95179">read_attributes_reply_i</link> (
+long req_id, long tmo_ms)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual long <link linkend="da/d18/classTango_1_1GroupDeviceElement_1a44a8fd7845d7a2ad0d9853951fc4bc53">write_attribute_asynch_i</link> (
+const DeviceAttribute &amp; d, bool fwd, long ari)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="dc/d11/classTango_1_1GroupReplyList">GroupReplyList</link> <link linkend="da/d18/classTango_1_1GroupDeviceElement_1af5ee876ead8345a4c45fc7107fcd40ad">write_attribute_reply_i</link> (
+long req_id, long tmo_ms)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+            <section xml:id="da/d18/classTango_1_1GroupDeviceElement_1a14f1b125cf6cf5eae91c1a06cadc41a9">
+                <title>virtual void Tango::GroupDeviceElement::dump (int indent_level=0)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/d18/classTango_1_1GroupDeviceElement_1a93d666ca9b3ba59abcf1feb86a111390">
+                <title>virtual void Tango::GroupDeviceElement::dump (TangoSys_OMemStream &amp;oms, int indent_level=0)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/d18/classTango_1_1GroupDeviceElement_1a5abe1c9a7c93eb66bca1e756833fdadd">
+                <title>virtual DeviceProxy* Tango::GroupDeviceElement::get_device (const std::string &amp;n)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/d18/classTango_1_1GroupDeviceElement_1acb1f9c6754c2dfc7b902bd0e90d3dfc1">
+                <title>virtual DeviceProxy* Tango::GroupDeviceElement::get_device (long idx)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/d18/classTango_1_1GroupDeviceElement_1af229babcc705fac5bf51edd7715a3496">
+                <title>virtual bool Tango::GroupDeviceElement::is_connected ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/d18/classTango_1_1GroupDeviceElement_1a8230a10f49f459944de457deaf2d8915">
+                <title>virtual DeviceProxy* Tango::GroupDeviceElement::operator[] (long idx)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/d18/classTango_1_1GroupDeviceElement_1a326af717a2dde9c75f60ab0ed6b35c2f">
+                <title>virtual bool Tango::GroupDeviceElement::ping (bool fwd=true)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/d18/classTango_1_1GroupDeviceElement_1a7e318af767b4030e04d3104e318da0b5">
+                <title>virtual void Tango::GroupDeviceElement::set_timeout_millis (int tmo_ms)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/d18/classTango_1_1GroupDeviceElement_1a87cf34e20168d34dfaee9a2a86674da1">
+                <title>Tango::GroupDeviceElement::GroupDeviceElement ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/d18/classTango_1_1GroupDeviceElement_1a8549d3fd9d7067100e8b8bfc73400680">
+                <title>Tango::GroupDeviceElement::GroupDeviceElement (const GroupDeviceElement &amp;)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/d18/classTango_1_1GroupDeviceElement_1af3096652053d8a8a63d88076638c8842">
+                <title>Tango::GroupDeviceElement::GroupDeviceElement (const std::string &amp;name)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/d18/classTango_1_1GroupDeviceElement_1a89ce67bbd56aee44af50fe1d46275634">
+                <title>Tango::GroupDeviceElement::GroupDeviceElement (const std::string &amp;name, int tmo_ms)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/d18/classTango_1_1GroupDeviceElement_1afc4501b3e1597fb6bfbaeb4d69c8587b">
+                <title>virtual Tango::GroupDeviceElement::~GroupDeviceElement ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/d18/classTango_1_1GroupDeviceElement_1a7f9eee0d00b0ba49b73f627298f6fc2c">
+                <title>virtual long Tango::GroupDeviceElement::command_inout_asynch_i (const std::string &amp;c, bool fgt, bool fwd, long ari)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/d18/classTango_1_1GroupDeviceElement_1a27046ece8cf056a45300d057225c50fe">
+                <title>virtual long Tango::GroupDeviceElement::command_inout_asynch_i (const std::string &amp;c, const DeviceData &amp;d, bool fgt, bool fwd, long ari)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/d18/classTango_1_1GroupDeviceElement_1adb4a5f1d10f81cb7b43a316a95abd742">
+                <title>virtual GroupCmdReplyList Tango::GroupDeviceElement::command_inout_reply_i (long req_id, long tmo_ms)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/d18/classTango_1_1GroupDeviceElement_1a31a51da51f47fd5a676bb18fbeed685f">
+                <title>DeviceProxy* Tango::GroupDeviceElement::connect ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/d18/classTango_1_1GroupDeviceElement_1ad2d469f6b28cc21ed7d3fa4eda284c0d">
+                <title>DeviceProxy* Tango::GroupDeviceElement::dev_proxy ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/d18/classTango_1_1GroupDeviceElement_1a20d79a7ad497f24cedb90271e6132a8c">
+                <title>void Tango::GroupDeviceElement::disconnect ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/d18/classTango_1_1GroupDeviceElement_1a27bf80fab15a62a93382ddb9da9f998a">
+                <title>virtual long Tango::GroupDeviceElement::get_size_i (bool fwd=true)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/d18/classTango_1_1GroupDeviceElement_1ae2edd7908a8d531ee102dc0901cbf4e9">
+                <title>virtual bool Tango::GroupDeviceElement::is_device_i ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/d18/classTango_1_1GroupDeviceElement_1a488f7b6e280ed4f64da0b8baf7fcf189">
+                <title>virtual bool Tango::GroupDeviceElement::is_group_i ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/d18/classTango_1_1GroupDeviceElement_1a4d42e81896d04a4217ce80878debc87a">
+                <title>GroupDeviceElement&amp; Tango::GroupDeviceElement::operator= (const GroupDeviceElement &amp;)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/d18/classTango_1_1GroupDeviceElement_1aa35d7d19d1c7a3b96050c5f9b76555c4">
+                <title>virtual long Tango::GroupDeviceElement::read_attribute_asynch_i (const std::string &amp;a, bool fwd, long ari)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/d18/classTango_1_1GroupDeviceElement_1afe12864711294bc8ab82e74260a7f798">
+                <title>virtual GroupAttrReplyList Tango::GroupDeviceElement::read_attribute_reply_i (long req_id, long tmo_ms)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/d18/classTango_1_1GroupDeviceElement_1abaa22739321bc43a04f1245a295882c6">
+                <title>virtual long Tango::GroupDeviceElement::read_attributes_asynch_i (const std::vector&lt; std::string &gt; &amp;al, bool fwd, long ari)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/d18/classTango_1_1GroupDeviceElement_1ae98c0c967dc0e6b4579f4fd8d3d95179">
+                <title>virtual GroupAttrReplyList Tango::GroupDeviceElement::read_attributes_reply_i (long req_id, long tmo_ms)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/d18/classTango_1_1GroupDeviceElement_1a44a8fd7845d7a2ad0d9853951fc4bc53">
+                <title>virtual long Tango::GroupDeviceElement::write_attribute_asynch_i (const DeviceAttribute &amp;d, bool fwd, long ari)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="da/d18/classTango_1_1GroupDeviceElement_1af5ee876ead8345a4c45fc7107fcd40ad">
+                <title>virtual GroupReplyList Tango::GroupDeviceElement::write_attribute_reply_i (long req_id, long tmo_ms)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

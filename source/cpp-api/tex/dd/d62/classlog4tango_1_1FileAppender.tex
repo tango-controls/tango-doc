@@ -1,0 +1,336 @@
+\section{log4tango\-:\-:File\-Appender Class Reference}
+\label{classlog4tango_1_1FileAppender}\index{log4tango\-::\-File\-Appender@{log4tango\-::\-File\-Appender}}
+
+
+{\ttfamily \#include \char`\"{}File\-Appender.\-hh\char`\"{}}
+
+
+
+Inheritance diagram for log4tango\-:\-:File\-Appender\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{d6/d51/classlog4tango_1_1FileAppender__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for log4tango\-:\-:File\-Appender\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=176pt]{de/d7f/classlog4tango_1_1FileAppender__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf File\-Appender} (const std\-::string \&name, const std\-::string \&file\-Name, bool {\bf append}=true, {\bf mode\-\_\-t} mode=00644)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxyref{File\-Appender}{p.}{dd/d62/classlog4tango_1_1FileAppender}. \end{DoxyCompactList}\item 
+{\bf File\-Appender} (const std\-::string \&name, int fd)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxyref{File\-Appender}{p.}{dd/d62/classlog4tango_1_1FileAppender} to an already open file descriptor. \end{DoxyCompactList}\item 
+virtual {\bf $\sim$\-File\-Appender} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void {\bf close} (void)
+\begin{DoxyCompactList}\small\item\em Closes the logfile. \end{DoxyCompactList}\item 
+virtual bool {\bf get\-\_\-append} (void) const 
+\begin{DoxyCompactList}\small\item\em Gets the value of the 'append' option. \end{DoxyCompactList}\item 
+virtual {\bf mode\-\_\-t} {\bf get\-\_\-mode} () const 
+\begin{DoxyCompactList}\small\item\em Gets the file open mode. \end{DoxyCompactList}\item 
+virtual bool {\bf is\-\_\-valid} (void) const 
+\begin{DoxyCompactList}\small\item\em Check if the appender is valid. \end{DoxyCompactList}\item 
+virtual bool {\bf reopen} (void)
+\begin{DoxyCompactList}\small\item\em Reopens the logfile. \end{DoxyCompactList}\item 
+virtual void {\bf set\-\_\-append} (bool {\bf append})
+\begin{DoxyCompactList}\small\item\em Sets the append vs truncate flag. \end{DoxyCompactList}\item 
+virtual void {\bf set\-\_\-mode} ({\bf mode\-\_\-t} mode)
+\begin{DoxyCompactList}\small\item\em Sets the file open mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual int {\bf \-\_\-append} (const {\bf Logging\-Event} \&event)
+\begin{DoxyCompactList}\small\item\em Log in \doxyref{Appender}{p.}{d7/dc4/classlog4tango_1_1Appender} specific way. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int {\bf \-\_\-fd}
+\item 
+const std\-::string {\bf \-\_\-file\-\_\-name}
+\item 
+int {\bf \-\_\-flags}
+\item 
+{\bf mode\-\_\-t} {\bf \-\_\-mode}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{log4tango\-::\-File\-Appender@{log4tango\-::\-File\-Appender}!File\-Appender@{File\-Appender}}
+\index{File\-Appender@{File\-Appender}!log4tango::FileAppender@{log4tango\-::\-File\-Appender}}
+\subsubsection[{File\-Appender}]{\setlength{\rightskip}{0pt plus 5cm}log4tango\-::\-File\-Appender\-::\-File\-Appender (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{name, }
+\item[{const std\-::string \&}]{file\-Name, }
+\item[{bool}]{append = {\ttfamily true}, }
+\item[{{\bf mode\-\_\-t}}]{mode = {\ttfamily 00644}}
+\end{DoxyParamCaption}
+)}\label{classlog4tango_1_1FileAppender_a43e09e7221ba060eb95252ee5461da95}
+
+
+Constructs a \doxyref{File\-Appender}{p.}{dd/d62/classlog4tango_1_1FileAppender}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & the name of the \doxyref{Appender}{p.}{d7/dc4/classlog4tango_1_1Appender}. \\
+\hline
+{\em file\-Name} & the name of the file to which the \doxyref{Appender}{p.}{d7/dc4/classlog4tango_1_1Appender} has to log. \\
+\hline
+{\em append} & whether the \doxyref{Appender}{p.}{d7/dc4/classlog4tango_1_1Appender} has to truncate the file or just append to it if it already exists. Defaults to 'true'. \\
+\hline
+{\em mode} & file mode to open the logfile with. Defaults to 00644. \\
+\hline
+\end{DoxyParams}
+
+
+References \-\_\-fd, \-\_\-file\-\_\-name, \-\_\-flags, and \-\_\-mode.
+
+\index{log4tango\-::\-File\-Appender@{log4tango\-::\-File\-Appender}!File\-Appender@{File\-Appender}}
+\index{File\-Appender@{File\-Appender}!log4tango::FileAppender@{log4tango\-::\-File\-Appender}}
+\subsubsection[{File\-Appender}]{\setlength{\rightskip}{0pt plus 5cm}log4tango\-::\-File\-Appender\-::\-File\-Appender (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{name, }
+\item[{int}]{fd}
+\end{DoxyParamCaption}
+)}\label{classlog4tango_1_1FileAppender_ab4cba01161e7a5db14ab19b07d1397f9}
+
+
+Constructs a \doxyref{File\-Appender}{p.}{dd/d62/classlog4tango_1_1FileAppender} to an already open file descriptor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & the name of the \doxyref{Appender}{p.}{d7/dc4/classlog4tango_1_1Appender}. \\
+\hline
+{\em fd} & the file descriptor to which the \doxyref{Appender}{p.}{d7/dc4/classlog4tango_1_1Appender} has to log. \\
+\hline
+\end{DoxyParams}
+\index{log4tango\-::\-File\-Appender@{log4tango\-::\-File\-Appender}!$\sim$\-File\-Appender@{$\sim$\-File\-Appender}}
+\index{$\sim$\-File\-Appender@{$\sim$\-File\-Appender}!log4tango::FileAppender@{log4tango\-::\-File\-Appender}}
+\subsubsection[{$\sim$\-File\-Appender}]{\setlength{\rightskip}{0pt plus 5cm}log4tango\-::\-File\-Appender\-::$\sim$\-File\-Appender (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classlog4tango_1_1FileAppender_a051e5c4850313d9fb3b4240c73d9f61c}
+
+
+Destructor. 
+
+
+
+References close().
+
+
+
+\subsection{Member Function Documentation}
+\index{log4tango\-::\-File\-Appender@{log4tango\-::\-File\-Appender}!\-\_\-append@{\-\_\-append}}
+\index{\-\_\-append@{\-\_\-append}!log4tango::FileAppender@{log4tango\-::\-File\-Appender}}
+\subsubsection[{\-\_\-append}]{\setlength{\rightskip}{0pt plus 5cm}int log4tango\-::\-File\-Appender\-::\-\_\-append (
+\begin{DoxyParamCaption}
+\item[{const {\bf Logging\-Event} \&}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classlog4tango_1_1FileAppender_acc1e885ec09a9f206383284656a0079e}
+
+
+Log in \doxyref{Appender}{p.}{d7/dc4/classlog4tango_1_1Appender} specific way. 
+
+Subclasses of \doxyref{Appender}{p.}{d7/dc4/classlog4tango_1_1Appender} should implement this method to perform actual logging. 
+\begin{DoxyParams}{Parameters}
+{\em event} & The \doxyref{Logging\-Event}{p.}{d8/df2/structlog4tango_1_1LoggingEvent} to log. \\
+\hline
+\end{DoxyParams}
+
+
+Implements {\bf log4tango\-::\-Appender} \doxyref{}{p.}{d7/dc4/classlog4tango_1_1Appender_a87739ce35cdc83e06dd4c55af28d3ac8}.
+
+
+
+Reimplemented in {\bf log4tango\-::\-Rolling\-File\-Appender} \doxyref{}{p.}{d9/db4/classlog4tango_1_1RollingFileAppender_ad25a1bd45e1dffc755821acca3b958f2}.
+
+
+
+References \-\_\-fd, and log4tango\-::\-Layout\-Appender\-::get\-\_\-layout().
+
+
+
+Referenced by log4tango\-::\-Rolling\-File\-Appender\-::\-\_\-append().
+
+\index{log4tango\-::\-File\-Appender@{log4tango\-::\-File\-Appender}!close@{close}}
+\index{close@{close}!log4tango::FileAppender@{log4tango\-::\-File\-Appender}}
+\subsubsection[{close}]{\setlength{\rightskip}{0pt plus 5cm}void log4tango\-::\-File\-Appender\-::close (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classlog4tango_1_1FileAppender_aa354da43ca498a14bdd83b8f8065589d}
+
+
+Closes the logfile. 
+
+
+
+Implements {\bf log4tango\-::\-Appender} \doxyref{}{p.}{d7/dc4/classlog4tango_1_1Appender_adafebe465072844506448a35570f9c59}.
+
+
+
+References \-\_\-fd.
+
+
+
+Referenced by reopen(), log4tango\-::\-Rolling\-File\-Appender\-::roll\-\_\-over(), and $\sim$\-File\-Appender().
+
+\index{log4tango\-::\-File\-Appender@{log4tango\-::\-File\-Appender}!get\-\_\-append@{get\-\_\-append}}
+\index{get\-\_\-append@{get\-\_\-append}!log4tango::FileAppender@{log4tango\-::\-File\-Appender}}
+\subsubsection[{get\-\_\-append}]{\setlength{\rightskip}{0pt plus 5cm}bool log4tango\-::\-File\-Appender\-::get\-\_\-append (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{classlog4tango_1_1FileAppender_a1958ac2f7755b5415abe40dc00104d6f}
+
+
+Gets the value of the 'append' option. 
+
+
+
+References \-\_\-flags.
+
+\index{log4tango\-::\-File\-Appender@{log4tango\-::\-File\-Appender}!get\-\_\-mode@{get\-\_\-mode}}
+\index{get\-\_\-mode@{get\-\_\-mode}!log4tango::FileAppender@{log4tango\-::\-File\-Appender}}
+\subsubsection[{get\-\_\-mode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mode\-\_\-t} log4tango\-::\-File\-Appender\-::get\-\_\-mode (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{classlog4tango_1_1FileAppender_ab7ebf728457c73d43b16725e048f1597}
+
+
+Gets the file open mode. 
+
+
+
+References \-\_\-mode.
+
+\index{log4tango\-::\-File\-Appender@{log4tango\-::\-File\-Appender}!is\-\_\-valid@{is\-\_\-valid}}
+\index{is\-\_\-valid@{is\-\_\-valid}!log4tango::FileAppender@{log4tango\-::\-File\-Appender}}
+\subsubsection[{is\-\_\-valid}]{\setlength{\rightskip}{0pt plus 5cm}bool log4tango\-::\-File\-Appender\-::is\-\_\-valid (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{classlog4tango_1_1FileAppender_a418db9eff584e38bd167dcd4e50df6c1}
+
+
+Check if the appender is valid. 
+
+\begin{DoxyReturn}{Returns}
+true if the appender is valid, false otherwise. 
+\end{DoxyReturn}
+
+
+Reimplemented from {\bf log4tango\-::\-Appender} \doxyref{}{p.}{d7/dc4/classlog4tango_1_1Appender_af8d183b5fdfc4b4affda75d1846d9270}.
+
+
+
+References \-\_\-fd.
+
+\index{log4tango\-::\-File\-Appender@{log4tango\-::\-File\-Appender}!reopen@{reopen}}
+\index{reopen@{reopen}!log4tango::FileAppender@{log4tango\-::\-File\-Appender}}
+\subsubsection[{reopen}]{\setlength{\rightskip}{0pt plus 5cm}bool log4tango\-::\-File\-Appender\-::reopen (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classlog4tango_1_1FileAppender_a17989960f7118b8628a93c69b10755ca}
+
+
+Reopens the logfile. 
+
+This can be useful for logfiles that are rotated externally, e.\-g. by logrotate. This method is a N\-O\-O\-P for File\-Appenders that have been constructed with a file descriptor. \begin{DoxyReturn}{Returns}
+true if the reopen succeeded. 
+\end{DoxyReturn}
+
+
+Reimplemented from {\bf log4tango\-::\-Appender} \doxyref{}{p.}{d7/dc4/classlog4tango_1_1Appender_a1f853fae3eebe457698039e3aafb770a}.
+
+
+
+References \-\_\-fd, \-\_\-file\-\_\-name, \-\_\-flags, \-\_\-mode, and close().
+
+\index{log4tango\-::\-File\-Appender@{log4tango\-::\-File\-Appender}!set\-\_\-append@{set\-\_\-append}}
+\index{set\-\_\-append@{set\-\_\-append}!log4tango::FileAppender@{log4tango\-::\-File\-Appender}}
+\subsubsection[{set\-\_\-append}]{\setlength{\rightskip}{0pt plus 5cm}void log4tango\-::\-File\-Appender\-::set\-\_\-append (
+\begin{DoxyParamCaption}
+\item[{bool}]{append}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classlog4tango_1_1FileAppender_a2b73b4da440d31a0b2a4ee7a0016b87c}
+
+
+Sets the append vs truncate flag. 
+
+N\-B. currently the \doxyref{File\-Appender}{p.}{dd/d62/classlog4tango_1_1FileAppender} opens the logfile in the constructor. Therefore this method is too late to influence the first file opening. We'll need something similar to log4j's activate\-Options(). 
+\begin{DoxyParams}{Parameters}
+{\em append} & false to truncate, true to append \\
+\hline
+\end{DoxyParams}
+
+
+References \-\_\-flags.
+
+\index{log4tango\-::\-File\-Appender@{log4tango\-::\-File\-Appender}!set\-\_\-mode@{set\-\_\-mode}}
+\index{set\-\_\-mode@{set\-\_\-mode}!log4tango::FileAppender@{log4tango\-::\-File\-Appender}}
+\subsubsection[{set\-\_\-mode}]{\setlength{\rightskip}{0pt plus 5cm}void log4tango\-::\-File\-Appender\-::set\-\_\-mode (
+\begin{DoxyParamCaption}
+\item[{{\bf mode\-\_\-t}}]{mode}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classlog4tango_1_1FileAppender_abf1747af681b0fa4ac760c364a5da1c6}
+
+
+Sets the file open mode. 
+
+
+
+References \-\_\-mode.
+
+
+
+\subsection{Member Data Documentation}
+\index{log4tango\-::\-File\-Appender@{log4tango\-::\-File\-Appender}!\-\_\-fd@{\-\_\-fd}}
+\index{\-\_\-fd@{\-\_\-fd}!log4tango::FileAppender@{log4tango\-::\-File\-Appender}}
+\subsubsection[{\-\_\-fd}]{\setlength{\rightskip}{0pt plus 5cm}int log4tango\-::\-File\-Appender\-::\-\_\-fd\hspace{0.3cm}{\ttfamily [protected]}}\label{classlog4tango_1_1FileAppender_a04f8a77d3ad3aa7cdcaa8f6be93c5ab0}
+
+
+Referenced by log4tango\-::\-Rolling\-File\-Appender\-::\-\_\-append(), \-\_\-append(), close(), File\-Appender(), is\-\_\-valid(), reopen(), and log4tango\-::\-Rolling\-File\-Appender\-::roll\-\_\-over().
+
+\index{log4tango\-::\-File\-Appender@{log4tango\-::\-File\-Appender}!\-\_\-file\-\_\-name@{\-\_\-file\-\_\-name}}
+\index{\-\_\-file\-\_\-name@{\-\_\-file\-\_\-name}!log4tango::FileAppender@{log4tango\-::\-File\-Appender}}
+\subsubsection[{\-\_\-file\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::string log4tango\-::\-File\-Appender\-::\-\_\-file\-\_\-name\hspace{0.3cm}{\ttfamily [protected]}}\label{classlog4tango_1_1FileAppender_a7a21e40ff4eb363cc20678a4be99c93d}
+
+
+Referenced by File\-Appender(), reopen(), and log4tango\-::\-Rolling\-File\-Appender\-::roll\-\_\-over().
+
+\index{log4tango\-::\-File\-Appender@{log4tango\-::\-File\-Appender}!\-\_\-flags@{\-\_\-flags}}
+\index{\-\_\-flags@{\-\_\-flags}!log4tango::FileAppender@{log4tango\-::\-File\-Appender}}
+\subsubsection[{\-\_\-flags}]{\setlength{\rightskip}{0pt plus 5cm}int log4tango\-::\-File\-Appender\-::\-\_\-flags\hspace{0.3cm}{\ttfamily [protected]}}\label{classlog4tango_1_1FileAppender_a6d4608df941bbaef01e82396bfc85cb2}
+
+
+Referenced by File\-Appender(), get\-\_\-append(), reopen(), log4tango\-::\-Rolling\-File\-Appender\-::roll\-\_\-over(), and set\-\_\-append().
+
+\index{log4tango\-::\-File\-Appender@{log4tango\-::\-File\-Appender}!\-\_\-mode@{\-\_\-mode}}
+\index{\-\_\-mode@{\-\_\-mode}!log4tango::FileAppender@{log4tango\-::\-File\-Appender}}
+\subsubsection[{\-\_\-mode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mode\-\_\-t} log4tango\-::\-File\-Appender\-::\-\_\-mode\hspace{0.3cm}{\ttfamily [protected]}}\label{classlog4tango_1_1FileAppender_a158481e2d508ad2615d78615a86e5206}
+
+
+Referenced by File\-Appender(), get\-\_\-mode(), reopen(), log4tango\-::\-Rolling\-File\-Appender\-::roll\-\_\-over(), and set\-\_\-mode().
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+{\bf File\-Appender.\-hh}\item 
+{\bf File\-Appender.\-cpp}\end{DoxyCompactItemize}

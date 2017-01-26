@@ -1,0 +1,167 @@
+\section{Tango\-:\-:Timed\-Cmd\-Data$<$ T $>$ Class Template Reference}
+\label{classTango_1_1TimedCmdData}\index{Tango\-::\-Timed\-Cmd\-Data$<$ T $>$@{Tango\-::\-Timed\-Cmd\-Data$<$ T $>$}}
+
+
+This class is used to store one element of a command history stack.  
+
+
+\subsection*{Public Member Functions}
+\begin{Indent}{\bf Constructors}\par
+{\em Miscellaneous constructors }\begin{DoxyCompactItemize}
+\item 
+{\bf Timed\-Cmd\-Data} (T $\ast$p\-\_\-data, time\-\_\-t when)
+\begin{DoxyCompactList}\small\item\em Create a new \doxyref{Timed\-Cmd\-Data}{p.}{df/db1/classTango_1_1TimedCmdData} object. \end{DoxyCompactList}\item 
+{\bf Timed\-Cmd\-Data} (T $\ast$p\-\_\-data, bool rel, time\-\_\-t when)
+\begin{DoxyCompactList}\small\item\em Create a new \doxyref{Timed\-Cmd\-Data}{p.}{df/db1/classTango_1_1TimedCmdData} object with memory management. \end{DoxyCompactList}\item 
+{\bf Timed\-Cmd\-Data} (T $\ast$p\-\_\-data, struct timeval when)
+\begin{DoxyCompactList}\small\item\em Create a new \doxyref{Timed\-Cmd\-Data}{p.}{df/db1/classTango_1_1TimedCmdData} object. \end{DoxyCompactList}\item 
+{\bf Timed\-Cmd\-Data} (T $\ast$p\-\_\-data, bool rel, struct timeval when)
+\begin{DoxyCompactList}\small\item\em Create a new \doxyref{Timed\-Cmd\-Data}{p.}{df/db1/classTango_1_1TimedCmdData} object with memory management. \end{DoxyCompactList}\item 
+{\bf Timed\-Cmd\-Data} (Dev\-Error\-List errs, time\-\_\-t when)
+\begin{DoxyCompactList}\small\item\em Create a new \doxyref{Timed\-Cmd\-Data}{p.}{df/db1/classTango_1_1TimedCmdData} object for errors. \end{DoxyCompactList}\item 
+{\bf Timed\-Cmd\-Data} (Dev\-Error\-List errs, timeval when)
+\begin{DoxyCompactList}\small\item\em Create a new \doxyref{Timed\-Cmd\-Data}{p.}{df/db1/classTango_1_1TimedCmdData} object for errors. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$class Tango\-::\-Timed\-Cmd\-Data$<$ T $>$}
+
+This class is used to store one element of a command history stack. 
+
+\$\-Author\$ \$\-Revision\$ 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Tango\-::\-Timed\-Cmd\-Data@{Tango\-::\-Timed\-Cmd\-Data}!Timed\-Cmd\-Data@{Timed\-Cmd\-Data}}
+\index{Timed\-Cmd\-Data@{Timed\-Cmd\-Data}!Tango::TimedCmdData@{Tango\-::\-Timed\-Cmd\-Data}}
+\subsubsection[{Timed\-Cmd\-Data}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf Tango\-::\-Timed\-Cmd\-Data}$<$ T $>$\-::{\bf Timed\-Cmd\-Data} (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{p\-\_\-data, }
+\item[{time\-\_\-t}]{when}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1TimedCmdData_a52aa3bee7afb6e0947d805e498ee08ae}
+
+
+Create a new \doxyref{Timed\-Cmd\-Data}{p.}{df/db1/classTango_1_1TimedCmdData} object. 
+
+The memory pointed to by the {\itshape p\-\_\-data} parameter will not be freed
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\-\_\-data} & Pointer to the command result data \\
+\hline
+{\em when} & The date \\
+\hline
+\end{DoxyParams}
+\index{Tango\-::\-Timed\-Cmd\-Data@{Tango\-::\-Timed\-Cmd\-Data}!Timed\-Cmd\-Data@{Timed\-Cmd\-Data}}
+\index{Timed\-Cmd\-Data@{Timed\-Cmd\-Data}!Tango::TimedCmdData@{Tango\-::\-Timed\-Cmd\-Data}}
+\subsubsection[{Timed\-Cmd\-Data}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf Tango\-::\-Timed\-Cmd\-Data}$<$ T $>$\-::{\bf Timed\-Cmd\-Data} (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{p\-\_\-data, }
+\item[{bool}]{rel, }
+\item[{time\-\_\-t}]{when}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1TimedCmdData_a641bf7e089fd36a70d09cebef4d91c79}
+
+
+Create a new \doxyref{Timed\-Cmd\-Data}{p.}{df/db1/classTango_1_1TimedCmdData} object with memory management. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\-\_\-data} & Pointer to the command result data \\
+\hline
+{\em rel} & Set to true if the memory pointed to by the {\itshape p\-\_\-data} parameter must be freed \\
+\hline
+{\em when} & The date \\
+\hline
+\end{DoxyParams}
+\index{Tango\-::\-Timed\-Cmd\-Data@{Tango\-::\-Timed\-Cmd\-Data}!Timed\-Cmd\-Data@{Timed\-Cmd\-Data}}
+\index{Timed\-Cmd\-Data@{Timed\-Cmd\-Data}!Tango::TimedCmdData@{Tango\-::\-Timed\-Cmd\-Data}}
+\subsubsection[{Timed\-Cmd\-Data}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf Tango\-::\-Timed\-Cmd\-Data}$<$ T $>$\-::{\bf Timed\-Cmd\-Data} (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{p\-\_\-data, }
+\item[{struct timeval}]{when}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1TimedCmdData_ab61561536584807b6771cc7ab6db76e2}
+
+
+Create a new \doxyref{Timed\-Cmd\-Data}{p.}{df/db1/classTango_1_1TimedCmdData} object. 
+
+The memory pointed to by the {\itshape p\-\_\-data} parameter will not be freed
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\-\_\-data} & Pointer to the command result data \\
+\hline
+{\em when} & The date \\
+\hline
+\end{DoxyParams}
+\index{Tango\-::\-Timed\-Cmd\-Data@{Tango\-::\-Timed\-Cmd\-Data}!Timed\-Cmd\-Data@{Timed\-Cmd\-Data}}
+\index{Timed\-Cmd\-Data@{Timed\-Cmd\-Data}!Tango::TimedCmdData@{Tango\-::\-Timed\-Cmd\-Data}}
+\subsubsection[{Timed\-Cmd\-Data}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf Tango\-::\-Timed\-Cmd\-Data}$<$ T $>$\-::{\bf Timed\-Cmd\-Data} (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{p\-\_\-data, }
+\item[{bool}]{rel, }
+\item[{struct timeval}]{when}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1TimedCmdData_af7d4d705ed242a8dca60443987926e28}
+
+
+Create a new \doxyref{Timed\-Cmd\-Data}{p.}{df/db1/classTango_1_1TimedCmdData} object with memory management. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\-\_\-data} & Pointer to the command result data \\
+\hline
+{\em rel} & Set to true if the memory pointed to by the {\itshape p\-\_\-data} parameter must be freed \\
+\hline
+{\em when} & The date \\
+\hline
+\end{DoxyParams}
+\index{Tango\-::\-Timed\-Cmd\-Data@{Tango\-::\-Timed\-Cmd\-Data}!Timed\-Cmd\-Data@{Timed\-Cmd\-Data}}
+\index{Timed\-Cmd\-Data@{Timed\-Cmd\-Data}!Tango::TimedCmdData@{Tango\-::\-Timed\-Cmd\-Data}}
+\subsubsection[{Timed\-Cmd\-Data}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf Tango\-::\-Timed\-Cmd\-Data}$<$ T $>$\-::{\bf Timed\-Cmd\-Data} (
+\begin{DoxyParamCaption}
+\item[{Dev\-Error\-List}]{errs, }
+\item[{time\-\_\-t}]{when}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTango_1_1TimedCmdData_a8cc1733169352938edf8432bc4551222}
+
+
+Create a new \doxyref{Timed\-Cmd\-Data}{p.}{df/db1/classTango_1_1TimedCmdData} object for errors. 
+
+The created \doxyref{Timed\-Cmd\-Data}{p.}{df/db1/classTango_1_1TimedCmdData} is used to store command errors in the command history stack
+
+
+\begin{DoxyParams}{Parameters}
+{\em errs} & The error stack \\
+\hline
+{\em when} & The date \\
+\hline
+\end{DoxyParams}
+\index{Tango\-::\-Timed\-Cmd\-Data@{Tango\-::\-Timed\-Cmd\-Data}!Timed\-Cmd\-Data@{Timed\-Cmd\-Data}}
+\index{Timed\-Cmd\-Data@{Timed\-Cmd\-Data}!Tango::TimedCmdData@{Tango\-::\-Timed\-Cmd\-Data}}
+\subsubsection[{Timed\-Cmd\-Data}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf Tango\-::\-Timed\-Cmd\-Data}$<$ T $>$\-::{\bf Timed\-Cmd\-Data} (
+\begin{DoxyParamCaption}
+\item[{Dev\-Error\-List}]{errs, }
+\item[{timeval}]{when}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTango_1_1TimedCmdData_a18999aecdf64d96fa704b7549c534dfe}
+
+
+Create a new \doxyref{Timed\-Cmd\-Data}{p.}{df/db1/classTango_1_1TimedCmdData} object for errors. 
+
+The created \doxyref{Timed\-Cmd\-Data}{p.}{df/db1/classTango_1_1TimedCmdData} is used to store command errors in the command history stack
+
+
+\begin{DoxyParams}{Parameters}
+{\em errs} & The error stack \\
+\hline
+{\em when} & The date \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+{\bf pollext.\-h}\end{DoxyCompactItemize}

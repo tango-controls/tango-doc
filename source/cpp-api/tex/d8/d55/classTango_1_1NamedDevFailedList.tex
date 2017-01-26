@@ -1,0 +1,96 @@
+\section{Tango\-:\-:Named\-Dev\-Failed\-List Class Reference}
+\label{classTango_1_1NamedDevFailedList}\index{Tango\-::\-Named\-Dev\-Failed\-List@{Tango\-::\-Named\-Dev\-Failed\-List}}
+
+
+An exception class.  
+
+
+
+
+Inheritance diagram for Tango\-:\-:Named\-Dev\-Failed\-List\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=180pt]{d8/dcc/classTango_1_1NamedDevFailedList__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Tango\-:\-:Named\-Dev\-Failed\-List\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=180pt]{d2/d33/classTango_1_1NamedDevFailedList__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf call\-\_\-failed} ()
+\begin{DoxyCompactList}\small\item\em Check if the call failed. \end{DoxyCompactList}\item 
+size\-\_\-t {\bf get\-\_\-faulty\-\_\-attr\-\_\-nb} ()
+\begin{DoxyCompactList}\small\item\em Get faulty attribute number. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ {\bf Named\-Dev\-Failed} $>$ {\bf err\-\_\-list}
+\begin{DoxyCompactList}\small\item\em There is one element in this vector for each attribute which failed during its writing. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+An exception class. 
+
+This class is used as exception for the Device\-Proxy\-::write\-\_\-attribute call()
+
+\$\-Author\$ \$\-Revision\$ 
+
+\subsection{Member Function Documentation}
+\index{Tango\-::\-Named\-Dev\-Failed\-List@{Tango\-::\-Named\-Dev\-Failed\-List}!call\-\_\-failed@{call\-\_\-failed}}
+\index{call\-\_\-failed@{call\-\_\-failed}!Tango::NamedDevFailedList@{Tango\-::\-Named\-Dev\-Failed\-List}}
+\subsubsection[{call\-\_\-failed}]{\setlength{\rightskip}{0pt plus 5cm}bool Tango\-::\-Named\-Dev\-Failed\-List\-::call\-\_\-failed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTango_1_1NamedDevFailedList_a3956dbf7ffa91df81efda72c4a1f6ab2}
+
+
+Check if the call failed. 
+
+This method returns true if at least one attribute failed during the call
+
+\begin{DoxyReturn}{Returns}
+A boolean set to true if the call failed for at least one attribute 
+\end{DoxyReturn}
+\index{Tango\-::\-Named\-Dev\-Failed\-List@{Tango\-::\-Named\-Dev\-Failed\-List}!get\-\_\-faulty\-\_\-attr\-\_\-nb@{get\-\_\-faulty\-\_\-attr\-\_\-nb}}
+\index{get\-\_\-faulty\-\_\-attr\-\_\-nb@{get\-\_\-faulty\-\_\-attr\-\_\-nb}!Tango::NamedDevFailedList@{Tango\-::\-Named\-Dev\-Failed\-List}}
+\subsubsection[{get\-\_\-faulty\-\_\-attr\-\_\-nb}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t Tango\-::\-Named\-Dev\-Failed\-List\-::get\-\_\-faulty\-\_\-attr\-\_\-nb (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTango_1_1NamedDevFailedList_ab158860b2498a2ac2c2c0b019d04108f}
+
+
+Get faulty attribute number. 
+
+Returns the number of attributes which failed during the write\-\_\-attribute call.
+
+\begin{DoxyReturn}{Returns}
+The number of attribute(s) which fail during the write\-\_\-attribute call 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\index{Tango\-::\-Named\-Dev\-Failed\-List@{Tango\-::\-Named\-Dev\-Failed\-List}!err\-\_\-list@{err\-\_\-list}}
+\index{err\-\_\-list@{err\-\_\-list}!Tango::NamedDevFailedList@{Tango\-::\-Named\-Dev\-Failed\-List}}
+\subsubsection[{err\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}vector$<${\bf Named\-Dev\-Failed}$>$ Tango\-::\-Named\-Dev\-Failed\-List\-::err\-\_\-list}\label{classTango_1_1NamedDevFailedList_a6223048f31f50ac1f6eaa9b6eb625236}
+
+
+There is one element in this vector for each attribute which failed during its writing. 
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+{\bf apiexcept.\-h}\end{DoxyCompactItemize}

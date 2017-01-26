@@ -1,0 +1,216 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d3/d7c/attribute_8h">
+    <title>attribute.h File Reference</title>
+    <programlisting>#include &lt;tango.h&gt;</programlisting>
+    <programlisting>#include &lt;tango/server/attrdesc.h&gt;</programlisting>
+    <programlisting>#include &lt;tango/server/fwdattrdesc.h&gt;</programlisting>
+    <programlisting>#include &lt;tango/server/encoded_attribute.h&gt;</programlisting>
+    <programlisting>#include &lt;functional&gt;</programlisting>
+    <programlisting>#include &lt;time.h&gt;</programlisting>
+    <programlisting>#include &lt;iterator&gt;</programlisting>
+        <simplesect>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="db/dbc/structTango_1_1Attribute_1_1__AttPropDb">Tango::Attribute::_AttPropDb</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d4/d1d/unionTango_1_1__Attr__CheckVal">Tango::_Attr_CheckVal</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="dd/d79/unionTango_1_1__Attr__Value">Tango::_Attr_Value</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d6/dad/classTango_1_1Attribute">Tango::Attribute</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="dc/d6c/classTango_1_1Attribute_1_1AttributeExt">Tango::Attribute::AttributeExt</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="de/da7/structTango_1_1Attribute_1_1CheckOneStrProp">Tango::Attribute::CheckOneStrProp</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="de/db2/structTango_1_1last__attr__value">Tango::last_attr_value</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d8/dc8/structTango_1_1WantedAttr">Tango::WantedAttr</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d0/d82/structTango_1_1WantedProp">Tango::WantedProp</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title> Namespaces </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="de/ddf/namespaceTango">Tango</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Defines</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d3/d7c/attribute_8h_1a86080a0078b929bc35e2d8c044d0a4dd">CHECK_PTR</link> if (A == NULL) \
+	{ \
+		stringstream o; \
+		o &lt;&lt; &quot;Data pointer for attribute &quot; &lt;&lt; B &lt;&lt; &quot; is NULL!&quot;; \
+		Except::throw_exception(API_AttrOptProp,o.str(),&quot;Attribute::set_value()&quot;); \
+	} \
+	else \
+		(void)0</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d3/d7c/attribute_8h_1a49a84efc29860d9ab37801ffad2161aa">GIVE_ATT_MUTEX</link> if (true) \
+	{\
+		Tango::AttributeValue_4 *tmp_ptr = &amp;((*A)[B]); \
+		(tmp_ptr)-&gt;set_attr_mutex(C.get_attr_mutex()); \
+	} \
+	else \
+		(void)0</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d3/d7c/attribute_8h_1af0f93f7328b3a53b5ecd014d616a92d1">GIVE_ATT_MUTEX_5</link> if (true) \
+	{\
+		Tango::AttributeValue_5 *tmp_ptr = &amp;((*A)[B]); \
+		(tmp_ptr)-&gt;set_attr_mutex(C.get_attr_mutex()); \
+	} \
+	else \
+		(void)0</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d3/d7c/attribute_8h_1afff88d532747db2961039390b82fea31">GIVE_USER_ATT_MUTEX</link> if (true) \
+	{ \
+		Tango::AttributeValue_4 *tmp_ptr = &amp;((*A)[B]); \
+		(tmp_ptr)-&gt;set_attr_mutex(C.get_user_attr_mutex()); \
+	} \
+	else \
+		(void)0</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d3/d7c/attribute_8h_1a0a7e572bb744b8fcb4db86c3e740d421">GIVE_USER_ATT_MUTEX_5</link> if (true) \
+	{ \
+		Tango::AttributeValue_5 *tmp_ptr = &amp;((*A)[B]); \
+		(tmp_ptr)-&gt;set_attr_mutex(C.get_user_attr_mutex()); \
+	} \
+	else \
+		(void)0</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d3/d7c/attribute_8h_1a05862c978fd6420159002c5979f82e9b">MEM_STREAM_2_CORBA</link> if (true) \
+	{ \
+		string s = B.str(); \
+		A = Tango::string_dup(s.c_str()); \
+		B.str(&quot;&quot;); \
+		B.clear(); \
+	} \
+	else \
+		(void)0</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d3/d7c/attribute_8h_1afc98311131c866e04e8eae8cffabb32c">REL_ATT_MUTEX</link> if (C.get_attr_serial_model() != ATTR_NO_SYNC) \
+	{ \
+		Tango::AttributeValue_4 *tmp_ptr = &amp;((*A)[B]); \
+		(tmp_ptr)-&gt;rel_attr_mutex(); \
+	} \
+	else \
+		(void)0</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d3/d7c/attribute_8h_1a3672a37cceae0d096fe1866444aca1f8">REL_ATT_MUTEX_5</link> if (C.get_attr_serial_model() != ATTR_NO_SYNC) \
+	{ \
+		Tango::AttributeValue_5 *tmp_ptr = &amp;((*A)[B]); \
+		(tmp_ptr)-&gt;rel_attr_mutex(); \
+	} \
+	else \
+		(void)0</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="d3/d7c/attribute_8h_1ad45c5447fa213228e8493458c1770e91">SAFE_DELETE</link> if (release == true) \
+	{ \
+		if (is_fwd_att() == true) \
+			delete [] ptr; \
+		else \
+			delete ptr; \
+	} \
+	else \
+		(void)0</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file /home/tango/workspace/cppTango/include/tango/server/attribute.h</para>
+    </simplesect>
+</section>

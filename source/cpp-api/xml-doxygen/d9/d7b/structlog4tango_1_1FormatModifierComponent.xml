@@ -1,0 +1,164 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="d9/d7b/structlog4tango_1_1FormatModifierComponent" kind="struct" prot="public">
+    <compoundname>log4tango::FormatModifierComponent</compoundname>
+    <basecompoundref refid="d0/d47/classlog4tango_1_1PatternLayout_1_1PatternComponent" prot="public" virt="non-virtual">log4tango::PatternLayout::PatternComponent</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d9/d7b/structlog4tango_1_1FormatModifierComponent_1acf5d62bfba335788accb85981f0e7169" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool log4tango::FormatModifierComponent::_alignLeft</definition>
+        <argsstring></argsstring>
+        <name>_alignLeft</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/src/log4tango/PatternLayout.cpp" line="271" column="1" bodyfile="/home/tango/workspace/cppTango/src/log4tango/PatternLayout.cpp" bodystart="271" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/d7b/structlog4tango_1_1FormatModifierComponent_1ac294d4634b9084a1e9cf7499df6544b1" prot="private" static="no" mutable="no">
+        <type><ref refid="d0/d47/classlog4tango_1_1PatternLayout_1_1PatternComponent" kindref="compound">PatternLayout::PatternComponent</ref> *</type>
+        <definition>PatternLayout::PatternComponent* log4tango::FormatModifierComponent::_component</definition>
+        <argsstring></argsstring>
+        <name>_component</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/src/log4tango/PatternLayout.cpp" line="268" column="1" bodyfile="/home/tango/workspace/cppTango/src/log4tango/PatternLayout.cpp" bodystart="268" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/d7b/structlog4tango_1_1FormatModifierComponent_1ab185fd8daae764f9e9327eea19be98ed" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int log4tango::FormatModifierComponent::_maxWidth</definition>
+        <argsstring></argsstring>
+        <name>_maxWidth</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/src/log4tango/PatternLayout.cpp" line="270" column="1" bodyfile="/home/tango/workspace/cppTango/src/log4tango/PatternLayout.cpp" bodystart="270" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/d7b/structlog4tango_1_1FormatModifierComponent_1aadda6b2130454c73c8009da3a1644427" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int log4tango::FormatModifierComponent::_minWidth</definition>
+        <argsstring></argsstring>
+        <name>_minWidth</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/src/log4tango/PatternLayout.cpp" line="269" column="1" bodyfile="/home/tango/workspace/cppTango/src/log4tango/PatternLayout.cpp" bodystart="269" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d9/d7b/structlog4tango_1_1FormatModifierComponent_1aedc2d692777fb6371bd70aff1a6c5c84" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>log4tango::FormatModifierComponent::FormatModifierComponent</definition>
+        <argsstring>(PatternLayout::PatternComponent *component, int minWidth, int maxWidth)</argsstring>
+        <name>FormatModifierComponent</name>
+        <param>
+          <type><ref refid="d0/d47/classlog4tango_1_1PatternLayout_1_1PatternComponent" kindref="compound">PatternLayout::PatternComponent</ref> *</type>
+          <declname>component</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>minWidth</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>maxWidth</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/src/log4tango/PatternLayout.cpp" line="236" column="1" bodyfile="/home/tango/workspace/cppTango/src/log4tango/PatternLayout.cpp" bodystart="236" bodyend="242"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d7b/structlog4tango_1_1FormatModifierComponent_1ae37a1f9a1a7ac6c7d5b11ec578a1bb16" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual log4tango::FormatModifierComponent::~FormatModifierComponent</definition>
+        <argsstring>()</argsstring>
+        <name>~FormatModifierComponent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/src/log4tango/PatternLayout.cpp" line="244" column="1" bodyfile="/home/tango/workspace/cppTango/src/log4tango/PatternLayout.cpp" bodystart="244" bodyend="246"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d7b/structlog4tango_1_1FormatModifierComponent_1a329cbcce277ab538adef53348659d6ea" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void log4tango::FormatModifierComponent::append</definition>
+        <argsstring>(std::ostringstream &amp;out, const LoggingEvent &amp;event)</argsstring>
+        <name>append</name>
+        <reimplements refid="d0/d47/classlog4tango_1_1PatternLayout_1_1PatternComponent_1afb25822922b51144361faff5d6cdeaa8">append</reimplements>
+        <param>
+          <type><ref refid="d7/d24/classstd_1_1ostringstream" kindref="compound">std::ostringstream</ref> &amp;</type>
+          <declname>out</declname>
+        </param>
+        <param>
+          <type>const <ref refid="d8/df2/structlog4tango_1_1LoggingEvent" kindref="compound">LoggingEvent</ref> &amp;</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/src/log4tango/PatternLayout.cpp" line="248" column="1" bodyfile="/home/tango/workspace/cppTango/src/log4tango/PatternLayout.cpp" bodystart="248" bodyend="265"/>
+        <references refid="d0/d47/classlog4tango_1_1PatternLayout_1_1PatternComponent_1afb25822922b51144361faff5d6cdeaa8">log4tango::PatternLayout::PatternComponent::append</references>
+        <references refid="d7/d24/classstd_1_1ostringstream_1a8acec234b9393fb5ee0d9c8f7bbb6cb4" compoundref="db/df6/PortabilityImpl_8cpp" startline="33" endline="38">std::ostringstream::str</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="996">
+        <label>log4tango::FormatModifierComponent</label>
+        <link refid="d9/d7b/structlog4tango_1_1FormatModifierComponent"/>
+        <childnode refid="997" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="997">
+        <label>log4tango::PatternLayout::PatternComponent</label>
+        <link refid="d0/d47/classlog4tango_1_1PatternLayout_1_1PatternComponent"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="998">
+        <label>log4tango::FormatModifierComponent</label>
+        <link refid="d9/d7b/structlog4tango_1_1FormatModifierComponent"/>
+        <childnode refid="999" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="999">
+        <label>log4tango::PatternLayout::PatternComponent</label>
+        <link refid="d0/d47/classlog4tango_1_1PatternLayout_1_1PatternComponent"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/tango/workspace/cppTango/src/log4tango/PatternLayout.cpp" line="235" column="1" bodyfile="/home/tango/workspace/cppTango/src/log4tango/PatternLayout.cpp" bodystart="235" bodyend="272"/>
+    <listofallmembers>
+      <member refid="d9/d7b/structlog4tango_1_1FormatModifierComponent_1acf5d62bfba335788accb85981f0e7169" prot="private" virt="non-virtual"><scope>log4tango::FormatModifierComponent</scope><name>_alignLeft</name></member>
+      <member refid="d9/d7b/structlog4tango_1_1FormatModifierComponent_1ac294d4634b9084a1e9cf7499df6544b1" prot="private" virt="non-virtual"><scope>log4tango::FormatModifierComponent</scope><name>_component</name></member>
+      <member refid="d9/d7b/structlog4tango_1_1FormatModifierComponent_1ab185fd8daae764f9e9327eea19be98ed" prot="private" virt="non-virtual"><scope>log4tango::FormatModifierComponent</scope><name>_maxWidth</name></member>
+      <member refid="d9/d7b/structlog4tango_1_1FormatModifierComponent_1aadda6b2130454c73c8009da3a1644427" prot="private" virt="non-virtual"><scope>log4tango::FormatModifierComponent</scope><name>_minWidth</name></member>
+      <member refid="d9/d7b/structlog4tango_1_1FormatModifierComponent_1a329cbcce277ab538adef53348659d6ea" prot="public" virt="virtual"><scope>log4tango::FormatModifierComponent</scope><name>append</name></member>
+      <member refid="d9/d7b/structlog4tango_1_1FormatModifierComponent_1aedc2d692777fb6371bd70aff1a6c5c84" prot="public" virt="non-virtual"><scope>log4tango::FormatModifierComponent</scope><name>FormatModifierComponent</name></member>
+      <member refid="d9/d7b/structlog4tango_1_1FormatModifierComponent_1ae37a1f9a1a7ac6c7d5b11ec578a1bb16" prot="public" virt="virtual"><scope>log4tango::FormatModifierComponent</scope><name>~FormatModifierComponent</name></member>
+      <member refid="d0/d47/classlog4tango_1_1PatternLayout_1_1PatternComponent_1adc8b8fe4a04939ecf6c440bf64ceaf80" prot="public" virt="virtual"><scope>log4tango::FormatModifierComponent</scope><name>~PatternComponent</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,906 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="dd/dd6/group__Ope">
+    <title>Operator overloading functions</title>
+    <simplesect>
+        <title>Brief Description</title>
+
+<para>Overloading of the &lt;&lt; operator between C++ vector and <link linkend="de/ddf/namespaceTango">Tango</link> types. </para>
+    </simplesect>
+        <simplesect>
+            <title>Detailed Description</title>
+        </simplesect>
+        <simplesect>
+            <title>Functions</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dd/dd6/group__Ope_1ga065f1fbeb02af4e92d4029235f2a186e">operator&lt;&lt;</link> (
+DevVarCharArray &amp; lval, const vector&lt; unsigned char &gt; &amp; rval)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dd/dd6/group__Ope_1gae546232aa642350a7e19a4a5e4698289">operator&lt;&lt;</link> (
+vector&lt; unsigned char &gt; &amp; lval, const DevVarCharArray &amp; rval)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dd/dd6/group__Ope_1gaff6627037d30a75ace59447d67a0b0f1">operator&lt;&lt;</link> (
+DevVarShortArray &amp; lval, const vector&lt; short &gt; &amp; rval)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dd/dd6/group__Ope_1ga712cfcf813b0f2a0201ccf74343b05a5">operator&lt;&lt;</link> (
+vector&lt; short &gt; &amp; lval, const DevVarShortArray &amp; rval)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dd/dd6/group__Ope_1ga65fc9c8f67a267ecb0002c0169dbbf8e">operator&lt;&lt;</link> (
+DevVarLongArray &amp; lval, const vector&lt; DevLong &gt; &amp; rval)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dd/dd6/group__Ope_1gaeb08b2bed8f7c2583e3457bc862dc6b0">operator&lt;&lt;</link> (
+vector&lt; DevLong &gt; &amp; lval, const DevVarLongArray &amp; rval)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dd/dd6/group__Ope_1ga73604d8da674eeeb83248e3ec792cde2">operator&lt;&lt;</link> (
+DevVarLong64Array &amp; lval, const vector&lt; DevLong64 &gt; &amp; rval)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dd/dd6/group__Ope_1ga90a170909487d4e37dfcb485535e02cc">operator&lt;&lt;</link> (
+vector&lt; DevLong64 &gt; &amp; lval, const DevVarLong64Array &amp; rval)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dd/dd6/group__Ope_1gad4eb2b96584b07d3aaf2789c98c7eda6">operator&lt;&lt;</link> (
+DevVarFloatArray &amp; lval, const vector&lt; float &gt; &amp; rval)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dd/dd6/group__Ope_1ga94906cc22d983d10ddd78d24d176c6ae">operator&lt;&lt;</link> (
+vector&lt; float &gt; &amp; lval, const DevVarFloatArray &amp; rval)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dd/dd6/group__Ope_1gae27ef2508818f48fa4e04cdb4b36e072">operator&lt;&lt;</link> (
+DevVarDoubleArray &amp; lval, const vector&lt; double &gt; &amp; rval)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dd/dd6/group__Ope_1gaba6e519930474d843b776205eebbe76f">operator&lt;&lt;</link> (
+vector&lt; double &gt; &amp; lval, const DevVarDoubleArray &amp; rval)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dd/dd6/group__Ope_1ga8539aea7c8f1186903d21add572c80dd">operator&lt;&lt;</link> (
+DevVarBooleanArray &amp; lval, const vector&lt; bool &gt; &amp; rval)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dd/dd6/group__Ope_1ga42c9cb65c5ac6599ea46270175d4dbf0">operator&lt;&lt;</link> (
+vector&lt; bool &gt; &amp; lval, const DevVarBooleanArray &amp; rval)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dd/dd6/group__Ope_1ga83003d5acb175dc5e2d0b9fbc170a3bc">operator&lt;&lt;</link> (
+DevVarUShortArray &amp; lval, const vector&lt; unsigned short &gt; &amp; rval)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dd/dd6/group__Ope_1ga3edbea88319132f7a43f2500df0c0b90">operator&lt;&lt;</link> (
+vector&lt; unsigned short &gt; &amp; lval, const DevVarUShortArray &amp; rval)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dd/dd6/group__Ope_1gab1bf84843fd0b81d282b17e29d209a2d">operator&lt;&lt;</link> (
+DevVarULongArray &amp; lval, const vector&lt; DevULong &gt; &amp; rval)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dd/dd6/group__Ope_1ga5f2f3b2eb5521d98b6e495ebaf038fca">operator&lt;&lt;</link> (
+vector&lt; DevULong &gt; &amp; lval, const DevVarULongArray &amp; rval)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dd/dd6/group__Ope_1ga4f134419f5595d6b2a8541e7077800f8">operator&lt;&lt;</link> (
+DevVarULong64Array &amp; lval, const vector&lt; DevULong64 &gt; &amp; rval)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dd/dd6/group__Ope_1gaaa8f568d0165d5b64eb1aeec34a2919b">operator&lt;&lt;</link> (
+vector&lt; DevULong64 &gt; &amp; lval, const DevVarULong64Array &amp; rval)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dd/dd6/group__Ope_1gac29792db54cd10f9f2cc14c487012686">operator&lt;&lt;</link> (
+DevVarStringArray &amp; lval, const vector&lt; string &gt; &amp; rval)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dd/dd6/group__Ope_1gabfe49dc628f325d11dbbc592779bf53a">operator&lt;&lt;</link> (
+vector&lt; string &gt; &amp; lval, const DevVarStringArray &amp; rval)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dd/dd6/group__Ope_1ga8360391336ed746e606b04aa964cdb60">operator&lt;&lt;</link> (
+DevVarStateArray &amp; lval, const vector&lt; DevState &gt; &amp; rval)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="dd/dd6/group__Ope_1ga646e70517216abcaaa2c6e47824a4bb7">operator&lt;&lt;</link> (
+vector&lt; DevState &gt; &amp; lval, const DevVarStateArray &amp; rval)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <section>
+            <title>Function Documentation</title>
+            <section xml:id="dd/dd6/group__Ope_1ga065f1fbeb02af4e92d4029235f2a186e">
+                <title>void Tango::operator&lt;&lt; (DevVarCharArray &amp;lval, const vector&lt; unsigned char &gt; &amp;rval)</title> <emphasis>Init a DevVarCharArray from a C++ vector of char(s).</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>lval</entry>
+                                <entry>
+<para>The DevVarCharArray to be initialised </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>rval</entry>
+                                <entry>
+<para>The C++ vector </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+            <section xml:id="dd/dd6/group__Ope_1gae546232aa642350a7e19a4a5e4698289">
+                <title>void Tango::operator&lt;&lt; (vector&lt; unsigned char &gt; &amp;lval, const DevVarCharArray &amp;rval)</title> <emphasis>Init a C++ vector of char from a DevVarCharArray.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>lval</entry>
+                                <entry>
+<para>The C++ vector to be initialised </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>rval</entry>
+                                <entry>
+<para>The DevVarCharArray </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+            <section xml:id="dd/dd6/group__Ope_1gaff6627037d30a75ace59447d67a0b0f1">
+                <title>void Tango::operator&lt;&lt; (DevVarShortArray &amp;lval, const vector&lt; short &gt; &amp;rval)</title> <emphasis>Init a DevVarShortArray from a C++ vector of short(s).</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>lval</entry>
+                                <entry>
+<para>The DevVarShortArray to be initialised </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>rval</entry>
+                                <entry>
+<para>The C++ vector </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+            <section xml:id="dd/dd6/group__Ope_1ga712cfcf813b0f2a0201ccf74343b05a5">
+                <title>void Tango::operator&lt;&lt; (vector&lt; short &gt; &amp;lval, const DevVarShortArray &amp;rval)</title> <emphasis>Init a C++ vector of short from a DevVarShortArray.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>lval</entry>
+                                <entry>
+<para>The C++ vector to be initialised </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>rval</entry>
+                                <entry>
+<para>The DevVarShortArray </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+            <section xml:id="dd/dd6/group__Ope_1ga65fc9c8f67a267ecb0002c0169dbbf8e">
+                <title>void Tango::operator&lt;&lt; (DevVarLongArray &amp;lval, const vector&lt; DevLong &gt; &amp;rval)</title> <emphasis>Init a DevVarLongArray from a C++ vector of DevLong(s).</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>lval</entry>
+                                <entry>
+<para>The DevVarLongArray to be initialised </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>rval</entry>
+                                <entry>
+<para>The C++ vector </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+            <section xml:id="dd/dd6/group__Ope_1gaeb08b2bed8f7c2583e3457bc862dc6b0">
+                <title>void Tango::operator&lt;&lt; (vector&lt; DevLong &gt; &amp;lval, const DevVarLongArray &amp;rval)</title> <emphasis>Init a C++ vector of DevLong from a DevVarLongArray.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>lval</entry>
+                                <entry>
+<para>The C++ vector to be initialised </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>rval</entry>
+                                <entry>
+<para>The DevVarLongArray </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+            <section xml:id="dd/dd6/group__Ope_1ga73604d8da674eeeb83248e3ec792cde2">
+                <title>void Tango::operator&lt;&lt; (DevVarLong64Array &amp;lval, const vector&lt; DevLong64 &gt; &amp;rval)</title> <emphasis>Init a DevVarLongArray from a C++ vector of DevLong64(s).</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>lval</entry>
+                                <entry>
+<para>The DevVarLong64Array to be initialised </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>rval</entry>
+                                <entry>
+<para>The C++ vector </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+            <section xml:id="dd/dd6/group__Ope_1ga90a170909487d4e37dfcb485535e02cc">
+                <title>void Tango::operator&lt;&lt; (vector&lt; DevLong64 &gt; &amp;lval, const DevVarLong64Array &amp;rval)</title> <emphasis>Init a C++ vector of long from a DevVarLong64Array.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>lval</entry>
+                                <entry>
+<para>The C++ vector to be initialised </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>rval</entry>
+                                <entry>
+<para>The DevVarLong64Array </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+            <section xml:id="dd/dd6/group__Ope_1gad4eb2b96584b07d3aaf2789c98c7eda6">
+                <title>void Tango::operator&lt;&lt; (DevVarFloatArray &amp;lval, const vector&lt; float &gt; &amp;rval)</title> <emphasis>Init a DevVarFloatArray from a C++ vector of float(s).</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>lval</entry>
+                                <entry>
+<para>The DevVarFloatArray to be initialised </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>rval</entry>
+                                <entry>
+<para>The C++ vector </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+            <section xml:id="dd/dd6/group__Ope_1ga94906cc22d983d10ddd78d24d176c6ae">
+                <title>void Tango::operator&lt;&lt; (vector&lt; float &gt; &amp;lval, const DevVarFloatArray &amp;rval)</title> <emphasis>Init a C++ vector of long from a DevVarFloatArray.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>lval</entry>
+                                <entry>
+<para>The C++ vector to be initialised </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>rval</entry>
+                                <entry>
+<para>The DevVarFloatArray </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+            <section xml:id="dd/dd6/group__Ope_1gae27ef2508818f48fa4e04cdb4b36e072">
+                <title>void Tango::operator&lt;&lt; (DevVarDoubleArray &amp;lval, const vector&lt; double &gt; &amp;rval)</title> <emphasis>Init a DevVarDoubleArray from a C++ vector of double(s).</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>lval</entry>
+                                <entry>
+<para>The DevVarDoubleArray to be initialised </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>rval</entry>
+                                <entry>
+<para>The C++ vector </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+            <section xml:id="dd/dd6/group__Ope_1gaba6e519930474d843b776205eebbe76f">
+                <title>void Tango::operator&lt;&lt; (vector&lt; double &gt; &amp;lval, const DevVarDoubleArray &amp;rval)</title> <emphasis>Init a C++ vector of long from a DevVarDoubleArray.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>lval</entry>
+                                <entry>
+<para>The C++ vector to be initialised </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>rval</entry>
+                                <entry>
+<para>The DevVarDoubleArray </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+            <section xml:id="dd/dd6/group__Ope_1ga8539aea7c8f1186903d21add572c80dd">
+                <title>void Tango::operator&lt;&lt; (DevVarBooleanArray &amp;lval, const vector&lt; bool &gt; &amp;rval)</title> <emphasis>Init a DevVarBooleanArray from a C++ vector of bool(s).</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>lval</entry>
+                                <entry>
+<para>The DevVarBooleanArray to be initialised </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>rval</entry>
+                                <entry>
+<para>The C++ vector </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+            <section xml:id="dd/dd6/group__Ope_1ga42c9cb65c5ac6599ea46270175d4dbf0">
+                <title>void Tango::operator&lt;&lt; (vector&lt; bool &gt; &amp;lval, const DevVarBooleanArray &amp;rval)</title> <emphasis>Init a C++ vector of long from a DevVarBooleanArray.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>lval</entry>
+                                <entry>
+<para>The C++ vector to be initialised </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>rval</entry>
+                                <entry>
+<para>The DevVarBooleanArray </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+            <section xml:id="dd/dd6/group__Ope_1ga83003d5acb175dc5e2d0b9fbc170a3bc">
+                <title>void Tango::operator&lt;&lt; (DevVarUShortArray &amp;lval, const vector&lt; unsigned short &gt; &amp;rval)</title> <emphasis>Init a DevVarUShortArray from a C++ vector of unsigned short(s).</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>lval</entry>
+                                <entry>
+<para>The DevVarUShortArray to be initialised </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>rval</entry>
+                                <entry>
+<para>The C++ vector </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+            <section xml:id="dd/dd6/group__Ope_1ga3edbea88319132f7a43f2500df0c0b90">
+                <title>void Tango::operator&lt;&lt; (vector&lt; unsigned short &gt; &amp;lval, const DevVarUShortArray &amp;rval)</title> <emphasis>Init a C++ vector of long from a DevVarUShortArray.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>lval</entry>
+                                <entry>
+<para>The C++ vector to be initialised </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>rval</entry>
+                                <entry>
+<para>The DevVarUShortArray </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+            <section xml:id="dd/dd6/group__Ope_1gab1bf84843fd0b81d282b17e29d209a2d">
+                <title>void Tango::operator&lt;&lt; (DevVarULongArray &amp;lval, const vector&lt; DevULong &gt; &amp;rval)</title> <emphasis>Init a DevVarULongArray from a C++ vector of DevULong(s).</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>lval</entry>
+                                <entry>
+<para>The DevVarULongArray to be initialised </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>rval</entry>
+                                <entry>
+<para>The C++ vector </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+            <section xml:id="dd/dd6/group__Ope_1ga5f2f3b2eb5521d98b6e495ebaf038fca">
+                <title>void Tango::operator&lt;&lt; (vector&lt; DevULong &gt; &amp;lval, const DevVarULongArray &amp;rval)</title> <emphasis>Init a C++ vector of long from a DevVarULongArray.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>lval</entry>
+                                <entry>
+<para>The C++ vector to be initialised </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>rval</entry>
+                                <entry>
+<para>The DevVarULongArray </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+            <section xml:id="dd/dd6/group__Ope_1ga4f134419f5595d6b2a8541e7077800f8">
+                <title>void Tango::operator&lt;&lt; (DevVarULong64Array &amp;lval, const vector&lt; DevULong64 &gt; &amp;rval)</title> <emphasis>Init a DevVarULong64Array from a C++ vector of DevULong64(s).</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>lval</entry>
+                                <entry>
+<para>The DevVarULong64Array to be initialised </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>rval</entry>
+                                <entry>
+<para>The C++ vector </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+            <section xml:id="dd/dd6/group__Ope_1gaaa8f568d0165d5b64eb1aeec34a2919b">
+                <title>void Tango::operator&lt;&lt; (vector&lt; DevULong64 &gt; &amp;lval, const DevVarULong64Array &amp;rval)</title> <emphasis>Init a C++ vector of long from a DevVarULong64Array.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>lval</entry>
+                                <entry>
+<para>The C++ vector to be initialised </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>rval</entry>
+                                <entry>
+<para>The DevVarULong64Array </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+            <section xml:id="dd/dd6/group__Ope_1gac29792db54cd10f9f2cc14c487012686">
+                <title>void Tango::operator&lt;&lt; (DevVarStringArray &amp;lval, const vector&lt; string &gt; &amp;rval)</title> <emphasis>Init a DevVarStringArray from a C++ vector of string(s).</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>lval</entry>
+                                <entry>
+<para>The DevVarStringArray to be initialised </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>rval</entry>
+                                <entry>
+<para>The C++ vector </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+            <section xml:id="dd/dd6/group__Ope_1gabfe49dc628f325d11dbbc592779bf53a">
+                <title>void Tango::operator&lt;&lt; (vector&lt; string &gt; &amp;lval, const DevVarStringArray &amp;rval)</title> <emphasis>Init a C++ vector of long from a DevVarStringArray.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>lval</entry>
+                                <entry>
+<para>The C++ vector to be initialised </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>rval</entry>
+                                <entry>
+<para>The DevVarStringArray </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+            <section xml:id="dd/dd6/group__Ope_1ga8360391336ed746e606b04aa964cdb60">
+                <title>void Tango::operator&lt;&lt; (DevVarStateArray &amp;lval, const vector&lt; DevState &gt; &amp;rval)</title> <emphasis>Init a DevVarStateArray from a C++ vector of state(s).</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>lval</entry>
+                                <entry>
+<para>The DevVarStateArray to be initialised </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>rval</entry>
+                                <entry>
+<para>The C++ vector </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+            <section xml:id="dd/dd6/group__Ope_1ga646e70517216abcaaa2c6e47824a4bb7">
+                <title>void Tango::operator&lt;&lt; (vector&lt; DevState &gt; &amp;lval, const DevVarStateArray &amp;rval)</title> <emphasis>Init a C++ vector of long from a DevVarStateArray.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>lval</entry>
+                                <entry>
+<para>The C++ vector to be initialised </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>rval</entry>
+                                <entry>
+<para>The DevVarStateArray </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+        </section>
+</section>

@@ -1,0 +1,83 @@
+\section{pollext.\-h File Reference}
+\label{pollext_8h}\index{pollext.\-h@{pollext.\-h}}
+{\ttfamily \#include $<$tango.\-h$>$}\\*
+Include dependency graph for pollext.\-h\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=96pt]{dd/d78/pollext_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=96pt]{d1/dc1/pollext_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Tango\-::\-Attr\-Data$<$ T $>$}
+\item 
+class {\bf Tango\-::\-Attr\-History\-Stack$<$ T $>$}
+\begin{DoxyCompactList}\small\item\em This class is a used to pass an attribute value history when the user directly fills the attribute polling buffer. \end{DoxyCompactList}\item 
+class {\bf Tango\-::\-Cmd\-History\-Stack$<$ T $>$}
+\begin{DoxyCompactList}\small\item\em This class is a used to pass a command result history when the user directly fills the command polling buffer. \end{DoxyCompactList}\item 
+class {\bf Tango\-::\-Timed\-Attr\-Data$<$ T $>$}
+\begin{DoxyCompactList}\small\item\em This class is used to store one element of an attribute history stack. \end{DoxyCompactList}\item 
+class {\bf Tango\-::\-Timed\-Cmd\-Data$<$ T $>$}
+\begin{DoxyCompactList}\small\item\em This class is used to store one element of a command history stack. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Tango}
+\begin{DoxyCompactList}\small\item\em ============================================================================= \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bf \-\_\-\-\_\-\-C\-H\-E\-C\-K\-\_\-\-D\-I\-M}()
+\item 
+\#define {\bf \-\_\-\-\_\-\-C\-H\-E\-C\-K\-\_\-\-D\-I\-M\-\_\-\-X}()
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{pollext.\-h@{pollext.\-h}!\-\_\-\-\_\-\-C\-H\-E\-C\-K\-\_\-\-D\-I\-M@{\-\_\-\-\_\-\-C\-H\-E\-C\-K\-\_\-\-D\-I\-M}}
+\index{\-\_\-\-\_\-\-C\-H\-E\-C\-K\-\_\-\-D\-I\-M@{\-\_\-\-\_\-\-C\-H\-E\-C\-K\-\_\-\-D\-I\-M}!pollext.h@{pollext.\-h}}
+\subsubsection[{\-\_\-\-\_\-\-C\-H\-E\-C\-K\-\_\-\-D\-I\-M}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-\_\-\-\_\-\-C\-H\-E\-C\-K\-\_\-\-D\-I\-M(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{pollext_8h_a55ff6cf2d431f70c018dac5372bd3596}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{if} ((x == 0) || (y == 0)) \(\backslash\)
+    \{ \(\backslash\)
+        Except::throw\_exception((\textcolor{keyword}{const} \textcolor{keywordtype}{char} *)API_AttrOptProp, \(\backslash\)
+                      (\textcolor{keyword}{const} \textcolor{keywordtype}{char} *)\textcolor{stringliteral}{"X or Y dimension cannot be 0 for image attribute"}, \(\backslash\)
+                      (\textcolor{keyword}{const} \textcolor{keywordtype}{char} *)\textcolor{stringliteral}{"AttrData::AttrData"}); \(\backslash\)
+    \} \(\backslash\)
+    else \(\backslash\)
+        (void)0
+\end{DoxyCode}
+\index{pollext.\-h@{pollext.\-h}!\-\_\-\-\_\-\-C\-H\-E\-C\-K\-\_\-\-D\-I\-M\-\_\-\-X@{\-\_\-\-\_\-\-C\-H\-E\-C\-K\-\_\-\-D\-I\-M\-\_\-\-X}}
+\index{\-\_\-\-\_\-\-C\-H\-E\-C\-K\-\_\-\-D\-I\-M\-\_\-\-X@{\-\_\-\-\_\-\-C\-H\-E\-C\-K\-\_\-\-D\-I\-M\-\_\-\-X}!pollext.h@{pollext.\-h}}
+\subsubsection[{\-\_\-\-\_\-\-C\-H\-E\-C\-K\-\_\-\-D\-I\-M\-\_\-\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-\_\-\-\_\-\-C\-H\-E\-C\-K\-\_\-\-D\-I\-M\-\_\-\-X(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{pollext_8h_a6f3bb473425819c00929ff64ab7c4b74}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{if} (x == 0) \(\backslash\)
+    \{ \(\backslash\)
+        Except::throw\_exception((\textcolor{keyword}{const} \textcolor{keywordtype}{char} *)API_AttrOptProp, \(\backslash\)
+                      (\textcolor{keyword}{const} \textcolor{keywordtype}{char} *)\textcolor{stringliteral}{"X dimension cannot be 0 for spectrum or image attribute"}, \(\backslash\)
+                      (\textcolor{keyword}{const} \textcolor{keywordtype}{char} *)\textcolor{stringliteral}{"AttrData::AttrData"}); \(\backslash\)
+    \} \(\backslash\)
+    else \(\backslash\)
+        (void)0
+\end{DoxyCode}

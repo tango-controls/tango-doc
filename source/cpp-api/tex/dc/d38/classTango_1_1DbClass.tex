@@ -1,0 +1,298 @@
+\section{Tango\-:\-:Db\-Class Class Reference}
+\label{classTango_1_1DbClass}\index{Tango\-::\-Db\-Class@{Tango\-::\-Db\-Class}}
+
+
+A database object for a class which can be used to query or modify class properties.  
+
+
+\subsection*{Public Member Functions}
+\begin{Indent}{\bf Constructors}\par
+\begin{DoxyCompactItemize}
+\item 
+{\bf Db\-Class} (string class\-\_\-name)
+\begin{DoxyCompactList}\small\item\em Create a \doxyref{Db\-Class}{p.}{dc/d38/classTango_1_1DbClass} instance. \end{DoxyCompactList}\item 
+{\bf Db\-Class} (string class\-\_\-name, Database $\ast$db)
+\begin{DoxyCompactList}\small\item\em Create a \doxyref{Db\-Class}{p.}{dc/d38/classTango_1_1DbClass} instance using a specified database. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Property oriented methods}\par
+\begin{DoxyCompactItemize}
+\item 
+void {\bf get\-\_\-property} ({\bf Db\-Data} \&db)
+\begin{DoxyCompactList}\small\item\em Get class property from database. \end{DoxyCompactList}\item 
+void {\bf put\-\_\-property} ({\bf Db\-Data} \&db)
+\begin{DoxyCompactList}\small\item\em Update class property in database. \end{DoxyCompactList}\item 
+void {\bf delete\-\_\-property} ({\bf Db\-Data} \&db)
+\begin{DoxyCompactList}\small\item\em Remove class property from database. \end{DoxyCompactList}\item 
+void {\bf get\-\_\-attribute\-\_\-property} ({\bf Db\-Data} \&db)
+\begin{DoxyCompactList}\small\item\em Get class attribute property from database. \end{DoxyCompactList}\item 
+void {\bf put\-\_\-attribute\-\_\-property} ({\bf Db\-Data} \&db)
+\begin{DoxyCompactList}\small\item\em Update class attribute property in database. \end{DoxyCompactList}\item 
+void {\bf delete\-\_\-attribute\-\_\-property} ({\bf Db\-Data} \&db)
+\begin{DoxyCompactList}\small\item\em Remove class attribute property from database. \end{DoxyCompactList}\item 
+void {\bf get\-\_\-pipe\-\_\-property} ({\bf Db\-Data} \&db)
+\begin{DoxyCompactList}\small\item\em Get class pipe property from database. \end{DoxyCompactList}\item 
+void {\bf put\-\_\-pipe\-\_\-property} ({\bf Db\-Data} \&db)
+\begin{DoxyCompactList}\small\item\em Update class pipe property in database. \end{DoxyCompactList}\item 
+void {\bf delete\-\_\-pipe\-\_\-property} ({\bf Db\-Data} \&db)
+\begin{DoxyCompactList}\small\item\em Remove class pipe property from database. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+A database object for a class which can be used to query or modify class properties. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Tango\-::\-Db\-Class@{Tango\-::\-Db\-Class}!Db\-Class@{Db\-Class}}
+\index{Db\-Class@{Db\-Class}!Tango::DbClass@{Tango\-::\-Db\-Class}}
+\subsubsection[{Db\-Class}]{\setlength{\rightskip}{0pt plus 5cm}Tango\-::\-Db\-Class\-::\-Db\-Class (
+\begin{DoxyParamCaption}
+\item[{string}]{class\-\_\-name}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1DbClass_afc0cd676677e89b14f27318588f64d23}
+
+
+Create a \doxyref{Db\-Class}{p.}{dc/d38/classTango_1_1DbClass} instance. 
+
+A constructor for a \doxyref{Db\-Class}{p.}{dc/d38/classTango_1_1DbClass} object for a class in the T\-A\-N\-G\-O database specified by the T\-A\-N\-G\-O\-\_\-\-H\-O\-S\-T environment variable
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em class\-\_\-name} & The \doxyref{Tango}{p.}{de/ddf/namespaceTango} class name \\
+\hline
+\end{DoxyParams}
+\index{Tango\-::\-Db\-Class@{Tango\-::\-Db\-Class}!Db\-Class@{Db\-Class}}
+\index{Db\-Class@{Db\-Class}!Tango::DbClass@{Tango\-::\-Db\-Class}}
+\subsubsection[{Db\-Class}]{\setlength{\rightskip}{0pt plus 5cm}Tango\-::\-Db\-Class\-::\-Db\-Class (
+\begin{DoxyParamCaption}
+\item[{string}]{class\-\_\-name, }
+\item[{Database $\ast$}]{db}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1DbClass_ab3cc824aa4a5dd46a97254019a4e9600}
+
+
+Create a \doxyref{Db\-Class}{p.}{dc/d38/classTango_1_1DbClass} instance using a specified database. 
+
+A constructor for a \doxyref{Db\-Class}{p.}{dc/d38/classTango_1_1DbClass} object for the \doxyref{Tango}{p.}{de/ddf/namespaceTango} class in the specified database. This method reuses the Database supplied by the programmer.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em class\-\_\-name} & The \doxyref{Tango}{p.}{de/ddf/namespaceTango} class name \\
+\hline
+\mbox{\tt in}  & {\em db} & The database object \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{Tango\-::\-Db\-Class@{Tango\-::\-Db\-Class}!delete\-\_\-attribute\-\_\-property@{delete\-\_\-attribute\-\_\-property}}
+\index{delete\-\_\-attribute\-\_\-property@{delete\-\_\-attribute\-\_\-property}!Tango::DbClass@{Tango\-::\-Db\-Class}}
+\subsubsection[{delete\-\_\-attribute\-\_\-property}]{\setlength{\rightskip}{0pt plus 5cm}void Tango\-::\-Db\-Class\-::delete\-\_\-attribute\-\_\-property (
+\begin{DoxyParamCaption}
+\item[{{\bf Db\-Data} \&}]{db}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1DbClass_af5ca60df7812776e82a8136fb88deda5}
+
+
+Remove class attribute property from database. 
+
+Delete all properties for the list of specified attributes for this class in the database. See Database\-::delete\-\_\-class\-\_\-attribute\-\_\-property() for an example of how to specify the properties.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em db} & Property name(s)\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Connection\-Failed,Communnication\-Failed,Dev\-Failed} & from device \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Db\-Class@{Tango\-::\-Db\-Class}!delete\-\_\-pipe\-\_\-property@{delete\-\_\-pipe\-\_\-property}}
+\index{delete\-\_\-pipe\-\_\-property@{delete\-\_\-pipe\-\_\-property}!Tango::DbClass@{Tango\-::\-Db\-Class}}
+\subsubsection[{delete\-\_\-pipe\-\_\-property}]{\setlength{\rightskip}{0pt plus 5cm}void Tango\-::\-Db\-Class\-::delete\-\_\-pipe\-\_\-property (
+\begin{DoxyParamCaption}
+\item[{{\bf Db\-Data} \&}]{db}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1DbClass_ad076695e963147713d893e2145d46656}
+
+
+Remove class pipe property from database. 
+
+Delete all properties for the list of specified pipes for this class in the database. See Database\-::delete\-\_\-class\-\_\-pipe\-\_\-property() for an example of how to specify the properties.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em db} & Property name(s)\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Connection\-Failed,Communnication\-Failed,Dev\-Failed} & from device \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Db\-Class@{Tango\-::\-Db\-Class}!delete\-\_\-property@{delete\-\_\-property}}
+\index{delete\-\_\-property@{delete\-\_\-property}!Tango::DbClass@{Tango\-::\-Db\-Class}}
+\subsubsection[{delete\-\_\-property}]{\setlength{\rightskip}{0pt plus 5cm}void Tango\-::\-Db\-Class\-::delete\-\_\-property (
+\begin{DoxyParamCaption}
+\item[{{\bf Db\-Data} \&}]{db}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1DbClass_a77a1ff9ebf5a4e5cbaa71802275f4c6d}
+
+
+Remove class property from database. 
+
+Delete the list of specified properties for this class in the database. See Database\-::delete\-\_\-property() for an example of how to specify the properties.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em db} & Property name(s)\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Connection\-Failed,Communnication\-Failed,Dev\-Failed} & from device \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Db\-Class@{Tango\-::\-Db\-Class}!get\-\_\-attribute\-\_\-property@{get\-\_\-attribute\-\_\-property}}
+\index{get\-\_\-attribute\-\_\-property@{get\-\_\-attribute\-\_\-property}!Tango::DbClass@{Tango\-::\-Db\-Class}}
+\subsubsection[{get\-\_\-attribute\-\_\-property}]{\setlength{\rightskip}{0pt plus 5cm}void Tango\-::\-Db\-Class\-::get\-\_\-attribute\-\_\-property (
+\begin{DoxyParamCaption}
+\item[{{\bf Db\-Data} \&}]{db}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1DbClass_a5c9d03bef93ac135659016c4be4e23a8}
+
+
+Get class attribute property from database. 
+
+Query the database for the list of attribute properties of this class. See Database\-::get\-\_\-class\-\_\-attribute\-\_\-property() for an example of how to specify and retrieve the properties.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em db} & Property name(s) and value\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Connection\-Failed,Communnication\-Failed,Dev\-Failed} & from device \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Db\-Class@{Tango\-::\-Db\-Class}!get\-\_\-pipe\-\_\-property@{get\-\_\-pipe\-\_\-property}}
+\index{get\-\_\-pipe\-\_\-property@{get\-\_\-pipe\-\_\-property}!Tango::DbClass@{Tango\-::\-Db\-Class}}
+\subsubsection[{get\-\_\-pipe\-\_\-property}]{\setlength{\rightskip}{0pt plus 5cm}void Tango\-::\-Db\-Class\-::get\-\_\-pipe\-\_\-property (
+\begin{DoxyParamCaption}
+\item[{{\bf Db\-Data} \&}]{db}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1DbClass_a59644325189626fe4a34282d68398089}
+
+
+Get class pipe property from database. 
+
+Query the database for the list of pipe properties of this class. See Database\-::get\-\_\-class\-\_\-pipe\-\_\-property() for an example of how to specify and retrieve the properties.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em db} & Property name(s) and value\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Connection\-Failed,Communnication\-Failed,Dev\-Failed} & from device \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Db\-Class@{Tango\-::\-Db\-Class}!get\-\_\-property@{get\-\_\-property}}
+\index{get\-\_\-property@{get\-\_\-property}!Tango::DbClass@{Tango\-::\-Db\-Class}}
+\subsubsection[{get\-\_\-property}]{\setlength{\rightskip}{0pt plus 5cm}void Tango\-::\-Db\-Class\-::get\-\_\-property (
+\begin{DoxyParamCaption}
+\item[{{\bf Db\-Data} \&}]{db}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1DbClass_a08aa0ec6b718aefca1cdafc3430d0159}
+
+
+Get class property from database. 
+
+Query the database for the list of properties of this class. See Database\-::get\-\_\-class\-\_\-property() for an example of how to specify and retrieve the properties.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em db} & Property name(s) and value\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Connection\-Failed,Communnication\-Failed,Dev\-Failed} & from device \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Db\-Class@{Tango\-::\-Db\-Class}!put\-\_\-attribute\-\_\-property@{put\-\_\-attribute\-\_\-property}}
+\index{put\-\_\-attribute\-\_\-property@{put\-\_\-attribute\-\_\-property}!Tango::DbClass@{Tango\-::\-Db\-Class}}
+\subsubsection[{put\-\_\-attribute\-\_\-property}]{\setlength{\rightskip}{0pt plus 5cm}void Tango\-::\-Db\-Class\-::put\-\_\-attribute\-\_\-property (
+\begin{DoxyParamCaption}
+\item[{{\bf Db\-Data} \&}]{db}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1DbClass_a068555bb06fa9510e1ae0f81bd4e06ff}
+
+
+Update class attribute property in database. 
+
+Update the list of attribute properties for this class in the database. See Database\-::put\-\_\-class\-\_\-attribute\-\_\-property() for an example of how to specify the properties.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em db} & Property name(s) and value\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Connection\-Failed,Communnication\-Failed,Dev\-Failed} & from device \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Db\-Class@{Tango\-::\-Db\-Class}!put\-\_\-pipe\-\_\-property@{put\-\_\-pipe\-\_\-property}}
+\index{put\-\_\-pipe\-\_\-property@{put\-\_\-pipe\-\_\-property}!Tango::DbClass@{Tango\-::\-Db\-Class}}
+\subsubsection[{put\-\_\-pipe\-\_\-property}]{\setlength{\rightskip}{0pt plus 5cm}void Tango\-::\-Db\-Class\-::put\-\_\-pipe\-\_\-property (
+\begin{DoxyParamCaption}
+\item[{{\bf Db\-Data} \&}]{db}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1DbClass_a3c28ab0e673e20431db58f7dadbe219c}
+
+
+Update class pipe property in database. 
+
+Update the list of pipe properties for this class in the database. See Database\-::put\-\_\-class\-\_\-pipe\-\_\-property() for an example of how to specify the properties.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em db} & Property name(s) and value\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Connection\-Failed,Communnication\-Failed,Dev\-Failed} & from device \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Db\-Class@{Tango\-::\-Db\-Class}!put\-\_\-property@{put\-\_\-property}}
+\index{put\-\_\-property@{put\-\_\-property}!Tango::DbClass@{Tango\-::\-Db\-Class}}
+\subsubsection[{put\-\_\-property}]{\setlength{\rightskip}{0pt plus 5cm}void Tango\-::\-Db\-Class\-::put\-\_\-property (
+\begin{DoxyParamCaption}
+\item[{{\bf Db\-Data} \&}]{db}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1DbClass_a276eeccb2af23e7223109e94f57d9484}
+
+
+Update class property in database. 
+
+Update the list of properties for this class in the database. See Database\-::put\-\_\-class\-\_\-property() for an example of how to specify the properties.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em db} & Property name(s) and value\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Connection\-Failed,Communnication\-Failed,Dev\-Failed} & from device \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+{\bf dbapi.\-h}\end{DoxyCompactItemize}

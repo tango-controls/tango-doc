@@ -1,0 +1,165 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="d8/d0e/classlog4tango_1_1Level" kind="class" prot="public">
+    <compoundname>log4tango::Level</compoundname>
+    <includes refid="d2/d33/Level_8hh" local="yes">Level.hh</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="d8/d0e/classlog4tango_1_1Level_1ad9edd63020b6becc9aef8802c48eb461" prot="public" static="no">
+        <name>LevelLevel</name>
+        <enumvalue id="d8/d0e/classlog4tango_1_1Level_1ad9edd63020b6becc9aef8802c48eb461a955ee789684a2e9952b7e4f56b6bb74f" prot="public">
+          <name>OFF</name>
+          <initializer>=  100</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d8/d0e/classlog4tango_1_1Level_1ad9edd63020b6becc9aef8802c48eb461a58fb50808d864278c4127f5c8ac5406c" prot="public">
+          <name>FATAL</name>
+          <initializer>=  200</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d8/d0e/classlog4tango_1_1Level_1ad9edd63020b6becc9aef8802c48eb461ae9f52151dce772e7a7ee87bc824b1fdf" prot="public">
+          <name>ERROR</name>
+          <initializer>=  300</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d8/d0e/classlog4tango_1_1Level_1ad9edd63020b6becc9aef8802c48eb461ab0dfb37a2ad73d7b7f53a460819a2cc3" prot="public">
+          <name>WARN</name>
+          <initializer>=  400</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d8/d0e/classlog4tango_1_1Level_1ad9edd63020b6becc9aef8802c48eb461ae666ceb60dfca43381816abf33e2cd1b" prot="public">
+          <name>INFO</name>
+          <initializer>=  500</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d8/d0e/classlog4tango_1_1Level_1ad9edd63020b6becc9aef8802c48eb461aa98b4453bf21b1af1c2d3d953887f393" prot="public">
+          <name>DEBUG</name>
+          <initializer>=  600</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Levels of Priorities. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/Level.hh" line="86" column="1" bodyfile="/home/tango/workspace/cppTango/include/log4tango/Level.hh" bodystart="86" bodyend="93"/>
+      </memberdef>
+      <memberdef kind="typedef" id="d8/d0e/classlog4tango_1_1Level_1aa708c09b6a19a8cc8a3b19631561ca99" prot="public" static="no">
+        <type>int</type>
+        <definition>typedef int log4tango::Level::Value</definition>
+        <argsstring></argsstring>
+        <name>Value</name>
+        <briefdescription>
+<para>The type of <ref refid="d8/d0e/classlog4tango_1_1Level" kindref="compound">Level</ref> Values. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/Level.hh" line="98" column="1" bodyfile="/home/tango/workspace/cppTango/include/log4tango/Level.hh" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="d8/d0e/classlog4tango_1_1Level_1a613426ab63e991eed00912c0dfd870c0" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const std::string &amp;</type>
+        <definition>const std::string &amp; log4tango::Level::get_name</definition>
+        <argsstring>(Value level)</argsstring>
+        <name>get_name</name>
+        <param>
+          <type><ref refid="d8/d0e/classlog4tango_1_1Level_1aa708c09b6a19a8cc8a3b19631561ca99" kindref="member">Value</ref></type>
+          <declname>level</declname>
+        </param>
+        <briefdescription>
+<para>Returns the name of the given level value. </para>        </briefdescription>
+        <detaileddescription>
+<para>Currently, if the value is not one of the LevelLevel values, the method returns the name of the largest level smaller the given value. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the numeric value of the level. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a string representing the name of the level. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/Level.hh" line="108" column="1" bodyfile="/home/tango/workspace/cppTango/src/log4tango/Level.cpp" bodystart="62" bodyend="77"/>
+        <references refid="de/db3/Level_8cpp_1ab122432988c73c06becf1ce34077e43b" compoundref="de/db3/Level_8cpp" startline="35">NUM_LEVELS</references>
+        <referencedby refid="d4/d71/structlog4tango_1_1LevelComponent_1a66b5059085fd0f76a3f68d8add4a2a3a" compoundref="d6/d13/PatternLayout_8cpp" startline="129" endline="131">log4tango::LevelComponent::append</referencedby>
+        <referencedby refid="d2/d7c/classlog4tango_1_1XMLLayout_1a0f455c8af4768383dc989923eddc72f3" compoundref="d4/d66/XmlLayout_8cpp" startline="46" endline="80">log4tango::XMLLayout::format</referencedby>
+        <referencedby refid="d7/da6/classlog4tango_1_1Layout_1a0ade719b2ab1ce512aca5699f136eb8b" compoundref="d5/d08/Layout_8cpp" startline="37" endline="59">log4tango::Layout::format</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d8/d0e/classlog4tango_1_1Level_1acb4420eb3aa2761f405a08c5f6a00ae1" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d8/d0e/classlog4tango_1_1Level_1aa708c09b6a19a8cc8a3b19631561ca99" kindref="member">Value</ref></type>
+        <definition>Level::Value log4tango::Level::get_value</definition>
+        <argsstring>(const std::string &amp;level_name)</argsstring>
+        <name>get_value</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>level_name</declname>
+        </param>
+        <exceptions> throw (std::invalid_argument)</exceptions>
+        <briefdescription>
+<para>Returns the value of the given level name. </para>        </briefdescription>
+        <detaileddescription>
+<para>This can be either one of &quot;OFF&quot;, &quot;ERRROR&quot;, ... or a decimal string representation of the value, e.g. &apos;500&apos; for DEBUG. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>level_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the string containing the the of the level </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the value corresponding with the level name </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>std::invalid_argument</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if the level_name does not correspond with a known <ref refid="d8/d0e/classlog4tango_1_1Level" kindref="compound">Level</ref> name or a number </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/Level.hh" line="119" column="1" bodyfile="/home/tango/workspace/cppTango/src/log4tango/Level.cpp" bodystart="79" bodyend="107"/>
+        <references refid="de/db3/Level_8cpp_1ab122432988c73c06becf1ce34077e43b" compoundref="de/db3/Level_8cpp" startline="35">NUM_LEVELS</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/tango/workspace/cppTango/include/log4tango/Level.hh" line="80" column="1" bodyfile="/home/tango/workspace/cppTango/include/log4tango/Level.hh" bodystart="79" bodyend="121"/>
+    <listofallmembers>
+      <member refid="d8/d0e/classlog4tango_1_1Level_1ad9edd63020b6becc9aef8802c48eb461aa98b4453bf21b1af1c2d3d953887f393" prot="public" virt="non-virtual"><scope>log4tango::Level</scope><name>DEBUG</name></member>
+      <member refid="d8/d0e/classlog4tango_1_1Level_1ad9edd63020b6becc9aef8802c48eb461ae9f52151dce772e7a7ee87bc824b1fdf" prot="public" virt="non-virtual"><scope>log4tango::Level</scope><name>ERROR</name></member>
+      <member refid="d8/d0e/classlog4tango_1_1Level_1ad9edd63020b6becc9aef8802c48eb461a58fb50808d864278c4127f5c8ac5406c" prot="public" virt="non-virtual"><scope>log4tango::Level</scope><name>FATAL</name></member>
+      <member refid="d8/d0e/classlog4tango_1_1Level_1a613426ab63e991eed00912c0dfd870c0" prot="public" virt="non-virtual"><scope>log4tango::Level</scope><name>get_name</name></member>
+      <member refid="d8/d0e/classlog4tango_1_1Level_1acb4420eb3aa2761f405a08c5f6a00ae1" prot="public" virt="non-virtual"><scope>log4tango::Level</scope><name>get_value</name></member>
+      <member refid="d8/d0e/classlog4tango_1_1Level_1ad9edd63020b6becc9aef8802c48eb461ae666ceb60dfca43381816abf33e2cd1b" prot="public" virt="non-virtual"><scope>log4tango::Level</scope><name>INFO</name></member>
+      <member refid="d8/d0e/classlog4tango_1_1Level_1ad9edd63020b6becc9aef8802c48eb461" prot="public" virt="non-virtual"><scope>log4tango::Level</scope><name>LevelLevel</name></member>
+      <member refid="d8/d0e/classlog4tango_1_1Level_1ad9edd63020b6becc9aef8802c48eb461a955ee789684a2e9952b7e4f56b6bb74f" prot="public" virt="non-virtual"><scope>log4tango::Level</scope><name>OFF</name></member>
+      <member refid="d8/d0e/classlog4tango_1_1Level_1aa708c09b6a19a8cc8a3b19631561ca99" prot="public" virt="non-virtual"><scope>log4tango::Level</scope><name>Value</name></member>
+      <member refid="d8/d0e/classlog4tango_1_1Level_1ad9edd63020b6becc9aef8802c48eb461ab0dfb37a2ad73d7b7f53a460819a2cc3" prot="public" virt="non-virtual"><scope>log4tango::Level</scope><name>WARN</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

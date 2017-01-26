@@ -1,0 +1,1233 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="d3/d0f/classTango_1_1DbDatum" kind="class" prot="public">
+    <compoundname>Tango::DbDatum</compoundname>
+    <innerclass refid="de/d64/classTango_1_1DbDatum_1_1DbDatumExt" prot="private">Tango::DbDatum::DbDatumExt</innerclass>
+      <sectiondef kind="user-defined">
+      <header>Constructors</header>
+      <memberdef kind="function" id="d3/d0f/classTango_1_1DbDatum_1aeff53e61f2fa3a42ac930113af6b9f0c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::DbDatum::DbDatum</definition>
+        <argsstring>(string name)</argsstring>
+        <name>DbDatum</name>
+        <param>
+          <type>string</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+<para>Create a <ref refid="d3/d0f/classTango_1_1DbDatum" kindref="compound">DbDatum</ref> object. </para>        </briefdescription>
+        <detaileddescription>
+<para>Create an instance of the <ref refid="d3/d0f/classTango_1_1DbDatum" kindref="compound">DbDatum</ref> class with name set to the specified parameter</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The CORBA ORB pointer. Default value is fine for 99 % of cases </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="473" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d0f/classTango_1_1DbDatum_1af66b0aadb93b23168cb56d81d61baf48" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::DbDatum::DbDatum</definition>
+        <argsstring>(const char *name)</argsstring>
+        <name>DbDatum</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+<para>Create a <ref refid="d3/d0f/classTango_1_1DbDatum" kindref="compound">DbDatum</ref> object. </para>        </briefdescription>
+        <detaileddescription>
+<para>Create an instance of the <ref refid="d3/d0f/classTango_1_1DbDatum" kindref="compound">DbDatum</ref> class with name set to the specified parameter</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The CORBA ORB pointer. Default value is fine for 99 % of cases </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="482" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Operators overloading</header>
+      <memberdef kind="function" id="d3/d0f/classTango_1_1DbDatum_1a66304a562149bdb6d89858cbca65729e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::DbDatum::operator&lt;&lt;</definition>
+        <argsstring>(bool val)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>bool</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+<para>Inserters operators. </para>        </briefdescription>
+        <detaileddescription>
+<para>The insert and extract operators are specified for the following C++ types : <itemizedlist>
+<listitem><para>bool </para></listitem>
+<listitem><para>unsigned char </para></listitem>
+<listitem><para>short </para></listitem>
+<listitem><para>unsigned short </para></listitem>
+<listitem><para>DevLong </para></listitem>
+<listitem><para>DevULong </para></listitem>
+<listitem><para>DevLong64 </para></listitem>
+<listitem><para>DevULong64 </para></listitem>
+<listitem><para>float </para></listitem>
+<listitem><para>double </para></listitem>
+<listitem><para>string </para></listitem>
+<listitem><para>char* (insert only) </para></listitem>
+<listitem><para>const char * </para></listitem>
+<listitem><para>vector&lt;string&gt; </para></listitem>
+<listitem><para>vector&lt;short&gt; </para></listitem>
+<listitem><para>vector&lt;unsigned short&gt; </para></listitem>
+<listitem><para>vector&lt;DevLong&gt; </para></listitem>
+<listitem><para>vector&lt;DevULong&gt; </para></listitem>
+<listitem><para>vector&lt;DevLong64&gt; </para></listitem>
+<listitem><para>vector&lt;DevULong64&gt; </para></listitem>
+<listitem><para>vector&lt;float&gt; </para></listitem>
+<listitem><para>vector&lt;double&gt;</para></listitem>
+</itemizedlist>
+Here is an example of creating, inserting and extracting some <ref refid="d3/d0f/classTango_1_1DbDatum" kindref="compound">DbDatum</ref> types : <programlisting><codeline><highlight class="normal">*<sp/><ref refid="d3/d0f/classTango_1_1DbDatum_1aeff53e61f2fa3a42ac930113af6b9f0c" kindref="member">DbDatum</ref><sp/>my_short(</highlight><highlight class="stringliteral">&quot;my_short&quot;</highlight><highlight class="normal">),<sp/>my_long(“my_long”),<sp/>my_string(</highlight><highlight class="stringliteral">&quot;my_string&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal">*<sp/><ref refid="d3/d0f/classTango_1_1DbDatum_1aeff53e61f2fa3a42ac930113af6b9f0c" kindref="member">DbDatum</ref><sp/>my_float_vector(</highlight><highlight class="stringliteral">&quot;my_float_vector&quot;</highlight><highlight class="normal">),<sp/>my_double_vector(</highlight><highlight class="stringliteral">&quot;my_double_vector&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal">*</highlight></codeline>
+<codeline><highlight class="normal">*<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>a_string;</highlight></codeline>
+<codeline><highlight class="normal">*<sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>a_short;</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>DevLong<sp/>a_long;</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>vector&lt;float&gt;<sp/>a_float_vector;</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>vector&lt;double&gt;<sp/>a_double_vector;</highlight></codeline>
+<codeline><highlight class="normal">*</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>my_short<sp/>&lt;&lt;<sp/>100;<sp/></highlight><highlight class="comment">//<sp/>insert<sp/>a<sp/>short</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">*<sp/>my_short<sp/>&gt;&gt;<sp/>a_short;<sp/></highlight><highlight class="comment">//<sp/>extract<sp/>a<sp/>short</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">*<sp/>my_long<sp/>&lt;&lt;<sp/>1000;<sp/></highlight><highlight class="comment">//<sp/>insert<sp/>a<sp/>DevLong</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">*<sp/>my_long<sp/>&gt;&gt;<sp/>a_long;<sp/></highlight><highlight class="comment">//<sp/>extract<sp/>a<sp/>long</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">*<sp/>my_string<sp/>&lt;&lt;<sp/>string(</highlight><highlight class="stringliteral">&quot;estas<sp/>lista<sp/>a<sp/>bailar<sp/>el<sp/>tango<sp/>?&quot;</highlight><highlight class="normal">);<sp/></highlight><highlight class="comment">//<sp/>insert<sp/>a<sp/>string</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">*<sp/>my_string<sp/>&gt;&gt;<sp/>a_string;<sp/></highlight><highlight class="comment">//<sp/>extract<sp/>a<sp/>string</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">*<sp/>my_float_vector<sp/>&lt;&lt;<sp/>a_float_vector<sp/></highlight><highlight class="comment">//<sp/>insert<sp/>a<sp/>vector<sp/>of<sp/>floats</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">*<sp/>my_float_vector<sp/>&gt;&gt;<sp/>a_float_vector;<sp/></highlight><highlight class="comment">//<sp/>extract<sp/>a<sp/>vector<sp/>of<sp/>floats</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">*<sp/>my_double_vector<sp/>&lt;&lt;<sp/>a_double_vector;<sp/></highlight><highlight class="comment">//<sp/>insert<sp/>a<sp/>vector<sp/>of<sp/>doubles</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">*<sp/>my_double_vector<sp/>&gt;&gt;<sp/>a_double_vector;<sp/></highlight><highlight class="comment">//<sp/>extract<sp/>a<sp/>vector<sp/>of<sp/>doubles</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">*<sp/></highlight></codeline>
+</programlisting></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">val</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Data to be inserted</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>WrongData</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if requested </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="541" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d0f/classTango_1_1DbDatum_1afd6ed9a2e6b129bcc9ae26e16ae4ef0b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Tango::DbDatum::operator&gt;&gt;</definition>
+        <argsstring>(bool &amp;val)</argsstring>
+        <name>operator&gt;&gt;</name>
+        <param>
+          <type>bool &amp;</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+<para>Extractors operators. </para>        </briefdescription>
+        <detaileddescription>
+<para>See documentation of the <ref refid="d3/d0f/classTango_1_1DbDatum_1a66304a562149bdb6d89858cbca65729e" kindref="member">DbDatum::operator&lt;&lt;</ref> for details</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">val</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Data to be initalized with database value </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A boolean set to true if the extraction succeeds </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>WrongData</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if requested </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="551" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Exception related methods methods</header>
+      <memberdef kind="function" id="d3/d0f/classTango_1_1DbDatum_1adce60a23dccf7f08f1fc7f81cbc783f0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::DbDatum::exceptions</definition>
+        <argsstring>(bitset&lt; DbDatum::numFlags &gt; fl)</argsstring>
+        <name>exceptions</name>
+        <param>
+          <type>bitset&lt; DbDatum::numFlags &gt;</type>
+          <declname>fl</declname>
+        </param>
+        <briefdescription>
+<para>Set exception flag. </para>        </briefdescription>
+        <detaileddescription>
+<para>Is a method which allows the user to switch on/off exception throwing for trying to extract data from an empty <ref refid="d3/d0f/classTango_1_1DbDatum" kindref="compound">DbDatum</ref> object. The default is to not throw exception. The following flags are supported : <itemizedlist>
+<listitem><para><bold>isempty_flag</bold> - throw a WrongData exception (reason = API_EmptyDbDatum) if user tries to extract data from an empty <ref refid="d3/d0f/classTango_1_1DbDatum" kindref="compound">DbDatum</ref> object </para></listitem>
+<listitem><para><bold>wrongtype_flag</bold> - throw a WrongData exception (reason = API_IncompatibleArgumentType) if user tries to extract data with a type different than the type used for insertion</para></listitem>
+</itemizedlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception flag </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="567" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" bodystart="567" bodyend="567"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d0f/classTango_1_1DbDatum_1a332a7e23267e200c786a5b8486916205" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bitset&lt; DbDatum::numFlags &gt;</type>
+        <definition>bitset&lt;DbDatum::numFlags&gt; Tango::DbDatum::exceptions</definition>
+        <argsstring>()</argsstring>
+        <name>exceptions</name>
+        <briefdescription>
+<para>Get exception flag. </para>        </briefdescription>
+        <detaileddescription>
+<para>Returns the whole exception flags. The following is an example of how to use these exceptions related methods <programlisting><codeline><highlight class="normal">*<sp/><ref refid="d3/d0f/classTango_1_1DbDatum_1aeff53e61f2fa3a42ac930113af6b9f0c" kindref="member">DbDatum</ref><sp/>da;</highlight></codeline>
+<codeline><highlight class="normal">*</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bitset&lt;DbDatum::numFlags&gt;<sp/>bs<sp/>=<sp/>da.exceptions();</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;bs<sp/>=<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>bs<sp/>&lt;&lt;<sp/><ref refid="d8/dcc/namespacestd_1a4639029cd5db5428c743a52d095356b9" kindref="member">endl</ref>;</highlight></codeline>
+<codeline><highlight class="normal">*</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>da.set_exceptions(DbDatum::wrongtype_flag);</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>bs<sp/>=<sp/>da.exceptions();</highlight></codeline>
+<codeline><highlight class="normal">*</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;bs<sp/>=<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>bs<sp/>&lt;&lt;<sp/><ref refid="d8/dcc/namespacestd_1a4639029cd5db5428c743a52d095356b9" kindref="member">endl</ref>;</highlight></codeline>
+<codeline><highlight class="normal">*<sp/></highlight></codeline>
+</programlisting></para><para><simplesect kind="return"><para>The exception flag </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="587" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" bodystart="587" bodyend="587"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d0f/classTango_1_1DbDatum_1a6c4f542a1f33e2ff5e7f2e16aded5679" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::DbDatum::reset_exceptions</definition>
+        <argsstring>(except_flags fl)</argsstring>
+        <name>reset_exceptions</name>
+        <param>
+          <type>except_flags</type>
+          <declname>fl</declname>
+        </param>
+        <briefdescription>
+<para>Reset one exception flag. </para>        </briefdescription>
+        <detaileddescription>
+<para>Resets one exception flag</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception flag </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="595" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" bodystart="595" bodyend="595"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d0f/classTango_1_1DbDatum_1aff8fbe5d2dd3c816b1ff24c55fb1295a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::DbDatum::set_exceptions</definition>
+        <argsstring>(except_flags fl)</argsstring>
+        <name>set_exceptions</name>
+        <param>
+          <type>except_flags</type>
+          <declname>fl</declname>
+        </param>
+        <briefdescription>
+<para>Set one exception flag. </para>        </briefdescription>
+        <detaileddescription>
+<para>Sets one exception flag. See <ref refid="d3/d0f/classTango_1_1DbDatum_1a332a7e23267e200c786a5b8486916205" kindref="member">DbDatum::exceptions()</ref> for a usage example</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception flag </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="603" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" bodystart="603" bodyend="603"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Miscellaneous methods</header>
+      <memberdef kind="function" id="d3/d0f/classTango_1_1DbDatum_1aead8e1ceb14215958af0c4202d973e54" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Tango::DbDatum::is_empty</definition>
+        <argsstring>()</argsstring>
+        <name>is_empty</name>
+        <briefdescription>
+<para>Test if instance is empty. </para>        </briefdescription>
+        <detaileddescription>
+<para><ref refid="d3/d0f/classTango_1_1DbDatum_1aead8e1ceb14215958af0c4202d973e54" kindref="member">is_empty()</ref> is a boolean method which returns true or false depending on whether the <ref refid="d3/d0f/classTango_1_1DbDatum" kindref="compound">DbDatum</ref> object contains data or not. It can be used to test whether a property is defined in the database or not e.g. <programlisting><codeline><highlight class="normal">*<sp/>sl_props.push_back(parity_prop);</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>dbase-&gt;get_device_property(device_name,<sp/>sl_props);</highlight></codeline>
+<codeline><highlight class="normal">*</highlight></codeline>
+<codeline><highlight class="normal">*<sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<sp/>parity_prop.is_empty())</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>{</highlight></codeline>
+<codeline><highlight class="normal">*<sp/><sp/><sp/><sp/><sp/>parity_prop<sp/>&gt;&gt;<sp/>parity;</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>}</highlight></codeline>
+<codeline><highlight class="normal">*<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">*<sp/>{</highlight></codeline>
+<codeline><highlight class="normal">*<sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/>device_name<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>has<sp/>no<sp/>parity<sp/>defined<sp/>in<sp/>database<sp/>!&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="d8/dcc/namespacestd_1a4639029cd5db5428c743a52d095356b9" kindref="member">endl</ref>;</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>}</highlight></codeline>
+<codeline><highlight class="normal">*<sp/></highlight></codeline>
+</programlisting></para><para><simplesect kind="return"><para>True if DdDatum instance is empty</para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>WrongData</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if requested </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="630" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-type">
+      <memberdef kind="enum" id="d3/d0f/classTango_1_1DbDatum_1aad97d9168efee0c36044153ed667b1b2" prot="private" static="no">
+        <name>except_flags</name>
+        <enumvalue id="d3/d0f/classTango_1_1DbDatum_1aad97d9168efee0c36044153ed667b1b2a1d27b2e9a1261bce3937b4896ff53d60" prot="private">
+          <name>isempty_flag</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d3/d0f/classTango_1_1DbDatum_1aad97d9168efee0c36044153ed667b1b2a51cffb433f735e242b0fce00d5a82f8f" prot="private">
+          <name>wrongtype_flag</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d3/d0f/classTango_1_1DbDatum_1aad97d9168efee0c36044153ed667b1b2aa03b0870669e263ce4d8873aa262aa4e" prot="private">
+          <name>numFlags</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="457" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" bodystart="456" bodyend="461"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d3/d0f/classTango_1_1DbDatum_1a46bce08025405aa0ca8599e5a09f4ac1" prot="private" static="no" mutable="no">
+        <type>bitset&lt; numFlags &gt;</type>
+        <definition>bitset&lt;numFlags&gt; Tango::DbDatum::exceptions_flags</definition>
+        <argsstring></argsstring>
+        <name>exceptions_flags</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="705" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" bodystart="705" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/d0f/classTango_1_1DbDatum_1abf5ad4cc2b2595305a29a35e41381238" prot="private" static="no" mutable="no">
+        <type>DbDatumExt *</type>
+        <definition>DbDatumExt* Tango::DbDatum::ext</definition>
+        <argsstring></argsstring>
+        <name>ext</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="716" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" bodystart="716" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/d0f/classTango_1_1DbDatum_1ab303d8d303e279939f240968272248df" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Tango::DbDatum::name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="634" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" bodystart="634" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/d0f/classTango_1_1DbDatum_1a67f25560fbb6a98c98a8284224165557" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Tango::DbDatum::value_size</definition>
+        <argsstring></argsstring>
+        <name>value_size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="704" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" bodystart="704" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/d0f/classTango_1_1DbDatum_1a8f71e10a896077479085cd9037999b12" prot="private" static="no" mutable="no">
+        <type>vector&lt; string &gt;</type>
+        <definition>vector&lt;string&gt; Tango::DbDatum::value_string</definition>
+        <argsstring></argsstring>
+        <name>value_string</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="635" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" bodystart="635" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/d0f/classTango_1_1DbDatum_1ac7959dd43bff644b16b3ddd1a0f43fc4" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Tango::DbDatum::value_type</definition>
+        <argsstring></argsstring>
+        <name>value_type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="703" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" bodystart="703" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="d3/d0f/classTango_1_1DbDatum_1a460b5da07767c99af568f145ed6d71a0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::DbDatum::DbDatum</definition>
+        <argsstring>()</argsstring>
+        <name>DbDatum</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="639" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d0f/classTango_1_1DbDatum_1a4d3d20a71e57a4e777c87bc1285e8fcb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::DbDatum::DbDatum</definition>
+        <argsstring>(const DbDatum &amp;)</argsstring>
+        <name>DbDatum</name>
+        <param>
+          <type>const <ref refid="d3/d0f/classTango_1_1DbDatum" kindref="compound">DbDatum</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="641" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d0f/classTango_1_1DbDatum_1a9ac82569924e7e825261bee3f26287da" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::DbDatum::~DbDatum</definition>
+        <argsstring>()</argsstring>
+        <name>~DbDatum</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="640" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d0f/classTango_1_1DbDatum_1ac614cd260423e8988b7df463470259fe" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::DbDatum::operator&lt;&lt;</definition>
+        <argsstring>(short)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>short</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="650" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d0f/classTango_1_1DbDatum_1a1583ce3c2330fcf47d7c5e9d5d19cad0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::DbDatum::operator&lt;&lt;</definition>
+        <argsstring>(unsigned char)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>unsigned</type>
+          <declname>char</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="651" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d0f/classTango_1_1DbDatum_1acd1628791b532b567ec8e1b774699e6d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::DbDatum::operator&lt;&lt;</definition>
+        <argsstring>(unsigned short)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>unsigned</type>
+          <declname>short</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="652" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d0f/classTango_1_1DbDatum_1a072704741d32172e2cee4dcb69b362de" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::DbDatum::operator&lt;&lt;</definition>
+        <argsstring>(DevLong)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>DevLong</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="653" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d0f/classTango_1_1DbDatum_1a2dd2abc8947329108b7533bddee3956f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::DbDatum::operator&lt;&lt;</definition>
+        <argsstring>(DevULong)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>DevULong</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="654" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d0f/classTango_1_1DbDatum_1a9e13a7d291f282f185b65e0bccfe74ca" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::DbDatum::operator&lt;&lt;</definition>
+        <argsstring>(DevLong64)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>DevLong64</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="655" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d0f/classTango_1_1DbDatum_1a61d056399909846963324441e7144763" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::DbDatum::operator&lt;&lt;</definition>
+        <argsstring>(DevULong64)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>DevULong64</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="656" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d0f/classTango_1_1DbDatum_1afda12245adaab9276415a147c3459c97" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::DbDatum::operator&lt;&lt;</definition>
+        <argsstring>(float)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>float</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="657" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d0f/classTango_1_1DbDatum_1ad98e81a2ca9c78822ae47cb534649aab" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::DbDatum::operator&lt;&lt;</definition>
+        <argsstring>(double)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>double</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="658" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d0f/classTango_1_1DbDatum_1a7fc65ee2932cee9a9897f6b69e19c65c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::DbDatum::operator&lt;&lt;</definition>
+        <argsstring>(char *)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>char *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="659" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d0f/classTango_1_1DbDatum_1a6de9f979f05bd36b118cf6fa985cc647" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::DbDatum::operator&lt;&lt;</definition>
+        <argsstring>(const char *)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>const char *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="661" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d0f/classTango_1_1DbDatum_1a8ddf35377f3cc39c4de74b8f6b193110" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::DbDatum::operator&lt;&lt;</definition>
+        <argsstring>(string &amp;)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>string &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="663" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d0f/classTango_1_1DbDatum_1a026642fbc42f407db5d6c681006d735b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::DbDatum::operator&lt;&lt;</definition>
+        <argsstring>(vector&lt; string &gt; &amp;)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>vector&lt; string &gt; &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="665" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d0f/classTango_1_1DbDatum_1a200eca5d901922c64a743c47e47af3bd" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::DbDatum::operator&lt;&lt;</definition>
+        <argsstring>(vector&lt; short &gt; &amp;)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>vector&lt; short &gt; &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="666" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d0f/classTango_1_1DbDatum_1aa8f08943ba71a33ecddbe568079e2b66" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::DbDatum::operator&lt;&lt;</definition>
+        <argsstring>(vector&lt; unsigned short &gt; &amp;)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>vector&lt; unsigned short &gt; &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="667" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d0f/classTango_1_1DbDatum_1a7bd57d12f9057527ead3d577e90d5ad8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::DbDatum::operator&lt;&lt;</definition>
+        <argsstring>(vector&lt; DevLong &gt; &amp;)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>vector&lt; DevLong &gt; &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="668" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d0f/classTango_1_1DbDatum_1a5b4cde800b2b996181e96cdb29348524" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::DbDatum::operator&lt;&lt;</definition>
+        <argsstring>(vector&lt; DevULong &gt; &amp;)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>vector&lt; DevULong &gt; &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="669" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d0f/classTango_1_1DbDatum_1aa83956e4ddffc0e1119ac589539c86f7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::DbDatum::operator&lt;&lt;</definition>
+        <argsstring>(vector&lt; DevLong64 &gt; &amp;)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>vector&lt; DevLong64 &gt; &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="670" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d0f/classTango_1_1DbDatum_1aa65dbd11e826873b7d50cafb58f2ec35" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::DbDatum::operator&lt;&lt;</definition>
+        <argsstring>(vector&lt; DevULong64 &gt; &amp;)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>vector&lt; DevULong64 &gt; &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="671" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d0f/classTango_1_1DbDatum_1a6685016df99bf74ff881e03ff6ea694d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::DbDatum::operator&lt;&lt;</definition>
+        <argsstring>(vector&lt; float &gt; &amp;)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>vector&lt; float &gt; &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="672" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d0f/classTango_1_1DbDatum_1ae94b5a029dcd723cee950f2cc21acee4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::DbDatum::operator&lt;&lt;</definition>
+        <argsstring>(vector&lt; double &gt; &amp;)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>vector&lt; double &gt; &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="673" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d0f/classTango_1_1DbDatum_1aa3bbbc15a89a1245f51f679ef1a5c86e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d3/d0f/classTango_1_1DbDatum" kindref="compound">DbDatum</ref> &amp;</type>
+        <definition>DbDatum&amp; Tango::DbDatum::operator=</definition>
+        <argsstring>(const DbDatum &amp;)</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="d3/d0f/classTango_1_1DbDatum" kindref="compound">DbDatum</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="642" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d0f/classTango_1_1DbDatum_1a7c8b177f067d501d077f0c7acaf87839" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Tango::DbDatum::operator&gt;&gt;</definition>
+        <argsstring>(short &amp;)</argsstring>
+        <name>operator&gt;&gt;</name>
+        <param>
+          <type>short &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="679" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d0f/classTango_1_1DbDatum_1a384d1a8be78431e041de1601359845c4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Tango::DbDatum::operator&gt;&gt;</definition>
+        <argsstring>(unsigned char &amp;)</argsstring>
+        <name>operator&gt;&gt;</name>
+        <param>
+          <type>unsigned char &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="680" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d0f/classTango_1_1DbDatum_1aca8d8ad898457a4430db3b50b857990d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Tango::DbDatum::operator&gt;&gt;</definition>
+        <argsstring>(unsigned short &amp;)</argsstring>
+        <name>operator&gt;&gt;</name>
+        <param>
+          <type>unsigned short &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="681" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d0f/classTango_1_1DbDatum_1a94cba158bc9c312f75187384f70e6ebe" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Tango::DbDatum::operator&gt;&gt;</definition>
+        <argsstring>(DevLong &amp;)</argsstring>
+        <name>operator&gt;&gt;</name>
+        <param>
+          <type>DevLong &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="682" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d0f/classTango_1_1DbDatum_1a30e5d345e25236c17cd8fd5ccff950c6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Tango::DbDatum::operator&gt;&gt;</definition>
+        <argsstring>(DevULong &amp;)</argsstring>
+        <name>operator&gt;&gt;</name>
+        <param>
+          <type>DevULong &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="683" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d0f/classTango_1_1DbDatum_1aaa60f04b772ba2b56053871e28026f14" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Tango::DbDatum::operator&gt;&gt;</definition>
+        <argsstring>(DevLong64 &amp;)</argsstring>
+        <name>operator&gt;&gt;</name>
+        <param>
+          <type>DevLong64 &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="684" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d0f/classTango_1_1DbDatum_1ac55dde85fae0330dbdf162662bdf0f08" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Tango::DbDatum::operator&gt;&gt;</definition>
+        <argsstring>(DevULong64 &amp;)</argsstring>
+        <name>operator&gt;&gt;</name>
+        <param>
+          <type>DevULong64 &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="685" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d0f/classTango_1_1DbDatum_1a63939fbe33ed4de5a07587fe705a8dc6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Tango::DbDatum::operator&gt;&gt;</definition>
+        <argsstring>(float &amp;)</argsstring>
+        <name>operator&gt;&gt;</name>
+        <param>
+          <type>float &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="686" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d0f/classTango_1_1DbDatum_1a19398e9de020e8b72a07757567091418" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Tango::DbDatum::operator&gt;&gt;</definition>
+        <argsstring>(double &amp;)</argsstring>
+        <name>operator&gt;&gt;</name>
+        <param>
+          <type>double &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="687" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d0f/classTango_1_1DbDatum_1a41d1e86478a9d86742b6b3a3cf34c21b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Tango::DbDatum::operator&gt;&gt;</definition>
+        <argsstring>(const char *&amp;)</argsstring>
+        <name>operator&gt;&gt;</name>
+        <param>
+          <type>const char *&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="688" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d0f/classTango_1_1DbDatum_1ad4a2479446fd133b8b26320b4e0bda5a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Tango::DbDatum::operator&gt;&gt;</definition>
+        <argsstring>(string &amp;)</argsstring>
+        <name>operator&gt;&gt;</name>
+        <param>
+          <type>string &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="689" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d0f/classTango_1_1DbDatum_1ae9636a15a0d663da426f6451ef6b1cc3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Tango::DbDatum::operator&gt;&gt;</definition>
+        <argsstring>(vector&lt; string &gt; &amp;)</argsstring>
+        <name>operator&gt;&gt;</name>
+        <param>
+          <type>vector&lt; string &gt; &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="691" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d0f/classTango_1_1DbDatum_1a4ff5af8f7e374d8d9718af32d29c240c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Tango::DbDatum::operator&gt;&gt;</definition>
+        <argsstring>(vector&lt; short &gt; &amp;)</argsstring>
+        <name>operator&gt;&gt;</name>
+        <param>
+          <type>vector&lt; short &gt; &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="692" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d0f/classTango_1_1DbDatum_1ae092383ef8fd6e4999dc0b56739a74fc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Tango::DbDatum::operator&gt;&gt;</definition>
+        <argsstring>(vector&lt; unsigned short &gt; &amp;)</argsstring>
+        <name>operator&gt;&gt;</name>
+        <param>
+          <type>vector&lt; unsigned short &gt; &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="693" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d0f/classTango_1_1DbDatum_1a210500ca5c26be3fc0c63d3c079beef4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Tango::DbDatum::operator&gt;&gt;</definition>
+        <argsstring>(vector&lt; DevLong &gt; &amp;)</argsstring>
+        <name>operator&gt;&gt;</name>
+        <param>
+          <type>vector&lt; DevLong &gt; &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="694" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d0f/classTango_1_1DbDatum_1a7b79536a34d26e1781b38efe6564ec01" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Tango::DbDatum::operator&gt;&gt;</definition>
+        <argsstring>(vector&lt; DevULong &gt; &amp;)</argsstring>
+        <name>operator&gt;&gt;</name>
+        <param>
+          <type>vector&lt; DevULong &gt; &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="695" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d0f/classTango_1_1DbDatum_1a6bbed6376a7cdc25b2e5d639a377aa2a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Tango::DbDatum::operator&gt;&gt;</definition>
+        <argsstring>(vector&lt; DevLong64 &gt; &amp;)</argsstring>
+        <name>operator&gt;&gt;</name>
+        <param>
+          <type>vector&lt; DevLong64 &gt; &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="696" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d0f/classTango_1_1DbDatum_1a3984aaa151c987894976a69b140b1728" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Tango::DbDatum::operator&gt;&gt;</definition>
+        <argsstring>(vector&lt; DevULong64 &gt; &amp;)</argsstring>
+        <name>operator&gt;&gt;</name>
+        <param>
+          <type>vector&lt; DevULong64 &gt; &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="697" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d0f/classTango_1_1DbDatum_1af491f9f2e4d913b45a814ad794f348b6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Tango::DbDatum::operator&gt;&gt;</definition>
+        <argsstring>(vector&lt; float &gt; &amp;)</argsstring>
+        <name>operator&gt;&gt;</name>
+        <param>
+          <type>vector&lt; float &gt; &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="698" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d0f/classTango_1_1DbDatum_1a0b52369354096147284cc64d8da7f143" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Tango::DbDatum::operator&gt;&gt;</definition>
+        <argsstring>(vector&lt; double &gt; &amp;)</argsstring>
+        <name>operator&gt;&gt;</name>
+        <param>
+          <type>vector&lt; double &gt; &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="699" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d0f/classTango_1_1DbDatum_1a1d5a9ccc30b9259af52aaae3ca946a70" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t Tango::DbDatum::size</definition>
+        <argsstring>()</argsstring>
+        <name>size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="644" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" bodystart="644" bodyend="644"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A database value. </para>    </briefdescription>
+    <detaileddescription>
+<para>A single database value which has a name, type, address and value and methods for inserting and extracting C++ native types. This is the fundamental type for specifying database properties. Every property has a name and has one or more values associated with it. The values can be inserted and extracted using the operators &lt;&lt; and &gt;&gt; respectively. A status flag indicates if there is data in the <ref refid="d3/d0f/classTango_1_1DbDatum" kindref="compound">DbDatum</ref> object or not. An additional flag allows the user to activate exceptions. </para>    </detaileddescription>
+    <location file="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" line="453" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/dbapi.h" bodystart="452" bodyend="718"/>
+    <listofallmembers>
+      <member refid="d3/d0f/classTango_1_1DbDatum_1aeff53e61f2fa3a42ac930113af6b9f0c" prot="public" virt="non-virtual"><scope>Tango::DbDatum</scope><name>DbDatum</name></member>
+      <member refid="d3/d0f/classTango_1_1DbDatum_1af66b0aadb93b23168cb56d81d61baf48" prot="public" virt="non-virtual"><scope>Tango::DbDatum</scope><name>DbDatum</name></member>
+      <member refid="d3/d0f/classTango_1_1DbDatum_1a460b5da07767c99af568f145ed6d71a0" prot="private" virt="non-virtual"><scope>Tango::DbDatum</scope><name>DbDatum</name></member>
+      <member refid="d3/d0f/classTango_1_1DbDatum_1a4d3d20a71e57a4e777c87bc1285e8fcb" prot="private" virt="non-virtual"><scope>Tango::DbDatum</scope><name>DbDatum</name></member>
+      <member refid="d3/d0f/classTango_1_1DbDatum_1aad97d9168efee0c36044153ed667b1b2" prot="private" virt="non-virtual"><scope>Tango::DbDatum</scope><name>except_flags</name></member>
+      <member refid="d3/d0f/classTango_1_1DbDatum_1adce60a23dccf7f08f1fc7f81cbc783f0" prot="public" virt="non-virtual"><scope>Tango::DbDatum</scope><name>exceptions</name></member>
+      <member refid="d3/d0f/classTango_1_1DbDatum_1a332a7e23267e200c786a5b8486916205" prot="public" virt="non-virtual"><scope>Tango::DbDatum</scope><name>exceptions</name></member>
+      <member refid="d3/d0f/classTango_1_1DbDatum_1a46bce08025405aa0ca8599e5a09f4ac1" prot="private" virt="non-virtual"><scope>Tango::DbDatum</scope><name>exceptions_flags</name></member>
+      <member refid="d3/d0f/classTango_1_1DbDatum_1abf5ad4cc2b2595305a29a35e41381238" prot="private" virt="non-virtual"><scope>Tango::DbDatum</scope><name>ext</name></member>
+      <member refid="d3/d0f/classTango_1_1DbDatum_1aead8e1ceb14215958af0c4202d973e54" prot="public" virt="non-virtual"><scope>Tango::DbDatum</scope><name>is_empty</name></member>
+      <member refid="d3/d0f/classTango_1_1DbDatum_1aad97d9168efee0c36044153ed667b1b2a1d27b2e9a1261bce3937b4896ff53d60" prot="private" virt="non-virtual"><scope>Tango::DbDatum</scope><name>isempty_flag</name></member>
+      <member refid="d3/d0f/classTango_1_1DbDatum_1ab303d8d303e279939f240968272248df" prot="private" virt="non-virtual"><scope>Tango::DbDatum</scope><name>name</name></member>
+      <member refid="d3/d0f/classTango_1_1DbDatum_1aad97d9168efee0c36044153ed667b1b2aa03b0870669e263ce4d8873aa262aa4e" prot="private" virt="non-virtual"><scope>Tango::DbDatum</scope><name>numFlags</name></member>
+      <member refid="d3/d0f/classTango_1_1DbDatum_1a66304a562149bdb6d89858cbca65729e" prot="public" virt="non-virtual"><scope>Tango::DbDatum</scope><name>operator&lt;&lt;</name></member>
+      <member refid="d3/d0f/classTango_1_1DbDatum_1ac614cd260423e8988b7df463470259fe" prot="private" virt="non-virtual"><scope>Tango::DbDatum</scope><name>operator&lt;&lt;</name></member>
+      <member refid="d3/d0f/classTango_1_1DbDatum_1a1583ce3c2330fcf47d7c5e9d5d19cad0" prot="private" virt="non-virtual"><scope>Tango::DbDatum</scope><name>operator&lt;&lt;</name></member>
+      <member refid="d3/d0f/classTango_1_1DbDatum_1acd1628791b532b567ec8e1b774699e6d" prot="private" virt="non-virtual"><scope>Tango::DbDatum</scope><name>operator&lt;&lt;</name></member>
+      <member refid="d3/d0f/classTango_1_1DbDatum_1a072704741d32172e2cee4dcb69b362de" prot="private" virt="non-virtual"><scope>Tango::DbDatum</scope><name>operator&lt;&lt;</name></member>
+      <member refid="d3/d0f/classTango_1_1DbDatum_1a2dd2abc8947329108b7533bddee3956f" prot="private" virt="non-virtual"><scope>Tango::DbDatum</scope><name>operator&lt;&lt;</name></member>
+      <member refid="d3/d0f/classTango_1_1DbDatum_1a9e13a7d291f282f185b65e0bccfe74ca" prot="private" virt="non-virtual"><scope>Tango::DbDatum</scope><name>operator&lt;&lt;</name></member>
+      <member refid="d3/d0f/classTango_1_1DbDatum_1a61d056399909846963324441e7144763" prot="private" virt="non-virtual"><scope>Tango::DbDatum</scope><name>operator&lt;&lt;</name></member>
+      <member refid="d3/d0f/classTango_1_1DbDatum_1afda12245adaab9276415a147c3459c97" prot="private" virt="non-virtual"><scope>Tango::DbDatum</scope><name>operator&lt;&lt;</name></member>
+      <member refid="d3/d0f/classTango_1_1DbDatum_1ad98e81a2ca9c78822ae47cb534649aab" prot="private" virt="non-virtual"><scope>Tango::DbDatum</scope><name>operator&lt;&lt;</name></member>
+      <member refid="d3/d0f/classTango_1_1DbDatum_1a7fc65ee2932cee9a9897f6b69e19c65c" prot="private" virt="non-virtual"><scope>Tango::DbDatum</scope><name>operator&lt;&lt;</name></member>
+      <member refid="d3/d0f/classTango_1_1DbDatum_1a6de9f979f05bd36b118cf6fa985cc647" prot="private" virt="non-virtual"><scope>Tango::DbDatum</scope><name>operator&lt;&lt;</name></member>
+      <member refid="d3/d0f/classTango_1_1DbDatum_1a8ddf35377f3cc39c4de74b8f6b193110" prot="private" virt="non-virtual"><scope>Tango::DbDatum</scope><name>operator&lt;&lt;</name></member>
+      <member refid="d3/d0f/classTango_1_1DbDatum_1a026642fbc42f407db5d6c681006d735b" prot="private" virt="non-virtual"><scope>Tango::DbDatum</scope><name>operator&lt;&lt;</name></member>
+      <member refid="d3/d0f/classTango_1_1DbDatum_1a200eca5d901922c64a743c47e47af3bd" prot="private" virt="non-virtual"><scope>Tango::DbDatum</scope><name>operator&lt;&lt;</name></member>
+      <member refid="d3/d0f/classTango_1_1DbDatum_1aa8f08943ba71a33ecddbe568079e2b66" prot="private" virt="non-virtual"><scope>Tango::DbDatum</scope><name>operator&lt;&lt;</name></member>
+      <member refid="d3/d0f/classTango_1_1DbDatum_1a7bd57d12f9057527ead3d577e90d5ad8" prot="private" virt="non-virtual"><scope>Tango::DbDatum</scope><name>operator&lt;&lt;</name></member>
+      <member refid="d3/d0f/classTango_1_1DbDatum_1a5b4cde800b2b996181e96cdb29348524" prot="private" virt="non-virtual"><scope>Tango::DbDatum</scope><name>operator&lt;&lt;</name></member>
+      <member refid="d3/d0f/classTango_1_1DbDatum_1aa83956e4ddffc0e1119ac589539c86f7" prot="private" virt="non-virtual"><scope>Tango::DbDatum</scope><name>operator&lt;&lt;</name></member>
+      <member refid="d3/d0f/classTango_1_1DbDatum_1aa65dbd11e826873b7d50cafb58f2ec35" prot="private" virt="non-virtual"><scope>Tango::DbDatum</scope><name>operator&lt;&lt;</name></member>
+      <member refid="d3/d0f/classTango_1_1DbDatum_1a6685016df99bf74ff881e03ff6ea694d" prot="private" virt="non-virtual"><scope>Tango::DbDatum</scope><name>operator&lt;&lt;</name></member>
+      <member refid="d3/d0f/classTango_1_1DbDatum_1ae94b5a029dcd723cee950f2cc21acee4" prot="private" virt="non-virtual"><scope>Tango::DbDatum</scope><name>operator&lt;&lt;</name></member>
+      <member refid="d3/d0f/classTango_1_1DbDatum_1aa3bbbc15a89a1245f51f679ef1a5c86e" prot="private" virt="non-virtual"><scope>Tango::DbDatum</scope><name>operator=</name></member>
+      <member refid="d3/d0f/classTango_1_1DbDatum_1afd6ed9a2e6b129bcc9ae26e16ae4ef0b" prot="public" virt="non-virtual"><scope>Tango::DbDatum</scope><name>operator&gt;&gt;</name></member>
+      <member refid="d3/d0f/classTango_1_1DbDatum_1a7c8b177f067d501d077f0c7acaf87839" prot="private" virt="non-virtual"><scope>Tango::DbDatum</scope><name>operator&gt;&gt;</name></member>
+      <member refid="d3/d0f/classTango_1_1DbDatum_1a384d1a8be78431e041de1601359845c4" prot="private" virt="non-virtual"><scope>Tango::DbDatum</scope><name>operator&gt;&gt;</name></member>
+      <member refid="d3/d0f/classTango_1_1DbDatum_1aca8d8ad898457a4430db3b50b857990d" prot="private" virt="non-virtual"><scope>Tango::DbDatum</scope><name>operator&gt;&gt;</name></member>
+      <member refid="d3/d0f/classTango_1_1DbDatum_1a94cba158bc9c312f75187384f70e6ebe" prot="private" virt="non-virtual"><scope>Tango::DbDatum</scope><name>operator&gt;&gt;</name></member>
+      <member refid="d3/d0f/classTango_1_1DbDatum_1a30e5d345e25236c17cd8fd5ccff950c6" prot="private" virt="non-virtual"><scope>Tango::DbDatum</scope><name>operator&gt;&gt;</name></member>
+      <member refid="d3/d0f/classTango_1_1DbDatum_1aaa60f04b772ba2b56053871e28026f14" prot="private" virt="non-virtual"><scope>Tango::DbDatum</scope><name>operator&gt;&gt;</name></member>
+      <member refid="d3/d0f/classTango_1_1DbDatum_1ac55dde85fae0330dbdf162662bdf0f08" prot="private" virt="non-virtual"><scope>Tango::DbDatum</scope><name>operator&gt;&gt;</name></member>
+      <member refid="d3/d0f/classTango_1_1DbDatum_1a63939fbe33ed4de5a07587fe705a8dc6" prot="private" virt="non-virtual"><scope>Tango::DbDatum</scope><name>operator&gt;&gt;</name></member>
+      <member refid="d3/d0f/classTango_1_1DbDatum_1a19398e9de020e8b72a07757567091418" prot="private" virt="non-virtual"><scope>Tango::DbDatum</scope><name>operator&gt;&gt;</name></member>
+      <member refid="d3/d0f/classTango_1_1DbDatum_1a41d1e86478a9d86742b6b3a3cf34c21b" prot="private" virt="non-virtual"><scope>Tango::DbDatum</scope><name>operator&gt;&gt;</name></member>
+      <member refid="d3/d0f/classTango_1_1DbDatum_1ad4a2479446fd133b8b26320b4e0bda5a" prot="private" virt="non-virtual"><scope>Tango::DbDatum</scope><name>operator&gt;&gt;</name></member>
+      <member refid="d3/d0f/classTango_1_1DbDatum_1ae9636a15a0d663da426f6451ef6b1cc3" prot="private" virt="non-virtual"><scope>Tango::DbDatum</scope><name>operator&gt;&gt;</name></member>
+      <member refid="d3/d0f/classTango_1_1DbDatum_1a4ff5af8f7e374d8d9718af32d29c240c" prot="private" virt="non-virtual"><scope>Tango::DbDatum</scope><name>operator&gt;&gt;</name></member>
+      <member refid="d3/d0f/classTango_1_1DbDatum_1ae092383ef8fd6e4999dc0b56739a74fc" prot="private" virt="non-virtual"><scope>Tango::DbDatum</scope><name>operator&gt;&gt;</name></member>
+      <member refid="d3/d0f/classTango_1_1DbDatum_1a210500ca5c26be3fc0c63d3c079beef4" prot="private" virt="non-virtual"><scope>Tango::DbDatum</scope><name>operator&gt;&gt;</name></member>
+      <member refid="d3/d0f/classTango_1_1DbDatum_1a7b79536a34d26e1781b38efe6564ec01" prot="private" virt="non-virtual"><scope>Tango::DbDatum</scope><name>operator&gt;&gt;</name></member>
+      <member refid="d3/d0f/classTango_1_1DbDatum_1a6bbed6376a7cdc25b2e5d639a377aa2a" prot="private" virt="non-virtual"><scope>Tango::DbDatum</scope><name>operator&gt;&gt;</name></member>
+      <member refid="d3/d0f/classTango_1_1DbDatum_1a3984aaa151c987894976a69b140b1728" prot="private" virt="non-virtual"><scope>Tango::DbDatum</scope><name>operator&gt;&gt;</name></member>
+      <member refid="d3/d0f/classTango_1_1DbDatum_1af491f9f2e4d913b45a814ad794f348b6" prot="private" virt="non-virtual"><scope>Tango::DbDatum</scope><name>operator&gt;&gt;</name></member>
+      <member refid="d3/d0f/classTango_1_1DbDatum_1a0b52369354096147284cc64d8da7f143" prot="private" virt="non-virtual"><scope>Tango::DbDatum</scope><name>operator&gt;&gt;</name></member>
+      <member refid="d3/d0f/classTango_1_1DbDatum_1a6c4f542a1f33e2ff5e7f2e16aded5679" prot="public" virt="non-virtual"><scope>Tango::DbDatum</scope><name>reset_exceptions</name></member>
+      <member refid="d3/d0f/classTango_1_1DbDatum_1aff8fbe5d2dd3c816b1ff24c55fb1295a" prot="public" virt="non-virtual"><scope>Tango::DbDatum</scope><name>set_exceptions</name></member>
+      <member refid="d3/d0f/classTango_1_1DbDatum_1a1d5a9ccc30b9259af52aaae3ca946a70" prot="private" virt="non-virtual"><scope>Tango::DbDatum</scope><name>size</name></member>
+      <member refid="d3/d0f/classTango_1_1DbDatum_1a67f25560fbb6a98c98a8284224165557" prot="private" virt="non-virtual"><scope>Tango::DbDatum</scope><name>value_size</name></member>
+      <member refid="d3/d0f/classTango_1_1DbDatum_1a8f71e10a896077479085cd9037999b12" prot="private" virt="non-virtual"><scope>Tango::DbDatum</scope><name>value_string</name></member>
+      <member refid="d3/d0f/classTango_1_1DbDatum_1ac7959dd43bff644b16b3ddd1a0f43fc4" prot="private" virt="non-virtual"><scope>Tango::DbDatum</scope><name>value_type</name></member>
+      <member refid="d3/d0f/classTango_1_1DbDatum_1aad97d9168efee0c36044153ed667b1b2a51cffb433f735e242b0fce00d5a82f8f" prot="private" virt="non-virtual"><scope>Tango::DbDatum</scope><name>wrongtype_flag</name></member>
+      <member refid="d3/d0f/classTango_1_1DbDatum_1a9ac82569924e7e825261bee3f26287da" prot="private" virt="non-virtual"><scope>Tango::DbDatum</scope><name>~DbDatum</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

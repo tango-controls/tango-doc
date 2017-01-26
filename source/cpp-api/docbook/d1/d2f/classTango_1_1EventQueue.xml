@@ -1,0 +1,295 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d1/d2f/classTango_1_1EventQueue">
+<title>Tango::EventQueue class Reference</title>
+<para>
+    <programlisting>#include <link linkend="dd/d20/event_8h">&quot;event.h&quot;</link></programlisting>
+</para>
+        <simplesect>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>vector&lt; AttrConfEventData * &gt; conf_event_buffer</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>vector&lt; DevIntrChangeEventData * &gt; dev_inter_event_buffer</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>vector&lt; EventData * &gt; event_buffer</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>long insert_elt</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>long max_elt</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>omni_mutex modification_mutex</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>long nb_elt</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>vector&lt; PipeEventData * &gt; pipe_event_buffer</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>vector&lt; DataReadyEventData * &gt; ready_event_buffer</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d1/d2f/classTango_1_1EventQueue_1aff28e8d8ab5c02d96623653e3fc58655">EventQueue</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d1/d2f/classTango_1_1EventQueue_1ae211fc963322443c42177491f3fc683e">EventQueue</link> (
+long max_size)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d1/d2f/classTango_1_1EventQueue_1a3a80d06ad50ff07a6f6222f10492904c">~EventQueue</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d1/d2f/classTango_1_1EventQueue_1af1a21b499b68ce9adbb44122548ac559">get_events</link> (
+<link linkend="d3/d57/classTango_1_1EventDataList">EventDataList</link> &amp; event_list)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d1/d2f/classTango_1_1EventQueue_1a5ddc5a7c99857240c0409b58a01fa8e8">get_events</link> (
+<link linkend="d5/d4a/classTango_1_1AttrConfEventDataList">AttrConfEventDataList</link> &amp; event_list)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d1/d2f/classTango_1_1EventQueue_1ae725ae4162089ffd103d723aa8f43f63">get_events</link> (
+<link linkend="d0/d3e/classTango_1_1DataReadyEventDataList">DataReadyEventDataList</link> &amp; event_list)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d1/d2f/classTango_1_1EventQueue_1aa3a13d020e48d38efc3cba8343d74fcd">get_events</link> (
+<link linkend="dc/d3b/classTango_1_1DevIntrChangeEventDataList">DevIntrChangeEventDataList</link> &amp; event_list)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d1/d2f/classTango_1_1EventQueue_1a7eee85961e8b24b17a6d38c9383b7e17">get_events</link> (
+<link linkend="d1/d12/classTango_1_1PipeEventDataList">PipeEventDataList</link> &amp; event_list)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d1/d2f/classTango_1_1EventQueue_1a5bb7d32d1ebbbd187b2c9f0cc6291ca9">get_events</link> (
+<link linkend="d4/ded/classTango_1_1CallBack">CallBack</link> * cb)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>TimeVal <link linkend="d1/d2f/classTango_1_1EventQueue_1a505546a336dc7cccbb0b2a9427446d93">get_last_event_date</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d1/d2f/classTango_1_1EventQueue_1a6d482a1f15ffe9542e3d020be37d0d66">insert_event</link> (
+<link linkend="d7/d5f/classTango_1_1EventData">EventData</link> * new_event)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d1/d2f/classTango_1_1EventQueue_1a0fcc98a018ca2d373e243ecdcd2c3daf">insert_event</link> (
+<link linkend="d9/da1/classTango_1_1AttrConfEventData">AttrConfEventData</link> * new_event)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d1/d2f/classTango_1_1EventQueue_1a0c495ad7768218dabf49a9e89ccc3865">insert_event</link> (
+<link linkend="df/d39/classTango_1_1DataReadyEventData">DataReadyEventData</link> * new_event)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d1/d2f/classTango_1_1EventQueue_1ab83393ffa3c91ff21a56a6ee15f730f0">insert_event</link> (
+<link linkend="db/d47/classTango_1_1DevIntrChangeEventData">DevIntrChangeEventData</link> * new_event)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d1/d2f/classTango_1_1EventQueue_1add6e7ebf477c757e9f5abc3d747cb174">insert_event</link> (
+<link linkend="d8/d0d/classTango_1_1PipeEventData">PipeEventData</link> * new_event)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d1/d2f/classTango_1_1EventQueue_1ac1823d42d92c9b4faf6317a0a08be94e">is_empty</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="d1/d2f/classTango_1_1EventQueue_1a0ab7cfe0b9b255a9928478eddd8f955c">size</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d1/d2f/classTango_1_1EventQueue_1a8bc87bcb4f5389908f6fbe92c38af315">inc_indexes</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+            <section xml:id="d1/d2f/classTango_1_1EventQueue_1aff28e8d8ab5c02d96623653e3fc58655">
+                <title>Tango::EventQueue::EventQueue ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/d2f/classTango_1_1EventQueue_1ae211fc963322443c42177491f3fc683e">
+                <title>Tango::EventQueue::EventQueue (long max_size)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/d2f/classTango_1_1EventQueue_1a3a80d06ad50ff07a6f6222f10492904c">
+                <title>Tango::EventQueue::~EventQueue ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/d2f/classTango_1_1EventQueue_1af1a21b499b68ce9adbb44122548ac559">
+                <title>void Tango::EventQueue::get_events (EventDataList &amp;event_list)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/d2f/classTango_1_1EventQueue_1a5ddc5a7c99857240c0409b58a01fa8e8">
+                <title>void Tango::EventQueue::get_events (AttrConfEventDataList &amp;event_list)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/d2f/classTango_1_1EventQueue_1ae725ae4162089ffd103d723aa8f43f63">
+                <title>void Tango::EventQueue::get_events (DataReadyEventDataList &amp;event_list)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/d2f/classTango_1_1EventQueue_1aa3a13d020e48d38efc3cba8343d74fcd">
+                <title>void Tango::EventQueue::get_events (DevIntrChangeEventDataList &amp;event_list)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/d2f/classTango_1_1EventQueue_1a7eee85961e8b24b17a6d38c9383b7e17">
+                <title>void Tango::EventQueue::get_events (PipeEventDataList &amp;event_list)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/d2f/classTango_1_1EventQueue_1a5bb7d32d1ebbbd187b2c9f0cc6291ca9">
+                <title>void Tango::EventQueue::get_events (CallBack *cb)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/d2f/classTango_1_1EventQueue_1a505546a336dc7cccbb0b2a9427446d93">
+                <title>TimeVal Tango::EventQueue::get_last_event_date ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/d2f/classTango_1_1EventQueue_1a6d482a1f15ffe9542e3d020be37d0d66">
+                <title>void Tango::EventQueue::insert_event (EventData *new_event)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/d2f/classTango_1_1EventQueue_1a0fcc98a018ca2d373e243ecdcd2c3daf">
+                <title>void Tango::EventQueue::insert_event (AttrConfEventData *new_event)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/d2f/classTango_1_1EventQueue_1a0c495ad7768218dabf49a9e89ccc3865">
+                <title>void Tango::EventQueue::insert_event (DataReadyEventData *new_event)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/d2f/classTango_1_1EventQueue_1ab83393ffa3c91ff21a56a6ee15f730f0">
+                <title>void Tango::EventQueue::insert_event (DevIntrChangeEventData *new_event)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/d2f/classTango_1_1EventQueue_1add6e7ebf477c757e9f5abc3d747cb174">
+                <title>void Tango::EventQueue::insert_event (PipeEventData *new_event)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/d2f/classTango_1_1EventQueue_1ac1823d42d92c9b4faf6317a0a08be94e">
+                <title>bool Tango::EventQueue::is_empty ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/d2f/classTango_1_1EventQueue_1a0ab7cfe0b9b255a9928478eddd8f955c">
+                <title>int Tango::EventQueue::size ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d1/d2f/classTango_1_1EventQueue_1a8bc87bcb4f5389908f6fbe92c38af315">
+                <title>void Tango::EventQueue::inc_indexes ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

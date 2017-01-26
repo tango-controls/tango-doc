@@ -1,0 +1,132 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="d0/d4a/structTango_1_1AttributeAlarmInfo" kind="struct" prot="public">
+    <compoundname>Tango::AttributeAlarmInfo</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="d0/d4a/structTango_1_1AttributeAlarmInfo_1a2339ccfe8ef57425533de87ec7677438" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Tango::AttributeAlarmInfo::delta_t</definition>
+        <argsstring></argsstring>
+        <name>delta_t</name>
+        <briefdescription>
+<para>Delta t RDS. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/devapi.h" line="237" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/devapi.h" bodystart="237" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/d4a/structTango_1_1AttributeAlarmInfo_1a5e6d8bd051731bf5730ef92d89dc9810" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Tango::AttributeAlarmInfo::delta_val</definition>
+        <argsstring></argsstring>
+        <name>delta_val</name>
+        <briefdescription>
+<para>Delta val RDS. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/devapi.h" line="238" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/devapi.h" bodystart="238" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/d4a/structTango_1_1AttributeAlarmInfo_1a41217de305a07f3aac512190bf802436" prot="public" static="no" mutable="no">
+        <type>vector&lt; string &gt;</type>
+        <definition>vector&lt;string&gt; Tango::AttributeAlarmInfo::extensions</definition>
+        <argsstring></argsstring>
+        <name>extensions</name>
+        <briefdescription>
+<para>Future extensions. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/devapi.h" line="239" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/devapi.h" bodystart="239" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/d4a/structTango_1_1AttributeAlarmInfo_1aac90fcaa709d3614ac9d838f3af2f41a" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Tango::AttributeAlarmInfo::max_alarm</definition>
+        <argsstring></argsstring>
+        <name>max_alarm</name>
+        <briefdescription>
+<para>max alarm level </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/devapi.h" line="234" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/devapi.h" bodystart="234" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/d4a/structTango_1_1AttributeAlarmInfo_1ab89ae378c905d41c580b922f16f55ffa" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Tango::AttributeAlarmInfo::max_warning</definition>
+        <argsstring></argsstring>
+        <name>max_warning</name>
+        <briefdescription>
+<para>Max warning level. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/devapi.h" line="236" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/devapi.h" bodystart="236" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/d4a/structTango_1_1AttributeAlarmInfo_1a75ab6140f065a841206c4c8a812bffea" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Tango::AttributeAlarmInfo::min_alarm</definition>
+        <argsstring></argsstring>
+        <name>min_alarm</name>
+        <briefdescription>
+<para>Min alarm level. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/devapi.h" line="233" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/devapi.h" bodystart="233" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/d4a/structTango_1_1AttributeAlarmInfo_1af47fd458db3938f4242350cca362d473" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Tango::AttributeAlarmInfo::min_warning</definition>
+        <argsstring></argsstring>
+        <name>min_warning</name>
+        <briefdescription>
+<para>Min warning level. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/devapi.h" line="235" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/devapi.h" bodystart="235" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="d0/d4a/structTango_1_1AttributeAlarmInfo_1a6284623f5fd9f0e5d52dfdfec16b239a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Tango::AttributeAlarmInfo::operator==</definition>
+        <argsstring>(const _AttributeAlarmInfo &amp;)</argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const _AttributeAlarmInfo &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/devapi.h" line="242" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="d6/dad/classTango_1_1Attribute" kindref="compound">Attribute</ref> alarms configuration. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/tango/workspace/cppTango/include/tango/client/devapi.h" line="232" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/devapi.h" bodystart="228" bodyend="243"/>
+    <listofallmembers>
+      <member refid="d0/d4a/structTango_1_1AttributeAlarmInfo_1a2339ccfe8ef57425533de87ec7677438" prot="public" virt="non-virtual"><scope>Tango::AttributeAlarmInfo</scope><name>delta_t</name></member>
+      <member refid="d0/d4a/structTango_1_1AttributeAlarmInfo_1a5e6d8bd051731bf5730ef92d89dc9810" prot="public" virt="non-virtual"><scope>Tango::AttributeAlarmInfo</scope><name>delta_val</name></member>
+      <member refid="d0/d4a/structTango_1_1AttributeAlarmInfo_1a41217de305a07f3aac512190bf802436" prot="public" virt="non-virtual"><scope>Tango::AttributeAlarmInfo</scope><name>extensions</name></member>
+      <member refid="d0/d4a/structTango_1_1AttributeAlarmInfo_1aac90fcaa709d3614ac9d838f3af2f41a" prot="public" virt="non-virtual"><scope>Tango::AttributeAlarmInfo</scope><name>max_alarm</name></member>
+      <member refid="d0/d4a/structTango_1_1AttributeAlarmInfo_1ab89ae378c905d41c580b922f16f55ffa" prot="public" virt="non-virtual"><scope>Tango::AttributeAlarmInfo</scope><name>max_warning</name></member>
+      <member refid="d0/d4a/structTango_1_1AttributeAlarmInfo_1a75ab6140f065a841206c4c8a812bffea" prot="public" virt="non-virtual"><scope>Tango::AttributeAlarmInfo</scope><name>min_alarm</name></member>
+      <member refid="d0/d4a/structTango_1_1AttributeAlarmInfo_1af47fd458db3938f4242350cca362d473" prot="public" virt="non-virtual"><scope>Tango::AttributeAlarmInfo</scope><name>min_warning</name></member>
+      <member refid="d0/d4a/structTango_1_1AttributeAlarmInfo_1a6284623f5fd9f0e5d52dfdfec16b239a" prot="private" virt="non-virtual"><scope>Tango::AttributeAlarmInfo</scope><name>operator==</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

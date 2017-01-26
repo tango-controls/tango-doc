@@ -1,0 +1,1074 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="d5/d94/classTango_1_1Device__5Impl" kind="class" prot="public">
+    <compoundname>Tango::Device_5Impl</compoundname>
+    <basecompoundref prot="public" virt="virtual">Device_5</basecompoundref>
+    <basecompoundref refid="dc/dd9/classTango_1_1Device__4Impl" prot="public" virt="non-virtual">Tango::Device_4Impl</basecompoundref>
+    <innerclass refid="d0/d94/classTango_1_1Device__5Impl_1_1Device__5ImplExt" prot="private">Tango::Device_5Impl::Device_5ImplExt</innerclass>
+      <sectiondef kind="user-defined">
+      <header>Constructors</header>
+      <description><para>Miscellaneous constructors </para></description>
+      <memberdef kind="function" id="d5/d94/classTango_1_1Device__5Impl_1afe1920d066044205dfe58cd07df3a821" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::Device_5Impl::Device_5Impl</definition>
+        <argsstring>(DeviceClass *device_class, string &amp;dev_name)</argsstring>
+        <name>Device_5Impl</name>
+        <param>
+          <type><ref refid="d4/dcd/classTango_1_1DeviceClass" kindref="compound">DeviceClass</ref> *</type>
+          <declname>device_class</declname>
+        </param>
+        <param>
+          <type>string &amp;</type>
+          <declname>dev_name</declname>
+        </param>
+        <briefdescription>
+<para>Constructs a newly allocated <ref refid="d5/d94/classTango_1_1Device__5Impl" kindref="compound">Device_5Impl</ref> object from its name. </para>        </briefdescription>
+        <detaileddescription>
+<para>The device description field is set to <emphasis>A <ref refid="de/ddf/namespaceTango" kindref="compound">Tango</ref> device</emphasis>. The device state is set to unknown and the device status is set to <bold>Not Initialised</bold></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>device_class</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the device class object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dev_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The device name </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/device_5.h" line="91" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d94/classTango_1_1Device__5Impl_1ab102993af659a0f91a811fa6d1690380" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::Device_5Impl::Device_5Impl</definition>
+        <argsstring>(DeviceClass *device_class, string &amp;dev_name, string &amp;desc)</argsstring>
+        <name>Device_5Impl</name>
+        <param>
+          <type><ref refid="d4/dcd/classTango_1_1DeviceClass" kindref="compound">DeviceClass</ref> *</type>
+          <declname>device_class</declname>
+        </param>
+        <param>
+          <type>string &amp;</type>
+          <declname>dev_name</declname>
+        </param>
+        <param>
+          <type>string &amp;</type>
+          <declname>desc</declname>
+        </param>
+        <briefdescription>
+<para>Constructs a newly allocated <ref refid="d5/d94/classTango_1_1Device__5Impl" kindref="compound">Device_5Impl</ref> object from its name and its description. </para>        </briefdescription>
+        <detaileddescription>
+<para>The device state is set to unknown and the device status is set to <emphasis>Not Initialised</emphasis></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>device_class</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the device class object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dev_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The device name </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>desc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The device description </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/device_5.h" line="105" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d94/classTango_1_1Device__5Impl_1ab40ede73a0c84a2f78f4213470df5129" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::Device_5Impl::Device_5Impl</definition>
+        <argsstring>(DeviceClass *device_class, string &amp;dev_name, string &amp;desc, Tango::DevState dev_state, string &amp;dev_status)</argsstring>
+        <name>Device_5Impl</name>
+        <param>
+          <type><ref refid="d4/dcd/classTango_1_1DeviceClass" kindref="compound">DeviceClass</ref> *</type>
+          <declname>device_class</declname>
+        </param>
+        <param>
+          <type>string &amp;</type>
+          <declname>dev_name</declname>
+        </param>
+        <param>
+          <type>string &amp;</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>Tango::DevState</type>
+          <declname>dev_state</declname>
+        </param>
+        <param>
+          <type>string &amp;</type>
+          <declname>dev_status</declname>
+        </param>
+        <briefdescription>
+<para>Constructs a newly allocated <ref refid="d5/d94/classTango_1_1Device__5Impl" kindref="compound">Device_5Impl</ref> object from all its creation parameters. </para>        </briefdescription>
+        <detaileddescription>
+<para>The device is constructed from its name, its description, an original state and status</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>device_class</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the device class object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dev_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The device name </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>desc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The device description </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dev_state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The device initial state </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dev_status</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The device initial status </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/device_5.h" line="121" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d94/classTango_1_1Device__5Impl_1ad8b28f32f4a9ed7730f396e20e2b7334" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::Device_5Impl::Device_5Impl</definition>
+        <argsstring>(DeviceClass *device_class, const char *dev_name, const char *desc=&quot;A TANGO device&quot;, Tango::DevState dev_state=Tango::UNKNOWN, const char *dev_status=StatusNotSet)</argsstring>
+        <name>Device_5Impl</name>
+        <param>
+          <type><ref refid="d4/dcd/classTango_1_1DeviceClass" kindref="compound">DeviceClass</ref> *</type>
+          <declname>device_class</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>dev_name</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>desc</declname>
+          <defval>&quot;A TANGO device&quot;</defval>
+        </param>
+        <param>
+          <type>Tango::DevState</type>
+          <declname>dev_state</declname>
+          <defval>Tango::UNKNOWN</defval>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>dev_status</declname>
+          <defval><ref refid="de/ddf/namespaceTango_1ae1851ebaa91cbf1df9317e3f47f6190a" kindref="member">StatusNotSet</ref></defval>
+        </param>
+        <briefdescription>
+<para>Constructs a newly allocated <ref refid="d5/d94/classTango_1_1Device__5Impl" kindref="compound">Device_5Impl</ref> object from all its creation parameters with some default values. </para>        </briefdescription>
+        <detaileddescription>
+<para>The device is constructed from its name, its description, an original state and status. This constructor defined default values for the description, state and status parameters. The default device description is <emphasis>A TANGO device</emphasis>. The default device state is <emphasis>UNKNOWN</emphasis> and the default device status is <emphasis>Not initialised</emphasis>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>device_class</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the device class object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dev_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The device name </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>desc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The device desc </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dev_state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The device initial state </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dev_status</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The device initial status </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/device_5.h" line="142" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Destructor</header>
+      <description><para>Only one desctructor is defined for this class </para></description>
+      <memberdef kind="function" id="d5/d94/classTango_1_1Device__5Impl_1ad7cf3154c98f61e13d6324a959903d24" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual Tango::Device_5Impl::~Device_5Impl</definition>
+        <argsstring>()</argsstring>
+        <name>~Device_5Impl</name>
+        <briefdescription>
+<para>The device desctructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/device_5.h" line="154" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/device_5.h" bodystart="154" bodyend="154"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>CORBA operation methods</header>
+      <description><para>Method defined to implement TANGO device CORBA operation </para></description>
+      <memberdef kind="function" id="d5/d94/classTango_1_1Device__5Impl_1ac79f342b824d93b3352f30b1f6a381dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>Tango::AttributeValueList_5 *</type>
+        <definition>virtual Tango::AttributeValueList_5* Tango::Device_5Impl::read_attributes_5</definition>
+        <argsstring>(const Tango::DevVarStringArray &amp;names, Tango::DevSource source, const Tango::ClntIdent &amp;cl_ident)</argsstring>
+        <name>read_attributes_5</name>
+        <param>
+          <type>const Tango::DevVarStringArray &amp;</type>
+          <declname>names</declname>
+        </param>
+        <param>
+          <type>Tango::DevSource</type>
+          <declname>source</declname>
+        </param>
+        <param>
+          <type>const Tango::ClntIdent &amp;</type>
+          <declname>cl_ident</declname>
+        </param>
+        <briefdescription>
+<para>Read attribute(s) value. </para>        </briefdescription>
+        <detaileddescription>
+<para>Invoked when the client request the read_attributes_5 CORBA operation. It returns to the client one AttributeValue structure for each wanted attribute.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>names</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute(s) name list </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>source</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The data source. This parameter is new in <ref refid="de/ddf/namespaceTango" kindref="compound">Tango</ref> release 5. It allows a client to choose the data source between the device itself or the data cache for polled attribute. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>cl_ident</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The client identificator. This parameter is new in release 4. It allows device locking feature implemented in <ref refid="de/ddf/namespaceTango" kindref="compound">Tango</ref> V7 </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A sequence of AttributeValue_5 structure. One structure is initialised for each wanted attribute with the attribute value, the date and the attribute value quality. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#AttributeValue_5">here</ulink> to read <bold>AttributeValue</bold> structure definition. </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>DevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown if the attribute does not exist. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/device_5.h" line="183" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d94/classTango_1_1Device__5Impl_1a6e4e5de7a14e9e02e39d88fd74341a2a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>Tango::AttributeValueList_5 *</type>
+        <definition>virtual Tango::AttributeValueList_5* Tango::Device_5Impl::write_read_attributes_5</definition>
+        <argsstring>(const Tango::AttributeValueList_4 &amp;values, const Tango::DevVarStringArray &amp;r_names, const Tango::ClntIdent &amp;cl_ident)</argsstring>
+        <name>write_read_attributes_5</name>
+        <param>
+          <type>const Tango::AttributeValueList_4 &amp;</type>
+          <declname>values</declname>
+        </param>
+        <param>
+          <type>const Tango::DevVarStringArray &amp;</type>
+          <declname>r_names</declname>
+        </param>
+        <param>
+          <type>const Tango::ClntIdent &amp;</type>
+          <declname>cl_ident</declname>
+        </param>
+        <briefdescription>
+<para>Write then read attribute(s) value. </para>        </briefdescription>
+        <detaileddescription>
+<para>Invoked when the client request the write_read_attributes CORBA operation. It sets the attribute(s) with the new value(s) passed as parameter and then read the attribute(s) and return the read value to the caller.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>values</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute(s) new value(s). One structure is initialised for each wanted attribute with the attribute value. The attribute quality and date are not used by this method. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#AttributeValue_5">here</ulink> to read <bold>AttributeValue</bold> structure definition. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>r_names</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Names of the attribute(s) to be read </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>cl_ident</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The client identificator. This parameter is new in release 4. It allows device locking feature implemented in <ref refid="de/ddf/namespaceTango" kindref="compound">Tango</ref> V7 </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A sequence of AttributeValue_5 structure. One structure is initialised for each wanted attribute with the attribute value, the date and the attribute value quality. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#AttributeValue_5">here</ulink> to read <bold>AttributeValue_5</bold> structure definition. </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>DevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown if the command does not exist. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/device_5.h" line="210" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d94/classTango_1_1Device__5Impl_1aab44f183c589d5bc661730747bf7f661" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>Tango::AttributeConfigList_5 *</type>
+        <definition>virtual Tango::AttributeConfigList_5* Tango::Device_5Impl::get_attribute_config_5</definition>
+        <argsstring>(const Tango::DevVarStringArray &amp;names)</argsstring>
+        <name>get_attribute_config_5</name>
+        <param>
+          <type>const Tango::DevVarStringArray &amp;</type>
+          <declname>names</declname>
+        </param>
+        <briefdescription>
+<para>Get attribute(s) configuration. </para>        </briefdescription>
+        <detaileddescription>
+<para>Invoked when the client request the get_attribute_config_5 CORBA operation. It returns to the client one AttributeConfig_5 structure for each wanted attribute. All the attribute properties value are returned in this AttributeConfig_5 structure. Since <ref refid="de/ddf/namespaceTango" kindref="compound">Tango</ref> release V5, the attribute event related, the attribute warning alarm and attribute rds alarm properties have been added to the returned structures.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>names</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute(s) name list </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A sequence of AttributeConfig_5 structure. One structure is initialised for each wanted attribute. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#AttributeConfig_5">here</ulink> to read <bold>AttributeConfig_5</bold> structure specification.</para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>DevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown if the attribute does not exist. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/device_5.h" line="233" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d94/classTango_1_1Device__5Impl_1a54f9985386c233714413f73fba00e50a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Tango::Device_5Impl::set_attribute_config_5</definition>
+        <argsstring>(const Tango::AttributeConfigList_5 &amp;new_conf, const Tango::ClntIdent &amp;cl_ident)</argsstring>
+        <name>set_attribute_config_5</name>
+        <param>
+          <type>const Tango::AttributeConfigList_5 &amp;</type>
+          <declname>new_conf</declname>
+        </param>
+        <param>
+          <type>const Tango::ClntIdent &amp;</type>
+          <declname>cl_ident</declname>
+        </param>
+        <briefdescription>
+<para>Set attribute(s) configuration. </para>        </briefdescription>
+        <detaileddescription>
+<para>Invoked when the client request the set_attribute_config_5 CORBA operation. It updates the device attribute configuration actually used by the device but this method also updates the <ref refid="de/ddf/namespaceTango" kindref="compound">Tango</ref> database. One structure of the AttributeConfig_3 type is needed for each attribute to update configuration. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#AttributeConfig_5">here</ulink> to read <bold>AttributeConfig_5</bold> structure specification.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>new_conf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute(s) new configuration structure sequence </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>cl_ident</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The client identificator. This parameter is new in release 4. It allows device locking feature implemented in <ref refid="de/ddf/namespaceTango" kindref="compound">Tango</ref> V7 </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>DevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown if the command does not exist. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/device_5.h" line="252" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d94/classTango_1_1Device__5Impl_1a605986206b97694efa729d83eed85c29" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>Tango::DevAttrHistory_5 *</type>
+        <definition>virtual Tango::DevAttrHistory_5* Tango::Device_5Impl::read_attribute_history_5</definition>
+        <argsstring>(const char *name, DevLong n)</argsstring>
+        <name>read_attribute_history_5</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>DevLong</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+<para>Read attribute value history. </para>        </briefdescription>
+        <detaileddescription>
+<para>Invoked when the client request the read_attribute_history_5 CORBA operation. This operation allows a client to retrieve attribute value history for polled attribute. The depth of the history is limited to the depth of the device server internal polling buffer. It returns to the client one DevAttrHistory structure for each record.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute name </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>n</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The record number. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A DevAttrHistory_5 structure. This strucure contains all the element allowing a client to retrieve for each history record the attribute value, the date and in case of the attribute returns an error when it was read, the DevErrors data. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevAttrHistory_5">here</ulink> to read <bold>DevAttrHistory</bold> structure definition. </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>DevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown if the attribute does not exist or is not polled. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/device_5.h" line="276" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d94/classTango_1_1Device__5Impl_1aa58a10421bb77f52f091b0af4cde2a8b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>Tango::PipeConfigList *</type>
+        <definition>virtual Tango::PipeConfigList* Tango::Device_5Impl::get_pipe_config_5</definition>
+        <argsstring>(const Tango::DevVarStringArray &amp;names)</argsstring>
+        <name>get_pipe_config_5</name>
+        <param>
+          <type>const Tango::DevVarStringArray &amp;</type>
+          <declname>names</declname>
+        </param>
+        <briefdescription>
+<para>Get pipe(s) configuration. </para>        </briefdescription>
+        <detaileddescription>
+<para>Invoked when the client request the get_pipe_config_5 CORBA operation. It returns to the client one PipeConfig_5 structure for each wanted pipe. All the pipe description is returned in this PipeConfig_5 structure.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>names</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The pipe(s) name list </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A sequence of PipeConfig_5 structure. One structure is initialised for each wanted pipe. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#PipeConfig_5">here</ulink> to read <bold>PipeConfig_5</bold> structure specification.</para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>DevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown if the pipe does not exist. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/device_5.h" line="295" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d94/classTango_1_1Device__5Impl_1a4feb7a02977d194593cdb5c7ec6a23a7" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Tango::Device_5Impl::set_pipe_config_5</definition>
+        <argsstring>(const Tango::PipeConfigList &amp;new_conf, const Tango::ClntIdent &amp;cl_ident)</argsstring>
+        <name>set_pipe_config_5</name>
+        <param>
+          <type>const Tango::PipeConfigList &amp;</type>
+          <declname>new_conf</declname>
+        </param>
+        <param>
+          <type>const Tango::ClntIdent &amp;</type>
+          <declname>cl_ident</declname>
+        </param>
+        <briefdescription>
+<para>Set pipe(s) configuration. </para>        </briefdescription>
+        <detaileddescription>
+<para>Invoked when the client request the set_pipe_config_5 CORBA operation. It updates the device pipe configuration actually used by the device but this method also updates the <ref refid="de/ddf/namespaceTango" kindref="compound">Tango</ref> database. One structure of the PipeConfig type is needed for each pipe to update configuration. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#PipeConfig">here</ulink> to read <bold>PipeConfig</bold> structure specification.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>new_conf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The pipe(s) new configuration structure sequence </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>cl_ident</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The client identificator. This parameter is new in release 4. It allows device locking feature implemented in <ref refid="de/ddf/namespaceTango" kindref="compound">Tango</ref> V7 </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>DevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown if the command does not exist. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/device_5.h" line="314" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d94/classTango_1_1Device__5Impl_1a87a53f7fe891410c80e28e716525683e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>Tango::DevPipeData *</type>
+        <definition>virtual Tango::DevPipeData* Tango::Device_5Impl::read_pipe_5</definition>
+        <argsstring>(const char *name, const Tango::ClntIdent &amp;cl_ident)</argsstring>
+        <name>read_pipe_5</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const Tango::ClntIdent &amp;</type>
+          <declname>cl_ident</declname>
+        </param>
+        <briefdescription>
+<para>Read pipe value. </para>        </briefdescription>
+        <detaileddescription>
+<para>Invoked when the client request the read_pipe_5 CORBA operation. It returns to the client a DevPipeData structure.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The pipe name </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>cl_ident</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The client identificator. This parameter is new in release 4. It allows device locking feature implemented in <ref refid="de/ddf/namespaceTango" kindref="compound">Tango</ref> V7 </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A DevPipeData structure. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevPipeData">here</ulink> to read <bold>DevPipeData</bold> structure definition. </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>DevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown if the attribute does not exist. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/device_5.h" line="332" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d94/classTango_1_1Device__5Impl_1a03df67255a0e7b6b6259f85fc7834c77" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Tango::Device_5Impl::write_pipe_5</definition>
+        <argsstring>(const Tango::DevPipeData &amp;pipe_value, const Tango::ClntIdent &amp;cl_ident)</argsstring>
+        <name>write_pipe_5</name>
+        <param>
+          <type>const Tango::DevPipeData &amp;</type>
+          <declname>pipe_value</declname>
+        </param>
+        <param>
+          <type>const Tango::ClntIdent &amp;</type>
+          <declname>cl_ident</declname>
+        </param>
+        <briefdescription>
+<para>Write pipe value. </para>        </briefdescription>
+        <detaileddescription>
+<para>Invoked when the client request the write_pipe_5 CORBA operation. It allows a client to send data to a device through a pipe.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pipe_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new pipe value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>cl_ident</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The client identificator. This parameter is new in release 4. It allows device locking feature implemented in <ref refid="de/ddf/namespaceTango" kindref="compound">Tango</ref> V7 </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>DevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown if the attribute does not exist. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/device_5.h" line="347" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d94/classTango_1_1Device__5Impl_1a5da64b16851db4a641a06df11e1f371a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>Tango::DevPipeData *</type>
+        <definition>virtual Tango::DevPipeData* Tango::Device_5Impl::write_read_pipe_5</definition>
+        <argsstring>(const Tango::DevPipeData &amp;pipe_value, const Tango::ClntIdent &amp;cl_ident)</argsstring>
+        <name>write_read_pipe_5</name>
+        <param>
+          <type>const Tango::DevPipeData &amp;</type>
+          <declname>pipe_value</declname>
+        </param>
+        <param>
+          <type>const Tango::ClntIdent &amp;</type>
+          <declname>cl_ident</declname>
+        </param>
+        <briefdescription>
+<para>Write then read pipe value. </para>        </briefdescription>
+        <detaileddescription>
+<para>Invoked when the client request the write_read_pipe_5 CORBA operation. It allows a client to send data to a device through a pipe then to read data from the device through the same pipe.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pipe_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new pipe value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>cl_ident</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The client identificator. This parameter is new in release 4. It allows device locking feature implemented in <ref refid="de/ddf/namespaceTango" kindref="compound">Tango</ref> V7 </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A DevPipeData structure. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevPipeData">here</ulink> to read <bold>DevPipeData</bold> structure definition. </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>DevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown if the attribute does not exist. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/device_5.h" line="365" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d5/d94/classTango_1_1Device__5Impl_1ad2d901c27dae8336c771121dabe72fee" prot="private" static="no" mutable="no">
+        <type>Device_5ImplExt *</type>
+        <definition>Device_5ImplExt* Tango::Device_5Impl::ext_5</definition>
+        <argsstring></argsstring>
+        <name>ext_5</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/device_5.h" line="381" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/device_5.h" bodystart="381" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Base class for all TANGO device since version 5. </para>    </briefdescription>
+    <detaileddescription>
+<para>This class inherits from <ref refid="d3/d62/classTango_1_1DeviceImpl" kindref="compound">DeviceImpl</ref> class which itself inherits from CORBA classes where all the network layer is implemented. This class has been created since release 7 of <ref refid="de/ddf/namespaceTango" kindref="compound">Tango</ref> library where the IDL <ref refid="de/ddf/namespaceTango" kindref="compound">Tango</ref> module has been modified in order to create a Device_4 interface which inherits from the original Device interface</para><para><simplesect kind="rcs"><title>Author:</title><para>taurel </para></simplesect>
+<simplesect kind="rcs"><title>Revision:</title><para>20742 </para></simplesect>
+</para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="900">
+        <label>Tango::Device_3Impl</label>
+        <link refid="db/d65/classTango_1_1Device__3Impl"/>
+        <childnode refid="901" relation="public-inheritance">
+        </childnode>
+        <childnode refid="902" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="902">
+        <label>Tango::Device_2Impl</label>
+        <link refid="d8/dbf/classTango_1_1Device__2Impl"/>
+        <childnode refid="903" relation="public-inheritance">
+        </childnode>
+        <childnode refid="904" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="905">
+        <label>POA_Tango::Device</label>
+      </node>
+      <node id="903">
+        <label>POA_Tango::Device_2</label>
+      </node>
+      <node id="901">
+        <label>POA_Tango::Device_3</label>
+      </node>
+      <node id="899">
+        <label>POA_Tango::Device_4</label>
+      </node>
+      <node id="897">
+        <label>POA_Tango::Device_5</label>
+      </node>
+      <node id="896">
+        <label>Tango::Device_5Impl</label>
+        <link refid="d5/d94/classTango_1_1Device__5Impl"/>
+        <childnode refid="897" relation="public-inheritance">
+        </childnode>
+        <childnode refid="898" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="898">
+        <label>Tango::Device_4Impl</label>
+        <link refid="dc/dd9/classTango_1_1Device__4Impl"/>
+        <childnode refid="899" relation="public-inheritance">
+        </childnode>
+        <childnode refid="900" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="904">
+        <label>Tango::DeviceImpl</label>
+        <link refid="d3/d62/classTango_1_1DeviceImpl"/>
+        <childnode refid="905" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="910">
+        <label>Tango::Device_3Impl</label>
+        <link refid="db/d65/classTango_1_1Device__3Impl"/>
+        <childnode refid="911" relation="public-inheritance">
+        </childnode>
+        <childnode refid="912" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="912">
+        <label>Tango::Device_2Impl</label>
+        <link refid="d8/dbf/classTango_1_1Device__2Impl"/>
+        <childnode refid="913" relation="public-inheritance">
+        </childnode>
+        <childnode refid="914" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="917">
+        <label>Tango::DeviceClass</label>
+        <link refid="d4/dcd/classTango_1_1DeviceClass"/>
+        <childnode refid="918" relation="usage">
+          <edgelabel>db_class</edgelabel>
+        </childnode>
+      </node>
+      <node id="916">
+        <label>Tango::MultiAttribute</label>
+        <link refid="dc/d3b/classTango_1_1MultiAttribute"/>
+      </node>
+      <node id="915">
+        <label>POA_Tango::Device</label>
+      </node>
+      <node id="918">
+        <label>Tango::DbClass</label>
+        <link refid="dc/d38/classTango_1_1DbClass"/>
+      </node>
+      <node id="913">
+        <label>POA_Tango::Device_2</label>
+      </node>
+      <node id="911">
+        <label>POA_Tango::Device_3</label>
+      </node>
+      <node id="909">
+        <label>POA_Tango::Device_4</label>
+      </node>
+      <node id="907">
+        <label>POA_Tango::Device_5</label>
+      </node>
+      <node id="906">
+        <label>Tango::Device_5Impl</label>
+        <link refid="d5/d94/classTango_1_1Device__5Impl"/>
+        <childnode refid="907" relation="public-inheritance">
+        </childnode>
+        <childnode refid="908" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="908">
+        <label>Tango::Device_4Impl</label>
+        <link refid="dc/dd9/classTango_1_1Device__4Impl"/>
+        <childnode refid="909" relation="public-inheritance">
+        </childnode>
+        <childnode refid="910" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="914">
+        <label>Tango::DeviceImpl</label>
+        <link refid="d3/d62/classTango_1_1DeviceImpl"/>
+        <childnode refid="915" relation="public-inheritance">
+        </childnode>
+        <childnode refid="916" relation="usage">
+          <edgelabel>dev_attr</edgelabel>
+        </childnode>
+        <childnode refid="917" relation="usage">
+          <edgelabel>device_class</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/tango/workspace/cppTango/include/tango/server/device_5.h" line="74" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/device_5.h" bodystart="72" bodyend="384"/>
+    <listofallmembers>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a0895eb0df1a110eba046df7200d86f48" prot="public" virt="virtual"><scope>Tango::Device_5Impl</scope><name>_default_POA</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a9f130650c3a9da5190001adfbc2dc50c" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>add_attribute</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a64f3aafd381cd25bb562cdb4074932d9" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>add_command</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a57b6296e483e01cb62ffdce4eca0261a" prot="protected" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>adm_device_name</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a086fe46c88aed6e2aff70a9cb6c26e84" prot="public" virt="virtual"><scope>Tango::Device_5Impl</scope><name>always_executed_hook</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1ab1c6dfb1ea310030cd464f9091a2b8b0" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>append_status</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1ac1b1c0e44d43f83e9b6a1633dbfe2967" prot="protected" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>blackbox_depth</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1afdc166bd02d4723a09861bfbbf285c77" prot="protected" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>blackbox_ptr</name></member>
+      <member refid="d8/dbf/classTango_1_1Device__2Impl_1a4348a6f642052b9eeaca07b34877f3e7" prot="public" virt="virtual"><scope>Tango::Device_5Impl</scope><name>command_inout_2</name></member>
+      <member refid="dc/dd9/classTango_1_1Device__4Impl_1a4844c56133a99f6e6d1f5155475fb184" prot="public" virt="virtual"><scope>Tango::Device_5Impl</scope><name>command_inout_4</name></member>
+      <member refid="d8/dbf/classTango_1_1Device__2Impl_1a418ccb8015d1319130c9fe040b71121b" prot="public" virt="virtual"><scope>Tango::Device_5Impl</scope><name>command_inout_history_2</name></member>
+      <member refid="dc/dd9/classTango_1_1Device__4Impl_1a6c3490726c00bc7d33ea833e1b923690" prot="public" virt="virtual"><scope>Tango::Device_5Impl</scope><name>command_inout_history_4</name></member>
+      <member refid="d8/dbf/classTango_1_1Device__2Impl_1ac71c8dc3ed7116437c00370abc992968" prot="public" virt="virtual"><scope>Tango::Device_5Impl</scope><name>command_list_query_2</name></member>
+      <member refid="d8/dbf/classTango_1_1Device__2Impl_1afa99e1bb14a0decaa40ab43b46f3fea1" prot="public" virt="virtual"><scope>Tango::Device_5Impl</scope><name>command_query_2</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1ab4b7bdcca9c83603da302783c86553bc" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>create_DevVarCharArray</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a11715eb4830c827fed3b0e5592cfd1a0" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>create_DevVarDoubleArray</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1ab0cee831dc51482a9b16f49406a796c4" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>create_DevVarFloatArray</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a78a091f645e75c006f856adde52c1c50" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>create_DevVarLong64Array</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1ac094cb1f6aaf9f8672e7a508ac561e6b" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>create_DevVarLongArray</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1aa4c9e98e8b3fa64328eca74a4d1e07d3" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>create_DevVarShortArray</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1abe7b41d84597f3e9327c2a8fdc2eff2b" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>create_DevVarStringArray</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1aa00f880d45531edc57cf3f070ce9e757" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>create_DevVarULong64Array</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a408b4dd2c4b27caf1ffdefdc5fdde784" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>create_DevVarULongArray</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1ad08bf54e4603f07b21a522047626ffef" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>create_DevVarUShortArray</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1ae063e45a3778e7241d74f7270461cbb4" prot="protected" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>db_dev</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1ac2cf9bd6e0a5da8c121c65b068d36463" prot="public" virt="virtual"><scope>Tango::Device_5Impl</scope><name>delete_device</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a480f48ff00c9d1aa8bd406323967df7d" prot="protected" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>desc</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1aed3e20a35c92335be9ba742abdd9d60b" prot="protected" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>dev_attr</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a1b5f98bd245bd7e94403eaebc2913283" prot="public" virt="virtual"><scope>Tango::Device_5Impl</scope><name>dev_state</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1afcea586ff5d465e6f752fd256a66aeea" prot="public" virt="virtual"><scope>Tango::Device_5Impl</scope><name>dev_status</name></member>
+      <member refid="d8/dbf/classTango_1_1Device__2Impl_1a6d7f50b5fec343f584298c5263822854" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>Device_2Impl</name></member>
+      <member refid="d8/dbf/classTango_1_1Device__2Impl_1ad90287b9ce6a16a656aad0d0f3ce10b8" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>Device_2Impl</name></member>
+      <member refid="d8/dbf/classTango_1_1Device__2Impl_1ad0e74e2158f49e61d5d5db908f5aec69" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>Device_2Impl</name></member>
+      <member refid="d8/dbf/classTango_1_1Device__2Impl_1a0093f572273fc5464e562665b454e9db" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>Device_2Impl</name></member>
+      <member refid="db/d65/classTango_1_1Device__3Impl_1ac9db8606c8ea7044642865d104ad74af" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>Device_3Impl</name></member>
+      <member refid="db/d65/classTango_1_1Device__3Impl_1a96a52877d50b929178e5660901bd9e3e" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>Device_3Impl</name></member>
+      <member refid="db/d65/classTango_1_1Device__3Impl_1a4188f383ad8efb4624b9b12d7af6bd75" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>Device_3Impl</name></member>
+      <member refid="db/d65/classTango_1_1Device__3Impl_1a6d5f7b8f5aac1f9ea056d461f3ee94ce" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>Device_3Impl</name></member>
+      <member refid="dc/dd9/classTango_1_1Device__4Impl_1ac4fc7cd8a4256fa15d1a91b9040e7f68" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>Device_4Impl</name></member>
+      <member refid="dc/dd9/classTango_1_1Device__4Impl_1ac065aec658bab72b62b0b3546d700e44" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>Device_4Impl</name></member>
+      <member refid="dc/dd9/classTango_1_1Device__4Impl_1aea4538fbbca23294bddfcac3c442259c" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>Device_4Impl</name></member>
+      <member refid="dc/dd9/classTango_1_1Device__4Impl_1a996a80ca514898f8a31f40dc6e08baf0" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>Device_4Impl</name></member>
+      <member refid="d5/d94/classTango_1_1Device__5Impl_1afe1920d066044205dfe58cd07df3a821" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>Device_5Impl</name></member>
+      <member refid="d5/d94/classTango_1_1Device__5Impl_1ab102993af659a0f91a811fa6d1690380" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>Device_5Impl</name></member>
+      <member refid="d5/d94/classTango_1_1Device__5Impl_1ab40ede73a0c84a2f78f4213470df5129" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>Device_5Impl</name></member>
+      <member refid="d5/d94/classTango_1_1Device__5Impl_1ad8b28f32f4a9ed7730f396e20e2b7334" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>Device_5Impl</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a103c3527a529f7a40ecadf227a8a7990" prot="protected" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>device_class</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1af2649629d515c38fc5a19c44f07e2f40" prot="protected" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>device_name</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a214ba0a5741c52165869ae11219d414a" prot="protected" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>device_state</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1aa66233801c127f96878d701259739383" prot="protected" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>device_status</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a5cd151bc1016a1e0aaee47df1949fc03" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>DeviceImpl</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a2b7b74d29766be8582b66bd70b18e670" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>DeviceImpl</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a8159577740dda7690d6a9b416ee51721" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>DeviceImpl</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a44ad2f0801d241cf16d84b629cb85b1a" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>DeviceImpl</name></member>
+      <member refid="d5/d94/classTango_1_1Device__5Impl_1ad2d901c27dae8336c771121dabe72fee" prot="private" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>ext_5</name></member>
+      <member refid="d8/dbf/classTango_1_1Device__2Impl_1a80ba13a4e11a42c6aba434389cf8812b" prot="public" virt="virtual"><scope>Tango::Device_5Impl</scope><name>get_attribute_config_2</name></member>
+      <member refid="db/d65/classTango_1_1Device__3Impl_1a651489039cc5222dc1197b3368aa8cdd" prot="public" virt="virtual"><scope>Tango::Device_5Impl</scope><name>get_attribute_config_3</name></member>
+      <member refid="d5/d94/classTango_1_1Device__5Impl_1aab44f183c589d5bc661730747bf7f661" prot="public" virt="virtual"><scope>Tango::Device_5Impl</scope><name>get_attribute_config_5</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1ab4b52ce4ebdfb338399dc146cc629529" prot="protected" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>get_attribute_poll_period</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a00f3e7b568926d1e09b1dff8f574979f" prot="protected" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>get_command_poll_period</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1af57cb03749073660df2f1515204d17aa" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>get_d_var</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a6a5e05c240b76db97a357703bdd30552" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>get_db_device</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a339ebeff825166048358919948782be8" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>get_device_attr</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a61fa9524c2eba31eba7ba9ff3b48ef0a" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>get_device_class</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1ac337fcab0f8fa8647e817a9aedc87f0c" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>get_name</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a59b8a8053b36fe6eb5058342f77829ab" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>get_obj_id</name></member>
+      <member refid="d5/d94/classTango_1_1Device__5Impl_1aa58a10421bb77f52f091b0af4cde2a8b" prot="public" virt="virtual"><scope>Tango::Device_5Impl</scope><name>get_pipe_config_5</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1ac47d75934efad28b5668ee8b90df0999" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>get_polled_obj_by_type_name</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a051cb13d94de8492f37a9b5f48e38e56" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>get_prev_state</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a5b53b4435a1ea8087849a9e505d70f2a" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>get_state</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1adc92cdf3a75da5ebc139b7bf7d9c7377" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>get_status</name></member>
+      <member refid="db/d65/classTango_1_1Device__3Impl_1a28dab632521e2fb0e52827d155af673c" prot="public" virt="virtual"><scope>Tango::Device_5Impl</scope><name>info_3</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1afaa3632ea04076bb5614a98ff944ef8c" prot="public" virt="pure-virtual"><scope>Tango::Device_5Impl</scope><name>init_device</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1ab6434f2fd256b10b21ba38ba80b7231c" prot="protected" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>is_attribute_polled</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1ab3075b4e266562181c28d33be817ec0d" prot="protected" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>is_command_polled</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1ab7ccad84e75ab8e91ada91bb49a028ba" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>is_there_subscriber</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a6a748b41d85396d38cd004a30a10bda1" prot="protected" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>poll_attribute</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a96a247ceb8f389dbb02e8e693847fcdf" prot="protected" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>poll_command</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a5db64e22096acbd28c24e4c0eb91ae8f" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_archive_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a2178a2b731db74bcbee66e774dff4d9a" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_archive_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a8fa59e2bc965e66a9ca4611b7632bfd5" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_archive_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1ac05ed03092d65731a1089c46f4b2fda9" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_archive_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a635750d8940f09287bf50883a26bc021" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_archive_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a8b2f401ee83720c7d51887617258b8a1" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_archive_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1aa23b3a45fbff170bb26e7d7ac601184c" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_archive_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a49d509f24520272f94c3b62f05f0f2f4" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_archive_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a07bc41aaf4b0c07c6ed0eab8c619d83f" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_archive_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a6ccc427017496027aa8f050e002e065e" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_archive_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a7091e910df2b9b91311f009b3911c915" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_archive_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1abba65795f545e527852cdb9c0629a641" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_archive_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a5bd5bb3ec090a5313ee8489b7c7567d2" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_archive_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a46a4961a1752697ae17e35ad90722c13" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_archive_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1af9784d0a0460bd5c2c6fa3ef9817ed27" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_archive_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1ab569d4dbbb2005a7073fc331035bea88" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_archive_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a0a405f3f33a489bd943795cdca916506" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_archive_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a9d97a4c743bd5d7df0418f19ab31c68b" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_archive_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1ac077d834876215e373c5904ae438ac03" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_archive_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1af12a4fcc2686eafc5766a92471318c90" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_archive_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a5a14133c408b27f7bb1ea58ade98eb9f" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_archive_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a98a556bc3f307877add6dfb511174d06" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_archive_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a82ae5e5698a922ad745ec885d3be5d60" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_archive_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a0548aefd3fec998fcd006dd5b3f21909" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_archive_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a4e2c6e3b95067910f1e3fd091985ba68" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_archive_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a0270cdbc600f7f614708175e7f2c674b" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_archive_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1ae9eed5a3b6fd5dd301c1bbf37a12172a" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_archive_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a489ed63de4130e0e9ba98d9a08b2b9b8" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_archive_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a0fd048e5cfeab65ae3c29eaea1f22ab9" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_archive_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a6c789211496cd65dd417ea4fe633c85a" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_change_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a25b61671395cd833817d073449d2a240" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_change_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a188894e6cce3c43e0ee2dc6197cf6b8d" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_change_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a09d665b63b701372e4f2ea71750db462" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_change_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a11d1533d2eb6d80ec41100b71605284a" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_change_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1af12b9042dffbceb6462b151eeb01f6f8" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_change_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a65aaa57d7ae064487cebf48eee239401" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_change_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1ad46f18d53f1d78430bf0113ba4b0d8d2" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_change_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a3c0f829c573f5da1674d3e02aff2fce3" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_change_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a54443f0082d8903d300677f587589d4d" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_change_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1aa915d01687a0fd1739a1dadcac78ef31" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_change_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1adf7a4e85571cd258a27a2dc8ea25fd49" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_change_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a74931b906e58ca078cb93746ee620016" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_change_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a8aca443b2753cd3258bafa05ad534d4b" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_change_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1af08f98bd4d9f40b3359b1a54ddfeae30" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_change_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a036f0e21df2369343321838be2368e79" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_change_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a5f4b6031c439b9a6ff7e6e933bc60e82" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_change_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a1a78d899253dc8be6c44866dc8dd055f" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_change_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a3a57944f25d7478ac59f8d3861c5696a" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_change_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1ab2eb1193f346084132ec037add29c55f" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_change_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a7e5d6d6a6e2f15baad7a76465b93b1a6" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_change_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a94e5ed83c55f047f2871f5e1bee985fa" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_change_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1abb808eb7ddf3444c8cc411dc74f15c01" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_change_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a4da73eb21138da11e156c018ceff3810" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_change_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1ae747f15a580daaa2977402598b2e5550" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_change_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a23bfcd091ac32924cb96d5a64e4dbd95" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_change_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a111da256603495d6eb8e2ec2c35ae639" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_change_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a37eb1710cf8c1f44d8990ebfbec5c6b5" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_change_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a00fa2ee4c3603f919c7aef49b107b053" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_change_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a0de42a80d6d1fc464b142dae308671b4" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_data_ready_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a002bc27747f35517048b5b87169c52c8" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1abea2bef4a09d8c32e00d52b42dcb1519" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a57e7b6629cb3b1b6a025f290b3950747" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a67ca044f6c93e871d8964b4b60f741cf" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1abe5a15e693deaa18fe61a0445c463635" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1ae33711bbb1c5fa7ac69d7b569d85153e" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a4da3dedd55a7f7208543db0fda31e741" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1aa50f68d34b10b33c56588040a16d9767" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a277a59839649739fc734cf797e7b494f" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a36c9c565106b8730986e1ce889bed8ac" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a4f81154a4b42d6b7ae853af50fa9b1a9" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a286e1bc0c636bcac6b75a42caacb31c6" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1aba816f038f5fb56bed646118c86b5528" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a80d07794e70f84930fc1125237659a5d" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a349cda6696deb45ea5ac82f9d0f16efe" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a8be4ec9b7b5c9d085a47da0679cbc7fb" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a79d790e27316aca2aaa355c11f46a97c" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a8a7c19733896179f5282f9009468263f" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a5907485e9673b050add68908f868305a" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a8b6ea9ea8ffb0e688010e7b3804db3e2" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a4999198b1a726c85867eadac47d14494" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a75a48ed53e504fc4a72de34053203c0e" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1ab5a7d7c3b8e890a814505aafdad79734" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a6a551682fe5936c4364e33fd162da35b" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1af852d77c72a39a73187f491c993d39b9" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a14ac401d247b784b1bd06a485af4f094" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1ac77151d73d38e817568ae535b1f0ddb8" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1aee05a449a784d6d7c5fef37c573ef831" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a0706ab09666f888c28803f0ffc3ac62d" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1aedd422cbede721279f2bbac705e34017" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_pipe_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1abfe94a1987a8d5db4b69e9cc2c05c294" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_pipe_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a058f5747705f5bda88f1357dc9b2865e" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>push_pipe_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a7c6302cff47fca241560187e1c178701" prot="public" virt="virtual"><scope>Tango::Device_5Impl</scope><name>read_attr</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a934daa7bef5a3f01c50ba304006fdda4" prot="public" virt="virtual"><scope>Tango::Device_5Impl</scope><name>read_attr_hardware</name></member>
+      <member refid="d8/dbf/classTango_1_1Device__2Impl_1a8f89727d69733be88e44453a7c97d3a8" prot="public" virt="virtual"><scope>Tango::Device_5Impl</scope><name>read_attribute_history_2</name></member>
+      <member refid="db/d65/classTango_1_1Device__3Impl_1aa9f8d1442f41a4424951a0a4cb84cfec" prot="public" virt="virtual"><scope>Tango::Device_5Impl</scope><name>read_attribute_history_3</name></member>
+      <member refid="dc/dd9/classTango_1_1Device__4Impl_1a7a0149c0d9d22ebc68af3e6aae66c26e" prot="public" virt="virtual"><scope>Tango::Device_5Impl</scope><name>read_attribute_history_4</name></member>
+      <member refid="d5/d94/classTango_1_1Device__5Impl_1a605986206b97694efa729d83eed85c29" prot="public" virt="virtual"><scope>Tango::Device_5Impl</scope><name>read_attribute_history_5</name></member>
+      <member refid="d8/dbf/classTango_1_1Device__2Impl_1ae4a337540c05d540b69b1332aeae7444" prot="public" virt="virtual"><scope>Tango::Device_5Impl</scope><name>read_attributes_2</name></member>
+      <member refid="db/d65/classTango_1_1Device__3Impl_1a870e349674aca9b3ebee55157a31b5d3" prot="public" virt="virtual"><scope>Tango::Device_5Impl</scope><name>read_attributes_3</name></member>
+      <member refid="dc/dd9/classTango_1_1Device__4Impl_1ab617c665fa91c17f56e07f4afdd5f3f3" prot="public" virt="virtual"><scope>Tango::Device_5Impl</scope><name>read_attributes_4</name></member>
+      <member refid="d5/d94/classTango_1_1Device__5Impl_1ac79f342b824d93b3352f30b1f6a381dd" prot="public" virt="virtual"><scope>Tango::Device_5Impl</scope><name>read_attributes_5</name></member>
+      <member refid="d5/d94/classTango_1_1Device__5Impl_1a87a53f7fe891410c80e28e716525683e" prot="public" virt="virtual"><scope>Tango::Device_5Impl</scope><name>read_pipe_5</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a1066d2fe5f4d45bf12a38c667d02bdb8" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>register_signal</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1aa88509d4d6bba29d28a6c124cf0349a6" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>remove_attribute</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a5fe45df27c5a6a2d9ff951f9f0861d5e" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>remove_attribute</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1ae57fcb9d357314f6e4f159a62de3fb8d" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>remove_command</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a3ae8333e1349c4691bf46712afd6f221" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>remove_command</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1ad90289326211e05632a245a87bab11bb" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>set_archive_event</name></member>
+      <member refid="db/d65/classTango_1_1Device__3Impl_1a6eaac6785a84422132e654916fc2cf7e" prot="public" virt="virtual"><scope>Tango::Device_5Impl</scope><name>set_attribute_config_3</name></member>
+      <member refid="dc/dd9/classTango_1_1Device__4Impl_1a43f5bb3a3cffe1595f33603278a298bd" prot="public" virt="virtual"><scope>Tango::Device_5Impl</scope><name>set_attribute_config_4</name></member>
+      <member refid="d5/d94/classTango_1_1Device__5Impl_1a54f9985386c233714413f73fba00e50a" prot="public" virt="virtual"><scope>Tango::Device_5Impl</scope><name>set_attribute_config_5</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1acc288d1cf858125abe0e6e4e154e9f43" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>set_change_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1ae4071b4df6b9398e890d8dea51365383" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>set_d_var</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1ae1ac32627a6ec783de529ddb26e5d900" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>set_data_ready_event</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1abfe5f92400f24bcfed94bc7a0d731233" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>set_device_attr</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a99aba4af5cd29838f50956a75427d5f7" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>set_obj_id</name></member>
+      <member refid="d5/d94/classTango_1_1Device__5Impl_1a4feb7a02977d194593cdb5c7ec6a23a7" prot="public" virt="virtual"><scope>Tango::Device_5Impl</scope><name>set_pipe_config_5</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a2123f00afdfa638c31399eb10efefd66" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>set_state</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a54f9d94ef1072a6cb19ee472ccf044d7" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>set_status</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a2f387fb75b3427fc661a4f9b829b1491" prot="public" virt="virtual"><scope>Tango::Device_5Impl</scope><name>signal_handler</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a70d7f89e019fa63535ab7815a0cb4552" prot="protected" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>stop_poll_attribute</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1acbf6090c2400d6c44a6474b458c58b36" prot="protected" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>stop_poll_command</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a9bbea9d3b6cf43f467a56d8866b343ca" prot="public" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>unregister_signal</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1ab3bdf85a2faf1fe98ecd9253c1a51d77" prot="protected" virt="non-virtual"><scope>Tango::Device_5Impl</scope><name>version</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a7aee6ee9fee2feb7f358972ec1677328" prot="public" virt="virtual"><scope>Tango::Device_5Impl</scope><name>write_attr_hardware</name></member>
+      <member refid="db/d65/classTango_1_1Device__3Impl_1af1a705a748bf08290150c3e50bdb29ff" prot="public" virt="virtual"><scope>Tango::Device_5Impl</scope><name>write_attributes_3</name></member>
+      <member refid="dc/dd9/classTango_1_1Device__4Impl_1ac7bea03a2b3b6ab988962155736a9335" prot="public" virt="virtual"><scope>Tango::Device_5Impl</scope><name>write_attributes_4</name></member>
+      <member refid="d5/d94/classTango_1_1Device__5Impl_1a03df67255a0e7b6b6259f85fc7834c77" prot="public" virt="virtual"><scope>Tango::Device_5Impl</scope><name>write_pipe_5</name></member>
+      <member refid="dc/dd9/classTango_1_1Device__4Impl_1a0785c4039f78b824a128ee16bd26dbee" prot="public" virt="virtual"><scope>Tango::Device_5Impl</scope><name>write_read_attributes_4</name></member>
+      <member refid="d5/d94/classTango_1_1Device__5Impl_1a6e4e5de7a14e9e02e39d88fd74341a2a" prot="public" virt="virtual"><scope>Tango::Device_5Impl</scope><name>write_read_attributes_5</name></member>
+      <member refid="d5/d94/classTango_1_1Device__5Impl_1a5da64b16851db4a641a06df11e1f371a" prot="public" virt="virtual"><scope>Tango::Device_5Impl</scope><name>write_read_pipe_5</name></member>
+      <member refid="d8/dbf/classTango_1_1Device__2Impl_1afaefae8635cff0da56608f4bc38aa6da" prot="public" virt="virtual"><scope>Tango::Device_5Impl</scope><name>~Device_2Impl</name></member>
+      <member refid="db/d65/classTango_1_1Device__3Impl_1a364061576e373d8bec46b5bba70f2817" prot="public" virt="virtual"><scope>Tango::Device_5Impl</scope><name>~Device_3Impl</name></member>
+      <member refid="dc/dd9/classTango_1_1Device__4Impl_1af254d0190336648b899e031eba61160a" prot="public" virt="virtual"><scope>Tango::Device_5Impl</scope><name>~Device_4Impl</name></member>
+      <member refid="d5/d94/classTango_1_1Device__5Impl_1ad7cf3154c98f61e13d6324a959903d24" prot="public" virt="virtual"><scope>Tango::Device_5Impl</scope><name>~Device_5Impl</name></member>
+      <member refid="d3/d62/classTango_1_1DeviceImpl_1a9a5ffdab6150008e52d87ea4c38ee9ff" prot="public" virt="virtual"><scope>Tango::Device_5Impl</scope><name>~DeviceImpl</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

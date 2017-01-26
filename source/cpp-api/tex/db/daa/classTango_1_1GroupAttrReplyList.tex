@@ -1,0 +1,87 @@
+\section{Tango\-:\-:Group\-Attr\-Reply\-List Class Reference}
+\label{classTango_1_1GroupAttrReplyList}\index{Tango\-::\-Group\-Attr\-Reply\-List@{Tango\-::\-Group\-Attr\-Reply\-List}}
+
+
+\doxyref{Group}{p.}{d4/d6d/classTango_1_1Group} reply for a read\-\_\-attribute execution.  
+
+
+
+
+Inheritance diagram for Tango\-:\-:Group\-Attr\-Reply\-List\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{d4/d9e/classTango_1_1GroupAttrReplyList__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Tango\-:\-:Group\-Attr\-Reply\-List\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{d8/d5f/classTango_1_1GroupAttrReplyList__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf has\-\_\-failed} () const 
+\begin{DoxyCompactList}\small\item\em Check if an error has occured. \end{DoxyCompactList}\item 
+void {\bf reset} ()
+\begin{DoxyCompactList}\small\item\em Reset the object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Group}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Group}{p.}{d4/d6d/classTango_1_1Group} reply for a read\-\_\-attribute execution. 
+
+This class inherits from {\bfseries vector$<$\-Group\-Attr\-Reply$>$} and therefore, each device in the group heierarchy has his own \doxyref{Group\-Attr\-Reply}{p.}{d5/dae/classTango_1_1GroupAttrReply} object which can be retrieved with the classical vector [] operator
+
+\$\-Author\$ \$\-Revision\$ 
+
+\subsection{Member Function Documentation}
+\index{Tango\-::\-Group\-Attr\-Reply\-List@{Tango\-::\-Group\-Attr\-Reply\-List}!has\-\_\-failed@{has\-\_\-failed}}
+\index{has\-\_\-failed@{has\-\_\-failed}!Tango::GroupAttrReplyList@{Tango\-::\-Group\-Attr\-Reply\-List}}
+\subsubsection[{has\-\_\-failed}]{\setlength{\rightskip}{0pt plus 5cm}bool Tango\-::\-Group\-Attr\-Reply\-List\-::has\-\_\-failed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classTango_1_1GroupAttrReplyList_a1737797b7a4585b948752ef80c915fb2}
+
+
+Check if an error has occured. 
+
+Returns a boolean set to true if the read\-\_\-attribute executed on the group has failed for any device member of the hierarchy. Otherwise, returns false
+
+\begin{DoxyReturn}{Returns}
+The error flag 
+\end{DoxyReturn}
+\index{Tango\-::\-Group\-Attr\-Reply\-List@{Tango\-::\-Group\-Attr\-Reply\-List}!reset@{reset}}
+\index{reset@{reset}!Tango::GroupAttrReplyList@{Tango\-::\-Group\-Attr\-Reply\-List}}
+\subsubsection[{reset}]{\setlength{\rightskip}{0pt plus 5cm}void Tango\-::\-Group\-Attr\-Reply\-List\-::reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTango_1_1GroupAttrReplyList_a27620a4010723a1649c0dd810b4e1367}
+
+
+Reset the object. 
+
+This methods empty the inherited vector and reset the error flag 
+
+\subsection{Friends And Related Function Documentation}
+\index{Tango\-::\-Group\-Attr\-Reply\-List@{Tango\-::\-Group\-Attr\-Reply\-List}!Group@{Group}}
+\index{Group@{Group}!Tango::GroupAttrReplyList@{Tango\-::\-Group\-Attr\-Reply\-List}}
+\subsubsection[{Group}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Group}\hspace{0.3cm}{\ttfamily [friend]}}\label{classTango_1_1GroupAttrReplyList_a2697825715974a353728f0d4d5658112}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+{\bf group.\-h}\end{DoxyCompactItemize}

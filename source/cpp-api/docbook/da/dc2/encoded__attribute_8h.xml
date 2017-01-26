@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="da/dc2/encoded__attribute_8h">
+    <title>encoded_attribute.h File Reference</title>
+    <programlisting>#include &lt;tango.h&gt;</programlisting>
+    <programlisting>#include &lt;tango/server/encoded_format.h&gt;</programlisting>
+        <simplesect>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="da/da5/classTango_1_1EncodedAttribute">Tango::EncodedAttribute</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d3/dc1/classTango_1_1EncodedAttribute_1_1EncodedAttributeExt">Tango::EncodedAttribute::EncodedAttributeExt</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title> Namespaces </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="de/ddf/namespaceTango">Tango</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Defines</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="da/dc2/encoded__attribute_8h_1a122c2c871efab18ffb4af25a750eeb0e">INC_INDEX</link> index++; \
+  if (index == buf_elt_nb) \
+  	index = 0;</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file /home/tango/workspace/cppTango/include/tango/server/encoded_attribute.h</para>
+    </simplesect>
+</section>

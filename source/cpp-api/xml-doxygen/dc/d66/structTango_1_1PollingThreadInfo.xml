@@ -1,0 +1,146 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="dc/d66/structTango_1_1PollingThreadInfo" kind="struct" prot="public">
+    <compoundname>Tango::PollingThreadInfo</compoundname>
+    <includes refid="d5/d60/utils_8h" local="yes">utils.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="dc/d66/structTango_1_1PollingThreadInfo_1a263e8adedff07f0b831780e349a9a7d0" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Tango::PollingThreadInfo::nb_polled_objects</definition>
+        <argsstring></argsstring>
+        <name>nb_polled_objects</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/utils.h" line="1237" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/utils.h" bodystart="1237" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dc/d66/structTango_1_1PollingThreadInfo_1a37f783d36e383cf347ccacab3387aa51" prot="public" static="no" mutable="no">
+        <type>TangoMonitor</type>
+        <definition>TangoMonitor Tango::PollingThreadInfo::poll_mon</definition>
+        <argsstring></argsstring>
+        <name>poll_mon</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/utils.h" line="1235" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/utils.h" bodystart="1235" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dc/d66/structTango_1_1PollingThreadInfo_1a32ce4856c38b4bbc52564f24e61c7321" prot="public" static="no" mutable="no">
+        <type>PollThread *</type>
+        <definition>PollThread* Tango::PollingThreadInfo::poll_th</definition>
+        <argsstring></argsstring>
+        <name>poll_th</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/utils.h" line="1233" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/utils.h" bodystart="1233" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dc/d66/structTango_1_1PollingThreadInfo_1aba7953103780bcc5f3e93ad265b61ea1" prot="public" static="no" mutable="no">
+        <type>vector&lt; string &gt;</type>
+        <definition>vector&lt;string&gt; Tango::PollingThreadInfo::polled_devices</definition>
+        <argsstring></argsstring>
+        <name>polled_devices</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/utils.h" line="1236" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/utils.h" bodystart="1236" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dc/d66/structTango_1_1PollingThreadInfo_1a34ac72f11342fa6246db3ff04c8dc032" prot="public" static="no" mutable="no">
+        <type>PollThCmd</type>
+        <definition>PollThCmd Tango::PollingThreadInfo::shared_data</definition>
+        <argsstring></argsstring>
+        <name>shared_data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/utils.h" line="1234" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/utils.h" bodystart="1234" bodyend="-1"/>
+        <referencedby refid="dc/d66/structTango_1_1PollingThreadInfo_1af876c42e90deca5c9d47fe7987366c2e" compoundref="d5/d60/utils_8h" startline="1241" endline="1242">PollingThreadInfo</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="dc/d66/structTango_1_1PollingThreadInfo_1a04264b5d754e7559ad8ad67fff69a110" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Tango::PollingThreadInfo::smallest_upd</definition>
+        <argsstring></argsstring>
+        <name>smallest_upd</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/utils.h" line="1238" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/utils.h" bodystart="1238" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dc/d66/structTango_1_1PollingThreadInfo_1a0ed194258705e10b4b4b8b132e4687dd" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Tango::PollingThreadInfo::thread_id</definition>
+        <argsstring></argsstring>
+        <name>thread_id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/utils.h" line="1232" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/utils.h" bodystart="1232" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dc/d66/structTango_1_1PollingThreadInfo_1a8b8d1a40cf642511070d7fb097f74a28" prot="public" static="no" mutable="no">
+        <type>vector&lt; DevVarLongStringArray * &gt;</type>
+        <definition>vector&lt;DevVarLongStringArray *&gt; Tango::PollingThreadInfo::v_poll_cmd</definition>
+        <argsstring></argsstring>
+        <name>v_poll_cmd</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/utils.h" line="1239" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/utils.h" bodystart="1239" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="dc/d66/structTango_1_1PollingThreadInfo_1af876c42e90deca5c9d47fe7987366c2e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Tango::PollingThreadInfo::PollingThreadInfo</definition>
+        <argsstring>()</argsstring>
+        <name>PollingThreadInfo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/utils.h" line="1241" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/utils.h" bodystart="1241" bodyend="1242"/>
+        <references refid="dc/d66/structTango_1_1PollingThreadInfo_1a34ac72f11342fa6246db3ff04c8dc032" compoundref="d5/d60/utils_8h" startline="1234">shared_data</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/tango/workspace/cppTango/include/tango/server/utils.h" line="1231" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/utils.h" bodystart="1230" bodyend="1243"/>
+    <listofallmembers>
+      <member refid="dc/d66/structTango_1_1PollingThreadInfo_1a263e8adedff07f0b831780e349a9a7d0" prot="public" virt="non-virtual"><scope>Tango::PollingThreadInfo</scope><name>nb_polled_objects</name></member>
+      <member refid="dc/d66/structTango_1_1PollingThreadInfo_1a37f783d36e383cf347ccacab3387aa51" prot="public" virt="non-virtual"><scope>Tango::PollingThreadInfo</scope><name>poll_mon</name></member>
+      <member refid="dc/d66/structTango_1_1PollingThreadInfo_1a32ce4856c38b4bbc52564f24e61c7321" prot="public" virt="non-virtual"><scope>Tango::PollingThreadInfo</scope><name>poll_th</name></member>
+      <member refid="dc/d66/structTango_1_1PollingThreadInfo_1aba7953103780bcc5f3e93ad265b61ea1" prot="public" virt="non-virtual"><scope>Tango::PollingThreadInfo</scope><name>polled_devices</name></member>
+      <member refid="dc/d66/structTango_1_1PollingThreadInfo_1af876c42e90deca5c9d47fe7987366c2e" prot="public" virt="non-virtual"><scope>Tango::PollingThreadInfo</scope><name>PollingThreadInfo</name></member>
+      <member refid="dc/d66/structTango_1_1PollingThreadInfo_1a34ac72f11342fa6246db3ff04c8dc032" prot="public" virt="non-virtual"><scope>Tango::PollingThreadInfo</scope><name>shared_data</name></member>
+      <member refid="dc/d66/structTango_1_1PollingThreadInfo_1a04264b5d754e7559ad8ad67fff69a110" prot="public" virt="non-virtual"><scope>Tango::PollingThreadInfo</scope><name>smallest_upd</name></member>
+      <member refid="dc/d66/structTango_1_1PollingThreadInfo_1a0ed194258705e10b4b4b8b132e4687dd" prot="public" virt="non-virtual"><scope>Tango::PollingThreadInfo</scope><name>thread_id</name></member>
+      <member refid="dc/d66/structTango_1_1PollingThreadInfo_1a8b8d1a40cf642511070d7fb097f74a28" prot="public" virt="non-virtual"><scope>Tango::PollingThreadInfo</scope><name>v_poll_cmd</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

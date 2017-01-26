@@ -1,0 +1,90 @@
+\section{log4tango\-:\-:Layout Class Reference}
+\label{classlog4tango_1_1Layout}\index{log4tango\-::\-Layout@{log4tango\-::\-Layout}}
+
+
+{\ttfamily \#include \char`\"{}Layout.\-hh\char`\"{}}
+
+
+
+Inheritance diagram for log4tango\-:\-:Layout\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=297pt]{de/d7a/classlog4tango_1_1Layout__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Layout} ()
+\begin{DoxyCompactList}\small\item\em Constructor for \doxyref{Layout}{p.}{d7/da6/classlog4tango_1_1Layout}. \end{DoxyCompactList}\item 
+virtual {\bf $\sim$\-Layout} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \doxyref{Layout}{p.}{d7/da6/classlog4tango_1_1Layout}. \end{DoxyCompactList}\item 
+virtual std\-::string {\bf format} (const {\bf Logging\-Event} \&event)
+\begin{DoxyCompactList}\small\item\em Formats the \doxyref{Logging\-Event}{p.}{d8/df2/structlog4tango_1_1LoggingEvent} data to a string that appenders can log. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{log4tango\-::\-Layout@{log4tango\-::\-Layout}!Layout@{Layout}}
+\index{Layout@{Layout}!log4tango::Layout@{log4tango\-::\-Layout}}
+\subsubsection[{Layout}]{\setlength{\rightskip}{0pt plus 5cm}log4tango\-::\-Layout\-::\-Layout (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classlog4tango_1_1Layout_a053084d0c22a45a3304a75f7b0c5de39}
+
+
+Constructor for \doxyref{Layout}{p.}{d7/da6/classlog4tango_1_1Layout}. 
+
+\index{log4tango\-::\-Layout@{log4tango\-::\-Layout}!$\sim$\-Layout@{$\sim$\-Layout}}
+\index{$\sim$\-Layout@{$\sim$\-Layout}!log4tango::Layout@{log4tango\-::\-Layout}}
+\subsubsection[{$\sim$\-Layout}]{\setlength{\rightskip}{0pt plus 5cm}virtual log4tango\-::\-Layout\-::$\sim$\-Layout (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classlog4tango_1_1Layout_ae3298877b40a255b5723a6cfa58e00ea}
+
+
+Destructor for \doxyref{Layout}{p.}{d7/da6/classlog4tango_1_1Layout}. 
+
+
+
+\subsection{Member Function Documentation}
+\index{log4tango\-::\-Layout@{log4tango\-::\-Layout}!format@{format}}
+\index{format@{format}!log4tango::Layout@{log4tango\-::\-Layout}}
+\subsubsection[{format}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string log4tango\-::\-Layout\-::format (
+\begin{DoxyParamCaption}
+\item[{const {\bf Logging\-Event} \&}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classlog4tango_1_1Layout_a0ade719b2ab1ce512aca5699f136eb8b}
+
+
+Formats the \doxyref{Logging\-Event}{p.}{d8/df2/structlog4tango_1_1LoggingEvent} data to a string that appenders can log. 
+
+Overload this method to create your own layout format. 
+\begin{DoxyParams}{Parameters}
+{\em event} & The \doxyref{Logging\-Event}{p.}{d8/df2/structlog4tango_1_1LoggingEvent}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an appendable string. 
+\end{DoxyReturn}
+
+
+Reimplemented in {\bf log4tango\-::\-Pattern\-Layout} \doxyref{}{p.}{db/d60/classlog4tango_1_1PatternLayout_a127f7708ad24a3290d3c6cbe29257020}, and {\bf log4tango\-::\-X\-M\-L\-Layout} \doxyref{}{p.}{d2/d7c/classlog4tango_1_1XMLLayout_a0f455c8af4768383dc989923eddc72f3}.
+
+
+
+References log4tango\-::\-Level\-::get\-\_\-name(), log4tango\-::\-Logging\-Event\-::level, and std\-::ostringstream\-::str().
+
+
+
+Referenced by log4tango\-::\-Ostream\-Appender\-::\-\_\-append().
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+{\bf Layout.\-hh}\item 
+{\bf Layout.\-cpp}\end{DoxyCompactItemize}

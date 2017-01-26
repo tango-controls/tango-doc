@@ -1,0 +1,110 @@
+\section{Tango\-:\-:Attr\-History\-Stack$<$ T $>$ Class Template Reference}
+\label{classTango_1_1AttrHistoryStack}\index{Tango\-::\-Attr\-History\-Stack$<$ T $>$@{Tango\-::\-Attr\-History\-Stack$<$ T $>$}}
+
+
+This class is a used to pass an attribute value history when the user directly fills the attribute polling buffer.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf clear} ()
+\begin{DoxyCompactList}\small\item\em Clear the stack. \end{DoxyCompactList}\item 
+vector$<$ {\bf Timed\-Attr\-Data}$<$ T $>$ $>$ \& {\bf get\-\_\-data} ()
+\begin{DoxyCompactList}\small\item\em Get stack data. \end{DoxyCompactList}\item 
+size\-\_\-t {\bf length} ()
+\begin{DoxyCompactList}\small\item\em Get stack depth. \end{DoxyCompactList}\item 
+void {\bf length} (long nb)
+\begin{DoxyCompactList}\small\item\em Reserve memory for stack elements. \end{DoxyCompactList}\item 
+void {\bf push} ({\bf Timed\-Attr\-Data}$<$ T $>$ const \&elt)
+\begin{DoxyCompactList}\small\item\em Store a new element in the stack. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$class Tango\-::\-Attr\-History\-Stack$<$ T $>$}
+
+This class is a used to pass an attribute value history when the user directly fills the attribute polling buffer. 
+
+Each element in this stack will be used to store one element of the attribute polling buffer
+
+\$\-Author\$ \$\-Revision\$ 
+
+\subsection{Member Function Documentation}
+\index{Tango\-::\-Attr\-History\-Stack@{Tango\-::\-Attr\-History\-Stack}!clear@{clear}}
+\index{clear@{clear}!Tango::AttrHistoryStack@{Tango\-::\-Attr\-History\-Stack}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ void {\bf Tango\-::\-Attr\-History\-Stack}$<$ T $>$\-::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTango_1_1AttrHistoryStack_aac60d22a112badcb3c27fb0b6c22eecd}
+
+
+Clear the stack. 
+
+\index{Tango\-::\-Attr\-History\-Stack@{Tango\-::\-Attr\-History\-Stack}!get\-\_\-data@{get\-\_\-data}}
+\index{get\-\_\-data@{get\-\_\-data}!Tango::AttrHistoryStack@{Tango\-::\-Attr\-History\-Stack}}
+\subsubsection[{get\-\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ vector$<${\bf Timed\-Attr\-Data}$<$T$>$ $>$\& {\bf Tango\-::\-Attr\-History\-Stack}$<$ T $>$\-::get\-\_\-data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1AttrHistoryStack_a73318d3db023c337bdbeae5fc743b3fd}
+
+
+Get stack data. 
+
+\begin{DoxyReturn}{Returns}
+The stack itself 
+\end{DoxyReturn}
+\index{Tango\-::\-Attr\-History\-Stack@{Tango\-::\-Attr\-History\-Stack}!length@{length}}
+\index{length@{length}!Tango::AttrHistoryStack@{Tango\-::\-Attr\-History\-Stack}}
+\subsubsection[{length}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ size\-\_\-t {\bf Tango\-::\-Attr\-History\-Stack}$<$ T $>$\-::length (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTango_1_1AttrHistoryStack_a078798e0c374f134f0cfb315a515f028}
+
+
+Get stack depth. 
+
+\begin{DoxyReturn}{Returns}
+The stack depth 
+\end{DoxyReturn}
+\index{Tango\-::\-Attr\-History\-Stack@{Tango\-::\-Attr\-History\-Stack}!length@{length}}
+\index{length@{length}!Tango::AttrHistoryStack@{Tango\-::\-Attr\-History\-Stack}}
+\subsubsection[{length}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ void {\bf Tango\-::\-Attr\-History\-Stack}$<$ T $>$\-::length (
+\begin{DoxyParamCaption}
+\item[{long}]{nb}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTango_1_1AttrHistoryStack_afcf19d9e75e02341bb8533cc7c61df5e}
+
+
+Reserve memory for stack elements. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nb} & The stack element number \\
+\hline
+\end{DoxyParams}
+\index{Tango\-::\-Attr\-History\-Stack@{Tango\-::\-Attr\-History\-Stack}!push@{push}}
+\index{push@{push}!Tango::AttrHistoryStack@{Tango\-::\-Attr\-History\-Stack}}
+\subsubsection[{push}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ void {\bf Tango\-::\-Attr\-History\-Stack}$<$ T $>$\-::push (
+\begin{DoxyParamCaption}
+\item[{{\bf Timed\-Attr\-Data}$<$ T $>$ const \&}]{elt}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1AttrHistoryStack_a6356c9fc9d4dd06b941b8e4a36de1f90}
+
+
+Store a new element in the stack. 
+
+This method stores a new element in the stack
+
+
+\begin{DoxyParams}{Parameters}
+{\em elt} & The new element \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+{\bf pollext.\-h}\end{DoxyCompactItemize}

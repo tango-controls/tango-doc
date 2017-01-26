@@ -1,0 +1,444 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="dd/d62/classlog4tango_1_1FileAppender" kind="class" prot="public">
+    <compoundname>log4tango::FileAppender</compoundname>
+    <basecompoundref refid="d3/db6/classlog4tango_1_1LayoutAppender" prot="public" virt="non-virtual">log4tango::LayoutAppender</basecompoundref>
+    <derivedcompoundref refid="d9/db4/classlog4tango_1_1RollingFileAppender" prot="public" virt="non-virtual">log4tango::RollingFileAppender</derivedcompoundref>
+    <includes refid="dd/de6/FileAppender_8hh" local="yes">FileAppender.hh</includes>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="dd/d62/classlog4tango_1_1FileAppender_1a04f8a77d3ad3aa7cdcaa8f6be93c5ab0" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int log4tango::FileAppender::_fd</definition>
+        <argsstring></argsstring>
+        <name>_fd</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/FileAppender.hh" line="118" column="1" bodyfile="/home/tango/workspace/cppTango/include/log4tango/FileAppender.hh" bodystart="118" bodyend="-1"/>
+        <referencedby refid="d9/db4/classlog4tango_1_1RollingFileAppender_1ad25a1bd45e1dffc755821acca3b958f2" compoundref="d6/d1b/RollingFileAppender_8cpp" startline="92" endline="103">log4tango::RollingFileAppender::_append</referencedby>
+        <referencedby refid="dd/d62/classlog4tango_1_1FileAppender_1acc1e885ec09a9f206383284656a0079e" compoundref="d2/d6d/FileAppender_8cpp" startline="108" endline="115">_append</referencedby>
+        <referencedby refid="dd/d62/classlog4tango_1_1FileAppender_1aa354da43ca498a14bdd83b8f8065589d" compoundref="d2/d6d/FileAppender_8cpp" startline="71" endline="77">close</referencedby>
+        <referencedby refid="dd/d62/classlog4tango_1_1FileAppender_1a43e09e7221ba060eb95252ee5461da95" compoundref="d2/d6d/FileAppender_8cpp" startline="41" endline="54">FileAppender</referencedby>
+        <referencedby refid="dd/d62/classlog4tango_1_1FileAppender_1a418db9eff584e38bd167dcd4e50df6c1" compoundref="d2/d6d/FileAppender_8cpp" startline="79" endline="82">is_valid</referencedby>
+        <referencedby refid="dd/d62/classlog4tango_1_1FileAppender_1a17989960f7118b8628a93c69b10755ca" compoundref="d2/d6d/FileAppender_8cpp" startline="117" endline="131">reopen</referencedby>
+        <referencedby refid="d9/db4/classlog4tango_1_1RollingFileAppender_1a137e08d9ff85d0b78c06be2323bd66c2" compoundref="d6/d1b/RollingFileAppender_8cpp" startline="74" endline="90">log4tango::RollingFileAppender::roll_over</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="dd/d62/classlog4tango_1_1FileAppender_1a7a21e40ff4eb363cc20678a4be99c93d" prot="protected" static="no" mutable="no">
+        <type>const std::string</type>
+        <definition>const std::string log4tango::FileAppender::_file_name</definition>
+        <argsstring></argsstring>
+        <name>_file_name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/FileAppender.hh" line="117" column="1" bodyfile="/home/tango/workspace/cppTango/include/log4tango/FileAppender.hh" bodystart="117" bodyend="-1"/>
+        <referencedby refid="dd/d62/classlog4tango_1_1FileAppender_1a43e09e7221ba060eb95252ee5461da95" compoundref="d2/d6d/FileAppender_8cpp" startline="41" endline="54">FileAppender</referencedby>
+        <referencedby refid="dd/d62/classlog4tango_1_1FileAppender_1a17989960f7118b8628a93c69b10755ca" compoundref="d2/d6d/FileAppender_8cpp" startline="117" endline="131">reopen</referencedby>
+        <referencedby refid="d9/db4/classlog4tango_1_1RollingFileAppender_1a137e08d9ff85d0b78c06be2323bd66c2" compoundref="d6/d1b/RollingFileAppender_8cpp" startline="74" endline="90">log4tango::RollingFileAppender::roll_over</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="dd/d62/classlog4tango_1_1FileAppender_1a6d4608df941bbaef01e82396bfc85cb2" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int log4tango::FileAppender::_flags</definition>
+        <argsstring></argsstring>
+        <name>_flags</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/FileAppender.hh" line="119" column="1" bodyfile="/home/tango/workspace/cppTango/include/log4tango/FileAppender.hh" bodystart="119" bodyend="-1"/>
+        <referencedby refid="dd/d62/classlog4tango_1_1FileAppender_1a43e09e7221ba060eb95252ee5461da95" compoundref="d2/d6d/FileAppender_8cpp" startline="41" endline="54">FileAppender</referencedby>
+        <referencedby refid="dd/d62/classlog4tango_1_1FileAppender_1a1958ac2f7755b5415abe40dc00104d6f" compoundref="d2/d6d/FileAppender_8cpp" startline="93" endline="96">get_append</referencedby>
+        <referencedby refid="dd/d62/classlog4tango_1_1FileAppender_1a17989960f7118b8628a93c69b10755ca" compoundref="d2/d6d/FileAppender_8cpp" startline="117" endline="131">reopen</referencedby>
+        <referencedby refid="d9/db4/classlog4tango_1_1RollingFileAppender_1a137e08d9ff85d0b78c06be2323bd66c2" compoundref="d6/d1b/RollingFileAppender_8cpp" startline="74" endline="90">log4tango::RollingFileAppender::roll_over</referencedby>
+        <referencedby refid="dd/d62/classlog4tango_1_1FileAppender_1a2b73b4da440d31a0b2a4ee7a0016b87c" compoundref="d2/d6d/FileAppender_8cpp" startline="84" endline="91">set_append</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="dd/d62/classlog4tango_1_1FileAppender_1a158481e2d508ad2615d78615a86e5206" prot="protected" static="no" mutable="no">
+        <type><ref refid="d4/db0/namespacelog4tango_1af02411cb691986e819f7fbf75872b81a" kindref="member">mode_t</ref></type>
+        <definition>mode_t log4tango::FileAppender::_mode</definition>
+        <argsstring></argsstring>
+        <name>_mode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/FileAppender.hh" line="120" column="1" bodyfile="/home/tango/workspace/cppTango/include/log4tango/FileAppender.hh" bodystart="120" bodyend="-1"/>
+        <referencedby refid="dd/d62/classlog4tango_1_1FileAppender_1a43e09e7221ba060eb95252ee5461da95" compoundref="d2/d6d/FileAppender_8cpp" startline="41" endline="54">FileAppender</referencedby>
+        <referencedby refid="dd/d62/classlog4tango_1_1FileAppender_1ab7ebf728457c73d43b16725e048f1597" compoundref="d2/d6d/FileAppender_8cpp" startline="103" endline="106">get_mode</referencedby>
+        <referencedby refid="dd/d62/classlog4tango_1_1FileAppender_1a17989960f7118b8628a93c69b10755ca" compoundref="d2/d6d/FileAppender_8cpp" startline="117" endline="131">reopen</referencedby>
+        <referencedby refid="d9/db4/classlog4tango_1_1RollingFileAppender_1a137e08d9ff85d0b78c06be2323bd66c2" compoundref="d6/d1b/RollingFileAppender_8cpp" startline="74" endline="90">log4tango::RollingFileAppender::roll_over</referencedby>
+        <referencedby refid="dd/d62/classlog4tango_1_1FileAppender_1abf1747af681b0fa4ac760c364a5da1c6" compoundref="d2/d6d/FileAppender_8cpp" startline="98" endline="101">set_mode</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="dd/d62/classlog4tango_1_1FileAppender_1a43e09e7221ba060eb95252ee5461da95" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>log4tango::FileAppender::FileAppender</definition>
+        <argsstring>(const std::string &amp;name, const std::string &amp;fileName, bool append=true, mode_t mode=00644)</argsstring>
+        <name>FileAppender</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>fileName</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>append</declname>
+          <defval>true</defval>
+        </param>
+        <param>
+          <type><ref refid="d4/db0/namespacelog4tango_1af02411cb691986e819f7fbf75872b81a" kindref="member">mode_t</ref></type>
+          <declname>mode</declname>
+          <defval>00644</defval>
+        </param>
+        <briefdescription>
+<para>Constructs a <ref refid="dd/d62/classlog4tango_1_1FileAppender" kindref="compound">FileAppender</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the name of the <ref refid="d7/dc4/classlog4tango_1_1Appender" kindref="compound">Appender</ref>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fileName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the name of the file to which the <ref refid="d7/dc4/classlog4tango_1_1Appender" kindref="compound">Appender</ref> has to log. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>append</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>whether the <ref refid="d7/dc4/classlog4tango_1_1Appender" kindref="compound">Appender</ref> has to truncate the file or just append to it if it already exists. Defaults to &apos;true&apos;. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>mode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>file mode to open the logfile with. Defaults to 00644. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/FileAppender.hh" line="52" column="1" bodyfile="/home/tango/workspace/cppTango/src/log4tango/FileAppender.cpp" bodystart="41" bodyend="54"/>
+        <references refid="dd/d62/classlog4tango_1_1FileAppender_1a04f8a77d3ad3aa7cdcaa8f6be93c5ab0" compoundref="dd/de6/FileAppender_8hh" startline="118">_fd</references>
+        <references refid="dd/d62/classlog4tango_1_1FileAppender_1a7a21e40ff4eb363cc20678a4be99c93d" compoundref="dd/de6/FileAppender_8hh" startline="117">_file_name</references>
+        <references refid="dd/d62/classlog4tango_1_1FileAppender_1a6d4608df941bbaef01e82396bfc85cb2" compoundref="dd/de6/FileAppender_8hh" startline="119">_flags</references>
+        <references refid="dd/d62/classlog4tango_1_1FileAppender_1a158481e2d508ad2615d78615a86e5206" compoundref="dd/de6/FileAppender_8hh" startline="120">_mode</references>
+      </memberdef>
+      <memberdef kind="function" id="dd/d62/classlog4tango_1_1FileAppender_1ab4cba01161e7a5db14ab19b07d1397f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>log4tango::FileAppender::FileAppender</definition>
+        <argsstring>(const std::string &amp;name, int fd)</argsstring>
+        <name>FileAppender</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>fd</declname>
+        </param>
+        <briefdescription>
+<para>Constructs a <ref refid="dd/d62/classlog4tango_1_1FileAppender" kindref="compound">FileAppender</ref> to an already open file descriptor. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the name of the <ref refid="d7/dc4/classlog4tango_1_1Appender" kindref="compound">Appender</ref>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the file descriptor to which the <ref refid="d7/dc4/classlog4tango_1_1Appender" kindref="compound">Appender</ref> has to log. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/FileAppender.hh" line="60" column="1" bodyfile="/home/tango/workspace/cppTango/src/log4tango/FileAppender.cpp" bodystart="56" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d62/classlog4tango_1_1FileAppender_1a051e5c4850313d9fb3b4240c73d9f61c" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>log4tango::FileAppender::~FileAppender</definition>
+        <argsstring>()</argsstring>
+        <name>~FileAppender</name>
+        <briefdescription>
+<para>Destructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/FileAppender.hh" line="65" column="1" bodyfile="/home/tango/workspace/cppTango/src/log4tango/FileAppender.cpp" bodystart="66" bodyend="69"/>
+        <references refid="dd/d62/classlog4tango_1_1FileAppender_1aa354da43ca498a14bdd83b8f8065589d" compoundref="d2/d6d/FileAppender_8cpp" startline="71" endline="77">close</references>
+      </memberdef>
+      <memberdef kind="function" id="dd/d62/classlog4tango_1_1FileAppender_1aa354da43ca498a14bdd83b8f8065589d" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void log4tango::FileAppender::close</definition>
+        <argsstring>(void)</argsstring>
+        <name>close</name>
+        <reimplements refid="d7/dc4/classlog4tango_1_1Appender_1adafebe465072844506448a35570f9c59">close</reimplements>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Closes the logfile. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/FileAppender.hh" line="79" column="1" bodyfile="/home/tango/workspace/cppTango/src/log4tango/FileAppender.cpp" bodystart="71" bodyend="77"/>
+        <references refid="dd/d62/classlog4tango_1_1FileAppender_1a04f8a77d3ad3aa7cdcaa8f6be93c5ab0" compoundref="dd/de6/FileAppender_8hh" startline="118">_fd</references>
+        <referencedby refid="dd/d62/classlog4tango_1_1FileAppender_1a17989960f7118b8628a93c69b10755ca" compoundref="d2/d6d/FileAppender_8cpp" startline="117" endline="131">reopen</referencedby>
+        <referencedby refid="d9/db4/classlog4tango_1_1RollingFileAppender_1a137e08d9ff85d0b78c06be2323bd66c2" compoundref="d6/d1b/RollingFileAppender_8cpp" startline="74" endline="90">log4tango::RollingFileAppender::roll_over</referencedby>
+        <referencedby refid="dd/d62/classlog4tango_1_1FileAppender_1a051e5c4850313d9fb3b4240c73d9f61c" compoundref="d2/d6d/FileAppender_8cpp" startline="66" endline="69">~FileAppender</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="dd/d62/classlog4tango_1_1FileAppender_1a1958ac2f7755b5415abe40dc00104d6f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool log4tango::FileAppender::get_append</definition>
+        <argsstring>(void) const </argsstring>
+        <name>get_append</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Gets the value of the &apos;append&apos; option. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/FileAppender.hh" line="101" column="1" bodyfile="/home/tango/workspace/cppTango/src/log4tango/FileAppender.cpp" bodystart="93" bodyend="96"/>
+        <references refid="dd/d62/classlog4tango_1_1FileAppender_1a6d4608df941bbaef01e82396bfc85cb2" compoundref="dd/de6/FileAppender_8hh" startline="119">_flags</references>
+      </memberdef>
+      <memberdef kind="function" id="dd/d62/classlog4tango_1_1FileAppender_1ab7ebf728457c73d43b16725e048f1597" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="d4/db0/namespacelog4tango_1af02411cb691986e819f7fbf75872b81a" kindref="member">mode_t</ref></type>
+        <definition>mode_t log4tango::FileAppender::get_mode</definition>
+        <argsstring>() const </argsstring>
+        <name>get_mode</name>
+        <briefdescription>
+<para>Gets the file open mode. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/FileAppender.hh" line="111" column="1" bodyfile="/home/tango/workspace/cppTango/src/log4tango/FileAppender.cpp" bodystart="103" bodyend="106"/>
+        <references refid="dd/d62/classlog4tango_1_1FileAppender_1a158481e2d508ad2615d78615a86e5206" compoundref="dd/de6/FileAppender_8hh" startline="120">_mode</references>
+      </memberdef>
+      <memberdef kind="function" id="dd/d62/classlog4tango_1_1FileAppender_1a418db9eff584e38bd167dcd4e50df6c1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool log4tango::FileAppender::is_valid</definition>
+        <argsstring>(void) const </argsstring>
+        <name>is_valid</name>
+        <reimplements refid="d7/dc4/classlog4tango_1_1Appender_1af8d183b5fdfc4b4affda75d1846d9270">is_valid</reimplements>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Check if the appender is valid. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if the appender is valid, false otherwise. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/FileAppender.hh" line="86" column="1" bodyfile="/home/tango/workspace/cppTango/src/log4tango/FileAppender.cpp" bodystart="79" bodyend="82"/>
+        <references refid="dd/d62/classlog4tango_1_1FileAppender_1a04f8a77d3ad3aa7cdcaa8f6be93c5ab0" compoundref="dd/de6/FileAppender_8hh" startline="118">_fd</references>
+      </memberdef>
+      <memberdef kind="function" id="dd/d62/classlog4tango_1_1FileAppender_1a17989960f7118b8628a93c69b10755ca" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool log4tango::FileAppender::reopen</definition>
+        <argsstring>(void)</argsstring>
+        <name>reopen</name>
+        <reimplements refid="d7/dc4/classlog4tango_1_1Appender_1a1f853fae3eebe457698039e3aafb770a">reopen</reimplements>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Reopens the logfile. </para>        </briefdescription>
+        <detaileddescription>
+<para>This can be useful for logfiles that are rotated externally, e.g. by logrotate. This method is a NOOP for FileAppenders that have been constructed with a file descriptor. <simplesect kind="return"><para>true if the reopen succeeded. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/FileAppender.hh" line="74" column="1" bodyfile="/home/tango/workspace/cppTango/src/log4tango/FileAppender.cpp" bodystart="117" bodyend="131"/>
+        <references refid="dd/d62/classlog4tango_1_1FileAppender_1a04f8a77d3ad3aa7cdcaa8f6be93c5ab0" compoundref="dd/de6/FileAppender_8hh" startline="118">_fd</references>
+        <references refid="dd/d62/classlog4tango_1_1FileAppender_1a7a21e40ff4eb363cc20678a4be99c93d" compoundref="dd/de6/FileAppender_8hh" startline="117">_file_name</references>
+        <references refid="dd/d62/classlog4tango_1_1FileAppender_1a6d4608df941bbaef01e82396bfc85cb2" compoundref="dd/de6/FileAppender_8hh" startline="119">_flags</references>
+        <references refid="dd/d62/classlog4tango_1_1FileAppender_1a158481e2d508ad2615d78615a86e5206" compoundref="dd/de6/FileAppender_8hh" startline="120">_mode</references>
+        <references refid="dd/d62/classlog4tango_1_1FileAppender_1aa354da43ca498a14bdd83b8f8065589d" compoundref="d2/d6d/FileAppender_8cpp" startline="71" endline="77">close</references>
+      </memberdef>
+      <memberdef kind="function" id="dd/d62/classlog4tango_1_1FileAppender_1a2b73b4da440d31a0b2a4ee7a0016b87c" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void log4tango::FileAppender::set_append</definition>
+        <argsstring>(bool append)</argsstring>
+        <name>set_append</name>
+        <param>
+          <type>bool</type>
+          <declname>append</declname>
+        </param>
+        <briefdescription>
+<para>Sets the append vs truncate flag. </para>        </briefdescription>
+        <detaileddescription>
+<para>NB. currently the <ref refid="dd/d62/classlog4tango_1_1FileAppender" kindref="compound">FileAppender</ref> opens the logfile in the constructor. Therefore this method is too late to influence the first file opening. We&apos;ll need something similar to log4j&apos;s activateOptions(). <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>append</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>false to truncate, true to append </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/FileAppender.hh" line="96" column="1" bodyfile="/home/tango/workspace/cppTango/src/log4tango/FileAppender.cpp" bodystart="84" bodyend="91"/>
+        <references refid="dd/d62/classlog4tango_1_1FileAppender_1a6d4608df941bbaef01e82396bfc85cb2" compoundref="dd/de6/FileAppender_8hh" startline="119">_flags</references>
+      </memberdef>
+      <memberdef kind="function" id="dd/d62/classlog4tango_1_1FileAppender_1abf1747af681b0fa4ac760c364a5da1c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void log4tango::FileAppender::set_mode</definition>
+        <argsstring>(mode_t mode)</argsstring>
+        <name>set_mode</name>
+        <param>
+          <type><ref refid="d4/db0/namespacelog4tango_1af02411cb691986e819f7fbf75872b81a" kindref="member">mode_t</ref></type>
+          <declname>mode</declname>
+        </param>
+        <briefdescription>
+<para>Sets the file open mode. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/FileAppender.hh" line="106" column="1" bodyfile="/home/tango/workspace/cppTango/src/log4tango/FileAppender.cpp" bodystart="98" bodyend="101"/>
+        <references refid="dd/d62/classlog4tango_1_1FileAppender_1a158481e2d508ad2615d78615a86e5206" compoundref="dd/de6/FileAppender_8hh" startline="120">_mode</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="dd/d62/classlog4tango_1_1FileAppender_1acc1e885ec09a9f206383284656a0079e" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>int</type>
+        <definition>int log4tango::FileAppender::_append</definition>
+        <argsstring>(const LoggingEvent &amp;event)</argsstring>
+        <name>_append</name>
+        <reimplements refid="d7/dc4/classlog4tango_1_1Appender_1a87739ce35cdc83e06dd4c55af28d3ac8">_append</reimplements>
+        <reimplementedby refid="d9/db4/classlog4tango_1_1RollingFileAppender_1ad25a1bd45e1dffc755821acca3b958f2">_append</reimplementedby>
+        <param>
+          <type>const <ref refid="d8/df2/structlog4tango_1_1LoggingEvent" kindref="compound">LoggingEvent</ref> &amp;</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+<para>Log in <ref refid="d7/dc4/classlog4tango_1_1Appender" kindref="compound">Appender</ref> specific way. </para>        </briefdescription>
+        <detaileddescription>
+<para>Subclasses of <ref refid="d7/dc4/classlog4tango_1_1Appender" kindref="compound">Appender</ref> should implement this method to perform actual logging. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>event</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="d8/df2/structlog4tango_1_1LoggingEvent" kindref="compound">LoggingEvent</ref> to log. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/FileAppender.hh" line="115" column="1" bodyfile="/home/tango/workspace/cppTango/src/log4tango/FileAppender.cpp" bodystart="108" bodyend="115"/>
+        <references refid="dd/d62/classlog4tango_1_1FileAppender_1a04f8a77d3ad3aa7cdcaa8f6be93c5ab0" compoundref="dd/de6/FileAppender_8hh" startline="118">_fd</references>
+        <references refid="d3/db6/classlog4tango_1_1LayoutAppender_1a5b0903233dd0bb8ea2d6fc33a5b85cb0" compoundref="dd/d2b/LayoutAppender_8cpp" startline="63" endline="65">log4tango::LayoutAppender::get_layout</references>
+        <referencedby refid="d9/db4/classlog4tango_1_1RollingFileAppender_1ad25a1bd45e1dffc755821acca3b958f2" compoundref="d6/d1b/RollingFileAppender_8cpp" startline="92" endline="103">log4tango::RollingFileAppender::_append</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="990">
+        <label>log4tango::LayoutAppender</label>
+        <link refid="d3/db6/classlog4tango_1_1LayoutAppender"/>
+        <childnode refid="991" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="992">
+        <label>log4tango::RollingFileAppender</label>
+        <link refid="d9/db4/classlog4tango_1_1RollingFileAppender"/>
+        <childnode refid="989" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="989">
+        <label>log4tango::FileAppender</label>
+        <link refid="dd/d62/classlog4tango_1_1FileAppender"/>
+        <childnode refid="990" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="991">
+        <label>log4tango::Appender</label>
+        <link refid="d7/dc4/classlog4tango_1_1Appender"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="994">
+        <label>log4tango::LayoutAppender</label>
+        <link refid="d3/db6/classlog4tango_1_1LayoutAppender"/>
+        <childnode refid="995" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="993">
+        <label>log4tango::FileAppender</label>
+        <link refid="dd/d62/classlog4tango_1_1FileAppender"/>
+        <childnode refid="994" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="995">
+        <label>log4tango::Appender</label>
+        <link refid="d7/dc4/classlog4tango_1_1Appender"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/tango/workspace/cppTango/include/log4tango/FileAppender.hh" line="40" column="1" bodyfile="/home/tango/workspace/cppTango/include/log4tango/FileAppender.hh" bodystart="39" bodyend="121"/>
+    <listofallmembers>
+      <member refid="dd/d62/classlog4tango_1_1FileAppender_1acc1e885ec09a9f206383284656a0079e" prot="protected" virt="virtual"><scope>log4tango::FileAppender</scope><name>_append</name></member>
+      <member refid="dd/d62/classlog4tango_1_1FileAppender_1a04f8a77d3ad3aa7cdcaa8f6be93c5ab0" prot="protected" virt="non-virtual"><scope>log4tango::FileAppender</scope><name>_fd</name></member>
+      <member refid="dd/d62/classlog4tango_1_1FileAppender_1a7a21e40ff4eb363cc20678a4be99c93d" prot="protected" virt="non-virtual"><scope>log4tango::FileAppender</scope><name>_file_name</name></member>
+      <member refid="dd/d62/classlog4tango_1_1FileAppender_1a6d4608df941bbaef01e82396bfc85cb2" prot="protected" virt="non-virtual"><scope>log4tango::FileAppender</scope><name>_flags</name></member>
+      <member refid="dd/d62/classlog4tango_1_1FileAppender_1a158481e2d508ad2615d78615a86e5206" prot="protected" virt="non-virtual"><scope>log4tango::FileAppender</scope><name>_mode</name></member>
+      <member refid="d7/dc4/classlog4tango_1_1Appender_1acfb6f50c20043bd740b198dfbb4231ea" prot="public" virt="non-virtual"><scope>log4tango::FileAppender</scope><name>append</name></member>
+      <member refid="d7/dc4/classlog4tango_1_1Appender_1a16f9d0456a87ff10d57b02f7d5c2cc01" prot="protected" virt="non-virtual"><scope>log4tango::FileAppender</scope><name>Appender</name></member>
+      <member refid="dd/d62/classlog4tango_1_1FileAppender_1aa354da43ca498a14bdd83b8f8065589d" prot="public" virt="virtual"><scope>log4tango::FileAppender</scope><name>close</name></member>
+      <member refid="d3/db6/classlog4tango_1_1LayoutAppender_1afff8b793c258c86701cbd1fe72925b49" prot="public" virt="non-virtual"><scope>log4tango::FileAppender</scope><name>DefaultLayoutType</name></member>
+      <member refid="dd/d62/classlog4tango_1_1FileAppender_1a43e09e7221ba060eb95252ee5461da95" prot="public" virt="non-virtual"><scope>log4tango::FileAppender</scope><name>FileAppender</name></member>
+      <member refid="dd/d62/classlog4tango_1_1FileAppender_1ab4cba01161e7a5db14ab19b07d1397f9" prot="public" virt="non-virtual"><scope>log4tango::FileAppender</scope><name>FileAppender</name></member>
+      <member refid="dd/d62/classlog4tango_1_1FileAppender_1a1958ac2f7755b5415abe40dc00104d6f" prot="public" virt="virtual"><scope>log4tango::FileAppender</scope><name>get_append</name></member>
+      <member refid="d3/db6/classlog4tango_1_1LayoutAppender_1a5b0903233dd0bb8ea2d6fc33a5b85cb0" prot="protected" virt="non-virtual"><scope>log4tango::FileAppender</scope><name>get_layout</name></member>
+      <member refid="dd/d62/classlog4tango_1_1FileAppender_1ab7ebf728457c73d43b16725e048f1597" prot="public" virt="virtual"><scope>log4tango::FileAppender</scope><name>get_mode</name></member>
+      <member refid="d7/dc4/classlog4tango_1_1Appender_1ac02d43ef46297bcc9eb3e1442d00b58c" prot="public" virt="non-virtual"><scope>log4tango::FileAppender</scope><name>get_name</name></member>
+      <member refid="dd/d62/classlog4tango_1_1FileAppender_1a418db9eff584e38bd167dcd4e50df6c1" prot="public" virt="virtual"><scope>log4tango::FileAppender</scope><name>is_valid</name></member>
+      <member refid="d3/db6/classlog4tango_1_1LayoutAppender_1aae15fc6ce336d263386c6866ad569782" prot="public" virt="non-virtual"><scope>log4tango::FileAppender</scope><name>LayoutAppender</name></member>
+      <member refid="d7/dc4/classlog4tango_1_1Appender_1a3ee7b310ce4681a93e1f53bdcc02a15c" prot="protected" virt="virtual"><scope>log4tango::FileAppender</scope><name>level_changed</name></member>
+      <member refid="dd/d62/classlog4tango_1_1FileAppender_1a17989960f7118b8628a93c69b10755ca" prot="public" virt="virtual"><scope>log4tango::FileAppender</scope><name>reopen</name></member>
+      <member refid="d3/db6/classlog4tango_1_1LayoutAppender_1aed53ada140e2b10a63d4d836b0e22ba9" prot="public" virt="virtual"><scope>log4tango::FileAppender</scope><name>requires_layout</name></member>
+      <member refid="dd/d62/classlog4tango_1_1FileAppender_1a2b73b4da440d31a0b2a4ee7a0016b87c" prot="public" virt="virtual"><scope>log4tango::FileAppender</scope><name>set_append</name></member>
+      <member refid="d3/db6/classlog4tango_1_1LayoutAppender_1ac3d2b08e933399a5dfc78dab2c208055" prot="public" virt="virtual"><scope>log4tango::FileAppender</scope><name>set_layout</name></member>
+      <member refid="dd/d62/classlog4tango_1_1FileAppender_1abf1747af681b0fa4ac760c364a5da1c6" prot="public" virt="virtual"><scope>log4tango::FileAppender</scope><name>set_mode</name></member>
+      <member refid="d7/dc4/classlog4tango_1_1Appender_1a3951b12a37424e9418963680662388b1" prot="public" virt="virtual"><scope>log4tango::FileAppender</scope><name>~Appender</name></member>
+      <member refid="dd/d62/classlog4tango_1_1FileAppender_1a051e5c4850313d9fb3b4240c73d9f61c" prot="public" virt="virtual"><scope>log4tango::FileAppender</scope><name>~FileAppender</name></member>
+      <member refid="d3/db6/classlog4tango_1_1LayoutAppender_1a2822f627fd98e29db0a9a7c96377e81e" prot="public" virt="virtual"><scope>log4tango::FileAppender</scope><name>~LayoutAppender</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

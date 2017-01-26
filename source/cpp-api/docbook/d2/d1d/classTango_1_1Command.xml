@@ -1,0 +1,886 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d2/d1d/classTango_1_1Command">
+<title>Tango::Command class Reference</title>
+        <simplesect>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d9/dbc/classTango_1_1Command_1_1CommandExt">Tango::Command::CommandExt</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Constructors</title>
+      <description>
+<para>Miscellaneous constructors </para>
+</description>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d2/d1d/classTango_1_1Command_1ac8aee54ed6b9c883f39a5a15a075c15f">Command</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d2/d1d/classTango_1_1Command_1a3598206398bf3cb500d88bee3a1c76f4">Command</link> (
+const char * s, <link linkend="de/ddf/namespaceTango_1a86ed7ac243c13a7813f08c3b899af170">Tango::CmdArgType</link> in, <link linkend="de/ddf/namespaceTango_1a86ed7ac243c13a7813f08c3b899af170">Tango::CmdArgType</link> out)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d2/d1d/classTango_1_1Command_1af4b7d2ad7aa06b60eb273d9214b34af9">Command</link> (
+string &amp; s, <link linkend="de/ddf/namespaceTango_1a86ed7ac243c13a7813f08c3b899af170">Tango::CmdArgType</link> in, <link linkend="de/ddf/namespaceTango_1a86ed7ac243c13a7813f08c3b899af170">Tango::CmdArgType</link> out)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d2/d1d/classTango_1_1Command_1ac4e9596ebbf8ced45a8383185cbbeae4">Command</link> (
+const char * s, <link linkend="de/ddf/namespaceTango_1a86ed7ac243c13a7813f08c3b899af170">Tango::CmdArgType</link> in, <link linkend="de/ddf/namespaceTango_1a86ed7ac243c13a7813f08c3b899af170">Tango::CmdArgType</link> out, const char * in_desc, const char * out_desc)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d2/d1d/classTango_1_1Command_1a291c62e3e6d852b8c116b7b27c927a64">Command</link> (
+string &amp; s, <link linkend="de/ddf/namespaceTango_1a86ed7ac243c13a7813f08c3b899af170">Tango::CmdArgType</link> in, <link linkend="de/ddf/namespaceTango_1a86ed7ac243c13a7813f08c3b899af170">Tango::CmdArgType</link> out, string &amp; in_desc, string &amp; out_desc)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d2/d1d/classTango_1_1Command_1accaebfd69dc12dd6212a9228724c63a6">Command</link> (
+const char * s, <link linkend="de/ddf/namespaceTango_1a86ed7ac243c13a7813f08c3b899af170">Tango::CmdArgType</link> in, <link linkend="de/ddf/namespaceTango_1a86ed7ac243c13a7813f08c3b899af170">Tango::CmdArgType</link> out, Tango::DispLevel level)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d2/d1d/classTango_1_1Command_1a99b6f06c975ad890fcb8f551ca6a42a7">Command</link> (
+string &amp; s, <link linkend="de/ddf/namespaceTango_1a86ed7ac243c13a7813f08c3b899af170">Tango::CmdArgType</link> in, <link linkend="de/ddf/namespaceTango_1a86ed7ac243c13a7813f08c3b899af170">Tango::CmdArgType</link> out, Tango::DispLevel level)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d2/d1d/classTango_1_1Command_1a34f9bd55d6766d58bc783000cfc3e908">Command</link> (
+const char * s, <link linkend="de/ddf/namespaceTango_1a86ed7ac243c13a7813f08c3b899af170">Tango::CmdArgType</link> in, <link linkend="de/ddf/namespaceTango_1a86ed7ac243c13a7813f08c3b899af170">Tango::CmdArgType</link> out, const char * in_desc, const char * out_desc, Tango::DispLevel level)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d2/d1d/classTango_1_1Command_1a892d20cd88adcf27ccb7a5483027c856">Command</link> (
+string &amp; s, <link linkend="de/ddf/namespaceTango_1a86ed7ac243c13a7813f08c3b899af170">Tango::CmdArgType</link> in, <link linkend="de/ddf/namespaceTango_1a86ed7ac243c13a7813f08c3b899af170">Tango::CmdArgType</link> out, string &amp; in_desc, string &amp; out_desc, Tango::DispLevel level)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Destructor</title>
+      <description>
+<para>Only one desctructor is defined for this class </para>
+</description>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="d2/d1d/classTango_1_1Command_1a05ff827c05911f69e56e3835345f5e84">~Command</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Miscellaneous methods</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual CORBA::Any * <link linkend="d2/d1d/classTango_1_1Command_1a24505e18425086e1c6b84d7ba1f92503">execute</link> (
+<link linkend="d3/d62/classTango_1_1DeviceImpl">DeviceImpl</link> * dev, const CORBA::Any &amp; in_any)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual bool <link linkend="d2/d1d/classTango_1_1Command_1af634fd436701aca40fbcdaeb5d4691b1">is_allowed</link> (
+<link linkend="d3/d62/classTango_1_1DeviceImpl">DeviceImpl</link> * dev, const CORBA::Any &amp; in_any)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual void <link linkend="d2/d1d/classTango_1_1Command_1a9cd12d4e02a35bfdb896a7cc89fc7eb0">init_types</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Get/Set object members.</title>
+      <description>
+<para>These methods allows the external world to get/set <link linkend="d3/d62/classTango_1_1DeviceImpl">DeviceImpl</link> instance data members </para>
+</description>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string &amp; <link linkend="d2/d1d/classTango_1_1Command_1aa6bfd85b7ee91b2c492fce5938fdaebe">get_name</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d2/d1d/classTango_1_1Command_1a13a2bbf037579b576dcee0bc9b55d8f2">set_name</link> (
+string &amp; new_name)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string &amp; <link linkend="d2/d1d/classTango_1_1Command_1a92e8a62375817d7e812132e49ee27dc3">get_lower_name</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="de/ddf/namespaceTango_1a86ed7ac243c13a7813f08c3b899af170">Tango::CmdArgType</link> <link linkend="d2/d1d/classTango_1_1Command_1a66cba1d14a421998571b5d871e31c155">get_in_type</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="de/ddf/namespaceTango_1a86ed7ac243c13a7813f08c3b899af170">Tango::CmdArgType</link> <link linkend="d2/d1d/classTango_1_1Command_1ad2b89784882a915431128712973939ee">get_out_type</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string &amp; <link linkend="d2/d1d/classTango_1_1Command_1ae36c1e09f7be85f9bf88fbbf68ca436e">get_in_type_desc</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string &amp; <link linkend="d2/d1d/classTango_1_1Command_1a32334cc5b6977f362a6ea50da4924653">get_out_type_desc</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Tango::DispLevel <link linkend="d2/d1d/classTango_1_1Command_1a943bac0451ccabcb2e093911a6cf852f">get_disp_level</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d2/d1d/classTango_1_1Command_1a47b22bb3cdfdc732c84a07b6db753aba">set_in_type_desc</link> (
+const char * desc)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d2/d1d/classTango_1_1Command_1aeb1db497ea77211071a7fd11cb2c9900">set_in_type_desc</link> (
+string &amp; desc)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d2/d1d/classTango_1_1Command_1af421f59ba21cb3300d8ed5cdc28114ad">set_out_type_desc</link> (
+const char * desc)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d2/d1d/classTango_1_1Command_1a98bb11a3d9c82fd2e4bbde0ed28d3dcf">set_out_type_desc</link> (
+string &amp; desc)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d2/d1d/classTango_1_1Command_1a9108e06b866948d8ea6a5de2cde80853">set_disp_level</link> (
+Tango::DispLevel level)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d2/d1d/classTango_1_1Command_1af8270bde5b9e4b9826419eabb8f8a3ec">set_polling_period</link> (
+long per)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>long <link linkend="d2/d1d/classTango_1_1Command_1a1e60dcb1a8a89eb7e6596a2f0ecd87a7">get_polling_period</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Extract methods.</title>
+      <description>
+<para>All these methods extract data from the CORBA Any object received as command input data </para>
+</description>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d2/d1d/classTango_1_1Command_1aa8a75d6b22f8fd09e07d46982855d233">extract</link> (
+const CORBA::Any &amp; in, Tango::DevBoolean &amp; data)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d2/d1d/classTango_1_1Command_1af279abb75028ddd1d96950963fad06eb">extract</link> (
+const CORBA::Any &amp; in, Tango::DevShort &amp; data)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d2/d1d/classTango_1_1Command_1a1c95b781a6cf51bc330d89228a9e6526">extract</link> (
+const CORBA::Any &amp; in, Tango::DevLong &amp; data)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d2/d1d/classTango_1_1Command_1a14a8016a57b8828deda2530119d650f3">extract</link> (
+const CORBA::Any &amp; in, Tango::DevLong64 &amp; data)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d2/d1d/classTango_1_1Command_1aeb2d6fcfa3acf6d4031af18884d22da7">extract</link> (
+const CORBA::Any &amp; in, Tango::DevFloat &amp; data)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d2/d1d/classTango_1_1Command_1af920614d03b5e1df3d7c7d74019ddc0e">extract</link> (
+const CORBA::Any &amp; in, Tango::DevDouble &amp; data)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d2/d1d/classTango_1_1Command_1a56cd878bc00bd6ca125b55e63d87528e">extract</link> (
+const CORBA::Any &amp; in, Tango::DevUShort &amp; data)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d2/d1d/classTango_1_1Command_1ad728692954b432d7eacdaaef88b23e34">extract</link> (
+const CORBA::Any &amp; in, Tango::DevULong &amp; data)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d2/d1d/classTango_1_1Command_1aa0cef124e525bf10049e549381d92e2d">extract</link> (
+const CORBA::Any &amp; in, Tango::DevULong64 &amp; data)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d2/d1d/classTango_1_1Command_1a422a40ed06a240af34d47ad01c82caee">extract</link> (
+const CORBA::Any &amp; in, Tango::DevString &amp; data)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d2/d1d/classTango_1_1Command_1ac7af73b7e2addf8e28a4286b9f454957">extract</link> (
+const CORBA::Any &amp; in, const char *&amp; data)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d2/d1d/classTango_1_1Command_1ae350209b019e0e27b72da229b701cfcb">extract</link> (
+const CORBA::Any &amp; in, const Tango::DevVarCharArray *&amp; data)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d2/d1d/classTango_1_1Command_1a3431556a6fc4fa01552f29b82cce7a8f">extract</link> (
+const CORBA::Any &amp; in, const Tango::DevVarShortArray *&amp; data)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d2/d1d/classTango_1_1Command_1a490eab9fa4a80f25a9ee4b032c3cd3a8">extract</link> (
+const CORBA::Any &amp; in, const Tango::DevVarLongArray *&amp; data)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d2/d1d/classTango_1_1Command_1a5cd810f135a01c1872c03245d2636c1f">extract</link> (
+const CORBA::Any &amp; in, const Tango::DevVarLong64Array *&amp; data)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d2/d1d/classTango_1_1Command_1a71bce528c2210b2599afc8c656af333d">extract</link> (
+const CORBA::Any &amp; in, const Tango::DevVarFloatArray *&amp; data)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d2/d1d/classTango_1_1Command_1ab965311c14dafd6dc1d6e52af4378c62">extract</link> (
+const CORBA::Any &amp; in, const Tango::DevVarDoubleArray *&amp; data)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d2/d1d/classTango_1_1Command_1a1ab6c6ec18eb1cba2fee960c66cd8817">extract</link> (
+const CORBA::Any &amp; in, const Tango::DevVarUShortArray *&amp; data)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d2/d1d/classTango_1_1Command_1af21e73695aa983ae0ce584008db56208">extract</link> (
+const CORBA::Any &amp; in, const Tango::DevVarULongArray *&amp; data)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d2/d1d/classTango_1_1Command_1a1d4f0266427dc4ef7cfbeaf931771553">extract</link> (
+const CORBA::Any &amp; in, const Tango::DevVarULong64Array *&amp; data)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d2/d1d/classTango_1_1Command_1a80c2ff23d561a93f06ea7a869734de4a">extract</link> (
+const CORBA::Any &amp; in, const Tango::DevVarStringArray *&amp; data)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d2/d1d/classTango_1_1Command_1a048a55e9d37d70f3e1120b37c730baab">extract</link> (
+const CORBA::Any &amp; in, const Tango::DevVarLongStringArray *&amp; data)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d2/d1d/classTango_1_1Command_1ab1ee52c490c42f9a0727d778892bdc3c">extract</link> (
+const CORBA::Any &amp; in, const Tango::DevVarDoubleStringArray *&amp; data)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d2/d1d/classTango_1_1Command_1acb2054505f53b0b638b3aab737289e8d">extract</link> (
+const CORBA::Any &amp; in, Tango::DevState &amp; data)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d2/d1d/classTango_1_1Command_1a1cc83923947f3305ddcc4980767121ea">extract</link> (
+const CORBA::Any &amp; in, const Tango::DevEncoded *&amp; data)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Insert methods.</title>
+      <description>
+<para>All these methods create a CORBA Any object and insert data into this object </para>
+</description>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>CORBA::Any * <link linkend="d2/d1d/classTango_1_1Command_1a665614cc771db2aeeef0f5a0ac1a1903">insert</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>CORBA::Any * <link linkend="d2/d1d/classTango_1_1Command_1a7c8f1595a81d800beb9845377716c29a">insert</link> (
+Tango::DevBoolean data)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>CORBA::Any * <link linkend="d2/d1d/classTango_1_1Command_1ab515b6bc55aedf12258d5487589f7eb6">insert</link> (
+Tango::DevShort data)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>CORBA::Any * <link linkend="d2/d1d/classTango_1_1Command_1ac7d5016d95647f8a68fef9e15bffbe90">insert</link> (
+Tango::DevLong data)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>CORBA::Any * <link linkend="d2/d1d/classTango_1_1Command_1ac1488aec40ba1e78d7cd1b3dc426f9b6">insert</link> (
+Tango::DevLong64 data)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>CORBA::Any * <link linkend="d2/d1d/classTango_1_1Command_1a5f3653dc4a432fea2fb66c7e7dc2e136">insert</link> (
+Tango::DevFloat data)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>CORBA::Any * <link linkend="d2/d1d/classTango_1_1Command_1aa7b766f514c72b9da575685673ceb77c">insert</link> (
+Tango::DevDouble data)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>CORBA::Any * <link linkend="d2/d1d/classTango_1_1Command_1a3b7333363e69cd16b89fdfcdd54cab3c">insert</link> (
+Tango::DevUShort data)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>CORBA::Any * <link linkend="d2/d1d/classTango_1_1Command_1a8a9a2a06e2afcf9b1824bbe2ba2687ff">insert</link> (
+Tango::DevULong data)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>CORBA::Any * <link linkend="d2/d1d/classTango_1_1Command_1a2a2c6e4f5434446cf3a1aec4412b7b0f">insert</link> (
+Tango::DevULong64 data)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>CORBA::Any * <link linkend="d2/d1d/classTango_1_1Command_1a06b833d3639d8f24d8f5cfb7480c94bb">insert</link> (
+Tango::DevString data)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>CORBA::Any * <link linkend="d2/d1d/classTango_1_1Command_1a6c16c497b7eef06ed4ff880ce02d5894">insert</link> (
+const char * data)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>CORBA::Any * <link linkend="d2/d1d/classTango_1_1Command_1a4c5c0bc9b364c5d2f377143597aec833">insert</link> (
+Tango::DevVarCharArray &amp; data)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>CORBA::Any * <link linkend="d2/d1d/classTango_1_1Command_1aa7457591f2ef2b110535fc8e9bff81aa">insert</link> (
+Tango::DevVarCharArray * data)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>CORBA::Any * <link linkend="d2/d1d/classTango_1_1Command_1a42fcd1d6068dee4f2640be160afe8af6">insert</link> (
+Tango::DevVarShortArray &amp; data)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>CORBA::Any * <link linkend="d2/d1d/classTango_1_1Command_1a37ddcc3509f439e9994d985310075a69">insert</link> (
+Tango::DevVarShortArray * data)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>CORBA::Any * <link linkend="d2/d1d/classTango_1_1Command_1a7d8c4de9c8010994f58d0571b4bf9863">insert</link> (
+Tango::DevVarLongArray &amp; data)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>CORBA::Any * <link linkend="d2/d1d/classTango_1_1Command_1a1f1ddff524fd99c2878062a4c3f451ea">insert</link> (
+Tango::DevVarLongArray * data)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>CORBA::Any * <link linkend="d2/d1d/classTango_1_1Command_1a1961e3fa4dd9f3b4034b01b896936b01">insert</link> (
+Tango::DevVarLong64Array &amp; data)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>CORBA::Any * <link linkend="d2/d1d/classTango_1_1Command_1aaebcc600e513cc5370ee2c827c401da1">insert</link> (
+Tango::DevVarLong64Array * data)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>CORBA::Any * <link linkend="d2/d1d/classTango_1_1Command_1acb1861ed6136daedc511ad7fac6cbd47">insert</link> (
+Tango::DevVarFloatArray &amp; data)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>CORBA::Any * <link linkend="d2/d1d/classTango_1_1Command_1adb44f35e4d13c44f3ca855c8d4ca82fd">insert</link> (
+Tango::DevVarFloatArray * data)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>CORBA::Any * <link linkend="d2/d1d/classTango_1_1Command_1a93be182d51d3cf48c1bde5effe7e75a8">insert</link> (
+Tango::DevVarDoubleArray &amp; data)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>CORBA::Any * <link linkend="d2/d1d/classTango_1_1Command_1a6ed55e2aa4d58c6cdd79e610a1364238">insert</link> (
+Tango::DevVarDoubleArray * data)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>CORBA::Any * <link linkend="d2/d1d/classTango_1_1Command_1a36a523ad2ca65bf8d60f571fcc465f0b">insert</link> (
+Tango::DevVarUShortArray &amp; data)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>CORBA::Any * <link linkend="d2/d1d/classTango_1_1Command_1a2ffc06bc6da1dc9021bdf736a9e48312">insert</link> (
+Tango::DevVarUShortArray * data)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>CORBA::Any * <link linkend="d2/d1d/classTango_1_1Command_1afee3e64ef79c31468ee691bec989e02f">insert</link> (
+Tango::DevVarULongArray &amp; data)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>CORBA::Any * <link linkend="d2/d1d/classTango_1_1Command_1a2825c793c7d4fb598ab4d4161d332943">insert</link> (
+Tango::DevVarULongArray * data)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>CORBA::Any * <link linkend="d2/d1d/classTango_1_1Command_1ad18d9ad16a986040425e13c3f96e64dd">insert</link> (
+Tango::DevVarULong64Array &amp; data)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>CORBA::Any * <link linkend="d2/d1d/classTango_1_1Command_1a5905a365cafebb13ff514c0526ab1a35">insert</link> (
+Tango::DevVarULong64Array * data)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>CORBA::Any * <link linkend="d2/d1d/classTango_1_1Command_1a759ae1a8f289ea77001650e0dd9dc73b">insert</link> (
+Tango::DevVarStringArray &amp; data)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>CORBA::Any * <link linkend="d2/d1d/classTango_1_1Command_1a14366c96e3d99893fb8daac9fb6639c1">insert</link> (
+Tango::DevVarStringArray * data)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>CORBA::Any * <link linkend="d2/d1d/classTango_1_1Command_1a72142fc4ebb29ff2b176cbbdae61034a">insert</link> (
+Tango::DevVarLongStringArray &amp; data)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>CORBA::Any * <link linkend="d2/d1d/classTango_1_1Command_1a2678ebf879cf014aa55fff6f2bdc10bb">insert</link> (
+Tango::DevVarLongStringArray * data)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>CORBA::Any * <link linkend="d2/d1d/classTango_1_1Command_1ab44d0a90519efd1f357ca0875d98f4e7">insert</link> (
+Tango::DevVarDoubleStringArray &amp; data)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>CORBA::Any * <link linkend="d2/d1d/classTango_1_1Command_1afe5aa741af2de317e44cdafe65e2f3a4">insert</link> (
+Tango::DevVarDoubleStringArray * data)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>CORBA::Any * <link linkend="d2/d1d/classTango_1_1Command_1af4c02c4968ea0fa878424507d6edb8d3">insert</link> (
+Tango::DevState data)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>CORBA::Any * <link linkend="d2/d1d/classTango_1_1Command_1a21a6cda05b9c4182c7d0ef2e6bb01c0a">insert</link> (
+Tango::DevEncoded * data)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Class data members</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string name<para><emphasis>The command name.</emphasis></para></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string lower_name<para><emphasis>The command name in lower case.</emphasis></para></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Tango::CmdArgType in_type<para><emphasis>The command input parameter type.</emphasis></para></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Tango::CmdArgType out_type<para><emphasis>The command output parameter type.</emphasis></para></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string in_type_desc<para><emphasis>The command input parameter description.</emphasis></para></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string out_type_desc<para><emphasis>The command output parameter type.</emphasis></para></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Tango::DispLevel cmd_disp_level</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>CommandExt * ext</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>long poll_period</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d2/d1d/classTango_1_1Command_1a0aada5c2b473e36c3569bbb875f7a7b4">alloc_any</link> (
+CORBA::Any *&amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d2/d1d/classTango_1_1Command_1a5960cd13fa48f2923e9e37722405e580">throw_bad_type</link> (
+const char * )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Brief Description</title>
+
+<para>This class is a class representing a command in the TANGO device server pattern. </para>
+    </simplesect>
+        <simplesect>
+            <title>Detailed Description</title>
+
+<para>it is an abstract class. It is the root class for all command related classes for command implemented with the inheritance model or with the template command model</para>
+
+<para>$Author$ $Revision$ </para>
+                <para>Definition at line 84 of file command.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>command.h</para></listitem></itemizedlist></para>
+        </simplesect>
+            <section xml:id="d2/d1d/classTango_1_1Command_1a0aada5c2b473e36c3569bbb875f7a7b4">
+                <title>void Tango::Command::alloc_any (CORBA::Any *&amp;)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d2/d1d/classTango_1_1Command_1a5960cd13fa48f2923e9e37722405e580">
+                <title>void Tango::Command::throw_bad_type (const char *)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

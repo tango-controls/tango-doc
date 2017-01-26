@@ -1,0 +1,224 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="d2/d0d/classTango_1_1AsynchRequest" kind="class" prot="public">
+    <compoundname>Tango::AsynchRequest</compoundname>
+    <includes refid="d9/dd1/group_8h" local="yes">group.h</includes>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="d2/d0d/classTango_1_1AsynchRequest_1ac6facd8fbba95d830b9806ceffb3a5bd" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend class</type>
+        <definition>friend class GroupDeviceElement</definition>
+        <argsstring></argsstring>
+        <name>GroupDeviceElement</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="72" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/group.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d2/d0d/classTango_1_1AsynchRequest_1aef10e07684e2f47bf26aebd7c5de99b6" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Tango::AsynchRequest::group_element_enabled_m</definition>
+        <argsstring></argsstring>
+        <name>group_element_enabled_m</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="115" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/group.h" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d2/d0d/classTango_1_1AsynchRequest_1ac5b6033ec76d80573278e262ee569260" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt;std::string&gt; Tango::AsynchRequest::obj_names</definition>
+        <argsstring></argsstring>
+        <name>obj_names</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="111" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/group.h" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d2/d0d/classTango_1_1AsynchRequest_1a483fdce72c95b3b296baa986558910fc" prot="private" static="no" mutable="no">
+        <type>DevFailed</type>
+        <definition>DevFailed Tango::AsynchRequest::rq_ex</definition>
+        <argsstring></argsstring>
+        <name>rq_ex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="113" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/group.h" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d2/d0d/classTango_1_1AsynchRequest_1ac1baeaf0c4feb15c0d08abf7e3c7893b" prot="private" static="no" mutable="no">
+        <type>long</type>
+        <definition>long Tango::AsynchRequest::rq_id</definition>
+        <argsstring></argsstring>
+        <name>rq_id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="109" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/group.h" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d2/d0d/classTango_1_1AsynchRequest_1a3e7880f845044a536121f702b5521270" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Tango::AsynchRequest::AsynchRequest</definition>
+        <argsstring>(long _rid, const std::string &amp;_obj_name, bool ge_enabled=true)</argsstring>
+        <name>AsynchRequest</name>
+        <param>
+          <type>long</type>
+          <declname>_rid</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>_obj_name</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>ge_enabled</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="76" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/group.h" bodystart="76" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d0d/classTango_1_1AsynchRequest_1a383a9c0102ddd1126e7470840779bff1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Tango::AsynchRequest::AsynchRequest</definition>
+        <argsstring>(long _rid, const std::vector&lt; std::string &gt; &amp;_obj_names, bool ge_enabled=true)</argsstring>
+        <name>AsynchRequest</name>
+        <param>
+          <type>long</type>
+          <declname>_rid</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; std::string &gt; &amp;</type>
+          <declname>_obj_names</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>ge_enabled</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="82" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/group.h" bodystart="82" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d0d/classTango_1_1AsynchRequest_1a26b3a914e0dfff3db69ab6d645358080" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Tango::AsynchRequest::AsynchRequest</definition>
+        <argsstring>(long _rid, const std::string &amp;_obj_name, const DevFailed &amp;_df)</argsstring>
+        <name>AsynchRequest</name>
+        <param>
+          <type>long</type>
+          <declname>_rid</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>_obj_name</declname>
+        </param>
+        <param>
+          <type>const DevFailed &amp;</type>
+          <declname>_df</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="88" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/group.h" bodystart="88" bodyend="92"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d0d/classTango_1_1AsynchRequest_1a802862507d2cbd9ff8d54a1d029a6d27" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Tango::AsynchRequest::AsynchRequest</definition>
+        <argsstring>(long _rid, const std::vector&lt; std::string &gt; &amp;_obj_names, const DevFailed &amp;_df)</argsstring>
+        <name>AsynchRequest</name>
+        <param>
+          <type>long</type>
+          <declname>_rid</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; std::string &gt; &amp;</type>
+          <declname>_obj_names</declname>
+        </param>
+        <param>
+          <type>const DevFailed &amp;</type>
+          <declname>_df</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="94" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/group.h" bodystart="94" bodyend="98"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d0d/classTango_1_1AsynchRequest_1ae6f806d0204ff49ced628dca1e651acd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual Tango::AsynchRequest::~AsynchRequest</definition>
+        <argsstring>()</argsstring>
+        <name>~AsynchRequest</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="100" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/group.h" bodystart="100" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d0d/classTango_1_1AsynchRequest_1ac4de9d1f09f1fbdaddd2204c6e77506e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Tango::AsynchRequest::group_element_enabled</definition>
+        <argsstring>() const </argsstring>
+        <name>group_element_enabled</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="104" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/group.h" bodystart="104" bodyend="106"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="70" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/group.h" bodystart="69" bodyend="116"/>
+    <listofallmembers>
+      <member refid="d2/d0d/classTango_1_1AsynchRequest_1a3e7880f845044a536121f702b5521270" prot="public" virt="non-virtual"><scope>Tango::AsynchRequest</scope><name>AsynchRequest</name></member>
+      <member refid="d2/d0d/classTango_1_1AsynchRequest_1a383a9c0102ddd1126e7470840779bff1" prot="public" virt="non-virtual"><scope>Tango::AsynchRequest</scope><name>AsynchRequest</name></member>
+      <member refid="d2/d0d/classTango_1_1AsynchRequest_1a26b3a914e0dfff3db69ab6d645358080" prot="public" virt="non-virtual"><scope>Tango::AsynchRequest</scope><name>AsynchRequest</name></member>
+      <member refid="d2/d0d/classTango_1_1AsynchRequest_1a802862507d2cbd9ff8d54a1d029a6d27" prot="public" virt="non-virtual"><scope>Tango::AsynchRequest</scope><name>AsynchRequest</name></member>
+      <member refid="d2/d0d/classTango_1_1AsynchRequest_1ac4de9d1f09f1fbdaddd2204c6e77506e" prot="public" virt="non-virtual"><scope>Tango::AsynchRequest</scope><name>group_element_enabled</name></member>
+      <member refid="d2/d0d/classTango_1_1AsynchRequest_1aef10e07684e2f47bf26aebd7c5de99b6" prot="private" virt="non-virtual"><scope>Tango::AsynchRequest</scope><name>group_element_enabled_m</name></member>
+      <member refid="d2/d0d/classTango_1_1AsynchRequest_1ac6facd8fbba95d830b9806ceffb3a5bd" prot="private" virt="non-virtual"><scope>Tango::AsynchRequest</scope><name>GroupDeviceElement</name></member>
+      <member refid="d2/d0d/classTango_1_1AsynchRequest_1ac5b6033ec76d80573278e262ee569260" prot="private" virt="non-virtual"><scope>Tango::AsynchRequest</scope><name>obj_names</name></member>
+      <member refid="d2/d0d/classTango_1_1AsynchRequest_1a483fdce72c95b3b296baa986558910fc" prot="private" virt="non-virtual"><scope>Tango::AsynchRequest</scope><name>rq_ex</name></member>
+      <member refid="d2/d0d/classTango_1_1AsynchRequest_1ac1baeaf0c4feb15c0d08abf7e3c7893b" prot="private" virt="non-virtual"><scope>Tango::AsynchRequest</scope><name>rq_id</name></member>
+      <member refid="d2/d0d/classTango_1_1AsynchRequest_1ae6f806d0204ff49ced628dca1e651acd" prot="public" virt="virtual"><scope>Tango::AsynchRequest</scope><name>~AsynchRequest</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

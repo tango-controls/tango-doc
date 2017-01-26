@@ -1,0 +1,253 @@
+\section{Tango\-:\-:Group\-Element Class Reference}
+\label{classTango_1_1GroupElement}\index{Tango\-::\-Group\-Element@{Tango\-::\-Group\-Element}}
+
+
+{\ttfamily \#include \char`\"{}group.\-h\char`\"{}}
+
+
+
+Inheritance diagram for Tango\-:\-:Group\-Element\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=275pt]{db/d4d/classTango_1_1GroupElement__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool {\bf contains} (const std\-::string \&n, bool fwd=true)
+\item 
+void {\bf disable} ()
+\item 
+virtual void {\bf dump} (int indent\-\_\-level=0)=0
+\item 
+virtual void {\bf dump} (Tango\-Sys\-\_\-\-O\-Mem\-Stream \&oms, int indent\-\_\-level=0)=0
+\item 
+void {\bf enable} ()
+\item 
+virtual Device\-Proxy $\ast$ {\bf get\-\_\-device} (const std\-::string \&n)=0
+\item 
+virtual Device\-Proxy $\ast$ {\bf get\-\_\-device} (long idx)=0
+\item 
+const std\-::string {\bf get\-\_\-fully\-\_\-qualified\-\_\-name} () const 
+\item 
+const std\-::string \& {\bf get\-\_\-name} () const 
+\item 
+virtual bool {\bf is\-\_\-connected} ()
+\item 
+bool {\bf is\-\_\-enabled} () const 
+\item 
+bool {\bf name\-\_\-equals} (const std\-::string \&n)
+\item 
+bool {\bf name\-\_\-matches} (const std\-::string \&n)
+\item 
+virtual Device\-Proxy $\ast$ {\bf operator[$\,$]} (long idx)=0
+\item 
+virtual bool {\bf ping} (bool fwd=true)=0
+\item 
+virtual void {\bf set\-\_\-timeout\-\_\-millis} (int tmo\-\_\-ms)=0
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Group\-Element} (const std\-::string \&name, {\bf Group\-Element} $\ast$parent=0)
+\item 
+virtual {\bf $\sim$\-Group\-Element} ()
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Group}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Tango\-::\-Group\-Element@{Tango\-::\-Group\-Element}!Group\-Element@{Group\-Element}}
+\index{Group\-Element@{Group\-Element}!Tango::GroupElement@{Tango\-::\-Group\-Element}}
+\subsubsection[{Group\-Element}]{\setlength{\rightskip}{0pt plus 5cm}Tango\-::\-Group\-Element\-::\-Group\-Element (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{name, }
+\item[{{\bf Group\-Element} $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classTango_1_1GroupElement_a5f9e25c3711969c3fc5fe50202a22bb9}
+\index{Tango\-::\-Group\-Element@{Tango\-::\-Group\-Element}!$\sim$\-Group\-Element@{$\sim$\-Group\-Element}}
+\index{$\sim$\-Group\-Element@{$\sim$\-Group\-Element}!Tango::GroupElement@{Tango\-::\-Group\-Element}}
+\subsubsection[{$\sim$\-Group\-Element}]{\setlength{\rightskip}{0pt plus 5cm}virtual Tango\-::\-Group\-Element\-::$\sim$\-Group\-Element (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classTango_1_1GroupElement_a9e4421b2ad2ad0c72dfa587b6912c811}
+
+
+\subsection{Member Function Documentation}
+\index{Tango\-::\-Group\-Element@{Tango\-::\-Group\-Element}!contains@{contains}}
+\index{contains@{contains}!Tango::GroupElement@{Tango\-::\-Group\-Element}}
+\subsubsection[{contains}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Tango\-::\-Group\-Element\-::contains (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{n, }
+\item[{bool}]{fwd = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classTango_1_1GroupElement_a64f031e079125a08bdab73d21c906c86}
+
+
+Reimplemented in {\bf Tango\-::\-Group} \doxyref{}{p.}{d4/d6d/classTango_1_1Group_a2885b00242d3a2d199836e48186dd71e}.
+
+\index{Tango\-::\-Group\-Element@{Tango\-::\-Group\-Element}!disable@{disable}}
+\index{disable@{disable}!Tango::GroupElement@{Tango\-::\-Group\-Element}}
+\subsubsection[{disable}]{\setlength{\rightskip}{0pt plus 5cm}void Tango\-::\-Group\-Element\-::disable (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTango_1_1GroupElement_ac81b46293f4d775658c433b83759ecf2}
+\index{Tango\-::\-Group\-Element@{Tango\-::\-Group\-Element}!dump@{dump}}
+\index{dump@{dump}!Tango::GroupElement@{Tango\-::\-Group\-Element}}
+\subsubsection[{dump}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Tango\-::\-Group\-Element\-::dump (
+\begin{DoxyParamCaption}
+\item[{int}]{indent\-\_\-level = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classTango_1_1GroupElement_af8ebd6508a22f24c40886f97f879c54f}
+
+
+Implemented in {\bf Tango\-::\-Group\-Device\-Element} \doxyref{}{p.}{da/d18/classTango_1_1GroupDeviceElement_a14f1b125cf6cf5eae91c1a06cadc41a9}.
+
+\index{Tango\-::\-Group\-Element@{Tango\-::\-Group\-Element}!dump@{dump}}
+\index{dump@{dump}!Tango::GroupElement@{Tango\-::\-Group\-Element}}
+\subsubsection[{dump}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Tango\-::\-Group\-Element\-::dump (
+\begin{DoxyParamCaption}
+\item[{Tango\-Sys\-\_\-\-O\-Mem\-Stream \&}]{oms, }
+\item[{int}]{indent\-\_\-level = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classTango_1_1GroupElement_aee01792236e000e57e4725e6141a46a1}
+
+
+Implemented in {\bf Tango\-::\-Group\-Device\-Element} \doxyref{}{p.}{da/d18/classTango_1_1GroupDeviceElement_a93d666ca9b3ba59abcf1feb86a111390}.
+
+\index{Tango\-::\-Group\-Element@{Tango\-::\-Group\-Element}!enable@{enable}}
+\index{enable@{enable}!Tango::GroupElement@{Tango\-::\-Group\-Element}}
+\subsubsection[{enable}]{\setlength{\rightskip}{0pt plus 5cm}void Tango\-::\-Group\-Element\-::enable (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTango_1_1GroupElement_a8b81d29966bfd9d42bafb34bd111fab0}
+\index{Tango\-::\-Group\-Element@{Tango\-::\-Group\-Element}!get\-\_\-device@{get\-\_\-device}}
+\index{get\-\_\-device@{get\-\_\-device}!Tango::GroupElement@{Tango\-::\-Group\-Element}}
+\subsubsection[{get\-\_\-device}]{\setlength{\rightskip}{0pt plus 5cm}virtual Device\-Proxy$\ast$ Tango\-::\-Group\-Element\-::get\-\_\-device (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classTango_1_1GroupElement_a78f61062a50404b224883dab23c08168}
+
+
+Implemented in {\bf Tango\-::\-Group\-Device\-Element} \doxyref{}{p.}{da/d18/classTango_1_1GroupDeviceElement_a5abe1c9a7c93eb66bca1e756833fdadd}, and {\bf Tango\-::\-Group} \doxyref{}{p.}{d4/d6d/classTango_1_1Group_adc7d5db7e814e378bf30f940865885b8}.
+
+\index{Tango\-::\-Group\-Element@{Tango\-::\-Group\-Element}!get\-\_\-device@{get\-\_\-device}}
+\index{get\-\_\-device@{get\-\_\-device}!Tango::GroupElement@{Tango\-::\-Group\-Element}}
+\subsubsection[{get\-\_\-device}]{\setlength{\rightskip}{0pt plus 5cm}virtual Device\-Proxy$\ast$ Tango\-::\-Group\-Element\-::get\-\_\-device (
+\begin{DoxyParamCaption}
+\item[{long}]{idx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classTango_1_1GroupElement_ab40d45bdf475f9e4ea51ab855e38bf91}
+
+
+Implemented in {\bf Tango\-::\-Group\-Device\-Element} \doxyref{}{p.}{da/d18/classTango_1_1GroupDeviceElement_acb1f9c6754c2dfc7b902bd0e90d3dfc1}, and {\bf Tango\-::\-Group} \doxyref{}{p.}{d4/d6d/classTango_1_1Group_a29685f1ad173310c2cf695390cedd362}.
+
+\index{Tango\-::\-Group\-Element@{Tango\-::\-Group\-Element}!get\-\_\-fully\-\_\-qualified\-\_\-name@{get\-\_\-fully\-\_\-qualified\-\_\-name}}
+\index{get\-\_\-fully\-\_\-qualified\-\_\-name@{get\-\_\-fully\-\_\-qualified\-\_\-name}!Tango::GroupElement@{Tango\-::\-Group\-Element}}
+\subsubsection[{get\-\_\-fully\-\_\-qualified\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::string Tango\-::\-Group\-Element\-::get\-\_\-fully\-\_\-qualified\-\_\-name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classTango_1_1GroupElement_a44dea90469791483f36bda324fa67ea1}
+
+
+References get\-\_\-fully\-\_\-qualified\-\_\-name().
+
+
+
+Referenced by get\-\_\-fully\-\_\-qualified\-\_\-name().
+
+\index{Tango\-::\-Group\-Element@{Tango\-::\-Group\-Element}!get\-\_\-name@{get\-\_\-name}}
+\index{get\-\_\-name@{get\-\_\-name}!Tango::GroupElement@{Tango\-::\-Group\-Element}}
+\subsubsection[{get\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::string\& Tango\-::\-Group\-Element\-::get\-\_\-name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classTango_1_1GroupElement_a1313406261e09af44efae5b49ce4fc5a}
+\index{Tango\-::\-Group\-Element@{Tango\-::\-Group\-Element}!is\-\_\-connected@{is\-\_\-connected}}
+\index{is\-\_\-connected@{is\-\_\-connected}!Tango::GroupElement@{Tango\-::\-Group\-Element}}
+\subsubsection[{is\-\_\-connected}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Tango\-::\-Group\-Element\-::is\-\_\-connected (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classTango_1_1GroupElement_a5ca539735117e31e002587883e508ca5}
+
+
+Reimplemented in {\bf Tango\-::\-Group\-Device\-Element} \doxyref{}{p.}{da/d18/classTango_1_1GroupDeviceElement_af229babcc705fac5bf51edd7715a3496}.
+
+\index{Tango\-::\-Group\-Element@{Tango\-::\-Group\-Element}!is\-\_\-enabled@{is\-\_\-enabled}}
+\index{is\-\_\-enabled@{is\-\_\-enabled}!Tango::GroupElement@{Tango\-::\-Group\-Element}}
+\subsubsection[{is\-\_\-enabled}]{\setlength{\rightskip}{0pt plus 5cm}bool Tango\-::\-Group\-Element\-::is\-\_\-enabled (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classTango_1_1GroupElement_aec8981c295f17883ad1b05bcee4f78da}
+\index{Tango\-::\-Group\-Element@{Tango\-::\-Group\-Element}!name\-\_\-equals@{name\-\_\-equals}}
+\index{name\-\_\-equals@{name\-\_\-equals}!Tango::GroupElement@{Tango\-::\-Group\-Element}}
+\subsubsection[{name\-\_\-equals}]{\setlength{\rightskip}{0pt plus 5cm}bool Tango\-::\-Group\-Element\-::name\-\_\-equals (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{n}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1GroupElement_ac38ec8a0666000aaeb0be72a538555f6}
+\index{Tango\-::\-Group\-Element@{Tango\-::\-Group\-Element}!name\-\_\-matches@{name\-\_\-matches}}
+\index{name\-\_\-matches@{name\-\_\-matches}!Tango::GroupElement@{Tango\-::\-Group\-Element}}
+\subsubsection[{name\-\_\-matches}]{\setlength{\rightskip}{0pt plus 5cm}bool Tango\-::\-Group\-Element\-::name\-\_\-matches (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{n}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1GroupElement_ac59fc656076f55359d8d3b000d0940e9}
+\index{Tango\-::\-Group\-Element@{Tango\-::\-Group\-Element}!operator[$\,$]@{operator[]}}
+\index{operator[$\,$]@{operator[]}!Tango::GroupElement@{Tango\-::\-Group\-Element}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}virtual Device\-Proxy$\ast$ Tango\-::\-Group\-Element\-::operator[$\,$] (
+\begin{DoxyParamCaption}
+\item[{long}]{idx}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classTango_1_1GroupElement_aef54618c81a0042334be5c13d0326346}
+
+
+Implemented in {\bf Tango\-::\-Group\-Device\-Element} \doxyref{}{p.}{da/d18/classTango_1_1GroupDeviceElement_a8230a10f49f459944de457deaf2d8915}, and {\bf Tango\-::\-Group} \doxyref{}{p.}{d4/d6d/classTango_1_1Group_aea3b781cd10d28770cb584c55c065534}.
+
+\index{Tango\-::\-Group\-Element@{Tango\-::\-Group\-Element}!ping@{ping}}
+\index{ping@{ping}!Tango::GroupElement@{Tango\-::\-Group\-Element}}
+\subsubsection[{ping}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Tango\-::\-Group\-Element\-::ping (
+\begin{DoxyParamCaption}
+\item[{bool}]{fwd = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classTango_1_1GroupElement_ab004b0e82f6a7cd7db714ca42b3b1d8a}
+
+
+Implemented in {\bf Tango\-::\-Group\-Device\-Element} \doxyref{}{p.}{da/d18/classTango_1_1GroupDeviceElement_a326af717a2dde9c75f60ab0ed6b35c2f}, and {\bf Tango\-::\-Group} \doxyref{}{p.}{d4/d6d/classTango_1_1Group_aa7cd5c6f1be1a85c244c7a4ec99081ec}.
+
+\index{Tango\-::\-Group\-Element@{Tango\-::\-Group\-Element}!set\-\_\-timeout\-\_\-millis@{set\-\_\-timeout\-\_\-millis}}
+\index{set\-\_\-timeout\-\_\-millis@{set\-\_\-timeout\-\_\-millis}!Tango::GroupElement@{Tango\-::\-Group\-Element}}
+\subsubsection[{set\-\_\-timeout\-\_\-millis}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Tango\-::\-Group\-Element\-::set\-\_\-timeout\-\_\-millis (
+\begin{DoxyParamCaption}
+\item[{int}]{tmo\-\_\-ms}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classTango_1_1GroupElement_aa4ed03d3347901cecadbeff4c9b465a3}
+
+
+Implemented in {\bf Tango\-::\-Group\-Device\-Element} \doxyref{}{p.}{da/d18/classTango_1_1GroupDeviceElement_a7e318af767b4030e04d3104e318da0b5}, and {\bf Tango\-::\-Group} \doxyref{}{p.}{d4/d6d/classTango_1_1Group_a92242b89511557c3296480ee19b790b2}.
+
+
+
+\subsection{Friends And Related Function Documentation}
+\index{Tango\-::\-Group\-Element@{Tango\-::\-Group\-Element}!Group@{Group}}
+\index{Group@{Group}!Tango::GroupElement@{Tango\-::\-Group\-Element}}
+\subsubsection[{Group}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Group}\hspace{0.3cm}{\ttfamily [friend]}}\label{classTango_1_1GroupElement_a2697825715974a353728f0d4d5658112}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+{\bf group.\-h}\end{DoxyCompactItemize}

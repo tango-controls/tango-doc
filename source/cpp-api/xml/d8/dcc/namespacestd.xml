@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="d8/dcc/namespacestd" kind="namespace">
+    <compoundname>std</compoundname>
+    <innerclass refid="d7/d24/classstd_1_1ostringstream" prot="public">std::ostringstream</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="d8/dcc/namespacestd_1a4639029cd5db5428c743a52d095356b9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="d6/de1/classlog4tango_1_1LoggerStream" kindref="compound">log4tango::LoggerStream</ref> &amp;</type>
+        <definition>log4tango::LoggerStream&amp; std::endl</definition>
+        <argsstring>(log4tango::LoggerStream &amp;ls)</argsstring>
+        <name>endl</name>
+        <param>
+          <type><ref refid="d6/de1/classlog4tango_1_1LoggerStream" kindref="compound">log4tango::LoggerStream</ref> &amp;</type>
+          <declname>ls</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/LoggerStream.hh" line="180" column="1" bodyfile="/home/tango/workspace/cppTango/include/log4tango/LoggerStream.hh" bodystart="180" bodyend="182"/>
+        <referencedby refid="df/d37/classlog4tango_1_1OstreamAppender_1a90001f5d7e7ef88b5492e6154d90aa86" compoundref="da/dc0/OstreamAppender_8cpp" startline="52" endline="59">log4tango::OstreamAppender::_append</referencedby>
+        <referencedby refid="db/d60/classlog4tango_1_1PatternLayout_1a0a893fc5d34dad85771c45cd081c932b" compoundref="d6/d13/PatternLayout_8cpp" startline="297" endline="413">log4tango::PatternLayout::set_conversion_pattern</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/tango/workspace/cppTango/include/log4tango/LoggerStream.hh" line="178" column="1"/>
+  </compounddef>
+</doxygen>

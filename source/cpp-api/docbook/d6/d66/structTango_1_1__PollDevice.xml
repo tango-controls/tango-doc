@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d6/d66/structTango_1_1__PollDevice">
+<title>Tango::_PollDevice struct Reference</title>
+<para>
+    <programlisting>#include <link linkend="d4/d13/tango__const_8h">&quot;tango_const.h&quot;</link></programlisting>
+</para>
+        <simplesect>
+            <title>Public Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string dev_name</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>vector&lt; long &gt; ind_list</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+</section>

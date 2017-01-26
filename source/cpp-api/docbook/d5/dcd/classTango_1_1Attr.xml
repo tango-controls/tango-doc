@@ -1,0 +1,648 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d5/dcd/classTango_1_1Attr">
+<title>Tango::Attr class Reference</title>
+        <simplesect>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="dd/d84/classTango_1_1Attr_1_1AttrExt">Tango::Attr::AttrExt</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Constructors</title>
+      <description>
+<para>Two constructor are defined for this class </para>
+</description>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d5/dcd/classTango_1_1Attr_1a7333f0eab1956673be866f4c7a2d44e8">Attr</link> (
+const char * name, long data_type, Tango::AttrWriteType w_type, const char * assoc)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d5/dcd/classTango_1_1Attr_1ad03a6014aeefda86d8ee4d52659a6c39">Attr</link> (
+const char * name, long data_type, Tango::DispLevel disp, Tango::AttrWriteType w_type, const char * assoc)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d5/dcd/classTango_1_1Attr_1ad69e9aa5dcd4c22be0509ed72a01cd0d">Attr</link> (
+const char * name, Tango::DispLevel disp)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Destructor</title>
+      <description>
+<para>Only one desctructor is defined for this class </para>
+</description>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="d5/dcd/classTango_1_1Attr_1af280714a1ec4254e7ad7009eb0e8feda">~Attr</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Miscellaneous methods</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d5/dcd/classTango_1_1Attr_1acca03caaac31c20e746a276ab033c174">set_default_properties</link> (
+<link linkend="de/d9a/classTango_1_1UserDefaultAttrProp">UserDefaultAttrProp</link> &amp; prop)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d5/dcd/classTango_1_1Attr_1a8f841afb6effc8384e49730550261378">set_disp_level</link> (
+Tango::DispLevel level)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d5/dcd/classTango_1_1Attr_1a5d0e17f5a1ce7263482bb3df5090f91d">set_polling_period</link> (
+long update)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d5/dcd/classTango_1_1Attr_1aac89c07e2033c13abf2222fd6cd089dc">set_memorized</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d5/dcd/classTango_1_1Attr_1a5c1d94ccc3bacb8d728cf836df737889">set_memorized_init</link> (
+bool write_on_init)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d5/dcd/classTango_1_1Attr_1a68801b4629667565b9cceb6fefa413d7">set_change_event</link> (
+bool implemented, bool detect)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d5/dcd/classTango_1_1Attr_1a9269546f4b25a6395efe8b93bdb8d07f">is_change_event</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d5/dcd/classTango_1_1Attr_1a3001dc4d14cbdc62a914a15ff3a86e49">is_check_change_criteria</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d5/dcd/classTango_1_1Attr_1a6ba7dd409514e938cb2f530b767aa98c">set_archive_event</link> (
+bool implemented, bool detect)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d5/dcd/classTango_1_1Attr_1aff00859f5da6a7f48e7abe079491f12c">is_archive_event</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d5/dcd/classTango_1_1Attr_1a8aa3318fe49d403969a59fe000352be8">is_check_archive_criteria</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d5/dcd/classTango_1_1Attr_1a7e18250ed88d997b603b308212eb7362">set_data_ready_event</link> (
+bool implemented)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d5/dcd/classTango_1_1Attr_1aff3b774c27e61c3c2ae97ec81c30fcea">is_data_ready_event</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string assoc_name</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool check_archive_event</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool check_change_event</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string cl_name</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>vector&lt; AttrProperty &gt; class_properties</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Tango::DispLevel disp_level</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>AttrExt * ext</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool fire_archive_event</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool fire_change_event</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool fire_dr_event</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Tango::AttrDataFormat format</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool mem</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool mem_init</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string name</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>long poll_period</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>long type</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>vector&lt; AttrProperty &gt; user_default_properties</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Tango::AttrWriteType writable</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d5/dcd/classTango_1_1Attr_1aead8236385c93b1aefe23d9da9044cc0">Attr</link> (
+const <link linkend="d5/dcd/classTango_1_1Attr">Attr</link> &amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d5/dcd/classTango_1_1Attr_1a20dc0d7081a6c61262aee65294930589">check_type</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d5/dcd/classTango_1_1Attr_1ab61466337a75b1493b80432f261a92d7">convert_def_prop</link> (
+const string &amp; , double &amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string &amp; <link linkend="d5/dcd/classTango_1_1Attr_1a96fc08da548e9ef5b61c65d414be3dfb">get_assoc</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const string &amp; <link linkend="d5/dcd/classTango_1_1Attr_1a2d1c9add7f48c5bb8a99d3470ef05823">get_cl_name</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>vector&lt; AttrProperty &gt; &amp; <link linkend="d5/dcd/classTango_1_1Attr_1a973deef765163bfe19bb474f5d9a9aa5">get_class_properties</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Tango::DispLevel <link linkend="d5/dcd/classTango_1_1Attr_1ab3ac5b6fb5e354d15e15b1c5e73f3c44">get_disp_level</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual string <link linkend="d5/dcd/classTango_1_1Attr_1a5aed0269497fc7770c56a4231534a919">get_enum_type</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Tango::AttrDataFormat <link linkend="d5/dcd/classTango_1_1Attr_1af6a0136c295f6377139d9f50ac3b937f">get_format</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d5/dcd/classTango_1_1Attr_1ab33aa37ef55236fa0fe7999019113e80">get_memorized</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d5/dcd/classTango_1_1Attr_1ac09c3812a975222d84323b0a76f9ed0c">get_memorized_init</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string &amp; <link linkend="d5/dcd/classTango_1_1Attr_1ab1c1210cc9a0023a287ecbc4e8f28e32">get_name</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>long <link linkend="d5/dcd/classTango_1_1Attr_1af66b5908c0270e41749c5bae2bab54e4">get_polling_period</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>long <link linkend="d5/dcd/classTango_1_1Attr_1a0157606c262e972f6e0dc31b4b0c156b">get_type</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>vector&lt; AttrProperty &gt; &amp; <link linkend="d5/dcd/classTango_1_1Attr_1aef90ba8dfd00b39032bbdf3d3ab36aed">get_user_default_properties</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Tango::AttrWriteType <link linkend="d5/dcd/classTango_1_1Attr_1adf41ac17c3fb025080e6f4a5718e8a85">get_writable</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual bool <link linkend="d5/dcd/classTango_1_1Attr_1a26c28750cbbe186c6a80fd6bb32f8efe">is_allowed</link> (
+<link linkend="d3/d62/classTango_1_1DeviceImpl">DeviceImpl</link> * , <link linkend="de/ddf/namespaceTango_1af86537193dcecd8a6710791fc2d4969d">AttReqType</link> )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="d5/dcd/classTango_1_1Attr_1ad248ab4b7c639ff5a0e15e2518328d11">is_assoc</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual bool <link linkend="d5/dcd/classTango_1_1Attr_1a17a6c4d5b8ee9e3bf8566e368d8dd0c0">is_fwd</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual void <link linkend="d5/dcd/classTango_1_1Attr_1addc6a01351f1e76ca77b9c56a1c1a8bc">read</link> (
+<link linkend="d3/d62/classTango_1_1DeviceImpl">DeviceImpl</link> * , <link linkend="d6/dad/classTango_1_1Attribute">Attribute</link> &amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual bool <link linkend="d5/dcd/classTango_1_1Attr_1a0513dade0aa05727b0ce1a1cfc46dc8b">same_type</link> (
+const type_info &amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d5/dcd/classTango_1_1Attr_1a9fd67659d7a794a74a0b75f330f0ede0">set_cl_name</link> (
+const string &amp; cl)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d5/dcd/classTango_1_1Attr_1a80049ef7f048ef73b1430a6b8523788a">set_class_properties</link> (
+vector&lt; AttrProperty &gt; &amp; in_prop)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d5/dcd/classTango_1_1Attr_1af709be8c2ae350dd441ef1d4a4864c19">throw_incoherent_def_prop</link> (
+const char * , const char * )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d5/dcd/classTango_1_1Attr_1a6f6bd28eb7e26c153cfcd22f32b06e25">throw_invalid_def_prop</link> (
+const char * , const char * )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d5/dcd/classTango_1_1Attr_1a501799bbf392c36f5a28ce905ed1f1df">validate_def_change_prop</link> (
+const string &amp; , const char * )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d5/dcd/classTango_1_1Attr_1aaeb9567b939c97bbfe5e206e3ce1dbe8">validate_def_prop</link> (
+const string &amp; , const char * )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual void <link linkend="d5/dcd/classTango_1_1Attr_1a364617f4dccd4540ac9ae83ef7d0d7d2">write</link> (
+<link linkend="d3/d62/classTango_1_1DeviceImpl">DeviceImpl</link> * , <link linkend="db/da8/classTango_1_1WAttribute">WAttribute</link> &amp; )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Brief Description</title>
+
+<para>User class to create a no dimension attribute object. </para>
+    </simplesect>
+        <simplesect>
+            <title>Detailed Description</title>
+
+<para>Information from this class and information fetched out from the <link linkend="de/ddf/namespaceTango">Tango</link> database allows the <link linkend="de/ddf/namespaceTango">Tango</link> core software to create the <link linkend="d6/dad/classTango_1_1Attribute">Attribute</link> object for the attribute created by the user.</para>
+
+<para>$Author$ $Revision$ </para>
+                <para>Definition at line 377 of file attrdesc.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>attrdesc.h</para></listitem></itemizedlist></para>
+        </simplesect>
+            <section xml:id="d5/dcd/classTango_1_1Attr_1aead8236385c93b1aefe23d9da9044cc0">
+                <title>Tango::Attr::Attr (const Attr &amp;)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d5/dcd/classTango_1_1Attr_1a20dc0d7081a6c61262aee65294930589">
+                <title>void Tango::Attr::check_type ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d5/dcd/classTango_1_1Attr_1ab61466337a75b1493b80432f261a92d7">
+                <title>void Tango::Attr::convert_def_prop (const string &amp;, double &amp;)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d5/dcd/classTango_1_1Attr_1a96fc08da548e9ef5b61c65d414be3dfb">
+                <title>string&amp; Tango::Attr::get_assoc ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d5/dcd/classTango_1_1Attr_1a2d1c9add7f48c5bb8a99d3470ef05823">
+                <title>const string&amp; Tango::Attr::get_cl_name ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d5/dcd/classTango_1_1Attr_1a973deef765163bfe19bb474f5d9a9aa5">
+                <title>vector&lt;AttrProperty&gt;&amp; Tango::Attr::get_class_properties ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d5/dcd/classTango_1_1Attr_1ab3ac5b6fb5e354d15e15b1c5e73f3c44">
+                <title>Tango::DispLevel Tango::Attr::get_disp_level ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d5/dcd/classTango_1_1Attr_1a5aed0269497fc7770c56a4231534a919">
+                <title>virtual string Tango::Attr::get_enum_type ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d5/dcd/classTango_1_1Attr_1af6a0136c295f6377139d9f50ac3b937f">
+                <title>Tango::AttrDataFormat Tango::Attr::get_format ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d5/dcd/classTango_1_1Attr_1ab33aa37ef55236fa0fe7999019113e80">
+                <title>bool Tango::Attr::get_memorized ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d5/dcd/classTango_1_1Attr_1ac09c3812a975222d84323b0a76f9ed0c">
+                <title>bool Tango::Attr::get_memorized_init ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d5/dcd/classTango_1_1Attr_1ab1c1210cc9a0023a287ecbc4e8f28e32">
+                <title>string&amp; Tango::Attr::get_name ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d5/dcd/classTango_1_1Attr_1af66b5908c0270e41749c5bae2bab54e4">
+                <title>long Tango::Attr::get_polling_period ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d5/dcd/classTango_1_1Attr_1a0157606c262e972f6e0dc31b4b0c156b">
+                <title>long Tango::Attr::get_type ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d5/dcd/classTango_1_1Attr_1aef90ba8dfd00b39032bbdf3d3ab36aed">
+                <title>vector&lt;AttrProperty&gt;&amp; Tango::Attr::get_user_default_properties ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d5/dcd/classTango_1_1Attr_1adf41ac17c3fb025080e6f4a5718e8a85">
+                <title>Tango::AttrWriteType Tango::Attr::get_writable ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d5/dcd/classTango_1_1Attr_1a26c28750cbbe186c6a80fd6bb32f8efe">
+                <title>virtual bool Tango::Attr::is_allowed (DeviceImpl *, AttReqType)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d5/dcd/classTango_1_1Attr_1ad248ab4b7c639ff5a0e15e2518328d11">
+                <title>bool Tango::Attr::is_assoc ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d5/dcd/classTango_1_1Attr_1a17a6c4d5b8ee9e3bf8566e368d8dd0c0">
+                <title>virtual bool Tango::Attr::is_fwd ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d5/dcd/classTango_1_1Attr_1addc6a01351f1e76ca77b9c56a1c1a8bc">
+                <title>virtual void Tango::Attr::read (DeviceImpl *, Attribute &amp;)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d5/dcd/classTango_1_1Attr_1a0513dade0aa05727b0ce1a1cfc46dc8b">
+                <title>virtual bool Tango::Attr::same_type (const type_info &amp;)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d5/dcd/classTango_1_1Attr_1a9fd67659d7a794a74a0b75f330f0ede0">
+                <title>void Tango::Attr::set_cl_name (const string &amp;cl)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d5/dcd/classTango_1_1Attr_1a80049ef7f048ef73b1430a6b8523788a">
+                <title>void Tango::Attr::set_class_properties (vector&lt; AttrProperty &gt; &amp;in_prop)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d5/dcd/classTango_1_1Attr_1af709be8c2ae350dd441ef1d4a4864c19">
+                <title>void Tango::Attr::throw_incoherent_def_prop (const char *, const char *)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d5/dcd/classTango_1_1Attr_1a6f6bd28eb7e26c153cfcd22f32b06e25">
+                <title>void Tango::Attr::throw_invalid_def_prop (const char *, const char *)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d5/dcd/classTango_1_1Attr_1a501799bbf392c36f5a28ce905ed1f1df">
+                <title>void Tango::Attr::validate_def_change_prop (const string &amp;, const char *)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d5/dcd/classTango_1_1Attr_1aaeb9567b939c97bbfe5e206e3ce1dbe8">
+                <title>void Tango::Attr::validate_def_prop (const string &amp;, const char *)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="d5/dcd/classTango_1_1Attr_1a364617f4dccd4540ac9ae83ef7d0d7d2">
+                <title>virtual void Tango::Attr::write (DeviceImpl *, WAttribute &amp;)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

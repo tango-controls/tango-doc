@@ -1,0 +1,744 @@
+\section{Tango\-:\-:Pipe Class Reference}
+\label{classTango_1_1Pipe}\index{Tango\-::\-Pipe@{Tango\-::\-Pipe}}
+
+
+This class is a class representing a pipe in the T\-A\-N\-G\-O device server pattern.  
+
+
+
+
+Inheritance diagram for Tango\-:\-:Pipe\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=120pt]{d3/d1a/classTango_1_1Pipe__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{Indent}{\bf Constructors}\par
+{\em Miscellaneous constructors }\begin{DoxyCompactItemize}
+\item 
+{\bf Pipe} ()
+\begin{DoxyCompactList}\small\item\em Constructs a newly allocated \doxyref{Pipe}{p.}{d8/d14/classTango_1_1Pipe} object. \end{DoxyCompactList}\item 
+{\bf Pipe} (const string \&{\bf name}, const Tango\-::\-Disp\-Level level, const Pipe\-Write\-Type pwt=P\-I\-P\-E\-\_\-\-R\-E\-A\-D)
+\begin{DoxyCompactList}\small\item\em Constructs a newly allocated \doxyref{Pipe}{p.}{d8/d14/classTango_1_1Pipe} object from its name and its display level. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Destructor}\par
+{\em Only one destructor is defined for this class }\begin{DoxyCompactItemize}
+\item 
+virtual {\bf $\sim$\-Pipe} ()
+\begin{DoxyCompactList}\small\item\em The object desctructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Get/\-Set object members.}\par
+{\em These methods allows the external world to get/set \doxyref{Pipe}{p.}{d8/d14/classTango_1_1Pipe} instance data members }\begin{DoxyCompactItemize}
+\item 
+string \& {\bf get\-\_\-name} ()
+\begin{DoxyCompactList}\small\item\em Return the pipe name. \end{DoxyCompactList}\item 
+void {\bf set\-\_\-name} (string \&new\-\_\-name)
+\begin{DoxyCompactList}\small\item\em Set the pipe name. \end{DoxyCompactList}\item 
+void {\bf set\-\_\-default\-\_\-properties} ({\bf User\-Default\-Pipe\-Prop} \&prop)
+\begin{DoxyCompactList}\small\item\em Set default attribute properties. \end{DoxyCompactList}\item 
+string \& {\bf get\-\_\-lower\-\_\-name} ()
+\begin{DoxyCompactList}\small\item\em Return the pipe name in lower case letters. \end{DoxyCompactList}\item 
+const string \& {\bf get\-\_\-root\-\_\-blob\-\_\-name} ()
+\begin{DoxyCompactList}\small\item\em Return the root data blob name. \end{DoxyCompactList}\item 
+void {\bf set\-\_\-root\-\_\-blob\-\_\-name} (const string \&{\bf name})
+\begin{DoxyCompactList}\small\item\em Set the root data blob name. \end{DoxyCompactList}\item 
+string \& {\bf get\-\_\-desc} ()
+\begin{DoxyCompactList}\small\item\em Return the pipe description. \end{DoxyCompactList}\item 
+string \& {\bf get\-\_\-label} ()
+\begin{DoxyCompactList}\small\item\em Return the pipe label. \end{DoxyCompactList}\item 
+Tango\-::\-Disp\-Level {\bf get\-\_\-disp\-\_\-level} ()
+\begin{DoxyCompactList}\small\item\em Return the pipe display level. \end{DoxyCompactList}\item 
+Tango\-::\-Pipe\-Write\-Type {\bf get\-\_\-writable} ()
+\begin{DoxyCompactList}\small\item\em Get the pipe writable type (R\-O/\-R\-W). \end{DoxyCompactList}\item 
+void {\bf set\-\_\-pipe\-\_\-serial\-\_\-model} ({\bf Pipe\-Serial\-Model} ser\-\_\-model)
+\begin{DoxyCompactList}\small\item\em Set pipe serialization model. \end{DoxyCompactList}\item 
+{\bf Pipe\-Serial\-Model} {\bf get\-\_\-pipe\-\_\-serial\-\_\-model} ()
+\begin{DoxyCompactList}\small\item\em Get pipe serialization model. \end{DoxyCompactList}\item 
+void {\bf set\-\_\-user\-\_\-pipe\-\_\-mutex} (omni\-\_\-mutex $\ast$mut\-\_\-ptr)
+\begin{DoxyCompactList}\small\item\em Set pipe user mutex. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Inserting data into a Device\-Pipe}\par
+\begin{DoxyCompactItemize}
+\item 
+{\bf Pipe} \& {\bf operator$<$$<$} (short \&datum)
+\begin{DoxyCompactList}\small\item\em Insert data into a device pipe. \end{DoxyCompactList}\item 
+void {\bf set\-\_\-data\-\_\-elt\-\_\-nb} (size\-\_\-t nb)
+\begin{DoxyCompactList}\small\item\em Set blob data element number. \end{DoxyCompactList}\item 
+void {\bf set\-\_\-data\-\_\-elt\-\_\-names} (vector$<$ string $>$ \&names)
+\begin{DoxyCompactList}\small\item\em Set blob data element number and names. \end{DoxyCompactList}\item 
+size\-\_\-t {\bf get\-\_\-data\-\_\-elt\-\_\-nb} ()
+\begin{DoxyCompactList}\small\item\em Get blob data element number. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Exception and error related methods methods}\par
+\begin{DoxyCompactItemize}
+\item 
+void {\bf exceptions} (bitset$<$ Device\-Pipe\-Blob\-::num\-Flags $>$ fl)
+\begin{DoxyCompactList}\small\item\em Set exception flag. \end{DoxyCompactList}\item 
+bitset$<$ Device\-Pipe\-Blob\-::num\-Flags $>$ {\bf exceptions} ()
+\begin{DoxyCompactList}\small\item\em Get exception flag. \end{DoxyCompactList}\item 
+void {\bf reset\-\_\-exceptions} (Device\-Pipe\-Blob\-::except\-\_\-flags fl)
+\begin{DoxyCompactList}\small\item\em Reset one exception flag. \end{DoxyCompactList}\item 
+void {\bf set\-\_\-exceptions} (Device\-Pipe\-Blob\-::except\-\_\-flags fl)
+\begin{DoxyCompactList}\small\item\em Set one exception flag. \end{DoxyCompactList}\item 
+bool {\bf has\-\_\-failed} ()
+\begin{DoxyCompactList}\small\item\em Check insertion/extraction success. \end{DoxyCompactList}\item 
+bitset$<$ Device\-Pipe\-Blob\-::num\-Flags $>$ {\bf state} ()
+\begin{DoxyCompactList}\small\item\em Get instance insertion/extraction state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Device\-Pipe\-Blob {\bf the\-\_\-blob}
+\end{DoxyCompactItemize}
+\begin{Indent}{\bf Class data members}\par
+\begin{DoxyCompactItemize}
+\item 
+string {\bf name}
+\begin{DoxyCompactList}\small\item\em The pipe name. \end{DoxyCompactList}\item 
+string {\bf lower\-\_\-name}
+\begin{DoxyCompactList}\small\item\em The pipe name in lower case. \end{DoxyCompactList}\item 
+string {\bf desc}
+\begin{DoxyCompactList}\small\item\em The pipe description. \end{DoxyCompactList}\item 
+string {\bf label}
+\begin{DoxyCompactList}\small\item\em The pipe label. \end{DoxyCompactList}\item 
+Tango\-::\-Disp\-Level {\bf disp\-\_\-level}
+\begin{DoxyCompactList}\small\item\em The pipe display level. \end{DoxyCompactList}\item 
+Tango\-::\-Pipe\-Write\-Type {\bf writable}
+\begin{DoxyCompactList}\small\item\em The pipe R/\-W type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Event\-Supplier}
+\item 
+class {\bf Zmq\-Event\-Supplier}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class is a class representing a pipe in the T\-A\-N\-G\-O device server pattern. 
+
+It is an abstract class. It is the root class for all pipe related classes.
+
+\$\-Author\$ \$\-Revision\$ 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Tango\-::\-Pipe@{Tango\-::\-Pipe}!Pipe@{Pipe}}
+\index{Pipe@{Pipe}!Tango::Pipe@{Tango\-::\-Pipe}}
+\subsubsection[{Pipe}]{\setlength{\rightskip}{0pt plus 5cm}Tango\-::\-Pipe\-::\-Pipe (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTango_1_1Pipe_a48f8fa0e8e169fd8f278407b771dc27d}
+
+
+Constructs a newly allocated \doxyref{Pipe}{p.}{d8/d14/classTango_1_1Pipe} object. 
+
+The default constructor \index{Tango\-::\-Pipe@{Tango\-::\-Pipe}!Pipe@{Pipe}}
+\index{Pipe@{Pipe}!Tango::Pipe@{Tango\-::\-Pipe}}
+\subsubsection[{Pipe}]{\setlength{\rightskip}{0pt plus 5cm}Tango\-::\-Pipe\-::\-Pipe (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{name, }
+\item[{const Tango\-::\-Disp\-Level}]{level, }
+\item[{const Pipe\-Write\-Type}]{pwt = {\ttfamily PIPE\-\_\-READ}}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Pipe_af29e5ee12dae6e4ea121718d407cf75d}
+
+
+Constructs a newly allocated \doxyref{Pipe}{p.}{d8/d14/classTango_1_1Pipe} object from its name and its display level. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The pipe name \\
+\hline
+{\em level} & The pipe display level \\
+\hline
+{\em pwt} & The pipe R/\-W type (default to R\-E\-A\-D) \\
+\hline
+\end{DoxyParams}
+\index{Tango\-::\-Pipe@{Tango\-::\-Pipe}!$\sim$\-Pipe@{$\sim$\-Pipe}}
+\index{$\sim$\-Pipe@{$\sim$\-Pipe}!Tango::Pipe@{Tango\-::\-Pipe}}
+\subsubsection[{$\sim$\-Pipe}]{\setlength{\rightskip}{0pt plus 5cm}virtual Tango\-::\-Pipe\-::$\sim$\-Pipe (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classTango_1_1Pipe_a4b23ac2255767c1effe26d4a3bd26cab}
+
+
+The object desctructor. 
+
+
+
+\subsection{Member Function Documentation}
+\index{Tango\-::\-Pipe@{Tango\-::\-Pipe}!exceptions@{exceptions}}
+\index{exceptions@{exceptions}!Tango::Pipe@{Tango\-::\-Pipe}}
+\subsubsection[{exceptions}]{\setlength{\rightskip}{0pt plus 5cm}void Tango\-::\-Pipe\-::exceptions (
+\begin{DoxyParamCaption}
+\item[{bitset$<$ Device\-Pipe\-Blob\-::num\-Flags $>$}]{fl}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTango_1_1Pipe_abd430c1ee08d7d19ebbf469974c62dc4}
+
+
+Set exception flag. 
+
+It's a method which allows the user to switch on/off exception throwing when trying to insert/extract data from a \doxyref{Pipe}{p.}{d8/d14/classTango_1_1Pipe} object. The following flags are supported \-: \begin{DoxyItemize}
+\item {\bfseries isempty\-\_\-flag} -\/ throw a Wrong\-Data exception (reason = A\-P\-I\-\_\-\-Empty\-Data\-Element) if user tries to extract data from one empty blob data element. By default, this flag is set \item {\bfseries wrongtype\-\_\-flag} -\/ throw a Wrong\-Data exception (reason = A\-P\-I\-\_\-\-Incompatible\-Argument\-Type) if user tries to extract data with a type different than the type used for insertion. By default, this flag is set \item {\bfseries notenoughde\-\_\-flag} -\/ throw a Wrong\-Data exception (reason = A\-P\-I\-\_\-\-Pipe\-Wrong\-Arg) if user tries to extract data from a Device\-Pipe\-Blob for a data element which does not exist. By default, this flag is set \item {\bfseries blobdenamenotset\-\_\-flag} -\/ Throw a Wrong\-Data exception (reason = A\-P\-I\-\_\-\-Pipe\-No\-Data\-Element) if user tries to insert data into the blob while the name or number of data element has not been set with methods \doxyref{set\-\_\-data\-\_\-elt\-\_\-nb()}{p.}{d8/d14/classTango_1_1Pipe_a9e73adb9661dd91811af627d701d8832} or \doxyref{set\-\_\-data\-\_\-elt\-\_\-names()}{p.}{d8/d14/classTango_1_1Pipe_a90537af700f9c8f7bbbe4540e0b9542b} \item {\bfseries mixing\-\_\-flag} -\/ Throw a Wrong\-Data exception (reason = A\-P\-I\-\_\-\-Not\-Supported\-Feature) if user tries to mix insertion/extraction method ($<$$<$ or $>$$>$) with operator[]\end{DoxyItemize}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em fl} & The exception flag \\
+\hline
+\end{DoxyParams}
+
+
+References the\-\_\-blob.
+
+\index{Tango\-::\-Pipe@{Tango\-::\-Pipe}!exceptions@{exceptions}}
+\index{exceptions@{exceptions}!Tango::Pipe@{Tango\-::\-Pipe}}
+\subsubsection[{exceptions}]{\setlength{\rightskip}{0pt plus 5cm}bitset$<$Device\-Pipe\-Blob\-::num\-Flags$>$ Tango\-::\-Pipe\-::exceptions (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTango_1_1Pipe_a4fb5132f87eba2ccd54a392b0612a1fa}
+
+
+Get exception flag. 
+
+Returns the whole exception flags. The following is an example of how to use these exceptions related methods 
+\begin{DoxyCode}
+* Pipe pi;
+*
+* bitset<DevicePipeBlob::numFlags> bs = pi.exceptions();
+* cout << \textcolor{stringliteral}{"bs = "} << bs << endl;
+*
+* pi.set\_exceptions(DevicePipeBlob::wrongtype\_flag);
+* bs = pi.exceptions();
+*
+* cout << \textcolor{stringliteral}{"bs = "} << bs << endl;
+* 
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+The exception flag 
+\end{DoxyReturn}
+
+
+References the\-\_\-blob.
+
+\index{Tango\-::\-Pipe@{Tango\-::\-Pipe}!get\-\_\-data\-\_\-elt\-\_\-nb@{get\-\_\-data\-\_\-elt\-\_\-nb}}
+\index{get\-\_\-data\-\_\-elt\-\_\-nb@{get\-\_\-data\-\_\-elt\-\_\-nb}!Tango::Pipe@{Tango\-::\-Pipe}}
+\subsubsection[{get\-\_\-data\-\_\-elt\-\_\-nb}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t Tango\-::\-Pipe\-::get\-\_\-data\-\_\-elt\-\_\-nb (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTango_1_1Pipe_a85b5e99f841bc2a6f6fe2c7dce9f2928}
+
+
+Get blob data element number. 
+
+Get the blob data element number
+
+\begin{DoxyReturn}{Returns}
+The blob data element number 
+\end{DoxyReturn}
+
+
+References the\-\_\-blob.
+
+\index{Tango\-::\-Pipe@{Tango\-::\-Pipe}!get\-\_\-desc@{get\-\_\-desc}}
+\index{get\-\_\-desc@{get\-\_\-desc}!Tango::Pipe@{Tango\-::\-Pipe}}
+\subsubsection[{get\-\_\-desc}]{\setlength{\rightskip}{0pt plus 5cm}string\& Tango\-::\-Pipe\-::get\-\_\-desc (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTango_1_1Pipe_a21c57287d00cae3a66f6cb9626f6324d}
+
+
+Return the pipe description. 
+
+\begin{DoxyReturn}{Returns}
+The pipe description 
+\end{DoxyReturn}
+
+
+References desc.
+
+\index{Tango\-::\-Pipe@{Tango\-::\-Pipe}!get\-\_\-disp\-\_\-level@{get\-\_\-disp\-\_\-level}}
+\index{get\-\_\-disp\-\_\-level@{get\-\_\-disp\-\_\-level}!Tango::Pipe@{Tango\-::\-Pipe}}
+\subsubsection[{get\-\_\-disp\-\_\-level}]{\setlength{\rightskip}{0pt plus 5cm}Tango\-::\-Disp\-Level Tango\-::\-Pipe\-::get\-\_\-disp\-\_\-level (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTango_1_1Pipe_a6b6e9b53474dc7121ff7fb38942c1250}
+
+
+Return the pipe display level. 
+
+\begin{DoxyReturn}{Returns}
+The pipe display level 
+\end{DoxyReturn}
+
+
+References disp\-\_\-level.
+
+\index{Tango\-::\-Pipe@{Tango\-::\-Pipe}!get\-\_\-label@{get\-\_\-label}}
+\index{get\-\_\-label@{get\-\_\-label}!Tango::Pipe@{Tango\-::\-Pipe}}
+\subsubsection[{get\-\_\-label}]{\setlength{\rightskip}{0pt plus 5cm}string\& Tango\-::\-Pipe\-::get\-\_\-label (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTango_1_1Pipe_ae66635efe0978d51fd62e73b34b24e5c}
+
+
+Return the pipe label. 
+
+\begin{DoxyReturn}{Returns}
+The pipe label 
+\end{DoxyReturn}
+
+
+References label.
+
+\index{Tango\-::\-Pipe@{Tango\-::\-Pipe}!get\-\_\-lower\-\_\-name@{get\-\_\-lower\-\_\-name}}
+\index{get\-\_\-lower\-\_\-name@{get\-\_\-lower\-\_\-name}!Tango::Pipe@{Tango\-::\-Pipe}}
+\subsubsection[{get\-\_\-lower\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}string\& Tango\-::\-Pipe\-::get\-\_\-lower\-\_\-name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTango_1_1Pipe_af3201b786412b40011bbc4343e995ebe}
+
+
+Return the pipe name in lower case letters. 
+
+\begin{DoxyReturn}{Returns}
+The pipe name 
+\end{DoxyReturn}
+
+
+References lower\-\_\-name.
+
+\index{Tango\-::\-Pipe@{Tango\-::\-Pipe}!get\-\_\-name@{get\-\_\-name}}
+\index{get\-\_\-name@{get\-\_\-name}!Tango::Pipe@{Tango\-::\-Pipe}}
+\subsubsection[{get\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}string\& Tango\-::\-Pipe\-::get\-\_\-name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTango_1_1Pipe_a00bb2112e4e81c63ff5e55ffa046c9d7}
+
+
+Return the pipe name. 
+
+\begin{DoxyReturn}{Returns}
+The pipe name 
+\end{DoxyReturn}
+
+
+References name.
+
+\index{Tango\-::\-Pipe@{Tango\-::\-Pipe}!get\-\_\-pipe\-\_\-serial\-\_\-model@{get\-\_\-pipe\-\_\-serial\-\_\-model}}
+\index{get\-\_\-pipe\-\_\-serial\-\_\-model@{get\-\_\-pipe\-\_\-serial\-\_\-model}!Tango::Pipe@{Tango\-::\-Pipe}}
+\subsubsection[{get\-\_\-pipe\-\_\-serial\-\_\-model}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Pipe\-Serial\-Model} Tango\-::\-Pipe\-::get\-\_\-pipe\-\_\-serial\-\_\-model (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTango_1_1Pipe_a131457c57f76313b0784d02228e423dd}
+
+
+Get pipe serialization model. 
+
+Get the pipe serialization model
+
+\begin{DoxyReturn}{Returns}
+The pipe serialization model 
+\end{DoxyReturn}
+\index{Tango\-::\-Pipe@{Tango\-::\-Pipe}!get\-\_\-root\-\_\-blob\-\_\-name@{get\-\_\-root\-\_\-blob\-\_\-name}}
+\index{get\-\_\-root\-\_\-blob\-\_\-name@{get\-\_\-root\-\_\-blob\-\_\-name}!Tango::Pipe@{Tango\-::\-Pipe}}
+\subsubsection[{get\-\_\-root\-\_\-blob\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}const string\& Tango\-::\-Pipe\-::get\-\_\-root\-\_\-blob\-\_\-name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTango_1_1Pipe_a03818186cd3b89c123db978ec735174b}
+
+
+Return the root data blob name. 
+
+\begin{DoxyReturn}{Returns}
+The data blob name 
+\end{DoxyReturn}
+
+
+References the\-\_\-blob.
+
+\index{Tango\-::\-Pipe@{Tango\-::\-Pipe}!get\-\_\-writable@{get\-\_\-writable}}
+\index{get\-\_\-writable@{get\-\_\-writable}!Tango::Pipe@{Tango\-::\-Pipe}}
+\subsubsection[{get\-\_\-writable}]{\setlength{\rightskip}{0pt plus 5cm}Tango\-::\-Pipe\-Write\-Type Tango\-::\-Pipe\-::get\-\_\-writable (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTango_1_1Pipe_ad4981873f1e6f3d5e294f66d3b01b848}
+
+
+Get the pipe writable type (R\-O/\-R\-W). 
+
+\begin{DoxyReturn}{Returns}
+The pipe write type. 
+\end{DoxyReturn}
+
+
+References writable.
+
+\index{Tango\-::\-Pipe@{Tango\-::\-Pipe}!has\-\_\-failed@{has\-\_\-failed}}
+\index{has\-\_\-failed@{has\-\_\-failed}!Tango::Pipe@{Tango\-::\-Pipe}}
+\subsubsection[{has\-\_\-failed}]{\setlength{\rightskip}{0pt plus 5cm}bool Tango\-::\-Pipe\-::has\-\_\-failed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTango_1_1Pipe_a5de39890365fd35d887d66ef8fe5bae7}
+
+
+Check insertion/extraction success. 
+
+Allow the user to check if insertion/extraction into/from \doxyref{Pipe}{p.}{d8/d14/classTango_1_1Pipe} instance was successfull. This method has to be used when exceptions are disabled.
+
+\begin{DoxyReturn}{Returns}
+True if insertion/extraction has failed 
+\end{DoxyReturn}
+
+
+References the\-\_\-blob.
+
+\index{Tango\-::\-Pipe@{Tango\-::\-Pipe}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Tango::Pipe@{Tango\-::\-Pipe}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Pipe}\& Tango\-::\-Pipe\-::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{short \&}]{datum}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Pipe_ac67072c3bf8d26e547ea92aac9b7e260}
+
+
+Insert data into a device pipe. 
+
+Inserting data into a \doxyref{Pipe}{p.}{d8/d14/classTango_1_1Pipe} instance is simlar to inserting data into a Device\-Pipe\-Blob class instance. See doc of Device\-Pipe\-Blob class insertion methods (Device\-Pipe\-Blob\-::operator$<$$<$) to get a complete documentation on how to insert data into a \doxyref{Pipe}{p.}{d8/d14/classTango_1_1Pipe} object
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em datum} & The data to be inserted into the \doxyref{Pipe}{p.}{d8/d14/classTango_1_1Pipe} object \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Wrong\-Data} & if requested \\
+\hline
+\end{DoxyExceptions}
+\index{Tango\-::\-Pipe@{Tango\-::\-Pipe}!reset\-\_\-exceptions@{reset\-\_\-exceptions}}
+\index{reset\-\_\-exceptions@{reset\-\_\-exceptions}!Tango::Pipe@{Tango\-::\-Pipe}}
+\subsubsection[{reset\-\_\-exceptions}]{\setlength{\rightskip}{0pt plus 5cm}void Tango\-::\-Pipe\-::reset\-\_\-exceptions (
+\begin{DoxyParamCaption}
+\item[{Device\-Pipe\-Blob\-::except\-\_\-flags}]{fl}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTango_1_1Pipe_ad0961a4c770ff42b0b672907268b6c14}
+
+
+Reset one exception flag. 
+
+Resets one exception flag
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em fl} & The exception flag \\
+\hline
+\end{DoxyParams}
+
+
+References the\-\_\-blob.
+
+\index{Tango\-::\-Pipe@{Tango\-::\-Pipe}!set\-\_\-data\-\_\-elt\-\_\-names@{set\-\_\-data\-\_\-elt\-\_\-names}}
+\index{set\-\_\-data\-\_\-elt\-\_\-names@{set\-\_\-data\-\_\-elt\-\_\-names}!Tango::Pipe@{Tango\-::\-Pipe}}
+\subsubsection[{set\-\_\-data\-\_\-elt\-\_\-names}]{\setlength{\rightskip}{0pt plus 5cm}void Tango\-::\-Pipe\-::set\-\_\-data\-\_\-elt\-\_\-names (
+\begin{DoxyParamCaption}
+\item[{vector$<$ string $>$ \&}]{names}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTango_1_1Pipe_a90537af700f9c8f7bbbe4540e0b9542b}
+
+
+Set blob data element number and names. 
+
+Set the blob data element number and names. The data element number is the number of names in the input parameter.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em names} & The blob data element names \\
+\hline
+\end{DoxyParams}
+
+
+References the\-\_\-blob.
+
+\index{Tango\-::\-Pipe@{Tango\-::\-Pipe}!set\-\_\-data\-\_\-elt\-\_\-nb@{set\-\_\-data\-\_\-elt\-\_\-nb}}
+\index{set\-\_\-data\-\_\-elt\-\_\-nb@{set\-\_\-data\-\_\-elt\-\_\-nb}!Tango::Pipe@{Tango\-::\-Pipe}}
+\subsubsection[{set\-\_\-data\-\_\-elt\-\_\-nb}]{\setlength{\rightskip}{0pt plus 5cm}void Tango\-::\-Pipe\-::set\-\_\-data\-\_\-elt\-\_\-nb (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{nb}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTango_1_1Pipe_a9e73adb9661dd91811af627d701d8832}
+
+
+Set blob data element number. 
+
+Set the blob data element number
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em nb} & The blob data element number \\
+\hline
+\end{DoxyParams}
+
+
+References the\-\_\-blob.
+
+\index{Tango\-::\-Pipe@{Tango\-::\-Pipe}!set\-\_\-default\-\_\-properties@{set\-\_\-default\-\_\-properties}}
+\index{set\-\_\-default\-\_\-properties@{set\-\_\-default\-\_\-properties}!Tango::Pipe@{Tango\-::\-Pipe}}
+\subsubsection[{set\-\_\-default\-\_\-properties}]{\setlength{\rightskip}{0pt plus 5cm}void Tango\-::\-Pipe\-::set\-\_\-default\-\_\-properties (
+\begin{DoxyParamCaption}
+\item[{{\bf User\-Default\-Pipe\-Prop} \&}]{prop}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Pipe_acf20d48edb9f74cf8268cc6cd5e0e4fa}
+
+
+Set default attribute properties. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em prop} & The user default property class \\
+\hline
+\end{DoxyParams}
+\index{Tango\-::\-Pipe@{Tango\-::\-Pipe}!set\-\_\-exceptions@{set\-\_\-exceptions}}
+\index{set\-\_\-exceptions@{set\-\_\-exceptions}!Tango::Pipe@{Tango\-::\-Pipe}}
+\subsubsection[{set\-\_\-exceptions}]{\setlength{\rightskip}{0pt plus 5cm}void Tango\-::\-Pipe\-::set\-\_\-exceptions (
+\begin{DoxyParamCaption}
+\item[{Device\-Pipe\-Blob\-::except\-\_\-flags}]{fl}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTango_1_1Pipe_a6362521002ff86cf970661a7699b5c54}
+
+
+Set one exception flag. 
+
+Sets one exception flag. See Device\-Pipe\-Blob\-::exceptions() for a usage example.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em fl} & The exception flag \\
+\hline
+\end{DoxyParams}
+
+
+References the\-\_\-blob.
+
+\index{Tango\-::\-Pipe@{Tango\-::\-Pipe}!set\-\_\-name@{set\-\_\-name}}
+\index{set\-\_\-name@{set\-\_\-name}!Tango::Pipe@{Tango\-::\-Pipe}}
+\subsubsection[{set\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}void Tango\-::\-Pipe\-::set\-\_\-name (
+\begin{DoxyParamCaption}
+\item[{string \&}]{new\-\_\-name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTango_1_1Pipe_ac70b0bcbaf0f31a91fd27f21fe05fef6}
+
+
+Set the pipe name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\-\_\-name} & The new pipe name \\
+\hline
+\end{DoxyParams}
+
+
+References name.
+
+\index{Tango\-::\-Pipe@{Tango\-::\-Pipe}!set\-\_\-pipe\-\_\-serial\-\_\-model@{set\-\_\-pipe\-\_\-serial\-\_\-model}}
+\index{set\-\_\-pipe\-\_\-serial\-\_\-model@{set\-\_\-pipe\-\_\-serial\-\_\-model}!Tango::Pipe@{Tango\-::\-Pipe}}
+\subsubsection[{set\-\_\-pipe\-\_\-serial\-\_\-model}]{\setlength{\rightskip}{0pt plus 5cm}void Tango\-::\-Pipe\-::set\-\_\-pipe\-\_\-serial\-\_\-model (
+\begin{DoxyParamCaption}
+\item[{{\bf Pipe\-Serial\-Model}}]{ser\-\_\-model}
+\end{DoxyParamCaption}
+)}\label{classTango_1_1Pipe_a77c6b9c413099b205da176541100659d}
+
+
+Set pipe serialization model. 
+
+This method allows the user to choose the pipe serialization model.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ser\-\_\-model} & The new serialisation model. The serialization model must be one of P\-I\-P\-E\-\_\-\-B\-Y\-\_\-\-K\-E\-R\-N\-E\-L, P\-I\-P\-E\-\_\-\-B\-Y\-\_\-\-U\-S\-E\-R or P\-I\-P\-E\-\_\-\-N\-O\-\_\-\-S\-Y\-N\-C \\
+\hline
+\end{DoxyParams}
+\index{Tango\-::\-Pipe@{Tango\-::\-Pipe}!set\-\_\-root\-\_\-blob\-\_\-name@{set\-\_\-root\-\_\-blob\-\_\-name}}
+\index{set\-\_\-root\-\_\-blob\-\_\-name@{set\-\_\-root\-\_\-blob\-\_\-name}!Tango::Pipe@{Tango\-::\-Pipe}}
+\subsubsection[{set\-\_\-root\-\_\-blob\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}void Tango\-::\-Pipe\-::set\-\_\-root\-\_\-blob\-\_\-name (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTango_1_1Pipe_afc0f382d5d6c6d03abb2e25ceb4456e6}
+
+
+Set the root data blob name. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em name} & The root data blob name \\
+\hline
+\end{DoxyParams}
+
+
+References the\-\_\-blob.
+
+\index{Tango\-::\-Pipe@{Tango\-::\-Pipe}!set\-\_\-user\-\_\-pipe\-\_\-mutex@{set\-\_\-user\-\_\-pipe\-\_\-mutex}}
+\index{set\-\_\-user\-\_\-pipe\-\_\-mutex@{set\-\_\-user\-\_\-pipe\-\_\-mutex}!Tango::Pipe@{Tango\-::\-Pipe}}
+\subsubsection[{set\-\_\-user\-\_\-pipe\-\_\-mutex}]{\setlength{\rightskip}{0pt plus 5cm}void Tango\-::\-Pipe\-::set\-\_\-user\-\_\-pipe\-\_\-mutex (
+\begin{DoxyParamCaption}
+\item[{omni\-\_\-mutex $\ast$}]{mut\-\_\-ptr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTango_1_1Pipe_acbe28a16686f044af10708792fddf245}
+
+
+Set pipe user mutex. 
+
+This method allows the user to give to the pipe object the pointer to the omni\-\_\-mutex used to protect its buffer. The mutex has to be locked when passed to this method. The \doxyref{Tango}{p.}{de/ddf/namespaceTango} kernel will unlock it when the data will be transferred to the client.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em mut\-\_\-ptr} & The user mutex pointer \\
+\hline
+\end{DoxyParams}
+\index{Tango\-::\-Pipe@{Tango\-::\-Pipe}!state@{state}}
+\index{state@{state}!Tango::Pipe@{Tango\-::\-Pipe}}
+\subsubsection[{state}]{\setlength{\rightskip}{0pt plus 5cm}bitset$<$Device\-Pipe\-Blob\-::num\-Flags$>$ Tango\-::\-Pipe\-::state (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTango_1_1Pipe_a124f05b1125ea60be231ded98f27d303}
+
+
+Get instance insertion/extraction state. 
+
+Allow the user to find out what was the reason of insertion/extraction into/from \doxyref{Pipe}{p.}{d8/d14/classTango_1_1Pipe} failure. This method has to be used when exceptions are disabled. Here is an example of how methods \doxyref{has\-\_\-failed()}{p.}{d8/d14/classTango_1_1Pipe_a5de39890365fd35d887d66ef8fe5bae7} and \doxyref{state()}{p.}{d8/d14/classTango_1_1Pipe_a124f05b1125ea60be231ded98f27d303} could be used 
+\begin{DoxyCode}
+* Pipe dpb = ....
+*
+* bitset<DevicePipeBlob::numFlags> bs;
+* bs.reset();
+* dpb.exceptions(bs);
+*
+* DevLong dl;
+* dpb >> dl;
+*
+* \textcolor{keywordflow}{if} (dpb.has\_failed() == \textcolor{keyword}{true})
+* \{
+*    bitset<DevicePipeBlob::numFlags> bs\_err = dpb.state();
+*    \textcolor{keywordflow}{if} (dpb.test(DevicePipeBlob::isempty\_flag) == \textcolor{keyword}{true})
+*        .....
+* \}
+* 
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+The error bit set. 
+\end{DoxyReturn}
+
+
+References the\-\_\-blob.
+
+
+
+\subsection{Friends And Related Function Documentation}
+\index{Tango\-::\-Pipe@{Tango\-::\-Pipe}!Event\-Supplier@{Event\-Supplier}}
+\index{Event\-Supplier@{Event\-Supplier}!Tango::Pipe@{Tango\-::\-Pipe}}
+\subsubsection[{Event\-Supplier}]{\setlength{\rightskip}{0pt plus 5cm}friend class Event\-Supplier\hspace{0.3cm}{\ttfamily [friend]}}\label{classTango_1_1Pipe_a113a5beda9b94ad235073dd9cfd3504a}
+\index{Tango\-::\-Pipe@{Tango\-::\-Pipe}!Zmq\-Event\-Supplier@{Zmq\-Event\-Supplier}}
+\index{Zmq\-Event\-Supplier@{Zmq\-Event\-Supplier}!Tango::Pipe@{Tango\-::\-Pipe}}
+\subsubsection[{Zmq\-Event\-Supplier}]{\setlength{\rightskip}{0pt plus 5cm}friend class Zmq\-Event\-Supplier\hspace{0.3cm}{\ttfamily [friend]}}\label{classTango_1_1Pipe_a89ef1b5b0e914a3b89e77cebe6dd8ce8}
+
+
+\subsection{Member Data Documentation}
+\index{Tango\-::\-Pipe@{Tango\-::\-Pipe}!desc@{desc}}
+\index{desc@{desc}!Tango::Pipe@{Tango\-::\-Pipe}}
+\subsubsection[{desc}]{\setlength{\rightskip}{0pt plus 5cm}string Tango\-::\-Pipe\-::desc\hspace{0.3cm}{\ttfamily [protected]}}\label{classTango_1_1Pipe_a317ab27c21563fc4d279007991c8080b}
+
+
+The pipe description. 
+
+
+
+Referenced by get\-\_\-desc().
+
+\index{Tango\-::\-Pipe@{Tango\-::\-Pipe}!disp\-\_\-level@{disp\-\_\-level}}
+\index{disp\-\_\-level@{disp\-\_\-level}!Tango::Pipe@{Tango\-::\-Pipe}}
+\subsubsection[{disp\-\_\-level}]{\setlength{\rightskip}{0pt plus 5cm}Tango\-::\-Disp\-Level Tango\-::\-Pipe\-::disp\-\_\-level\hspace{0.3cm}{\ttfamily [protected]}}\label{classTango_1_1Pipe_a58da366eded254dd357432105a5fd645}
+
+
+The pipe display level. 
+
+
+
+Referenced by get\-\_\-disp\-\_\-level().
+
+\index{Tango\-::\-Pipe@{Tango\-::\-Pipe}!label@{label}}
+\index{label@{label}!Tango::Pipe@{Tango\-::\-Pipe}}
+\subsubsection[{label}]{\setlength{\rightskip}{0pt plus 5cm}string Tango\-::\-Pipe\-::label\hspace{0.3cm}{\ttfamily [protected]}}\label{classTango_1_1Pipe_a139a571b46d6f4911fae84269d0beff6}
+
+
+The pipe label. 
+
+
+
+Referenced by get\-\_\-label().
+
+\index{Tango\-::\-Pipe@{Tango\-::\-Pipe}!lower\-\_\-name@{lower\-\_\-name}}
+\index{lower\-\_\-name@{lower\-\_\-name}!Tango::Pipe@{Tango\-::\-Pipe}}
+\subsubsection[{lower\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}string Tango\-::\-Pipe\-::lower\-\_\-name\hspace{0.3cm}{\ttfamily [protected]}}\label{classTango_1_1Pipe_af7c22f717b75210fcb5328a38be95e7c}
+
+
+The pipe name in lower case. 
+
+
+
+Referenced by get\-\_\-lower\-\_\-name().
+
+\index{Tango\-::\-Pipe@{Tango\-::\-Pipe}!name@{name}}
+\index{name@{name}!Tango::Pipe@{Tango\-::\-Pipe}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}string Tango\-::\-Pipe\-::name\hspace{0.3cm}{\ttfamily [protected]}}\label{classTango_1_1Pipe_af3cae1c6cb5f44b9a51e45b61d67cfdb}
+
+
+The pipe name. 
+
+
+
+Referenced by get\-\_\-name(), and set\-\_\-name().
+
+\index{Tango\-::\-Pipe@{Tango\-::\-Pipe}!the\-\_\-blob@{the\-\_\-blob}}
+\index{the\-\_\-blob@{the\-\_\-blob}!Tango::Pipe@{Tango\-::\-Pipe}}
+\subsubsection[{the\-\_\-blob}]{\setlength{\rightskip}{0pt plus 5cm}Device\-Pipe\-Blob Tango\-::\-Pipe\-::the\-\_\-blob\hspace{0.3cm}{\ttfamily [protected]}}\label{classTango_1_1Pipe_a784d199e1309184b6c5afbe64dcc64b4}
+
+
+Referenced by exceptions(), Tango\-::\-W\-Pipe\-::get\-\_\-data\-\_\-elt\-\_\-name(), Tango\-::\-W\-Pipe\-::get\-\_\-data\-\_\-elt\-\_\-names(), Tango\-::\-W\-Pipe\-::get\-\_\-data\-\_\-elt\-\_\-nb(), get\-\_\-data\-\_\-elt\-\_\-nb(), Tango\-::\-W\-Pipe\-::get\-\_\-data\-\_\-elt\-\_\-type(), Tango\-::\-W\-Pipe\-::get\-\_\-root\-\_\-blob\-\_\-name(), get\-\_\-root\-\_\-blob\-\_\-name(), has\-\_\-failed(), reset\-\_\-exceptions(), set\-\_\-data\-\_\-elt\-\_\-names(), set\-\_\-data\-\_\-elt\-\_\-nb(), set\-\_\-exceptions(), set\-\_\-root\-\_\-blob\-\_\-name(), and state().
+
+\index{Tango\-::\-Pipe@{Tango\-::\-Pipe}!writable@{writable}}
+\index{writable@{writable}!Tango::Pipe@{Tango\-::\-Pipe}}
+\subsubsection[{writable}]{\setlength{\rightskip}{0pt plus 5cm}Tango\-::\-Pipe\-Write\-Type Tango\-::\-Pipe\-::writable\hspace{0.3cm}{\ttfamily [protected]}}\label{classTango_1_1Pipe_afaec591f0261e13cb7df7277c9f09ece}
+
+
+The pipe R/\-W type. 
+
+
+
+Referenced by get\-\_\-writable().
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+{\bf pipe.\-h}\end{DoxyCompactItemize}

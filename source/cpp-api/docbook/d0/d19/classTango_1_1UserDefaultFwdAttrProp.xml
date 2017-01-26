@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d0/d19/classTango_1_1UserDefaultFwdAttrProp">
+<title>Tango::UserDefaultFwdAttrProp class Reference</title>
+        <simplesect>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d5/dbb/classTango_1_1UserDefaultFwdAttrProp_1_1UserDefaultFwdAttrPropExt">Tango::UserDefaultFwdAttrProp::UserDefaultFwdAttrPropExt</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Constructor</title>
+      <description>
+<para>Only one constructor is defined for this class </para>
+</description>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d0/d19/classTango_1_1UserDefaultFwdAttrProp_1a1f9555dc9376f0ac86399164ae6be529">UserDefaultFwdAttrProp</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Set default property methods</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d0/d19/classTango_1_1UserDefaultFwdAttrProp_1a83a156838771e7aac685e7e3c1a89fd3">set_label</link> (
+const string &amp; def_label)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>UserDefaultFwdAttrPropExt * ext</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string label</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d0/d19/classTango_1_1UserDefaultFwdAttrProp_1aedf9cc277779d6403f18b341aaa63dca">~UserDefaultFwdAttrProp</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Brief Description</title>
+
+<para>User class to set forwarded attribute default properties. </para>
+    </simplesect>
+        <simplesect>
+            <title>Detailed Description</title>
+
+<para>This class is used to set forwarded attribute default properties. Three levels of attributes properties setting are implemented within <link linkend="de/ddf/namespaceTango">Tango</link>. The highest property setting level is the database. Then the user default (set using this <link linkend="d0/d19/classTango_1_1UserDefaultFwdAttrProp">UserDefaultFwdAttrProp</link> class) and finally a <link linkend="de/ddf/namespaceTango">Tango</link> library default value</para>
+
+<para>$Author$ $Revision$ </para>
+                <para>Definition at line 59 of file fwdattrdesc.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>fwdattrdesc.h</para></listitem></itemizedlist></para>
+        </simplesect>
+            <section xml:id="d0/d19/classTango_1_1UserDefaultFwdAttrProp_1aedf9cc277779d6403f18b341aaa63dca">
+                <title>Tango::UserDefaultFwdAttrProp::~UserDefaultFwdAttrProp ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

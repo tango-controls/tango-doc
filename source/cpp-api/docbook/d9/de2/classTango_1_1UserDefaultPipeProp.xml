@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d9/de2/classTango_1_1UserDefaultPipeProp">
+<title>Tango::UserDefaultPipeProp class Reference</title>
+        <simplesect>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="dd/d20/classTango_1_1UserDefaultPipeProp_1_1UserDefaultPipePropExt">Tango::UserDefaultPipeProp::UserDefaultPipePropExt</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Constructor</title>
+      <description>
+<para>Only one constructor is defined for this class </para>
+</description>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d9/de2/classTango_1_1UserDefaultPipeProp_1a82e93031702a5358117b85ec41e3b09c">UserDefaultPipeProp</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Set default property methods</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d9/de2/classTango_1_1UserDefaultPipeProp_1a907036fa8c1fa267cc15ea8699eadfd1">set_label</link> (
+const string &amp; def_label)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="d9/de2/classTango_1_1UserDefaultPipeProp_1aab0829fe22ca5e105e6168f4e3e9888b">set_description</link> (
+const string &amp; def_desc)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string description</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>UserDefaultPipePropExt * ext</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string label</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="d9/de2/classTango_1_1UserDefaultPipeProp_1a88824ec1bc2bfe07633096ef97337aab">~UserDefaultPipeProp</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Brief Description</title>
+
+<para>User class to set pipe default properties. </para>
+    </simplesect>
+        <simplesect>
+            <title>Detailed Description</title>
+
+<para>This class is used to set pipe default properties. Three levels of pipes properties setting are implemented within <link linkend="de/ddf/namespaceTango">Tango</link>. The highest property setting level is the database. Then the user default (set using this <link linkend="d9/de2/classTango_1_1UserDefaultPipeProp">UserDefaultPipeProp</link> class) and finally a <link linkend="de/ddf/namespaceTango">Tango</link> library default value</para>
+
+<para>$Author$ $Revision$ </para>
+                <para>Definition at line 59 of file pipedesc.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>pipedesc.h</para></listitem></itemizedlist></para>
+        </simplesect>
+            <section xml:id="d9/de2/classTango_1_1UserDefaultPipeProp_1a88824ec1bc2bfe07633096ef97337aab">
+                <title>Tango::UserDefaultPipeProp::~UserDefaultPipeProp ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

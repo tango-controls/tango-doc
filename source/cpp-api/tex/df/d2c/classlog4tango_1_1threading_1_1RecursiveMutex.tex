@@ -1,0 +1,156 @@
+\section{log4tango\-:\-:threading\-:\-:Recursive\-Mutex Class Reference}
+\label{classlog4tango_1_1threading_1_1RecursiveMutex}\index{log4tango\-::threading\-::\-Recursive\-Mutex@{log4tango\-::threading\-::\-Recursive\-Mutex}}
+
+
+{\ttfamily \#include \char`\"{}M\-S\-Threads.\-hh\char`\"{}}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Recursive\-Mutex} (void)
+\item 
+{\bf Recursive\-Mutex} (void)
+\item 
+{\bf $\sim$\-Recursive\-Mutex} (void)
+\item 
+{\bf $\sim$\-Recursive\-Mutex} (void)
+\item 
+int {\bf lock} (long timeout\-\_\-=0)
+\item 
+int {\bf lock} (long timeout\-\_\-=0)
+\item 
+void {\bf unlock} (void)
+\item 
+void {\bf unlock} (void)
+\item 
+void {\bf unlockn} (void)
+\item 
+void {\bf unlockn} (void)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+pthread\-\_\-mutex\-\_\-t {\bf guard\-\_\-}
+\item 
+C\-R\-I\-T\-I\-C\-A\-L\-\_\-\-S\-E\-C\-T\-I\-O\-N {\bf guard\-\_\-}
+\item 
+pthread\-\_\-cond\-\_\-t {\bf mutex\-\_\-available\-\_\-}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{log4tango\-::threading\-::\-Recursive\-Mutex@{log4tango\-::threading\-::\-Recursive\-Mutex}!Recursive\-Mutex@{Recursive\-Mutex}}
+\index{Recursive\-Mutex@{Recursive\-Mutex}!log4tango::threading::RecursiveMutex@{log4tango\-::threading\-::\-Recursive\-Mutex}}
+\subsubsection[{Recursive\-Mutex}]{\setlength{\rightskip}{0pt plus 5cm}log4tango\-::threading\-::\-Recursive\-Mutex\-::\-Recursive\-Mutex (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classlog4tango_1_1threading_1_1RecursiveMutex_a7bb6f1bb4ca7072b24bda6321e196fc8}
+
+
+References guard\-\_\-.
+
+\index{log4tango\-::threading\-::\-Recursive\-Mutex@{log4tango\-::threading\-::\-Recursive\-Mutex}!$\sim$\-Recursive\-Mutex@{$\sim$\-Recursive\-Mutex}}
+\index{$\sim$\-Recursive\-Mutex@{$\sim$\-Recursive\-Mutex}!log4tango::threading::RecursiveMutex@{log4tango\-::threading\-::\-Recursive\-Mutex}}
+\subsubsection[{$\sim$\-Recursive\-Mutex}]{\setlength{\rightskip}{0pt plus 5cm}log4tango\-::threading\-::\-Recursive\-Mutex\-::$\sim$\-Recursive\-Mutex (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classlog4tango_1_1threading_1_1RecursiveMutex_a7210fe141d367494415cf8b580910fdf}
+
+
+References guard\-\_\-.
+
+\index{log4tango\-::threading\-::\-Recursive\-Mutex@{log4tango\-::threading\-::\-Recursive\-Mutex}!Recursive\-Mutex@{Recursive\-Mutex}}
+\index{Recursive\-Mutex@{Recursive\-Mutex}!log4tango::threading::RecursiveMutex@{log4tango\-::threading\-::\-Recursive\-Mutex}}
+\subsubsection[{Recursive\-Mutex}]{\setlength{\rightskip}{0pt plus 5cm}log4tango\-::threading\-::\-Recursive\-Mutex\-::\-Recursive\-Mutex (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{classlog4tango_1_1threading_1_1RecursiveMutex_a7bb6f1bb4ca7072b24bda6321e196fc8}
+\index{log4tango\-::threading\-::\-Recursive\-Mutex@{log4tango\-::threading\-::\-Recursive\-Mutex}!$\sim$\-Recursive\-Mutex@{$\sim$\-Recursive\-Mutex}}
+\index{$\sim$\-Recursive\-Mutex@{$\sim$\-Recursive\-Mutex}!log4tango::threading::RecursiveMutex@{log4tango\-::threading\-::\-Recursive\-Mutex}}
+\subsubsection[{$\sim$\-Recursive\-Mutex}]{\setlength{\rightskip}{0pt plus 5cm}log4tango\-::threading\-::\-Recursive\-Mutex\-::$\sim$\-Recursive\-Mutex (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{classlog4tango_1_1threading_1_1RecursiveMutex_a7210fe141d367494415cf8b580910fdf}
+
+
+\subsection{Member Function Documentation}
+\index{log4tango\-::threading\-::\-Recursive\-Mutex@{log4tango\-::threading\-::\-Recursive\-Mutex}!lock@{lock}}
+\index{lock@{lock}!log4tango::threading::RecursiveMutex@{log4tango\-::threading\-::\-Recursive\-Mutex}}
+\subsubsection[{lock}]{\setlength{\rightskip}{0pt plus 5cm}int log4tango\-::threading\-::\-Recursive\-Mutex\-::lock (
+\begin{DoxyParamCaption}
+\item[{long}]{timeout\-\_\- = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}\label{classlog4tango_1_1threading_1_1RecursiveMutex_ab25b75795eeed61c179ba00d3b9cd4e0}
+\index{log4tango\-::threading\-::\-Recursive\-Mutex@{log4tango\-::threading\-::\-Recursive\-Mutex}!lock@{lock}}
+\index{lock@{lock}!log4tango::threading::RecursiveMutex@{log4tango\-::threading\-::\-Recursive\-Mutex}}
+\subsubsection[{lock}]{\setlength{\rightskip}{0pt plus 5cm}int log4tango\-::threading\-::\-Recursive\-Mutex\-::lock (
+\begin{DoxyParamCaption}
+\item[{long}]{timeout\-\_\- = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classlog4tango_1_1threading_1_1RecursiveMutex_ab25b75795eeed61c179ba00d3b9cd4e0}
+
+
+References guard\-\_\-.
+
+\index{log4tango\-::threading\-::\-Recursive\-Mutex@{log4tango\-::threading\-::\-Recursive\-Mutex}!unlock@{unlock}}
+\index{unlock@{unlock}!log4tango::threading::RecursiveMutex@{log4tango\-::threading\-::\-Recursive\-Mutex}}
+\subsubsection[{unlock}]{\setlength{\rightskip}{0pt plus 5cm}void log4tango\-::threading\-::\-Recursive\-Mutex\-::unlock (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{classlog4tango_1_1threading_1_1RecursiveMutex_a35bcfd9220d32eb5d8974acde72e9820}
+\index{log4tango\-::threading\-::\-Recursive\-Mutex@{log4tango\-::threading\-::\-Recursive\-Mutex}!unlock@{unlock}}
+\index{unlock@{unlock}!log4tango::threading::RecursiveMutex@{log4tango\-::threading\-::\-Recursive\-Mutex}}
+\subsubsection[{unlock}]{\setlength{\rightskip}{0pt plus 5cm}void log4tango\-::threading\-::\-Recursive\-Mutex\-::unlock (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classlog4tango_1_1threading_1_1RecursiveMutex_a35bcfd9220d32eb5d8974acde72e9820}
+
+
+References guard\-\_\-.
+
+\index{log4tango\-::threading\-::\-Recursive\-Mutex@{log4tango\-::threading\-::\-Recursive\-Mutex}!unlockn@{unlockn}}
+\index{unlockn@{unlockn}!log4tango::threading::RecursiveMutex@{log4tango\-::threading\-::\-Recursive\-Mutex}}
+\subsubsection[{unlockn}]{\setlength{\rightskip}{0pt plus 5cm}void log4tango\-::threading\-::\-Recursive\-Mutex\-::unlockn (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{classlog4tango_1_1threading_1_1RecursiveMutex_ae8ca497191c6f8ac476f50fe5172f777}
+\index{log4tango\-::threading\-::\-Recursive\-Mutex@{log4tango\-::threading\-::\-Recursive\-Mutex}!unlockn@{unlockn}}
+\index{unlockn@{unlockn}!log4tango::threading::RecursiveMutex@{log4tango\-::threading\-::\-Recursive\-Mutex}}
+\subsubsection[{unlockn}]{\setlength{\rightskip}{0pt plus 5cm}void log4tango\-::threading\-::\-Recursive\-Mutex\-::unlockn (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classlog4tango_1_1threading_1_1RecursiveMutex_ae8ca497191c6f8ac476f50fe5172f777}
+
+
+References guard\-\_\-.
+
+
+
+\subsection{Member Data Documentation}
+\index{log4tango\-::threading\-::\-Recursive\-Mutex@{log4tango\-::threading\-::\-Recursive\-Mutex}!guard\-\_\-@{guard\-\_\-}}
+\index{guard\-\_\-@{guard\-\_\-}!log4tango::threading::RecursiveMutex@{log4tango\-::threading\-::\-Recursive\-Mutex}}
+\subsubsection[{guard\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}pthread\-\_\-mutex\-\_\-t log4tango\-::threading\-::\-Recursive\-Mutex\-::guard\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}\label{classlog4tango_1_1threading_1_1RecursiveMutex_a84a463cd8c14c629e9449a1ab16aecfb}
+\index{log4tango\-::threading\-::\-Recursive\-Mutex@{log4tango\-::threading\-::\-Recursive\-Mutex}!guard\-\_\-@{guard\-\_\-}}
+\index{guard\-\_\-@{guard\-\_\-}!log4tango::threading::RecursiveMutex@{log4tango\-::threading\-::\-Recursive\-Mutex}}
+\subsubsection[{guard\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}C\-R\-I\-T\-I\-C\-A\-L\-\_\-\-S\-E\-C\-T\-I\-O\-N log4tango\-::threading\-::\-Recursive\-Mutex\-::guard\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}\label{classlog4tango_1_1threading_1_1RecursiveMutex_aba88d437ae0d89daf73d46488b45b06d}
+
+
+Referenced by lock(), Recursive\-Mutex(), unlock(), unlockn(), and $\sim$\-Recursive\-Mutex().
+
+\index{log4tango\-::threading\-::\-Recursive\-Mutex@{log4tango\-::threading\-::\-Recursive\-Mutex}!mutex\-\_\-available\-\_\-@{mutex\-\_\-available\-\_\-}}
+\index{mutex\-\_\-available\-\_\-@{mutex\-\_\-available\-\_\-}!log4tango::threading::RecursiveMutex@{log4tango\-::threading\-::\-Recursive\-Mutex}}
+\subsubsection[{mutex\-\_\-available\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}pthread\-\_\-cond\-\_\-t log4tango\-::threading\-::\-Recursive\-Mutex\-::mutex\-\_\-available\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}\label{classlog4tango_1_1threading_1_1RecursiveMutex_abafc328ab69204599821730c657c3cba}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+{\bf M\-S\-Threads.\-hh}\item 
+{\bf P\-Threads.\-hh}\end{DoxyCompactItemize}

@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="da/dd8/Portability_8hh">
+    <title>Portability.hh File Reference</title>
+    <programlisting>#include &lt;log4tango/config.h&gt;</programlisting>
+    <programlisting>#include &quot;Export.hh&quot;</programlisting>
+    <programlisting>#include &lt;strstream&gt;</programlisting>
+        <simplesect>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d7/d24/classstd_1_1ostringstream">std::ostringstream</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title> Namespaces </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d8/dcc/namespacestd">std</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Defines</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="da/dd8/Portability_8hh_1a3e82719800a6abe2ae163e2da6739661">LOG4TANGO_UNUSED</link> var</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file /home/tango/workspace/cppTango/include/log4tango/Portability.hh</para>
+    </simplesect>
+</section>

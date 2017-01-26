@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="d5/d60/utils_8h">
+    <title>utils.h File Reference</title>
+    <programlisting>#include &lt;tango.h&gt;</programlisting>
+    <programlisting>#include &lt;tango/server/pollext.h&gt;</programlisting>
+    <programlisting>#include &lt;tango/server/subdev_diag.h&gt;</programlisting>
+    <programlisting>#include &lt;new&gt;</programlisting>
+    <programlisting>#include &lt;tango/server/rootattreg.h&gt;</programlisting>
+    <programlisting>#include &lt;tango/server/pollthread.h&gt;</programlisting>
+    <programlisting>#include &lt;unistd.h&gt;</programlisting>
+        <simplesect>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="de/dbe/classTango_1_1AutoPyLock">Tango::AutoPyLock</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d9/dd7/classTango_1_1CreatePyLock">Tango::CreatePyLock</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d5/db2/structTango_1_1DevDbUpd">Tango::DevDbUpd</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d6/d62/classTango_1_1Interceptors">Tango::Interceptors</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="dc/d66/structTango_1_1PollingThreadInfo">Tango::PollingThreadInfo</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d5/d7d/classTango_1_1PyData">Tango::PyData</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d4/d9f/classTango_1_1PyLock">Tango::PyLock</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d4/deb/classTango_1_1Util">Tango::Util</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="d0/d19/classTango_1_1Util_1_1UtilExt">Tango::Util::UtilExt</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title> Namespaces </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="de/ddf/namespaceTango">Tango</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file /home/tango/workspace/cppTango/include/tango/server/utils.h</para>
+    </simplesect>
+</section>

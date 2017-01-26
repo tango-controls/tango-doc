@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="d3/dfe/classlog4tango_1_1LogInitiator" kind="class" prot="public">
+    <compoundname>log4tango::LogInitiator</compoundname>
+    <includes refid="d5/d64/LogSeparator_8hh" local="yes">LogSeparator.hh</includes>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="d3/dfe/classlog4tango_1_1LogInitiator_1a662c8dd89b2ea992603dbcb852ad9ce4" prot="public" static="yes" mutable="no">
+        <type><ref refid="d3/dfe/classlog4tango_1_1LogInitiator" kindref="compound">LogInitiator</ref></type>
+        <definition>LogInitiator log4tango::LogInitiator::_begin_log</definition>
+        <argsstring></argsstring>
+        <name>_begin_log</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/LogSeparator.hh" line="40" column="1" bodyfile="/home/tango/workspace/cppTango/include/log4tango/LogSeparator.hh" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1115">
+        <label>log4tango::LogInitiator</label>
+        <link refid="d3/dfe/classlog4tango_1_1LogInitiator"/>
+        <childnode refid="1115" relation="usage">
+          <edgelabel>_begin_log</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/tango/workspace/cppTango/include/log4tango/LogSeparator.hh" line="38" column="1" bodyfile="/home/tango/workspace/cppTango/include/log4tango/LogSeparator.hh" bodystart="38" bodyend="41"/>
+    <listofallmembers>
+      <member refid="d3/dfe/classlog4tango_1_1LogInitiator_1a662c8dd89b2ea992603dbcb852ad9ce4" prot="public" virt="non-virtual"><scope>log4tango::LogInitiator</scope><name>_begin_log</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

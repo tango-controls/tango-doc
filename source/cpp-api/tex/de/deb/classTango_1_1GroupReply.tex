@@ -1,0 +1,131 @@
+\section{Tango\-:\-:Group\-Reply Class Reference}
+\label{classTango_1_1GroupReply}\index{Tango\-::\-Group\-Reply@{Tango\-::\-Group\-Reply}}
+
+
+Base class for \doxyref{Group}{p.}{d4/d6d/classTango_1_1Group} reply.  
+
+
+
+
+Inheritance diagram for Tango\-:\-:Group\-Reply\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=295pt]{d5/d39/classTango_1_1GroupReply__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const std\-::string \& {\bf dev\-\_\-name} () const 
+\begin{DoxyCompactList}\small\item\em Get device name. \end{DoxyCompactList}\item 
+const Dev\-Error\-List \& {\bf get\-\_\-err\-\_\-stack} () const 
+\begin{DoxyCompactList}\small\item\em Get error stack. \end{DoxyCompactList}\item 
+bool {\bf has\-\_\-failed} () const 
+\begin{DoxyCompactList}\small\item\em Check if an error has occured. \end{DoxyCompactList}\item 
+const std\-::string \& {\bf obj\-\_\-name} () const 
+\begin{DoxyCompactList}\small\item\em Get object name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool {\bf enable\-\_\-exception} (bool exception\-\_\-mode=true)
+\begin{DoxyCompactList}\small\item\em Enable/\-Disable exception. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Base class for \doxyref{Group}{p.}{d4/d6d/classTango_1_1Group} reply. 
+
+\$\-Author\$ \$\-Revision\$ 
+
+\subsection{Member Function Documentation}
+\index{Tango\-::\-Group\-Reply@{Tango\-::\-Group\-Reply}!dev\-\_\-name@{dev\-\_\-name}}
+\index{dev\-\_\-name@{dev\-\_\-name}!Tango::GroupReply@{Tango\-::\-Group\-Reply}}
+\subsubsection[{dev\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::string\& Tango\-::\-Group\-Reply\-::dev\-\_\-name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classTango_1_1GroupReply_a4fe578ba1fcd03239b7dc589ffc1af77}
+
+
+Get device name. 
+
+Returns the device name for the group element
+
+\begin{DoxyReturn}{Returns}
+The device name 
+\end{DoxyReturn}
+\index{Tango\-::\-Group\-Reply@{Tango\-::\-Group\-Reply}!enable\-\_\-exception@{enable\-\_\-exception}}
+\index{enable\-\_\-exception@{enable\-\_\-exception}!Tango::GroupReply@{Tango\-::\-Group\-Reply}}
+\subsubsection[{enable\-\_\-exception}]{\setlength{\rightskip}{0pt plus 5cm}static bool Tango\-::\-Group\-Reply\-::enable\-\_\-exception (
+\begin{DoxyParamCaption}
+\item[{bool}]{exception\-\_\-mode = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classTango_1_1GroupReply_a4250fb27cfce0de073029a1b778b06b8}
+
+
+Enable/\-Disable exception. 
+
+Set the group exception mode. If set to true, exception will be thrown (when needed) by the library when the user get command execution result. If set to false (the default), the user has to deal with the \doxyref{has\-\_\-failed()}{p.}{de/deb/classTango_1_1GroupReply_aec0def5a9df786134dc9cb8c66c21cb8} exception to manage cases of wrong execution command.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em exception\-\_\-mode} & The new exception mode \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The previous exception mode 
+\end{DoxyReturn}
+\index{Tango\-::\-Group\-Reply@{Tango\-::\-Group\-Reply}!get\-\_\-err\-\_\-stack@{get\-\_\-err\-\_\-stack}}
+\index{get\-\_\-err\-\_\-stack@{get\-\_\-err\-\_\-stack}!Tango::GroupReply@{Tango\-::\-Group\-Reply}}
+\subsubsection[{get\-\_\-err\-\_\-stack}]{\setlength{\rightskip}{0pt plus 5cm}const Dev\-Error\-List\& Tango\-::\-Group\-Reply\-::get\-\_\-err\-\_\-stack (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classTango_1_1GroupReply_a47419919cad3f689140757bd09eae457}
+
+
+Get error stack. 
+
+Returns the error stack for the group element
+
+\begin{DoxyReturn}{Returns}
+The error stack 
+\end{DoxyReturn}
+\index{Tango\-::\-Group\-Reply@{Tango\-::\-Group\-Reply}!has\-\_\-failed@{has\-\_\-failed}}
+\index{has\-\_\-failed@{has\-\_\-failed}!Tango::GroupReply@{Tango\-::\-Group\-Reply}}
+\subsubsection[{has\-\_\-failed}]{\setlength{\rightskip}{0pt plus 5cm}bool Tango\-::\-Group\-Reply\-::has\-\_\-failed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classTango_1_1GroupReply_aec0def5a9df786134dc9cb8c66c21cb8}
+
+
+Check if an error has occured. 
+
+Returns a boolean set to true if the command executed on the group element has failed. Otherwise, returns false
+
+\begin{DoxyReturn}{Returns}
+The error flag 
+\end{DoxyReturn}
+\index{Tango\-::\-Group\-Reply@{Tango\-::\-Group\-Reply}!obj\-\_\-name@{obj\-\_\-name}}
+\index{obj\-\_\-name@{obj\-\_\-name}!Tango::GroupReply@{Tango\-::\-Group\-Reply}}
+\subsubsection[{obj\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::string\& Tango\-::\-Group\-Reply\-::obj\-\_\-name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classTango_1_1GroupReply_a13564b3e6df04a5257b2592b94a07d88}
+
+
+Get object name. 
+
+Returns the object name (i.\-e. command or attribute) for the group element
+
+\begin{DoxyReturn}{Returns}
+The object name 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+{\bf group.\-h}\end{DoxyCompactItemize}

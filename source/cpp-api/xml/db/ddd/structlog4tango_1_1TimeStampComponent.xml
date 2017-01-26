@@ -1,0 +1,180 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="db/ddd/structlog4tango_1_1TimeStampComponent" kind="struct" prot="public">
+    <compoundname>log4tango::TimeStampComponent</compoundname>
+    <basecompoundref refid="d0/d47/classlog4tango_1_1PatternLayout_1_1PatternComponent" prot="public" virt="non-virtual">log4tango::PatternLayout::PatternComponent</basecompoundref>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="db/ddd/structlog4tango_1_1TimeStampComponent_1a0317edb0f793205fc7c39e6609fc1279" prot="public" static="yes" mutable="no">
+        <type>const char *const</type>
+        <definition>const char *const log4tango::TimeStampComponent::FORMAT_ABSOLUTE</definition>
+        <argsstring></argsstring>
+        <name>FORMAT_ABSOLUTE</name>
+        <initializer>= &quot;%H:%M:%S,%l&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/src/log4tango/PatternLayout.cpp" line="154" column="1" bodyfile="/home/tango/workspace/cppTango/src/log4tango/PatternLayout.cpp" bodystart="154" bodyend="-1"/>
+        <referencedby refid="db/ddd/structlog4tango_1_1TimeStampComponent_1a165f177f73788eaa319cf3f61cdb6516" compoundref="d6/d13/PatternLayout_8cpp" startline="157" endline="174">TimeStampComponent</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="db/ddd/structlog4tango_1_1TimeStampComponent_1afae617926ec5bc952e25c2b4968f1fcf" prot="public" static="yes" mutable="no">
+        <type>const char *const</type>
+        <definition>const char *const log4tango::TimeStampComponent::FORMAT_DATE</definition>
+        <argsstring></argsstring>
+        <name>FORMAT_DATE</name>
+        <initializer>= &quot;%d %b %Y %H:%M:%S,%l&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/src/log4tango/PatternLayout.cpp" line="155" column="1" bodyfile="/home/tango/workspace/cppTango/src/log4tango/PatternLayout.cpp" bodystart="155" bodyend="-1"/>
+        <referencedby refid="db/ddd/structlog4tango_1_1TimeStampComponent_1a165f177f73788eaa319cf3f61cdb6516" compoundref="d6/d13/PatternLayout_8cpp" startline="157" endline="174">TimeStampComponent</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="db/ddd/structlog4tango_1_1TimeStampComponent_1a1c5e53d1bd2ddf4b8212fc8d5ca45d5d" prot="public" static="yes" mutable="no">
+        <type>const char *const</type>
+        <definition>const char *const log4tango::TimeStampComponent::FORMAT_ISO8601</definition>
+        <argsstring></argsstring>
+        <name>FORMAT_ISO8601</name>
+        <initializer>= &quot;%Y-%m-%d %H:%M:%S,%l&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/src/log4tango/PatternLayout.cpp" line="153" column="1" bodyfile="/home/tango/workspace/cppTango/src/log4tango/PatternLayout.cpp" bodystart="153" bodyend="-1"/>
+        <referencedby refid="db/ddd/structlog4tango_1_1TimeStampComponent_1a165f177f73788eaa319cf3f61cdb6516" compoundref="d6/d13/PatternLayout_8cpp" startline="157" endline="174">TimeStampComponent</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="db/ddd/structlog4tango_1_1TimeStampComponent_1a068baf1c239c413b2fc14b83d4ed481b" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool log4tango::TimeStampComponent::_printMillis</definition>
+        <argsstring></argsstring>
+        <name>_printMillis</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/src/log4tango/PatternLayout.cpp" line="199" column="1" bodyfile="/home/tango/workspace/cppTango/src/log4tango/PatternLayout.cpp" bodystart="199" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="db/ddd/structlog4tango_1_1TimeStampComponent_1a41d03aedb377fa4c22fb86431e8d5c11" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string log4tango::TimeStampComponent::_timeFormat1</definition>
+        <argsstring></argsstring>
+        <name>_timeFormat1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/src/log4tango/PatternLayout.cpp" line="197" column="1" bodyfile="/home/tango/workspace/cppTango/src/log4tango/PatternLayout.cpp" bodystart="197" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="db/ddd/structlog4tango_1_1TimeStampComponent_1a3082ae305d395c1f2be6b6942fcac959" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string log4tango::TimeStampComponent::_timeFormat2</definition>
+        <argsstring></argsstring>
+        <name>_timeFormat2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/src/log4tango/PatternLayout.cpp" line="198" column="1" bodyfile="/home/tango/workspace/cppTango/src/log4tango/PatternLayout.cpp" bodystart="198" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="db/ddd/structlog4tango_1_1TimeStampComponent_1a165f177f73788eaa319cf3f61cdb6516" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>log4tango::TimeStampComponent::TimeStampComponent</definition>
+        <argsstring>(std::string timeFormat)</argsstring>
+        <name>TimeStampComponent</name>
+        <param>
+          <type>std::string</type>
+          <declname>timeFormat</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/src/log4tango/PatternLayout.cpp" line="157" column="1" bodyfile="/home/tango/workspace/cppTango/src/log4tango/PatternLayout.cpp" bodystart="157" bodyend="174"/>
+        <references refid="db/ddd/structlog4tango_1_1TimeStampComponent_1a0317edb0f793205fc7c39e6609fc1279" compoundref="d6/d13/PatternLayout_8cpp" startline="154">FORMAT_ABSOLUTE</references>
+        <references refid="db/ddd/structlog4tango_1_1TimeStampComponent_1afae617926ec5bc952e25c2b4968f1fcf" compoundref="d6/d13/PatternLayout_8cpp" startline="155">FORMAT_DATE</references>
+        <references refid="db/ddd/structlog4tango_1_1TimeStampComponent_1a1c5e53d1bd2ddf4b8212fc8d5ca45d5d" compoundref="d6/d13/PatternLayout_8cpp" startline="153">FORMAT_ISO8601</references>
+      </memberdef>
+      <memberdef kind="function" id="db/ddd/structlog4tango_1_1TimeStampComponent_1ab2f54131358eda0f2d767b8994152e8e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void log4tango::TimeStampComponent::append</definition>
+        <argsstring>(std::ostringstream &amp;out, const LoggingEvent &amp;event)</argsstring>
+        <name>append</name>
+        <reimplements refid="d0/d47/classlog4tango_1_1PatternLayout_1_1PatternComponent_1afb25822922b51144361faff5d6cdeaa8">append</reimplements>
+        <param>
+          <type><ref refid="d7/d24/classstd_1_1ostringstream" kindref="compound">std::ostringstream</ref> &amp;</type>
+          <declname>out</declname>
+        </param>
+        <param>
+          <type>const <ref refid="d8/df2/structlog4tango_1_1LoggingEvent" kindref="compound">LoggingEvent</ref> &amp;</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/src/log4tango/PatternLayout.cpp" line="176" column="1" bodyfile="/home/tango/workspace/cppTango/src/log4tango/PatternLayout.cpp" bodystart="176" bodyend="194"/>
+        <references refid="d7/d24/classstd_1_1ostringstream_1a8acec234b9393fb5ee0d9c8f7bbb6cb4" compoundref="db/df6/PortabilityImpl_8cpp" startline="33" endline="38">std::ostringstream::str</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1314">
+        <label>log4tango::TimeStampComponent</label>
+        <link refid="db/ddd/structlog4tango_1_1TimeStampComponent"/>
+        <childnode refid="1315" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1315">
+        <label>log4tango::PatternLayout::PatternComponent</label>
+        <link refid="d0/d47/classlog4tango_1_1PatternLayout_1_1PatternComponent"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1316">
+        <label>log4tango::TimeStampComponent</label>
+        <link refid="db/ddd/structlog4tango_1_1TimeStampComponent"/>
+        <childnode refid="1317" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1317">
+        <label>log4tango::PatternLayout::PatternComponent</label>
+        <link refid="d0/d47/classlog4tango_1_1PatternLayout_1_1PatternComponent"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/tango/workspace/cppTango/src/log4tango/PatternLayout.cpp" line="152" column="1" bodyfile="/home/tango/workspace/cppTango/src/log4tango/PatternLayout.cpp" bodystart="152" bodyend="200"/>
+    <listofallmembers>
+      <member refid="db/ddd/structlog4tango_1_1TimeStampComponent_1a068baf1c239c413b2fc14b83d4ed481b" prot="private" virt="non-virtual"><scope>log4tango::TimeStampComponent</scope><name>_printMillis</name></member>
+      <member refid="db/ddd/structlog4tango_1_1TimeStampComponent_1a41d03aedb377fa4c22fb86431e8d5c11" prot="private" virt="non-virtual"><scope>log4tango::TimeStampComponent</scope><name>_timeFormat1</name></member>
+      <member refid="db/ddd/structlog4tango_1_1TimeStampComponent_1a3082ae305d395c1f2be6b6942fcac959" prot="private" virt="non-virtual"><scope>log4tango::TimeStampComponent</scope><name>_timeFormat2</name></member>
+      <member refid="db/ddd/structlog4tango_1_1TimeStampComponent_1ab2f54131358eda0f2d767b8994152e8e" prot="public" virt="virtual"><scope>log4tango::TimeStampComponent</scope><name>append</name></member>
+      <member refid="db/ddd/structlog4tango_1_1TimeStampComponent_1a0317edb0f793205fc7c39e6609fc1279" prot="public" virt="non-virtual"><scope>log4tango::TimeStampComponent</scope><name>FORMAT_ABSOLUTE</name></member>
+      <member refid="db/ddd/structlog4tango_1_1TimeStampComponent_1afae617926ec5bc952e25c2b4968f1fcf" prot="public" virt="non-virtual"><scope>log4tango::TimeStampComponent</scope><name>FORMAT_DATE</name></member>
+      <member refid="db/ddd/structlog4tango_1_1TimeStampComponent_1a1c5e53d1bd2ddf4b8212fc8d5ca45d5d" prot="public" virt="non-virtual"><scope>log4tango::TimeStampComponent</scope><name>FORMAT_ISO8601</name></member>
+      <member refid="db/ddd/structlog4tango_1_1TimeStampComponent_1a165f177f73788eaa319cf3f61cdb6516" prot="public" virt="non-virtual"><scope>log4tango::TimeStampComponent</scope><name>TimeStampComponent</name></member>
+      <member refid="d0/d47/classlog4tango_1_1PatternLayout_1_1PatternComponent_1adc8b8fe4a04939ecf6c440bf64ceaf80" prot="public" virt="virtual"><scope>log4tango::TimeStampComponent</scope><name>~PatternComponent</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

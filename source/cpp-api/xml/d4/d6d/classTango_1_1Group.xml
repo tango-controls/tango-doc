@@ -1,0 +1,2554 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="d4/d6d/classTango_1_1Group" kind="class" prot="public">
+    <compoundname>Tango::Group</compoundname>
+    <basecompoundref refid="df/d46/classTango_1_1GroupElement" prot="public" virt="non-virtual">Tango::GroupElement</basecompoundref>
+      <sectiondef kind="user-defined">
+      <header>Constructor and destructor</header>
+      <memberdef kind="function" id="d4/d6d/classTango_1_1Group_1aa1bcfe79af9522faa65449efb128fc3e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::Group::Group</definition>
+        <argsstring>(const std::string &amp;name)</argsstring>
+        <name>Group</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+<para>Create a <ref refid="d4/d6d/classTango_1_1Group" kindref="compound">Group</ref> instance. </para>        </briefdescription>
+        <detaileddescription>
+<para>Instanciate an empty group. The group name allows retrieving a sub-group in the hierarchy.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The group name </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="754" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d6d/classTango_1_1Group_1acd7a0b40d37852923131e9bce68dd9ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual Tango::Group::~Group</definition>
+        <argsstring>()</argsstring>
+        <name>~Group</name>
+        <briefdescription>
+<para>Create a <ref refid="d4/d6d/classTango_1_1Group" kindref="compound">Group</ref> instance. </para>        </briefdescription>
+        <detaileddescription>
+<para>Delete a group and all its elements. Be aware that a group always gets the ownership of its children and deletes themwhen it is itself deleted. Therefore, never try to delete a <ref refid="d4/d6d/classTango_1_1Group" kindref="compound">Group</ref> (respectively a DeviceProxy) returned by a call to <emphasis><ref refid="d4/d6d/classTango_1_1Group_1a75ddf85f5805e6e99656cbe554ecf96e" kindref="member">Tango::Group::get_group()</ref></emphasis> (respectively to <emphasis><ref refid="d4/d6d/classTango_1_1Group_1adc7d5db7e814e378bf30f940865885b8" kindref="member">Tango::Group::get_device()</ref></emphasis>). Use the <emphasis><ref refid="d4/d6d/classTango_1_1Group_1acd7763925b6e27ccf237b13fa7f98009" kindref="member">Tango::Group::remove()</ref></emphasis> method instead. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="763" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Group management related methods</header>
+      <memberdef kind="function" id="d4/d6d/classTango_1_1Group_1a2cbaa3bf6cecdb6fb33a387c79556e58" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Tango::Group::add</definition>
+        <argsstring>(Group *group, int tmo_ms=-1)</argsstring>
+        <name>add</name>
+        <param>
+          <type><ref refid="d4/d6d/classTango_1_1Group" kindref="compound">Group</ref> *</type>
+          <declname>group</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>tmo_ms</declname>
+          <defval>-1</defval>
+        </param>
+        <briefdescription>
+<para>Attaches a (sub) group. </para>        </briefdescription>
+        <detaileddescription>
+<para>Be aware that a group always gets the ownership of its children and deletes them when it is itself deleted. Therefore, never try to delete a <ref refid="d4/d6d/classTango_1_1Group" kindref="compound">Group</ref> attached to a <ref refid="d4/d6d/classTango_1_1Group" kindref="compound">Group</ref>. Use the <ref refid="d4/d6d/classTango_1_1Group_1acd7763925b6e27ccf237b13fa7f98009" kindref="member">Group::remove()</ref> method instead. If timeout_ms parameter is different from -1, the client side timeout associated to each device composing the group added is set to timeout_ms milliseconds. If timeout_ms is -1, timeouts are not changed. This method does nothing if the specified group is already attached (i.e. it is silently ignored) and timeout_ms = -1. If the specified group is already attached and timeout_ms is different from -1, the client side timeout of each device composing the group given in parameter is set to timeout_ms milliseconds.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">group</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The group to be attached </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">tmo_ms</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The timeout value </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="787" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d6d/classTango_1_1Group_1ad0cae4533d2ab5f218d6b65748f8374f" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Tango::Group::add</definition>
+        <argsstring>(const std::string &amp;pattern, int tmo_ms=-1)</argsstring>
+        <name>add</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>pattern</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>tmo_ms</declname>
+          <defval>-1</defval>
+        </param>
+        <briefdescription>
+<para>Attaches any device which name matches the specified pattern. </para>        </briefdescription>
+        <detaileddescription>
+<para>The pattern parameter can be a simple device name or a device name pattern (e.g. domain_* / family/ member_*). This method first asks to the <ref refid="de/ddf/namespaceTango" kindref="compound">Tango</ref> database the list of device names matching the pattern. Devices are then attached to the group in the order in which they are returned by the database. Any device already present in the hierarchy (i.e. a device belonging to the group or to one of its subgroups) is silently ignored but its client side timeout is set to timeout_ms milliseconds if timeout_ms is different from -1. Set the client side timeout of each device matching the specified pattern to timeout_ms milliseconds if timeout_ms is different from -1.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pattern</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The device selection pattern </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">tmo_ms</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The timeout value </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="804" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d6d/classTango_1_1Group_1a633d0ced915368b8b084adb3a215cca5" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Tango::Group::add</definition>
+        <argsstring>(const std::vector&lt; std::string &gt; &amp;patterns, int tmo_ms=-1)</argsstring>
+        <name>add</name>
+        <param>
+          <type>const std::vector&lt; std::string &gt; &amp;</type>
+          <declname>patterns</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>tmo_ms</declname>
+          <defval>-1</defval>
+        </param>
+        <briefdescription>
+<para>Attaches any device which name matches one of the specified pattern. </para>        </briefdescription>
+        <detaileddescription>
+<para>The patterns parameter can be an array of device names and/or device name patterns. Thismethod first asks to the <ref refid="de/ddf/namespaceTango" kindref="compound">Tango</ref> database the list of device namesmatching one the patterns. Devices are then attached to the group in the order in which they are returned by the database. Any device already present in the hierarchy (i.e. a device belonging to the group or to one of its subgroups), is silently ignored but its client side timeout is set to timeout_ms milliseconds if timeout_ms is different from -1. If timeout_ms is different from -1, the client side timeouts of all devices matching the specified patterns are set to timeout_ms milliseconds.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">patterns</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The device selection pattern list </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">tmo_ms</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The timeout value </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="820" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d6d/classTango_1_1Group_1acd7763925b6e27ccf237b13fa7f98009" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Tango::Group::remove</definition>
+        <argsstring>(const std::string &amp;pattern, bool fwd=true)</argsstring>
+        <name>remove</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>pattern</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>fwd</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+<para>Removes any group or device which name matches the specified pattern. </para>        </briefdescription>
+        <detaileddescription>
+<para>The pattern parameter can be a group name, a device name or a device name pattern (e.g domain_* /family/member_*). Since we can have groups with the same name in the hierarchy, a group name can be fully qualified to specify which group should be removed. Considering the following group: <verbatim> -&gt; gauges
+    | -&gt; cell-01
+    |     | -&gt; penning
+    |     |     | -&gt; ...
+    |     | -&gt; pirani
+    |     |     | -&gt; ...
+    | -&gt; cell-02
+    |     | -&gt; penning
+    |     |     | -&gt; ...
+    |     | -&gt; pirani
+    |     |     | -&gt; ...
+    | -&gt; cell-03
+    |     | -&gt; ...</verbatim> A call to gauges-&gt;remove(&quot;penning&quot;) will remove any group named &quot;penning&quot; in the hierarchy while gauges-&gt;remove(&quot;gauges.cell-02.penning&quot;) will only remove the specified group. If fwd is set to true (the default), the remove request is also forwarded to subgroups. Otherwise, it is only applied to the local set of elements. For instance, the following code remove any stepper motor in the hierarchy: <programlisting><codeline><highlight class="normal">*<sp/>root_group-&gt;remove(</highlight><highlight class="stringliteral">&quot;*/stepper_motor/*&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal">*<sp/></highlight></codeline>
+</programlisting></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pattern</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The device selection pattern </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">fwd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The forward flag </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="857" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d6d/classTango_1_1Group_1a2561673c34638016106a6fba3c0b95ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Tango::Group::remove</definition>
+        <argsstring>(const std::vector&lt; std::string &gt; &amp;patterns, bool fwd=true)</argsstring>
+        <name>remove</name>
+        <param>
+          <type>const std::vector&lt; std::string &gt; &amp;</type>
+          <declname>patterns</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>fwd</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+<para>Removes any group or device which name matches any of the specified patterns. </para>        </briefdescription>
+        <detaileddescription>
+<para>The patterns parameter can be an array of group names and/or device names and/or device name patterns. Since we can have groups with the same name in the hierarchy, a group name can be fully qualified to specify which group should be removed. See previous method for details. If fwd is set to true (the default), the remove request is also forwarded to subgroups. Otherwise, it is only applied to the local set of elements.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">patterns</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The device selection patterns </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">fwd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The forward flag </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="870" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d6d/classTango_1_1Group_1a12404b76c3e64df47467a1260591e7df" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Tango::Group::remove_all</definition>
+        <argsstring>()</argsstring>
+        <name>remove_all</name>
+        <briefdescription>
+<para>Removes all elements in the group. </para>        </briefdescription>
+        <detaileddescription>
+<para>Removes all elements in the group. After such a call, the group is empty. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="876" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d6d/classTango_1_1Group_1a2885b00242d3a2d199836e48186dd71e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>virtual bool Tango::Group::contains</definition>
+        <argsstring>(const std::string &amp;pattern, bool fwd=true)</argsstring>
+        <name>contains</name>
+        <reimplements refid="df/d46/classTango_1_1GroupElement_1a64f031e079125a08bdab73d21c906c86">contains</reimplements>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>pattern</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>fwd</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+<para>Check if the hierarchy contains groups and/or devices which name matches the specified pattern. </para>        </briefdescription>
+        <detaileddescription>
+<para>Returns true if the hierarchy contains groups and/or devices which name matches the specified pattern. Returns false otherwise. The pattern can be a fully qualified or simple group name, a device name or a device name pattern. If fwd is set to true (the default), the request is also forwarded to subgroups. Otherwise, it is only applied to the local set of elements.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pattern</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The device selection pattern </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">fwd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The forward flag </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the hierarchy contains the element </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="890" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d6d/classTango_1_1Group_1adc7d5db7e814e378bf30f940865885b8" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>DeviceProxy *</type>
+        <definition>virtual DeviceProxy* Tango::Group::get_device</definition>
+        <argsstring>(const std::string &amp;device_name)</argsstring>
+        <name>get_device</name>
+        <reimplements refid="df/d46/classTango_1_1GroupElement_1a78f61062a50404b224883dab23c08168">get_device</reimplements>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>device_name</declname>
+        </param>
+        <briefdescription>
+<para>Returns a reference to the specified device. </para>        </briefdescription>
+        <detaileddescription>
+<para>Returns a reference to the specified device or NULL if there is no device by that name in the group. This method may throw an exception in case the specified device belongs to the group but can’t be reached (not registered, down...). See example below. See also the Tango::DeviceProxy class documentation for details. <programlisting><codeline><highlight class="normal">*<sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">*<sp/>{</highlight></codeline>
+<codeline><highlight class="normal">*<sp/><sp/><sp/><sp/>Tango::DeviceProxy<sp/>*dp<sp/>=<sp/>g-&gt;get_device(</highlight><highlight class="stringliteral">&quot;my/device/01&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal">*<sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(dp<sp/>==<sp/>0)</highlight></codeline>
+<codeline><highlight class="normal">*<sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>my/device/01<sp/>does<sp/>not<sp/>belongs<sp/>to<sp/>the<sp/>group</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">*<sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>}</highlight></codeline>
+<codeline><highlight class="normal">*<sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Tango::DevFailed<sp/>&amp;df)</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>{</highlight></codeline>
+<codeline><highlight class="normal">*<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>my/device/01<sp/>belongs<sp/>to<sp/>the<sp/>group<sp/>but<sp/>can’t<sp/>be<sp/>reached</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">*<sp/>}</highlight></codeline>
+<codeline><highlight class="normal">*<sp/></highlight></codeline>
+</programlisting> The request is systematically forwarded to subgroups (i.e. if no device named device_name could be found in the local set of devices, the request is forwarded to subgroups). Be aware that a group always gets the ownership of its children and deletes them when it is itself deleted. Therefore, never try to delete a DeviceProxy returned by the <ref refid="d4/d6d/classTango_1_1Group_1adc7d5db7e814e378bf30f940865885b8" kindref="member">Group::get_device()</ref>method. Use the <ref refid="d4/d6d/classTango_1_1Group_1acd7763925b6e27ccf237b13fa7f98009" kindref="member">Tango::Group::remove()</ref> method instead.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">device_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The device name </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the hierarchy contains the element </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="920" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d6d/classTango_1_1Group_1a29685f1ad173310c2cf695390cedd362" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>DeviceProxy *</type>
+        <definition>virtual DeviceProxy* Tango::Group::get_device</definition>
+        <argsstring>(long idx)</argsstring>
+        <name>get_device</name>
+        <reimplements refid="df/d46/classTango_1_1GroupElement_1ab40d45bdf475f9e4ea51ab855e38bf91">get_device</reimplements>
+        <param>
+          <type>long</type>
+          <declname>idx</declname>
+        </param>
+        <briefdescription>
+<para>Returns a reference to the &quot;idx-th&quot; device in the hierarchy. </para>        </briefdescription>
+        <detaileddescription>
+<para>Returns a reference to the &quot;idx-th&quot; device in the hierarchy or NULL if the hierarchy contains less than &quot;idx&quot; devices. This method may throw an exception in case the specified device belongs to the group but can’t be reached (not registered, down...). See previous example. See also the Tango::DeviceProxy class documentation for details. The request is systematically forwarded to subgroups (i.e. if the local set of devices contains less than &quot;idx&quot; devices, the request is forwarded to subgroups). Be aware that a group always gets the ownership of its children and deletes them when it is itself deleted. Therefore, never try to delete a DeviceProxy returned by the <ref refid="d4/d6d/classTango_1_1Group_1adc7d5db7e814e378bf30f940865885b8" kindref="member">Group::get_device()</ref>method. Use the <ref refid="d4/d6d/classTango_1_1Group_1acd7763925b6e27ccf237b13fa7f98009" kindref="member">Tango::Group::remove()</ref> method instead.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">idx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The device name </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>device reference </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="937" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d6d/classTango_1_1Group_1aea3b781cd10d28770cb584c55c065534" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>DeviceProxy *</type>
+        <definition>virtual DeviceProxy* Tango::Group::operator[]</definition>
+        <argsstring>(long idx)</argsstring>
+        <name>operator[]</name>
+        <reimplements refid="df/d46/classTango_1_1GroupElement_1aef54618c81a0042334be5c13d0326346">operator[]</reimplements>
+        <param>
+          <type>long</type>
+          <declname>idx</declname>
+        </param>
+        <briefdescription>
+<para>Returns a reference to the &quot;idx-th&quot; device in the hierarchy. </para>        </briefdescription>
+        <detaileddescription>
+<para>Returns a reference to the &quot;idx-th&quot; device in the hierarchy or NULL if the hierarchy contains less than &quot;idx&quot; devices. See the Tango::DeviceProxy class documentation for details. The request is systematically forwarded to subgroups (i.e. if the local set of devices contains less than &quot;idx&quot; devices, the request is forwarded to subgroups). Be aware that a group always gets the ownership of its children and deletes them when it is itself deleted. Therefore, never try to delete a DeviceProxy returned by the <ref refid="d4/d6d/classTango_1_1Group_1adc7d5db7e814e378bf30f940865885b8" kindref="member">Group::get_device()</ref>method. Use the <ref refid="d4/d6d/classTango_1_1Group_1acd7763925b6e27ccf237b13fa7f98009" kindref="member">Tango::Group::remove()</ref> method instead.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">idx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The device name </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>device reference </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="952" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d6d/classTango_1_1Group_1a75ddf85f5805e6e99656cbe554ecf96e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="d4/d6d/classTango_1_1Group" kindref="compound">Group</ref> *</type>
+        <definition>virtual Group* Tango::Group::get_group</definition>
+        <argsstring>(const std::string &amp;group_name)</argsstring>
+        <name>get_group</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>group_name</declname>
+        </param>
+        <briefdescription>
+<para>Returns a reference to the specified group. </para>        </briefdescription>
+        <detaileddescription>
+<para>Returns a reference to the specified group or NULL if there is no group by that name. The group_name can be a fully qualified name. Considering the following group: <verbatim>-&gt; gauges
+   | -&gt; cell-01
+   |     | -&gt; penning
+   |     |     | -&gt; ...
+   |     | -&gt; pirani
+   |     |     | -&gt; ...
+   | -&gt; cell-02
+   |     | -&gt; penning
+   |     |     | -&gt; ...
+   |     | -&gt; pirani
+   |     |     | -&gt; ...
+   | -&gt; cell-03
+   |     | -&gt; ...</verbatim> A call to gauges-&gt;get_group(&quot;penning&quot;) returns the first group named &quot;penning&quot; in the hierarchy (i.e. gauges.cell-01.penning)while gauges-&gt;get_group("gauges.cell-02.penning”) returns the specified group. The request is systematically forwarded to subgroups (i.e. if no group named group_name could be found in the local set of elements, the request is forwarded to subgroups). Be aware that a group always gets the ownership of its children and deletes them when it is itself deleted. Therefore, never try to delete a <ref refid="d4/d6d/classTango_1_1Group" kindref="compound">Group</ref> returned by the <ref refid="d4/d6d/classTango_1_1Group_1a75ddf85f5805e6e99656cbe554ecf96e" kindref="member">Group::get_group()</ref> method. Use the <ref refid="d4/d6d/classTango_1_1Group_1acd7763925b6e27ccf237b13fa7f98009" kindref="member">Tango::Group::remove()</ref> method instead.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">group_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The group name </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>group pointer </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="986" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d6d/classTango_1_1Group_1a1afb6e934e20fb757538b873fef265e5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long Tango::Group::get_size</definition>
+        <argsstring>(bool fwd=true)</argsstring>
+        <name>get_size</name>
+        <param>
+          <type>bool</type>
+          <declname>fwd</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+<para>Return the number of devices in the hierarchy. </para>        </briefdescription>
+        <detaileddescription>
+<para>Return the number of devices in the hierarchy (respectively the number of device in the group) if the forward option is set to true (respectively set to false)</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fwd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The forward flag </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>group size </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="996" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d6d/classTango_1_1Group_1a35a3426e304c3d87607997261aff1d22" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt;std::string&gt; Tango::Group::get_device_list</definition>
+        <argsstring>(bool fwd=true)</argsstring>
+        <name>get_device_list</name>
+        <param>
+          <type>bool</type>
+          <declname>fwd</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+<para>Returns the list of devices currently in the hierarchy. </para>        </briefdescription>
+        <detaileddescription>
+<para>Returns the list of devices currently in the hierarchy. If fwd is set to true (the default) the request is forwarded to subgroups. Otherwise, it is only applied to the local set of devices. Considering the following hierarchy: <programlisting><codeline><highlight class="normal">*<sp/>g2-&gt;add(</highlight><highlight class="stringliteral">&quot;my/device/04&quot;</highlight><highlight class="normal">);<sp/>g2-&gt;add(</highlight><highlight class="stringliteral">&quot;my/device/05&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal">*</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>g4-&gt;add(</highlight><highlight class="stringliteral">&quot;my/device/08&quot;</highlight><highlight class="normal">);<sp/>g4-&gt;add(</highlight><highlight class="stringliteral">&quot;my/device/09&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal">*</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>g3-&gt;add(</highlight><highlight class="stringliteral">&quot;my/device/06&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>g3-&gt;addg(g4);</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>g3-&gt;add(</highlight><highlight class="stringliteral">&quot;my/device/07&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal">*</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>g1-&gt;add(</highlight><highlight class="stringliteral">&quot;my/device/01&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>g1-&gt;add(g2);</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>g1-&gt;add(</highlight><highlight class="stringliteral">&quot;my/device/03&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>g1-&gt;add(g3);</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>g1-&gt;add(</highlight><highlight class="stringliteral">&quot;my/device/02&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal">*<sp/></highlight></codeline>
+</programlisting> The returned vector content depends on the value of the forward option. If set to true, the results will be organized as follows: <programlisting><codeline><highlight class="normal">*<sp/>std::vector&lt;std::string&gt;<sp/>dl<sp/>=<sp/>g1-&gt;get_device_list(</highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal">*<sp/></highlight></codeline>
+</programlisting> dl[0] contains &quot;my/device/01&quot; which belongs to g1 <linebreak/>
+ dl[1] contains &quot;my/device/04&quot; which belongs to g1.g2 <linebreak/>
+ dl[2] contains &quot;my/device/05&quot; which belongs to g1.g2 <linebreak/>
+ dl[3] contains &quot;my/device/03&quot; which belongs to g1 <linebreak/>
+ dl[4] contains &quot;my/device/06&quot; which belongs to g1.g3 <linebreak/>
+ dl[5] contains &quot;my/device/08&quot; which belongs to g1.g3.g4 <linebreak/>
+ dl[6] contains &quot;my/device/09&quot; which belongs to g1.g3.g4 <linebreak/>
+ dl[7] contains &quot;my/device/07&quot; which belongs to g1.g3 <linebreak/>
+ dl[8] contains &quot;my/device/02&quot; which belongs to g1 <linebreak/>
+ <linebreak/>
+ If the forward option is set to false, the results are: <programlisting><codeline><highlight class="normal">*<sp/>std::vector&lt;std::string&gt;<sp/>dl<sp/>=<sp/>g1-&gt;get_device_list(</highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal">*<sp/></highlight></codeline>
+</programlisting> dl[0] contains &quot;my/device/01&quot; which belongs to g1 <linebreak/>
+ dl[1] contains &quot;my/device/03&quot; which belongs to g1 <linebreak/>
+ dl[2] contains &quot;my/device/02&quot; which belongs to g1</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fwd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The forward flag </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>group size </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="1044" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>a la Deviceproxy interface</header>
+      <memberdef kind="function" id="d4/d6d/classTango_1_1Group_1aa7cd5c6f1be1a85c244c7a4ec99081ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>virtual bool Tango::Group::ping</definition>
+        <argsstring>(bool fwd=true)</argsstring>
+        <name>ping</name>
+        <reimplements refid="df/d46/classTango_1_1GroupElement_1ab004b0e82f6a7cd7db714ca42b3b1d8a">ping</reimplements>
+        <param>
+          <type>bool</type>
+          <declname>fwd</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+<para>Ping all devices in a group. </para>        </briefdescription>
+        <detaileddescription>
+<para>Ping all devices in a group. This method returns true if all devices in the group are alive, false otherwise. If fwd is set to true (the default), the request is also forwarded to subgroups. Otherwise, it is only applied to the local set of devices.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fwd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The forward flag </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if all devices are alive </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="1081" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d6d/classTango_1_1Group_1a92242b89511557c3296480ee19b790b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Tango::Group::set_timeout_millis</definition>
+        <argsstring>(int tmo_ms)</argsstring>
+        <name>set_timeout_millis</name>
+        <reimplements refid="df/d46/classTango_1_1GroupElement_1aa4ed03d3347901cecadbeff4c9b465a3">set_timeout_millis</reimplements>
+        <param>
+          <type>int</type>
+          <declname>tmo_ms</declname>
+        </param>
+        <briefdescription>
+<para>Set client side timeout for all devices in the group. </para>        </briefdescription>
+        <detaileddescription>
+<para>Set client side timeout for all devices composing the group in milliseconds. Any method which takes longer than this time to execute will throw an exception.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">tmo_ms</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The timeout value </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="1090" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d6d/classTango_1_1Group_1a8511861bcd0723b9e726e2bfaac6de3a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d8/d3d/classTango_1_1GroupCmdReplyList" kindref="compound">GroupCmdReplyList</ref></type>
+        <definition>GroupCmdReplyList Tango::Group::command_inout</definition>
+        <argsstring>(const std::string &amp;c, bool fwd=true)</argsstring>
+        <name>command_inout</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>c</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>fwd</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+<para>Executes a <ref refid="de/ddf/namespaceTango" kindref="compound">Tango</ref> command on a group. </para>        </briefdescription>
+        <detaileddescription>
+<para>Executes a <ref refid="de/ddf/namespaceTango" kindref="compound">Tango</ref> command on a group. This method is synchronous and does not return until replies are obtained or timeouts occurred. The parameter c is the name of the command. If fwd is set to true (the default), the request is also forwarded to subgroups. Otherwise, it is only applied to the local set of devices. <ref refid="d2/d1d/classTango_1_1Command" kindref="compound">Command</ref> results are returned in a <ref refid="d8/d3d/classTango_1_1GroupCmdReplyList" kindref="compound">GroupCmdReplyList</ref>. See Obtaining command result for details (Chapter 4.7.3.1 in <ulink url="http://www.esrf.eu/computing/cs/tango/tango_doc/kernel_doc/ds_prog/index.html">Tango book</ulink>). See also Case 1 of executing a command (Chapter 4.7.3.2 in <ulink url="http://www.esrf.eu/computing/cs/tango/tango_doc/kernel_doc/ds_prog/index.html">Tango book</ulink>) for an example.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The command name </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">fwd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The forward flag </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The group command result </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="1110" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d6d/classTango_1_1Group_1ab02f116ab2fcaed5850b0301dd8095a7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d8/d3d/classTango_1_1GroupCmdReplyList" kindref="compound">GroupCmdReplyList</ref></type>
+        <definition>GroupCmdReplyList Tango::Group::command_inout</definition>
+        <argsstring>(const std::string &amp;c, const DeviceData &amp;d, bool fwd=true)</argsstring>
+        <name>command_inout</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>c</declname>
+        </param>
+        <param>
+          <type>const DeviceData &amp;</type>
+          <declname>d</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>fwd</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+<para>Executes a <ref refid="de/ddf/namespaceTango" kindref="compound">Tango</ref> command with the same input data on a group. </para>        </briefdescription>
+        <detaileddescription>
+<para>Executes a <ref refid="de/ddf/namespaceTango" kindref="compound">Tango</ref> command on each device in the group. This method is synchronous and does not return until replies are obtained or timeouts occurred. The parameter c is the name of the command. The second parameter d is a <ref refid="de/ddf/namespaceTango" kindref="compound">Tango</ref> generic container for command carrying the command argument. See the Tango::DeviceData documentation. If fwd is set to true (the default), the request is also forwarded to subgroups. Otherwise, it is only applied to the local set of devices. <ref refid="d2/d1d/classTango_1_1Command" kindref="compound">Command</ref> results are returned in a <ref refid="d8/d3d/classTango_1_1GroupCmdReplyList" kindref="compound">GroupCmdReplyList</ref>. See Obtaining command results (Chapter 4.7.3.1 in <ulink url="http://www.esrf.eu/computing/cs/tango/tango_doc/kernel_doc/ds_prog/index.html">Tango book</ulink>) for details. See also Case 2 of executing a command (Chapter 4.7.3.4 in <ulink url="http://www.esrf.eu/computing/cs/tango/tango_doc/kernel_doc/ds_prog/index.html">Tango book</ulink>) for an example.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The command name </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">d</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The command data </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">fwd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The forward flag </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The group command result </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="1131" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d6d/classTango_1_1Group_1ae50c9d4d35e13d374dfc22afb6f6ab01" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d8/d3d/classTango_1_1GroupCmdReplyList" kindref="compound">GroupCmdReplyList</ref></type>
+        <definition>GroupCmdReplyList Tango::Group::command_inout</definition>
+        <argsstring>(const std::string &amp;c, const std::vector&lt; DeviceData &gt; &amp;d, bool fwd=true)</argsstring>
+        <name>command_inout</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>c</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; DeviceData &gt; &amp;</type>
+          <declname>d</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>fwd</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+<para>Executes a <ref refid="de/ddf/namespaceTango" kindref="compound">Tango</ref> command with the different input data on a group (Using DeviceData class instances) </para>        </briefdescription>
+        <detaileddescription>
+<para>Executes a <ref refid="de/ddf/namespaceTango" kindref="compound">Tango</ref> command on each device in the group. This method is synchronous and does not return until replies are obtained or timeouts occurred. This implementation of command_inout allows passing a specific input argument to each device in the group. In order to use this form of command_inout, the user must have an &quot;a priori&quot; and &quot;perfect&quot; knowledge of the devices order in the group. <linebreak/>
+ The parameter c is the name of the command. The std::vector d contains a specific argument value for each device in the group. Its size must equal Group::get_size(fwd). Otherwise, an exception is thrown. The order of the argument values must follows the order of the devices in the group (d[0] =&gt; 1st device, d[1] =&gt; 2nd device and so on). If fwd is set to true (the default), the request is also forwarded to subgroups. Otherwise, it is only applied to the local set of devices. <ref refid="d2/d1d/classTango_1_1Command" kindref="compound">Command</ref> results are returned in a <ref refid="d8/d3d/classTango_1_1GroupCmdReplyList" kindref="compound">GroupCmdReplyList</ref>. See Obtaining command results (Chpater 4.7.3.1 in <ulink url="http://www.esrf.eu/computing/cs/tango/tango_doc/kernel_doc/ds_prog/index.html">Tango book</ulink>) for details. See also Case 3 of executing a command (Chapter 4.7.3.5 in <ulink url="http://www.esrf.eu/computing/cs/tango/tango_doc/kernel_doc/ds_prog/index.html">Tango book</ulink>) for an example of this special form of command_inout.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The command name </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">d</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The command data </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">fwd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The forward flag </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The group command result </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="1157" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d6d/classTango_1_1Group_1ad54f51f9f9bbac8ad686199245274bbf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="d8/d3d/classTango_1_1GroupCmdReplyList" kindref="compound">GroupCmdReplyList</ref></type>
+        <definition>GroupCmdReplyList Tango::Group::command_inout</definition>
+        <argsstring>(const std::string &amp;c, const std::vector&lt; T &gt; &amp;d, bool fwd=true)</argsstring>
+        <name>command_inout</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>c</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; T &gt; &amp;</type>
+          <declname>d</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>fwd</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+<para>Executes a <ref refid="de/ddf/namespaceTango" kindref="compound">Tango</ref> command with the different input data on a group. </para>        </briefdescription>
+        <detaileddescription>
+<para>Executes a <ref refid="de/ddf/namespaceTango" kindref="compound">Tango</ref> command on each device in the group. This method is synchronous and does not return until replies are obtained or timeouts occurred. This implementation of command_inout allows passing a specific input argument to each device in the group. In order to use this form of command_inout, the user must have an &quot;a priori&quot; and &quot;perfect&quot; knowledge of the devices order in the group. <linebreak/>
+ The parameter c is the name of the command. The std::vector d contains a specific argument value for each device in the group. Since this method is a template, d is able to contain any <ref refid="de/ddf/namespaceTango" kindref="compound">Tango</ref> command argument type. Its size must equal Group::get_size(fwd). Otherwise, an exception is thrown. The order of the argument values must follows the order of the devices in the group (d[0] =&gt; 1st device, d[1] =&gt; 2nd device and so on). If fwd is set to true (the default), the request is also forwarded to subgroups. Otherwise, it is only applied to the local set of devices. <ref refid="d2/d1d/classTango_1_1Command" kindref="compound">Command</ref> results are returned in a <ref refid="d8/d3d/classTango_1_1GroupCmdReplyList" kindref="compound">GroupCmdReplyList</ref>. See Obtaining command results (Chpater 4.7.3.1 in <ulink url="http://www.esrf.eu/computing/cs/tango/tango_doc/kernel_doc/ds_prog/index.html">Tango book</ulink>) for details. See also Case 3 of executing a command (Chapter 4.7.3.5 in <ulink url="http://www.esrf.eu/computing/cs/tango/tango_doc/kernel_doc/ds_prog/index.html">Tango book</ulink>) for an example of this special form of command_inout.</para><para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The command input data type </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The command name </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">d</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The command data </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">fwd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The forward flag </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The group command result </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="1185" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/group.h" bodystart="1841" bodyend="1845"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d6d/classTango_1_1Group_1a53d95994ae0c6e3836e33f8acef6a038" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long Tango::Group::command_inout_asynch</definition>
+        <argsstring>(const std::string &amp;c, bool fgt=false, bool fwd=true)</argsstring>
+        <name>command_inout_asynch</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>c</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>fgt</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>fwd</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+<para>Executes a <ref refid="de/ddf/namespaceTango" kindref="compound">Tango</ref> command on each device in the group asynchronously. </para>        </briefdescription>
+        <detaileddescription>
+<para>Executes a <ref refid="de/ddf/namespaceTango" kindref="compound">Tango</ref> command on each device in the group asynchronously. The method sends the request to all devices and returns immediately. Pass the returned request id to <ref refid="d4/d6d/classTango_1_1Group_1abed06d2a84d479a13c2e98781af748e8" kindref="member">Group::command_inout_reply()</ref> to obtain the results. The parameter c is the name of the command. The parameter fgt is a fire and forget flag. If set to true, it means that no reply is expected (i.e. the caller does not care about it and will not even try to get it). A false default value is provided. If the parameter fwd is set to true (the default) request is forwarded to subgroups. Otherwise, it is only applied to the local set of devices. See Case 1 of Executing a command (Chapter 4.7.3.2 in <ulink url="http://www.esrf.eu/computing/cs/tango/tango_doc/kernel_doc/ds_prog/index.html">Tango book</ulink>) for an example.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The command name </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">fgt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The command data </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">fwd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The forward flag </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The call identifier </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="1205" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d6d/classTango_1_1Group_1a2bd15b110efd88ffa47233ba4244a273" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long Tango::Group::command_inout_asynch</definition>
+        <argsstring>(const std::string &amp;c, const DeviceData &amp;d, bool fgt=false, bool fwd=true)</argsstring>
+        <name>command_inout_asynch</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>c</declname>
+        </param>
+        <param>
+          <type>const DeviceData &amp;</type>
+          <declname>d</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>fgt</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>fwd</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+<para>Executes a <ref refid="de/ddf/namespaceTango" kindref="compound">Tango</ref> command with same input data on each device in the group asynchronously. </para>        </briefdescription>
+        <detaileddescription>
+<para>Executes a <ref refid="de/ddf/namespaceTango" kindref="compound">Tango</ref> command on each device in the group asynchronously. The method sends the request to all devices and returns immediately. Pass the returned request id to <ref refid="d4/d6d/classTango_1_1Group_1abed06d2a84d479a13c2e98781af748e8" kindref="member">Group::command_inout_reply()</ref> to obtain the results. The parameter c is the name of the command. The second parameter d is a <ref refid="de/ddf/namespaceTango" kindref="compound">Tango</ref> generic container for command carrying the command argument. See the Tango::DeviceData documentation for details. The parameter fgt is a fire and forget flag. If set to true, it means that no reply is expected (i.e. the caller does not care about it and will not even try to get it). A false default value is provided. If the parameter fwd is set to true (the default) request is forwarded to subgroups. Otherwise, it is only applied to the local set of devices. See Case 2 of Executing a command (Chapter 4.7.3.4 in <ulink url="http://www.esrf.eu/computing/cs/tango/tango_doc/kernel_doc/ds_prog/index.html">Tango book</ulink>) for an example.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The command name </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">d</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The command input data </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">fgt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The command data </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">fwd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The forward flag </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The call identifier </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="1228" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d6d/classTango_1_1Group_1a592a4fbe47296a6b27a142a38bbde6e8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long Tango::Group::command_inout_asynch</definition>
+        <argsstring>(const std::string &amp;c, const std::vector&lt; DeviceData &gt; &amp;d, bool fgt=false, bool fwd=true)</argsstring>
+        <name>command_inout_asynch</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>c</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; DeviceData &gt; &amp;</type>
+          <declname>d</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>fgt</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>fwd</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+<para>Executes a <ref refid="de/ddf/namespaceTango" kindref="compound">Tango</ref> command with different input data (using DeviceData object) on each device in the group asynchronously. </para>        </briefdescription>
+        <detaileddescription>
+<para>Executes a <ref refid="de/ddf/namespaceTango" kindref="compound">Tango</ref> command on each device in the group asynchronously. The method send the request to all devices and return immediately. Pass the returned request id to <ref refid="d4/d6d/classTango_1_1Group_1abed06d2a84d479a13c2e98781af748e8" kindref="member">Group::command_inout_reply</ref> to obtain the results. This implementation of command_inout allows passing a specific input argument to each device in the group. In order to use this form of command_inout_asynch, the user must have an &quot;a priori&quot; and &quot;perfect&quot; knowledge of the devices order in the group. The parameter c is the name of the command. The std::vector d contains a specific argument value for each device in the group. Its size must equal Group::get_size(fwd). Otherwise, an exception is thrown. The order of the argument values must follows the order of the devices in the group (d[0] =&gt; 1st device, d[1] =&gt; 2nd device and so on). The parameter fgt is a fire and forget flag. If set to true, it means that no reply is expected (i.e. the caller does not care about it and will not even try to get it). A false default value is provided. If fwd is set to true (the default), the request is also forwarded to subgroups. Otherwise, it is only applied to the local set of devices. See Case 3 of Executing a command (Chapter 4.7.3.5 in <ulink url="http://www.esrf.eu/computing/cs/tango/tango_doc/kernel_doc/ds_prog/index.html">Tango book</ulink>) for an example of this special form of command_inout.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The command name </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">d</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The command input data </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">fgt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The command data </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">fwd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The forward flag </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The call identifier </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="1255" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d6d/classTango_1_1Group_1a17b53cb8fb55e3b96d056cb9971aaab4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>long</type>
+        <definition>long Tango::Group::command_inout_asynch</definition>
+        <argsstring>(const std::string &amp;c, const std::vector&lt; T &gt; &amp;d, bool fgt=false, bool fwd=true)</argsstring>
+        <name>command_inout_asynch</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>c</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; T &gt; &amp;</type>
+          <declname>d</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>fgt</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>fwd</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+<para>Executes a <ref refid="de/ddf/namespaceTango" kindref="compound">Tango</ref> command with different input data on each device in the group asynchronously. </para>        </briefdescription>
+        <detaileddescription>
+<para>Executes a <ref refid="de/ddf/namespaceTango" kindref="compound">Tango</ref> command on each device in the group asynchronously. The method send the request to all devices and return immediately. Pass the returned request id to <ref refid="d4/d6d/classTango_1_1Group_1abed06d2a84d479a13c2e98781af748e8" kindref="member">Group::command_inout_reply</ref> to obtain the results. This implementation of command_inout allows passing a specific input argument to each device in the group. In order to use this form of command_inout_asynch, the user must have an &quot;a priori&quot; and &quot;perfect&quot; knowledge of the devices order in the group. The parameter c is the name of the command. The std::vector d contains a specific argument value for each device in the group. Since it&apos;s a template data type, d is able to contain any <ref refid="de/ddf/namespaceTango" kindref="compound">Tango</ref> command argument type. Its size must equal Group::get_size(fwd). Otherwise, an exception is thrown. The order of the argument values must follows the order of the devices in the group (d[0] =&gt; 1st device, d[1] =&gt; 2nd device and so on). The parameter fgt is a fire and forget flag. If set to true, it means that no reply is expected (i.e. the caller does not care about it and will not even try to get it). A false default value is provided. If fwd is set to true (the default), the request is also forwarded to subgroups. Otherwise, it is only applied to the local set of devices. See Case 3 of Executing a command (Chapter 4.7.3.5 in <ulink url="http://www.esrf.eu/computing/cs/tango/tango_doc/kernel_doc/ds_prog/index.html">Tango book</ulink>) for an example of this special form of command_inout.</para><para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The command input data type </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The command name </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">d</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The command input data </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">fgt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The command data </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">fwd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The forward flag </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The call identifier </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="1284" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/group.h" bodystart="1851" bodyend="1854"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d6d/classTango_1_1Group_1abed06d2a84d479a13c2e98781af748e8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d8/d3d/classTango_1_1GroupCmdReplyList" kindref="compound">GroupCmdReplyList</ref></type>
+        <definition>GroupCmdReplyList Tango::Group::command_inout_reply</definition>
+        <argsstring>(long req_id, long tmo_ms=0)</argsstring>
+        <name>command_inout_reply</name>
+        <param>
+          <type>long</type>
+          <declname>req_id</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>tmo_ms</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>Returns the results of an asynchronous command. </para>        </briefdescription>
+        <detaileddescription>
+<para>Returns the results of an asynchronous command. The first parameter req_id is a request identifier previously returned by one of the command_inout_asynch methods. For each device in the hierarchy, if the command result is not yet available, command_inout_replywait timeout_ms milliseconds before throwing an exception. This exception will be part of the global reply. If timeout_ms is set to 0, command_inout_reply waits &quot;indefinitely&quot;. <ref refid="d2/d1d/classTango_1_1Command" kindref="compound">Command</ref> results are returned in a <ref refid="d8/d3d/classTango_1_1GroupCmdReplyList" kindref="compound">GroupCmdReplyList</ref>. See Obtaining command results (Chapter 4.7.3.1 in <ulink url="http://www.esrf.eu/computing/cs/tango/tango_doc/kernel_doc/ds_prog/index.html">Tango book</ulink>) for details.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">req_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The request identifier </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">tmo_ms</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The timeout value </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The group command result </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="1302" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d6d/classTango_1_1Group_1a3c584b30ee4e69eed2de59cb548c4134" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="db/daa/classTango_1_1GroupAttrReplyList" kindref="compound">GroupAttrReplyList</ref></type>
+        <definition>GroupAttrReplyList Tango::Group::read_attribute</definition>
+        <argsstring>(const std::string &amp;a, bool fwd=true)</argsstring>
+        <name>read_attribute</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>fwd</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+<para>Reads an attribute on each device in the group. </para>        </briefdescription>
+        <detaileddescription>
+<para>Reads an attribute on each device in the group. This method is synchronous and does not return until replies are obtained or timeouts occurred. The parameter a is the name of the attribute to read. If fwd is set to true (the default) request is forwarded to subgroups. Otherwise, it is only applied to the local set of devices. <ref refid="d6/dad/classTango_1_1Attribute" kindref="compound">Attribute</ref> values are returned in a <ref refid="db/daa/classTango_1_1GroupAttrReplyList" kindref="compound">GroupAttrReplyList</ref>. See Obtaining attribute values (Chapter 4.7.4.1 in <ulink url="http://www.esrf.eu/computing/cs/tango/tango_doc/kernel_doc/ds_prog/index.html">Tango book</ulink>) for details. See also Reading an attribute (Chapter 4.7.4 in <ulink url="http://www.esrf.eu/computing/cs/tango/tango_doc/kernel_doc/ds_prog/index.html">Tango book</ulink>) for an example.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute name </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">fwd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The forward flag </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The group attribute data </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="1323" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d6d/classTango_1_1Group_1ab4088df9970f1f1c7d6ae8c29563369f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="db/daa/classTango_1_1GroupAttrReplyList" kindref="compound">GroupAttrReplyList</ref></type>
+        <definition>GroupAttrReplyList Tango::Group::read_attributes</definition>
+        <argsstring>(const std::vector&lt; std::string &gt; &amp;al, bool fwd=true)</argsstring>
+        <name>read_attributes</name>
+        <param>
+          <type>const std::vector&lt; std::string &gt; &amp;</type>
+          <declname>al</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>fwd</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+<para>Reads several attributes on each device in the group. </para>        </briefdescription>
+        <detaileddescription>
+<para>Reads several attributes on each device in the group. This method is synchronous and does not return until replies are obtained or timeouts occurred. The parameter al is the list of attributes to be read. If fwd is set to true (the default) request is forwarded to subgroups. Otherwise, it is only applied to the local set of devices. <ref refid="d6/dad/classTango_1_1Attribute" kindref="compound">Attribute</ref> values are returned in a <ref refid="db/daa/classTango_1_1GroupAttrReplyList" kindref="compound">GroupAttrReplyList</ref>. See Obtaining attribute values (Chapter 4.7.4.1 in <ulink url="http://www.esrf.eu/computing/cs/tango/tango_doc/kernel_doc/ds_prog/index.html">Tango book</ulink>) for details. See also Reading an attribute (Chapter 4.7.4 in <ulink url="http://www.esrf.eu/computing/cs/tango/tango_doc/kernel_doc/ds_prog/index.html">Tango book</ulink>) for an example.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">al</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute name list </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">fwd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The forward flag </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The group attribute data </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="1341" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d6d/classTango_1_1Group_1a08fa50b55ebad69d6fd819f658703997" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long Tango::Group::read_attribute_asynch</definition>
+        <argsstring>(const std::string &amp;a, bool fwd=true)</argsstring>
+        <name>read_attribute_asynch</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>fwd</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+<para>Reads an attribute on each device in the group asynchronously. </para>        </briefdescription>
+        <detaileddescription>
+<para>Reads an attribute on each device in the group asynchronously. The method sends the request to all devices and returns immediately. Pass the returned request id to <ref refid="d4/d6d/classTango_1_1Group_1a9c580ba756e84843f29e126efb8c1986" kindref="member">Group::read_attribute_reply()</ref> to obtain the results. The parameter a is the name of the attribute to read. If fwd is set to true (the default) request is forwarded to subgroups. Otherwise, it is only applied to the local set of devices. The last parameter (rsv) is reserved for internal purpose and should not be modify. It may disappear in a near future. See Reading an attribute (Chapter 4.7.4 in <ulink url="http://www.esrf.eu/computing/cs/tango/tango_doc/kernel_doc/ds_prog/index.html">Tango book</ulink>) for an example.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute name </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">fwd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The forward flag </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The call identifier </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="1358" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d6d/classTango_1_1Group_1a9431b4c0673e3824c31b00028e894d31" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long Tango::Group::read_attributes_asynch</definition>
+        <argsstring>(const std::vector&lt; std::string &gt; &amp;al, bool fwd=true)</argsstring>
+        <name>read_attributes_asynch</name>
+        <param>
+          <type>const std::vector&lt; std::string &gt; &amp;</type>
+          <declname>al</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>fwd</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+<para>Reads several attributes on each device in the group asynchronously. </para>        </briefdescription>
+        <detaileddescription>
+<para>Reads several attribute on each device in the group asynchronously. The method sends the request to all devices and returns immediately. Pass the returned request id to <ref refid="d4/d6d/classTango_1_1Group_1a9c580ba756e84843f29e126efb8c1986" kindref="member">Group::read_attribute_reply()</ref> to obtain the results. The parameter a is the name of the attribute to read. If fwd is set to true (the default) request is forwarded to subgroups. Otherwise, it is only applied to the local set of devices. The last parameter (rsv) is reserved for internal purpose and should not be modify. It may disappear in a near future. See Reading an attribute (Chapter 4.7.4 in <ulink url="http://www.esrf.eu/computing/cs/tango/tango_doc/kernel_doc/ds_prog/index.html">Tango book</ulink>) for an example.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">al</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute name list </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">fwd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The forward flag </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The call identifier </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="1375" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d6d/classTango_1_1Group_1a9c580ba756e84843f29e126efb8c1986" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="db/daa/classTango_1_1GroupAttrReplyList" kindref="compound">GroupAttrReplyList</ref></type>
+        <definition>GroupAttrReplyList Tango::Group::read_attribute_reply</definition>
+        <argsstring>(long req_id, long tmo_ms=0)</argsstring>
+        <name>read_attribute_reply</name>
+        <param>
+          <type>long</type>
+          <declname>req_id</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>tmo_ms</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>Returns the results of an asynchronous attribute reading. </para>        </briefdescription>
+        <detaileddescription>
+<para>Returns the results of an asynchronous attribute reading. The first parameter req_id is a request identifier previously returned by read_attribute_asynch. For each device in the hierarchy, if the attribute value is not yet available, read_attribute_reply wait timeout_ms milliseconds before throwing an exception. This exception will be part of the global reply. If timeout_ms is set to 0, read_attribute_reply waits &quot;indefinitely&quot;. Replies are returned in a <ref refid="db/daa/classTango_1_1GroupAttrReplyList" kindref="compound">GroupAttrReplyList</ref>. See Obtaining attribute values (Chapter 4.7.4.1 in <ulink url="http://www.esrf.eu/computing/cs/tango/tango_doc/kernel_doc/ds_prog/index.html">Tango book</ulink>) for details</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">req_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute name list </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">tmo_ms</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The timeout value </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The group attribute data </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="1391" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d6d/classTango_1_1Group_1ab1a83261058e5c52803e502c01380b79" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="db/daa/classTango_1_1GroupAttrReplyList" kindref="compound">GroupAttrReplyList</ref></type>
+        <definition>GroupAttrReplyList Tango::Group::read_attributes_reply</definition>
+        <argsstring>(long req_id, long tmo_ms=0)</argsstring>
+        <name>read_attributes_reply</name>
+        <param>
+          <type>long</type>
+          <declname>req_id</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>tmo_ms</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>Returns the results of an asynchronous attributes reading. </para>        </briefdescription>
+        <detaileddescription>
+<para>Returns the results of an asynchronous attributes reading. The first parameter req_id is a request identifier previously returned by read_attribute_asynch. For each device in the hierarchy, if the attribute value is not yet available, read_attribute_reply wait timeout_ms milliseconds before throwing an exception. This exception will be part of the global reply. If timeout_ms is set to 0, read_attribute_reply waits &quot;indefinitely&quot;. Replies are returned in a <ref refid="db/daa/classTango_1_1GroupAttrReplyList" kindref="compound">GroupAttrReplyList</ref>. See Obtaining attribute values (Chapter 4.7.4.1 in <ulink url="http://www.esrf.eu/computing/cs/tango/tango_doc/kernel_doc/ds_prog/index.html">Tango book</ulink>) for details</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">req_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute name list </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">tmo_ms</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The timeout value </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The group attribute data </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="1407" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d6d/classTango_1_1Group_1a64da6f972d7dca15b192c66226e3d4c7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="dc/d11/classTango_1_1GroupReplyList" kindref="compound">GroupReplyList</ref></type>
+        <definition>GroupReplyList Tango::Group::write_attribute</definition>
+        <argsstring>(const DeviceAttribute &amp;d, bool fwd=true)</argsstring>
+        <name>write_attribute</name>
+        <param>
+          <type>const DeviceAttribute &amp;</type>
+          <declname>d</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>fwd</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+<para>Writes an attribute on each device in the group. </para>        </briefdescription>
+        <detaileddescription>
+<para>Writes an attribute on each device in the group. This method is synchronous and does not return until acknowledgements are obtained or timeouts occurred. The first parameter d is a <ref refid="de/ddf/namespaceTango" kindref="compound">Tango</ref> generic container for attribute carrying both the attribute name and the value. See the Tango::DeviceAttribute documentation for details. If fwd is set to true (the default) request is forwarded to subgroups. Otherwise, it is only applied to the local set of devices. Acknowledgements are returned in a <ref refid="dc/d11/classTango_1_1GroupReplyList" kindref="compound">GroupReplyList</ref>. See Obtaining acknowledgements (Chapter 4.7.5.1 in <ulink url="http://www.esrf.eu/computing/cs/tango/tango_doc/kernel_doc/ds_prog/index.html">Tango book</ulink>) for details. See also Case 1 of Writing an attribute (Chapter 4.7.5.2 in <ulink url="http://www.esrf.eu/computing/cs/tango/tango_doc/kernel_doc/ds_prog/index.html">Tango book</ulink>) for an example.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">d</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute name and value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">fwd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The forward flag </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The group reply </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="1429" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d6d/classTango_1_1Group_1ac05e427721de6903871b6c2dc505dec7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="dc/d11/classTango_1_1GroupReplyList" kindref="compound">GroupReplyList</ref></type>
+        <definition>GroupReplyList Tango::Group::write_attribute</definition>
+        <argsstring>(const std::vector&lt; DeviceAttribute &gt; &amp;d, bool fwd=true)</argsstring>
+        <name>write_attribute</name>
+        <param>
+          <type>const std::vector&lt; DeviceAttribute &gt; &amp;</type>
+          <declname>d</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>fwd</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+<para>Writes several attributes on each device in the group (using DeviceAttribute) </para>        </briefdescription>
+        <detaileddescription>
+<para>Writes several attributes on each device in the group. This method is synchronous and does not return until acknowledgements are obtained or timeouts occurred. The first parameter d is a vector of <ref refid="de/ddf/namespaceTango" kindref="compound">Tango</ref> generic container for attribute carrying both the attribute name and the value. See the Tango::DeviceAttribute documentation for details. If fwd is set to true (the default) request is forwarded to subgroups. Otherwise, it is only applied to the local set of devices. Acknowledgements are returned in a <ref refid="dc/d11/classTango_1_1GroupReplyList" kindref="compound">GroupReplyList</ref>. See Obtaining acknowledgements (Chapter 4.7.5.1 in <ulink url="http://www.esrf.eu/computing/cs/tango/tango_doc/kernel_doc/ds_prog/index.html">Tango book</ulink>) for details. See also Case 2 of Writing an attribute (Chapter 4.7.5.3 in <ulink url="http://www.esrf.eu/computing/cs/tango/tango_doc/kernel_doc/ds_prog/index.html">Tango book</ulink>) for an example.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">d</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute names and values </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">fwd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The forward flag </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The group reply </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="1448" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d6d/classTango_1_1Group_1a5b513a1564a1a4f9e5482dfcef528d0c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="dc/d11/classTango_1_1GroupReplyList" kindref="compound">GroupReplyList</ref></type>
+        <definition>GroupReplyList Tango::Group::write_attribute</definition>
+        <argsstring>(const std::string &amp;n, const std::vector&lt; T &gt; &amp;d, bool fwd=true)</argsstring>
+        <name>write_attribute</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; T &gt; &amp;</type>
+          <declname>d</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>fwd</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+<para>Writes one attributes on each device in the group with specific value per device. </para>        </briefdescription>
+        <detaileddescription>
+<para>Writes an attribute on each device in the group. This method is synchronous and does not return until replies are obtained or timeouts occurred. This implementation of write_attribute allows writing a specific value to each device in the group. In order to use this form of write_attribute, the user must have an &quot;a priori&quot; and &quot;perfect&quot; knowledge of the devices order in the group. The parameter a is the name of the attribute. The std::vector d contains a specific value for each device in the group. Since this method is a template, d is able to contain any <ref refid="de/ddf/namespaceTango" kindref="compound">Tango</ref> attribute type. Its size must equal Group::get_size(fwd). Otherwise, an exception is thrown. The order of the attribute values must follows the order of the devices in the group (d[0] =&gt; 1st device, d[1] =&gt; 2nd device and so on). If fwd is set to true (the default) request is forwarded to subgroups. Otherwise, it is only applied to the local set of devices. Acknowledgements are returned in a <ref refid="dc/d11/classTango_1_1GroupReplyList" kindref="compound">GroupReplyList</ref>. See Obtaining acknowledgements (Chapter 4.7.5.1 in <ulink url="http://www.esrf.eu/computing/cs/tango/tango_doc/kernel_doc/ds_prog/index.html">Tango book</ulink>) for details. See also Case 2 of Writing an attribute (Chapter 4.7.5.3 in <ulink url="http://www.esrf.eu/computing/cs/tango/tango_doc/kernel_doc/ds_prog/index.html">Tango book</ulink>) for an example.</para><para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute data type </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">n</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute name </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">d</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute names and values </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">fwd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The forward flag </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The group reply </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="1475" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/group.h" bodystart="1914" bodyend="1918"/>
+        <references refid="d4/d6d/classTango_1_1Group_1aa300f78715baea10d390b7e7489e0506">write_attribute_reply</references>
+      </memberdef>
+      <memberdef kind="function" id="d4/d6d/classTango_1_1Group_1a2ead1c134a086855da1e809aa8f13d03" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long Tango::Group::write_attribute_asynch</definition>
+        <argsstring>(const DeviceAttribute &amp;d, bool fwd=true)</argsstring>
+        <name>write_attribute_asynch</name>
+        <param>
+          <type>const DeviceAttribute &amp;</type>
+          <declname>d</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>fwd</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+<para>Writes an attribute on each device in the group asynchronously. </para>        </briefdescription>
+        <detaileddescription>
+<para>Write an attribute on each device in the group asynchronously. The method sends the request to all devices and returns immediately. Pass the returned request id to <ref refid="d4/d6d/classTango_1_1Group_1aa300f78715baea10d390b7e7489e0506" kindref="member">Group::write_attribute_reply()</ref> to obtain the acknowledgements. The first parameter d is a <ref refid="de/ddf/namespaceTango" kindref="compound">Tango</ref> generic container for attribute carrying both the attribute name and the value. See the Tango::DeviceAttribute documentation for details. If fwd is set to true (the default) request is forwarded to subgroups. Otherwise, it is only applied to the local set of devices. See Case 1 of Writing an attribute (Chapter 4.7.5.2 in <ulink url="http://www.esrf.eu/computing/cs/tango/tango_doc/kernel_doc/ds_prog/index.html">Tango book</ulink>) for an example.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">d</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute name and value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">fwd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The forward flag </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The call identifier </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="1493" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d6d/classTango_1_1Group_1a2edbe29d80b0c686840c01bac7304197" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long Tango::Group::write_attribute_asynch</definition>
+        <argsstring>(const std::vector&lt; DeviceAttribute &gt; &amp;d, bool fwd=true)</argsstring>
+        <name>write_attribute_asynch</name>
+        <param>
+          <type>const std::vector&lt; DeviceAttribute &gt; &amp;</type>
+          <declname>d</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>fwd</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+<para>Writes several attributes on each device in the group asynchronously. </para>        </briefdescription>
+        <detaileddescription>
+<para>Write several attributes on each device in the group asynchronously. The method sends the request to all devices and returns immediately. Pass the returned request id to <ref refid="d4/d6d/classTango_1_1Group_1aa300f78715baea10d390b7e7489e0506" kindref="member">Group::write_attribute_reply()</ref> to obtain the acknowledgements. The first parameter d is a vector of <ref refid="de/ddf/namespaceTango" kindref="compound">Tango</ref> generic container for attribute carrying both the attribute name and the value. See the Tango::DeviceAttribute documentation for details. If fwd is set to true (the default) request is forwarded to subgroups. Otherwise, it is only applied to the local set of devices. See Case 1 of Writing an attribute (Chapter 4.7.5.2 in <ulink url="http://www.esrf.eu/computing/cs/tango/tango_doc/kernel_doc/ds_prog/index.html">Tango book</ulink>) for an example.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">d</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute name and value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">fwd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The forward flag </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The call identifier </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="1511" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d6d/classTango_1_1Group_1a187f0b29e02bf82b74f21b55c4252d62" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>long</type>
+        <definition>long Tango::Group::write_attribute_asynch</definition>
+        <argsstring>(const std::string &amp;a, const std::vector&lt; T &gt; &amp;d, bool fwd=true)</argsstring>
+        <name>write_attribute_asynch</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; T &gt; &amp;</type>
+          <declname>d</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>fwd</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+<para>Writes an attribute on each device in the group asynchronously (Without DeviceAttribute data) </para>        </briefdescription>
+        <detaileddescription>
+<para>Writes an attribute on each device in the group asynchronously. The method sends the request to all devices and returns immediately. Pass the returned request id to <ref refid="d4/d6d/classTango_1_1Group_1aa300f78715baea10d390b7e7489e0506" kindref="member">Group::write_attribute_reply()</ref> to obtain the acknowledgements. This implementation of write_attribute_asynch allows writing a specific value to each device in the group. In order to use this form of write_attribute_asynch, the user must have an &quot;a priori&quot; and &quot;perfect&quot; knowledge of the devices order in the group. The parameter a is the name of the attribute. The std::vector d contains a specific value for each device in the group. Since this method is a template, d is able to contain any <ref refid="de/ddf/namespaceTango" kindref="compound">Tango</ref> attribute type. Its size must equal Group::get_size(fwd). Otherwise, an exception is thrown. The order of the attribute values must follows the order of the devices in the group (d[0] =&gt; 1st device, d[1] =&gt; 2nd device and so on). If fwd is set to true (the default) request is forwarded to subgroups. Otherwise, it is only applied to the local set of devices. See Case2 of Writing an attribute (Chapter 4.7.5.3 in <ulink url="http://www.esrf.eu/computing/cs/tango/tango_doc/kernel_doc/ds_prog/index.html">Tango book</ulink>) for an example.</para><para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute data type </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute name </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">d</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute value(s) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">fwd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The forward flag </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The call identifier </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="1536" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/group.h" bodystart="1924" bodyend="1927"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d6d/classTango_1_1Group_1aa300f78715baea10d390b7e7489e0506" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="dc/d11/classTango_1_1GroupReplyList" kindref="compound">GroupReplyList</ref></type>
+        <definition>GroupReplyList Tango::Group::write_attribute_reply</definition>
+        <argsstring>(long req_id, long tmo_ms=0)</argsstring>
+        <name>write_attribute_reply</name>
+        <param>
+          <type>long</type>
+          <declname>req_id</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>tmo_ms</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>Returns the acknowledgements of an asynchronous attribute writing. </para>        </briefdescription>
+        <detaileddescription>
+<para>Returns the acknowledgements of an asynchronous attribute writing. The first parameter req_id is a request identifier previously returned by one of the write_attribute_asynch implementation. For each device in the hierarchy, if the acknowledgement is not yet available, write_attribute_replywait timeout_ms milliseconds before throwing an exception. This exception will be part of the global reply. If timeout_ms is set to 0, write_attribute_reply waits &quot;indefinitely&quot;. Acknowledgements are returned in a <ref refid="dc/d11/classTango_1_1GroupReplyList" kindref="compound">GroupReplyList</ref>. See Obtaining acknowledgements (Chapter 4.7.5.1 in <ulink url="http://www.esrf.eu/computing/cs/tango/tango_doc/kernel_doc/ds_prog/index.html">Tango book</ulink>) for details.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">req_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The request identifier </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">tmo_ms</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The timeout value </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The attribute writing acknowledgements </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="1554" column="1"/>
+        <referencedby refid="d4/d6d/classTango_1_1Group_1a5b513a1564a1a4f9e5482dfcef528d0c" compoundref="d9/dd1/group_8h" startline="1914" endline="1918">write_attribute</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d4/d6d/classTango_1_1Group_1adc2e652ef5085af4a4b92b5be89ea144" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Tango::Group::dump</definition>
+        <argsstring>(int indent_level=0)</argsstring>
+        <name>dump</name>
+        <reimplements refid="df/d46/classTango_1_1GroupElement_1af8ebd6508a22f24c40886f97f879c54f">dump</reimplements>
+        <param>
+          <type>int</type>
+          <declname>indent_level</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="1561" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d6d/classTango_1_1Group_1a4b83d8f95cf520017b690f13db029900" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Tango::Group::dump</definition>
+        <argsstring>(TangoSys_OMemStream &amp;oms, int indent_level=0)</argsstring>
+        <name>dump</name>
+        <reimplements refid="df/d46/classTango_1_1GroupElement_1aee01792236e000e57e4725e6141a46a1">dump</reimplements>
+        <param>
+          <type>TangoSys_OMemStream &amp;</type>
+          <declname>oms</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>indent_level</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="1563" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="d4/d6d/classTango_1_1Group_1a89de9c08fc764d4589f0575b298a3e3e" prot="private" static="no">
+        <type>std::map&lt; long, bool &gt;</type>
+        <definition>typedef std::map&lt;long, bool&gt; Tango::Group::AsynchRequestDesc</definition>
+        <argsstring></argsstring>
+        <name>AsynchRequestDesc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="736" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/group.h" bodystart="736" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="d4/d6d/classTango_1_1Group_1a77176c43ec53ccf3447b707c69ee0287" prot="private" static="no">
+        <type>AsynchRequestDesc::iterator</type>
+        <definition>typedef AsynchRequestDesc::iterator Tango::Group::AsynchRequestDescIt</definition>
+        <argsstring></argsstring>
+        <name>AsynchRequestDescIt</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="737" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/group.h" bodystart="737" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="d4/d6d/classTango_1_1Group_1a1b282849e5ec7c40e5429e2699223f48" prot="private" static="no">
+        <type>AsynchRequestDesc::value_type</type>
+        <definition>typedef AsynchRequestDesc::value_type Tango::Group::AsynchRequestDescVal</definition>
+        <argsstring></argsstring>
+        <name>AsynchRequestDescVal</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="738" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/group.h" bodystart="738" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d4/d6d/classTango_1_1Group_1aeacb34fa73815437648144ea92d4cf87" prot="private" static="no" mutable="no">
+        <type>AsynchRequestDesc</type>
+        <definition>AsynchRequestDesc Tango::Group::arp</definition>
+        <argsstring></argsstring>
+        <name>arp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="1596" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/group.h" bodystart="1596" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/d6d/classTango_1_1Group_1a6992ca731d3082bbc19635ccc3535f62" prot="private" static="no" mutable="no">
+        <type>long</type>
+        <definition>long Tango::Group::asynch_req_id</definition>
+        <argsstring></argsstring>
+        <name>asynch_req_id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="1598" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/group.h" bodystart="1598" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/d6d/classTango_1_1Group_1a0fd26a0aa77741e32d49300b865d0630" prot="private" static="no" mutable="no">
+        <type><ref refid="de/ddf/namespaceTango_1ab9ef33527260f0bc7f0bf168143f55a0" kindref="member">GroupElements</ref></type>
+        <definition>GroupElements Tango::Group::elements</definition>
+        <argsstring></argsstring>
+        <name>elements</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="1594" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/group.h" bodystart="1594" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/d6d/classTango_1_1Group_1ad4ce2b1dbd6d1f3f3e74c67be776bfbd" prot="private" static="no" mutable="no">
+        <type>omni_mutex</type>
+        <definition>omni_mutex Tango::Group::elements_mutex</definition>
+        <argsstring></argsstring>
+        <name>elements_mutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="1591" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/group.h" bodystart="1591" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="d4/d6d/classTango_1_1Group_1aeebd7f4a634d89a12773b2b59910ad73" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::Group::Group</definition>
+        <argsstring>()</argsstring>
+        <name>Group</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="1601" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d6d/classTango_1_1Group_1a4ff988d79aeee38e41dfc87eb3fa5efd" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::Group::Group</definition>
+        <argsstring>(const Group &amp;)</argsstring>
+        <name>Group</name>
+        <param>
+          <type>const <ref refid="d4/d6d/classTango_1_1Group" kindref="compound">Group</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="1602" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d6d/classTango_1_1Group_1a16d66f2076e8845de1758749ab006d2e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Tango::Group::add_i</definition>
+        <argsstring>(GroupElement *e, bool fwd=true)</argsstring>
+        <name>add_i</name>
+        <param>
+          <type><ref refid="df/d46/classTango_1_1GroupElement" kindref="compound">GroupElement</ref> *</type>
+          <declname>e</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>fwd</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="1570" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d6d/classTango_1_1Group_1a1f8869a8e4708828deb0ab39369fea0b" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>long</type>
+        <definition>virtual long Tango::Group::command_inout_asynch_i</definition>
+        <argsstring>(const std::string &amp;c, bool fgt, bool fwd, long ari)</argsstring>
+        <name>command_inout_asynch_i</name>
+        <reimplements refid="df/d46/classTango_1_1GroupElement_1a95d2550a6499a998c554ccdd51ca6ca0">command_inout_asynch_i</reimplements>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>c</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>fgt</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>fwd</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>ari</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="1606" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d6d/classTango_1_1Group_1ac5c84d2f58e716b6a81ada19ef902cee" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>long</type>
+        <definition>virtual long Tango::Group::command_inout_asynch_i</definition>
+        <argsstring>(const std::string &amp;c, const DeviceData &amp;d, bool fgt, bool fwd, long ari)</argsstring>
+        <name>command_inout_asynch_i</name>
+        <reimplements refid="df/d46/classTango_1_1GroupElement_1afc7058e0b113663d697086a4db6ca702">command_inout_asynch_i</reimplements>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>c</declname>
+        </param>
+        <param>
+          <type>const DeviceData &amp;</type>
+          <declname>d</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>fgt</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>fwd</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>ari</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="1607" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d6d/classTango_1_1Group_1a644cc7fee81a400f0f0ec68f40ae610b" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>long</type>
+        <definition>virtual long Tango::Group::command_inout_asynch_i</definition>
+        <argsstring>(const std::string &amp;c, const std::vector&lt; DeviceData &gt; &amp;d, bool fgt, bool fwd, long ari)</argsstring>
+        <name>command_inout_asynch_i</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>c</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; DeviceData &gt; &amp;</type>
+          <declname>d</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>fgt</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>fwd</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>ari</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="1608" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d6d/classTango_1_1Group_1a147ed4f28e840f1974ef6d60254ce4ff" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>long</type>
+        <definition>long Tango::Group::command_inout_asynch_i</definition>
+        <argsstring>(const std::string &amp;c, std::vector&lt; T &gt; &amp;d, bool fgt, bool fwd, long ari)</argsstring>
+        <name>command_inout_asynch_i</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>c</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; T &gt; &amp;</type>
+          <declname>d</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>fgt</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>fwd</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>ari</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="1609" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/group.h" bodystart="1860" bodyend="1908"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d6d/classTango_1_1Group_1a69e596b021337bf451281be751a0cc51" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="d8/d3d/classTango_1_1GroupCmdReplyList" kindref="compound">GroupCmdReplyList</ref></type>
+        <definition>virtual GroupCmdReplyList Tango::Group::command_inout_reply_i</definition>
+        <argsstring>(long req_id, long tmo_ms)</argsstring>
+        <name>command_inout_reply_i</name>
+        <reimplements refid="df/d46/classTango_1_1GroupElement_1acb8fe1536d385484e4923a4ef1c8da68">command_inout_reply_i</reimplements>
+        <param>
+          <type>long</type>
+          <declname>req_id</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>tmo_ms</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="1610" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d6d/classTango_1_1Group_1adf197bf73fac7c2416d4b2351099b7f5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::Group::disable</definition>
+        <argsstring>(const std::string &amp;device_name, bool fwd=true)</argsstring>
+        <name>disable</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>device_name</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>fwd</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="1054" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d6d/classTango_1_1Group_1acb4b3423c404c5b64b49222dcac49b82" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::Group::enable</definition>
+        <argsstring>(const std::string &amp;device_name, bool fwd=true)</argsstring>
+        <name>enable</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>device_name</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>fwd</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="1052" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d6d/classTango_1_1Group_1ad8a40746a11da5ad8d4fc65c1746ee5c" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="df/d46/classTango_1_1GroupElement" kindref="compound">GroupElement</ref> *</type>
+        <definition>GroupElement* Tango::Group::find_i</definition>
+        <argsstring>(const std::string &amp;n, bool fwd=true)</argsstring>
+        <name>find_i</name>
+        <reimplements refid="df/d46/classTango_1_1GroupElement_1a4d3fee8ce8b9284dc496620bfe6e39a4">find_i</reimplements>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>fwd</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="1574" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d6d/classTango_1_1Group_1aa0d21c559a7a98e2feb9c8e4ffdb8fd0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d4/d6d/classTango_1_1Group" kindref="compound">Group</ref> *</type>
+        <definition>Group* Tango::Group::get_group_i</definition>
+        <argsstring>(const std::string &amp;n)</argsstring>
+        <name>get_group_i</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="1578" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d6d/classTango_1_1Group_1a1473ad6acdaa34996092372dcfda6ef1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="de/ddf/namespaceTango_1ab9ef33527260f0bc7f0bf168143f55a0" kindref="member">GroupElements</ref></type>
+        <definition>GroupElements Tango::Group::get_hiearchy</definition>
+        <argsstring>()</argsstring>
+        <name>get_hiearchy</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="1576" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d6d/classTango_1_1Group_1a5a93daf23d11bfe1683fd6340e21aa1a" prot="private" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="d4/d6d/classTango_1_1Group" kindref="compound">Group</ref> *</type>
+        <definition>virtual Group* Tango::Group::get_parent</definition>
+        <argsstring>() const </argsstring>
+        <name>get_parent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="1050" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d6d/classTango_1_1Group_1a08b7e3ef96591fdcca3c080d5c002512" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>long</type>
+        <definition>long Tango::Group::get_size_i</definition>
+        <argsstring>(bool fwd)</argsstring>
+        <name>get_size_i</name>
+        <reimplements refid="df/d46/classTango_1_1GroupElement_1a2a80b476178d0b43f8ebd0c2e951ce07">get_size_i</reimplements>
+        <param>
+          <type>bool</type>
+          <declname>fwd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="1580" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d6d/classTango_1_1Group_1affa5e503eb3d43694a67e243183a8282" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>virtual bool Tango::Group::is_device_i</definition>
+        <argsstring>()</argsstring>
+        <name>is_device_i</name>
+        <reimplements refid="df/d46/classTango_1_1GroupElement_1abb56612a58bb9411a510bac19c32f42c">is_device_i</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="1586" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d6d/classTango_1_1Group_1a483f1c5993f62ea4c9395708f60c086a" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Tango::Group::is_enabled</definition>
+        <argsstring>(const std::string &amp;device_name, bool fwd=true)</argsstring>
+        <name>is_enabled</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>device_name</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>fwd</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="1056" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/group.h" bodystart="1056" bodyend="1059"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d6d/classTango_1_1Group_1a5e0638583aee1b3e7274106ee58a61ae" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>virtual bool Tango::Group::is_group_i</definition>
+        <argsstring>()</argsstring>
+        <name>is_group_i</name>
+        <reimplements refid="df/d46/classTango_1_1GroupElement_1a76e02ccb1296a415c7667bb4f535431c">is_group_i</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="1588" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d6d/classTango_1_1Group_1ac28f3849d9811cc81d2dcf9605503a71" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Tango::Group::is_root_group</definition>
+        <argsstring>() const </argsstring>
+        <name>is_root_group</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="1061" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d6d/classTango_1_1Group_1abf65a9ac5293e70b8753d603243f71a7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long Tango::Group::next_asynch_request_id</definition>
+        <argsstring>()</argsstring>
+        <name>next_asynch_request_id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="1568" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d6d/classTango_1_1Group_1ac34b2389fa3a770284f9595a56295bbe" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d4/d6d/classTango_1_1Group" kindref="compound">Group</ref> &amp;</type>
+        <definition>Group&amp; Tango::Group::operator=</definition>
+        <argsstring>(const Group &amp;)</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="d4/d6d/classTango_1_1Group" kindref="compound">Group</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="1603" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d6d/classTango_1_1Group_1a4cd4c746f784892e378376b55bc573b1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::Group::pop_async_request</definition>
+        <argsstring>(long rid)</argsstring>
+        <name>pop_async_request</name>
+        <param>
+          <type>long</type>
+          <declname>rid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="1584" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d6d/classTango_1_1Group_1ab0586beed2453a7bfd5cf1484c77bd03" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::Group::push_async_request</definition>
+        <argsstring>(long rid, bool fwded)</argsstring>
+        <name>push_async_request</name>
+        <param>
+          <type>long</type>
+          <declname>rid</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>fwded</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="1582" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d6d/classTango_1_1Group_1ae3721c37d17ed44646f2bfa38da83daa" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>long</type>
+        <definition>virtual long Tango::Group::read_attribute_asynch_i</definition>
+        <argsstring>(const std::string &amp;a, bool fwd, long ari)</argsstring>
+        <name>read_attribute_asynch_i</name>
+        <reimplements refid="df/d46/classTango_1_1GroupElement_1a7ff693d7883106cdd0f9cf7c1b44648e">read_attribute_asynch_i</reimplements>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>fwd</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>ari</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="1612" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d6d/classTango_1_1Group_1a3fd2541e054ce46e0fee7008dc289980" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="db/daa/classTango_1_1GroupAttrReplyList" kindref="compound">GroupAttrReplyList</ref></type>
+        <definition>virtual GroupAttrReplyList Tango::Group::read_attribute_reply_i</definition>
+        <argsstring>(long req_id, long tmo_ms)</argsstring>
+        <name>read_attribute_reply_i</name>
+        <reimplements refid="df/d46/classTango_1_1GroupElement_1a49fcc9e747f8ae7c73e3c9738c27519b">read_attribute_reply_i</reimplements>
+        <param>
+          <type>long</type>
+          <declname>req_id</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>tmo_ms</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="1613" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d6d/classTango_1_1Group_1a908fc61f2324eb1aa0585fb2e8b35613" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>long</type>
+        <definition>virtual long Tango::Group::read_attributes_asynch_i</definition>
+        <argsstring>(const std::vector&lt; std::string &gt; &amp;al, bool fwd, long ari)</argsstring>
+        <name>read_attributes_asynch_i</name>
+        <reimplements refid="df/d46/classTango_1_1GroupElement_1ae82e46099e73c8d8309b4c7903cbb79e">read_attributes_asynch_i</reimplements>
+        <param>
+          <type>const std::vector&lt; std::string &gt; &amp;</type>
+          <declname>al</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>fwd</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>ari</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="1615" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d6d/classTango_1_1Group_1ad80497005d66e9876584f2eb39ba55f6" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="db/daa/classTango_1_1GroupAttrReplyList" kindref="compound">GroupAttrReplyList</ref></type>
+        <definition>virtual GroupAttrReplyList Tango::Group::read_attributes_reply_i</definition>
+        <argsstring>(long req_id, long tmo_ms)</argsstring>
+        <name>read_attributes_reply_i</name>
+        <reimplements refid="df/d46/classTango_1_1GroupElement_1a7ddbf2429b03e38cff65758c88f52a85">read_attributes_reply_i</reimplements>
+        <param>
+          <type>long</type>
+          <declname>req_id</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>tmo_ms</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="1616" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d6d/classTango_1_1Group_1a0d8e519a13696bf75e51ca035f063e3b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::Group::remove_i</definition>
+        <argsstring>(const std::string &amp;p, bool fwd=true)</argsstring>
+        <name>remove_i</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>fwd</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="1572" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d6d/classTango_1_1Group_1a980ec63ac9055dd1164ee5597791550b" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>long</type>
+        <definition>virtual long Tango::Group::write_attribute_asynch_i</definition>
+        <argsstring>(const DeviceAttribute &amp;d, bool fwd, long ari)</argsstring>
+        <name>write_attribute_asynch_i</name>
+        <reimplements refid="df/d46/classTango_1_1GroupElement_1a0072eabed48ad0b7d9bf204fa4c87f3f">write_attribute_asynch_i</reimplements>
+        <param>
+          <type>const DeviceAttribute &amp;</type>
+          <declname>d</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>fwd</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>ari</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="1618" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d6d/classTango_1_1Group_1a75730ec0483748ba0cb299c3ad8f5f57" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>long</type>
+        <definition>virtual long Tango::Group::write_attribute_asynch_i</definition>
+        <argsstring>(const std::vector&lt; DeviceAttribute &gt; &amp;d, bool fwd, long ari)</argsstring>
+        <name>write_attribute_asynch_i</name>
+        <param>
+          <type>const std::vector&lt; DeviceAttribute &gt; &amp;</type>
+          <declname>d</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>fwd</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>ari</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="1619" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d6d/classTango_1_1Group_1aa114c407d382bd72added052a5f486c0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>long</type>
+        <definition>long Tango::Group::write_attribute_asynch_i</definition>
+        <argsstring>(const std::string &amp;a, std::vector&lt; T &gt; &amp;d, bool fwd, long ari)</argsstring>
+        <name>write_attribute_asynch_i</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; T &gt; &amp;</type>
+          <declname>d</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>fwd</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>ari</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="1620" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/group.h" bodystart="1933" bodyend="1980"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d6d/classTango_1_1Group_1a7a5ebea7ee0ac7a9d5c197bd7f5f83f1" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="dc/d11/classTango_1_1GroupReplyList" kindref="compound">GroupReplyList</ref></type>
+        <definition>virtual GroupReplyList Tango::Group::write_attribute_reply_i</definition>
+        <argsstring>(long req_id, long tmo_ms)</argsstring>
+        <name>write_attribute_reply_i</name>
+        <reimplements refid="df/d46/classTango_1_1GroupElement_1a4da656b11bc24a62cfca7d74ca48dd06">write_attribute_reply_i</reimplements>
+        <param>
+          <type>long</type>
+          <declname>req_id</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>tmo_ms</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="1621" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>High level class allowing the user to handle <ref refid="de/ddf/namespaceTango" kindref="compound">Tango</ref> group. </para>    </briefdescription>
+    <detaileddescription>
+<para>$Author$ $Revision$ </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="1026">
+        <label>Tango::Group</label>
+        <link refid="d4/d6d/classTango_1_1Group"/>
+        <childnode refid="1027" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1027">
+        <label>Tango::GroupElement</label>
+        <link refid="df/d46/classTango_1_1GroupElement"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1028">
+        <label>Tango::Group</label>
+        <link refid="d4/d6d/classTango_1_1Group"/>
+        <childnode refid="1029" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1029">
+        <label>Tango::GroupElement</label>
+        <link refid="df/d46/classTango_1_1GroupElement"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="735" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/group.h" bodystart="734" bodyend="1622"/>
+    <listofallmembers>
+      <member refid="d4/d6d/classTango_1_1Group_1a2cbaa3bf6cecdb6fb33a387c79556e58" prot="public" virt="virtual"><scope>Tango::Group</scope><name>add</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1ad0cae4533d2ab5f218d6b65748f8374f" prot="public" virt="virtual"><scope>Tango::Group</scope><name>add</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1a633d0ced915368b8b084adb3a215cca5" prot="public" virt="virtual"><scope>Tango::Group</scope><name>add</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1a16d66f2076e8845de1758749ab006d2e" prot="private" virt="non-virtual"><scope>Tango::Group</scope><name>add_i</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1aeacb34fa73815437648144ea92d4cf87" prot="private" virt="non-virtual"><scope>Tango::Group</scope><name>arp</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1a6992ca731d3082bbc19635ccc3535f62" prot="private" virt="non-virtual"><scope>Tango::Group</scope><name>asynch_req_id</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1a89de9c08fc764d4589f0575b298a3e3e" prot="private" virt="non-virtual"><scope>Tango::Group</scope><name>AsynchRequestDesc</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1a77176c43ec53ccf3447b707c69ee0287" prot="private" virt="non-virtual"><scope>Tango::Group</scope><name>AsynchRequestDescIt</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1a1b282849e5ec7c40e5429e2699223f48" prot="private" virt="non-virtual"><scope>Tango::Group</scope><name>AsynchRequestDescVal</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1a8511861bcd0723b9e726e2bfaac6de3a" prot="public" virt="non-virtual"><scope>Tango::Group</scope><name>command_inout</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1ab02f116ab2fcaed5850b0301dd8095a7" prot="public" virt="non-virtual"><scope>Tango::Group</scope><name>command_inout</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1ae50c9d4d35e13d374dfc22afb6f6ab01" prot="public" virt="non-virtual"><scope>Tango::Group</scope><name>command_inout</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1ad54f51f9f9bbac8ad686199245274bbf" prot="public" virt="non-virtual"><scope>Tango::Group</scope><name>command_inout</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1a53d95994ae0c6e3836e33f8acef6a038" prot="public" virt="non-virtual"><scope>Tango::Group</scope><name>command_inout_asynch</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1a2bd15b110efd88ffa47233ba4244a273" prot="public" virt="non-virtual"><scope>Tango::Group</scope><name>command_inout_asynch</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1a592a4fbe47296a6b27a142a38bbde6e8" prot="public" virt="non-virtual"><scope>Tango::Group</scope><name>command_inout_asynch</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1a17b53cb8fb55e3b96d056cb9971aaab4" prot="public" virt="non-virtual"><scope>Tango::Group</scope><name>command_inout_asynch</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1a1f8869a8e4708828deb0ab39369fea0b" prot="private" virt="virtual"><scope>Tango::Group</scope><name>command_inout_asynch_i</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1ac5c84d2f58e716b6a81ada19ef902cee" prot="private" virt="virtual"><scope>Tango::Group</scope><name>command_inout_asynch_i</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1a644cc7fee81a400f0f0ec68f40ae610b" prot="private" virt="virtual"><scope>Tango::Group</scope><name>command_inout_asynch_i</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1a147ed4f28e840f1974ef6d60254ce4ff" prot="private" virt="non-virtual"><scope>Tango::Group</scope><name>command_inout_asynch_i</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1abed06d2a84d479a13c2e98781af748e8" prot="public" virt="non-virtual"><scope>Tango::Group</scope><name>command_inout_reply</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1a69e596b021337bf451281be751a0cc51" prot="private" virt="virtual"><scope>Tango::Group</scope><name>command_inout_reply_i</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1a2885b00242d3a2d199836e48186dd71e" prot="public" virt="virtual"><scope>Tango::Group</scope><name>contains</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1adf197bf73fac7c2416d4b2351099b7f5" prot="private" virt="non-virtual"><scope>Tango::Group</scope><name>disable</name></member>
+      <member refid="df/d46/classTango_1_1GroupElement_1ac81b46293f4d775658c433b83759ecf2" prot="public" virt="non-virtual" ambiguityscope="Tango::GroupElement::"><scope>Tango::Group</scope><name>disable</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1adc2e652ef5085af4a4b92b5be89ea144" prot="private" virt="virtual"><scope>Tango::Group</scope><name>dump</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1a4b83d8f95cf520017b690f13db029900" prot="private" virt="virtual"><scope>Tango::Group</scope><name>dump</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1a0fd26a0aa77741e32d49300b865d0630" prot="private" virt="non-virtual"><scope>Tango::Group</scope><name>elements</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1ad4ce2b1dbd6d1f3f3e74c67be776bfbd" prot="private" virt="non-virtual"><scope>Tango::Group</scope><name>elements_mutex</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1acb4b3423c404c5b64b49222dcac49b82" prot="private" virt="non-virtual"><scope>Tango::Group</scope><name>enable</name></member>
+      <member refid="df/d46/classTango_1_1GroupElement_1a8b81d29966bfd9d42bafb34bd111fab0" prot="public" virt="non-virtual" ambiguityscope="Tango::GroupElement::"><scope>Tango::Group</scope><name>enable</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1ad8a40746a11da5ad8d4fc65c1746ee5c" prot="private" virt="virtual"><scope>Tango::Group</scope><name>find_i</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1adc7d5db7e814e378bf30f940865885b8" prot="public" virt="virtual"><scope>Tango::Group</scope><name>get_device</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1a29685f1ad173310c2cf695390cedd362" prot="public" virt="virtual"><scope>Tango::Group</scope><name>get_device</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1a35a3426e304c3d87607997261aff1d22" prot="public" virt="non-virtual"><scope>Tango::Group</scope><name>get_device_list</name></member>
+      <member refid="df/d46/classTango_1_1GroupElement_1a44dea90469791483f36bda324fa67ea1" prot="public" virt="non-virtual"><scope>Tango::Group</scope><name>get_fully_qualified_name</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1a75ddf85f5805e6e99656cbe554ecf96e" prot="public" virt="virtual"><scope>Tango::Group</scope><name>get_group</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1aa0d21c559a7a98e2feb9c8e4ffdb8fd0" prot="private" virt="non-virtual"><scope>Tango::Group</scope><name>get_group_i</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1a1473ad6acdaa34996092372dcfda6ef1" prot="private" virt="non-virtual"><scope>Tango::Group</scope><name>get_hiearchy</name></member>
+      <member refid="df/d46/classTango_1_1GroupElement_1a1313406261e09af44efae5b49ce4fc5a" prot="public" virt="non-virtual"><scope>Tango::Group</scope><name>get_name</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1a5a93daf23d11bfe1683fd6340e21aa1a" prot="private" virt="virtual"><scope>Tango::Group</scope><name>get_parent</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1a1afb6e934e20fb757538b873fef265e5" prot="public" virt="non-virtual"><scope>Tango::Group</scope><name>get_size</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1a08b7e3ef96591fdcca3c080d5c002512" prot="private" virt="virtual"><scope>Tango::Group</scope><name>get_size_i</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1aa1bcfe79af9522faa65449efb128fc3e" prot="public" virt="non-virtual"><scope>Tango::Group</scope><name>Group</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1aeebd7f4a634d89a12773b2b59910ad73" prot="private" virt="non-virtual"><scope>Tango::Group</scope><name>Group</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1a4ff988d79aeee38e41dfc87eb3fa5efd" prot="private" virt="non-virtual"><scope>Tango::Group</scope><name>Group</name></member>
+      <member refid="df/d46/classTango_1_1GroupElement_1a5f9e25c3711969c3fc5fe50202a22bb9" prot="protected" virt="non-virtual"><scope>Tango::Group</scope><name>GroupElement</name></member>
+      <member refid="df/d46/classTango_1_1GroupElement_1a5ca539735117e31e002587883e508ca5" prot="public" virt="virtual"><scope>Tango::Group</scope><name>is_connected</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1affa5e503eb3d43694a67e243183a8282" prot="private" virt="virtual"><scope>Tango::Group</scope><name>is_device_i</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1a483f1c5993f62ea4c9395708f60c086a" prot="private" virt="non-virtual"><scope>Tango::Group</scope><name>is_enabled</name></member>
+      <member refid="df/d46/classTango_1_1GroupElement_1aec8981c295f17883ad1b05bcee4f78da" prot="public" virt="non-virtual" ambiguityscope="Tango::GroupElement::"><scope>Tango::Group</scope><name>is_enabled</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1a5e0638583aee1b3e7274106ee58a61ae" prot="private" virt="virtual"><scope>Tango::Group</scope><name>is_group_i</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1ac28f3849d9811cc81d2dcf9605503a71" prot="private" virt="non-virtual"><scope>Tango::Group</scope><name>is_root_group</name></member>
+      <member refid="df/d46/classTango_1_1GroupElement_1ac38ec8a0666000aaeb0be72a538555f6" prot="public" virt="non-virtual"><scope>Tango::Group</scope><name>name_equals</name></member>
+      <member refid="df/d46/classTango_1_1GroupElement_1ac59fc656076f55359d8d3b000d0940e9" prot="public" virt="non-virtual"><scope>Tango::Group</scope><name>name_matches</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1abf65a9ac5293e70b8753d603243f71a7" prot="private" virt="non-virtual"><scope>Tango::Group</scope><name>next_asynch_request_id</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1ac34b2389fa3a770284f9595a56295bbe" prot="private" virt="non-virtual"><scope>Tango::Group</scope><name>operator=</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1aea3b781cd10d28770cb584c55c065534" prot="public" virt="virtual"><scope>Tango::Group</scope><name>operator[]</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1aa7cd5c6f1be1a85c244c7a4ec99081ec" prot="public" virt="virtual"><scope>Tango::Group</scope><name>ping</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1a4cd4c746f784892e378376b55bc573b1" prot="private" virt="non-virtual"><scope>Tango::Group</scope><name>pop_async_request</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1ab0586beed2453a7bfd5cf1484c77bd03" prot="private" virt="non-virtual"><scope>Tango::Group</scope><name>push_async_request</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1a3c584b30ee4e69eed2de59cb548c4134" prot="public" virt="non-virtual"><scope>Tango::Group</scope><name>read_attribute</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1a08fa50b55ebad69d6fd819f658703997" prot="public" virt="non-virtual"><scope>Tango::Group</scope><name>read_attribute_asynch</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1ae3721c37d17ed44646f2bfa38da83daa" prot="private" virt="virtual"><scope>Tango::Group</scope><name>read_attribute_asynch_i</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1a9c580ba756e84843f29e126efb8c1986" prot="public" virt="non-virtual"><scope>Tango::Group</scope><name>read_attribute_reply</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1a3fd2541e054ce46e0fee7008dc289980" prot="private" virt="virtual"><scope>Tango::Group</scope><name>read_attribute_reply_i</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1ab4088df9970f1f1c7d6ae8c29563369f" prot="public" virt="non-virtual"><scope>Tango::Group</scope><name>read_attributes</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1a9431b4c0673e3824c31b00028e894d31" prot="public" virt="non-virtual"><scope>Tango::Group</scope><name>read_attributes_asynch</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1a908fc61f2324eb1aa0585fb2e8b35613" prot="private" virt="virtual"><scope>Tango::Group</scope><name>read_attributes_asynch_i</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1ab1a83261058e5c52803e502c01380b79" prot="public" virt="non-virtual"><scope>Tango::Group</scope><name>read_attributes_reply</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1ad80497005d66e9876584f2eb39ba55f6" prot="private" virt="virtual"><scope>Tango::Group</scope><name>read_attributes_reply_i</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1acd7763925b6e27ccf237b13fa7f98009" prot="public" virt="virtual"><scope>Tango::Group</scope><name>remove</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1a2561673c34638016106a6fba3c0b95ee" prot="public" virt="virtual"><scope>Tango::Group</scope><name>remove</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1a12404b76c3e64df47467a1260591e7df" prot="public" virt="virtual"><scope>Tango::Group</scope><name>remove_all</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1a0d8e519a13696bf75e51ca035f063e3b" prot="private" virt="non-virtual"><scope>Tango::Group</scope><name>remove_i</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1a92242b89511557c3296480ee19b790b2" prot="public" virt="virtual"><scope>Tango::Group</scope><name>set_timeout_millis</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1a64da6f972d7dca15b192c66226e3d4c7" prot="public" virt="non-virtual"><scope>Tango::Group</scope><name>write_attribute</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1ac05e427721de6903871b6c2dc505dec7" prot="public" virt="non-virtual"><scope>Tango::Group</scope><name>write_attribute</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1a5b513a1564a1a4f9e5482dfcef528d0c" prot="public" virt="non-virtual"><scope>Tango::Group</scope><name>write_attribute</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1a2ead1c134a086855da1e809aa8f13d03" prot="public" virt="non-virtual"><scope>Tango::Group</scope><name>write_attribute_asynch</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1a2edbe29d80b0c686840c01bac7304197" prot="public" virt="non-virtual"><scope>Tango::Group</scope><name>write_attribute_asynch</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1a187f0b29e02bf82b74f21b55c4252d62" prot="public" virt="non-virtual"><scope>Tango::Group</scope><name>write_attribute_asynch</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1a980ec63ac9055dd1164ee5597791550b" prot="private" virt="virtual"><scope>Tango::Group</scope><name>write_attribute_asynch_i</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1a75730ec0483748ba0cb299c3ad8f5f57" prot="private" virt="virtual"><scope>Tango::Group</scope><name>write_attribute_asynch_i</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1aa114c407d382bd72added052a5f486c0" prot="private" virt="non-virtual"><scope>Tango::Group</scope><name>write_attribute_asynch_i</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1aa300f78715baea10d390b7e7489e0506" prot="public" virt="non-virtual"><scope>Tango::Group</scope><name>write_attribute_reply</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1a7a5ebea7ee0ac7a9d5c197bd7f5f83f1" prot="private" virt="virtual"><scope>Tango::Group</scope><name>write_attribute_reply_i</name></member>
+      <member refid="d4/d6d/classTango_1_1Group_1acd7a0b40d37852923131e9bce68dd9ff" prot="public" virt="virtual"><scope>Tango::Group</scope><name>~Group</name></member>
+      <member refid="df/d46/classTango_1_1GroupElement_1a9e4421b2ad2ad0c72dfa587b6912c811" prot="protected" virt="virtual"><scope>Tango::Group</scope><name>~GroupElement</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
