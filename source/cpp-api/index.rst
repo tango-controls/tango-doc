@@ -17,12 +17,12 @@ Contents:
 .. toctree::
    :maxdepth: 5
 
-   *
-   */*
-   */*/*
-   */*/*/*
-   */*/*/*/*
+.. doxygenindex::
 
+.. doxygenfunction::
+.. doxygenstruct::
+.. doxygentypedef::
+.. doxygenclass::
 
 -  Generated on Fri Oct 7 2016 11:11:17 for Tango Core Classes Reference
    by |doxygen| 1.8.8
