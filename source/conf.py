@@ -14,6 +14,8 @@
 
 import sys
 import os
+# sys.path.insert(0, os.path.abspath('.'))
+sys.path.append( "/home/tango/workspace/breathe")
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -29,6 +31,7 @@ import os
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    'breathe',
     'sphinx.ext.autodoc',
     'sphinx.ext.doctest',
     'sphinx.ext.intersphinx',
@@ -38,6 +41,10 @@ extensions = [
     'sphinx.ext.ifconfig',
     'sphinx.ext.viewcode',
 ]
+
+breathe_projects = { "cppTango": "/home/tango/workspace/td-tango-community-docs/source/cpp-api/xml" }
+
+breathe_default_project = "cppTango"
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
