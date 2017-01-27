@@ -43,7 +43,7 @@ extensions = [
     'sphinx.ext.viewcode',
 ]
 
-breathe_projects = { "cppTango": "source/cpp-api/xml" }
+breathe_projects = { "cppTango": "cpp-api/xml" }
 
 breathe_default_project = "cppTango"
 
