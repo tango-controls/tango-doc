@@ -14,8 +14,9 @@
 
 import sys
 import os
+import breathe
 # sys.path.insert(0, os.path.abspath('.'))
-sys.path.append( "/home/tango/workspace/breathe")
+# sys.path.append( "/home/tango/workspace/breathe")
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -42,7 +43,7 @@ extensions = [
     'sphinx.ext.viewcode',
 ]
 
-breathe_projects = { "cppTango": "/home/tango/workspace/td-tango-community-docs/source/cpp-api/xml" }
+breathe_projects = { "cppTango": "source/cpp-api/xml" }
 
 breathe_default_project = "cppTango"
 
