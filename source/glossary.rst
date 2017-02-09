@@ -32,3 +32,8 @@ Glossary
         well as a runtime catalog of the components/devices. It allows (among others) client applications to find
         devices in distributed environment.
 
+    Tango Database
+        A database providing configuration and some runtime information about Tango Controls components in so called
+        Tango System instance or deployment. It is served by *Databaseds* device serve and
+        constitutes :term:`Tango Host`.
+

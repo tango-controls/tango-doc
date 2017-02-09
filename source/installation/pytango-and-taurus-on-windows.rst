@@ -1,4 +1,4 @@
-.. How to install PyTango anf Taurus on windows
+.. How to install PyTango and Taurus on windows
 
 PyTango and Taurus on Windows
 =============================
