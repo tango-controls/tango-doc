@@ -18,6 +18,9 @@ The documentation is organized in the following categories (some of them overlap
 * :doc:`Reference </reference>` which provides you with all details of Tango Controls **Core** or **Kernel**.
 * :doc:`Tools and libraries </tools>`. Tango comes with lot of GUI, commandline and programing tools for its management,
   GUI creations or connecting with other systems and applications.
+* :doc:`Tutorials <tutorials/index>` giving step by step guidance and teaching how to work with Tango Controls.
+* :doc:`Advanced topics </advanced>` where you may find articles on some specific topics regarding system configuration
+  or internal details.
 
 .. include:: first-steps.rst
 
