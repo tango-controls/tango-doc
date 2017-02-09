@@ -118,6 +118,22 @@ div.related li.right {
     margin-right: 5px;
 }
 
+div.related a {
+    color: rgb(200,255,200);
+}
+
+div.related a:hover {
+    color: rgb(150,200, 150);
+}
+
+div.related a:active {
+    color: rgb(150,200, 150);
+}
+
+div.related a: visited {
+    color: rgb(200,255,200);
+}
+
 /* ::: SIDEBAR :::: */
 div.sphinxsidebar h3 {
     margin: 0;
