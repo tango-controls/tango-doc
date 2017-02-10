@@ -8,9 +8,9 @@
    :depth: 3
 ..
 
-[FirstPicture]|image|
+[FirstPicture]|image01|
 
-|image|
+|image02|
 
 Introduction
 ============
@@ -516,7 +516,7 @@ coding the device state machine. By default a allways allowed state
 machine is provided. For more information about coding the state
 machine, refer to the chapter Writing a device server.
 
-[APicture]|image|
+[APicture]|image03|
 
 The TANGO device server model
 =============================
@@ -984,7 +984,7 @@ In addition to these main classes, many other classes allows a full
 interface to TANGO features. The following figure is a drawing of a
 typical client/server application using TANGO.
 
-|image|
+|image04|
 
 The database is used during server and client startup phase to establish
 connection between client and server.
@@ -1046,7 +1046,7 @@ and servers get the IOR for the host from the TANGO database.
 The following figure is a schematic of the Tango event system for Tango
 releases before Tango 8.
 
-|image|
+|image05|
 
 Starting with Tango 8, a new design of the event system has been
 implemented. This new design is based on the ZMQ library. ZMQ is a
@@ -1064,9 +1064,9 @@ chapter on Advanced Features to get all the details on this feature.
 The following figure is a schematic of the Tango event system for Tango
 releases starting with Tango release 8.
 
-|image|
+|image06|
 
-[OneRicardo]|image|
+[OneRicardo]|image07|
 
 Writing a TANGO client using TANGO APIs
 =======================================
@@ -3343,7 +3343,7 @@ a Tango device server. Please, refer to chapter Compiling, Linking and
 executing a Tango device server process ([sec:Compiling,-linking-and])
 to get all the details.
 
-[ThreeRicardo]|image|
+[ThreeRicardo]|image08|
 
 TangoATK Programmer’s Guide
 ===========================
@@ -3398,7 +3398,7 @@ Swing is developed using a variant over a design-pattern the
 Model-View-Controller (MVC) pattern called *model-delegate*, where the
 view and the controller of the MVC-pattern are merged into one object.
 
-| |image|
+| |image09|
 
 This pattern made the choice of labor division quite easy: all
 non-graphic parts of TangoATK reside in the packages beneath
@@ -3486,7 +3486,7 @@ following steps are required
    connect each *individual command* in the command list with a *command
    viewer*.
 
-|image|
+|image10|
 
 The following program (FirstApplication) shows an implementation of the
 list mentioned above. It should be rather self-explanatory with the
@@ -3713,7 +3713,7 @@ comments.
 The program should look something like this (depending on your platform
 and your device)
 
-|image|
+|image11|
 
 Multi device applications
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -3934,7 +3934,7 @@ mentioned above.
 
 | This program (SeondApplication) should look something like this
   (depending on your platform and your device attributes)
-| |image|
+| |image12|
 
 .. code:: cpp
   :number-lines:
@@ -4145,7 +4145,7 @@ editor.
 
 | The synoptic application (ThirdApplication) should look something like
   this (depending on your synoptic drawing file)
-| |image|
+| |image13|
 
 A short note on the relationship between models and viewers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -4460,7 +4460,7 @@ the command it has to show the results.
 
      
 
-[TwoRicardo]|image|
+[TwoRicardo]|image14|
 
 Writing a TANGO device server
 =============================
@@ -7976,7 +7976,7 @@ The console window
 
 This window looks like :
 
-|image|
+|image15|
 
 It simply displays all the logging\ ** message when a console target is
 used in the device server.
@@ -7986,7 +7986,7 @@ The help window
 
 This window looks like :
 
-|image|
+|image16|
 
 This window displays
 
@@ -9211,7 +9211,7 @@ the API reference documentation (in Tango WEB pages) to learn more on
 how you can insert data into a pipe and to know how data are organized
 within a pipe.
 
-[BlackPicture]|image|
+[BlackPicture]|image17|
 
 Advanced features
 =================
@@ -9686,7 +9686,7 @@ syntax used for this property is described in the Reference part of the
 Appendix [cha:Reference-part]. The following window dump is the Astor
 tool window which allows polling threads pool management.
 
-|image|
+|image18|
 
 In this example, the polling threads pool size to set to 9 but only 4
 polling threads are running. Thread 1 is in charge of all polled objects
@@ -10393,7 +10393,7 @@ informations which have to be provided to Tango to get multicast
 transport. This configuration is done using the **MulticastEvent** free
 property associated to the **CtrlSystem** object.
 
-|image|
+|image19|
 
 In the above window dump of the Jive tool, the *change* event on the
 *state* attribute of the *dev/test/11* device has to be transferred
@@ -10429,7 +10429,7 @@ GBytes in-memory buffer. Whan any of these two optional parameters are
 not set, the default value (defined in next sub-chapter) are used. Here
 is another example of events using multicasting configuration
 
-|image|
+|image20|
 
 In this example, there are 5 events which are transmitted using
 multicasting:
@@ -11066,7 +11066,7 @@ Astor:raw-latex:`\cite{Astor_doc}` tool which has some graphical windows
 allowing to grant/revoke user rights and to define device class allowed
 commands set. The following window dump shows this Astor window.
 
-|image|
+|image21|
 
 In this example, the user taurel has Write Access to the device
 sr/d-ct/1 and to all devices belonging to the domain fe but only from
@@ -11109,7 +11109,7 @@ variable SUPER\_TANGO is defined to true. If for one reason or another,
 the controlled access server is defined but not accessible, the device
 right checked at that time will be Read Access.
 
-[FourRicardo]|image|
+[FourRicardo]|image22|
 
 Reference part
 ==============
@@ -15618,29 +15618,29 @@ documentation <http://www.esrf.eu/computing/cs/tango/tango_doc/kernel_doc/cpp_do
 .. [13]
    Their black-box is also destroyed and re-built
 
-.. |image| image:: dance/tango-08-27
-.. |image| image:: dance/Ready
-.. |image| image:: dance/tg_argentine
-.. |image| image:: ds_model/archi
+.. |image01| image:: dance/tango-08-27
+.. |image02| image:: dance/Ready
+.. |image03| image:: dance/tg_argentine
+.. |image04| image:: ds_model/archi
    :width: 12.00000cm
    :height: 7.00000cm
-.. |image| image:: ds_model/event_schematic
-.. |image| image:: ds_model/event_schematic_zmq
-.. |image| image:: dance/Eltaita-reduc
-.. |image| image:: dance/0066-reduc
-.. |image| image:: atk/img/core-widget
-.. |image| image:: atk/img/listpanel
-.. |image| image:: atk/img/prog_guide_exple1
-.. |image| image:: atk/img/prog_guide_exple2
-.. |image| image:: atk/img/prog_guide_exple3
-.. |image| image:: dance/0046-reduc
-.. |image| image:: ds_writing/nt_server/cons
+.. |image05| image:: ds_model/event_schematic
+.. |image06| image:: ds_model/event_schematic_zmq
+.. |image07| image:: dance/Eltaita-reduc
+.. |image08| image:: dance/0066-reduc
+.. |image09| image:: atk/img/core-widget
+.. |image10| image:: atk/img/listpanel
+.. |image11| image:: atk/img/prog_guide_exple1
+.. |image12| image:: atk/img/prog_guide_exple2
+.. |image13| image:: atk/img/prog_guide_exple3
+.. |image14| image:: dance/0046-reduc
+.. |image15| image:: ds_writing/nt_server/cons
    :width: 14.00000cm
-.. |image| image:: ds_writing/nt_server/help
+.. |image16| image:: ds_writing/nt_server/help
    :width: 9.00000cm
-.. |image| image:: dance/tango-08-39
-.. |image| image:: advanced/ThreadsManagement
-.. |image| image:: advanced/jive_simpl
-.. |image| image:: advanced/jive_sophis
-.. |image| image:: advanced/control
-.. |image| image:: dance/AT97-65-size
+.. |image17| image:: dance/tango-08-39
+.. |image18| image:: advanced/ThreadsManagement
+.. |image19| image:: advanced/jive_simpl
+.. |image20| image:: advanced/jive_sophis
+.. |image21| image:: advanced/control
+.. |image22| image:: dance/AT97-65-size
