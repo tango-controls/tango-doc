@@ -1,0 +1,305 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="db/d47/classTango_1_1DevIntrChangeEventData" kind="class" prot="public">
+    <compoundname>Tango::DevIntrChangeEventData</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="db/d47/classTango_1_1DevIntrChangeEventData_1a2e744bebe4c8ba3ae8da76f5295143f8" prot="private" static="no" mutable="no">
+        <type>Tango::TimeVal</type>
+        <definition>Tango::TimeVal Tango::DevIntrChangeEventData::reception_date</definition>
+        <argsstring></argsstring>
+        <name>reception_date</name>
+        <briefdescription>
+<para>The date when the event arrived. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/event.h" line="366" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/event.h" bodystart="366" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="db/d47/classTango_1_1DevIntrChangeEventData_1a89db4537a1e2634d03b6f3836469a5e0" prot="public" static="no" mutable="no">
+        <type><ref refid="d1/d45/group__Client_1ga7175e05437edf640b8e555d1a601335c" kindref="member">AttributeInfoListEx</ref></type>
+        <definition>AttributeInfoListEx Tango::DevIntrChangeEventData::att_list</definition>
+        <argsstring></argsstring>
+        <name>att_list</name>
+        <briefdescription>
+<para>Device attribute list info. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/event.h" line="374" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/event.h" bodystart="374" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="db/d47/classTango_1_1DevIntrChangeEventData_1ab75f7e002dd7df09755b26e513231dc2" prot="public" static="no" mutable="no">
+        <type><ref refid="d1/d45/group__Client_1ga702913bccb1c2d427d7a6f046602d657" kindref="member">CommandInfoList</ref></type>
+        <definition>CommandInfoList Tango::DevIntrChangeEventData::cmd_list</definition>
+        <argsstring></argsstring>
+        <name>cmd_list</name>
+        <briefdescription>
+<para>Device command list info. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/event.h" line="373" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/event.h" bodystart="373" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="db/d47/classTango_1_1DevIntrChangeEventData_1adbf8cb3b33018c236a5fa1440edb3588" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Tango::DevIntrChangeEventData::dev_started</definition>
+        <argsstring></argsstring>
+        <name>dev_started</name>
+        <briefdescription>
+<para>Device started flag (true when event sent due to device being (re)started and with only a possible but not sure interface change) </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/event.h" line="375" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/event.h" bodystart="375" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="db/d47/classTango_1_1DevIntrChangeEventData_1aa23d2843deae51a30852fb1d49d51c91" prot="public" static="no" mutable="no">
+        <type>DeviceProxy *</type>
+        <definition>DeviceProxy* Tango::DevIntrChangeEventData::device</definition>
+        <argsstring></argsstring>
+        <name>device</name>
+        <briefdescription>
+<para>The DeviceProxy object on which the call was executed. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/event.h" line="370" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/event.h" bodystart="370" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="db/d47/classTango_1_1DevIntrChangeEventData_1acc8d3960c808ddbcd750224ba1d9f417" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Tango::DevIntrChangeEventData::device_name</definition>
+        <argsstring></argsstring>
+        <name>device_name</name>
+        <briefdescription>
+<para>The device name. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/event.h" line="372" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/event.h" bodystart="372" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="db/d47/classTango_1_1DevIntrChangeEventData_1a52384944b2b92cbd9ecf66b21c4a9fdc" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Tango::DevIntrChangeEventData::err</definition>
+        <argsstring></argsstring>
+        <name>err</name>
+        <briefdescription>
+<para>A boolean flag set to true if the request failed. False otherwise. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/event.h" line="378" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/event.h" bodystart="378" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="db/d47/classTango_1_1DevIntrChangeEventData_1a33be40ed8e49d251e5ba18e87a6468ef" prot="public" static="no" mutable="no">
+        <type>DevErrorList</type>
+        <definition>DevErrorList Tango::DevIntrChangeEventData::errors</definition>
+        <argsstring></argsstring>
+        <name>errors</name>
+        <briefdescription>
+<para>The error stack. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/event.h" line="379" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/event.h" bodystart="379" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="db/d47/classTango_1_1DevIntrChangeEventData_1a9d4af2556b9cda47da2210546419f3ca" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Tango::DevIntrChangeEventData::event</definition>
+        <argsstring></argsstring>
+        <name>event</name>
+        <briefdescription>
+<para>The event name. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/event.h" line="371" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/event.h" bodystart="371" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="db/d47/classTango_1_1DevIntrChangeEventData_1aa6a48d027c71888b049e18f5e8e7c7bd" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Tango::DevIntrChangeEventData::DevIntrChangeEventData</definition>
+        <argsstring>()</argsstring>
+        <name>DevIntrChangeEventData</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/event.h" line="357" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/event.h" bodystart="357" bodyend="357"/>
+      </memberdef>
+      <memberdef kind="function" id="db/d47/classTango_1_1DevIntrChangeEventData_1a2c1fd5457e59837e40ac2dbd58de1f50" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::DevIntrChangeEventData::DevIntrChangeEventData</definition>
+        <argsstring>(DeviceProxy *, string &amp;, string &amp;, DevCmdInfoList_2 *, AttributeConfigList_5 *, bool, DevErrorList &amp;)</argsstring>
+        <name>DevIntrChangeEventData</name>
+        <param>
+          <type>DeviceProxy *</type>
+        </param>
+        <param>
+          <type>string &amp;</type>
+        </param>
+        <param>
+          <type>string &amp;</type>
+        </param>
+        <param>
+          <type>DevCmdInfoList_2 *</type>
+        </param>
+        <param>
+          <type>AttributeConfigList_5 *</type>
+        </param>
+        <param>
+          <type>bool</type>
+        </param>
+        <param>
+          <type>DevErrorList &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/event.h" line="358" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="db/d47/classTango_1_1DevIntrChangeEventData_1a601271f83dff8fb1b441fbd43f2910e8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::DevIntrChangeEventData::DevIntrChangeEventData</definition>
+        <argsstring>(DeviceProxy *, string &amp;, string &amp;, CommandInfoList *, AttributeInfoListEx *, bool, DevErrorList &amp;)</argsstring>
+        <name>DevIntrChangeEventData</name>
+        <param>
+          <type>DeviceProxy *</type>
+        </param>
+        <param>
+          <type>string &amp;</type>
+        </param>
+        <param>
+          <type>string &amp;</type>
+        </param>
+        <param>
+          <type><ref refid="d1/d45/group__Client_1ga702913bccb1c2d427d7a6f046602d657" kindref="member">CommandInfoList</ref> *</type>
+        </param>
+        <param>
+          <type><ref refid="d1/d45/group__Client_1ga7175e05437edf640b8e555d1a601335c" kindref="member">AttributeInfoListEx</ref> *</type>
+        </param>
+        <param>
+          <type>bool</type>
+        </param>
+        <param>
+          <type>DevErrorList &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/event.h" line="359" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="db/d47/classTango_1_1DevIntrChangeEventData_1a2b7350faf9d9a65744848ad64877cd25" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::DevIntrChangeEventData::DevIntrChangeEventData</definition>
+        <argsstring>(const DevIntrChangeEventData &amp;)</argsstring>
+        <name>DevIntrChangeEventData</name>
+        <param>
+          <type>const <ref refid="db/d47/classTango_1_1DevIntrChangeEventData" kindref="compound">DevIntrChangeEventData</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/event.h" line="361" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="db/d47/classTango_1_1DevIntrChangeEventData_1a6d6a72b5bc3a51b0b98ec6e03ce8bd55" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Tango::DevIntrChangeEventData::~DevIntrChangeEventData</definition>
+        <argsstring>()</argsstring>
+        <name>~DevIntrChangeEventData</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/event.h" line="360" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/event.h" bodystart="360" bodyend="360"/>
+      </memberdef>
+      <memberdef kind="function" id="db/d47/classTango_1_1DevIntrChangeEventData_1a610aaaf6f675f797f5ba5c319a356e7d" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Tango::TimeVal &amp;</type>
+        <definition>Tango::TimeVal&amp; Tango::DevIntrChangeEventData::get_date</definition>
+        <argsstring>()</argsstring>
+        <name>get_date</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/event.h" line="367" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/event.h" bodystart="367" bodyend="367"/>
+      </memberdef>
+      <memberdef kind="function" id="db/d47/classTango_1_1DevIntrChangeEventData_1aa9a0a4c8d0bf13864aba719cd7fb9dae" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="db/d47/classTango_1_1DevIntrChangeEventData" kindref="compound">DevIntrChangeEventData</ref> &amp;</type>
+        <definition>DevIntrChangeEventData&amp; Tango::DevIntrChangeEventData::operator=</definition>
+        <argsstring>(const DevIntrChangeEventData &amp;)</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="db/d47/classTango_1_1DevIntrChangeEventData" kindref="compound">DevIntrChangeEventData</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/event.h" line="362" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="db/d47/classTango_1_1DevIntrChangeEventData_1a74534342896acc26c36e34e17b560db4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::DevIntrChangeEventData::set_time</definition>
+        <argsstring>()</argsstring>
+        <name>set_time</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/event.h" line="382" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Device interface change event callback execution data. </para>    </briefdescription>
+    <detaileddescription>
+<para>This class is used to pass data to the callback method when a device interface change event is sent to the client.</para><para>$Author$ $Revision$ </para>    </detaileddescription>
+    <location file="/home/tango/workspace/cppTango/include/tango/client/event.h" line="354" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/event.h" bodystart="353" bodyend="383"/>
+    <listofallmembers>
+      <member refid="db/d47/classTango_1_1DevIntrChangeEventData_1a89db4537a1e2634d03b6f3836469a5e0" prot="public" virt="non-virtual"><scope>Tango::DevIntrChangeEventData</scope><name>att_list</name></member>
+      <member refid="db/d47/classTango_1_1DevIntrChangeEventData_1ab75f7e002dd7df09755b26e513231dc2" prot="public" virt="non-virtual"><scope>Tango::DevIntrChangeEventData</scope><name>cmd_list</name></member>
+      <member refid="db/d47/classTango_1_1DevIntrChangeEventData_1adbf8cb3b33018c236a5fa1440edb3588" prot="public" virt="non-virtual"><scope>Tango::DevIntrChangeEventData</scope><name>dev_started</name></member>
+      <member refid="db/d47/classTango_1_1DevIntrChangeEventData_1aa23d2843deae51a30852fb1d49d51c91" prot="public" virt="non-virtual"><scope>Tango::DevIntrChangeEventData</scope><name>device</name></member>
+      <member refid="db/d47/classTango_1_1DevIntrChangeEventData_1acc8d3960c808ddbcd750224ba1d9f417" prot="public" virt="non-virtual"><scope>Tango::DevIntrChangeEventData</scope><name>device_name</name></member>
+      <member refid="db/d47/classTango_1_1DevIntrChangeEventData_1aa6a48d027c71888b049e18f5e8e7c7bd" prot="private" virt="non-virtual"><scope>Tango::DevIntrChangeEventData</scope><name>DevIntrChangeEventData</name></member>
+      <member refid="db/d47/classTango_1_1DevIntrChangeEventData_1a2c1fd5457e59837e40ac2dbd58de1f50" prot="private" virt="non-virtual"><scope>Tango::DevIntrChangeEventData</scope><name>DevIntrChangeEventData</name></member>
+      <member refid="db/d47/classTango_1_1DevIntrChangeEventData_1a601271f83dff8fb1b441fbd43f2910e8" prot="private" virt="non-virtual"><scope>Tango::DevIntrChangeEventData</scope><name>DevIntrChangeEventData</name></member>
+      <member refid="db/d47/classTango_1_1DevIntrChangeEventData_1a2b7350faf9d9a65744848ad64877cd25" prot="private" virt="non-virtual"><scope>Tango::DevIntrChangeEventData</scope><name>DevIntrChangeEventData</name></member>
+      <member refid="db/d47/classTango_1_1DevIntrChangeEventData_1a52384944b2b92cbd9ecf66b21c4a9fdc" prot="public" virt="non-virtual"><scope>Tango::DevIntrChangeEventData</scope><name>err</name></member>
+      <member refid="db/d47/classTango_1_1DevIntrChangeEventData_1a33be40ed8e49d251e5ba18e87a6468ef" prot="public" virt="non-virtual"><scope>Tango::DevIntrChangeEventData</scope><name>errors</name></member>
+      <member refid="db/d47/classTango_1_1DevIntrChangeEventData_1a9d4af2556b9cda47da2210546419f3ca" prot="public" virt="non-virtual"><scope>Tango::DevIntrChangeEventData</scope><name>event</name></member>
+      <member refid="db/d47/classTango_1_1DevIntrChangeEventData_1a610aaaf6f675f797f5ba5c319a356e7d" prot="private" virt="non-virtual"><scope>Tango::DevIntrChangeEventData</scope><name>get_date</name></member>
+      <member refid="db/d47/classTango_1_1DevIntrChangeEventData_1aa9a0a4c8d0bf13864aba719cd7fb9dae" prot="private" virt="non-virtual"><scope>Tango::DevIntrChangeEventData</scope><name>operator=</name></member>
+      <member refid="db/d47/classTango_1_1DevIntrChangeEventData_1a2e744bebe4c8ba3ae8da76f5295143f8" prot="private" virt="non-virtual"><scope>Tango::DevIntrChangeEventData</scope><name>reception_date</name></member>
+      <member refid="db/d47/classTango_1_1DevIntrChangeEventData_1a74534342896acc26c36e34e17b560db4" prot="private" virt="non-virtual"><scope>Tango::DevIntrChangeEventData</scope><name>set_time</name></member>
+      <member refid="db/d47/classTango_1_1DevIntrChangeEventData_1a6d6a72b5bc3a51b0b98ec6e03ce8bd55" prot="private" virt="non-virtual"><scope>Tango::DevIntrChangeEventData</scope><name>~DevIntrChangeEventData</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

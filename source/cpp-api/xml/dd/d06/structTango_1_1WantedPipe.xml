@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="dd/d06/structTango_1_1WantedPipe" kind="struct" prot="public">
+    <compoundname>Tango::WantedPipe</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">binary_function&lt; A1, A2, R &gt;</basecompoundref>
+    <includes refid="da/d3e/pipe_8h" local="yes">pipe.h</includes>
+    <templateparamlist>
+      <param>
+        <type>typename A1</type>
+      </param>
+      <param>
+        <type>typename A2</type>
+      </param>
+      <param>
+        <type>typename R</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="dd/d06/structTango_1_1WantedPipe_1a7ba811ef470b2d0349ad209cf30ea93a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>R</type>
+        <definition>R Tango::WantedPipe&lt; A1, A2, R &gt;::operator()</definition>
+        <argsstring>(A1 pipe_ptr, A2 name) const </argsstring>
+        <name>operator()</name>
+        <param>
+          <type>A1</type>
+          <declname>pipe_ptr</declname>
+        </param>
+        <param>
+          <type>A2</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/pipe.h" line="54" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/pipe.h" bodystart="54" bodyend="61"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1346">
+        <label>Tango::WantedPipe&lt; A1, A2, R &gt;</label>
+        <link refid="dd/d06/structTango_1_1WantedPipe"/>
+        <childnode refid="1347" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1347">
+        <label>binary_function&lt; A1, A2, R &gt;</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1348">
+        <label>Tango::WantedPipe&lt; A1, A2, R &gt;</label>
+        <link refid="dd/d06/structTango_1_1WantedPipe"/>
+        <childnode refid="1349" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1349">
+        <label>binary_function&lt; A1, A2, R &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/tango/workspace/cppTango/include/tango/server/pipe.h" line="53" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/pipe.h" bodystart="52" bodyend="62"/>
+    <listofallmembers>
+      <member refid="dd/d06/structTango_1_1WantedPipe_1a7ba811ef470b2d0349ad209cf30ea93a" prot="public" virt="non-virtual"><scope>Tango::WantedPipe</scope><name>operator()</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

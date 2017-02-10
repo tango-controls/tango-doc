@@ -1,0 +1,267 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="d3/d49/Appender_8cpp" kind="file">
+    <compoundname>Appender.cpp</compoundname>
+    <includes refid="da/dc7/PortabilityImpl_8hh" local="yes">PortabilityImpl.hh</includes>
+    <includes refid="d2/d5c/Appender_8hh" local="no">log4tango/Appender.hh</includes>
+    <incdepgraph>
+      <node id="1251">
+        <label>LoggingEvent.hh</label>
+        <link refid="d2/d60/LoggingEvent_8hh"/>
+        <childnode refid="1237" relation="include">
+        </childnode>
+        <childnode refid="1242" relation="include">
+        </childnode>
+        <childnode refid="1245" relation="include">
+        </childnode>
+        <childnode refid="1252" relation="include">
+        </childnode>
+      </node>
+      <node id="1235">
+        <label>Appender.cpp</label>
+        <link refid="Appender.cpp"/>
+        <childnode refid="1236" relation="include">
+        </childnode>
+        <childnode refid="1241" relation="include">
+        </childnode>
+      </node>
+      <node id="1240">
+        <label>strstream</label>
+      </node>
+      <node id="1239">
+        <label>Export.hh</label>
+        <link refid="df/d5d/Export_8hh"/>
+      </node>
+      <node id="1246">
+        <label>stdexcept</label>
+      </node>
+      <node id="1245">
+        <label>Level.hh</label>
+        <link refid="d2/d33/Level_8hh"/>
+        <childnode refid="1237" relation="include">
+        </childnode>
+        <childnode refid="1242" relation="include">
+        </childnode>
+        <childnode refid="1246" relation="include">
+        </childnode>
+      </node>
+      <node id="1237">
+        <label>log4tango/Portability.hh</label>
+        <link refid="da/dd8/Portability_8hh"/>
+        <childnode refid="1238" relation="include">
+        </childnode>
+        <childnode refid="1239" relation="include">
+        </childnode>
+        <childnode refid="1240" relation="include">
+        </childnode>
+      </node>
+      <node id="1242">
+        <label>string</label>
+      </node>
+      <node id="1243">
+        <label>map</label>
+      </node>
+      <node id="1252">
+        <label>TimeStamp.hh</label>
+        <link refid="db/d7c/TimeStamp_8hh"/>
+        <childnode refid="1237" relation="include">
+        </childnode>
+      </node>
+      <node id="1238">
+        <label>log4tango/config.h</label>
+      </node>
+      <node id="1248">
+        <label>threading/Threading.hh</label>
+        <link refid="d6/d51/Threading_8hh"/>
+        <childnode refid="1237" relation="include">
+        </childnode>
+        <childnode refid="1249" relation="include">
+        </childnode>
+      </node>
+      <node id="1247">
+        <label>Layout.hh</label>
+        <link refid="db/da8/Layout_8hh"/>
+        <childnode refid="1237" relation="include">
+        </childnode>
+        <childnode refid="1248" relation="include">
+        </childnode>
+        <childnode refid="1251" relation="include">
+        </childnode>
+        <childnode refid="1242" relation="include">
+        </childnode>
+      </node>
+      <node id="1244">
+        <label>set</label>
+      </node>
+      <node id="1241">
+        <label>log4tango/Appender.hh</label>
+        <link refid="d2/d5c/Appender_8hh"/>
+        <childnode refid="1237" relation="include">
+        </childnode>
+        <childnode refid="1242" relation="include">
+        </childnode>
+        <childnode refid="1243" relation="include">
+        </childnode>
+        <childnode refid="1244" relation="include">
+        </childnode>
+        <childnode refid="1245" relation="include">
+        </childnode>
+        <childnode refid="1247" relation="include">
+        </childnode>
+        <childnode refid="1251" relation="include">
+        </childnode>
+        <childnode refid="1248" relation="include">
+        </childnode>
+      </node>
+      <node id="1250">
+        <label>stdio.h</label>
+      </node>
+      <node id="1236">
+        <label>PortabilityImpl.hh</label>
+        <link refid="da/dc7/PortabilityImpl_8hh"/>
+        <childnode refid="1237" relation="include">
+        </childnode>
+      </node>
+      <node id="1249">
+        <label>log4tango/threading/DummyThreads.hh</label>
+        <link refid="d7/d68/DummyThreads_8hh"/>
+        <childnode refid="1237" relation="include">
+        </childnode>
+        <childnode refid="1250" relation="include">
+        </childnode>
+        <childnode refid="1242" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="d4/db0/namespacelog4tango">log4tango</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>Appender.cpp</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>(C)<sp/>:<sp/><sp/>2000<sp/>-<sp/>2002</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>LifeLine<sp/>Networks<sp/>BV<sp/>(www.lifeline.nl).<sp/>All<sp/>rights<sp/>reserved.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Bastiaan<sp/>Bakker.<sp/>All<sp/>rights<sp/>reserved.<sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2004,2005,2006,2007,2008,2009,2010,2011,2012</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Synchrotron<sp/>SOLEIL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>L&apos;Orme<sp/>des<sp/>Merisiers</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Saint-Aubin<sp/>-<sp/>BP<sp/>48<sp/>-<sp/>France</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">//<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>log4tango.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Log4ango<sp/>is<sp/>free<sp/>software:<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">//<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">//<sp/>the<sp/>Free<sp/>Software<sp/>Foundation,<sp/>either<sp/>version<sp/>3<sp/>of<sp/>the<sp/>License,<sp/>or</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">//<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment">//<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Log4tango<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">//<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="comment">//<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="comment">//<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="comment">//<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="comment">//<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="comment">//<sp/>along<sp/>with<sp/>Log4Tango.<sp/><sp/>If<sp/>not,<sp/>see<sp/>&lt;http://www.gnu.org/licenses/&gt;.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="da/dc7/PortabilityImpl_8hh" kindref="compound">PortabilityImpl.hh</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="d2/d5c/Appender_8hh" kindref="compound">log4tango/Appender.hh</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">log4tango<sp/>{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="d7/dc4/classlog4tango_1_1Appender_1a16f9d0456a87ff10d57b02f7d5c2cc01" refkind="member"><highlight class="normal"><ref refid="d7/dc4/classlog4tango_1_1Appender_1a16f9d0456a87ff10d57b02f7d5c2cc01" kindref="member">Appender::Appender</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>name)<sp/></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/>:<sp/>_name(name)</highlight></codeline>
+<codeline lineno="36"><highlight class="normal">#if<sp/>APPENDERS_HAVE_LEVEL_THRESHOLD</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/>,_level(<ref refid="d8/d0e/classlog4tango_1_1Level" kindref="compound">Level</ref>::DEBUG)</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">#endif</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">#if<sp/>APPENDERS_HAVE_FILTERS</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/>,_filter(0)<sp/></highlight></codeline>
+<codeline lineno="41"><highlight class="normal">#endif</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//no-op</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46" refid="d7/dc4/classlog4tango_1_1Appender_1a3951b12a37424e9418963680662388b1" refkind="member"><highlight class="normal"><ref refid="d7/dc4/classlog4tango_1_1Appender_1a3951b12a37424e9418963680662388b1" kindref="member">Appender::~Appender</ref>()<sp/></highlight></codeline>
+<codeline lineno="47"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>APPENDERS_HAVE_FILTERS</highlight></codeline>
+<codeline lineno="49"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(_filter)<sp/>{</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>_filter;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="53"><highlight class="preprocessor"></highlight><highlight class="normal">}</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="55" refid="d7/dc4/classlog4tango_1_1Appender_1af8d183b5fdfc4b4affda75d1846d9270" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d7/dc4/classlog4tango_1_1Appender_1af8d183b5fdfc4b4affda75d1846d9270" kindref="member">Appender::is_valid</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="59" refid="d7/dc4/classlog4tango_1_1Appender_1a1f853fae3eebe457698039e3aafb770a" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d7/dc4/classlog4tango_1_1Appender_1a1f853fae3eebe457698039e3aafb770a" kindref="member">Appender::reopen</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/></highlight></codeline>
+<codeline lineno="60"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(APPENDERS_HAVE_LEVEL_THRESHOLD)<sp/>||<sp/>defined(APPENDERS_HAVE_FILTERS)</highlight></codeline>
+<codeline lineno="65"><highlight class="preprocessor"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d7/dc4/classlog4tango_1_1Appender_1acfb6f50c20043bd740b198dfbb4231ea" kindref="member">Appender::append</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="d8/df2/structlog4tango_1_1LoggingEvent" kindref="compound">LoggingEvent</ref>&amp;<sp/>event)<sp/></highlight></codeline>
+<codeline lineno="66"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>if<sp/>APPENDERS_HAVE_LEVEL_THRESHOLD</highlight></codeline>
+<codeline lineno="68"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(event.<ref refid="d8/df2/structlog4tango_1_1LoggingEvent_1a669d5dbcaf34dff9ad9ec7578856a550" kindref="member">level</ref><sp/>&lt;=<sp/>_level)<sp/></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>endif</highlight></codeline>
+<codeline lineno="71"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#<sp/>if<sp/>APPENDERS_HAVE_FILTERS</highlight></codeline>
+<codeline lineno="72"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!_filter<sp/>||<sp/>(_filter-&gt;decide(event)<sp/>!=<sp/>Filter::DENY))<sp/></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>endif</highlight></codeline>
+<codeline lineno="75"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="d7/dc4/classlog4tango_1_1Appender_1a87739ce35cdc83e06dd4c55af28d3ac8" kindref="member">_append</ref>(event);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>if<sp/>APPENDERS_HAVE_FILTERS</highlight></codeline>
+<codeline lineno="79"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>endif</highlight></codeline>
+<codeline lineno="81"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#<sp/>if<sp/>APPENDERS_HAVE_LEVEL_THRESHOLD</highlight></codeline>
+<codeline lineno="82"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>endif</highlight></codeline>
+<codeline lineno="84"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>APPENDERS_HAVE_LEVEL_THRESHOLD<sp/>||<sp/>APPENDERS_HAVE_FILTERS</highlight></codeline>
+<codeline lineno="87"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>APPENDERS_HAVE_LEVEL_THRESHOLD</highlight></codeline>
+<codeline lineno="89"><highlight class="preprocessor"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Appender::set_level<sp/>(<ref refid="d8/d0e/classlog4tango_1_1Level_1aa708c09b6a19a8cc8a3b19631561ca99" kindref="member">Level::Value</ref><sp/>level)<sp/></highlight></codeline>
+<codeline lineno="90"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/>_level<sp/>=<sp/>level;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><ref refid="d8/d0e/classlog4tango_1_1Level_1aa708c09b6a19a8cc8a3b19631561ca99" kindref="member">Level::Value</ref><sp/>Appender::get_level<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight><highlight class="keyword"><sp/>const<sp/></highlight></codeline>
+<codeline lineno="95"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>_level;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>APPENDERS_HAVE_LEVEL_THRESHOLD<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="99"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>APPENDERS_HAVE_FILTERS</highlight></codeline>
+<codeline lineno="101"><highlight class="preprocessor"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Appender::set_filter<sp/>(Filter*<sp/>filter)<sp/></highlight></codeline>
+<codeline lineno="102"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(_filter<sp/>!=<sp/>filter)<sp/>{</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(_filter)<sp/>{</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>_filter;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>_filter<sp/>=<sp/>filter;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="109"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="111"><highlight class="normal">Filter*<sp/>Appender::get_filter<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/></highlight></codeline>
+<codeline lineno="112"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>_filter;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>APPENDERS_HAVE_FILTERS</highlight></codeline>
+<codeline lineno="116"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117" refid="d7/dc4/classlog4tango_1_1Appender_1a3ee7b310ce4681a93e1f53bdcc02a15c" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d7/dc4/classlog4tango_1_1Appender_1a3ee7b310ce4681a93e1f53bdcc02a15c" kindref="member">Appender::level_changed</ref><sp/>(<ref refid="d8/d0e/classlog4tango_1_1Level_1aa708c09b6a19a8cc8a3b19631561ca99" kindref="member">Level::Value</ref><sp/>new_level)<sp/></highlight></codeline>
+<codeline lineno="118"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//--noop</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="122"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>log4tango</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/tango/workspace/cppTango/src/log4tango/Appender.cpp"/>
+  </compounddef>
+</doxygen>

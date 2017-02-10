@@ -1,0 +1,234 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="d5/dae/classTango_1_1GroupAttrReply" kind="class" prot="public">
+    <compoundname>Tango::GroupAttrReply</compoundname>
+    <basecompoundref refid="de/deb/classTango_1_1GroupReply" prot="public" virt="non-virtual">Tango::GroupReply</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d5/dae/classTango_1_1GroupAttrReply_1aa4dc1efbe0e088a9b38114d3db19f482" prot="private" static="no" mutable="no">
+        <type>DeviceAttribute</type>
+        <definition>DeviceAttribute Tango::GroupAttrReply::data_m</definition>
+        <argsstring></argsstring>
+        <name>data_m</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="384" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/group.h" bodystart="384" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="d5/dae/classTango_1_1GroupAttrReply_1a0bacdd98337676865fc24b9aeda2df53" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::GroupAttrReply::GroupAttrReply</definition>
+        <argsstring>()</argsstring>
+        <name>GroupAttrReply</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="343" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/dae/classTango_1_1GroupAttrReply_1a0e79eee44fd06f815b00f63655d1170e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::GroupAttrReply::GroupAttrReply</definition>
+        <argsstring>(const GroupAttrReply &amp;src)</argsstring>
+        <name>GroupAttrReply</name>
+        <param>
+          <type>const <ref refid="d5/dae/classTango_1_1GroupAttrReply" kindref="compound">GroupAttrReply</ref> &amp;</type>
+          <declname>src</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="345" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/dae/classTango_1_1GroupAttrReply_1a91e535c45e0b678ca74198ded399286e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::GroupAttrReply::GroupAttrReply</definition>
+        <argsstring>(const std::string &amp;dev_name, const std::string &amp;obj_name, const DeviceAttribute &amp;data)</argsstring>
+        <name>GroupAttrReply</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>dev_name</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>obj_name</declname>
+        </param>
+        <param>
+          <type>const DeviceAttribute &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="347" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/dae/classTango_1_1GroupAttrReply_1a73f0267a21e75c3810970bdd7ec9a0b6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::GroupAttrReply::GroupAttrReply</definition>
+        <argsstring>(const std::string &amp;dev_name, const std::string &amp;obj_name, const DevFailed &amp;exception)</argsstring>
+        <name>GroupAttrReply</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>dev_name</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>obj_name</declname>
+        </param>
+        <param>
+          <type>const DevFailed &amp;</type>
+          <declname>exception</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="351" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/dae/classTango_1_1GroupAttrReply_1a6ebfc566d06916b4b29464a3ad77f332" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::GroupAttrReply::GroupAttrReply</definition>
+        <argsstring>(const std::string &amp;dev_name, const std::string &amp;obj_name, bool group_element_enabled)</argsstring>
+        <name>GroupAttrReply</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>dev_name</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>obj_name</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>group_element_enabled</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="355" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/dae/classTango_1_1GroupAttrReply_1ae0bef376c07e461e646f6c0cb5bd8d2a" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual Tango::GroupAttrReply::~GroupAttrReply</definition>
+        <argsstring>()</argsstring>
+        <name>~GroupAttrReply</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="359" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d5/dae/classTango_1_1GroupAttrReply_1adac0b677ce81ec7e66f3c53872adea86" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>DeviceAttribute &amp;</type>
+        <definition>DeviceAttribute&amp; Tango::GroupAttrReply::get_data</definition>
+        <argsstring>()</argsstring>
+        <name>get_data</name>
+        <briefdescription>
+<para>Get attribute data. </para>        </briefdescription>
+        <detaileddescription>
+<para>Get attribute data for a device member of a group hierarchy</para><para><simplesect kind="return"><para>The attribute data </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="369" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/dae/classTango_1_1GroupAttrReply_1a421f7a196fc46f20b76a2124da30de95" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool Tango::GroupAttrReply::operator&gt;&gt;</definition>
+        <argsstring>(T &amp;dest)</argsstring>
+        <name>operator&gt;&gt;</name>
+        <param>
+          <type>T &amp;</type>
+          <declname>dest</declname>
+        </param>
+        <briefdescription>
+<para>Get attribute data and extract them. </para>        </briefdescription>
+        <detaileddescription>
+<para>Get attribute data for a device member of a group hierarchy and extract them in the provided variable</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">dest</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The variable in which the data should be extracted </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Flag set to true if the extraction succeeds </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="380" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/group.h" bodystart="1778" bodyend="1835"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Single element group reply for a read attribute execution. </para>    </briefdescription>
+    <detaileddescription>
+<para>$Author$ $Revision$ </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="1031">
+        <label>Tango::GroupReply</label>
+        <link refid="de/deb/classTango_1_1GroupReply"/>
+      </node>
+      <node id="1030">
+        <label>Tango::GroupAttrReply</label>
+        <link refid="d5/dae/classTango_1_1GroupAttrReply"/>
+        <childnode refid="1031" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1033">
+        <label>Tango::GroupReply</label>
+        <link refid="de/deb/classTango_1_1GroupReply"/>
+      </node>
+      <node id="1032">
+        <label>Tango::GroupAttrReply</label>
+        <link refid="d5/dae/classTango_1_1GroupAttrReply"/>
+        <childnode refid="1033" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="339" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/group.h" bodystart="338" bodyend="385"/>
+    <listofallmembers>
+      <member refid="d5/dae/classTango_1_1GroupAttrReply_1aa4dc1efbe0e088a9b38114d3db19f482" prot="private" virt="non-virtual"><scope>Tango::GroupAttrReply</scope><name>data_m</name></member>
+      <member refid="de/deb/classTango_1_1GroupReply_1a4fe578ba1fcd03239b7dc589ffc1af77" prot="public" virt="non-virtual"><scope>Tango::GroupAttrReply</scope><name>dev_name</name></member>
+      <member refid="de/deb/classTango_1_1GroupReply_1a4250fb27cfce0de073029a1b778b06b8" prot="public" virt="non-virtual"><scope>Tango::GroupAttrReply</scope><name>enable_exception</name></member>
+      <member refid="d5/dae/classTango_1_1GroupAttrReply_1adac0b677ce81ec7e66f3c53872adea86" prot="public" virt="non-virtual"><scope>Tango::GroupAttrReply</scope><name>get_data</name></member>
+      <member refid="de/deb/classTango_1_1GroupReply_1a47419919cad3f689140757bd09eae457" prot="public" virt="non-virtual"><scope>Tango::GroupAttrReply</scope><name>get_err_stack</name></member>
+      <member refid="d5/dae/classTango_1_1GroupAttrReply_1a0bacdd98337676865fc24b9aeda2df53" prot="private" virt="non-virtual"><scope>Tango::GroupAttrReply</scope><name>GroupAttrReply</name></member>
+      <member refid="d5/dae/classTango_1_1GroupAttrReply_1a0e79eee44fd06f815b00f63655d1170e" prot="private" virt="non-virtual"><scope>Tango::GroupAttrReply</scope><name>GroupAttrReply</name></member>
+      <member refid="d5/dae/classTango_1_1GroupAttrReply_1a91e535c45e0b678ca74198ded399286e" prot="private" virt="non-virtual"><scope>Tango::GroupAttrReply</scope><name>GroupAttrReply</name></member>
+      <member refid="d5/dae/classTango_1_1GroupAttrReply_1a73f0267a21e75c3810970bdd7ec9a0b6" prot="private" virt="non-virtual"><scope>Tango::GroupAttrReply</scope><name>GroupAttrReply</name></member>
+      <member refid="d5/dae/classTango_1_1GroupAttrReply_1a6ebfc566d06916b4b29464a3ad77f332" prot="private" virt="non-virtual"><scope>Tango::GroupAttrReply</scope><name>GroupAttrReply</name></member>
+      <member refid="de/deb/classTango_1_1GroupReply_1aec0def5a9df786134dc9cb8c66c21cb8" prot="public" virt="non-virtual"><scope>Tango::GroupAttrReply</scope><name>has_failed</name></member>
+      <member refid="de/deb/classTango_1_1GroupReply_1a13564b3e6df04a5257b2592b94a07d88" prot="public" virt="non-virtual"><scope>Tango::GroupAttrReply</scope><name>obj_name</name></member>
+      <member refid="d5/dae/classTango_1_1GroupAttrReply_1a421f7a196fc46f20b76a2124da30de95" prot="public" virt="non-virtual"><scope>Tango::GroupAttrReply</scope><name>operator&gt;&gt;</name></member>
+      <member refid="d5/dae/classTango_1_1GroupAttrReply_1ae0bef376c07e461e646f6c0cb5bd8d2a" prot="private" virt="virtual"><scope>Tango::GroupAttrReply</scope><name>~GroupAttrReply</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

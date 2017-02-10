@@ -1,0 +1,150 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="d0/dcb/classTango_1_1AttrHistoryStack" kind="class" prot="public">
+    <compoundname>Tango::AttrHistoryStack</compoundname>
+    <templateparamlist>
+      <param>
+        <type>typename</type>
+        <declname>T</declname>
+        <defname>T</defname>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d0/dcb/classTango_1_1AttrHistoryStack_1abb512cd346ff0ac80a6872a72f5e1169" prot="private" static="no" mutable="no">
+        <type>vector&lt; <ref refid="da/d12/classTango_1_1TimedAttrData" kindref="compound">Tango::TimedAttrData</ref>&lt; T &gt; &gt;</type>
+        <definition>vector&lt;Tango::TimedAttrData&lt;T&gt; &gt; Tango::AttrHistoryStack&lt; T &gt;::hist</definition>
+        <argsstring></argsstring>
+        <name>hist</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/pollext.h" line="764" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/pollext.h" bodystart="762" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d0/dcb/classTango_1_1AttrHistoryStack_1aac60d22a112badcb3c27fb0b6c22eecd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::AttrHistoryStack&lt; T &gt;::clear</definition>
+        <argsstring>()</argsstring>
+        <name>clear</name>
+        <briefdescription>
+<para>Clear the stack. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/pollext.h" line="752" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/pollext.h" bodystart="752" bodyend="752"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/dcb/classTango_1_1AttrHistoryStack_1a73318d3db023c337bdbeae5fc743b3fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>vector&lt; <ref refid="da/d12/classTango_1_1TimedAttrData" kindref="compound">TimedAttrData</ref>&lt; T &gt; &gt; &amp;</type>
+        <definition>vector&lt;TimedAttrData&lt;T&gt; &gt;&amp; Tango::AttrHistoryStack&lt; T &gt;::get_data</definition>
+        <argsstring>()</argsstring>
+        <name>get_data</name>
+        <briefdescription>
+<para>Get stack data. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The stack itself </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/pollext.h" line="759" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/dcb/classTango_1_1AttrHistoryStack_1a078798e0c374f134f0cfb315a515f028" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t Tango::AttrHistoryStack&lt; T &gt;::length</definition>
+        <argsstring>()</argsstring>
+        <name>length</name>
+        <briefdescription>
+<para>Get stack depth. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The stack depth </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/pollext.h" line="740" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/pollext.h" bodystart="740" bodyend="740"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/dcb/classTango_1_1AttrHistoryStack_1afcf19d9e75e02341bb8533cc7c61df5e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::AttrHistoryStack&lt; T &gt;::length</definition>
+        <argsstring>(long nb)</argsstring>
+        <name>length</name>
+        <param>
+          <type>long</type>
+          <declname>nb</declname>
+        </param>
+        <briefdescription>
+<para>Reserve memory for stack elements. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>nb</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The stack element number </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/pollext.h" line="747" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/pollext.h" bodystart="747" bodyend="747"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/dcb/classTango_1_1AttrHistoryStack_1a6356c9fc9d4dd06b941b8e4a36de1f90" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::AttrHistoryStack&lt; T &gt;::push</definition>
+        <argsstring>(TimedAttrData&lt; T &gt; const &amp;elt)</argsstring>
+        <name>push</name>
+        <param>
+          <type><ref refid="da/d12/classTango_1_1TimedAttrData" kindref="compound">TimedAttrData</ref>&lt; T &gt; const &amp;</type>
+          <declname>elt</declname>
+        </param>
+        <briefdescription>
+<para>Store a new element in the stack. </para>        </briefdescription>
+        <detaileddescription>
+<para>This method stores a new element in the stack</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>elt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new element </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/pollext.h" line="733" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="d0/dcb/classTango_1_1AttrHistoryStack_1a29ff76ad581f4979e18bf566b2ad7326" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Tango::AttrHistoryStack&lt; T &gt;::AttrHistoryStack</definition>
+        <argsstring>()</argsstring>
+        <name>AttrHistoryStack</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/pollext.h" line="762" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/pollext.h" bodystart="762" bodyend="762"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This class is a used to pass an attribute value history when the user directly fills the attribute polling buffer. </para>    </briefdescription>
+    <detaileddescription>
+<para>Each element in this stack will be used to store one element of the attribute polling buffer</para><para>$Author$ $Revision$ </para>    </detaileddescription>
+    <location file="/home/tango/workspace/cppTango/include/tango/server/pollext.h" line="723" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/pollext.h" bodystart="722" bodyend="765"/>
+    <listofallmembers>
+      <member refid="d0/dcb/classTango_1_1AttrHistoryStack_1a29ff76ad581f4979e18bf566b2ad7326" prot="private" virt="non-virtual"><scope>Tango::AttrHistoryStack</scope><name>AttrHistoryStack</name></member>
+      <member refid="d0/dcb/classTango_1_1AttrHistoryStack_1aac60d22a112badcb3c27fb0b6c22eecd" prot="public" virt="non-virtual"><scope>Tango::AttrHistoryStack</scope><name>clear</name></member>
+      <member refid="d0/dcb/classTango_1_1AttrHistoryStack_1a73318d3db023c337bdbeae5fc743b3fd" prot="public" virt="non-virtual"><scope>Tango::AttrHistoryStack</scope><name>get_data</name></member>
+      <member refid="d0/dcb/classTango_1_1AttrHistoryStack_1abb512cd346ff0ac80a6872a72f5e1169" prot="private" virt="non-virtual"><scope>Tango::AttrHistoryStack</scope><name>hist</name></member>
+      <member refid="d0/dcb/classTango_1_1AttrHistoryStack_1a078798e0c374f134f0cfb315a515f028" prot="public" virt="non-virtual"><scope>Tango::AttrHistoryStack</scope><name>length</name></member>
+      <member refid="d0/dcb/classTango_1_1AttrHistoryStack_1afcf19d9e75e02341bb8533cc7c61df5e" prot="public" virt="non-virtual"><scope>Tango::AttrHistoryStack</scope><name>length</name></member>
+      <member refid="d0/dcb/classTango_1_1AttrHistoryStack_1a6356c9fc9d4dd06b941b8e4a36de1f90" prot="public" virt="non-virtual"><scope>Tango::AttrHistoryStack</scope><name>push</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

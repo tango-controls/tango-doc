@@ -1,0 +1,1049 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="d4/d1c/classlog4tango_1_1Logger" kind="class" prot="public">
+    <compoundname>log4tango::Logger</compoundname>
+    <basecompoundref refid="d6/d89/classlog4tango_1_1AppenderAttachable" prot="public" virt="non-virtual">log4tango::AppenderAttachable</basecompoundref>
+    <includes refid="d1/d13/Logger_8hh" local="yes">Logger.hh</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d4/d1c/classlog4tango_1_1Logger_1a8bb35caa4f5fdbe222fd1093116cf593" prot="private" static="no" mutable="no">
+        <type><ref refid="d8/d0e/classlog4tango_1_1Level_1aa708c09b6a19a8cc8a3b19631561ca99" kindref="member">Level::Value</ref></type>
+        <definition>Level::Value log4tango::Logger::_level</definition>
+        <argsstring></argsstring>
+        <name>_level</name>
+        <briefdescription>
+<para>The assigned level of this logger. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/Logger.hh" line="397" column="1" bodyfile="/home/tango/workspace/cppTango/include/log4tango/Logger.hh" bodystart="397" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/d1c/classlog4tango_1_1Logger_1ad7aeddae9976c874561dc0f817c7eee9" prot="private" static="no" mutable="no">
+        <type>const std::string</type>
+        <definition>const std::string log4tango::Logger::_name</definition>
+        <argsstring></argsstring>
+        <name>_name</name>
+        <briefdescription>
+<para>The name of this logger. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/Logger.hh" line="394" column="1" bodyfile="/home/tango/workspace/cppTango/include/log4tango/Logger.hh" bodystart="394" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d4/d1c/classlog4tango_1_1Logger_1a26b45ebe00d0cbecda9d9f64f169922e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>log4tango::Logger::Logger</definition>
+        <argsstring>(const std::string &amp;name, Level::Value level=Level::OFF)</argsstring>
+        <name>Logger</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type><ref refid="d8/d0e/classlog4tango_1_1Level_1aa708c09b6a19a8cc8a3b19631561ca99" kindref="member">Level::Value</ref></type>
+          <declname>level</declname>
+          <defval><ref refid="d8/d0e/classlog4tango_1_1Level_1ad9edd63020b6becc9aef8802c48eb461a955ee789684a2e9952b7e4f56b6bb74f" kindref="member">Level::OFF</ref></defval>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the fully qualified name of this <ref refid="d4/d1c/classlog4tango_1_1Logger" kindref="compound">Logger</ref> </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the level for this <ref refid="d4/d1c/classlog4tango_1_1Logger" kindref="compound">Logger</ref>. Defaults to <ref refid="d8/d0e/classlog4tango_1_1Level_1ad9edd63020b6becc9aef8802c48eb461a955ee789684a2e9952b7e4f56b6bb74f" kindref="member">Level::OFF</ref> </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/Logger.hh" line="65" column="1" bodyfile="/home/tango/workspace/cppTango/src/log4tango/Logger.cpp" bodystart="45" bodyend="63"/>
+        <references refid="d8/d0e/classlog4tango_1_1Level_1ad9edd63020b6becc9aef8802c48eb461aa98b4453bf21b1af1c2d3d953887f393" compoundref="d2/d33/Level_8hh" startline="92">log4tango::Level::DEBUG</references>
+        <references refid="d8/d0e/classlog4tango_1_1Level_1ad9edd63020b6becc9aef8802c48eb461ae9f52151dce772e7a7ee87bc824b1fdf" compoundref="d2/d33/Level_8hh" startline="89">log4tango::Level::ERROR</references>
+        <references refid="d8/d0e/classlog4tango_1_1Level_1ad9edd63020b6becc9aef8802c48eb461a58fb50808d864278c4127f5c8ac5406c" compoundref="d2/d33/Level_8hh" startline="88">log4tango::Level::FATAL</references>
+        <references refid="d8/d0e/classlog4tango_1_1Level_1ad9edd63020b6becc9aef8802c48eb461ae666ceb60dfca43381816abf33e2cd1b" compoundref="d2/d33/Level_8hh" startline="91">log4tango::Level::INFO</references>
+        <references refid="d8/d0e/classlog4tango_1_1Level_1ad9edd63020b6becc9aef8802c48eb461ab0dfb37a2ad73d7b7f53a460819a2cc3" compoundref="d2/d33/Level_8hh" startline="90">log4tango::Level::WARN</references>
+      </memberdef>
+      <memberdef kind="function" id="d4/d1c/classlog4tango_1_1Logger_1a39fb5f0cb96762664150e4af657cd33a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>log4tango::Logger::~Logger</definition>
+        <argsstring>()</argsstring>
+        <name>~Logger</name>
+        <briefdescription>
+<para>Destructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/Logger.hh" line="71" column="1" bodyfile="/home/tango/workspace/cppTango/src/log4tango/Logger.cpp" bodystart="65" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d1c/classlog4tango_1_1Logger_1a86870349be1352d8c529e713acf51a0b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void log4tango::Logger::debug</definition>
+        <argsstring>(const char *string_format,...)</argsstring>
+        <name>debug</name>
+        <param>
+          <type>const char *</type>
+          <declname>string_format</declname>
+        </param>
+        <param>
+          <type>...</type>
+        </param>
+        <briefdescription>
+<para>Log a message with debug level. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>string_format</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Format specifier for the log. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>...</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The arguments for string_format </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/Logger.hh" line="148" column="1" bodyfile="/home/tango/workspace/cppTango/src/log4tango/Logger.cpp" bodystart="150" bodyend="157"/>
+        <references refid="d8/d0e/classlog4tango_1_1Level_1ad9edd63020b6becc9aef8802c48eb461aa98b4453bf21b1af1c2d3d953887f393" compoundref="d2/d33/Level_8hh" startline="92">log4tango::Level::DEBUG</references>
+        <references refid="d4/d1c/classlog4tango_1_1Logger_1a393cade41cee1267e49018f5b4f8fa67" compoundref="d1/d13/Logger_8hh" startline="101" endline="103">is_level_enabled</references>
+        <references refid="d4/d1c/classlog4tango_1_1Logger_1adc92f13df7647dbeac96120bbda218f4" compoundref="d9/df5/Logger_8cpp" startline="120" endline="127">log_unconditionally</references>
+        <references refid="d4/d04/classlog4tango_1_1StringUtil_1a1588cfe00d2951f175025f949793f866" compoundref="da/dfc/StringUtil_8cpp" startline="57" endline="79">log4tango::StringUtil::vform</references>
+      </memberdef>
+      <memberdef kind="function" id="d4/d1c/classlog4tango_1_1Logger_1acdeaf9ecda4f2fd1b6ac845e188b34d6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void log4tango::Logger::debug</definition>
+        <argsstring>(const std::string &amp;message)</argsstring>
+        <name>debug</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+<para>Log a message with debug level. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>message</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>string to write in the log file </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/Logger.hh" line="154" column="1" bodyfile="/home/tango/workspace/cppTango/include/log4tango/Logger.hh" bodystart="154" bodyend="158"/>
+        <references refid="d8/d0e/classlog4tango_1_1Level_1ad9edd63020b6becc9aef8802c48eb461aa98b4453bf21b1af1c2d3d953887f393" compoundref="d2/d33/Level_8hh" startline="92">log4tango::Level::DEBUG</references>
+      </memberdef>
+      <memberdef kind="function" id="d4/d1c/classlog4tango_1_1Logger_1a652427a4aed5322eb189f7409498cd18" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="d6/de1/classlog4tango_1_1LoggerStream" kindref="compound">LoggerStream</ref></type>
+        <definition>LoggerStream log4tango::Logger::debug_stream</definition>
+        <argsstring>(void)</argsstring>
+        <name>debug_stream</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Return a <ref refid="d6/de1/classlog4tango_1_1LoggerStream" kindref="compound">LoggerStream</ref> with level DEBUG. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The <ref refid="d6/de1/classlog4tango_1_1LoggerStream" kindref="compound">LoggerStream</ref>. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/Logger.hh" line="173" column="1" bodyfile="/home/tango/workspace/cppTango/include/log4tango/Logger.hh" bodystart="173" bodyend="175"/>
+        <references refid="d8/d0e/classlog4tango_1_1Level_1ad9edd63020b6becc9aef8802c48eb461aa98b4453bf21b1af1c2d3d953887f393" compoundref="d2/d33/Level_8hh" startline="92">log4tango::Level::DEBUG</references>
+      </memberdef>
+      <memberdef kind="function" id="d4/d1c/classlog4tango_1_1Logger_1ac9c2f129c56991f6bf7148ce5b7f1518" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void log4tango::Logger::error</definition>
+        <argsstring>(const char *string_format,...)</argsstring>
+        <name>error</name>
+        <param>
+          <type>const char *</type>
+          <declname>string_format</declname>
+        </param>
+        <param>
+          <type>...</type>
+        </param>
+        <briefdescription>
+<para>Log a message with error level. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>string_format</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Format specifier for the log. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>...</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The arguments for string_format </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/Logger.hh" line="277" column="1" bodyfile="/home/tango/workspace/cppTango/src/log4tango/Logger.cpp" bodystart="177" bodyend="184"/>
+        <references refid="d8/d0e/classlog4tango_1_1Level_1ad9edd63020b6becc9aef8802c48eb461ae9f52151dce772e7a7ee87bc824b1fdf" compoundref="d2/d33/Level_8hh" startline="89">log4tango::Level::ERROR</references>
+        <references refid="d4/d1c/classlog4tango_1_1Logger_1a393cade41cee1267e49018f5b4f8fa67" compoundref="d1/d13/Logger_8hh" startline="101" endline="103">is_level_enabled</references>
+        <references refid="d4/d1c/classlog4tango_1_1Logger_1adc92f13df7647dbeac96120bbda218f4" compoundref="d9/df5/Logger_8cpp" startline="120" endline="127">log_unconditionally</references>
+        <references refid="d4/d04/classlog4tango_1_1StringUtil_1a1588cfe00d2951f175025f949793f866" compoundref="da/dfc/StringUtil_8cpp" startline="57" endline="79">log4tango::StringUtil::vform</references>
+      </memberdef>
+      <memberdef kind="function" id="d4/d1c/classlog4tango_1_1Logger_1a7d587fb218937b9c525f5c48e5f0e230" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void log4tango::Logger::error</definition>
+        <argsstring>(const std::string &amp;message)</argsstring>
+        <name>error</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+<para>Log a message with error level. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>message</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>string to write in the log file </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/Logger.hh" line="283" column="1" bodyfile="/home/tango/workspace/cppTango/include/log4tango/Logger.hh" bodystart="283" bodyend="287"/>
+        <references refid="d8/d0e/classlog4tango_1_1Level_1ad9edd63020b6becc9aef8802c48eb461ae9f52151dce772e7a7ee87bc824b1fdf" compoundref="d2/d33/Level_8hh" startline="89">log4tango::Level::ERROR</references>
+      </memberdef>
+      <memberdef kind="function" id="d4/d1c/classlog4tango_1_1Logger_1a09c866cc0bfb1de324c676617234f4fd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="d6/de1/classlog4tango_1_1LoggerStream" kindref="compound">LoggerStream</ref></type>
+        <definition>LoggerStream log4tango::Logger::error_stream</definition>
+        <argsstring>(void)</argsstring>
+        <name>error_stream</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Return a <ref refid="d6/de1/classlog4tango_1_1LoggerStream" kindref="compound">LoggerStream</ref> with level ERROR. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The <ref refid="d6/de1/classlog4tango_1_1LoggerStream" kindref="compound">LoggerStream</ref>. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/Logger.hh" line="302" column="1" bodyfile="/home/tango/workspace/cppTango/include/log4tango/Logger.hh" bodystart="302" bodyend="304"/>
+        <references refid="d8/d0e/classlog4tango_1_1Level_1ad9edd63020b6becc9aef8802c48eb461ae9f52151dce772e7a7ee87bc824b1fdf" compoundref="d2/d33/Level_8hh" startline="89">log4tango::Level::ERROR</references>
+      </memberdef>
+      <memberdef kind="function" id="d4/d1c/classlog4tango_1_1Logger_1a4c8832412bde8329c5a69acd88e08b8c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void log4tango::Logger::fatal</definition>
+        <argsstring>(const char *string_format,...)</argsstring>
+        <name>fatal</name>
+        <param>
+          <type>const char *</type>
+          <declname>string_format</declname>
+        </param>
+        <param>
+          <type>...</type>
+        </param>
+        <briefdescription>
+<para>Log a message with fatal level. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>string_format</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Format specifier for the log. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>...</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The arguments for string_format </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/Logger.hh" line="320" column="1" bodyfile="/home/tango/workspace/cppTango/src/log4tango/Logger.cpp" bodystart="186" bodyend="193"/>
+        <references refid="d8/d0e/classlog4tango_1_1Level_1ad9edd63020b6becc9aef8802c48eb461a58fb50808d864278c4127f5c8ac5406c" compoundref="d2/d33/Level_8hh" startline="88">log4tango::Level::FATAL</references>
+        <references refid="d4/d1c/classlog4tango_1_1Logger_1a393cade41cee1267e49018f5b4f8fa67" compoundref="d1/d13/Logger_8hh" startline="101" endline="103">is_level_enabled</references>
+        <references refid="d4/d1c/classlog4tango_1_1Logger_1adc92f13df7647dbeac96120bbda218f4" compoundref="d9/df5/Logger_8cpp" startline="120" endline="127">log_unconditionally</references>
+        <references refid="d4/d04/classlog4tango_1_1StringUtil_1a1588cfe00d2951f175025f949793f866" compoundref="da/dfc/StringUtil_8cpp" startline="57" endline="79">log4tango::StringUtil::vform</references>
+      </memberdef>
+      <memberdef kind="function" id="d4/d1c/classlog4tango_1_1Logger_1a56287e6a0a500f74d9fd7bc09f612111" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void log4tango::Logger::fatal</definition>
+        <argsstring>(const std::string &amp;message)</argsstring>
+        <name>fatal</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+<para>Log a message with fatal level. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>message</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>string to write in the log file </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/Logger.hh" line="326" column="1" bodyfile="/home/tango/workspace/cppTango/include/log4tango/Logger.hh" bodystart="326" bodyend="330"/>
+        <references refid="d8/d0e/classlog4tango_1_1Level_1ad9edd63020b6becc9aef8802c48eb461a58fb50808d864278c4127f5c8ac5406c" compoundref="d2/d33/Level_8hh" startline="88">log4tango::Level::FATAL</references>
+      </memberdef>
+      <memberdef kind="function" id="d4/d1c/classlog4tango_1_1Logger_1ae734bcc83b3b3687a073edaacd5c74f0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="d6/de1/classlog4tango_1_1LoggerStream" kindref="compound">LoggerStream</ref></type>
+        <definition>LoggerStream log4tango::Logger::fatal_stream</definition>
+        <argsstring>(void)</argsstring>
+        <name>fatal_stream</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Return a <ref refid="d6/de1/classlog4tango_1_1LoggerStream" kindref="compound">LoggerStream</ref> with level FATAL. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The <ref refid="d6/de1/classlog4tango_1_1LoggerStream" kindref="compound">LoggerStream</ref>. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/Logger.hh" line="345" column="1" bodyfile="/home/tango/workspace/cppTango/include/log4tango/Logger.hh" bodystart="345" bodyend="347"/>
+        <references refid="d8/d0e/classlog4tango_1_1Level_1ad9edd63020b6becc9aef8802c48eb461a58fb50808d864278c4127f5c8ac5406c" compoundref="d2/d33/Level_8hh" startline="88">log4tango::Level::FATAL</references>
+      </memberdef>
+      <memberdef kind="function" id="d4/d1c/classlog4tango_1_1Logger_1a0bfd7a54498aba29263cfb0dae55faff" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="d8/d0e/classlog4tango_1_1Level_1aa708c09b6a19a8cc8a3b19631561ca99" kindref="member">Level::Value</ref></type>
+        <definition>Level::Value log4tango::Logger::get_level</definition>
+        <argsstring>() const </argsstring>
+        <name>get_level</name>
+        <briefdescription>
+<para>Returns the assigned <ref refid="d8/d0e/classlog4tango_1_1Level" kindref="compound">Level</ref>, if any, for this <ref refid="d4/d1c/classlog4tango_1_1Logger" kindref="compound">Logger</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><ref refid="d8/d0e/classlog4tango_1_1Level" kindref="compound">Level</ref> - the assigned <ref refid="d8/d0e/classlog4tango_1_1Level" kindref="compound">Level</ref>, can be Level::NOTSET </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/Logger.hh" line="91" column="1" bodyfile="/home/tango/workspace/cppTango/include/log4tango/Logger.hh" bodystart="91" bodyend="93"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d1c/classlog4tango_1_1Logger_1abfe1c32b01e64c5f58f52812f898f170" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::string &amp;</type>
+        <definition>const std::string&amp; log4tango::Logger::get_name</definition>
+        <argsstring>() const </argsstring>
+        <name>get_name</name>
+        <briefdescription>
+<para>Return the logger name. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The logger name. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/Logger.hh" line="77" column="1" bodyfile="/home/tango/workspace/cppTango/include/log4tango/Logger.hh" bodystart="77" bodyend="79"/>
+        <referencedby refid="d4/d1c/classlog4tango_1_1Logger_1a8ee921e0f61dea06224b7b249e820470" compoundref="d9/df5/Logger_8cpp" startline="129" endline="138">log_unconditionally</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d4/d1c/classlog4tango_1_1Logger_1a34b294678a690630721e8824f16020de" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="d6/de1/classlog4tango_1_1LoggerStream" kindref="compound">LoggerStream</ref></type>
+        <definition>LoggerStream log4tango::Logger::get_stream</definition>
+        <argsstring>(Level::Value level, bool filter=true)</argsstring>
+        <name>get_stream</name>
+        <param>
+          <type><ref refid="d8/d0e/classlog4tango_1_1Level_1aa708c09b6a19a8cc8a3b19631561ca99" kindref="member">Level::Value</ref></type>
+          <declname>level</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>filter</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+<para>Return a <ref refid="d6/de1/classlog4tango_1_1LoggerStream" kindref="compound">LoggerStream</ref> with given <ref refid="d8/d0e/classlog4tango_1_1Level" kindref="compound">Level</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="d8/d0e/classlog4tango_1_1Level" kindref="compound">Level</ref> of the <ref refid="d6/de1/classlog4tango_1_1LoggerStream" kindref="compound">LoggerStream</ref>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>filter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The filter flag </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The requested <ref refid="d6/de1/classlog4tango_1_1LoggerStream" kindref="compound">LoggerStream</ref>. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/Logger.hh" line="365" column="1" bodyfile="/home/tango/workspace/cppTango/include/log4tango/Logger.hh" bodystart="365" bodyend="367"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d1c/classlog4tango_1_1Logger_1adaba6152f4a39580d48bae035ac30778" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void log4tango::Logger::info</definition>
+        <argsstring>(const char *string_format,...)</argsstring>
+        <name>info</name>
+        <param>
+          <type>const char *</type>
+          <declname>string_format</declname>
+        </param>
+        <param>
+          <type>...</type>
+        </param>
+        <briefdescription>
+<para>Log a message with info level. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>string_format</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Format specifier for the log. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>...</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The arguments for string_format </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/Logger.hh" line="191" column="1" bodyfile="/home/tango/workspace/cppTango/src/log4tango/Logger.cpp" bodystart="159" bodyend="166"/>
+        <references refid="d8/d0e/classlog4tango_1_1Level_1ad9edd63020b6becc9aef8802c48eb461ae666ceb60dfca43381816abf33e2cd1b" compoundref="d2/d33/Level_8hh" startline="91">log4tango::Level::INFO</references>
+        <references refid="d4/d1c/classlog4tango_1_1Logger_1a393cade41cee1267e49018f5b4f8fa67" compoundref="d1/d13/Logger_8hh" startline="101" endline="103">is_level_enabled</references>
+        <references refid="d4/d1c/classlog4tango_1_1Logger_1adc92f13df7647dbeac96120bbda218f4" compoundref="d9/df5/Logger_8cpp" startline="120" endline="127">log_unconditionally</references>
+        <references refid="d4/d04/classlog4tango_1_1StringUtil_1a1588cfe00d2951f175025f949793f866" compoundref="da/dfc/StringUtil_8cpp" startline="57" endline="79">log4tango::StringUtil::vform</references>
+      </memberdef>
+      <memberdef kind="function" id="d4/d1c/classlog4tango_1_1Logger_1a987565b18e6ea9a2524d64c80759c2eb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void log4tango::Logger::info</definition>
+        <argsstring>(const std::string &amp;message)</argsstring>
+        <name>info</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+<para>Log a message with info level. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>message</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>string to write in the log file </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/Logger.hh" line="197" column="1" bodyfile="/home/tango/workspace/cppTango/include/log4tango/Logger.hh" bodystart="197" bodyend="201"/>
+        <references refid="d8/d0e/classlog4tango_1_1Level_1ad9edd63020b6becc9aef8802c48eb461ae666ceb60dfca43381816abf33e2cd1b" compoundref="d2/d33/Level_8hh" startline="91">log4tango::Level::INFO</references>
+      </memberdef>
+      <memberdef kind="function" id="d4/d1c/classlog4tango_1_1Logger_1a22a2fd4d13e70e352a5f47dd02d33342" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="d6/de1/classlog4tango_1_1LoggerStream" kindref="compound">LoggerStream</ref></type>
+        <definition>LoggerStream log4tango::Logger::info_stream</definition>
+        <argsstring>(void)</argsstring>
+        <name>info_stream</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Return a <ref refid="d6/de1/classlog4tango_1_1LoggerStream" kindref="compound">LoggerStream</ref> with level INFO. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The <ref refid="d6/de1/classlog4tango_1_1LoggerStream" kindref="compound">LoggerStream</ref>. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/Logger.hh" line="216" column="1" bodyfile="/home/tango/workspace/cppTango/include/log4tango/Logger.hh" bodystart="216" bodyend="218"/>
+        <references refid="d8/d0e/classlog4tango_1_1Level_1ad9edd63020b6becc9aef8802c48eb461ae666ceb60dfca43381816abf33e2cd1b" compoundref="d2/d33/Level_8hh" startline="91">log4tango::Level::INFO</references>
+      </memberdef>
+      <memberdef kind="function" id="d4/d1c/classlog4tango_1_1Logger_1a6ce8b32ab06c6b77f8aac562dabf9c1f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool log4tango::Logger::is_debug_enabled</definition>
+        <argsstring>(void) const </argsstring>
+        <name>is_debug_enabled</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Return true if the <ref refid="d4/d1c/classlog4tango_1_1Logger" kindref="compound">Logger</ref> will log messages with level DEBUG. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Whether the <ref refid="d4/d1c/classlog4tango_1_1Logger" kindref="compound">Logger</ref> will log. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/Logger.hh" line="164" column="1" bodyfile="/home/tango/workspace/cppTango/include/log4tango/Logger.hh" bodystart="164" bodyend="166"/>
+        <references refid="d8/d0e/classlog4tango_1_1Level_1ad9edd63020b6becc9aef8802c48eb461aa98b4453bf21b1af1c2d3d953887f393" compoundref="d2/d33/Level_8hh" startline="92">log4tango::Level::DEBUG</references>
+      </memberdef>
+      <memberdef kind="function" id="d4/d1c/classlog4tango_1_1Logger_1ab2ec2debd2d3024293a0d873af8e86b3" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool log4tango::Logger::is_error_enabled</definition>
+        <argsstring>(void) const </argsstring>
+        <name>is_error_enabled</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Return true if the <ref refid="d4/d1c/classlog4tango_1_1Logger" kindref="compound">Logger</ref> will log messages with level ERROR. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Whether the <ref refid="d4/d1c/classlog4tango_1_1Logger" kindref="compound">Logger</ref> will log. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/Logger.hh" line="293" column="1" bodyfile="/home/tango/workspace/cppTango/include/log4tango/Logger.hh" bodystart="293" bodyend="295"/>
+        <references refid="d8/d0e/classlog4tango_1_1Level_1ad9edd63020b6becc9aef8802c48eb461ae9f52151dce772e7a7ee87bc824b1fdf" compoundref="d2/d33/Level_8hh" startline="89">log4tango::Level::ERROR</references>
+      </memberdef>
+      <memberdef kind="function" id="d4/d1c/classlog4tango_1_1Logger_1a16213b0ab5912487ad2eb62c4337900b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool log4tango::Logger::is_fatal_enabled</definition>
+        <argsstring>(void) const </argsstring>
+        <name>is_fatal_enabled</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Return true if the <ref refid="d4/d1c/classlog4tango_1_1Logger" kindref="compound">Logger</ref> will log messages with level FATAL. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Whether the <ref refid="d4/d1c/classlog4tango_1_1Logger" kindref="compound">Logger</ref> will log. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/Logger.hh" line="336" column="1" bodyfile="/home/tango/workspace/cppTango/include/log4tango/Logger.hh" bodystart="336" bodyend="338"/>
+        <references refid="d8/d0e/classlog4tango_1_1Level_1ad9edd63020b6becc9aef8802c48eb461a58fb50808d864278c4127f5c8ac5406c" compoundref="d2/d33/Level_8hh" startline="88">log4tango::Level::FATAL</references>
+      </memberdef>
+      <memberdef kind="function" id="d4/d1c/classlog4tango_1_1Logger_1af73279505009e650e615294711fe75fe" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool log4tango::Logger::is_info_enabled</definition>
+        <argsstring>(void) const </argsstring>
+        <name>is_info_enabled</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Return true if the <ref refid="d4/d1c/classlog4tango_1_1Logger" kindref="compound">Logger</ref> will log messages with level INFO. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Whether the <ref refid="d4/d1c/classlog4tango_1_1Logger" kindref="compound">Logger</ref> will log. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/Logger.hh" line="207" column="1" bodyfile="/home/tango/workspace/cppTango/include/log4tango/Logger.hh" bodystart="207" bodyend="209"/>
+        <references refid="d8/d0e/classlog4tango_1_1Level_1ad9edd63020b6becc9aef8802c48eb461ae666ceb60dfca43381816abf33e2cd1b" compoundref="d2/d33/Level_8hh" startline="91">log4tango::Level::INFO</references>
+      </memberdef>
+      <memberdef kind="function" id="d4/d1c/classlog4tango_1_1Logger_1a393cade41cee1267e49018f5b4f8fa67" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool log4tango::Logger::is_level_enabled</definition>
+        <argsstring>(Level::Value level) const </argsstring>
+        <name>is_level_enabled</name>
+        <param>
+          <type><ref refid="d8/d0e/classlog4tango_1_1Level_1aa708c09b6a19a8cc8a3b19631561ca99" kindref="member">Level::Value</ref></type>
+          <declname>level</declname>
+        </param>
+        <briefdescription>
+<para>Returns true if the level of the <ref refid="d4/d1c/classlog4tango_1_1Logger" kindref="compound">Logger</ref> is equal to or higher than given level. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The level to compare with. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>whether logging is enable for this level. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/Logger.hh" line="101" column="1" bodyfile="/home/tango/workspace/cppTango/include/log4tango/Logger.hh" bodystart="101" bodyend="103"/>
+        <referencedby refid="d4/d1c/classlog4tango_1_1Logger_1a86870349be1352d8c529e713acf51a0b" compoundref="d9/df5/Logger_8cpp" startline="150" endline="157">debug</referencedby>
+        <referencedby refid="d4/d1c/classlog4tango_1_1Logger_1ac9c2f129c56991f6bf7148ce5b7f1518" compoundref="d9/df5/Logger_8cpp" startline="177" endline="184">error</referencedby>
+        <referencedby refid="d4/d1c/classlog4tango_1_1Logger_1a4c8832412bde8329c5a69acd88e08b8c" compoundref="d9/df5/Logger_8cpp" startline="186" endline="193">fatal</referencedby>
+        <referencedby refid="d4/d1c/classlog4tango_1_1Logger_1adaba6152f4a39580d48bae035ac30778" compoundref="d9/df5/Logger_8cpp" startline="159" endline="166">info</referencedby>
+        <referencedby refid="d4/d1c/classlog4tango_1_1Logger_1aebe7a33e64c1dd47d908d5a1eec18545" compoundref="d9/df5/Logger_8cpp" startline="140" endline="148">log</referencedby>
+        <referencedby refid="d4/d1c/classlog4tango_1_1Logger_1ab7a7dfad91aa2196ed91a607808f1061" compoundref="d9/df5/Logger_8cpp" startline="168" endline="175">warn</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d4/d1c/classlog4tango_1_1Logger_1ac48da8e8705775526b0d94f974dd158d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool log4tango::Logger::is_warn_enabled</definition>
+        <argsstring>(void) const </argsstring>
+        <name>is_warn_enabled</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Return true if the <ref refid="d4/d1c/classlog4tango_1_1Logger" kindref="compound">Logger</ref> will log messages with level WARN. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Whether the <ref refid="d4/d1c/classlog4tango_1_1Logger" kindref="compound">Logger</ref> will log. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/Logger.hh" line="250" column="1" bodyfile="/home/tango/workspace/cppTango/include/log4tango/Logger.hh" bodystart="250" bodyend="252"/>
+        <references refid="d8/d0e/classlog4tango_1_1Level_1ad9edd63020b6becc9aef8802c48eb461ab0dfb37a2ad73d7b7f53a460819a2cc3" compoundref="d2/d33/Level_8hh" startline="90">log4tango::Level::WARN</references>
+      </memberdef>
+      <memberdef kind="function" id="d4/d1c/classlog4tango_1_1Logger_1aebe7a33e64c1dd47d908d5a1eec18545" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void log4tango::Logger::log</definition>
+        <argsstring>(Level::Value level, const char *string_format,...)</argsstring>
+        <name>log</name>
+        <param>
+          <type><ref refid="d8/d0e/classlog4tango_1_1Level_1aa708c09b6a19a8cc8a3b19631561ca99" kindref="member">Level::Value</ref></type>
+          <declname>level</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>string_format</declname>
+        </param>
+        <param>
+          <type>...</type>
+        </param>
+        <briefdescription>
+<para>Log a message with the specified level. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The level of this log message. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>string_format</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Format specifier for the log . </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>...</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The arguments for string_format </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/Logger.hh" line="111" column="1" bodyfile="/home/tango/workspace/cppTango/src/log4tango/Logger.cpp" bodystart="140" bodyend="148"/>
+        <references refid="d4/d1c/classlog4tango_1_1Logger_1a393cade41cee1267e49018f5b4f8fa67" compoundref="d1/d13/Logger_8hh" startline="101" endline="103">is_level_enabled</references>
+        <references refid="d4/d1c/classlog4tango_1_1Logger_1adc92f13df7647dbeac96120bbda218f4" compoundref="d9/df5/Logger_8cpp" startline="120" endline="127">log_unconditionally</references>
+        <references refid="d4/d04/classlog4tango_1_1StringUtil_1a1588cfe00d2951f175025f949793f866" compoundref="da/dfc/StringUtil_8cpp" startline="57" endline="79">log4tango::StringUtil::vform</references>
+        <referencedby refid="d6/de1/classlog4tango_1_1LoggerStream_1a87e12557f4851fcbb9f4077e9a4d0d59" compoundref="d4/d11/LoggerStream_8cpp" startline="59" endline="79">log4tango::LoggerStream::flush</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d4/d1c/classlog4tango_1_1Logger_1afab624480348ae2bae502c72efeaf38e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void log4tango::Logger::log</definition>
+        <argsstring>(Level::Value level, const std::string &amp;message)</argsstring>
+        <name>log</name>
+        <param>
+          <type><ref refid="d8/d0e/classlog4tango_1_1Level_1aa708c09b6a19a8cc8a3b19631561ca99" kindref="member">Level::Value</ref></type>
+          <declname>level</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+<para>Log a message with the specified level. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The level of this log message. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>message</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>string to write in the log file </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/Logger.hh" line="119" column="1" bodyfile="/home/tango/workspace/cppTango/include/log4tango/Logger.hh" bodystart="119" bodyend="124"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d1c/classlog4tango_1_1Logger_1adc92f13df7647dbeac96120bbda218f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void log4tango::Logger::log_unconditionally</definition>
+        <argsstring>(Level::Value level, const char *string_format,...)</argsstring>
+        <name>log_unconditionally</name>
+        <param>
+          <type><ref refid="d8/d0e/classlog4tango_1_1Level_1aa708c09b6a19a8cc8a3b19631561ca99" kindref="member">Level::Value</ref></type>
+          <declname>level</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>string_format</declname>
+        </param>
+        <param>
+          <type>...</type>
+        </param>
+        <briefdescription>
+<para>Log a message with the specified level without level checking. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The level of this log message. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>string_format</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Format specifier for the log . </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>...</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The arguments for string_format </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/Logger.hh" line="132" column="1" bodyfile="/home/tango/workspace/cppTango/src/log4tango/Logger.cpp" bodystart="120" bodyend="127"/>
+        <references refid="d4/d04/classlog4tango_1_1StringUtil_1a1588cfe00d2951f175025f949793f866" compoundref="da/dfc/StringUtil_8cpp" startline="57" endline="79">log4tango::StringUtil::vform</references>
+        <referencedby refid="d4/d1c/classlog4tango_1_1Logger_1a86870349be1352d8c529e713acf51a0b" compoundref="d9/df5/Logger_8cpp" startline="150" endline="157">debug</referencedby>
+        <referencedby refid="d4/d1c/classlog4tango_1_1Logger_1ac9c2f129c56991f6bf7148ce5b7f1518" compoundref="d9/df5/Logger_8cpp" startline="177" endline="184">error</referencedby>
+        <referencedby refid="d4/d1c/classlog4tango_1_1Logger_1a4c8832412bde8329c5a69acd88e08b8c" compoundref="d9/df5/Logger_8cpp" startline="186" endline="193">fatal</referencedby>
+        <referencedby refid="d6/de1/classlog4tango_1_1LoggerStream_1a87e12557f4851fcbb9f4077e9a4d0d59" compoundref="d4/d11/LoggerStream_8cpp" startline="59" endline="79">log4tango::LoggerStream::flush</referencedby>
+        <referencedby refid="d4/d1c/classlog4tango_1_1Logger_1adaba6152f4a39580d48bae035ac30778" compoundref="d9/df5/Logger_8cpp" startline="159" endline="166">info</referencedby>
+        <referencedby refid="d4/d1c/classlog4tango_1_1Logger_1aebe7a33e64c1dd47d908d5a1eec18545" compoundref="d9/df5/Logger_8cpp" startline="140" endline="148">log</referencedby>
+        <referencedby refid="d4/d1c/classlog4tango_1_1Logger_1ab7a7dfad91aa2196ed91a607808f1061" compoundref="d9/df5/Logger_8cpp" startline="168" endline="175">warn</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d4/d1c/classlog4tango_1_1Logger_1a8ee921e0f61dea06224b7b249e820470" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void log4tango::Logger::log_unconditionally</definition>
+        <argsstring>(Level::Value level, const std::string &amp;message)</argsstring>
+        <name>log_unconditionally</name>
+        <param>
+          <type><ref refid="d8/d0e/classlog4tango_1_1Level_1aa708c09b6a19a8cc8a3b19631561ca99" kindref="member">Level::Value</ref></type>
+          <declname>level</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+<para>Log a message with the specified level without level checking. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The level of this log message. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>message</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>string to write in the log file </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/Logger.hh" line="140" column="1" bodyfile="/home/tango/workspace/cppTango/src/log4tango/Logger.cpp" bodystart="129" bodyend="138"/>
+        <references refid="d4/d1c/classlog4tango_1_1Logger_1a44d8fa395ad922427bf417aee9c3ed79" compoundref="d9/df5/Logger_8cpp" startline="92" endline="118">call_appenders</references>
+        <references refid="d4/d1c/classlog4tango_1_1Logger_1abfe1c32b01e64c5f58f52812f898f170" compoundref="d1/d13/Logger_8hh" startline="77" endline="79">get_name</references>
+      </memberdef>
+      <memberdef kind="function" id="d4/d1c/classlog4tango_1_1Logger_1aee3ae63ec9ebc6f2a2eb72c0ff3d2b34" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void log4tango::Logger::set_level</definition>
+        <argsstring>(Level::Value level)</argsstring>
+        <name>set_level</name>
+        <param>
+          <type><ref refid="d8/d0e/classlog4tango_1_1Level_1aa708c09b6a19a8cc8a3b19631561ca99" kindref="member">Level::Value</ref></type>
+          <declname>level</declname>
+        </param>
+        <briefdescription>
+<para>Set the level of this <ref refid="d4/d1c/classlog4tango_1_1Logger" kindref="compound">Logger</ref> (silently ignores invalid values) </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The level to set. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/Logger.hh" line="85" column="1" bodyfile="/home/tango/workspace/cppTango/src/log4tango/Logger.cpp" bodystart="75" bodyend="90"/>
+        <references refid="d6/d89/classlog4tango_1_1AppenderAttachable_1a1956c7e554f262cfecfc1a9de9145289" compoundref="d6/d73/AppenderAttachable_8hh" startline="122">log4tango::AppenderAttachable::_appenders</references>
+        <references refid="d6/d89/classlog4tango_1_1AppenderAttachable_1a9390c8fc80202c4296f7ef10f08d13a5" compoundref="d6/d73/AppenderAttachable_8hh" startline="127">log4tango::AppenderAttachable::_appendersMutex</references>
+        <references refid="d8/d0e/classlog4tango_1_1Level_1ad9edd63020b6becc9aef8802c48eb461aa98b4453bf21b1af1c2d3d953887f393" compoundref="d2/d33/Level_8hh" startline="92">log4tango::Level::DEBUG</references>
+        <references refid="d8/d0e/classlog4tango_1_1Level_1ad9edd63020b6becc9aef8802c48eb461a955ee789684a2e9952b7e4f56b6bb74f" compoundref="d2/d33/Level_8hh" startline="87">log4tango::Level::OFF</references>
+      </memberdef>
+      <memberdef kind="function" id="d4/d1c/classlog4tango_1_1Logger_1ab7a7dfad91aa2196ed91a607808f1061" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void log4tango::Logger::warn</definition>
+        <argsstring>(const char *string_format,...)</argsstring>
+        <name>warn</name>
+        <param>
+          <type>const char *</type>
+          <declname>string_format</declname>
+        </param>
+        <param>
+          <type>...</type>
+        </param>
+        <briefdescription>
+<para>Log a message with warn level. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>string_format</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Format specifier for the log. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>...</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The arguments for string_format </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/Logger.hh" line="234" column="1" bodyfile="/home/tango/workspace/cppTango/src/log4tango/Logger.cpp" bodystart="168" bodyend="175"/>
+        <references refid="d4/d1c/classlog4tango_1_1Logger_1a393cade41cee1267e49018f5b4f8fa67" compoundref="d1/d13/Logger_8hh" startline="101" endline="103">is_level_enabled</references>
+        <references refid="d4/d1c/classlog4tango_1_1Logger_1adc92f13df7647dbeac96120bbda218f4" compoundref="d9/df5/Logger_8cpp" startline="120" endline="127">log_unconditionally</references>
+        <references refid="d4/d04/classlog4tango_1_1StringUtil_1a1588cfe00d2951f175025f949793f866" compoundref="da/dfc/StringUtil_8cpp" startline="57" endline="79">log4tango::StringUtil::vform</references>
+        <references refid="d8/d0e/classlog4tango_1_1Level_1ad9edd63020b6becc9aef8802c48eb461ab0dfb37a2ad73d7b7f53a460819a2cc3" compoundref="d2/d33/Level_8hh" startline="90">log4tango::Level::WARN</references>
+      </memberdef>
+      <memberdef kind="function" id="d4/d1c/classlog4tango_1_1Logger_1a22646b15ebc33254f734e23280868345" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void log4tango::Logger::warn</definition>
+        <argsstring>(const std::string &amp;message)</argsstring>
+        <name>warn</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+<para>Log a message with warn level. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>message</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>string to write in the log file </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/Logger.hh" line="240" column="1" bodyfile="/home/tango/workspace/cppTango/include/log4tango/Logger.hh" bodystart="240" bodyend="244"/>
+        <references refid="d8/d0e/classlog4tango_1_1Level_1ad9edd63020b6becc9aef8802c48eb461ab0dfb37a2ad73d7b7f53a460819a2cc3" compoundref="d2/d33/Level_8hh" startline="90">log4tango::Level::WARN</references>
+      </memberdef>
+      <memberdef kind="function" id="d4/d1c/classlog4tango_1_1Logger_1a223a0d6d82a1e054d07474e87b207bba" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="d6/de1/classlog4tango_1_1LoggerStream" kindref="compound">LoggerStream</ref></type>
+        <definition>LoggerStream log4tango::Logger::warn_stream</definition>
+        <argsstring>(void)</argsstring>
+        <name>warn_stream</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Return a <ref refid="d6/de1/classlog4tango_1_1LoggerStream" kindref="compound">LoggerStream</ref> with level WARN. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The <ref refid="d6/de1/classlog4tango_1_1LoggerStream" kindref="compound">LoggerStream</ref>. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/Logger.hh" line="259" column="1" bodyfile="/home/tango/workspace/cppTango/include/log4tango/Logger.hh" bodystart="259" bodyend="261"/>
+        <references refid="d8/d0e/classlog4tango_1_1Level_1ad9edd63020b6becc9aef8802c48eb461ab0dfb37a2ad73d7b7f53a460819a2cc3" compoundref="d2/d33/Level_8hh" startline="90">log4tango::Level::WARN</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="d4/d1c/classlog4tango_1_1Logger_1a44d8fa395ad922427bf417aee9c3ed79" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void log4tango::Logger::call_appenders</definition>
+        <argsstring>(const LoggingEvent &amp;event)</argsstring>
+        <name>call_appenders</name>
+        <param>
+          <type>const <ref refid="d8/df2/structlog4tango_1_1LoggingEvent" kindref="compound">LoggingEvent</ref> &amp;</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+<para>Call the appenders. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>event</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the LogginEvent to log. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/Logger.hh" line="377" column="1" bodyfile="/home/tango/workspace/cppTango/src/log4tango/Logger.cpp" bodystart="92" bodyend="118"/>
+        <references refid="d6/d89/classlog4tango_1_1AppenderAttachable_1a1956c7e554f262cfecfc1a9de9145289" compoundref="d6/d73/AppenderAttachable_8hh" startline="122">log4tango::AppenderAttachable::_appenders</references>
+        <references refid="d6/d89/classlog4tango_1_1AppenderAttachable_1a9390c8fc80202c4296f7ef10f08d13a5" compoundref="d6/d73/AppenderAttachable_8hh" startline="127">log4tango::AppenderAttachable::_appendersMutex</references>
+        <references refid="d6/d89/classlog4tango_1_1AppenderAttachable_1a17009480a695669ed8e1611db6320ba9" compoundref="da/d3f/AppenderAttachable_8cpp" startline="99" endline="104">log4tango::AppenderAttachable::remove_appender</references>
+        <referencedby refid="d4/d1c/classlog4tango_1_1Logger_1a8ee921e0f61dea06224b7b249e820470" compoundref="d9/df5/Logger_8cpp" startline="129" endline="138">log_unconditionally</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="d4/d1c/classlog4tango_1_1Logger_1af770517acfedd076fb14d97b822a88f3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>log4tango::Logger::Logger</definition>
+        <argsstring>(const Logger &amp;)</argsstring>
+        <name>Logger</name>
+        <param>
+          <type>const <ref refid="d4/d1c/classlog4tango_1_1Logger" kindref="compound">Logger</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/Logger.hh" line="405" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d1c/classlog4tango_1_1Logger_1ae9e6a28d838a7e30ba0e5cdfef525d0e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d4/d1c/classlog4tango_1_1Logger" kindref="compound">Logger</ref> &amp;</type>
+        <definition>Logger&amp; log4tango::Logger::operator=</definition>
+        <argsstring>(const Logger &amp;)</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="d4/d1c/classlog4tango_1_1Logger" kindref="compound">Logger</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/Logger.hh" line="406" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1101">
+        <label>log4tango::Logger</label>
+        <link refid="d4/d1c/classlog4tango_1_1Logger"/>
+        <childnode refid="1102" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1102">
+        <label>log4tango::AppenderAttachable</label>
+        <link refid="d6/d89/classlog4tango_1_1AppenderAttachable"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1103">
+        <label>log4tango::Logger</label>
+        <link refid="d4/d1c/classlog4tango_1_1Logger"/>
+        <childnode refid="1104" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1104">
+        <label>log4tango::AppenderAttachable</label>
+        <link refid="d6/d89/classlog4tango_1_1AppenderAttachable"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/tango/workspace/cppTango/include/log4tango/Logger.hh" line="57" column="1" bodyfile="/home/tango/workspace/cppTango/include/log4tango/Logger.hh" bodystart="56" bodyend="407"/>
+    <listofallmembers>
+      <member refid="d6/d89/classlog4tango_1_1AppenderAttachable_1a1956c7e554f262cfecfc1a9de9145289" prot="protected" virt="non-virtual"><scope>log4tango::Logger</scope><name>_appenders</name></member>
+      <member refid="d6/d89/classlog4tango_1_1AppenderAttachable_1a9390c8fc80202c4296f7ef10f08d13a5" prot="protected" virt="non-virtual"><scope>log4tango::Logger</scope><name>_appendersMutex</name></member>
+      <member refid="d4/d1c/classlog4tango_1_1Logger_1a8bb35caa4f5fdbe222fd1093116cf593" prot="private" virt="non-virtual"><scope>log4tango::Logger</scope><name>_level</name></member>
+      <member refid="d4/d1c/classlog4tango_1_1Logger_1ad7aeddae9976c874561dc0f817c7eee9" prot="private" virt="non-virtual"><scope>log4tango::Logger</scope><name>_name</name></member>
+      <member refid="d6/d89/classlog4tango_1_1AppenderAttachable_1a04b4e410672579c6d8f698872f26866d" prot="public" virt="non-virtual"><scope>log4tango::Logger</scope><name>add_appender</name></member>
+      <member refid="d6/d89/classlog4tango_1_1AppenderAttachable_1a5b2a99851f2aa46162c9d51433887e18" prot="public" virt="non-virtual"><scope>log4tango::Logger</scope><name>AppenderAttachable</name></member>
+      <member refid="d6/d89/classlog4tango_1_1AppenderAttachable_1a74532446063d73d710678566a5b3fc57" prot="protected" virt="non-virtual"><scope>log4tango::Logger</scope><name>AppenderAttachable</name></member>
+      <member refid="d4/d1c/classlog4tango_1_1Logger_1a44d8fa395ad922427bf417aee9c3ed79" prot="protected" virt="non-virtual"><scope>log4tango::Logger</scope><name>call_appenders</name></member>
+      <member refid="d4/d1c/classlog4tango_1_1Logger_1a86870349be1352d8c529e713acf51a0b" prot="public" virt="non-virtual"><scope>log4tango::Logger</scope><name>debug</name></member>
+      <member refid="d4/d1c/classlog4tango_1_1Logger_1acdeaf9ecda4f2fd1b6ac845e188b34d6" prot="public" virt="non-virtual"><scope>log4tango::Logger</scope><name>debug</name></member>
+      <member refid="d4/d1c/classlog4tango_1_1Logger_1a652427a4aed5322eb189f7409498cd18" prot="public" virt="non-virtual"><scope>log4tango::Logger</scope><name>debug_stream</name></member>
+      <member refid="d4/d1c/classlog4tango_1_1Logger_1ac9c2f129c56991f6bf7148ce5b7f1518" prot="public" virt="non-virtual"><scope>log4tango::Logger</scope><name>error</name></member>
+      <member refid="d4/d1c/classlog4tango_1_1Logger_1a7d587fb218937b9c525f5c48e5f0e230" prot="public" virt="non-virtual"><scope>log4tango::Logger</scope><name>error</name></member>
+      <member refid="d4/d1c/classlog4tango_1_1Logger_1a09c866cc0bfb1de324c676617234f4fd" prot="public" virt="non-virtual"><scope>log4tango::Logger</scope><name>error_stream</name></member>
+      <member refid="d4/d1c/classlog4tango_1_1Logger_1a4c8832412bde8329c5a69acd88e08b8c" prot="public" virt="non-virtual"><scope>log4tango::Logger</scope><name>fatal</name></member>
+      <member refid="d4/d1c/classlog4tango_1_1Logger_1a56287e6a0a500f74d9fd7bc09f612111" prot="public" virt="non-virtual"><scope>log4tango::Logger</scope><name>fatal</name></member>
+      <member refid="d4/d1c/classlog4tango_1_1Logger_1ae734bcc83b3b3687a073edaacd5c74f0" prot="public" virt="non-virtual"><scope>log4tango::Logger</scope><name>fatal_stream</name></member>
+      <member refid="d6/d89/classlog4tango_1_1AppenderAttachable_1ac09cfee8ed24912f751c1b46502b91c3" prot="public" virt="non-virtual"><scope>log4tango::Logger</scope><name>get_all_appenders</name></member>
+      <member refid="d6/d89/classlog4tango_1_1AppenderAttachable_1aef280962681b6de83bf759dee678f9ad" prot="public" virt="non-virtual"><scope>log4tango::Logger</scope><name>get_appender</name></member>
+      <member refid="d4/d1c/classlog4tango_1_1Logger_1a0bfd7a54498aba29263cfb0dae55faff" prot="public" virt="non-virtual"><scope>log4tango::Logger</scope><name>get_level</name></member>
+      <member refid="d4/d1c/classlog4tango_1_1Logger_1abfe1c32b01e64c5f58f52812f898f170" prot="public" virt="non-virtual"><scope>log4tango::Logger</scope><name>get_name</name></member>
+      <member refid="d4/d1c/classlog4tango_1_1Logger_1a34b294678a690630721e8824f16020de" prot="public" virt="non-virtual"><scope>log4tango::Logger</scope><name>get_stream</name></member>
+      <member refid="d4/d1c/classlog4tango_1_1Logger_1adaba6152f4a39580d48bae035ac30778" prot="public" virt="non-virtual"><scope>log4tango::Logger</scope><name>info</name></member>
+      <member refid="d4/d1c/classlog4tango_1_1Logger_1a987565b18e6ea9a2524d64c80759c2eb" prot="public" virt="non-virtual"><scope>log4tango::Logger</scope><name>info</name></member>
+      <member refid="d4/d1c/classlog4tango_1_1Logger_1a22a2fd4d13e70e352a5f47dd02d33342" prot="public" virt="non-virtual"><scope>log4tango::Logger</scope><name>info_stream</name></member>
+      <member refid="d6/d89/classlog4tango_1_1AppenderAttachable_1ad453ee78f746f781cdac768c57b8bd74" prot="public" virt="non-virtual"><scope>log4tango::Logger</scope><name>is_attached</name></member>
+      <member refid="d4/d1c/classlog4tango_1_1Logger_1a6ce8b32ab06c6b77f8aac562dabf9c1f" prot="public" virt="non-virtual"><scope>log4tango::Logger</scope><name>is_debug_enabled</name></member>
+      <member refid="d4/d1c/classlog4tango_1_1Logger_1ab2ec2debd2d3024293a0d873af8e86b3" prot="public" virt="non-virtual"><scope>log4tango::Logger</scope><name>is_error_enabled</name></member>
+      <member refid="d4/d1c/classlog4tango_1_1Logger_1a16213b0ab5912487ad2eb62c4337900b" prot="public" virt="non-virtual"><scope>log4tango::Logger</scope><name>is_fatal_enabled</name></member>
+      <member refid="d4/d1c/classlog4tango_1_1Logger_1af73279505009e650e615294711fe75fe" prot="public" virt="non-virtual"><scope>log4tango::Logger</scope><name>is_info_enabled</name></member>
+      <member refid="d4/d1c/classlog4tango_1_1Logger_1a393cade41cee1267e49018f5b4f8fa67" prot="public" virt="non-virtual"><scope>log4tango::Logger</scope><name>is_level_enabled</name></member>
+      <member refid="d4/d1c/classlog4tango_1_1Logger_1ac48da8e8705775526b0d94f974dd158d" prot="public" virt="non-virtual"><scope>log4tango::Logger</scope><name>is_warn_enabled</name></member>
+      <member refid="d4/d1c/classlog4tango_1_1Logger_1aebe7a33e64c1dd47d908d5a1eec18545" prot="public" virt="non-virtual"><scope>log4tango::Logger</scope><name>log</name></member>
+      <member refid="d4/d1c/classlog4tango_1_1Logger_1afab624480348ae2bae502c72efeaf38e" prot="public" virt="non-virtual"><scope>log4tango::Logger</scope><name>log</name></member>
+      <member refid="d4/d1c/classlog4tango_1_1Logger_1adc92f13df7647dbeac96120bbda218f4" prot="public" virt="non-virtual"><scope>log4tango::Logger</scope><name>log_unconditionally</name></member>
+      <member refid="d4/d1c/classlog4tango_1_1Logger_1a8ee921e0f61dea06224b7b249e820470" prot="public" virt="non-virtual"><scope>log4tango::Logger</scope><name>log_unconditionally</name></member>
+      <member refid="d4/d1c/classlog4tango_1_1Logger_1a26b45ebe00d0cbecda9d9f64f169922e" prot="public" virt="non-virtual"><scope>log4tango::Logger</scope><name>Logger</name></member>
+      <member refid="d4/d1c/classlog4tango_1_1Logger_1af770517acfedd076fb14d97b822a88f3" prot="private" virt="non-virtual"><scope>log4tango::Logger</scope><name>Logger</name></member>
+      <member refid="d4/d1c/classlog4tango_1_1Logger_1ae9e6a28d838a7e30ba0e5cdfef525d0e" prot="private" virt="non-virtual"><scope>log4tango::Logger</scope><name>operator=</name></member>
+      <member refid="d6/d89/classlog4tango_1_1AppenderAttachable_1a4cbf4bf5552db661c8f41c430db0e953" prot="protected" virt="non-virtual" ambiguityscope="log4tango::AppenderAttachable::"><scope>log4tango::Logger</scope><name>operator=</name></member>
+      <member refid="d6/d89/classlog4tango_1_1AppenderAttachable_1a53e072db4ea8496e1fe68b0fa20b6f3b" prot="public" virt="non-virtual"><scope>log4tango::Logger</scope><name>remove_all_appenders</name></member>
+      <member refid="d6/d89/classlog4tango_1_1AppenderAttachable_1a17009480a695669ed8e1611db6320ba9" prot="public" virt="non-virtual"><scope>log4tango::Logger</scope><name>remove_appender</name></member>
+      <member refid="d6/d89/classlog4tango_1_1AppenderAttachable_1af662639b70264c826f88387c99294ba4" prot="public" virt="non-virtual"><scope>log4tango::Logger</scope><name>remove_appender</name></member>
+      <member refid="d4/d1c/classlog4tango_1_1Logger_1aee3ae63ec9ebc6f2a2eb72c0ff3d2b34" prot="public" virt="non-virtual"><scope>log4tango::Logger</scope><name>set_level</name></member>
+      <member refid="d4/d1c/classlog4tango_1_1Logger_1ab7a7dfad91aa2196ed91a607808f1061" prot="public" virt="non-virtual"><scope>log4tango::Logger</scope><name>warn</name></member>
+      <member refid="d4/d1c/classlog4tango_1_1Logger_1a22646b15ebc33254f734e23280868345" prot="public" virt="non-virtual"><scope>log4tango::Logger</scope><name>warn</name></member>
+      <member refid="d4/d1c/classlog4tango_1_1Logger_1a223a0d6d82a1e054d07474e87b207bba" prot="public" virt="non-virtual"><scope>log4tango::Logger</scope><name>warn_stream</name></member>
+      <member refid="d6/d89/classlog4tango_1_1AppenderAttachable_1a5af097d444408db567e0c2202b10a158" prot="public" virt="virtual"><scope>log4tango::Logger</scope><name>~AppenderAttachable</name></member>
+      <member refid="d4/d1c/classlog4tango_1_1Logger_1a39fb5f0cb96762664150e4af657cd33a" prot="public" virt="virtual"><scope>log4tango::Logger</scope><name>~Logger</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

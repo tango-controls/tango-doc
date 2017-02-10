@@ -1,0 +1,282 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="d3/d71/structTango_1_1AttributeInfoEx" kind="struct" prot="public">
+    <compoundname>Tango::AttributeInfoEx</compoundname>
+    <basecompoundref refid="df/dab/structTango_1_1AttributeInfo" prot="public" virt="non-virtual">Tango::AttributeInfo</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="d3/d71/structTango_1_1AttributeInfoEx_1aaf01f87192831893661acfa4b926d0c8" prot="public" static="no" mutable="no">
+        <type><ref refid="d0/d4a/structTango_1_1AttributeAlarmInfo" kindref="compound">AttributeAlarmInfo</ref></type>
+        <definition>AttributeAlarmInfo Tango::AttributeInfoEx::alarms</definition>
+        <argsstring></argsstring>
+        <name>alarms</name>
+        <briefdescription>
+<para>The attribute alarms. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/devapi.h" line="345" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/devapi.h" bodystart="345" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/d71/structTango_1_1AttributeInfoEx_1a4b0ef35e29ace8d9ea557ad142018185" prot="public" static="no" mutable="no">
+        <type>vector&lt; string &gt;</type>
+        <definition>vector&lt;string&gt; Tango::AttributeInfoEx::enum_labels</definition>
+        <argsstring></argsstring>
+        <name>enum_labels</name>
+        <briefdescription>
+<para>Enumerated attribute labels. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/devapi.h" line="344" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/devapi.h" bodystart="344" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/d71/structTango_1_1AttributeInfoEx_1a57d8d88a07dac398a91ad4180d7cb6c8" prot="public" static="no" mutable="no">
+        <type><ref refid="da/dce/structTango_1_1AttributeEventInfo" kindref="compound">AttributeEventInfo</ref></type>
+        <definition>AttributeEventInfo Tango::AttributeInfoEx::events</definition>
+        <argsstring></argsstring>
+        <name>events</name>
+        <briefdescription>
+<para>The attribute events configuration. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/devapi.h" line="346" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/devapi.h" bodystart="346" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/d71/structTango_1_1AttributeInfoEx_1a60e3af52cd117f6c05f3408124caa4ce" prot="public" static="no" mutable="no">
+        <type><ref refid="d1/d45/group__Client_1ga84b78e55dbad67c8eacf6bd539875391" kindref="member">AttrMemorizedType</ref></type>
+        <definition>AttrMemorizedType Tango::AttributeInfoEx::memorized</definition>
+        <argsstring></argsstring>
+        <name>memorized</name>
+        <briefdescription>
+<para>The attribute memorization type. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/devapi.h" line="343" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/devapi.h" bodystart="343" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/d71/structTango_1_1AttributeInfoEx_1a9b125948c23b7a7747ad16165625ab66" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Tango::AttributeInfoEx::root_attr_name</definition>
+        <argsstring></argsstring>
+        <name>root_attr_name</name>
+        <briefdescription>
+<para>Root attribute name (in case of forwarded attribute) </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/devapi.h" line="342" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/devapi.h" bodystart="342" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/d71/structTango_1_1AttributeInfoEx_1afdf808e107b2d36d75eb8e07d798d7b4" prot="public" static="no" mutable="no">
+        <type>vector&lt; string &gt;</type>
+        <definition>vector&lt;string&gt; Tango::AttributeInfoEx::sys_extensions</definition>
+        <argsstring></argsstring>
+        <name>sys_extensions</name>
+        <briefdescription>
+<para>Future extensions. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/devapi.h" line="347" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/devapi.h" bodystart="347" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="d3/d71/structTango_1_1AttributeInfoEx_1ae548719ab35222c3afb0a85b0365ba40" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>_AttributeInfoEx &amp;</type>
+        <definition>_AttributeInfoEx&amp; Tango::AttributeInfoEx::operator=</definition>
+        <argsstring>(const AttributeConfig_2 *)</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const AttributeConfig_2 *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/devapi.h" line="350" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d71/structTango_1_1AttributeInfoEx_1a0d354a7e17f212e79652260e20843070" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>_AttributeInfoEx &amp;</type>
+        <definition>_AttributeInfoEx&amp; Tango::AttributeInfoEx::operator=</definition>
+        <argsstring>(const AttributeConfig_3 *)</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const AttributeConfig_3 *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/devapi.h" line="352" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d71/structTango_1_1AttributeInfoEx_1abfc92c148cb54824b4a4bae9795fc31a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>_AttributeInfoEx &amp;</type>
+        <definition>_AttributeInfoEx&amp; Tango::AttributeInfoEx::operator=</definition>
+        <argsstring>(const AttributeConfig_5 *)</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const AttributeConfig_5 *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/devapi.h" line="354" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d71/structTango_1_1AttributeInfoEx_1a7190f2fdb1d9d3eee210d7fcffa4bdda" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Tango::AttributeInfoEx::operator==</definition>
+        <argsstring>(const _AttributeInfoEx &amp;)</argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const _AttributeInfoEx &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/devapi.h" line="358" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="d3/d71/structTango_1_1AttributeInfoEx_1a3b236cc8fe05b2d0e5ab1b3bb1aaaa87" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend ostream &amp;</type>
+        <definition>ostream&amp; operator&lt;&lt;</definition>
+        <argsstring>(ostream &amp;, _AttributeInfoEx &amp;)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>ostream &amp;</type>
+        </param>
+        <param>
+          <type>_AttributeInfoEx &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/devapi.h" line="356" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Extended attribute configuration data. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="725">
+        <label>Tango::AttributeInfoEx</label>
+        <link refid="d3/d71/structTango_1_1AttributeInfoEx"/>
+        <childnode refid="726" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="726">
+        <label>Tango::AttributeInfo</label>
+        <link refid="df/dab/structTango_1_1AttributeInfo"/>
+        <childnode refid="727" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="727">
+        <label>Tango::DeviceAttributeConfig</label>
+        <link refid="db/d74/structTango_1_1DeviceAttributeConfig"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="728">
+        <label>Tango::AttributeInfoEx</label>
+        <link refid="d3/d71/structTango_1_1AttributeInfoEx"/>
+        <childnode refid="729" relation="public-inheritance">
+        </childnode>
+        <childnode refid="731" relation="usage">
+          <edgelabel>events</edgelabel>
+        </childnode>
+        <childnode refid="735" relation="usage">
+          <edgelabel>alarms</edgelabel>
+        </childnode>
+      </node>
+      <node id="731">
+        <label>Tango::AttributeEventInfo</label>
+        <link refid="da/dce/structTango_1_1AttributeEventInfo"/>
+        <childnode refid="732" relation="usage">
+          <edgelabel>per_event</edgelabel>
+        </childnode>
+        <childnode refid="733" relation="usage">
+          <edgelabel>ch_event</edgelabel>
+        </childnode>
+        <childnode refid="734" relation="usage">
+          <edgelabel>arch_event</edgelabel>
+        </childnode>
+      </node>
+      <node id="734">
+        <label>Tango::ArchiveEventInfo</label>
+        <link refid="d1/d29/structTango_1_1ArchiveEventInfo"/>
+      </node>
+      <node id="729">
+        <label>Tango::AttributeInfo</label>
+        <link refid="df/dab/structTango_1_1AttributeInfo"/>
+        <childnode refid="730" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="732">
+        <label>Tango::PeriodicEventInfo</label>
+        <link refid="d6/d55/structTango_1_1PeriodicEventInfo"/>
+      </node>
+      <node id="735">
+        <label>Tango::AttributeAlarmInfo</label>
+        <link refid="d0/d4a/structTango_1_1AttributeAlarmInfo"/>
+      </node>
+      <node id="733">
+        <label>Tango::ChangeEventInfo</label>
+        <link refid="d9/d49/structTango_1_1ChangeEventInfo"/>
+      </node>
+      <node id="730">
+        <label>Tango::DeviceAttributeConfig</label>
+        <link refid="db/d74/structTango_1_1DeviceAttributeConfig"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/tango/workspace/cppTango/include/tango/client/devapi.h" line="341" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/devapi.h" bodystart="337" bodyend="359"/>
+    <listofallmembers>
+      <member refid="d3/d71/structTango_1_1AttributeInfoEx_1aaf01f87192831893661acfa4b926d0c8" prot="public" virt="non-virtual"><scope>Tango::AttributeInfoEx</scope><name>alarms</name></member>
+      <member refid="db/d74/structTango_1_1DeviceAttributeConfig_1a10e944fe3cc1e6dce24ebfd2f474c294" prot="public" virt="non-virtual"><scope>Tango::AttributeInfoEx</scope><name>data_format</name></member>
+      <member refid="db/d74/structTango_1_1DeviceAttributeConfig_1a2e2c5a17bc577057f9db3fec6fc5002c" prot="public" virt="non-virtual"><scope>Tango::AttributeInfoEx</scope><name>data_type</name></member>
+      <member refid="db/d74/structTango_1_1DeviceAttributeConfig_1a3ee3ca0543af398a2ee69901ab2086ea" prot="public" virt="non-virtual"><scope>Tango::AttributeInfoEx</scope><name>description</name></member>
+      <member refid="df/dab/structTango_1_1AttributeInfo_1aa958466c57a8cb39cb5aac4d451e13e2" prot="public" virt="non-virtual"><scope>Tango::AttributeInfoEx</scope><name>disp_level</name></member>
+      <member refid="db/d74/structTango_1_1DeviceAttributeConfig_1ae7ec9432c308d2080bff8390bf86e9dc" prot="public" virt="non-virtual"><scope>Tango::AttributeInfoEx</scope><name>display_unit</name></member>
+      <member refid="d3/d71/structTango_1_1AttributeInfoEx_1a4b0ef35e29ace8d9ea557ad142018185" prot="public" virt="non-virtual"><scope>Tango::AttributeInfoEx</scope><name>enum_labels</name></member>
+      <member refid="d3/d71/structTango_1_1AttributeInfoEx_1a57d8d88a07dac398a91ad4180d7cb6c8" prot="public" virt="non-virtual"><scope>Tango::AttributeInfoEx</scope><name>events</name></member>
+      <member refid="db/d74/structTango_1_1DeviceAttributeConfig_1ae77d336e762e1c6e1e8fcea17d6b107f" prot="public" virt="non-virtual"><scope>Tango::AttributeInfoEx</scope><name>extensions</name></member>
+      <member refid="db/d74/structTango_1_1DeviceAttributeConfig_1ad3ec3ee2584e54354a9ad398432b7e63" prot="public" virt="non-virtual"><scope>Tango::AttributeInfoEx</scope><name>format</name></member>
+      <member refid="db/d74/structTango_1_1DeviceAttributeConfig_1a4ec80e8421b9f1f3e250b047771a4a17" prot="public" virt="non-virtual"><scope>Tango::AttributeInfoEx</scope><name>label</name></member>
+      <member refid="db/d74/structTango_1_1DeviceAttributeConfig_1ac2be6304818d741aa970abcb3ff91105" prot="public" virt="non-virtual"><scope>Tango::AttributeInfoEx</scope><name>max_alarm</name></member>
+      <member refid="db/d74/structTango_1_1DeviceAttributeConfig_1a1194d38c18b4aaeba0989b14d912f17f" prot="public" virt="non-virtual"><scope>Tango::AttributeInfoEx</scope><name>max_dim_x</name></member>
+      <member refid="db/d74/structTango_1_1DeviceAttributeConfig_1a519d30179f56a9d0405a2b16fbd762eb" prot="public" virt="non-virtual"><scope>Tango::AttributeInfoEx</scope><name>max_dim_y</name></member>
+      <member refid="db/d74/structTango_1_1DeviceAttributeConfig_1a84c6e32024eb2ab01a03cb1016f2acbd" prot="public" virt="non-virtual"><scope>Tango::AttributeInfoEx</scope><name>max_value</name></member>
+      <member refid="d3/d71/structTango_1_1AttributeInfoEx_1a60e3af52cd117f6c05f3408124caa4ce" prot="public" virt="non-virtual"><scope>Tango::AttributeInfoEx</scope><name>memorized</name></member>
+      <member refid="db/d74/structTango_1_1DeviceAttributeConfig_1a265cd1f58f040fbb4fdebb8a5eb13718" prot="public" virt="non-virtual"><scope>Tango::AttributeInfoEx</scope><name>min_alarm</name></member>
+      <member refid="db/d74/structTango_1_1DeviceAttributeConfig_1aa647cb22659434ffe9833adbfecb11ab" prot="public" virt="non-virtual"><scope>Tango::AttributeInfoEx</scope><name>min_value</name></member>
+      <member refid="db/d74/structTango_1_1DeviceAttributeConfig_1aa986f46571ce7f48ac88d005034b16be" prot="public" virt="non-virtual"><scope>Tango::AttributeInfoEx</scope><name>name</name></member>
+      <member refid="d3/d71/structTango_1_1AttributeInfoEx_1a3b236cc8fe05b2d0e5ab1b3bb1aaaa87" prot="private" virt="non-virtual"><scope>Tango::AttributeInfoEx</scope><name>operator&lt;&lt;</name></member>
+      <member refid="d3/d71/structTango_1_1AttributeInfoEx_1ae548719ab35222c3afb0a85b0365ba40" prot="private" virt="non-virtual"><scope>Tango::AttributeInfoEx</scope><name>operator=</name></member>
+      <member refid="d3/d71/structTango_1_1AttributeInfoEx_1a0d354a7e17f212e79652260e20843070" prot="private" virt="non-virtual"><scope>Tango::AttributeInfoEx</scope><name>operator=</name></member>
+      <member refid="d3/d71/structTango_1_1AttributeInfoEx_1abfc92c148cb54824b4a4bae9795fc31a" prot="private" virt="non-virtual"><scope>Tango::AttributeInfoEx</scope><name>operator=</name></member>
+      <member refid="d3/d71/structTango_1_1AttributeInfoEx_1a7190f2fdb1d9d3eee210d7fcffa4bdda" prot="private" virt="non-virtual"><scope>Tango::AttributeInfoEx</scope><name>operator==</name></member>
+      <member refid="d3/d71/structTango_1_1AttributeInfoEx_1a9b125948c23b7a7747ad16165625ab66" prot="public" virt="non-virtual"><scope>Tango::AttributeInfoEx</scope><name>root_attr_name</name></member>
+      <member refid="db/d74/structTango_1_1DeviceAttributeConfig_1a6e39a2bd02dff03ba378d42e0f0892e8" prot="public" virt="non-virtual"><scope>Tango::AttributeInfoEx</scope><name>standard_unit</name></member>
+      <member refid="d3/d71/structTango_1_1AttributeInfoEx_1afdf808e107b2d36d75eb8e07d798d7b4" prot="public" virt="non-virtual"><scope>Tango::AttributeInfoEx</scope><name>sys_extensions</name></member>
+      <member refid="db/d74/structTango_1_1DeviceAttributeConfig_1abbfe98ae17bfc21368b6347b9611e4f8" prot="public" virt="non-virtual"><scope>Tango::AttributeInfoEx</scope><name>unit</name></member>
+      <member refid="db/d74/structTango_1_1DeviceAttributeConfig_1a5f02c5c4d857bd6eec495a746dfaf646" prot="public" virt="non-virtual"><scope>Tango::AttributeInfoEx</scope><name>writable</name></member>
+      <member refid="db/d74/structTango_1_1DeviceAttributeConfig_1a7c86de3d725f10a4ca07b086d04ce043" prot="public" virt="non-virtual"><scope>Tango::AttributeInfoEx</scope><name>writable_attr_name</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

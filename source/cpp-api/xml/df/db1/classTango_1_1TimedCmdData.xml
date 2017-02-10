@@ -1,0 +1,326 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="df/db1/classTango_1_1TimedCmdData" kind="class" prot="public">
+    <compoundname>Tango::TimedCmdData</compoundname>
+    <templateparamlist>
+      <param>
+        <type>typename</type>
+        <declname>T</declname>
+        <defname>T</defname>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="user-defined">
+      <header>Constructors</header>
+      <description><para>Miscellaneous constructors </para></description>
+      <memberdef kind="function" id="df/db1/classTango_1_1TimedCmdData_1a52aa3bee7afb6e0947d805e498ee08ae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::TimedCmdData&lt; T &gt;::TimedCmdData</definition>
+        <argsstring>(T *p_data, time_t when)</argsstring>
+        <name>TimedCmdData</name>
+        <param>
+          <type>T *</type>
+          <declname>p_data</declname>
+        </param>
+        <param>
+          <type>time_t</type>
+          <declname>when</declname>
+        </param>
+        <briefdescription>
+<para>Create a new <ref refid="df/db1/classTango_1_1TimedCmdData" kindref="compound">TimedCmdData</ref> object. </para>        </briefdescription>
+        <detaileddescription>
+<para>The memory pointed to by the <emphasis>p_data</emphasis> parameter will not be freed</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the command result data </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>when</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The date </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/pollext.h" line="815" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="df/db1/classTango_1_1TimedCmdData_1a641bf7e089fd36a70d09cebef4d91c79" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::TimedCmdData&lt; T &gt;::TimedCmdData</definition>
+        <argsstring>(T *p_data, bool rel, time_t when)</argsstring>
+        <name>TimedCmdData</name>
+        <param>
+          <type>T *</type>
+          <declname>p_data</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>rel</declname>
+        </param>
+        <param>
+          <type>time_t</type>
+          <declname>when</declname>
+        </param>
+        <briefdescription>
+<para>Create a new <ref refid="df/db1/classTango_1_1TimedCmdData" kindref="compound">TimedCmdData</ref> object with memory management. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the command result data </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Set to true if the memory pointed to by the <emphasis>p_data</emphasis> parameter must be freed </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>when</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The date </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/pollext.h" line="825" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="df/db1/classTango_1_1TimedCmdData_1ab61561536584807b6771cc7ab6db76e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::TimedCmdData&lt; T &gt;::TimedCmdData</definition>
+        <argsstring>(T *p_data, struct timeval when)</argsstring>
+        <name>TimedCmdData</name>
+        <param>
+          <type>T *</type>
+          <declname>p_data</declname>
+        </param>
+        <param>
+          <type>struct timeval</type>
+          <declname>when</declname>
+        </param>
+        <briefdescription>
+<para>Create a new <ref refid="df/db1/classTango_1_1TimedCmdData" kindref="compound">TimedCmdData</ref> object. </para>        </briefdescription>
+        <detaileddescription>
+<para>The memory pointed to by the <emphasis>p_data</emphasis> parameter will not be freed</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the command result data </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>when</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The date </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/pollext.h" line="835" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="df/db1/classTango_1_1TimedCmdData_1af7d4d705ed242a8dca60443987926e28" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::TimedCmdData&lt; T &gt;::TimedCmdData</definition>
+        <argsstring>(T *p_data, bool rel, struct timeval when)</argsstring>
+        <name>TimedCmdData</name>
+        <param>
+          <type>T *</type>
+          <declname>p_data</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>rel</declname>
+        </param>
+        <param>
+          <type>struct timeval</type>
+          <declname>when</declname>
+        </param>
+        <briefdescription>
+<para>Create a new <ref refid="df/db1/classTango_1_1TimedCmdData" kindref="compound">TimedCmdData</ref> object with memory management. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the command result data </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Set to true if the memory pointed to by the <emphasis>p_data</emphasis> parameter must be freed </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>when</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The date </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/pollext.h" line="844" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="df/db1/classTango_1_1TimedCmdData_1a8cc1733169352938edf8432bc4551222" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Tango::TimedCmdData&lt; T &gt;::TimedCmdData</definition>
+        <argsstring>(DevErrorList errs, time_t when)</argsstring>
+        <name>TimedCmdData</name>
+        <param>
+          <type>DevErrorList</type>
+          <declname>errs</declname>
+        </param>
+        <param>
+          <type>time_t</type>
+          <declname>when</declname>
+        </param>
+        <briefdescription>
+<para>Create a new <ref refid="df/db1/classTango_1_1TimedCmdData" kindref="compound">TimedCmdData</ref> object for errors. </para>        </briefdescription>
+        <detaileddescription>
+<para>The created <ref refid="df/db1/classTango_1_1TimedCmdData" kindref="compound">TimedCmdData</ref> is used to store command errors in the command history stack</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>errs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The error stack </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>when</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The date </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/pollext.h" line="856" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/pollext.h" bodystart="856" bodyend="856"/>
+      </memberdef>
+      <memberdef kind="function" id="df/db1/classTango_1_1TimedCmdData_1a18999aecdf64d96fa704b7549c534dfe" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Tango::TimedCmdData&lt; T &gt;::TimedCmdData</definition>
+        <argsstring>(DevErrorList errs, timeval when)</argsstring>
+        <name>TimedCmdData</name>
+        <param>
+          <type>DevErrorList</type>
+          <declname>errs</declname>
+        </param>
+        <param>
+          <type>timeval</type>
+          <declname>when</declname>
+        </param>
+        <briefdescription>
+<para>Create a new <ref refid="df/db1/classTango_1_1TimedCmdData" kindref="compound">TimedCmdData</ref> object for errors. </para>        </briefdescription>
+        <detaileddescription>
+<para>The created <ref refid="df/db1/classTango_1_1TimedCmdData" kindref="compound">TimedCmdData</ref> is used to store command errors in the command history stack</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>errs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The error stack </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>when</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The date </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/pollext.h" line="866" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/pollext.h" bodystart="866" bodyend="866"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="df/db1/classTango_1_1TimedCmdData_1a7771bbcb9ffe3c140bdffbce79fef24b" prot="private" static="no" mutable="no">
+        <type>DevErrorList</type>
+        <definition>DevErrorList Tango::TimedCmdData&lt; T &gt;::err</definition>
+        <argsstring></argsstring>
+        <name>err</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/pollext.h" line="872" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/pollext.h" bodystart="872" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="df/db1/classTango_1_1TimedCmdData_1a2696979e067b34a8f5969589a0f9ce9e" prot="private" static="no" mutable="no">
+        <type>T *</type>
+        <definition>T* Tango::TimedCmdData&lt; T &gt;::ptr</definition>
+        <argsstring></argsstring>
+        <name>ptr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/pollext.h" line="871" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/pollext.h" bodystart="871" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="df/db1/classTango_1_1TimedCmdData_1ad4e5993772cb4fe033a50408f9b9dcf1" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Tango::TimedCmdData&lt; T &gt;::release</definition>
+        <argsstring></argsstring>
+        <name>release</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/pollext.h" line="874" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/pollext.h" bodystart="874" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="df/db1/classTango_1_1TimedCmdData_1aae5106b0d0ac620e5726c9ea45679013" prot="private" static="no" mutable="no">
+        <type>struct timeval</type>
+        <definition>struct timeval Tango::TimedCmdData&lt; T &gt;::t_val</definition>
+        <argsstring></argsstring>
+        <name>t_val</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/pollext.h" line="872" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/pollext.h" bodystart="873" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This class is used to store one element of a command history stack. </para>    </briefdescription>
+    <detaileddescription>
+<para>$Author$ $Revision$ </para>    </detaileddescription>
+    <location file="/home/tango/workspace/cppTango/include/tango/server/pollext.h" line="800" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/pollext.h" bodystart="799" bodyend="880"/>
+    <listofallmembers>
+      <member refid="df/db1/classTango_1_1TimedCmdData_1a7771bbcb9ffe3c140bdffbce79fef24b" prot="private" virt="non-virtual"><scope>Tango::TimedCmdData</scope><name>err</name></member>
+      <member refid="df/db1/classTango_1_1TimedCmdData_1a2696979e067b34a8f5969589a0f9ce9e" prot="private" virt="non-virtual"><scope>Tango::TimedCmdData</scope><name>ptr</name></member>
+      <member refid="df/db1/classTango_1_1TimedCmdData_1ad4e5993772cb4fe033a50408f9b9dcf1" prot="private" virt="non-virtual"><scope>Tango::TimedCmdData</scope><name>release</name></member>
+      <member refid="df/db1/classTango_1_1TimedCmdData_1aae5106b0d0ac620e5726c9ea45679013" prot="private" virt="non-virtual"><scope>Tango::TimedCmdData</scope><name>t_val</name></member>
+      <member refid="df/db1/classTango_1_1TimedCmdData_1a52aa3bee7afb6e0947d805e498ee08ae" prot="public" virt="non-virtual"><scope>Tango::TimedCmdData</scope><name>TimedCmdData</name></member>
+      <member refid="df/db1/classTango_1_1TimedCmdData_1a641bf7e089fd36a70d09cebef4d91c79" prot="public" virt="non-virtual"><scope>Tango::TimedCmdData</scope><name>TimedCmdData</name></member>
+      <member refid="df/db1/classTango_1_1TimedCmdData_1ab61561536584807b6771cc7ab6db76e2" prot="public" virt="non-virtual"><scope>Tango::TimedCmdData</scope><name>TimedCmdData</name></member>
+      <member refid="df/db1/classTango_1_1TimedCmdData_1af7d4d705ed242a8dca60443987926e28" prot="public" virt="non-virtual"><scope>Tango::TimedCmdData</scope><name>TimedCmdData</name></member>
+      <member refid="df/db1/classTango_1_1TimedCmdData_1a8cc1733169352938edf8432bc4551222" prot="public" virt="non-virtual"><scope>Tango::TimedCmdData</scope><name>TimedCmdData</name></member>
+      <member refid="df/db1/classTango_1_1TimedCmdData_1a18999aecdf64d96fa704b7549c534dfe" prot="public" virt="non-virtual"><scope>Tango::TimedCmdData</scope><name>TimedCmdData</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

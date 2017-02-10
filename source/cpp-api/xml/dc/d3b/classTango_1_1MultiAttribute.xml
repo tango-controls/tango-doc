@@ -1,0 +1,822 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="dc/d3b/classTango_1_1MultiAttribute" kind="class" prot="public">
+    <compoundname>Tango::MultiAttribute</compoundname>
+    <innerclass refid="d6/da3/classTango_1_1MultiAttribute_1_1MultiAttributeExt" prot="private">Tango::MultiAttribute::MultiAttributeExt</innerclass>
+      <sectiondef kind="user-defined">
+      <header>Constructor</header>
+      <description><para>Only one constructor is defined for this class </para></description>
+      <memberdef kind="function" id="dc/d3b/classTango_1_1MultiAttribute_1aafd0cc4e89eeef1687b827da72b2db34" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::MultiAttribute::MultiAttribute</definition>
+        <argsstring>(string &amp;dev_name, DeviceClass *dev_class, DeviceImpl *dev)</argsstring>
+        <name>MultiAttribute</name>
+        <param>
+          <type>string &amp;</type>
+          <declname>dev_name</declname>
+        </param>
+        <param>
+          <type><ref refid="d4/dcd/classTango_1_1DeviceClass" kindref="compound">DeviceClass</ref> *</type>
+          <declname>dev_class</declname>
+        </param>
+        <param>
+          <type><ref refid="d3/d62/classTango_1_1DeviceImpl" kindref="compound">DeviceImpl</ref> *</type>
+          <declname>dev</declname>
+        </param>
+        <briefdescription>
+<para>Create a new <ref refid="dc/d3b/classTango_1_1MultiAttribute" kindref="compound">MultiAttribute</ref> object. </para>        </briefdescription>
+        <detaileddescription>
+<para>This constructor will in-turn call the constructor of the <ref refid="d6/dad/classTango_1_1Attribute" kindref="compound">Attribute</ref> or <ref refid="db/da8/classTango_1_1WAttribute" kindref="compound">WAttribute</ref> class of all the device class attributes.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dev_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The device name </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dev_class</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to the device <ref refid="d4/dcd/classTango_1_1DeviceClass" kindref="compound">DeviceClass</ref> object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The device pointer </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>DevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the command sent to the database failed. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/multiattribute.h" line="106" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Destructor</header>
+      <description><para>Only one desctructor is defined for this class </para></description>
+      <memberdef kind="function" id="dc/d3b/classTango_1_1MultiAttribute_1ad0f2a8d4aaff4735c71456d7ef6ba440" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::MultiAttribute::~MultiAttribute</definition>
+        <argsstring>()</argsstring>
+        <name>~MultiAttribute</name>
+        <briefdescription>
+<para>The <ref refid="dc/d3b/classTango_1_1MultiAttribute" kindref="compound">MultiAttribute</ref> desctructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/multiattribute.h" line="115" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Miscellaneous methods</header>
+      <memberdef kind="function" id="dc/d3b/classTango_1_1MultiAttribute_1a7b35eb2625bb190393524de6971e2a84" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d6/dad/classTango_1_1Attribute" kindref="compound">Attribute</ref> &amp;</type>
+        <definition>Attribute&amp; Tango::MultiAttribute::get_attr_by_name</definition>
+        <argsstring>(const char *attr_name)</argsstring>
+        <name>get_attr_by_name</name>
+        <param>
+          <type>const char *</type>
+          <declname>attr_name</declname>
+        </param>
+        <briefdescription>
+<para>Get <ref refid="d6/dad/classTango_1_1Attribute" kindref="compound">Attribute</ref> object from its name. </para>        </briefdescription>
+        <detaileddescription>
+<para>This method returns a reference to the <ref refid="d6/dad/classTango_1_1Attribute" kindref="compound">Attribute</ref> object with a name passed as parameter. The equality on attribute name is case independant.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>attr_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute name </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A reference to the <ref refid="d6/dad/classTango_1_1Attribute" kindref="compound">Attribute</ref> object </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>DevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the attribute is not defined. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/multiattribute.h" line="132" column="1"/>
+        <referencedby refid="dc/d3b/classTango_1_1MultiAttribute_1af25a9b37449cc1e596bd5154c710c8df" compoundref="da/dd1/multiattribute_8h" startline="207" endline="207">check_alarm</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="dc/d3b/classTango_1_1MultiAttribute_1a30ec97afa15f663a53df8a07aab3b29f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="d6/dad/classTango_1_1Attribute" kindref="compound">Attribute</ref> &amp;</type>
+        <definition>Attribute&amp; Tango::MultiAttribute::get_attr_by_ind</definition>
+        <argsstring>(const long ind)</argsstring>
+        <name>get_attr_by_ind</name>
+        <param>
+          <type>const long</type>
+          <declname>ind</declname>
+        </param>
+        <briefdescription>
+<para>Get <ref refid="d6/dad/classTango_1_1Attribute" kindref="compound">Attribute</ref> object from its index. </para>        </briefdescription>
+        <detaileddescription>
+<para>This method returns a reference to the <ref refid="d6/dad/classTango_1_1Attribute" kindref="compound">Attribute</ref> object from the index in the main attribute vector</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ind</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute index </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A reference to the <ref refid="d6/dad/classTango_1_1Attribute" kindref="compound">Attribute</ref> object </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/multiattribute.h" line="142" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/multiattribute.h" bodystart="142" bodyend="142"/>
+        <references refid="dc/d3b/classTango_1_1MultiAttribute_1aacf766c6cbdeef887e871ec408d80ff7" compoundref="da/dd1/multiattribute_8h" startline="262">attr_list</references>
+        <referencedby refid="dc/d3b/classTango_1_1MultiAttribute_1a11c6b528f663726ccc8b39f0e0ddf967" compoundref="da/dd1/multiattribute_8h" startline="221" endline="221">check_alarm</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="dc/d3b/classTango_1_1MultiAttribute_1a3023529c543ed802a58c9e1eb2b12ff3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="db/da8/classTango_1_1WAttribute" kindref="compound">WAttribute</ref> &amp;</type>
+        <definition>WAttribute&amp; Tango::MultiAttribute::get_w_attr_by_name</definition>
+        <argsstring>(const char *attr_name)</argsstring>
+        <name>get_w_attr_by_name</name>
+        <param>
+          <type>const char *</type>
+          <declname>attr_name</declname>
+        </param>
+        <briefdescription>
+<para>Get Writable <ref refid="d6/dad/classTango_1_1Attribute" kindref="compound">Attribute</ref> object from its name. </para>        </briefdescription>
+        <detaileddescription>
+<para>This method returns a reference to the <ref refid="db/da8/classTango_1_1WAttribute" kindref="compound">WAttribute</ref> object with a name passed as parameter. The equality on attribute name is case independant.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>attr_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute name </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A reference to the writable attribute object </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>DevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the attribute is not defined. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/multiattribute.h" line="155" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d3b/classTango_1_1MultiAttribute_1a1e02cdb7576f1758143226efabcc374c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="db/da8/classTango_1_1WAttribute" kindref="compound">WAttribute</ref> &amp;</type>
+        <definition>WAttribute&amp; Tango::MultiAttribute::get_w_attr_by_ind</definition>
+        <argsstring>(const long ind)</argsstring>
+        <name>get_w_attr_by_ind</name>
+        <param>
+          <type>const long</type>
+          <declname>ind</declname>
+        </param>
+        <briefdescription>
+<para>Get Writable <ref refid="d6/dad/classTango_1_1Attribute" kindref="compound">Attribute</ref> object from its index. </para>        </briefdescription>
+        <detaileddescription>
+<para>This method returns a reference to the Writable <ref refid="d6/dad/classTango_1_1Attribute" kindref="compound">Attribute</ref> object from the index in the main attribute vector</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ind</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute index </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A reference to the <ref refid="db/da8/classTango_1_1WAttribute" kindref="compound">WAttribute</ref> object </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/multiattribute.h" line="165" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/multiattribute.h" bodystart="165" bodyend="165"/>
+        <references refid="dc/d3b/classTango_1_1MultiAttribute_1aacf766c6cbdeef887e871ec408d80ff7" compoundref="da/dd1/multiattribute_8h" startline="262">attr_list</references>
+      </memberdef>
+      <memberdef kind="function" id="dc/d3b/classTango_1_1MultiAttribute_1a63ae2f2c06d88bb8b641a37898fdefdf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long Tango::MultiAttribute::get_attr_ind_by_name</definition>
+        <argsstring>(const char *attr_name)</argsstring>
+        <name>get_attr_ind_by_name</name>
+        <param>
+          <type>const char *</type>
+          <declname>attr_name</declname>
+        </param>
+        <briefdescription>
+<para>Get <ref refid="d6/dad/classTango_1_1Attribute" kindref="compound">Attribute</ref> index into the main attribute vector from its name. </para>        </briefdescription>
+        <detaileddescription>
+<para>This method returns the index in the <ref refid="d6/dad/classTango_1_1Attribute" kindref="compound">Attribute</ref> vector (stored in the <ref refid="dc/d3b/classTango_1_1MultiAttribute" kindref="compound">MultiAttribute</ref> object) of an attribute with a given name. The name equality is case independant</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>attr_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute name </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The index in the main attributes vector </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>DevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the attribute is not found in the vector. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/multiattribute.h" line="179" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d3b/classTango_1_1MultiAttribute_1a18553cf9309d7a92f2f8d1fe96b7c637" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>vector&lt; long &gt; &amp;</type>
+        <definition>vector&lt;long&gt;&amp; Tango::MultiAttribute::get_alarm_list</definition>
+        <argsstring>()</argsstring>
+        <name>get_alarm_list</name>
+        <briefdescription>
+<para>Get list of attribute with an alarm level defined. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A vector of long data. Each object is the index in the main attribute vector of attribute with alarm level defined </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/multiattribute.h" line="186" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/multiattribute.h" bodystart="186" bodyend="186"/>
+        <references refid="dc/d3b/classTango_1_1MultiAttribute_1a2ae4228c1bc367771a1c7add54c60ff2" compoundref="da/dd1/multiattribute_8h" startline="274">alarm_attr_list</references>
+      </memberdef>
+      <memberdef kind="function" id="dc/d3b/classTango_1_1MultiAttribute_1a1eeb8abbdd3e3a44d60410758a0d0535" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>unsigned long</type>
+        <definition>unsigned long Tango::MultiAttribute::get_attr_nb</definition>
+        <argsstring>()</argsstring>
+        <name>get_attr_nb</name>
+        <briefdescription>
+<para>Get attribute number. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The attribute number </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/multiattribute.h" line="192" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/multiattribute.h" bodystart="192" bodyend="192"/>
+        <references refid="dc/d3b/classTango_1_1MultiAttribute_1aacf766c6cbdeef887e871ec408d80ff7" compoundref="da/dd1/multiattribute_8h" startline="262">attr_list</references>
+      </memberdef>
+      <memberdef kind="function" id="dc/d3b/classTango_1_1MultiAttribute_1af25a9b37449cc1e596bd5154c710c8df" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Tango::MultiAttribute::check_alarm</definition>
+        <argsstring>(const char *attr_name)</argsstring>
+        <name>check_alarm</name>
+        <param>
+          <type>const char *</type>
+          <declname>attr_name</declname>
+        </param>
+        <briefdescription>
+<para>Check alarm for one attribute with a given name. </para>        </briefdescription>
+        <detaileddescription>
+<para>This method returns a boolean set to true if the attribute with the given name is in alarm condition</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>attr_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute name </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A boolean set to true if the attribute is in alarm </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>DevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the attribute does not have any alarm level defined. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/multiattribute.h" line="207" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/multiattribute.h" bodystart="207" bodyend="207"/>
+        <references refid="d6/dad/classTango_1_1Attribute_1a64b4a569c810258ae52a2acaadf15d55">Tango::Attribute::check_alarm</references>
+        <references refid="dc/d3b/classTango_1_1MultiAttribute_1a7b35eb2625bb190393524de6971e2a84">get_attr_by_name</references>
+      </memberdef>
+      <memberdef kind="function" id="dc/d3b/classTango_1_1MultiAttribute_1a11c6b528f663726ccc8b39f0e0ddf967" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Tango::MultiAttribute::check_alarm</definition>
+        <argsstring>(const long ind)</argsstring>
+        <name>check_alarm</name>
+        <param>
+          <type>const long</type>
+          <declname>ind</declname>
+        </param>
+        <briefdescription>
+<para>Check alarm for one attribute from its index in the main attributes vector. </para>        </briefdescription>
+        <detaileddescription>
+<para>This method returns a boolean set to true if the attribute with the given index in the attrobite object vector is in alarm condition</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ind</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute index </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A boolean set to true if the attribute is in alarm </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>DevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the attribute does not have any alarm level defined. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/multiattribute.h" line="221" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/multiattribute.h" bodystart="221" bodyend="221"/>
+        <references refid="d6/dad/classTango_1_1Attribute_1a64b4a569c810258ae52a2acaadf15d55">Tango::Attribute::check_alarm</references>
+        <references refid="dc/d3b/classTango_1_1MultiAttribute_1a30ec97afa15f663a53df8a07aab3b29f" compoundref="da/dd1/multiattribute_8h" startline="142" endline="142">get_attr_by_ind</references>
+      </memberdef>
+      <memberdef kind="function" id="dc/d3b/classTango_1_1MultiAttribute_1a4293e644ee659ccc6796f8bf4bea8e5a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Tango::MultiAttribute::check_alarm</definition>
+        <argsstring>()</argsstring>
+        <name>check_alarm</name>
+        <briefdescription>
+<para>Check alarm on all attribute(s) with an alarm defined. </para>        </briefdescription>
+        <detaileddescription>
+<para>This method returns a boolean set to true if one of the attribute with an alarm level defined is in alarm condition.</para><para><simplesect kind="return"><para>A boolean set to true if one attribute is in alarm </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>DevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the alarm level are not defined for one of the attribute in the list of alarmable one Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/multiattribute.h" line="235" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d3b/classTango_1_1MultiAttribute_1a5f848b890a266861a0dced1add52fe88" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::MultiAttribute::read_alarm</definition>
+        <argsstring>(string &amp;status)</argsstring>
+        <name>read_alarm</name>
+        <param>
+          <type>string &amp;</type>
+          <declname>status</declname>
+        </param>
+        <briefdescription>
+<para>Add alarm message to device status. </para>        </briefdescription>
+        <detaileddescription>
+<para>This method add alarm mesage to the string passed as parameter. A message is added for each attribute which is in alarm condition</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>status</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The string (should be the device status) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/multiattribute.h" line="244" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d3b/classTango_1_1MultiAttribute_1a1cb698e75ba5417305de17409fbeb1b3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>vector&lt; <ref refid="d6/dad/classTango_1_1Attribute" kindref="compound">Attribute</ref> * &gt; &amp;</type>
+        <definition>vector&lt;Attribute *&gt;&amp; Tango::MultiAttribute::get_attribute_list</definition>
+        <argsstring>()</argsstring>
+        <name>get_attribute_list</name>
+        <briefdescription>
+<para>Get the vector of attribute objects. </para>        </briefdescription>
+        <detaileddescription>
+<para>Returns the vector of attribute objects. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/multiattribute.h" line="251" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/multiattribute.h" bodystart="251" bodyend="251"/>
+        <references refid="dc/d3b/classTango_1_1MultiAttribute_1aacf766c6cbdeef887e871ec408d80ff7" compoundref="da/dd1/multiattribute_8h" startline="262">attr_list</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Class data members</header>
+      <memberdef kind="variable" id="dc/d3b/classTango_1_1MultiAttribute_1aacf766c6cbdeef887e871ec408d80ff7" prot="protected" static="no" mutable="no">
+        <type>vector&lt; <ref refid="d6/dad/classTango_1_1Attribute" kindref="compound">Attribute</ref> * &gt;</type>
+        <definition>vector&lt;Attribute *&gt; Tango::MultiAttribute::attr_list</definition>
+        <argsstring></argsstring>
+        <name>attr_list</name>
+        <briefdescription>
+<para>The <ref refid="d6/dad/classTango_1_1Attribute" kindref="compound">Attribute</ref> objects vector. </para>        </briefdescription>
+        <detaileddescription>
+<para>This vector is often referred as the main attributes vector </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/multiattribute.h" line="262" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/multiattribute.h" bodystart="262" bodyend="-1"/>
+        <referencedby refid="dc/d3b/classTango_1_1MultiAttribute_1a30ec97afa15f663a53df8a07aab3b29f" compoundref="da/dd1/multiattribute_8h" startline="142" endline="142">get_attr_by_ind</referencedby>
+        <referencedby refid="dc/d3b/classTango_1_1MultiAttribute_1a1eeb8abbdd3e3a44d60410758a0d0535" compoundref="da/dd1/multiattribute_8h" startline="192" endline="192">get_attr_nb</referencedby>
+        <referencedby refid="dc/d3b/classTango_1_1MultiAttribute_1a1cb698e75ba5417305de17409fbeb1b3" compoundref="da/dd1/multiattribute_8h" startline="251" endline="251">get_attribute_list</referencedby>
+        <referencedby refid="dc/d3b/classTango_1_1MultiAttribute_1a1e02cdb7576f1758143226efabcc374c" compoundref="da/dd1/multiattribute_8h" startline="165" endline="165">get_w_attr_by_ind</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="dc/d3b/classTango_1_1MultiAttribute_1aa256d20e115d7c13a17d82fa7fbdd2d5" prot="protected" static="no" mutable="no">
+        <type>vector&lt; long &gt;</type>
+        <definition>vector&lt;long&gt; Tango::MultiAttribute::writable_attr_list</definition>
+        <argsstring></argsstring>
+        <name>writable_attr_list</name>
+        <briefdescription>
+<para>The list of writable attribute. </para>        </briefdescription>
+        <detaileddescription>
+<para>It is a vector of index in the main attribute vector </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/multiattribute.h" line="268" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/multiattribute.h" bodystart="268" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dc/d3b/classTango_1_1MultiAttribute_1a2ae4228c1bc367771a1c7add54c60ff2" prot="protected" static="no" mutable="no">
+        <type>vector&lt; long &gt;</type>
+        <definition>vector&lt;long&gt; Tango::MultiAttribute::alarm_attr_list</definition>
+        <argsstring></argsstring>
+        <name>alarm_attr_list</name>
+        <briefdescription>
+<para>The list of attribute with an alarm level defined. </para>        </briefdescription>
+        <detaileddescription>
+<para>It is a vector of index in the main attribute vector </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/multiattribute.h" line="274" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/multiattribute.h" bodystart="274" bodyend="-1"/>
+        <referencedby refid="dc/d3b/classTango_1_1MultiAttribute_1a18553cf9309d7a92f2f8d1fe96b7c637" compoundref="da/dd1/multiattribute_8h" startline="186" endline="186">get_alarm_list</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="dc/d3b/classTango_1_1MultiAttribute_1aa3ff5cb3ab7ab16be2d040388cdc72fb" prot="private" static="no" mutable="no">
+        <type>MultiAttributeExt *</type>
+        <definition>MultiAttributeExt* Tango::MultiAttribute::ext</definition>
+        <argsstring></argsstring>
+        <name>ext</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/multiattribute.h" line="307" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/multiattribute.h" bodystart="307" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="dc/d3b/classTango_1_1MultiAttribute_1a95091c53ee7404dd757be541965f7c95" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::MultiAttribute::add_alarmed_quality_factor</definition>
+        <argsstring>(string &amp;)</argsstring>
+        <name>add_alarmed_quality_factor</name>
+        <param>
+          <type>string &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/multiattribute.h" line="288" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d3b/classTango_1_1MultiAttribute_1aa45aa9fcd379b2eba8134541c5116264" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::MultiAttribute::add_attr</definition>
+        <argsstring>(Attribute *att)</argsstring>
+        <name>add_attr</name>
+        <param>
+          <type><ref refid="d6/dad/classTango_1_1Attribute" kindref="compound">Attribute</ref> *</type>
+          <declname>att</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/multiattribute.h" line="290" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/multiattribute.h" bodystart="290" bodyend="290"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d3b/classTango_1_1MultiAttribute_1a555fcdf815c09724c852dea0d4e1631f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::MultiAttribute::add_attribute</definition>
+        <argsstring>(string &amp;, DeviceClass *, long)</argsstring>
+        <name>add_attribute</name>
+        <param>
+          <type>string &amp;</type>
+        </param>
+        <param>
+          <type><ref refid="d4/dcd/classTango_1_1DeviceClass" kindref="compound">DeviceClass</ref> *</type>
+        </param>
+        <param>
+          <type>long</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/multiattribute.h" line="281" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d3b/classTango_1_1MultiAttribute_1ad09aad97add1704bb699d6e5cdbc9c3a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::MultiAttribute::add_default</definition>
+        <argsstring>(vector&lt; AttrProperty &gt; &amp;, string &amp;, string &amp;, long)</argsstring>
+        <name>add_default</name>
+        <param>
+          <type>vector&lt; AttrProperty &gt; &amp;</type>
+        </param>
+        <param>
+          <type>string &amp;</type>
+        </param>
+        <param>
+          <type>string &amp;</type>
+        </param>
+        <param>
+          <type>long</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/multiattribute.h" line="289" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d3b/classTango_1_1MultiAttribute_1acc710dc04d2ae7ffedb79add0daa4aa2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::MultiAttribute::add_fwd_attribute</definition>
+        <argsstring>(string &amp;, DeviceClass *, long, Attr *)</argsstring>
+        <name>add_fwd_attribute</name>
+        <param>
+          <type>string &amp;</type>
+        </param>
+        <param>
+          <type><ref refid="d4/dcd/classTango_1_1DeviceClass" kindref="compound">DeviceClass</ref> *</type>
+        </param>
+        <param>
+          <type>long</type>
+        </param>
+        <param>
+          <type><ref refid="d5/dcd/classTango_1_1Attr" kindref="compound">Attr</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/multiattribute.h" line="282" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d3b/classTango_1_1MultiAttribute_1a61d870789064363a386aab22c019d9ee" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::MultiAttribute::add_user_default</definition>
+        <argsstring>(vector&lt; AttrProperty &gt; &amp;, vector&lt; AttrProperty &gt; &amp;)</argsstring>
+        <name>add_user_default</name>
+        <param>
+          <type>vector&lt; AttrProperty &gt; &amp;</type>
+        </param>
+        <param>
+          <type>vector&lt; AttrProperty &gt; &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/multiattribute.h" line="301" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d3b/classTango_1_1MultiAttribute_1a97dce822ddff978e682e56dc934bd760" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::MultiAttribute::add_write_value</definition>
+        <argsstring>(Attribute &amp;)</argsstring>
+        <name>add_write_value</name>
+        <param>
+          <type><ref refid="d6/dad/classTango_1_1Attribute" kindref="compound">Attribute</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/multiattribute.h" line="280" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d3b/classTango_1_1MultiAttribute_1aa546d38d824da82a1796f8aeb84ad0e7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::MultiAttribute::check_associated</definition>
+        <argsstring>(long, string &amp;)</argsstring>
+        <name>check_associated</name>
+        <param>
+          <type>long</type>
+        </param>
+        <param>
+          <type>string &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/multiattribute.h" line="302" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d3b/classTango_1_1MultiAttribute_1a430ee85e264196d64162c6f05df5b882" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::MultiAttribute::check_idl_release</definition>
+        <argsstring>(DeviceImpl *)</argsstring>
+        <name>check_idl_release</name>
+        <param>
+          <type><ref refid="d3/d62/classTango_1_1DeviceImpl" kindref="compound">DeviceImpl</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/multiattribute.h" line="292" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d3b/classTango_1_1MultiAttribute_1ad5770f678a807f5f8097d9e9fa29e377" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::MultiAttribute::concat</definition>
+        <argsstring>(vector&lt; AttrProperty &gt; &amp;, vector&lt; AttrProperty &gt; &amp;, vector&lt; AttrProperty &gt; &amp;)</argsstring>
+        <name>concat</name>
+        <param>
+          <type>vector&lt; AttrProperty &gt; &amp;</type>
+        </param>
+        <param>
+          <type>vector&lt; AttrProperty &gt; &amp;</type>
+        </param>
+        <param>
+          <type>vector&lt; AttrProperty &gt; &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/multiattribute.h" line="300" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d3b/classTango_1_1MultiAttribute_1ae254983aaca796072bc03f903789cc8d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::MultiAttribute::get_event_param</definition>
+        <argsstring>(vector&lt; EventPar &gt; &amp;)</argsstring>
+        <name>get_event_param</name>
+        <param>
+          <type>vector&lt; <ref refid="de/d7e/structTango_1_1EventPar" kindref="compound">EventPar</ref> &gt; &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/multiattribute.h" line="286" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d3b/classTango_1_1MultiAttribute_1a0dcea1b5e151d7393eb2241f5fe674e2" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>vector&lt; long &gt; &amp;</type>
+        <definition>vector&lt;long&gt;&amp; Tango::MultiAttribute::get_w_attr_list</definition>
+        <argsstring>()</argsstring>
+        <name>get_w_attr_list</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/multiattribute.h" line="284" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/multiattribute.h" bodystart="284" bodyend="284"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d3b/classTango_1_1MultiAttribute_1a402917514ec2e3a355e3c04dda37b43d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Tango::MultiAttribute::is_att_quality_alarmed</definition>
+        <argsstring>()</argsstring>
+        <name>is_att_quality_alarmed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/multiattribute.h" line="285" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d3b/classTango_1_1MultiAttribute_1ad22baba0b347dae867a7132f76fab509" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Tango::MultiAttribute::is_opt_prop</definition>
+        <argsstring>(const string &amp;)</argsstring>
+        <name>is_opt_prop</name>
+        <param>
+          <type>const string &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/multiattribute.h" line="293" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d3b/classTango_1_1MultiAttribute_1aaa2cbc47b1ef6730b45df28ceb0eab9b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::MultiAttribute::remove_attribute</definition>
+        <argsstring>(string &amp;, bool)</argsstring>
+        <name>remove_attribute</name>
+        <param>
+          <type>string &amp;</type>
+        </param>
+        <param>
+          <type>bool</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/multiattribute.h" line="283" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d3b/classTango_1_1MultiAttribute_1a1ac83656d0df14dba6c4a4365749164e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::MultiAttribute::set_event_param</definition>
+        <argsstring>(vector&lt; EventPar &gt; &amp;)</argsstring>
+        <name>set_event_param</name>
+        <param>
+          <type>vector&lt; <ref refid="de/d7e/structTango_1_1EventPar" kindref="compound">EventPar</ref> &gt; &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/multiattribute.h" line="287" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d3b/classTango_1_1MultiAttribute_1a2d3d69c43c52df3a1817f30ab6eb5ac2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::MultiAttribute::update</definition>
+        <argsstring>(Attribute &amp;, string &amp;)</argsstring>
+        <name>update</name>
+        <param>
+          <type><ref refid="d6/dad/classTango_1_1Attribute" kindref="compound">Attribute</ref> &amp;</type>
+        </param>
+        <param>
+          <type>string &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/multiattribute.h" line="291" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>There is one instance of this class for each device. </para>    </briefdescription>
+    <detaileddescription>
+<para>This class is mainly an aggregate of <ref refid="d6/dad/classTango_1_1Attribute" kindref="compound">Attribute</ref> or <ref refid="db/da8/classTango_1_1WAttribute" kindref="compound">WAttribute</ref> objects. It eases management of multiple attributes</para><para>$Author$ $Revision$ </para>    </detaileddescription>
+    <location file="/home/tango/workspace/cppTango/include/tango/server/multiattribute.h" line="88" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/multiattribute.h" bodystart="87" bodyend="309"/>
+    <listofallmembers>
+      <member refid="dc/d3b/classTango_1_1MultiAttribute_1a95091c53ee7404dd757be541965f7c95" prot="private" virt="non-virtual"><scope>Tango::MultiAttribute</scope><name>add_alarmed_quality_factor</name></member>
+      <member refid="dc/d3b/classTango_1_1MultiAttribute_1aa45aa9fcd379b2eba8134541c5116264" prot="private" virt="non-virtual"><scope>Tango::MultiAttribute</scope><name>add_attr</name></member>
+      <member refid="dc/d3b/classTango_1_1MultiAttribute_1a555fcdf815c09724c852dea0d4e1631f" prot="private" virt="non-virtual"><scope>Tango::MultiAttribute</scope><name>add_attribute</name></member>
+      <member refid="dc/d3b/classTango_1_1MultiAttribute_1ad09aad97add1704bb699d6e5cdbc9c3a" prot="private" virt="non-virtual"><scope>Tango::MultiAttribute</scope><name>add_default</name></member>
+      <member refid="dc/d3b/classTango_1_1MultiAttribute_1acc710dc04d2ae7ffedb79add0daa4aa2" prot="private" virt="non-virtual"><scope>Tango::MultiAttribute</scope><name>add_fwd_attribute</name></member>
+      <member refid="dc/d3b/classTango_1_1MultiAttribute_1a61d870789064363a386aab22c019d9ee" prot="private" virt="non-virtual"><scope>Tango::MultiAttribute</scope><name>add_user_default</name></member>
+      <member refid="dc/d3b/classTango_1_1MultiAttribute_1a97dce822ddff978e682e56dc934bd760" prot="private" virt="non-virtual"><scope>Tango::MultiAttribute</scope><name>add_write_value</name></member>
+      <member refid="dc/d3b/classTango_1_1MultiAttribute_1a2ae4228c1bc367771a1c7add54c60ff2" prot="protected" virt="non-virtual"><scope>Tango::MultiAttribute</scope><name>alarm_attr_list</name></member>
+      <member refid="dc/d3b/classTango_1_1MultiAttribute_1aacf766c6cbdeef887e871ec408d80ff7" prot="protected" virt="non-virtual"><scope>Tango::MultiAttribute</scope><name>attr_list</name></member>
+      <member refid="dc/d3b/classTango_1_1MultiAttribute_1af25a9b37449cc1e596bd5154c710c8df" prot="public" virt="non-virtual"><scope>Tango::MultiAttribute</scope><name>check_alarm</name></member>
+      <member refid="dc/d3b/classTango_1_1MultiAttribute_1a11c6b528f663726ccc8b39f0e0ddf967" prot="public" virt="non-virtual"><scope>Tango::MultiAttribute</scope><name>check_alarm</name></member>
+      <member refid="dc/d3b/classTango_1_1MultiAttribute_1a4293e644ee659ccc6796f8bf4bea8e5a" prot="public" virt="non-virtual"><scope>Tango::MultiAttribute</scope><name>check_alarm</name></member>
+      <member refid="dc/d3b/classTango_1_1MultiAttribute_1aa546d38d824da82a1796f8aeb84ad0e7" prot="private" virt="non-virtual"><scope>Tango::MultiAttribute</scope><name>check_associated</name></member>
+      <member refid="dc/d3b/classTango_1_1MultiAttribute_1a430ee85e264196d64162c6f05df5b882" prot="private" virt="non-virtual"><scope>Tango::MultiAttribute</scope><name>check_idl_release</name></member>
+      <member refid="dc/d3b/classTango_1_1MultiAttribute_1ad5770f678a807f5f8097d9e9fa29e377" prot="private" virt="non-virtual"><scope>Tango::MultiAttribute</scope><name>concat</name></member>
+      <member refid="dc/d3b/classTango_1_1MultiAttribute_1aa3ff5cb3ab7ab16be2d040388cdc72fb" prot="private" virt="non-virtual"><scope>Tango::MultiAttribute</scope><name>ext</name></member>
+      <member refid="dc/d3b/classTango_1_1MultiAttribute_1a18553cf9309d7a92f2f8d1fe96b7c637" prot="public" virt="non-virtual"><scope>Tango::MultiAttribute</scope><name>get_alarm_list</name></member>
+      <member refid="dc/d3b/classTango_1_1MultiAttribute_1a30ec97afa15f663a53df8a07aab3b29f" prot="public" virt="non-virtual"><scope>Tango::MultiAttribute</scope><name>get_attr_by_ind</name></member>
+      <member refid="dc/d3b/classTango_1_1MultiAttribute_1a7b35eb2625bb190393524de6971e2a84" prot="public" virt="non-virtual"><scope>Tango::MultiAttribute</scope><name>get_attr_by_name</name></member>
+      <member refid="dc/d3b/classTango_1_1MultiAttribute_1a63ae2f2c06d88bb8b641a37898fdefdf" prot="public" virt="non-virtual"><scope>Tango::MultiAttribute</scope><name>get_attr_ind_by_name</name></member>
+      <member refid="dc/d3b/classTango_1_1MultiAttribute_1a1eeb8abbdd3e3a44d60410758a0d0535" prot="public" virt="non-virtual"><scope>Tango::MultiAttribute</scope><name>get_attr_nb</name></member>
+      <member refid="dc/d3b/classTango_1_1MultiAttribute_1a1cb698e75ba5417305de17409fbeb1b3" prot="public" virt="non-virtual"><scope>Tango::MultiAttribute</scope><name>get_attribute_list</name></member>
+      <member refid="dc/d3b/classTango_1_1MultiAttribute_1ae254983aaca796072bc03f903789cc8d" prot="private" virt="non-virtual"><scope>Tango::MultiAttribute</scope><name>get_event_param</name></member>
+      <member refid="dc/d3b/classTango_1_1MultiAttribute_1a1e02cdb7576f1758143226efabcc374c" prot="public" virt="non-virtual"><scope>Tango::MultiAttribute</scope><name>get_w_attr_by_ind</name></member>
+      <member refid="dc/d3b/classTango_1_1MultiAttribute_1a3023529c543ed802a58c9e1eb2b12ff3" prot="public" virt="non-virtual"><scope>Tango::MultiAttribute</scope><name>get_w_attr_by_name</name></member>
+      <member refid="dc/d3b/classTango_1_1MultiAttribute_1a0dcea1b5e151d7393eb2241f5fe674e2" prot="private" virt="non-virtual"><scope>Tango::MultiAttribute</scope><name>get_w_attr_list</name></member>
+      <member refid="dc/d3b/classTango_1_1MultiAttribute_1a402917514ec2e3a355e3c04dda37b43d" prot="private" virt="non-virtual"><scope>Tango::MultiAttribute</scope><name>is_att_quality_alarmed</name></member>
+      <member refid="dc/d3b/classTango_1_1MultiAttribute_1ad22baba0b347dae867a7132f76fab509" prot="private" virt="non-virtual"><scope>Tango::MultiAttribute</scope><name>is_opt_prop</name></member>
+      <member refid="dc/d3b/classTango_1_1MultiAttribute_1aafd0cc4e89eeef1687b827da72b2db34" prot="public" virt="non-virtual"><scope>Tango::MultiAttribute</scope><name>MultiAttribute</name></member>
+      <member refid="dc/d3b/classTango_1_1MultiAttribute_1a5f848b890a266861a0dced1add52fe88" prot="public" virt="non-virtual"><scope>Tango::MultiAttribute</scope><name>read_alarm</name></member>
+      <member refid="dc/d3b/classTango_1_1MultiAttribute_1aaa2cbc47b1ef6730b45df28ceb0eab9b" prot="private" virt="non-virtual"><scope>Tango::MultiAttribute</scope><name>remove_attribute</name></member>
+      <member refid="dc/d3b/classTango_1_1MultiAttribute_1a1ac83656d0df14dba6c4a4365749164e" prot="private" virt="non-virtual"><scope>Tango::MultiAttribute</scope><name>set_event_param</name></member>
+      <member refid="dc/d3b/classTango_1_1MultiAttribute_1a2d3d69c43c52df3a1817f30ab6eb5ac2" prot="private" virt="non-virtual"><scope>Tango::MultiAttribute</scope><name>update</name></member>
+      <member refid="dc/d3b/classTango_1_1MultiAttribute_1aa256d20e115d7c13a17d82fa7fbdd2d5" prot="protected" virt="non-virtual"><scope>Tango::MultiAttribute</scope><name>writable_attr_list</name></member>
+      <member refid="dc/d3b/classTango_1_1MultiAttribute_1ad0f2a8d4aaff4735c71456d7ef6ba440" prot="public" virt="non-virtual"><scope>Tango::MultiAttribute</scope><name>~MultiAttribute</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="d1/d12/classTango_1_1PipeEventDataList" kind="class" prot="public">
+    <compoundname>Tango::PipeEventDataList</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">std::vector&lt; PipeEventData * &gt;</basecompoundref>
+    <includes refid="dd/d20/event_8h" local="yes">event.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d1/d12/classTango_1_1PipeEventDataList_1a993c95943d47907b18b1c7f7b0fd6f16" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Tango::PipeEventDataList::PipeEventDataList</definition>
+        <argsstring>()</argsstring>
+        <name>PipeEventDataList</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/event.h" line="476" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/event.h" bodystart="476" bodyend="476"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d12/classTango_1_1PipeEventDataList_1aba1ed1818cbccb3e07ee2da584e40e85" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Tango::PipeEventDataList::~PipeEventDataList</definition>
+        <argsstring>()</argsstring>
+        <name>~PipeEventDataList</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/event.h" line="477" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/event.h" bodystart="477" bodyend="487"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d12/classTango_1_1PipeEventDataList_1aca52a643f45df5ecf81036332a874e76" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::PipeEventDataList::clear</definition>
+        <argsstring>()</argsstring>
+        <name>clear</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/event.h" line="488" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/event.h" bodystart="488" bodyend="500"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1188">
+        <label>std::vector&lt; PipeEventData * &gt;</label>
+      </node>
+      <node id="1187">
+        <label>Tango::PipeEventDataList</label>
+        <link refid="d1/d12/classTango_1_1PipeEventDataList"/>
+        <childnode refid="1188" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1190">
+        <label>std::vector&lt; PipeEventData * &gt;</label>
+      </node>
+      <node id="1189">
+        <label>Tango::PipeEventDataList</label>
+        <link refid="d1/d12/classTango_1_1PipeEventDataList"/>
+        <childnode refid="1190" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/tango/workspace/cppTango/include/tango/client/event.h" line="474" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/event.h" bodystart="473" bodyend="501"/>
+    <listofallmembers>
+      <member refid="d1/d12/classTango_1_1PipeEventDataList_1aca52a643f45df5ecf81036332a874e76" prot="public" virt="non-virtual"><scope>Tango::PipeEventDataList</scope><name>clear</name></member>
+      <member refid="d1/d12/classTango_1_1PipeEventDataList_1a993c95943d47907b18b1c7f7b0fd6f16" prot="public" virt="non-virtual"><scope>Tango::PipeEventDataList</scope><name>PipeEventDataList</name></member>
+      <member refid="d1/d12/classTango_1_1PipeEventDataList_1aba1ed1818cbccb3e07ee2da584e40e85" prot="public" virt="non-virtual"><scope>Tango::PipeEventDataList</scope><name>~PipeEventDataList</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

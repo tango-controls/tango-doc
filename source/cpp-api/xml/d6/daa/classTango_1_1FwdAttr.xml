@@ -1,0 +1,529 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="d6/daa/classTango_1_1FwdAttr" kind="class" prot="public">
+    <compoundname>Tango::FwdAttr</compoundname>
+    <basecompoundref refid="dd/dd1/classTango_1_1ImageAttr" prot="public" virt="non-virtual">Tango::ImageAttr</basecompoundref>
+    <innerclass refid="d0/d24/classTango_1_1FwdAttr_1_1FwdAttrExt" prot="private">Tango::FwdAttr::FwdAttrExt</innerclass>
+      <sectiondef kind="user-defined">
+      <header>Constructors</header>
+      <description><para>Only one constructor is defined for this class </para></description>
+      <memberdef kind="function" id="d6/daa/classTango_1_1FwdAttr_1a9a241a7b91325152d9cb29e339ed816d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::FwdAttr::FwdAttr</definition>
+        <argsstring>(const string &amp;name, const string &amp;root_attribute=RootAttNotDef)</argsstring>
+        <name>FwdAttr</name>
+        <param>
+          <type>const string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const string &amp;</type>
+          <declname>root_attribute</declname>
+          <defval><ref refid="de/ddf/namespaceTango_1a1c7c38a09a30e1eb128a9d90c3b8e41a" kindref="member">RootAttNotDef</ref></defval>
+        </param>
+        <briefdescription>
+<para>Constructs a newly allocated <ref refid="d6/daa/classTango_1_1FwdAttr" kindref="compound">FwdAttr</ref> object. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute name </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>root_attribute</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The root attribute name (FQAN) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/fwdattrdesc.h" line="130" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Miscellaneous methods</header>
+      <memberdef kind="function" id="d6/daa/classTango_1_1FwdAttr_1a4e03c27d8edac79cb48a9f2cb0170359" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::FwdAttr::set_default_properties</definition>
+        <argsstring>(UserDefaultFwdAttrProp &amp;prop)</argsstring>
+        <name>set_default_properties</name>
+        <param>
+          <type><ref refid="d0/d19/classTango_1_1UserDefaultFwdAttrProp" kindref="compound">UserDefaultFwdAttrProp</ref> &amp;</type>
+          <declname>prop</declname>
+        </param>
+        <briefdescription>
+<para>Set default attribute properties. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>prop</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The user default property class </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/fwdattrdesc.h" line="140" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d6/daa/classTango_1_1FwdAttr_1a597495cbbbca303e7c8061f12d5418eb" prot="private" static="no" mutable="no">
+        <type><ref refid="de/ddf/namespaceTango_1a1e389712aae3f56c65cda947d965f8f3" kindref="member">FwdAttError</ref></type>
+        <definition>FwdAttError Tango::FwdAttr::err_kind</definition>
+        <argsstring></argsstring>
+        <name>err_kind</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/fwdattrdesc.h" line="171" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/fwdattrdesc.h" bodystart="171" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d6/daa/classTango_1_1FwdAttr_1a2e3272e4d893661a683434869afd017a" prot="private" static="no" mutable="no">
+        <type>FwdAttrExt *</type>
+        <definition>FwdAttrExt* Tango::FwdAttr::ext</definition>
+        <argsstring></argsstring>
+        <name>ext</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/fwdattrdesc.h" line="181" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/fwdattrdesc.h" bodystart="181" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d6/daa/classTango_1_1FwdAttr_1ac952b9cf629ce6a095f86a7a0bfe9fb1" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Tango::FwdAttr::full_root_att</definition>
+        <argsstring></argsstring>
+        <name>full_root_att</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/fwdattrdesc.h" line="167" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/fwdattrdesc.h" bodystart="167" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d6/daa/classTango_1_1FwdAttr_1a2f446143e14457054220d86932282f40" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Tango::FwdAttr::fwd_dev_name</definition>
+        <argsstring></argsstring>
+        <name>fwd_dev_name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/fwdattrdesc.h" line="168" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/fwdattrdesc.h" bodystart="168" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d6/daa/classTango_1_1FwdAttr_1ac6814f6ff596d88a6b49e5b3017da8d1" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Tango::FwdAttr::fwd_root_att</definition>
+        <argsstring></argsstring>
+        <name>fwd_root_att</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/fwdattrdesc.h" line="169" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/fwdattrdesc.h" bodystart="169" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d6/daa/classTango_1_1FwdAttr_1a1096a767c74c602d8230d37c5e299ebb" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Tango::FwdAttr::fwd_wrongly_conf</definition>
+        <argsstring></argsstring>
+        <name>fwd_wrongly_conf</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/fwdattrdesc.h" line="170" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/fwdattrdesc.h" bodystart="170" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="d6/daa/classTango_1_1FwdAttr_1ac78e7d92ef2169d2313425ad132262ba" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::FwdAttr::FwdAttr</definition>
+        <argsstring>(const FwdAttr &amp;)</argsstring>
+        <name>FwdAttr</name>
+        <param>
+          <type>const <ref refid="d6/daa/classTango_1_1FwdAttr" kindref="compound">FwdAttr</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/fwdattrdesc.h" line="144" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/daa/classTango_1_1FwdAttr_1a48cbf90d51a8b755f640ae6b7d19c48f" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="de/ddf/namespaceTango_1a1e389712aae3f56c65cda947d965f8f3" kindref="member">FwdAttError</ref></type>
+        <definition>FwdAttError Tango::FwdAttr::get_err_kind</definition>
+        <argsstring>()</argsstring>
+        <name>get_err_kind</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/fwdattrdesc.h" line="151" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/fwdattrdesc.h" bodystart="151" bodyend="151"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/daa/classTango_1_1FwdAttr_1af75eb5a786f1ec31fa9422b6fb9b1b47" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>string &amp;</type>
+        <definition>string&amp; Tango::FwdAttr::get_full_root_att</definition>
+        <argsstring>()</argsstring>
+        <name>get_full_root_att</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/fwdattrdesc.h" line="149" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/fwdattrdesc.h" bodystart="149" bodyend="149"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/daa/classTango_1_1FwdAttr_1aced66514b216b46027d6877a27d91f4a" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>string &amp;</type>
+        <definition>string&amp; Tango::FwdAttr::get_fwd_dev_name</definition>
+        <argsstring>()</argsstring>
+        <name>get_fwd_dev_name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/fwdattrdesc.h" line="148" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/fwdattrdesc.h" bodystart="148" bodyend="148"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/daa/classTango_1_1FwdAttr_1a4e81d107c5f354f2fc110052fad39a8c" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>string &amp;</type>
+        <definition>string&amp; Tango::FwdAttr::get_fwd_root_att</definition>
+        <argsstring>()</argsstring>
+        <name>get_fwd_root_att</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/fwdattrdesc.h" line="147" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/fwdattrdesc.h" bodystart="147" bodyend="147"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/daa/classTango_1_1FwdAttr_1a46c4c949ca5654162e58632d6f978fb8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>string &amp;</type>
+        <definition>string&amp; Tango::FwdAttr::get_label_from_default_properties</definition>
+        <argsstring>()</argsstring>
+        <name>get_label_from_default_properties</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/fwdattrdesc.h" line="163" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/daa/classTango_1_1FwdAttr_1afead319117d43a7514b5704ad97abb87" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::FwdAttr::get_root_conf</definition>
+        <argsstring>(string &amp;, DeviceImpl *)</argsstring>
+        <name>get_root_conf</name>
+        <param>
+          <type>string &amp;</type>
+        </param>
+        <param>
+          <type><ref refid="d3/d62/classTango_1_1DeviceImpl" kindref="compound">DeviceImpl</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/fwdattrdesc.h" line="160" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/daa/classTango_1_1FwdAttr_1a357444606cbda446592735a0c45c9ec3" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Tango::FwdAttr::init_conf</definition>
+        <argsstring>(AttrConfEventData *)</argsstring>
+        <name>init_conf</name>
+        <param>
+          <type><ref refid="d9/da1/classTango_1_1AttrConfEventData" kindref="compound">AttrConfEventData</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/fwdattrdesc.h" line="158" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/daa/classTango_1_1FwdAttr_1a1dcfaeba5b1fcb7dd5ade3c06cdeaa52" prot="private" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>bool</type>
+        <definition>virtual bool Tango::FwdAttr::is_allowed</definition>
+        <argsstring>(DeviceImpl *, AttReqType)</argsstring>
+        <name>is_allowed</name>
+        <reimplements refid="d5/dcd/classTango_1_1Attr_1a26c28750cbbe186c6a80fd6bb32f8efe">is_allowed</reimplements>
+        <param>
+          <type><ref refid="d3/d62/classTango_1_1DeviceImpl" kindref="compound">DeviceImpl</ref> *</type>
+        </param>
+        <param>
+          <type><ref refid="de/ddf/namespaceTango_1af86537193dcecd8a6710791fc2d4969d" kindref="member">AttReqType</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/fwdattrdesc.h" line="156" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/fwdattrdesc.h" bodystart="156" bodyend="156"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/daa/classTango_1_1FwdAttr_1ae884ec4c51335980b8fee2fc6783d988" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Tango::FwdAttr::is_correctly_configured</definition>
+        <argsstring>()</argsstring>
+        <name>is_correctly_configured</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/fwdattrdesc.h" line="150" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/fwdattrdesc.h" bodystart="150" bodyend="150"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/daa/classTango_1_1FwdAttr_1afa327e92681846e6bc85ecb46b5f856f" prot="private" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>bool</type>
+        <definition>virtual bool Tango::FwdAttr::is_fwd</definition>
+        <argsstring>()</argsstring>
+        <name>is_fwd</name>
+        <reimplements refid="d5/dcd/classTango_1_1Attr_1a17a6c4d5b8ee9e3bf8566e368d8dd0c0">is_fwd</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/fwdattrdesc.h" line="145" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/fwdattrdesc.h" bodystart="145" bodyend="145"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/daa/classTango_1_1FwdAttr_1aa195596e380dbbac3b02e81225c9142e" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Tango::FwdAttr::read</definition>
+        <argsstring>(DeviceImpl *, Attribute &amp;)</argsstring>
+        <name>read</name>
+        <reimplements refid="d5/dcd/classTango_1_1Attr_1addc6a01351f1e76ca77b9c56a1c1a8bc">read</reimplements>
+        <param>
+          <type><ref refid="d3/d62/classTango_1_1DeviceImpl" kindref="compound">DeviceImpl</ref> *</type>
+        </param>
+        <param>
+          <type><ref refid="d6/dad/classTango_1_1Attribute" kindref="compound">Attribute</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/fwdattrdesc.h" line="154" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/daa/classTango_1_1FwdAttr_1a9539bfccfee28d94f7ee07cacfa39f6f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::FwdAttr::remove_useless_prop</definition>
+        <argsstring>(vector&lt; AttrProperty &gt; &amp;, string &amp;, MultiAttribute *)</argsstring>
+        <name>remove_useless_prop</name>
+        <param>
+          <type>vector&lt; AttrProperty &gt; &amp;</type>
+        </param>
+        <param>
+          <type>string &amp;</type>
+        </param>
+        <param>
+          <type><ref refid="dc/d3b/classTango_1_1MultiAttribute" kindref="compound">MultiAttribute</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/fwdattrdesc.h" line="162" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/daa/classTango_1_1FwdAttr_1a9ec1799a74804f4129f0fd5f1b366ae9" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::FwdAttr::set_err_kind</definition>
+        <argsstring>(FwdAttError _e)</argsstring>
+        <name>set_err_kind</name>
+        <param>
+          <type><ref refid="de/ddf/namespaceTango_1a1e389712aae3f56c65cda947d965f8f3" kindref="member">FwdAttError</ref></type>
+          <declname>_e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/fwdattrdesc.h" line="152" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/fwdattrdesc.h" bodystart="152" bodyend="152"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/daa/classTango_1_1FwdAttr_1a9802a15237e40325f6a58ddcf642a920" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Tango::FwdAttr::validate_fwd_att</definition>
+        <argsstring>(vector&lt; AttrProperty &gt; &amp;, const string &amp;)</argsstring>
+        <name>validate_fwd_att</name>
+        <param>
+          <type>vector&lt; AttrProperty &gt; &amp;</type>
+        </param>
+        <param>
+          <type>const string &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/fwdattrdesc.h" line="159" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/daa/classTango_1_1FwdAttr_1a5179d014bf4ca45bf6cb24c8b5bf168c" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Tango::FwdAttr::write</definition>
+        <argsstring>(DeviceImpl *, WAttribute &amp;)</argsstring>
+        <name>write</name>
+        <reimplements refid="d5/dcd/classTango_1_1Attr_1a364617f4dccd4540ac9ae83ef7d0d7d2">write</reimplements>
+        <param>
+          <type><ref refid="d3/d62/classTango_1_1DeviceImpl" kindref="compound">DeviceImpl</ref> *</type>
+        </param>
+        <param>
+          <type><ref refid="db/da8/classTango_1_1WAttribute" kindref="compound">WAttribute</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/fwdattrdesc.h" line="155" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>User class to create a forwarded attribute object. </para>    </briefdescription>
+    <detaileddescription>
+<para>Information from this class and information fetched out from the <ref refid="de/ddf/namespaceTango" kindref="compound">Tango</ref> database allows the <ref refid="de/ddf/namespaceTango" kindref="compound">Tango</ref> core software to create the FwdAttribute object for the forwarded attribute created by the user.</para><para>$Author$ $Revision$ </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="1001">
+        <label>Tango::ImageAttr</label>
+        <link refid="dd/dd1/classTango_1_1ImageAttr"/>
+        <childnode refid="1002" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1000">
+        <label>Tango::FwdAttr</label>
+        <link refid="d6/daa/classTango_1_1FwdAttr"/>
+        <childnode refid="1001" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1002">
+        <label>Tango::SpectrumAttr</label>
+        <link refid="dd/de9/classTango_1_1SpectrumAttr"/>
+        <childnode refid="1003" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1003">
+        <label>Tango::Attr</label>
+        <link refid="d5/dcd/classTango_1_1Attr"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1005">
+        <label>Tango::ImageAttr</label>
+        <link refid="dd/dd1/classTango_1_1ImageAttr"/>
+        <childnode refid="1006" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1004">
+        <label>Tango::FwdAttr</label>
+        <link refid="d6/daa/classTango_1_1FwdAttr"/>
+        <childnode refid="1005" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1006">
+        <label>Tango::SpectrumAttr</label>
+        <link refid="dd/de9/classTango_1_1SpectrumAttr"/>
+        <childnode refid="1007" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1007">
+        <label>Tango::Attr</label>
+        <link refid="d5/dcd/classTango_1_1Attr"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/tango/workspace/cppTango/include/tango/server/fwdattrdesc.h" line="118" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/fwdattrdesc.h" bodystart="117" bodyend="183"/>
+    <listofallmembers>
+      <member refid="d5/dcd/classTango_1_1Attr_1a7333f0eab1956673be866f4c7a2d44e8" prot="public" virt="non-virtual"><scope>Tango::FwdAttr</scope><name>Attr</name></member>
+      <member refid="d5/dcd/classTango_1_1Attr_1ad03a6014aeefda86d8ee4d52659a6c39" prot="public" virt="non-virtual"><scope>Tango::FwdAttr</scope><name>Attr</name></member>
+      <member refid="d5/dcd/classTango_1_1Attr_1ad69e9aa5dcd4c22be0509ed72a01cd0d" prot="public" virt="non-virtual"><scope>Tango::FwdAttr</scope><name>Attr</name></member>
+      <member refid="d6/daa/classTango_1_1FwdAttr_1a597495cbbbca303e7c8061f12d5418eb" prot="private" virt="non-virtual"><scope>Tango::FwdAttr</scope><name>err_kind</name></member>
+      <member refid="d6/daa/classTango_1_1FwdAttr_1a2e3272e4d893661a683434869afd017a" prot="private" virt="non-virtual"><scope>Tango::FwdAttr</scope><name>ext</name></member>
+      <member refid="d6/daa/classTango_1_1FwdAttr_1ac952b9cf629ce6a095f86a7a0bfe9fb1" prot="private" virt="non-virtual"><scope>Tango::FwdAttr</scope><name>full_root_att</name></member>
+      <member refid="d6/daa/classTango_1_1FwdAttr_1a2f446143e14457054220d86932282f40" prot="private" virt="non-virtual"><scope>Tango::FwdAttr</scope><name>fwd_dev_name</name></member>
+      <member refid="d6/daa/classTango_1_1FwdAttr_1ac6814f6ff596d88a6b49e5b3017da8d1" prot="private" virt="non-virtual"><scope>Tango::FwdAttr</scope><name>fwd_root_att</name></member>
+      <member refid="d6/daa/classTango_1_1FwdAttr_1a1096a767c74c602d8230d37c5e299ebb" prot="private" virt="non-virtual"><scope>Tango::FwdAttr</scope><name>fwd_wrongly_conf</name></member>
+      <member refid="d6/daa/classTango_1_1FwdAttr_1a9a241a7b91325152d9cb29e339ed816d" prot="public" virt="non-virtual"><scope>Tango::FwdAttr</scope><name>FwdAttr</name></member>
+      <member refid="d6/daa/classTango_1_1FwdAttr_1ac78e7d92ef2169d2313425ad132262ba" prot="private" virt="non-virtual"><scope>Tango::FwdAttr</scope><name>FwdAttr</name></member>
+      <member refid="d6/daa/classTango_1_1FwdAttr_1a48cbf90d51a8b755f640ae6b7d19c48f" prot="private" virt="non-virtual"><scope>Tango::FwdAttr</scope><name>get_err_kind</name></member>
+      <member refid="d6/daa/classTango_1_1FwdAttr_1af75eb5a786f1ec31fa9422b6fb9b1b47" prot="private" virt="non-virtual"><scope>Tango::FwdAttr</scope><name>get_full_root_att</name></member>
+      <member refid="d6/daa/classTango_1_1FwdAttr_1aced66514b216b46027d6877a27d91f4a" prot="private" virt="non-virtual"><scope>Tango::FwdAttr</scope><name>get_fwd_dev_name</name></member>
+      <member refid="d6/daa/classTango_1_1FwdAttr_1a4e81d107c5f354f2fc110052fad39a8c" prot="private" virt="non-virtual"><scope>Tango::FwdAttr</scope><name>get_fwd_root_att</name></member>
+      <member refid="d6/daa/classTango_1_1FwdAttr_1a46c4c949ca5654162e58632d6f978fb8" prot="private" virt="non-virtual"><scope>Tango::FwdAttr</scope><name>get_label_from_default_properties</name></member>
+      <member refid="d6/daa/classTango_1_1FwdAttr_1afead319117d43a7514b5704ad97abb87" prot="private" virt="non-virtual"><scope>Tango::FwdAttr</scope><name>get_root_conf</name></member>
+      <member refid="dd/dd1/classTango_1_1ImageAttr_1a4103de2b6a5f5bb187bcb6cdcfc210c5" prot="public" virt="non-virtual"><scope>Tango::FwdAttr</scope><name>ImageAttr</name></member>
+      <member refid="dd/dd1/classTango_1_1ImageAttr_1a5f0ff1d6eed2e33a40be144e25c7a80e" prot="public" virt="non-virtual"><scope>Tango::FwdAttr</scope><name>ImageAttr</name></member>
+      <member refid="dd/dd1/classTango_1_1ImageAttr_1a54939c797ec3d63f84a18d0a54f45b51" prot="public" virt="non-virtual"><scope>Tango::FwdAttr</scope><name>ImageAttr</name></member>
+      <member refid="dd/dd1/classTango_1_1ImageAttr_1a86863b65108a6098519bd19a2d7ac78e" prot="public" virt="non-virtual"><scope>Tango::FwdAttr</scope><name>ImageAttr</name></member>
+      <member refid="dd/dd1/classTango_1_1ImageAttr_1a941b6e0f0409f199c6b86a18c40fb8f0" prot="public" virt="non-virtual"><scope>Tango::FwdAttr</scope><name>ImageAttr</name></member>
+      <member refid="d6/daa/classTango_1_1FwdAttr_1a357444606cbda446592735a0c45c9ec3" prot="private" virt="virtual"><scope>Tango::FwdAttr</scope><name>init_conf</name></member>
+      <member refid="d6/daa/classTango_1_1FwdAttr_1a1dcfaeba5b1fcb7dd5ade3c06cdeaa52" prot="private" virt="virtual"><scope>Tango::FwdAttr</scope><name>is_allowed</name></member>
+      <member refid="d5/dcd/classTango_1_1Attr_1aff00859f5da6a7f48e7abe079491f12c" prot="public" virt="non-virtual"><scope>Tango::FwdAttr</scope><name>is_archive_event</name></member>
+      <member refid="d5/dcd/classTango_1_1Attr_1a9269546f4b25a6395efe8b93bdb8d07f" prot="public" virt="non-virtual"><scope>Tango::FwdAttr</scope><name>is_change_event</name></member>
+      <member refid="d5/dcd/classTango_1_1Attr_1a8aa3318fe49d403969a59fe000352be8" prot="public" virt="non-virtual"><scope>Tango::FwdAttr</scope><name>is_check_archive_criteria</name></member>
+      <member refid="d5/dcd/classTango_1_1Attr_1a3001dc4d14cbdc62a914a15ff3a86e49" prot="public" virt="non-virtual"><scope>Tango::FwdAttr</scope><name>is_check_change_criteria</name></member>
+      <member refid="d6/daa/classTango_1_1FwdAttr_1ae884ec4c51335980b8fee2fc6783d988" prot="private" virt="non-virtual"><scope>Tango::FwdAttr</scope><name>is_correctly_configured</name></member>
+      <member refid="d5/dcd/classTango_1_1Attr_1aff3b774c27e61c3c2ae97ec81c30fcea" prot="public" virt="non-virtual"><scope>Tango::FwdAttr</scope><name>is_data_ready_event</name></member>
+      <member refid="d6/daa/classTango_1_1FwdAttr_1afa327e92681846e6bc85ecb46b5f856f" prot="private" virt="virtual"><scope>Tango::FwdAttr</scope><name>is_fwd</name></member>
+      <member refid="dd/de9/classTango_1_1SpectrumAttr_1a74073e0d76cabe94dac96d926a4dcff4" prot="protected" virt="non-virtual"><scope>Tango::FwdAttr</scope><name>max_x</name></member>
+      <member refid="d6/daa/classTango_1_1FwdAttr_1aa195596e380dbbac3b02e81225c9142e" prot="private" virt="virtual"><scope>Tango::FwdAttr</scope><name>read</name></member>
+      <member refid="d6/daa/classTango_1_1FwdAttr_1a9539bfccfee28d94f7ee07cacfa39f6f" prot="private" virt="non-virtual"><scope>Tango::FwdAttr</scope><name>remove_useless_prop</name></member>
+      <member refid="d5/dcd/classTango_1_1Attr_1a6ba7dd409514e938cb2f530b767aa98c" prot="public" virt="non-virtual"><scope>Tango::FwdAttr</scope><name>set_archive_event</name></member>
+      <member refid="d5/dcd/classTango_1_1Attr_1a68801b4629667565b9cceb6fefa413d7" prot="public" virt="non-virtual"><scope>Tango::FwdAttr</scope><name>set_change_event</name></member>
+      <member refid="d5/dcd/classTango_1_1Attr_1a7e18250ed88d997b603b308212eb7362" prot="public" virt="non-virtual"><scope>Tango::FwdAttr</scope><name>set_data_ready_event</name></member>
+      <member refid="d6/daa/classTango_1_1FwdAttr_1a4e03c27d8edac79cb48a9f2cb0170359" prot="public" virt="non-virtual"><scope>Tango::FwdAttr</scope><name>set_default_properties</name></member>
+      <member refid="d5/dcd/classTango_1_1Attr_1acca03caaac31c20e746a276ab033c174" prot="public" virt="non-virtual" ambiguityscope="Tango::ImageAttr::"><scope>Tango::FwdAttr</scope><name>set_default_properties</name></member>
+      <member refid="d5/dcd/classTango_1_1Attr_1a8f841afb6effc8384e49730550261378" prot="public" virt="non-virtual"><scope>Tango::FwdAttr</scope><name>set_disp_level</name></member>
+      <member refid="d6/daa/classTango_1_1FwdAttr_1a9ec1799a74804f4129f0fd5f1b366ae9" prot="private" virt="non-virtual"><scope>Tango::FwdAttr</scope><name>set_err_kind</name></member>
+      <member refid="d5/dcd/classTango_1_1Attr_1aac89c07e2033c13abf2222fd6cd089dc" prot="public" virt="non-virtual"><scope>Tango::FwdAttr</scope><name>set_memorized</name></member>
+      <member refid="d5/dcd/classTango_1_1Attr_1a5c1d94ccc3bacb8d728cf836df737889" prot="public" virt="non-virtual"><scope>Tango::FwdAttr</scope><name>set_memorized_init</name></member>
+      <member refid="d5/dcd/classTango_1_1Attr_1a5d0e17f5a1ce7263482bb3df5090f91d" prot="public" virt="non-virtual"><scope>Tango::FwdAttr</scope><name>set_polling_period</name></member>
+      <member refid="dd/de9/classTango_1_1SpectrumAttr_1a7615edf64261435e3a422f5757aa0946" prot="public" virt="non-virtual"><scope>Tango::FwdAttr</scope><name>SpectrumAttr</name></member>
+      <member refid="dd/de9/classTango_1_1SpectrumAttr_1a7e692cf26932a23e335ea1b7d3c8eb04" prot="public" virt="non-virtual"><scope>Tango::FwdAttr</scope><name>SpectrumAttr</name></member>
+      <member refid="dd/de9/classTango_1_1SpectrumAttr_1abd3b26a2c9335f121a9e461b4c305051" prot="public" virt="non-virtual"><scope>Tango::FwdAttr</scope><name>SpectrumAttr</name></member>
+      <member refid="dd/de9/classTango_1_1SpectrumAttr_1a671c9d94738e60668990494188032469" prot="public" virt="non-virtual"><scope>Tango::FwdAttr</scope><name>SpectrumAttr</name></member>
+      <member refid="dd/de9/classTango_1_1SpectrumAttr_1a9dcccb8a63b6343b1567098cc47cfb88" prot="public" virt="non-virtual"><scope>Tango::FwdAttr</scope><name>SpectrumAttr</name></member>
+      <member refid="d6/daa/classTango_1_1FwdAttr_1a9802a15237e40325f6a58ddcf642a920" prot="private" virt="non-virtual"><scope>Tango::FwdAttr</scope><name>validate_fwd_att</name></member>
+      <member refid="d6/daa/classTango_1_1FwdAttr_1a5179d014bf4ca45bf6cb24c8b5bf168c" prot="private" virt="virtual"><scope>Tango::FwdAttr</scope><name>write</name></member>
+      <member refid="d5/dcd/classTango_1_1Attr_1af280714a1ec4254e7ad7009eb0e8feda" prot="public" virt="virtual"><scope>Tango::FwdAttr</scope><name>~Attr</name></member>
+      <member refid="dd/dd1/classTango_1_1ImageAttr_1a86703e9efdc8c59dba36821dbbda31f8" prot="public" virt="non-virtual"><scope>Tango::FwdAttr</scope><name>~ImageAttr</name></member>
+      <member refid="dd/de9/classTango_1_1SpectrumAttr_1a2204d147fb74aac1efeff7ea9ea5c7be" prot="public" virt="non-virtual"><scope>Tango::FwdAttr</scope><name>~SpectrumAttr</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

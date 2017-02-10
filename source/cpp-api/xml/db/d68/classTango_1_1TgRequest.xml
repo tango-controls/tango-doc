@@ -1,0 +1,220 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="db/d68/classTango_1_1TgRequest" kind="class" prot="public">
+    <compoundname>Tango::TgRequest</compoundname>
+    <includes refid="db/d02/devasyn_8h" local="yes">devasyn.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="db/d68/classTango_1_1TgRequest_1a6ae144d0765e704695987f8b20255343" prot="public" static="no">
+        <name>ReqType</name>
+        <enumvalue id="db/d68/classTango_1_1TgRequest_1a6ae144d0765e704695987f8b20255343a04e80a438e091149063679db1a10ddb9" prot="public">
+          <name>CMD_INOUT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="db/d68/classTango_1_1TgRequest_1a6ae144d0765e704695987f8b20255343a3466c21a6337f0cd76a5bbd90a566172" prot="public">
+          <name>READ_ATTR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="db/d68/classTango_1_1TgRequest_1a6ae144d0765e704695987f8b20255343aa7268c071129d7da5e811bf37b8f2fcb" prot="public">
+          <name>WRITE_ATTR_SINGLE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="db/d68/classTango_1_1TgRequest_1a6ae144d0765e704695987f8b20255343a82796f46c21ca154dc78089e2983de65" prot="public">
+          <name>WRITE_ATTR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/devasyn.h" line="361" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/devasyn.h" bodystart="360" bodyend="366"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="db/d68/classTango_1_1TgRequest_1ab6edfb4b709db11d6863eaf6b3d963fb" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Tango::TgRequest::arrived</definition>
+        <argsstring></argsstring>
+        <name>arrived</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/devasyn.h" line="383" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/devasyn.h" bodystart="383" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="db/d68/classTango_1_1TgRequest_1afa65b05a864aed9174755a819d8193a0" prot="public" static="no" mutable="no">
+        <type><ref refid="d4/ded/classTango_1_1CallBack" kindref="compound">CallBack</ref> *</type>
+        <definition>CallBack* Tango::TgRequest::cb_ptr</definition>
+        <argsstring></argsstring>
+        <name>cb_ptr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/devasyn.h" line="382" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/devasyn.h" bodystart="382" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="db/d68/classTango_1_1TgRequest_1a6600b476fa5be339ff010fe4f60d593b" prot="public" static="no" mutable="no">
+        <type>Connection *</type>
+        <definition>Connection* Tango::TgRequest::dev</definition>
+        <argsstring></argsstring>
+        <name>dev</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/devasyn.h" line="384" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/devasyn.h" bodystart="384" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="db/d68/classTango_1_1TgRequest_1a17cf8b3659ac680ae34ab0d801daa163" prot="public" static="no" mutable="no">
+        <type><ref refid="db/d68/classTango_1_1TgRequest_1a6ae144d0765e704695987f8b20255343" kindref="member">ReqType</ref></type>
+        <definition>ReqType Tango::TgRequest::req_type</definition>
+        <argsstring></argsstring>
+        <name>req_type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/devasyn.h" line="381" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/devasyn.h" bodystart="381" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="db/d68/classTango_1_1TgRequest_1ac67ab29d677879fb006e4bbd434fef00" prot="public" static="no" mutable="no">
+        <type>CORBA::Request_ptr</type>
+        <definition>CORBA::Request_ptr Tango::TgRequest::request</definition>
+        <argsstring></argsstring>
+        <name>request</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/devasyn.h" line="380" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/devasyn.h" bodystart="378" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="db/d68/classTango_1_1TgRequest_1aaff69a8c4221e4ac48febff3f9c6e3b6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Tango::TgRequest::TgRequest</definition>
+        <argsstring>(CORBA::Request_ptr re, ReqType ty)</argsstring>
+        <name>TgRequest</name>
+        <param>
+          <type>CORBA::Request_ptr</type>
+          <declname>re</declname>
+        </param>
+        <param>
+          <type><ref refid="db/d68/classTango_1_1TgRequest_1a6ae144d0765e704695987f8b20255343" kindref="member">ReqType</ref></type>
+          <declname>ty</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/devasyn.h" line="368" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/devasyn.h" bodystart="368" bodyend="370"/>
+      </memberdef>
+      <memberdef kind="function" id="db/d68/classTango_1_1TgRequest_1ad17a7ebe95dc9bd2ed9e55409ada8059" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Tango::TgRequest::TgRequest</definition>
+        <argsstring>(CORBA::Request_ptr re, ReqType ty, CallBack *cb)</argsstring>
+        <name>TgRequest</name>
+        <param>
+          <type>CORBA::Request_ptr</type>
+          <declname>re</declname>
+        </param>
+        <param>
+          <type><ref refid="db/d68/classTango_1_1TgRequest_1a6ae144d0765e704695987f8b20255343" kindref="member">ReqType</ref></type>
+          <declname>ty</declname>
+        </param>
+        <param>
+          <type><ref refid="d4/ded/classTango_1_1CallBack" kindref="compound">CallBack</ref> *</type>
+          <declname>cb</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/devasyn.h" line="372" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/devasyn.h" bodystart="372" bodyend="374"/>
+      </memberdef>
+      <memberdef kind="function" id="db/d68/classTango_1_1TgRequest_1a3a6abdbc73d075711e9573909fbd0dba" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Tango::TgRequest::TgRequest</definition>
+        <argsstring>(Tango::Connection *con, ReqType ty, CallBack *cb)</argsstring>
+        <name>TgRequest</name>
+        <param>
+          <type>Tango::Connection *</type>
+          <declname>con</declname>
+        </param>
+        <param>
+          <type><ref refid="db/d68/classTango_1_1TgRequest_1a6ae144d0765e704695987f8b20255343" kindref="member">ReqType</ref></type>
+          <declname>ty</declname>
+        </param>
+        <param>
+          <type><ref refid="d4/ded/classTango_1_1CallBack" kindref="compound">CallBack</ref> *</type>
+          <declname>cb</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/devasyn.h" line="376" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/devasyn.h" bodystart="376" bodyend="378"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1296">
+        <label>Tango::TgRequest</label>
+        <link refid="db/d68/classTango_1_1TgRequest"/>
+        <childnode refid="1297" relation="usage">
+          <edgelabel>cb_ptr</edgelabel>
+        </childnode>
+      </node>
+      <node id="1297">
+        <label>Tango::CallBack</label>
+        <link refid="d4/ded/classTango_1_1CallBack"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/tango/workspace/cppTango/include/tango/client/devasyn.h" line="358" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/devasyn.h" bodystart="357" bodyend="385"/>
+    <listofallmembers>
+      <member refid="db/d68/classTango_1_1TgRequest_1ab6edfb4b709db11d6863eaf6b3d963fb" prot="public" virt="non-virtual"><scope>Tango::TgRequest</scope><name>arrived</name></member>
+      <member refid="db/d68/classTango_1_1TgRequest_1afa65b05a864aed9174755a819d8193a0" prot="public" virt="non-virtual"><scope>Tango::TgRequest</scope><name>cb_ptr</name></member>
+      <member refid="db/d68/classTango_1_1TgRequest_1a6ae144d0765e704695987f8b20255343a04e80a438e091149063679db1a10ddb9" prot="public" virt="non-virtual"><scope>Tango::TgRequest</scope><name>CMD_INOUT</name></member>
+      <member refid="db/d68/classTango_1_1TgRequest_1a6600b476fa5be339ff010fe4f60d593b" prot="public" virt="non-virtual"><scope>Tango::TgRequest</scope><name>dev</name></member>
+      <member refid="db/d68/classTango_1_1TgRequest_1a6ae144d0765e704695987f8b20255343a3466c21a6337f0cd76a5bbd90a566172" prot="public" virt="non-virtual"><scope>Tango::TgRequest</scope><name>READ_ATTR</name></member>
+      <member refid="db/d68/classTango_1_1TgRequest_1a17cf8b3659ac680ae34ab0d801daa163" prot="public" virt="non-virtual"><scope>Tango::TgRequest</scope><name>req_type</name></member>
+      <member refid="db/d68/classTango_1_1TgRequest_1a6ae144d0765e704695987f8b20255343" prot="public" virt="non-virtual"><scope>Tango::TgRequest</scope><name>ReqType</name></member>
+      <member refid="db/d68/classTango_1_1TgRequest_1ac67ab29d677879fb006e4bbd434fef00" prot="public" virt="non-virtual"><scope>Tango::TgRequest</scope><name>request</name></member>
+      <member refid="db/d68/classTango_1_1TgRequest_1aaff69a8c4221e4ac48febff3f9c6e3b6" prot="public" virt="non-virtual"><scope>Tango::TgRequest</scope><name>TgRequest</name></member>
+      <member refid="db/d68/classTango_1_1TgRequest_1ad17a7ebe95dc9bd2ed9e55409ada8059" prot="public" virt="non-virtual"><scope>Tango::TgRequest</scope><name>TgRequest</name></member>
+      <member refid="db/d68/classTango_1_1TgRequest_1a3a6abdbc73d075711e9573909fbd0dba" prot="public" virt="non-virtual"><scope>Tango::TgRequest</scope><name>TgRequest</name></member>
+      <member refid="db/d68/classTango_1_1TgRequest_1a6ae144d0765e704695987f8b20255343a82796f46c21ca154dc78089e2983de65" prot="public" virt="non-virtual"><scope>Tango::TgRequest</scope><name>WRITE_ATTR</name></member>
+      <member refid="db/d68/classTango_1_1TgRequest_1a6ae144d0765e704695987f8b20255343aa7268c071129d7da5e811bf37b8f2fcb" prot="public" virt="non-virtual"><scope>Tango::TgRequest</scope><name>WRITE_ATTR_SINGLE</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

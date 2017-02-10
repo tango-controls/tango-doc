@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="d7/d24/classstd_1_1ostringstream" kind="class" prot="public">
+    <compoundname>std::ostringstream</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">ostrstream</basecompoundref>
+    <includes refid="da/dd8/Portability_8hh" local="yes">Portability.hh</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d7/d24/classstd_1_1ostringstream_1a8acec234b9393fb5ee0d9c8f7bbb6cb4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string std::ostringstream::str</definition>
+        <argsstring>()</argsstring>
+        <name>str</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/Portability.hh" line="58" column="1" bodyfile="/home/tango/workspace/cppTango/src/log4tango/PortabilityImpl.cpp" bodystart="33" bodyend="38"/>
+        <referencedby refid="db/ddd/structlog4tango_1_1TimeStampComponent_1ab2f54131358eda0f2d767b8994152e8e" compoundref="d6/d13/PatternLayout_8cpp" startline="176" endline="194">log4tango::TimeStampComponent::append</referencedby>
+        <referencedby refid="d9/d7b/structlog4tango_1_1FormatModifierComponent_1a329cbcce277ab538adef53348659d6ea" compoundref="d6/d13/PatternLayout_8cpp" startline="248" endline="265">log4tango::FormatModifierComponent::append</referencedby>
+        <referencedby refid="d6/de1/classlog4tango_1_1LoggerStream_1a87e12557f4851fcbb9f4077e9a4d0d59" compoundref="d4/d11/LoggerStream_8cpp" startline="59" endline="79">log4tango::LoggerStream::flush</referencedby>
+        <referencedby refid="d7/da6/classlog4tango_1_1Layout_1a0ade719b2ab1ce512aca5699f136eb8b" compoundref="d5/d08/Layout_8cpp" startline="37" endline="59">log4tango::Layout::format</referencedby>
+        <referencedby refid="db/d60/classlog4tango_1_1PatternLayout_1a127f7708ad24a3290d3c6cbe29257020" compoundref="d6/d13/PatternLayout_8cpp" startline="419" endline="428">log4tango::PatternLayout::format</referencedby>
+        <referencedby refid="d9/db4/classlog4tango_1_1RollingFileAppender_1a137e08d9ff85d0b78c06be2323bd66c2" compoundref="d6/d1b/RollingFileAppender_8cpp" startline="74" endline="90">log4tango::RollingFileAppender::roll_over</referencedby>
+        <referencedby refid="db/d60/classlog4tango_1_1PatternLayout_1a0a893fc5d34dad85771c45cd081c932b" compoundref="d6/d13/PatternLayout_8cpp" startline="297" endline="413">log4tango::PatternLayout::set_conversion_pattern</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d7/d24/classstd_1_1ostringstream_1a4f56312d6490032bc9b6aa73d53df0af" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void std::ostringstream::str</definition>
+        <argsstring>(const char *)</argsstring>
+        <name>str</name>
+        <param>
+          <type>const char *</type>
+          <defname>s</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/Portability.hh" line="59" column="1" bodyfile="/home/tango/workspace/cppTango/src/log4tango/PortabilityImpl.cpp" bodystart="40" bodyend="42"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1159">
+        <label>std::ostringstream</label>
+        <link refid="d7/d24/classstd_1_1ostringstream"/>
+        <childnode refid="1160" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1160">
+        <label>ostrstream</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1161">
+        <label>std::ostringstream</label>
+        <link refid="d7/d24/classstd_1_1ostringstream"/>
+        <childnode refid="1162" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1162">
+        <label>ostrstream</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/tango/workspace/cppTango/include/log4tango/Portability.hh" line="56" column="1" bodyfile="/home/tango/workspace/cppTango/include/log4tango/Portability.hh" bodystart="56" bodyend="60"/>
+    <listofallmembers>
+      <member refid="d7/d24/classstd_1_1ostringstream_1a8acec234b9393fb5ee0d9c8f7bbb6cb4" prot="public" virt="non-virtual"><scope>std::ostringstream</scope><name>str</name></member>
+      <member refid="d7/d24/classstd_1_1ostringstream_1a4f56312d6490032bc9b6aa73d53df0af" prot="public" virt="non-virtual"><scope>std::ostringstream</scope><name>str</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

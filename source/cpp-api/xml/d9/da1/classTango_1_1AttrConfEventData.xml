@@ -1,0 +1,314 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="d9/da1/classTango_1_1AttrConfEventData" kind="class" prot="public">
+    <compoundname>Tango::AttrConfEventData</compoundname>
+    <derivedcompoundref refid="d1/d08/classTango_1_1FwdAttrConfEventData" prot="public" virt="non-virtual">Tango::FwdAttrConfEventData</derivedcompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d9/da1/classTango_1_1AttrConfEventData_1af6203a20c38df513591d1c19219134a0" prot="private" static="no" mutable="no">
+        <type>Tango::TimeVal</type>
+        <definition>Tango::TimeVal Tango::AttrConfEventData::reception_date</definition>
+        <argsstring></argsstring>
+        <name>reception_date</name>
+        <briefdescription>
+<para>The date when the event arrived. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/event.h" line="186" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/event.h" bodystart="186" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="d9/da1/classTango_1_1AttrConfEventData_1af84272ced68dde94791aa090fc80bd24" prot="public" static="no" mutable="no">
+        <type><ref refid="d3/d71/structTango_1_1AttributeInfoEx" kindref="compound">AttributeInfoEx</ref> *</type>
+        <definition>AttributeInfoEx* Tango::AttrConfEventData::attr_conf</definition>
+        <argsstring></argsstring>
+        <name>attr_conf</name>
+        <briefdescription>
+<para>The attribute configuration. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/event.h" line="193" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/event.h" bodystart="193" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/da1/classTango_1_1AttrConfEventData_1a950448309e5b62a4387d94fd38ce0d75" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Tango::AttrConfEventData::attr_name</definition>
+        <argsstring></argsstring>
+        <name>attr_name</name>
+        <briefdescription>
+<para>The attribute name. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/event.h" line="191" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/event.h" bodystart="191" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/da1/classTango_1_1AttrConfEventData_1a6da04a13ce41eff0ddcf63417f001c13" prot="public" static="no" mutable="no">
+        <type>DeviceProxy *</type>
+        <definition>DeviceProxy* Tango::AttrConfEventData::device</definition>
+        <argsstring></argsstring>
+        <name>device</name>
+        <briefdescription>
+<para>The DeviceProxy object on which the call was executed. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/event.h" line="190" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/event.h" bodystart="190" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/da1/classTango_1_1AttrConfEventData_1a2e3fb06bc98bb156e254ebeb6a1c222e" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Tango::AttrConfEventData::err</definition>
+        <argsstring></argsstring>
+        <name>err</name>
+        <briefdescription>
+<para>A boolean flag set to true if the request failed. False otherwise. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/event.h" line="194" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/event.h" bodystart="194" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/da1/classTango_1_1AttrConfEventData_1adb1f2a3796ba28cfa8a6de522b1596a8" prot="public" static="no" mutable="no">
+        <type>DevErrorList</type>
+        <definition>DevErrorList Tango::AttrConfEventData::errors</definition>
+        <argsstring></argsstring>
+        <name>errors</name>
+        <briefdescription>
+<para>The error stack. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/event.h" line="195" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/event.h" bodystart="195" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/da1/classTango_1_1AttrConfEventData_1a70a8c86b121849afab88c952c6cc8bde" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Tango::AttrConfEventData::event</definition>
+        <argsstring></argsstring>
+        <name>event</name>
+        <briefdescription>
+<para>The event name. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/event.h" line="192" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/event.h" bodystart="192" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="d9/da1/classTango_1_1AttrConfEventData_1a7cadc199f45cd38567fc81ee2070b6fa" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Tango::AttrConfEventData::AttrConfEventData</definition>
+        <argsstring>()</argsstring>
+        <name>AttrConfEventData</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/event.h" line="176" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/event.h" bodystart="176" bodyend="176"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/da1/classTango_1_1AttrConfEventData_1a451336d865976c2687b6e99b2a93dee0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::AttrConfEventData::AttrConfEventData</definition>
+        <argsstring>(DeviceProxy *dev, string &amp;nam, string &amp;evt, Tango::AttributeInfoEx *attr_conf_in, DevErrorList &amp;errors_in)</argsstring>
+        <name>AttrConfEventData</name>
+        <param>
+          <type>DeviceProxy *</type>
+          <declname>dev</declname>
+        </param>
+        <param>
+          <type>string &amp;</type>
+          <declname>nam</declname>
+        </param>
+        <param>
+          <type>string &amp;</type>
+          <declname>evt</declname>
+        </param>
+        <param>
+          <type><ref refid="d3/d71/structTango_1_1AttributeInfoEx" kindref="compound">Tango::AttributeInfoEx</ref> *</type>
+          <declname>attr_conf_in</declname>
+        </param>
+        <param>
+          <type>DevErrorList &amp;</type>
+          <declname>errors_in</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/event.h" line="177" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/da1/classTango_1_1AttrConfEventData_1a6eeb838e1187ca9ab168f968af25b449" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::AttrConfEventData::AttrConfEventData</definition>
+        <argsstring>(const AttrConfEventData &amp;)</argsstring>
+        <name>AttrConfEventData</name>
+        <param>
+          <type>const <ref refid="d9/da1/classTango_1_1AttrConfEventData" kindref="compound">AttrConfEventData</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/event.h" line="181" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/da1/classTango_1_1AttrConfEventData_1ab4ab5bee44218995c25c1b6040b1a39b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::AttrConfEventData::~AttrConfEventData</definition>
+        <argsstring>()</argsstring>
+        <name>~AttrConfEventData</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/event.h" line="180" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/da1/classTango_1_1AttrConfEventData_1a2f68677d930115ab59c4da3a4ee44b56" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Tango::TimeVal &amp;</type>
+        <definition>Tango::TimeVal&amp; Tango::AttrConfEventData::get_date</definition>
+        <argsstring>()</argsstring>
+        <name>get_date</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/event.h" line="187" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/event.h" bodystart="187" bodyend="187"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/da1/classTango_1_1AttrConfEventData_1ab2b17f91c5144c8782bc5f7034d534f1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d9/da1/classTango_1_1AttrConfEventData" kindref="compound">AttrConfEventData</ref> &amp;</type>
+        <definition>AttrConfEventData&amp; Tango::AttrConfEventData::operator=</definition>
+        <argsstring>(const AttrConfEventData &amp;)</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="d9/da1/classTango_1_1AttrConfEventData" kindref="compound">AttrConfEventData</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/event.h" line="182" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/da1/classTango_1_1AttrConfEventData_1a147ba154fa41067a8e67124a9e67fb1a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::AttrConfEventData::set_time</definition>
+        <argsstring>()</argsstring>
+        <name>set_time</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/event.h" line="198" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="d6/dad/classTango_1_1Attribute" kindref="compound">Attribute</ref> configuration change event callback execution data. </para>    </briefdescription>
+    <detaileddescription>
+<para>This class is used to pass data to the callback method when an attribute configuration event is sent to the client</para><para>$Author$ $Revision$ </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="683">
+        <label>Tango::FwdAttrConfEventData</label>
+        <link refid="d1/d08/classTango_1_1FwdAttrConfEventData"/>
+        <childnode refid="682" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="682">
+        <label>Tango::AttrConfEventData</label>
+        <link refid="d9/da1/classTango_1_1AttrConfEventData"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="685">
+        <label>Tango::AttributeInfoEx</label>
+        <link refid="d3/d71/structTango_1_1AttributeInfoEx"/>
+        <childnode refid="686" relation="public-inheritance">
+        </childnode>
+        <childnode refid="688" relation="usage">
+          <edgelabel>events</edgelabel>
+        </childnode>
+        <childnode refid="692" relation="usage">
+          <edgelabel>alarms</edgelabel>
+        </childnode>
+      </node>
+      <node id="688">
+        <label>Tango::AttributeEventInfo</label>
+        <link refid="da/dce/structTango_1_1AttributeEventInfo"/>
+        <childnode refid="689" relation="usage">
+          <edgelabel>per_event</edgelabel>
+        </childnode>
+        <childnode refid="690" relation="usage">
+          <edgelabel>ch_event</edgelabel>
+        </childnode>
+        <childnode refid="691" relation="usage">
+          <edgelabel>arch_event</edgelabel>
+        </childnode>
+      </node>
+      <node id="691">
+        <label>Tango::ArchiveEventInfo</label>
+        <link refid="d1/d29/structTango_1_1ArchiveEventInfo"/>
+      </node>
+      <node id="686">
+        <label>Tango::AttributeInfo</label>
+        <link refid="df/dab/structTango_1_1AttributeInfo"/>
+        <childnode refid="687" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="689">
+        <label>Tango::PeriodicEventInfo</label>
+        <link refid="d6/d55/structTango_1_1PeriodicEventInfo"/>
+      </node>
+      <node id="692">
+        <label>Tango::AttributeAlarmInfo</label>
+        <link refid="d0/d4a/structTango_1_1AttributeAlarmInfo"/>
+      </node>
+      <node id="690">
+        <label>Tango::ChangeEventInfo</label>
+        <link refid="d9/d49/structTango_1_1ChangeEventInfo"/>
+      </node>
+      <node id="684">
+        <label>Tango::AttrConfEventData</label>
+        <link refid="d9/da1/classTango_1_1AttrConfEventData"/>
+        <childnode refid="685" relation="usage">
+          <edgelabel>attr_conf</edgelabel>
+        </childnode>
+      </node>
+      <node id="687">
+        <label>Tango::DeviceAttributeConfig</label>
+        <link refid="db/d74/structTango_1_1DeviceAttributeConfig"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/tango/workspace/cppTango/include/tango/client/event.h" line="173" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/event.h" bodystart="172" bodyend="199"/>
+    <listofallmembers>
+      <member refid="d9/da1/classTango_1_1AttrConfEventData_1af84272ced68dde94791aa090fc80bd24" prot="public" virt="non-virtual"><scope>Tango::AttrConfEventData</scope><name>attr_conf</name></member>
+      <member refid="d9/da1/classTango_1_1AttrConfEventData_1a950448309e5b62a4387d94fd38ce0d75" prot="public" virt="non-virtual"><scope>Tango::AttrConfEventData</scope><name>attr_name</name></member>
+      <member refid="d9/da1/classTango_1_1AttrConfEventData_1a7cadc199f45cd38567fc81ee2070b6fa" prot="private" virt="non-virtual"><scope>Tango::AttrConfEventData</scope><name>AttrConfEventData</name></member>
+      <member refid="d9/da1/classTango_1_1AttrConfEventData_1a451336d865976c2687b6e99b2a93dee0" prot="private" virt="non-virtual"><scope>Tango::AttrConfEventData</scope><name>AttrConfEventData</name></member>
+      <member refid="d9/da1/classTango_1_1AttrConfEventData_1a6eeb838e1187ca9ab168f968af25b449" prot="private" virt="non-virtual"><scope>Tango::AttrConfEventData</scope><name>AttrConfEventData</name></member>
+      <member refid="d9/da1/classTango_1_1AttrConfEventData_1a6da04a13ce41eff0ddcf63417f001c13" prot="public" virt="non-virtual"><scope>Tango::AttrConfEventData</scope><name>device</name></member>
+      <member refid="d9/da1/classTango_1_1AttrConfEventData_1a2e3fb06bc98bb156e254ebeb6a1c222e" prot="public" virt="non-virtual"><scope>Tango::AttrConfEventData</scope><name>err</name></member>
+      <member refid="d9/da1/classTango_1_1AttrConfEventData_1adb1f2a3796ba28cfa8a6de522b1596a8" prot="public" virt="non-virtual"><scope>Tango::AttrConfEventData</scope><name>errors</name></member>
+      <member refid="d9/da1/classTango_1_1AttrConfEventData_1a70a8c86b121849afab88c952c6cc8bde" prot="public" virt="non-virtual"><scope>Tango::AttrConfEventData</scope><name>event</name></member>
+      <member refid="d9/da1/classTango_1_1AttrConfEventData_1a2f68677d930115ab59c4da3a4ee44b56" prot="private" virt="non-virtual"><scope>Tango::AttrConfEventData</scope><name>get_date</name></member>
+      <member refid="d9/da1/classTango_1_1AttrConfEventData_1ab2b17f91c5144c8782bc5f7034d534f1" prot="private" virt="non-virtual"><scope>Tango::AttrConfEventData</scope><name>operator=</name></member>
+      <member refid="d9/da1/classTango_1_1AttrConfEventData_1af6203a20c38df513591d1c19219134a0" prot="private" virt="non-virtual"><scope>Tango::AttrConfEventData</scope><name>reception_date</name></member>
+      <member refid="d9/da1/classTango_1_1AttrConfEventData_1a147ba154fa41067a8e67124a9e67fb1a" prot="private" virt="non-virtual"><scope>Tango::AttrConfEventData</scope><name>set_time</name></member>
+      <member refid="d9/da1/classTango_1_1AttrConfEventData_1ab4ab5bee44218995c25c1b6040b1a39b" prot="private" virt="non-virtual"><scope>Tango::AttrConfEventData</scope><name>~AttrConfEventData</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

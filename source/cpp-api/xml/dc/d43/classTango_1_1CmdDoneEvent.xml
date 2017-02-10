@@ -1,0 +1,134 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="dc/d43/classTango_1_1CmdDoneEvent" kind="class" prot="public">
+    <compoundname>Tango::CmdDoneEvent</compoundname>
+    <innerclass refid="dc/d3e/classTango_1_1CmdDoneEvent_1_1CmdDoneEventExt" prot="private">Tango::CmdDoneEvent::CmdDoneEventExt</innerclass>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="dc/d43/classTango_1_1CmdDoneEvent_1a5bfb13a2fa90db07a6bd6092188dd96b" prot="public" static="no" mutable="no">
+        <type>DeviceData &amp;</type>
+        <definition>DeviceData&amp; Tango::CmdDoneEvent::argout</definition>
+        <argsstring></argsstring>
+        <name>argout</name>
+        <briefdescription>
+<para>The command argout. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/devasyn.h" line="92" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/devasyn.h" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dc/d43/classTango_1_1CmdDoneEvent_1a9b3ff5a65147c469b19d5deafecf600a" prot="public" static="no" mutable="no">
+        <type>string &amp;</type>
+        <definition>string&amp; Tango::CmdDoneEvent::cmd_name</definition>
+        <argsstring></argsstring>
+        <name>cmd_name</name>
+        <briefdescription>
+<para>The command name. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/devasyn.h" line="91" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/devasyn.h" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dc/d43/classTango_1_1CmdDoneEvent_1a4815622ebc52bc227f481e2d488cc7c1" prot="public" static="no" mutable="no">
+        <type>Tango::DeviceProxy *</type>
+        <definition>Tango::DeviceProxy* Tango::CmdDoneEvent::device</definition>
+        <argsstring></argsstring>
+        <name>device</name>
+        <briefdescription>
+<para>The DeviceProxy object on which the call was executed. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/devasyn.h" line="90" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/devasyn.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dc/d43/classTango_1_1CmdDoneEvent_1aa65c091b8483025114f5825760cb994a" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Tango::CmdDoneEvent::err</definition>
+        <argsstring></argsstring>
+        <name>err</name>
+        <briefdescription>
+<para>A boolean flag set to true if the command failed. False otherwise. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/devasyn.h" line="93" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/devasyn.h" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dc/d43/classTango_1_1CmdDoneEvent_1ad6842cac8f28ad790a3a19bd4818390e" prot="public" static="no" mutable="no">
+        <type>DevErrorList &amp;</type>
+        <definition>DevErrorList&amp; Tango::CmdDoneEvent::errors</definition>
+        <argsstring></argsstring>
+        <name>errors</name>
+        <briefdescription>
+<para>The error stack. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/devasyn.h" line="94" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/devasyn.h" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="dc/d43/classTango_1_1CmdDoneEvent_1a72bfa3c0a310bb6378dfacd829b21d17" prot="private" static="no" mutable="no">
+        <type>CmdDoneEventExt *</type>
+        <definition>CmdDoneEventExt* Tango::CmdDoneEvent::ext</definition>
+        <argsstring></argsstring>
+        <name>ext</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/devasyn.h" line="106" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/devasyn.h" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="dc/d43/classTango_1_1CmdDoneEvent_1a20a12ce5b8ae673636aab01241a83c87" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Tango::CmdDoneEvent::CmdDoneEvent</definition>
+        <argsstring>(DeviceProxy *dev, string &amp;cmd, DeviceData &amp;arg, DevErrorList &amp;err_in)</argsstring>
+        <name>CmdDoneEvent</name>
+        <param>
+          <type>DeviceProxy *</type>
+          <declname>dev</declname>
+        </param>
+        <param>
+          <type>string &amp;</type>
+          <declname>cmd</declname>
+        </param>
+        <param>
+          <type>DeviceData &amp;</type>
+          <declname>arg</declname>
+        </param>
+        <param>
+          <type>DevErrorList &amp;</type>
+          <declname>err_in</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/devasyn.h" line="80" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/devasyn.h" bodystart="80" bodyend="87"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Asynchronous command execution callback data. </para>    </briefdescription>
+    <detaileddescription>
+<para>This class is used to pass data to the callback method in asynchronous callback model for command execution.</para><para>$Author$ $Revision$ </para>    </detaileddescription>
+    <location file="/home/tango/workspace/cppTango/include/tango/client/devasyn.h" line="77" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/devasyn.h" bodystart="76" bodyend="108"/>
+    <listofallmembers>
+      <member refid="dc/d43/classTango_1_1CmdDoneEvent_1a5bfb13a2fa90db07a6bd6092188dd96b" prot="public" virt="non-virtual"><scope>Tango::CmdDoneEvent</scope><name>argout</name></member>
+      <member refid="dc/d43/classTango_1_1CmdDoneEvent_1a9b3ff5a65147c469b19d5deafecf600a" prot="public" virt="non-virtual"><scope>Tango::CmdDoneEvent</scope><name>cmd_name</name></member>
+      <member refid="dc/d43/classTango_1_1CmdDoneEvent_1a20a12ce5b8ae673636aab01241a83c87" prot="private" virt="non-virtual"><scope>Tango::CmdDoneEvent</scope><name>CmdDoneEvent</name></member>
+      <member refid="dc/d43/classTango_1_1CmdDoneEvent_1a4815622ebc52bc227f481e2d488cc7c1" prot="public" virt="non-virtual"><scope>Tango::CmdDoneEvent</scope><name>device</name></member>
+      <member refid="dc/d43/classTango_1_1CmdDoneEvent_1aa65c091b8483025114f5825760cb994a" prot="public" virt="non-virtual"><scope>Tango::CmdDoneEvent</scope><name>err</name></member>
+      <member refid="dc/d43/classTango_1_1CmdDoneEvent_1ad6842cac8f28ad790a3a19bd4818390e" prot="public" virt="non-virtual"><scope>Tango::CmdDoneEvent</scope><name>errors</name></member>
+      <member refid="dc/d43/classTango_1_1CmdDoneEvent_1a72bfa3c0a310bb6378dfacd829b21d17" prot="private" virt="non-virtual"><scope>Tango::CmdDoneEvent</scope><name>ext</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

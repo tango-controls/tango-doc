@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="da/da9/classTango_1_1GroupElementFactory" kind="class" prot="public">
+    <compoundname>Tango::GroupElementFactory</compoundname>
+    <includes refid="d9/dd1/group_8h" local="yes">group.h</includes>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="da/da9/classTango_1_1GroupElementFactory_1a2697825715974a353728f0d4d5658112" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend class</type>
+        <definition>friend class Group</definition>
+        <argsstring></argsstring>
+        <name>Group</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="588" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/group.h" bodystart="588" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="da/da9/classTango_1_1GroupElementFactory_1afb95ba1e4fae96779178710668dbaa30" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="de/ddf/namespaceTango_1ab9ef33527260f0bc7f0bf168143f55a0" kindref="member">GroupElements</ref></type>
+        <definition>static GroupElements Tango::GroupElementFactory::instanciate</definition>
+        <argsstring>(const std::string &amp;p, int tmo=-1)</argsstring>
+        <name>instanciate</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>tmo</declname>
+          <defval>-1</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="592" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="da/da9/classTango_1_1GroupElementFactory_1adb3f995f6039e97cb9db5205df7dbbd2" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Tango::GroupElementFactory::parse_name</definition>
+        <argsstring>(const std::string &amp;p, std::string &amp;db_host, int &amp;db_port, std::string &amp;dev_pattern)</argsstring>
+        <name>parse_name</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type>std::string &amp;</type>
+          <declname>db_host</declname>
+        </param>
+        <param>
+          <type>int &amp;</type>
+          <declname>db_port</declname>
+        </param>
+        <param>
+          <type>std::string &amp;</type>
+          <declname>dev_pattern</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="594" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="da/da9/classTango_1_1GroupElementFactory_1aa0bbfb75f71d149b99131b11b9b75ecb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::GroupElementFactory::GroupElementFactory</definition>
+        <argsstring>()</argsstring>
+        <name>GroupElementFactory</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="597" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="da/da9/classTango_1_1GroupElementFactory_1a1ddae0b72dd63a0d91abd2e7ebbcb73c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::GroupElementFactory::~GroupElementFactory</definition>
+        <argsstring>()</argsstring>
+        <name>~GroupElementFactory</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="598" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="da/da9/classTango_1_1GroupElementFactory_1ab91bd48057403f3b37d63042dfdc1ff8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="da/da9/classTango_1_1GroupElementFactory" kindref="compound">GroupElementFactory</ref> &amp;</type>
+        <definition>GroupElementFactory&amp; Tango::GroupElementFactory::operator=</definition>
+        <argsstring>(const GroupElementFactory &amp;other)</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="da/da9/classTango_1_1GroupElementFactory" kindref="compound">GroupElementFactory</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="599" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/tango/workspace/cppTango/include/tango/client/group.h" line="587" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/client/group.h" bodystart="586" bodyend="600"/>
+    <listofallmembers>
+      <member refid="da/da9/classTango_1_1GroupElementFactory_1a2697825715974a353728f0d4d5658112" prot="private" virt="non-virtual"><scope>Tango::GroupElementFactory</scope><name>Group</name></member>
+      <member refid="da/da9/classTango_1_1GroupElementFactory_1aa0bbfb75f71d149b99131b11b9b75ecb" prot="private" virt="non-virtual"><scope>Tango::GroupElementFactory</scope><name>GroupElementFactory</name></member>
+      <member refid="da/da9/classTango_1_1GroupElementFactory_1afb95ba1e4fae96779178710668dbaa30" prot="private" virt="non-virtual"><scope>Tango::GroupElementFactory</scope><name>instanciate</name></member>
+      <member refid="da/da9/classTango_1_1GroupElementFactory_1ab91bd48057403f3b37d63042dfdc1ff8" prot="private" virt="non-virtual"><scope>Tango::GroupElementFactory</scope><name>operator=</name></member>
+      <member refid="da/da9/classTango_1_1GroupElementFactory_1adb3f995f6039e97cb9db5205df7dbbd2" prot="private" virt="non-virtual"><scope>Tango::GroupElementFactory</scope><name>parse_name</name></member>
+      <member refid="da/da9/classTango_1_1GroupElementFactory_1a1ddae0b72dd63a0d91abd2e7ebbcb73c" prot="private" virt="non-virtual"><scope>Tango::GroupElementFactory</scope><name>~GroupElementFactory</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

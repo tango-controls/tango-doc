@@ -1,0 +1,308 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="db/da8/Layout_8hh" kind="file">
+    <compoundname>Layout.hh</compoundname>
+    <includes refid="da/dd8/Portability_8hh" local="yes">Portability.hh</includes>
+    <includes refid="d6/d51/Threading_8hh" local="yes">threading/Threading.hh</includes>
+    <includes refid="d2/d60/LoggingEvent_8hh" local="yes">LoggingEvent.hh</includes>
+    <includes local="no">string</includes>
+    <includedby refid="d2/d5c/Appender_8hh" local="yes">Appender.hh</includedby>
+    <includedby refid="df/d8c/PatternLayout_8hh" local="yes">PatternLayout.hh</includedby>
+    <includedby refid="d3/d7f/XmlLayout_8hh" local="yes">XmlLayout.hh</includedby>
+    <includedby refid="d5/d08/Layout_8cpp" local="no">Layout.cpp</includedby>
+    <incdepgraph>
+      <node id="1656">
+        <label>LoggingEvent.hh</label>
+        <link refid="d2/d60/LoggingEvent_8hh"/>
+        <childnode refid="1648" relation="include">
+        </childnode>
+        <childnode refid="1655" relation="include">
+        </childnode>
+        <childnode refid="1657" relation="include">
+        </childnode>
+        <childnode refid="1659" relation="include">
+        </childnode>
+      </node>
+      <node id="1651">
+        <label>strstream</label>
+      </node>
+      <node id="1650">
+        <label>Export.hh</label>
+        <link refid="df/d5d/Export_8hh"/>
+      </node>
+      <node id="1658">
+        <label>stdexcept</label>
+      </node>
+      <node id="1657">
+        <label>Level.hh</label>
+        <link refid="d2/d33/Level_8hh"/>
+        <childnode refid="1648" relation="include">
+        </childnode>
+        <childnode refid="1655" relation="include">
+        </childnode>
+        <childnode refid="1658" relation="include">
+        </childnode>
+      </node>
+      <node id="1648">
+        <label>Portability.hh</label>
+        <link refid="da/dd8/Portability_8hh"/>
+        <childnode refid="1649" relation="include">
+        </childnode>
+        <childnode refid="1650" relation="include">
+        </childnode>
+        <childnode refid="1651" relation="include">
+        </childnode>
+      </node>
+      <node id="1655">
+        <label>string</label>
+      </node>
+      <node id="1659">
+        <label>TimeStamp.hh</label>
+        <link refid="db/d7c/TimeStamp_8hh"/>
+        <childnode refid="1648" relation="include">
+        </childnode>
+      </node>
+      <node id="1649">
+        <label>log4tango/config.h</label>
+      </node>
+      <node id="1652">
+        <label>threading/Threading.hh</label>
+        <link refid="d6/d51/Threading_8hh"/>
+        <childnode refid="1648" relation="include">
+        </childnode>
+        <childnode refid="1653" relation="include">
+        </childnode>
+      </node>
+      <node id="1647">
+        <label>Layout.hh</label>
+        <link refid="Layout.hh"/>
+        <childnode refid="1648" relation="include">
+        </childnode>
+        <childnode refid="1652" relation="include">
+        </childnode>
+        <childnode refid="1656" relation="include">
+        </childnode>
+        <childnode refid="1655" relation="include">
+        </childnode>
+      </node>
+      <node id="1654">
+        <label>stdio.h</label>
+      </node>
+      <node id="1653">
+        <label>log4tango/threading/DummyThreads.hh</label>
+        <link refid="d7/d68/DummyThreads_8hh"/>
+        <childnode refid="1648" relation="include">
+        </childnode>
+        <childnode refid="1654" relation="include">
+        </childnode>
+        <childnode refid="1655" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1663">
+        <label>Logger.hh</label>
+        <link refid="d1/d13/Logger_8hh"/>
+        <childnode refid="1664" relation="include">
+        </childnode>
+        <childnode refid="1666" relation="include">
+        </childnode>
+        <childnode refid="1667" relation="include">
+        </childnode>
+        <childnode refid="1668" relation="include">
+        </childnode>
+      </node>
+      <node id="1676">
+        <label>LayoutAppender.cpp</label>
+        <link refid="dd/d2b/LayoutAppender_8cpp"/>
+      </node>
+      <node id="1677">
+        <label>Appender.cpp</label>
+        <link refid="d3/d49/Appender_8cpp"/>
+      </node>
+      <node id="1662">
+        <label>AppenderAttachable.hh</label>
+        <link refid="d6/d73/AppenderAttachable_8hh"/>
+        <childnode refid="1663" relation="include">
+        </childnode>
+        <childnode refid="1669" relation="include">
+        </childnode>
+      </node>
+      <node id="1668">
+        <label>RollingFileAppender.cpp</label>
+        <link refid="d6/d1b/RollingFileAppender_8cpp"/>
+      </node>
+      <node id="1666">
+        <label>Logger.cpp</label>
+        <link refid="d9/df5/Logger_8cpp"/>
+      </node>
+      <node id="1673">
+        <label>FileAppender.cpp</label>
+        <link refid="d2/d6d/FileAppender_8cpp"/>
+      </node>
+      <node id="1672">
+        <label>RollingFileAppender.hh</label>
+        <link refid="d7/dd5/RollingFileAppender_8hh"/>
+        <childnode refid="1668" relation="include">
+        </childnode>
+      </node>
+      <node id="1679">
+        <label>PatternLayout.cpp</label>
+        <link refid="d6/d13/PatternLayout_8cpp"/>
+      </node>
+      <node id="1674">
+        <label>OstreamAppender.hh</label>
+        <link refid="d5/d17/OstreamAppender_8hh"/>
+        <childnode refid="1675" relation="include">
+        </childnode>
+      </node>
+      <node id="1667">
+        <label>LoggerStream.cpp</label>
+        <link refid="d4/d11/LoggerStream_8cpp"/>
+      </node>
+      <node id="1681">
+        <label>XmlLayout.cpp</label>
+        <link refid="d4/d66/XmlLayout_8cpp"/>
+      </node>
+      <node id="1664">
+        <label>LogStreambuf.hh</label>
+        <link refid="d7/dff/LogStreambuf_8hh"/>
+        <childnode refid="1665" relation="include">
+        </childnode>
+      </node>
+      <node id="1675">
+        <label>OstreamAppender.cpp</label>
+        <link refid="da/dc0/OstreamAppender_8cpp"/>
+      </node>
+      <node id="1680">
+        <label>XmlLayout.hh</label>
+        <link refid="d3/d7f/XmlLayout_8hh"/>
+        <childnode refid="1681" relation="include">
+        </childnode>
+      </node>
+      <node id="1669">
+        <label>AppenderAttachable.cpp</label>
+        <link refid="da/d3f/AppenderAttachable_8cpp"/>
+      </node>
+      <node id="1665">
+        <label>LogStream.hh</label>
+        <link refid="d6/d89/LogStream_8hh"/>
+      </node>
+      <node id="1660">
+        <label>Layout.hh</label>
+        <link refid="Layout.hh"/>
+        <childnode refid="1661" relation="include">
+        </childnode>
+        <childnode refid="1678" relation="include">
+        </childnode>
+        <childnode refid="1680" relation="include">
+        </childnode>
+        <childnode refid="1682" relation="include">
+        </childnode>
+      </node>
+      <node id="1682">
+        <label>Layout.cpp</label>
+        <link refid="d5/d08/Layout_8cpp"/>
+      </node>
+      <node id="1670">
+        <label>LayoutAppender.hh</label>
+        <link refid="d3/da3/LayoutAppender_8hh"/>
+        <childnode refid="1671" relation="include">
+        </childnode>
+        <childnode refid="1674" relation="include">
+        </childnode>
+        <childnode refid="1676" relation="include">
+        </childnode>
+      </node>
+      <node id="1661">
+        <label>Appender.hh</label>
+        <link refid="d2/d5c/Appender_8hh"/>
+        <childnode refid="1662" relation="include">
+        </childnode>
+        <childnode refid="1670" relation="include">
+        </childnode>
+        <childnode refid="1677" relation="include">
+        </childnode>
+      </node>
+      <node id="1671">
+        <label>FileAppender.hh</label>
+        <link refid="dd/de6/FileAppender_8hh"/>
+        <childnode refid="1672" relation="include">
+        </childnode>
+        <childnode refid="1673" relation="include">
+        </childnode>
+      </node>
+      <node id="1678">
+        <label>PatternLayout.hh</label>
+        <link refid="df/d8c/PatternLayout_8hh"/>
+        <childnode refid="1670" relation="include">
+        </childnode>
+        <childnode refid="1679" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="d7/da6/classlog4tango_1_1Layout" prot="public">log4tango::Layout</innerclass>
+    <innernamespace refid="d4/db0/namespacelog4tango">log4tango</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Layout.hh</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>(C)<sp/>:<sp/><sp/>2000<sp/>-<sp/>2002</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>LifeLine<sp/>Networks<sp/>BV<sp/>(www.lifeline.nl).<sp/>All<sp/>rights<sp/>reserved.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Bastiaan<sp/>Bakker.<sp/>All<sp/>rights<sp/>reserved.<sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2004,2005,2006,2007,2008,2009,2010,2011,2012</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Synchrotron<sp/>SOLEIL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>L&apos;Orme<sp/>des<sp/>Merisiers</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Saint-Aubin<sp/>-<sp/>BP<sp/>48<sp/>-<sp/>France</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">//<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>log4tango.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Log4ango<sp/>is<sp/>free<sp/>software:<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">//<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">//<sp/>the<sp/>Free<sp/>Software<sp/>Foundation,<sp/>either<sp/>version<sp/>3<sp/>of<sp/>the<sp/>License,<sp/>or</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">//<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment">//<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Log4tango<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">//<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="comment">//<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="comment">//<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="comment">//<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="comment">//<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="comment">//<sp/>along<sp/>with<sp/>Log4Tango.<sp/><sp/>If<sp/>not,<sp/>see<sp/>&lt;http://www.gnu.org/licenses/&gt;.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>_LOG4TANGO_LAYOUT_H</highlight></codeline>
+<codeline lineno="29"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>_LOG4TANGO_LAYOUT_H</highlight></codeline>
+<codeline lineno="30"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="da/dd8/Portability_8hh" kindref="compound">Portability.hh</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="d6/d51/Threading_8hh" kindref="compound">threading/Threading.hh</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="d2/d60/LoggingEvent_8hh" kindref="compound">LoggingEvent.hh</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">log4tango<sp/>{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="comment">//-----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="comment">//<sp/>class<sp/>:<sp/>Appender<sp/>(abstract<sp/>class)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="comment">//-----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="d7/da6/classlog4tango_1_1Layout" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="df/d5d/Export_8hh_1abb9e874b4244b6247ac9dbb62a2c7b8f" kindref="member">LOG4TANGO_EXPORT</ref><sp/><ref refid="d7/da6/classlog4tango_1_1Layout" kindref="compound">Layout</ref><sp/></highlight></codeline>
+<codeline lineno="42"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="d7/da6/classlog4tango_1_1Layout_1a053084d0c22a45a3304a75f7b0c5de39" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="d7/da6/classlog4tango_1_1Layout_1a053084d0c22a45a3304a75f7b0c5de39" kindref="member">Layout</ref>()<sp/>{};</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53" refid="d7/da6/classlog4tango_1_1Layout_1ae3298877b40a255b5723a6cfa58e00ea" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="d7/da6/classlog4tango_1_1Layout_1ae3298877b40a255b5723a6cfa58e00ea" kindref="member">~Layout</ref>()<sp/>{};</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>std::string<sp/>format<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="d8/df2/structlog4tango_1_1LoggingEvent" kindref="compound">LoggingEvent</ref>&amp;<sp/>event);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal">};<sp/><sp/></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="64"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>log4tango</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>_LOG4TANGO_LAYOUT_H</highlight></codeline>
+    </programlisting>
+    <location file="/home/tango/workspace/cppTango/include/log4tango/Layout.hh"/>
+  </compounddef>
+</doxygen>

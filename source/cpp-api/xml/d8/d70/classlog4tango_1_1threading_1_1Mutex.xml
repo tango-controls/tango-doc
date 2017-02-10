@@ -1,0 +1,186 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="d8/d70/classlog4tango_1_1threading_1_1Mutex" kind="class" prot="public">
+    <compoundname>log4tango::threading::Mutex</compoundname>
+    <includes refid="db/d37/MSThreads_8hh" local="yes">MSThreads.hh</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d8/d70/classlog4tango_1_1threading_1_1Mutex_1aa87901b9396061155e2e8a8163724eb1" prot="private" static="no" mutable="no">
+        <type>CRITICAL_SECTION</type>
+        <definition>CRITICAL_SECTION log4tango::threading::Mutex::_criticalSection</definition>
+        <argsstring></argsstring>
+        <name>_criticalSection</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/threading/MSThreads.hh" line="94" column="1" bodyfile="/home/tango/workspace/cppTango/include/log4tango/threading/MSThreads.hh" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d8/d70/classlog4tango_1_1threading_1_1Mutex_1a03c859c3bb227fb43c2c0984e3d3b1df" prot="private" static="no" mutable="no">
+        <type>pthread_mutex_t</type>
+        <definition>pthread_mutex_t log4tango::threading::Mutex::mutex</definition>
+        <argsstring></argsstring>
+        <name>mutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/threading/PThreads.hh" line="51" column="1" bodyfile="/home/tango/workspace/cppTango/include/log4tango/threading/PThreads.hh" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d8/d70/classlog4tango_1_1threading_1_1Mutex_1abc347dc995fca40b2017977630c173bc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>log4tango::threading::Mutex::Mutex</definition>
+        <argsstring>()</argsstring>
+        <name>Mutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/threading/PThreads.hh" line="55" column="1" bodyfile="/home/tango/workspace/cppTango/include/log4tango/threading/PThreads.hh" bodystart="55" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/d70/classlog4tango_1_1threading_1_1Mutex_1abc347dc995fca40b2017977630c173bc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>log4tango::threading::Mutex::Mutex</definition>
+        <argsstring>()</argsstring>
+        <name>Mutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/threading/MSThreads.hh" line="78" column="1" bodyfile="/home/tango/workspace/cppTango/include/log4tango/threading/MSThreads.hh" bodystart="78" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/d70/classlog4tango_1_1threading_1_1Mutex_1ad75cb2944b40e951cb131c66a573ef3c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>log4tango::threading::Mutex::~Mutex</definition>
+        <argsstring>()</argsstring>
+        <name>~Mutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/threading/PThreads.hh" line="59" column="1" bodyfile="/home/tango/workspace/cppTango/include/log4tango/threading/PThreads.hh" bodystart="59" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/d70/classlog4tango_1_1threading_1_1Mutex_1ad75cb2944b40e951cb131c66a573ef3c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>log4tango::threading::Mutex::~Mutex</definition>
+        <argsstring>()</argsstring>
+        <name>~Mutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/threading/MSThreads.hh" line="82" column="1" bodyfile="/home/tango/workspace/cppTango/include/log4tango/threading/MSThreads.hh" bodystart="82" bodyend="84"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/d70/classlog4tango_1_1threading_1_1Mutex_1ac0dff8ce594fd638931141d431b5117a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>LPCRITICAL_SECTION</type>
+        <definition>LPCRITICAL_SECTION log4tango::threading::Mutex::get_critical_section</definition>
+        <argsstring>(void)</argsstring>
+        <name>get_critical_section</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/threading/MSThreads.hh" line="86" column="1" bodyfile="/home/tango/workspace/cppTango/include/log4tango/threading/MSThreads.hh" bodystart="86" bodyend="88"/>
+        <referencedby refid="d3/d60/classlog4tango_1_1threading_1_1ScopedLock_1aa11d7d68ced4dc20f5577a264797e9a1" compoundref="db/d37/MSThreads_8hh" startline="104" endline="107">log4tango::threading::ScopedLock::ScopedLock</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d8/d70/classlog4tango_1_1threading_1_1Mutex_1a121bae8bb2ca8d412983fbb303441ed0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void log4tango::threading::Mutex::lock</definition>
+        <argsstring>()</argsstring>
+        <name>lock</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/threading/PThreads.hh" line="63" column="1" bodyfile="/home/tango/workspace/cppTango/include/log4tango/threading/PThreads.hh" bodystart="63" bodyend="65"/>
+        <referencedby refid="d3/d60/classlog4tango_1_1threading_1_1ScopedLock_1a3c6e5abbb0fada2b3ea6432bd19862dd" compoundref="d0/d6c/PThreads_8hh" startline="81" endline="83">log4tango::threading::ScopedLock::ScopedLock</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d8/d70/classlog4tango_1_1threading_1_1Mutex_1a0689618bc67462cc3646e86de6b5f261" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void log4tango::threading::Mutex::unlock</definition>
+        <argsstring>()</argsstring>
+        <name>unlock</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/threading/PThreads.hh" line="67" column="1" bodyfile="/home/tango/workspace/cppTango/include/log4tango/threading/PThreads.hh" bodystart="67" bodyend="69"/>
+        <referencedby refid="d3/d60/classlog4tango_1_1threading_1_1ScopedLock_1ab03de73986f5bb51e7e40d5725e725bb" compoundref="d0/d6c/PThreads_8hh" startline="85" endline="87">log4tango::threading::ScopedLock::~ScopedLock</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="d8/d70/classlog4tango_1_1threading_1_1Mutex_1a97441a9750938c13898372b18193f211" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>log4tango::threading::Mutex::Mutex</definition>
+        <argsstring>(const Mutex &amp;)</argsstring>
+        <name>Mutex</name>
+        <param>
+          <type>const <ref refid="d8/d70/classlog4tango_1_1threading_1_1Mutex" kindref="compound">Mutex</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/threading/MSThreads.hh" line="91" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/d70/classlog4tango_1_1threading_1_1Mutex_1a60730bbda7f7eaf04d4b21c15752d9cf" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d8/d70/classlog4tango_1_1threading_1_1Mutex" kindref="compound">Mutex</ref></type>
+        <definition>Mutex log4tango::threading::Mutex::operator=</definition>
+        <argsstring>(const Mutex &amp;)</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="d8/d70/classlog4tango_1_1threading_1_1Mutex" kindref="compound">Mutex</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/log4tango/threading/MSThreads.hh" line="92" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/tango/workspace/cppTango/include/log4tango/threading/MSThreads.hh" line="75" column="1" bodyfile="/home/tango/workspace/cppTango/include/log4tango/threading/MSThreads.hh" bodystart="74" bodyend="95"/>
+    <listofallmembers>
+      <member refid="d8/d70/classlog4tango_1_1threading_1_1Mutex_1aa87901b9396061155e2e8a8163724eb1" prot="private" virt="non-virtual"><scope>log4tango::threading::Mutex</scope><name>_criticalSection</name></member>
+      <member refid="d8/d70/classlog4tango_1_1threading_1_1Mutex_1ac0dff8ce594fd638931141d431b5117a" prot="public" virt="non-virtual"><scope>log4tango::threading::Mutex</scope><name>get_critical_section</name></member>
+      <member refid="d8/d70/classlog4tango_1_1threading_1_1Mutex_1a121bae8bb2ca8d412983fbb303441ed0" prot="public" virt="non-virtual"><scope>log4tango::threading::Mutex</scope><name>lock</name></member>
+      <member refid="d8/d70/classlog4tango_1_1threading_1_1Mutex_1a03c859c3bb227fb43c2c0984e3d3b1df" prot="private" virt="non-virtual"><scope>log4tango::threading::Mutex</scope><name>mutex</name></member>
+      <member refid="d8/d70/classlog4tango_1_1threading_1_1Mutex_1abc347dc995fca40b2017977630c173bc" prot="public" virt="non-virtual"><scope>log4tango::threading::Mutex</scope><name>Mutex</name></member>
+      <member refid="d8/d70/classlog4tango_1_1threading_1_1Mutex_1a97441a9750938c13898372b18193f211" prot="private" virt="non-virtual"><scope>log4tango::threading::Mutex</scope><name>Mutex</name></member>
+      <member refid="d8/d70/classlog4tango_1_1threading_1_1Mutex_1abc347dc995fca40b2017977630c173bc" prot="public" virt="non-virtual"><scope>log4tango::threading::Mutex</scope><name>Mutex</name></member>
+      <member refid="d8/d70/classlog4tango_1_1threading_1_1Mutex_1a60730bbda7f7eaf04d4b21c15752d9cf" prot="private" virt="non-virtual"><scope>log4tango::threading::Mutex</scope><name>operator=</name></member>
+      <member refid="d8/d70/classlog4tango_1_1threading_1_1Mutex_1a0689618bc67462cc3646e86de6b5f261" prot="public" virt="non-virtual"><scope>log4tango::threading::Mutex</scope><name>unlock</name></member>
+      <member refid="d8/d70/classlog4tango_1_1threading_1_1Mutex_1ad75cb2944b40e951cb131c66a573ef3c" prot="public" virt="non-virtual"><scope>log4tango::threading::Mutex</scope><name>~Mutex</name></member>
+      <member refid="d8/d70/classlog4tango_1_1threading_1_1Mutex_1ad75cb2944b40e951cb131c66a573ef3c" prot="public" virt="non-virtual"><scope>log4tango::threading::Mutex</scope><name>~Mutex</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

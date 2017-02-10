@@ -1,0 +1,778 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="da/da5/classTango_1_1EncodedAttribute" kind="class" prot="public">
+    <compoundname>Tango::EncodedAttribute</compoundname>
+    <innerclass refid="d3/dc1/classTango_1_1EncodedAttribute_1_1EncodedAttributeExt" prot="private">Tango::EncodedAttribute::EncodedAttributeExt</innerclass>
+      <sectiondef kind="user-defined">
+      <header>Constructors</header>
+      <description><para>Miscellaneous constructors </para></description>
+      <memberdef kind="function" id="da/da5/classTango_1_1EncodedAttribute_1a2d44e9152c929390d51fd631f5e31d37" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::EncodedAttribute::EncodedAttribute</definition>
+        <argsstring>()</argsstring>
+        <name>EncodedAttribute</name>
+        <briefdescription>
+<para>Create a new <ref refid="da/da5/classTango_1_1EncodedAttribute" kindref="compound">EncodedAttribute</ref> object. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/encoded_attribute.h" line="65" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="da/da5/classTango_1_1EncodedAttribute_1a63df51e7343e74e6f10253f6fd69a8ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::EncodedAttribute::EncodedAttribute</definition>
+        <argsstring>(int buf_pool_size, bool serialization=false)</argsstring>
+        <name>EncodedAttribute</name>
+        <param>
+          <type>int</type>
+          <declname>buf_pool_size</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>serialization</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Create a new <ref refid="da/da5/classTango_1_1EncodedAttribute" kindref="compound">EncodedAttribute</ref> object with a user defined buffer pool. </para>        </briefdescription>
+        <detaileddescription>
+<para>This constructor allows the user to define the size of the buffer pool used to store the encoded images. This buffer pool is managed as a circular pool. A different buffer is used each time an image is encoded. The last used buffer is then passed to the attribute with the attribute::set_value() method</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>buf_pool_size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Buffer pool size </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>serialization</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Set to true if the instance manage the data buffer serialization </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/encoded_attribute.h" line="79" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Destructor</header>
+      <description><para>Only one desctructor is defined for this class </para></description>
+      <memberdef kind="function" id="da/da5/classTango_1_1EncodedAttribute_1a6e013aa1fbfaa40971b3db1a32c17970" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tango::EncodedAttribute::~EncodedAttribute</definition>
+        <argsstring>()</argsstring>
+        <name>~EncodedAttribute</name>
+        <briefdescription>
+<para>The attribute desctructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/encoded_attribute.h" line="89" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Image Encoding Methods</header>
+      <memberdef kind="function" id="da/da5/classTango_1_1EncodedAttribute_1a7a98013fc1577c67127c0cca9b192b88" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::EncodedAttribute::encode_jpeg_gray8</definition>
+        <argsstring>(unsigned char *gray8, int width, int height, double quality)</argsstring>
+        <name>encode_jpeg_gray8</name>
+        <param>
+          <type>unsigned char *</type>
+          <declname>gray8</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>height</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>quality</declname>
+        </param>
+        <briefdescription>
+<para>Encode a 8 bit grayscale image as JPEG format. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>gray8</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of 8bit gray sample </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The image width </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The image height </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>quality</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Quality of JPEG (0=poor quality 100=max quality) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/encoded_attribute.h" line="105" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="da/da5/classTango_1_1EncodedAttribute_1afd6be02fbf49d3f7823679d190eea0a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::EncodedAttribute::encode_jpeg_rgb32</definition>
+        <argsstring>(unsigned char *rgb32, int width, int height, double quality)</argsstring>
+        <name>encode_jpeg_rgb32</name>
+        <param>
+          <type>unsigned char *</type>
+          <declname>rgb32</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>height</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>quality</declname>
+        </param>
+        <briefdescription>
+<para>Encode a 32 bit rgb color image as JPEG format. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>rgb32</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of 32bit RGB sample (RGB0RGB0...) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The image width </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The image height </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>quality</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Quality of JPEG (0=poor quality 100=max quality) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/encoded_attribute.h" line="116" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="da/da5/classTango_1_1EncodedAttribute_1a2bf74ff1635f2d3120dd0cdbef5e0c00" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::EncodedAttribute::encode_jpeg_rgb24</definition>
+        <argsstring>(unsigned char *rgb24, int width, int height, double quality)</argsstring>
+        <name>encode_jpeg_rgb24</name>
+        <param>
+          <type>unsigned char *</type>
+          <declname>rgb24</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>height</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>quality</declname>
+        </param>
+        <briefdescription>
+<para>Encode a 24 bit rgb color image as JPEG format. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>rgb24</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of 32bit RGB sample (RGBRGB...) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The image width </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The image height </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>quality</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Quality of JPEG (0=poor quality 100=max quality) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/encoded_attribute.h" line="127" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="da/da5/classTango_1_1EncodedAttribute_1a0aeecda296c64b53ab43317e94e6ac35" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::EncodedAttribute::encode_gray8</definition>
+        <argsstring>(unsigned char *gray8, int width, int height)</argsstring>
+        <name>encode_gray8</name>
+        <param>
+          <type>unsigned char *</type>
+          <declname>gray8</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+<para>Encode a 8 bit grayscale image (no compression) </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>gray8</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of 8bit gray sample </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The image width </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The image height </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/encoded_attribute.h" line="137" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="da/da5/classTango_1_1EncodedAttribute_1aa67d49c4b99bd6e91e80138acca7a1a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::EncodedAttribute::encode_gray16</definition>
+        <argsstring>(unsigned short *gray16, int width, int height)</argsstring>
+        <name>encode_gray16</name>
+        <param>
+          <type>unsigned short *</type>
+          <declname>gray16</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+<para>Encode a 16 bit grayscale image (no compression) </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>gray16</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of 16bit gray sample </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The image width </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The image height </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/encoded_attribute.h" line="147" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="da/da5/classTango_1_1EncodedAttribute_1a8c0850a138718cf1a1513c20c1e58844" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::EncodedAttribute::encode_rgb24</definition>
+        <argsstring>(unsigned char *rgb24, int width, int height)</argsstring>
+        <name>encode_rgb24</name>
+        <param>
+          <type>unsigned char *</type>
+          <declname>rgb24</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+<para>Encode a 24 bit color image (no compression) </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>rgb24</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of 24bit RGB sample </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The image width </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The image height </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/encoded_attribute.h" line="157" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Image Decoding Methods</header>
+      <memberdef kind="function" id="da/da5/classTango_1_1EncodedAttribute_1a0a64f653b5fe0049cb04daf0740c4755" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::EncodedAttribute::decode_rgb32</definition>
+        <argsstring>(DeviceAttribute *attr, int *width, int *height, unsigned char **rgb32)</argsstring>
+        <name>decode_rgb32</name>
+        <param>
+          <type>DeviceAttribute *</type>
+          <declname>attr</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>height</declname>
+        </param>
+        <param>
+          <type>unsigned char **</type>
+          <declname>rgb32</declname>
+        </param>
+        <briefdescription>
+<para>Decode a color image (JPEG_RGB or RGB24) and returns a 32 bits RGB image. </para>        </briefdescription>
+        <detaileddescription>
+<para>Throws DevFailed in case of failure.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>attr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>DeviceAttribute that contains the image </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Width of the image </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Height of the image </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rgb32</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Image (memory allocated by the function) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/encoded_attribute.h" line="173" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="da/da5/classTango_1_1EncodedAttribute_1ae12a9771857f2fecbebd3b9381213ab5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::EncodedAttribute::decode_gray8</definition>
+        <argsstring>(DeviceAttribute *attr, int *width, int *height, unsigned char **gray8)</argsstring>
+        <name>decode_gray8</name>
+        <param>
+          <type>DeviceAttribute *</type>
+          <declname>attr</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>height</declname>
+        </param>
+        <param>
+          <type>unsigned char **</type>
+          <declname>gray8</declname>
+        </param>
+        <briefdescription>
+<para>Decode a 8 bits grayscale image (JPEG_GRAY8 or GRAY8) and returns a 8 bits gray scale image. </para>        </briefdescription>
+        <detaileddescription>
+<para>Throws DevFailed in case of failure.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>attr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>DeviceAttribute that contains the image </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Width of the image </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Height of the image </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>gray8</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Image (memory allocated by the function) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/encoded_attribute.h" line="184" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="da/da5/classTango_1_1EncodedAttribute_1a76fef5a1583210da6f06d7e3fe5bf7bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tango::EncodedAttribute::decode_gray16</definition>
+        <argsstring>(DeviceAttribute *attr, int *width, int *height, unsigned short **gray16)</argsstring>
+        <name>decode_gray16</name>
+        <param>
+          <type>DeviceAttribute *</type>
+          <declname>attr</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>height</declname>
+        </param>
+        <param>
+          <type>unsigned short **</type>
+          <declname>gray16</declname>
+        </param>
+        <briefdescription>
+<para>Decode a 16 bits grayscale image (GRAY16) and returns a 16 bits gray scale image. </para>        </briefdescription>
+        <detaileddescription>
+<para>Throws DevFailed in case of failure.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>attr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>DeviceAttribute that contains the image </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Width of the image </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Height of the image </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>gray16</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Image (memory allocated by the function) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/encoded_attribute.h" line="195" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="da/da5/classTango_1_1EncodedAttribute_1a6a1cd85815e57c59bcdd64d043ff21ac" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Tango::EncodedAttribute::buf_elt_nb</definition>
+        <argsstring></argsstring>
+        <name>buf_elt_nb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/encoded_attribute.h" line="232" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/encoded_attribute.h" bodystart="232" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="da/da5/classTango_1_1EncodedAttribute_1ac9a1b73c7d660a0d46ccf55872cc102d" prot="private" static="no" mutable="no">
+        <type>unsigned char **</type>
+        <definition>unsigned char** Tango::EncodedAttribute::buffer_array</definition>
+        <argsstring></argsstring>
+        <name>buffer_array</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/encoded_attribute.h" line="226" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/encoded_attribute.h" bodystart="226" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="da/da5/classTango_1_1EncodedAttribute_1a866b17db0b46cd3ea4f92d289df7f518" prot="private" static="no" mutable="no">
+        <type>int *</type>
+        <definition>int* Tango::EncodedAttribute::buffSize_array</definition>
+        <argsstring></argsstring>
+        <name>buffSize_array</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/encoded_attribute.h" line="227" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/encoded_attribute.h" bodystart="227" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="da/da5/classTango_1_1EncodedAttribute_1ac2f6aa83b54bb27c1bf853231b2c0e97" prot="private" static="no" mutable="no">
+        <type>EncodedAttributeExt *</type>
+        <definition>EncodedAttributeExt* Tango::EncodedAttribute::ext</definition>
+        <argsstring></argsstring>
+        <name>ext</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/encoded_attribute.h" line="238" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/encoded_attribute.h" bodystart="238" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="da/da5/classTango_1_1EncodedAttribute_1a9d48f97bcbc7f01d74dc9d9cc7868002" prot="private" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* Tango::EncodedAttribute::format</definition>
+        <argsstring></argsstring>
+        <name>format</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/encoded_attribute.h" line="229" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/encoded_attribute.h" bodystart="229" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="da/da5/classTango_1_1EncodedAttribute_1aae79d225b948c00e8345dd870081cd11" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Tango::EncodedAttribute::index</definition>
+        <argsstring></argsstring>
+        <name>index</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/encoded_attribute.h" line="231" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/encoded_attribute.h" bodystart="231" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="da/da5/classTango_1_1EncodedAttribute_1af61bf69c15c0f996eaa046eeb9bf7898" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Tango::EncodedAttribute::manage_exclusion</definition>
+        <argsstring></argsstring>
+        <name>manage_exclusion</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/encoded_attribute.h" line="233" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/encoded_attribute.h" bodystart="233" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="da/da5/classTango_1_1EncodedAttribute_1afed80f8ca1ec7536315a89ac68d51884" prot="private" static="no" mutable="no">
+        <type>omni_mutex *</type>
+        <definition>omni_mutex* Tango::EncodedAttribute::mutex_array</definition>
+        <argsstring></argsstring>
+        <name>mutex_array</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/encoded_attribute.h" line="228" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/encoded_attribute.h" bodystart="228" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="da/da5/classTango_1_1EncodedAttribute_1a64c6b3723c44352f85678c0b61cbfac3" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>DevUChar *</type>
+        <definition>DevUChar* Tango::EncodedAttribute::get_data</definition>
+        <argsstring>()</argsstring>
+        <name>get_data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/encoded_attribute.h" line="201" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/encoded_attribute.h" bodystart="201" bodyend="205"/>
+      </memberdef>
+      <memberdef kind="function" id="da/da5/classTango_1_1EncodedAttribute_1aed1b224423a728339fe92f564e286c81" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Tango::EncodedAttribute::get_exclusion</definition>
+        <argsstring>()</argsstring>
+        <name>get_exclusion</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/encoded_attribute.h" line="214" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/encoded_attribute.h" bodystart="214" bodyend="214"/>
+      </memberdef>
+      <memberdef kind="function" id="da/da5/classTango_1_1EncodedAttribute_1a3ad72f53742a4d9acb5fba43789e234e" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>DevString *</type>
+        <definition>DevString* Tango::EncodedAttribute::get_format</definition>
+        <argsstring>()</argsstring>
+        <name>get_format</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/encoded_attribute.h" line="213" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/encoded_attribute.h" bodystart="213" bodyend="213"/>
+      </memberdef>
+      <memberdef kind="function" id="da/da5/classTango_1_1EncodedAttribute_1a72500a936e0f78c2e4a947b7fe2f301f" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>omni_mutex *</type>
+        <definition>omni_mutex* Tango::EncodedAttribute::get_mutex</definition>
+        <argsstring>()</argsstring>
+        <name>get_mutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/encoded_attribute.h" line="215" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/encoded_attribute.h" bodystart="215" bodyend="219"/>
+      </memberdef>
+      <memberdef kind="function" id="da/da5/classTango_1_1EncodedAttribute_1ae1c2039032ece680109d9761353b4c31" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>long</type>
+        <definition>long Tango::EncodedAttribute::get_size</definition>
+        <argsstring>()</argsstring>
+        <name>get_size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/encoded_attribute.h" line="207" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/encoded_attribute.h" bodystart="207" bodyend="211"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This class provides method to deal with Tango::DevEncoded attribute format. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/tango/workspace/cppTango/include/tango/server/encoded_attribute.h" line="54" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/encoded_attribute.h" bodystart="53" bodyend="241"/>
+    <listofallmembers>
+      <member refid="da/da5/classTango_1_1EncodedAttribute_1a6a1cd85815e57c59bcdd64d043ff21ac" prot="private" virt="non-virtual"><scope>Tango::EncodedAttribute</scope><name>buf_elt_nb</name></member>
+      <member refid="da/da5/classTango_1_1EncodedAttribute_1ac9a1b73c7d660a0d46ccf55872cc102d" prot="private" virt="non-virtual"><scope>Tango::EncodedAttribute</scope><name>buffer_array</name></member>
+      <member refid="da/da5/classTango_1_1EncodedAttribute_1a866b17db0b46cd3ea4f92d289df7f518" prot="private" virt="non-virtual"><scope>Tango::EncodedAttribute</scope><name>buffSize_array</name></member>
+      <member refid="da/da5/classTango_1_1EncodedAttribute_1a76fef5a1583210da6f06d7e3fe5bf7bb" prot="public" virt="non-virtual"><scope>Tango::EncodedAttribute</scope><name>decode_gray16</name></member>
+      <member refid="da/da5/classTango_1_1EncodedAttribute_1ae12a9771857f2fecbebd3b9381213ab5" prot="public" virt="non-virtual"><scope>Tango::EncodedAttribute</scope><name>decode_gray8</name></member>
+      <member refid="da/da5/classTango_1_1EncodedAttribute_1a0a64f653b5fe0049cb04daf0740c4755" prot="public" virt="non-virtual"><scope>Tango::EncodedAttribute</scope><name>decode_rgb32</name></member>
+      <member refid="da/da5/classTango_1_1EncodedAttribute_1aa67d49c4b99bd6e91e80138acca7a1a4" prot="public" virt="non-virtual"><scope>Tango::EncodedAttribute</scope><name>encode_gray16</name></member>
+      <member refid="da/da5/classTango_1_1EncodedAttribute_1a0aeecda296c64b53ab43317e94e6ac35" prot="public" virt="non-virtual"><scope>Tango::EncodedAttribute</scope><name>encode_gray8</name></member>
+      <member refid="da/da5/classTango_1_1EncodedAttribute_1a7a98013fc1577c67127c0cca9b192b88" prot="public" virt="non-virtual"><scope>Tango::EncodedAttribute</scope><name>encode_jpeg_gray8</name></member>
+      <member refid="da/da5/classTango_1_1EncodedAttribute_1a2bf74ff1635f2d3120dd0cdbef5e0c00" prot="public" virt="non-virtual"><scope>Tango::EncodedAttribute</scope><name>encode_jpeg_rgb24</name></member>
+      <member refid="da/da5/classTango_1_1EncodedAttribute_1afd6be02fbf49d3f7823679d190eea0a1" prot="public" virt="non-virtual"><scope>Tango::EncodedAttribute</scope><name>encode_jpeg_rgb32</name></member>
+      <member refid="da/da5/classTango_1_1EncodedAttribute_1a8c0850a138718cf1a1513c20c1e58844" prot="public" virt="non-virtual"><scope>Tango::EncodedAttribute</scope><name>encode_rgb24</name></member>
+      <member refid="da/da5/classTango_1_1EncodedAttribute_1a2d44e9152c929390d51fd631f5e31d37" prot="public" virt="non-virtual"><scope>Tango::EncodedAttribute</scope><name>EncodedAttribute</name></member>
+      <member refid="da/da5/classTango_1_1EncodedAttribute_1a63df51e7343e74e6f10253f6fd69a8ea" prot="public" virt="non-virtual"><scope>Tango::EncodedAttribute</scope><name>EncodedAttribute</name></member>
+      <member refid="da/da5/classTango_1_1EncodedAttribute_1ac2f6aa83b54bb27c1bf853231b2c0e97" prot="private" virt="non-virtual"><scope>Tango::EncodedAttribute</scope><name>ext</name></member>
+      <member refid="da/da5/classTango_1_1EncodedAttribute_1a9d48f97bcbc7f01d74dc9d9cc7868002" prot="private" virt="non-virtual"><scope>Tango::EncodedAttribute</scope><name>format</name></member>
+      <member refid="da/da5/classTango_1_1EncodedAttribute_1a64c6b3723c44352f85678c0b61cbfac3" prot="private" virt="non-virtual"><scope>Tango::EncodedAttribute</scope><name>get_data</name></member>
+      <member refid="da/da5/classTango_1_1EncodedAttribute_1aed1b224423a728339fe92f564e286c81" prot="private" virt="non-virtual"><scope>Tango::EncodedAttribute</scope><name>get_exclusion</name></member>
+      <member refid="da/da5/classTango_1_1EncodedAttribute_1a3ad72f53742a4d9acb5fba43789e234e" prot="private" virt="non-virtual"><scope>Tango::EncodedAttribute</scope><name>get_format</name></member>
+      <member refid="da/da5/classTango_1_1EncodedAttribute_1a72500a936e0f78c2e4a947b7fe2f301f" prot="private" virt="non-virtual"><scope>Tango::EncodedAttribute</scope><name>get_mutex</name></member>
+      <member refid="da/da5/classTango_1_1EncodedAttribute_1ae1c2039032ece680109d9761353b4c31" prot="private" virt="non-virtual"><scope>Tango::EncodedAttribute</scope><name>get_size</name></member>
+      <member refid="da/da5/classTango_1_1EncodedAttribute_1aae79d225b948c00e8345dd870081cd11" prot="private" virt="non-virtual"><scope>Tango::EncodedAttribute</scope><name>index</name></member>
+      <member refid="da/da5/classTango_1_1EncodedAttribute_1af61bf69c15c0f996eaa046eeb9bf7898" prot="private" virt="non-virtual"><scope>Tango::EncodedAttribute</scope><name>manage_exclusion</name></member>
+      <member refid="da/da5/classTango_1_1EncodedAttribute_1afed80f8ca1ec7536315a89ac68d51884" prot="private" virt="non-virtual"><scope>Tango::EncodedAttribute</scope><name>mutex_array</name></member>
+      <member refid="da/da5/classTango_1_1EncodedAttribute_1a6e013aa1fbfaa40971b3db1a32c17970" prot="public" virt="non-virtual"><scope>Tango::EncodedAttribute</scope><name>~EncodedAttribute</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

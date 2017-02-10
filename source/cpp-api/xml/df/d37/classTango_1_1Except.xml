@@ -1,0 +1,3752 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="df/d37/classTango_1_1Except" kind="class" prot="public">
+    <compoundname>Tango::Except</compoundname>
+      <sectiondef kind="user-defined">
+      <header>Exception related method</header>
+      <memberdef kind="function" id="df/d37/classTango_1_1Except_1a649730652d055010916449aad7a9b5f3" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Tango::Except::print_exception</definition>
+        <argsstring>(const CORBA::Exception &amp;ex)</argsstring>
+        <name>print_exception</name>
+        <param>
+          <type>const CORBA::Exception &amp;</type>
+          <declname>ex</declname>
+        </param>
+        <briefdescription>
+<para>Print a TANGO exception. </para>        </briefdescription>
+        <detaileddescription>
+<para>Print all the details of a TANGO exception.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception object reference </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/except.h" line="87" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Error stack related method</header>
+      <memberdef kind="function" id="df/d37/classTango_1_1Except_1aba359c6be26a171c1d9ebd143f7a9630" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Tango::Except::print_error_stack</definition>
+        <argsstring>(const Tango::DevErrorList &amp;ex)</argsstring>
+        <name>print_error_stack</name>
+        <param>
+          <type>const Tango::DevErrorList &amp;</type>
+          <declname>ex</declname>
+        </param>
+        <briefdescription>
+<para>Print a TANGO error stack. </para>        </briefdescription>
+        <detaileddescription>
+<para>Print all the details of a TANGO error stack.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The error stack reference </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/except.h" line="99" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Throw exception inline methods (static)</header>
+      <memberdef kind="function" id="df/d37/classTango_1_1Except_1a937f591028b392e50070fbc4149beec6" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Tango::Except::throw_exception</definition>
+        <argsstring>(const char *reason, const char *desc, const char *origin, Tango::ErrSeverity sever=Tango::ERR)</argsstring>
+        <name>throw_exception</name>
+        <param>
+          <type>const char *</type>
+          <declname>reason</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>origin</declname>
+        </param>
+        <param>
+          <type>Tango::ErrSeverity</type>
+          <declname>sever</declname>
+          <defval>Tango::ERR</defval>
+        </param>
+        <briefdescription>
+<para>Generate and throw a TANGO DevFailed exception. </para>        </briefdescription>
+        <detaileddescription>
+<para>The exception is created with a single DevError object. A default value &quot;Tango::ERR&quot; is defined for the DevError severity field. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>reason</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object reason field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>desc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object desc field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>origin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object origin field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sever</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object severity field </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>DevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The thrown exception. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/except.h" line="122" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/except.h" bodystart="122" bodyend="136"/>
+        <referencedby refid="d3/d62/classTango_1_1DeviceImpl_1a6a5e05c240b76db97a357703bdd30552" compoundref="d5/d60/utils_8h" startline="1203" endline="1218">Tango::DeviceImpl::get_db_device</referencedby>
+        <referencedby refid="d8/d68/classTango_1_1AttrProp_1a0c80445d1ce52c04813778057ee1bc22" compoundref="d2/d19/attrprop_8h" startline="161" endline="169">Tango::AttrProp&lt; DevLong &gt;::get_val</referencedby>
+        <referencedby refid="d5/da9/classTango_1_1DoubleAttrProp_1a377133f8bb35b0c6609fd0fe024d84c6" compoundref="d2/d19/attrprop_8h" startline="415" endline="423">Tango::DoubleAttrProp&lt; DevDouble &gt;::get_val</referencedby>
+        <referencedby refid="de/ddf/namespaceTango_1a3b3bd64ad7f36f411ad17050d314a460" compoundref="d5/d60/utils_8h" startline="1182" endline="1201">Tango::return_empty_any</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="df/d37/classTango_1_1Except_1a2dc82f122c0bdde68566f0a6b3419f13" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Tango::Except::throw_exception</definition>
+        <argsstring>(const char *reason, const char *desc, char *origin, Tango::ErrSeverity sever=Tango::ERR)</argsstring>
+        <name>throw_exception</name>
+        <param>
+          <type>const char *</type>
+          <declname>reason</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>origin</declname>
+        </param>
+        <param>
+          <type>Tango::ErrSeverity</type>
+          <declname>sever</declname>
+          <defval>Tango::ERR</defval>
+        </param>
+        <briefdescription>
+<para>Generate and throw a TANGO DevFailed exception. </para>        </briefdescription>
+        <detaileddescription>
+<para>The exception is created with a single DevError object. A default value &quot;Tango::ERR&quot; is defined for the DevError severity field. The memory used by the origin parameter will be freed by this method Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>reason</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object reason field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>desc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object desc field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>origin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object origin field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sever</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object severity field </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>DevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The thrown exception. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/except.h" line="157" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/except.h" bodystart="157" bodyend="172"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d37/classTango_1_1Except_1a21f0ffe9ed4839c570f8137edb3d7241" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Tango::Except::throw_exception</definition>
+        <argsstring>(const char *reason, char *desc, const char *origin, Tango::ErrSeverity sever=Tango::ERR)</argsstring>
+        <name>throw_exception</name>
+        <param>
+          <type>const char *</type>
+          <declname>reason</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>origin</declname>
+        </param>
+        <param>
+          <type>Tango::ErrSeverity</type>
+          <declname>sever</declname>
+          <defval>Tango::ERR</defval>
+        </param>
+        <briefdescription>
+<para>Generate and throw a TANGO DevFailed exception. </para>        </briefdescription>
+        <detaileddescription>
+<para>The exception is created with a single DevError object. A default value &quot;Tango::ERR&quot; is defined for the DevError severity field. The memory used by the desc parameter will be freed by this method Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>reason</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object reason field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>desc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object desc field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>origin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object origin field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sever</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object severity field </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>DevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The thrown exception. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/except.h" line="193" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/except.h" bodystart="193" bodyend="208"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d37/classTango_1_1Except_1a4b6a58d11b720d1aef7cc341802ddc4e" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Tango::Except::throw_exception</definition>
+        <argsstring>(const char *reason, char *desc, char *origin, Tango::ErrSeverity sever=Tango::ERR)</argsstring>
+        <name>throw_exception</name>
+        <param>
+          <type>const char *</type>
+          <declname>reason</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>origin</declname>
+        </param>
+        <param>
+          <type>Tango::ErrSeverity</type>
+          <declname>sever</declname>
+          <defval>Tango::ERR</defval>
+        </param>
+        <briefdescription>
+<para>Generate and throw a TANGO DevFailed exception. </para>        </briefdescription>
+        <detaileddescription>
+<para>The exception is created with a single DevError object. A default value &quot;Tango::ERR&quot; is defined for the DevError severity field. The memory used by the origin and desc parameters will be freed by this method Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>reason</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object reason field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>desc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object desc field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>origin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object origin field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sever</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object severity field </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>DevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The thrown exception. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/except.h" line="228" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/except.h" bodystart="228" bodyend="244"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d37/classTango_1_1Except_1a4bc955a801d67a784828f4b79471e959" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Tango::Except::throw_exception</definition>
+        <argsstring>(char *reason, const char *desc, const char *origin, Tango::ErrSeverity sever=Tango::ERR)</argsstring>
+        <name>throw_exception</name>
+        <param>
+          <type>char *</type>
+          <declname>reason</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>origin</declname>
+        </param>
+        <param>
+          <type>Tango::ErrSeverity</type>
+          <declname>sever</declname>
+          <defval>Tango::ERR</defval>
+        </param>
+        <briefdescription>
+<para>Generate and throw a TANGO DevFailed exception. </para>        </briefdescription>
+        <detaileddescription>
+<para>The exception is created with a single DevError object. A default value &quot;Tango::ERR&quot; is defined for the DevError severity field. The memory used by the reason parameter will be freed by this method Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>reason</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object reason field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>desc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object desc field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>origin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object origin field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sever</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object severity field </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>DevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The thrown exception. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/except.h" line="265" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/except.h" bodystart="265" bodyend="280"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d37/classTango_1_1Except_1a21253baed3a2521bfa388fc8079f2026" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Tango::Except::throw_exception</definition>
+        <argsstring>(char *reason, const char *desc, char *origin, Tango::ErrSeverity sever=Tango::ERR)</argsstring>
+        <name>throw_exception</name>
+        <param>
+          <type>char *</type>
+          <declname>reason</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>origin</declname>
+        </param>
+        <param>
+          <type>Tango::ErrSeverity</type>
+          <declname>sever</declname>
+          <defval>Tango::ERR</defval>
+        </param>
+        <briefdescription>
+<para>Generate and throw a TANGO DevFailed exception. </para>        </briefdescription>
+        <detaileddescription>
+<para>The exception is created with a single DevError object. A default value &quot;Tango::ERR&quot; is defined for the DevError severity field. The memory used by the reason and origin parameters will be freed by this method Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>reason</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object reason field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>desc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object desc field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>origin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object origin field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sever</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object severity field </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>DevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The thrown exception. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/except.h" line="301" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/except.h" bodystart="301" bodyend="317"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d37/classTango_1_1Except_1a87d6f2b545de08d288da642068e001c8" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Tango::Except::throw_exception</definition>
+        <argsstring>(char *reason, char *desc, const char *origin, Tango::ErrSeverity sever=Tango::ERR)</argsstring>
+        <name>throw_exception</name>
+        <param>
+          <type>char *</type>
+          <declname>reason</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>origin</declname>
+        </param>
+        <param>
+          <type>Tango::ErrSeverity</type>
+          <declname>sever</declname>
+          <defval>Tango::ERR</defval>
+        </param>
+        <briefdescription>
+<para>Generate and throw a TANGO DevFailed exception. </para>        </briefdescription>
+        <detaileddescription>
+<para>The exception is created with a single DevError object. A default value &quot;Tango::ERR&quot; is defined for the DevError severity field. The memory used by the reason and desc parameters will be freed by this method Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>reason</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object reason field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>desc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object desc field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>origin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object origin field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sever</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object severity field </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>DevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The thrown exception. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/except.h" line="338" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/except.h" bodystart="338" bodyend="354"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d37/classTango_1_1Except_1a55ed8f25cc157fa3152ede702b36517c" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Tango::Except::throw_exception</definition>
+        <argsstring>(char *reason, char *desc, char *origin, Tango::ErrSeverity sever=Tango::ERR)</argsstring>
+        <name>throw_exception</name>
+        <param>
+          <type>char *</type>
+          <declname>reason</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>origin</declname>
+        </param>
+        <param>
+          <type>Tango::ErrSeverity</type>
+          <declname>sever</declname>
+          <defval>Tango::ERR</defval>
+        </param>
+        <briefdescription>
+<para>Generate and throw a TANGO DevFailed exception. </para>        </briefdescription>
+        <detaileddescription>
+<para>The exception is created with a single DevError object. A default value &quot;Tango::ERR&quot; is defined for the DevError severity field. The memory used by the origin, reason and desc parameters will be freed by this method Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>reason</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object reason field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>desc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object desc field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>origin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object origin field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sever</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object severity field </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>DevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The thrown exception. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/except.h" line="375" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/except.h" bodystart="375" bodyend="392"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d37/classTango_1_1Except_1ae8002ec9ea1ba0c99a0770b55ff71d98" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Tango::Except::throw_exception</definition>
+        <argsstring>(const string &amp;reason, const string &amp;desc, const string &amp;origin, Tango::ErrSeverity sever=Tango::ERR)</argsstring>
+        <name>throw_exception</name>
+        <param>
+          <type>const string &amp;</type>
+          <declname>reason</declname>
+        </param>
+        <param>
+          <type>const string &amp;</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>const string &amp;</type>
+          <declname>origin</declname>
+        </param>
+        <param>
+          <type>Tango::ErrSeverity</type>
+          <declname>sever</declname>
+          <defval>Tango::ERR</defval>
+        </param>
+        <briefdescription>
+<para>Generate and throw a TANGO DevFailed exception. </para>        </briefdescription>
+        <detaileddescription>
+<para>The exception is created with a single DevError object. A default value &quot;Tango::ERR&quot; is defined for the DevError severity field. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>reason</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object reason field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>desc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object desc field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>origin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object origin field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sever</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object severity field </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>DevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The thrown exception. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/except.h" line="412" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/except.h" bodystart="412" bodyend="426"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d37/classTango_1_1Except_1aea2efa05e2b0f46a343061cf88655547" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Tango::Except::throw_exception</definition>
+        <argsstring>(const string &amp;reason, const string &amp;desc, const char *origin, Tango::ErrSeverity sever=Tango::ERR)</argsstring>
+        <name>throw_exception</name>
+        <param>
+          <type>const string &amp;</type>
+          <declname>reason</declname>
+        </param>
+        <param>
+          <type>const string &amp;</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>origin</declname>
+        </param>
+        <param>
+          <type>Tango::ErrSeverity</type>
+          <declname>sever</declname>
+          <defval>Tango::ERR</defval>
+        </param>
+        <briefdescription>
+<para>Generate and throw a TANGO DevFailed exception. </para>        </briefdescription>
+        <detaileddescription>
+<para>The exception is created with a single DevError object. A default value &quot;Tango::ERR&quot; is defined for the DevError severity field. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>reason</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object reason field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>desc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object desc field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>origin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object origin field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sever</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object severity field </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>DevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The thrown exception. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/except.h" line="446" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/except.h" bodystart="446" bodyend="460"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d37/classTango_1_1Except_1a13ecdf493972a076fcf3627624198cce" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Tango::Except::throw_exception</definition>
+        <argsstring>(const string &amp;reason, const char *desc, const string &amp;origin, Tango::ErrSeverity sever=Tango::ERR)</argsstring>
+        <name>throw_exception</name>
+        <param>
+          <type>const string &amp;</type>
+          <declname>reason</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>const string &amp;</type>
+          <declname>origin</declname>
+        </param>
+        <param>
+          <type>Tango::ErrSeverity</type>
+          <declname>sever</declname>
+          <defval>Tango::ERR</defval>
+        </param>
+        <briefdescription>
+<para>Generate and throw a TANGO DevFailed exception. </para>        </briefdescription>
+        <detaileddescription>
+<para>The exception is created with a single DevError object. A default value &quot;Tango::ERR&quot; is defined for the DevError severity field. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>reason</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object reason field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>desc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object desc field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>origin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object origin field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sever</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object severity field </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>DevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The thrown exception. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/except.h" line="480" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/except.h" bodystart="480" bodyend="494"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d37/classTango_1_1Except_1ac7a9b59a82aa568890f75c0232e68824" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Tango::Except::throw_exception</definition>
+        <argsstring>(const string &amp;reason, const char *desc, const char *origin, Tango::ErrSeverity sever=Tango::ERR)</argsstring>
+        <name>throw_exception</name>
+        <param>
+          <type>const string &amp;</type>
+          <declname>reason</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>origin</declname>
+        </param>
+        <param>
+          <type>Tango::ErrSeverity</type>
+          <declname>sever</declname>
+          <defval>Tango::ERR</defval>
+        </param>
+        <briefdescription>
+<para>Generate and throw a TANGO DevFailed exception. </para>        </briefdescription>
+        <detaileddescription>
+<para>The exception is created with a single DevError object. A default value &quot;Tango::ERR&quot; is defined for the DevError severity field. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>reason</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object reason field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>desc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object desc field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>origin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object origin field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sever</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object severity field </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>DevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The thrown exception. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/except.h" line="514" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/except.h" bodystart="514" bodyend="528"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d37/classTango_1_1Except_1ac7d152b9c381a9ff2202224404b4df34" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Tango::Except::throw_exception</definition>
+        <argsstring>(const char *reason, const string &amp;desc, const string &amp;origin, Tango::ErrSeverity sever=Tango::ERR)</argsstring>
+        <name>throw_exception</name>
+        <param>
+          <type>const char *</type>
+          <declname>reason</declname>
+        </param>
+        <param>
+          <type>const string &amp;</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>const string &amp;</type>
+          <declname>origin</declname>
+        </param>
+        <param>
+          <type>Tango::ErrSeverity</type>
+          <declname>sever</declname>
+          <defval>Tango::ERR</defval>
+        </param>
+        <briefdescription>
+<para>Generate and throw a TANGO DevFailed exception. </para>        </briefdescription>
+        <detaileddescription>
+<para>The exception is created with a single DevError object. A default value &quot;Tango::ERR&quot; is defined for the DevError severity field. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>reason</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object reason field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>desc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object desc field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>origin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object origin field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sever</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object severity field </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>DevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The thrown exception. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/except.h" line="548" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/except.h" bodystart="548" bodyend="562"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d37/classTango_1_1Except_1ae1125b916a127f9b75832b018eb98ede" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Tango::Except::throw_exception</definition>
+        <argsstring>(const char *reason, const string &amp;desc, const char *origin, Tango::ErrSeverity sever=Tango::ERR)</argsstring>
+        <name>throw_exception</name>
+        <param>
+          <type>const char *</type>
+          <declname>reason</declname>
+        </param>
+        <param>
+          <type>const string &amp;</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>origin</declname>
+        </param>
+        <param>
+          <type>Tango::ErrSeverity</type>
+          <declname>sever</declname>
+          <defval>Tango::ERR</defval>
+        </param>
+        <briefdescription>
+<para>Generate and throw a TANGO DevFailed exception. </para>        </briefdescription>
+        <detaileddescription>
+<para>The exception is created with a single DevError object. A default value &quot;Tango::ERR&quot; is defined for the DevError severity field. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>reason</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object reason field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>desc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object desc field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>origin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object origin field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sever</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object severity field </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>DevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The thrown exception. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/except.h" line="582" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/except.h" bodystart="582" bodyend="596"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d37/classTango_1_1Except_1a92359694cca28325fd6480f87e4b9668" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Tango::Except::throw_exception</definition>
+        <argsstring>(const char *reason, const char *desc, const string &amp;origin, Tango::ErrSeverity sever=Tango::ERR)</argsstring>
+        <name>throw_exception</name>
+        <param>
+          <type>const char *</type>
+          <declname>reason</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>const string &amp;</type>
+          <declname>origin</declname>
+        </param>
+        <param>
+          <type>Tango::ErrSeverity</type>
+          <declname>sever</declname>
+          <defval>Tango::ERR</defval>
+        </param>
+        <briefdescription>
+<para>Generate and throw a TANGO DevFailed exception. </para>        </briefdescription>
+        <detaileddescription>
+<para>The exception is created with a single DevError object. A default value &quot;Tango::ERR&quot; is defined for the DevError severity field. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>reason</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object reason field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>desc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object desc field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>origin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object origin field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sever</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object severity field </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>DevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The thrown exception. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/except.h" line="616" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/except.h" bodystart="616" bodyend="630"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d37/classTango_1_1Except_1a379a9cc1c1ccfc574ffecd135279e13f" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Tango::Except::throw_exception</definition>
+        <argsstring>(const string &amp;reason, const string &amp;desc, char *origin, Tango::ErrSeverity sever=Tango::ERR)</argsstring>
+        <name>throw_exception</name>
+        <param>
+          <type>const string &amp;</type>
+          <declname>reason</declname>
+        </param>
+        <param>
+          <type>const string &amp;</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>origin</declname>
+        </param>
+        <param>
+          <type>Tango::ErrSeverity</type>
+          <declname>sever</declname>
+          <defval>Tango::ERR</defval>
+        </param>
+        <briefdescription>
+<para>Generate and throw a TANGO DevFailed exception. </para>        </briefdescription>
+        <detaileddescription>
+<para>The exception is created with a single DevError object. A default value &quot;Tango::ERR&quot; is defined for the DevError severity field. The memory used by the origin parameter will be freed by this method Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>reason</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object reason field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>desc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object desc field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>origin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object origin field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sever</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object severity field </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>DevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The thrown exception. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/except.h" line="651" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/except.h" bodystart="651" bodyend="666"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d37/classTango_1_1Except_1a8a7e6834550169c1b9bd4c6cd822bd58" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Tango::Except::throw_exception</definition>
+        <argsstring>(const string &amp;reason, char *desc, const string &amp;origin, Tango::ErrSeverity sever=Tango::ERR)</argsstring>
+        <name>throw_exception</name>
+        <param>
+          <type>const string &amp;</type>
+          <declname>reason</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>const string &amp;</type>
+          <declname>origin</declname>
+        </param>
+        <param>
+          <type>Tango::ErrSeverity</type>
+          <declname>sever</declname>
+          <defval>Tango::ERR</defval>
+        </param>
+        <briefdescription>
+<para>Generate and throw a TANGO DevFailed exception. </para>        </briefdescription>
+        <detaileddescription>
+<para>The exception is created with a single DevError object. A default value &quot;Tango::ERR&quot; is defined for the DevError severity field. The memory used by the desc parameter will be freed by this method Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>reason</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object reason field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>desc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object desc field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>origin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object origin field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sever</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object severity field </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>DevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The thrown exception. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/except.h" line="687" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/except.h" bodystart="687" bodyend="702"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d37/classTango_1_1Except_1a81dc475cd517c75e49c188bb91fd0e60" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Tango::Except::throw_exception</definition>
+        <argsstring>(const string &amp;reason, char *desc, char *origin, Tango::ErrSeverity sever=Tango::ERR)</argsstring>
+        <name>throw_exception</name>
+        <param>
+          <type>const string &amp;</type>
+          <declname>reason</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>origin</declname>
+        </param>
+        <param>
+          <type>Tango::ErrSeverity</type>
+          <declname>sever</declname>
+          <defval>Tango::ERR</defval>
+        </param>
+        <briefdescription>
+<para>Generate and throw a TANGO DevFailed exception. </para>        </briefdescription>
+        <detaileddescription>
+<para>The exception is created with a single DevError object. A default value &quot;Tango::ERR&quot; is defined for the DevError severity field. The memory used by the origin and desc parameters will be freed by this method Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>reason</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object reason field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>desc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object desc field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>origin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object origin field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sever</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object severity field </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>DevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The thrown exception. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/except.h" line="723" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/except.h" bodystart="723" bodyend="739"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d37/classTango_1_1Except_1a81a64fad0f2d00d7e9eae178fe986ea8" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Tango::Except::throw_exception</definition>
+        <argsstring>(char *reason, const string &amp;desc, const string &amp;origin, Tango::ErrSeverity sever=Tango::ERR)</argsstring>
+        <name>throw_exception</name>
+        <param>
+          <type>char *</type>
+          <declname>reason</declname>
+        </param>
+        <param>
+          <type>const string &amp;</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>const string &amp;</type>
+          <declname>origin</declname>
+        </param>
+        <param>
+          <type>Tango::ErrSeverity</type>
+          <declname>sever</declname>
+          <defval>Tango::ERR</defval>
+        </param>
+        <briefdescription>
+<para>Generate and throw a TANGO DevFailed exception. </para>        </briefdescription>
+        <detaileddescription>
+<para>The exception is created with a single DevError object. A default value &quot;Tango::ERR&quot; is defined for the DevError severity field. The memory used by the reason parameter will be freed by this method Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>reason</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object reason field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>desc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object desc field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>origin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object origin field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sever</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object severity field </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>DevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The thrown exception. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/except.h" line="760" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/except.h" bodystart="760" bodyend="775"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d37/classTango_1_1Except_1a99d02e0220c93333faf67f1b680c38c1" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Tango::Except::throw_exception</definition>
+        <argsstring>(char *reason, const string &amp;desc, char *origin, Tango::ErrSeverity sever=Tango::ERR)</argsstring>
+        <name>throw_exception</name>
+        <param>
+          <type>char *</type>
+          <declname>reason</declname>
+        </param>
+        <param>
+          <type>const string &amp;</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>origin</declname>
+        </param>
+        <param>
+          <type>Tango::ErrSeverity</type>
+          <declname>sever</declname>
+          <defval>Tango::ERR</defval>
+        </param>
+        <briefdescription>
+<para>Generate and throw a TANGO DevFailed exception. </para>        </briefdescription>
+        <detaileddescription>
+<para>The exception is created with a single DevError object. A default value &quot;Tango::ERR&quot; is defined for the DevError severity field. The memory used by the reason and origin parameters will be freed by this method Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>reason</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object reason field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>desc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object desc field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>origin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object origin field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sever</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object severity field </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>DevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The thrown exception. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/except.h" line="796" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/except.h" bodystart="796" bodyend="812"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d37/classTango_1_1Except_1a51c66f4b7d4ef481676117b5db783695" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Tango::Except::throw_exception</definition>
+        <argsstring>(char *reason, char *desc, const string &amp;origin, Tango::ErrSeverity sever=Tango::ERR)</argsstring>
+        <name>throw_exception</name>
+        <param>
+          <type>char *</type>
+          <declname>reason</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>const string &amp;</type>
+          <declname>origin</declname>
+        </param>
+        <param>
+          <type>Tango::ErrSeverity</type>
+          <declname>sever</declname>
+          <defval>Tango::ERR</defval>
+        </param>
+        <briefdescription>
+<para>Generate and throw a TANGO DevFailed exception. </para>        </briefdescription>
+        <detaileddescription>
+<para>The exception is created with a single DevError object. A default value &quot;Tango::ERR&quot; is defined for the DevError severity field. The memory used by the reason and desc parameter will be freed by this method Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>reason</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object reason field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>desc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object desc field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>origin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object origin field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sever</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object severity field </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>DevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The thrown exception. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/except.h" line="833" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/except.h" bodystart="833" bodyend="849"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Re-throw exception inline methods (static)</header>
+      <memberdef kind="function" id="df/d37/classTango_1_1Except_1a9c3792241214eac89e7fbdd91646b67a" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Tango::Except::re_throw_exception</definition>
+        <argsstring>(Tango::DevFailed &amp;ex, const char *reason, const char *desc, const char *origin, Tango::ErrSeverity sever=Tango::ERR)</argsstring>
+        <name>re_throw_exception</name>
+        <param>
+          <type>Tango::DevFailed &amp;</type>
+          <declname>ex</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>reason</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>origin</declname>
+        </param>
+        <param>
+          <type>Tango::ErrSeverity</type>
+          <declname>sever</declname>
+          <defval>Tango::ERR</defval>
+        </param>
+        <briefdescription>
+<para>Re-throw a TANGO DevFailed exception with one more error. </para>        </briefdescription>
+        <detaileddescription>
+<para>The exception is re-thrown with one more DevError object. A default value &quot;Tango::ERR&quot; is defined for the new DevError severity field. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The DevFailed exception </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>reason</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object reason field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>desc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object desc field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>origin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object origin field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sever</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object severity field </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>DevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The thrown exception. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/except.h" line="873" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/except.h" bodystart="873" bodyend="888"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d37/classTango_1_1Except_1ab892eac30e082eca52af8c57f245e46e" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Tango::Except::re_throw_exception</definition>
+        <argsstring>(Tango::DevFailed &amp;ex, const char *reason, const char *desc, char *origin, Tango::ErrSeverity sever=Tango::ERR)</argsstring>
+        <name>re_throw_exception</name>
+        <param>
+          <type>Tango::DevFailed &amp;</type>
+          <declname>ex</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>reason</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>origin</declname>
+        </param>
+        <param>
+          <type>Tango::ErrSeverity</type>
+          <declname>sever</declname>
+          <defval>Tango::ERR</defval>
+        </param>
+        <briefdescription>
+<para>Re-throw a TANGO DevFailed exception with one more error. </para>        </briefdescription>
+        <detaileddescription>
+<para>The exception is re-thrown with one more DevError object. A default value &quot;Tango::ERR&quot; is defined for the new DevError severity field. The memory used by the origin parameter will be freed by this method Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The DevFailed exception </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>reason</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object reason field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>desc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object desc field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>origin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object origin field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sever</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object severity field </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>DevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The thrown exception. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/except.h" line="910" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/except.h" bodystart="910" bodyend="926"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d37/classTango_1_1Except_1a498aaee0525e6650bb17e209581837f8" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Tango::Except::re_throw_exception</definition>
+        <argsstring>(Tango::DevFailed &amp;ex, const char *reason, char *desc, const char *origin, Tango::ErrSeverity sever=Tango::ERR)</argsstring>
+        <name>re_throw_exception</name>
+        <param>
+          <type>Tango::DevFailed &amp;</type>
+          <declname>ex</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>reason</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>origin</declname>
+        </param>
+        <param>
+          <type>Tango::ErrSeverity</type>
+          <declname>sever</declname>
+          <defval>Tango::ERR</defval>
+        </param>
+        <briefdescription>
+<para>Re-throw a TANGO DevFailed exception with one more error. </para>        </briefdescription>
+        <detaileddescription>
+<para>The exception is re-thrown with one more DevError object. A default value &quot;Tango::ERR&quot; is defined for the new DevError severity field. The memory used by the desc parameter will be freed by this method Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The DevFailed exception </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>reason</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object reason field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>desc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object desc field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>origin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object origin field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sever</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object severity field </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>DevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The thrown exception. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/except.h" line="948" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/except.h" bodystart="948" bodyend="964"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d37/classTango_1_1Except_1a0422b78fa9a5632a46f3c617917ea80f" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Tango::Except::re_throw_exception</definition>
+        <argsstring>(Tango::DevFailed &amp;ex, const char *reason, char *desc, char *origin, Tango::ErrSeverity sever=Tango::ERR)</argsstring>
+        <name>re_throw_exception</name>
+        <param>
+          <type>Tango::DevFailed &amp;</type>
+          <declname>ex</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>reason</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>origin</declname>
+        </param>
+        <param>
+          <type>Tango::ErrSeverity</type>
+          <declname>sever</declname>
+          <defval>Tango::ERR</defval>
+        </param>
+        <briefdescription>
+<para>Re-throw a TANGO DevFailed exception with one more error. </para>        </briefdescription>
+        <detaileddescription>
+<para>The exception is re-thrown with one more DevError object. A default value &quot;Tango::ERR&quot; is defined for the new DevError severity field. The memory used by the origin and desc parameters will be freed by this method Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The DevFailed exception </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>reason</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object reason field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>desc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object desc field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>origin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object origin field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sever</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object severity field </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>DevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The thrown exception. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/except.h" line="985" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/except.h" bodystart="985" bodyend="1002"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d37/classTango_1_1Except_1a8896fdbe1a3bbe7b3aee6930a3d01b68" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Tango::Except::re_throw_exception</definition>
+        <argsstring>(Tango::DevFailed &amp;ex, char *reason, const char *desc, const char *origin, Tango::ErrSeverity sever=Tango::ERR)</argsstring>
+        <name>re_throw_exception</name>
+        <param>
+          <type>Tango::DevFailed &amp;</type>
+          <declname>ex</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>reason</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>origin</declname>
+        </param>
+        <param>
+          <type>Tango::ErrSeverity</type>
+          <declname>sever</declname>
+          <defval>Tango::ERR</defval>
+        </param>
+        <briefdescription>
+<para>Re-throw a TANGO DevFailed exception with one more error. </para>        </briefdescription>
+        <detaileddescription>
+<para>The exception is re-thrown with one more DevError object. A default value &quot;Tango::ERR&quot; is defined for the new DevError severity field. The memory used by the reason parameter will be freed by this method Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The DevFailed exception </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>reason</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object reason field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>desc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object desc field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>origin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object origin field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sever</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object severity field </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>DevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The thrown exception. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/except.h" line="1024" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/except.h" bodystart="1024" bodyend="1040"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d37/classTango_1_1Except_1a83510f679847371ba4ac8813e82fc14f" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Tango::Except::re_throw_exception</definition>
+        <argsstring>(Tango::DevFailed &amp;ex, char *reason, const char *desc, char *origin, Tango::ErrSeverity sever=Tango::ERR)</argsstring>
+        <name>re_throw_exception</name>
+        <param>
+          <type>Tango::DevFailed &amp;</type>
+          <declname>ex</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>reason</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>origin</declname>
+        </param>
+        <param>
+          <type>Tango::ErrSeverity</type>
+          <declname>sever</declname>
+          <defval>Tango::ERR</defval>
+        </param>
+        <briefdescription>
+<para>Re-throw a TANGO DevFailed exception with one more error. </para>        </briefdescription>
+        <detaileddescription>
+<para>The exception is re-thrown with one more DevError object. A default value &quot;Tango::ERR&quot; is defined for the new DevError severity field. The memory used by the reason and origin parameters will be freed by this method Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The DevFailed exception </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>reason</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object reason field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>desc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object desc field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>origin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object origin field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sever</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object severity field </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>DevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The thrown exception. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/except.h" line="1062" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/except.h" bodystart="1062" bodyend="1079"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d37/classTango_1_1Except_1aa01396d9679d7b260a31a61735bf4004" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Tango::Except::re_throw_exception</definition>
+        <argsstring>(Tango::DevFailed &amp;ex, char *reason, char *desc, const char *origin, Tango::ErrSeverity sever=Tango::ERR)</argsstring>
+        <name>re_throw_exception</name>
+        <param>
+          <type>Tango::DevFailed &amp;</type>
+          <declname>ex</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>reason</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>origin</declname>
+        </param>
+        <param>
+          <type>Tango::ErrSeverity</type>
+          <declname>sever</declname>
+          <defval>Tango::ERR</defval>
+        </param>
+        <briefdescription>
+<para>Re-throw a TANGO DevFailed exception with one more error. </para>        </briefdescription>
+        <detaileddescription>
+<para>The exception is re-thrown with one more DevError object. A default value &quot;Tango::ERR&quot; is defined for the new DevError severity field. The memory used by the reason and desc parameters will be freed by this method Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The DevFailed exception </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>reason</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object reason field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>desc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object desc field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>origin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object origin field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sever</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object severity field </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>DevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The thrown exception. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/except.h" line="1101" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/except.h" bodystart="1101" bodyend="1118"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d37/classTango_1_1Except_1ae2c8a7188665f1cd16f448aa4ab83d17" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Tango::Except::re_throw_exception</definition>
+        <argsstring>(Tango::DevFailed &amp;ex, char *reason, char *desc, char *origin, Tango::ErrSeverity sever=Tango::ERR)</argsstring>
+        <name>re_throw_exception</name>
+        <param>
+          <type>Tango::DevFailed &amp;</type>
+          <declname>ex</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>reason</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>origin</declname>
+        </param>
+        <param>
+          <type>Tango::ErrSeverity</type>
+          <declname>sever</declname>
+          <defval>Tango::ERR</defval>
+        </param>
+        <briefdescription>
+<para>Re-throw a TANGO DevFailed exception with one more error. </para>        </briefdescription>
+        <detaileddescription>
+<para>The exception is re-thrown with one more DevError object. A default value &quot;Tango::ERR&quot; is defined for the new DevError severity field. The memory used by the origin, reason and desc parameters will be freed by this method Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The DevFailed exception </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>reason</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object reason field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>desc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object desc field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>origin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object origin field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sever</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object severity field </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>DevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The thrown exception. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/except.h" line="1140" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/except.h" bodystart="1140" bodyend="1158"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d37/classTango_1_1Except_1ace5f51b25e895260bb85b318d4e4f59c" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Tango::Except::re_throw_exception</definition>
+        <argsstring>(Tango::DevFailed &amp;ex, const string &amp;reason, const string &amp;desc, const string &amp;origin, Tango::ErrSeverity sever=Tango::ERR)</argsstring>
+        <name>re_throw_exception</name>
+        <param>
+          <type>Tango::DevFailed &amp;</type>
+          <declname>ex</declname>
+        </param>
+        <param>
+          <type>const string &amp;</type>
+          <declname>reason</declname>
+        </param>
+        <param>
+          <type>const string &amp;</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>const string &amp;</type>
+          <declname>origin</declname>
+        </param>
+        <param>
+          <type>Tango::ErrSeverity</type>
+          <declname>sever</declname>
+          <defval>Tango::ERR</defval>
+        </param>
+        <briefdescription>
+<para>Re-throw a TANGO DevFailed exception with one more error. </para>        </briefdescription>
+        <detaileddescription>
+<para>The exception is re-thrown with one more DevError object. A default value &quot;Tango::ERR&quot; is defined for the new DevError severity field. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The DevFailed exception </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>reason</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object reason field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>desc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object desc field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>origin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object origin field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sever</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object severity field </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>DevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The thrown exception. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/except.h" line="1179" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/except.h" bodystart="1179" bodyend="1194"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d37/classTango_1_1Except_1aeba14e603df6a856739c7734859c50f9" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Tango::Except::re_throw_exception</definition>
+        <argsstring>(Tango::DevFailed &amp;ex, const string &amp;reason, const string &amp;desc, const char *origin, Tango::ErrSeverity sever=Tango::ERR)</argsstring>
+        <name>re_throw_exception</name>
+        <param>
+          <type>Tango::DevFailed &amp;</type>
+          <declname>ex</declname>
+        </param>
+        <param>
+          <type>const string &amp;</type>
+          <declname>reason</declname>
+        </param>
+        <param>
+          <type>const string &amp;</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>origin</declname>
+        </param>
+        <param>
+          <type>Tango::ErrSeverity</type>
+          <declname>sever</declname>
+          <defval>Tango::ERR</defval>
+        </param>
+        <briefdescription>
+<para>Re-throw a TANGO DevFailed exception with one more error. </para>        </briefdescription>
+        <detaileddescription>
+<para>The exception is re-thrown with one more DevError object. A default value &quot;Tango::ERR&quot; is defined for the new DevError severity field. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The DevFailed exception </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>reason</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object reason field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>desc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object desc field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>origin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object origin field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sever</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object severity field </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>DevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The thrown exception. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/except.h" line="1215" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/except.h" bodystart="1215" bodyend="1230"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d37/classTango_1_1Except_1a03a3ffc68c976acb58a8e61eb50fcad6" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Tango::Except::re_throw_exception</definition>
+        <argsstring>(Tango::DevFailed &amp;ex, const string &amp;reason, const char *desc, const string &amp;origin, Tango::ErrSeverity sever=Tango::ERR)</argsstring>
+        <name>re_throw_exception</name>
+        <param>
+          <type>Tango::DevFailed &amp;</type>
+          <declname>ex</declname>
+        </param>
+        <param>
+          <type>const string &amp;</type>
+          <declname>reason</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>const string &amp;</type>
+          <declname>origin</declname>
+        </param>
+        <param>
+          <type>Tango::ErrSeverity</type>
+          <declname>sever</declname>
+          <defval>Tango::ERR</defval>
+        </param>
+        <briefdescription>
+<para>Re-throw a TANGO DevFailed exception with one more error. </para>        </briefdescription>
+        <detaileddescription>
+<para>The exception is re-thrown with one more DevError object. A default value &quot;Tango::ERR&quot; is defined for the new DevError severity field. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The DevFailed exception </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>reason</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object reason field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>desc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object desc field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>origin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object origin field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sever</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object severity field </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>DevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The thrown exception. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/except.h" line="1251" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/except.h" bodystart="1251" bodyend="1266"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d37/classTango_1_1Except_1a1ca76b2d4a5b22d0a2079e3889b12a9e" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Tango::Except::re_throw_exception</definition>
+        <argsstring>(Tango::DevFailed &amp;ex, const string &amp;reason, const char *desc, const char *origin, Tango::ErrSeverity sever=Tango::ERR)</argsstring>
+        <name>re_throw_exception</name>
+        <param>
+          <type>Tango::DevFailed &amp;</type>
+          <declname>ex</declname>
+        </param>
+        <param>
+          <type>const string &amp;</type>
+          <declname>reason</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>origin</declname>
+        </param>
+        <param>
+          <type>Tango::ErrSeverity</type>
+          <declname>sever</declname>
+          <defval>Tango::ERR</defval>
+        </param>
+        <briefdescription>
+<para>Re-throw a TANGO DevFailed exception with one more error. </para>        </briefdescription>
+        <detaileddescription>
+<para>The exception is re-thrown with one more DevError object. A default value &quot;Tango::ERR&quot; is defined for the new DevError severity field. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The DevFailed exception </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>reason</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object reason field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>desc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object desc field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>origin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object origin field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sever</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object severity field </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>DevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The thrown exception. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/except.h" line="1287" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/except.h" bodystart="1287" bodyend="1302"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d37/classTango_1_1Except_1aa28f7d876b6967235e854555fc2fe1ba" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Tango::Except::re_throw_exception</definition>
+        <argsstring>(Tango::DevFailed &amp;ex, const char *reason, const string &amp;desc, const string &amp;origin, Tango::ErrSeverity sever=Tango::ERR)</argsstring>
+        <name>re_throw_exception</name>
+        <param>
+          <type>Tango::DevFailed &amp;</type>
+          <declname>ex</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>reason</declname>
+        </param>
+        <param>
+          <type>const string &amp;</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>const string &amp;</type>
+          <declname>origin</declname>
+        </param>
+        <param>
+          <type>Tango::ErrSeverity</type>
+          <declname>sever</declname>
+          <defval>Tango::ERR</defval>
+        </param>
+        <briefdescription>
+<para>Re-throw a TANGO DevFailed exception with one more error. </para>        </briefdescription>
+        <detaileddescription>
+<para>The exception is re-thrown with one more DevError object. A default value &quot;Tango::ERR&quot; is defined for the new DevError severity field. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The DevFailed exception </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>reason</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object reason field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>desc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object desc field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>origin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object origin field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sever</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object severity field </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>DevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The thrown exception. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/except.h" line="1323" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/except.h" bodystart="1323" bodyend="1338"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d37/classTango_1_1Except_1a93e9e068103c707d2c4931f8c7804ef8" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Tango::Except::re_throw_exception</definition>
+        <argsstring>(Tango::DevFailed &amp;ex, const char *reason, const string &amp;desc, const char *origin, Tango::ErrSeverity sever=Tango::ERR)</argsstring>
+        <name>re_throw_exception</name>
+        <param>
+          <type>Tango::DevFailed &amp;</type>
+          <declname>ex</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>reason</declname>
+        </param>
+        <param>
+          <type>const string &amp;</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>origin</declname>
+        </param>
+        <param>
+          <type>Tango::ErrSeverity</type>
+          <declname>sever</declname>
+          <defval>Tango::ERR</defval>
+        </param>
+        <briefdescription>
+<para>Re-throw a TANGO DevFailed exception with one more error. </para>        </briefdescription>
+        <detaileddescription>
+<para>The exception is re-thrown with one more DevError object. A default value &quot;Tango::ERR&quot; is defined for the new DevError severity field. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The DevFailed exception </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>reason</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object reason field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>desc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object desc field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>origin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object origin field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sever</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object severity field </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>DevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The thrown exception. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/except.h" line="1359" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/except.h" bodystart="1359" bodyend="1374"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d37/classTango_1_1Except_1a1d0f06fa487f3506e49cad58d36e6ba0" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Tango::Except::re_throw_exception</definition>
+        <argsstring>(Tango::DevFailed &amp;ex, const char *reason, const char *desc, const string &amp;origin, Tango::ErrSeverity sever=Tango::ERR)</argsstring>
+        <name>re_throw_exception</name>
+        <param>
+          <type>Tango::DevFailed &amp;</type>
+          <declname>ex</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>reason</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>const string &amp;</type>
+          <declname>origin</declname>
+        </param>
+        <param>
+          <type>Tango::ErrSeverity</type>
+          <declname>sever</declname>
+          <defval>Tango::ERR</defval>
+        </param>
+        <briefdescription>
+<para>Re-throw a TANGO DevFailed exception with one more error. </para>        </briefdescription>
+        <detaileddescription>
+<para>The exception is re-thrown with one more DevError object. A default value &quot;Tango::ERR&quot; is defined for the new DevError severity field. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The DevFailed exception </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>reason</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object reason field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>desc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object desc field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>origin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object origin field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sever</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object severity field </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>DevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The thrown exception. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/except.h" line="1395" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/except.h" bodystart="1395" bodyend="1410"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d37/classTango_1_1Except_1a73f743dfaac89212eeb994bb40e79577" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Tango::Except::re_throw_exception</definition>
+        <argsstring>(Tango::DevFailed &amp;ex, const string &amp;reason, const string &amp;desc, char *origin, Tango::ErrSeverity sever=Tango::ERR)</argsstring>
+        <name>re_throw_exception</name>
+        <param>
+          <type>Tango::DevFailed &amp;</type>
+          <declname>ex</declname>
+        </param>
+        <param>
+          <type>const string &amp;</type>
+          <declname>reason</declname>
+        </param>
+        <param>
+          <type>const string &amp;</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>origin</declname>
+        </param>
+        <param>
+          <type>Tango::ErrSeverity</type>
+          <declname>sever</declname>
+          <defval>Tango::ERR</defval>
+        </param>
+        <briefdescription>
+<para>Re-throw a TANGO DevFailed exception with one more error. </para>        </briefdescription>
+        <detaileddescription>
+<para>The exception is re-thrown with one more DevError object. A default value &quot;Tango::ERR&quot; is defined for the new DevError severity field. The memory used by the origin parameter will be freed by this method Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The DevFailed exception </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>reason</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object reason field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>desc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object desc field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>origin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object origin field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sever</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object severity field </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>DevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The thrown exception. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/except.h" line="1432" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/except.h" bodystart="1432" bodyend="1448"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d37/classTango_1_1Except_1a1a0b86d7563895673901bbfb9e862b9b" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Tango::Except::re_throw_exception</definition>
+        <argsstring>(Tango::DevFailed &amp;ex, const string &amp;reason, char *desc, const string &amp;origin, Tango::ErrSeverity sever=Tango::ERR)</argsstring>
+        <name>re_throw_exception</name>
+        <param>
+          <type>Tango::DevFailed &amp;</type>
+          <declname>ex</declname>
+        </param>
+        <param>
+          <type>const string &amp;</type>
+          <declname>reason</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>const string &amp;</type>
+          <declname>origin</declname>
+        </param>
+        <param>
+          <type>Tango::ErrSeverity</type>
+          <declname>sever</declname>
+          <defval>Tango::ERR</defval>
+        </param>
+        <briefdescription>
+<para>Re-throw a TANGO DevFailed exception with one more error. </para>        </briefdescription>
+        <detaileddescription>
+<para>The exception is re-thrown with one more DevError object. A default value &quot;Tango::ERR&quot; is defined for the new DevError severity field. The memory used by the desc parameter will be freed by this method Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The DevFailed exception </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>reason</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object reason field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>desc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object desc field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>origin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object origin field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sever</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object severity field </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>DevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The thrown exception. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/except.h" line="1470" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/except.h" bodystart="1470" bodyend="1486"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d37/classTango_1_1Except_1ab919ac526ab5cc7912d98df37989a96d" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Tango::Except::re_throw_exception</definition>
+        <argsstring>(Tango::DevFailed &amp;ex, const string &amp;reason, char *desc, char *origin, Tango::ErrSeverity sever=Tango::ERR)</argsstring>
+        <name>re_throw_exception</name>
+        <param>
+          <type>Tango::DevFailed &amp;</type>
+          <declname>ex</declname>
+        </param>
+        <param>
+          <type>const string &amp;</type>
+          <declname>reason</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>origin</declname>
+        </param>
+        <param>
+          <type>Tango::ErrSeverity</type>
+          <declname>sever</declname>
+          <defval>Tango::ERR</defval>
+        </param>
+        <briefdescription>
+<para>Re-throw a TANGO DevFailed exception with one more error. </para>        </briefdescription>
+        <detaileddescription>
+<para>The exception is re-thrown with one more DevError object. A default value &quot;Tango::ERR&quot; is defined for the new DevError severity field. The memory used by the origin and desc parameters will be freed by this method Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The DevFailed exception </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>reason</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object reason field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>desc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object desc field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>origin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object origin field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sever</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object severity field </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>DevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The thrown exception. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/except.h" line="1508" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/except.h" bodystart="1508" bodyend="1525"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d37/classTango_1_1Except_1aa52f5b4614aaa58d60a2fc830ef23ba6" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Tango::Except::re_throw_exception</definition>
+        <argsstring>(Tango::DevFailed &amp;ex, char *reason, const string &amp;desc, const string &amp;origin, Tango::ErrSeverity sever=Tango::ERR)</argsstring>
+        <name>re_throw_exception</name>
+        <param>
+          <type>Tango::DevFailed &amp;</type>
+          <declname>ex</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>reason</declname>
+        </param>
+        <param>
+          <type>const string &amp;</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>const string &amp;</type>
+          <declname>origin</declname>
+        </param>
+        <param>
+          <type>Tango::ErrSeverity</type>
+          <declname>sever</declname>
+          <defval>Tango::ERR</defval>
+        </param>
+        <briefdescription>
+<para>Re-throw a TANGO DevFailed exception with one more error. </para>        </briefdescription>
+        <detaileddescription>
+<para>The exception is re-thrown with one more DevError object. A default value &quot;Tango::ERR&quot; is defined for the new DevError severity field. The memory used by the reason parameter will be freed by this method Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The DevFailed exception </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>reason</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object reason field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>desc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object desc field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>origin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object origin field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sever</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object severity field </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>DevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The thrown exception. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/except.h" line="1547" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/except.h" bodystart="1547" bodyend="1563"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d37/classTango_1_1Except_1a28f9a09de30e050f27d879e1120d3ad2" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Tango::Except::re_throw_exception</definition>
+        <argsstring>(Tango::DevFailed &amp;ex, char *reason, const string &amp;desc, char *origin, Tango::ErrSeverity sever=Tango::ERR)</argsstring>
+        <name>re_throw_exception</name>
+        <param>
+          <type>Tango::DevFailed &amp;</type>
+          <declname>ex</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>reason</declname>
+        </param>
+        <param>
+          <type>const string &amp;</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>origin</declname>
+        </param>
+        <param>
+          <type>Tango::ErrSeverity</type>
+          <declname>sever</declname>
+          <defval>Tango::ERR</defval>
+        </param>
+        <briefdescription>
+<para>Re-throw a TANGO DevFailed exception with one more error. </para>        </briefdescription>
+        <detaileddescription>
+<para>The exception is re-thrown with one more DevError object. A default value &quot;Tango::ERR&quot; is defined for the new DevError severity field. The memory used by the reason and origin parameters will be freed by this method Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The DevFailed exception </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>reason</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object reason field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>desc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object desc field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>origin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object origin field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sever</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object severity field </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>DevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The thrown exception. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/except.h" line="1585" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/except.h" bodystart="1585" bodyend="1602"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d37/classTango_1_1Except_1a42d1f2a98eb402a268e582128ddd61ab" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Tango::Except::re_throw_exception</definition>
+        <argsstring>(Tango::DevFailed &amp;ex, char *reason, char *desc, const string &amp;origin, Tango::ErrSeverity sever=Tango::ERR)</argsstring>
+        <name>re_throw_exception</name>
+        <param>
+          <type>Tango::DevFailed &amp;</type>
+          <declname>ex</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>reason</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>const string &amp;</type>
+          <declname>origin</declname>
+        </param>
+        <param>
+          <type>Tango::ErrSeverity</type>
+          <declname>sever</declname>
+          <defval>Tango::ERR</defval>
+        </param>
+        <briefdescription>
+<para>Re-throw a TANGO DevFailed exception with one more error. </para>        </briefdescription>
+        <detaileddescription>
+<para>The exception is re-thrown with one more DevError object. A default value &quot;Tango::ERR&quot; is defined for the new DevError severity field. The memory used by the reason and desc parameter will be freed by this method Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The DevFailed exception </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>reason</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object reason field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>desc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object desc field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>origin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object origin field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sever</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object severity field </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>DevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The thrown exception. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/except.h" line="1624" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/except.h" bodystart="1624" bodyend="1641"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Other throw exception methods</header>
+      <memberdef kind="function" id="df/d37/classTango_1_1Except_1a1b8717bff6543c006432b21f75bfbc91" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Tango::Except::throw_exception</definition>
+        <argsstring>(const CORBA::SystemException &amp;ex, const char *origin)</argsstring>
+        <name>throw_exception</name>
+        <param>
+          <type>const CORBA::SystemException &amp;</type>
+          <declname>ex</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>origin</declname>
+        </param>
+        <briefdescription>
+<para>Generate and throw a TANGO DevFailed exception. </para>        </briefdescription>
+        <detaileddescription>
+<para>The exception is created with a single DevError object. A value &quot;Tango::ERR&quot; is defined for the DevError severity field. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A CORBA System Exception. The reason and desc fields of the DevError object will be set according to the data in this exception. The desc field is always set to API_CorbaSysException and the reason flag is different depending on the exact type of the CORBA system exception. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>origin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object origin field </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>DevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The thrown exception. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/except.h" line="1664" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d37/classTango_1_1Except_1af5e4556620778aafe5f4ac804d2487f3" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Tango::Except::throw_exception</definition>
+        <argsstring>(const CORBA::SystemException &amp;ex, char *origin)</argsstring>
+        <name>throw_exception</name>
+        <param>
+          <type>const CORBA::SystemException &amp;</type>
+          <declname>ex</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>origin</declname>
+        </param>
+        <briefdescription>
+<para>Generate and throw a TANGO DevFailed exception. </para>        </briefdescription>
+        <detaileddescription>
+<para>The exception is created with a single DevError object. A value &quot;Tango::ERR&quot; is defined for the DevError severity field. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A CORBA System Exception. The reason and desc fields of the DevError object will be set according to the data in this exception. The desc field is always set to API_CorbaSysException and the reason flag is different depending on the exact type of the CORBA system exception. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>origin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object origin field. The memory allocated for this parameter will be freed by this method. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>DevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The thrown exception. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/except.h" line="1685" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d37/classTango_1_1Except_1aa48033af1929e523868abce480161902" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Tango::Except::throw_exception</definition>
+        <argsstring>(const CORBA::SystemException &amp;ex, const string &amp;origin)</argsstring>
+        <name>throw_exception</name>
+        <param>
+          <type>const CORBA::SystemException &amp;</type>
+          <declname>ex</declname>
+        </param>
+        <param>
+          <type>const string &amp;</type>
+          <declname>origin</declname>
+        </param>
+        <briefdescription>
+<para>Generate and throw a TANGO DevFailed exception. </para>        </briefdescription>
+        <detaileddescription>
+<para>The exception is created with a single DevError object. A value &quot;Tango::ERR&quot; is defined for the DevError severity field. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A CORBA System Exception. The reason and desc fields of the DevError object will be set according to the data in this exception. The desc field is always set to API_CorbaSysException and the reason flag is different depending on the exact type of the CORBA system exception. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>origin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object origin field. The memory allocated for this parameter will be freed by this method. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>DevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The thrown exception. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/except.h" line="1706" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d37/classTango_1_1Except_1a79a7b2e44c9584e8795042c1ff7a92cc" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Tango::Except::throw_named_exception</definition>
+        <argsstring>(const char *att_name, const char *reason, const char *desc, const char *origin, Tango::ErrSeverity sever=Tango::ERR)</argsstring>
+        <name>throw_named_exception</name>
+        <param>
+          <type>const char *</type>
+          <declname>att_name</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>reason</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>origin</declname>
+        </param>
+        <param>
+          <type>Tango::ErrSeverity</type>
+          <declname>sever</declname>
+          <defval>Tango::ERR</defval>
+        </param>
+        <briefdescription>
+<para>Throw a TANGO MultiDevFailed exception. </para>        </briefdescription>
+        <detaileddescription>
+<para>Throw a MultiDevFailed exception with one more DevError object for the attribute with name given as first parameter. A default value &quot;Tango::ERR&quot; is defined for the new DevError severity field. Note that throwing MultiDevFailed exception is allowed only in attribute writing methods. The memory used by the origin and desc parameters will be freed by this method Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>att_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attribute name </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>reason</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object reason field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>desc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object desc field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>origin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object origin field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sever</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object severity field </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>MultiDevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The thrown exception. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>MultiDevFailed</bold> exception specification </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/except.h" line="1731" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/except.h" bodystart="1731" bodyend="1746"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d37/classTango_1_1Except_1a55ba95758fa392f750ad9b84d0a636f8" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Tango::Except::throw_named_exception</definition>
+        <argsstring>(vector&lt; string &gt; &amp;atts, const char *reason, const char *desc, const char *origin, Tango::ErrSeverity sever=Tango::ERR)</argsstring>
+        <name>throw_named_exception</name>
+        <param>
+          <type>vector&lt; string &gt; &amp;</type>
+          <declname>atts</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>reason</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>origin</declname>
+        </param>
+        <param>
+          <type>Tango::ErrSeverity</type>
+          <declname>sever</declname>
+          <defval>Tango::ERR</defval>
+        </param>
+        <briefdescription>
+<para>Throw a TANGO MultiDevFailed exception. </para>        </briefdescription>
+        <detaileddescription>
+<para>Throw a MultiDevFailed exception with one more DevError object for the attribute list with names given as first parameter. A default value &quot;Tango::ERR&quot; is defined for the new DevError severity field. Note that throwing MultiDevFailed exception is allowed only in attribute writing methods. The memory used by the origin and desc parameters will be freed by this method Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>atts</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attributes name vector </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>reason</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object reason field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>desc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object desc field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>origin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object origin field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sever</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object severity field </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>MultiDevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The thrown exception. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>MultiDevFailed</bold> exception specification </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/except.h" line="1769" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/except.h" bodystart="1769" bodyend="1788"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d37/classTango_1_1Except_1a8df2d695cd46b604cf136e5096a4514a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Tango::Except::throw_named_exception</definition>
+        <argsstring>(Tango::DeviceImpl *d, long att_idx, const char *reason, const char *desc, const char *origin, Tango::ErrSeverity sever=Tango::ERR)</argsstring>
+        <name>throw_named_exception</name>
+        <param>
+          <type><ref refid="d3/d62/classTango_1_1DeviceImpl" kindref="compound">Tango::DeviceImpl</ref> *</type>
+          <declname>d</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>att_idx</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>reason</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>origin</declname>
+        </param>
+        <param>
+          <type>Tango::ErrSeverity</type>
+          <declname>sever</declname>
+          <defval>Tango::ERR</defval>
+        </param>
+        <briefdescription>
+<para>Throw a TANGO MultiDevFailed exception. </para>        </briefdescription>
+        <detaileddescription>
+<para>Throw a MultiDevFailed exception with one more DevError object for one attribute with index given as second parameter. The attributes index is the index received by the write_attr_hardware() method. A default value &quot;Tango::ERR&quot; is defined for the new DevError severity field. Note that throwing MultiDevFailed exception is allowed only in attribute writing methods.</para><para>The memory used by the origin and desc parameters will be freed by this method Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>d</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The device pointer </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>att_idx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attributes index </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>reason</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object reason field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>desc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object desc field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>origin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object origin field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sever</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object severity field </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>MultiDevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The thrown exception. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>MultiDevFailed</bold> exception specification </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/except.h" line="1815" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d37/classTango_1_1Except_1a3c79b097902506591430124f8db3341a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Tango::Except::throw_named_exception</definition>
+        <argsstring>(Tango::DeviceImpl *d, vector&lt; long &gt; &amp;atts, const char *reason, const char *desc, const char *origin, Tango::ErrSeverity sever=Tango::ERR)</argsstring>
+        <name>throw_named_exception</name>
+        <param>
+          <type><ref refid="d3/d62/classTango_1_1DeviceImpl" kindref="compound">Tango::DeviceImpl</ref> *</type>
+          <declname>d</declname>
+        </param>
+        <param>
+          <type>vector&lt; long &gt; &amp;</type>
+          <declname>atts</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>reason</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>desc</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>origin</declname>
+        </param>
+        <param>
+          <type>Tango::ErrSeverity</type>
+          <declname>sever</declname>
+          <defval>Tango::ERR</defval>
+        </param>
+        <briefdescription>
+<para>Throw a TANGO MultiDevFailed exception. </para>        </briefdescription>
+        <detaileddescription>
+<para>Throw a MultiDevFailed exception with one more DevError object for the attribute list with indexes given as second parameter. The attributes indexes are the index received by the write_attr_hardware() method. A default value &quot;Tango::ERR&quot; is defined for the new DevError severity field. Note that throwing MultiDevFailed exception is allowed only in attribute writing methods.</para><para>The memory used by the origin and desc parameters will be freed by this method Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>d</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The device pointer </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>atts</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The attributes indexes vector </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>reason</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object reason field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>desc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object desc field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>origin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object origin field </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sever</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception DevError object severity field </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>MultiDevFailed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The thrown exception. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>MultiDevFailed</bold> exception specification </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/except.h" line="1843" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d37/classTango_1_1Except_1ae6c9e03693b15d5645ce0e6515c09776" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool Tango::Except::compare_exception</definition>
+        <argsstring>(Tango::DevFailed &amp;ex1, Tango::DevFailed &amp;ex2)</argsstring>
+        <name>compare_exception</name>
+        <param>
+          <type>Tango::DevFailed &amp;</type>
+          <declname>ex1</declname>
+        </param>
+        <param>
+          <type>Tango::DevFailed &amp;</type>
+          <declname>ex2</declname>
+        </param>
+        <briefdescription>
+<para>Compare two <ref refid="de/ddf/namespaceTango" kindref="compound">Tango</ref> DevFailed exceptions for equality. </para>        </briefdescription>
+        <detaileddescription>
+<para>The two DevFailed exceptions are verified by comparing the reason, origin, description and severity of all exceptions in the error stack. The strings reason, origin and description are compared literally. Click <ulink url="../../../tango_idl/idl_html/_Tango.html#DevFailed">here</ulink> to read <bold>DevFailed</bold> exception specification</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ex1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The first DevFailed exception </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ex2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The second DevFailed exception </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A boolean set to true if the two exceptions are equal </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/except.h" line="1860" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="df/d37/classTango_1_1Except_1ae0b5f39be74fcc6ab01f6ee8eaee734d" prot="private" static="yes" mutable="no">
+        <type>char</type>
+        <definition>char Tango::Except::mess[256]</definition>
+        <argsstring>[256]</argsstring>
+        <name>mess</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/except.h" line="1873" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/except.h" bodystart="1873" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="df/d37/classTango_1_1Except_1a0380f9df1e0d487e765ce07d180f62f3" prot="private" static="yes" mutable="no">
+        <type>omni_mutex</type>
+        <definition>omni_mutex Tango::Except::the_mutex</definition>
+        <argsstring></argsstring>
+        <name>the_mutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/except.h" line="1869" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/except.h" bodystart="1869" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="df/d37/classTango_1_1Except_1a13787b9eb5decbd678f356a766d45932" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>static char* Tango::Except::print_CORBA_SystemException</definition>
+        <argsstring>(const CORBA::SystemException *)</argsstring>
+        <name>print_CORBA_SystemException</name>
+        <param>
+          <type>const CORBA::SystemException *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/except.h" line="1867" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d37/classTango_1_1Except_1a51a8126d9fe90d580058ae6304e0ddfc" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>static char* Tango::Except::print_CORBA_SystemException_r</definition>
+        <argsstring>(const CORBA::SystemException *, char *err_msg)</argsstring>
+        <name>print_CORBA_SystemException_r</name>
+        <param>
+          <type>const CORBA::SystemException *</type>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>err_msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tango/workspace/cppTango/include/tango/server/except.h" line="1868" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Container class for all exception related methods. </para>    </briefdescription>
+    <detaileddescription>
+<para>Most of these methods are static methods</para><para>$Author$ $Revision$ </para>    </detaileddescription>
+    <location file="/home/tango/workspace/cppTango/include/tango/server/except.h" line="75" column="1" bodyfile="/home/tango/workspace/cppTango/include/tango/server/except.h" bodystart="74" bodyend="1874"/>
+    <listofallmembers>
+      <member refid="df/d37/classTango_1_1Except_1ae6c9e03693b15d5645ce0e6515c09776" prot="public" virt="non-virtual"><scope>Tango::Except</scope><name>compare_exception</name></member>
+      <member refid="df/d37/classTango_1_1Except_1ae0b5f39be74fcc6ab01f6ee8eaee734d" prot="private" virt="non-virtual"><scope>Tango::Except</scope><name>mess</name></member>
+      <member refid="df/d37/classTango_1_1Except_1a13787b9eb5decbd678f356a766d45932" prot="private" virt="non-virtual"><scope>Tango::Except</scope><name>print_CORBA_SystemException</name></member>
+      <member refid="df/d37/classTango_1_1Except_1a51a8126d9fe90d580058ae6304e0ddfc" prot="private" virt="non-virtual"><scope>Tango::Except</scope><name>print_CORBA_SystemException_r</name></member>
+      <member refid="df/d37/classTango_1_1Except_1aba359c6be26a171c1d9ebd143f7a9630" prot="public" virt="non-virtual"><scope>Tango::Except</scope><name>print_error_stack</name></member>
+      <member refid="df/d37/classTango_1_1Except_1a649730652d055010916449aad7a9b5f3" prot="public" virt="non-virtual"><scope>Tango::Except</scope><name>print_exception</name></member>
+      <member refid="df/d37/classTango_1_1Except_1a9c3792241214eac89e7fbdd91646b67a" prot="public" virt="non-virtual"><scope>Tango::Except</scope><name>re_throw_exception</name></member>
+      <member refid="df/d37/classTango_1_1Except_1ab892eac30e082eca52af8c57f245e46e" prot="public" virt="non-virtual"><scope>Tango::Except</scope><name>re_throw_exception</name></member>
+      <member refid="df/d37/classTango_1_1Except_1a498aaee0525e6650bb17e209581837f8" prot="public" virt="non-virtual"><scope>Tango::Except</scope><name>re_throw_exception</name></member>
+      <member refid="df/d37/classTango_1_1Except_1a0422b78fa9a5632a46f3c617917ea80f" prot="public" virt="non-virtual"><scope>Tango::Except</scope><name>re_throw_exception</name></member>
+      <member refid="df/d37/classTango_1_1Except_1a8896fdbe1a3bbe7b3aee6930a3d01b68" prot="public" virt="non-virtual"><scope>Tango::Except</scope><name>re_throw_exception</name></member>
+      <member refid="df/d37/classTango_1_1Except_1a83510f679847371ba4ac8813e82fc14f" prot="public" virt="non-virtual"><scope>Tango::Except</scope><name>re_throw_exception</name></member>
+      <member refid="df/d37/classTango_1_1Except_1aa01396d9679d7b260a31a61735bf4004" prot="public" virt="non-virtual"><scope>Tango::Except</scope><name>re_throw_exception</name></member>
+      <member refid="df/d37/classTango_1_1Except_1ae2c8a7188665f1cd16f448aa4ab83d17" prot="public" virt="non-virtual"><scope>Tango::Except</scope><name>re_throw_exception</name></member>
+      <member refid="df/d37/classTango_1_1Except_1ace5f51b25e895260bb85b318d4e4f59c" prot="public" virt="non-virtual"><scope>Tango::Except</scope><name>re_throw_exception</name></member>
+      <member refid="df/d37/classTango_1_1Except_1aeba14e603df6a856739c7734859c50f9" prot="public" virt="non-virtual"><scope>Tango::Except</scope><name>re_throw_exception</name></member>
+      <member refid="df/d37/classTango_1_1Except_1a03a3ffc68c976acb58a8e61eb50fcad6" prot="public" virt="non-virtual"><scope>Tango::Except</scope><name>re_throw_exception</name></member>
+      <member refid="df/d37/classTango_1_1Except_1a1ca76b2d4a5b22d0a2079e3889b12a9e" prot="public" virt="non-virtual"><scope>Tango::Except</scope><name>re_throw_exception</name></member>
+      <member refid="df/d37/classTango_1_1Except_1aa28f7d876b6967235e854555fc2fe1ba" prot="public" virt="non-virtual"><scope>Tango::Except</scope><name>re_throw_exception</name></member>
+      <member refid="df/d37/classTango_1_1Except_1a93e9e068103c707d2c4931f8c7804ef8" prot="public" virt="non-virtual"><scope>Tango::Except</scope><name>re_throw_exception</name></member>
+      <member refid="df/d37/classTango_1_1Except_1a1d0f06fa487f3506e49cad58d36e6ba0" prot="public" virt="non-virtual"><scope>Tango::Except</scope><name>re_throw_exception</name></member>
+      <member refid="df/d37/classTango_1_1Except_1a73f743dfaac89212eeb994bb40e79577" prot="public" virt="non-virtual"><scope>Tango::Except</scope><name>re_throw_exception</name></member>
+      <member refid="df/d37/classTango_1_1Except_1a1a0b86d7563895673901bbfb9e862b9b" prot="public" virt="non-virtual"><scope>Tango::Except</scope><name>re_throw_exception</name></member>
+      <member refid="df/d37/classTango_1_1Except_1ab919ac526ab5cc7912d98df37989a96d" prot="public" virt="non-virtual"><scope>Tango::Except</scope><name>re_throw_exception</name></member>
+      <member refid="df/d37/classTango_1_1Except_1aa52f5b4614aaa58d60a2fc830ef23ba6" prot="public" virt="non-virtual"><scope>Tango::Except</scope><name>re_throw_exception</name></member>
+      <member refid="df/d37/classTango_1_1Except_1a28f9a09de30e050f27d879e1120d3ad2" prot="public" virt="non-virtual"><scope>Tango::Except</scope><name>re_throw_exception</name></member>
+      <member refid="df/d37/classTango_1_1Except_1a42d1f2a98eb402a268e582128ddd61ab" prot="public" virt="non-virtual"><scope>Tango::Except</scope><name>re_throw_exception</name></member>
+      <member refid="df/d37/classTango_1_1Except_1a0380f9df1e0d487e765ce07d180f62f3" prot="private" virt="non-virtual"><scope>Tango::Except</scope><name>the_mutex</name></member>
+      <member refid="df/d37/classTango_1_1Except_1a937f591028b392e50070fbc4149beec6" prot="public" virt="non-virtual"><scope>Tango::Except</scope><name>throw_exception</name></member>
+      <member refid="df/d37/classTango_1_1Except_1a2dc82f122c0bdde68566f0a6b3419f13" prot="public" virt="non-virtual"><scope>Tango::Except</scope><name>throw_exception</name></member>
+      <member refid="df/d37/classTango_1_1Except_1a21f0ffe9ed4839c570f8137edb3d7241" prot="public" virt="non-virtual"><scope>Tango::Except</scope><name>throw_exception</name></member>
+      <member refid="df/d37/classTango_1_1Except_1a4b6a58d11b720d1aef7cc341802ddc4e" prot="public" virt="non-virtual"><scope>Tango::Except</scope><name>throw_exception</name></member>
+      <member refid="df/d37/classTango_1_1Except_1a4bc955a801d67a784828f4b79471e959" prot="public" virt="non-virtual"><scope>Tango::Except</scope><name>throw_exception</name></member>
+      <member refid="df/d37/classTango_1_1Except_1a21253baed3a2521bfa388fc8079f2026" prot="public" virt="non-virtual"><scope>Tango::Except</scope><name>throw_exception</name></member>
+      <member refid="df/d37/classTango_1_1Except_1a87d6f2b545de08d288da642068e001c8" prot="public" virt="non-virtual"><scope>Tango::Except</scope><name>throw_exception</name></member>
+      <member refid="df/d37/classTango_1_1Except_1a55ed8f25cc157fa3152ede702b36517c" prot="public" virt="non-virtual"><scope>Tango::Except</scope><name>throw_exception</name></member>
+      <member refid="df/d37/classTango_1_1Except_1ae8002ec9ea1ba0c99a0770b55ff71d98" prot="public" virt="non-virtual"><scope>Tango::Except</scope><name>throw_exception</name></member>
+      <member refid="df/d37/classTango_1_1Except_1aea2efa05e2b0f46a343061cf88655547" prot="public" virt="non-virtual"><scope>Tango::Except</scope><name>throw_exception</name></member>
+      <member refid="df/d37/classTango_1_1Except_1a13ecdf493972a076fcf3627624198cce" prot="public" virt="non-virtual"><scope>Tango::Except</scope><name>throw_exception</name></member>
+      <member refid="df/d37/classTango_1_1Except_1ac7a9b59a82aa568890f75c0232e68824" prot="public" virt="non-virtual"><scope>Tango::Except</scope><name>throw_exception</name></member>
+      <member refid="df/d37/classTango_1_1Except_1ac7d152b9c381a9ff2202224404b4df34" prot="public" virt="non-virtual"><scope>Tango::Except</scope><name>throw_exception</name></member>
+      <member refid="df/d37/classTango_1_1Except_1ae1125b916a127f9b75832b018eb98ede" prot="public" virt="non-virtual"><scope>Tango::Except</scope><name>throw_exception</name></member>
+      <member refid="df/d37/classTango_1_1Except_1a92359694cca28325fd6480f87e4b9668" prot="public" virt="non-virtual"><scope>Tango::Except</scope><name>throw_exception</name></member>
+      <member refid="df/d37/classTango_1_1Except_1a379a9cc1c1ccfc574ffecd135279e13f" prot="public" virt="non-virtual"><scope>Tango::Except</scope><name>throw_exception</name></member>
+      <member refid="df/d37/classTango_1_1Except_1a8a7e6834550169c1b9bd4c6cd822bd58" prot="public" virt="non-virtual"><scope>Tango::Except</scope><name>throw_exception</name></member>
+      <member refid="df/d37/classTango_1_1Except_1a81dc475cd517c75e49c188bb91fd0e60" prot="public" virt="non-virtual"><scope>Tango::Except</scope><name>throw_exception</name></member>
+      <member refid="df/d37/classTango_1_1Except_1a81a64fad0f2d00d7e9eae178fe986ea8" prot="public" virt="non-virtual"><scope>Tango::Except</scope><name>throw_exception</name></member>
+      <member refid="df/d37/classTango_1_1Except_1a99d02e0220c93333faf67f1b680c38c1" prot="public" virt="non-virtual"><scope>Tango::Except</scope><name>throw_exception</name></member>
+      <member refid="df/d37/classTango_1_1Except_1a51c66f4b7d4ef481676117b5db783695" prot="public" virt="non-virtual"><scope>Tango::Except</scope><name>throw_exception</name></member>
+      <member refid="df/d37/classTango_1_1Except_1a1b8717bff6543c006432b21f75bfbc91" prot="public" virt="non-virtual"><scope>Tango::Except</scope><name>throw_exception</name></member>
+      <member refid="df/d37/classTango_1_1Except_1af5e4556620778aafe5f4ac804d2487f3" prot="public" virt="non-virtual"><scope>Tango::Except</scope><name>throw_exception</name></member>
+      <member refid="df/d37/classTango_1_1Except_1aa48033af1929e523868abce480161902" prot="public" virt="non-virtual"><scope>Tango::Except</scope><name>throw_exception</name></member>
+      <member refid="df/d37/classTango_1_1Except_1a79a7b2e44c9584e8795042c1ff7a92cc" prot="public" virt="non-virtual"><scope>Tango::Except</scope><name>throw_named_exception</name></member>
+      <member refid="df/d37/classTango_1_1Except_1a55ba95758fa392f750ad9b84d0a636f8" prot="public" virt="non-virtual"><scope>Tango::Except</scope><name>throw_named_exception</name></member>
+      <member refid="df/d37/classTango_1_1Except_1a8df2d695cd46b604cf136e5096a4514a" prot="public" virt="non-virtual"><scope>Tango::Except</scope><name>throw_named_exception</name></member>
+      <member refid="df/d37/classTango_1_1Except_1a3c79b097902506591430124f8db3341a" prot="public" virt="non-virtual"><scope>Tango::Except</scope><name>throw_named_exception</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
