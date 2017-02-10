@@ -466,80 +466,80 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \align block
      1  enum class Card: short
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      2  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      3      NORTH = 0,
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      4      SOUTH,
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      5      EAST,
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      6      WEST
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      7  };
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      8 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      9  void XXXClass::attribute_factory(vector<Tango::Attr *> &att_list)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     10  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     11      .....
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     12      TheEnumAttrib	*theenum = new TheEnumAttrib();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     13      Tango::UserDefaultAttrProp theenum_prop;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     14      vector<string> labels = {"North","South","East","West"};
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     15      theenum_prop.set_enum_labels(labels);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     16      theenum->set_default_properties(theenum_prop);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     17      att_list.push_back(theenum);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     18      .....
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     19   }	
 \end_layout
 
@@ -606,52 +606,52 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \align block
      1  void MyDev::init_device()
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      2  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      3      ...
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      4  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      5      Attribute &att = get_device_attr()->get_attr_by_name("TheEnumAtt");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      6      MultiAttrProp<DevEnum> multi_prop;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      7      att.get_properties(multi_prop);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      8 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      9      multi_prop.enum_labels = {....};
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     10      att.set_properties(multi_prop);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     11      ....
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     12   }	
 \end_layout
 
@@ -704,36 +704,36 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \align block
      1  enum Card points;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      2  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      3  void MyDev::read_TheEnum(Attribute &att)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      4  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      5      ...
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      6      points = SOUTH;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      7      att.set_value(&points);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      8  }
 \end_layout
 
@@ -775,36 +775,36 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \align block
      1  DevShort sh;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      2  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      3  void MyDev::read_TheEnum(Attribute &att)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      4  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      5      ...
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      6      sh = 1;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      7      att.set_value(&sh);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      8  }
 \end_layout
 
@@ -853,32 +853,32 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \align block
      1  DeviceAttribute da = the_dev.read_attribute("TheEnumAtt");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      2  Card ca;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      3  da >> ca;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      4  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      5  DeviceAttribute db = the_dev.read_attribute("TheEnumAtt");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      6  DevShort sh;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      7  da >> sh;
 \end_layout
 
@@ -1137,96 +1137,96 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \align block
      1  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      2  void DevTestClass::command_factory()
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      3  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      4  ...
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      5      command_list.push_back(new IOStartPoll("IOStartPoll",
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      6                                              Tango::DEV_VOID,
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      7                                              Tango::DEV_LONG,
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      8                                              "Void",
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      9                                              "Constant number"));
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     10      command_list.back()->set_polling_period(400);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     11  ...
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     12  }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     13  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     14  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     15  void DevTestClass::attribute_factory(vector<Tango::Attr *> &att_list)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     16  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     17  ...
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     18      att_list.push_back(new Tango::Attr("String_attr",
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     19                                          Tango::DEV_STRING,
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     20                                          Tango::READ));
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     21      att_list.back()->set_polling_period(250);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     22  ...
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     23  }
 \end_layout
 
@@ -1808,48 +1808,48 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \align block
      1  .....
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      2  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      3  string ext_polled_cmd("MyCmd");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      4  Tango::DeviceImpl *device = .....;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      5  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      6  Tango::Util *tg = Tango::Util::instance();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      7  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      8  tg->trigger_cmd_polling(device,ext_polled_cmd);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      9  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     10  .....
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
@@ -2020,128 +2020,128 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \align block
      1  ....
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      2  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      3  Tango::DevVarLongArray dvla_array[4];
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      4          
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      5  for(int i = 0;i < 4;i++)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      6  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      7      dvla_array[i].length(3);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      8      dvla_array[i][0] = 10 + i;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      9      dvla_array[i][1] = 11 + i;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     10      dvla_array[i][2] = 12 + i;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     11  }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     12  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     13  Tango::CmdHistoryStack<DevVarLongArray> chs;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     14  chs.length(4);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     15  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     16  for (int k = 0;k < 4;k++)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     17  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     18      time_t when = time(NULL);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     19  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     20      Tango::TimedCmdData<DevVarLongArray> tcd(&dvla_array[k],when);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     21      chs.push(tcd);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     22  }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     23  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     24  Tango::Util *tg = Tango::Util::instance();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     25  string cmd_name("MyCmd");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     26  DeviceImpl *dev = ....;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     27  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     28  tg->fill_cmd_polling_buffer(dev,cmd_name,chs);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     29  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     30  .....
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
@@ -2221,122 +2221,122 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \align block
      1  ....
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \align block
      2  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \align block
      3  AttrHistoryStack<DevString> ahs;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \align block
      4  ahs.length(3);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \align block
      5  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \align block
      6  for (int k = 0;k < 3;k++)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \align block
      7  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \align block
      8      time_t when = time(NULL);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \align block
      9  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \align block
     10      DevString *ptr = new DevString [1];
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \align block
     11      ptr = CORBA::string_dup("Attr history data");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \align block
     12  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \align block
     13      TimedAttrData<DevString> tad(ptr,Tango::ATTR_VALID,true,when);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \align block
     14      ahs.push(tad);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \align block
     15  }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \align block
     16  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \align block
     17  Tango::Util *tg = Tango::Util::instance();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \align block
     18  string attr_name("MyAttr");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \align block
     19  DeviceImpl *dev = ....;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \align block
     20  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \align block
     21  tg->fill_attr_polling_buffer(dev,attr_name,ahs);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \align block
     22  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \align block
     23  .....
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \align block
   
 \end_layout
@@ -2479,7 +2479,7 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \align block
      
 \begin_inset CommandInset include
@@ -2748,135 +2748,135 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      1  #include <tango.h>
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      2  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      3  int main(int argc,char *argv[])
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      4  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      5  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      6      try
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      7      {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      8          
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      9          Tango::Util *tg = Tango::Util::init(argc,argv);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     10  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     11          tg->set_serial_model(Tango::BY_CLASS);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     12  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     13          tg->server_init();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     14  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     15          cout << "Ready to accept request" << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     16          tg->server_run();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     17      }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     18      catch (bad_alloc)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     19      {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     20           cout << "Can't allocate memory!!!" << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     21           cout << "Exiting" << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     22      }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     23      catch (CORBA::Exception &e)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     24      {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     25           Tango::Except::print_exception(e);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     26                  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     27           cout << "Received a CORBA::Exception" << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     28           cout << "Exiting" << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     29      }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     30          
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     31      return(0);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     32  }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
@@ -2967,99 +2967,99 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 1 void MyClass::init_device()
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 2 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 3    ...
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 4    ...
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 5    Tango::Attribute &att = dev_attr->get_attr_by_name("TheAttribute");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 6    att.set_attr_serial_model(Tango::ATTR_BY_USER);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 7    ....
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 8    ....
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 9 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 10 }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 11 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 12 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 13 void MyClass::read_TheAttribute(Tango::Attribute &attr)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 14 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 15    ....
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 16    ....
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 17    the_mutex.lock();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 18    ....
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 19    // Fill the attribute buffer
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 20    ....
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 21    attr.set_value(buffer,....);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 22    attr->set_user_attr_mutex(&the_mutex);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 23 }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 24 
 \end_layout
 
@@ -3197,15 +3197,15 @@ archive
  Three methods are available for this purpose:
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 Attr::set_change_event(bool implemented, bool detect = true);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 Attr::set_archive_event(bool implemented, bool detect = true);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 Attr::set_data_ready_event( bool implemented);
 \end_layout
 
@@ -3234,11 +3234,11 @@ To push events manually from the code a set of data type dependent methods
  can be used:
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 DeviceImpl::push_change_event (string attr_name, ....);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 DeviceImpl::push_archive_event(string attr_name, ....);
 \end_layout
 
@@ -3247,7 +3247,7 @@ For the data ready event, a DeviceImpl class method has to be used to push
  the event.
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 DeviceImpl::push_data_ready_event(string attr_name,Tango::DevLong ctr);
 \end_layout
 
@@ -3267,19 +3267,19 @@ To push non-standard events, use the following api call is available to
  all device servers :
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 DeviceImpl::push_event( string attr_name,
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
              vector<string> &filterable_names,
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
              vector<double> &filterable_vals,
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
              Attribute &att)
 \end_layout
 
@@ -3317,95 +3317,95 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 1  void MyClass::read_Sinusoide(Tango::Attribute &attr)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 2  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 3    ...
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 4       struct timeval tv;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 5       gettimeofday(&tv, NULL);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 6       sinusoide = 100 * sin( 2 * 3.14 * frequency * tv.tv_sec);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 7  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 8       if (sinusoide >= 0) 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 9       {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 10          vector<string> filterable_names;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 11          vector<double> filterable_value;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 12 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 13          filterable_names.push_back("value");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 14          filterable_value.push_back((double)sinusoide);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 15 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 16          push_event( attr.get_name(),
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 17                      filterable_names, filterable_value,
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 18                      &sinusoide);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 19       }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 20    ....
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 21    ....
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 22 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 23 }
 \end_layout
 
@@ -3598,24 +3598,24 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \align block
 1 CtrlSystem->MulticastEvent:   Multicast address,
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 2                               port number,
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 3                               [rate in Mbit/sec],
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 4                               [ivl in seconds],
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 5                               event name
 \end_layout
 
@@ -3955,36 +3955,36 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \align block
 1 void DevTestClass::attribute_factory(vector<Tango::Attr *> &att_list)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 2  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 3      ...
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 4      att_list.push_back(new String_attrAttr());
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 5      att_list.back()->set_memorized();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 6      att_list.back()->set_memorized_init(false);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 7      ...
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 8  }
 \end_layout
 
@@ -4272,78 +4272,78 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \align block
 1  class MyFwdAttr: public Tango::FwdAttr
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \align block
 2  { 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \align block
 3  public:     
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \align block
 4      MyFwdAttr(const string &_n):FwdAttr(_n) {}; 	
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \align block
 5      ~MyFwdAttr() {}; 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \align block
 6  };
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 7
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \align block
 8  void DevTestClass::attribute_factory(vector<Tango::Attr *> &att_list)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 9  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 10     ...
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 11     MyFwdAttr *att1 = new MyFwdAttr("fwd_att_name");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 12     Tango::UserDefaultFwdAttrProp att1_prop; 	
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 13     att1_prop.set_label("Gasp a fwd attribute");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 14     att1->set_default_properties(att1_prop); 	
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 15     att_list.push_back(att1);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 14     ...
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 15  }
 \end_layout
 
@@ -4472,28 +4472,28 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \align block
 1 class MyDevice::Tango::Device_4Impl
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 2  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 3      ...
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 4      Tango::EncodedAttribute jpeg;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 5      ...
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 6  }
 \end_layout
 
@@ -4522,28 +4522,28 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \align block
 1 void MyDevice::read_Encoded_attr_image(Tango::Attribute &att)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 2 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 3      ....
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 4      jpeg.encode_jpeg_gray8(imageData,256,256,50.0);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 5      att.set_value(&jpeg);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 6 }
 \end_layout
 
@@ -4587,52 +4587,52 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \align block
 1    ....
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \align block
 2    DeviceAttribute da;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \align block
 3    EncodedAttribute att;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \align block
 4    int width,height;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \align block
 5    unsigned char *gray8;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 6      
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 7    da = device.read_attribute("Encoded_attr_image");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 8    att.decode_gray8(&da,&width,&height,&gray8);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 9    ....
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 10   delete [] gray8;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 11   ...
 \end_layout
 
@@ -4729,156 +4729,156 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \align block
      1  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      2  bool my_event_loop()
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      3  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      4     bool ret;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      5  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      6     some_sleeping_time();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      7  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      8     ret = handle_gui_events();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      9  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     10     return ret;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     11  }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     12  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     13  int main(int argc,char *argv[])
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     14  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     15     Tango::Util *tg;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     16     try
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     17     {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     18        // Initialise the device server
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     19        //----------------------------------------
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     20        tg = Tango::Util::init(argc,argv);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     21  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     22        tg->set_polling_threads_pool_size(5);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     23  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     24        // Create the device server singleton 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     25        //        which will create everything
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     26        //----------------------------------------
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     27        tg->server_init(false);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     28  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     29        tg->server_set_event_loop(my_event_loop);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     30  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     31        // Run the endless loop
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     32        //----------------------------------------
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     33        cout << "Ready to accept request" << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     34        tg->server_run();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     35     }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     36     catch (bad_alloc)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     37     {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     38     ...
 \end_layout
 
@@ -5292,23 +5292,23 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      1  void StepperMotorClass::device_name_factory(vector<string> &list)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      2  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      3      list.push_back("sr/cav-tuner/1");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      4      list.push_back("sr/cav-tuner/2");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      5  }
 \end_layout
 

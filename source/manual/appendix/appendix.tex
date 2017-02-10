@@ -1,16 +1,20 @@
 \appendix
 
-\chapter{Reference part\label{cha:Reference-part}}
+
+\chapter{Reference part}
+\label{cha:Reference-part}
 
 \textbf{This chapter is only part of the TANGO device server reference
 guide. To get reference documentation about the C++ library classes,
 see \cite{TANGO_ref_man}. To get reference documentation about the
 Java classes, also see \cite{TANGO_ref_man}.}
 
+
 \section{Device parameter}
 
 A black box, a device description field, a device state and status
 are associated with each TANGO device.
+
 
 \subsection{The device black box}
 
@@ -20,6 +24,7 @@ property name is \begin{center}device name->blackbox\_depth\end{center}
 A default value is hard-coded to 50 if the property is not defined.
 This black box depth property is retrieved from the Tango property
 database during the device creation phase.
+
 
 \subsection{The device description field}
 
@@ -43,12 +48,15 @@ creation time. If these fields are not defined, a default value is
 applied. The default state is Tango::UNKOWN, the default status is
 \emph{Not Initialised.}
 
-\subsection{The device polling\label{subsec:The-device-polling-prop}}
+
+\subsection{The device polling}
+\label{sub:The-device-polling-prop}
 
 Seven device properties allow the polling tunning. These properties
 are described in the following table 
 
 \vspace{0.3cm}
+
 
 \begin{center}
 \begin{longtable}{|c|c|c|}
@@ -74,6 +82,7 @@ attr\_min\_poll\_period & Min. polling period for attr & \tabularnewline
 \par\end{center}
 
 \vspace{0.3cm}
+
 
 The rule of the poll\_ring\_depth\index{poll-ring-depth} property
 is obvious. It defines the polling ring depth for all the device polled
@@ -122,6 +131,7 @@ should not be polled automatically at the first request
 You don't have to change these properties values by yourself. They
 are automatically created/modified/deleted by Tango core classes.
 
+
 \subsection{The device logging}
 
 The Tango Logging Service (TLS) uses device properties to control
@@ -129,6 +139,7 @@ device logging at startup (static configuration). These properties
 are described in the following table 
 
 \vspace{0.3cm}
+
 
 \begin{center}
 \begin{longtable}{|c|c|c|}
@@ -200,6 +211,7 @@ class device and has no effect on other devices.
 Attribute are configured with two kind of parameters: Parameters hard-coded
 in source code and modifiable parameters
 
+
 \subsection{Hard-coded device attribute parameters}
 
 Seven attribute parameters are defined at attribute\index{attribute}
@@ -208,6 +220,7 @@ are not modifiable except with a new source code compilation. These
 parameters are 
 
 \vspace{0.3cm}
+
 
 \begin{center}
 \begin{longtable}{|c|c|}
@@ -239,6 +252,7 @@ root\_attr\_name & Root attribute name\tabularnewline
 \vspace{0.3cm}
 
 
+
 \subsubsection{The Attribute data type\index{data-type}}
 
 Thirteen data types are supported. These data types are
@@ -264,6 +278,7 @@ Three data format are supported for attribute
 
 \vspace{0.3cm}
 
+
 \begin{center}
 \begin{longtable}{|c|c|}
 \hline 
@@ -282,6 +297,7 @@ Tango::IMAGE\index{IMAGE} & The attribute value is a two dimension number\tabula
 \vspace{0.3cm}
 
 
+
 \subsubsection{The max\_dim\_x\index{max-dim-x} and max\_dim\_y\index{max-dim-y}
 parameters}
 
@@ -289,6 +305,7 @@ These two parameters defined the maximum size for attributes of the
 SPECTRUM and IMAGE data format.
 
 \vspace{0.3cm}
+
 
 \begin{center}
 \begin{longtable}{|c|c|c|}
@@ -307,10 +324,12 @@ Tango::IMAGE & User Defined & User Defined\tabularnewline
 
 \vspace{0.3cm}
 
+
 For attribute of the Tango::IMAGE data format, all the data are also
 returned in a one dimension array. The first array is value{[}0{]},{[}0{]},
 array element X is value{[}0{]},{[}X-1{]}, array element X+1 is value{[}1{]}{[}0{]}
 and so forth.
+
 
 \subsubsection{The attribute read/write type}
 
@@ -335,6 +354,7 @@ its elements is detailed in the following table for scalar attribute.
 
 \vspace{0.3cm}
 
+
 \begin{center}
 \begin{longtable}{|c|c|c|c|}
 \hline 
@@ -354,6 +374,7 @@ Tango::READ\_WITH\_WRITE  & 2 & Read value & Associated attributelast write valu
 
 \vspace{0.3cm}
 
+
 When a spectrum or image attribute is read, it is possible to code
 the device class in order to send only some part of the attribute
 data (For instance only a Region Of Interest for an image) but never
@@ -368,6 +389,7 @@ is the data size sent by the server when the attribute is read and
 dim\_x\_w is the data size used during the last attribute write call.
 
 \vspace{0.3cm}
+
 
 \begin{center}
 \begin{longtable}{|c|c|c|c|}
@@ -388,12 +410,14 @@ Tango::READ\_WITH\_WRITE  & dim\_x + dim\_x\_w & Read value & Associated attribu
 
 \vspace{0.3cm}
 
+
 The following table describe how data are returned for image attribute.
 dim\_r is the data size sent by the server when the attribute is read
 (dim\_x {*} dim\_y) and dim\_w is the data size used during the last
 attribute write call (dim\_x\_w {*} dim\_y\_w).
 
 \vspace{0.3cm}
+
 
 \begin{center}
 \begin{longtable}{|c|c|c|c|}
@@ -414,6 +438,7 @@ Tango::READ\_WITH\_WRITE  & dim\_r + dim\_w & Read value & Associated attributel
 
 \vspace{0.3cm}
 
+
 Until a write operation has been performed, the last write value is
 initialized to \emph{0} for scalar attribute of the numeriacal type,
 to \emph{\textquotedbl{}Not Initialised\textquotedbl{}} for scalar
@@ -424,18 +449,22 @@ an array of one element set to \emph{true} for boolean attribute and
 to an array of one element set to \textquotedbl{}\emph{Not initialized}\textquotedbl{}
 for string attribute
 
+
 \subsubsection{The associated write attribute parameter}
 
 This parameter has a meaning only for attribute with a Tango::READ\_WITH\_WRITE
 read/write type. This is the name of the associated write attribute.
 
-\subsubsection{The attribute display level\index{level} parameter\label{display level}}
+
+\subsubsection{The attribute display level\index{level} parameter}
+\label{display level}
 
 This parameter is only an help for graphical application. It is a
 C++ enumeration starting at 0. The code associated with each attribute
 display level is defined in the following table (Tango::DispLevel\index{DispLevel}).
 
 \vspace{0.3cm}
+
 
 \begin{center}
 \begin{longtable}{|c|c|}
@@ -452,6 +481,7 @@ Tango::EXPERT & 1\tabularnewline
 
 \vspace{0.3cm}
 
+
 This parameter allows a graphical application to support two types
 of operation :
 \begin{itemize}
@@ -461,11 +491,13 @@ of operation :
 According to this parameter, a graphical application knows if the
 attribute is for the operator mode or for the expert mode.
 
+
 \subsubsection{The root attribute\index{root-attribute} name parameter}
 
 In case the attribute is a forwarded one, this parameter is the name
 of the associated root attribute. In case of classical attribute,
 this string is set to \textquotedbl{}Not specified\textquotedbl{}.
+
 
 \subsection{Modifiable attribute parameters}
 
@@ -483,6 +515,7 @@ Eight attribute parameters are modifiable at run-time via a device
 call or via the property database.
 
 \vspace{0.3cm}
+
 
 \begin{center}
 \begin{longtable}{|c|c|}
@@ -515,6 +548,7 @@ memorized & Attribute memorization\tabularnewline
 
 \vspace{0.3cm}
 
+
 The \textbf{description\index{description}} parameter describes the
 attribute. The \textbf{label\index{label}} parameter is used by graphical
 application to display a label when this attribute is used in a graphical
@@ -528,6 +562,7 @@ unit to application user. The \textbf{enum\_labels\index{enum_labels@enum\_label
 parameter is defined only for attribute of the DEV\_ENUM data type.
 This is a vector of strings with one string for each enumeration label.
 It is an ordered list.
+
 
 \paragraph{The format\index{format} attribute parameter}
 
@@ -552,6 +587,7 @@ device, its value can be printed with \begin{center}cout <\textcompwordmark{}<
 Tango::AttrManip(format) <\textcompwordmark{}< value <\textcompwordmark{}<
 endl;\end{center}.
 
+
 \paragraph{The min\_value\index{min-value} and max\_value\index{max-value}
 parameters}
 
@@ -566,6 +602,7 @@ by the device \emph{get\_attribute\_config()} call.
 These two parameters have no meaning for attribute with data type
 DevString, DevBoolean or DevState. An exception is thrown in case
 the user try to set them for attribute of these 3 data types.
+
 
 \paragraph{The memorized\index{memorized} attribute parameter}
 
@@ -585,6 +622,7 @@ Six alarm related attribute parameters are modifiable at run-time
 via a device call or via the property database. 
 
 \vspace{0.3cm}
+
 
 \begin{center}
 \begin{longtable}{|c|c|}
@@ -612,6 +650,7 @@ These parameters have no meaning for attribute with data type DevString,
 DevBoolean or DevState. An exception is thrown in case the user try
 to set them for attribute of these 3 data types.
 
+
 \paragraph{The min\_alarm\index{min-alarm} and max\_alarm\index{max-alarm}
 parameters}
 
@@ -625,6 +664,7 @@ and if the device state is Tango::ON, it is switched to Tango::ALARM\index{ALARM
 Even if these parameters are numbers, they are returned as strings
 by the device \emph{get\_attribute\_config()} call.
 
+
 \paragraph{The min\_warning\index{min-warning} and max\_warning\index{max-warning}
 parameters}
 
@@ -637,6 +677,7 @@ quality factor will be set to Tango::ATTR\_WARNING\index{ATTR-WARNING}
 and if the device state is Tango::ON, it is switched to Tango::ALARM\index{ALARM}.
 Even if these parameters are numbers, they are returned as strings
 by the device \emph{get\_attribute\_config()} call.
+
 
 \paragraph{The delta\_t\index{delta-t} and delta\_val\index{delta-val} parameters}
 
@@ -652,12 +693,14 @@ it is switched to Tango::ALARM\index{ALARM}. Even if these parameters
 are numbers, they are returned as strings by the device \emph{get\_attribute\_config()}
 call.
 
+
 \subsubsection{The event related configuration parameters}
 
 Six event\index{event} related attribute parameters are modifiable
 at run-time via a device call or via the property database.
 
 \vspace{0.3cm}
+
 
 \begin{center}
 \begin{longtable}{|c|c|}
@@ -685,6 +728,7 @@ archive\_period  & Period for change archive event\tabularnewline
 \vspace{0.3cm}
 
 
+
 \paragraph{The rel\_change and abs\_change parameters}
 
 Rel\_change\index{rel-change} is a property with a maximum of 2 values
@@ -705,10 +749,12 @@ value's satisfies the above criterium. If only one value is specified
 then it is used for the increasing and decreasing change. If no values
 are specified then the relative change is used.
 
+
 \paragraph{The periodic period\index{period} parameter}
 
 The minimum time between events (in milliseconds). If no property
 is specified then a default value of 1 second is used.
+
 
 \paragraph{The archive\_rel\_change\index{archive-rel-change}, archive\_abs\_change\index{archive-abs-change}
 and archive\_period\index{archive-period} parameters}
@@ -734,6 +780,7 @@ used.
 archive\_period is the minimum time between archive events (in milliseconds).
 If no property is specified, no periodic archiving events are send.
 
+
 \subsection{Setting modifiable attribute parameters}
 
 A default value is given to all modifiable attribute parameters by
@@ -751,6 +798,7 @@ default value
 The default value set by the Tango core library are
 
 \vspace{0.3cm}
+
 
 \begin{center}
 \begin{longtable}{|c|c|c|}
@@ -803,6 +851,7 @@ Parameter type & Parameter name & Library default value\tabularnewline
 
 \vspace{0.3cm}
 
+
 It is possible to set modifiable parameters via the database at two
 levels :
 \begin{enumerate}
@@ -826,6 +875,7 @@ For the description, label, unit, standard\_unit, display\_unit and
 format parameters, it is possible to return them to their default
 value by setting them to an empty string.
 
+
 \subsection{Resetting modifiable attribute parameters}
 
 It is possible to reset attribute parameters to their default value
@@ -837,6 +887,7 @@ default value. In this table, the user default are the values given
 within Pogo in the \textquotedbl{}Properties\textquotedbl{} tab of
 the attribute edition window (or in in Tango class code using the
 Tango::UserDefaultAttrProp class).\vspace{0.3cm}
+
 
 \begin{center}
 \begin{longtable}{|c|c|}
@@ -859,6 +910,7 @@ default\tabularnewline
 
 \vspace{0.3cm}
 
+
 \begin{center}
 Let's take one exemple: For one attribute belonging to a device, we
 have the following attribute parameters:\vspace{0.3cm}
@@ -880,6 +932,7 @@ rel\_change & 5 & 10 & Not specified\tabularnewline
 
 \vspace{0.3cm}
 
+
 The string \textquotedbl{}Not specified\textquotedbl{} sent to each
 attribute parameter will set attribute parameter value to \textquotedbl{}No
 standard unit\textquotedbl{} for standard\_unit, \textquotedbl{}Not
@@ -896,10 +949,12 @@ C++ specific: Instead of the string \textquotedbl{}Not specified\textquotedbl{}
 and \textquotedbl{}NaN\textquotedbl{}, the preprocessor define\textbf{
 AlrmValueNotSpec} and \textbf{NotANumber} can be used.
 
+
 \section{Device pipe}
 
 Pipe are configured with two kind of parameters: Parameters hard-coded
 in source code and modifiable parameters
+
 
 \subsection{Hard-coded device pipe parameters}
 
@@ -909,6 +964,7 @@ modifiable except with a new source code compilation. These parameters
 are 
 
 \vspace{0.3cm}
+
 
 \begin{center}
 \begin{longtable}{|c|c|}
@@ -924,6 +980,7 @@ disp\_level\index{disp_level@disp\_level} & Pipe display level\tabularnewline
 \hline 
 \end{longtable}
 \par\end{center}
+
 
 \subsubsection{The pipe read/write type. }
 
@@ -942,6 +999,7 @@ display level is defined in the following table (Tango::DispLevel\index{DispLeve
 
 \vspace{0.3cm}
 
+
 \begin{center}
 \begin{longtable}{|c|c|}
 \hline 
@@ -957,6 +1015,7 @@ Tango::EXPERT & 1\tabularnewline
 
 \vspace{0.3cm}
 
+
 This parameter allows a graphical application to support two types
 of operation :
 \begin{itemize}
@@ -966,6 +1025,7 @@ of operation :
 According to this parameter, a graphical application knows if the
 pipe is for the operator mode or for the expert mode.
 
+
 \subsection{Modifiable pipe parameters}
 
 Each pipe has a configuration set of 2 modifiable parameters. These
@@ -973,6 +1033,7 @@ parameters are modifiable at run-time via a device call or via the
 property database.
 
 \vspace{0.3cm}
+
 
 \begin{center}
 \begin{longtable}{|c|c|}
@@ -989,10 +1050,12 @@ label & Pipe label\tabularnewline
 
 \vspace{0.3cm}
 
+
 The \textbf{description\index{description}} parameter describes the
 pipe. The \textbf{label\index{label}} parameter is used by graphical
 application to display a label when this pipe is used in a graphical
 application.
+
 
 \subsection{Setting modifiable pipe parameters}
 
@@ -1011,6 +1074,7 @@ The default value set by the Tango core library are
 
 \vspace{0.3cm}
 
+
 \begin{center}
 \begin{longtable}{|c|c|}
 \hline 
@@ -1026,6 +1090,7 @@ label & pipe name\tabularnewline
 
 \vspace{0.3cm}
 
+
 It is possible to set modifiable parameters via the database at two
 levels :
 \begin{enumerate}
@@ -1038,6 +1103,7 @@ it.
 This is the same principle than the one used for attribute configuration
 modifiable parameters.
 
+
 \subsection{Resetting modifiable pipe parameters}
 
 It is possible to reset pipe parameters to their default value at
@@ -1046,6 +1112,7 @@ the DeviceProxy::set\_pipe\_config() method family. It uses the same
 principle than the one used for resetting modifiable attribute pipe
 parameters. Refer to their documentation if you want to know details
 about this feature.
+
 
 \section{Device class parameter}
 
@@ -1057,6 +1124,7 @@ is store in the DeviceClass class. It is possible to set this field
 via a class property. This property name is \begin{center}class name->doc\_url\end{center} and
 is retrieved when instance of the DeviceClass object is created. A
 default value is defined for this field.
+
 
 \section{The device black box}
 
@@ -1086,6 +1154,7 @@ output data type
 
 \vspace{0.3cm}
 
+
 \begin{center}
 \begin{longtable}{|c|c|c|}
 \hline 
@@ -1104,6 +1173,7 @@ Init & void & void\tabularnewline
 \vspace{0.3cm}
 
 
+
 \subsection{The State command}
 
 This command gets the device state (stored in its \emph{device\_state}
@@ -1111,11 +1181,13 @@ data member) and returns it to the caller. The device state is a variable
 of the Tango\_DevState type (packed into a CORBA Any object when it
 is returned by a command)
 
+
 \subsection{The Status command}
 
 This command gets the device status (stored in its \emph{device\_status}
 data member) and returns it to the caller. The device status is a
 variable of the string type.
+
 
 \subsection{The Init command}
 
@@ -1127,6 +1199,7 @@ method. For C++ device server, all the memory allocated in the \emph{init\_devic
 method must be freed in the \emph{delete\_device()} method. The language
 device desctructor automatically calls the \emph{delete\_device()}
 method.
+
 
 \section{DServer\index{DServer} class device commands}
 
@@ -1152,6 +1225,7 @@ StopLogging\index{StopLogging} and StartLogging\index{StartLogging}.
 The following table give all commands input and output data types
 
 \vspace{0.3cm}
+
 
 \begin{center}
 \begin{longtable}{|c|c|c|}
@@ -1232,15 +1306,18 @@ StartLogging & void & void\tabularnewline
 
 \vspace{0.3cm}
 
+
 The device description field is set to ``A device server device''.
 Device server started with the -file command line option also supports
 a command called QueryEventChannelIOR\index{QueryEventChannelIOR}.
 This command is used interanally by the Tango kernel classes when
 the event system is used with device server using database on file.
 
+
 \subsection{The State command}
 
 This device state is always set to ON
+
 
 \subsection{The Status command}
 
@@ -1249,22 +1326,26 @@ by a new line character and a string describing polling thread status.
 This string is either ``The polling is OFF'' or ``The polling is
 ON'' according to polling state.
 
+
 \subsection{The DevRestart command}
 
 The DevRestart command restart a device. The name of the device to
 be re-started is the command input parameter. The command destroys
 the device by calling its destructor and re-create it from its constructor.
 
+
 \subsection{The RestartServer command}
 
 The DevRestartServer command restarts all the device pattern(s) embedded
 in the device server process. Therefore, all the devices implemented
-in the server process are destroyed and re-built\footnote{Their black-box is also destroyed and re-built}.
-The network connection between client(s) and device(s) implemented
+in the server process are destroyed and re-built%
+\footnote{Their black-box is also destroyed and re-built%
+}. The network connection between client(s) and device(s) implemented
 in the device server process is destroyed and re-built. 
 
 Executing this command allows a complete restart of the device server
 without stopping the process.
+
 
 \subsection{The QueryClass\index{QueryClass} command}
 
@@ -1272,6 +1353,7 @@ This command returns to the client the list of Tango device class(es)
 embedded in the device server. It returns only class(es) implemented
 by the device server programmer. The DServer device class name (implemented
 by the TANGO core software) is not returned by this command.
+
 
 \subsection{The QueryDevice\index{QueryDevice} command}
 
@@ -1282,11 +1364,13 @@ name>::<device name>\end{center}
 
 The name of the DServer class device is not returned by this command.
 
+
 \subsection{The Kill\index{Kill} command}
 
 This command stops the device server process. In order that the client
 receives a last answer from the server, this command starts a thread
 which will after a short delay, kills the device server process.
+
 
 \subsection{The QueryWizardClassProperty\index{QueryWizardClassProperty} command}
 
@@ -1294,11 +1378,13 @@ This command returns the list of property(ies) defined for a class
 stored in the device server process property wizard. For each property,
 its name, a description and a default value is returned.
 
+
 \subsection{The QueryWizardDevProperty\index{QueryWizardDevProperty} command}
 
 This command returns the list of property(ies) defined for a device
 stored in the device server process property wizard. For each property,
 its name, a description and a default value is returned.
+
 
 \subsection{The QuerySubDevice\index{QuerySubDevice} command}
 
@@ -1312,13 +1398,16 @@ threads using a sub-device, it is not possible to link this sub-device
 to any process devices. In such a case, the string contains only the
 sub-device name
 
+
 \subsection{The StartPolling\index{StartPolling} command}
 
 This command starts the polling thread
 
+
 \subsection{The StopPolling\index{StopPolling} command}
 
 This command stops the polling thread
+
 
 \subsection{The AddObjPolling\index{AddObjPolling} command}
 
@@ -1328,6 +1417,7 @@ data type with one long data and three strings. The input parameters
 are:
 
 \vspace{0.3cm}
+
 
 \begin{center}
 \begin{longtable}{|c|c|}
@@ -1348,11 +1438,13 @@ lvalue{[}0{]} & polling period in mS\tabularnewline
 
 \vspace{0.3cm}
 
+
 The object type string is case independent. The object name string
 (command name or attribute name) is case dependant. This command does
 not start polling if it is stopped. This command is not allowed in
 case the device is locked and the command requester is not the lock
 owner.
+
 
 \subsection{The RemObjPolling\index{RemObjPolling} command}
 
@@ -1361,6 +1453,7 @@ command input data type is a Tango::DevVarStringArray with three strings.
 These strings meaning are :
 
 \vspace{0.3cm}
+
 
 \begin{center}
 \begin{longtable}{|c|c|}
@@ -1379,10 +1472,12 @@ string{[}2{]} & Object name\tabularnewline
 
 \vspace{0.3cm}
 
+
 The object type string is case independent. The object name string
 (command name or attribute name) is case dependant. This command is
 not allowed in case the device is locked and the command requester
 is not the lock owner.
+
 
 \subsection{The UpdObjPollingPeriod\index{UpdObjPollingPeriod} command}
 
@@ -1392,6 +1487,7 @@ data type with one long data and three strings. The input parameters
 are:
 
 \vspace{0.3cm}
+
 
 \begin{center}
 \begin{longtable}{|c|c|}
@@ -1412,11 +1508,13 @@ lvalue{[}0{]} & new polling period in mS\tabularnewline
 
 \vspace{0.3cm}
 
+
 The object type string is case independent. The object name string
 (command name or attribute name) is case dependant. This command does
 not start polling if it is stopped. This command is not allowed in
 case the device is locked and the command requester is not the lock
 owner.
+
 
 \subsection{The PolledDevice\index{PolledDevice} command}
 
@@ -1424,6 +1522,7 @@ This command returns the name of device which are polled. Each string
 in the Tango::DevVarStringArray returned by the command is a device
 name which has at least one command or attribute polled. The list
 is alphabetically sorted.
+
 
 \subsection{The DevPollStatus\index{DevPollStatus} command}
 
@@ -1447,11 +1546,13 @@ the last attribute reading failed.
 \end{itemize}
 A new line character is inserted between each piece of information.
 
+
 \subsection{The LockDevice\index{LockDevice} command}
 
 This command locks a device for the calling process. The command input
 parameters are embedded within a Tango::DevVarLongStringArray data
 type with one long data and one string. The input parameters are:\vspace{0.3cm}
+
 
 \begin{center}
 \begin{longtable}{|c|c|}
@@ -1469,11 +1570,13 @@ lvalue{[}0{]} & Lock validity\tabularnewline
 \vspace{0.3cm}
 
 
+
 \subsection{The UnLockDevice\index{UnLockDevice} command}
 
 This command unlocks a device. The command input parameters are embedded
 within a Tango::DevVarLongStringArray data type with one long data
 and one string. The input parameters are:\vspace{0.3cm}
+
 
 \begin{center}
 \begin{longtable}{|c|c|}
@@ -1490,8 +1593,10 @@ lvalue{[}0{]} & Force flag\tabularnewline
 
 \vspace{0.3cm}
 
+
 The force flag parameter allows a client to unlock a device already
 locked by another process (for admin usage only)
+
 
 \subsection{The ReLockDevices\index{ReLockDevices} command}
 
@@ -1499,12 +1604,14 @@ This command re-lock devices. The input argument is the list of devices
 to be re-locked. It's an error to re-lock a device which is not already
 locked.
 
+
 \subsection{The DevLockStatus\index{DevLockStatus} command}
 
 This command returns a device locking status to the caller. Its input
 parameter is the device name. The output parameters are embedded within
 a Tango::DevVarLongStringArray data type with three strings and six
 long. These data are\vspace{0.3cm}
+
 
 \begin{center}
 \begin{longtable}{|c|c|}
@@ -1536,6 +1643,7 @@ lvalue{[}5{]} & Java locker UUID part 4 or 0 for CPP locker\tabularnewline
 \vspace{0.3cm}
 
 
+
 \subsection{The EventSubscriptionChange\index{EventSubscriptionChange} command
 (C++ server only)}
 
@@ -1550,6 +1658,7 @@ not generated when there are no clients subscribed within the last
 10 minutes. The input parameters are:
 
 \vspace{0.3cm}
+
 
 \begin{center}
 \begin{longtable}{|c|c|}
@@ -1571,8 +1680,10 @@ argin{[}3{]} & event name (\textquotedbl{}change\textquotedbl{}, \textquotedbl{}
 
 \vspace{0.3cm}
 
+
 The command output data is the simply the Tango release used by the
 device server process. This is necessary for compatibility reason.
+
 
 \subsection{The ZmqEventSubscriptionChange\index{ZmqEventSubscriptionChange}
 command }
@@ -1590,6 +1701,7 @@ not generated when there are no clients subscribed within the last
 the EventSubscriptionChange command. They are:
 
 \vspace{0.3cm}
+
 
 \begin{center}
 \begin{longtable}{|c|c|}
@@ -1611,9 +1723,11 @@ argin{[}3{]} & event name (\textquotedbl{}change\textquotedbl{}, \textquotedbl{}
 
 \vspace{0.3cm}
 
+
 The command output parameters aer all the necessary data to build
 one event connection between a client and the device server process
 generating the events. This means:\vspace{0.3cm}
+
 
 \begin{center}
 \begin{longtable}{|c|c|}
@@ -1641,6 +1755,7 @@ lvalue{[}4{]} & IVL (Multicasting related)\tabularnewline
 \vspace{0.3cm}
 
 
+
 \subsection{The EventConfirmSubscription\index{EventConfirmSubscription} command}
 
 This command is used by client to regularly notify to device server
@@ -1651,6 +1766,7 @@ command must be a multiple of 3. They are 3 parameters for each event
 confirmed by this command. Per event, these parameters are:
 
 \vspace{0.3cm}
+
 
 \begin{center}
 \begin{longtable}{|c|c|}
@@ -1666,6 +1782,7 @@ argin{[}x + 2{]} & Event name\tabularnewline
 \hline 
 \end{longtable}
 \par\end{center}
+
 
 \subsection{The AddLoggingTarget\index{AddLoggingTarget} command}
 
@@ -1690,6 +1807,7 @@ omitted.
 \end{itemize}
 This command is not allowed in case the device is locked and the command
 requester is not the lock owner.
+
 
 \subsection{The RemoveLoggingTarget\index{RemoveLoggingTarget} command}
 
@@ -1720,12 +1838,14 @@ targets from all the devices running in the device server. This command
 is not allowed in case the device is locked and the command requester
 is not the lock owner.
 
+
 \subsection{The GetLoggingTarget\index{GetLoggingTarget} command}
 
 Returns the current target list of the specified device. The command
 parameter device\_name is the name of the device which logging target
 list is requested. The list is returned as a DevVarStringArray containing
 target\_type::target\_name elements.
+
 
 \subsection{The GetLoggingLevel\index{GetLoggingLevel} command}
 
@@ -1736,6 +1856,7 @@ is supported to get the logging level of all the devices running within
 the server. The string part of the result contains the name of the
 devices and its long part contains the levels. Obviously, result.lvalue{[}i{]}
 is the current logging level of the device named result.svalue{[}i{]}.
+
 
 \subsection{The SetLoggingLevel\index{SetLoggingLevel} command}
 
@@ -1751,15 +1872,18 @@ level of all the devices running within the server to WARNING. This
 command is not allowed in case the device is locked and the command
 requester is not the lock owner.
 
+
 \subsection{The StopLogging\index{StopLogging} command}
 
 For all the devices running within the server, StopLogging saves their
 current logging level and set their logging level to OFF. 
 
+
 \subsection{The StartLogging\index{StartLogging} command}
 
 For each device running within the server, StartLogging restores their
 logging level to the value stored during a previous StopLogging call.
+
 
 \section{DServer class device properties}
 
@@ -1768,6 +1892,7 @@ plus another one for the choice of polling algorithm. These properties
 are described in the following table 
 
 \vspace{0.3cm}
+
 
 \begin{center}
 \begin{longtable}{|c|c|c|}
@@ -1786,6 +1911,7 @@ polling\_before\_9 & Choice of the polling algorithm & false\tabularnewline
 
 \vspace{0.3cm}
 
+
 The rule of the polling\_threads\_pool\_size\index{polling-threads-pool-size}
 is to define the maximun number of thread created for the polling
 threads pool size. The rule of the polling\_threads\_pool\_conf\index{polling-threads-pool-conf}
@@ -1794,13 +1920,11 @@ object(s) of which device. This property is an array of strings with
 one string per used thread in the pool. The content of the string
 is simply a device name list with device name splitted by a comma.
 Example of polling\_threads\_pool\_conf property for 3 threads used:
-\begin{lyxcode}
-dserver/<ds~exec~name>/<inst.~name>/polling\_threads\_pool\_conf->~the/dev/01
-
-~~~~~~~~~~~~~~~~~~the/dev/02,the/dev/06
-
-~~~~~~~~~~~~~~~~~~the/dev/03
-\end{lyxcode}
+\begin{minted}[linenos]{cpp}
+dserver/<ds exec name>/<inst. name>/polling_threads_pool_conf-> the/dev/01
+                  the/dev/02,the/dev/06
+                  the/dev/03
+\end{minted}
 Thread number 2 is in charge of 2 devices. Note that there is an entry
 in this list only for the used threads in the pool.
 
@@ -1808,7 +1932,10 @@ The rule of the polling\_before\_9\index{polling_before_9@polling\_before\_9}
 property is to select the polling algorithm which was used in Tango
 device server process before Tango release 9.
 
-\section{Tango log consumer\index{consumer} \label{sec:Tango-log-consumer}}
+
+\section{Tango log consumer\index{consumer} }
+\label{sec:Tango-log-consumer}
+
 
 \subsection{The available Log Consumer}
 
@@ -1848,11 +1975,13 @@ the log request comes from)
 These log details can easily be extended. Any tango device supporting
 this command can act as a device target for other devices. 
 
+
 \section{Control system specific}
 
 It is possible to define a few control system parameters. By control
 system, we mean for each set of computers having the same database
 device server (the same TANGO\_HOST environment variable)
+
 
 \subsection{The device class documentation default value}
 
@@ -1863,6 +1992,7 @@ device class itself does not define any doc\_url property. If the
 Default->doc\_url property is also not defined, a hard-coded default
 value is provided.
 
+
 \subsection{The services definition}
 
 The property used to defined control system services is named \textbf{Services\index{Services}}
@@ -1870,6 +2000,7 @@ and belongs to the free object \textbf{CtrlSystem}\index{CtrlSystem}.
 This property is an array of strings. Each string defines a service
 available within the control system. The syntax of each service definition
 is \begin{center}Service name/Instance name:service device name\end{center}
+
 
 \subsection{Tuning the event system buffers (HWM)\index{HWM}}
 
@@ -1903,6 +2034,7 @@ numbers when writing attributes of the DevFloat or DevDouble data
 type. This is a boolean property and by default, it's value is taken
 as false (Meaning NaN values are rejected).
 
+
 \subsection{Tuning multicasting event propagation}
 
 Starting with Tango 8.1, it is possible to transfer event(s) between
@@ -1914,12 +2046,14 @@ events has to be sent using multicasting and with which parameters.
 See chapter \textquotedbl{}Advanced features/Using multicast protocol
 to transfer events\textquotedbl{} to get details about these properties.
 
+
 \subsection{Summary of CtrlSystem free object properties}
 
 The following table summarizes properties defined at control system
 level and belonging to the free object CtrlSystem\index{CtrlSystem}
 
 \vspace{0.3cm}
+
 
 \begin{center}
 \begin{longtable}{|c|c|c|}
@@ -1949,7 +2083,9 @@ MulticastHops & Max number of eleemnts to cross & 5\tabularnewline
 \vspace{0.3cm}
 
 
+
 \section{C++ specific}
+
 
 \subsection{The Tango master include file (tango.h\index{tango.h})}
 
@@ -1983,7 +2119,9 @@ For instance, with Tango release 8.1.2, TANGO\_VERSION\_MAJOR will
 be set to 8 while TANGO\_VERSION\_MINOR will be 1 and TANGO\_VERSION\_PATCH
 will be 2.
 
+
 \subsection{Tango specific types}
+
 
 \subsubsection*{Operating system free type}
 
@@ -1991,6 +2129,7 @@ Some data type used in the TANGO core software have been defined.
 They are described in the following table.
 
 \vspace{0.3cm}
+
 
 \begin{center}
 \begin{longtable}{|c|c|}
@@ -2011,7 +2150,9 @@ TangoSys\_Cout & ostream\tabularnewline
 
 \vspace{0.3cm}
 
+
 These types are defined in the tango\_config.h file
+
 
 \subsubsection{Template command model related type}
 
@@ -2020,6 +2161,7 @@ command model uses static casting. Many type definition have been
 written for these casting.
 
 \vspace{0.3cm}
+
 
 \begin{center}
 \begin{longtable}{|c|c|c|}
@@ -2040,6 +2182,7 @@ TemplCommandInOut\index{TemplCommandInOut} & Tango::StateMethodPtr & Tango::xxx\
 
 \vspace{0.3cm}
 
+
 The \textbf{Tango::StateMethPtr} is a pointer to a method of the DeviceImpl
 class which returns a boolean and has one parameter which is a reference
 to a const CORBA::Any obect. 
@@ -2053,6 +2196,7 @@ must be set according to the method parameter type as described in
 the next table
 
 \vspace{0.3cm}
+
 
 \begin{center}
 \begin{longtable}{|c|c|}
@@ -2103,6 +2247,7 @@ Tango::DevState & Sta\tabularnewline
 
 \vspace{0.3cm}
 
+
 For instance, a pointer to a method which takes a Tango::DevVarStringArray
 as input parameter must be statically casted to a Tango::CmdMethPtr\_StrA,
 a pointer to a method which takes a Tango::DevLong data as input parameter
@@ -2126,6 +2271,7 @@ casted to a Tango::Db\_CmdMethPtr\_LSA.
 
 All those type are defined in the tango\_const.h file.
 
+
 \subsection{Tango device state code}
 
 The Tango::DevState type is a C++ enumeration starting at 0. The code
@@ -2133,6 +2279,7 @@ associated with each state\index{state} is defined in the following
 table.
 
 \vspace{0.3cm}
+
 
 \begin{center}
 \begin{longtable}{|c|c|}
@@ -2173,9 +2320,11 @@ Tango::UNKNOWN & 13\tabularnewline
 
 \vspace{0.3cm}
 
+
 A strings array called \textbf{Tango::DevStateName\index{DevStateName}}
 can be used to get the device state as a string. Use the Tango device
 state code as index into the array to get the correct string.
+
 
 \subsection{Tango data type }
 
@@ -2183,6 +2332,7 @@ A ``define'' has been created for each Tango data type. This is
 summarized in the following table
 
 \vspace{0.3cm}
+
 
 \begin{center}
 \begin{longtable}{|c|c|c|}
@@ -2257,12 +2407,14 @@ Tango::DevVarStateArray & Tango::DEVVAR\_STATEARRAY & 31\tabularnewline
 
 \vspace{0.3cm}
 
+
 For command which do not take input parameter, the type code Tango::DEV\_VOID
 (value = 0) has been defined.
 
 A strings array called \textbf{Tango::CmdArgTypeName\index{CmdArgTypeName}}
 can be used to get the data type as a string. Use the Tango data type
 code as index into the array to get the correct string.
+
 
 \subsection{Tango command display level}
 
@@ -2279,7 +2431,9 @@ support two types of operation :
 According to this parameter, a graphical application knows if the
 command is for the operator mode or for the expert mode.
 
+
 \section{Device server process option and environment variables}
+
 
 \subsection{Classical device server}
 
@@ -2324,6 +2478,7 @@ prior to use it.
 Note that these options must be used after the device server instance
 name.
 
+
 \subsection{Environment variables}
 
 A few environment variables can be used to tune a Tango control system.
@@ -2336,6 +2491,7 @@ is also not defined in this file, the software searches in the file
 \textbf{/etc/tangorc}\index{tangorc} for its value. For Windows,
 the file is \textbf{\$TANGO\_ROOT/tangorc} TANGO\_ROOT\index{TANGO-ROOT}
 being the mandatory environment variable of the Windows binary distribution.
+
 
 \subsubsection{TANGO\_HOST}
 
@@ -2354,6 +2510,7 @@ is running and port\_2 is its port number. All access to database
 will automatically switch from one server to another one in the list
 if the one which was used has died.
 
+
 \subsubsection{Tango Logging Service (TANGO\_LOG\_PATH)}
 
 The TANGO\_LOG\_PATH\index{TANGO-LOG-PATH} environment variable can
@@ -2364,8 +2521,10 @@ saved into \$TANGO\_LOG\_PATH/\{ server\_name\}/\{ server\_instance\_name\}.
 This means that all the devices running within the same process log
 into the same directory. 
 
+
 \subsubsection{The database and controlled access server (MYSQL\_USER, MYSQL\_PASSWORD,
-MYSQL\_HOST and MYSQL\_DATABASE)\label{subsec:Db-Env-Variables}}
+MYSQL\_HOST and MYSQL\_DATABASE)}
+\label{sub:Db-Env-Variables}
 
 The Tango database server and the controlled access server (if used)
 need to connect to the MySQL database. They are using four environment
@@ -2384,11 +2543,13 @@ MYSQL\_DATABASE environment variable has to be used in case your are
 using the same Tango Database device server executable code to connect
 to several Tango databases each of them having a different name.
 
+
 \subsubsection{The controlled access}
 
 Even if a controlled access system is running, it is possible to by-pass
 it if in the environment of the client application the environment
 variable SUPER\_TANGO\index{SUPER-TANGO} is defined to \textquotedbl{}true\textquotedbl{}.
+
 
 \subsubsection{The event buffer size}
 

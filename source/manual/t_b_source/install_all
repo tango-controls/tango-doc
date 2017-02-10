@@ -1,0 +1,68 @@
+#! /bin/sh
+#
+#
+case `/bin/uname` in
+	Linux )
+	ec="echo -e"
+	;;
+
+	SunOS )
+	ec=echo
+	;;
+
+	HP-UX )
+	ec=echo
+	;;
+esac
+
+if [ $# = 0 ]
+then
+	$ec "\nusage:  install_all type\n"
+	$ec "To install Tango DS programmer's guide, type install_all ds"
+	exit 1
+fi
+#
+#
+#
+TANGO_HTMLDOC_HOME=/segfs/tango/doc/www/tango/tango_doc/kernel_doc/ds_prog
+#
+#	Install documentation
+#
+install_doc () {
+#$ec "generating PDF file from PS file"
+#ps2pdf tango.ps
+
+#$ec "Installing PDF file in ftp server"
+#rcp tango.pdf mars:/ftp/pub/cs/tango
+
+#$ec "Installing PS file in ftp server"
+#rcp tango.ps mars:/ftp/pub/cs/tango
+
+$ec "Generating HTML doc version"
+#latex2html -dir doc_html -split 3 progman.tex >/tmp/progman_tex2html 2>&1
+#latex2html -dir doc_html -split 3 -local_icons tango.tex 
+#/users/verdier/bin/scripts/replace -s "<P>" -t "<Br>" doc_html/*.html
+
+$ec "installing HTML doc in WEB directory" 
+cd doc_html;tar cvf /tmp/Tango.doc *
+rm -Rf $TANGO_HTMLDOC_HOME
+mkdir $TANGO_HTMLDOC_HOME
+cd $TANGO_HTMLDOC_HOME;tar xvf /tmp/Tango.doc
+chmod -R g+w $TANGO_HTMLDOC_HOME
+chgrp -R dserver $TANGO_HTMLDOC_HOME
+rm /tmp/Tango.doc
+}
+#
+#	execute function for choosen system
+#
+case $1 in
+ds ) 
+	install_doc
+	exit 0 ;;
+#
+esac
+#
+$ec "\n Unknown request specification !\n"
+exit 1
+#
+#

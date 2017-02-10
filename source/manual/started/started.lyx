@@ -1,5 +1,5 @@
-#LyX 2.0 created this file. For more info see http://www.lyx.org/
-\lyxformat 413
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
 \begin_document
 \begin_header
 \textclass book
@@ -10,18 +10,18 @@
 \maintain_unincluded_children false
 \language english
 \language_package default
-\inputencoding latin1
+\inputencoding utf8
 \fontencoding global
 \font_roman default
 \font_sans default
 \font_typewriter default
+\font_math auto
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
 \font_sf_scale 100
 \font_tt_scale 100
-
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -32,15 +32,24 @@
 \use_hyperref false
 \papersize default
 \use_geometry false
-\use_amsmath 1
-\use_esint 0
-\use_mhchem 1
-\use_mathdots 1
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
 \cite_engine basic
+\cite_engine_type default
+\biblio_style plain
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
 \suppress_date false
+\justification true
 \use_refstyle 0
 \index Index
 \shortcut idx
@@ -86,70 +95,70 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 /* 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
  * example of a client using the TANGO C++ api.
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
  */
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 #include <tango.h>
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 using namespace Tango;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 int main(unsigned int argc, char **argv)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     try
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 // create a connection to a TANGO device
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         DeviceProxy *device = new DeviceProxy(
 \begin_inset Quotes eld
 \end_inset
@@ -161,59 +170,59 @@ sys/database/2
 );
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 // Ping the device
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         device->ping();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 // Execute a command on the device and extract the reply as a string
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         string db_info; 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         DeviceData cmd_reply;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         cmd_reply = device->command_inout(
 \begin_inset Quotes eld
 \end_inset
@@ -225,11 +234,11 @@ DbInfo
 );
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         cmd_reply >> db_info;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         cout << 
 \begin_inset Quotes eld
 \end_inset
@@ -241,35 +250,35 @@ Command reply
  << db_info << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 // Read a device attribute (string data type)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         string spr;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         DeviceAttribute att_reply;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         att_reply = device->read_attribute(
 \begin_inset Quotes eld
 \end_inset
@@ -281,11 +290,11 @@ StoredProcedureRelease
 );
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         att_reply >> spr;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         cout << 
 \begin_inset Quotes eld
 \end_inset
@@ -297,36 +306,36 @@ Database device stored procedure release:
  << spr << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
     catch (DevFailed &e)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
     {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
         Except::print_exception(e);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
         exit(-1);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
     } 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 \noindent
 }
 \end_layout
@@ -510,44 +519,44 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      1  Tango::DevFloat DocDs::dev_simple(Tango::DevFloat argin)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      2  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      3          Tango::DevFloat argout ;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      4          DEBUG_STREAM << "DocDs::dev_simple(): entering...
  !" << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      5  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      6          //      Add your own code to control device here
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      7  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      8          argout = argin * 2;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      9          return argout;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     10  }
 \end_layout
 
@@ -601,86 +610,86 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      1  Tango::DevVarLongArray *DocDs::dev_array(const Tango::DevVarLongArray
  *argin)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      2  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      3          //      POGO has generated a method core with argout allocation.
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      4          //      If you would like to use a static reference without
  copying,
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      5          //      See "TANGO Device Server Programmer's Manual"
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      6          //              (chapter x.x)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      7          //------------------------------------------------------------
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      8          Tango::DevVarLongArray  *argout  = new Tango::DevVarLongArray();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      9                  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     10          DEBUG_STREAM << "DocDs::dev_array(): entering...
  !" << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     11  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     12          //      Add your own code to control device here
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     13  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     14          long argin_length = argin->length();    
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     15          argout->length(argin_length);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     16          for (int i = 0;i < argin_length;i++)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     17                  (*argout)[i] = (*argin)[i] * 2;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     18  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     19          return argout;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     20  }
 \end_layout
 
@@ -754,85 +763,85 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      1  Tango::DevString DocDs::dev_string(Tango::DevString argin)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      2  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      3          //      POGO has generated a method core with argout allocation.
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      4          //      If you would like to use a static reference without
  copying,
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      5          //      See "TANGO Device Server Programmer's Manual"
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      6          //              (chapter x.x)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      7          //------------------------------------------------------------
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      8          Tango::DevString        argout;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      9          DEBUG_STREAM << "DocDs::dev_string(): entering...
  !" << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     10  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     11          //      Add your own code to control device here
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     12  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     13          cout << "the received string is " << argin << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     14          
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     15          string str("Am I a good Tango dancer ?");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     16          argout = new char[str.size() + 1];
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     17          strcpy(argout,str.c_str());
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     18          
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     19          return argout;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     20  }
 \end_layout
 
@@ -906,86 +915,86 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      1  Tango::DevVarStringArray *DocDs::dev_str_array()
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      2  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      3          //      POGO has generated a method core with argout allocation.
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      4          //      If you would like to use a static reference without
  copying,
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      5          //      See "TANGO Device Server Programmer's Manual"
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      6          //              (chapter x.x)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      7          //------------------------------------------------------------
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      8          Tango::DevVarStringArray        *argout  = new Tango::DevVarStri
 ngArray();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      9  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     10          DEBUG_STREAM << "DocDs::dev_str_array(): entering...
  !" << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     11  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     12          //      Add your own code to control device here
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     13  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     14          argout->length(3);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     15          (*argout)[0] = CORBA::string_dup("Rumba");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     16          (*argout)[1] = CORBA::string_dup("Waltz");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     17          string str("Jerck");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     18          (*argout)[2] = CORBA::string_dup(str.c_str());
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     19          return argout;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     20  }
 \end_layout
 
@@ -1064,106 +1073,106 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      1  Tango::DevVarDoubleStringArray *DocDs::dev_struct()
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      2  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      3          //      POGO has generated a method core with argout allocation.
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      4          //      If you would like to use a static reference without
  copying,
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      5          //      See "TANGO Device Server Programmer's Manual"
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      6          //              (chapter x.x)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      7          //------------------------------------------------------------
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      8          Tango::DevVarDoubleStringArray  *argout  = new Tango::DevVarDoub
 leStringArray();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      9  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     10          DEBUG_STREAM << "DocDs::dev_struct(): entering...
  !" << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     11          
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     12          //      Add your own code to control device here
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     13  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     14          argout->dvalue.length(3);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     15          argout->dvalue[0] = 0.0;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     16          argout->dvalue[1] = 11.11;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     17          argout->dvalue[2] = 22.22;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     18          
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     19          argout->svalue.length(2);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     20          argout->svalue[0] = CORBA::string_dup("Be Bop");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     21          string str("Smurf");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     22          argout->svalue[1] = CORBA::string_dup(str.c_str());
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     23          
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     24          return argout;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     25  }
 \end_layout
 
@@ -1246,35 +1255,35 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      1  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      2  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      3  protected :     
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      4          //      Add your own data members here
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      5          //-----------------------------------------
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      6          Tango::DevString        attr_str_array[5];
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      7          Tango::DevLong          attr_rd;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      8          Tango::DevLong          attr_wr;
 \end_layout
 
@@ -1312,202 +1321,202 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 1 void DocDs::read_attr_hardware(vector<long> &attr_list)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 2 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 3     DEBUG_STREAM << "DocDs::read_attr_hardware(vector<long> &attr_list)
  entering...
  "<< endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 4 // Add your own code here
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 5 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 6     string att_name;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 7     for (long i = 0;i < attr_list.size();i++)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 8     {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 9         att_name = dev_attr->get_attr_by_ind(attr_list[i]).get_name();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 10 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 11        if (att_name == "LongRdAttr")
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 12        {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 13            attr_rd = 5;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 14        }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 15    }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 16 }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 17 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 18 void DocDs::read_LongRdAttr(Tango::Attribute &attr)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 19 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 20     DEBUG_STREAM << "DocDs::read_LongRdAttr(Tango::Attribute &attr) entering...
  "<< endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 21 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 22     attr.set_value(&attr_rd);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 23 }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 24 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 25 void DocDs::read_LongWrAttr(Tango::Attribute &attr)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 26 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 27     DEBUG_STREAM << "DocDs::read_LongWrAttr(Tango::Attribute &attr) entering...
  "<< endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 28 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 29     attr.set_value(&attr_wr);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 30 }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 31 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 32 void DocDs::write_LongWrAttr(Tango::WAttribute &attr)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 33 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 34     DEBUG_STREAM << "DocDs::write_LongWrAttr(Tango::WAttribute &attr)
  entering...
  "<< endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 35 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 36     attr.get_write_value(attr_wr);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 37     DEBUG_STREAM << "Value to be written = " << attr_wr << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 38 }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 39 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 40 void DocDs::read_StrAttr(Tango::Attribute &attr)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 41 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 42     DEBUG_STREAM << "DocDs::read_StrAttr(Tango::Attribute &attr) entering...
  "<< endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 43 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 44     attr_str_array[0] = const_cast<char *>("Rock");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 45     attr_str_array[1] = const_cast<char *>("Samba");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 46 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 47     attr_set_value(attr_str_array, 2);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 48 }
 \end_layout
 

@@ -1,6 +1,7 @@
 
 \chapter{Writing a TANGO client using TANGO APIs}
 
+
 \section{Introduction}
 
 \noindent TANGO devices and database are implemented using the TANGO
@@ -19,12 +20,14 @@ TANGO api supports native C++ data types e.g. strings and vectors.
 This chapter describes how to use these API's. It is not a reference
 guide. Reference documentation is available as Web pages in the \href{http://www.tango-controls.org}{Tango Web site}
 
-\section{Getting Started}
+
+\section{\noindent Getting Started}
 
 Refer to the chapter \textquotedbl{}Getting Started\textquotedbl{}
 for an example on getting start with the C++ or Java api.
 
-\section{Basic Philosophy}
+
+\section{\noindent Basic Philosophy}
 
 \noindent The basic philosophy is to have high level classes to deal
 with Tango devices. To communicate with Tango device, uses the \textbf{DeviceProxy\index{DeviceProxy}}
@@ -43,12 +46,14 @@ database. Callback for asynchronous requests or events are implemented
 via a \textbf{CallBack\index{CallBack}} class. An utility class called
 \textbf{ApiUtil\index{ApiUtil}} is also available.
 
+
 \section{Data types}
 
 The definition of the basic data type you can transfert using Tango
 is:
 
 \vspace{0.3cm}
+
 
 \begin{center}
 \begin{longtable}{|c|c|}
@@ -91,6 +96,7 @@ DevState & Tango specific data type\tabularnewline
 
 \vspace{0.3cm}
 
+
 Using commands, you are able to transfert all these data types, array
 of these basic types and two other Tango specific data types called
 DevVarLongStringArray and DevVarDoubleStringArray. See chapter \ref{Data exchange}
@@ -98,7 +104,9 @@ to get details about them. You are also able to create attributes
 using any of these basic data types to transfer data between clients
 and servers.
 
-\section{Request model\label{sec:Request-model}}
+
+\section{Request model}
+\label{sec:Request-model}
 
 For the most important API remote calls (command\_inout, read\_attribute(s)
 and write\_attribute(s)), Tango supports two kind of requests which
@@ -138,6 +146,7 @@ a \emph{synchronization} method (The client pull-out the answer).
 In push mode, the callback is executed as soon as the reply arrives
 in a separate thread (The server pushes the answer to the client).
 
+
 \subsection{Synchronous model}
 
 Synchronous access to Tango device are provided using the \emph{DeviceProxy}
@@ -170,6 +179,7 @@ Its main synchronous methods are :
 \item \emph{write\_read()} to write then read the attribute value
 \end{itemize}
 Data are transmitted using the \emph{DeviceAttribute} class.
+
 
 \subsection{Asynchronous model}
 
@@ -221,6 +231,7 @@ write the attribute value
 
 \section{Events\index{event}}
 
+
 \subsection{Introduction}
 
 Events are a critical part of any distributed control system. Their
@@ -246,6 +257,7 @@ doing other things, is fast and makes efficient use of the network.
 The rest of this chapter explains how the TANGO events are implemented
 and the application programmer's interface.
 
+
 \subsection{Event definition}
 
 TANGO events represent an alternative channel for reading TANGO device
@@ -263,6 +275,7 @@ was used to dispatch events. Starting with TANGO 8, this CORBA Notification
 service has been replaced by the ZMQ\index{ZMQ} library which implements
 a Publish/Subscribe communication model well adapted to TANGO events
 communication.
+
 
 \subsection{Event types}
 
@@ -302,8 +315,10 @@ property of the attribute and the polling frequency. The polling frequency
 determines the highest frequency at which the attribute is read. The
 event\_period determines the highest frequency at which the periodic
 event is sent. Note if the event\_period is not an integral number
-of the polling period there will be a beating of the two frequencies\footnote{note: the polling is not synchronized is currently not synchronized
-on the hour}. Clients can reduce the frequency at which they receive periodic
+of the polling period there will be a beating of the two frequencies%
+\footnote{note: the polling is not synchronized is currently not synchronized
+on the hour%
+}. Clients can reduce the frequency at which they receive periodic
 events by specifying a filter on the periodic event counter. 
 \item \textbf{archive\index{archive}} - an event is sent if one of the
 archiving conditions is satisfied. Archiving conditions are defined
@@ -353,6 +368,7 @@ library or fired by the user code. Events number 4 and 7 are only
 automatically sent by the library and events 5, 6 and 8 are fired
 only by the user code.
 
+
 \subsection{Event filtering (Removed in Tango release 8 and above)}
 
 Please, note that this feature is available only for Tango releases
@@ -363,6 +379,7 @@ control system, some pre-defined fields can be used as filter. These
 fields depend on the event type.
 
 \vspace{0.3cm}
+
 
 \begin{center}
 \begin{longtable}{|c|c|c|c|}
@@ -403,6 +420,7 @@ periodic & counter & Incremented each time the event is sent & long\tabularnewli
 
 \vspace{0.3cm}
 
+
 Filter are defined as a string following a grammar defined by CORBA.
 It is defined in \cite{Notif_doc}. The following example shows you
 the most common use of these filters in the Tango world :
@@ -417,6 +435,7 @@ be \begin{center}\textquotedbl{}\$quality == 1\textquotedbl{}\end{center}
 \end{itemize}
 For user events, the filter field name(s) and their value are defined
 by the device server programmer.
+
 
 \subsection{Application Programmer's Interface}
 
@@ -459,6 +478,7 @@ events\index{event} are generated. A set of standard attribute properties
 at device startup time and used to configure the event engine. If
 there are no properties defined then default values specified in the
 code are used. 
+
 
 \paragraph{change}
 
@@ -534,6 +554,7 @@ to receive the event data.
 \end{itemize}
 The mode to be used has to be chosen when subscribing for the event.
 
+
 \paragraph{Subscribing to events}
 
 The client call to subscribe to an event is named \emph{DeviceProxy::subscribe\_event()\index{subscribe-event}}
@@ -541,17 +562,13 @@ The client call to subscribe to an event is named \emph{DeviceProxy::subscribe\_
 reception mode to use. 
 
 \textbf{Push model}:
-\begin{lyxcode}
-int~DeviceProxy::subscribe\_event(~
-
-~~~~~~~~~~~~~const~string~\&attribute,~
-
-~~~~~~~~~~~~~Tango::EventType~event,~
-
-~~~~~~~~~~~~~Tango::CallBack~{*}callback,
-
-~~~~~~~~~~~~~bool~stateless~=~false);
-\end{lyxcode}
+\begin{minted}[linenos]{cpp}
+int DeviceProxy::subscribe_event( 
+             const string &attribute, 
+             Tango::EventType event, 
+             Tango::CallBack *callback,
+             bool stateless = false);
+\end{minted}
 The client implements a callback method which is triggered when the
 event is received. Note that this callback method will be executed
 by a thread started by the underlying ORB. This thread is not the
@@ -559,17 +576,13 @@ application main thread. For Tango releases before 8, a similar call
 with one extra parameter for event filtering is also available.
 
 \textbf{Pull model}:
-\begin{lyxcode}
-int~DeviceProxy::subscribe\_event(~
-
-~~~~~~~~~~~~~const~string~\&attribute,~
-
-~~~~~~~~~~~~~Tango::EventType~event,~
-
-~~~~~~~~~~~~~int~event\_queue\_size,
-
-~~~~~~~~~~~~~bool~stateless~=~false);
-\end{lyxcode}
+\begin{minted}[linenos]{cpp}
+int DeviceProxy::subscribe_event( 
+             const string &attribute, 
+             Tango::EventType event, 
+             int event_queue_size,
+             bool stateless = false);
+\end{minted}
 The client chooses the size of the round robin event reception buffer.
 Arriving events will be buffered until the client uses \emph{DeviceProxy::get\_events()\index{get-events}}
 to extract the event data. For Tango releases before 8, a similar
@@ -594,144 +607,92 @@ in the Tango system.
 Note that in this model, the callback method will be executed by the
 thread doing the \emph{DeviceProxy::get\_events()} call.
 
+
 \paragraph{The CallBack class}
 
 In C++, the client has to implement a class inheriting from the Tango
 CallBack\index{CallBack} class and pass this to the \emph{DeviceProxy::subscribe\_event()}
 method. The CallBack class is the same class as the one proposed for
 the TANGO asynchronous call. This is as follows for events :
-\begin{lyxcode}
-class~MyCallback~:~public~Tango::CallBack
-
-\{
-
-~~~.
-
-~~~.
-
-~~~.
-
-~~~virtual~push\_event(Tango::EventData~{*});
-
-~~~virtual~push\_event(Tango::AttrConfEventData~{*});
-
-~~~virtual~push\_event(Tango::DataReadyEventData~{*});
-
-~~~virtual~push\_event(Tango::DevIntrChangeEventData~{*});
-
-~~~virtual~push\_event(Tango::PipeEventData~{*});
-
-\}
-\end{lyxcode}
+\begin{minted}[linenos]{cpp}
+class MyCallback : public Tango::CallBack
+{
+   .
+   .
+   .
+   virtual push_event(Tango::EventData *);
+   virtual push_event(Tango::AttrConfEventData *);
+   virtual push_event(Tango::DataReadyEventData *);
+   virtual push_event(Tango::DevIntrChangeEventData *);
+   virtual push_event(Tango::PipeEventData *);
+}
+\end{minted}
 where EventData\index{EventData} is defined as follows :
-\begin{lyxcode}
-class~EventData~
-
-\{
-
-~~~DeviceProxy~~~~~~~{*}device;
-
-~~~string~~~~~~~~~~~~attr\_name;
-
-~~~string~~~~~~~~~~~~event;
-
-~~~DeviceAttribute~~~{*}attr\_value;
-
-~~~bool~~~~~~~~~~~~~~err;
-
-~~~DevErrorList~~~~~~errors;
-
-\}
-\end{lyxcode}
+\begin{minted}[linenos]{cpp}
+class EventData 
+{
+   DeviceProxy       *device;
+   string            attr_name;
+   string            event;
+   DeviceAttribute   *attr_value;
+   bool              err;
+   DevErrorList      errors;
+}
+\end{minted}
 AttrConfEventData\index{AttrConfEventData} is defined as follows
 :
-\begin{lyxcode}
-class~AttrConfEventData~
-
-\{
-
-~~~DeviceProxy~~~~~~~{*}device;
-
-~~~string~~~~~~~~~~~~attr\_name;
-
-~~~string~~~~~~~~~~~~event;
-
-~~~AttributeInfoEx~~~{*}attr\_conf;
-
-~~~bool~~~~~~~~~~~~~~err;
-
-~~~DevErrorList~~~~~~errors;
-
-\}
-\end{lyxcode}
+\begin{minted}[linenos]{cpp}
+class AttrConfEventData 
+{
+   DeviceProxy       *device;
+   string            attr_name;
+   string            event;
+   AttributeInfoEx   *attr_conf;
+   bool              err;
+   DevErrorList      errors;
+}
+\end{minted}
 DataReadyEventData\index{DataReadyEventData} is defined as follows
 :
-\begin{lyxcode}
-class~DataReadyEventData~
-
-\{
-
-~~~DeviceProxy~~~~~~~{*}device;
-
-~~~string~~~~~~~~~~~~attr\_name;
-
-~~~string~~~~~~~~~~~~event;
-
-~~~int~~~~~~~~~~~~~~~attr\_data\_type;
-
-~~~int~~~~~~~~~~~~~~~ctr;
-
-~~~bool~~~~~~~~~~~~~~err;
-
-~~~DevErrorList~~~~~~errors;
-
-\}
-\end{lyxcode}
+\begin{minted}[linenos]{cpp}
+class DataReadyEventData 
+{
+   DeviceProxy       *device;
+   string            attr_name;
+   string            event;
+   int               attr_data_type;
+   int               ctr;
+   bool              err;
+   DevErrorList      errors;
+}
+\end{minted}
 DevIntrChangeEventData\index{DevIntrChangeEventData} is defined as
 follows :
-\begin{lyxcode}
-class~DevIntrChangeEventData~
-
-\{
-
-~~~DeviceProxy~~~~~~~~~~~~device;
-
-~~~string~~~~~~~~~~~~~~~~~event;
-
-~~~string~~~~~~~~~~~~~~~~~device\_name;
-
-~~~CommandInfoList~~~~~~~~cmd\_list;
-
-~~~AttributeInfoListEx~~~~att\_list;
-
-~~~bool~~~~~~~~~~~~~~~~~~~dev\_started;
-
-~~~bool~~~~~~~~~~~~~~~~~~~err;
-
-~~~DevErrorList~~~~~~~~~~~errors;
-
-\}
-\end{lyxcode}
+\begin{minted}[linenos]{cpp}
+class DevIntrChangeEventData 
+{
+   DeviceProxy            device;
+   string                 event;
+   string                 device_name;
+   CommandInfoList        cmd_list;
+   AttributeInfoListEx    att_list;
+   bool                   dev_started;
+   bool                   err;
+   DevErrorList           errors;
+}
+\end{minted}
 and PipeEventData\index{PipeEventData} is defined as follows :
-\begin{lyxcode}
-class~PipeEventData~
-
-\{
-
-~~~DeviceProxy~~~~~~~{*}device;
-
-~~~string~~~~~~~~~~~~pipe\_name;
-
-~~~string~~~~~~~~~~~~event;
-
-~~~DevicePipe~~~~~~~~{*}pipe\_value;
-
-~~~bool~~~~~~~~~~~~~~err;
-
-~~~DevErrorList~~~~~~errors;
-
-\}
-\end{lyxcode}
+\begin{minted}[linenos]{cpp}
+class PipeEventData 
+{
+   DeviceProxy       *device;
+   string            pipe_name;
+   string            event;
+   DevicePipe        *pipe_value;
+   bool              err;
+   DevErrorList      errors;
+}
+\end{minted}
 In push model, there are some cases (same callback used for events
 coming from different devices hosted in device server process running
 on different hosts) where the callback method could be executed concurently
@@ -739,15 +700,16 @@ by different threads started by the ORB. The user has to code his
 callback method in a \textbf{thread}\index{thread} \textbf{safe}
 manner.
 
+
 \paragraph{Unsubscribing from an event }
 
 Unsubscribe a client from receiving the event specified by \emph{event\_id}
 is done by calling the \emph{DeviceProxy::unsubscribe\_event()\index{unsubscribe-event}}
 method :
-\begin{lyxcode}
-void~DeviceProxy::unsubscribe\_event(int~event\_id);
+\begin{minted}[linenos]{cpp}
+void DeviceProxy::unsubscribe_event(int event_id);
 
-\end{lyxcode}
+\end{minted}
 
 \paragraph{Extract buffered event data}
 
@@ -755,62 +717,46 @@ When the pull model was chosen during the event subscription, the
 received event data can be extracted with \emph{DeviceProxy::get\_events()\index{get-events}.}
 Two possibilities are available for data extraction. Either a callback
 method can be executed for every event in the buffer when using
-\begin{lyxcode}
-int~DeviceProxy::get\_events(~
-
-~~~~~~~~~~~~~int~event\_id,~
-
-~~~~~~~~~~~~~CallBack~{*}cb);
-\end{lyxcode}
+\begin{minted}[linenos]{cpp}
+int DeviceProxy::get_events( 
+             int event_id, 
+             CallBack *cb);
+\end{minted}
 Or all the event data can be directly extracted as EventDataList\index{EventDataList},
 AttrConfEventDataList\index{AttrConfEventDataList} , DataReadyEventDataList\index{DataReadyEventDataList},
 DevIntrChangeEventDataList\index{DevIntrChangeEventDataList} or PipeEventDataList\index{PipeEventDataList}
 when using
-\begin{lyxcode}
-int~DeviceProxy::get\_events(~
+\begin{minted}[linenos]{cpp}
+int DeviceProxy::get_events( 
+             int event_id, 
+             EventDataList &event_list);
 
-~~~~~~~~~~~~~int~event\_id,~
+int DeviceProxy::get_events( 
+             int event_id, 
+             AttrConfEventDataList &event_list);
 
-~~~~~~~~~~~~~EventDataList~\&event\_list);
+int DeviceProxy::get_events( 
+             int event_id, 
+             DataReadyEventDataList &event_list);
 
-int~DeviceProxy::get\_events(~
+int DeviceProxy::get_events( 
+             int event_id, 
+             DevIntrChangeEventDataList &event_list);
 
-~~~~~~~~~~~~~int~event\_id,~
-
-~~~~~~~~~~~~~AttrConfEventDataList~\&event\_list);
-
-int~DeviceProxy::get\_events(~
-
-~~~~~~~~~~~~~int~event\_id,~
-
-~~~~~~~~~~~~~DataReadyEventDataList~\&event\_list);
-
-int~DeviceProxy::get\_events(~
-
-~~~~~~~~~~~~~int~event\_id,~
-
-~~~~~~~~~~~~~DevIntrChangeEventDataList~\&event\_list);
-
-int~DeviceProxy::get\_events(~
-
-~~~~~~~~~~~~~int~event\_id,~
-
-~~~~~~~~~~~~~PipeEventDataList~\&event\_list);
-\end{lyxcode}
+int DeviceProxy::get_events( 
+             int event_id, 
+             PipeEventDataList &event_list);
+\end{minted}
 The event data lists are vectors of EventData, AttrConfEventData,
 DataReadyEventData or PipeEventData pointers with special destructor
 and clean-up methods to ease the memory handling.
-\begin{lyxcode}
-class~EventDataList:public~vector<EventData~{*}>
-
-class~AttrConfEventDataList:public~vector<AttrConfEventData~{*}>
-
-class~DataReadyEventDataList:public~vector<DataReadyEventData~{*}>
-
-class~DevIntrChangeEventDataList:public~vector<DevIntrChangeEventData~{*}>
-
-class~PipeEventDataList:public~vector<PipeEventData~{*}>
-\end{lyxcode}
+\begin{minted}[linenos]{cpp}
+class EventDataList:public vector<EventData *>
+class AttrConfEventDataList:public vector<AttrConfEventData *>
+class DataReadyEventDataList:public vector<DataReadyEventData *>
+class DevIntrChangeEventDataList:public vector<DevIntrChangeEventData *>
+class PipeEventDataList:public vector<PipeEventData *>
+\end{minted}
 
 \paragraph{Example}
 
@@ -818,164 +764,104 @@ Here is a typical code example of a client to register and receive
 events. First, you have to define a callback\index{CallBack} method
 as follows:
 
-\input{gen_api/line.tex}
-\begin{lyxcode}
-class~DoubleEventCallBack~:~public~Tango::CallBack~
 
-\{
+\begin{minted}[linenos]{cpp}
+class DoubleEventCallBack : public Tango::CallBack 
+{
+   void push_event(Tango::EventData*);
+}; 
+ 
 
-~~~void~push\_event(Tango::EventData{*});
+void DoubleEventCallBack::push_event(Tango::EventData *myevent)
+{
+    Tango::DevVarDoubleArray *double_value;
+    try
+    {
+        cout << "DoubleEventCallBack::push_event(): called attribute " 
+             << myevent->attr_name
+             << " event "
+             << myevent->event 
+             << " (err="
+             << myevent->err
+             << ")" << endl;
+ 
 
-\};~
+         if (!myevent->err)
+         {
+             *(myevent->attr_value) >> double_value;
+             cout << "double value "
+                  << (*double_value)[0]
+                  << endl;
+             delete double_value;
+         }
+    }
+    catch (...)
+    {
+         cout << "DoubleEventCallBack::push_event(): could not extract data !\n";
+    }
+}
+\end{minted}
 
-~
-
-void~DoubleEventCallBack::push\_event(Tango::EventData~{*}myevent)
-
-\{
-
-~~~~Tango::DevVarDoubleArray~{*}double\_value;
-
-~~~~try
-
-~~~~\{
-
-~~~~~~~~cout~<\textcompwordmark{}<~\textquotedbl{}DoubleEventCallBack::push\_event():~called~attribute~\textquotedbl{}~
-
-~~~~~~~~~~~~~<\textcompwordmark{}<~myevent->attr\_name
-
-~~~~~~~~~~~~~<\textcompwordmark{}<~\textquotedbl{}~event~\textquotedbl{}
-
-~~~~~~~~~~~~~<\textcompwordmark{}<~myevent->event~
-
-~~~~~~~~~~~~~<\textcompwordmark{}<~\textquotedbl{}~(err=\textquotedbl{}
-
-~~~~~~~~~~~~~<\textcompwordmark{}<~myevent->err
-
-~~~~~~~~~~~~~<\textcompwordmark{}<~\textquotedbl{})\textquotedbl{}~<\textcompwordmark{}<~endl;
-
-~
-
-~~~~~~~~~if~(!myevent->err)
-
-~~~~~~~~~\{
-
-~~~~~~~~~~~~~{*}(myevent->attr\_value)~>\textcompwordmark{}>~double\_value;
-
-~~~~~~~~~~~~~cout~<\textcompwordmark{}<~\textquotedbl{}double~value~\textquotedbl{}
-
-~~~~~~~~~~~~~~~~~~<\textcompwordmark{}<~({*}double\_value){[}0{]}
-
-~~~~~~~~~~~~~~~~~~<\textcompwordmark{}<~endl;
-
-~~~~~~~~~~~~~delete~double\_value;
-
-~~~~~~~~~\}
-
-~~~~\}
-
-~~~~catch~(...)
-
-~~~~\{
-
-~~~~~~~~~cout~<\textcompwordmark{}<~\textquotedbl{}DoubleEventCallBack::push\_event():~could~not~extract~data~!\textbackslash{}n\textquotedbl{};
-
-~~~~\}
-
-\}
-\end{lyxcode}
-\input{gen_api/line.tex}
 
 Then the main code must subscribe\index{evebt-subscribe} to the event
 and choose the push or the pull model for event reception.
 
 \textbf{Push model}:
 
-\input{gen_api/line.tex}
-\begin{lyxcode}
-DoubleEventCallBack~{*}double\_callback~=~new~DoubleEventCallBack;~
 
-~~~~~~
+\begin{minted}[linenos]{cpp}
+DoubleEventCallBack *double_callback = new DoubleEventCallBack; 
+      
+Tango::DeviceProxy *mydevice = new Tango::DeviceProxy("my/device/1");
+ 
+int event_id;
+const string attr_name("current");
+event_id = mydevice->subscribe_event(attr_name, 
+                         Tango::CHANGE_EVENT,
+                         double_callback);
+cout << "event_client() id = " << event_id << endl;
 
-Tango::DeviceProxy~{*}mydevice~=~new~Tango::DeviceProxy(\textquotedbl{}my/device/1\textquotedbl{});
+// The callback methods are executed by the Tango event reception thread.
+// The main thread is not concerned of event reception.
+// Whatch out with synchronisation and data access in a multi threaded environment!
 
-~
+sleep(1000); // wait for events
+ 
+mydevice->unsubscribe_event(event_id);
+\end{minted}
 
-int~event\_id;
-
-const~string~attr\_name(\textquotedbl{}current\textquotedbl{});
-
-event\_id~=~mydevice->subscribe\_event(attr\_name,~
-
-~~~~~~~~~~~~~~~~~~~~~~~~~Tango::CHANGE\_EVENT,
-
-~~~~~~~~~~~~~~~~~~~~~~~~~double\_callback);
-
-cout~<\textcompwordmark{}<~\textquotedbl{}event\_client()~id~=~\textquotedbl{}~<\textcompwordmark{}<~event\_id~<\textcompwordmark{}<~endl;
-
-//~The~callback~methods~are~executed~by~the~Tango~event~reception~thread.
-
-//~The~main~thread~is~not~concerned~of~event~reception.
-
-//~Whatch~out~with~synchronisation~and~data~access~in~a~multi~threaded~environment!
-
-sleep(1000);~//~wait~for~events
-
-~
-
-mydevice->unsubscribe\_event(event\_id);
-\end{lyxcode}
-\input{gen_api/line.tex}
 
 \textbf{Pull model}:
 
-\input{gen_api/line.tex}
-\begin{lyxcode}
-DoubleEventCallBack~{*}double\_callback~=~new~DoubleEventCallBack;
 
-int~event\_queue\_size~=~100;~//~keep~the~last~100~events
+\begin{minted}[linenos]{cpp}
+DoubleEventCallBack *double_callback = new DoubleEventCallBack;
+int event_queue_size = 100; // keep the last 100 events
+      
+Tango::DeviceProxy *mydevice = new Tango::DeviceProxy("my/device/1");
+ 
+int event_id;
+const string attr_name("current");
+event_id = mydevice->subscribe_event(attr_name, 
+                         Tango::CHANGE_EVENT,
+                         event_queue_size);
+cout << "event_client() id = " << event_id << endl;
 
-~~~~~~
+// Check every 3 seconds whether new events have arrived and trigger the callback method 
+// for the new events.
 
-Tango::DeviceProxy~{*}mydevice~=~new~Tango::DeviceProxy(\textquotedbl{}my/device/1\textquotedbl{});
+for (int i=0; i < 100; i++)
+{
+    sleep (3); 
+    
+    // Read the stored event data from the queue and call the callback method for every event.
+    mydevice->get_events(event_id, double_callback);
+}
+ 
+event_test->unsubscribe_event(event_id);
+\end{minted}
 
-~
 
-int~event\_id;
-
-const~string~attr\_name(\textquotedbl{}current\textquotedbl{});
-
-event\_id~=~mydevice->subscribe\_event(attr\_name,~
-
-~~~~~~~~~~~~~~~~~~~~~~~~~Tango::CHANGE\_EVENT,
-
-~~~~~~~~~~~~~~~~~~~~~~~~~event\_queue\_size);
-
-cout~<\textcompwordmark{}<~\textquotedbl{}event\_client()~id~=~\textquotedbl{}~<\textcompwordmark{}<~event\_id~<\textcompwordmark{}<~endl;
-
-//~Check~every~3~seconds~whether~new~events~have~arrived~and~trigger~the~callback~method~
-
-//~for~the~new~events.
-
-for~(int~i=0;~i~<~100;~i++)
-
-\{
-
-~~~~sleep~(3);~
-
-~~~~
-
-~~~~//~Read~the~stored~event~data~from~the~queue~and~call~the~callback~method~for~every~event.
-
-~~~~mydevice->get\_events(event\_id,~double\_callback);
-
-\}
-
-~
-
-event\_test->unsubscribe\_event(event\_id);
-\end{lyxcode}
-\input{gen_api/line.tex}
 
 \section{Group\index{group}}
 
@@ -994,6 +880,7 @@ In this chapter, we will use the term \emph{hierarchy} to refer to
 a group and its sub-groups. The term \emph{Group} designates to the
 local set of devices attached to a specific Group. 
 
+
 \subsection{Getting started with Tango group}
 
 The quickest way of getting started is to study an example\ldots{}
@@ -1010,124 +897,80 @@ Using a Tango Group, such features are quite straightforward to obtain.
 Reading the description of the problem, the device hierarchy becomes
 obvious. Our \textquotedbl{}gauges\textquotedbl{} group will have
 the following structure: 
-\begin{lyxcode}
-->~gauges
-
-~~|~~->~cell-01
-
-~~|~~~~~|->~inst-c01/vac-gauge/strange~
-
-~~|~~~~~|->~penning~
-
-~~|~~~~~|~~~|->~inst-c01/vac-gauge/penning-01~
-
-~~|~~~~~|~~~|->~inst-c01/vac-gauge/penning-02~
-
-~~|~~~~~|~~~|-~...~
-
-~~|~~~~~|~~~|->~inst-c01/vac-gauge/penning-xx~
-
-~~|~~~~~|->~pirani~
-
-~~|~~~~~~~~~|->~inst-c01/vac-gauge/pirani-01
-
-~~|~~~~~~~~~|->~...~
-
-~~|~~~~~~~~~|->~inst-c01/vac-gauge/pirani-xx~
-
-~~|~~->~cell-02
-
-~~|~~~~~|->~inst-c02/vac-gauge/strange~
-
-~~|~~~~~|->~penning~
-
-~~|~~~~~|~~~|->~inst-c02/vac-gauge/penning-01~
-
-~~|~~~~~|~~~|->~...~
-
-~~|~~~~~|~
-
-~~|~~~~~|->~pirani~
-
-~~|~~~~~|~~~|->~...~
-
-~~|~~->~cell-03~
-
-~~|~~~~~|->~...~
-
-~~|~~~~~~~~~|~->~...~
-\end{lyxcode}
+\begin{minted}[linenos]{cpp}
+-> gauges
+  |  -> cell-01
+  |     |-> inst-c01/vac-gauge/strange 
+  |     |-> penning 
+  |     |   |-> inst-c01/vac-gauge/penning-01 
+  |     |   |-> inst-c01/vac-gauge/penning-02 
+  |     |   |- ... 
+  |     |   |-> inst-c01/vac-gauge/penning-xx 
+  |     |-> pirani 
+  |         |-> inst-c01/vac-gauge/pirani-01
+  |         |-> ... 
+  |         |-> inst-c01/vac-gauge/pirani-xx 
+  |  -> cell-02
+  |     |-> inst-c02/vac-gauge/strange 
+  |     |-> penning 
+  |     |   |-> inst-c02/vac-gauge/penning-01 
+  |     |   |-> ... 
+  |     | 
+  |     |-> pirani 
+  |     |   |-> ... 
+  |  -> cell-03 
+  |     |-> ... 
+  |         | -> ... 
+\end{minted}
 In the C++, such a hierarchy can be build as follows (basic version): 
 
-\input{gen_api/line.tex}
-\begin{lyxcode}
-//-~step0:~create~the~root~group~
 
-Tango::Group~{*}gauges~=~new~Tango::Group(\textquotedbl{}gauges\textquotedbl{});
+\begin{minted}[linenos]{cpp}
+//- step0: create the root group 
+Tango::Group *gauges = new Tango::Group("gauges");
+ 
 
-~
+//- step1: create a group for the n-th cell
+Tango::Group *cell = new Tango::Group("cell-01");
+ 
 
-//-~step1:~create~a~group~for~the~n-th~cell
-
-Tango::Group~{*}cell~=~new~Tango::Group(\textquotedbl{}cell-01\textquotedbl{});
-
-~
-
-//-~step2:~make~the~cell~a~sub-group~of~the~root~group~
-
+//- step2: make the cell a sub-group of the root group 
 gauges->add(cell);
+ 
 
-~
+//- step3: create a "penning" group 
+Tango::Group *gauge_family = new Tango::Group("penning");
+ 
 
-//-~step3:~create~a~\textquotedbl{}penning\textquotedbl{}~group~
+//- step4: add all penning gauges located into the cell (note the wildcard)
+gauge_family->add("inst-c01/vac-gauge/penning*");
+ 
 
-Tango::Group~{*}gauge\_family~=~new~Tango::Group(\textquotedbl{}penning\textquotedbl{});
+//- step5: add the penning gauges to the cell
+cell->add(gauge_family);
+ 
 
-~
+//- step6: create a "pirani" group 
+gauge_family = new Tango::Group("pirani");
+ 
 
-//-~step4:~add~all~penning~gauges~located~into~the~cell~(note~the~wildcard)
+//- step7: add all pirani gauges located into the cell (note the wildcard)
+gauge_family->add("inst-c01/vac-gauge/pirani*");
+ 
 
-gauge\_family->add(\textquotedbl{}inst-c01/vac-gauge/penning{*}\textquotedbl{});
+//- step8: add the pirani gauges to the cell
+cell->add(gauge_family);
+ 
 
-~
+//- step9: add the "strange" gauge to the cell
+cell->add("inst-c01/vac-gauge/strange");
+ 
 
-//-~step5:~add~the~penning~gauges~to~the~cell
-
-cell->add(gauge\_family);
-
-~
-
-//-~step6:~create~a~\textquotedbl{}pirani\textquotedbl{}~group~
-
-gauge\_family~=~new~Tango::Group(\textquotedbl{}pirani\textquotedbl{});
-
-~
-
-//-~step7:~add~all~pirani~gauges~located~into~the~cell~(note~the~wildcard)
-
-gauge\_family->add(\textquotedbl{}inst-c01/vac-gauge/pirani{*}\textquotedbl{});
-
-~
-
-//-~step8:~add~the~pirani~gauges~to~the~cell
-
-cell->add(gauge\_family);
-
-~
-
-//-~step9:~add~the~\textquotedbl{}strange\textquotedbl{}~gauge~to~the~cell
-
-cell->add(\textquotedbl{}inst-c01/vac-gauge/strange\textquotedbl{});
-
-~
-
-//-~repeat~step~1~to~9~for~the~remaining~cells
-
-cell~=~new~Tango::Group(\textquotedbl{}cell-02\textquotedbl{});
-
+//- repeat step 1 to 9 for the remaining cells
+cell = new Tango::Group("cell-02");
 ...
-\end{lyxcode}
-\input{gen_api/line.tex} 
+\end{minted}
+ 
 
 \textbf{Important note}: There is no particular order to create the
 hierarchy. However, the insertion order of the devices is conserved
@@ -1152,27 +995,20 @@ We can now perform any action on any element of our \textquotedbl{}gauges\textqu
 group. For instance, let's ping the whole hierarchy to be sure that
 all devices are alive.
 
-\input{gen_api/line.tex}
-\begin{lyxcode}
-//-~ping~the~whole~hierarchy~
 
-if~(gauges->ping()~==~true)
-
-\{
-
-~~~~std::cout~<\textcompwordmark{}<~\textquotedbl{}all~devices~alive\textquotedbl{}~<\textcompwordmark{}<~std::endl;
-
-\}
-
+\begin{minted}[linenos]{cpp}
+//- ping the whole hierarchy 
+if (gauges->ping() == true)
+{
+    std::cout << "all devices alive" << std::endl;
+}
 else
+{
+    std::cout << "at least one dead/busy/locked/... device" << std::endl;
+}
+\end{minted}
+ 
 
-\{
-
-~~~~std::cout~<\textcompwordmark{}<~\textquotedbl{}at~least~one~dead/busy/locked/...~device\textquotedbl{}~<\textcompwordmark{}<~std::endl;
-
-\}
-\end{lyxcode}
-\input{gen_api/line.tex} 
 
 \subsection{Forward or not forward\index{forward}?}
 
@@ -1186,6 +1022,7 @@ In C++ , the forward option defaults to true (thanks to the C++ default
 argument value). There is no such mechanism in Java and the forward
 option must be systematically specified.
 
+
 \subsection{Executing a command}
 
 As a proxy for a collection of devices, the Tango Group provides an
@@ -1194,7 +1031,9 @@ the Group\index{group} interface contains several implementations
 of the \emph{command\_inout\index{command-inout}} method. Both synchronous
 and asynchronous forms are supported. 
 
-\subsubsection{Obtaining command results\label{subsec:Obt-cmd-results}}
+
+\subsubsection{Obtaining command results}
+\label{sub:Obt-cmd-results}
 
 Command results are returned using a Tango::GroupCmdReplyList\index{GroupCmdReplyList}.
 This is nothing but a vector containing a Tango::GroupCmdReply\index{GroupCmdReply}
@@ -1207,17 +1046,15 @@ We previously indicated that the Tango Group implementation guarantees
 that the command results are returned in the order in which its elements
 were attached to the group. For instance, if g1 is a group containing
 three devices attached in the following order:
-\begin{lyxcode}
-g1->add(\textquotedbl{}my/device/01\textquotedbl{});
-
-g1->add(\textquotedbl{}my/device/03\textquotedbl{});
-
-g1->add(\textquotedbl{}my/device/02\textquotedbl{});
-\end{lyxcode}
+\begin{minted}[linenos]{cpp}
+g1->add("my/device/01");
+g1->add("my/device/03");
+g1->add("my/device/02");
+\end{minted}
 the results of 
-\begin{lyxcode}
-Tango::GroupCmdReplyList~crl~=~g1->command\_inout(\textquotedbl{}Status\textquotedbl{});
-\end{lyxcode}
+\begin{minted}[linenos]{cpp}
+Tango::GroupCmdReplyList crl = g1->command_inout("Status");
+\end{minted}
 will be organized as follows:
 
 \emph{crl{[}0{]}} contains the status of my/device/01 \\
@@ -1226,43 +1063,32 @@ will be organized as follows:
 
 Things get more complicated if sub-groups are added \textquotedbl{}between\textquotedbl{}
 devices.
-\begin{lyxcode}
-g2->add(\textquotedbl{}my/device/04\textquotedbl{});
+\begin{minted}[linenos]{cpp}
+g2->add("my/device/04");
+g2->add("my/device/05");
+ 
 
-g2->add(\textquotedbl{}my/device/05\textquotedbl{});
+g4->add("my/device/08");
+g4->add("my/device/09");
+ 
 
-~
-
-g4->add(\textquotedbl{}my/device/08\textquotedbl{});
-
-g4->add(\textquotedbl{}my/device/09\textquotedbl{});
-
-~
-
-g3->add(\textquotedbl{}my/device/06\textquotedbl{});
-
+g3->add("my/device/06");
 g3->add(g4);
+g3->add("my/device/07");
+ 
 
-g3->add(\textquotedbl{}my/device/07\textquotedbl{});
-
-~
-
-g1->add(\textquotedbl{}my/device/01\textquotedbl{});
-
+g1->add("my/device/01");
 g1->add(g2);
-
-g1->add(\textquotedbl{}my/device/03\textquotedbl{});
-
+g1->add("my/device/03");
 g1->add(g3);
-
-g1->add(\textquotedbl{}my/device/02\textquotedbl{});
-\end{lyxcode}
+g1->add("my/device/02");
+\end{minted}
 The result order in the Tango::GroupCmdReplyList depends on the value
 of the forward\index{forward} option. If set to \emph{true}, the
 results will be organized as follows:
-\begin{lyxcode}
-Tango::GroupCmdReplyList~crl~=~g1->command\_inout(\textquotedbl{}Status\textquotedbl{},~true);
-\end{lyxcode}
+\begin{minted}[linenos]{cpp}
+Tango::GroupCmdReplyList crl = g1->command_inout("Status", true);
+\end{minted}
 \emph{crl{[}0{]}} contains the status of my/device/01 which belongs
 to g1\\
 \emph{crl{[}1{]}} contains the status of my/device/04 which belongs
@@ -1283,9 +1109,9 @@ to g1.g3\\
 to g1 
 
 If the forward option is set to \emph{false}, the results are:
-\begin{lyxcode}
-Tango::GroupCmdReplyList~crl~=~g1->command\_inout(\textquotedbl{}Status\textquotedbl{},~false);~
-\end{lyxcode}
+\begin{minted}[linenos]{cpp}
+Tango::GroupCmdReplyList crl = g1->command_inout("Status", false); 
+\end{minted}
 \emph{crl{[}0{]}} contains the status of my/device/01 which belongs
 to g \\
 \emph{crl{[}1{]}} contains the status of my/device/03 which belongs
@@ -1300,41 +1126,37 @@ It means that, depending of your application, you can associate a
 response with its source using its position in the response list or
 using the Tango::GroupCmdReply::dev\_name member.
 
-\subsubsection{Case 1: a command, no argument\label{subsec:Case-1}}
+
+\subsubsection{Case 1: a command, no argument}
+\label{sub:Case-1}
 
 As an example, we execute the Status command on the whole hierarchy
 synchronously.
-\begin{lyxcode}
-Tango::GroupCmdReplyList~crl~=~gauges->command\_inout(\textquotedbl{}Status\textquotedbl{});
-\end{lyxcode}
+\begin{minted}[linenos]{cpp}
+Tango::GroupCmdReplyList crl = gauges->command_inout("Status");
+\end{minted}
 As a first step in the results processing, it could be interesting
 to check value returned by the \emph{has\_failed\index{has-failed}()}
 method of the GroupCmdReplyList\index{GroupCmdReplyList}. If it is
 set to true, it means that at least one error occurred during the
 execution of the command (i.e. at least one device gave error).
 
-\input{gen_api/line.tex}
-\begin{lyxcode}
-if~(crl.has\_failed())
 
-\{
-
-~~~~cout~<\textcompwordmark{}<~\textquotedbl{}at~least~one~error~occurred\textquotedbl{}~<\textcompwordmark{}<~endl;
-
-\}
-
+\begin{minted}[linenos]{cpp}
+if (crl.has_failed())
+{
+    cout << "at least one error occurred" << endl;
+}
 else
+{
+    cout << "no error " << endl;
+}
+\end{minted}
 
-\{
-
-~~~~cout~<\textcompwordmark{}<~\textquotedbl{}no~error~\textquotedbl{}~<\textcompwordmark{}<~endl;
-
-\}
-\end{lyxcode}
-\input{gen_api/line.tex}
 
 Now, we have to process each \textquotedbl{}individual response\textquotedbl{}
 in the list. 
+
 
 \subsubsection{A few words on error handling and data extraction}
 
@@ -1357,260 +1179,148 @@ DevVarLongStringArray and DevVarDoubleStringArray types to std::vectors.
 
 Error and data handling C++ example:
 
-\input{gen_api/line.tex}
-\begin{lyxcode}
-//-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-
 
-//-~synch.~group~command~example~with~exception~enabled
-
-//-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-
-
-//-~enable~exceptions~and~save~current~mode
-
-bool~last\_mode~=~GroupReply::enable\_exception(true);
-
-//-~process~each~response~in~the~list~...
-
-for~(int~r~=~0;~r~<~crl.size();~r++)
-
-\{
-
-//-~enter~a~try/catch~block
-
-~~~try
-
-~~~\{
-
-//-~try~to~extract~the~data~from~the~r-th~reply
-
-//-~suppose~data~contains~a~double
-
-~~~~~~~double~ans;
-
-~~~~~~~crl{[}r{]}~>\textcompwordmark{}>~ans;
-
-~~~~~~~cout~<\textcompwordmark{}<~crl{[}r{]}.dev\_name()
-
-~~~~~~~~~~~~<\textcompwordmark{}<~\textquotedbl{}::\textquotedbl{}
-
-~~~~~~~~~~~~<\textcompwordmark{}<~crl{[}r{]}.obj\_name()
-
-~~~~~~~~~~~~<\textcompwordmark{}<~\textquotedbl{}~returned~\textquotedbl{}
-
-~~~~~~~~~~~~<\textcompwordmark{}<~ans
-
-~~~~~~~~~~~~<\textcompwordmark{}<~endl;
-
-~~~~\}
-
-~~~~catch~(const~DevFailed\&~df)
-
-~~~~\{
-
-//-~DevFailed~caught~while~trying~to~extract~the~data~from~reply
-
-~~~~~~for~(int~err~=~0;~err~<~df.errors.length();~err++)
-
-~~~~~~\{
-
-~~~~~~~~~~~cout~<\textcompwordmark{}<~\textquotedbl{}error:~\textquotedbl{}~<\textcompwordmark{}<~df.errors{[}err{]}.desc.in()~<\textcompwordmark{}<~endl;
-
-~~~~~~\}
-
-//-~alternatively,~one~can~use~crl{[}r{]}.get\_err\_stack()~see~below
-
-~~~~\}
-
-~~~~catch~(...)
-
-~~~~\{
-
-~~~~~~~cout~<\textcompwordmark{}<~\textquotedbl{}unknown~exception~caught\textquotedbl{};
-
-~~~~\}
-
-\}
-
-//-~restore~last~exception~mode~(if~needed)
-
-GroupReply::enable\_exception(last\_mode);
-
-//-~Clear~the~response~list~(if~reused~later~in~the~code)
-
+\begin{minted}[linenos]{cpp}
+//-------------------------------------------------------
+//- synch. group command example with exception enabled
+//-------------------------------------------------------
+//- enable exceptions and save current mode
+bool last_mode = GroupReply::enable_exception(true);
+//- process each response in the list ...
+for (int r = 0; r < crl.size(); r++)
+{
+//- enter a try/catch block
+   try
+   {
+//- try to extract the data from the r-th reply
+//- suppose data contains a double
+       double ans;
+       crl[r] >> ans;
+       cout << crl[r].dev_name()
+            << "::"
+            << crl[r].obj_name()
+            << " returned "
+            << ans
+            << endl;
+    }
+    catch (const DevFailed& df)
+    {
+//- DevFailed caught while trying to extract the data from reply
+      for (int err = 0; err < df.errors.length(); err++)
+      {
+           cout << "error: " << df.errors[err].desc.in() << endl;
+      }
+//- alternatively, one can use crl[r].get_err_stack() see below
+    }
+    catch (...)
+    {
+       cout << "unknown exception caught";
+    }
+}
+//- restore last exception mode (if needed)
+GroupReply::enable_exception(last_mode);
+//- Clear the response list (if reused later in the code)
 crl.reset();
+ 
 
-~
-
-//-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-
-
-//-~synch.~group~command~example~with~exception~disabled
-
-//-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-
-
-//-~disable~exceptions~and~save~current~mode~bool
-
-last\_mode~=~GroupReply::enable\_exception(false);
-
-//-~process~each~response~in~the~list~...
-
-for~(int~r~=~0;~r~<~crl.size();~r++)
-
-\{
-
-//-~did~the~r-th~device~give~error?
-
-~~~~if~(crl{[}r{]}.has\_failed()~==~true)
-
-~~~~\{
-
-//-~printout~error~description
-
-~~~~~~~cout~<\textcompwordmark{}<~\textquotedbl{}an~error~occurred~while~executing~\textquotedbl{}
-
-~~~~~~~~~~~~<\textcompwordmark{}<~crl{[}r{]}.obj\_name()
-
-~~~~~~~~~~~~<\textcompwordmark{}<~\textquotedbl{}~on~\textquotedbl{}~
-
-~~~~~~~~~~~~<\textcompwordmark{}<~crl{[}r{]}.dev\_name()~<\textcompwordmark{}<~endl;
-
-//-~dump~error~stack
-
-~~~~~~~const~DevErrorList\&~el~=~crl{[}r{]}.get\_err\_stack();
-
-~~~~~~~for~(int~err~=~0;~err~<~el.size();~err++)
-
-~~~~~~~\{
-
-~~~~~~~~~~~cout~<\textcompwordmark{}<~el{[}err{]}.desc.in();
-
-~~~~~~~\}
-
-~~~~\}
-
-~~~~else
-
-~~~~\{
-
-//-~no~error~(suppose~data~contains~a~double)
-
-~~~~~~~double~ans;
-
-~~~~~~~bool~result~=~crl{[}r{]}~>\textcompwordmark{}>~ans;
-
-~~~~~~~if~(result~==~false)
-
-~~~~~~~\{
-
-~~~~~~~~~~~cout~<\textcompwordmark{}<~\textquotedbl{}could~not~extract~double~from~\textquotedbl{}
-
-~~~~~~~~~~~~~~~~<\textcompwordmark{}<~crl{[}r{]}.dev\_name()
-
-~~~~~~~~~~~~~~~~<\textcompwordmark{}<~\textquotedbl{}~reply\textquotedbl{}
-
-~~~~~~~~~~~~~~~~<\textcompwordmark{}<~endl;
-
-~~~~~~~\}
-
-~~~~~~~else
-
-~~~~~~~\{
-
-~~~~~~~~~~~cout~<\textcompwordmark{}<~crl{[}r{]}.dev\_name()
-
-~~~~~~~~~~~~~~~~<\textcompwordmark{}<~\textquotedbl{}::\textquotedbl{}
-
-~~~~~~~~~~~~~~~~<\textcompwordmark{}<~crl{[}r{]}.obj\_name()
-
-~~~~~~~~~~~~~~~~<\textcompwordmark{}<~\textquotedbl{}~returned~\textquotedbl{}
-
-~~~~~~~~~~~~~~~~<\textcompwordmark{}<~ans
-
-~~~~~~~~~~~~~~~~<\textcompwordmark{}<~endl;
-
-~~~~~~~\}
-
-~~~~\}
-
-\}
-
-//-~restore~last~exception~mode~(if~needed)
-
-GroupReply::enable\_exception(last\_mode);
-
-//-~Clear~the~response~list~(if~reused~later~in~the~code)
-
+//-------------------------------------------------------
+//- synch. group command example with exception disabled
+//-------------------------------------------------------
+//- disable exceptions and save current mode bool
+last_mode = GroupReply::enable_exception(false);
+//- process each response in the list ...
+for (int r = 0; r < crl.size(); r++)
+{
+//- did the r-th device give error?
+    if (crl[r].has_failed() == true)
+    {
+//- printout error description
+       cout << "an error occurred while executing "
+            << crl[r].obj_name()
+            << " on " 
+            << crl[r].dev_name() << endl;
+//- dump error stack
+       const DevErrorList& el = crl[r].get_err_stack();
+       for (int err = 0; err < el.size(); err++)
+       {
+           cout << el[err].desc.in();
+       }
+    }
+    else
+    {
+//- no error (suppose data contains a double)
+       double ans;
+       bool result = crl[r] >> ans;
+       if (result == false)
+       {
+           cout << "could not extract double from "
+                << crl[r].dev_name()
+                << " reply"
+                << endl;
+       }
+       else
+       {
+           cout << crl[r].dev_name()
+                << "::"
+                << crl[r].obj_name()
+                << " returned "
+                << ans
+                << endl;
+       }
+    }
+}
+//- restore last exception mode (if needed)
+GroupReply::enable_exception(last_mode);
+//- Clear the response list (if reused later in the code)
 crl.reset();
-\end{lyxcode}
-\input{gen_api/line.tex}
+\end{minted}
+
 
 Now execute the same command asynchronously. C++ example:
 
-\input{gen_api/line.tex}
-\begin{lyxcode}
-//-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-
 
-//-~asynch.~group~command~example~(C++~example)
-
-//-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-
-
-long~request\_id~=~gauges->command\_inout\_asynch(\textquotedbl{}Status\textquotedbl{});
-
-//-~do~some~work
-
-do\_some\_work();
-
-~
-
-~
-
-//-~get~results
-
-crl~=~gauges->command\_inout\_reply(request\_id);
-
-//-~process~responses~as~previously~describe~in~the~synch.~implementation
-
-for~(int~r~=~0;~r~<~crl.size();~r++)
-
-\{
-
-//-~data~processing~and~error~handling~goes~here
-
-//-~copy/paste~code~from~previous~example
-
-.~.~.
-
-\}
-
-//-~clear~the~response~list~(if~reused~later~in~the~code)
-
+\begin{minted}[linenos]{cpp}
+//-------------------------------------------------------
+//- asynch. group command example (C++ example)
+//-------------------------------------------------------
+long request_id = gauges->command_inout_asynch("Status");
+//- do some work
+do_some_work();
+ 
+ 
+//- get results
+crl = gauges->command_inout_reply(request_id);
+//- process responses as previously describe in the synch. implementation
+for (int r = 0; r < crl.size(); r++)
+{
+//- data processing and error handling goes here
+//- copy/paste code from previous example
+. . .
+}
+//- clear the response list (if reused later in the code)
 crl.reset();
-\end{lyxcode}
-\input{gen_api/line.tex}
+\end{minted}
 
-\subsubsection{Case 2: a command, one argument\label{subsec:Case-2} }
+
+
+\subsubsection{Case 2: a command, one argument\label{sub:Case-2} }
 
 Here, we give an example in which the same input argument is applied
 to all devices in the group (or its sub-groups). 
 
 In C++:
 
-\input{gen_api/line.tex}
-\begin{lyxcode}
-//-~the~argument~value
 
-double~d~=~0.1;
+\begin{minted}[linenos]{cpp}
+//- the argument value
+double d = 0.1;
+//- insert it into the TANGO generic container for command: DeviceData
+Tango::DeviceData dd;
+dd << d;
+//- execute the command: Dev_Void SetDummyFactor (Dev_Double)
+Tango::GroupCmdReplyList crl = gauges->command_inout("SetDummyFactor", dd);
+\end{minted}
 
-//-~insert~it~into~the~TANGO~generic~container~for~command:~DeviceData
-
-Tango::DeviceData~dd;
-
-dd~<\textcompwordmark{}<~d;
-
-//-~execute~the~command:~Dev\_Void~SetDummyFactor~(Dev\_Double)
-
-Tango::GroupCmdReplyList~crl~=~gauges->command\_inout(\textquotedbl{}SetDummyFactor\textquotedbl{},~dd);
-\end{lyxcode}
-\input{gen_api/line.tex}
 
 Since the SetDummyFactor command does not return any value, the individual
 replies (i.e. the GroupCmdReply) do not contain any data. However,
@@ -1621,35 +1331,27 @@ are useless since we never try to extract data from the replies.
 
 In C++ we should have something like: 
 
-\input{gen_api/line.tex}
-\begin{lyxcode}
-//-~no~need~to~process~the~results~if~no~error~occurred~(Dev\_Void~command)
 
-if~(crl.has\_failed())
-
-\{
-
-//-~at~least~one~error~occurred
-
-~~~~for~(int~r~=~0;~r~<~crl.size();~r++)
-
-~~~~\{
-
-//-~handle~errors~here~(see~previous~C++~examples)
-
-~~~~\}
-
-\}
-
-//-~clear~the~response~list~(if~reused~later~in~the~code)
-
+\begin{minted}[linenos]{cpp}
+//- no need to process the results if no error occurred (Dev_Void command)
+if (crl.has_failed())
+{
+//- at least one error occurred
+    for (int r = 0; r < crl.size(); r++)
+    {
+//- handle errors here (see previous C++ examples)
+    }
+}
+//- clear the response list (if reused later in the code)
 crl.reset();
-\end{lyxcode}
-\input{gen_api/line.tex}
+\end{minted}
+
 
 See case 1 for an example of asynchronous command.
 
-\subsubsection{Case 3: a command, several arguments\label{subsec:Case-3}}
+
+\subsubsection{Case 3: a command, several arguments}
+\label{sub:Case-3}
 
 Here, we give an example in which a \textbf{specific} input argument
 is applied to each device in the hierarchy. In order to use this form
@@ -1679,226 +1381,130 @@ its sub-groups) as follows:
 
 Remember, \textquotedbl{}cell-01\textquotedbl{} has the following
 internal structure: 
-\begin{lyxcode}
-->~gauges
-
-~~~|~->~cell-01
-
-~~~|~~~~|->~inst-c01/vac-gauge/strange
-
-~~~|~~~~|->~penning
-
-~~~|~~~~|~~~|->~inst-c01/vac-gauge/penning-01
-
-~~~|~~~~|~~~|->~inst-c01/vac-gauge/penning-02
-
-~~~|~~~~|~~~|->~...
-
-~~~|~~~~|~~~|->~inst-c01/vac-gauge/penning-xx
-
-~~~|~~~~|->~pirani
-
-~~~|~~~~~~~~|->~inst-c01/vac-gauge/pirani-01
-
-~~~|~~~~~~~~|->~...
-
-~~~|~~~~~~~~|->~inst-c01/vac-gauge/pirani-xx
-\end{lyxcode}
+\begin{minted}[linenos]{cpp}
+-> gauges
+   | -> cell-01
+   |    |-> inst-c01/vac-gauge/strange
+   |    |-> penning
+   |    |   |-> inst-c01/vac-gauge/penning-01
+   |    |   |-> inst-c01/vac-gauge/penning-02
+   |    |   |-> ...
+   |    |   |-> inst-c01/vac-gauge/penning-xx
+   |    |-> pirani
+   |        |-> inst-c01/vac-gauge/pirani-01
+   |        |-> ...
+   |        |-> inst-c01/vac-gauge/pirani-xx
+\end{minted}
 Passing a specific argument to each device in C++:
 
-\input{gen_api/line.tex}
-\begin{lyxcode}
-//-~get~a~reference~to~the~target~group
 
-Tango::Group~{*}g~=~gauges->get\_group(\textquotedbl{}cell-01\textquotedbl{});
-
-//-~get~number~of~device~in~the~hierarchy~(starting~at~cell-01)
-
-long~n\_dev~=~g->get\_size(true);
-
-//-~Build~argin~list
-
-std::vector<double>~argins(n\_dev);
-
-//-~argument~for~inst-c01/vac-gauge/strange
-
-argins{[}0{]}~=~0.0;
-
-//-~argument~for~inst-c01/vac-gauge/penning-01
-
-argins{[}1{]}~=~0.1;
-
-//-~argument~for~inst-c01/vac-gauge/penning-02
-
-argins{[}2{]}~=~0.2;
-
-//-~argument~for~remaining~devices~in~cell-01.penning
-
-.~.~.
-
-//-~argument~for~devices~in~cell-01.pirani
-
-.~.~.
-
-//-~the~reply~list
-
-Tango::GroupCmdReplyList~crl;
-
-//-~enter~a~try/catch~block~(see~below)
-
+\begin{minted}[linenos]{cpp}
+//- get a reference to the target group
+Tango::Group *g = gauges->get_group("cell-01");
+//- get number of device in the hierarchy (starting at cell-01)
+long n_dev = g->get_size(true);
+//- Build argin list
+std::vector<double> argins(n_dev);
+//- argument for inst-c01/vac-gauge/strange
+argins[0] = 0.0;
+//- argument for inst-c01/vac-gauge/penning-01
+argins[1] = 0.1;
+//- argument for inst-c01/vac-gauge/penning-02
+argins[2] = 0.2;
+//- argument for remaining devices in cell-01.penning
+. . .
+//- argument for devices in cell-01.pirani
+. . .
+//- the reply list
+Tango::GroupCmdReplyList crl;
+//- enter a try/catch block (see below)
 try
-
-\{
-
-//-~execute~the~command
-
-~~~~crl~=~g->command\_inout(\textquotedbl{}SetDummyFactor\textquotedbl{},~argins,~true);
-
-~~~~if~(crl.has\_failed())
-
-~~~~\{
-
-//-~error~handling~goes~here~(see~case~1)
-
-~~~~\}
-
-\}
-
-catch~(const~DevFailed\&~df)
-
-\{
-
-//-~see~below
-
-\}
-
+{
+//- execute the command
+    crl = g->command_inout("SetDummyFactor", argins, true);
+    if (crl.has_failed())
+    {
+//- error handling goes here (see case 1)
+    }
+}
+catch (const DevFailed& df)
+{
+//- see below
+}
 crl.reset();
-\end{lyxcode}
-\input{gen_api/line.tex}
+\end{minted}
+
 
 If we want to execute the command locally on \textquotedbl{}cell-01\textquotedbl{}
 (i.e. not on its sub-groups), we should write the following C++ code:
 
-\input{gen_api/line.tex}
-\begin{lyxcode}
-//-~get~a~reference~to~the~target~group
 
-Tango::Group~{*}g~=~gauges->get\_group(\textquotedbl{}cell-01\textquotedbl{});
-
-//-~get~number~of~device~in~the~group~(starting~at~cell-01)
-
-long~n\_dev~=~g->get\_size(false);
-
-//-~Build~argin~list
-
-std::vector<double>~argins(n\_dev);
-
-//-~argins~for~inst-c01/vac-gauge/penning-01
-
-argins{[}0{]}~=~0.1;
-
-//-~argins~for~inst-c01/vac-gauge/penning-02
-
-argins{[}1{]}~=~0.2;
-
-//-~argins~for~remaining~devices~in~cell-01.penning
-
-.~.~.
-
-//-~the~reply~list
-
-Tango::GroupCmdReplyList~crl;
-
-//-~enter~a~try/catch~block~(see~below)
-
+\begin{minted}[linenos]{cpp}
+//- get a reference to the target group
+Tango::Group *g = gauges->get_group("cell-01");
+//- get number of device in the group (starting at cell-01)
+long n_dev = g->get_size(false);
+//- Build argin list
+std::vector<double> argins(n_dev);
+//- argins for inst-c01/vac-gauge/penning-01
+argins[0] = 0.1;
+//- argins for inst-c01/vac-gauge/penning-02
+argins[1] = 0.2;
+//- argins for remaining devices in cell-01.penning
+. . .
+//- the reply list
+Tango::GroupCmdReplyList crl;
+//- enter a try/catch block (see below)
 try
-
-\{
-
-//-~execute~the~command
-
-~~~~crl~=~g->command\_inout(\textquotedbl{}SetDummyFactor\textquotedbl{},~argins,~false);
-
-~~~~if~(crl.has\_failed())
-
-~~~~\{
-
-//-~error~handling~goes~here~(see~case~1)
-
-~~~~\}
-
-\}
-
-catch~(const~DevFailed\&~df)
-
-\{
-
-//-~see~below
-
-\}
-
+{
+//- execute the command
+    crl = g->command_inout("SetDummyFactor", argins, false);
+    if (crl.has_failed())
+    {
+//- error handling goes here (see case 1)
+    }
+}
+catch (const DevFailed& df)
+{
+//- see below
+}
 crl.reset();
-\end{lyxcode}
-\input{gen_api/line.tex}
+\end{minted}
+
 
 Note: if we want to execute the command locally on \textquotedbl{}cell-01\textquotedbl{}
 (i.e. not on its sub-groups), we should write the following code:
 
-\input{gen_api/line.tex}
-\begin{lyxcode}
-//-~get~a~reference~to~the~target~group
 
-Group~g~=~gauges.get\_group(\textquotedbl{}cell-01\textquotedbl{});
-
-//-~get~pre-build~arguments~list~for~the~group~(starting@cell-01)
-
-DeviceData{[}{]}~argins~=~g.get\_command\_specific\_argument\_list(false);
-
-//-~argins~for~inst-c01/vac-gauge/penning-01
-
-argins{[}0{]}.insert(0.1);
-
-//-~argins~for~inst-c01/vac-gauge/penning-02
-
-argins{[}1{]}.insert(0.2);
-
-//-~argins~for~remaining~devices~in~cell-01.penning
-
-.~.~.
-
-//-~the~reply~list~
-
-GroupCmdReplyList~crl;
-
-//-~enter~a~try/catch~block~(see~below)
-
+\begin{minted}[linenos]{cpp}
+//- get a reference to the target group
+Group g = gauges.get_group("cell-01");
+//- get pre-build arguments list for the group (starting@cell-01)
+DeviceData[] argins = g.get_command_specific_argument_list(false);
+//- argins for inst-c01/vac-gauge/penning-01
+argins[0].insert(0.1);
+//- argins for inst-c01/vac-gauge/penning-02
+argins[1].insert(0.2);
+//- argins for remaining devices in cell-01.penning
+. . .
+//- the reply list 
+GroupCmdReplyList crl;
+//- enter a try/catch block (see below)
 try
+{
+//- execute the command
+    crl = g.command_inout("SetDummyFactor", argins, false, false);
+    if (crl.has_failed())
+    {
+//- error handling goes here (see case 1)
+    }
+}
+catch (DevFailed d)
+{
+//- see below
+}
+\end{minted}
 
-\{
-
-//-~execute~the~command
-
-~~~~crl~=~g.command\_inout(\textquotedbl{}SetDummyFactor\textquotedbl{},~argins,~false,~false);
-
-~~~~if~(crl.has\_failed())
-
-~~~~\{
-
-//-~error~handling~goes~here~(see~case~1)
-
-~~~~\}
-
-\}
-
-catch~(DevFailed~d)
-
-\{
-
-//-~see~below
-
-\}
-\end{lyxcode}
-\input{gen_api/line.tex}
 
 This form of \emph{command\_inout\index{command-inout}} (the one
 that accepts an array of value as its input argument), may throw an
@@ -1910,7 +1516,8 @@ of individual devices in the group\index{group} or in the hierarchy
 An asynchronous version of this method is also available. See case
 1 for an example of asynchronous command.
 
-\subsection{Reading attribute(s)\index{attribute}\label{subsec:Read-attr} }
+
+\subsection{Reading attribute(s)\index{attribute}\label{sub:Read-attr} }
 
 In order to read attribute(s), the Group\index{group} interface contains
 several implementations of the \emph{read\_attribute()}\index{read-attribute}
@@ -1923,7 +1530,9 @@ value returned in the GroupAttrReplyList is all attributes for first
 element in the group followed by all attributes for the second group
 element and so on.
 
-\subsubsection{Obtaining attribute values\label{subsec:O-attr-values}}
+
+\subsubsection{Obtaining attribute values}
+\label{sub:O-attr-values}
 
 Attribute values are returned using a GroupAttrReplyList\index{GroupAttrReplyList}.
 This is nothing but an array containing a GroupAttrReply\index{GroupAttrReply}
@@ -1942,6 +1551,7 @@ the attribute (GroupAttrReply::obj\_name\index{obj-name}). It means
 that, depending of your application, you can associate a response
 with its source using its position in the response list or using the
 Tango::GroupAttrReply::dev\_name member.
+
 
 \subsubsection{A few words on error handling and data extraction}
 
@@ -1964,131 +1574,76 @@ Reading an attribute is very similar to executing a command.
 
 Reading an attribute in C++:
 
-\input{gen_api/line.tex}
-\begin{lyxcode}
-//-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-
 
-//-~synch.~read~\textquotedbl{}vacuum\textquotedbl{}~attribute~on~each~device~in~the~hierarchy
-
-//-~with~exceptions~enabled~-~C++~example
-
-//-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-
-
-//-~enable~exceptions~and~save~current~mode
-
-bool~last\_mode~=~GroupReply::enable\_exception(true);
-
-//-~read~attribute
-
-Tango::GroupAttrReplyList~arl~=~gauges->read\_attribute(\textquotedbl{}vacuum\textquotedbl{});
-
-//-~for~each~response~in~the~list~...
-
-for~(int~r~=~0;~r~<~arl.size();~r++)
-
-\{
-
-//-~enter~a~try/catch~block
-
-~~~try
-
-~~~\{
-
-//-~try~to~extract~the~data~from~the~r-th~reply
-
-//-~suppose~data~contains~a~double
-
-~~~~~~double~ans;
-
-~~~~~~arl{[}r{]}~>\textcompwordmark{}>~ans;
-
-~~~~~~cout~<\textcompwordmark{}<~arl{[}r{]}.dev\_name()
-
-~~~~~~~~~~~<\textcompwordmark{}<~\textquotedbl{}::\textquotedbl{}
-
-~~~~~~~~~~~<\textcompwordmark{}<~arl{[}r{]}.obj\_name()
-
-~~~~~~~~~~~<\textcompwordmark{}<~\textquotedbl{}~value~is~\textquotedbl{}
-
-~~~~~~~~~~~<\textcompwordmark{}<~ans~<\textcompwordmark{}<~endl;
-
-~~~\}
-
-~~~catch~(const~DevFailed\&~df)
-
-~~~\{
-
-//-~DevFailed~caught~while~trying~to~extract~the~data~from~reply
-
-~~~~~~for~(int~err~=~0;~err~<~df.errors.length();~err++)
-
-~~~~~~\{
-
-~~~~~~~~~cout~<\textcompwordmark{}<~\textquotedbl{}error:~\textquotedbl{}~<\textcompwordmark{}<~df.errors{[}err{]}.desc.in()~<\textcompwordmark{}<~endl;
-
-~~~~~~\}
-
-//-~alternatively,~one~can~use~arl{[}r{]}.get\_err\_stack()~see~below
-
-~~~\}
-
-~~~catch~(...)
-
-~~~\{
-
-~~~~~~cout~<\textcompwordmark{}<~\textquotedbl{}unknown~exception~caught\textquotedbl{};
-
-~~~\}
-
-\}
-
-//-~restore~last~exception~mode~(if~needed)
-
-GroupReply::enable\_exception(last\_mode);
-
-//-~clear~the~reply~list~(if~reused~later~in~the~code)
-
+\begin{minted}[linenos]{cpp}
+//-----------------------------------------------------------------
+//- synch. read "vacuum" attribute on each device in the hierarchy
+//- with exceptions enabled - C++ example
+//-----------------------------------------------------------------
+//- enable exceptions and save current mode
+bool last_mode = GroupReply::enable_exception(true);
+//- read attribute
+Tango::GroupAttrReplyList arl = gauges->read_attribute("vacuum");
+//- for each response in the list ...
+for (int r = 0; r < arl.size(); r++)
+{
+//- enter a try/catch block
+   try
+   {
+//- try to extract the data from the r-th reply
+//- suppose data contains a double
+      double ans;
+      arl[r] >> ans;
+      cout << arl[r].dev_name()
+           << "::"
+           << arl[r].obj_name()
+           << " value is "
+           << ans << endl;
+   }
+   catch (const DevFailed& df)
+   {
+//- DevFailed caught while trying to extract the data from reply
+      for (int err = 0; err < df.errors.length(); err++)
+      {
+         cout << "error: " << df.errors[err].desc.in() << endl;
+      }
+//- alternatively, one can use arl[r].get_err_stack() see below
+   }
+   catch (...)
+   {
+      cout << "unknown exception caught";
+   }
+}
+//- restore last exception mode (if needed)
+GroupReply::enable_exception(last_mode);
+//- clear the reply list (if reused later in the code)
 arl.reset();
-\end{lyxcode}
-\input{gen_api/line.tex}
+\end{minted}
+
 
 In C++, an asynchronous version of the previous example could be:
 
-\input{gen_api/line.tex}
-\begin{lyxcode}
-//-~read~the~attribute~asynchronously
 
-long~request\_id~=~gauges->read\_attribute\_asynch(\textquotedbl{}vacuum\textquotedbl{});
-
-//-~do~some~work
-
-do\_some\_work();
-
-~
-
-~
-
-//-~get~results
-
-Tango::GroupAttrReplyList~arl~=~gauges->read\_attribute\_reply(request\_id);
-
-//-~process~replies~as~previously~described~in~the~synch.~implementation
-
-for~(int~r~=~0;~r~<~arl.size();~r++)
-
-\{
-
-//-~data~processing~and/or~error~handling~goes~here
-
+\begin{minted}[linenos]{cpp}
+//- read the attribute asynchronously
+long request_id = gauges->read_attribute_asynch("vacuum");
+//- do some work
+do_some_work();
+ 
+ 
+//- get results
+Tango::GroupAttrReplyList arl = gauges->read_attribute_reply(request_id);
+//- process replies as previously described in the synch. implementation
+for (int r = 0; r < arl.size(); r++)
+{
+//- data processing and/or error handling goes here
 ...
-
-\}
-
-//-~clear~the~reply~list~(if~reused~later~in~the~code)
-
+}
+//- clear the reply list (if reused later in the code)
 arl.reset();
-\end{lyxcode}
-\input{gen_api/line.tex}
+\end{minted}
+
+
 
 \subsection{Writing an attribute\index{attribute} }
 
@@ -2096,7 +1651,9 @@ The Group interface contains several implementations of the \emph{write\_attribu
 method. Both synchronous and asynchronous forms are supported. However,
 writing more than one attribute at a time is not supported.
 
-\subsubsection{Obtaining acknowledgement\label{subsec:O-ack}}
+
+\subsubsection{Obtaining acknowledgement}
+\label{sub:O-ack}
 
 Acknowledgements are returned using a GroupReplyList. This is nothing
 but an array containing a GroupReply for each device in the group.
@@ -2117,7 +1674,8 @@ depending of your application, you can associate a response with its
 source using its position in the response list or using the GroupReply::dev\_name
 member.
 
-\subsubsection{Case 1: one value for all devices\label{subsec:Case-1-writing} }
+
+\subsubsection{Case 1: one value for all devices\label{sub:Case-1-writing} }
 
 Here, we give an example in which the same attribute value is written
 on all devices in the group (or its sub-groups). Exceptions are supposed
@@ -2125,117 +1683,71 @@ to be disabled.
 
 Writing an attribute in C++:
 
-\input{gen_api/line.tex}
-\begin{lyxcode}
-//-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-
 
-//-~synch.~write~\textquotedbl{}dummy\textquotedbl{}~attribute~on~each~device~in~the~hierarchy
-
-//-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-
-
-//-~assume~each~device~support~a~\textquotedbl{}dummy\textquotedbl{}~writable~attribute
-
-//-~insert~the~value~to~be~written~into~a~generic~container
-
-Tango::DeviceAttribute~value(std::string(\textquotedbl{}dummy\textquotedbl{}),~3.14159);
-
-//-~write~the~attribute
-
-Tango::GroupReplyList~rl~=~gauges->write\_attribute(value);
-
-//-~any~error?
-
-if~(rl.has\_failed()~==~false)
-
-\{
-
-~~~~cout~<\textcompwordmark{}<~\textquotedbl{}no~error\textquotedbl{}~<\textcompwordmark{}<~endl;
-
-\}
-
+\begin{minted}[linenos]{cpp}
+//-----------------------------------------------------------------
+//- synch. write "dummy" attribute on each device in the hierarchy
+//-----------------------------------------------------------------
+//- assume each device support a "dummy" writable attribute
+//- insert the value to be written into a generic container
+Tango::DeviceAttribute value(std::string("dummy"), 3.14159);
+//- write the attribute
+Tango::GroupReplyList rl = gauges->write_attribute(value);
+//- any error?
+if (rl.has_failed() == false)
+{
+    cout << "no error" << endl;
+}
 else
-
-\{
-
-~~~~cout~<\textcompwordmark{}<~\textquotedbl{}at~least~one~error~occurred\textquotedbl{}~<\textcompwordmark{}<~endl;
-
-//-~for~each~response~in~the~list~...
-
-~~~~for~(int~r~=~0;~r~<~rl.size();~r++)
-
-~~~~\{
-
-//-~did~the~r-th~device~give~error?
-
-~~~~~~~if~(rl{[}r{]}.has\_failed()~==~true)
-
-~~~~~~~\{
-
-//-~printout~error~description
-
-~~~~~~~~~~~cout~<\textcompwordmark{}<~\textquotedbl{}an~error~occurred~while~reading~\textquotedbl{}~
-
-~~~~~~~~~~~~~~~~<\textcompwordmark{}<~rl{[}r{]}.obj\_name()
-
-~~~~~~~~~~~~~~~~<\textcompwordmark{}<~\textquotedbl{}~on~\textquotedbl{}
-
-~~~~~~~~~~~~~~~~<\textcompwordmark{}<~rl{[}r{]}.dev\_name()
-
-~~~~~~~~~~~~~~~~<\textcompwordmark{}<~endl;
-
-//-~dump~error~stack
-
-~~~~~~~~~~~const~DevErrorList\&~el~=~rl{[}r{]}.get\_err\_stack();
-
-~~~~~~~~~~~for~(int~err~=~0;~err~<~el.size();~err++)
-
-~~~~~~~~~~~\{
-
-~~~~~~~~~~~~~~cout~<\textcompwordmark{}<~el{[}err{]}.desc.in();
-
-~~~~~~~~~~~\}
-
-~~~~~~~~\}
-
-~~~~~\}
-
-\}
-
-//-~clear~the~reply~list~(if~reused~later~in~the~code)
-
+{
+    cout << "at least one error occurred" << endl;
+//- for each response in the list ...
+    for (int r = 0; r < rl.size(); r++)
+    {
+//- did the r-th device give error?
+       if (rl[r].has_failed() == true)
+       {
+//- printout error description
+           cout << "an error occurred while reading " 
+                << rl[r].obj_name()
+                << " on "
+                << rl[r].dev_name()
+                << endl;
+//- dump error stack
+           const DevErrorList& el = rl[r].get_err_stack();
+           for (int err = 0; err < el.size(); err++)
+           {
+              cout << el[err].desc.in();
+           }
+        }
+     }
+}
+//- clear the reply list (if reused later in the code)
 rl.reset();
-\end{lyxcode}
-\input{gen_api/line.tex}
+\end{minted}
+
 
 Here is a C++ asynchronous version:
 
-\input{gen_api/line.tex}
-\begin{lyxcode}
-//-~insert~the~value~to~be~written~into~a~generic~container
 
-Tango::DeviceAttribute~value(std::string(\textquotedbl{}dummy\textquotedbl{}),~3.14159);
+\begin{minted}[linenos]{cpp}
+//- insert the value to be written into a generic container
+Tango::DeviceAttribute value(std::string("dummy"), 3.14159);
+//- write the attribute asynchronously
+long request_id = gauges.write_attribute_asynch(value);
+//- do some work
+do_some_work();
+ 
+ 
+//- get results
+Tango::GroupReplyList rl = gauges->write_attribute_reply(request_id);
+//- process replies as previously describe in the synch. implementation ...
+\end{minted}
 
-//-~write~the~attribute~asynchronously
 
-long~request\_id~=~gauges.write\_attribute\_asynch(value);
 
-//-~do~some~work
-
-do\_some\_work();
-
-~
-
-~
-
-//-~get~results
-
-Tango::GroupReplyList~rl~=~gauges->write\_attribute\_reply(request\_id);
-
-//-~process~replies~as~previously~describe~in~the~synch.~implementation~...
-\end{lyxcode}
-\input{gen_api/line.tex}
-
-\subsubsection{Case 2: a specific value per device\label{subsec:Case-2-writing}}
+\subsubsection{Case 2: a specific value per device}
+\label{sub:Case-2-writing}
 
 Here, we give an example in which a \textbf{specific} attribute value
 is applied to each device in the hierarchy. In order to use this form
@@ -2263,167 +1775,96 @@ be written as follows on group \textquotedbl{}cell-01\textquotedbl{}
 
 Remember, \textquotedbl{}cell-01\textquotedbl{} has the following
 internal structure: 
-\begin{lyxcode}
-->~gauges~
-
-~~~~|~->~cell-01
-
-~~~~|~~~~~|->~inst-c01/vac-gauge/strange
-
-~~~~|~~~~~|->~penning
-
-~~~~|~~~~~|~~~~|->~inst-c01/vac-gauge/penning-01
-
-~~~~|~~~~~|~~~~|->~inst-c01/vac-gauge/penning-02
-
-~~~~|~~~~~|~~~~|->~...
-
-~~~~|~~~~~|~~~~|->~inst-c01/vac-gauge/penning-xx
-
-~~~~|~~~~~|->~pirani
-
-~~~~|~~~~~~~~~~|->~inst-c01/vac-gauge/pirani-01
-
-~~~~|~~~~~~~~~~|->~...
-
-~~~~|~~~~~~~~~~|->~inst-c01/vac-gauge/pirani-xx
-\end{lyxcode}
+\begin{minted}[linenos]{cpp}
+-> gauges 
+    | -> cell-01
+    |     |-> inst-c01/vac-gauge/strange
+    |     |-> penning
+    |     |    |-> inst-c01/vac-gauge/penning-01
+    |     |    |-> inst-c01/vac-gauge/penning-02
+    |     |    |-> ...
+    |     |    |-> inst-c01/vac-gauge/penning-xx
+    |     |-> pirani
+    |          |-> inst-c01/vac-gauge/pirani-01
+    |          |-> ...
+    |          |-> inst-c01/vac-gauge/pirani-xx
+\end{minted}
 C++ version:
 
-\input{gen_api/line.tex}
-\begin{lyxcode}
-//-~get~a~reference~to~the~target~group
 
-Tango::Group~{*}g~=~gauges->get\_group(\textquotedbl{}cell-01\textquotedbl{});
-
-//-~get~number~of~device~in~the~hierarchy~(starting~at~cell-01)
-
-long~n\_dev~=~g->get\_size(true);
-
-//-~Build~value~list
-
-std::vector<double>~values(n\_dev);
-
-//-~value~for~inst-c01/vac-gauge/strange
-
-values{[}0{]}~=~3.14159;
-
-//-~value~for~inst-c01/vac-gauge/penning-01
-
-values{[}1{]}~=~2~{*}~3.14159;
-
-//-~value~for~inst-c01/vac-gauge/penning-02
-
-values{[}2{]}~=~3~{*}~3.14159;
-
-//-~value~for~remaining~devices~in~cell-01.penning
-
-.~.~.
-
-//-~value~for~devices~in~cell-01.pirani
-
-.~.~.
-
-//-~the~reply~list
-
-Tango::GroupReplyList~rl;
-
-//-~enter~a~try/catch~block~(see~below)
-
+\begin{minted}[linenos]{cpp}
+//- get a reference to the target group
+Tango::Group *g = gauges->get_group("cell-01");
+//- get number of device in the hierarchy (starting at cell-01)
+long n_dev = g->get_size(true);
+//- Build value list
+std::vector<double> values(n_dev);
+//- value for inst-c01/vac-gauge/strange
+values[0] = 3.14159;
+//- value for inst-c01/vac-gauge/penning-01
+values[1] = 2 * 3.14159;
+//- value for inst-c01/vac-gauge/penning-02
+values[2] = 3 * 3.14159;
+//- value for remaining devices in cell-01.penning
+. . .
+//- value for devices in cell-01.pirani
+. . .
+//- the reply list
+Tango::GroupReplyList rl;
+//- enter a try/catch block (see below)
 try
-
-\{
-
-//-~write~the~\textquotedbl{}dummy\textquotedbl{}~attribute
-
-~~~~rl~=~g->write\_attribute(\textquotedbl{}dummy\textquotedbl{},~values,~true);
-
-~~~~if~(rl.has\_failed())
-
-~~~~\{
-
-//-~error~handling~(see~previous~cases)
-
-~~~~\}
-
-\}
-
-catch~(const~DevFailed\&~df)
-
-\{
-
-//-~see~below
-
-\}
-
+{
+//- write the "dummy" attribute
+    rl = g->write_attribute("dummy", values, true);
+    if (rl.has_failed())
+    {
+//- error handling (see previous cases)
+    }
+}
+catch (const DevFailed& df)
+{
+//- see below
+}
 rl.reset();
-\end{lyxcode}
-\input{gen_api/line.tex}
+\end{minted}
+
 
 Note: if we want to execute the command locally on \textquotedbl{}cell-01\textquotedbl{}
 (i.e. not on its sub-groups), we should write the following code
 
-\input{gen_api/line.tex}
-\begin{lyxcode}
-//-~get~a~reference~to~the~target~group
 
-Tango::Group~{*}g~=~gauges->get\_group(\textquotedbl{}cell-01\textquotedbl{});
-
-//-~get~number~of~device~in~the~group
-
-long~n\_dev~=~g->get\_size(false);
-
-//-~Build~value~list
-
-std::vector<double>~values(n\_dev);
-
-//-~value~for~inst-c01/vac-gauge/penning-01
-
-values{[}0{]}~=~2~{*}~3.14159;
-
-//-~value~for~inst-c01/vac-gauge/penning-02
-
-values{[}1{]}~=~3~{*}~3.14159;
-
-//-~value~for~remaining~devices~in~cell-01.penning
-
-.~.~.
-
-//-~the~reply~list
-
-Tango::GroupReplyList~rl;
-
-//-~enter~a~try/catch~block~(see~below)
-
+\begin{minted}[linenos]{cpp}
+//- get a reference to the target group
+Tango::Group *g = gauges->get_group("cell-01");
+//- get number of device in the group
+long n_dev = g->get_size(false);
+//- Build value list
+std::vector<double> values(n_dev);
+//- value for inst-c01/vac-gauge/penning-01
+values[0] = 2 * 3.14159;
+//- value for inst-c01/vac-gauge/penning-02
+values[1] = 3 * 3.14159;
+//- value for remaining devices in cell-01.penning
+. . .
+//- the reply list
+Tango::GroupReplyList rl;
+//- enter a try/catch block (see below)
 try
-
-\{
-
-//-~write~the~\textquotedbl{}dummy\textquotedbl{}~attribute
-
-~~~rl~=~g->write\_attribute(\textquotedbl{}dummy\textquotedbl{},~values,~false);
-
-~~~if~(rl.has\_failed())
-
-~~~\{
-
-//-~error~handling~(see~previous~cases)
-
-~~~\}
-
-\}
-
-catch~(const~DevFailed\&~df)
-
-\{
-
-//-~see~below
-
-\}
-
+{
+//- write the "dummy" attribute
+   rl = g->write_attribute("dummy", values, false);
+   if (rl.has_failed())
+   {
+//- error handling (see previous cases)
+   }
+}
+catch (const DevFailed& df)
+{
+//- see below
+}
 rl.reset();
-\end{lyxcode}
-\input{gen_api/line.tex}
+\end{minted}
+
 
 This form of \emph{write\_attribute()\index{write-attribute}} (the
 one that accepts an array of value as its input argument), may throw
@@ -2432,6 +1873,7 @@ in the input array does not match the number of individual devices
 in the group or in the hierarchy (depending on the forward option). 
 
 An asynchronous version of this method is also available.
+
 
 \section{Reading/Writing device pipe\index{pipe}}
 
@@ -2469,14 +1911,18 @@ figure summarizes DevicePipe data structure
 \begin{centering}
 \includegraphics[width=14cm,height=8cm]{gen_api/pipe}
 \par\end{centering}
-\caption{DevicePipe data structure\label{ }}
+
+\protect\caption{DevicePipe data structure}
+\label{ }
 \end{figure}
+
 
 Many methods to insert/extract data into/from a DevicePipe are available.
 In the DevicePipe class, these methods simply forward their action
 to the DevicePipe root blob. The same methods are available in the
 DevicePipeBlob in case you need to use the recursivity provided by
 this data structure.
+
 
 \subsection{Reading a pipe}
 
@@ -2491,6 +1937,7 @@ pipe
 \end{enumerate}
 Those two cases are detailed in the following sub-chapters.
 
+
 \subsubsection{Extracting data with pipe content prior knowledge}
 
 To extract data from a DevicePipe object (or from a DevicePipeBlob
@@ -2500,27 +1947,19 @@ contains 3 data elements with a Tango long, an array of double and
 finally an array of unsigned short. The code you need to extract these
 data is (Without error case treatment detailed in a next sub-chapter)
 
-\input{gen_api/line.tex}
-\begin{lyxcode}
-1~DevicePipe~dp~=~mydev.read\_pipe(\textquotedbl{}MyPipe\textquotedbl{});
 
-2~
-
-3~DevLong~dl;~~
-
-4~vector<double>~v\_db;~~
-
-5~DevVarUShortArray~{*}dvush~=~new~DevVarUShortArray();
-
-6~
-
-7~dp~>\textcompwordmark{}>~dl~>\textcompwordmark{}>~v\_db~>\textcompwordmark{}>~dvush;
-
+\begin{minted}[linenos]{cpp}
+1 DevicePipe dp = mydev.read_pipe("MyPipe");
+2 
+3 DevLong dl;  
+4 vector<double> v_db;  
+5 DevVarUShortArray *dvush = new DevVarUShortArray();
+6 
+7 dp >> dl >> v_db >> dvush;
 8
+9 delete dvush;
+\end{minted}
 
-9~delete~dvush;
-\end{lyxcode}
-\input{gen_api/line.tex}
 
 The pipe is read at line 1. Pipe (or root blob) data extracttion is
 at line 7. As you can see, it is just a matter of chaining extraction
@@ -2542,27 +1981,19 @@ class which allows you to retrieve/set data element name. The following
 code is how you can extract pipe data and retrieve data element name
 (same pipe then previously)
 
-\input{gen_api/line.tex}
-\begin{lyxcode}
-1~DevicePipe~dp~=~mydev.read\_pipe(\textquotedbl{}MyPipe\textquotedbl{});
 
-2~
-
-3~DataElement<DevLong>~de\_dl;~~
-
-4~DataElement<vector<double>~>~de\_v\_db;~~
-
-5~DataElement<DevVarUShortArray~{*}>~de\_dvush(new~DevVarUShortArray());
-
-6~
-
-7~dp~>\textcompwordmark{}>~de\_dl~>\textcompwordmark{}>~de\_v\_db~>\textcompwordmark{}>~de\_dvush;
-
+\begin{minted}[linenos]{cpp}
+1 DevicePipe dp = mydev.read_pipe("MyPipe");
+2 
+3 DataElement<DevLong> de_dl;  
+4 DataElement<vector<double> > de_v_db;  
+5 DataElement<DevVarUShortArray *> de_dvush(new DevVarUShortArray());
+6 
+7 dp >> de_dl >> de_v_db >> de_dvush;
 8
+9 delete de_dvush.value;
+\end{minted}
 
-9~delete~de\_dvush.value;
-\end{lyxcode}
-\input{gen_api/line.tex}
 
 The extraction line (number 7) is similar to the previous case but
 local data are instances of DataElement class. This is template class
@@ -2584,67 +2015,43 @@ These methods belong to the DevicePipeBlob class but they also exist
 on the DevicePipe class for its root blob. Here is one example of
 how you use them:
 
-\input{gen_api/line.tex}
-\begin{lyxcode}
-1~~DevicePipe~dp~=~mydev.read\_pipe(\textquotedbl{}MyPipe\textquotedbl{});
 
+\begin{minted}[linenos]{cpp}
+1  DevicePipe dp = mydev.read_pipe("MyPipe");
 2
+3  size_t nb_de = dp.get_data_elt_nb();  
+4  for (size_t loop = 0;loop < nb;loop++)
+5  {      
+6     int data_type = dp.get_data_elt_type(loop);      
+7     string de_name = dp.get_data_elt_name(loop);      
+8     switch(data_type)      
+9     {         
+10        case DEV_LONG:         
+11        {             
+12            DevLong lg;             
+13            dp >> lg;         
+14        }         
+15        break;
+16        
+17        case DEVVAR_DOUBLEARRAY:         
+18        {             
+19            vector<double> v_db;             
+20            dp >> v_db;         
+21        }         
+22        break;         
+23        ....      
+24    }  
+25    ...  
+26 }
+\end{minted}
 
-3~~size\_t~nb\_de~=~dp.get\_data\_elt\_nb();~~
-
-4~~for~(size\_t~loop~=~0;loop~<~nb;loop++)
-
-5~~\{~~~~~~
-
-6~~~~~int~data\_type~=~dp.get\_data\_elt\_type(loop);~~~~~~
-
-7~~~~~string~de\_name~=~dp.get\_data\_elt\_name(loop);~~~~~~
-
-8~~~~~switch(data\_type)~~~~~~
-
-9~~~~~\{~~~~~~~~~
-
-10~~~~~~~~case~DEV\_LONG:~~~~~~~~~
-
-11~~~~~~~~\{~~~~~~~~~~~~~
-
-12~~~~~~~~~~~~DevLong~lg;~~~~~~~~~~~~~
-
-13~~~~~~~~~~~~dp~>\textcompwordmark{}>~lg;~~~~~~~~~
-
-14~~~~~~~~\}~~~~~~~~~
-
-15~~~~~~~~break;
-
-16~~~~~~~~
-
-17~~~~~~~~case~DEVVAR\_DOUBLEARRAY:~~~~~~~~~
-
-18~~~~~~~~\{~~~~~~~~~~~~~
-
-19~~~~~~~~~~~~vector<double>~v\_db;~~~~~~~~~~~~~
-
-20~~~~~~~~~~~~dp~>\textcompwordmark{}>~v\_db;~~~~~~~~~
-
-21~~~~~~~~\}~~~~~~~~~
-
-22~~~~~~~~break;~~~~~~~~~
-
-23~~~~~~~~....~~~~~~
-
-24~~~~\}~~
-
-25~~~~...~~
-
-26~\}
-\end{lyxcode}
-\input{gen_api/line.tex}
 
 The number of data element in the pipe root blob is retrieve at line
 3. Then a loop for each data element is coded. For each data element,
 its value data type and its name are retrieved at lines 6 and 7. Then,
 according to the data element value data type, the data are extracted
 using the classical extraction operator (lines 13 or 20)
+
 
 \subsubsection{Error management}
 
@@ -2667,6 +2074,7 @@ kind of error he is interested in. For error treatment without exceptions,
 methods \emph{has\_failed()} and \emph{state()} has to be used. See
 reference documentation for details about these methods.
 
+
 \subsection{Writing a pipe}
 
 Writing data into a DevicePipe or a DevicePipeBlob is similar to reading
@@ -2675,49 +2083,30 @@ Let's have a look at a first example if you want to write a pipe with
 a Tango long, a vector of double and finally an array of unsigned
 short.
 
-\input{gen_api/line.tex}
-\begin{lyxcode}
-1~~DevicePipe~dp(\textquotedbl{}MyPipe\textquotedbl{});
 
-2~
-
-3~~vector<string>~de\_names~\{\textquotedbl{}FirstDE\textquotedbl{},\textquotedbl{}SecondDE\textquotedbl{},\textquotedbl{}ThirdDE\textquotedbl{}\};
-
-4~~db.set\_data\_elt\_names(de\_names);
-
+\begin{minted}[linenos]{cpp}
+1  DevicePipe dp("MyPipe");
+2 
+3  vector<string> de_names {"FirstDE","SecondDE","ThirdDE"};
+4  db.set_data_elt_names(de_names);
 5
-
-6~~DevLong~dl~=~666;~~
-
-7~~vector<double>~v\_db~\{1.11,2.22\};
-
-8~~unsigned~short~{*}array~=~new~unsigned~short~{[}100{]};
-
-9~~DevVarUShortArray~{*}dvush~=~create\_DevVarUShortArray(array,100);
-
+6  DevLong dl = 666;  
+7  vector<double> v_db {1.11,2.22};
+8  unsigned short *array = new unsigned short [100];
+9  DevVarUShortArray *dvush = create_DevVarUShortArray(array,100);
 10
+11 try  
+12 {     
+12    dp << dl << v_db << dvush;
+13    mydev.write_pipe(dp);
+14 }
+15 catch (DevFailed &e)
+16 {     
+17    cout << "DevicePipeBlob insertion failed" << endl;     
+18    ....  
+19 }
+\end{minted}
 
-11~try~~
-
-12~\{~~~~~
-
-12~~~~dp~<\textcompwordmark{}<~dl~<\textcompwordmark{}<~v\_db~<\textcompwordmark{}<~dvush;
-
-13~~~~mydev.write\_pipe(dp);
-
-14~\}
-
-15~catch~(DevFailed~\&e)
-
-16~\{~~~~~
-
-17~~~~cout~<\textcompwordmark{}<~\textquotedbl{}DevicePipeBlob~insertion~failed\textquotedbl{}~<\textcompwordmark{}<~endl;~~~~~
-
-18~~~~....~~
-
-19~\}
-\end{lyxcode}
-\input{gen_api/line.tex}
 
 Insertion into the DevicePipe is done at line 12 with the insert operators.
 The main difference with extracting data from the pipe is at line
@@ -2733,49 +2122,30 @@ It's also possible to use DataElement class instances to set the pipe
 data element. Here is the previous example modified to use DataElement
 class.
 
-\input{gen_api/line.tex}
-\begin{lyxcode}
-1~~DevicePipe~dp(\textquotedbl{}MyPipe\textquotedbl{});
 
+\begin{minted}[linenos]{cpp}
+1  DevicePipe dp("MyPipe");
 2
-
-3~~DataElement<DevLong>~de\_dl(\textquotedbl{}FirstElt\textquotedbl{},666);~~
-
-4~~vector<double>~~v\_db~\{1.11,2.22\};
-
-5~~DataElement<vector<double>~>~de\_v\_db(\textquotedbl{}SecondElt,v\_db);
-
+3  DataElement<DevLong> de_dl("FirstElt",666);  
+4  vector<double>  v_db {1.11,2.22};
+5  DataElement<vector<double> > de_v_db("SecondElt,v_db);
 6
-
-7~~unsigned~short~{*}array~=~new~unsigned~short~{[}100{]};
-
-8~~DevVarUShortArray~{*}dvush~=~create\_DevVarUShortArray(array,100);
-
-9~~DataElement<DevVarUShortArray~{*}>~de\_dvush(\textquotedbl{}ThirdDE\textquotedbl{},array);
-
+7  unsigned short *array = new unsigned short [100];
+8  DevVarUShortArray *dvush = create_DevVarUShortArray(array,100);
+9  DataElement<DevVarUShortArray *> de_dvush("ThirdDE",array);
 10
+11 try  
+12 {     
+12    dp << de_dl << de_v_db << de_dvush;
+13    mydev.write_pipe(dp);
+14 }
+15 catch (DevFailed &e)
+16 {     
+17    cout << "DevicePipeBlob insertion failed" << endl;     
+18    ....  
+19 }
+\end{minted}
 
-11~try~~
-
-12~\{~~~~~
-
-12~~~~dp~<\textcompwordmark{}<~de\_dl~<\textcompwordmark{}<~de\_v\_db~<\textcompwordmark{}<~de\_dvush;
-
-13~~~~mydev.write\_pipe(dp);
-
-14~\}
-
-15~catch~(DevFailed~\&e)
-
-16~\{~~~~~
-
-17~~~~cout~<\textcompwordmark{}<~\textquotedbl{}DevicePipeBlob~insertion~failed\textquotedbl{}~<\textcompwordmark{}<~endl;~~~~~
-
-18~~~~....~~
-
-19~\}
-\end{lyxcode}
-\input{gen_api/line.tex}
 
 The population of the array used for the third pipe data element is
 not represented here. Finally, there is a third way to insert data
@@ -2785,39 +2155,28 @@ are able to insert data into the data element in any order using the
 \textquotedbl{}{[}{]}\textquotedbl{} operator overwritten for the
 DevicePipe and DevicePipeBlob classes. Look at the following example:
 
-\input{gen_api/line.tex}
-\begin{lyxcode}
-1~~DevicePipe~dp(\textquotedbl{}MyPipe\textquotedbl{});
 
-2~
-
-3~~vector<string>~de\_names~\{\textquotedbl{}FirstDE\textquotedbl{},\textquotedbl{}SecondDE\textquotedbl{},\textquotedbl{}ThirdDE\textquotedbl{}\};
-
-4~~db.set\_data\_elt\_names(de\_names);
-
+\begin{minted}[linenos]{cpp}
+1  DevicePipe dp("MyPipe");
+2 
+3  vector<string> de_names {"FirstDE","SecondDE","ThirdDE"};
+4  db.set_data_elt_names(de_names);
 5
-
-6~~DevLong~dl~=~666;~~
-
-7~~vector<double>~v\_db~=~\{1.11,2.22\};
-
-8~~unsigned~short~{*}array~=~new~unsigned~short~{[}100{]};
-
-9~~DevVarUShortArray~{*}dvush~=~create\_DevVarUShortArray(array,100);
-
+6  DevLong dl = 666;  
+7  vector<double> v_db = {1.11,2.22};
+8  unsigned short *array = new unsigned short [100];
+9  DevVarUShortArray *dvush = create_DevVarUShortArray(array,100);
 10
+11 dp["SecondDE"] << v_db;
+12 dp["FirstDE"] << dl;
+13 dp["ThirdDE"] << dvush;
+\end{minted}
 
-11~dp{[}\textquotedbl{}SecondDE\textquotedbl{}{]}~<\textcompwordmark{}<~v\_db;
-
-12~dp{[}\textquotedbl{}FirstDE\textquotedbl{}{]}~<\textcompwordmark{}<~dl;
-
-13~dp{[}\textquotedbl{}ThirdDE\textquotedbl{}{]}~<\textcompwordmark{}<~dvush;
-\end{lyxcode}
-\input{gen_api/line.tex}
 
 Insertion into the device pipe is now done at lines 11 to 13. The
 population of the array used for the third pipe data element is not
 represented here. Note that the data element name is case insensitive.
+
 
 \subsubsection{Error management}
 
@@ -2868,6 +2227,7 @@ to get locking information
 \end{itemize}
 These methods are precisely described in the API reference chapters.
 
+
 \section{Reconnection\index{reconnection} and exception}
 
 The Tango API automatically manages re-connection between client and
@@ -2881,6 +2241,7 @@ not to have any exception thrown in case of communication error. The
 API will try to re-build the network connection as soon as it is detected
 as bad. This is the default mode. See \ref{sec:Reconnection-and-exception}
 for more details on this subject.
+
 
 \section{Thread\index{thread} safety}
 
@@ -2902,6 +2263,7 @@ these instances. Nevertheless, data local to a DeviceProxy instance
 like its timeout are not managed on a per thread basis. For a DeviceProxy
 instance shared between two threads, if thread 1 changes the instance
 timeout, thread 2 will also see this change.
+
 
 \section{Compiling and linking a Tango client}
 

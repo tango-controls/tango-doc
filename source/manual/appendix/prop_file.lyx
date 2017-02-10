@@ -129,7 +129,7 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \series bold
 1 
@@ -137,171 +137,171 @@ filename "line.tex"
 #---------------------------------------------------------
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 2 # SERVER TimeoutTest/manu, TimeoutTest device declaration
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 3 #---------------------------------------------------------
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 4 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 5 TimeoutTest/manu/DEVICE/TimeoutTest: "et/to/01",
 \backslash
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 6                                      "et/to/02",
 \backslash
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 7                                      "et/to/03"
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 8 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 9 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 10 # --- et/to/01 properties
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 11 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 12 et/to/01->StringProp: Property
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 13 et/to/01->ArrayProp: 1,
 \backslash
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 14                      2,
 \backslash
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 15                      3
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 16 et/to/01->attr_min_poll_period: TheAttr,
 \backslash
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 17                                 1000
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 18 et/to/01->AnotherStringProp: "A long string"
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 19 et/to/01->ArrayStringProp: "the first prop",
 \backslash
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 20                            "the second prop"
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 21 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 22 # --- et/to/01 attribute properties
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 23 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 24 et/to/01/TheAttr->display_unit: 1.0
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 25 et/to/01/TheAttr->event_period: 1000
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 26 et/to/01/TheAttr->format: %4d
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 27 et/to/01/TheAttr->min_alarm: -2.0
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 28 et/to/01/TheAttr->min_value: -5.0
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 29 et/to/01/TheAttr->standard_unit: 1.0
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 30 et/to/01/TheAttr->__value: 111
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 31 et/to/01/BooAttr->event_period: 1000doc_url
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 32 et/to/01/TestAttr->display_unit: 1.0
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 33 et/to/01/TestAttr->event_period: 1000
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 34 et/to/01/TestAttr->format: %4d
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 35 et/to/01/TestAttr->standard_unit: 1.0
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 36 et/to/01/DbAttr->abs_change: 1.1
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 37 et/to/01/DbAttr->event_period: 1000
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 38
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 39 CLASS/TimeoutTest->InheritedFrom:   Device_4Impl
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 40 CLASS/TimeoutTest->doc_url:   "http://www.esrf.fr/some/path"
 \end_layout
 

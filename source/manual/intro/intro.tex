@@ -1,6 +1,7 @@
 
 \chapter{Introduction}
 
+
 \section{Introduction to device server}
 
 Device servers were first developed at the European Synchrotron radiation
@@ -48,13 +49,16 @@ to illustrate what is meant. Most examples have been taken from the
 StepperMotor class - a simulation of a stepper motor which illustrates
 how a typical device server for a stepper motor at the ESRF functions.
 
+
 \section{Device server history}
 
 The concept of using device servers to access devices was first proposed
 at the ESRF in 1989. It has been successfully used as the heart of
 the ESRF\index{ESRF} Control System for the institute accelerator
-complex. This Control System has been named TACO\index{TACO}\footnote{TACO stands for \textbf{T}elescope and \textbf{A}ccelerator \textbf{C}ontrolled
-with \textbf{O}bjects}. Then, it has been decided to also used TACO to control devices in
+complex. This Control System has been named TACO\index{TACO}%
+\footnote{TACO stands for \textbf{T}elescope and \textbf{A}ccelerator \textbf{C}ontrolled
+with \textbf{O}bjects%
+}. Then, it has been decided to also used TACO to control devices in
 the beam-lines. Today, more than 30 instances of TACO are running
 at the ESRF. The main technologies used within TACO are the leading
 technologies of the 80's. The Sun Remote Procedure Call (RPC) is used
@@ -73,14 +77,16 @@ about Elettra. Then, beginning of 2005, ALBA\index{ALBA} also decided
 to join. ALBA is a Spanish synchrotron radiation facility located
 in Barcelona. See \cite{Alba_WEB} to get all information about ALBA.
 The new version of the Alba/Elettra/ESRF/Soleil control system is
-named TANGO\footnote{TANGO stands for \textbf{TA}co \textbf{N}ext \textbf{G}eneration \textbf{O}bject}
-and is based on the 21 century technologies :
+named TANGO%
+\footnote{TANGO stands for \textbf{TA}co \textbf{N}ext \textbf{G}eneration \textbf{O}bject%
+} and is based on the 21 century technologies :
 \begin{itemize}
-\item CORBA\index{CORBA}\footnote{CORBA stands for \textbf{C}ommon \textbf{O}bject \textbf{R}equest
-\textbf{B}roker \textbf{A}rchitecture} and ZMQ\index{ZMQ}\cite{ZMQ} to communicate between device server
+\item CORBA\index{CORBA}%
+\footnote{CORBA stands for \textbf{C}ommon \textbf{O}bject \textbf{R}equest
+\textbf{B}roker \textbf{A}rchitecture%
+} and ZMQ\index{ZMQ}\cite{ZMQ} to communicate between device server
 and clients 
 \item C++, Python and Java as reference programming languages 
 \item Linux and Windows as operating systems 
-\item Modern object oriented design patterns
-\end{itemize}
+\item Modern object oriented design patterns\end{itemize}
 

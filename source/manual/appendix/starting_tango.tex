@@ -1,6 +1,7 @@
 
 \chapter{Starting a Tango control system}
 
+
 \section{Without database}
 
 When used without database\index{database}, there is no additional
@@ -8,6 +9,7 @@ process to start. Simply starts device server using the -nodb option
 (and eventually the -dlist option) on specific port. See \ref{sec:Device-server-without}
 to find informations on how to start/write Tango device server not
 using the database.
+
 
 \section{With database}
 
@@ -31,7 +33,9 @@ it will enter a loop in which it periodically tries to access the
 Tango database device. The loop exits and the server starts only if
 the database device access succeed.
 
+
 \section{With database and event}
+
 
 \subsection{For Tango releases lower than 8}
 
@@ -52,15 +56,13 @@ value of only 2 Mybtes for thread stack. The Unix command line \textquotedbl{}ul
 for each thread stack. Example of starting and registering a Notification
 Service daemon on a UNIX like operating system
 
-\input{line.tex}
-\begin{lyxcode}
-~~~~~1~~ulimit~-s~2048
 
-~~~~~2~~notifd~-n~-DDeadFilterInterval=300~\&
+\begin{minted}[linenos]{cpp}
+     1  ulimit -s 2048
+     2  notifd -n -DDeadFilterInterval=300 &
+     3  notifd2db
+\end{minted}
 
-~~~~~3~~notifd2db
-\end{lyxcode}
-\input{line.tex}
 
 The Notification Service daemon is started at line 2. Its \textquotedbl{}-DDeadFilterInterval\textquotedbl{}\index{DeadFilterInterval}
 option is used to specify some internal cleaning of dead objects within
@@ -71,13 +73,13 @@ Service daemon in the Tango database is done at line 2.
 
 It differs on a Windows computer
 
-\input{line.tex}
-\begin{lyxcode}
-~~~~~1~~notifd~-n~-DDeadFilterInterval=300~-DFactoryIORFileName=C:\textbackslash{}Temp\textbackslash{}evfact.ior~\&
 
-~~~~~2~~notifd2db~C:\textbackslash{}Temp\textbackslash{}evfact.ior
-\end{lyxcode}
-\input{line.tex}
+\begin{minted}[linenos]{cpp}
+     1  notifd -n -DDeadFilterInterval=300 -DFactoryIORFileName=C:\Temp\evfact.ior &
+     2  notifd2db C:\Temp\evfact.ior
+\end{minted}
+
+
 
 \subsection{For release 8 and above}
 
@@ -89,6 +91,7 @@ their devices used Tango 8, it is not required to start any process
 other than the device servers and the clients. You can forget the
 previous sub-chapter!
 
+
 \section{With file used as database}
 
 When used with database\index{database} on file, there is no additional
@@ -97,7 +100,9 @@ specifying file name port. See \ref{sec:Device-server-file} to find
 informations on how to start Tango device server using database on
 file.
 
+
 \section{With file used as database and event}
+
 
 \subsection{For Tango releases lower than 8}
 
@@ -109,13 +114,12 @@ as database. This is done with the \textbf{notifd2db\index{notifd2db}}
 command. Example of starting and registering a Notification Service
 daemon on a UNIX like operating system
 
-\input{line.tex}
-\begin{lyxcode}
-~~~~~1~~notifd~-n~-DDeadFilterInterval=300~\&
 
-~~~~~2~~notifd2db~-o~/var/myfile.res
-\end{lyxcode}
-\input{line.tex}
+\begin{minted}[linenos]{cpp}
+     1  notifd -n -DDeadFilterInterval=300 &
+     2  notifd2db -o /var/myfile.res
+\end{minted}
+
 
 The Notification Service daemon is started at line 1. Its \textquotedbl{}-n\textquotedbl{}
 option is used to disable the use of the CORBA Naming Service for
@@ -128,13 +132,13 @@ by the CORBA notification service to store its channel factory IOR
 must be specified using its -D command line option. This file name
 has also to be passed to the notifd2db command.
 
-\input{line.tex}
-\begin{lyxcode}
-~~~~~1~~notifd~-n~-DDeadFilterInterval=300~-DFactoryIORFileName=C:\textbackslash{}Temp\textbackslash{}evfact.ior~\&
 
-~~~~~2~~notifd2db~C:\textbackslash{}Temp\textbackslash{}evfact.ior~-o~C:\textbackslash{}Temp\textbackslash{}myfile.res
-\end{lyxcode}
-\input{line.tex}
+\begin{minted}[linenos]{cpp}
+     1  notifd -n -DDeadFilterInterval=300 -DFactoryIORFileName=C:\Temp\evfact.ior &
+     2  notifd2db C:\Temp\evfact.ior -o C:\Temp\myfile.res
+\end{minted}
+
+
 
 \subsection{For release 8 and above}
 
@@ -145,6 +149,7 @@ events from devices embedded in the device server use Tango 8, it
 is not required to start any process other than the device server
 and its clients.
 
+
 \section{With the controlled access}
 
 Using the Tango controlled access means starting a specific device
@@ -152,9 +157,9 @@ server called TangoAccessControl\index{TangoAccessControl}. By default,
 this server has to be started with the instance name set to \textquotedbl{}1\textquotedbl{}
 and its device name is \textquotedbl{}sys/access\_control/1\textquotedbl{}.
 The command line to start this device server is:
-\begin{lyxcode}
-TangoAccessControl~1
-\end{lyxcode}
+\begin{minted}[linenos]{cpp}
+TangoAccessControl 1
+\end{minted}
 This server connects to MySQL using a default logging name set to
 \textquotedbl{}root\textquotedbl{}. You can change this behaviour
 with the MYSQL\_USER\index{MYSQL-USER} and MYSQL\_PASSWORD\index{MYSQL-PASSWORD}

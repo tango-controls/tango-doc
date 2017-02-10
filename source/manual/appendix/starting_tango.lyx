@@ -248,15 +248,15 @@ input{line.tex}
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      1  ulimit -s 2048
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      2  notifd -n -DDeadFilterInterval=300 &
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      3  notifd2db
 \end_layout
 
@@ -316,7 +316,7 @@ input{line.tex}
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      1  notifd -n -DDeadFilterInterval=300 -DFactoryIORFileName=C:
 \backslash
 Temp
@@ -324,7 +324,7 @@ Temp
 evfact.ior &
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      2  notifd2db C:
 \backslash
 Temp
@@ -453,11 +453,11 @@ input{line.tex}
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      1  notifd -n -DDeadFilterInterval=300 &
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      2  notifd2db -o /var/myfile.res
 \end_layout
 
@@ -512,7 +512,7 @@ input{line.tex}
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      1  notifd -n -DDeadFilterInterval=300 -DFactoryIORFileName=C:
 \backslash
 Temp
@@ -520,7 +520,7 @@ Temp
 evfact.ior &
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      2  notifd2db C:
 \backslash
 Temp
@@ -587,7 +587,7 @@ TangoAccessControl
  The command line to start this device server is:
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 TangoAccessControl 1
 \end_layout
 

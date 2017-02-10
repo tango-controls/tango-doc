@@ -1,113 +1,70 @@
 
 \chapter{Getting Started}
 
+
 \section{A C++ TANGO client}
 
 \noindent The quickest way of getting started is by studying this
 example :
 
-\input{started/line.tex}
-\begin{lyxcode}
-\noindent /{*}~
 
-\noindent ~{*}~example~of~a~client~using~the~TANGO~C++~api.
-
-\noindent ~{*}/
-
-\noindent \#include~<tango.h>
-
-\noindent using~namespace~Tango;
-
-\noindent int~main(unsigned~int~argc,~char~{*}{*}argv)
-
-\noindent \{
-
-~~~~try
-
-~~~~\{
+\begin{minted}[linenos]{cpp}
+/* 
+ * example of a client using the TANGO C++ api.
+ */
+#include <tango.h>
+using namespace Tango;
+int main(unsigned int argc, char **argv)
+{
+    try
+    {
 
 //
-
-//~create~a~connection~to~a~TANGO~device
-
+// create a connection to a TANGO device
 //
-
-~
-
-~~~~~~~~DeviceProxy~{*}device~=~new~DeviceProxy(``sys/database/2'');
-
-~
-
+ 
+        DeviceProxy *device = new DeviceProxy("sys/database/2");
+ 
 //
-
-//~Ping~the~device
-
+// Ping the device
 //
-
-~
-
-~~~~~~~~device->ping();
-
-~
-
+ 
+        device->ping();
+ 
 //
-
-//~Execute~a~command~on~the~device~and~extract~the~reply~as~a~string
-
+// Execute a command on the device and extract the reply as a string
 //
-
-~
-
-~~~~~~~~string~db\_info;~
-
-~~~~~~~~DeviceData~cmd\_reply;
-
-~~~~~~~~cmd\_reply~=~device->command\_inout(``DbInfo'');
-
-~~~~~~~~cmd\_reply~>\textcompwordmark{}>~db\_info;
-
-~~~~~~~~cout~<\textcompwordmark{}<~``Command~reply~``~<\textcompwordmark{}<~db\_info~<\textcompwordmark{}<~endl;
-
-~
-
+ 
+        string db_info; 
+        DeviceData cmd_reply;
+        cmd_reply = device->command_inout("DbInfo");
+        cmd_reply >> db_info;
+        cout << "Command reply " << db_info << endl;
+ 
 //
-
-//~Read~a~device~attribute~(string~data~type)
-
+// Read a device attribute (string data type)
 //
+ 
+        string spr;
+        DeviceAttribute att_reply;
+        att_reply = device->read_attribute("StoredProcedureRelease");
+        att_reply >> spr;
+        cout << "Database device stored procedure release: " << spr << endl;
+    }
+    catch (DevFailed &e)
+    {
+        Except::print_exception(e);
+        exit(-1);
+    } 
+}
+\end{minted}
 
-~
-
-~~~~~~~~string~spr;
-
-~~~~~~~~DeviceAttribute~att\_reply;
-
-~~~~~~~~att\_reply~=~device->read\_attribute(``StoredProcedureRelease'');
-
-~~~~~~~~att\_reply~>\textcompwordmark{}>~spr;
-
-~~~~~~~~cout~<\textcompwordmark{}<~``Database~device~stored~procedure~release:~``~<\textcompwordmark{}<~spr~<\textcompwordmark{}<~endl;
-
-~~~~\}
-
-\noindent ~~~~catch~(DevFailed~\&e)
-
-\noindent ~~~~\{
-
-\noindent ~~~~~~~~Except::print\_exception(e);
-
-\noindent ~~~~~~~~exit(-1);
-
-\noindent ~~~~\}~
-
-\noindent \}
-\end{lyxcode}
-\input{started/line.tex}
 
 \noindent Modify this example to fit your device server or client's
 needs, compile it and link with the library -ltango. Forget about
 those painful early TANGO days when you had to learn CORBA and manipulate
 Any's. Life's going to easy and fun from now on !
+
 
 \section{A TANGO device server}
 
@@ -141,12 +98,14 @@ feature reserved for some specific cases. Therefore, there is no device
 pipe example in this \textquotedbl{}Getting started\textquotedbl{}
 chapter.
 
+
 \subsection{The commands and attributes code}
 
 For each command called DevXxxx, pogo generates in the device class
 a method named dev\_xxx which will be executed when the command is
 requested by a client. In this chapter, the name of the device class
 is \emph{DocDs}
+
 
 \subsubsection{The DevSimple command}
 
@@ -155,34 +114,26 @@ and also returns a data of the Tango::DevFloat type which is simply
 the double of the input value. The code for the method executed by
 this command is the following:
 
-\input{started/line.tex}
-\begin{lyxcode}
-~~~~~1~~Tango::DevFloat~DocDs::dev\_simple(Tango::DevFloat~argin)
 
-~~~~~2~~\{
+\begin{minted}[linenos]{cpp}
+     1  Tango::DevFloat DocDs::dev_simple(Tango::DevFloat argin)
+     2  {
+     3          Tango::DevFloat argout ;
+     4          DEBUG_STREAM << "DocDs::dev_simple(): entering... !" << endl;
+     5  
+     6          //      Add your own code to control device here
+     7  
+     8          argout = argin * 2;
+     9          return argout;
+    10  }
+\end{minted}
 
-~~~~~3~~~~~~~~~~Tango::DevFloat~argout~;
-
-~~~~~4~~~~~~~~~~DEBUG\_STREAM~<\textcompwordmark{}<~\textquotedbl{}DocDs::dev\_simple():~entering...~!\textquotedbl{}~<\textcompwordmark{}<~endl;
-
-~~~~~5~~
-
-~~~~~6~~~~~~~~~~//~~~~~~Add~your~own~code~to~control~device~here
-
-~~~~~7~~
-
-~~~~~8~~~~~~~~~~argout~=~argin~{*}~2;
-
-~~~~~9~~~~~~~~~~return~argout;
-
-~~~~10~~\}
-\end{lyxcode}
-\input{started/line.tex}
 
 This method is fairly simple. The received data is passed to the method
 as its argument. It is
 
 doubled at line 8 and the method simply returns the result.
+
 
 \subsubsection{The DevArray command}
 
@@ -191,49 +142,30 @@ type and also returns a data of the Tango::DevVarLongArray type. Each
 element of the array is doubled. The code for the method executed
 by the command is the following :
 
-\input{started/line.tex}
-\begin{lyxcode}
-~~~~~1~~Tango::DevVarLongArray~{*}DocDs::dev\_array(const~Tango::DevVarLongArray~{*}argin)
 
-~~~~~2~~\{
+\begin{minted}[linenos]{cpp}
+     1  Tango::DevVarLongArray *DocDs::dev_array(const Tango::DevVarLongArray *argin)
+     2  {
+     3          //      POGO has generated a method core with argout allocation.
+     4          //      If you would like to use a static reference without copying,
+     5          //      See "TANGO Device Server Programmer's Manual"
+     6          //              (chapter x.x)
+     7          //------------------------------------------------------------
+     8          Tango::DevVarLongArray  *argout  = new Tango::DevVarLongArray();
+     9                  
+    10          DEBUG_STREAM << "DocDs::dev_array(): entering... !" << endl;
+    11  
+    12          //      Add your own code to control device here
+    13  
+    14          long argin_length = argin->length();    
+    15          argout->length(argin_length);
+    16          for (int i = 0;i < argin_length;i++)
+    17                  (*argout)[i] = (*argin)[i] * 2;
+    18  
+    19          return argout;
+    20  }
+\end{minted}
 
-~~~~~3~~~~~~~~~~//~~~~~~POGO~has~generated~a~method~core~with~argout~allocation.
-
-~~~~~4~~~~~~~~~~//~~~~~~If~you~would~like~to~use~a~static~reference~without~copying,
-
-~~~~~5~~~~~~~~~~//~~~~~~See~\textquotedbl{}TANGO~Device~Server~Programmer's~Manual\textquotedbl{}
-
-~~~~~6~~~~~~~~~~//~~~~~~~~~~~~~~(chapter~x.x)
-
-~~~~~7~~~~~~~~~~//-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-
-
-~~~~~8~~~~~~~~~~Tango::DevVarLongArray~~{*}argout~~=~new~Tango::DevVarLongArray();
-
-~~~~~9~~~~~~~~~~~~~~~~~~
-
-~~~~10~~~~~~~~~~DEBUG\_STREAM~<\textcompwordmark{}<~\textquotedbl{}DocDs::dev\_array():~entering...~!\textquotedbl{}~<\textcompwordmark{}<~endl;
-
-~~~~11~~
-
-~~~~12~~~~~~~~~~//~~~~~~Add~your~own~code~to~control~device~here
-
-~~~~13~~
-
-~~~~14~~~~~~~~~~long~argin\_length~=~argin->length();~~~~
-
-~~~~15~~~~~~~~~~argout->length(argin\_length);
-
-~~~~16~~~~~~~~~~for~(int~i~=~0;i~<~argin\_length;i++)
-
-~~~~17~~~~~~~~~~~~~~~~~~({*}argout){[}i{]}~=~({*}argin){[}i{]}~{*}~2;
-
-~~~~18~~
-
-~~~~19~~~~~~~~~~return~argout;
-
-~~~~20~~\}
-\end{lyxcode}
-\input{started/line.tex}
 
 The argout data array is created at line 8. Its length is set at line
 15 from the input argument length. The array is populated at line
@@ -243,6 +175,7 @@ the data have been sent to the caller (no delete is needed). It is
 also possible to return data from a statically allocated array without
 copying. Look at chapter \ref{Data exchange} for all the details.
 
+
 \subsubsection{The DevString command}
 
 This method receives a data of the Tango::DevString\index{Tango::DevString}
@@ -251,49 +184,30 @@ simply displays the content of the input string and returns a hard-coded
 string. The code for the method executed by the command is the following
 :
 
-\input{started/line.tex}
-\begin{lyxcode}
-~~~~~1~~Tango::DevString~DocDs::dev\_string(Tango::DevString~argin)
 
-~~~~~2~~\{
+\begin{minted}[linenos]{cpp}
+     1  Tango::DevString DocDs::dev_string(Tango::DevString argin)
+     2  {
+     3          //      POGO has generated a method core with argout allocation.
+     4          //      If you would like to use a static reference without copying,
+     5          //      See "TANGO Device Server Programmer's Manual"
+     6          //              (chapter x.x)
+     7          //------------------------------------------------------------
+     8          Tango::DevString        argout;
+     9          DEBUG_STREAM << "DocDs::dev_string(): entering... !" << endl;
+    10  
+    11          //      Add your own code to control device here
+    12  
+    13          cout << "the received string is " << argin << endl;
+    14          
+    15          string str("Am I a good Tango dancer ?");
+    16          argout = new char[str.size() + 1];
+    17          strcpy(argout,str.c_str());
+    18          
+    19          return argout;
+    20  }
+\end{minted}
 
-~~~~~3~~~~~~~~~~//~~~~~~POGO~has~generated~a~method~core~with~argout~allocation.
-
-~~~~~4~~~~~~~~~~//~~~~~~If~you~would~like~to~use~a~static~reference~without~copying,
-
-~~~~~5~~~~~~~~~~//~~~~~~See~\textquotedbl{}TANGO~Device~Server~Programmer's~Manual\textquotedbl{}
-
-~~~~~6~~~~~~~~~~//~~~~~~~~~~~~~~(chapter~x.x)
-
-~~~~~7~~~~~~~~~~//-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-
-
-~~~~~8~~~~~~~~~~Tango::DevString~~~~~~~~argout;
-
-~~~~~9~~~~~~~~~~DEBUG\_STREAM~<\textcompwordmark{}<~\textquotedbl{}DocDs::dev\_string():~entering...~!\textquotedbl{}~<\textcompwordmark{}<~endl;
-
-~~~~10~~
-
-~~~~11~~~~~~~~~~//~~~~~~Add~your~own~code~to~control~device~here
-
-~~~~12~~
-
-~~~~13~~~~~~~~~~cout~<\textcompwordmark{}<~\textquotedbl{}the~received~string~is~\textquotedbl{}~<\textcompwordmark{}<~argin~<\textcompwordmark{}<~endl;
-
-~~~~14~~~~~~~~~~
-
-~~~~15~~~~~~~~~~string~str(\textquotedbl{}Am~I~a~good~Tango~dancer~?\textquotedbl{});
-
-~~~~16~~~~~~~~~~argout~=~new~char{[}str.size()~+~1{]};
-
-~~~~17~~~~~~~~~~strcpy(argout,str.c\_str());
-
-~~~~18~~~~~~~~~~
-
-~~~~19~~~~~~~~~~return~argout;
-
-~~~~20~~\}
-\end{lyxcode}
-\input{started/line.tex}
 
 The argout string is created at line 8. Internally, this method is
 using a standard C++ string. Memory for the returned data is allocated
@@ -304,55 +218,37 @@ It is also possible to return data from a statically allocated string
 without copying. Look at chapter \ref{Data exchange} for all the
 details.
 
+
 \subsubsection{The DevStrArray command}
 
 This method does not receive input data but returns an array of strings
 (Tango::DevVarStringArray\index{Tango::DevVarStringArray} type).
 The code for the method executed by this command is the following:
 
-\input{started/line.tex}
-\begin{lyxcode}
-~~~~~1~~Tango::DevVarStringArray~{*}DocDs::dev\_str\_array()
 
-~~~~~2~~\{
+\begin{minted}[linenos]{cpp}
+     1  Tango::DevVarStringArray *DocDs::dev_str_array()
+     2  {
+     3          //      POGO has generated a method core with argout allocation.
+     4          //      If you would like to use a static reference without copying,
+     5          //      See "TANGO Device Server Programmer's Manual"
+     6          //              (chapter x.x)
+     7          //------------------------------------------------------------
+     8          Tango::DevVarStringArray        *argout  = new Tango::DevVarStringArray();
+     9  
+    10          DEBUG_STREAM << "DocDs::dev_str_array(): entering... !" << endl;
+    11  
+    12          //      Add your own code to control device here
+    13  
+    14          argout->length(3);
+    15          (*argout)[0] = CORBA::string_dup("Rumba");
+    16          (*argout)[1] = CORBA::string_dup("Waltz");
+    17          string str("Jerck");
+    18          (*argout)[2] = CORBA::string_dup(str.c_str());
+    19          return argout;
+    20  }
+\end{minted}
 
-~~~~~3~~~~~~~~~~//~~~~~~POGO~has~generated~a~method~core~with~argout~allocation.
-
-~~~~~4~~~~~~~~~~//~~~~~~If~you~would~like~to~use~a~static~reference~without~copying,
-
-~~~~~5~~~~~~~~~~//~~~~~~See~\textquotedbl{}TANGO~Device~Server~Programmer's~Manual\textquotedbl{}
-
-~~~~~6~~~~~~~~~~//~~~~~~~~~~~~~~(chapter~x.x)
-
-~~~~~7~~~~~~~~~~//-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-
-
-~~~~~8~~~~~~~~~~Tango::DevVarStringArray~~~~~~~~{*}argout~~=~new~Tango::DevVarStringArray();
-
-~~~~~9~~
-
-~~~~10~~~~~~~~~~DEBUG\_STREAM~<\textcompwordmark{}<~\textquotedbl{}DocDs::dev\_str\_array():~entering...~!\textquotedbl{}~<\textcompwordmark{}<~endl;
-
-~~~~11~~
-
-~~~~12~~~~~~~~~~//~~~~~~Add~your~own~code~to~control~device~here
-
-~~~~13~~
-
-~~~~14~~~~~~~~~~argout->length(3);
-
-~~~~15~~~~~~~~~~({*}argout){[}0{]}~=~CORBA::string\_dup(\textquotedbl{}Rumba\textquotedbl{});
-
-~~~~16~~~~~~~~~~({*}argout){[}1{]}~=~CORBA::string\_dup(\textquotedbl{}Waltz\textquotedbl{});
-
-~~~~17~~~~~~~~~~string~str(\textquotedbl{}Jerck\textquotedbl{});
-
-~~~~18~~~~~~~~~~({*}argout){[}2{]}~=~CORBA::string\_dup(str.c\_str());
-
-~~~~19~~~~~~~~~~return~argout;
-
-~~~~20~~\}
-\end{lyxcode}
-\input{started/line.tex}
 
 The argout data array is created at line 8. Its length is set at line
 14. The array is populated at line 15,16 and 18. The last array element
@@ -360,6 +256,7 @@ is initialized from a standard C++ string created at line 17. Note
 the usage of the \emph{string\_dup\index{string-dup}} function of
 the CORBA namespace. This is necessary for strings array due to the
 CORBA memory\index{memory} allocation schema.
+
 
 \subsubsection{The DevStruct command}
 
@@ -369,59 +266,35 @@ type. This type is a composed type with an array of double and an
 array of strings. The code for the method executed by this command
 is the following:
 
-\input{started/line.tex}
-\begin{lyxcode}
-~~~~~1~~Tango::DevVarDoubleStringArray~{*}DocDs::dev\_struct()
 
-~~~~~2~~\{
+\begin{minted}[linenos]{cpp}
+     1  Tango::DevVarDoubleStringArray *DocDs::dev_struct()
+     2  {
+     3          //      POGO has generated a method core with argout allocation.
+     4          //      If you would like to use a static reference without copying,
+     5          //      See "TANGO Device Server Programmer's Manual"
+     6          //              (chapter x.x)
+     7          //------------------------------------------------------------
+     8          Tango::DevVarDoubleStringArray  *argout  = new Tango::DevVarDoubleStringArray();
+     9  
+    10          DEBUG_STREAM << "DocDs::dev_struct(): entering... !" << endl;
+    11          
+    12          //      Add your own code to control device here
+    13  
+    14          argout->dvalue.length(3);
+    15          argout->dvalue[0] = 0.0;
+    16          argout->dvalue[1] = 11.11;
+    17          argout->dvalue[2] = 22.22;
+    18          
+    19          argout->svalue.length(2);
+    20          argout->svalue[0] = CORBA::string_dup("Be Bop");
+    21          string str("Smurf");
+    22          argout->svalue[1] = CORBA::string_dup(str.c_str());
+    23          
+    24          return argout;
+    25  }
+\end{minted}
 
-~~~~~3~~~~~~~~~~//~~~~~~POGO~has~generated~a~method~core~with~argout~allocation.
-
-~~~~~4~~~~~~~~~~//~~~~~~If~you~would~like~to~use~a~static~reference~without~copying,
-
-~~~~~5~~~~~~~~~~//~~~~~~See~\textquotedbl{}TANGO~Device~Server~Programmer's~Manual\textquotedbl{}
-
-~~~~~6~~~~~~~~~~//~~~~~~~~~~~~~~(chapter~x.x)
-
-~~~~~7~~~~~~~~~~//-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-
-
-~~~~~8~~~~~~~~~~Tango::DevVarDoubleStringArray~~{*}argout~~=~new~Tango::DevVarDoubleStringArray();
-
-~~~~~9~~
-
-~~~~10~~~~~~~~~~DEBUG\_STREAM~<\textcompwordmark{}<~\textquotedbl{}DocDs::dev\_struct():~entering...~!\textquotedbl{}~<\textcompwordmark{}<~endl;
-
-~~~~11~~~~~~~~~~
-
-~~~~12~~~~~~~~~~//~~~~~~Add~your~own~code~to~control~device~here
-
-~~~~13~~
-
-~~~~14~~~~~~~~~~argout->dvalue.length(3);
-
-~~~~15~~~~~~~~~~argout->dvalue{[}0{]}~=~0.0;
-
-~~~~16~~~~~~~~~~argout->dvalue{[}1{]}~=~11.11;
-
-~~~~17~~~~~~~~~~argout->dvalue{[}2{]}~=~22.22;
-
-~~~~18~~~~~~~~~~
-
-~~~~19~~~~~~~~~~argout->svalue.length(2);
-
-~~~~20~~~~~~~~~~argout->svalue{[}0{]}~=~CORBA::string\_dup(\textquotedbl{}Be~Bop\textquotedbl{});
-
-~~~~21~~~~~~~~~~string~str(\textquotedbl{}Smurf\textquotedbl{});
-
-~~~~22~~~~~~~~~~argout->svalue{[}1{]}~=~CORBA::string\_dup(str.c\_str());
-
-~~~~23~~~~~~~~~~
-
-~~~~24~~~~~~~~~~return~argout;
-
-~~~~25~~\}
-\end{lyxcode}
-\input{started/line.tex}
 
 The argout data structure is created at line 8. The length of the
 double array in the output structure is set at line 14. The array
@@ -435,31 +308,25 @@ of the \emph{string\_dup\index{string-dup}} function of the CORBA
 namespace. This is necessary for strings array due to the CORBA memory
 allocation schema.
 
+
 \subsubsection{The three attributes\index{attribute}}
 
 Some data have been added to the definition of the device class in
 order to store attributes value. These data are (part of the class
 definition) :
 
-\input{started/line.tex}
-\begin{lyxcode}
-~~~~~1~~
 
-~~~~~2~~
+\begin{minted}[linenos]{cpp}
+     1  
+     2  
+     3  protected :     
+     4          //      Add your own data members here
+     5          //-----------------------------------------
+     6          Tango::DevString        attr_str_array[5];
+     7          Tango::DevLong          attr_rd;
+     8          Tango::DevLong          attr_wr;
+\end{minted}
 
-~~~~~3~~protected~:~~~~~
-
-~~~~~4~~~~~~~~~~//~~~~~~Add~your~own~data~members~here
-
-~~~~~5~~~~~~~~~~//-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-
-
-~~~~~6~~~~~~~~~~Tango::DevString~~~~~~~~attr\_str\_array{[}5{]};
-
-~~~~~7~~~~~~~~~~Tango::DevLong~~~~~~~~~~attr\_rd;
-
-~~~~~8~~~~~~~~~~Tango::DevLong~~~~~~~~~~attr\_wr;
-\end{lyxcode}
-\input{started/line.tex}
 
 One data has been created for each attribute. As the StrAttr attribute
 is of type spectrum with a maximum X dimension of 5, an array of length
@@ -472,105 +339,58 @@ each readable attribute and one \textquotedbl{}write\textquotedbl{}
 method for each writable attribute. The code for these methods is
 the following :
 
-\input{started/line.tex}
-\begin{lyxcode}
-1~void~DocDs::read\_attr\_hardware(vector<long>~\&attr\_list)
 
-2~\{
+\begin{minted}[linenos]{cpp}
+1 void DocDs::read_attr_hardware(vector<long> &attr_list)
+2 {
+3     DEBUG_STREAM << "DocDs::read_attr_hardware(vector<long> &attr_list) entering... "<< endl;
+4 // Add your own code here
+5 
+6     string att_name;
+7     for (long i = 0;i < attr_list.size();i++)
+8     {
+9         att_name = dev_attr->get_attr_by_ind(attr_list[i]).get_name();
+10 
+11        if (att_name == "LongRdAttr")
+12        {
+13            attr_rd = 5;
+14        }
+15    }
+16 }
+17 
+18 void DocDs::read_LongRdAttr(Tango::Attribute &attr)
+19 {
+20     DEBUG_STREAM << "DocDs::read_LongRdAttr(Tango::Attribute &attr) entering... "<< endl;
+21 
+22     attr.set_value(&attr_rd);
+23 }
+24 
+25 void DocDs::read_LongWrAttr(Tango::Attribute &attr)
+26 {
+27     DEBUG_STREAM << "DocDs::read_LongWrAttr(Tango::Attribute &attr) entering... "<< endl;
+28 
+29     attr.set_value(&attr_wr);
+30 }
+31 
+32 void DocDs::write_LongWrAttr(Tango::WAttribute &attr)
+33 {
+34     DEBUG_STREAM << "DocDs::write_LongWrAttr(Tango::WAttribute &attr) entering... "<< endl;
+35 
+36     attr.get_write_value(attr_wr);
+37     DEBUG_STREAM << "Value to be written = " << attr_wr << endl;
+38 }
+39 
+40 void DocDs::read_StrAttr(Tango::Attribute &attr)
+41 {
+42     DEBUG_STREAM << "DocDs::read_StrAttr(Tango::Attribute &attr) entering... "<< endl;
+43 
+44     attr_str_array[0] = const_cast<char *>("Rock");
+45     attr_str_array[1] = const_cast<char *>("Samba");
+46 
+47     attr_set_value(attr_str_array, 2);
+48 }
+\end{minted}
 
-3~~~~~DEBUG\_STREAM~<\textcompwordmark{}<~\textquotedbl{}DocDs::read\_attr\_hardware(vector<long>~\&attr\_list)~entering...~\textquotedbl{}<\textcompwordmark{}<~endl;
-
-4~//~Add~your~own~code~here
-
-5~
-
-6~~~~~string~att\_name;
-
-7~~~~~for~(long~i~=~0;i~<~attr\_list.size();i++)
-
-8~~~~~\{
-
-9~~~~~~~~~att\_name~=~dev\_attr->get\_attr\_by\_ind(attr\_list{[}i{]}).get\_name();
-
-10~
-
-11~~~~~~~~if~(att\_name~==~\textquotedbl{}LongRdAttr\textquotedbl{})
-
-12~~~~~~~~\{
-
-13~~~~~~~~~~~~attr\_rd~=~5;
-
-14~~~~~~~~\}
-
-15~~~~\}
-
-16~\}
-
-17~
-
-18~void~DocDs::read\_LongRdAttr(Tango::Attribute~\&attr)
-
-19~\{
-
-20~~~~~DEBUG\_STREAM~<\textcompwordmark{}<~\textquotedbl{}DocDs::read\_LongRdAttr(Tango::Attribute~\&attr)~entering...~\textquotedbl{}<\textcompwordmark{}<~endl;
-
-21~
-
-22~~~~~attr.set\_value(\&attr\_rd);
-
-23~\}
-
-24~
-
-25~void~DocDs::read\_LongWrAttr(Tango::Attribute~\&attr)
-
-26~\{
-
-27~~~~~DEBUG\_STREAM~<\textcompwordmark{}<~\textquotedbl{}DocDs::read\_LongWrAttr(Tango::Attribute~\&attr)~entering...~\textquotedbl{}<\textcompwordmark{}<~endl;
-
-28~
-
-29~~~~~attr.set\_value(\&attr\_wr);
-
-30~\}
-
-31~
-
-32~void~DocDs::write\_LongWrAttr(Tango::WAttribute~\&attr)
-
-33~\{
-
-34~~~~~DEBUG\_STREAM~<\textcompwordmark{}<~\textquotedbl{}DocDs::write\_LongWrAttr(Tango::WAttribute~\&attr)~entering...~\textquotedbl{}<\textcompwordmark{}<~endl;
-
-35~
-
-36~~~~~attr.get\_write\_value(attr\_wr);
-
-37~~~~~DEBUG\_STREAM~<\textcompwordmark{}<~\textquotedbl{}Value~to~be~written~=~\textquotedbl{}~<\textcompwordmark{}<~attr\_wr~<\textcompwordmark{}<~endl;
-
-38~\}
-
-39~
-
-40~void~DocDs::read\_StrAttr(Tango::Attribute~\&attr)
-
-41~\{
-
-42~~~~~DEBUG\_STREAM~<\textcompwordmark{}<~\textquotedbl{}DocDs::read\_StrAttr(Tango::Attribute~\&attr)~entering...~\textquotedbl{}<\textcompwordmark{}<~endl;
-
-43~
-
-44~~~~~attr\_str\_array{[}0{]}~=~const\_cast<char~{*}>(\textquotedbl{}Rock\textquotedbl{});
-
-45~~~~~attr\_str\_array{[}1{]}~=~const\_cast<char~{*}>(\textquotedbl{}Samba\textquotedbl{});
-
-46~
-
-47~~~~~attr\_set\_value(attr\_str\_array,~2);
-
-48~\}
-\end{lyxcode}
-\input{started/line.tex}
 
 The \emph{read\_attr\_hardware\index{read-attr-hardware}()} method
 is executed once when a client execute the read\_attributes\index{read-attributes}
@@ -605,6 +425,7 @@ server\textquotedbl{}.
 \newpage{}
 
 \vspace{5cm}
+
 
 \begin{center}
 \label{APicture}\includegraphics{dance/tg_argentine}

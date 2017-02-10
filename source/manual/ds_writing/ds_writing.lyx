@@ -1,5 +1,5 @@
-#LyX 2.0 created this file. For more info see http://www.lyx.org/
-\lyxformat 413
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
 \begin_document
 \begin_header
 \textclass book
@@ -10,18 +10,18 @@
 \maintain_unincluded_children false
 \language english
 \language_package default
-\inputencoding latin1
+\inputencoding utf8
 \fontencoding global
 \font_roman default
 \font_sans default
 \font_typewriter default
+\font_math auto
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
 \font_sf_scale 100
 \font_tt_scale 100
-
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -32,15 +32,24 @@
 \use_hyperref false
 \papersize default
 \use_geometry false
-\use_amsmath 1
-\use_esint 0
-\use_mhchem 1
-\use_mathdots 1
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
 \cite_engine basic
+\cite_engine_type default
+\biblio_style plain
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
 \suppress_date false
+\justification true
 \use_refstyle 0
 \index Index
 \shortcut idx
@@ -221,7 +230,7 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-\begin_inset Caption
+\begin_inset Caption Standard
 
 \begin_layout Plain Layout
 Device pattern class diagram
@@ -249,7 +258,7 @@ Device pattern class diagram
 \end_layout
 
 \begin_layout Plain Layout
-\begin_inset Caption
+\begin_inset Caption Standard
 
 \begin_layout Plain Layout
 Device pattern class diagram
@@ -2061,191 +2070,191 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 1 class StepperMotor: public TANGO_BASE_CLASS
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 2 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 3 public :
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 4    StepperMotor(Tango::DeviceClass *,string &);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 5    StepperMotor(Tango::DeviceClass *,const char *);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 6    StepperMotor(Tango::DeviceClass *,const char *,const char *);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 7    ~StepperMotor() {};
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 8 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 9    DevLong dev_read_position(DevLong);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 10   DevLong dev_read_direction(DevLong);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 11   bool direct_cmd_allowed(const CORBA::Any &);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 12 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 13   virtual Tango::DevState dev_state();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 14   virtual Tango::ConstDevString dev_status();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 15 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 16   virtual void always_executed_hook();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 17 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 18   virtual void read_attr_hardware(vector<long> &attr_list);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 19   virtual void write_attr_hardware(vector<long> &attr_list);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 20 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 21   void read_position(Tango::Attribute &);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 22   bool is_Position_allowed(Tango::AttReqType req);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 23   void write_SetPosition(Tango::WAttribute &);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 24   void read_Direction(Tango::Attribute &);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 25 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 26   virtual void init_device();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 27   virtual void delete_device();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 28 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 29   void get_device_properties();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 30 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 31 protected : 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 32   long axis[AGSM_MAX_MOTORS];
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 33   DevLong position[AGSM_MAX_MOTORS];
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 34   DevLong direction[AGSM_MAX_MOTORS];
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 35   long state[AGSM_MAX_MOTORS];
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 36 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 37   Tango::DevLong *attr_Position_read;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 38   Tango::DevLong *attr_Direction_read;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 38   Tango::DevLong attr_SetPosition_write;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 40 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 41   Tango::DevLong min;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 42   Tango::DevLong max;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 43 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 44   Tango::DevLong *ptr;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 45 };
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 46 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 47 } /* End of StepperMotor namespace */
 \end_layout
 
@@ -2666,40 +2675,40 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 1  class DevReadPositionCmd : public Command
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 2  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 3  public:
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 4      DevReadPositionCmd(const char *,Tango_CmdArgType, Tango_CmdArgType,
  const char *, const char*);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 5      ~DevReadPositionCmd() {};
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 6          
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 7      virtual bool is_allowed (DeviceImpl *, const CORBA::Any &);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 8      virtual CORBA::Any *execute (DeviceImpl *, const CORBA::Any &);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 9  };
 \end_layout
 
@@ -2800,48 +2809,48 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      1  class PositionAttr: public Tango::Attr
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      2  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      3  public:
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      4     PositionAttr():Attr("Position",Tango::DEV_LONG,Tango::READ);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      5     ~PositionAttr() {};
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      6          
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      7     virtual void read(Tango::DeviceImpl *dev,Tango::Attribute &att)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      8     {(static_cast<StepperMotor *>(dev))->read_Position(att);}
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      9     virtual bool is_allowed(Tango::DeviceImpl *dev,Tango::AttReqType
  ty)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     10     {return (static_cast<StepperMotor *>(dev))->is_Position_allowed(ty);}
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     11  };
 \end_layout
 
@@ -3006,7 +3015,7 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
-\begin_inset Caption
+\begin_inset Caption Standard
 
 \begin_layout Plain Layout
 Device pattern startup sequence
@@ -3144,7 +3153,7 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
-\begin_inset Caption
+\begin_inset Caption Standard
 
 \begin_layout Plain Layout
 Command execution timing
@@ -3658,7 +3667,7 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
-\begin_inset Caption
+\begin_inset Caption Standard
 
 \begin_layout Plain Layout
 Read attribute sequencing
@@ -3810,7 +3819,7 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
-\begin_inset Caption
+\begin_inset Caption Standard
 
 \begin_layout Plain Layout
 Write attribute sequencing
@@ -4549,7 +4558,7 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
-\begin_inset Caption
+\begin_inset Caption Standard
 
 \begin_layout Plain Layout
 A complete device server
@@ -4795,7 +4804,7 @@ namespace
 \begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="26" columns="2">
-<features islongtable="true" longtabularalignment="center">
+<features rotate="0" islongtable="true" longtabularalignment="center">
 <column alignment="center" valignment="top" width="0pt">
 <column alignment="left" valignment="top" width="0pt">
 <row>
@@ -5478,7 +5487,7 @@ For these types, the mapping between IDL and C++ is obvious and defined
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="11" columns="4">
-<features islongtable="true" longtabularalignment="center">
+<features rotate="0" islongtable="true" longtabularalignment="center">
 <column alignment="center" valignment="top" width="0pt">
 <column alignment="center" valignment="top" width="0pt">
 <column alignment="center" valignment="top" width="0pt">
@@ -5967,15 +5976,15 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     char *CORBA::string_alloc(unsigned long len);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     char *CORBA::string_dup(const char *);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     void CORBA::string_free(char *);
 \end_layout
 
@@ -6082,32 +6091,32 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      1     Tango::DevString str = CORBA::string_alloc(5);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      2     strcpy(str,"TANGO");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      3  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      4     Tango::DevString str1 = CORBA::string_dup("Do you want to danse
  TANGO?");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      5  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      6     CORBA::string_free(str);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      7     CORBA::string_free(str1);
 \end_layout
 
@@ -6256,75 +6265,75 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      1     Tango::DevVarLongArray *mylongseq_ptr;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      2     mylongseq_ptr = new Tango::DevVarLongArray();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      3     mylongseq_ptr->length(4);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      4  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      5     (*mylongseq_ptr)[0] = 1;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      6     (*mylongseq_ptr)[1] = 2;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      7     (*mylongseq_ptr)[2] = 3;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      8     (*mylongseq_ptr)[3] = 4;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      9  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     10     // (*mylongseq_ptr)[4] = 5;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     11  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     12     CORBA::Long nb_elt = mylongseq_ptr->length();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     13  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     14     mylongseq_ptr->length(5);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     15     (*mylongseq_ptr)[4] = 5;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     16  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     17     for (int i = 0;i < mylongseq_ptr->length();i++)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     18          cout << "Sequence elt " << i + 1 << " = " << (*mylongseq_ptr)[i]
  << endl;
 \end_layout
@@ -6419,27 +6428,27 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      1     Tango::DevVarStringArray mystrseq(4);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      2     mystrseq.length(4);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      3  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      4     mystrseq[0] = CORBA::string_dup("Rock and Roll");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      5     mystrseq[1] = CORBA::string_dup("Bossa Nova");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      6     mystrseq[2] = CORBA::string_dup(
 \begin_inset Quotes eld
 \end_inset
@@ -6451,27 +6460,27 @@ Waltz
 );
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      7     mystrseq[3] = CORBA::string_dup("Tango");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      8  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      9     CORBA::Long nb_elt = mystrseq.length();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     10  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     11     for (int i = 0;i < mystrseq.length();i++)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     12          cout << "Sequence elt " << i + 1 << " = " << mystrseq[i]
  << endl;
 \end_layout
@@ -6638,35 +6647,35 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      1     Tango::DevVarLongStringArray my_vl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      2  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      3     myvl.svalue.length(2);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      4     myvl.svalue[0] = CORBA_string_dup("Samba");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      5     myvl.svalue[1] = CORBA_string_dup("Rumba");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      6  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      7     myvl.lvalue.length(1);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      8     myvl.lvalue[0] = 10;
 \end_layout
 
@@ -6725,19 +6734,19 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      1     Tango::DevState state;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      2  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      3     state = Tango::ON;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      4     state = Tango::FAULT;
 \end_layout
 
@@ -7042,127 +7051,127 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      1    CORBA::Any a;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      2    Tango::DevLong l1,l2;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      3    l1 = 2;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      4    a <<= l1;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      5    a >>= l2;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      6  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      7    CORBA::Any b;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      8    Tango::DevBoolean b1,b2;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      9    b1 = true;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     10    b <<= CORBA::Any::from_boolean(b1);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     11    b >>= CORBA::Any::to_boolean(b2);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     12  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     13    CORBA::Any s;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     14    Tango::DevString str1,str2;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     15    str1 = "I like dancing TANGO";
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     16    s <<= str1;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     17    s >>= str2;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     18  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     19  //   CORBA::string_free(str2);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     20  //   a <<= CORBA::string_dup("Oups");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     21  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     22    CORBA::Any seq;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     23    Tango::DevVarFloatArray fl_arr1;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     24    fl_arr1.length(2);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     25    fl_arr1[0] = 1.0;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     26    fl_arr1[1] = 2.0;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     27    seq <<= fl_arr1;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     28    const Tango::DevVarFloatArray *fl_arr_ptr;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     29    seq >>= fl_arr_ptr;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     30  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     31  //   delete fl_arr_ptr;
 \end_layout
 
@@ -7248,7 +7257,7 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      1          void extract
 \begin_inset Index idx
 status collapsed
@@ -7262,7 +7271,7 @@ extract
 (const CORBA::Any &,<Tango type> &);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      2          CORBA::Any *insert
 \begin_inset Index idx
 status collapsed
@@ -7334,95 +7343,95 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      1    Tango::DevLong l1,l2;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      2    l1 = 2;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      3    CORBA::Any *a_ptr = insert(l1);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      4    extract(*a_ptr,l2);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      5  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      6    Tango::DevBoolean b1,b2;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      7    b1 = true;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      8    CORBA::Any *b_ptr = insert(b1);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      9    extract(*b_ptr,b2);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     10  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     11    Tango::DevString str1,str2;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     12    str1 = "I like dancing TANGO";
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     13    CORBA::Any *s_ptr = insert(str1);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     14    extract(*s_ptr,str2);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     15  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     16    Tango::DevVarFloatArray fl_arr1;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     17    fl_arr1.length(2);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     18    fl_arr1[0] = 1.0;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     19    fl_arr1[1] = 2.0;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     20    insert(fl_arr1);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     21    CORBA::Any *seq_ptr = insert(fl_arr1);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     22    Tango::DevVarFloatArray *fl_arr_ptr;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     23    extract(*seq_ptr,fl_arr_ptr);
 \end_layout
 
@@ -7513,51 +7522,51 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      1  Tango::DevString MyDev::dev_string(Tango::DevString argin)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      2  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      3      Tango::DevString        argout;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      4  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      5      cout << "the received string is " << argin << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      6          
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      7      string str("Am I a good Tango dancer ?");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      8      argout = new char[str.size() + 1];
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      9      strcpy(argout,str.c_str());
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     10          
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     11      return argout;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     12  }
 \end_layout
 
@@ -7616,39 +7625,39 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      1  Tango::ConstDevString MyDev::dev_string(Tango::DevString argin)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      2  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      3      Tango::ConstDevString   argout;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      4  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      5      cout << "the received string is " << argin << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      6          
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      7      argout = "Hello world"; 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      8      return argout;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      9  }
 \end_layout
 
@@ -7729,47 +7738,47 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      1  Tango::DevVarLongArray *MyDev::dev_array()
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      2  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      3      Tango::DevVarLongArray  *argout  = new Tango::DevVarLongArray();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      4                  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      5      long output_array_length = ...;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      6      argout->length(output_array_length);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      7      for (int i = 0;i < output_array_length;i++)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      8          (*argout)[i] = i;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      9  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     10      return argout;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     11  }
 \end_layout
 
@@ -7830,35 +7839,35 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      1  Tango::DevVarLongArray *MyDev::dev_array()
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      2  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      3      Tango::DevVarLongArray  *argout;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      4                  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      5      long output_array_length = ...;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      6      argout = create_DevVarLongArray(buffer,output_array_length);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      7      return argout;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      8  }
 \end_layout
 
@@ -7912,7 +7921,7 @@ Command::insert()
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="10" columns="2">
-<features islongtable="true" longtabularalignment="center">
+<features rotate="0" islongtable="true" longtabularalignment="center">
 <column alignment="center" valignment="top" width="0pt">
 <column alignment="center" valignment="top" width="0pt">
 <row>
@@ -8157,47 +8166,47 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      1  Tango::DevVarStringArray *MyDev::dev_str_array()
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      2  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      3     Tango::DevVarStringArray *argout  = new Tango::DevVarStringArray();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      4  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      5     argout->length(3);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      6     (*argout)[0] = CORBA::string_dup("Rumba");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      7     (*argout)[1] = CORBA::string_dup("Waltz");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      8     string str("Jerck");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      9     (*argout)[2] = CORBA::string_dup(str.c_str());
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     10     return argout;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     11  }
 \end_layout
 
@@ -8298,39 +8307,39 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      1  Tango::DevVarStringArray *DocDs::dev_str_array()
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      2  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      3     int_buffer[0] = "first";
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      4     int_buffer[1] = "second";
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      5  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      6     Tango::DevVarStringArray *argout;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      7     argout = create_DevVarStringArray(int_buffer,2);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      8     return argout;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      9  }
 \end_layout
 
@@ -8618,91 +8627,91 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      1    TangoSys_OMemStream o;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      2                  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      3    o << "Command " << command << " not found" << ends;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      4    Tango::Except::throw_exception("API_CommandNotFound",
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      5                                o.str(),
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      6                                "DeviceClass::command_handler");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      7  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      8  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      9    try
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     10    {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     11        .....
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     12    }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     13    catch (Tango::DevFailed &e)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     14    {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     15        TangoSys_OMemStream o;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     16                  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     17        o << "Command " << command << " not found" << ends;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     18        Tango::Except::re_throw_exception(e,
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     19                                  "API_CommandNotFound",
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     20                                  o.str(),
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     21                                  "DeviceClass::command_handler");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     22    }
 \end_layout
 
@@ -9109,63 +9118,63 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 1 class MyDeviceActualImpl: public Tango::LogAdapter
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 2 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 3 public :
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 4    MyDeviceActualImpl(...,Tango::DeviceImpl *device,...)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 5    :Tango::LogAdpater(device)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 6    {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 7          ....
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 8 //
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 9 // The following log is associated to the device passed to the constructor
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 10 //
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 11         DEBUG_STREAM << "In MyDeviceActualImpl constructor" << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 12 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 13         ....
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 14    }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 15 };
 \end_layout
 
@@ -9695,7 +9704,7 @@ state
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="15" columns="1">
-<features islongtable="true" longtabularalignment="center">
+<features rotate="0" islongtable="true" longtabularalignment="center">
 <column alignment="center" valignment="top" width="0pt">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
@@ -10050,59 +10059,59 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      1    vector<string> v1;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      2    v1.push_back("one");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      3    v1.push_back("two");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      4    v1.push_back("three");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      5          
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      6    Tango::DevVarStringArray s;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      7    s << v1;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      8    cout << s << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      9  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     10    vector<string> v2;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     11    v2 << s;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     12          
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     13    for (int i = 0;i < v2.size();i++)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     14       cout << "vector element = " << v2[i] << endl;
 \end_layout
 
@@ -10224,139 +10233,139 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      1  #include <tango.h>
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      2  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      3  int main(int argc,char *argv[])
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      4  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      5  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      6      Tango::Util *tg;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      7          
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      8      try
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      9      {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     10          
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     11          tg = Tango::Util::init(argc,argv);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     12  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     13          tg->server_init();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     14  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     15          cout << "Ready to accept request" << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     16          tg->server_run();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     17      }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     18      catch (bad_alloc)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     19      {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     20           cout << "Can't allocate memory!!!" << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     21           cout << "Exiting" << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     22      }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     23      catch (CORBA::Exception &e)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     24      {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     25           Tango::Except::print_exception(e);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     26                  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     27           cout << "Received a CORBA::Exception" << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     28           cout << "Exiting" << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     29      }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     30  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     31      tg->server_cleanup();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     32                  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     33      return(0);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     34  }
 \end_layout
 
@@ -10543,39 +10552,39 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      1  #include <tango.h>
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      2  #include <steppermotorclass.h>
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      3  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      4  void Tango::DServer::class_factory()
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      5  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      6  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      7     add_class(StepperMotor::StepperMotorClass::init("StepperMotor"));
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      8  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      9  }
 \end_layout
 
@@ -10656,95 +10665,95 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      1  #include <tango.h>
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      2  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      3  namespace StepperMotor
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      4  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      5  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      6  class StepperMotorClass : public Tango::DeviceClass
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      7  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      8  public:
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      9      static StepperMotorClass *init(const char *);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     10      static StepperMotorClass *instance();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     11      ~StepperMotorClass() {_instance = NULL;}
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     12          
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     13  protected:
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     14      StepperMotorClass(string &);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     15      static StepperMotorClass *_instance;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     16      void command_factory();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     17      void attribute_factory(vector<Tango::Attr *> &);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     18          
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     19  public:
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     20      void device_factory(const Tango::DevVarStringArray *);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     21  };
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     22  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     23  } /* End of StepperMotor namespace */
 \end_layout
 
@@ -10917,187 +10926,187 @@ filename "line.tex"
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      1  #include <tango.h>
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      2  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      3  #include <steppermotor.h>
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      4  #include <steppermotorclass.h>
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      5  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      6  namespace StepperMotor
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      7  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      8  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      9  StepperMotorClass *StepperMotorClass::_instance = NULL;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     10  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     11  StepperMotorClass::StepperMotorClass(string &s):
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     12  Tango::DeviceClass(s)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     13  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     14      INFO_STREAM << "Entering StepperMotorClass constructor" << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     15          
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     16      INFO_STREAM << "Leaving StepperMotorClass constructor" << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     17  }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     18  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     19  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     20  StepperMotorClass *StepperMotorClass::init(const char *name)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     21  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     22      if (_instance == NULL)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     23      {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     24            try
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     25            {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     26                 string s(name);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     27                 _instance = new StepperMotorClass(s);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     28            }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     29            catch (bad_alloc)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     30            {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     31                 throw;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     32            }               
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     33      }               
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     34      return _instance;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     35  }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     36  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     37  StepperMotorClass *StepperMotorClass::instance()
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     38  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     39      if (_instance == NULL)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     40      {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     41            cerr << "Class is not initialised !!" << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     42            exit(-1);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     43      }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     44      return _instance;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     45  }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  
 \end_layout
 
@@ -11255,81 +11264,81 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      1  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      2  void StepperMotorClass::command_factory()
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      3  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      4          command_list.push_back(new DevReadPositionCmd("DevReadPosition",
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      5                                                        Tango::DEV_LONG,
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      6                                                        Tango::DEV_LONG,
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      7                                                        "Motor number
  (0-7)",
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      8                                                        "Motor position"))
 ;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      9                                                        
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     10          command_list.push_back(
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     11              new TemplCommandInOut<Tango::DevLong,Tango::DevLong>
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     12                  ((const char *)"DevReadDirection",
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     13                   static_cast<Tango::Lg_CmdMethPtr_Lg>
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     14                          (&StepperMotor::dev_read_direction),
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     15                   static_cast<Tango::StateMethPtr>
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     16                          (&StepperMotor::direct_cmd_allowed))
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     17                                );
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     18  }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     19  
 \end_layout
 
@@ -11440,62 +11449,62 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      1  void StepperMotorClass::device_factory(const Tango::_DevVarStringArray
  *devlist_ptr)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      2  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      3          
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      4      for (long i = 0;i < devlist_ptr->length();i++)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      5      {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      6           DEBUG_STREAM << "Device name : " << (*devlist_ptr)[i] <<
  endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      7                                                  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      8           device_list.push_back(new StepperMotor(this,(*devlist_ptr)[i]));
        9  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     10           if (Tango::Util::_UseDb == true)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     11                export_device(device_list.back());
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     12           else
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     13                export_device(device_list.back(),(*devlist_ptr[i]));
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     14      }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     15  }
 \end_layout
 
@@ -11569,56 +11578,56 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      1  void StepperMotorClass::attribute_factory(vector<Tango::Attr *>
  &att_list)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      2  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      3      att_list.push_back(new PositionAttr());
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      4  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      5      Tango::UserDefaultAttrProp def_prop;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      6      def_prop.set_label("Set the motor position");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      7      def_prop.set_format("scientific;setprecision(4)");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      8      Tango::Attr *at = new SetPositionAttr();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      9      at->set_default_properties(def_prop);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     10      att_list.push_back(at);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     11  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     12      att_list.push_back(new DirectcionAttr());
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     13  }
 \end_layout
 
@@ -11720,77 +11729,77 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      1  #include <tango.h>
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      2  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      3  namespace StepperMotor
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      4  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      5  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      6  class DevReadPositionCmd : public Tango::Command
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      7  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      8  public:
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      9      DevReadPositionCmd(const char *,Tango::CmdArgType,
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     10                             Tango::CmdArgType,
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     11                             const char *,const char *);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     12      ~DevReadPositionCmd() {};
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     13          
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     14      virtual bool is_allowed (Tango::DeviceImpl *, const CORBA::Any
  &);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     15      virtual CORBA::Any *execute (Tango::DeviceImpl *, const CORBA::Any
  &);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     16  };
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     17  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     18  } /* End of StepperMotor namespace */
 \end_layout
 
@@ -12045,35 +12054,35 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      1  bool DevReadPositionCmd::is_allowed(Tango::DeviceImpl *device,
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      2                                      const CORBA::Any &in_any)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      3  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      4       if (device->get_state() == Tango::ON)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      5            return true;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      6       else
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      7            return false;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      8  }
 \end_layout
 
@@ -12136,49 +12145,49 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      1  CORBA::Any *DevReadPositionCmd::execute(
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      2                          Tango::DeviceImpl *device,
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      3                          const CORBA::Any &in_any)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      4  {       
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      5       INFO_STREAM << "DevReadPositionCmd::execute(): arrived" <<
  endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      6       Tango::DevLong motor;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      7  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      8       extract(in_any,motor);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      9       return insert(
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     10          (static_cast<StepperMotor *>(device))->dev_read_position(motor))
 ;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     11  }
 \end_layout
 
@@ -12255,105 +12264,105 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      1  #include <tango.h>
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      2  #include <steppermotor.h>
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      3  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      4  namespace StepperMotor
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      5  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      6  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      7  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      8  class PositionAttr: public Tango::Attr
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      9  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     10  public:
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     11      PositionAttr():Attr("Position",
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     12                          Tango::DEV_LONG,
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     13                          Tango::READ_WITH_WRITE,
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     14                          "SetPosition") {};
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     15      ~PositionAttr() {};
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     16          
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     17      virtual void read(Tango::DeviceImpl *dev,Tango::Attribute &att)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     18      {(static_cast<StepperMotor *>(dev))->read_Position(att);}
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     19      virtual bool is_allowed(Tango::DeviceImpl *dev,Tango::AttReqType
  ty)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     20      {return (static_cast<StepperMotor *>(dev))->is_Position_allowed(ty);
 }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     21  };
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     22  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     23  } /* End of StepperMotor namespace */
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     24  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     25  #endif // _STEPPERMOTORCLASS_H
 \end_layout
 
@@ -12647,219 +12656,219 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 1 #include <tango.h>
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 2 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 3 #define AGSM_MAX_MOTORS 8 // maximum number of motors per device
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 4 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 5 namespace StepperMotor
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 6 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 7 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 8 class StepperMotor: public TANGO_BASE_CLASS
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 9 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 10 public :
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 11    StepperMotor(Tango::DeviceClass *,string &);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 12    StepperMotor(Tango::DeviceClass *,const char *);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 13    StepperMotor(Tango::DeviceClass *,const char *,const char *);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 14    ~StepperMotor() {};
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 15 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 16    DevLong dev_read_position(DevLong);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 17    DevLong dev_read_direction(DevLong);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 18    bool direct_cmd_allowed(const CORBA::Any &);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 19 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 20    virtual Tango::DevState dev_state();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 21    virtual Tango::ConstDevString dev_status();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 22 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 23    virtual void always_executed_hook();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 24 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 25    virtual void read_attr_hardware(vector<long> &attr_list);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 26    virtual void write_attr_hardware(vector<long> &attr_list);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 27 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 28    void read_position(Tango::Attribute &);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 29    bool is_Position_allowed(Tango::AttReqType req);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 30    void write_SetPosition(Tango::WAttribute &);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 31    void read_Direction(Tango::Attribute &);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 32 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 33    virtual void init_device();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 34    virtual void delete_device();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 35 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 36    void get_device_properties();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 37 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 38 protected : 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 39    long axis[AGSM_MAX_MOTORS];
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 40    DevLong position[AGSM_MAX_MOTORS];
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 41    DevLong direction[AGSM_MAX_MOTORS];
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 42    long state[AGSM_MAX_MOTORS];
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 43 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 44    Tango::DevLong *attr_Position_read;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 45    Tango::DevLong *attr_Direction_read;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 46    Tango::DevLong attr_SetPosition_write;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 47 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 48    Tango::DevLong min;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 49    Tango::DevLong max;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 50 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 51    Tango::DevLong *ptr;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 52 };
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 53 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 54 } /* End of StepperMotor namespace */
 \end_layout
 
@@ -13112,188 +13121,188 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 1  #include <tango.h>
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 2  #include <steppermotor.h>
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 3 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 4  namespace StepperMotor
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 5  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 6 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 7  StepperMotor::StepperMotor(Tango::DeviceClass *cl,string &s)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 8  :TANGO_BASE_CLASS(cl,s.c_str())
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 9  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 10    init_device();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 11 }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 12 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 13 StepperMotor::StepperMotor(Tango::DeviceClass *cl,const char *s)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 14 :TANGO_BASE_CLASS(cl,s)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 15 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 16    init_device();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 17 }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 18 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 19 StepperMotor::StepperMotor(Tango::DeviceClass *cl,const char *s,const
  char *d)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 20 :TANGO_BASE_CLASS(cl,s,d)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 21 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 22    init_device();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 23 }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 24 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 25 void StepperMotor::init_device()
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 26 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 27    cout << "StepperMotor::StepperMotor() create " << device_name << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 28 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 29    long i;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 30 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 31    for (i=0; i< AGSM_MAX_MOTORS; i++)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 32    {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 33       axis[i] = 0;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 34       position[i] = 0;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 35       direction[i] = 0;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 36    }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 37 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 38    ptr = new Tango::DevLong[10];
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 39 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 40    get_device_properties();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 41 }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 42 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 43 void StepperMotor::delete_device()
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 44 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 45    delete [] ptr;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 46 }
 \end_layout
 
@@ -13508,104 +13517,104 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      1  DevLong StepperMotor::dev_read_direction(DevLong axis)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      2  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      3     if (axis < 0 || axis > AGSM_MAX_MOTORS)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      4     {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      5         WARNING_STREAM << "Steppermotor::dev_read_direction(): axis
  out of range !";
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      6         WARNING_STREAM << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      7         TangoSys_OMemStream o;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      8                  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      9         o << "Axis number " << axis << " out of range" << ends;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     10         throw_exception("StepperMotor_OutOfRange",
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     11                         o.str(),
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     12                         "StepperMotor::dev_read_direction");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     13      }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     14  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     15      return direction[axis];
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     16  }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     17  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     18  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     19  bool StepperMotor::direct_cmd_allowed(const CORBA::Any &in_data)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     20  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     21      INFO_STREAM << "In direct_cmd_allowed() method" << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     22          
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     23      return true;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     24  }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     25  
 \end_layout
 
@@ -13772,155 +13781,155 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      1  void StepperMotor::read_attr_hardware(vector<long> &attr_list)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      2  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      3     INFO_STREAM << "In read_attr_hardware for " << attr_list.size();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      4     INFO_STREAM << " attribute(s)" << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      5  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      6     for (long i = 0;i < attr_list.size();i++)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      7     {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      8        string attr_name;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      9        attr_name = dev_attr->get_attr_by_ind(attr_list[i]).get_name();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     10  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     11        if (attr_name == "Position")
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     12        {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     13           attr_Position_read = &(position[0]);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     14        }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     15        else if (attr_name == "Direction")
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     16        {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     17           attr_Direction_read = &(direction[0]);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     18        }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     19     }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     20  }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     21  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     22  void read_Position(Tango::Attribute &att)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     23  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     24     att.set_value(attr_Position_read);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     25  }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     26  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     27  bool is_Position_allowed(Tango::AttReqType req)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     28  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     29     if (req == Tango::WRITE_REQ)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     30        return false;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     31     else
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     32     {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     33        if (get_state() == Tango::ON)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     34           return true;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     35        else
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     36           return false;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     37     }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     38  }
 \end_layout
 
@@ -14069,59 +14078,59 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 1 void StepperMotor::write_SetPosition(Tango::WAttribute &att)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 2 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 3    att.get_write_value(sttr_SetPosition_write);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 4 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 5    DEBUG_STREAM << "Attribute SetPosition value = ";
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 6    DEBUG_STREAM << attr_SetPosition_write << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 7 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 8    position[0] = attr_SetPosition_write;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 9 }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 10 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 11 void StepperMotor::write_attr_hardware(vector<long> &attr_list)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 12 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 13 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 14 }
 \end_layout
 
@@ -14173,7 +14182,7 @@ write-attr-hardware
 \emph default
  method.
  It is coded here just for educational purpose.
- When itś not needed, this method has a default implementation in the Tango
+ When its not needed, this method has a default implementation in the Tango
  base class and it is not mandatory to declare and defin it in your own
  Tango class
 \end_layout
@@ -14221,55 +14230,55 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      1  void DocDs::get_device_property()
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      2  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      3     Tango::DbData   data;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      4     data.push_back(DbDatum("Max"));
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      5     data.push_back(DbDatum("Min"));
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      6  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      7     get_db_device()->get_property(data);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      8  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      9     if (data[0].is_empty()==false)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     10        data[0]  >>  max;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     11     if (data[1].is_empty()==false)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     12        data[1]  >>  min;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     13  }
 \end_layout
 
@@ -14390,164 +14399,164 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 1  DevLong StepperMotor::dev_read_position(DevLong axis)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      2  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      3  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      4     if (axis < 0 || axis > AGSM_MAX_MOTORS)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      5     {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      6          WARNING_STREAM << "Steppermotor::dev_read_position(): axis
  out of range !";
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      7          WARNING_STREAM << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      8                  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      9          TangoSys_OMemStream o;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     10                  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     11          o << "Axis number " << axis << " out of range" << ends;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     12          throw_exception("StepperMotor_OutOfRange",
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     13                          o.str(),
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     14                          "StepperMotor::dev_read_position");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     15     }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     16  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     17     return position[axis];
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     18  }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     19  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     20  void always_executed_hook()
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     21  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     22     INFO_STREAM << "In the always_executed_hook method << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     23  }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     24  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     25  Tango_DevState StepperMotor::dev_state()
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     26  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     27     INFO_STREAM << "In StepperMotor state command" << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     28     return DeviceImpl::dev_state();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     29  }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     30  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     31  Tango_DevString StepperMotor::dev_status()
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     32  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     33     INFO_STREAM << "In StepperMotor status command" << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     34     return DeviceImpl::dev_status();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     35  }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     36  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     37  void read_Direction(Tango::Attribute att)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     38  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     39     att.set_value(attr_Direction_read);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     40  }
 \end_layout
 
@@ -14750,7 +14759,7 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-\begin_inset Caption
+\begin_inset Caption Standard
 
 \begin_layout Plain Layout
 Tango device server main window
@@ -15102,191 +15111,191 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      1 BOOL FluidsApp::InitInstance()
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      2 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      3    AfxEnableControlContainer();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      4  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      5 // Standard initialization
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      6 // If you are not using these features and wish to reduce the size
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      7 //  of your final executable, you should remove from the following
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      8 //  the specific initialization routines you do not need.
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      9  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     10  #ifdef _AFXDLL
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     11    Enable3dControls();          // Call this when using MFC in a
  shared DLL
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     12  #else
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     13    Enable3dControlsStatic();    // Call this when linking to MFC
  statically
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     14  #endif
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     15    Tango::Util *tg;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     16    try
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     17    {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     18          
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     19        tg = Tango::Util::init(m_hInstance,m_nCmdShow);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     20  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     21        tg->server_init(true);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     22  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     23        tg->server_run();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     24  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     25    }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     26    catch (bad_alloc)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     27    {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     28        MessageBox((HWND)NULL,"Memory error","Command line",MB_ICONSTOP);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     29        return(FALSE);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     30    }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     31    catch (Tango::DevFailed &e)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     32    {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     33        MessageBox((HWND)NULL,,e.errors[0].desc.in(),"Command line",MB_ICONST
 OP);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     34        return(FALSE);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     35    }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     36    catch (CORBA::Exception &)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     37    {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     38        MessageBox((HWND)NULL,"Exception CORBA","Command line",MB_ICONSTOP
 );
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     39        return(FALSE);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     40    }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     41  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     42    m_pMainWnd = new CWnd;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     43    m_pMainWnd->Attach(tg->get_ds_main_window());
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     44  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     45    return TRUE;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     46  }
 \end_layout
 
@@ -15385,75 +15394,75 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      1  int FluidsApp::ExitInstance()
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      2  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      3     bool del = true;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      4  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      5     try
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      6     {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      7         Tango::Util *tg = Tango::Util::instance();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      8     }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      9     catch(Tango::DevFailed)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     10     {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     11         del = false;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     12     }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     13  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     14     if (del == true)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     15         delete (Tango::Util::instance());
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     16  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     17     return CWinApp::ExitInstance();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     18  }
 \end_layout
 
@@ -15727,211 +15736,211 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      1  int APIENTRY WinMain(HINSTANCE hInstance,
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      2                       HINSTANCE hPrevInstance,
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      3                       LPSTR     lpCmdLine,
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      4                       int       nCmdShow)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      5  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      6     MSG msg;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      7     Tango::Util *tg;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      8  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      9     try
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     10     {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     11         tg = Tango::Util::init(hInstance,nCmdShow);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     12  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     13         string txt;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     14         txt = "Blabla first line
 \backslash
 n";
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     15         txt = txt + "Blabla second line
 \backslash
 n";
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     16         txt = txt + "Blabla third line
 \backslash
 n";
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     17         tg->set_main_window_text(txt);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     18         tg->set_server_version("2.2");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     19  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     20         tg->server_init(true);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     21  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     22         tg->server_run();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     23  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     24     }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     25     catch (bad_alloc)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     26     {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     27         MessageBox((HWND)NULL,"Memory error","Command line",MB_ICONSTOP);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     28         return (FALSE);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     29     }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     30     catch (Tango::DevFailed &e)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     31     {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     32         MessageBox((HWND)NULL,e.errors[0].desc.in(),"Command line",MB_ICONST
 OP);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     33         return (FALSE);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     34     }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     35     catch (CORBA::Exception &)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     36     {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     37         MessageBox((HWND)NULL,"Exception CORBA","Command line",MB_ICONSTO
 P);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     38         return(FALSE);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     39     }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     40  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     41     while (GetMessage(&msg, NULL, 0, 0)) 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     42     {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     43         TranslateMessage(&msg);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     44         DispatchMessage(&msg);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     45     }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     46  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     47     delete tg;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     48  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     49     return msg.wParam;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     50  }
 \end_layout
 
@@ -16143,43 +16152,43 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      1  #include <tango.h>
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      2  #include <ntservice.h>
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      3  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      4  class MYService: public Tango::NTService
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      5  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      6  public:
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      7     MYService(char *);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      8  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      9     void start(int,char **,Tango::NTEventLogger *);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     10  };
 \end_layout
 
@@ -16249,144 +16258,144 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      1  #include <myservice.h>
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      2  #include <tango.h>
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      3  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      4  using namespace std;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      5  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      6  MYService::MYService(char *exec_name):NTService(exec_name)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      7  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      8  }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      9  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     10  void MYService::start(int argc,char **argv,Tango::NTEventLogger
  *logger)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     11  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     12     Tango::Util *tg;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     13     try
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     14     {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     15        Tango::Util::_service = true;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     16  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     17        tg = Tango::Util::init(argc,argv);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     18  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     19        tg->server_init();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     20  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     21        tg->server_run();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     22     }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     23     catch (bad_alloc)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     24     {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     25        logger->error("Can't allocate memory to store device object");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     26     }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     27     catch (Tango::DevFailed &e)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     28     {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     29        logger->error(e.errors[0].desc.in());
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     30     }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     31     catch (CORBA::Exception &)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     32     {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     33        logger->error("CORBA Exception");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     34     }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     35  }
 \end_layout
 
@@ -16473,75 +16482,75 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      1  #include <tango.h>
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      2  #include <MYService.h>
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      3  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      4  using namespace std;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      5  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      6  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      7  int main(int argc,char *argv[])
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      8  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      9     MYService service(argv[0]);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     10          
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     11     int ret;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     12     if ((ret = service.options(argc,argv)) <= 0)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     13         return ret;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     14          
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     15     service.run(argc,argv);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     16          
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     17     return 0;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     18  }
 \end_layout
 
@@ -16838,75 +16847,75 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      1  int main(int argc,char *argv[])
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      2  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      3     if (!AfxWinInit(::GetModuleHandle(NULL),NULL,::GetCommandLine(),0))
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      4     {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      5        cerr << "Can't initialise MFC !" << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      6        return -1;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      7     }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      8  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      9     service serv(argv[0]);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     10  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     11     int ret;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     12     if ((ret = serv.options(argc,argv)) <= 0)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     13          return ret;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     14  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     15     serv.run(argc,argv);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     16  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     17     return 0;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     18  }
 \end_layout
 
@@ -17166,7 +17175,7 @@ C++11
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="2" columns="3">
-<features islongtable="true" longtabularalignment="center">
+<features rotate="0" islongtable="true" longtabularalignment="center">
 <column alignment="center" valignment="top" width="0pt">
 <column alignment="center" valignment="top" width="0pt">
 <column alignment="block" valignment="middle" width="70mm">
@@ -17259,201 +17268,201 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 1 #
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 2 # Makefile to generate a Tango server
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 3 #
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 4 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 5 CC = c++
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 6 BIN_DIR = ubuntu1104
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 7 TANGO_HOME = /segfs/tango
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 8 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 9 INCLUDE_DIRS = -I $(TANGO_HOME)/include/$(BIN_DIR) -I .
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 10
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 11 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 12 LIB_DIRS = -L $(TANGO_HOME)/lib/$(BIN_DIR)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 13 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 14 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 15 CXXFLAGS = -D_REENTRANT -std=c++0x $(INCLUDE_DIRS)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 16 LFLAGS = $(LIB_DIRS) -ltango 
 \backslash
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 17                      -llog4tango 
 \backslash
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 18                      -lomniORB4 
 \backslash
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 19                      -lomniDynamic4 
 \backslash
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 20                      -lCOS4 
 \backslash
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 21                      -lomnithread 
 \backslash
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 22                      -lzmq 
 \backslash
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 23                      -lpthread
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 24 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 25 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 26 SVC_OBJS = main.o 
 \backslash
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 27            ClassFactory.o 
 \backslash
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 28            SteppermotorClass.o 
 \backslash
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 29            Steppermotor.o 
 \backslash
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 30            SteppermotorStateMachine.o
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 31 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 32 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 33 .SUFFIXES: .o .cpp
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 34 .cpp.o:
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 35     $(CC) $(CXXFLAGS) -c $<
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 36 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 37 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 38 all: StepperMotor
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 39 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 40 StepperMotor: $(SVC_OBJS)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 41     $(CC) $(SVC_OBJS) -o $(BIN_DIR)/StepperMotor $(LFLAGS)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 42 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 43 clean:
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 44     rm -f *.o core
 \end_layout
 
@@ -17726,7 +17735,7 @@ omniORB
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="7" columns="2">
-<features islongtable="true" longtabularalignment="center">
+<features rotate="0" islongtable="true" longtabularalignment="center">
 <column alignment="center" valignment="top" width="0pt">
 <column alignment="center" valignment="top" width="0pt">
 <row>
@@ -18364,120 +18373,120 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  1  void StepperMotor::init_device()
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  2  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  3      cout << "StepperMotor::StepperMotor() create motor " << dev_name
  << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  4  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  5      long i;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  6  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  7      for (i=0; i< AGSM_MAX_MOTORS; i++)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  8      {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  9          axis[i] = 0;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 10          position[i] = 0;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 11          direction[i] = 0;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 12      }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 13  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 14      if (dev_name == "id04/motor/02")
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 15          register_signal(SIGALRM);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 16  }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 17  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 18  StepperMotor::~StepperMotor()
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 19  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 20      unregister_signal(SIGALRM);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 21  }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 22  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 23  void StepperMotor::signal_handler(long signo)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 24  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 25      INFO_STREAM << "Inside signal handler for signal " << signo << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 26  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 27  //  Do what you want here
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 28  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 29  }
 \end_layout
 
@@ -18712,67 +18721,67 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      1  namespace B
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      2  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      3  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      4  class BClass : public A::AClass
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      5  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      6  .....
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      7  }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      8  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      9  BClass::command_factory()
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     10  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     11      A::AClass::command_factory();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     12  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     13      command_list.push_back(....);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     14  }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     15  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     16  } /* End of B namespace */
 \end_layout
 
@@ -18840,83 +18849,83 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      1  namespace B
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      2  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      3  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      4  class B : public A:A
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      5  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      6     .....
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      7  };
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      8  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      9  B::B(Tango::DeviceClass *cl,const char *s):A::A(cl,s)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     10  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     11     ....
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     12     init_device();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     13  }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     14  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     15  void B::init_device()
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     16  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     17     ....
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     18  }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     19  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     20  } /* End of B namespace */
 \end_layout
 
@@ -19145,7 +19154,7 @@ status collapsed
 \end_layout
 
 \begin_layout Plain Layout
-\begin_inset Caption
+\begin_inset Caption Standard
 
 \begin_layout Plain Layout
 Read pipe sequencing
@@ -19197,59 +19206,59 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      1  bool StepperMotor::is_DynData_allowed(Tango::PipeReqType req)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      2  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      3      if (get_state() == Tango::ON)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      4          return true;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      5      else
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      6          return false;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      7  }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      8
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      9  void StepperMotor::read_DynData(Tango::Pipe &pipe)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     10  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     11      nb_call++;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     12      if (nb_call % 2 == 0)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     13      {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     14          pipe.set_root_blob_name(
 \begin_inset Quotes eld
 \end_inset
@@ -19261,11 +19270,11 @@ BlobCaseEven
 );
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     15
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     16          vector<string> de_names {
 \begin_inset Quotes erd
 \end_inset
@@ -19285,51 +19294,51 @@ EvenSecondDE
 };
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     17          pipe.set_data_elt_names(de_names);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     18
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     19          dl = 666;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     20          v_db.clear();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     21          v_db.push_back(1.11);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     22          v_db.push_back(2.22);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     23
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     24          pipe << dl << v_db;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     25      }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     26      else
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     27      {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     28          pipe.set_root_blob_name(
 \begin_inset Quotes eld
 \end_inset
@@ -19341,11 +19350,11 @@ BlobCaseOdd
 );
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     29
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     30          vector<string> de_names {
 \begin_inset Quotes erd
 \end_inset
@@ -19357,19 +19366,19 @@ OddFirstDE
 };
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     31          pipe.set_data_elt_names(de_names);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     32
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     33          v_str.clear();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     34          v_str.push_back(
 \begin_inset Quotes eld
 \end_inset
@@ -19381,7 +19390,7 @@ Hola
 );
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     35          v_str.push_back(
 \begin_inset Quotes eld
 \end_inset
@@ -19393,7 +19402,7 @@ Salut
 );
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     36          v_str.push_back(
 \begin_inset Quotes eld
 \end_inset
@@ -19405,19 +19414,19 @@ Hi
 );
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     37
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     38          pipe << v_str;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     39      }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     40  }
 \end_layout
 
@@ -19533,7 +19542,7 @@ status collapsed
 \end_layout
 
 \begin_layout Plain Layout
-\begin_inset Caption
+\begin_inset Caption Standard
 
 \begin_layout Plain Layout
 Write pipe sequencing
@@ -19589,35 +19598,35 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      1  void StepperMotor::write_DynData(Tango::WPipe &w_pipe)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      2  {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      3     string str;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      4     vector<float> v_fl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      5
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      6     w_pipe >> str >> v_fl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      7     .....
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      8  }
 \end_layout
 

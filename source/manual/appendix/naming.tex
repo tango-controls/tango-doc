@@ -1,7 +1,9 @@
 
 \chapter{Tango object naming (device, attribute and property)}
 
-\section{Device name\label{DeviceNaming}}
+
+\section{Device name}
+\label{DeviceNaming}
 
 A Tango device name is a three fields name. The field separator is
 the \textbf{/} character. The first field is named \textbf{domain},
@@ -54,7 +56,9 @@ The host:port and dbase=xx fields are necessary only when creating
 the DeviceProxy object used to remotely access the device. The ->
 characters are used to specify a property name.
 
+
 \subsection{Some examples}
+
 
 \subsubsection{Full device name examples}
 \begin{itemize}
@@ -115,6 +119,7 @@ attribute name which is \emph{sr/ps/dipole/Current}. Device alias
 name are uniq within a Tango control system. Attribute alias name
 are also uniq within a Tango control system.
 
+
 \section{Reserved words and characters, limitations}
 
 From the naming schema described above, the reserved characters are
@@ -127,6 +132,7 @@ are stored in the Tango database. The default maximum size for these
 items are :
 
 \vspace{0.3cm}
+
 
 \begin{center}
 \begin{longtable}{|c|c|}
@@ -148,6 +154,7 @@ device alias name & 255\tabularnewline
 \par\end{center}
 
 \vspace{0.3cm}
+
 
 The device name, the command name, the attribute name, the property
 name, the device alias name and the device server name are \textbf{case

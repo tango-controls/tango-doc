@@ -2842,23 +2842,23 @@ Push model
 :
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 int DeviceProxy::subscribe_event( 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
              const string &attribute, 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
              Tango::EventType event, 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
              Tango::CallBack *callback,
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
              bool stateless = false);
 \end_layout
 
@@ -2880,23 +2880,23 @@ Pull model
 :
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 int DeviceProxy::subscribe_event( 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
              const string &attribute, 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
              Tango::EventType event, 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
              int event_queue_size,
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
              bool stateless = false);
 \end_layout
 
@@ -2979,47 +2979,47 @@ DeviceProxy::subscribe_event()
  This is as follows for events :
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 class MyCallback : public Tango::CallBack
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    .
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    .
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    .
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    virtual push_event(Tango::EventData *);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    virtual push_event(Tango::AttrConfEventData *);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    virtual push_event(Tango::DataReadyEventData *);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    virtual push_event(Tango::DevIntrChangeEventData *);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    virtual push_event(Tango::PipeEventData *);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 }
 \end_layout
 
@@ -3037,39 +3037,39 @@ EventData
  is defined as follows :
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 class EventData 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    DeviceProxy       *device;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    string            attr_name;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    string            event;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    DeviceAttribute   *attr_value;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    bool              err;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    DevErrorList      errors;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 }
 \end_layout
 
@@ -3087,39 +3087,39 @@ AttrConfEventData
  is defined as follows :
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 class AttrConfEventData 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    DeviceProxy       *device;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    string            attr_name;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    string            event;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    AttributeInfoEx   *attr_conf;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    bool              err;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    DevErrorList      errors;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 }
 \end_layout
 
@@ -3137,43 +3137,43 @@ DataReadyEventData
  is defined as follows :
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 class DataReadyEventData 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    DeviceProxy       *device;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    string            attr_name;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    string            event;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    int               attr_data_type;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    int               ctr;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    bool              err;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    DevErrorList      errors;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 }
 \end_layout
 
@@ -3191,47 +3191,47 @@ DevIntrChangeEventData
  is defined as follows :
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 class DevIntrChangeEventData 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    DeviceProxy            device;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    string                 event;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    string                 device_name;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    CommandInfoList        cmd_list;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    AttributeInfoListEx    att_list;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    bool                   dev_started;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    bool                   err;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    DevErrorList           errors;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 }
 \end_layout
 
@@ -3249,39 +3249,39 @@ PipeEventData
  is defined as follows :
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 class PipeEventData 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    DeviceProxy       *device;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    string            pipe_name;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    string            event;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    DevicePipe        *pipe_value;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    bool              err;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    DevErrorList      errors;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 }
 \end_layout
 
@@ -3337,11 +3337,11 @@ unsubscribe-event
  method :
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 void DeviceProxy::unsubscribe_event(int event_id);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
@@ -3371,15 +3371,15 @@ get-events
  when using
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 int DeviceProxy::get_events( 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
              int event_id, 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
              CallBack *cb);
 \end_layout
 
@@ -3437,79 +3437,79 @@ PipeEventDataList
  when using
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 int DeviceProxy::get_events( 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
              int event_id, 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
              EventDataList &event_list);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 int DeviceProxy::get_events( 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
              int event_id, 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
              AttrConfEventDataList &event_list);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 int DeviceProxy::get_events( 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
              int event_id, 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
              DataReadyEventDataList &event_list);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 int DeviceProxy::get_events( 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
              int event_id, 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
              DevIntrChangeEventDataList &event_list);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 int DeviceProxy::get_events( 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
              int event_id, 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
              PipeEventDataList &event_list);
 \end_layout
 
@@ -3519,23 +3519,23 @@ Data or PipeEventData pointers with special destructor and clean-up methods
  to ease the memory handling.
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 class EventDataList:public vector<EventData *>
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 class AttrConfEventDataList:public vector<AttrConfEventData *>
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 class DataReadyEventDataList:public vector<DataReadyEventData *>
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 class DevIntrChangeEventDataList:public vector<DevIntrChangeEventData *>
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 class PipeEventDataList:public vector<PipeEventData *>
 \end_layout
 
@@ -3568,142 +3568,142 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 class DoubleEventCallBack : public Tango::CallBack 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    void push_event(Tango::EventData*);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 }; 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 void DoubleEventCallBack::push_event(Tango::EventData *myevent)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     Tango::DevVarDoubleArray *double_value;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     try
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         cout << "DoubleEventCallBack::push_event(): called attribute " 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
              << myevent->attr_name
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
              << " event "
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
              << myevent->event 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
              << " (err="
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
              << myevent->err
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
              << ")" << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
          if (!myevent->err)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
          {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
              *(myevent->attr_value) >> double_value;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
              cout << "double value "
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                   << (*double_value)[0]
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                   << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
              delete double_value;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
          }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     catch (...)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
          cout << "DoubleEventCallBack::push_event(): could not extract data
  !
 \backslash
 n";
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 }
 \end_layout
 
@@ -3749,76 +3749,76 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 DoubleEventCallBack *double_callback = new DoubleEventCallBack; 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
       
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 Tango::DeviceProxy *mydevice = new Tango::DeviceProxy("my/device/1");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 int event_id;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 const string attr_name("current");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 event_id = mydevice->subscribe_event(attr_name, 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                          Tango::CHANGE_EVENT,
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                          double_callback);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 cout << "event_client() id = " << event_id << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 // The callback methods are executed by the Tango event reception thread.
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 // The main thread is not concerned of event reception.
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 // Whatch out with synchronisation and data access in a multi threaded environme
 nt!
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 sleep(1000); // wait for events
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 mydevice->unsubscribe_event(event_id);
 \end_layout
 
@@ -3850,101 +3850,101 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 DoubleEventCallBack *double_callback = new DoubleEventCallBack;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 int event_queue_size = 100; // keep the last 100 events
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
       
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 Tango::DeviceProxy *mydevice = new Tango::DeviceProxy("my/device/1");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 int event_id;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 const string attr_name("current");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 event_id = mydevice->subscribe_event(attr_name, 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                          Tango::CHANGE_EVENT,
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                          event_queue_size);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 cout << "event_client() id = " << event_id << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 // Check every 3 seconds whether new events have arrived and trigger the
  callback method 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 // for the new events.
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 for (int i=0; i < 100; i++)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     sleep (3); 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     // Read the stored event data from the queue and call the callback method
  for every event.
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     mydevice->get_events(event_id, double_callback);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 event_test->unsubscribe_event(event_id);
 \end_layout
 
@@ -4035,100 +4035,100 @@ Reading the description of the problem, the device hierarchy becomes obvious.
  Our "gauges" group will have the following structure: 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 -> gauges
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
   |  -> cell-01
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
   |     |-> inst-c01/vac-gauge/strange 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
   |     |-> penning 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
   |     |   |-> inst-c01/vac-gauge/penning-01 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
   |     |   |-> inst-c01/vac-gauge/penning-02 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
   |     |   |- ...
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
   |     |   |-> inst-c01/vac-gauge/penning-xx 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
   |     |-> pirani 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
   |         |-> inst-c01/vac-gauge/pirani-01
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
   |         |-> ...
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
   |         |-> inst-c01/vac-gauge/pirani-xx 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
   |  -> cell-02
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
   |     |-> inst-c02/vac-gauge/strange 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
   |     |-> penning 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
   |     |   |-> inst-c02/vac-gauge/penning-01 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
   |     |   |-> ...
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
   |     | 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
   |     |-> pirani 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
   |     |   |-> ...
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
   |  -> cell-03 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
   |     |-> ...
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
   |         | -> ...
  
 \end_layout
@@ -4147,175 +4147,175 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- step0: create the root group 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 Tango::Group *gauges = new Tango::Group("gauges");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- step1: create a group for the n-th cell
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 Tango::Group *cell = new Tango::Group("cell-01");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- step2: make the cell a sub-group of the root group 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 gauges->add(cell);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- step3: create a "penning" group 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 Tango::Group *gauge_family = new Tango::Group("penning");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- step4: add all penning gauges located into the cell (note the wildcard)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 gauge_family->add("inst-c01/vac-gauge/penning*");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- step5: add the penning gauges to the cell
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 cell->add(gauge_family);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- step6: create a "pirani" group 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 gauge_family = new Tango::Group("pirani");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- step7: add all pirani gauges located into the cell (note the wildcard)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 gauge_family->add("inst-c01/vac-gauge/pirani*");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- step8: add the pirani gauges to the cell
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 cell->add(gauge_family);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- step9: add the "strange" gauge to the cell
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 cell->add("inst-c01/vac-gauge/strange");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- repeat step 1 to 9 for the remaining cells
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 cell = new Tango::Group("cell-02");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 ...
 \end_layout
 
@@ -4427,40 +4427,40 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- ping the whole hierarchy 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 if (gauges->ping() == true)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     std::cout << "all devices alive" << std::endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 else
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     std::cout << "at least one dead/busy/locked/...
  device" << std::endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 }
 \end_layout
 
@@ -4594,15 +4594,15 @@ We previously indicated that the Tango Group implementation guarantees that
  following order:
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 g1->add("my/device/01");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 g1->add("my/device/03");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 g1->add("my/device/02");
 \end_layout
 
@@ -4610,7 +4610,7 @@ g1->add("my/device/02");
 the results of 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 Tango::GroupCmdReplyList crl = g1->command_inout("Status");
 \end_layout
 
@@ -4646,75 +4646,75 @@ crl[2]
 Things get more complicated if sub-groups are added "between" devices.
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 g2->add("my/device/04");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 g2->add("my/device/05");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 g4->add("my/device/08");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 g4->add("my/device/09");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 g3->add("my/device/06");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 g3->add(g4);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 g3->add("my/device/07");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 g1->add("my/device/01");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 g1->add(g2);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 g1->add("my/device/03");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 g1->add(g3);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 g1->add("my/device/02");
 \end_layout
 
@@ -4738,7 +4738,7 @@ true
 , the results will be organized as follows:
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 Tango::GroupCmdReplyList crl = g1->command_inout("Status", true);
 \end_layout
 
@@ -4822,7 +4822,7 @@ false
 , the results are:
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 Tango::GroupCmdReplyList crl = g1->command_inout("Status", false); 
 \end_layout
 
@@ -4894,7 +4894,7 @@ As an example, we execute the Status command on the whole hierarchy synchronousl
 y.
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 Tango::GroupCmdReplyList crl = gauges->command_inout("Status");
 \end_layout
 
@@ -4940,35 +4940,35 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 if (crl.has_failed())
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     cout << "at least one error occurred" << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 else
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     cout << "no error " << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 }
 \end_layout
 
@@ -5091,373 +5091,373 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //-------------------------------------------------------
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- synch.
  group command example with exception enabled
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //-------------------------------------------------------
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- enable exceptions and save current mode
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 bool last_mode = GroupReply::enable_exception(true);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- process each response in the list ...
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 for (int r = 0; r < crl.size(); r++)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- enter a try/catch block
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    try
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- try to extract the data from the r-th reply
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- suppose data contains a double
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
        double ans;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
        crl[r] >> ans;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
        cout << crl[r].dev_name()
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
             << "::"
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
             << crl[r].obj_name()
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
             << " returned "
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
             << ans
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
             << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     catch (const DevFailed& df)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- DevFailed caught while trying to extract the data from reply
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
       for (int err = 0; err < df.errors.length(); err++)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
       {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
            cout << "error: " << df.errors[err].desc.in() << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
       }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- alternatively, one can use crl[r].get_err_stack() see below
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     catch (...)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
        cout << "unknown exception caught";
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- restore last exception mode (if needed)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 GroupReply::enable_exception(last_mode);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- Clear the response list (if reused later in the code)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 crl.reset();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //-------------------------------------------------------
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- synch.
  group command example with exception disabled
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //-------------------------------------------------------
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- disable exceptions and save current mode bool
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 last_mode = GroupReply::enable_exception(false);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- process each response in the list ...
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 for (int r = 0; r < crl.size(); r++)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- did the r-th device give error?
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     if (crl[r].has_failed() == true)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- printout error description
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
        cout << "an error occurred while executing "
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
             << crl[r].obj_name()
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
             << " on " 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
             << crl[r].dev_name() << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- dump error stack
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
        const DevErrorList& el = crl[r].get_err_stack();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
        for (int err = 0; err < el.size(); err++)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
        {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
            cout << el[err].desc.in();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
        }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     else
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- no error (suppose data contains a double)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
        double ans;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
        bool result = crl[r] >> ans;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
        if (result == false)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
        {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
            cout << "could not extract double from "
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                 << crl[r].dev_name()
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                 << " reply"
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                 << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
        }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
        else
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
        {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
            cout << crl[r].dev_name()
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                 << "::"
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                 << crl[r].obj_name()
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                 << " returned "
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                 << ans
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                 << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
        }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- restore last exception mode (if needed)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 GroupReply::enable_exception(last_mode);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- Clear the response list (if reused later in the code)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 crl.reset();
 \end_layout
 
@@ -5486,83 +5486,83 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //-------------------------------------------------------
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- asynch.
  group command example (C++ example)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //-------------------------------------------------------
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 long request_id = gauges->command_inout_asynch("Status");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- do some work
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 do_some_work();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- get results
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 crl = gauges->command_inout_reply(request_id);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- process responses as previously describe in the synch.
  implementation
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 for (int r = 0; r < crl.size(); r++)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- data processing and error handling goes here
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- copy/paste code from previous example
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 .
  .
  .
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- clear the response list (if reused later in the code)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 crl.reset();
 \end_layout
 
@@ -5607,31 +5607,31 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- the argument value
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 double d = 0.1;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- insert it into the TANGO generic container for command: DeviceData
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 Tango::DeviceData dd;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 dd << d;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- execute the command: Dev_Void SetDummyFactor (Dev_Double)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 Tango::GroupCmdReplyList crl = gauges->command_inout("SetDummyFactor", dd);
 \end_layout
 
@@ -5684,47 +5684,47 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- no need to process the results if no error occurred (Dev_Void command)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 if (crl.has_failed())
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- at least one error occurred
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     for (int r = 0; r < crl.size(); r++)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- handle errors here (see previous C++ examples)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- clear the response list (if reused later in the code)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 crl.reset();
 \end_layout
 
@@ -5824,51 +5824,51 @@ Assuming that gauges are ordered by name, the SetDummyFactor command can
 Remember, "cell-01" has the following internal structure: 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 -> gauges
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    | -> cell-01
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    |    |-> inst-c01/vac-gauge/strange
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    |    |-> penning
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    |    |   |-> inst-c01/vac-gauge/penning-01
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    |    |   |-> inst-c01/vac-gauge/penning-02
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    |    |   |-> ...
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    |    |   |-> inst-c01/vac-gauge/penning-xx
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    |    |-> pirani
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    |        |-> inst-c01/vac-gauge/pirani-01
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    |        |-> ...
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    |        |-> inst-c01/vac-gauge/pirani-xx
 \end_layout
 
@@ -5886,139 +5886,139 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- get a reference to the target group
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 Tango::Group *g = gauges->get_group("cell-01");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- get number of device in the hierarchy (starting at cell-01)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 long n_dev = g->get_size(true);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- Build argin list
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 std::vector<double> argins(n_dev);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- argument for inst-c01/vac-gauge/strange
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 argins[0] = 0.0;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- argument for inst-c01/vac-gauge/penning-01
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 argins[1] = 0.1;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- argument for inst-c01/vac-gauge/penning-02
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 argins[2] = 0.2;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- argument for remaining devices in cell-01.penning
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 .
  .
  .
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- argument for devices in cell-01.pirani
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 .
  .
  .
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- the reply list
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 Tango::GroupCmdReplyList crl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- enter a try/catch block (see below)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 try
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- execute the command
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     crl = g->command_inout("SetDummyFactor", argins, true);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     if (crl.has_failed())
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- error handling goes here (see case 1)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 catch (const DevFailed& df)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- see below
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 crl.reset();
 \end_layout
 
@@ -6047,121 +6047,121 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- get a reference to the target group
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 Tango::Group *g = gauges->get_group("cell-01");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- get number of device in the group (starting at cell-01)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 long n_dev = g->get_size(false);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- Build argin list
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 std::vector<double> argins(n_dev);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- argins for inst-c01/vac-gauge/penning-01
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 argins[0] = 0.1;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- argins for inst-c01/vac-gauge/penning-02
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 argins[1] = 0.2;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- argins for remaining devices in cell-01.penning
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 .
  .
  .
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- the reply list
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 Tango::GroupCmdReplyList crl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- enter a try/catch block (see below)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 try
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- execute the command
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     crl = g->command_inout("SetDummyFactor", argins, false);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     if (crl.has_failed())
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- error handling goes here (see case 1)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 catch (const DevFailed& df)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- see below
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 crl.reset();
 \end_layout
 
@@ -6190,109 +6190,109 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- get a reference to the target group
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 Group g = gauges.get_group("cell-01");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- get pre-build arguments list for the group (starting@cell-01)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 DeviceData[] argins = g.get_command_specific_argument_list(false);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- argins for inst-c01/vac-gauge/penning-01
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 argins[0].insert(0.1);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- argins for inst-c01/vac-gauge/penning-02
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 argins[1].insert(0.2);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- argins for remaining devices in cell-01.penning
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 .
  .
  .
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- the reply list 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 GroupCmdReplyList crl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- enter a try/catch block (see below)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 try
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- execute the command
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     crl = g.command_inout("SetDummyFactor", argins, false, false);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     if (crl.has_failed())
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- error handling goes here (see case 1)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 catch (DevFailed d)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- see below
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 }
 \end_layout
 
@@ -6604,172 +6604,172 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //-----------------------------------------------------------------
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- synch.
  read "vacuum" attribute on each device in the hierarchy
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- with exceptions enabled - C++ example
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //-----------------------------------------------------------------
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- enable exceptions and save current mode
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 bool last_mode = GroupReply::enable_exception(true);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- read attribute
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 Tango::GroupAttrReplyList arl = gauges->read_attribute("vacuum");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- for each response in the list ...
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 for (int r = 0; r < arl.size(); r++)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- enter a try/catch block
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    try
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- try to extract the data from the r-th reply
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- suppose data contains a double
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
       double ans;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
       arl[r] >> ans;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
       cout << arl[r].dev_name()
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
            << "::"
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
            << arl[r].obj_name()
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
            << " value is "
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
            << ans << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    catch (const DevFailed& df)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- DevFailed caught while trying to extract the data from reply
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
       for (int err = 0; err < df.errors.length(); err++)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
       {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
          cout << "error: " << df.errors[err].desc.in() << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
       }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- alternatively, one can use arl[r].get_err_stack() see below
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    catch (...)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
       cout << "unknown exception caught";
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- restore last exception mode (if needed)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 GroupReply::enable_exception(last_mode);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- clear the reply list (if reused later in the code)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 arl.reset();
 \end_layout
 
@@ -6797,68 +6797,68 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- read the attribute asynchronously
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 long request_id = gauges->read_attribute_asynch("vacuum");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- do some work
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 do_some_work();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- get results
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 Tango::GroupAttrReplyList arl = gauges->read_attribute_reply(request_id);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- process replies as previously described in the synch.
  implementation
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 for (int r = 0; r < arl.size(); r++)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- data processing and/or error handling goes here
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 ...
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- clear the reply list (if reused later in the code)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 arl.reset();
 \end_layout
 
@@ -7035,160 +7035,160 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //-----------------------------------------------------------------
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- synch.
  write "dummy" attribute on each device in the hierarchy
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //-----------------------------------------------------------------
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- assume each device support a "dummy" writable attribute
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- insert the value to be written into a generic container
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 Tango::DeviceAttribute value(std::string("dummy"), 3.14159);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- write the attribute
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 Tango::GroupReplyList rl = gauges->write_attribute(value);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- any error?
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 if (rl.has_failed() == false)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     cout << "no error" << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 else
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     cout << "at least one error occurred" << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- for each response in the list ...
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     for (int r = 0; r < rl.size(); r++)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- did the r-th device give error?
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
        if (rl[r].has_failed() == true)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
        {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- printout error description
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
            cout << "an error occurred while reading " 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                 << rl[r].obj_name()
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                 << " on "
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                 << rl[r].dev_name()
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
                 << endl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- dump error stack
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
            const DevErrorList& el = rl[r].get_err_stack();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
            for (int err = 0; err < el.size(); err++)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
            {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
               cout << el[err].desc.in();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
            }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
         }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
      }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- clear the reply list (if reused later in the code)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 rl.reset();
 \end_layout
 
@@ -7216,47 +7216,47 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- insert the value to be written into a generic container
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 Tango::DeviceAttribute value(std::string("dummy"), 3.14159);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- write the attribute asynchronously
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 long request_id = gauges.write_attribute_asynch(value);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- do some work
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 do_some_work();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- get results
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 Tango::GroupReplyList rl = gauges->write_attribute_reply(request_id);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- process replies as previously describe in the synch.
  implementation ...
 \end_layout
@@ -7346,51 +7346,51 @@ Assuming that gauges are ordered by name, the dummy attribute can be written
 Remember, "cell-01" has the following internal structure: 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 -> gauges 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     | -> cell-01
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     |     |-> inst-c01/vac-gauge/strange
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     |     |-> penning
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     |     |    |-> inst-c01/vac-gauge/penning-01
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     |     |    |-> inst-c01/vac-gauge/penning-02
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     |     |    |-> ...
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     |     |    |-> inst-c01/vac-gauge/penning-xx
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     |     |-> pirani
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     |          |-> inst-c01/vac-gauge/pirani-01
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     |          |-> ...
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     |          |-> inst-c01/vac-gauge/pirani-xx
 \end_layout
 
@@ -7408,139 +7408,139 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- get a reference to the target group
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 Tango::Group *g = gauges->get_group("cell-01");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- get number of device in the hierarchy (starting at cell-01)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 long n_dev = g->get_size(true);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- Build value list
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 std::vector<double> values(n_dev);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- value for inst-c01/vac-gauge/strange
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 values[0] = 3.14159;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- value for inst-c01/vac-gauge/penning-01
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 values[1] = 2 * 3.14159;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- value for inst-c01/vac-gauge/penning-02
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 values[2] = 3 * 3.14159;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- value for remaining devices in cell-01.penning
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 .
  .
  .
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- value for devices in cell-01.pirani
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 .
  .
  .
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- the reply list
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 Tango::GroupReplyList rl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- enter a try/catch block (see below)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 try
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- write the "dummy" attribute
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     rl = g->write_attribute("dummy", values, true);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     if (rl.has_failed())
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- error handling (see previous cases)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
     }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 catch (const DevFailed& df)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- see below
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 rl.reset();
 \end_layout
 
@@ -7569,121 +7569,121 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- get a reference to the target group
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 Tango::Group *g = gauges->get_group("cell-01");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- get number of device in the group
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 long n_dev = g->get_size(false);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- Build value list
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 std::vector<double> values(n_dev);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- value for inst-c01/vac-gauge/penning-01
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 values[0] = 2 * 3.14159;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- value for inst-c01/vac-gauge/penning-02
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 values[1] = 3 * 3.14159;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- value for remaining devices in cell-01.penning
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 .
  .
  .
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- the reply list
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 Tango::GroupReplyList rl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- enter a try/catch block (see below)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 try
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- write the "dummy" attribute
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    rl = g->write_attribute("dummy", values, false);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    if (rl.has_failed())
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- error handling (see previous cases)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
    }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 catch (const DevFailed& df)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 {
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 //- see below
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 rl.reset();
 \end_layout
 
@@ -7926,39 +7926,39 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 1 DevicePipe dp = mydev.read_pipe("MyPipe");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 2 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 3 DevLong dl;  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 4 vector<double> v_db;  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 5 DevVarUShortArray *dvush = new DevVarUShortArray();
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 6 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 7 dp >> dl >> v_db >> dvush;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 8
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 9 delete dvush;
 \end_layout
 
@@ -8018,39 +8018,39 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 1 DevicePipe dp = mydev.read_pipe("MyPipe");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 2 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 3 DataElement<DevLong> de_dl;  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 4 DataElement<vector<double> > de_v_db;  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 5 DataElement<DevVarUShortArray *> de_dvush(new DevVarUShortArray());
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 6 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 7 dp >> de_dl >> de_v_db >> de_dvush;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 8
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 9 delete de_dvush.value;
 \end_layout
 
@@ -8118,109 +8118,109 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 1  DevicePipe dp = mydev.read_pipe("MyPipe");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 2
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 3  size_t nb_de = dp.get_data_elt_nb();  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 4  for (size_t loop = 0;loop < nb;loop++)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 5  {      
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 6     int data_type = dp.get_data_elt_type(loop);      
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 7     string de_name = dp.get_data_elt_name(loop);      
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 8     switch(data_type)      
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 9     {         
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 10        case DEV_LONG:         
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 11        {             
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 12            DevLong lg;             
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 13            dp >> lg;         
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 14        }         
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 15        break;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 16        
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 17        case DEVVAR_DOUBLEARRAY:         
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 18        {             
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 19            vector<double> v_db;             
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 20            dp >> v_db;         
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 21        }         
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 22        break;         
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 23        ....
       
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 24    }  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 25    ...
   
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 26 }
 \end_layout
 
@@ -8319,84 +8319,84 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 1  DevicePipe dp("MyPipe");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 2 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 3  vector<string> de_names {"FirstDE","SecondDE","ThirdDE"};
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 4  db.set_data_elt_names(de_names);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 5
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 6  DevLong dl = 666;  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 7  vector<double> v_db {1.11,2.22};
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 8  unsigned short *array = new unsigned short [100];
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 9  DevVarUShortArray *dvush = create_DevVarUShortArray(array,100);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 10
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 11 try  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 12 {     
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 12    dp << dl << v_db << dvush;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 13    mydev.write_pipe(dp);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 14 }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 15 catch (DevFailed &e)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 16 {     
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 17    cout << "DevicePipeBlob insertion failed" << endl;     
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 18    ....
   
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 19 }
 \end_layout
 
@@ -8441,84 +8441,84 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 1  DevicePipe dp("MyPipe");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 2
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 3  DataElement<DevLong> de_dl("FirstElt",666);  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 4  vector<double>  v_db {1.11,2.22};
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 5  DataElement<vector<double> > de_v_db("SecondElt,v_db);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 6
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 7  unsigned short *array = new unsigned short [100];
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 8  DevVarUShortArray *dvush = create_DevVarUShortArray(array,100);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 9  DataElement<DevVarUShortArray *> de_dvush("ThirdDE",array);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 10
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 11 try  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 12 {     
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 12    dp << de_dl << de_v_db << de_dvush;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 13    mydev.write_pipe(dp);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 14 }
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 15 catch (DevFailed &e)
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 16 {     
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 17    cout << "DevicePipeBlob insertion failed" << endl;     
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 18    ....
   
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 19 }
 \end_layout
 
@@ -8553,55 +8553,55 @@ filename "line.tex"
 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 1  DevicePipe dp("MyPipe");
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 2 
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 3  vector<string> de_names {"FirstDE","SecondDE","ThirdDE"};
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 4  db.set_data_elt_names(de_names);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 5
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 6  DevLong dl = 666;  
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 7  vector<double> v_db = {1.11,2.22};
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 8  unsigned short *array = new unsigned short [100];
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 9  DevVarUShortArray *dvush = create_DevVarUShortArray(array,100);
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 10
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 11 dp["SecondDE"] << v_db;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 12 dp["FirstDE"] << dl;
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Verbatim
 13 dp["ThirdDE"] << dvush;
 \end_layout
 
