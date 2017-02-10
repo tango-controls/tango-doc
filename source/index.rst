@@ -18,14 +18,14 @@ The documentation is organized in the following categories (some of them overlap
 
 
 * :doc:`Reference </reference>` which provides you with all details of Tango Controls **Core** or **Kernel**. You may
-  be interested directly in :doc:`Tango Controls Handbook <manual/index>`.
+  be directly interested in :doc:`The TANGO Control System Manual <manual/index>`.
 
 
 * :doc:`Tools and libraries </tools>`. Tango comes with lot of GUI, commandline and programing tools for its management,
   GUI creations or connecting with other systems and applications.
 
 
-* :doc:`Tutorials <tutorials/index>` and :doc:`HOW-TOs <how-to/index>` giving step by step guidance and teaching how to work
+* :doc:`Tutorials <tutorials/index>` and :doc:`HOW-TOs <how-to/index>` are giving step by step guidance and teaching how to work
   with Tango Controls.
 
 
