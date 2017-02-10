@@ -7,6 +7,6 @@ Here you will find recipies on how-to install the Tango Controls on various syst
 .. toctree::
     :maxdepth: 2
 
+    minimum-deployment
     tango-on-windows
     pytango-and-taurus-on-windows
-    minimum-deployment
