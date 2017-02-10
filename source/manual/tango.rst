@@ -1,4 +1,4 @@
-:Author: The TANGO Team
+Author: The TANGO Team
 
 .. role:: raw-latex(raw)
    :format: latex
