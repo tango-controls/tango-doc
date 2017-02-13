@@ -89,17 +89,17 @@ control system was started. In June 2002, Soleil and ESRF offically
 decide to collaborate to develop this renewal of the old TACO control
 system. Soleil is a French synchrotron radiation facility currently
 under construction in the Paris suburbs. See
-:raw-latex:`\cite{Soleil_home_page}` to get all information about
+Soleil_home_page_ to get all information about
 Soleil. In December 2003, Elettra joins the club. Elettra is an Italian
 synchrotron radiation facility located in Trieste. See
-:raw-latex:`\cite{Elettra_home_page}` to get all information about
+Elettra_home_page_ to get all information about
 Elettra. Then, beginning of 2005, ALBA also decided to join. ALBA is a
 Spanish synchrotron radiation facility located in Barcelona. See
-:raw-latex:`\cite{Alba_WEB}` to get all information about ALBA. The new
+Alba_WEB_ to get all information about ALBA. The new
 version of the Alba/Elettra/ESRF/Soleil control system is named
 TANGO [2]_ and is based on the 21 century technologies :
 
--  CORBA [3]_ and ZMQ:raw-latex:`\cite{ZMQ}` to communicate between
+-  CORBA [3]_ and ZMQ_ to communicate between
    device server and clients
 
 -  C++, Python and Java as reference programming languages
@@ -178,7 +178,7 @@ A TANGO device server
 
 The code given in this chapter as example has been generated using POGO.
 Pogo is a code generator for Tango device server. See
-:raw-latex:`\cite{Pogo doc}` for more information about POGO. The
+`Pogo doc`_ for more information about POGO. The
 following examples briefly describe how to write device class with
 commands which receives and return different kind of Tango data types
 and also how to write device attributes The device class implements 5
@@ -519,7 +519,7 @@ coding the device state machine. By default a allways allowed state
 machine is provided. For more information about coding the state
 machine, refer to the chapter Writing a device server.
 
-[APicture]|image03|
+|image03|
 
 The TANGO device server model
 =============================
@@ -537,7 +537,7 @@ Introduction to CORBA
 
 CORBA is a definition of how to write object request brokers (ORB). The
 definition is managed by the Object Management Group (OMG
-:raw-latex:`\cite{OMG-page}`). Various commercial and non-commercial
+OMG-page_). Various commercial and non-commercial
 implementations exist for CORBA for all the mainstream operating
 systems. CORBA uses a programming language independent definition
 language (called IDL) to defined network object interfaces. Language
@@ -575,8 +575,8 @@ ordinary function call to avoid the overhead of using a networking
 protocol.
 
 For an excellent reference on CORBA with C++ refer to
-:raw-latex:`\cite{Henning}`. The complete TANGO IDL file can be found in
-the TANGO web page:raw-latex:`\cite{Tango web}` or at the end of this
+Henning_. The complete TANGO IDL file can be found in
+the TANGO web page `Tango web`_ or at the end of this
 document in the appendix 2 chapter.
 
 The model
@@ -929,13 +929,13 @@ list of devices for each class in a device server process. The database
 ensure the uniqueness of device name and of alias. It also links device
 name and it list of aliases.
 
-TANGO uses MySQL:raw-latex:`\cite{mysql}` as its database. MySQL is a
+TANGO uses MySQL mysql_ as its database. MySQL is a
 relational database which implements the SQL language. However, this is
 largely enough to implement all the functionalities needed by the TDSOM.
 The database is accessed via a classical TANGO device hosted in a device
 server. Therefore, client access the database via TANGO commands
 requested on the database device. For a good reference on MySQL refer to
-:raw-latex:`\cite{MySQL book}`
+`MySQL book`_
 
 The controlled access
 ---------------------
@@ -4463,7 +4463,7 @@ the command it has to show the results.
 
 
 
-[TwoRicardo]|image14|
+|image14|
 
 Writing a TANGO device server
 =============================
@@ -4483,7 +4483,7 @@ project is detailed.
 The aim of the class definition given in this chapter is only to help
 the reader to understand how a TANGO device server works. For a detailed
 description of these classes (and their methods), refer to chapter
-[Writing\_chapter] or to :raw-latex:`\cite{TANGO_ref_man}`.
+[Writing\_chapter] or to TANGO_ref_man_.
 
 Naming convention and programming language
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -4511,7 +4511,7 @@ Device server are written using the Device pattern. The aim of this
 pattern is to provide the control programmer with a framework in which
 s/he can develop new control objects. The device pattern uses other
 design patterns like the Singleton and Command patterns. These patterns
-are fully described in :raw-latex:`\cite{Patterns}`. The device pattern
+are fully described in Patterns_. The device pattern
 class diagram for stepper motor device is drawn in figure [Dvice pattern
 figure]
 
