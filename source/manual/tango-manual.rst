@@ -1,5 +1,3 @@
-.. include:: images-references.rst
-
 :Author: The TANGO Team
 
 .. role:: raw-latex(raw)
@@ -89,13 +87,13 @@ control system was started. In June 2002, Soleil and ESRF offically
 decide to collaborate to develop this renewal of the old TACO control
 system. Soleil is a French synchrotron radiation facility currently
 under construction in the Paris suburbs. See
-Soleil_home_page_ to get all information about
+`Soleil home page`_ to get all information about
 Soleil. In December 2003, Elettra joins the club. Elettra is an Italian
 synchrotron radiation facility located in Trieste. See
-Elettra_home_page_ to get all information about
+`Elettra home page`_ to get all information about
 Elettra. Then, beginning of 2005, ALBA also decided to join. ALBA is a
 Spanish synchrotron radiation facility located in Barcelona. See
-Alba_WEB_ to get all information about ALBA. The new
+`Alba home page`_ to get all information about ALBA. The new
 version of the Alba/Elettra/ESRF/Soleil control system is named
 TANGO [2]_ and is based on the 21 century technologies :
 
@@ -15494,131 +15492,14 @@ characters after the ’:’ delimiter are space, tabulation or nothing. On
 line 40, the ’’ characters around the property value are mandatory due
 to the ’/’ character contains in the property value.
 
-List of pictures
-================
+.. include:: manual-images-references.rst
 
--  Cover page: From http://www.juliaetandres.com
+.. include:: manual-text-references.rst
 
--  : By O. Chevre from http://www.forteresses.free.fr
+.. include:: manual-footnotes.rst
 
--  : From http://www.photo-evasion.com licence Creative Commons
 
--  : By R. STEINMANN ©ECK2000
 
--  : By R. STEINMANN ©ECK2000
 
--  : By R. STEINMANN ©ECK2000
-
--  : By O. Chevre from http://www.forteresses.free.fr
-
--  : By R. STEINMANN ©ECK2000
-
-10 `OMG home page <http://www.omg.org>`__
-
-Advanced CORBA programming with C++ by M.Henning and S.Vinosky
-(Addison-Wesley 1999)
-
-`TANGO home page <http://www.tango-controls.org>`__
-
-`ALBA home page <http://www.cells.es>`__
-
-`Soleil home page <http://www.synchrotron-soleil.fr>`__
-
-`MySQL home page <http://www.mysql.com>`__
-
-MySQL and mSQL by Randy Jay Yarger, George Reese and Tim King (O’Reilly
-1999)
-
-`Tango classes on-line
-documentation <http://www.tango-controls.org/device-servers>`__
-
-C++ programming language third edition by Stroustrup (Addison-Wesley)
-
-Design Patterns by Erich Gamma, Richard Helm, Ralph Johnson, John
-Vlissides (Addison-Wesley 1995)
-
-`omniORB home page <http://omniorb.sourceforge.net>`__
-
-The Common Object Request Broker: Architecture and Specification
-Revision 2.3 available from OMG home page
-
-Java Pro - June 1999 : Plugging memory leak by Tony Leung
-
-CVS WEB page - http://www.cyclic.com
-
-`POGO home
-page <http://www.esrf.eu/computing/cs/tango/tango_doc/tools_doc/pogo_doc/index.html>`__
-
-`JacORB home page <http://www.jacorb.org>`__
-
-`Tango ATK reference on-line
-documentation <http://www.esrf.eu/computing/cs/tango/tango_doc/atk_doc/index.html>`__
-
-The Notification Service specification available from OMG home page -
-http://www.omg.org
-
-`ASTOR home
-page <http://www.esrf.eu/computing/cs/tango/tango_doc/tools_doc/astor_doc/index.html>`__
-
-`Elettra home page <http://www.elettra.trieste.it>`__
-
-`JIVE home
-page <http://www.esrf.eu/computing/cs/tango/tango_doc/tools_doc/jive_doc/index.html>`__
-
-`Tango ATK
-Tutorials <http://www.esrf.eu/computing/cs/tango/tango_doc/atk_tutorial/Tutorials.pdf>`__
-
-`ZMQ home page <http://www.zeromq.org>`__
-
-`Tango class development reference
-documentation <http://www.esrf.eu/computing/cs/tango/tango_doc/kernel_doc/cpp_doc/index.html>`__
-
-.. [1]
-   TACO stands for **T**\ elescope and **A**\ ccelerator
-   **C**\ ontrolled with **O**\ bjects
-
-.. [2]
-   TANGO stands for **TA**\ co **N**\ ext **G**\ eneration **O**\ bject
-
-.. [3]
-   CORBA stands for **C**\ ommon **O**\ bject **R**\ equest **B**\ roker
-   **A**\ rchitecture
-
-.. [4]
-   In contrary to the state\_handler method of the TACO device server
-   model which is not specific to each command.
-
-.. [5]
-   TANGO attributes were known as signals in the TACO device server
-   model
-
-.. [6]
-   Properties were known as resources in the TACO device server model
-
-.. [7]
-   note: the polling is not synchronized is currently not synchronized
-   on the hour
-
-.. [8]
-   The default is\_allowed method behavior is to always allows the
-   command
-
-.. [9]
-   URL stands for **U**\ niform **R**\ esource **L**\ ocator
-
-.. [10]
-   The StepperMotor class inherits from the DeviceImpl class and
-   therefore is a DeviceImpl
-
-.. [11]
-   The StepperMotorClass inherits from the DeviceClass and therefore is
-   a DeviceClass
-
-.. [12]
-   It can also be data declared as object data members or memory
-   declared as static
-
-.. [13]
-   Their black-box is also destroyed and re-built
 
 

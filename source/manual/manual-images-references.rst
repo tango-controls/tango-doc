@@ -45,3 +45,23 @@
 .. |image21| image:: advanced/control.jpg
 
 .. |image22| image:: dance/AT97-65-size.jpg
+
+
+List of pictures
+================
+
+-  Cover page: From http://www.juliaetandres.com
+
+-  : By O. Chevre from http://www.forteresses.free.fr
+
+-  : From http://www.photo-evasion.com licence Creative Commons
+
+-  : By R. STEINMANN ©ECK2000
+
+-  : By R. STEINMANN ©ECK2000
+
+-  : By R. STEINMANN ©ECK2000
+
+-  : By O. Chevre from http://www.forteresses.free.fr
+
+-  : By R. STEINMANN ©ECK2000
