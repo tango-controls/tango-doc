@@ -1,7 +1,8 @@
+.. Comment
+
 .. _`OMG home page`: http://www.omg.org
 
-Advanced CORBA programming with C++ by M.Henning and S.Vinosky
-(Addison-Wesley 1999)
+.. _Henning: Advanced CORBA programming with C++ by M.Henning and S.Vinosky (Addison-Wesley 1999)
 
 .. _`TANGO home page`: http://www.tango-controls.org
 
@@ -43,13 +44,11 @@ http://www.omg.org
 
 .. _`Elettra home page`: http://www.elettra.trieste.it
 
-`JIVE home
-page <http://www.esrf.eu/computing/cs/tango/tango_doc/tools_doc/jive_doc/index.html>`__
+.. _`JIVE home page`: http://www.esrf.eu/computing/cs/tango/tango_doc/tools_doc/jive_doc/index.html
 
-`Tango ATK
-Tutorials <http://www.esrf.eu/computing/cs/tango/tango_doc/atk_tutorial/Tutorials.pdf>`__
+.. _`Tango ATK Tutorials`: http://www.esrf.eu/computing/cs/tango/tango_doc/atk_tutorial/Tutorials.pdf
 
-`ZMQ home page <http://www.zeromq.org>`__
+.. _`ZMQ home page`: http://www.zeromq.org
 
-`Tango class development reference
-documentation <http://www.esrf.eu/computing/cs/tango/tango_doc/kernel_doc/cpp_doc/index.html>`__
+.. _`Tango class development reference documentation`:
+    http://www.esrf.eu/computing/cs/tango/tango_doc/kernel_doc/cpp_doc/index.html

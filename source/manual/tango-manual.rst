@@ -97,7 +97,7 @@ Spanish synchrotron radiation facility located in Barcelona. See
 version of the Alba/Elettra/ESRF/Soleil control system is named
 TANGO [2]_ and is based on the 21 century technologies :
 
--  CORBA [3]_ and ZMQ_ to communicate between
+-  CORBA [3]_ and ZMQ [`ZMQ home page`_] to communicate between
    device server and clients
 
 -  C++, Python and Java as reference programming languages
@@ -176,7 +176,7 @@ A TANGO device server
 
 The code given in this chapter as example has been generated using POGO.
 Pogo is a code generator for Tango device server. See
-`Pogo doc`_ for more information about POGO. The
+`POGO home page`_ for more information about POGO. The
 following examples briefly describe how to write device class with
 commands which receives and return different kind of Tango data types
 and also how to write device attributes The device class implements 5
@@ -534,8 +534,8 @@ Introduction to CORBA
 ---------------------
 
 CORBA is a definition of how to write object request brokers (ORB). The
-definition is managed by the Object Management Group (OMG
-OMG-page_). Various commercial and non-commercial
+definition is managed by the Object Management Group (`OMG home page`_).
+Various commercial and non-commercial
 implementations exist for CORBA for all the mainstream operating
 systems. CORBA uses a programming language independent definition
 language (called IDL) to defined network object interfaces. Language
@@ -574,7 +574,7 @@ protocol.
 
 For an excellent reference on CORBA with C++ refer to
 Henning_. The complete TANGO IDL file can be found in
-the TANGO web page `Tango web`_ or at the end of this
+the `TANGO home page`_ or at the end of this
 document in the appendix 2 chapter.
 
 The model
@@ -798,22 +798,21 @@ the device interface and implemented in the device root class.
 Therefore, these actions are implemented automatically for every TANGO
 device. These operations are :
 
-MMMMMMMMMMM
+.. csv-table::
 
-to ping a device to check if the device is alive. Obviously, it checks
-only the connection from a client to the device and not all the device
-functionalities
+   "ping", "to ping a device to check if the device is alive. Obviously, it checks
+   only the connection from a client to the device and not all the device functionalities"
 
-request a list of all the commands supported by a device with their
-input and output types and description
+   "command_list_query", "request a list of all the commands supported by a device with their
+   input and output types and description"
 
-request information about a specific command which are its input and
-output type and description
+   "command_query", "request information about a specific command which are its input and
+   output type and description"
 
-request general information on the device like its name, the host where
-the device server hosting the device is running...
+   "info", "request general information on the device like its name, the host where
+   the device server hosting the device is running..."
 
-read the device black-box as an array of strings
+   "black_box", "read the device black-box as an array of strings"
 
 The special case of the device state and status
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -15391,7 +15390,7 @@ cases are:
    contents using his favorite tool and then reload file content into
    the database.
 
-Jive:raw-latex:`\cite{Jive doc}` is the tool provided to generate and
+Jive (`JIVE home page`_) is the tool provided to generate and
 load a property file. To generate a device server process properties
 file, select your device server process in the Server tab, right click
 and select Save Server Data. A file selection window pops up allowing
@@ -15404,7 +15403,7 @@ Property file syntax
 .. code:: cpp
   :number-lines:
 
-    \textbf{1 }#---------------------------------------------------------
+   #---------------------------------------------------------
    # SERVER TimeoutTest/manu, TimeoutTest device declaration
    #---------------------------------------------------------
 
