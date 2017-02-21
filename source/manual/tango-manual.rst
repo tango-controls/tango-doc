@@ -1474,7 +1474,7 @@ These fields depend on the event type.
 |            |                       | to invalid                              |        |
 +------------+-----------------------+-----------------------------------------+--------+
 | periodic   | counter               | Incremented each time the event is sent | long   |
-|----------- +-----------------------+-----------------------------------------+--------+
++------------+-----------------------+-----------------------------------------+--------+
 | archive    | delta\_change\_rel    | Relative change (in %) since last event | double |
 |            +-----------------------+-----------------------------------------+--------+
 |            | delta\_change\_abs    | Absolute change since last event        | double |
@@ -1492,7 +1492,7 @@ These fields depend on the event type.
 |            +-----------------------+-----------------------------------------+--------+
 |            | delta\_event          | Number of milli-seconds since previous  | double |
 |            |                       | event                                   |        |
-|----------- +-----------------------+-----------------------------------------+--------+
++------------+-----------------------+-----------------------------------------+--------+
 
 Filter are defined as a string following a grammar defined by CORBA. It
 is defined in [18]_. The following example shows
