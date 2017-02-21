@@ -1,1 +1,2 @@
-# Throw away repo for lyx -> rst conversion hacking
+# tango-doc
+The official documentation for Tango controls

@@ -887,7 +887,7 @@ informations which help to:
 
 -  Give regular information to user
 
-This is classically done using cout (or C printf) in C++ or println
+This is classically done using ``cout`` (or C ``printf``) in C++ or ``println``
 method in Java language. In a highly distributed control system, it is
 difficult to get all these informations coming from a high number of
 different processes running on a large number of computers. Since its
@@ -926,7 +926,7 @@ list of devices for each class in a device server process. The database
 ensure the uniqueness of device name and of alias. It also links device
 name and it list of aliases.
 
-TANGO uses MySQL mysql_ as its database. MySQL is a
+TANGO uses MySQL (`MySQL home page`_) as its database. MySQL is a
 relational database which implements the SQL language. However, this is
 largely enough to implement all the functionalities needed by the TDSOM.
 The database is accessed via a classical TANGO device hosted in a device
@@ -1066,7 +1066,7 @@ releases starting with Tango release 8.
 
 |image06|
 
-[OneRicardo]|image07|
+|image07|
 
 Writing a TANGO client using TANGO APIs
 =======================================
@@ -1088,8 +1088,9 @@ all TANGO and CORBA errors. Unlike the CORBA C++ bindings the TANGO api
 supports native C++ data types e.g. strings and vectors.
 
 This chapter describes how to use these API’s. It is not a reference
-guide. Reference documentation is available as Web pages in the `Tango
-Web site <http://www.tango-controls.org>`__
+guide. Reference documentation is available as Web pages in the `TANGO home page`_
+
+.. TODO - reference to read the docs ?
 
 Getting Started
 ---------------
@@ -1119,26 +1120,27 @@ Data types
 
 The definition of the basic data type you can transfert using Tango is:
 
-\|c\|c\| Tango type name & C++ equivalent type
- DevBoolean & boolean
- DevShort & short
- DevEnum & enumeration (only for attribute / See chapter on advanced
-features)
- DevLong & int (always 32 bits data)
- DevLong64 & long long on 32 bits chip or long on 64 bits chip
- & always 64 bits data
- DevFloat & float
- DevDouble & double
- DevString & char \*
- DevEncoded & structure with 2 fields: a string and an array of unsigned
-char
- DevUChar & unsigned char
- DevUShort & unsigned short
- DevULong & unsigned int (always 32 bits data)
- DevULong64 & unsigned long long on 32 bits chip or unsigned long on 64
-bits chip
- & always 64 bits data
- DevState & Tango specific data type
+.. csv-table::
+   :header-rows: 1
+
+   "Tango type name", "C++ equivalent type"
+   "DevBoolean", "``boolean``"
+   "DevShort", "``short``"
+   "DevEnum", "enumeration (only for attribute / See chapter on advanced
+   features)"
+   "DevLong", "``int`` (always 32 bits data)"
+   "DevLong64", "``long long`` on 32 bits chip or ``long`` on 64 bits chip
+   (always 64 bits data)"
+   "DevFloat", "``float``"
+   "DevDouble", "``double``"
+   "DevString", "``char \*``"
+   "DevEncoded", "``structure`` with 2 fields: a string and an array of unsigned char"
+   "DevUChar", "``unsigned char``"
+   "DevUShort", "``unsigned short``"
+   "DevULong", "``unsigned int`` (always 32 bits data)"
+   "DevULong64", "``unsigned long long`` on 32 bits chip or ``unsigned long`` on 64
+   bits chip (always 64 bits data)"
+   "DevState", "Tango specific data type"
 
 Using commands, you are able to transfert all these data types, array of
 these basic types and two other Tango specific data types called
@@ -1455,30 +1457,45 @@ send the event only if some filter is evaluated to true. Within the
 Tango control system, some pre-defined fields can be used as filter.
 These fields depend on the event type.
 
-\|c\|c\|c\|c\| Event type & Filterable field name & Filterable field
-value & type
- & delta\_change\_rel & Relative change (in %) since last event & double
- & delta\_change\_abs & Absolute change since last event & double
- & quality & Is set to 1 when the attribute quality factor has & double
- & & changed, otherwise it is 0 &
- & forced\_event & Is set to 1 when the event was fired on exception &
-double
- & & or a quality factor set to invalid &
- periodic & counter & Incremented each time the event is sent & long
- & delta\_change\_rel & Relative change (in %) since last event & double
- & delta\_change\_abs & Absolute change since last event & double
- & quality & Is set to 1 when the attribute quality factor has & double
- & & changed, otherwise it is 0 &
- & & Incremented each time the event is sent &
- & counter & for periodic reason. Set to -1 if event & long
- & & sent for change reason &
- & forced\_event & Is set to 1 when the event was fired on exception &
-double
- & & or a quality factor set to invalid &
- & delta\_event & Number of milli-seconds since previous event & double
++------------+-----------------------+-----------------------------------------+--------+
+| Event type | Filterable field name | Filterable field value                  | type   |
++============+=======================+=========================================+========+
+| change     | delta\_change\_rel    | Relative change (in %)                  | double |
+|            |                       | since last even                         |        |
+|            +-----------------------+-----------------------------------------+--------+
+|            | delta\_change\_abs    | Absolute change since                   |        |
+|            |                       | last event                              | double |
+|            +-----------------------+-----------------------------------------+--------+
+|            | quality               | Is set to 1 when the attribute quality  | double |
+|            |                       | factor has changed, otherwise it is 0   |        |
+|            +-----------------------+-----------------------------------------+--------+
+|            | forced\_event         | Is set to 1 when the event was fired    | double |
+|            |                       | on exception or a quality factor set    |        |
+|            |                       | to invalid                              |        |
++------------+-----------------------+-----------------------------------------+--------+
+| periodic   | counter               | Incremented each time the event is sent | long   |
+|----------- +-----------------------+-----------------------------------------+--------+
+| archive    | delta\_change\_rel    | Relative change (in %) since last event | double |
+|            +-----------------------+-----------------------------------------+--------+
+|            | delta\_change\_abs    | Absolute change since last event        | double |
+|            +-----------------------+-----------------------------------------+--------+
+|            | quality               | Is set to 1 when the attribute quality  | double |
+|            |                       |  factor has changed, otherwise it is 0  |        |
+|            +-----------------------+-----------------------------------------+--------+
+|            | counter               | Incremented each time the event is sent | long   |
+|            |                       | for periodic reason. Set to -1 if event |        |
+|            |                       | sent for change reason                  |        |
+|            +-----------------------+-----------------------------------------+--------+
+|            | forced\_event         | Is set to 1 when the event was fired on | double |
+|            |                       | exception or a quality factor set to    |        |
+|            |                       | invalid                                 |        |
+|            +-----------------------+-----------------------------------------+--------+
+|            | delta\_event          | Number of milli-seconds since previous  | double |
+|            |                       | event                                   |        |
+|----------- +-----------------------+-----------------------------------------+--------+
 
 Filter are defined as a string following a grammar defined by CORBA. It
-is defined in :raw-latex:`\cite{Notif_doc}`. The following example shows
+is defined in [18]_. The following example shows
 you the most common use of these filters in the Tango world :
 
 -  To receive periodic event one out of every three, the filter must be

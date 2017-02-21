@@ -12,8 +12,7 @@
 
 .. _`MySQL home page`: http://www.mysql.com
 
-MySQL and mSQL by Randy Jay Yarger, George Reese and Tim King (O’Reilly
-1999)
+.. _`MySQL book`: MySQL and mSQL by Randy Jay Yarger, George Reese and Tim King (O’Reilly 1999)
 
 .. _`Tango classes on-line documentation`: http://www.tango-controls.org/resources/dsc
 
@@ -37,8 +36,7 @@ Java Pro - June 1999 : Plugging memory leak by Tony Leung
 
 .. _`Tango ATK reference on-line documentation`: http://www.esrf.eu/computing/cs/tango/tango_doc/atk_doc/index.html
 
-The Notification Service specification available from OMG home page -
-http://www.omg.org
+.. [18] The Notification Service specification available from OMG home page - http://www.omg.org
 
 .. _`ASTOR home page`: http://www.esrf.eu/computing/cs/tango/tango_doc/tools_doc/astor_doc/index.html
 
