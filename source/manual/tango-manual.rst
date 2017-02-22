@@ -932,7 +932,7 @@ largely enough to implement all the functionalities needed by the TDSOM.
 The database is accessed via a classical TANGO device hosted in a device
 server. Therefore, client access the database via TANGO commands
 requested on the database device. For a good reference on MySQL refer to
-`MySQL book`_
+[MySQLbook]_.
 
 The controlled access
 ---------------------
@@ -1495,7 +1495,7 @@ These fields depend on the event type.
 +------------+-----------------------+-----------------------------------------+--------+
 
 Filter are defined as a string following a grammar defined by CORBA. It
-is defined in [18]_. The following example shows
+is defined in [NotificatioService]_. The following example shows
 you the most common use of these filters in the Tango world :
 
 -  To receive periodic event one out of every three, the filter must be
@@ -2615,8 +2615,8 @@ on the forward option).
 An asynchronous version of this method is also available. See case 1 for
 an example of asynchronous command.
 
-Reading attribute(s)[sub:Read-attr]
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Reading attribute(s)
+~~~~~~~~~~~~~~~~~~~~
 
 In order to read attribute(s), the Group interface contains several
 implementations of the *read\_attribute()* and *read\_attributes()*
@@ -3261,7 +3261,7 @@ Error management
 
 When inserting data into a DevicePipe or a DevicePipeBlob, error
 management is very similar to reading data from from a DevicePipe or a
-DevicePipeBlob. The difference is that there is one moer case which
+DevicePipeBlob. The difference is that there is one more case which
 could trigger one exception during the insertion. This case is
 
 -  Insertion into the DevicePipe (or DevicePipeBlob) if its data element
@@ -3368,11 +3368,11 @@ TangoATK Programmer’s Guide
 This chapter is only a brief Tango ATK (Application ToolKit)
 programmer’s guide. You can find a reference guide with a full
 description of TangoATK classes and methods in the ATK JavaDoc
-:raw-latex:`\cite{ATK-doc}`.
+(`Tango ATK reference on-line documentation`_).
 
-A tutorial document :raw-latex:`\cite{ATK-Tutorial}` is also provided
+A tutorial document `Tango ATK Tutorial`_ is also provided
 and includes the detailed description of the ATK architecture and the
-ATK components. In the ATK Tutorial :raw-latex:`\cite{ATK-Tutorial}` you
+ATK components. In the `ATK Tutorial`_ you
 can find some code examples and also Flash Demos which explain how to
 start using Tango ATK.
 
@@ -3509,7 +3509,7 @@ The following program (FirstApplication) shows an implementation of the
 list mentioned above. It should be rather self-explanatory with the
 comments.
 
-.. code:: cpp
+.. code:: java
   :number-lines:
 
     package examples;
@@ -3740,7 +3740,7 @@ Multi device applications
   the attributes by wildcard, you need to add them explicitly, like
   this:
 
-.. code:: cpp
+.. code:: java
   :number-lines:
 
     try
@@ -3793,7 +3793,7 @@ application. Since this application uses individual attribute viewers
 and not an attribute list viewer, it shows an implementation of the list
 mentioned above.
 
-.. code:: cpp
+.. code:: java
   :number-lines:
 
     package examples;
@@ -4002,7 +4002,7 @@ The SynopticFilerViewer will browse the objects in the synoptic file at
 run time. It discovers if some parts of the drawing is associated with
 an attribute or a command. In this case it will automatically connect to
 the corresponding attribute or command. Once the connection is
-successfull SynopticFileViewer will animate the synoptic according to
+successful SynopticFileViewer will animate the synoptic according to
 the default behaviour described below :
 
 -  For *tango state attributes* : the colour of the drawing object
@@ -4025,7 +4025,7 @@ The following example (ThirdApplication), is a Synoptic application. We
 assume that the synoptic has already been drawn using Jdraw graphical
 editor.
 
-.. code:: cpp
+.. code:: java
   :number-lines:
 
     package examples;
@@ -4158,7 +4158,6 @@ editor.
             errorHistory.setVisible(true);
          }
     }
-    [Input: line.tex]
 
 | The synoptic application (ThirdApplication) should look something like
   this (depending on your synoptic drawing file)
@@ -4179,7 +4178,7 @@ INumberScalarListener. An object implementing such a listener interface
 has the capability of receiving and treating *events* from a model which
 emits events.
 
-.. code:: cpp
+.. code:: java
   :number-lines:
 
     // this is the setModel of a SimpleScalarViewer
@@ -4247,7 +4246,7 @@ simply a subclass of ``java.lang.Thread`` which will sleep for a given
 amount of time and then call a method refresh on whatever kind of
 ``IRefreshee`` it has been given as parameter, as shown below
 
-.. code:: cpp
+.. code:: java
   :number-lines:
 
     // This is an example from DeviceFactory.
@@ -4471,10 +4470,6 @@ means of a ``ResultEvent``. The ``IResultListener`` extends
 to handle errors. So a viewer of command-results implements
 IResultListener interface and registers itself as a resultListener for
 the command it has to show the results.
-
-.. code:: cpp
-  :number-lines:
-
 
 
 |image14|
