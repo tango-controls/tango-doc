@@ -2235,6 +2235,8 @@ of your application, you can associate a response with its source using
 its position in the response list or using the
 Tango::GroupCmdReply::dev\_name member.
 
+.. Case1:
+
 Case 1: a command, no argument
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -2408,8 +2410,10 @@ Now execute the same command asynchronously. C++ example:
     //- clear the response list (if reused later in the code)
     crl.reset();
 
-Case 2: a command, one argument[sub:Case-2]
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. Case2:
+
+Case 2: a command, one argument
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Here, we give an example in which the same input argument is applied to
 all devices in the group (or its sub-groups).
@@ -2763,10 +2767,12 @@ The GroupReply contains some public members allowing the identification
 of both the device (GroupReply::dev\_name) and the attribute
 (GroupReply::obj\_name). It means that, depending of your application,
 you can associate a response with its source using its position in the
-response list or using the GroupReply::dev\_name member.
+response list or using
 
-Case 1: one value for all devices[sub:Case-1-writing]
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. Case2writing:
+
+Case 1: one value for all devices
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Here, we give an example in which the same attribute value is written on
 all devices in the group (or its sub-groups). Exceptions are supposed to
@@ -3953,8 +3959,6 @@ mentioned above.
   (depending on your platform and your device attributes)
 | |image12|
 
-.. code:: cpp
-  :number-lines:
 
 Synoptic viewer
 ^^^^^^^^^^^^^^^
@@ -5152,7 +5156,7 @@ created, a DeviceImpl object is also created. The DeviceImpl constructor
 builds all the device attribute object(s) from the attribute list built
 by the *attribute\_factory()* method.
 
-.. `6.2`:
+.. _`6.2`:
 
 .. figure:: ds_writing/startup.jpg
 
@@ -5162,7 +5166,7 @@ Command execution sequence
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 The figure `6.3`_
 
-.. `6.3`:
+.. _`6.3`:
 
 .. figure:: ds_writing/command.jpg
 
@@ -5262,14 +5266,16 @@ several methods of the device class (StepperMotor in our example) :
       store the attribute value into the attribute object. It has one
       parameter which is a reference to the Attribute object to be read.
 
-The figure [r\_attribute\_timing\_fig] is a drawing of these method
+The figure `6.4`_ is a drawing of these method
 calls sequencing. For attribute always readable, a default *is\_allowed*
 method is provided. This method always returns true.
 
-.. figure:: ds_writing/r_attribute
+.. _`6.4`:
+
+.. figure:: ds_writing/r_attribute.jpg
    :alt: Read attribute sequencing
 
-   Read attribute sequencing
+   Figure 6.4: Read attribute sequencing
 
 Writing attributes
 ^^^^^^^^^^^^^^^^^^
@@ -5302,11 +5308,13 @@ several methods of the device class (StepperMotor in our example)
    and code the real hardware access in each *write\_<att name>()*
    method.
 
-The figure [w\_attribute\_timing\_fig] is a drawing of these method
+The figure `6.5`_ is a drawing of these method
 calls sequencing. For attribute always writeable, a default is\_allowed
 method is provided. This method always allways returns true.
 
-.. figure:: ds_writing/w_attribute
+.. _`6.5`:
+
+.. figure:: ds_writing/w_attribute.jpg
    :alt: Write attribute sequencing
 
    Write attribute sequencing
@@ -5403,7 +5411,7 @@ These commands will be fully described later in this document.
 Several controlled object classes can be embedded within the same device
 server process and it is the rule of this device to create all these
 device server patterns and to call their command and device factories as
-described in [Pattern startup]. The name and number of all the classes
+described in `Startup of a device pattern`_. The name and number of all the classes
 to be created is known to this device after the execution of a method
 called *class\_factory*. It is the user responsibility to write this
 method.
@@ -5418,8 +5426,7 @@ This class merges a complete set of utilities in the same class. It is
 implemented as a singleton and there is only one instance of this class
 per device server process. It is mandatory to create this instance in
 order to run a device server. The description of all the methods
-implemented in this class can be found in
-:raw-latex:`\cite{TANGO_ref_man}`.
+implemented in this class can be found in [TangoRefMan]_.
 
 Contents
 ''''''''
@@ -5431,7 +5438,7 @@ Within this class, you can find :
 -  Miscellaneous utility methods like getting the server output trace
    level, getting the CORBA ORB pointer, retrieving device server
    instance name, getting the server PID and more. Please, refer to
-   :raw-latex:`\cite{TANGO_ref_man}` to get a complete list of all these
+   [TangoRefMan]_ to get a complete list of all these
    utility methods.
 
 -  Method to create the device pattern implementing the DServer class
@@ -5449,14 +5456,16 @@ device server pattern are created (one for the dserver object and the
 other for the class of devices to control). On top of that, one instance
 of the Tango::Util class must also be created.
 
-.. figure:: ds_writing/complete_server
+.. _`6.6`:
+
+.. figure:: ds_writing/complete_server.jpg
    :alt: A complete device server
    :width: 14.00000cm
    :height: 10.00000cm
 
-   A complete device server
+   Figure 6.6: A complete device server
 
-A drawing of a complete device server is in figure [completeDS]
+A drawing of a complete device server is in figure `6.6`_
 
 Device server startup sequence
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -5514,34 +5523,37 @@ name. In the IDL file, all the Tango definition are grouped in a IDL
 module named Tango. The IDL module maps to C++ namespace. Therefore, all
 the data type are parts of a namespace called Tango.
 
-\|c\|l\| Type name & IDL type
- Tango::DevBoolean (1) & boolean
- Tango::DevShort (1) & short
- Tango::DevEnum (2) & short (See chapter on advanced features)
- Tango::DevLong (1) & long
- Tango::DevLong64 (1) & long long
- Tango::DevFloat (1) & float
- Tango::DevDouble (1) & double
- Tango::DevUShort (1) & unsigned short
- Tango::DevULong (1) & unsigned long
- Tango::DevULong64 (1) & unsigned long long
- Tango::DevString (1) & string
- Tango::DevVarCharArray & sequence of unsigned char
- Tango::DevVarShortArray & sequence of short
- Tango::DevVarLongArray & sequence of long
- Tango::DevVarLong64Array & sequence of long long
- Tango::DevVarFloatArray & sequence of float
- Tango::DevVarDoubleArray & sequence of double
- Tango::DevVarUShortArray & sequence of unsigned short
- Tango::DevVarULongArray & sequence of unsigned long
- Tango::DevVarULong64Array & sequence of unsigned long long
- Tango::DevVarStringArray & sequence of string
- Tango::DevVarLongStringArray & structure with a sequence of long and a
-sequence of string
- Tango::DevVarDoubleStringArray & structure with a sequence of double
-and a sequence of string
- Tango::DevState (1) & enumeration
- Tango::DevEncoded (1) & structure with a string and a sequence of char
+.. csv-table::
+   :header-rows: 1
+
+   "Type name", "IDL type"
+   "Tango::DevBoolean (1)", "boolean"
+   "Tango::DevShort (1)", "short"
+   "Tango::DevEnum (2)", "short (See chapter on advanced features)"
+   "Tango::DevLong (1)", "long"
+   "Tango::DevLong64 (1)", "long long"
+   "Tango::DevFloat (1)", "float"
+   "Tango::DevDouble (1)", "double"
+   "Tango::DevUShort (1)", "unsigned short"
+   "Tango::DevULong (1)", "unsigned long"
+   "Tango::DevULong64 (1)", "unsigned long long"
+   "Tango::DevString (1)", "string"
+   "Tango::DevVarCharArray", "sequence of unsigned char"
+   "Tango::DevVarShortArray", "sequence of short"
+   "Tango::DevVarLongArray", "sequence of long"
+   "Tango::DevVarLong64Array", "sequence of long long"
+   "Tango::DevVarFloatArray", "sequence of float"
+   "Tango::DevVarDoubleArray", "sequence of double"
+   "Tango::DevVarUShortArray", "sequence of unsigned short"
+   "Tango::DevVarULongArray", "sequence of unsigned long"
+   "Tango::DevVarULong64Array", "sequence of unsigned long long"
+   "Tango::DevVarStringArray", "sequence of string"
+   "Tango::DevVarLongStringArray", "structure with a sequence of long and a
+   sequence of string"
+   "Tango::DevVarDoubleStringArray", "structure with a sequence of double
+   and a sequence of string"
+   "Tango::DevState (1)", "enumeration"
+   "Tango::DevEncoded (1)", "structure with a string and a sequence of char"
 
 The CORBA Interface Definition Language uses a type called **sequence**
 for variable length array. The Tango::DevUxxx types are used for
@@ -5582,7 +5594,7 @@ depending on the IDL data type used. These groups are :
 
 In the following sub chapters, only summaries of the IDL to C++ mapping
 are given. For a full description of the C++ mapping, please refer to
-:raw-latex:`\cite{Henning}`
+[Henning]_.
 
 Basic types
 '''''''''''
@@ -5590,19 +5602,22 @@ Basic types
 For these types, the mapping between IDL and C++ is obvious and defined
 in the following table.
 
-\|c\|c\|c\|c\| Tango type name & IDL type & C++ & typedef
- Tango::DevBoolean & boolean & CORBA::Boolean & unsigned char
- Tango::DevShort & short & CORBA::Short & short
- Tango::DevEnum & short & CORBA::Short &
- Tango::DevLong & long & CORBA::Long & int
- Tango::DevLong64 & long long & CORBA::LongLong & long long or long (64
-bits chip)
- Tango::DevFloat & float & CORBA::Float & float
- Tango::DevDouble & double & CORBA::Double & double
- Tango::DevUShort & unsigned short & CORBA::UShort & unsigned short
- Tango::DevULong & unsigned long & CORBA::ULong & unsigned long
- Tango::DevULong64 & unsigned long long & CORBA:ULongLong & unsigned
-long long or unsigned long (64 bits chip)
+.. csv-table::
+   :header-rows: 1
+
+   "Tango type name", "IDL type", "C++", "typedef"
+   "Tango::DevBoolean", "boolean", "CORBA::Boolean", "unsigned char"
+   "Tango::DevShort", "short", "CORBA::Short", "short"
+   "Tango::DevEnum", "short", "CORBA::Short", " "
+   "Tango::DevLong", "long", "CORBA::Long", "int"
+   "Tango::DevLong64", "long long", "CORBA::LongLong", "long long or long (64
+   bits chip)"
+   "Tango::DevFloat", "float", "CORBA::Float", "float"
+   "Tango::DevDouble", "double", "CORBA::Double", "double"
+   "Tango::DevUShort", "unsigned short", "CORBA::UShort", "unsigned short"
+   "Tango::DevULong", "unsigned long", "CORBA::ULong", "unsigned long"
+   "Tango::DevULong64", "unsigned long long", "CORBA:ULongLong", "unsigned
+   long long or unsigned long (64 bits chip)"
 
 The types defined in the column named C++ should be used for a better
 portability. All these types are defined in the CORBA namespace and
@@ -6150,16 +6165,20 @@ is created in a way that the destruction of the CORBA::Any object in
 which the sequence will be inserted will not destroy the buffer. The
 following create\_xxx methods are defined in the DeviceImpl class :
 
-\|c\|c\| Method name & data type
- create\_DevVarCharArray() & unsigned char
- create\_DevVarShortArray() & short
- create\_DevVarLongArray() & DevLong
- create\_DevVarLong64Array() & DevLong64
- create\_DevVarFloatArray() & float
- create\_DevVarDoubleArray() & double
- create\_DevVarUShortArray() & unsigned short
- create\_DevVarULongArray() & DevULong
- create\_DevVarULong64Array() & DevULong64
+
+.. csv-table::
+   :header-rows: 1
+
+   "Method name", "data type"
+   "create\_DevVarCharArray()", "unsigned char"
+   "create\_DevVarShortArray()", "short"
+   "create\_DevVarLongArray()", "DevLong"
+   "create\_DevVarLong64Array()", "DevLong64"
+   "create\_DevVarFloatArray()", "float"
+   "create\_DevVarDoubleArray()", "double"
+   "create\_DevVarUShortArray()", "unsigned short"
+   "create\_DevVarULongArray()", "DevULong"
+   "create\_DevVarULong64Array()", "DevULong64"
 
 For string array/sequence
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -6267,7 +6286,7 @@ exception). Some static methods of the Tango::Except class called
 Some other static methods called *re\_throw\_exception()* may also be
 used when the user want to add a new element in the exception sequence
 and re-throw the exception. Details on these methods can be found in
-:raw-latex:`\cite{TANGO_ref_man}`.
+[TangoRefMan]_.
 
 Example of throwing exception
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -6657,21 +6676,24 @@ The device state is a number which reflects the availability of the
 device. To simplify the coding for generic application, a predefined set
 of states are supported by TANGO. This list has 14 members which are
 
-\|c\| State name
- ON
- OFF
- CLOSE
- OPEN
- INSERT
- EXTRACT
- MOVING
- STANDBY
- FAULT
- INIT
- RUNNING
- ALARM
- DISABLE
- UNKNOWN
+.. csv-table::
+   :header-rows: 1
+
+   "State name"
+   ON
+   OFF
+   CLOSE
+   OPEN
+   INSERT
+   EXTRACT
+   MOVING
+   STANDBY
+   FAULT
+   INIT
+   RUNNING
+   ALARM
+   DISABLE
+   UNKNOWN
 
 The names used here have obvious meaning.
 
@@ -6810,7 +6832,7 @@ presence of two main functions.
 
 Line 1 : Include the **tango.h** file. This file is a master include
 file. It includes several other files. The list of files included by
-tango.h can be found in :raw-latex:`\cite{TANGO_ref_man}`
+tango.h can be found in [TangoRefMan]_
 
 Line 11 : Create the instance of the Tango::Util class (a singleton).
 Passing argc,argv to this method is mandatory because the device server
@@ -6915,7 +6937,7 @@ Line 11: The destructor
 
 Line 14 : The class constructor. It is protected and can’t be called
 from outside the class. Only the *init* method allows a user to create
-an instance of this class. See :raw-latex:`\cite{Patterns}` to get
+an instance of this class. See [Patterns]_ to get
 details about the singleton design pattern.
 
 Line 15 : The instance pointer. It is static in order to set it to NULL
@@ -7147,7 +7169,7 @@ this list during the device server life cycle. This
 *attribute\_factory()* method is called once during device server
 start-up. A method *add\_attribute()* of the DeviceImpl class allows the
 user to add a new attribute to the attribute list outside of this
-*attribute\_factory()* method. See :raw-latex:`\cite{TANGO_ref_man}` for
+*attribute\_factory()* method. See [TangoRefMan]_ for
 more information on this method.
 
 The DevReadPositionCmd class
@@ -7223,7 +7245,7 @@ type) and set the input or output parameter description fields with the
 To set the command display level, it is possible to use a 6 parameters
 constructor or it is also possible to set it in the constructor code
 with the *set\_disp\_level* method. Many Command class constructors are
-defined. See :raw-latex:`\cite{TANGO_ref_man}`for a complete list.
+defined. See [TangoRefMan]_ for a complete list.
 
 The is\_allowed method
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -7362,17 +7384,17 @@ With this 4 parameters Attr class constructor, the attribute display
 level is not specified. Therefore it is set to its default value
 (OPERATOR). To set the attribute display level, it is possible to use in
 the constructor code the *set\_disp\_level* method. Many Attr class
-constructors are defined. See :raw-latex:`\cite{TANGO_ref_man}`for a
+constructors are defined. See [TangoRefMan]_ for a
 complete list.
 
 This Position attribute is a scalar attribute. For spectrum attribute,
 instead of inheriting from the Attr class, the class must inherits from
 the SpectrumAttr class. Many SpectrumAttr class constructors are
-defined. See :raw-latex:`\cite{TANGO_ref_man}`for a complete list.
+defined. See [TangoRefMan]_ for a complete list.
 
 For Image attribute, instead of inheriting from the Attr class, the
 class must inherits from the ImageAttr class. Many ImageAttr class
-constructors are defined. See :raw-latex:`\cite{TANGO_ref_man}`for a
+constructors are defined. See [TangoRefMan]_ for a
 complete list.
 
 The is\_allowed method
@@ -7955,11 +7977,13 @@ The device server main window
 
 This window looks like :
 
-.. figure:: ds_writing/nt_server/main
+.. _`6.7`:
+
+.. figure:: ds_writing/nt_server/main.bmp
    :alt: Tango device server main window
    :width: 10.00000cm
 
-   Tango device server main window
+   Figure 6.7: Tango device server main window
 
 Four menus are available in this window. The File menu allows the user
 to exit the device server. The View menu allows you to display/hide the
@@ -7971,7 +7995,7 @@ at the bottom of the window has a default value (the one displayed in
 this window dump) but may be changed by the device server programmer
 using the *set\_main\_window\_text()* method of the Tango::Util class.
 If used, this method must be called prior to the call of the
-*server\_init()* method. Refer to :raw-latex:`\cite{TANGO_ref_man}` for
+*server\_init()* method. Refer to   [TangoRefMan]_  for
 a complete description of this method.
 
 The console window
@@ -8004,7 +8028,7 @@ This window displays
    Tango::Util class. If used, this must be done prior to the call of
    the *server\_init()* method. If the *set\_server\_version()* method
    is not used, x.y is displays as version number. Refer to
-   :raw-latex:`\cite{TANGO_ref_man}` for a complete description of this
+   [TangoRefMan]_  for a complete description of this
    method.
 
 MFC device server
@@ -8580,9 +8604,12 @@ release 4.3 and later, some C++11 code has been used. This requires the
 compiler option -std=c++0x. Obviously, the options -I and -L must be
 updated to reflect your file system organization.
 
-\|c\|c\|m70mm\| Operating system & Compiling option & Linking option
- Linux gcc & -D\_REENTRANT -std=c++0x -I.. & -L.. -ltango -llog4tango
--lomniORB4 -lomniDynamic4 -lCOS4 -lomnithread -lzmq -lpthread
+.. csv-table::
+   :header-rows: 1
+
+   "Operating system", "Compiling option", "Linking option"
+   "Linux gcc", "-D\_REENTRANT -std=c++0x -I..","-L.. -ltango -llog4tango
+   -lomniORB4 -lomniDynamic4 -lCOS4 -lomnithread -lzmq -lpthread"
 
 The following is an example of a Makefile for Linux. Obviously, all the
 paths are set to the ESRF file system structure.
@@ -8705,17 +8732,18 @@ are:
 
 -  | The omniORB package libraries (see next table)
 
-\|c\|c\| Compile mode & Libraries
- Debug Multithreaded & omniORB4d.lib, omniDynamic4d.lib, omnithreadd.lib
-and COS4d.lib
- Multithreaded & omniORB4.lib, omniDynamic4.lib, omnithread.lib and
-COS4.lib
- Debug Multithreaded DLL & omniORB420\_rtd.lib, omniDynamic420\_rtd.lib,
-omnithread40\_rtd.lib,
- & and COS420\_rtd.lib
- Multithreaded DLL & omniORB420\_rt.lib, omniDynamic420\_rt.lib,
-omnithread40\_rt.lib
- & and COS420\_rt.lib
+.. csv-table::
+   :header-rows: 1
+
+   "Compile mode", "Libraries"
+   "Debug Multithreaded", "omniORB4d.lib, omniDynamic4d.lib, omnithreadd.lib
+   and COS4d.lib"
+   "Multithreaded", "omniORB4.lib, omniDynamic4.lib, omnithread.lib and
+   COS4.lib"
+   "Debug Multithreaded DLL", "omniORB420\_rtd.lib, omniDynamic420\_rtd.lib,
+   omnithread40\_rtd.lib, and COS420\_rtd.lib"
+   "Multithreaded DLL", "omniORB420\_rt.lib, omniDynamic420\_rt.lib,
+   omnithread40\_rt.lib and COS420\_rt.lib"
 
 -  The ZMQ library (**zmq.lib** or **zmqd.lib** for debug mode)
 
@@ -9858,7 +9886,7 @@ stack depth cannot be larger than the polling buffer depth. See
 [sub:The-device-polling-prop] to learn how the polling buffer depth is
 defined. The same way is used for attribute with the *TimedAttrData* and
 *AttrHistoryStack* template classes. These classes are documented in
-:raw-latex:`\cite{TANGO_ref_man}`. The following piece of code fills the
+  [TangoRefMan]_ . The following piece of code fills the
 polling buffer for a command called MyCmd which is already in externally
 triggered mode. It returns a DevVarLongArray data type with three
 elements. This example is not really something you will find in a real
@@ -10169,7 +10197,7 @@ behavior.
 
 The serialization model is set at line 11 before the server is
 initialized and the infinite loop is started. See
-:raw-latex:`\cite{TANGO_ref_man}` for all details on the methods to
+  [TangoRefMan]_  for all details on the methods to
 set/get serialization model.
 
 Attribute Serialization model
@@ -10235,7 +10263,7 @@ kernel.
 The serialization model is set at line 6 in the init\_device() method.
 The user omni\_mutex is passed to the Tango kernel at line 22. This
 omni\_mutex object is a device data member. See
-:raw-latex:`\cite{TANGO_ref_man}` for all details on the methods to set
+  [TangoRefMan]_  for all details on the methods to set
 attribute serialization model.
 
 Client process
@@ -11119,8 +11147,8 @@ Reference part
 
 **This chapter is only part of the TANGO device server reference guide.
 To get reference documentation about the C++ library classes, see
-:raw-latex:`\cite{TANGO_ref_man}`. To get reference documentation about
-the Java classes, also see :raw-latex:`\cite{TANGO_ref_man}`.**
+  [TangoRefMan]_ . To get reference documentation about
+the Java classes, also see   [TangoRefMan]_ .**
 
 Device parameter
 ----------------

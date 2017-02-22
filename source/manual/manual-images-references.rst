@@ -28,10 +28,10 @@
 
 .. |image14| image:: dance/0046-reduc.jpg
 
-.. |image15| image:: ds_writing/nt_server/cons.jpg
+.. |image15| image:: ds_writing/nt_server/cons.bmp
    :width: 14.00000cm
 
-.. |image16| image:: ds_writing/nt_server/help.jpg
+.. |image16| image:: ds_writing/nt_server/help.bmp
    :width: 9.00000cm
 
 .. |image17| image:: dance/tango-08-39.jpg

@@ -810,8 +810,16 @@ span.eqno {
     float: right;
 }
 
-ul.simple li {
+.simple li {
     padding-bottom: 1em;
+}
+
+li ol {
+     padding-top: 0.5em;
+}
+
+li ul {
+     padding-top: 0.5em;
 }
 
 div.sphinxsidebar li {
