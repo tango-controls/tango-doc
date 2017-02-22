@@ -8,6 +8,10 @@
 
 .. _`TANGO web site`: `Tango home page`_
 
+.. _`Tango web`: `Tango home page`_
+
+.. [TangoWeb] `Tango home page`_
+
 .. _`ALBA home page`: http://www.cells.es
 
 .. _`Soleil home page`: http://www.synchrotron-soleil.fr
@@ -18,9 +22,11 @@
 
 .. _`Tango classes on-line documentation`: http://www.tango-controls.org/resources/dsc
 
+.. [TangoRefMan] `Tango classes on-line documentation`_
+
 .. [Stroustrup] C++ programming language third edition by Stroustrup (Addison-Wesley)
 
-.. _`Patterns`: Design Patterns by Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides (Addison-Wesley 1995)
+.. [Patterns] Design Patterns by Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides (Addison-Wesley 1995)
 
 .. _`omniORB home page`: http://omniorb.sourceforge.net
 

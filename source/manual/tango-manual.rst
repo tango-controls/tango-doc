@@ -417,7 +417,7 @@ to store attributes value. These data are (part of the class definition)
 :
 
 .. code:: cpp
-  :number-lines:
+   :number-lines:
 
 
 
@@ -4398,16 +4398,13 @@ The hierarchy
 The numeric attribute hierarchy is expressed in the following
 interfaces:
 
-INumberScalar
-    extends **INumber**
+``INumberScalar`` extends ``INumber``
 
-INumberSpectrum
-    extends **INumber**
+``INumberSpectrum`` extends ``INumber``
 
-INumberImage
-    extends **INumber**
+``INumberImage`` extends ``INumber``
 
-    **INumber** in turn extends **IAttribute**  
+``INumber`` in turn extends ``IAttribute`` 
 
 Each of these types emit their proper events and have their proper
 listeners. Please consult the javadoc for further information.
@@ -4485,23 +4482,22 @@ introduce what is the device server pattern and then it will describe a
 complete device server framework. A definition of classes used by the
 device server framework is given in this chapter. This manual is not
 intended to give the complete and detailed description of classes data
-member or methods, refer to :raw-latex:`\cite{TANGO_ref_man}` to get
+member or methods, refer to [TangoRefMan]_ to get
 this full description. But first, the naming convention used in this
 project is detailed.
 
 The aim of the class definition given in this chapter is only to help
 the reader to understand how a TANGO device server works. For a detailed
 description of these classes (and their methods), refer to chapter
-[Writing\_chapter] or to TANGO_ref_man_.
+[Writing\_chapter] or to [TangoRefMan]_.
 
 Naming convention and programming language
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 TANGO fully supports three different programming languages which are
 **C++, Java** and **Python**. This documentation focuses on C++ Tango
-class. For Java and Python Tango class, have a look at the `Tango
-web <http://www.tango-controls.org>`__ pages where similar chapter for
-Java and Python are available.
+class. For Java and Python Tango class, have a look at the `Reference`_
+pages where similar chapter for Java and Python are available.
 
 Every software project needs a naming convention. The naming convention
 adopted for the TDSOM is very simple and only defines two guidelines
@@ -4520,9 +4516,11 @@ Device server are written using the Device pattern. The aim of this
 pattern is to provide the control programmer with a framework in which
 s/he can develop new control objects. The device pattern uses other
 design patterns like the Singleton and Command patterns. These patterns
-are fully described in Patterns_. The device pattern
-class diagram for stepper motor device is drawn in figure [Dvice pattern
-figure]
+are fully described in [Patterns]_. The device pattern
+class diagram for stepper motor device is drawn in figure [Device pattern
+figure]_
+
+.. [DevicePattern] image:: ds_writing/device_et.jpg
 
 . In this figure, only classes surrounded with a dash line square are
 device specific. All the other classes are part of the TDSOM core and
@@ -4993,42 +4991,31 @@ Description
 This class inherits from the DeviceClass class. Like the DeviceClass
 class, there should be only one instance of the StepperMotorClass. This
 is ensured because this class is written following the Singleton pattern
-as defined in :raw-latex:`\cite{Patterns}`. All controlled object class
+as defined in [Patterns]_. All controlled object class
 data which should be defined only once per class must be stored in this
 object.
 
 Definition
 '''''''''''
 
-1 class StepperMotorClass : public DeviceClass
+.. code:: cpp
+   :number-lines:
 
-2 {
+    class StepperMotorClass : public DeviceClass
+    {
+      public:
+        static StepperMotorClass \*init(const char \*);
+        static StepperMotorClass \*instance();
+        ~StepperMotorClass() {\_instance = NULL;}
 
-3 public:
+      protected:
+        StepperMotorClass(string &);
+        static StepperMotorClass \*\_instance;
+        void command\_factory();
 
-4 static StepperMotorClass \*init(const char \*);
-
-5 static StepperMotorClass \*instance();
-
-6 ~StepperMotorClass() {\_instance = NULL;}
-
-7
-
-8 protected:
-
-9 StepperMotorClass(string &);
-
-10 static StepperMotorClass \*\_instance;
-
-11 void command\_factory();
-
-12
-
-13 private:
-
-14 void device\_factory(Tango\_DevVarStringArray \*);
-
-15 };
+      private:
+        void device\_factory(Tango\_DevVarStringArray \*);
+    };
 
 Line 1 : This class is a sub-class of the DeviceClass class
 
@@ -5136,7 +5123,7 @@ methods are :
 
 #. The *device\_factory*\ () method of the StepperMotorClass class
 
-This startup procedure is described in figure [pattern\_startup\_fig]
+This startup procedure is described in figure `6.2`_
 
 .. figure:: ds_writing/startup
    :alt: Device pattern startup sequence
@@ -5165,17 +5152,21 @@ created, a DeviceImpl object is also created. The DeviceImpl constructor
 builds all the device attribute object(s) from the attribute list built
 by the *attribute\_factory()* method.
 
+.. `6.2`:
+
+.. figure:: ds_writing/startup.jpg
+
+   Figure 6.2: Device pattern startup sequence
+
 Command execution sequence
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
+The figure `6.3`_
 
-The figure [command\_timing\_fig]
+.. `6.3`:
 
-.. figure:: ds_writing/command
-   :alt: Command execution timing
-   :width: 14.00000cm
-   :height: 8.00000cm
+.. figure:: ds_writing/command.jpg
 
-   Command execution timing
+   Figure 6.3: Command execution timing
 
 described how the method implementing a command is executed when a
 command\_inout CORBA operation is requested by a client. The

@@ -87,7 +87,7 @@ database in its most common application. To make a computer become a Tango Host 
     In the installation wizard on a tab :guilabel:`Accounts and Roles` select button :guilabel:`Add User`
     and create a dedicated user. See
 
-        .. image:: img/tango-on-windows/mysql-user-02.png
+        .. image:: tango-on-windows/mysql-user-02.png
 
 - Setup environment variables providing credentials to access MySQL:
     - Open :guilabel:`Command Line`.
@@ -176,7 +176,7 @@ Assuming you have downloaded it and copied to the Tango bin folder please follow
     - Invoke :command:`nssm.exe install Tango-DataBaseds`.
     - In the Application tab provide information as follows:
 
-        .. image:: img/tango-on-windows/starter-as-service-01.png
+        .. image:: tango-on-windows/starter-as-service-01.png
 
     Adjust if your installation path is different. In :guilabel:`Arguments` exchange ``pg-dell-new`` with the proper name
     of your host.
@@ -189,28 +189,28 @@ Assuming you have downloaded it and copied to the Tango bin folder please follow
     - Go back to :program:`Astor`.
     - After a while you will see a green led next to your host name:
 
-        .. image:: img/tango-on-windows/starter-02.png
+        .. image:: tango-on-windows/starter-02.png
 - Run :program:`TangoTest` device server:
 
     You may test the configuration by starting prefigured TangoTest device.
 
     - Start :program:`Astor` if it is not running.
 
-        .. image:: img/tango-on-windows/device-server-01.png
+        .. image:: tango-on-windows/device-server-01.png
     - Double Click on your computer name to open :guilabel:`Control Panel`. It opens a window as below:
 
-        .. image:: img/tango-on-windows/device-server-02.png
+        .. image:: tango-on-windows/device-server-02.png
     - Click :guilabel:`Start new`.
     - In the open window select :menuselection:`TangoTest/test`:
 
-        .. image:: img/tango-on-windows/device-server-03.png
+        .. image:: tango-on-windows/device-server-03.png
     - Click :guilabel:`Start Server`.
     - In the open window select :guilabel:`Controlled by Astro -> Yes`, and :guilabel:`Startup Level -> Level 1`.
 
-        .. image:: img/tango-on-windows/device-server-04.png
+        .. image:: tango-on-windows/device-server-04.png
     - When you click :guilabel:`OK` it should start the server. After a while you should see:
 
-        .. image:: img/tango-on-windows/device-server-05.png
+        .. image:: tango-on-windows/device-server-05.png
 - Running your :term:`Device Servers`:
     - You need to copy an executable to the folder configured for :program:`Starter`. In our example it is
       :file:`C:\DeviceServers\bin`.
