@@ -2266,7 +2266,7 @@ to re-build the network connection. With the
 is even possible not to have any exception thrown in case of
 communication error. The API will try to re-build the network connection
 as soon as it is detected as bad. This is the default mode. See
-[sec:Reconnection-and-exception] for more details on this subject.
+`Reconnection and exception`_ for more details on this subject.
 
 Thread safety
 -------------
@@ -2298,8 +2298,8 @@ Compiling and linking a Tango client
 ------------------------------------
 
 Compiling and linking a Tango client is similar to compiling and linking
-a Tango device server. Please, refer to chapter `Compiling, Linking and
-executing a Tango device server process <06-device-server_writing.rst#Compiling and linking a C++ device server>`_
+a Tango device server. Please, refer to chapter
+:ref:`Compiling and linking a C++ device server <compiling_device_server>`
 to get all the details.
 
 .. include:: footnotes.rst

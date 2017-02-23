@@ -5,7 +5,7 @@
 
 .. include:: substitutions.rst
 
-.. image:: ../img/logo_tangocontrols.png
+.. image:: /img/logo_tangocontrols.png
     :align: center
 
 :Author: The TANGO Team

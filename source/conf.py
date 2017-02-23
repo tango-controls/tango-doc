@@ -41,6 +41,7 @@ extensions = [
     'sphinx.ext.pngmath',
     'sphinx.ext.ifconfig',
     'sphinx.ext.viewcode',
+#    'sphinx.ext.autosectionlabel',
 ]
 
 breathe_projects = { "cppTango": "cpp-api/xml" }

@@ -4070,6 +4070,8 @@ function call.
 Compiling, linking and executing a TANGO device server process
 --------------------------------------------------------------
 
+.. _compiling_device_server:
+
 Compiling and linking a C++ device server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

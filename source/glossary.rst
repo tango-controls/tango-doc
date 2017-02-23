@@ -10,7 +10,7 @@ Glossary
         Device Server is a program (executable) which is able to create :term:'device' of certain classes...
 
     device class
-        ....
+        Device Class is
 
     device
         Device is a key concept of Tango Controls. It is an object providing access to its :term:`attributes`,
