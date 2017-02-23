@@ -1483,7 +1483,8 @@ source)
   raises(DevFailed);
   execute a command on a device synchronously with no input parameter
   and one one output parameter
-| *Parameters:*
+
+*Parameters:*
 
    command – ascii string e.g. On
 

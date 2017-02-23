@@ -474,7 +474,7 @@ changes will be taken into account at the next device server process
 start-up. At start-up, the polling threads pool will allways be
 configured as required by the polling\_threads\_pool\_conf property. The
 syntax used for this property is described in the Reference part of the
-Appendix `Reference part`_. The following window dump is the Astor
+`Appendix <A-reference.rst>`. The following window dump is the Astor
 tool window which allows polling threads pool management.
 
 |image18|

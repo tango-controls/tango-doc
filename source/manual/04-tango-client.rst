@@ -1932,12 +1932,14 @@ DevicePipeBlob in DevicePipeBlob. There is no limit on the depth of this
 recursivity even if it is not recommended to have a too large depth. The
 following figure summarizes DevicePipe data structure
 
-.. figure:: gen_api/pipe
+.. _`4.1`:
+
+.. figure:: gen_api/pipe.png
    :alt: DevicePipe data structure
    :width: 14.00000cm
    :height: 8.00000cm
 
-   DevicePipe data structure
+   Figure 4.1: DevicePipe data structure
 
 Many methods to insert/extract data into/from a DevicePipe are
 available. In the DevicePipe class, these methods simply forward their
@@ -2296,8 +2298,8 @@ Compiling and linking a Tango client
 ------------------------------------
 
 Compiling and linking a Tango client is similar to compiling and linking
-a Tango device server. Please, refer to chapter Compiling, Linking and
-executing a Tango device server process (`Compiling and linking a C++ device server`_)
+a Tango device server. Please, refer to chapter `Compiling, Linking and
+executing a Tango device server process <06-device-server_writing.rst#Compiling and linking a C++ device server>`_
 to get all the details.
 
 .. include:: footnotes.rst

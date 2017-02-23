@@ -56,7 +56,7 @@ ordinary function call to avoid the overhead of using a networking
 protocol.
 
 For an excellent reference on CORBA with C++ refer to
-Henning_. The complete TANGO IDL file can be found in
+[Henning]_. The complete TANGO IDL file can be found in
 the `TANGO home page`_ or at the end of this
 document in the appendix 2 chapter.
 

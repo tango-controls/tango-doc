@@ -16,9 +16,9 @@
 
 .. |image08| image:: dance/0066-reduc.jpg
 
-.. |image09| image:: atk/img/core-widget.jpg
+.. |image09| image:: atk/img/core-widget.png
 
-.. |image10| image:: atk/img/listpanel.jpg
+.. |image10| image:: atk/img/listpanel.png
 
 .. |image11| image:: atk/img/prog_guide_exple1.jpg
 
