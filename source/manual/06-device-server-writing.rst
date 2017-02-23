@@ -48,10 +48,16 @@ pattern is to provide the control programmer with a framework in which
 s/he can develop new control objects. The device pattern uses other
 design patterns like the Singleton and Command patterns. These patterns
 are fully described in [Patterns]_. The device pattern
-class diagram for stepper motor device is drawn in figure [Device pattern
-figure]_
+class diagram for stepper motor device is drawn in figure `6.1`_
 
-.. [DevicePattern] image:: ds_writing/device_et.jpg
+.. _`6.1`:
+
+.. figure:: ds_writing/device_et.png
+   :alt: Device pattern class diagram
+   :width: 16cm
+   :align: center
+
+   Figure 6.1: Device pattern class diagram
 
 . In this figure, only classes surrounded with a dash line square are
 device specific. All the other classes are part of the TDSOM core and
@@ -660,8 +666,7 @@ This startup procedure is described in figure `6.2`_
 
 .. figure:: ds_writing/startup.jpg
    :alt: Device pattern startup sequence
-   :width: 14.00000cm
-   :height: 10.00000cm
+   :align: center
 
    Figure 6.2: Device pattern startup sequence
 
@@ -691,7 +696,8 @@ The figure `6.3`_
 
 .. _`6.3`:
 
-.. figure:: ds_writing/command.jpg
+.. figure:: ds_writing/command.png
+   :align: center
 
    Figure 6.3: Command execution timing
 
@@ -797,6 +803,7 @@ method is provided. This method always returns true.
 
 .. figure:: ds_writing/r_attribute.png
    :alt: Read attribute sequencing
+   :align: center
 
    Figure 6.4: Read attribute sequencing
 
@@ -839,6 +846,7 @@ method is provided. This method always allways returns true.
 
 .. figure:: ds_writing/w_attribute.png
    :alt: Write attribute sequencing
+   :align: center
 
    Write attribute sequencing
 
@@ -981,10 +989,9 @@ of the Tango::Util class must also be created.
 
 .. _`6.6`:
 
-.. figure:: ds_writing/complete_server.jpg
+.. figure:: ds_writing/complete_server.png
    :alt: A complete device server
-   :width: 14.00000cm
-   :height: 10.00000cm
+   :align: center
 
    Figure 6.6: A complete device server
 
@@ -3504,7 +3511,7 @@ This window looks like :
 
 .. figure:: ds_writing/nt_server/main.bmp
    :alt: Tango device server main window
-   :width: 10.00000cm
+   :align: center
 
    Figure 6.7: Tango device server main window
 
@@ -4633,6 +4640,7 @@ sequencing for our class StepperMotor with one pipe named DynData.
 
 .. figure:: ds_writing/r_pipe.png
    :alt: Read pipe sequencing
+   :align: center
 
    Figure 6.8: Read pipe sequencing
 
@@ -4734,6 +4742,7 @@ sequencing for our class StepperMotor with one pipe named DynData.
 
 .. figure:: ds_writing/w_pipe.png
    :alt: Write pipe sequencing
+   :align: center
 
    Figure 6.9: Write pipe sequencing
 

@@ -1,6 +1,6 @@
 .. include:: substitutions.rst
 
-[ThreeRicardo]|image08|
+|image08|
 
 TangoATK Programmer’s Guide
 ===========================
