@@ -11267,12 +11267,14 @@ The Tango Logging Service (TLS) uses device properties to control device
 logging at startup (static configuration). These properties are
 described in the following table
 
-\|c\|c\|c\| Property name & property rule & default value
- logging\_level & Initial device logging level & WARN
- logging\_target & Initial device logging target & No default
- logging\_rft & Logging rolling file threshold & 20 Mega bytes
- logging\_path & Logging file path &
- & & C:/tango-<logging name> (Windows)
+.. csv-table::
+   :header-rows: 1
+
+   "Property name", "property rule", "default value"
+   "logging\_level", "Initial device logging level", "WARN"
+   "logging\_target", "Initial device logging target", "No default"
+   "logging\_rft", "Logging rolling file threshold", "20 Mega bytes"
+   "logging\_path", "Logging file path", "/tmp/tango-<logging name> or C:/tango-<logging name> (Windows)"
 
 -  The logging\_level property controls the initial logging level of a
    device. Its set of possible values is: OFF, FATAL, ERROR, WARN, INFO
@@ -11327,16 +11329,19 @@ Seven attribute parameters are defined at attribute creation time in the
 Tango class source code. Obviously, these parameters are not modifiable
 except with a new source code compilation. These parameters are
 
-\|c\|c\| Parameter name & Parameter description
- name & Attribute name
- data\_type & Attribute data type
- data\_format & Attribute data format
- writable & Attribute read/write type
- max\_dim\_x & Maximum X dimension
- max\_dim\_y & Maximum Y dimension
- writable\_attr\_name & Associated write attribute
- level & Attribute display level
- root\_attr\_name & Root attribute name
+.. csv-table::
+   :header-rows: 1
+
+   "Parameter name", "Parameter description"
+   "name", "Attribute name"
+   "data\_type", "Attribute data type"
+   "data\_format", "Attribute data format"
+   "writable", "Attribute read/write type"
+   "max\_dim\_x", "Maximum X dimension"
+   "max\_dim\_y", "Maximum Y dimension"
+   "writable\_attr\_name", "Associated write attribute"
+   "level", "Attribute display level"
+   "root\_attr\_name", "Root attribute name"
 
 The Attribute data type
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -11374,10 +11379,13 @@ The attribute data format
 
 Three data format are supported for attribute
 
-\|c\|c\| Format & Description
- Tango::SCALAR & The attribute value is a single number
- Tango::SPECTRUM & The attribute value is a one dimension number
- Tango::IMAGE & The attribute value is a two dimension number
+.. csv-table::
+   :header-rows: 1
+
+   "Format", "Description"
+   "Tango::SCALAR", "The attribute value is a single number"
+   "Tango::SPECTRUM", "The attribute value is a one dimension number"
+   "Tango::IMAGE", "The attribute value is a two dimension number"
 
 The max\_dim\_x and max\_dim\_y parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -11385,10 +11393,14 @@ The max\_dim\_x and max\_dim\_y parameters
 These two parameters defined the maximum size for attributes of the
 SPECTRUM and IMAGE data format.
 
-\|c\|c\|c\| data format & max\_dim\_x & max\_dim\_y
- Tango::SCALAR & 1 & 0
- Tango::SPECTRUM & User Defined & 0
- Tango::IMAGE & User Defined & User Defined
+
+.. csv-table::
+   :header-rows: 1
+
+   "data format", "max\_dim\_x", "max\_dim\_y"
+   "Tango::SCALAR", "1", "0"
+   "Tango::SPECTRUM", "User Defined", "0"
+   "Tango::IMAGE", "User Defined", "User Defined"
 
 For attribute of the Tango::IMAGE data format, all the data are also
 returned in a one dimension array. The first array is value[0],[0],
@@ -11419,12 +11431,14 @@ When read, attribute values are always returned within an array even for
 scalar attribute. The length of this array and the meaning of its
 elements is detailed in the following table for scalar attribute.
 
-\|c\|c\|c\|c\| Name & Array length & Array[0] & Array[1]
- Tango::READ & 1 & Read value &
- Tango::WRITE & 1 & Last write value &
- Tango::READ\_WRITE & 2 & Read value & Last write value
- Tango::READ\_WITH\_WRITE & 2 & Read value & Associated attributelast
-write value
+.. csv-table::
+   :header-rows: 1
+
+   "Name", "Array length", "Array[0]", "Array[1]"
+   "Tango::READ", "1", "Read value", ""
+   "Tango::WRITE", "1", "Last write value", ""
+   "Tango::READ\_WRITE", "2", "Read value", "Last write value"
+   "Tango::READ\_WITH\_WRITE", "2", "Read value", "Associated attribute last write value"
 
 When a spectrum or image attribute is read, it is possible to code the
 device class in order to send only some part of the attribute data (For
@@ -11439,27 +11453,28 @@ data are returned for spectrum attribute. dim\_x is the data size sent
 by the server when the attribute is read and dim\_x\_w is the data size
 used during the last attribute write call.
 
-\|c\|c\|c\|c\| Name & Array length & Array[0->dim\_x-1] & Array[dim\_x
--> dim\_x + dim\_x\_w -1]
- Tango::READ & dim\_x & Read values &
- Tango::WRITE & dim\_x\_w & Last write values &
- Tango::READ\_WRITE & dim\_x + dim\_x\_w & Read value & Last write
-values
- Tango::READ\_WITH\_WRITE & dim\_x + dim\_x\_w & Read value & Associated
-attributelast write values
+.. csv-table::
+   :header-rows: 1
+
+   "Name", "Array length", "Array[0->dim\_x-1]", "Array[dim\_x-> dim\_x + dim\_x\_w -1]"
+   "Tango::READ", "dim\_x", "Read values", "", ""
+   "Tango::WRITE", "dim\_x\_w", "Last write values", ""
+   "Tango::READ\_WRITE", "dim\_x + dim\_x\_w", "Read value", "Last write values"
+   "Tango::READ\_WITH\_WRITE", "dim\_x + dim\_x\_w", "Read value", "Associated attributelast write values"
 
 The following table describe how data are returned for image attribute.
 dim\_r is the data size sent by the server when the attribute is read
 (dim\_x \* dim\_y) and dim\_w is the data size used during the last
 attribute write call (dim\_x\_w \* dim\_y\_w).
 
-\|c\|c\|c\|c\| Name & Array length & Array[0->dim\_r-1] & Array[dim\_r->
-dim\_r + dim\_w -1]
- Tango::READ & dim\_r & Read values &
- Tango::WRITE & dim\_w & Last write values &
- Tango::READ\_WRITE & dim\_r + dim\_w & Read value & Last write values
- Tango::READ\_WITH\_WRITE & dim\_r + dim\_w & Read value & Associated
-attributelast write values
+.. csv-table::
+   :header-rows: 1
+
+   "Name", "Array length", "Array[0->dim\_r-1]", "Array[dim\_r->dim\_r + dim\_w -1]"
+   "Tango::READ", "dim\_r", "Read values", ""
+   "Tango::WRITE", "dim\_w", "Last write values", ""
+   "Tango::READ\_WRITE", "dim\_r + dim\_w", "Read value", "Last write values"
+   "Tango::READ\_WITH\_WRITE", "dim\_r + dim\_w", "Read value", "Associated attributelast write values"
 
 Until a write operation has been performed, the last write value is
 initialized to *0* for scalar attribute of the numeriacal type, to *Not
@@ -11483,9 +11498,12 @@ This parameter is only an help for graphical application. It is a C++
 enumeration starting at 0. The code associated with each attribute
 display level is defined in the following table (Tango::DispLevel).
 
-\|c\|c\| name & Value
- Tango::OPERATOR & 0
- Tango::EXPERT & 1
+.. csv-table::
+   :header-rows: 1
+
+   "name", "Value"
+   "Tango::OPERATOR", "0"
+   "Tango::EXPERT", "1"
 
 This parameter allows a graphical application to support two types of
 operation :
@@ -11522,17 +11540,20 @@ General purpose parameters
 Eight attribute parameters are modifiable at run-time via a device call
 or via the property database.
 
-\|c\|c\| Parameter name & Parameter description
- description & Attribute description
- label & Attribute label
- unit & Attribute unit
- standard\_unit & Conversion factor to MKSA unit
- display\_unit & The attribute unit in a printable form
- format & How to print attribute value
- min\_value & Attribute min value
- max\_value & Attribute max value
- enum\_labels & Enumerated labels
- memorized & Attribute memorization
+.. csv-table::
+   :header-rows: 1
+
+   "Parameter name", "Parameter description"
+   "description", "Attribute description"
+   "label", "Attribute label"
+   "unit", "Attribute unit"
+   "standard\_unit", "Conversion factor to MKSA unit"
+   "display\_unit", "The attribute unit in a printable form"
+   "format", "How to print attribute value"
+   "min\_value", "Attribute min value"
+   "max\_value", "Attribute max value"
+   "enum\_labels", "Enumerated labels"
+   "memorized", "Attribute memorization"
 
 The **description** parameter describes the attribute. The **label**
 parameter is used by graphical application to display a label when this
@@ -11571,15 +11592,14 @@ manipulators are :
 Their definition are the same than for C++ streams. An example of format
 parameter is
 
-scientific;uppercase;setprecision(3)
+``scientific;uppercase;setprecision(3)``.
 
-. A class called Tango::AttrManip has been written to handle this format
+A class called Tango::AttrManip has been written to handle this format
 string. Once the attribute format string has been retrieved from the
 device, its value can be printed with
 
-cout << Tango::AttrManip(format) << value << endl;
+``cout << Tango::AttrManip(format) << value << endl;``
 
-.
 
 The min\_value and max\_value parameters
 ''''''''''''''''''''''''''''''''''''''''
@@ -11617,13 +11637,16 @@ The alarm related configuration parameters
 Six alarm related attribute parameters are modifiable at run-time via a
 device call or via the property database.
 
-\|c\|c\| Parameter name & Parameter description
- min\_alarm & Attribute low level alarm
- max\_alarm & Attribute high level alarm
- min\_warning & Attribute low level warning
- max\_warning & Attribute high level warning
- delta\_t & delta time for RDS alarm (mS)
- delta\_val & delta value for RDS alarm (absolute)
+.. csv-table::
+   :header-rows: 1
+
+   "Parameter name", "Parameter description"
+   "min\_alarm", "Attribute low level alarm"
+   "max\_alarm", "Attribute high level alarm"
+   "min\_warning", "Attribute low level warning"
+   "max\_warning", "Attribute high level warning"
+   "delta\_t", "delta time for RDS alarm (mS)"
+   "delta\_val", "delta value for RDS alarm (absolute)"
 
 These parameters have no meaning for attribute with data type DevString,
 DevBoolean or DevState. An exception is thrown in case the user try to
@@ -11675,13 +11698,16 @@ The event related configuration parameters
 Six event related attribute parameters are modifiable at run-time via a
 device call or via the property database.
 
-\|c\|c\| Parameter name & Parameter description
- rel\_change & Relative change triggering change event
- abs\_change & Absolute change triggering change event
- period & Period for periodic event
- archive\_rel\_change & Relative change for archive event
- archive\_abs\_change & Absolute change for archive event
- archive\_period & Period for change archive event
+.. csv-table::
+   :header-rows: 1
+
+   "Parameter name", "Parameter description"
+   "rel\_change", "Relative change triggering change event"
+   "abs\_change", "Absolute change triggering change event"
+   "period", "Period for periodic event"
+   "archive\_rel\_change", "Relative change for archive event"
+   "archive\_abs\_change", "Absolute change for archive event"
+   "archive\_period", "Period for change archive event"
 
 The rel\_change and abs\_change parameters
 ''''''''''''''''''''''''''''''''''''''''''
@@ -11752,27 +11778,53 @@ initialized from:
 
 The default value set by the Tango core library are
 
-\|c\|c\|c\| Parameter type & Parameter name & Library default value
- & description & No description
- & label & attribute name
- & unit & One empty string
- & standard\_unit & No standard unit
- & display\_unit & No display unit
- & format & 6 characters with 2 decimal
- & min\_value & Not specified
- & max\_value & Not specified
- & min\_alarm & Not specified
- & max\_alarm & Not specified
- & min\_warning & Not specified
- & max\_warning & Not specified
- & delta\_t & Not specified
- & delta\_val & Not specified
- & rel\_change & Not specified
- & abs\_change & Not specified
- & period & 1000 (mS)
- & archive\_rel\_change & Not specified
- & archive\_abs\_change & Not specified
- & archive\_period & Not specified
+.. csv-table::
+   :header-rows: 1
+
++------------------+----------------------+--------------------------+
+| Parameter type   | Parameter name       | Library default value    |
++==================+======================+==========================+
+| general purpose  | description          | No description           |
+|                  +----------------------+--------------------------+
+|                  | label                | attribute name           |
+|                  +----------------------+--------------------------+
+|                  | unit                 | One empty string         |
+|                  +----------------------+--------------------------+
+|                  | standard\_unit       | No standard unit         |
+|                  +----------------------+--------------------------+
+|                  | display\_unit        | No display unit          |
+|                  +----------------------+--------------------------+
+|                  | format               | 6 characters             |
+|                  |                      | with 2 decimal           |
+|                  +----------------------+--------------------------+
+|                  | min\_value           | Not specified            |
+|                  +----------------------+--------------------------+
+|                  | max\_value           | Not specified            |
++------------------+----------------------+--------------------------+
+| alarm parameters | min\_alarm           | Not specified            |
+|                  +----------------------+--------------------------+
+|                  | max\_alarm           | Not specified            |
+|                  +----------------------+--------------------------+
+|                  | min\_warning         | Not specified            |
+|                  +----------------------+--------------------------+
+|                  | max\_warning         | Not specified            |
+|                  +----------------------+--------------------------+
+|                  |& delta\_t            | Not specified            |
+|                  +----------------------+--------------------------+
+|                  | delta\_val           | Not specified            |
++------------------+----------------------+--------------------------+
+| event parameters |rel\_change           | Not specified            |
+|                  +----------------------+--------------------------+
+|                  | abs\_change          | Not specified            |
+|                  +----------------------+--------------------------+
+|                  | period               | 1000 (mS)                |
+|                  +----------------------+--------------------------+
+|                  | archive\_rel\_change | Not specified            |
+|                  +----------------------+--------------------------+
+|                  | archive\_abs\_change | Not specified            |
+|                  +----------------------+--------------------------+
+|                  | archive\_period      | Not specified            |
++------------------+----------------------+--------------------------+
 
 It is possible to set modifiable parameters via the database at two
 levels :
@@ -11810,22 +11862,28 @@ value. In this table, the user default are the values given within Pogo
 in the Properties tab of the attribute edition window (or in in Tango
 class code using the Tango::UserDefaultAttrProp class).
 
-\|c\|c\| Input string & Action
- Not specified & Reset to **library** default
- &
- &
- & Reset to Tango **class** default if any
- & Otherwise, reset to **user** default (if any) or to **library**
-default
+.. csv-table::
+   :header-rows: 1
+
+   "Input string", "Action"
+   "\"Not specified\"", "Reset to **library** default"
+   "\"\"(empty string)", "Reset to **user** default if any.
+   Otherwise, reset to **library** default"
+   "\"NaN\"", "Reset to Tango **class** default if any.
+   Otherwise, reset to **user** default (if any) or to **library**
+   default"
 
 Let’s take one exemple: For one attribute belonging to a device, we have
 the following attribute parameters:
 
-\|c\|c\|c\|c\| Parameter name & Def. class & Def. user & Def. lib
- standard\_unit & & & No standard unit
- min\_value & & 5 & Not specified
- max\_value & 50 & & Not specified
- rel\_change & 5 & 10 & Not specified
+.. csv-table::
+   :header-rows: 1
+
+   "Parameter name", " Def. class", " Def. user", " Def. lib"
+   "standard\_unit", "", "", " No standard unit"
+   "min\_value", "", " 5", " Not specified"
+   "max\_value", " 50", "", " Not specified"
+   "rel\_change", " 5", " 10", " Not specified"
 
 The string Not specified sent to each attribute parameter will set
 attribute parameter value to No standard unit for standard\_unit, Not
@@ -11852,10 +11910,13 @@ Three pipe parameters are defined at pipe creation time in the Tango
 class source code. Obviously, these parameters are not modifiable except
 with a new source code compilation. These parameters are
 
-\|c\|c\| Parameter name & Parameter description
- name & Pipe name
- writable & Pipe read/write type
- disp\_level & Pipe display level
+.. csv-table::
+   :header-rows: 1
+
+   "Parameter name", "Parameter description"
+   "name", "Pipe name"
+   "writable", "Pipe read/write type"
+   "disp\_level", "Pipe display level"
 
 The pipe read/write type.
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -11873,9 +11934,12 @@ This parameter is only an help for graphical application. It is a C++
 enumeration starting at 0. The code associated with each pipe display
 level is defined in the following table (Tango::DispLevel).
 
-\|c\|c\| name & Value
- Tango::OPERATOR & 0
- Tango::EXPERT & 1
+.. csv-table::
+   :header-rows: 1
+
+   "name", "Value"
+   "Tango::OPERATOR", "0"
+   "Tango::EXPERT", "1"
 
 This parameter allows a graphical application to support two types of
 operation :
@@ -11894,9 +11958,12 @@ Each pipe has a configuration set of 2 modifiable parameters. These
 parameters are modifiable at run-time via a device call or via the
 property database.
 
-\|c\|c\| Parameter name & Parameter description
- description & Pipe description
- label & Pipe label
+.. csv-table::
+   :header-rows: 1
+
+   "Parameter name", "Parameter description"
+   "description", "Pipe description"
+   "label", "Pipe label"
 
 The **description** parameter describes the pipe. The **label**
 parameter is used by graphical application to display a label when this
@@ -11920,9 +11987,12 @@ creation time. The pipe parameters are therefore initialized from:
 
 The default value set by the Tango core library are
 
-\|c\|c\| Parameter name & Library default value
- description & No description
- label & pipe name
+.. csv-table::
+   :header-rows: 1
+
+   "Parameter name", "Library default value"
+   "description", "No description"
+   "label", "pipe name"
 
 It is possible to set modifiable parameters via the database at two
 levels :
@@ -11990,10 +12060,13 @@ As already mentionned in this documentation, each Tango device supports
 at least three commands which are State, Status and Init. The following
 array details command input and output data type
 
-\|c\|c\|c\| Command name & Input data type & Output data type
- State & void & Tango::DevState
- Status & void & Tango::DevString
- Init & void & void
+.. csv-table::
+   :header-rows: 1
+
+   "Command name", "Input data type", "Output data type"
+   "State", "void", "Tango::DevState"
+   "Status", "void", "Tango::DevString"
+   "Init", "void", "void"
 
 The State command
 ~~~~~~~~~~~~~~~~~
@@ -12040,41 +12113,42 @@ are AddLoggingTarget, RemoveLoggingTarget, GetLoggingTarget,
 GetLoggingLevel, SetLoggingLevel, StopLogging and StartLogging. The
 following table give all commands input and output data types
 
-\|c\|c\|c\| Command name & Input data type & Output data type
- State & void & Tango::DevState
- Status & void & Tango::DevString
- Init & void & void
- DevRestart & Tango::DevString & void
- RestartServer & void & void
- QueryClass & void & Tango::DevVarStringArray
- QueryDevice & void & Tango::DevVarStringArray
- Kill & void & void
- QueryWizardClassProperty & Tango::DevString & Tango::DevVarStringArray
- QueryWizardDevProperty & Tango::DevString & Tango::DevVarStringArray
- QuerySubDevice & void & Tango::DevVarStringArray
- StartPolling & void & void
- StopPolling & void & void
- AddObjPolling & Tango::DevVarLongStringArray & void
- RemObjPolling & Tango::DevVarStringArray & void
- UpdObjPollingPeriod & Tango::DevVarLongStringArray & void
- PolledDevice & void & Tango::DevVarStringArray
- DevPollStatus & Tango::DevString & Tango::DevVarStringArray
- LockDevice & Tango::DevVarLongStringArray & void
- UnLockDevice & Tango::DevVarLongStringArray & Tango::DevLong
- ReLockDevices & Tango::DevVarStringArray & void
- DevLockStatus & Tango::DevString & Tango::DevVarLongStringArray
- EventSubscribeChange & Tango::DevVarStringArray & Tango::DevLong
- ZmqEventSubscriptionChange & Tango::DevVarStringArray &
-Tango::DevVarLongStringArray
- EventConfirmSubscription & Tango::DevVarStringArray & void
- AddLoggingTarget & Tango::DevVarStringArray & void
- RemoveLoggingTarget & Tango::DevVarStringArray & void
- GetLoggingTarget & Tango::DevString & Tango::DevVarStringArray
- GetLoggingLevel & Tango::DevVarStringArray &
-Tango::DevVarLongStringArray
- SetLoggingLevel & Tango::DevVarLongStringArray & void
- StopLogging & void & void
- StartLogging & void & void
+.. csv-table::
+   :header-rows: 1
+
+   "Command name", "Input data type", "Output data type"
+   "State", "void", "Tango::DevState"
+   "Status", "void", "Tango::DevString"
+   "Init", "void", "void"
+   "DevRestart", "Tango::DevString", "void"
+   "RestartServer", "void", "void"
+   "QueryClass", "void", "Tango::DevVarStringArray"
+   "QueryDevice", "void", "Tango::DevVarStringArray"
+   "Kill", "void", "void"
+   "QueryWizardClassProperty", "Tango::DevString", "Tango::DevVarStringArray"
+   "QueryWizardDevProperty", "Tango::DevString", "Tango::DevVarStringArray"
+   "QuerySubDevice", "void", "Tango::DevVarStringArray"
+   "StartPolling", "void", "void"
+   "StopPolling", "void", "void"
+   "AddObjPolling", "Tango::DevVarLongStringArray", "void"
+   "RemObjPolling", "Tango::DevVarStringArray", "void"
+   "UpdObjPollingPeriod", "Tango::DevVarLongStringArray", "void"
+   "PolledDevice", "void", "Tango::DevVarStringArray"
+   "DevPollStatus", "Tango::DevString", "Tango::DevVarStringArray"
+   "LockDevice", "Tango::DevVarLongStringArray", "void"
+   "UnLockDevice", "Tango::DevVarLongStringArray", "Tango::DevLong"
+   "ReLockDevices", "Tango::DevVarStringArray", "void"
+   "DevLockStatus", "Tango::DevString", "Tango::DevVarLongStringArray"
+   "EventSubscribeChange", "Tango::DevVarStringArray", "Tango::DevLong"
+   "ZmqEventSubscriptionChange", "Tango::DevVarStringArray", "Tango::DevVarLongStringArray"
+   "EventConfirmSubscription", "Tango::DevVarStringArray", "void"
+   "AddLoggingTarget", "Tango::DevVarStringArray", "void"
+   "RemoveLoggingTarget", "Tango::DevVarStringArray", "void"
+   "GetLoggingTarget", "Tango::DevString", "Tango::DevVarStringArray"
+   "GetLoggingLevel", "Tango::DevVarStringArray", "Tango::DevVarLongStringArray"
+   "SetLoggingLevel", "Tango::DevVarLongStringArray", "void"
+   "StopLogging", "void", "void"
+   "StartLogging", "void", "void"
 
 The device description field is set to “A device server device”. Device
 server started with the -file command line option also supports a
@@ -12185,11 +12259,14 @@ The command input parameters are embedded within a
 Tango::DevVarLongStringArray data type with one long data and three
 strings. The input parameters are:
 
-\|c\|c\| Command parameter & Parameter meaning
- svalue[0] & Device name
- svalue[1] & Object type (“command“ or “attribute“)
- svalue[2] & Object name
- lvalue[0] & polling period in mS
+.. csv-table::
+   :header-rows: 1
+
+   "Command parameter", "Parameter meaning"
+   "svalue[0]", "Device name"
+   "svalue[1]", "Object type (“command“ or “attribute“)"
+   "svalue[2]", "Object name"
+   "lvalue[0]", "polling period in mS"
 
 The object type string is case independent. The object name string
 (command name or attribute name) is case dependant. This command does
@@ -12203,10 +12280,13 @@ This command removes an object of the list of polled objects. The
 command input data type is a Tango::DevVarStringArray with three
 strings. These strings meaning are :
 
-\|c\|c\| String & Meaning
- string[0] & Device name
- string[1] & Object type (“command“ or “attribute“)
- string[2] & Object name
+.. csv-table::
+   :header-rows: 1
+
+   "String", "Meaning"
+   "string[0]", "Device name"
+   "string[1]", "Object type (“command“ or “attribute“)"
+   "string[2]", "Object name"
 
 The object type string is case independent. The object name string
 (command name or attribute name) is case dependant. This command is not
@@ -12221,11 +12301,14 @@ command input parameters are embedded within a
 Tango::DevVarLongStringArray data type with one long data and three
 strings. The input parameters are:
 
-\|c\|c\| Command parameter & Parameter meaning
- svalue[0] & Device name
- svalue[1] & Object type (“command“ or “attribute“)
- svalue[2] & Object name
- lvalue[0] & new polling period in mS
+.. csv-table::
+   :header-rows: 1
+
+   "Command parameter", "Parameter meaning"
+   "svalue[0]", "Device name"
+   "svalue[1]", "Object type (“command“ or “attribute“)"
+   "svalue[2]", "Object name"
+   "lvalue[0]", "new polling period in mS"
 
 The object type string is case independent. The object name string
 (command name or attribute name) is case dependant. This command does
@@ -12277,9 +12360,12 @@ This command locks a device for the calling process. The command input
 parameters are embedded within a Tango::DevVarLongStringArray data type
 with one long data and one string. The input parameters are:
 
-\|c\|c\| Command parameter & Parameter meaning
- svalue[0] & Device name
- lvalue[0] & Lock validity
+.. csv-table::
+   :header-rows: 1
+
+   "Command parameter", "Parameter meaning"
+   "svalue[0]", "Device name"
+   "lvalue[0]", "Lock validity"
 
 The UnLockDevice command
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -12288,9 +12374,12 @@ This command unlocks a device. The command input parameters are embedded
 within a Tango::DevVarLongStringArray data type with one long data and
 one string. The input parameters are:
 
-\|c\|c\| Command parameter & Parameter meaning
- svalue[0] & Device name
- lvalue[0] & Force flag
+.. csv-table::
+   :header-rows: 1
+
+   "Command parameter", "Parameter meaning"
+   "svalue[0]", "Device name"
+   "lvalue[0]", "Force flag"
 
 The force flag parameter allows a client to unlock a device already
 locked by another process (for admin usage only)
@@ -12310,16 +12399,19 @@ parameter is the device name. The output parameters are embedded within
 a Tango::DevVarLongStringArray data type with three strings and six
 long. These data are
 
-\|c\|c\| Command parameter & Parameter meaning
- svalue[0] & Locking string
- svalue[1] & CPP client host IP address or Not defined
- svalue[2] & Java VM main class for Java client or Not defined
- lvalue[0] & Lock flag (1 if locked, 0 othterwise)
- lvalue[1] & CPP client host IP address or 0 for Java locker
- lvalue[2] & Java locker UUID part 1or 0 for CPP locker
- lvalue[3] & Java locker UUID part 2 or 0 for CPP locker
- lvalue[4] & Java locker UUID part 3 or 0 for CPP locker
- lvalue[5] & Java locker UUID part 4 or 0 for CPP locker
+.. csv-table::
+   :header-rows: 1
+
+   "Command parameter", "Parameter meaning"
+   "svalue[0]", "Locking string"
+   "svalue[1]", "CPP client host IP address or Not defined"
+   "svalue[2]", "Java VM main class for Java client or Not defined"
+   "lvalue[0]", "Lock flag (1 if locked, 0 othterwise)"
+   "lvalue[1]", "CPP client host IP address or 0 for Java locker"
+   "lvalue[2]", "Java locker UUID part 1or 0 for CPP locker"
+   "lvalue[3]", "Java locker UUID part 2 or 0 for CPP locker"
+   "lvalue[4]", "Java locker UUID part 3 or 0 for CPP locker"
+   "lvalue[5]", "Java locker UUID part 4 or 0 for CPP locker"
 
 The EventSubscriptionChange command (C++ server only)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -12334,11 +12426,14 @@ subscription timer with the current time. Events are not generated when
 there are no clients subscribed within the last 10 minutes. The input
 parameters are:
 
-\|c\|c\| Command parameter & Parameter meaning
- argin[0] & Device name
- argin[1] & Attribute name
- argin[2] & action (subscribe or unsubsribe)
- argin[3] & event name (change, periodic, archive,attr\_conf)
+.. csv-table::
+   :header-rows: 1
+
+   "Command parameter", "Parameter meaning"
+   "argin[0]", "Device name"
+   "argin[1]", "Attribute name"
+   "argin[2]", "action (subscribe or unsubsribe)"
+   "argin[3]", "event name (change, periodic, archive,attr\_conf)"
 
 The command output data is the simply the Tango release used by the
 device server process. This is necessary for compatibility reason.
@@ -12358,24 +12453,30 @@ there are no clients subscribed within the last 10 minutes. The input
 parameters are the same than the one used for the
 EventSubscriptionChange command. They are:
 
-\|c\|c\| Command in parameter & Parameter meaning
- argin[0] & Device name
- argin[1] & Attribute name
- argin[2] & action (subscribe or unsubsribe)
- argin[3] & event name (change, periodic, archive,attr\_conf)
+.. csv-table::
+   :header-rows: 1
+
+   "Command in parameter", "Parameter meaning"
+   "argin[0]", "Device name"
+   "argin[1]", "Attribute name"
+   "argin[2]", "action (subscribe or unsubsribe)"
+   "argin[3]", "event name (change, periodic, archive,attr\_conf)"
 
 The command output parameters aer all the necessary data to build one
 event connection between a client and the device server process
 generating the events. This means:
 
-\|c\|c\| Command out parameter & Parameter meaning
- svalue[0] & Heartbeat ZMQ socket connect end point
- svalue[1] & Event ZMQ socket connect end point
- lvalue[0] & Tango lib release used by device server
- lvalue[1] & Device IDL release
- lvalue[2] & Subscriber HWM
- lvalue[3] & Rate (Multicasting related)
- lvalue[4] & IVL (Multicasting related)
+.. csv-table::
+   :header-rows: 1
+
+   "Command out parameter", "Parameter meaning"
+   "svalue[0]", "Heartbeat ZMQ socket connect end point"
+   "svalue[1]", "Event ZMQ socket connect end point"
+   "lvalue[0]", "Tango lib release used by device server"
+   "lvalue[1]", "Device IDL release"
+   "lvalue[2]", "Subscriber HWM"
+   "lvalue[3]", "Rate (Multicasting related)"
+   "lvalue[4]", "IVL (Multicasting related)"
 
 The EventConfirmSubscription command
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -12387,10 +12488,13 @@ any more. The input parameters for the EventConfirmSubscription command
 must be a multiple of 3. They are 3 parameters for each event confirmed
 by this command. Per event, these parameters are:
 
-\|c\|c\| Command in parameter & Parameter meaning
- argin[x] & Device name
- argin[x + 1] & Attribute name
- argin[x + 2] & Event name
+.. csv-table::
+   :header-rows: 1
+
+   "Command in parameter", "Parameter meaning"
+   "argin[x]", "Device name"
+   "argin[x + 1]", "Attribute name"
+   "argin[x + 2]", "Event name"
 
 The AddLoggingTarget command
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -12499,11 +12603,13 @@ This device has two properties related to polling threads pool
 management plus another one for the choice of polling algorithm. These
 properties are described in the following table
 
-\|c\|c\|c\| Property name & property rule & default value
- polling\_threads\_pool\_size & Max number of thread in the polling pool
-& 1
- polling\_threads\_pool\_conf & Polling threads pool configuration &
- polling\_before\_9 & Choice of the polling algorithm & false
+.. csv-table::
+   :header-rows: 1
+
+   "Property name", "property rule", "default value"
+   "polling\_threads\_pool\_size", "Max number of thread in the polling pool", "1"
+   "polling\_threads\_pool\_conf", "Polling threads pool configuration", ""
+   "polling\_before\_9", "Choice of the polling algorithm", "false"
 
 The rule of the polling\_threads\_pool\_size is to define the maximun
 number of thread created for the polling threads pool size. The rule of
@@ -12629,9 +12735,9 @@ This is tunable at several level.
 
 #. At client or device server level using the library calls
    *Util::set\_ds\_event\_buffer\_hwm()* documented in
-   :raw-latex:`\cite{Tango-dsclasses-doc}` or
+   [TangoRefMan]_ or
    *ApiUtil::set\_event\_buffer\_hwm()* documented in
-   [sec:Tango::ApiUtil]
+   :cpp:class:`Tango::ApiUtil`
 
 #. Using environment variables TANGO\_DS\_EVENT\_BUFFER\_HWM or
    TANGO\_EVENT\_BUFFER\_HWM
@@ -12725,11 +12831,14 @@ Operating system free type
 Some data type used in the TANGO core software have been defined. They
 are described in the following table.
 
-\|c\|c\| Type name & C++ name
- TangoSys\_MemStream & stringstream
- TangoSys\_OMemStream & ostringstream
- TangoSys\_Pid & int
- TangoSys\_Cout & ostream
+.. csv-table::
+   :header-rows: 1
+
+   "Type name", "C++ name"
+   "TangoSys\_MemStream", "stringstream"
+   "TangoSys\_OMemStream", "ostringstream"
+   "TangoSys\_Pid", "int"
+   "TangoSys\_Cout", "ostream"
 
 These types are defined in the tango\_config.h file
 
@@ -12740,12 +12849,14 @@ As explained in [Command fact], command created with the template
 command model uses static casting. Many type definition have been
 written for these casting.
 
-\|c\|c\|c\| Class name & Command allowed method (if any) & Command
-execute method
- TemplCommand & Tango::StateMethodPtr & Tango::CmdMethPtr
- TemplCommandIn & Tango::StateMethodPtr & Tango::CmdMethPtr\_xxx
- TemplCommandOut & Tango::StateMethodPtr & Tango::xxx\_CmdMethPtr
- TemplCommandInOut & Tango::StateMethodPtr & Tango::xxx\_CmdMethPtr\_yyy
+.. csv-table::
+   :header-rows: 1
+
+   "Class name", "Command allowed method (if any)", "Command execute method"
+   "TemplCommand", "Tango::StateMethodPtr", "Tango::CmdMethPtr"
+   "TemplCommandIn", "Tango::StateMethodPtr", "Tango::CmdMethPtr\_xxx"
+   "TemplCommandOut", "Tango::StateMethodPtr", "Tango::xxx\_CmdMethPtr"
+   "TemplCommandInOut", "Tango::StateMethodPtr", "Tango::xxx\_CmdMethPtr\_yyy"
 
 The **Tango::StateMethPtr** is a pointer to a method of the DeviceImpl
 class which returns a boolean and has one parameter which is a reference
@@ -12759,26 +12870,29 @@ DeviceImpl class which returns nothing and has one parameter. xxx must
 be set according to the method parameter type as described in the next
 table
 
-\|c\|c\| Tango type & short cut (xxx)
- Tango::DevBoolean & Bo
- Tango::DevShort & Sh
- Tango::DevLong & Lg
- Tango::DevFloat & Fl
- Tango::DevDouble & Db
- Tango::DevUshort & US
- Tango::DevULong & UL
- Tango::DevString & Str
- Tango::DevVarCharArray & ChA
- Tango::DevVarShortArray & ShA
- Tango::DevVarLongArray & LgA
- Tango::DevVarFloatArray & FlA
- Tango::DevVarDoubleArray & DbA
- Tango::DevVarUShortArray & USA
- Tango::DevVarULongArray & ULA
- Tango::DevVarStringArray & StrA
- Tango::DevVarLongStringArray & LSA
- Tango::DevVarDoubleStringArray & DSA
- Tango::DevState & Sta
+.. csv-table::
+   :header-rows: 1
+
+   "Tango type", "short cut (xxx)"
+   "Tango::DevBoolean", "Bo"
+   "Tango::DevShort", "Sh"
+   "Tango::DevLong", "Lg"
+   "Tango::DevFloat", "Fl"
+   "Tango::DevDouble", "Db"
+   "Tango::DevUshort", "US"
+   "Tango::DevULong", "UL"
+   "Tango::DevString", "Str"
+   "Tango::DevVarCharArray", "ChA"
+   "Tango::DevVarShortArray", "ShA"
+   "Tango::DevVarLongArray", "LgA"
+   "Tango::DevVarFloatArray", "FlA"
+   "Tango::DevVarDoubleArray", "DbA"
+   "Tango::DevVarUShortArray", "USA"
+   "Tango::DevVarULongArray", "ULA"
+   "Tango::DevVarStringArray", "StrA"
+   "Tango::DevVarLongStringArray", "LSA"
+   "Tango::DevVarDoubleStringArray", "DSA"
+   "Tango::DevState", "Sta"
 
 For instance, a pointer to a method which takes a
 Tango::DevVarStringArray as input parameter must be statically casted to
@@ -12811,21 +12925,24 @@ Tango device state code
 The Tango::DevState type is a C++ enumeration starting at 0. The code
 associated with each state is defined in the following table.
 
-\|c\|c\| State name & Value
- Tango::ON & 0
- Tango::OFF & 1
- Tango::CLOSE & 2
- Tango::OPEN & 3
- Tango::INSERT & 4
- Tango::EXTRACT & 5
- Tango::MOVING & 6
- Tango::STANDBY & 7
- Tango::FAULT & 8
- Tango::INIT & 9
- Tango::RUNNING & 10
- Tango::ALARM & 11
- Tango::DISABLE & 12
- Tango::UNKNOWN & 13
+.. csv-table::
+   :header-rows: 1
+
+   "State name", "Value"
+   "Tango::ON", "0"
+   "Tango::OFF", "1"
+   "Tango::CLOSE", "2"
+   "Tango::OPEN", "3"
+   "Tango::INSERT", "4"
+   "Tango::EXTRACT", "5"
+   "Tango::MOVING", "6"
+   "Tango::STANDBY", "7"
+   "Tango::FAULT", "8"
+   "Tango::INIT", "9"
+   "Tango::RUNNING", "10"
+   "Tango::ALARM", "11"
+   "Tango::DISABLE", "12"
+   "Tango::UNKNOWN", "13"
 
 A strings array called **Tango::DevStateName** can be used to get the
 device state as a string. Use the Tango device state code as index into
@@ -12837,38 +12954,41 @@ Tango data type
 A “define” has been created for each Tango data type. This is summarized
 in the following table
 
-\|c\|c\|c\| Type name & Type code & Value
- Tango::DevBoolean & Tango::DEV\_BOOLEAN & 1
- Tango::DevShort & Tango::DEV\_SHORT & 2
- Tango::DevLong & Tango::DEV\_LONG & 3
- Tango::DevFloat & Tango::DEV\_FLOAT & 4
- Tango::DevDouble & Tango::DEV\_DOUBLE & 5
- Tango::DevUShort & Tango::DEV\_USHORT & 6
- Tango::DevULong & Tango::DEV\_ULONG & 7
- Tango::DevString & Tango::DEV\_STRING & 8
- Tango::DevVarCharArray & Tango::DEVVAR\_CHARARRAY & 9
- Tango::DevVarShortArray & Tango::DEVVAR\_SHORTARRAY & 10
- Tango::DevVarLongArray & Tango::DEVVAR\_LONGARRAY & 11
- Tango::DevVarFloatArray & Tango::DEVVAR\_FLOATARRAY & 12
- Tango::DevVarDoubleArray & Tango::DEVVAR\_DOUBLEARRAY & 13
- Tango::DevVarUShortArray & Tango::DEVVAR\_USHORTARRAY & 14
- Tango::DevVarULongArray & Tango::DEVVAR\_ULONGARRAY & 15
- Tango::DevVarStringArray & Tango::DEVVAR\_STRINGARRAY & 16
- Tango::DevVarLongStringArray & Tango::DEVVAR\_LONGSTRINGARRAY & 17
- Tango::DevVarDoubleStringArray & Tango::DEVVAR\_DOUBLESTRINGARRAY & 18
- Tango::DevState & Tango::DEV\_STATE & 19
- Tango::ConstDevString & Tango::CONST\_DEV\_STRING & 20
- Tango::DevVarBooleanArray & Tango::DEVVAR\_BOOLEANARRAY & 21
- Tango::DevUChar & Tango::DEV\_UCHAR & 22
- Tango::DevLong64 & Tango::DEV\_LONG64 & 23
- Tango::DevULong64 & Tango::DEV\_ULONG64 & 24
- Tango::DevVarLong64Array & Tango::DEVVAR\_LONG64ARRAY & 25
- Tango::DevVarULong64Array & Tango::DEVVAR\_ULONG64ARRAY & 26
- Tango::DevInt & Tango::DEV\_INT & 27
- Tango::DevEncoded & Tango::DEV\_ENCODED & 28
- Tango::DevEnum & Tango::DEV\_ENUM & 29
- Tango::DevPipeBlob & Tango::DEV\_PIPE\_BLOB & 30
- Tango::DevVarStateArray & Tango::DEVVAR\_STATEARRAY & 31
+.. csv-table::
+   :header-rows: 1
+
+   "Type name", "Type code", "Value"
+   "Tango::DevBoolean", "Tango::DEV\_BOOLEAN", "1"
+   "Tango::DevShort", "Tango::DEV\_SHORT", "2"
+   "Tango::DevLong", "Tango::DEV\_LONG", "3"
+   "Tango::DevFloat", "Tango::DEV\_FLOAT", "4"
+   "Tango::DevDouble", "Tango::DEV\_DOUBLE", "5"
+   "Tango::DevUShort", "Tango::DEV\_USHORT", "6"
+   "Tango::DevULong", "Tango::DEV\_ULONG", "7"
+   "Tango::DevString", "Tango::DEV\_STRING", "8"
+   "Tango::DevVarCharArray", "Tango::DEVVAR\_CHARARRAY", "9"
+   "Tango::DevVarShortArray", "Tango::DEVVAR\_SHORTARRAY", "10"
+   "Tango::DevVarLongArray", "Tango::DEVVAR\_LONGARRAY", "11"
+   "Tango::DevVarFloatArray", "Tango::DEVVAR\_FLOATARRAY", "12"
+   "Tango::DevVarDoubleArray", "Tango::DEVVAR\_DOUBLEARRAY", "13"
+   "Tango::DevVarUShortArray", "Tango::DEVVAR\_USHORTARRAY", "14"
+   "Tango::DevVarULongArray", "Tango::DEVVAR\_ULONGARRAY", "15"
+   "Tango::DevVarStringArray", "Tango::DEVVAR\_STRINGARRAY", "16"
+   "Tango::DevVarLongStringArray", "Tango::DEVVAR\_LONGSTRINGARRAY", "17"
+   "Tango::DevVarDoubleStringArray", "Tango::DEVVAR\_DOUBLESTRINGARRAY", "18"
+   "Tango::DevState", "Tango::DEV\_STATE", "19"
+   "Tango::ConstDevString", "Tango::CONST\_DEV\_STRING", "20"
+   "Tango::DevVarBooleanArray", "Tango::DEVVAR\_BOOLEANARRAY", "21"
+   "Tango::DevUChar", "Tango::DEV\_UCHAR", "22"
+   "Tango::DevLong64", "Tango::DEV\_LONG64", "23"
+   "Tango::DevULong64", "Tango::DEV\_ULONG64", "24"
+   "Tango::DevVarLong64Array", "Tango::DEVVAR\_LONG64ARRAY", "25"
+   "Tango::DevVarULong64Array", "Tango::DEVVAR\_ULONG64ARRAY", "26"
+   "Tango::DevInt", "Tango::DEV\_INT", "27"
+   "Tango::DevEncoded", "Tango::DEV\_ENCODED", "28"
+   "Tango::DevEnum", "Tango::DEV\_ENUM", "29"
+   "Tango::DevPipeBlob", "Tango::DEV\_PIPE\_BLOB", "30"
+   "Tango::DevVarStateArray", "Tango::DEVVAR\_STATEARRAY", "31"
 
 For command which do not take input parameter, the type code
 Tango::DEV\_VOID (value = 0) has been defined.
@@ -13435,9 +13555,9 @@ struct ArchiveEventProp
 
    DevVarStringArray extensions;
 
-| };\ ****
-| ****
-| **AttributeAlarm**
+ };
+
+**AttributeAlarm**
 
 struct AttributeAlarm
 
@@ -13457,12 +13577,11 @@ struct AttributeAlarm
 
    DevVarStringArray extensions;
 
-| };\ ****
-| ****
-| **AttDataReady**
+ };
+
+**AttDataReady**
 
 struct AttributeAlarm
-
 {
 
    string name;
@@ -13471,9 +13590,9 @@ struct AttributeAlarm
 
    long ctr;
 
-| }\ **;**
-| ****
-| **AttributeConfig**
+}
+
+**AttributeConfig**
 
 struct AttributeConfig
 
@@ -13515,7 +13634,7 @@ struct AttributeConfig
 
    DevVarStringArray extensions;
 
-| };
+};
 
 **AttributeConfig\_2**
 
@@ -13561,7 +13680,7 @@ struct AttributeConfig\_2
 
    DevVarStringArray extensions;
 
-| };
+};
 
 **AttributeConfig\_3**
 
@@ -13609,7 +13728,7 @@ struct AttributeConfig\_3
 
    DevVarStringArray sys\_extensions;
 
-| };
+};
 
 **AttributeConfig\_5**
 
@@ -13665,7 +13784,7 @@ struct AttributeConfig\_5
 
    DevVarStringArray sys\_extensions;
 
-| };
+};
 
 **AttributeDim**
 
@@ -13719,7 +13838,7 @@ struct AttributeValue\_3
 
    DevErrorList err\_list;
 
-| };
+};
 
 **AttributeValue\_4**
 
@@ -13743,7 +13862,7 @@ struct AttributeValue\_4
 
    DevErrorList err\_list;
 
-| };
+};
 
 **AttributeValue\_5**
 
@@ -13769,7 +13888,7 @@ struct AttributeValue\_5
 
    DevErrorList err\_list;
 
-| };
+};
 
 **ChangeEventProp**
 
@@ -13783,7 +13902,7 @@ struct ChangeEventProp
 
    DevVarStringArray extensions;
 
-| };
+};
 
 **DevAttrHistory**
 
@@ -13809,7 +13928,7 @@ struct DevAttrHistory\_3
 
    AttributeValue\_3 value;
 
-| };
+};
 
 **DevAttrHistory\_4**
 
@@ -13839,7 +13958,7 @@ struct DevAttrHistory\_4
 
    EltInArrayList errors\_array;
 
-| };
+};
 
 **DevAttrHistory\_5**
 
@@ -13953,7 +14072,7 @@ struct DevCmdInfo\_2
 
    string out\_type\_desc;
 
-| };
+};
 
 **DevEncoded**
 
@@ -13965,7 +14084,7 @@ struct DevEncoded
 
    DevVarCharArray encoded\_data;
 
-| };
+};
 
 **DevError**
 
@@ -13981,7 +14100,7 @@ struct DevError
 
    string origin;
 
-| };
+};
 
 **DevInfo**
 
@@ -13999,7 +14118,7 @@ struct DevInfo
 
    string doc\_url;
 
-| };
+};
 
 **DevInfo\_3**
 
@@ -14019,7 +14138,7 @@ struct DevInfo\_3
 
    string dev\_type;
 
-| };
+};
 
 **DevIntrChange**
 
@@ -14033,7 +14152,7 @@ struct DevIntrChange
 
    AttributeConfigList\_5 atts;
 
-| };
+};
 
 **DevPipeBlob**
 
@@ -14059,7 +14178,7 @@ struct DevPipeData
 
    DevPipeBlob data\_blob;
 
-| };
+};
 
 **DevPipeDataElt**
 
@@ -14075,7 +14194,7 @@ struct DevPipeDataElt
 
    string inner\_blob\_name;
 
-| };
+};
 
 **DevVarDoubleStringArray**
 
@@ -14087,7 +14206,7 @@ struct DevVarDoubleStringArray
 
    DevVarStringArray svalue;
 
-| };
+};
 
 **DevVarLongStringArray**
 
@@ -14099,7 +14218,7 @@ struct DevVarLongStringArray
 
    DevVarStringArray svalue;
 
-| };
+};
 
 **EltInArray**
 
@@ -14125,7 +14244,7 @@ struct EventProperties
 
    ArchiveEventProp arch\_event;
 
-| };
+};
 
 **JavaClntIdent**
 
@@ -14137,7 +14256,7 @@ struct JavaClntIdent
 
    JavaUUID uuid;
 
-| };
+};
 
 **NamedDevError**
 
@@ -14151,7 +14270,7 @@ struct NamedDevError
 
    DevErrorList err\_list;
 
-| };
+};
 
 **PeriodicEventProp**
 
@@ -14163,7 +14282,7 @@ struct PeriodicEventProp
 
    DevVarStringArray extensions;
 
-| };
+};
 
 **PipeConfig**
 
@@ -14183,9 +14302,9 @@ struct PipeConfig
 
    DevVarStringArray extensions;
 
-| };
+};
 
-**TimeV**\ a\ **l**
+**TimeVal**
 
 struct TimeVal
 
@@ -14286,9 +14405,9 @@ case ATT\_NO\_DATA:
 
    DevBoolean union\_no\_data;
 
-| };\ ****
-| ****
-| **ClntIdent**
+};
+
+**ClntIdent**
 
 union ClntIdent switch (LockerLanguage)
 
@@ -14315,9 +14434,9 @@ exception DevFailed
 
    DevErrorList errors;
 
-| };\ ****
-| ****
-| **MultiDevFailed**
+};
+
+**MultiDevFailed**
 
 exception MultiDevFailed
 
@@ -14325,7 +14444,7 @@ exception MultiDevFailed
 
    NamedDevErrorList errors;
 
-| };
+};
 
 Interface Tango::Device
 -----------------------
@@ -14504,8 +14623,8 @@ void write\_attributes(in AttributeValueList values)
 Interface Tango::Device\_2
 --------------------------
 
-| interface Device\_2 inherits from Tango::Device
-| The updated Tango device interface. It inherits from Tango::Device and
+  interface Device\_2 inherits from Tango::Device
+  The updated Tango device interface. It inherits from Tango::Device and
   therefore supports all attribute/operation defined in the
   Tango::Device interface. Two CORBA operations have been modified to
   support more parameters (command\_inout\_2 and read\_attribute\_2).
@@ -14521,8 +14640,8 @@ Operations
 any command\_inout\_2(in string command, in any argin, in DevSource
 source)
 
-| raises(DevFailed);
-| execute a command on a device synchronously with no input parameter
+  raises(DevFailed);
+  execute a command on a device synchronously with no input parameter
   and one one output parameter
 | *Parameters:*
 
@@ -15165,7 +15284,7 @@ Reserved words and characters, limitations
 ------------------------------------------
 
 From the naming schema described above, the reserved characters are
-**:**,\ **#**,\ **/** and the reserved string is : **->**. On top of
+**\:**, **\#**, **\/** and the reserved string is : **->**. On top of
 that, the dbt\_update tool (tool to fulfill database from the content of
 a file) reserved the **device** word
 
@@ -15173,16 +15292,18 @@ The device name, its domain, member and family fields and its alias are
 stored in the Tango database. The default maximum size for these items
 are :
 
-\|c\|c\| Item & max length
- device name & 255
- domain field & 85
- family field & 85
- member field & 85
- device alias name & 255
+.. csv-table::
+   :header-rows: 1
+
+   "Item", "max length"
+   "device name", "255"
+   "domain field", "85"
+   "family field", "85"
+   "member field", "85"
+   "device alias name", "255"
 
 The device name, the command name, the attribute name, the property
-name, the device alias name and the device server name are **case
-insensitive**.
+name, the device alias name and the device server name are **case insensitive**.
 
 Starting a Tango control system
 ===============================
@@ -15212,7 +15333,7 @@ environment variables. Define them before starting the database server.
 If you are using the Tango administration graphical tool called
 **Astor**, you also need to start a specific Tango device server called
 **Starter** on each host where Tango device server(s) are running. See
-:raw-latex:`\cite{Astor_doc}` for Astor documentation. This starter
+[ASTOR]_ for Astor documentation. This starter
 device server is able to start even before the Tango database device
 server is started. In this case, it will enter a loop in which it
 periodically tries to access the Tango database device. The loop exits
