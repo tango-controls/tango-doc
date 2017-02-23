@@ -36,13 +36,13 @@
 
 .. |image17| image:: dance/tango-08-39.jpg
 
-.. |image18| image:: advanced/ThreadsManagement.jpg
+.. |image18| image:: advanced/ThreadsManagement.png
 
 .. |image19| image:: advanced/jive_simpl.jpg
 
 .. |image20| image:: advanced/jive_sophis.jpg
 
-.. |image21| image:: advanced/control.jpg
+.. |image21| image:: advanced/control.png
 
 .. |image22| image:: dance/AT97-65-size.jpg
 

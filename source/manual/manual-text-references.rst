@@ -2,6 +2,8 @@
 
 .. _`OMG home page`: http://www.omg.org
 
+.. [OMG] `OMG home page`_
+
 .. [Henning] Advanced CORBA programming with C++ by M.Henning and S.Vinosky (Addison-Wesley 1999)
 
 .. _`TANGO home page`: http://www.tango-controls.org
@@ -22,7 +24,7 @@
 
 .. _`Tango classes on-line documentation`: http://www.tango-controls.org/resources/dsc
 
-.. [TangoRefMan] `Tango classes on-line documentation`_
+.. [TangoClasses] `Tango classes on-line documentation`_
 
 .. [Stroustrup] C++ programming language third edition by Stroustrup (Addison-Wesley)
 
@@ -39,23 +41,37 @@
 
 .. _`POGO home page`: http://www.esrf.eu/computing/cs/tango/tango_doc/tools_doc/pogo_doc/index.html
 
+.. [POGO] `POGO home page`_
+
 .. _`JacORB home page`: http://www.jacorb.org
 
 .. _`Tango ATK reference on-line documentation`: http://www.esrf.eu/computing/cs/tango/tango_doc/atk_doc/index.html
+
+.. [ATKref] `Tango ATK reference on-line documentation`_
 
 .. [NotificationService] The Notification Service specification available from OMG home page - http://www.omg.org
 
 .. _`ASTOR home page`: http://www.esrf.eu/computing/cs/tango/tango_doc/tools_doc/astor_doc/index.html
 
+.. [ASTOR] `ASTOR home page`_
+
 .. _`Elettra home page`: http://www.elettra.trieste.it
 
 .. _`JIVE home page`: http://www.esrf.eu/computing/cs/tango/tango_doc/tools_doc/jive_doc/index.html
+
+.. [Jive] `JIVE home page`_
 
 .. _`Tango ATK Tutorial`: http://www.esrf.eu/computing/cs/tango/tango_doc/atk_tutorial/Tutorials.pdf
 
 .. _`ATK Tutorial`: `Tango ATK Tutorial`_
 
+.. [ATKtutorial] `ATK Tutorial`_
+
 .. _`ZMQ home page`: http://www.zeromq.org
+
+.. [ZMQ] `ZMQ home page`_
 
 .. _`Tango class development reference documentation`:
     http://www.esrf.eu/computing/cs/tango/tango_doc/kernel_doc/cpp_doc/index.html
+
+.. [TangoRefMan] `Tango class development reference documentation`_

@@ -9104,7 +9104,7 @@ Tango class:
 The figure [r\_pipe\_timing\_fig-1] is a drawing of these method calls
 sequencing for our class StepperMotor with one pipe named DynData.
 
-.. figure:: ds_writing/r_pipe
+.. figure:: ds_writing/r_pipe.png
    :alt: Read pipe sequencing
 
    Read pipe sequencing
@@ -9290,10 +9290,12 @@ these four parameters are not defined and no check will be done.
 The following figure is a drawing of attribute quality factor and device
 state values function of the the attribute value.
 
-.. figure:: advanced/alarm
+.. _`7.1`:
+
+.. figure:: advanced/alarm.png
    :alt: Level alarm
 
-   Level alarm
+   Figure 7.1: Level alarm
 
 If the min\_warning and max\_warning parameters are not set, the
 attribute quality factor will simply change between Tango::ATTR\_ALARM
@@ -9558,28 +9560,28 @@ administration device automatically implemented in every device server
 process. Seven commands are dedicated to this feature. These commands
 are
 
-AddObjPolling
+**AddObjPolling**
     It add a new object (command or attribute) to the list of object(s)
     to be polled. It is also with this command that the polling period
     is specified.
 
-RemObjPolling
+**RemObjPolling**
     To remove one object (command or attribute) from the polled
     object(s) list
 
-UpdObjPollingPeriod
+**UpdObjPollingPeriod**
     Change one object polling period
 
-StartPolling
+**StartPolling**
     Starts polling for the whole process
 
-StopPolling
+**StopPolling**
     Stops polling for the whole process
 
-PolledDevice
+**PolledDevice**
     Allow a client to know which device are polled
 
-DevPollStatus
+**DevPollStatus**
     Allow a client to precisely knows the polling status for a device
 
 All the necessary parameters for the polling configuration are stored in
@@ -9655,7 +9657,7 @@ poll the device command/attribute with a polling period below those
 defined by these properties. See Appendix A on device parameter to get a
 precise syntax description for these properties.
 
-The Jive:raw-latex:`\cite{Jive doc}` tool also allows a graphical device
+The Jive (`JIVE home page`_) tool also allows a graphical device
 polling configuration.
 
 Configuring the polling threads pool
@@ -9708,13 +9710,13 @@ Each time the polling threads pool configuration is changed, it is
 written in the database using the polling\_threads\_pool\_conf property.
 If the behaviour previously described does not fulfill your needs, it is
 possible to update the polling\_threads\_pool\_conf property in a
-graphical way using the Tango Astor :raw-latex:`\cite{Astor_doc}` tool
-or manually using the Jive tool :raw-latex:`\cite{Jive doc}`. These
+graphical way using the Tango Astor (`ASTOR home page`_) tool
+or manually using the Jive tool [JIVE]_. These
 changes will be taken into account at the next device server process
 start-up. At start-up, the polling threads pool will allways be
 configured as required by the polling\_threads\_pool\_conf property. The
 syntax used for this property is described in the Reference part of the
-Appendix [cha:Reference-part]. The following window dump is the Astor
+Appendix `Reference part`_. The following window dump is the Astor
 tool window which allows polling threads pool management.
 
 |image18|
@@ -10033,7 +10035,7 @@ deal with polling. These methods are:
    a command or an attribute
 
 The following code snippet is just an exmaple of how these methods could
-be used. They are documented in :raw-latex:`\cite{Tango-dsclasses-doc}`
+be used. They are documented in [TangoRefMan]_.
 
 .. code:: cpp
   :number-lines:
@@ -10497,8 +10499,8 @@ transport tuning. These properties are:
    not defined, the Tango library used a value of 80 Mbit/sec.
 
 -  **MulticastIvl** associated to the CtrlSystem object. It specifies
-   the maximum time (in sec) during which data has to be buffered for
-   re-transmission in case a receiver signals some lost data. The unit
+   the maximusm time (in sec) during which data has to be buffered for
+   re-transmision in case a receiver signals some lost data. The unit
    is seconds. In case this property is not defined, the Tango library
    takes a value of 20 seconds.
 
@@ -10845,7 +10847,7 @@ command line option. In this case,
 are handled using the specified file instead of the Tango database. The
 file is an ASCII file and follows a well-defined syntax with predefined
 keywords. The simplest way to generate the file for a specific device
-server is to use the Jive application. See :raw-latex:`\cite{Jive doc}`
+server is to use the Jive application. See [Jive]_
 to get Jive documentation. The Tango database is not only used to store
 device configuration parameters, it is also used to store device network
 access parameter (the CORBA IOR). To allow an application to connect to
@@ -11093,7 +11095,7 @@ gives Write Access to specific user on specific host (or family) and on
 specific device (or family).
 
 The rights managements are done using the Tango
-Astor:raw-latex:`\cite{Astor_doc}` tool which has some graphical windows
+Astor [ASTOR]_ tool which has some graphical windows
 allowing to grant/revoke user rights and to define device class allowed
 commands set. The following window dump shows this Astor window.
 
@@ -11198,14 +11200,17 @@ The device polling
 Seven device properties allow the polling tunning. These properties are
 described in the following table
 
-\|c\|c\|c\| Property name & property rule & default value
- poll\_ring\_depth & Polling buffer depth & 10
- cmd\_poll\_ring\_depth & Cmd polling buffer depth &
- attr\_poll\_ring\_depth & Attr polling buffer depth &
- poll\_old\_factor & Data too old factor & 4
- min\_poll\_period & Minimun polling period &
- cmd\_min\_poll\_period & Min. polling period for cmd &
- attr\_min\_poll\_period & Min. polling period for attr &
+.. csv-table::
+   :header-rows: 1
+
+   "Property name", "property rule", "default value"
+   "poll\_ring\_depth", "Polling buffer depth", "10"
+   "cmd\_poll\_ring\_depth", "Cmd polling buffer depth", ""
+   "attr\_poll\_ring\_depth", "Attr polling buffer depth", ""
+   "poll\_old\_factor", "Data too old factor", "4"
+   "min\_poll\_period", "Minimun polling period", ""
+   "cmd\_min\_poll\_period", "Min. polling period for cmd", ""
+   "attr\_min\_poll\_period", "Min. polling period for attr", ""
 
 The rule of the poll\_ring\_depth property is obvious. It defines the
 polling ring depth for all the device polled command(s) and
