@@ -1,6 +1,6 @@
 
 How to install Tago Controls and its parts on various platforms
-============================
+===============================================================
 
 Here you will find recipies on how-to install the Tango Controls on various systems.
 

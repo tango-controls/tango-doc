@@ -6,6 +6,10 @@
 .. image:: ../img/logo_tangocontrols.png
     :align: center
 
+:Author: The TANGO Team
+
+|image01|
+
 The TANGO Control System Manual
 ===============================
 
@@ -15,13 +19,26 @@ Contents:
    :maxdepth: 2
    :name: manulatoc
 
-   tango-manual
-
+   01-introduction
+   02-getting-started
+   03-device-server-model
+   04-tango-client
+   05-atk
+   06-device-server-writing
+   07-advanced-features
+   A-reference
+   B-idl
+   C-naming
+   D-starting
+   E-notifd2db
+   F-property
+   images
+   bibliography
+   footnotes
 
 
 
 
 * :ref:`genindex`
-* :ref:`modindex`
 * :ref:`search`
 

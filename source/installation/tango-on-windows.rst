@@ -132,9 +132,9 @@ database in its most common application. To make a computer become a Tango Host 
     - Change current path to where the :program:`nssm` is unpacked or copied, eg. :command:`cd "%TANGO_ROOT%\bin"`.
     - Invoke :command:`nssm.exe install Tango-DataBaseds`. This will open a window where you can define service parameters.
         - In the Application tab provide information as follows (adjust if your installation path is different).
-            .. image:: img/tango-on-windows/databaseds-as-service-01.png
+            .. image:: tango-on-windows/databaseds-as-service-01.png
         - In the Environment tab provide variables with credentials used for accessing the MySQL, like:
-            .. image:: img/tango-on-windows/databaseds-as-service-02.png
+            .. image:: tango-on-windows/databaseds-as-service-02.png
         - Click :guilabel:`Install Service`.
     - Invoke :command:`nssm.exe start Tango-DataBaseds` to start the service.
     - Test if everything is ok. Use :guilabel:`Start` menu to run Jive or in command line call
@@ -168,7 +168,7 @@ Assuming you have downloaded it and copied to the Tango bin folder please follow
       call :command:`tango-astor.bat`
     - In :guilabel:`Astor` window select menu :menuselection:`&Command --> Add a New Host`
     - In the form that appears provide your :guilabel:`Host name` and :guilabel:`Device Servers PATH`.
-        .. image:: img/tango-on-windows/starter-01.png
+        .. image:: tango-on-windows/starter-01.png
     - Accept with :guilabel:`Create`
     - Go back to :program:`Command Line`
 
@@ -183,7 +183,7 @@ Assuming you have downloaded it and copied to the Tango bin folder please follow
 
     - In the Environment tab provide TANGO_HOST variable, like:
 
-        .. image:: img/tango-on-windows/starter-as-service-02.png
+        .. image:: tango-on-windows/starter-as-service-02.png
     - Click :guilabel:.
     - Start the service: :command:`nssm.exe start Tango-Starter`.
     - Go back to :program:`Astor`.

@@ -10,4 +10,3 @@ Tango Controls concepts
 
 :term:`Device Class`
 
-:term:`
