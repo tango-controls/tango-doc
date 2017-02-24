@@ -6,6 +6,8 @@
 
 |image03|
 
+Image copyright info: [img3]_
+
 The TANGO device server model
 =============================
 

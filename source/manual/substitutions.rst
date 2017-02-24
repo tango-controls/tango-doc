@@ -18,6 +18,7 @@
    :width: 6.0cm
 
 .. |image08| image:: dance/0066-reduc.jpg
+   :width: 6.0cm
 
 .. |image09| image:: atk/img/core-widget.png
 

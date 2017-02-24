@@ -10,11 +10,10 @@
 
 |image01|
 
+Image copyright info: [img2]_
+
 The TANGO Control System Manual
 ===============================
-
-.. image:: /img/logo_tangocontrols.png
-    :align: center
 
 :Author: The TANGO Team
 

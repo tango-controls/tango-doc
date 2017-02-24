@@ -6,6 +6,8 @@
 
 |image17|
 
+Image copyright info: [img7]_
+
 Advanced features
 =================
 

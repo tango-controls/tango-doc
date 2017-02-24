@@ -6,6 +6,8 @@
 
 |image07|
 
+Image copyright info: [img4]_
+
 Writing a TANGO client using TANGO APIs
 =======================================
 

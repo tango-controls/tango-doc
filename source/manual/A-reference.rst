@@ -6,6 +6,8 @@
 
 |image22|
 
+Image copyright info: [img8]_
+
 Reference part
 ==============
 

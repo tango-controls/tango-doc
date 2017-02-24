@@ -6,6 +6,8 @@
 
 |image08|
 
+Image copyright info: [img5]_
+
 TangoATK Programmer’s Guide
 ===========================
 

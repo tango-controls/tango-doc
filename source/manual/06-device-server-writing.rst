@@ -6,6 +6,8 @@
 
 |image14|
 
+Image copyright info: [img6]_
+
 Writing a TANGO device server
 =============================
 
