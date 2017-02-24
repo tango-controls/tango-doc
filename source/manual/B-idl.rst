@@ -1,3 +1,7 @@
+.. raw:: latex
+
+    \clearpage
+
 .. include:: substitutions.rst
 
 The TANGO IDL file : Module Tango

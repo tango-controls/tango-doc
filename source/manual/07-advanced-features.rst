@@ -1,6 +1,10 @@
+.. raw:: latex
+
+    \clearpage
+
 .. include:: substitutions.rst
 
-[BlackPicture]|image17|
+|image17|
 
 Advanced features
 =================

@@ -1,3 +1,7 @@
+.. raw:: latex
+
+    \clearpage
+
 .. include:: substitutions.rst
 
 The notifd2db utility

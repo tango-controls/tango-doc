@@ -1,6 +1,10 @@
+.. raw:: latex
+
+    \clearpage
+
 .. include:: substitutions.rst
 
-[FourRicardo]|image22|
+|image22|
 
 Reference part
 ==============

@@ -1,3 +1,7 @@
+.. raw:: latex
+
+    \clearpage
+
 .. include:: substitutions.rst
 
 Tango object naming (device, attribute and property)
