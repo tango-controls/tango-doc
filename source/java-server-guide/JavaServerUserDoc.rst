@@ -825,611 +825,623 @@ Example:
    a. .. rubric:: Full sample device code
          :name: full-sample-device-code
 
-**package** org.tango.test;
+.. code:: java
+  :number-lines:
 
-**import** org.slf4j.Logger;
+    package org.tango.test;
+    
+    import org.slf4j.Logger;
+    
+    import org.slf4j.LoggerFactory;
+    
+    import org.tango.server.ServerManager;
+    
+    import org.tango.server.annotation.Attribute;
+    
+    import org.tango.server.annotation.Command;
+    
+    import org.tango.server.annotation.Delete;
+    
+    import org.tango.server.annotation.Device;
+    
+    import org.tango.server.annotation.Init;
+    
+    @Device
+    
+    public class TestDevice {
+    
+    private final Logger logger =
+    LoggerFactory.*getLogger*(TestDevice.class);
+    
+    /**
+    
+    * Attribute myAttribute READ WRITE, type DevDouble.
+    
+    */
+    
+    @Attribute
+    
+    public double myAttribute;
 
-**import** org.slf4j.LoggerFactory;
+    /**
 
-**import** org.tango.server.ServerManager;
+    * Starts the server.
 
-**import** org.tango.server.annotation.Attribute;
+    */
 
-**import** org.tango.server.annotation.Command;
+    public static void main(final String[] args) {
 
-**import** org.tango.server.annotation.Delete;
+    ServerManager.*getInstance*().start(args, TestDevice.class);
 
-**import** org.tango.server.annotation.Device;
+    }
 
-**import** org.tango.server.annotation.Init;
+    /**
 
-@Device
+    * init device
 
-**public** **class** TestDevice {
+    */
 
-**private** **final** Logger logger =
-LoggerFactory.\ *getLogger*\ (TestDevice.**class**);
+    @Init
 
-/\*\*
+    public void init() {
 
-\* Attribute myAttribute READ WRITE, type DevDouble.
+    logger.debug("init");
 
-\*/
+    }
 
-@Attribute
+    /**
 
-**public** **double** myAttribute;
+    * delete device
 
-/\*\*
+    */
 
-\* Starts the server.
+    @Delete
 
-\*/
+    public void delete() {
 
-**public** **static** **void** main(\ **final** String[] args) {
+    logger.debug("delete");
 
-ServerManager.\ *getInstance*\ ().start(args, TestDevice.\ **class**);
+    }
 
-}
+    /**
 
-/\*\*
+    * Execute command start. Type VOID-VOID
 
-\* init device
+    */
 
-\*/
+    @Command
 
-@Init
+    public void start() {
 
-**public** **void** init() {
+    logger.debug("start");
 
-logger.debug("init");
+    }
 
-}
+    /**
 
-/\*\*
+    * Read attribute myAttribute.
 
-\* delete device
+    *
 
-\*/
+    * @return
 
-@Delete
+    */
 
-**public** **void** delete() {
+    public double getMyAttribute() {
 
-logger.debug("delete");
+    logger.debug("getMyAttribute {}", myAttribute);
 
-}
+    return myAttribute;
 
-/\*\*
+    }
 
-\* Execute command start. Type VOID-VOID
+    /**
 
-\*/
+    * Write attribute myAttribute
 
-@Command
+    *
 
-**public** **void** start() {
+    * @param myAttribute
 
-logger.debug("start");
+    */
 
-}
+    public void setMyAttribute(final double myAttribute) {
 
-/\*\*
+    logger.debug("setMyAttribute {}", myAttribute);
 
-\* Read attribute myAttribute.
-
-\*
-
-\* **@return**
-
-\*/
-
-**public** **double** getMyAttribute() {
-
-logger.debug("getMyAttribute {}", myAttribute);
-
-**return** myAttribute;
-
-}
-
-/\*\*
-
-\* Write attribute myAttribute
-
-\*
-
-\* **@param** myAttribute
-
-\*/
-
-**public** **void** setMyAttribute(\ **final** **double** myAttribute) {
-
-logger.debug("setMyAttribute {}", myAttribute);
-
-**this**.myAttribute = myAttribute;
-
-}
-
-}
+    this.myAttribute = myAttribute;
+    
+    }
+    
+    }
 
 Command with ICommandBehavior
 -----------------------------
 
-**package** org.tango.test;
+.. code:: java
+  :number-lines:
 
-**import** org.tango.server.StateMachineBehavior;
-
-**import** org.tango.server.command.CommandConfiguration;
-
-**import** org.tango.server.command.ICommandBehavior;
-
-**import** fr.esrf.Tango.DevFailed;
-
-**public** **class** TestDynamicCommand **implements** ICommandBehavior
-{
-
-@Override
-
-**public** CommandConfiguration getConfiguration() **throws** DevFailed
-{
-
-**final** CommandConfiguration config = **new** CommandConfiguration();
-
-config.setName("testDynCmd");
-
-config.setInType(\ **void**.\ **class**);
-
-config.setOutType(\ **double**.\ **class**);
-
-**return** config;
-
-}
-
-@Override
-
-**public** Object execute(\ **final** Object arg) **throws** DevFailed {
-
-**return** 10.0;
-
-}
-
-@Override
-
-**public** StateMachineBehavior getStateMachine() **throws** DevFailed {
-
-**return** **null**;
-
-}
-
-}
+    package org.tango.test;
+    
+    import org.tango.server.StateMachineBehavior;
+    
+    import org.tango.server.command.CommandConfiguration;
+    
+    import org.tango.server.command.ICommandBehavior;
+    
+    import fr.esrf.Tango.DevFailed;
+    
+    public class TestDynamicCommand implements ICommandBehavior
+    {
+    
+    @Override
+    
+    public CommandConfiguration getConfiguration() throws DevFailed
+    {
+    
+    final CommandConfiguration config = new CommandConfiguration();
+    
+    config.setName("testDynCmd");
+    
+    config.setInType(\ void.\ class);
+    
+    config.setOutType(\ double.\ class);
+    
+    return config;
+    
+    }
+    
+    @Override
+    
+    public Object execute(\ final Object arg) throws DevFailed {
+    
+    return 10.0;
+    
+    }
+    
+    @Override
+    
+    public StateMachineBehavior getStateMachine() throws DevFailed {
+    
+    return null;
+    
+    }
+    
+    }
 
 Attribute with IAttributeBehavior
 ---------------------------------
 
-**package** org.tango.test;
+.. code:: java
+  :number-lines:
 
-**import** org.tango.server.StateMachineBehavior;
-
-**import** org.tango.server.attribute.AttributeConfiguration;
-
-**import** org.tango.server.attribute.AttributeValue;
-
-**import** org.tango.server.attribute.IAttributeBehavior;
-
-**import** fr.esrf.Tango.AttrWriteType;
-
-**import** fr.esrf.Tango.DevFailed;
-
-/\*\*
-
-\* A sample attribute
-
-\*
-
-\*/
-
-**public** **class** TestDynamicAttribute **implements**
-IAttributeBehavior {
-
-**private** **double** readValue = 0;
-
-**private** **double** writeValue = 0;
-
-/\*\*
-
-\* Configure the attribute
-
-\*/
-
-@Override
-
-**public** AttributeConfiguration getConfiguration() **throws**
-DevFailed {
-
-**final** AttributeConfiguration config = **new**
-AttributeConfiguration();
-
-config.setName("testDynAttr");
-
-// attribute testDynAttr is a DevDouble
-
-config.setType(\ **double**.\ **class**);
-
-// attribute testDynAttr is READ\_WRITE
-
-config.setWritable(AttrWriteType.\ *READ\_WRITE*);
-
-**return** config;
-
-}
-
-/\*\*
-
-\* Read the attribute
-
-\*/
-
-@Override
-
-**public** AttributeValue getValue() **throws** DevFailed {
-
-readValue = readValue + writeValue;
-
-**return** **new** AttributeValue(readValue);
-
-}
-
-/\*\*
-
-\* Write the attribute
-
-\*/
-
-@Override
-
-**public** **void** setValue(\ **final** AttributeValue value)
-**throws** DevFailed {
-
-writeValue = (Double) value.getValue();
-
-}
-
-/\*\*
-
-\* Configure state machine if needed
-
-\*/
-
-@Override
-
-**public** StateMachineBehavior getStateMachine() **throws** DevFailed {
-
-**final** StateMachineBehavior stateMachine = **new**
-StateMachineBehavior();
-
-stateMachine.setDeniedStates(DeviceState.\ *FAULT*);
-
-stateMachine.setEndState(DeviceState.\ *ON*);
-
-**return** stateMachine;
-
-}
-
-@Override
-
-**public** AttributeValue getSetValue() **throws** DevFailed {
-
-**return** **new** AttributeValue(writeValue);
-
-}
-
-}
+    package org.tango.test;
+    
+    import org.tango.server.StateMachineBehavior;
+    
+    import org.tango.server.attribute.AttributeConfiguration;
+    
+    import org.tango.server.attribute.AttributeValue;
+    
+    import org.tango.server.attribute.IAttributeBehavior;
+    
+    import fr.esrf.Tango.AttrWriteType;
+    
+    import fr.esrf.Tango.DevFailed;
+    
+    /**
+    
+    * A sample attribute
+    
+    *
+    
+    */
+    
+    public class TestDynamicAttribute implements
+    IAttributeBehavior {
+    
+    private double readValue = 0;
+    
+    private double writeValue = 0;
+    
+    /**
+    
+    * Configure the attribute
+    
+    */
+    
+    @Override
+    
+    public AttributeConfiguration getConfiguration() throws
+    DevFailed {
+    
+    final AttributeConfiguration config = new
+    AttributeConfiguration();
+    
+    config.setName("testDynAttr");
+    
+    // attribute testDynAttr is a DevDouble
+    
+    config.setType(\ double.\ class);
+    
+    // attribute testDynAttr is READ\_WRITE
+    
+    config.setWritable(AttrWriteType.\ *READ\_WRITE*);
+    
+    return config;
+    
+    }
+    
+    /**
+    
+    * Read the attribute
+    
+    */
+    
+    @Override
+    
+    public AttributeValue getValue() throws DevFailed {
+    
+    readValue = readValue + writeValue;
+    
+    return new AttributeValue(readValue);
+    
+    }
+    
+    /**
+    
+    * Write the attribute
+    
+    */
+    
+    @Override
+    
+    public void setValue(\ final AttributeValue value)
+    throws DevFailed {
+    
+    writeValue = (Double) value.getValue();
+    
+    }
+    
+    /**
+    
+    * Configure state machine if needed
+    
+    */
+    
+    @Override
+    
+    public StateMachineBehavior getStateMachine() throws DevFailed {
+    
+    final StateMachineBehavior stateMachine = new
+    StateMachineBehavior();
+    
+    stateMachine.setDeniedStates(DeviceState.\ *FAULT*);
+    
+    stateMachine.setEndState(DeviceState.\ *ON*);
+    
+    return stateMachine;
+    
+    }
+    
+    @Override
+    
+    public AttributeValue getSetValue() throws DevFailed {
+    
+    return new AttributeValue(writeValue);
+    
+    }
+    
+    }
 
 Extended example
 ----------------
 
-**package** org.tango.test;
-
-**import** java.util.Map;
-
-**import** org.slf4j.Logger;
-
-**import** org.slf4j.LoggerFactory;
-
-**import** org.tango.DeviceState;
-
-**import** org.tango.server.ServerManager;
-
-**import** org.tango.server.annotation.Attribute;
-
-**import** org.tango.server.annotation.ClassProperty;
-
-**import** org.tango.server.annotation.Command;
-
-**import** org.tango.server.annotation.Delete;
-
-**import** org.tango.server.annotation.Device;
-
-**import** org.tango.server.annotation.DeviceProperties;
-
-**import** org.tango.server.annotation.DeviceProperty;
-
-**import** org.tango.server.annotation.DynamicManagement;
-
-**import** org.tango.server.annotation.Init;
-
-**import** org.tango.server.annotation.State;
-
-**import** org.tango.server.annotation.StateMachine;
-
-**import** org.tango.server.dynamic.DynamicManager;
-
-**import** org.tango.server.testserver.JTangoTest;
-
-**import** fr.esrf.Tango.DevFailed;
-
-@Device
-
-**public** **class** TestDevice {
-
-**private** **final** Logger logger =
-LoggerFactory.\ *getLogger*\ (TestDevice.**class**);
-
-/\*\*
-
-\* A device property
-
-\*/
-
-@DeviceProperty(defaultValue = "", description = "an example device
-property")
-
-**private** String myProp;
-
-@ClassProperty(defaultValue = "0", description = "an example class
-property")
-
-**private** **int** myClassProp;
-
-@DeviceProperties
-
-**private** Map<String, String[]> deviceProperties;
-
-/\*\*
-
-\* Attribute myAttribute READ WRITE, type DevDouble.
-
-\*/
-
-@Attribute
-
-**public** **double** myAttribute;
-
-/\*\*
-
-\* Manage dynamic attributes and commands
-
-\*/
-
-@DynamicManagement
-
-**public** DynamicManager dynamicManager;
-
-/\*\*
-
-\* Manage state of the device
-
-\*/
-
-@State
-
-**private** DeviceState state = DeviceState.\ *OFF*;
-
-/\*\*
-
-\* Starts the server.
-
-\*/
-
-**public** **static** **void** main(\ **final** String[] args) {
-
-ServerManager.\ *getInstance*\ ().start(args, TestDevice.\ **class**);
-
-}
-
-**public** **static** **final** String *NO\_DB\_DEVICE\_NAME* = "1/1/1";
-
-**public** **static** **final** String *NO\_DB\_GIOP\_PORT* = "12354";
-
-**public** **static** **final** String *NO\_DB\_INSTANCE\_NAME* = "1";
-
-/\*\*
-
-\* Starts the server in nodb mode.
-
-\*
-
-\* **@throws** DevFailed
-
-\*/
-
-**public** **static** **void** startNoDb() {
-
-System.\ *setProperty*\ ("OAPort", *NO\_DB\_GIOP\_PORT*);
-
-ServerManager.\ *getInstance*\ ().start(**new** String[] {
-*NO\_DB\_INSTANCE\_NAME*, "-nodb", "-dlist", *NO\_DB\_DEVICE\_NAME* },
-
-TestDevice.\ **class**);
-
-}
-
-/\*\*
-
-\* Starts the server in nodb mode with a file for device and class
-properties
-
-\*
-
-\* **@throws** DevFailed
-
-\*/
-
-**public** **static** **void** startNoDbFile() **throws** DevFailed {
-
-System.\ *setProperty*\ ("OAPort", *NO\_DB\_GIOP\_PORT*);
-
-ServerManager.\ *getInstance*\ ().start(
-
-**new** String[] { *NO\_DB\_INSTANCE\_NAME*, "-nodb", "-dlist",
-*NO\_DB\_DEVICE\_NAME*,
-
-"-file=" +
-JTangoTest.\ **class**.getResource("/noDbproperties.txt").getPath() },
-TestDevice.\ **class**);
-
-}
-
-/\*\*
-
-\* init device
-
-\*
-
-\* **@throws** DevFailed
-
-\*/
-
-@Init
-
-@StateMachine(endState = DeviceState.\ *ON*)
-
-**public** **void** init() **throws** DevFailed {
-
-logger.debug("myProp value = {}", myProp);
-
-logger.debug("myClassProp value = {}", myClassProp);
-
-logger.debug("deviceProperties value = {}", deviceProperties);
-
-// *create* a *new* *dynamic* *attribute*
-
-dynamicManager.addAttribute(\ **new** TestDynamicAttribute());
-
-// *create* a *new* *dynamic* *command*
-
-dynamicManager.addCommand(\ **new** TestDynamicCommand());
-
-logger.debug("init done");
-
-}
-
-/\*\*
-
-\* delete device
-
-\*
-
-\* **@throws** DevFailed
-
-\*/
-
-@Delete
-
-**public** **void** delete() **throws** DevFailed {
-
-logger.debug("delete");
-
-// remove all dynamic commands and attributes
-
-dynamicManager.clearAll();
-
-}
-
-/\*\*
-
-\* Execute command start.
-
-\*/
-
-@Command
-
-@StateMachine(endState = DeviceState.\ *RUNNING*, deniedStates =
-DeviceState.\ *FAULT*)
-
-**public** **void** start() {
-
-logger.debug("start");
-
-}
-
-/\*\*
-
-\* Read attribute myAttribute.
-
-\*
-
-\* **@return**
-
-\*/
-
-**public** **double** getMyAttribute() {
-
-logger.debug("getMyAttribute {}", myAttribute);
-
-**return** myAttribute;
-
-}
-
-/\*\*
-
-\* Write attribute myAttribute
-
-\*
-
-\* **@param** myAttribute
-
-\*/
-
-**public** **void** setMyAttribute(\ **final** **double** myAttribute) {
-
-logger.debug("setMyAttribute {}", myAttribute);
-
-**this**.myAttribute = myAttribute;
-
-}
-
-**public** **void** setMyProp(\ **final** String myProp) {
-
-**this**.myProp = myProp;
-
-}
-
-**public** **void** setMyClassProp(\ **final** **int** myClassProp) {
-
-**this**.myClassProp = myClassProp;
-
-}
-
-**public** Map<String, String[]> getDeviceProperties() {
-
-**return** deviceProperties;
-
-}
-
-**public** DeviceState getState() {
-
-**return** state;
-
-}
-
-**public** **void** setState(\ **final** DeviceState state) {
-
-**this**.state = state;
-
-}
-
-}
+.. code:: java
+  :number-lines:
+
+    package org.tango.test;
+    
+    import java.util.Map;
+    
+    import org.slf4j.Logger;
+    
+    import org.slf4j.LoggerFactory;
+    
+    import org.tango.DeviceState;
+    
+    import org.tango.server.ServerManager;
+    
+    import org.tango.server.annotation.Attribute;
+    
+    import org.tango.server.annotation.ClassProperty;
+    
+    import org.tango.server.annotation.Command;
+    
+    import org.tango.server.annotation.Delete;
+    
+    import org.tango.server.annotation.Device;
+    
+    import org.tango.server.annotation.DeviceProperties;
+    
+    import org.tango.server.annotation.DeviceProperty;
+    
+    import org.tango.server.annotation.DynamicManagement;
+    
+    import org.tango.server.annotation.Init;
+    
+    import org.tango.server.annotation.State;
+    
+    import org.tango.server.annotation.StateMachine;
+    
+    import org.tango.server.dynamic.DynamicManager;
+    
+    import org.tango.server.testserver.JTangoTest;
+    
+    import fr.esrf.Tango.DevFailed;
+    
+    @Device
+    
+    public class TestDevice {
+    
+    private final Logger logger =
+    LoggerFactory.getLogger(TestDevice.class);
+    
+    /**
+    
+    * A device property
+    
+    */
+    
+    @DeviceProperty(defaultValue = "", description = "an example device
+    property")
+    
+    private String myProp;
+    
+    @ClassProperty(defaultValue = "0", description = "an example class
+    property")
+    
+    private int myClassProp;
+    
+    @DeviceProperties
+    
+    private Map<String, String[]> deviceProperties;
+    
+    /**
+    
+    * Attribute myAttribute READ WRITE, type DevDouble.
+    
+    */
+    
+    @Attribute
+    
+    public double myAttribute;
+    
+    /**
+    
+    * Manage dynamic attributes and commands
+    
+    */
+    
+    @DynamicManagement
+    
+    public DynamicManager dynamicManager;
+    
+    /**
+    
+    * Manage state of the device
+    
+    */
+    
+    @State
+    
+    private DeviceState state = DeviceState.OFF;
+    
+    /**
+    
+    * Starts the server.
+    
+    */
+    
+    public static void main(final String[] args) {
+    
+    ServerManager.getInstance().start(args, TestDevice.class);
+    
+    }
+    
+    public static final String *NO\_DB\_DEVICE\_NAME* = "1/1/1";
+    
+    public static final String *NO\_DB\_GIOP\_PORT* = "12354";
+    
+    public static final String *NO\_DB\_INSTANCE\_NAME* = "1";
+    
+    /**
+    
+    * Starts the server in nodb mode.
+    
+    *
+    
+    * @throws DevFailed
+    
+    */
+    
+    public static void startNoDb() {
+    
+    System.setProperty("OAPort", *NO\_DB\_GIOP\_PORT*);
+    
+    ServerManager.getInstance().start(new String[] {
+    *NO\_DB\_INSTANCE\_NAME*, "-nodb", "-dlist", *NO\_DB\_DEVICE\_NAME* },
+    
+    TestDevice.class);
+    
+    }
+    
+    /**
+    
+    * Starts the server in nodb mode with a file for device and class
+    properties
+    
+    *
+    
+    * @throws DevFailed
+    
+    */
+    
+    public static void startNoDbFile() throws DevFailed {
+    
+    System.setProperty("OAPort", *NO\_DB\_GIOP\_PORT*);
+    
+    ServerManager.getInstance().start(
+    
+    new String[] { *NO\_DB\_INSTANCE\_NAME*, "-nodb", "-dlist",
+    *NO\_DB\_DEVICE\_NAME*,
+    
+    "-file=" +
+    JTangoTest.class.getResource("/noDbproperties.txt").getPath() },
+    TestDevice.class);
+    
+    }
+    
+    /**
+    
+    * init device
+    
+    *
+    
+    * @throws DevFailed
+    
+    */
+    
+    @Init
+    
+    @StateMachine(endState = DeviceState.ON)
+    
+    public void init() throws DevFailed {
+    
+    logger.debug("myProp value = {}", myProp);
+    
+    logger.debug("myClassProp value = {}", myClassProp);
+    
+    logger.debug("deviceProperties value = {}", deviceProperties);
+    
+    // create a new dynamic attribute
+    
+    dynamicManager.addAttribute(new TestDynamicAttribute());
+    
+    // create a new dynamic command
+    
+    dynamicManager.addCommand(new TestDynamicCommand());
+    
+    logger.debug("init done");
+    
+    }
+    
+    /**
+    
+    * delete device
+    
+    *
+    
+    * @throws DevFailed
+    
+    */
+    
+    @Delete
+    
+    public void delete() throws DevFailed {
+    
+    logger.debug("delete");
+    
+    // remove all dynamic commands and attributes
+    
+    dynamicManager.clearAll();
+    
+    }
+    
+    /**
+    
+    * Execute command start.
+    
+    */
+    
+    @Command
+    
+    @StateMachine(endState = DeviceState.RUNNING, deniedStates =
+    DeviceState.FAULT)
+    
+    public void start() {
+    
+    logger.debug("start");
+    
+    }
+    
+    /**
+    
+    * Read attribute myAttribute.
+    
+    *
+    
+    * @return
+    
+    */
+    
+    public double getMyAttribute() {
+    
+    logger.debug("getMyAttribute {}", myAttribute);
+    
+    return myAttribute;
+    
+    }
+    
+    /**
+    
+    * Write attribute myAttribute
+    
+    *
+    
+    * @param myAttribute
+    
+    */
+    
+    public void setMyAttribute(final double myAttribute) {
+    
+    logger.debug("setMyAttribute {}", myAttribute);
+    
+    this.myAttribute = myAttribute;
+    
+    }
+    
+    public void setMyProp(final String myProp) {
+    
+    this.myProp = myProp;
+    
+    }
+    
+    public void setMyClassProp(final int myClassProp) {
+    
+    this.myClassProp = myClassProp;
+    
+    }
+    
+    public Map<String, String[]> getDeviceProperties() {
+    
+    return deviceProperties;
+    
+    }
+    
+    public DeviceState getState() {
+    
+    return state;
+    
+    }
+    
+    public void setState(final DeviceState state) {
+    
+    this.state = state;
+    
+    }
+    
+    }
 
 Logging configuration with logback
 ----------------------------------
