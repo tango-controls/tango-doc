@@ -319,13 +319,9 @@ Here are the Tango types for each Java type:
 NB: Full class names of tango attributes:
 
 ``fr.esrf.Tango.DevState``
-
 ``fr.esrf.Tango.DevEncoded``
-
 ``fr.esrf.Tango.DevVarLongStringArray``
-
 ``fr.esrf.Tango.DevVarDoubleStringArray``
-
 ``org.tango.DeviceState``
 
 Tango provides also other types that do not have equivalent in Java
@@ -386,7 +382,7 @@ consequently a rapid control system startup.
 Delete
 ======
 
-org.tango.server.annotation.Delete
+``org.tango.server.annotation.Delete``
 
 Method must be public with no parameters. It is called:
 
@@ -399,7 +395,7 @@ The delete method is generally used to close resources.
 State
 =====
 
-org.tango.server.annotation.State
+``org.tango.server.annotation.State``
 
 The state annotation defines the state of the device, which will appear
 in the default command and attribute “State”. The field can be
@@ -452,7 +448,7 @@ initialization.
 Device properties
 =================
 
-org.tango.server.annotation.DeviceProperties
+``org.tango.server.annotation.DeviceProperties``
 
 It is possible to retrieve all device properties at once. It can be
 useful if some device properties are not known in advance (Example: some
@@ -467,7 +463,7 @@ initialization.
 Class property
 ==============
 
-org.tango.server.annotation.ClassProperty
+``org.tango.server.annotation.ClassProperty``
 
 The field can be of any standard java type (int, double …), as scalar or
 array.
