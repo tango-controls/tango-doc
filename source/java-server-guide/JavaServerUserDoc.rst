@@ -851,7 +851,7 @@ Example:
     public class TestDevice {
     
     private final Logger logger =
-    LoggerFactory.*getLogger*(TestDevice.class);
+    LoggerFactory.getLogger(TestDevice.class);
     
     /**
     
@@ -871,7 +871,7 @@ Example:
 
     public static void main(final String[] args) {
 
-    ServerManager.*getInstance*().start(args, TestDevice.class);
+    ServerManager.getInstance().start(args, TestDevice.class);
 
     }
 
@@ -983,9 +983,9 @@ Command with ICommandBehavior
     
     config.setName("testDynCmd");
     
-    config.setInType(\ void.\ class);
+    config.setInType(void.class);
     
-    config.setOutType(\ double.\ class);
+    config.setOutType(double.class);
     
     return config;
     
@@ -993,7 +993,7 @@ Command with ICommandBehavior
     
     @Override
     
-    public Object execute(\ final Object arg) throws DevFailed {
+    public Object execute(final Object arg) throws DevFailed {
     
     return 10.0;
     
@@ -1062,11 +1062,11 @@ Attribute with IAttributeBehavior
     
     // attribute testDynAttr is a DevDouble
     
-    config.setType(\ double.\ class);
+    config.setType(double.class);
     
-    // attribute testDynAttr is READ\_WRITE
+    // attribute testDynAttr is READ_WRITE
     
-    config.setWritable(AttrWriteType.\ *READ\_WRITE*);
+    config.setWritable(AttrWriteType.READ_WRITE);
     
     return config;
     
@@ -1096,7 +1096,7 @@ Attribute with IAttributeBehavior
     
     @Override
     
-    public void setValue(\ final AttributeValue value)
+    public void setValue(final AttributeValue value)
     throws DevFailed {
     
     writeValue = (Double) value.getValue();
@@ -1116,9 +1116,9 @@ Attribute with IAttributeBehavior
     final StateMachineBehavior stateMachine = new
     StateMachineBehavior();
     
-    stateMachine.setDeniedStates(DeviceState.\ *FAULT*);
+    stateMachine.setDeniedStates(DeviceState.FAULT);
     
-    stateMachine.setEndState(DeviceState.\ *ON*);
+    stateMachine.setEndState(DeviceState.ON);
     
     return stateMachine;
     
@@ -1249,11 +1249,11 @@ Extended example
     
     }
     
-    public static final String *NO\_DB\_DEVICE\_NAME* = "1/1/1";
+    public static final String NO_DB_DEVICE_NAME = "1/1/1";
     
-    public static final String *NO\_DB\_GIOP\_PORT* = "12354";
+    public static final String NO_DB_GIOP_PORT = "12354";
     
-    public static final String *NO\_DB\_INSTANCE\_NAME* = "1";
+    public static final String NO_DB_INSTANCE_NAME = "1";
     
     /**
     
@@ -1267,10 +1267,10 @@ Extended example
     
     public static void startNoDb() {
     
-    System.setProperty("OAPort", *NO\_DB\_GIOP\_PORT*);
+    System.setProperty("OAPort", NO_DB_GIOP_PORT);
     
     ServerManager.getInstance().start(new String[] {
-    *NO\_DB\_INSTANCE\_NAME*, "-nodb", "-dlist", *NO\_DB\_DEVICE\_NAME* },
+    NO_DB_INSTANCE_NAME, "-nodb", "-dlist", NO_DB_DEVICE_NAME },
     
     TestDevice.class);
     
@@ -1289,12 +1289,12 @@ Extended example
     
     public static void startNoDbFile() throws DevFailed {
     
-    System.setProperty("OAPort", *NO\_DB\_GIOP\_PORT*);
+    System.setProperty("OAPort", NO_DB_GIOP_PORT);
     
     ServerManager.getInstance().start(
     
-    new String[] { *NO\_DB\_INSTANCE\_NAME*, "-nodb", "-dlist",
-    *NO\_DB\_DEVICE\_NAME*,
+    new String[] { NO_DB_INSTANCE_NAME, "-nodb", "-dlist",
+    NO_DB_DEVICE_NAME,
     
     "-file=" +
     JTangoTest.class.getResource("/noDbproperties.txt").getPath() },
