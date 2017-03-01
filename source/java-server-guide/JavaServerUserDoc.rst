@@ -1,3 +1,5 @@
+.. highlight:: java
+
 Introduction
 ============
 
@@ -316,15 +318,15 @@ Here are the Tango types for each Java type:
 
 NB: Full class names of tango attributes:
 
-fr.esrf.Tango.DevState
+``fr.esrf.Tango.DevState``
 
-fr.esrf.Tango.DevEncoded
+``fr.esrf.Tango.DevEncoded``
 
-fr.esrf.Tango.DevVarLongStringArray
+``fr.esrf.Tango.DevVarLongStringArray``
 
-fr.esrf.Tango.DevVarDoubleStringArray
+``fr.esrf.Tango.DevVarDoubleStringArray``
 
-org.tango.DeviceState
+``org.tango.DeviceState``
 
 Tango provides also other types that do not have equivalent in Java
 types: DEVULONG, DEVULONG64, and DEVUSHORT, DEVENUM (with enumerated
@@ -340,13 +342,13 @@ A Tango attribute has also a quality and a timestamp. The default
 behavior is a valid quality, and the timestamp is the read time. To
 access these properties, the getter method can return a container for
 the attribute value, quality and timestamp. The container is:
-org.tango.server.attribute.AttributeValue. It contains constructors and
+``org.tango.server.attribute.AttributeValue``. It contains constructors and
 methods to set the value, quality and timestamp. Please refer to its
 javadoc for details.
 
 The default attribute properties are configurable with this annotation:
 
-org.tango.server.annotation.AttributeProperties
+``org.tango.server.annotation.AttributeProperties``
 
 Please refer to javadoc for details. Example:
 
@@ -356,14 +358,14 @@ Pipe
     A tango pipe is created with this Java annotation on a method or a
     field:
 
-    org.tango.server.annotation.Pipe
+    ``org.tango.server.annotation.Pipe``
 
     Example code of a read pipe:
 
 Init
 ====
 
-org.tango.server.annotation.Init
+``org.tango.server.annotation.Init``
 
 This method must be public with no parameters. It is called:
 
@@ -401,11 +403,11 @@ org.tango.server.annotation.State
 
 The state annotation defines the state of the device, which will appear
 in the default command and attribute “State”. The field can be
-fr.esrf.Tango.DevState or org.tango.DeviceState:
+``fr.esrf.Tango.DevState`` or ``org.tango.DeviceState``:
 
--  DevState is the Tango standard type defined by the IDL.
+-  ``DevState`` is the Tango standard type defined by the IDL.
 
--  DeviceState is java Enum that provides easiness to manage a State.
+-  ``DeviceState`` is java ``Enum`` that provides easiness to manage a State.
 
 Getter and setter are mandatory.
 
@@ -420,7 +422,7 @@ it could lead to performance issues.
 Status
 ======
 
-org.tango.server.annotation.Status
+``org.tango.server.annotation.Status``
 
 The status annotation defines the status of the device, which will
 appear in the default command and attribute “Status”. The status field
@@ -429,7 +431,7 @@ must be a String, getter and setter are mandatory.
 Device property
 ===============
 
-org.tango.server.annotation.DeviceProperty
+``org.tango.server.annotation.DeviceProperty``
 
 *NB: Tango reminder: loading order of a device property:*
 
@@ -478,7 +480,7 @@ initialization.
 Around Invoke
 =============
 
-org.tango.server.annotation.AroundInvoke
+``org.tango.server.annotation.AroundInvoke``
 
 It defines a public void method with a single parameter of class
 org.tango.server.InvocationContext. It is called before and after every
@@ -488,7 +490,7 @@ executed hook” in C++.
 State machine
 =============
 
-org.tango.server.annotation.StateMachine
+``org.tango.server.annotation.StateMachine``
 
 The StateMachine annotation allows to define some denied states, and
 some state changes:
@@ -505,7 +507,7 @@ some state changes:
 Device Manager
 ==============
 
-org.tango.server.annotation.DeviceManagement
+``org.tango.server.annotation.DeviceManagement``
 
 DeviceManager contains common utilities for a device. For example, it
 provides its name, its admin device name, a way to change attribute
@@ -532,7 +534,7 @@ Dynamic Command
 
 A dynamic command is a class that must implement the interface:
 
-org.tango.server.command.ICommandBehavior
+``org.tango.server.command.ICommandBehavior``
 
 See annexes for a full sample code.
 
@@ -574,7 +576,7 @@ Dynamic Attribute
 
 A dynamic attribute is a class that must implement:
 
-org.tango.server.attribute.IAttributeBehavior
+``org.tango.server.attribute.IAttributeBehavior``
 
 See annexes for a full sample code.
 
@@ -630,7 +632,7 @@ Forwarded Attribute
 ~~~~~~~~~~~~~~~~~~~
 
 To create a forwarded attribute, just use
-org.tango.server.attribute.ForwardedAttribute:
+``org.tango.server.attribute.ForwardedAttribute``:
 
 Default dynamic attributes and commands
 =======================================
@@ -727,7 +729,7 @@ The standard exception in Tango is fr.esrf.DevFailed. The class
 org.tango.DevFailedUtils is useful to throw it. It will, for instance,
 fill the origin field. See javadoc for details.
 
-**Loggin**\ g
+Logging
 =============
 
 The Java Tango server API uses SLF4J
@@ -825,8 +827,7 @@ Example:
    a. .. rubric:: Full sample device code
          :name: full-sample-device-code
 
-.. code:: java
-  :number-lines:
+.. code-block:: java
 
     package org.tango.test;
     
@@ -958,8 +959,7 @@ Example:
 Command with ICommandBehavior
 -----------------------------
 
-.. code:: java
-  :number-lines:
+.. code-block:: java
 
     package org.tango.test;
     
@@ -1012,8 +1012,7 @@ Command with ICommandBehavior
 Attribute with IAttributeBehavior
 ---------------------------------
 
-.. code:: java
-  :number-lines:
+.. code-block:: java
 
     package org.tango.test;
     
@@ -1137,8 +1136,7 @@ Attribute with IAttributeBehavior
 Extended example
 ----------------
 
-.. code:: java
-  :number-lines:
+.. code-block:: java
 
     package org.tango.test;
     
@@ -1453,48 +1451,52 @@ log in debug (root level). See
 `*http://logback.qos.ch/manual/configuration.html* <http://logback.qos.ch/manual/configuration.html>`__
 for details.
 
-<?xml version=\ *"1.0"* encoding=\ *"UTF-8"* ?>
+.. code-block:: xml
 
-<configuration>
-
-<jmxConfigurator />
-
-<appender name=\ *"CONSOLE"*
-class=\ *"ch.qos.logback.core.ConsoleAppender"*>
-
-<layout class=\ *"ch.qos.logback.classic.PatternLayout"*>
-
-<pattern>%-5level %d{HH:mm:ss.SSS} [%*thread* - %X{deviceName}]
-%\ *logger*\ {36}.%M:%L - %\ *msg*\ %n</pattern>
-
-</layout>
-
-</appender>
-
-<logger name=\ *"jacorb"* level=\ *"ERROR"* />
-
-<logger name=\ *"net.sf.ehcache"* level=\ *"ERROR"* />
-
-<logger name=\ *"org.tango"* level=\ *"ERROR"* />
-
-<logger name=\ *"org.tango.test"* level=\ *"DEBUG"* />
-
-<root level=\ *"DEBUG"*>
-
-<appender-ref ref=\ *"CONSOLE"* />
-
-</root>
-
-</configuration>
+    <?xml version="1.0" encoding="UTF-8" ?>
+    
+    <configuration>
+    
+    <jmxConfigurator />
+    
+    <appender name="CONSOLE"
+    class="ch.qos.logback.core.ConsoleAppender">
+    
+    <layout class="ch.qos.logback.classic.PatternLayout">
+    
+    <pattern>%-5level %d{HH:mm:ss.SSS} [%thread - %X{deviceName}]
+    %logger{36}.%M:%L - %msg%n</pattern>
+    
+    </layout>
+    
+    </appender>
+    
+    <logger name="jacorb" level="ERROR" />
+    
+    <logger name="net.sf.ehcache" level="ERROR" />
+    
+    <logger name="org.tango" level="ERROR" />
+    
+    <logger name="org.tango.test" level="DEBUG" />
+    
+    <root level="DEBUG">
+    
+    <appender-ref ref="CONSOLE" />
+    
+    </root>
+    
+    </configuration>
 
 Properties file for a device without Tango Database
 ---------------------------------------------------
 
-# --- 1/1/1 *properties*
+.. code-block:: text
 
-1/1/1->myProp:titi
+    # --- 1/1/1 *properties*
 
-CLASS/TestDevice->myClassProp: 10
+    1/1/1->myProp:titi
+
+    CLASS/TestDevice->myClassProp: 10
 
 .. |image0| image:: media/image3.png
    :width: 2.57847in
