@@ -1,4 +1,4 @@
-**Pogo**
+Pogo
 (Code Generator)
 `Description <Description.html>`__
 `Pogo Startup <Startup.html>`__
