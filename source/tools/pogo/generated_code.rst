@@ -150,7 +150,7 @@ In this directory 5 files are generated:
    " :file:`Class_lib.vcxproj` ", " Project to create a static library for the class"
    " :file:`Class_dll.vcxproj` ", "Project to create a dynamic-link library for the class"
    " :file:`Server_static.vcxproj` ", "Project to create a static server (using static library)"
-   " :file:`Server_shared.vcxproj` ". "Project to create a dynamic server (using dll)"
+   " :file:`Server_shared.vcxproj` ", "Project to create a dynamic server (using dll)"
 
 .. |image0| image:: img/Pogo-protected.jpg
 
