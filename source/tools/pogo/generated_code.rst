@@ -37,17 +37,17 @@ The generated code structure will look like to the Pogo-6 code.
 
 .. csv-table::
 
-   ":file:`MyObject.h`","Containing created class data members and prototypes."
-   ":file:`MyObject.cpp`", "Containing created class methods for init, commands, read/write attributes, ....."
-   ":file:`MyObjectClass.h`","Containing data members and prototypes for MyObjectClass.cpp.
+   " :file:`MyObject.h` ", "Containing created class data members and prototypes."
+   " :file:`MyObject.cpp` ", "Containing created class methods for init, commands, read/write attributes, ....."
+   " :file:`MyObjectClass.h` ", "Containing data members and prototypes for MyObjectClass.cpp.
    Containing also the Command and Attribute class definitions."
-   ":file:`MyObjectClass.cpp`","A singleton  class derived from DeviceClass.
+   " :file:`MyObjectClass.cpp` ", "A singleton  class derived from DeviceClass.
    It implements the command and attribute lists and all properties
    and methods required by the created class once per process."
-   ":file:`MyObjectStateMachine.cpp`", "Containing created class methods for the state machine."
-   ":file:`ClassFactory.cpp`", "Containing created class methods creating used class.
+   " :file:`MyObjectStateMachine.cpp` ", "Containing created class methods for the state machine."
+   " :file:`ClassFactory.cpp` ", "Containing created class methods creating used class.
    In case of multi class server, add other class(es) in the factory."
-   ":file:`main.cpp`", "Start point of the device server. Most of the time, not touched by the programmer."
+   " :file:`main.cpp` ", "Start point of the device server. Most of the time, not touched by the programmer."
 
 - A method called ``add_dynamic_attributes()`` has been added to the :file:`MyObject.cpp`.
   It will be called at startup to create dynamic attributes if any.
