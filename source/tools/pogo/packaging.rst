@@ -9,7 +9,7 @@ Set the environment variable :envvar:`PKG_CONFIG_PATH`
 -  e.g. for tango.pc file : :command:`export PKG_CONFIG_PATH=$TANGO_LIBS/pkgconfig`
 
 You can find many examples on the web on pkg\_config\_path management.
-In :program:`Pogo or Multi classes GUI`, use :guilabel:`File` menu and :guilabel:`Export Package`
+In :program:`Pogo` or :program:`Multi classes GUI`, use :guilabel:`File` menu and :guilabel:`Export Package`
 item.
 
 A panel will be launched to define to configure packaging.
