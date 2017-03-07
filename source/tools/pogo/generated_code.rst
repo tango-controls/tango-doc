@@ -1,29 +1,30 @@
-Generated Code
---------------
+.. Definitions
+.. ------------
+.. _Soleil:             http://www.synchrotron-soleil.fr/
+.. _`Java servers`:     /java-server-guide/index.html
+.. |image0| image::     img/Pogo-protected.png
 
-**The main differences with Pogo-6 code are:**
+
+
+Generated files
+=================
+
+.. Note:
 
 -  The source code will not be read when you re-open your project.
-   Only the :ref:`.xmi <warnings>` will be re-loaded.
+   Only the **.xmi** will be re-loaded.
 -  Your own code must be added only between specific tags:
    On following example, only the grey part will not be overwritten at
    next code generation.
 
 |image0|
 
-**Generated code:**
+Generated code:
+----------------
+    - :ref:`C++ code <c++>`
+    - :ref:`Python code <python>`
+    - :ref:`Java code <java>`
 
-- :ref:`C++ code <c++>`
-
-- :ref:`Python code <python>`
-
-- :ref:`Java code <java>`
-
-**Projects:**
-
--  :ref:`Eclipse project <eclipse>`
--  :ref:`IntelliJIDEA project <idea>`
--  :ref:`Windows projects <windows>`
 
 .. _`c++`:
 
@@ -51,9 +52,12 @@ The generated code structure will look like to the Pogo-6 code.
 
 - A method called ``add_dynamic_attributes()`` has been added to the :file:`MyObject.cpp`.
   It will be called at startup to create dynamic attributes if any.
-  .. warning::
-     It is NOT generated if the class is abstract !
+  .. warning::  It is NOT generated if the class is abstract !
 
+
+     
+
+     
 .. _`python`:
 
 Python Generated files
@@ -70,6 +74,9 @@ The python templates have been implemented by Sebastien Gara at `Nexeya <http://
 | :file:`MyObject.py` | Containing created class python code. |
 +---------------------+---------------------------------------+
 
+
+
+
 .. _`java`:
 
 Java Generated files
@@ -77,14 +84,8 @@ Java Generated files
 
 The generated Java classes are not compatible with the server API from TangORB.
 
-They are compatible only with the new design from Gwenaelle Abeille at
-`Soleil <http://www.synchrotron-soleil.fr/>`_.
-
-See **Devices in Java** at: `http://www.tango-controls.org/download`_
-
-This API is still under development.
-
-Inheritance and event system are not available.
+They are compatible only with the new design from Gwenaelle Abeille at Soleil_.
+See `Java servers`_
 
 +----------------------------------------------------+--------------------------------------------+
 | :file:`org.tango.myobject.MyObject.java`           | Containing created class java code.        |
@@ -93,41 +94,24 @@ Inheritance and event system are not available.
 |                                                    |  attribute class if any.                   |
 +----------------------------------------------------+--------------------------------------------+
 
-.. _`eclipes`:
 
-Eclipse project files
-~~~~~~~~~~~~~~~~~~~~~
 
-To resolve Tango keywords, Eclipse needs Tango include files.
 
-The include path depends on installation and platform.
-Start Pogo with  :envvar:`TANGO_INCLUDE` environment variable.
 
-Two files will be generated to be imported as Eclipse project.
+Projects:
+------------
+    -  :ref:`pom.xml <pom_xml>`
+    -  :ref:`Windows projects <windows>`
 
-+--------------------+---------------------------------------------+
-| :file:`.project`   | Global eclipse project                      |
-+--------------------+---------------------------------------------+
-| :file:`.cproject`  | Tango class project for C++ class           |
-+--------------------+---------------------------------------------+
 
-.. _`idea`:
 
-IntelliJIDEA project files
+.. _`pom_xml`:
+
+pom.xml (MAVEN) file
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-IntelliJIDEA is an IDE for java project.
-
-To resolve Tango keywords, IntelliJIDEA needs Tango server jar file.
-The :file:`JTangoServer.jar` path depends on installation and platform.
-
-Start Pogo with  :envvar:`JSERVER_JAR_FILE` environment variable.
-
-+------------------------+----------------------------------------------------------+
-| :file:`MyObject.iml`   | Global IntelliJIDEA project                              |
-+------------------------+----------------------------------------------------------+
-| :file:`.idea/`         | a sub-directory containing all information about project |
-+------------------------+----------------------------------------------------------+
+* Pom.xml is MAVEN project file. It can be loaded as project by IDE (like IntellijIDEA).
+* To generate this file, you must generate the xmi file in a path like *../../src/main/java*
 
 .. _`windows`:
 
@@ -136,11 +120,11 @@ Windows project files
 
 Pogo supports **Visual C++** projects.
 
-It will generate files in a directory name :file:`vcxx_proj` (where xx is the Visual C release. e.g. :file:`vc10_proj`)
+It will generate files in a directory name :file:`vcxx_proj` (where xx is the Visual C release. e.g. :file:`vc12_proj`)
 
 Projects use the :envvar:`TANGO_ROOT` environment variable to find include and library files.
 
-It provides 32/64 bits and debug/release modes for each solution.
+It provides 64 bits and debug/release modes for each solution.
 
 In this directory 5 files are generated:
 
@@ -152,5 +136,4 @@ In this directory 5 files are generated:
    " :file:`Server_static.vcxproj` ", "Project to create a static server (using static library)"
    " :file:`Server_shared.vcxproj` ", "Project to create a dynamic server (using dll)"
 
-.. |image0| image:: img/Pogo-protected.jpg
 

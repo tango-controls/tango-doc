@@ -1,7 +1,7 @@
-Pogo
-====
+Pogo (Class Generator)
+======================
 
-Tango class generator based on openArchitectureWare
+**Pogo** is the `TANGO <http://www.tango-controls.org/>`_ code generator.
 
 .. toctree::
    :maxdepth: 3
@@ -12,8 +12,7 @@ Tango class generator based on openArchitectureWare
    generated_code
    inheritance
    preferences
-   multi_classes
    dynamic_attr
+   multi_classes
    packaging
    compatibility
-   warnings

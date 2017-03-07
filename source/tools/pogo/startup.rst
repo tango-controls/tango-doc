@@ -1,35 +1,51 @@
-Pogo Startup
-------------
+.. Definitions
+.. ------------
 
+.. _Jive:   ../jive/index.html
+.. |image0| image:: img/Pogo-first.png
+   :scale: 75 %
+.. |image1| image:: img/Pogo-generate.png
+.. |image2| image:: img/Use-templates.png
+   :scale: 85 %
+
+Starting with Pogo
+===================
+
+TANGO class creation
+----------------------
 Pogo will start as follow.
-
-Then, create a new class and add yours commands, attributes,
-properties,... as usual (with :program:`Pogo-6` application [Pogo6]_).
 
 |image0|
 
-When your class is defined, you will generate code:
+
+Then, create a new class using **File/New** menu and add your:
+    * Properties
+    * Commands
+    * Attributes
+    * Pipes
+    * States
+
+When your class is defined, you can generate code:
 
 |image1|
 
+
 Select what you want to generate:
+        
+-  **.xmi** file is the project itself, it will be loaded when you re-open your project with Pogo.
+-  Linux **Makefile** or **CMakeList.txt**
+-  **VC12** project (Windows project)
+-  **pom.xml** (if Java and maven path structure found)
+-  **html documentation** : html pages based on information entered during class model creation.
 
--  xmi file : this file is the project itself, it will be loaded when
-   you re-open your project with Pogo.
+You are now able to compile the generated code and if the server is defined in database (using Jive_) you are also able to run it.
 
-   .. warning::
 
-      That means, DO NOT FORGET TO COMMIT IT !!!
+Using templates
+----------------
 
--  :doc:`Code files <genereated_code>`
--  Linux Makefile
--  VC8, VC9 and VC10 project
--  html documentation
+If you define an evironment variable **TEMPLATES_PATH** to a directory containing :file:`xmi` files,
+ you will be able to use these  :file:`xmi` files as templates.
 
-.. |image0| image:: img/Pogo-first.jpg
-   :height: 450px
-
-.. |image1| image:: img/Pogo-generate.jpg
-
-.. [Pogo6] `Pogo-6 <http://www.esrf.eu/computing/cs/tango/tango_doc/tools_doc/pogo-6_doc/index.html>`_
-
+ **e.g.: export TEMPLATES_PATH=$TANGO_HOME/templates/pogo**
+ |image2|

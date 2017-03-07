@@ -1,11 +1,8 @@
-Pogo Compatibility
-------------------
-
-Compatibility with `Pogo-6 <http://www.esrf.eu/computing/cs/tango/tango_doc/tools_doc/pogo-6_doc/index.html>`_
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Pogo-6 Compatibility
+----------------------
 
 This application is supposed to be able to re-load a class generated with a :program:`Pogo-6.x` application.
-If :program:`Pogo-6.x` can load it, :program:`Pogo-7` is also able to load it. :guilabel:`Open` the :file:`XXXX.h` file.
+If :program:`Pogo-6.x` can load it, :program:`Pogo` is also able to load it. :guilabel:`Open` the :file:`XXXX.h` file.
 
 **BUT:**
 
@@ -22,17 +19,19 @@ When it load an old project it will propose:
 The code insertion is available only for **C++**.
 If code insertion fails, or for **Python** and **Java**, generate class only and add your code by copy/paste action.
 
+
+
+
 For C++
 +++++++
 
 If insertion works and compilation fails, most of the time it is due to:
 
--  Declaration duplicated(one by generator, one by code insertion).
+-  Declaration duplicated (one by generator, one by code insertion).
 -  For writable attribute, in ``write_MyAttribute method``, the
    ``attr.get_write_value()`` method management has changed. It is now returned in a local
    variable. Your old global variable does not exist any more (it is not necessary
-   to be global in 99% of cases).
-   It now local and named ``w_val``.
+   to be global in 99% of cases). It now local and named ``w_val``.
 -  Take care in ``dev_state()`` and ``dev_status()`` methods if you
    override the default.
 
