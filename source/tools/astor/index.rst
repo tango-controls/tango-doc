@@ -8,8 +8,8 @@ Astor
    introduction
    main_window
    host_window
-   add_server
    add_host
+   add_server
    multi_start_stop
    branch_management
    config
