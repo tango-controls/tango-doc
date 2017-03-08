@@ -1,23 +1,20 @@
 Astor Configuration
 -------------------
 
-| 
+Astor can be configured using the following window.
+Click on :menuselection:`File --> Ctrl System Preferences` menu to open
 
-| Astor can be configured using the following window.
-| Click on **File/Ctrl System Preferences** menu to open
-
-+--------------------------------------+--------------------------------------+
-| |image0|                             | -  `Define control system            |
-|                                      |    name <config.html#name>`__        |
-|                                      | -  `Define default window            |
-|                                      |    sizes <config.html#sizes>`__      |
-|                                      | -  `Additional java                  |
-|                                      |    tools. <config.html#add_tools>`__ |
-|                                      | -  `Additional html                  |
-|                                      |    pages. <config.html#html_pages>`_ |
-|                                      | _                                    |
-|                                      | -  `Multi Tango                      |
-|                                      |    Host. <config.html#known_hosts>`_ |
++--------------------------------------+----------------------------------------+
+| |image0|                             | -  `Define control system              |
+|                                      |    name <name>`_                       |
+|                                      | -  `Define default window              |
+|                                      |    sizes <sizes>`_                     |
+|                                      | -  `Additional java                    |
+|                                      |    tools. <add_tools>`_                |
+|                                      | -  `Additional html                    |
+|                                      |    pages. <html_pages>`_               |
+|                                      | -  `Multi Tango                        |
+|                                      |    Host. <known_hosts>`_               |
 |                                      | _                                    |
 |                                      | -  `Host remote loggin               |
 |                                      |    command. <config.html#remote_logg |
@@ -37,70 +34,93 @@ Astor Configuration
   **-DNO\_PREF=true**.
 | 
 
-**Control system name :**
+.. _`name`:
 
-| 
-| 
+Control system name
+~~~~~~~~~~~~~~~~~~~
 
-**Default window sizes :**
+This name will be displayed on top of Astor main window.
 
-| 
-| 
+It could be useful when user has to manage several control systems.
 
-**Last Collections :**
+.. _`sizes`:
 
-| 
-| 
+Default window sizes
+~~~~~~~~~~~~~~~~~~~~
 
-**Additional html pages :**
+:guilabel:`Hosts tree Width/Height` defines the preferred size for the tree object in main window.
 
-| The property *HtmlHelps* give the possibility to add specific html
-  pages.
-| This is a string array property.
+:guilabel:`Host window Width/Height` defines default maximum size for host window.
+
+If the number of hosts needs a bigger window, scroll bars will be added.
+
+
+Last Collections
+~~~~~~~~~~~~~~~~
+
+Hosts can be distributed in families.
+
+In the tree, the families are sorted by alphabetic order.
+
+The property LastCollections give the possibility put collections (families) at the end of the tree.
+
+It could be useful to put at the end of the tree, families like Not Critical, In Test, ...
+
+.. _`html_pages`:
+
+Additional html pages
+~~~~~~~~~~~~~~~~~~~~~
+
+The property *HtmlHelps* give the possibility to add specific html pages.
+This is a string array property.
 
 -  The first line is the message displayed in help menu.
 -  The second one is the URL address for the specified page.
 
-| 
-| The following example add a link to the Tango device servers pages:
-| |image1|
+The following example add a link to the Tango device servers pages:
 
-| 
-| 
+  |image1|
 
-**Additional java Tools:**
+.. _`add_tools`:
 
-| The property *Tools* give the possibility to add java class to tools
-  menu.
-| These additional tools could be specific for one controle system
-| This is a string array property.
-| One tool (java class) is define by two strings:
+Additional java Tools
+~~~~~~~~~~~~~~~~~~~~~
+
+The property *Tools* give the possibility to add java class to tools
+menu.
+These additional tools could be specific for one controle system
+This is a string array property.
+
+One tool (java class) is define by two strings:
 
 -  The first line is the message displayed in tools menu.
 -  The second one is the class (and package) to be instancied.
 
-| 
-| The following example add 3 java tools used on ESRF machine control
-  system for TACO HDB:
-| |image2|
-| **Remarks:**
 
--  The tools java classes need to have a constructor with a *JFrame*
-   parameter as parent.
--  It need also to not exit if it has been instancied from a parent
-   application.
--  The tools class or jar file needs to be found in *$CLASSPATH* of
-   **Astor** startup.
+The following example add 3 java tools used on ESRF machine control
+system for TACO HDB:
 
-| 
-| 
+  |image2|
 
-**KnownTangoHosts:**
+.. topic:: Remarks
 
-| 
-| 
+    -  The tools java classes need to have a constructor with a *JFrame*
+       parameter as parent.
+    -  It need also to not exit if it has been instancied from a parent
+       application.
+    -  The tools class or jar file needs to be found in :envvar:`$CLASSPATH` of
+       :program:`Astor` startup.
 
-**RloginCmd:**
+.. _`known_hosts`:
+
+KnownTangoHosts
+~~~~~~~~~~~~~~~
+
+This property give a list of :envvar:`TANGO_HOST` to be controlled by Astor.
+The :envvar:`TANGO_HOST` can be change by typing a new name but the specified list will be available in a combo box.
+
+RloginCmd
+~~~~~~~~~
 
 | 
 | 
