@@ -4,35 +4,22 @@ Astor Configuration
 Astor can be configured using the following window.
 Click on :menuselection:`File --> Ctrl System Preferences` menu to open
 
-+--------------------------------------+----------------------------------------+
-| |image0|                             | -  `Define control system              |
-|                                      |    name <name>`_                       |
-|                                      | -  `Define default window              |
-|                                      |    sizes <sizes>`_                     |
-|                                      | -  `Additional java                    |
-|                                      |    tools. <add_tools>`_                |
-|                                      | -  `Additional html                    |
-|                                      |    pages. <html_pages>`_               |
-|                                      | -  `Multi Tango                        |
-|                                      |    Host. <known_hosts>`_               |
-|                                      | _                                    |
-|                                      | -  `Host remote loggin               |
-|                                      |    command. <config.html#remote_logg |
-|                                      | in>`__                               |
-|                                      | -  `Host remote loggin               |
-|                                      |    user. <config.html#remote_user>`_ |
-|                                      | _                                    |
-|                                      | -  `Jive in RAD\_ONLY                |
-|                                      |    mode. <config.html#jive_mode>`__  |
-|                                      | -  `Starter starts servers at        |
-|                                      |    startup <config.html#starter_star |
-|                                      | t>`__                                |
-+--------------------------------------+--------------------------------------+
++--------------------------------------+--------------------------------------------------------------+
+| |image0|                             | -  :ref:`Define control system name <name>`                  |
+|                                      | -  :ref:`Define default window sizes <sizes>`                |
+|                                      | -  :ref:`Additional java tools. <add_tools>`                 |
+|                                      | -  :ref:`Additional html pages. <html_pages>`                |
+|                                      | -  :ref:`Multi Tango Host. <known_hosts>`                    |
+|                                      | -  :ref:`Host remote loggin command. <remote_logging>`       |
+|                                      | -  :ref:`Host remote loggin user. <remote_user>`             |
+|                                      | -  :ref:`Jive in RAD_ONLY mode. <jive_mode>`                 |
+|                                      | -  :ref:`Starter starts servers at startup <starter_start>`  |
++--------------------------------------+--------------------------------------------------------------+
 
-| 
-| **NOTE**: To disable the **Preference** menu, start Astor with
-  **-DNO\_PREF=true**.
-| 
+.. note::
+
+   To disable the :guilabel:`Preference` menu, start Astor with :option:`-DNO\_PREF=true`.
+
 
 .. _`name`:
 
@@ -42,6 +29,7 @@ Control system name
 This name will be displayed on top of Astor main window.
 
 It could be useful when user has to manage several control systems.
+
 
 .. _`sizes`:
 
@@ -71,7 +59,7 @@ It could be useful to put at the end of the tree, families like Not Critical, In
 Additional html pages
 ~~~~~~~~~~~~~~~~~~~~~
 
-The property *HtmlHelps* give the possibility to add specific html pages.
+The property :guilabel:`HtmlHelps` give the possibility to add specific html pages.
 This is a string array property.
 
 -  The first line is the message displayed in help menu.
@@ -80,6 +68,7 @@ This is a string array property.
 The following example add a link to the Tango device servers pages:
 
   |image1|
+
 
 .. _`add_tools`:
 
@@ -102,6 +91,7 @@ system for TACO HDB:
 
   |image2|
 
+
 .. topic:: Remarks
 
     -  The tools java classes need to have a constructor with a *JFrame*
@@ -111,6 +101,7 @@ system for TACO HDB:
     -  The tools class or jar file needs to be found in :envvar:`$CLASSPATH` of
        :program:`Astor` startup.
 
+
 .. _`known_hosts`:
 
 KnownTangoHosts
@@ -119,25 +110,44 @@ KnownTangoHosts
 This property give a list of :envvar:`TANGO_HOST` to be controlled by Astor.
 The :envvar:`TANGO_HOST` can be change by typing a new name but the specified list will be available in a combo box.
 
+
+.. _`remote_logging`:
+
 RloginCmd
 ~~~~~~~~~
 
-| 
-| 
+This property give the possibility change the default remote loggin command.
+The default command is :command:`telnet` (or :command:`rlogin` if :guilabel:`RloginUser` is defined).
 
-**RloginUser:**
 
-| 
-| 
+.. _`remote_user`:
 
-**Jive in READ\_ONLY mode:**
+RloginUser
+~~~~~~~~~~
 
-| 
-| 
+This property give the possibility set the remote loggin to the specified user.
 
-**Starter starts servers at startup:**
 
-| 
+.. _`jive_mode`:
+
+Jive in READ\_ONLY mode
+~~~~~~~~~~~~~~~~~~~~~~~
+
+If this property is true the :program:`Jive` application will be instancied in READ_ONLY mode.
+If the property is not set or false, :program:`Jive` is in READ_WRITE mode.
+
+
+.. _`starter_start`:
+
+Starter starts servers at startup
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This boolean property allows the starter to starts the device servers when it starts.
+
+If it is false, when the starter will be started, it will not start any server.
+
+It could be useful when a large control system is re-started (e.g. after an electrical power cut)
+to do not overload the Tango database.
 
 .. |image0| image:: img/preferences.jpg
 .. |image1| image:: img/html_pages.jpg
