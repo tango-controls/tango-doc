@@ -20,8 +20,8 @@ body {
 
 .page-header {
     width:100%;
-    vertical-align: center;
-    horizontal-align: center;
+    vertical-align: middle;
+    horizontal-align: middle;
     font-family: sans-serif;
     text-align: center;
     height:80px;
@@ -46,7 +46,7 @@ body {
 .page-header span {
   display: inline-block;
   vertical-align: middle;
-  horizontal-align: center
+  horizontal-align: center;
   line-height: normal;
 }
 
@@ -131,7 +131,7 @@ div.related a:active {
     color: rgb(150,200, 150);
 }
 
-div.related a: visited {
+div.related a:visited {
     color: rgb(230,255,230);
 }
 
@@ -385,14 +385,15 @@ div#comments div.comment blockquote {
     padding: 10px;
     border-left: 1px solid #0f3646;
     /*border: 1px solid #0f3646;
-    background-color: #071c25;*/
+    background-color: #071c25;
 }
+
 
 div#comments em.important {
     color: #d00;
     font-weight: bold;
     font-style: normal;
-}*/
+} */
 
 /* :::: SUGGEST CHANGES :::: */
 div#suggest-changes-box input, div#suggest-changes-box textarea {

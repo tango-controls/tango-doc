@@ -10,6 +10,7 @@ Astor
    host_window
    add_host
    add_server
+   new_server_wizard
    multi_start_stop
    branch_management
    config
