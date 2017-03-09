@@ -1,5 +1,8 @@
-|Features Overview|
+Features overview
+-----------------
 
-.. |Features Overview| image:: img/features_overview.jpg
+|image0|
+
+.. |image0| image:: img/features_overview.jpg
    :width: 100.0%
-   :target: img/features_overview.jpg
+   :target: ../../_images/features_overview.jpg
