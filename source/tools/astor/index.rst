@@ -20,3 +20,4 @@ Astor
    tango_versions
    access_control
    features_overview
+   paper
