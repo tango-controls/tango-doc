@@ -1,3 +1,4 @@
+
 Introduction to Astor
 ---------------------
 
@@ -15,26 +16,20 @@ Goal
 Principle
 ~~~~~~~~~
 
--  On each host to be controlled, a device server (called
-   `**Starter** <http://www.esrf.fr/computing/cs/tango/tango_doc/ds_doc/tango-ds/System/starter/ClassDescription.html>`_)
-   takes care of all device servers running (or supposed to) on this
-   computer.
-   The controlled server list is read from the TANGO database.
-   A graphical client (called Astor) is connected to all Starter servers
-   and is able to:
-
-   -  Display the control system status and component status using
+    - On each host to be controlled, a device server (called Starter_)
+      takes care of all device servers running (or supposed to) on this computer.
+    - The controlled server list is read from the TANGO database.
+    - A graphical client (called Astor) is connected to all Starter servers and is able to:
+    - Display the control system status and component status using
       coloured icons.
-   -  Execute actions on components (start, stop, test, configure,
+    - Execute actions on components (start, stop, test, configure,
       display information, ....
-   -  Execute diagnostics on components.
-   -  Execute global analysis on a large number of crates or database.
+    - Execute diagnostics on components.
+    - Execute global analysis on a large number of crates or database.
 
 |image0|
 
-    -  To control a host in remote, the TANGO device server
-       `**Starter** <http://www.esrf.fr/computing/cs/tango/tango_doc/ds_doc/tango-ds/System/starter/ClassDescription.html>`_
-       must be running on it.
+    -  To control a host in remote, the TANGO device server Starter_ must be running on it.
 
    .. warning::
 
@@ -48,12 +43,11 @@ Principle
 Running Astor
 ~~~~~~~~~~~~~
 
-    -  :program:`Astor` is a **Java** program using **Swing** classes.
-       Classes has been compiled and the jar file has been built whith :program:`java-1.7`.
-    -  To start the application, start the script file:
-       :command:`$TANGO_HOME/bin/astor`
-    -  **There are 3 modes to start Astor:**
-
+- :program:`Astor` is a **Java** program using **Swing** classes.
+  Classes has been compiled and the jar file has been built whith :program:`java-1.7`.
+- To start the application, start the script file:
+  :command:`$TANGO_HOME/bin/astor`
+- **There are 3 modes to start Astor:**
    +---------------+-----------------------------------------------------------------------------+
    |  Parameter    |   Mode                                                                      |
    +===============+=============================================================================+
@@ -120,9 +114,12 @@ Host Control
 
 
 
-.. Image definitions
-   ------------------------
+.. definitions
+   --------------
 
+.. _Starter:    http://www.esrf.fr/computing/cs/tango/tango_doc/ds_doc/tango-ds/System/starter/index.html
+   
+   
 .. |image0| image:: img/Astor-Starter.gif
 .. |image1| image:: img/greenbal.gif
 .. |image2| image:: img/blueball.gif
