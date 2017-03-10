@@ -1,5 +1,5 @@
-Astor
-=====
+Astor (TANGO Manager)
+=======================
 
 .. toctree::
    :maxdepth: 2

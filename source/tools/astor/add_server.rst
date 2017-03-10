@@ -13,11 +13,17 @@ If the server is already defined in database
 
    |image0|
 
--  Select the expected server and click on :guilabel:`Start` button.
--  And define :guilabel:`Astor control` and :guilable:`Startup Level`.
+-  Select the expected server and click on **Start server** button.
+
+|
+
+-  And configure **Controlled by Astor** and **Startup Level**.
 
    |image1|
 
+   
+|
+   
 If the server is NOT already defined in database
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -26,6 +32,10 @@ If the server is NOT already defined in database
 -  Or click on :guilabel:`Create New Server` button to start the
    :doc:`wizard <new_server_wizard>`.
 
+   
+   
+|
+   
 If the server has been started from shell
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -34,10 +44,12 @@ by Astor.
 
 That means that it does not appear in :doc:`host window <host_window>`.
 
-To see it click open :guilabel:`Not Controlled` level. And change it startup
-level if needed.
+To see it click open **Not Controlled** level.
+And change it startup level if needed.
+
+
+
 
 .. |image0| image:: img/start_new_server.jpg
-
 .. |image1| image:: img/startup_level.jpg
 
