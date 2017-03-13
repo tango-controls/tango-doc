@@ -17,7 +17,7 @@ Requirements
       on the Sourceforge. To avoid problems one can edit :file:`svn/common.py` around line 358 to have something like
       the following:
 
-.. code-block:: python
+      .. code-block:: python
 
                 author = ''
                 if commit_node.find('author') is not None:
