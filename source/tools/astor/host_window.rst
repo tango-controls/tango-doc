@@ -3,8 +3,14 @@ Host Status Window
 
 -  When a host window has been opened, all servers controlled on this
    host are displayed.
--  The color of the srver define its state (**red**: not running,
-   **green** running, **blue** running but not responding).
+-  The color of the srver define its state:
+    +--------------------------------------------------------+
+    | |image6| Server is running                             |
+    +--------------------------------------------------------+
+    | |image7| Server is running but not alive (Starting ?)  |
+    +--------------------------------------------------------+
+    | |image8| Server is not running.                        |
+    +--------------------------------------------------------+
 -  These servers are ordered by startup level.
 
 |image0|
@@ -14,10 +20,20 @@ Host Status Window
 
 |image1|
 
-.. topic:: It is possible to display not controlled servers if any.
+.. note::
 
-   These servers are not taken in account to compute host state.
+    * It is possible to display not controlled servers if any.
+    * These servers are not taken in account to compute host state.
+
+   
+   
+   
+.. Image definitions
+   ------------------------
 
 .. |image0| image:: img/host_window.jpg
 .. |image1| image:: img/host_window2.jpg
 
+.. |image6| image:: img/greenbal.gif
+.. |image7| image:: img/blueball.gif
+.. |image8| image:: img/redball.gif
