@@ -64,7 +64,7 @@ How-to import multiple classes
         # Tango Controls or test server address
         SERVER_BASE_URL = 'http://www.tango-controls.org/'
 
-#. run with a :command:`python dsc_import_utility.py`
+#. run with a command: :command:`python dsc_import_utility.py`
 
     - It will ask you for your credentials for tango-controls.org
 
