@@ -27,67 +27,68 @@ Here is the code of a simple device class with one Tango command and one
 attribute (see annexes for full code):
 
 .. code-block:: java
-@Device
-public class TestDevice {
 
-    private final Logger logger = LoggerFactory.getLogger(TestDevice.class);
-    /**
-     * Attribute myAttribute READ WRITE, type DevDouble.
-     */
-    @Attribute
-    public double myAttribute;
+    @Device
+    public class TestDevice {
 
-    /**
-     * Starts the server.
-     */
-    public static void main(final String[] args) {
-	ServerManager.getInstance().start(args, TestDevice.class);
+        private final Logger logger = LoggerFactory.getLogger(TestDevice.class);
+        /**
+         * Attribute myAttribute READ WRITE, type DevDouble.
+         */
+        @Attribute
+        public double myAttribute;
+
+        /**
+         * Starts the server.
+         */
+        public static void main(final String[] args) {
+    	    ServerManager.getInstance().start(args, TestDevice.class);
+        }
+
+        /**
+         * init device
+         */
+        @Init
+        public void init() {
+            logger.debug("init");
+        }
+
+        /**
+         * delete device
+         */
+        @Delete
+        public void delete() {
+	    logger.debug("delete");
+        }
+
+        /**
+         * Execute command start. Type VOID-VOID
+         */
+        @Command
+        public void start() {
+	    logger.debug("start");
+        }
+
+        /**
+         * Read attribute myAttribute. 
+         * 
+         * @return
+         */
+        public double getMyAttribute() {
+	    logger.debug("getMyAttribute {}", myAttribute);
+	    return myAttribute;
+        }
+
+        /**
+         * Write attribute myAttribute
+         * 
+         * @param myAttribute
+         */
+        public void setMyAttribute(final double myAttribute) {
+	    logger.debug("setMyAttribute {}", myAttribute);
+	    this.myAttribute = myAttribute;
+        }
     }
-
-    /**
-     * init device
-     */
-    @Init
-    public void init() {
-	logger.debug("init");
-    }
-
-    /**
-     * delete device
-     */
-    @Delete
-    public void delete() {
-	logger.debug("delete");
-    }
-
-    /**
-     * Execute command start. Type VOID-VOID
-     */
-    @Command
-    public void start() {
-	logger.debug("start");
-    }
-
-    /**
-     * Read attribute myAttribute. 
-     * 
-     * @return
-     */
-    public double getMyAttribute() {
-	logger.debug("getMyAttribute {}", myAttribute);
-	return myAttribute;
-    }
-
-    /**
-     * Write attribute myAttribute
-     * 
-     * @param myAttribute
-     */
-    public void setMyAttribute(final double myAttribute) {
-	logger.debug("setMyAttribute {}", myAttribute);
-	this.myAttribute = myAttribute;
-    }
-}
 
 
 Before starting this device, it has to be declared in the Tango database
@@ -163,10 +164,10 @@ org.tango.server.annotation.Device
 
 .. code-block:: java
 
-@Device
-public class TestDevice {
+    @Device
+    public class TestDevice {
 
-}
+    }
 
 
 
@@ -179,7 +180,7 @@ client request at a time per device:
 
 .. code-block:: java
 
-@Device(transactionType = TransactionType.DEVICE)
+    @Device(transactionType = TransactionType.DEVICE)
 
 
 All transaction values are:
@@ -231,10 +232,10 @@ a returned type of DEVLONG:
 
 .. code-block:: java
 
-@Command
-public int testCmd(final double[] in) {
-  return 0;
-}
+    @Command
+    public int testCmd(final double[] in) {
+        return 0;
+    }
 
 
 The command name is by default the method name. The Command annotation
@@ -322,16 +323,16 @@ Example code of a DEVDOUBLE scalar read and write attribute:
 
 .. code-block:: java
 
-@Attribute
-private double testAttribute;
+    @Attribute
+    private double testAttribute;
 
-public double getTestAttribute() {
-    return testAttribute;
-}
+    public double getTestAttribute() {
+        return testAttribute;
+    }
 
-public void setTestAttribute(double testAttribute) {
-    this.testAttribute = testAttribute;
-}
+    public void setTestAttribute(double testAttribute) {
+        this.testAttribute = testAttribute;
+    }
 
 
 
@@ -339,19 +340,19 @@ Example code for DEVENUM attribute:
 
 .. code-block:: java
 
-public enum TestType {
-    VALUE1, VALUE2
-}
+    public enum TestType {
+        VALUE1, VALUE2
+    }
 
-@Attribute
-private TestType enumAttribute = TestType.VALUE1;
-public TestType getEnumAttribute() {
-    return enumAttribute;
-}
+    @Attribute
+    private TestType enumAttribute = TestType.VALUE1;
+    public TestType getEnumAttribute() {
+        return enumAttribute;
+    }
 
-public void setEnumAttribute(final TestType enumAttribute) {
-    this.enumAttribute = enumAttribute;
-}
+    public void setEnumAttribute(final TestType enumAttribute) {
+        this.enumAttribute = enumAttribute;
+    }
 
 
 
@@ -464,15 +465,15 @@ javadoc for details.
 
 .. code-block:: java
 
-@Attribute
-private double myAttribute;
+    @Attribute
+    private double myAttribute;
 
-public AttributeValue getMyAttribute() throws DevFailed {
-    AttributeValue value = new AttributeValue(myAttribute);
-    value.setQuality(AttrQuality.ATTR_CHANGING);
-    value.setTime(System.currentTimeMillis());
-    return value;
-}
+    public AttributeValue getMyAttribute() throws DevFailed {
+        AttributeValue value = new AttributeValue(myAttribute);
+        value.setQuality(AttrQuality.ATTR_CHANGING);
+        value.setTime(System.currentTimeMillis());
+        return value;
+    }
 
 
 The default attribute properties are configurable with this annotation:
@@ -483,9 +484,9 @@ Please refer to javadoc for details. Example:
 
 .. code-block:: java
 
-@Attribute
-@AttributeProperties(format = "%6.4f", description = "a test attribute")
-private double testAttribute;
+    @Attribute
+    @AttributeProperties(format = "%6.4f", description = "a test attribute")
+    private double testAttribute;
 
 
 
@@ -501,18 +502,18 @@ Pipe
 
 .. code-block:: java
 
-@Pipe
-private PipeValue myPipeRO;
+    @Pipe
+    private PipeValue myPipeRO;
 
-…
+    // ...
 
-final PipeBlob myPipeBlob = new PipeBlob("A");
-myPipeBlob.add(new PipeDataElement("C", "B"));
-myPipeRO = new PipeValue(myPipeBlob);
+    final PipeBlob myPipeBlob = new PipeBlob("A");
+    myPipeBlob.add(new PipeDataElement("C", "B"));
+    myPipeRO = new PipeValue(myPipeBlob);
 
-…
+    // ...
 
-public PipeValue getMyPipeRO() {return myPipeRO;}
+    public PipeValue getMyPipeRO() {return myPipeRO;}
 
 
 
@@ -523,9 +524,9 @@ Init
 
 .. code-block:: java
 
-@Init
-public void init() {
-}
+    @Init
+    public void init() {
+    }
 
 
 
@@ -552,9 +553,9 @@ Delete
 
 .. code-block:: java
 
-@Delete
-public void delete() {
-}
+    @Delete
+    public void delete() {
+    }
 
 
 
@@ -573,16 +574,16 @@ State
 
 .. code-block:: java
 
-@State
-private DeviceState state;
+    @State
+    private DeviceState state;
 
-public DeviceState getState() {
-  return state;
-}
+    public DeviceState getState() {
+        return state;
+    }
 
-public void setState(final DeviceState state) {
-   this.state = state;
-}
+    public void setState(final DeviceState state) {
+        this.state = state;
+    }
 
 
 The state annotation defines the state of the device, which will appear
@@ -610,16 +611,16 @@ Status
 
 .. code-block:: java
 
-@Status
-private String status;
+    @Status
+    private String status;
 
-public String getStatus() {
-   return status;
-}
+    public String getStatus() {
+        return status;
+    }
 
-public void setStatus(String status) {
-   this.status = status;
-}
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
 
 
@@ -642,12 +643,12 @@ Device property
 
 .. code-block:: java
 
-@DeviceProperty (defaultValue = "", description = "an example")
-private String devicePropTest;
+    @DeviceProperty (defaultValue = "", description = "an example")
+    private String devicePropTest;
 
-public void setDevicePropTest(String devicePropTest) {
-   this.devicePropTest = devicePropTest;
-}
+    public void setDevicePropTest(String devicePropTest) {
+        this.devicePropTest = devicePropTest;
+    }
 
 
 The field can be of any standard java type (int, double …), as scalar or
@@ -669,12 +670,12 @@ dynamic attributes that have their names as a device property name).
 
 .. code-block:: java
 
-@DeviceProperties
-private Map<String, String[]> devicePropTest;
+    @DeviceProperties
+    private Map<String, String[]> devicePropTest;
 
-public void setDevicePropTest(final Map<String, String[]> devicePropTest) {
-  this.devicePropTest = devicePropTest;
-}
+    public void setDevicePropTest(final Map<String, String[]> devicePropTest) {
+        this.devicePropTest = devicePropTest;
+    }
 
 
 
@@ -691,12 +692,12 @@ Class property
 
 .. code-block:: java
 
-@ClassProperty
-private double[] classPropTest;
+    @ClassProperty
+    private double[] classPropTest;
 
-public void setClassPropTest(double[] classPropTest) {
-   this.classPropTest = classPropTest;
-}
+    public void setClassPropTest(double[] classPropTest) {
+        this.classPropTest = classPropTest;
+    }
 
 
 
@@ -720,12 +721,12 @@ executed hook” in C++.
 
 .. code-block:: java
 
-@AroundInvoke
-public void aroundInvoke(final InvocationContext ctxt) {
-    System.out.println("called at " + ctxt.getContext());
-    System.out.println("called command or attributes " + 
-			Arrays.toString(ctxt.getNames()));
-}
+    @AroundInvoke
+    public void aroundInvoke(final InvocationContext ctxt) {
+        System.out.println("called at " + ctxt.getContext());
+        System.out.println("called command or attributes " + 
+			    Arrays.toString(ctxt.getNames()));
+    }
 
 
 State machine
@@ -747,20 +748,20 @@ some state changes:
 
 .. code-block:: java
 
-@Attribute
-@StateMachine(endState = DeviceState.RUNNING)
-private double value;
+    @Attribute
+    @StateMachine(endState = DeviceState.RUNNING)
+    private double value;
 
-@Init
-@StateMachine(endState = DeviceState.OFF)
-public void init() {
-}
+    @Init
+    @StateMachine(endState = DeviceState.OFF)
+    public void init() {
+    }
 
-@Command
-@StateMachine(deniedStates = { DeviceState.FAULT, DeviceState.UNKNOWN }, endState = DeviceState.ON)
-public int on() {
-  return 0;
-}
+    @Command
+    @StateMachine(deniedStates = { DeviceState.FAULT, DeviceState.UNKNOWN }, endState = DeviceState.ON)
+    public int on() {
+        return 0;
+    }
 
 
 Device Manager
@@ -774,17 +775,17 @@ properties…
 
 .. code-block:: java
 
-@DeviceManagement
-private DeviceManager deviceManager;
+    @DeviceManagement
+    private DeviceManager deviceManager;
 
-@Init
-public void init() {
-   System.out.println(deviceManager.getName());
-}
+    @Init
+    public void init() {
+        System.out.println(deviceManager.getName());
+    }
 
-public void setDeviceManager(final DeviceManager deviceManager) {
-   this.deviceManager = deviceManager;
-}
+    public void setDeviceManager(final DeviceManager deviceManager) {
+        this.deviceManager = deviceManager;
+    }
 
 
 
@@ -800,23 +801,23 @@ called in @Delete method:
 
 .. code-block:: java
 
-@DynamicManagement
-private DynamicManager dynamicManagement;
+    @DynamicManagement
+    private DynamicManager dynamicManagement;
 
-public void setDynamicManagement(DynamicManager dynamicManagement) {
-    this.dynamicManagement = dynamicManagement;
-}
+    public void setDynamicManagement(DynamicManager dynamicManagement) {
+        this.dynamicManagement = dynamicManagement;
+    }
 
-@Init
-public void init() throws DevFailed {
-   dynamicManager.addAttribute(new TestDynamicAttribute());
-   dynamicManager.addCommand(new TestDynamicCommand());
-}
+    @Init
+    public void init() throws DevFailed {
+        dynamicManager.addAttribute(new TestDynamicAttribute());
+        dynamicManager.addCommand(new TestDynamicCommand());
+    }
 
-@Delete
-public void delete() throws DevFailed {
-   dynamicManager.clearAll();
-}
+    @Delete
+    public void delete() throws DevFailed {
+        dynamicManager.clearAll();
+    }
 
 
 
@@ -846,13 +847,13 @@ value of type DEVDOUBLE:
 
 .. code-block:: java
 
-public CommandConfiguration getConfiguration() throws DevFailed {
-    final CommandConfiguration config = new CommandConfiguration();
-    config.setName("testDynCmd");
-    config.setInType(void.class);
-    config.setOutType(double.class);
-    return config;
-}
+    public CommandConfiguration getConfiguration() throws DevFailed {
+        final CommandConfiguration config = new CommandConfiguration();
+        config.setName("testDynCmd");
+        config.setInType(void.class);
+        config.setOutType(double.class);
+        return config;
+    }
 
 
 The command types may be declared in two different ways:
@@ -874,12 +875,12 @@ annotation. See its chapter for details.
 
 .. code-block:: java
 
-public StateMachineBehavior getStateMachine() throws DevFailed {
-  final StateMachineBehavior stateMachine = new StateMachineBehavior();
-  stateMachine.setDeniedStates(DeviceState.FAULT);
-  stateMachine.setEndState(DeviceState.ON);
-  return stateMachine;    
-}
+    public StateMachineBehavior getStateMachine() throws DevFailed {
+        final StateMachineBehavior stateMachine = new StateMachineBehavior();
+        stateMachine.setDeniedStates(DeviceState.FAULT);
+        stateMachine.setEndState(DeviceState.ON);
+        return stateMachine;    
+    }
 
 
 Execution
@@ -891,9 +892,9 @@ value may be null.
 
 .. code-block:: java
 
-public Object execute(final Object arg) throws DevFailed {
-   return 10.0;
-}
+    public Object execute(final Object arg) throws DevFailed {
+        return 10.0;
+    }
 
 
 Dynamic Attribute
@@ -915,7 +916,7 @@ an example for a scalar, DevDouble, READ\_WRITE attribute:
 
 .. code-block:: java
 
-public AttributeConfiguration getConfiguration() throws DevFailed {
+    public AttributeConfiguration getConfiguration() throws DevFailed {
 	final AttributeConfiguration config = new AttributeConfiguration();
 	config.setName("testDynAttr");
 	// attribute testDynAttr is a DevDouble
@@ -923,7 +924,7 @@ public AttributeConfiguration getConfiguration() throws DevFailed {
 	// attribute testDynAttr is READ_WRITE
 	config.setWritable(AttrWriteType.READ_WRITE);
 	return config;
-}
+    }
 
 
 The attribute type and format may be declared in two different ways:
@@ -940,10 +941,10 @@ The attribute type and format may be declared in two different ways:
 
 .. code-block:: java
 
-final AttributePropertiesImpl props = new AttributePropertiesImpl();
-props.setLabel("DevEnumDynamic");
-props.setEnumLabels(new String[] { "label1", "label2" });
-configAttr.setTangoType(TangoConst.Tango_DEV_ENUM, AttrDataFormat.SCALAR);
+    final AttributePropertiesImpl props = new AttributePropertiesImpl();
+    props.setLabel("DevEnumDynamic");
+    props.setEnumLabels(new String[] { "label1", "label2" });
+    configAttr.setTangoType(TangoConst.Tango_DEV_ENUM, AttrDataFormat.SCALAR);
 
 
 StateMachine
@@ -954,12 +955,12 @@ annotation. See its chapter for details.
 
 .. code-block:: java
 
-public StateMachineBehavior getStateMachine() throws DevFailed {
-  final StateMachineBehavior stateMachine = new StateMachineBehavior();
-  stateMachine.setDeniedStates(DeviceState.FAULT);
-  stateMachine.setEndState(DeviceState.ON);
-  return stateMachine;    
-}
+    public StateMachineBehavior getStateMachine() throws DevFailed {
+        final StateMachineBehavior stateMachine = new StateMachineBehavior();
+        stateMachine.setDeniedStates(DeviceState.FAULT);
+        stateMachine.setEndState(DeviceState.ON);
+        return stateMachine;    
+    }
 
 
 Read attribute
@@ -972,13 +973,13 @@ type (defined in “getConfiguration”).
 
 .. code-block:: java
 
-private double readValue = 0;
-private double writeValue = 0;
+    private double readValue = 0;
+    private double writeValue = 0;
 
-public AttributeValue getValue() throws DevFailed {
+    public AttributeValue getValue() throws DevFailed {
 	readValue = readValue + writeValue;
 	return new AttributeValue(readValue);
-}
+    }
 
 
 Write attribute
@@ -989,9 +990,9 @@ defined as writable in “getConfiguration”.
 
 .. code-block:: java
 
-public void setValue(final AttributeValue value) throws DevFailed {
-    writeValue = (Double) value.getValue();
-}
+    public void setValue(final AttributeValue value) throws DevFailed {
+        writeValue = (Double) value.getValue();
+    }
 
 
 Update write part
@@ -1004,9 +1005,9 @@ which has one method:
 
 .. code-block:: java
 
-public AttributeValue getSetValue() throws DevFailed {
-  return new AttributeValue(writeValue);
-}
+    public AttributeValue getSetValue() throws DevFailed {
+        return new AttributeValue(writeValue);
+    }
 
 
 Forwarded Attribute
@@ -1017,13 +1018,13 @@ To create a forwarded attribute, just use
 
 .. code-block:: java
 
-@DynamicManagement
-private DynamicManager dynamicManagement;
+    @DynamicManagement
+    private DynamicManager dynamicManagement;
 
-@Init
-public void init() throws DevFailed {
-   dynamicManager.addAttribute(new ForwardedAttribute(fullRootAttributeName, attributeName, defaulltLabel);
-}
+    @Init
+    public void init() throws DevFailed {
+        dynamicManager.addAttribute(new ForwardedAttribute(fullRootAttributeName, attributeName, defaulltLabel);
+    }
 
 
 Default dynamic attributes and commands
@@ -1099,9 +1100,9 @@ value varies at least of 1 since the last time it was sent:
 
 .. code-block:: java
 
-@Attribute(isPolled = true, pollingPeriod = 100)
-@AttributeProperties(changeEventAbsolute = "1")
-private double doubleAtt = 0;
+    @Attribute(isPolled = true, pollingPeriod = 100)
+    @AttributeProperties(changeEventAbsolute = "1")
+    private double doubleAtt = 0;
 
 
 Pushed events
@@ -1119,50 +1120,50 @@ the criteria ‘changeEventAbsolute’ and ‘changeEventRelative’:
 
 .. code-block:: java
 
-@DeviceManagement
-DeviceManager deviceManager;
-public void setDeviceManager(final DeviceManager deviceManager) {
-    this.deviceManager = deviceManager;
-}
+    @DeviceManagement
+    DeviceManager deviceManager;
+    public void setDeviceManager(final DeviceManager deviceManager) {
+        this.deviceManager = deviceManager;
+    }
 
-@Attribute(pushChangeEvent = true, checkChangeEvent = true)
-@AttributeProperties(changeEventAbsolute = "1", changeEventRelative = "0.3")
-private double doubleAttr;
-…
+    @Attribute(pushChangeEvent = true, checkChangeEvent = true)
+    @AttributeProperties(changeEventAbsolute = "1", changeEventRelative = "0.3")
+    private double doubleAttr;
+    // ...
 
-doubleAttr++;
-deviceManager.pushEvent("doubleAttr", new AttributeValue(doubleAttr), EventType.CHANGE_EVENT);
-…
+    doubleAttr++;
+    deviceManager.pushEvent("doubleAttr", new AttributeValue(doubleAttr), EventType.CHANGE_EVENT);
+    // ...
 
 
 Here is an example for pushing data ready events:
 
 .. code-block:: java
 
-private int counter;
+    private int counter;
 
-@Attribute(pushDataReady = true)
-private double doubleAttr;
-… 
+    @Attribute(pushDataReady = true)
+    private double doubleAttr;
+        // ... 
 
-    counter++;
-…
+        counter++;
+        // ...
 
-    deviceManager.pushDataReadyEvent("doubleAttr", counter);
-…        
+        deviceManager.pushDataReadyEvent("doubleAttr", counter);
+        // ...        
 
 
 Here is an example that sends a user event:
 
 .. code-block:: java
 
-@Attribute
-public String getUserEvent() throws DevFailed {
+    @Attribute
+    public String getUserEvent() throws DevFailed {
         return "Hello";
-}
+    }
 
- …
-deviceManager.pushEvent("userEvent",new AttributeValue("test"), EventType.USER_EVENT);
+    // ...
+    deviceManager.pushEvent("userEvent",new AttributeValue("test"), EventType.USER_EVENT);
 
 
 Error management
@@ -1174,10 +1175,10 @@ fill the origin field. See javadoc for details.
 
 .. code-block:: java
 
-@Command
-public int off() throws DevFailed {
-  throw DevFailedUtils.newDevFailed("DEVICE_ERROR", "an example error");
-}
+    @Command
+    public int off() throws DevFailed {
+        throw DevFailedUtils.newDevFailed("DEVICE_ERROR", "an example error");
+    }
 
 
 Logging
@@ -1190,11 +1191,11 @@ example of a logger class:
 
 .. code-block:: java
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory; 
+    import org.slf4j.Logger;
+    import org.slf4j.LoggerFactory; 
 
-…
-private final Logger logger = LoggerFactory.getLogger(TestDevice.class);
+    // ...
+    private final Logger logger = LoggerFactory.getLogger(TestDevice.class);
 
 
 For details about SLF4J, please refer to its documentation:
@@ -1233,9 +1234,9 @@ call “start” of org.tango.server.ServerManager.
 
 .. code-block:: java
 
-public static void main(final String[] args) {
-  ServerManager.getInstance().start(args, TestDevice.class);
-}
+    public static void main(final String[] args) {
+        ServerManager.getInstance().start(args, TestDevice.class);
+    }
 
 
 When using the Tango database, the java system property or environment
@@ -1258,12 +1259,12 @@ org.tango.PowerSupply):
 
 .. code-block:: java
 
-// add class org.tango.Motor to the server (to be declared as “Motor” in the tango db)
-ServerManager.getInstance().addClass(org.tango.Motor.class.getSimpleName(), org.tango.Motor.class);
-// add class org.tango.PowerSupply to the server (to be declared as “PowerSupply” in the tango db)
-ServerManager.getInstance().addClass(org.tango.PowerSupply.class.getSimpleName(),org.tango. PowerSupply.class);
-// start the server “Insertion/test”
-ServerManager.getInstance().start(new String[] {"test"}, "Insertion");
+    // add class org.tango.Motor to the server (to be declared as “Motor” in the tango db)
+    ServerManager.getInstance().addClass(org.tango.Motor.class.getSimpleName(), org.tango.Motor.class);
+    // add class org.tango.PowerSupply to the server (to be declared as “PowerSupply” in the tango db)
+    ServerManager.getInstance().addClass(org.tango.PowerSupply.class.getSimpleName(),org.tango. PowerSupply.class);
+    // start the server “Insertion/test”
+    ServerManager.getInstance().start(new String[] {"test"}, "Insertion");
 
 
 The following screenshot shows an example declaration of the server
@@ -1283,13 +1284,13 @@ it with an address like "tango://localhost:12354/1/1/1#dbase=no")
 
 .. code-block:: java
 
-public static final String NO_DB_DEVICE_NAME = "1/1/1";
-public static final String NO_DB_GIOP_PORT = "12354";
-public static final String NO_DB_INSTANCE_NAME = "1";
+    public static final String NO_DB_DEVICE_NAME = "1/1/1";
+    public static final String NO_DB_GIOP_PORT = "12354";
+    public static final String NO_DB_INSTANCE_NAME = "1";
 
-…
-System.setProperty("OAPort", NO_DB_GIOP_PORT);
-ServerManager.getInstance().start(new String[] { NO_DB_INSTANCE_NAME, "-nodb", "-dlist", NO_DB_DEVICE_NAME },
+    // ...
+    System.setProperty("OAPort", NO_DB_GIOP_PORT);
+    ServerManager.getInstance().start(new String[] { NO_DB_INSTANCE_NAME, "-nodb", "-dlist", NO_DB_DEVICE_NAME },
 		TestDevice.class);
 
 
@@ -1312,8 +1313,8 @@ Example:
 
 .. code-block:: java
 
-System.setProperty("OAPort", NO_DB_GIOP_PORT);
-ServerManager.getInstance().start(
+    System.setProperty("OAPort", NO_DB_GIOP_PORT);
+    ServerManager.getInstance().start(
 		new String[] { NO_DB_INSTANCE_NAME, "-nodb", "-dlist", NO_DB_DEVICE_NAME,
 			"-file=" + TestDevice.class.getResource("/noDbproperties.txt").getPath() }, TestDevice.class);
 
