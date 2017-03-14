@@ -3,7 +3,8 @@ How to import multiple device classes to the Catalogue
 
 The Device Classes Catalogue is available on the Tango Controls web page:
 http://www.tango-controls.org/resources/dsc/.
-| To import multiple device classes to the catalogue from a repository please use an
+
+To import multiple device classes to the catalogue from a repository please use an
 `import script <https://github.com/piogor/dsc-import>`_.
 
 Requirements
