@@ -26,6 +26,71 @@ A first device
 Here is the code of a simple device class with one Tango command and one
 attribute (see annexes for full code):
 
+.. code-block:: java
+
+    @Device
+    public class TestDevice {
+
+        private final Logger logger = LoggerFactory.getLogger(TestDevice.class);
+        /**
+         * Attribute myAttribute READ WRITE, type DevDouble.
+         */
+        @Attribute
+        public double myAttribute;
+
+        /**
+         * Starts the server.
+         */
+        public static void main(final String[] args) {
+    	    ServerManager.getInstance().start(args, TestDevice.class);
+        }
+
+        /**
+         * init device
+         */
+        @Init
+        public void init() {
+            logger.debug("init");
+        }
+
+        /**
+         * delete device
+         */
+        @Delete
+        public void delete() {
+	    logger.debug("delete");
+        }
+
+        /**
+         * Execute command start. Type VOID-VOID
+         */
+        @Command
+        public void start() {
+	    logger.debug("start");
+        }
+
+        /**
+         * Read attribute myAttribute. 
+         * 
+         * @return
+         */
+        public double getMyAttribute() {
+	    logger.debug("getMyAttribute {}", myAttribute);
+	    return myAttribute;
+        }
+
+        /**
+         * Write attribute myAttribute
+         * 
+         * @param myAttribute
+         */
+        public void setMyAttribute(final double myAttribute) {
+	    logger.debug("setMyAttribute {}", myAttribute);
+	    this.myAttribute = myAttribute;
+        }
+    }
+
+
 Before starting this device, it has to be declared in the Tango database
 with Jive menu “Create server”. Hereafter, a server “TestDevice/1” with
 one device “tmp/test/device.1” is created:
@@ -97,11 +162,26 @@ A Tango device class must have the following Java annotation:
 
 org.tango.server.annotation.Device
 
+.. code-block:: java
+
+    @Device
+    public class TestDevice {
+
+    }
+
+
+
+
 This class can only have a no-arguments constructor.
 
 This annotation has an option to configure how the server will manage
 client transactions. Default value is “NONE”. Here is an example for one
 client request at a time per device:
+
+.. code-block:: java
+
+    @Device(transactionType = TransactionType.DEVICE)
+
 
 All transaction values are:
 
@@ -149,6 +229,14 @@ org.tango.server.annotation.Command
 
 Example code of a command with a parameter of type DEVVARDOUBLEARRAY and
 a returned type of DEVLONG:
+
+.. code-block:: java
+
+    @Command
+    public int testCmd(final double[] in) {
+        return 0;
+    }
+
 
 The command name is by default the method name. The Command annotation
 has some parameters to change its name, its description, its polling
@@ -233,7 +321,40 @@ org.tango.server.annotation.Attribute
 
 Example code of a DEVDOUBLE scalar read and write attribute:
 
+.. code-block:: java
+
+    @Attribute
+    private double testAttribute;
+
+    public double getTestAttribute() {
+        return testAttribute;
+    }
+
+    public void setTestAttribute(double testAttribute) {
+        this.testAttribute = testAttribute;
+    }
+
+
+
 Example code for DEVENUM attribute:
+
+.. code-block:: java
+
+    public enum TestType {
+        VALUE1, VALUE2
+    }
+
+    @Attribute
+    private TestType enumAttribute = TestType.VALUE1;
+    public TestType getEnumAttribute() {
+        return enumAttribute;
+    }
+
+    public void setEnumAttribute(final TestType enumAttribute) {
+        this.enumAttribute = enumAttribute;
+    }
+
+
 
 As defined by the Java bean convention, the setter and getter must
 contain the name of the field and manage the same type as the field
@@ -342,11 +463,32 @@ the attribute value, quality and timestamp. The container is:
 methods to set the value, quality and timestamp. Please refer to its
 javadoc for details.
 
+.. code-block:: java
+
+    @Attribute
+    private double myAttribute;
+
+    public AttributeValue getMyAttribute() throws DevFailed {
+        AttributeValue value = new AttributeValue(myAttribute);
+        value.setQuality(AttrQuality.ATTR_CHANGING);
+        value.setTime(System.currentTimeMillis());
+        return value;
+    }
+
+
 The default attribute properties are configurable with this annotation:
 
 ``org.tango.server.annotation.AttributeProperties``
 
 Please refer to javadoc for details. Example:
+
+.. code-block:: java
+
+    @Attribute
+    @AttributeProperties(format = "%6.4f", description = "a test attribute")
+    private double testAttribute;
+
+
 
 Pipe
 ====
@@ -358,10 +500,35 @@ Pipe
 
     Example code of a read pipe:
 
+.. code-block:: java
+
+    @Pipe
+    private PipeValue myPipeRO;
+
+    // ...
+
+    final PipeBlob myPipeBlob = new PipeBlob("A");
+    myPipeBlob.add(new PipeDataElement("C", "B"));
+    myPipeRO = new PipeValue(myPipeBlob);
+
+    // ...
+
+    public PipeValue getMyPipeRO() {return myPipeRO;}
+
+
+
 Init
 ====
 
 ``org.tango.server.annotation.Init``
+
+.. code-block:: java
+
+    @Init
+    public void init() {
+    }
+
+
 
 This method must be public with no parameters. It is called:
 
@@ -384,6 +551,14 @@ Delete
 
 ``org.tango.server.annotation.Delete``
 
+.. code-block:: java
+
+    @Delete
+    public void delete() {
+    }
+
+
+
 Method must be public with no parameters. It is called:
 
 -  When “Init” command is called before @Init method
@@ -396,6 +571,20 @@ State
 =====
 
 ``org.tango.server.annotation.State``
+
+.. code-block:: java
+
+    @State
+    private DeviceState state;
+
+    public DeviceState getState() {
+        return state;
+    }
+
+    public void setState(final DeviceState state) {
+        this.state = state;
+    }
+
 
 The state annotation defines the state of the device, which will appear
 in the default command and attribute “State”. The field can be
@@ -420,6 +609,21 @@ Status
 
 ``org.tango.server.annotation.Status``
 
+.. code-block:: java
+
+    @Status
+    private String status;
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+
+
 The status annotation defines the status of the device, which will
 appear in the default command and attribute “Status”. The status field
 must be a String, getter and setter are mandatory.
@@ -436,6 +640,16 @@ Device property
 -  *If does not exists; value defined at class level*
 
 -  *If does not exists; default value*
+
+.. code-block:: java
+
+    @DeviceProperty (defaultValue = "", description = "an example")
+    private String devicePropTest;
+
+    public void setDevicePropTest(String devicePropTest) {
+        this.devicePropTest = devicePropTest;
+    }
+
 
 The field can be of any standard java type (int, double …), as scalar or
 array.
@@ -454,6 +668,17 @@ It is possible to retrieve all device properties at once. It can be
 useful if some device properties are not known in advance (Example: some
 dynamic attributes that have their names as a device property name).
 
+.. code-block:: java
+
+    @DeviceProperties
+    private Map<String, String[]> devicePropTest;
+
+    public void setDevicePropTest(final Map<String, String[]> devicePropTest) {
+        this.devicePropTest = devicePropTest;
+    }
+
+
+
 The field has to be a java.util.Map with a “String” key and a “String[]”
 value.
 
@@ -464,6 +689,17 @@ Class property
 ==============
 
 ``org.tango.server.annotation.ClassProperty``
+
+.. code-block:: java
+
+    @ClassProperty
+    private double[] classPropTest;
+
+    public void setClassPropTest(double[] classPropTest) {
+        this.classPropTest = classPropTest;
+    }
+
+
 
 The field can be of any standard java type (int, double …), as scalar or
 array.
@@ -483,6 +719,16 @@ org.tango.server.InvocationContext. It is called before and after every
 command and attributes execution. This functionality is known as “always
 executed hook” in C++.
 
+.. code-block:: java
+
+    @AroundInvoke
+    public void aroundInvoke(final InvocationContext ctxt) {
+        System.out.println("called at " + ctxt.getContext());
+        System.out.println("called command or attributes " + 
+			    Arrays.toString(ctxt.getNames()));
+    }
+
+
 State machine
 =============
 
@@ -500,6 +746,24 @@ some state changes:
 -  For an attribute, it can be disallowed to write it for some states
    and the state at the end of its execution.
 
+.. code-block:: java
+
+    @Attribute
+    @StateMachine(endState = DeviceState.RUNNING)
+    private double value;
+
+    @Init
+    @StateMachine(endState = DeviceState.OFF)
+    public void init() {
+    }
+
+    @Command
+    @StateMachine(deniedStates = { DeviceState.FAULT, DeviceState.UNKNOWN }, endState = DeviceState.ON)
+    public int on() {
+        return 0;
+    }
+
+
 Device Manager
 ==============
 
@@ -508,6 +772,22 @@ Device Manager
 DeviceManager contains common utilities for a device. For example, it
 provides its name, its admin device name, a way to change attribute
 properties…
+
+.. code-block:: java
+
+    @DeviceManagement
+    private DeviceManager deviceManager;
+
+    @Init
+    public void init() {
+        System.out.println(deviceManager.getName());
+    }
+
+    public void setDeviceManager(final DeviceManager deviceManager) {
+        this.deviceManager = deviceManager;
+    }
+
+
 
 Dynamic API
 ===========
@@ -518,6 +798,28 @@ the annotation org.tango.server.annotation.DynamicManagement. It
 provides methods to add or remove attributes and commands. Typically,
 the add methods will be called in the @Init method and remove will be
 called in @Delete method:
+
+.. code-block:: java
+
+    @DynamicManagement
+    private DynamicManager dynamicManagement;
+
+    public void setDynamicManagement(DynamicManager dynamicManagement) {
+        this.dynamicManagement = dynamicManagement;
+    }
+
+    @Init
+    public void init() throws DevFailed {
+        dynamicManager.addAttribute(new TestDynamicAttribute());
+        dynamicManager.addCommand(new TestDynamicCommand());
+    }
+
+    @Delete
+    public void delete() throws DevFailed {
+        dynamicManager.clearAll();
+    }
+
+
 
 NB: If a server is running with several devices in the same process, the
 dynamic commands or attributes can be different for each device.
@@ -543,6 +845,17 @@ org.tango.server.command.CommandConfiguration for details). Here is an
 example a command called testDynCmd with no parameter and a returned
 value of type DEVDOUBLE:
 
+.. code-block:: java
+
+    public CommandConfiguration getConfiguration() throws DevFailed {
+        final CommandConfiguration config = new CommandConfiguration();
+        config.setName("testDynCmd");
+        config.setInType(void.class);
+        config.setOutType(double.class);
+        return config;
+    }
+
+
 The command types may be declared in two different ways:
 
 -  setInType(Class<?> type) or setOutType: as table in chapter
@@ -560,12 +873,29 @@ The command types may be declared in two different ways:
 It is optional and can return “null”. It works like the StateMachine
 annotation. See its chapter for details.
 
+.. code-block:: java
+
+    public StateMachineBehavior getStateMachine() throws DevFailed {
+        final StateMachineBehavior stateMachine = new StateMachineBehavior();
+        stateMachine.setDeniedStates(DeviceState.FAULT);
+        stateMachine.setEndState(DeviceState.ON);
+        return stateMachine;    
+    }
+
+
 Execution
 ~~~~~~~~~
 
 The input and output types of the execute method is defined by the
 configuration above. If the type is void, the parameter or returned
 value may be null.
+
+.. code-block:: java
+
+    public Object execute(final Object arg) throws DevFailed {
+        return 10.0;
+    }
+
 
 Dynamic Attribute
 -----------------
@@ -584,6 +914,19 @@ attribute (see javadoc of
 org.tango.server.attribute.AttributeConfiguration for details). Here is
 an example for a scalar, DevDouble, READ\_WRITE attribute:
 
+.. code-block:: java
+
+    public AttributeConfiguration getConfiguration() throws DevFailed {
+	final AttributeConfiguration config = new AttributeConfiguration();
+	config.setName("testDynAttr");
+	// attribute testDynAttr is a DevDouble
+	config.setType(double.class);
+	// attribute testDynAttr is READ_WRITE
+	config.setWritable(AttrWriteType.READ_WRITE);
+	return config;
+    }
+
+
 The attribute type and format may be declared in two different ways:
 
 -  setType(Class<?> type): as table in chapter “Attribute”, the java
@@ -596,11 +939,29 @@ The attribute type and format may be declared in two different ways:
    Java classes: DEVULONG, DEVULONG64, DEVUSHORT, DEVENUM. Example of
    DEVENUM:
 
+.. code-block:: java
+
+    final AttributePropertiesImpl props = new AttributePropertiesImpl();
+    props.setLabel("DevEnumDynamic");
+    props.setEnumLabels(new String[] { "label1", "label2" });
+    configAttr.setTangoType(TangoConst.Tango_DEV_ENUM, AttrDataFormat.SCALAR);
+
+
 StateMachine
 ~~~~~~~~~~~~
 
 Not mandatory, can return “null”. It works like the StateMachine
 annotation. See its chapter for details.
+
+.. code-block:: java
+
+    public StateMachineBehavior getStateMachine() throws DevFailed {
+        final StateMachineBehavior stateMachine = new StateMachineBehavior();
+        stateMachine.setDeniedStates(DeviceState.FAULT);
+        stateMachine.setEndState(DeviceState.ON);
+        return stateMachine;    
+    }
+
 
 Read attribute
 ~~~~~~~~~~~~~~
@@ -610,11 +971,29 @@ org.tango.server.attribute.AttributeValue (see javadoc for details). Of
 course, the inserted value must be of the same type as the attribute
 type (defined in “getConfiguration”).
 
+.. code-block:: java
+
+    private double readValue = 0;
+    private double writeValue = 0;
+
+    public AttributeValue getValue() throws DevFailed {
+	readValue = readValue + writeValue;
+	return new AttributeValue(readValue);
+    }
+
+
 Write attribute
 ~~~~~~~~~~~~~~~
 
 The method “setValue” will be called only if the attribute has been
 defined as writable in “getConfiguration”.
+
+.. code-block:: java
+
+    public void setValue(final AttributeValue value) throws DevFailed {
+        writeValue = (Double) value.getValue();
+    }
+
 
 Update write part
 ~~~~~~~~~~~~~~~~~
@@ -624,11 +1003,29 @@ In some specific cases, the write part has to be updated from the device
 implementing the interface org.tango.server.attribute.ISetValueUpdater
 which has one method:
 
+.. code-block:: java
+
+    public AttributeValue getSetValue() throws DevFailed {
+        return new AttributeValue(writeValue);
+    }
+
+
 Forwarded Attribute
 ~~~~~~~~~~~~~~~~~~~
 
 To create a forwarded attribute, just use
 ``org.tango.server.attribute.ForwardedAttribute``:
+
+.. code-block:: java
+
+    @DynamicManagement
+    private DynamicManager dynamicManagement;
+
+    @Init
+    public void init() throws DevFailed {
+        dynamicManager.addAttribute(new ForwardedAttribute(fullRootAttributeName, attributeName, defaulltLabel);
+    }
+
 
 Default dynamic attributes and commands
 =======================================
@@ -701,6 +1098,13 @@ device’s code. In the following example, the attribute ‘doubleAtt’ is
 polled at a 100 milliseconds rate and will send a change event if its
 value varies at least of 1 since the last time it was sent:
 
+.. code-block:: java
+
+    @Attribute(isPolled = true, pollingPeriod = 100)
+    @AttributeProperties(changeEventAbsolute = "1")
+    private double doubleAtt = 0;
+
+
 Pushed events
 ~~~~~~~~~~~~~
 
@@ -714,9 +1118,53 @@ In the following example, a change event is pushed on the attribute
 ‘doubleAttr’. The API will check if the event must be send according to
 the criteria ‘changeEventAbsolute’ and ‘changeEventRelative’:
 
+.. code-block:: java
+
+    @DeviceManagement
+    DeviceManager deviceManager;
+    public void setDeviceManager(final DeviceManager deviceManager) {
+        this.deviceManager = deviceManager;
+    }
+
+    @Attribute(pushChangeEvent = true, checkChangeEvent = true)
+    @AttributeProperties(changeEventAbsolute = "1", changeEventRelative = "0.3")
+    private double doubleAttr;
+    // ...
+
+    doubleAttr++;
+    deviceManager.pushEvent("doubleAttr", new AttributeValue(doubleAttr), EventType.CHANGE_EVENT);
+    // ...
+
+
 Here is an example for pushing data ready events:
 
+.. code-block:: java
+
+    private int counter;
+
+    @Attribute(pushDataReady = true)
+    private double doubleAttr;
+        // ... 
+
+        counter++;
+        // ...
+
+        deviceManager.pushDataReadyEvent("doubleAttr", counter);
+        // ...        
+
+
 Here is an example that sends a user event:
+
+.. code-block:: java
+
+    @Attribute
+    public String getUserEvent() throws DevFailed {
+        return "Hello";
+    }
+
+    // ...
+    deviceManager.pushEvent("userEvent",new AttributeValue("test"), EventType.USER_EVENT);
+
 
 Error management
 ================
@@ -725,6 +1173,14 @@ The standard exception in Tango is fr.esrf.DevFailed. The class
 org.tango.DevFailedUtils is useful to throw it. It will, for instance,
 fill the origin field. See javadoc for details.
 
+.. code-block:: java
+
+    @Command
+    public int off() throws DevFailed {
+        throw DevFailedUtils.newDevFailed("DEVICE_ERROR", "an example error");
+    }
+
+
 Logging
 =============
 
@@ -732,6 +1188,15 @@ The Java Tango server API uses SLF4J
 (`*http://www.slf4j.org/* <http://www.slf4j.org/>`__). The underlying
 libraries use also SLF4J (i.e. jacorb, ehcache…). Here is a declaration
 example of a logger class:
+
+.. code-block:: java
+
+    import org.slf4j.Logger;
+    import org.slf4j.LoggerFactory; 
+
+    // ...
+    private final Logger logger = LoggerFactory.getLogger(TestDevice.class);
+
 
 For details about SLF4J, please refer to its documentation:
 `*http://www.slf4j.org/docs.html* <http://www.slf4j.org/docs.html>`__
@@ -767,6 +1232,13 @@ So logback may be used to benefit from the above configuration topics
 A device class may contain a main method to start its server. It should
 call “start” of org.tango.server.ServerManager.
 
+.. code-block:: java
+
+    public static void main(final String[] args) {
+        ServerManager.getInstance().start(args, TestDevice.class);
+    }
+
+
 When using the Tango database, the java system property or environment
 variable TANGO\_HOST must be defined to indicate the host and port of
 the database. The string array passed in the start method must contain
@@ -785,6 +1257,16 @@ It is possible to have several classes in a single server. Here is an
 example of a server started with two classes (org.tango.Motor and
 org.tango.PowerSupply):
 
+.. code-block:: java
+
+    // add class org.tango.Motor to the server (to be declared as “Motor” in the tango db)
+    ServerManager.getInstance().addClass(org.tango.Motor.class.getSimpleName(), org.tango.Motor.class);
+    // add class org.tango.PowerSupply to the server (to be declared as “PowerSupply” in the tango db)
+    ServerManager.getInstance().addClass(org.tango.PowerSupply.class.getSimpleName(),org.tango. PowerSupply.class);
+    // start the server “Insertion/test”
+    ServerManager.getInstance().start(new String[] {"test"}, "Insertion");
+
+
 The following screenshot shows an example declaration of the server
 “Insertion/test” in the tango db; it contains 4 devices, 2 of class
 Motor and 2 of class PowerSupply:
@@ -799,6 +1281,18 @@ perform unit tests. The system property OAPort (used by JacORB) must
 specify the port on which the server is started. The following code
 starts a device “1/1/1” on the port 12354 (NB: a client will connect to
 it with an address like "tango://localhost:12354/1/1/1#dbase=no")
+
+.. code-block:: java
+
+    public static final String NO_DB_DEVICE_NAME = "1/1/1";
+    public static final String NO_DB_GIOP_PORT = "12354";
+    public static final String NO_DB_INSTANCE_NAME = "1";
+
+    // ...
+    System.setProperty("OAPort", NO_DB_GIOP_PORT);
+    ServerManager.getInstance().start(new String[] { NO_DB_INSTANCE_NAME, "-nodb", "-dlist", NO_DB_DEVICE_NAME },
+		TestDevice.class);
+
 
 The start options are for a no db server:
 
@@ -816,6 +1310,14 @@ The start options are for a no db server:
 |image5|
 
 Example:
+
+.. code-block:: java
+
+    System.setProperty("OAPort", NO_DB_GIOP_PORT);
+    ServerManager.getInstance().start(
+		new String[] { NO_DB_INSTANCE_NAME, "-nodb", "-dlist", NO_DB_DEVICE_NAME,
+			"-file=" + TestDevice.class.getResource("/noDbproperties.txt").getPath() }, TestDevice.class);
+
 
 1. .. rubric:: Annexes
       :name: annexes
