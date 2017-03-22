@@ -20,7 +20,7 @@ First steps with Tango Controls
       supported by any existing :term:`Device Server`.
 
 * At the beginning you may also be interested in how to use provided tools:
-  `Jive <http://jive.readthedocs.io/en/latest/>`_,
+  :doc:`Jive <tools/jive/index>`,
   :doc:`Astor <tools/astor/index>`, :doc:`JDraw <tools/jdraw/index>` or :doc:`Pogo <tools/pogo/index>`.
 
 
