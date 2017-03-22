@@ -7,9 +7,19 @@ Glossary
 
     device server
     device servers
-        Device Server is a program (executable) which is able to create :term:'device' of certain classes. A device
-        server may implement one or multiple classes.
+        Device Server is a program (executable) which is able to create :term:'devices' of certain classes. A device
+        server may implement one or multiple classes and instantiate one or many devices. A running device server
+        is called the :term:`device server instance`.
 
+    instance
+    device server instance
+        A running device server is called a device server instance. So, it is a process. Every device server instance
+        has an unique name in Tango Controls by which it can be referenced. The name is built as
+        *{DeviceServerName}*/*{instanceName}*. For each running device server the system creates a special device
+        of `DServer` :term:`class`: *dserver/{DeviceServerName}/{instanceName}*. This device provides management
+        facility for the device server instance (see `DServer class device commands`_)
+
+    class
     device class
     device classes
         Device Class is an abstraction of device interface. It defines :term:`attributes`, :term:`pipes`,
@@ -22,7 +32,7 @@ Glossary
         Device is a key concept of Tango Controls. It is an object providing access to its :term:`attributes`,
         :term:`pipes` and :term:`commands`. The list of attributes, pipes and commands available for certain device is
         defined by its :term:`device class`. The device may be related to a hardware device it interface to or it may
-        be a kid of logical device providing some functionalities not directly related to hardware.
+        be a kid of logical device providing some functionality not directly related to hardware.
 
     attribute
     attributes
@@ -32,7 +42,16 @@ Glossary
 
     command
     commands
-        A command is an operation a user may invoke on a device.
+        A command is an operation a user may invoke on a device (ex. `SwitchOn`, `SwitchOff`). It also relates
+        to the method in OOP (Object-Oriented Programming). In fact, Tango Controls allows a command to get input
+        argument (argin) and to return a value (argout). List of available commands for a certain device is defined
+        by its :term:`device class`.
+
+
+    state
+    states
+    state machine
+        A state
 
     pipe
     pipes
