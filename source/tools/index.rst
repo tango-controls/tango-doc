@@ -1,10 +1,32 @@
-Tango Controls Tools
-====================
+Tango Controls tools and libraries index
+========================================
+
+Built-in tools
+--------------
+
+These tools are delivered as a part of Tango Controls core package.
 
 .. toctree::
-    :maxdepth: 2
+   :name: buildintoolstoc
+   :maxdepth: 1
 
-    astor/index
-    jdraw/index
-    jive/index
-    pogo/index
+   astor/index
+   jive/index
+   pogo/index
+   jdraw/index
+
+Archiving
+---------
+
+
+GUI building
+------------
+
+
+Bindings
+--------
+
+
+Other
+-----
+
