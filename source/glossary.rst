@@ -7,8 +7,18 @@ Glossary
 .. glossary::
 
     Tango Controls
-        The Tango Controls is object oriented, distributed control system framework which defines communication protocol,
-        and API as well as provides set of tools and libraries to build a control systems a specially SCADA.
+        The Tango Controls is object oriented, distributed control system framework which defines communication protocol
+        and API as well as provides set of tools and libraries to build software for a control systems
+        especially :term:`SCADA`.
+
+    Core
+    Tango Core
+        The Tango Core is set of main tools, libraries and specifications of Tango Controls. It consists of libraries
+        and API definitions for C++, Java and Python, tools to manage the system :doc:`Astor <tools/astor/index>`,
+        :doc:`Jive <tools/jive/index>`, ...
+
+    SCADA
+        It is abbreviation of Supervisory Control and Data Acquisition.
 
     device server
     device servers
