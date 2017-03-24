@@ -8,3 +8,4 @@ Reference
     ds-guide/index
     java-server-guide/index
     cpp-api/index
+    glossary
