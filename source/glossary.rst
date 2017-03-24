@@ -1,13 +1,18 @@
 .. This is file to keep glossary
+.. _glossary:
 
 Glossary
 ========
 
 .. glossary::
 
+    Tango Controls
+        The Tango Controls is object oriented, distributed control system framework which defines communication protocol,
+        and API as well as provides set of tools and libraries to build a control systems a specially SCADA.
+
     device server
     device servers
-        Device Server is a program (executable) which is able to create :term:'devices' of certain classes. A device
+        Device Server is a program (executable) which is able to create :term:`devices` of certain classes. A device
         server may implement one or multiple classes and instantiate one or many devices. A running device server
         is called the :term:`device server instance`.
 
@@ -36,9 +41,15 @@ Glossary
 
     attribute
     attributes
-        An attribute represents a process value in the system. It may have different format or dimensions like
+        An attribute represents a process value(s) in the system. It may have different format or dimensions like
         scalar(0D), spectrum(1D) or image(2D). The attribute allows to read and/or write these values depends of
-        defined access type. The value may have different data type. Please refer to the manual.
+        defined access. The value may have different data type. In addition to value the attribute provides some
+        metadata like a :term:`attribute quality`, timestamp, configuration properties. Please refer to the manual.
+        A list of attributes available for a certain device is defined by its :term:`class`.
+
+    dynamic attribute
+        A :term:`device` may create attributes which configration is determined during device initialization or even
+        runtime. These kind of attributes are called *dynamic*.
 
     command
     commands
@@ -47,15 +58,25 @@ Glossary
         argument (argin) and to return a value (argout). List of available commands for a certain device is defined
         by its :term:`device class`.
 
+    pipe
+    pipes
+        A pipe allows to read and/or write a structured data from and/or to a :term:`device`. The data may be built
+        out of several basic Tango datatypes. The structure of data is defined by a :term:`device class` and is not
+        fixed. It may be changed runtime by the :term:`device` itself or modified upon request from client according to
+        `set_pipe_config` operation provided by pipe. List of pipes available for a :term:`device` is defined by its
+        :term:`device class`.
 
     state
     states
-    state machine
-        A state
+    device state
+        A :term:`device` may be in a certain state determined on runtime. State of a :term:`device` may reflect state of
+        an equipment it interfaces to or be determined in other way. The behaviour is defined by the
+        :term:`device class` which implements :term:`state machine`. The state may define attributes', commands` and
+        pipes' operations available at the moment. Tango Controls limits kinde of states the device may be in
 
-    pipe
-    pipes
-        A pipe is...
+    state machine
+       A state machine for a :term:`device class` define operations (commands, attributes' and pipes' access) available
+       at different :term:`states` of a :term:`device`.
 
     Tango Host
         Each Tango Controls system/deployment has to have at least one running DataBaseds :term:`device server`.
