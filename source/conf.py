@@ -62,7 +62,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'Tango Controls'
-copyright = u'2016, Tango Community, 3Controls, Piotr Goryl'
+copyright = u'2017, Tango Community, Creative Commons Attribution 4.0 International (CC BY 4.0)'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -217,8 +217,8 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  ('index', 'TangoControlsDocumentation.tex', u'Tango Controls Documentation Documentation',
-   u'Tango Community, 3Controls, Piotr Goryl', 'manual'),
+  ('index', 'TangoControlsDocumentation.tex', u'Tango Controls Documentation',
+   u'Tango Community (CC BY 4.0)', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -261,8 +261,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'TangoControlsDocumentation', u'Tango Controls Documentation Documentation',
-   u'Tango Community, 3Controls, Piotr Goryl', 'TangoControlsDocumentation', 'One line description of project.',
+  ('index', 'TangoControlsDocumentation', u'Tango Controls Documentation',
+   u'Tango Community (CC BY 4.0)', 'TangoControlsDocumentation', 'One line description of project.',
    'Miscellaneous'),
 ]
 
@@ -283,9 +283,9 @@ texinfo_documents = [
 
 # Bibliographic Dublin Core info.
 epub_title = u'Tango Controls Documentation'
-epub_author = u'Tango Community, 3Controls, Piotr Goryl'
-epub_publisher = u'Tango Community, 3Controls, Piotr Goryl'
-epub_copyright = u'2016, Tango Community, 3Controls, Piotr Goryl'
+epub_author = u'Tango Community'
+epub_publisher = u'Tango Community'
+epub_copyright = u'2017, Tango Community, CC BY 4.0'
 
 # The basename for the epub file. It defaults to the project name.
 #epub_basename = u'Tango Controls Documentation'
