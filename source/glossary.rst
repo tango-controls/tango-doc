@@ -7,31 +7,31 @@ Glossary
 .. glossary::
 
     Tango Controls
-        The Tango Controls is object oriented, distributed control system framework which defines communication protocol
-        and API as well as provides set of tools and libraries to build software for a control systems
+        Tango Controls is an object oriented, distributed control system framework which defines communication protocol
+        and API as well as provides a set of tools and libraries to build software for control systems,
         especially :term:`SCADA`.
 
     Core
     Tango Core
-        The Tango Core is set of main tools, libraries and specifications of Tango Controls. It consists of libraries
-        and API definitions for C++, Java and Python, tools to manage the system :doc:`Astor <tools/astor/index>`,
-        :doc:`Jive <tools/jive/index>`, ...
+        Tango Core is a set of main tools, libraries and specifications of the Tango Controls framework. It consists of libraries
+        and API definitions for C++, Java and Python as well as tools to manage the system: :doc:`Astor <tools/astor/index>`,
+        :doc:`Jive <tools/jive/index>`, etc.
 
     SCADA
-        It is abbreviation of Supervisory Control and Data Acquisition.
+        It is an abbreviation standing for Supervisory Control and Data Acquisition.
 
     device server
     device servers
-        Device Server is a program (executable) which is able to create :term:`devices` of certain classes. A device
-        server may implement one or multiple classes and instantiate one or many devices. A running device server
-        is called the :term:`device server instance`.
+        A Device Server is a program (executable) which is able to create :term:`devices` of certain classes. A Device
+        Server may implement one or multiple classes and instantiate one or more devices. A running device server
+        is called a :term:`Device Server instance`.
 
     instance
     device server instance
-        A running device server is called a device server instance. So, it is a process. Every device server instance
+        A running device server is called a device server instance. So it means, it is a process. Every device server instance
         has an unique name in Tango Controls by which it can be referenced. The name is built as
         *{DeviceServerName}*/*{instanceName}*. For each running device server the system creates a special device
-        of `DServer` :term:`class`: *dserver/{DeviceServerName}/{instanceName}*. This device provides management
+        of `DServer` :term:`class`: *dserver/{DeviceServerName}/{instanceName}*. This device provides a management
         facility for the device server instance (see `DServer class device commands`_)
 
     class
