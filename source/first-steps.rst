@@ -2,19 +2,19 @@ First steps with Tango Controls
 -------------------------------
 
 * In the :doc:`Overview <overview/index>` you will find basic information on Tango Controls. It will let you understand
-  concepts of Tango Controls and help dancing with it.
+  concepts of Tango Controls and help dancing it.
 
 * You may also start with :doc:`trying Tango Controls <how-to/how-to-try-tango>` either with a preconfigured virtual
   machine or installing basic setup on your own computer.
 
 * If you would like to install Tango Controls please look on :doc:`Installation guides <installation/index>`.
 
-* To start connecting your devices to Tango Controls you would probably:
+* To start connecting your devices to Tango Controls you should probably:
 
-    * browse `Device Classes Catalogue <http://www.tango-controls.org/resources/dsc/>`_ to find a device server
+    * browse `Device Classes Catalogue <http://www.tango-controls.org/resources/dsc/>`_ to find device servers
       for your equipment
 
-    * and read :doc:`how to start a device server <how-to/start-device-server>`
+    * read :doc:`how to start a device server <how-to/start-device-server>`
 
     * or follow a guide :doc:`How to write your device class <how-to/first-device-class>` if your device is not yet
       supported by any existing :term:`Device Server`.
@@ -34,3 +34,4 @@ First steps with Tango Controls
 .. • Playing with generic tools.
 .. • How to develop your own device class.
 .. • How to make a device server from one or several device classes
+
