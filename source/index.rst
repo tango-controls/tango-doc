@@ -40,6 +40,25 @@ The documentation is organized in the following categories (some of them overlap
 .. include:: tools.rst
 
 
+Contents
+========
+
+.. toctree::
+   :glob:
+   :name: welcometoc
+   :maxdepth: 2
+   :numbered:
+
+   self
+   first-steps
+   reference
+   tools
+   advanced
+   tools/index
+   tutorials/index
+   how-to/index
+   glossary
+
 Indices and tables
 ==================
 
