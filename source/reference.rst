@@ -2,6 +2,7 @@ Reference
 ---------
 
 .. toctree::
+    :glob:
     :maxdepth: 1
 
     manual/index

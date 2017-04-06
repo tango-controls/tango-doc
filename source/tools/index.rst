@@ -1,8 +1,7 @@
-Tango Controls tools and libraries index
-========================================
+.. rubric:: Tango Controls tools and libraries index
 
 Built-in tools
---------------
+==============
 
 These tools are delivered as a part of Tango Controls core package.
 
@@ -15,18 +14,19 @@ These tools are delivered as a part of Tango Controls core package.
    pogo/index
    jdraw/index
 
+
 Archiving
----------
+=========
 
 
 GUI building
-------------
+============
 
 
 Bindings
---------
+========
 
 
-Other
------
+Other tools
+===========
 

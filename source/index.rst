@@ -32,6 +32,7 @@ The documentation is organized in the following categories (some of them overlap
 * :doc:`Advanced topics </advanced>` where you may find articles on some specific topics regarding system configuration
   or internal details.
 
+* :doc:`Table of Contents <contents>` provides access to all documents.
 
 .. include:: first-steps.rst
 
@@ -39,29 +40,10 @@ The documentation is organized in the following categories (some of them overlap
 
 .. include:: tools.rst
 
-
-Contents
-========
-
-.. toctree::
-   :glob:
-   :name: welcometoc
-   :maxdepth: 2
-   :numbered:
-
-   self
-   first-steps
-   reference
-   tools
-   advanced
-   tools/index
-   tutorials/index
-   how-to/index
-   glossary
-
 Indices and tables
 ==================
 
+* :doc:`Table of Contents <contents>`
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
