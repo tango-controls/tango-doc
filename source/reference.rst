@@ -5,6 +5,7 @@ Reference
     :glob:
     :maxdepth: 1
 
+    overview/index
     manual/index
     ds-guide/index
     java-server-guide/index
