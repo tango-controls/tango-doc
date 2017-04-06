@@ -1,9 +1,9 @@
 HOW-TOs
 =======
 
-Other
------
-
 .. toctree::
+   :glob:
+   :name: howtotoc
+   :maxdepth: 2
 
-   how-to-import-classes-to-catalogue
+   *

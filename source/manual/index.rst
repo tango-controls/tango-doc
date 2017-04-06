@@ -17,11 +17,10 @@ The TANGO Control System Manual
 
 :Author: The TANGO Team
 
-Contents:
----------
 
 .. toctree::
    :maxdepth: 2
+   :caption: Contents
    :name: manulatoc
 
    01-introduction
