@@ -8,6 +8,6 @@ Tango Core C++ Classes Reference Documentation
 
 Full C++ API reference
 ----------------------
-.. doxygenindex::
+.. .. doxygenindex::
 
 
