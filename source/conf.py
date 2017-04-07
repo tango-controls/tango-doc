@@ -217,7 +217,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  ('index', 'TangoControlsDocumentation.tex', u'Tango Controls Documentation',
+  ('contents', 'TangoControlsDocumentation.tex', u'Tango Controls Documentation',
    u'Tango Community (CC BY 4.0)', 'manual'),
 ]
 
