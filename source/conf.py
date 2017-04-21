@@ -117,6 +117,10 @@ rst_epilog = """
 .. _`Tango class development reference documentation`:
     http://www.esrf.eu/computing/cs/tango/tango_doc/kernel_doc/cpp_doc/index.html
 
+.. _`Sphinx`: http://www.sphinx-doc.org
+
+.. _`Sphinx webpage`: `Sphinx`_
+
 """
 
 
