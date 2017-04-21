@@ -17,4 +17,5 @@ Tango Documentation Contents
    tools/index
    tutorials/index
    how-to/index
+   documentation-guide
    glossary
