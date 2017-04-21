@@ -40,7 +40,7 @@ Sources structure
 -----------------
 
 The *readthedocs.io* allows to publish various versions of the documentation. It is achieved by providing branches
-in a git repository.
+in a git repository. The official branches are these named numerically as Tango Controls version: #.#.#.
 
 Chapters' order is defined by the main table of contents. It is contained in a file :file:`source/contents.rst`.
 
