@@ -9,9 +9,7 @@ About this documentation
 ------------------------
 
 The documentation is written with the `Sphinx`_ markup language. It is a documentation framework based on
-`Docutils <http://docutils.sourceforge.net/index.html>` and uses
-`reStructuredText <http://docutils.sourceforge.net/rst.html>` for providing content.
-For details please refer to `Sphinx webpage`_.
+`Docutils`_ and uses `reStructuredText`_ for providing content. For details please refer to `Sphinx webpage`_.
 
 The documentation sources are stored on GitHub: https://github.com/tango-controls/tango-doc .
 
@@ -88,8 +86,8 @@ To keep chapters levels consistent please use the following underlining schema:
 References
 ~~~~~~~~~~
 
-Basic list of `Reference Names <http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#reference-names>`
-is provided within :file:conf.py as a `rst_epilog` variable. The contents of this variable
+Basic list of `Reference Names <http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#reference-names>`_
+is provided within :file:`source/conf.py` as a `rst_epilog` variable. The contents of this variable
 is dynamically concatenated to the end of each *.rst* file during the building process. As of today, it provides some common
 hyperlink targets. However, it is planned to include some common substitutions.
 The list allows to use some entries like `\`Tango webpage\`\_` which will be rendered as `Tango webpage`_

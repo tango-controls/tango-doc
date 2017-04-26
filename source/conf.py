@@ -121,6 +121,10 @@ rst_epilog = """
 
 .. _`Sphinx webpage`: `Sphinx`_
 
+.. _`Docutils`: http://docutils.sourceforge.net/index.html
+
+.. _`reStructuredText`: http://docutils.sourceforge.net/rst.html
+
 """
 
 
