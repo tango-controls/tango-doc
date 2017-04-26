@@ -77,7 +77,7 @@ Chapters and headers
 ~~~~~~~~~~~~~~~~~~~~
 
 Chapters' order is defined by the main table of contents. It is contained in a file :file:`source/contents.rst` and
-referenced index.rst file.
+referenced index.rst files.
 
 To keep chapters levels consistent please use the following underlining schema:
 
