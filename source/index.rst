@@ -34,7 +34,7 @@ The documentation is organized in the following categories (some of them overlap
 
 * :doc:`Table of Contents <contents>` provides access to all documents.
 
-* If you want to contribute to the documentation please read a document
+* If you want to contribute to the documentation please read the document
   :doc:`How to work with Tango Controls documentation <documentation-guide>`.
 
 .. include:: first-steps.rst
