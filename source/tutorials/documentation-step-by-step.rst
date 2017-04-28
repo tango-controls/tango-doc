@@ -10,3 +10,4 @@ Prerequisites
 Installation
 ------------
 
+- :comman:`pip install virtualenv`
