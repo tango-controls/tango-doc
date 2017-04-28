@@ -5,5 +5,5 @@ Tutorials
    :name: tutorialstoc
    :maxdepth: 1
 
-   documentation-step-by-step
+   documentation-workflow-tutorial
 

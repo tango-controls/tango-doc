@@ -33,6 +33,8 @@ For the second option, the preferred way is to:
 * create your own local fix branch
 * when finished, send a pull request to the origin
 
+For details see :doc:`Documentation workflow tutorial <tutorials/documentation-workflow-tutorial>`.
+
 Building/previewing documentation locally
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -60,6 +62,9 @@ This will build HTML output in the :file:`build` folder.Then you may use any web
 
    The build process generates a lot of warnings. Don't worry. We will work to remove as much of them as possible but some
    are inevitable.
+
+For more details and step-by-step guidance pleas refer to
+:doc:`Documentation workflow tutorial <tutorials/documentation-workflow-tutorial>`.
 
 Sources structure
 -----------------
@@ -118,7 +123,7 @@ info are defined there. Please refer to
 
 
 sources/requirements.txt
-~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~
 This is a standard :program:`pip` requirements file used to fix packages version. Currently it contains entries only
 for Sphinx and Breathe.
 
