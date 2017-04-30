@@ -12,24 +12,24 @@ How this documentation is organized
 
 The documentation is organized in the following categories (some of them overlap):
 
-* :doc:`First steps </first-steps>` which will lead you through a beginning with Tango Controls. This category includes
+* :doc:`First steps </first-steps>` will lead you through a beginning with Tango Controls. This category includes
   an overview of Tango Controls concepts, procedures for installation and starting the system
-  as well as *Getting stated* tutorials.
+  as well as *Getting started* tutorials.
 
 
-* :doc:`Reference </reference>` which provides you with all details of Tango Controls **Core** or **Kernel**. You may
+* :doc:`Reference </reference>` provides you with all details of Tango Controls **Core** or **Kernel**. You may
   be directly interested in :doc:`The TANGO Control System Manual <manual/index>`.
 
 
-* :doc:`Tools and libraries </tools>`. Tango comes with lot of GUIs, command line and programing tools for its management,
-  GUI creation or connecting with other systems and applications.
+* :doc:`Tools and libraries </tools>`. Tango comes with lot of command line, graphical toolkits and programming tools for its management,
+  developing graphical applications and connecting with other systems and applications.
 
 
-* :doc:`Tutorials <tutorials/index>` and :doc:`HOW-TOs <how-to/index>` give step by step guidance and teach how to work
+* :doc:`Tutorials <tutorials/index>` and :doc:`HOWTOs <how-to/index>` give step by step guidance and teach you how to work
   with Tango Controls.
 
 
-* :doc:`Advanced topics </advanced>` where you may find articles on some specific topics regarding system configuration
+* :doc:`Advanced topics </advanced>` where you will find articles on some specific topics regarding system configuration
   or internal details.
 
 * :doc:`Table of Contents <contents>` provides access to all documents.
