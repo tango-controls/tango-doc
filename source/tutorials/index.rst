@@ -6,4 +6,5 @@ Tutorials
    :maxdepth: 1
 
    documentation-workflow-tutorial
+   example
 
