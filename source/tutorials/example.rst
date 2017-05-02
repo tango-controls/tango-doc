@@ -1,4 +1,4 @@
 Example
 =======
 
-This is a file to test features of sphinx and learn. Fill free to update it during your learning.
+This is a file to test features of sphinx and learn. Feel free to update it during your learning.
