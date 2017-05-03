@@ -17,6 +17,9 @@ If you have a prerequisities installed, you need to install Sphinx tools:
 #. Install virtual environments support for python:
 
    :command:`pip install virtualenv`
+    .. note::
+        If you're using a Unix-based system, you might need to use :command:`sudo`.
+
 #. Create an environment for sphinx tools:
 
    :command:`virtualenv doc-env`
@@ -26,13 +29,14 @@ If you have a prerequisities installed, you need to install Sphinx tools:
 #. Install Sphinx:
 
    :command:`pip install sphinx`
+    .. note::
+        If you're using a Unix-based system, you might need to use :command:`sudo`.
+
 #. Install Breathe (a module to deal with doxygen C++ API documenatation):
 
-   :command:`pip install --upgrade git+git://github.com/michaeljones/breathe@cc8f830`
-
-   .. note::
-
-      There is a fixed version from git that has been tested to work
+   :command:`pip install breathe`
+    .. note::
+        If you're using a Unix-based system, you might need to use :command:`sudo`.
 
 Get documentation sources
 -------------------------
@@ -68,6 +72,7 @@ Updating documentation
       with asterisk (\*).
 
    :command:`git checkout -b "TD-66-step-by-step-demo"`
+
 #. Edit (or create if it does not exist) a file you would like to edit. If you are following this tutorial for learning
    please use the file: :file:`source/tutorials/example.rst`
 
@@ -89,17 +94,18 @@ Committing changes
    :command:`git add source/tutorials/example.rst`
 
    :command:`git add source/tutorials/index.rst`
+
 #. Commit the changes providing some meaning full message. For example:
 
    :command:`git commit -m "doing tutorial"`
 
    .. note::
 
-      The changes are now committed to your local repository. To share them you need to push. You may repeat
+      The changes are now committed to your local repository. To share them, you need to push. You may repeat
       editing, checking and commit steps several times without pushing util you are happy with your work. This
       way you may track the history of changes.
 
-#. If your work took a long time it is good to do  rebasing with recent changes done by someone else. For example:
+#. If your work took a long time it is good to do rebasing with recent changes done by someone else. For example:
 
    :command:`git fetch origin`
 
@@ -143,9 +149,14 @@ steps:
 
 #. Fetch changes from the origin repository:
 
-   :command:`git fetch`
+   :command:`git fetch origin`
 #. Switch to main branch you are going to update (for example 9.2.5):
 
    :command:`git checkout origin/9.2.5`
+
+#. Pull the changes:
+
+   :command:`git pull`
+
 #. Follow steps from :ref:`Updating documentation <updating-doc>`
 
