@@ -25,18 +25,14 @@ If you have prerequisites installed, you need to install Sphinx tools:
    :command:`virtualenv doc-env`
 #. Activate the environment:
 
-   :command:`. doc-env/bin/activate` or :command:`source doc-env/bin/activate`
+   :command:`source doc-env/bin/activate`
 #. Install Sphinx:
 
    :command:`pip install sphinx`
-    .. note::
-        If you're using a Unix-based system, you might need to use :command:`sudo pip install sphinx`.
 
 #. Install Breathe (a module to deal with Doxygen C++ API documentation):
 
    :command:`pip install breathe`
-    .. note::
-        If you're using a Unix-based system, you might need to use :command:`sudo pip install breathe`.
 
 Get documentation sources
 -------------------------
