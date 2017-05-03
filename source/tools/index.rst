@@ -22,6 +22,14 @@ Archiving
 GUI building
 ============
 
+These are libraries for creating GUI applications.
+
+.. toctree::
+   :name: guibuilding
+   :maxdepth: 1
+
+   taurus/index
+
 
 Bindings
 ========
