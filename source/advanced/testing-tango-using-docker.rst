@@ -21,12 +21,17 @@ On the command line:
 Prerequisites
 -------------
 
- - Docker engine
+ - Docker engine [link]
 
 Tango docker containers
 -----------------------
 
 Tango provides two docker containers: mysql container with Tango scheme and tango-cs container with minimal set of Tango servers.
+
+These containers can be found in the corresponding repositories:
+https://github.com/tango-controls/docker-mysql
+
+https://github.com/tango-controls/tango-cs
 
 Typical tango stack looks like this:
 
