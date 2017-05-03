@@ -6,6 +6,7 @@ Taurus (Python GUI library)
 Taurus is a Python framework for control and data acquisition CLIs and GUIs in scientific/industrial environments.
 It supports multiple control systems or data sources: :term:`Tango Controls`, EPICS, spec...
 New control system libraries can be integrated through plugins.
+
 For non-programmers: Taurus allows the creation of fully-featured GUI (with forms, plots, synoptics, etc)
 from scratch in a few minutes using a “wizard”, which can also be customized and expanded by drag-and-dropping
 elements around at execution time.
