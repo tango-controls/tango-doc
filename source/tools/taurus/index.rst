@@ -14,7 +14,7 @@ elements around at execution time.
 For programmers: Taurus gives full control to more advanced users to create and customize CLIs and GUIs
 programmatically using Python and a very simple and economical API which abstracts data sources as “models”.
 
-You can find the documentation here_.
+You can find its full documentation here_.
 
 
 .. definitions
