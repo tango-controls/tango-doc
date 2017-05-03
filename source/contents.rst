@@ -12,6 +12,7 @@ Tango Documentation Contents
    ds-guide/index
    java-server-guide/index
    cpp-api/index
+   pytango/index
    advanced/index
    installation/index
    tools/index
