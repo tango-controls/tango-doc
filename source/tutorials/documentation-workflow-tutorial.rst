@@ -17,8 +17,9 @@ If you have prerequisites installed, you need to install Sphinx tools:
 #. Install virtual environments support for Python:
 
    :command:`pip install virtualenv`
-    .. note::
-        If you're using a Unix-based system, you might need to use :command:`sudo pip install virtualenv`.
+
+   .. note::
+      If you're using a Unix-based system, you might need to use :command:`sudo pip install virtualenv`.
 
 #. Create an environment for sphinx tools:
 
@@ -105,7 +106,7 @@ Committing changes
 
    :command:`git fetch origin`
 
-   :command:`git rebase master`
+   :command:`git rebase origin/master`
 
    .. note::
 
