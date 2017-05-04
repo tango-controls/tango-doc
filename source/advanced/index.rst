@@ -1,18 +1,13 @@
-.. image:: ../img/logo_tangocontrols.png
-    :align: center
-
 Tango Advanced
 ==============
 
+There you will find articles on advanced topics.
 
-Contents:
+.. rubric:: Contents:
+
 
 .. toctree::
-   :maxdepth: 2
+   :name:
+   :maxdepth: 1
 
    TangoDeviceServerModel
-
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`

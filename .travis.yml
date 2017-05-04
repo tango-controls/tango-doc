@@ -1,0 +1,10 @@
+language: python
+
+notifications:
+  email: false
+
+before_install:
+  - pip install -U setuptools
+
+script:
+  - sphinx-build source build

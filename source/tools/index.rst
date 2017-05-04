@@ -34,6 +34,12 @@ These are libraries for creating GUI applications.
 Bindings
 ========
 
+.. toctree::
+   :name: bindingstoc
+   :maxdepth: 1
+
+   bindings/index
+
 
 Other tools
 ===========
