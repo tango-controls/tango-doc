@@ -7,4 +7,4 @@ before_install:
   - pip install -U setuptools
 
 script:
-  - sphinx-build source build
+  - sphinx-build -b linkcheck source build
