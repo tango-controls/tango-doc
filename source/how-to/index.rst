@@ -4,6 +4,6 @@ HOW-TOs
 .. toctree::
    :glob:
    :name: howtotoc
-   :maxdepth: 2
+   :maxdepth: 1
 
    *
