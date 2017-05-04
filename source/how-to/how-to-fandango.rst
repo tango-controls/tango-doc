@@ -9,7 +9,7 @@ by *Sergi Rubio*
 fun4tango, functional programming for Tango
 ###########################################
 
-.. warning:: Fandango package is a refactored version of the old PyTango_utils package, which is now deprecated*
+.. warning:: Fandango package is a refactored version of the old PyTango_utils package, which is now deprecated
 
 .. note::  Fandango is now on github
 
