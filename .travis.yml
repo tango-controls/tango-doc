@@ -1,0 +1,12 @@
+language: python
+
+sudo: required
+
+notifications:
+  email: false
+
+install:
+  - pip install -r source/requirements.txt
+
+script:
+  - sphinx-build source build
