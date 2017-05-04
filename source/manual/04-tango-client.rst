@@ -230,6 +230,8 @@ following the same schema than above. Methods to use are :
 -  *write\_asynch()* and *write\_reply()* to asynchronously write the
    attribute value
 
+.. _events_tangoclient:
+
 Events
 ------
 

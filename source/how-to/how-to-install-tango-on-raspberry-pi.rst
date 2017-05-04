@@ -4,7 +4,7 @@
 How To Install TANGO On Raspberry PI In One Line Command
 ========================================================
 
-.. figure:: media/raspberry_pi_200x200.jpg
+.. figure:: how-to-install-tango-on-raspberry-pi/raspberry_pi_200x200.jpg
     :width: 200px
     :align: center
     :height: 200px
@@ -61,5 +61,4 @@ More details on readthedocs_
 .. definitions
   ------------
 .. _readthedocs: http://eras.readthedocs.io/en/latest/doc/setup.html
-.. _picca: https://people.debian.org/\~picca
-..
+.. _picca: https://people.debian.org/~picca
