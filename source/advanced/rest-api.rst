@@ -57,7 +57,7 @@ Since Tango REST API itself is only a specification one needs an actual implemen
 
 Known implementations are:
 
-mtangorest.server [link]
+`mtangorest.server https://bitbucket.org/hzgwpn/mtangorest.server`_
 
 Please refer to the corresponding implementation documentation on how to install and use it.
 
@@ -76,10 +76,13 @@ As Tango REST is supposed to export Tango via http to the Internet the usual que
 
 In this section two examples are given of a real world installations of Tango REST API.
 
-@ESRF
+ESRF
+~~~~
 
 https://mstatus.esrf.fr/tango/rest
 
+.. image:: rest-api/ESRF.png
 
+Every request passes HAProxy configured to use https protocol for secure connection. On its backend HAproxy speaks with Tango REST server which in turn can access only one tango host where a device of class `ForwardComposer https://github.com/tango-controls/ForwardedComposer`_ is defined. This device provides read only access to MStatus Tango device which status information about the storage ring at ESRF.
 
 
