@@ -182,9 +182,9 @@ Rationale
 
 Please refer to the :ref:`Tango Device Model <deviceservermodel>`.
 
-.. |image0| image:: media/image2.jpg
+.. |image0| image:: TangoDeviceServerModel/TangoDeviceServerModel_image1.jpg
    :width: 6.26772in
    :height: 6.41667in
-.. |image1| image:: media/image4.jpg
+.. |image1| image:: TangoDeviceServerModel/TangoDeviceServerModel_image2.jpg
    :width: 6.26772in
    :height: 3.09722in
