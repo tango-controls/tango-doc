@@ -11,7 +11,7 @@ List of pictures
 
 .. _img2ref:
 
-.. [img2] By O. Chevre from http://www.forteresses.free.fr
+.. [img2] By O. Chevre from http://forteresses.free.fr/
 
 .. _img3ref:
 
@@ -31,7 +31,7 @@ List of pictures
 
 .. _img7ref:
 
-.. [img7] By 0. Chevre from http://www.forteresses.free.fr
+.. [img7] By 0. Chevre from http://forteresses.free.fr
 
 .. _img8ref:
 
