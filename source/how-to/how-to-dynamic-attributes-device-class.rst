@@ -49,7 +49,7 @@ string is the attribute name.
    The dynamic attributes have a light green background
    color on the main Pogo window.
 
-.. figure:: dynamic/pogo-dynattr.jpg
+.. figure:: how-to-dynamic-attributes-device-class/pogo-dynattr.jpg
     :align: center
 
 Implementing the Dynamic Attributes
