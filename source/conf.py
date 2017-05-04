@@ -15,6 +15,8 @@
 import sys
 import os
 import breathe
+import IPython.sphinxext
+
 # sys.path.insert(0, os.path.abspath('.'))
 # sys.path.append( "/home/tango/workspace/breathe")
 
@@ -41,6 +43,9 @@ extensions = [
     'sphinx.ext.pngmath',
     'sphinx.ext.ifconfig',
     'sphinx.ext.viewcode',
+    'IPython.sphinxext.ipython_console_highlighting',
+    'IPython.sphinxext.ipython_directive',
+    'sphinx.ext.intersphinx',
 #    'sphinx.ext.autosectionlabel',
 ]
 
