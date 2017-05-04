@@ -8,6 +8,8 @@
 
 Image copyright info: [img3]_
 
+.. _deviceservermodel:
+
 The TANGO device server model
 =============================
 
@@ -96,6 +98,8 @@ Each device is stored in a process called a **device server**. Devices
 are configured at runtime via **properties** which are stored in a
 **database**.
 
+.. _devicesection_deviceservermodel:
+
 The device
 ----------
 
@@ -134,6 +138,8 @@ All devices also support a **black box** where client requests for
 attributes or operations are recorded. This feature allows easier
 debugging session for device already installed in a running control
 system.
+
+.. _commands_deviceservermodel:
 
 The commands
 ~~~~~~~~~~~~
