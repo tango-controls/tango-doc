@@ -3,7 +3,7 @@ language: python
 notifications:
   email: false
 
-before-install:
+before_install:
   - pip install -U setuptools
 
 script:
