@@ -14,9 +14,9 @@ First steps with Tango Controls
     * browse `Device Classes Catalogue <http://www.tango-controls.org/resources/dsc/>`_ to find device servers
       for your equipment
 
-    * read :doc:`how to start a device server <how-to/start-device-server>`
+    * read :doc:`how to start a device server <how-to/how-to-start-device-server>`
 
-    * or follow a guide :doc:`How to write your device class <how-to/first-device-class>` if your device is not yet
+    * or follow a guide :doc:`How to write your device class <how-to/how-to-first-device-class>` if your device is not yet
       supported by any existing :term:`Device Server`.
 
 * At the beginning you may also be interested in how to use provided tools:
