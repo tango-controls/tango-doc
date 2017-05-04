@@ -1,5 +1,5 @@
-Draw the synoptic : Use Jdraw editor
-====================================
+Synoptic and JDraw
+==================
 
 ATK includes a graphical editor, to design the graphic shape of the
 synoptic. The editor is called **Jdraw**. This editor is included in

@@ -12,7 +12,7 @@ These tools are delivered as a part of Tango Controls core package.
    astor/index
    jive/index
    pogo/index
-   jdraw/index
+   jdraw/jdraw
 
 
 Archiving
