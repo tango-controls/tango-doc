@@ -61,5 +61,4 @@ More details on readthedocs_
 .. definitions
   ------------
 .. _readthedocs: http://eras.readthedocs.io/en/latest/doc/setup.html
-.. _picca: https://people.debian.org/\~picca
-..
+.. _picca: https://people.debian.org/~picca
