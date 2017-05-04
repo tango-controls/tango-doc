@@ -35,7 +35,7 @@ Here one uses Tango REST API implementation related to version RC4 [link to the 
 
 In the following example client requests for a device attribute:
 
-:coomad:`GET tango/rest/rc4/hosts/tango_host/10000/devices/sys/tg_test/1/attributes/double_scalar/value`
+:command:`GET tango/rest/rc4/hosts/tango_host/10000/devices/sys/tg_test/1/attributes/double_scalar/value`
 
 Again here `tango/rest/rc4` relates to Tango REST API version RC4 implementation; `hosts/tango_host/10000` relates to TANGO_HOST=tango_host:10000;  `devices/sys/tg_test/1` relates to the device `tango://tango_host:10000/sys/tg_test/1` exported through this Tango REST API; finally `attributes/double_scalar/value` relates to the value of the attribute.
 
