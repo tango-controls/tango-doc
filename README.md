@@ -24,10 +24,9 @@ organised [here](http://tango-controls.readthedocs.io/en/latest/documentation-gu
 There is also a tutorial with documentation contribution workflow which you can find
 [here](http://tango-controls.readthedocs.io/en/latest/tutorials/documentation-workflow-tutorial.html).
 
-<aside class="notice">
-You can also find the aforementioned files in this repository under `source/documentation-guide.rst`
+You can also find the aforementioned files in this repository under
+`source/documentation-guide.rst`
 and `source/tutorials/documentation-workflow-tutorial.rst`.
-</aside>
 
 
 Documentation is as important as code - your help will be appreciated by the Tango Community! 
