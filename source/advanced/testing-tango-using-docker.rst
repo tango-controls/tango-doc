@@ -4,24 +4,13 @@ level: advanced; target: Tango developer
 Using Tango docker containers
 =============================
 
-In this section we describe how one can test newly developed tango device server using docker [link] containers.
+In this section we describe how one can test newly developed tango device server using `docker https://www.docker.com/`_ containers.
 
 Tango docker containers provide a lightweight solution for deploying tango.
 
-To get info on how to install docker on your machine please refer to the docker documentation [link].
+To get info on how to install docker on your machine please refer to the docker `documentation https://docs.docker.com/engine/installation/`_.
 
 Once docker is installed one can pull docker images with pre-installed tango.
-
-On the command line:
-
-:command:`docker pull tangocs/mysql`
-[further commands]
-
-
-Prerequisites
--------------
-
- - Docker engine [link]
 
 Tango docker containers
 -----------------------
@@ -31,19 +20,18 @@ Tango provides two docker containers: mysql container with Tango scheme and tang
 These containers can be found in the corresponding repositories:
 https://github.com/tango-controls/docker-mysql
 
-[inject Dockerfile]
 
 https://github.com/tango-controls/tango-cs
 
-[inject Dockerfile]
 
-[header] Tango docker stack
+Tango docker stack
+~~~~~~~~~~~~~~~~~~
 
 Typical tango stack looks like this:
 
-|image/tango-stack.png|
+.. image:: testing-tango-using-docker/tango-stack.png
 
-The best way to setup the whole stack is to use docker compose [link]
+The best way to setup the whole stack is to use `docker compose <https://docs.docker.com/compose/>`_
 
 Here is an example of docker-compose.yml:
 
@@ -70,17 +58,14 @@ Here is an example of docker-compose.yml:
         depends_on:
     - tango-db
 
-:command:`docker-compose up`
-
-[output]
+Now to stast the whole stack execute :command:`docker-compose up`
 
 Once docker containers are up and running one can access mysql on localhost:9999 and the tango host on localhost:10000
 
-For instance, one can start jive (assuming it is installed on the system) [link to jive] :command:`TANGO_HOST=localhost:10000 jive`
+For instance, one can start jive [reference] (assuming it is installed on the system).
 
-[img?]
-
-[header] Tango docker stack for Tango REST API
+Tango docker stack for Tango REST API
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 One can setup Tango docker stack for Tango REST API [reference] as well. Currently only mtangorest.server [link] provides docker container that can be used together with Tango docker containers:
 https://bitbucket.org/hzgwpn/mtangorest.docker
@@ -134,6 +119,3 @@ Since every docker image can be used as a base for another docker image one can 
 An example of such extension could look like this:
 
 [TODO script]
-
-
-
