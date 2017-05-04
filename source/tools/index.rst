@@ -18,6 +18,12 @@ These tools are delivered as a part of Tango Controls core package.
 Archiving
 =========
 
+.. toctree::
+   :maxdepth: 2
+   :name: archivingtoc
+
+   archiving/HDB++
+
 
 GUI building
 ============
@@ -33,6 +39,12 @@ These are libraries for creating GUI applications.
 
 Bindings
 ========
+
+.. toctree::
+   :name: bindingstoc
+   :maxdepth: 1
+
+   bindings/index
 
 
 Other tools

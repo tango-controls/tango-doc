@@ -875,6 +875,8 @@ Perkin id11
 starts a device server process with an instance name id11, an executable
 name Perkin and a device server name Perkin/id11.
 
+.. _dserverclass_deviceserverwriting:
+
 The DServer class
 ^^^^^^^^^^^^^^^^^
 
@@ -2204,6 +2206,8 @@ are
    connection
 
 These commands have already been discussed in [Auto\_cmd]
+
+.. _choosingdevicestate_deviceserverwriting:
 
 Choosing device state
 ~~~~~~~~~~~~~~~~~~~~~
