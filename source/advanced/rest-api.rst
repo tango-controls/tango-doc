@@ -72,6 +72,14 @@ mtangoserver.rest is distributed as a single executable jar file. After download
 Safety
 ------
 
+As Tango REST is supposed to export Tango via http to the Internet the usual question is how to protect Tango from the unwanted activity.
+
+In this section two examples are given of a real world installations of Tango REST API.
+
+@ESRF
+
+https://mstatus.esrf.fr/tango/rest
+
 
 
 
