@@ -234,11 +234,11 @@ A Tango device server process hosting this DynAttr class has been
 defined in the database with two device. The dynamic attributes for
 these two devices are:
 
-.. figure:: dynamic/jive-dev1.jpg
+.. figure:: how-to-dynamic-attributes-device-class/jive-dev1.jpg
     :align: center
 
 
-.. figure:: dynamic/prop_dev2.jpg
+.. figure:: how-to-dynamic-attributes-device-class/prop_dev2.jpg
     :align: center
 
 
@@ -247,11 +247,11 @@ Tango class also defines a static attribute for each device named
 StaticAttr. Running the device server and opening TestDevice panels on
 each device displays device attribute list:
 
-.. figure:: dynamic/test-dev1.jpg
+.. figure:: how-to-dynamic-attributes-device-class/test-dev1.jpg
     :align: center
 
 
-.. figure:: dynamic/test_device2.jpg
+.. figure:: how-to-dynamic-attributes-device-class/test_device2.jpg
     :align: center
 
 This method fully supports restarting device(s) or server using the

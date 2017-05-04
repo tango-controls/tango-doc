@@ -349,7 +349,7 @@ Defining the class in the Tango control system
 Once the executable is linked, the device server process instance has to
 be created in the Tango database (using Jive for instance).
 
-.. figure:: inheritance/jive.png
+.. figure:: how-to-create-inheritance-link/jive.png
     :align: center
 
 Running your class
@@ -361,11 +361,11 @@ Connecting to the device using a "Test Panel" shows that the device now has:
 * two commands (one from the LowLevel class and the other from the HighLevel class),
 * two attributes (from LowLevel class and from HighLevel class).
 
-.. figure:: inheritance/testdevice_cmd.png
+.. figure:: how-to-create-inheritance-link/testdevice_cmd.png
     :align: center
 
 
-.. figure:: inheritance/testdevice_attr.png
+.. figure:: how-to-create-inheritance-link/testdevice_attr.png
     :align: center
 
 Conclusion
