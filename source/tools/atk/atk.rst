@@ -269,16 +269,11 @@ Once the NetBeans is installed you can browse:
 which can help you, learn more about NetBeans. 
 
 If you are a beginner with NetBeans we recommend you to go through the
-two following quick start guides: 
+following quick start guides: 
 
-`Guided Video Tour of NetBeans IDE 6.0 and
-6.1 <http://www.netbeans.org/kb/60/intro-screencasts.html>`__
+`Guided Video Tour of NetBeans IDE <https://netbeans.org/kb/docs/intro-screencasts.html>`__
 
-`NetBeans 6 IDE Quick Start
-Tutorial <http://www.netbeans.org/kb/60/java/quickstart.html>`__
 
-`Designing a Swing GUI in NetBeans
-IDE <http://www.netbeans.org/kb/60/java/quickstart-gui.html>`__
 
 Create an ATK Application project in NetBeans
 ---------------------------------------------
