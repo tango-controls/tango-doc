@@ -14,7 +14,7 @@
 
 import sys
 import os
-import breathe
+# import breathe
 import IPython.sphinxext
 
 # sys.path.insert(0, os.path.abspath('.'))
@@ -34,7 +34,7 @@ import IPython.sphinxext
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'breathe',
+#    'breathe',
     'sphinx.ext.autodoc',
     'sphinx.ext.doctest',
     'sphinx.ext.intersphinx',
@@ -49,9 +49,9 @@ extensions = [
 #    'sphinx.ext.autosectionlabel',
 ]
 
-breathe_projects = { "cppTango": "cpp-api/xml" }
+# breathe_projects = { "cppTango": "cpp-api/xml" }
 
-breathe_default_project = "cppTango"
+# breathe_default_project = "cppTango"
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
