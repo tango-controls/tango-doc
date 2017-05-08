@@ -581,18 +581,6 @@ their corresponding Atk viewers as listed below :
 
 The run time behavior is the one provided by the Atk viewer.
 
-.. |image24| image:: media/image28.jpeg
-   :width: 3.06528in
-   :height: 5.72639in
-.. |image25| image:: media/image29.jpeg
-   :width: 6.29167in
-   :height: 3.29792in
-.. |image26| image:: media/image30.jpeg
-   :width: 3.14861in
-   :height: 1.26181in
-.. |image27| image:: media/image31.jpeg
-   :width: 6.29792in
-   :height: 3.66042in
 .. |image28| image:: media/image32.jpeg
    :width: 6.29792in
    :height: 5.23819in

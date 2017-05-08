@@ -13,6 +13,7 @@ These tools are delivered as a part of Tango Controls core package.
    jive/index
    pogo/index
    jdraw/jdraw
+   atk/index
 
 
 Archiving
