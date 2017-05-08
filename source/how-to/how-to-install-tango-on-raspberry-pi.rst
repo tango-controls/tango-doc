@@ -58,7 +58,11 @@ If you need the local database, process this installation **before **
 
 More details on readthedocs_
 
+.. warning::
+    The ERAS project ReadTheDocs entry does not exist. Please refer to the PDF on the other side of the provided link.
+
+
 .. definitions
   ------------
-.. _readthedocs: http://eras.readthedocs.io/en/latest/doc/setup.html
+.. _readthedocs: https://media.readthedocs.org/pdf/eras/latest/eras.pdf
 .. _picca: https://people.debian.org/~picca

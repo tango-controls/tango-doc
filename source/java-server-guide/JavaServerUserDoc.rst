@@ -15,7 +15,7 @@ strongly recommended. The pre-requisites are:
    `*http://www.oracle.com/technetwork/java/javase/documentation/index.html* <http://www.oracle.com/technetwork/java/javase/documentation/index.html>`__
 
 -  The concept of annotations introduced in Java version 5:
-   `*http://docs.oracle.com/javase/tutorial/java/javaOO/annotations.html* <http://docs.oracle.com/javase/tutorial/java/javaOO/annotations.html>`__
+   `*https://docs.oracle.com/javase/tutorial/java/annotations/* <https://docs.oracle.com/javase/tutorial/java/annotations/>`__
 
 -  Java beans :
    `*http://en.wikipedia.org/wiki/JavaBeans* <http://en.wikipedia.org/wiki/JavaBeans>`__

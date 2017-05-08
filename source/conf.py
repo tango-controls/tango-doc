@@ -119,7 +119,7 @@ rst_epilog = """
 
 .. _`ATK Tutorial`: `Tango ATK Tutorial`_
 
-.. _`ZMQ home page`: http://www.zeromq.org
+.. _`ZMQ home page`: http://zeromq.org/
 
 .. _`Tango class development reference documentation`:
     http://www.esrf.eu/computing/cs/tango/tango_doc/kernel_doc/cpp_doc/index.html
