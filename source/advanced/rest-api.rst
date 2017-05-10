@@ -71,7 +71,7 @@ Known implementations are:
 
 Please refer to the corresponding implementation documentation on how to install and use it.
 
-In a nutshell download the latest fat jar distribution and start the server via :command:`java -DTANGO_HOST=localhost:10000 -jar mtangorest.server.jar sys`
+In a nutshell download the latest fat jar distribution and start the server via :command:`java -DTANGO_HOST=localhost:10000 -jar mtangorest.server.jar -nodb -dlist sys/rest/0`
 
 Basically one can test the installation trying to read an attribute value from a device. Typically there is a TangoTest server running on the tango host through browser:
 
