@@ -99,6 +99,8 @@ Below is a deployment scheme of REST API at ESRF:
 
 https://mstatus.esrf.fr/tango/rest
 
+Use tango-cs/tango when prompted.
+
 In this installation REST API exports readonly forwarded attributes and is accessible via secured http connection.
 
 .. image:: rest-api/ESRF.png
@@ -117,3 +119,10 @@ Install Tango REST API server localy or using docker [reference].
 Develop your REST client or use 3rd party frameworks (`mTangoSDK <http://bitbucket.org/hzgwpn/mtango>`_, `tangojs <https://tangojs.github.io/>`_).
 
 Deploy everything in the local network or in the cloud [reference].
+
+References
+----------
+
+[1] `Tango REST API specification <http://tango-rest-api.readthedocs.io/en/latest>`_
+[2] `Tango REST API specification on GitHub <https://github.com/tango-controls/rest-api>`_
+[3] `mtangorest.server -- Tango REST API implementation <https://bitbucket.org/hzgwpn/mtangorest.server>`_
