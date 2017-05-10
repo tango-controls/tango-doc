@@ -1,3 +1,5 @@
+.. _tango_device_server_model:
+
 Tango Device Server Model
 =========================
 
