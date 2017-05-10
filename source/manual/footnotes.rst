@@ -1,6 +1,3 @@
-
-
-
 .. [1]
    TACO stands for **T**\ elescope and **A**\ ccelerator
    **C**\ ontrolled with **O**\ bjects

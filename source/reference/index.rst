@@ -6,3 +6,4 @@ Reference
 
    glossary
    bibliography
+   genindex
