@@ -1,7 +1,8 @@
-.. rubric:: Tango Controls tools and libraries index
+Tools and Extensions
+====================
 
 Built-in tools
-==============
+--------------
 
 These tools are delivered as a part of Tango Controls core package.
 
@@ -17,7 +18,7 @@ These tools are delivered as a part of Tango Controls core package.
 
 
 Archiving
-=========
+---------
 
 .. toctree::
    :maxdepth: 2
@@ -27,7 +28,7 @@ Archiving
 
 
 GUI building
-============
+------------
 
 These are libraries for creating GUI applications.
 
@@ -39,7 +40,7 @@ These are libraries for creating GUI applications.
 
 
 Bindings
-========
+--------
 
 .. toctree::
    :name: bindingstoc
@@ -49,5 +50,5 @@ Bindings
 
 
 Other tools
-===========
+-----------
 

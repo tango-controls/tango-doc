@@ -12,7 +12,7 @@ How this documentation is organized
 
 The documentation is organized in the following categories (some of them overlap):
 
-* :doc:`First steps </first-steps>` will lead you through a beginning with Tango Controls. This category includes
+* :ref:`First steps <first_steps>` will lead you through a beginning with Tango Controls. This category includes
   an overview of Tango Controls concepts, procedures for installation and starting the system
   as well as *Getting started* tutorials.
 
@@ -21,7 +21,7 @@ The documentation is organized in the following categories (some of them overlap
   be directly interested in :doc:`The TANGO Control System Manual <manual/index>`.
 
 
-* :doc:`Tools and libraries </tools>`. Tango comes with lot of command line, graphical toolkits and programming tools for its management,
+* :doc:`Tools and libraries </tools-and-extensions>`. Tango comes with lot of command line, graphical toolkits and programming tools for its management,
   developing graphical applications and connecting with other systems and applications.
 
 
@@ -37,11 +37,6 @@ The documentation is organized in the following categories (some of them overlap
 * If you want to contribute to the documentation please read the document
   :doc:`How to work with Tango Controls documentation <documentation-guide>`.
 
-.. include:: first-steps.rst
-
-.. include:: reference.rst
-
-.. include:: tools.rst
 
 Indices and tables
 ==================

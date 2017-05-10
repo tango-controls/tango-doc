@@ -1,5 +1,4 @@
-
-.. How-To try
+.. _how_to_deal_with_strings:
 
 How to deal with string Tango attribute (C++)
 =============================================

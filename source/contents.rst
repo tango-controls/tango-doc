@@ -5,18 +5,20 @@ Tango Documentation Contents
    :glob:
    :name: maintoc
    :maxdepth: 2
-   :numbered:
 
    overview/index
+   getting-started/index
+   development/index
+   tools-end-extensions/index
+   administration/index
+   tutorials-and-howtos/index
+   reference/index
    manual/index
    ds-guide/index
    java-server-guide/index
    cpp-api/index
    pytango/index
    advanced/index
-   installation/index
-   tools/index
-   tutorials/index
    how-to/index
    documentation-guide
    glossary

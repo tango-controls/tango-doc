@@ -1,0 +1,5 @@
+Administration
+==============
+
+.. toctree::
+   :name: administrationtoc
