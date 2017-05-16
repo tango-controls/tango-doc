@@ -2,11 +2,13 @@
 
     \clearpage
 
-.. include:: substitutions.rst
+.. |image04| image:: device-server-model/archi.gif
+   :width: 12.00000cm
+   :height: 7.00000cm
 
-|image03|
+.. |image05| image:: device-server-model/event_schematic.png
 
-Image copyright info: [img3]_
+.. |image06| image:: device-server-model/event_schematic_zmq.png
 
 .. _deviceservermodel:
 

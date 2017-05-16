@@ -8,4 +8,5 @@ Device Servers
    :maxdepth: 2
 
    introduction
+   device-server-model
    device-server-writing
