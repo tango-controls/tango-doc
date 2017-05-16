@@ -12,5 +12,6 @@ follows:
    general-guidelines/index
    client-api/index
    device-api/index
+   advanced/index
    cpp-api/index
 

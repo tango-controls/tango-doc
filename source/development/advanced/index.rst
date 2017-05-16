@@ -1,5 +1,5 @@
-Tango Advanced
-==============
+Advanced
+========
 
 There you will find articles on advanced topics.
 
