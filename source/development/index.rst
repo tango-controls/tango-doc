@@ -8,3 +8,6 @@ follows:
 .. toctree::
    :name: developersguidetoc
    :maxdepth: 2
+
+   device-api/index
+   cpp-api/index
