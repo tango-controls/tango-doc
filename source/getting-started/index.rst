@@ -6,6 +6,6 @@ Getting Started
 
    first-steps
    first-client
-   first-device-server
+   first-device-class
    installation/index
 
