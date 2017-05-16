@@ -2,8 +2,6 @@
 
     \clearpage
 
-.. include:: substitutions.rst
-
 Tango object naming (device, attribute and property)
 ====================================================
 
@@ -49,15 +47,14 @@ attribute and property. Therefore, the full naming schema is
 The protocol, host, port, attribute, property and dbase fields are
 optional. The meaning of these fields are :
 
-00.00.0000
 
-: Specifies which protocol is used (Tango or Taco). Tango is the default
+`protocol`: Specifies which protocol is used (Tango or Taco). Tango is the default
 
-: The supported value for xx is *yes* and *no*. This field is used to
+`#dbase`: The supported value for xx is *yes* and *no*. This field is used to
 specify that the device is a device served by a device server started
 with or without database usage. The default value is *dbase=yes*
 
-: This field has different meaning according to the dbase value. If
+`host:port`: This field has different meaning according to the dbase value. If
 *dbase=yes* (the default), the host is the host where the control system
 database server is running and port is the database server port. It has
 a higher priority than the value defined by the TANGO\_HOST environment
@@ -65,9 +62,9 @@ variable. If *dbase=no*, host is the host name where the device server
 process serving the device is running and port is the device server
 process port.
 
-: The attribute name
+`attribute`: The attribute name
 
-: The property name
+`property`: The property name
 
 The host:port and dbase=xx fields are necessary only when creating the
 DeviceProxy object used to remotely access the device. The -> characters
@@ -164,4 +161,4 @@ are :
 The device name, the command name, the attribute name, the property
 name, the device alias name and the device server name are **case insensitive**.
 
-.. include:: footnotes.rst
+

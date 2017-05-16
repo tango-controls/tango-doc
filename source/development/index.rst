@@ -11,3 +11,4 @@ follows:
 
    device-api/index
    cpp-api/index
+   general-guidelines/index.rst

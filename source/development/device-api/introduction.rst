@@ -1,5 +1,3 @@
-.. image:: dance/Ready.jpg
-
 Introduction to device server
 =============================
 

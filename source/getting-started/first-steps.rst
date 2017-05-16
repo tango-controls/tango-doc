@@ -18,8 +18,11 @@ First steps with Tango Controls
 
     * read :doc:`how to start a device server <how-to/how-to-start-device-server>`
 
-    * or follow a guide :doc:`How to write your device class <how-to/how-to-first-device-class>` if your device is not yet
+    * or read :doc:`first-device-class` and follow a guide
+      :ref:`How to write your device class <how_to_write_first_device_class>` if your device is not yet
       supported by any existing :term:`Device Server`.
+
+* To write your first C++ client see :doc:`first-client`.
 
 * At the beginning you may also be interested in how to use provided tools:
   :doc:`Jive <tools/jive/index>`,

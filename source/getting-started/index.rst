@@ -5,4 +5,7 @@ Getting Started
    :name: gettingstartedtoc
 
    first-steps
+   first-client
+   first-device-server
    installation/index
+

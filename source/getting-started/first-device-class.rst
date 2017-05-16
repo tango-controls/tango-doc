@@ -2,75 +2,8 @@
 
     \clearpage
 
-.. include:: substitutions.rst
-
-Getting Started
-===============
-
-A C++ TANGO client
-------------------
-
-The quickest way of getting started is by studying this example :
-
-.. code:: cpp
-  :number-lines:
-
-    /*
-     * example of a client using the TANGO C++ api.
-     */
-    #include <tango.h>
-    using namespace Tango;
-    int main(unsigned int argc, char **argv)
-    {
-        try
-        {
-
-    //
-    // create a connection to a TANGO device
-    //
-
-            DeviceProxy *device = new DeviceProxy("sys/database/2");
-
-    //
-    // Ping the device
-    //
-
-            device->ping();
-
-    //
-    // Execute a command on the device and extract the reply as a string
-    //
-
-            string db_info;
-            DeviceData cmd_reply;
-            cmd_reply = device->command_inout("DbInfo");
-            cmd_reply >> db_info;
-            cout << "Command reply " << db_info << endl;
-
-    //
-    // Read a device attribute (string data type)
-    //
-
-            string spr;
-            DeviceAttribute att_reply;
-            att_reply = device->read_attribute("StoredProcedureRelease");
-            att_reply >> spr;
-            cout << "Database device stored procedure release: " << spr << endl;
-        }
-        catch (DevFailed &e)
-        {
-            Except::print_exception(e);
-            exit(-1);
-        }
-    }
-
-Modify this example to fit your device server or client’s needs, compile
-it and link with the library -ltango. Forget about those painful early
-TANGO days when you had to learn CORBA and manipulate Any’s. Life’s
-going to easy and fun from now on !
-
-A TANGO device server
----------------------
+Your first TANGO device class
+=============================
 
 The code given in this chapter as example has been generated using POGO.
 Pogo is a code generator for Tango device server. See
@@ -109,7 +42,7 @@ feature reserved for some specific cases. Therefore, there is no device
 pipe example in this Getting started chapter.
 
 The commands and attributes code
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------------
 
 For each command called DevXxxx, pogo generates in the device class a
 method named dev\_xxx which will be executed when the command is
@@ -117,7 +50,7 @@ requested by a client. In this chapter, the name of the device class is
 *DocDs*
 
 The DevSimple command
-^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~
 
 This method receives a Tango::DevFloat type and also returns a data of
 the Tango::DevFloat type which is simply the double of the input value.
@@ -143,7 +76,7 @@ as its argument. It is
 doubled at line 8 and the method simply returns the result.
 
 The DevArray command
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 This method receives a data of the Tango::DevVarLongArray type and also
 returns a data of the Tango::DevVarLongArray type. Each element of the
@@ -183,7 +116,7 @@ statically allocated array without copying. Look at chapter [Data
 exchange] for all the details.
 
 The DevString command
-^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~
 
 This method receives a data of the Tango::DevString type and also
 returns a data of the Tango::DevString type. The command simply displays
@@ -223,7 +156,7 @@ possible to return data from a statically allocated string without
 copying. Look at chapter [Data exchange] for all the details.
 
 The DevStrArray command
-^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~
 
 This method does not receive input data but returns an array of strings
 (Tango::DevVarStringArray type). The code for the method executed by
@@ -260,7 +193,7 @@ usage of the *string\_dup* function of the CORBA namespace. This is
 necessary for strings array due to the CORBA memory allocation schema.
 
 The DevStruct command
-^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~
 
 This method does not receive input data but returns a structure of the
 Tango::DevVarDoubleStringArray type. This type is a composed type with
@@ -308,7 +241,7 @@ the CORBA namespace. This is necessary for strings array due to the
 CORBA memory allocation schema.
 
 The three attributes
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 Some data have been added to the definition of the device class in order
 to store attributes value. These data are (part of the class definition)
@@ -414,5 +347,3 @@ device server class called DocDs). This file is used to store methods
 coding the device state machine. By default a allways allowed state
 machine is provided. For more information about coding the state
 machine, refer to the chapter Writing a device server.
-
-.. include:: footnotes.rst
