@@ -2,14 +2,10 @@
 
     \clearpage
 
-.. include:: substitutions.rst
+.. _cpp_client_programmers_guide:
 
-|image07|
-
-Image copyright info: [img4]_
-
-Writing a TANGO client using TANGO APIs
-=======================================
+Writing a TANGO client using TANGO C++ APIs
+===========================================
 
 Introduction
 ------------
@@ -2309,5 +2305,3 @@ Compiling and linking a Tango client is similar to compiling and linking
 a Tango device server. Please, refer to chapter
 :ref:`Compiling and linking a C++ device server <compiling_device_server>`
 to get all the details.
-
-.. include:: footnotes.rst

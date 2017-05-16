@@ -2,11 +2,17 @@
 
     \clearpage
 
-.. include:: substitutions.rst
+.. |image09| image:: atk/img/core-widget.png
 
-|image08|
+.. |image10| image:: atk/img/listpanel.png
 
-Image copyright info: [img5]_
+.. |image11| image:: atk/img/prog_guide_exple1.jpg
+
+.. |image12| image:: atk/img/prog_guide_exple2.jpg
+
+.. |image13| image:: atk/img/prog_guide_exple3.jpg
+
+.. _atk_programmers_guide:
 
 TangoATK Programmer’s Guide
 ===========================
@@ -65,8 +71,8 @@ view and the controller of the MVC-pattern are merged into one object.
 
 This pattern made the choice of labor division quite easy: all
 non-graphic parts of TangoATK reside in the packages beneath
-``fr.esrf.tangoatk.core``, and anything remotely graphic are located
-beneath ``fr.esrf.tangoatk.widge``\ t. More on the content and
+`fr.esrf.tangoatk.core`, and anything remotely graphic are located
+beneath `fr.esrf.tangoatk.widge`\ t. More on the content and
 organization of this will follow.
 
 The communication between the non-graphic and graphic objects are done
@@ -142,10 +148,10 @@ following steps are required
 
 #. Instantiate a CommandList and fill it with the commands you want.
 
-#. Connect the whole *AttributeList* with a *list viewer* and / or each
+#. Connect the whole `AttributeList` with a `list viewer` and / or each
    *individual attribute* with an *attribute viewer*.
 
-#. Connect the whole *CommandList* to a *command list viewer* and / or
+#. Connect the whole `CommandList` to a *command list viewer* and / or
    connect each *individual command* in the command list with a *command
    viewer*.
 
@@ -156,7 +162,7 @@ list mentioned above. It should be rather self-explanatory with the
 comments.
 
 .. code:: java
-  :number-lines:
+   :number-lines:
 
     package examples;
 

@@ -9,6 +9,8 @@ follows:
    :name: developersguidetoc
    :maxdepth: 2
 
+   general-guidelines/index
+   client-api/index
    device-api/index
    cpp-api/index
-   general-guidelines/index.rst
+
