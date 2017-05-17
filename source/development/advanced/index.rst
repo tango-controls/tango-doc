@@ -11,6 +11,8 @@ There you will find articles on advanced topics.
    :maxdepth: 1
 
    threading
+   transferring-images
+   user-loop
    TangoDeviceServerModel
    rest-api
    IDL

@@ -19,7 +19,7 @@
 
 
 
-.. |image21| image:: advanced/control.png
+
 
 .. |image22| image:: dance/AT97-65-size.jpg
    :width: 6.0cm

@@ -19,7 +19,6 @@ The TANGO Control System Manual
    :caption: Contents
    :name: manulatoc
 
-   07-advanced-features
    D-starting
    E-notifd2db
    F-property
