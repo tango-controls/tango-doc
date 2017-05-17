@@ -2,8 +2,6 @@
 
     \clearpage
 
-.. include:: substitutions.rst
-
 The TANGO IDL file : Module Tango
 =================================
 
@@ -1990,4 +1988,3 @@ cl\_ident)
 
    pipe values read
 
-.. include:: footnotes.rst

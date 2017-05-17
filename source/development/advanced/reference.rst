@@ -2,12 +2,6 @@
 
     \clearpage
 
-.. include:: substitutions.rst
-
-|image22|
-
-Image copyright info: [img8]_
-
 Reference part
 ==============
 
@@ -1042,7 +1036,7 @@ The RestartServer command
 
 The DevRestartServer command restarts all the device pattern(s) embedded
 in the device server process. Therefore, all the devices implemented in
-the server process are destroyed and re-built [13]_. The network
+the server process are destroyed and re-built [1]_. The network
 connection between client(s) and device(s) implemented in the device
 server process is destroyed and re-built.
 
@@ -2021,4 +2015,6 @@ side and TANGO\_EVENT\_BUFFER\_HWM for the event buffer on the client
 size. Both of them are a number which is the maximum number of events
 which could be stored in these buffers.
 
-.. include:: footnotes.rst
+
+.. [1]
+   Their black-box is also destroyed and re-built

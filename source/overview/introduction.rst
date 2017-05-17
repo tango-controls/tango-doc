@@ -5,7 +5,7 @@
 Introduction
 ============
 
-.. image:: dance/Ready.jpg
+.. image:: introduction/Ready.jpg
 
 
 

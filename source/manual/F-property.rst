@@ -140,4 +140,3 @@ characters after the ’:’ delimiter are space, tabulation or nothing. On
 line 40, the ’’ characters around the property value are mandatory due
 to the ’/’ character contains in the property value.
 
-.. include:: footnotes.rst

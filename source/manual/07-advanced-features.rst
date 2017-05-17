@@ -1905,5 +1905,3 @@ it if, in the environment of the client application, the environment
 variable SUPER\_TANGO is defined to true. If for one reason or another,
 the controlled access server is defined but not accessible, the device
 right checked at that time will be Read Access.
-
-.. include:: footnotes.rst

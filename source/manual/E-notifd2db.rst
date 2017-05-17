@@ -42,4 +42,3 @@ to register notification service in the /var/my\_ds\_file.res file used
 by a device server started with the device server -file command line
 option.
 
-.. include:: footnotes.rst

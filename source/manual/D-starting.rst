@@ -171,5 +171,3 @@ is optional and if it is not defined, the MySQL default port is used
 made. This controlled access system uses the Tango database to retrieve
 user rights and it is not possible to run it in a Tango control system
 running without database.
-
-.. include:: footnotes.rst
