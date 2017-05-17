@@ -17,11 +17,7 @@
 .. |image17| image:: dance/tango-08-39.jpg
    :width: 6.0cm
 
-.. |image18| image:: advanced/ThreadsManagement.png
 
-.. |image19| image:: advanced/jive_simpl.jpg
-
-.. |image20| image:: advanced/jive_sophis.jpg
 
 .. |image21| image:: advanced/control.png
 
