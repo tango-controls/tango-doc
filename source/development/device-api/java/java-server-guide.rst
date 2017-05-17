@@ -1106,7 +1106,7 @@ value varies at least of 1 since the last time it was sent:
 
 
 Pushed events
-~~~~~~~~~~~~~
+-------------
 
 The event types that can be sent from the device’s code are
 *CHANGE\_EVENT, ARCHIVING\_EVENT, DATA\_READY\_EVENT and USER\_EVENT*.
@@ -1182,7 +1182,7 @@ fill the origin field. See javadoc for details.
 
 
 Logging
-=============
+=======
 
 The Java Tango server API uses SLF4J
 (`*http://www.slf4j.org/* <http://www.slf4j.org/>`__). The underlying
@@ -1727,21 +1727,21 @@ Properties file for a device without Tango Database
     1/1/1->myProp:titi
     CLASS/TestDevice->myClassProp: 10
 
-.. |image0| image:: media/image3.png
+.. |image0| image:: java-server-guide/image3.png
    :width: 2.57847in
    :height: 1.98403in
-.. |image1| image:: media/image4.png
+.. |image1| image:: java-server-guide/image4.png
    :width: 3.13194in
    :height: 1.61389in
-.. |image2| image:: media/image5.png
+.. |image2| image:: java-server-guide/image5.png
    :width: 2.33735in
    :height: 0.75904in
-.. |image3| image:: media/image6.png
+.. |image3| image:: java-server-guide/image6.png
    :width: 2.94805in
    :height: 3.00085in
-.. |image4| image:: media/image7.png
+.. |image4| image:: java-server-guide/image7.png
    :width: 2.77108in
    :height: 1.58082in
-.. |image5| image:: media/image8.png
+.. |image5| image:: java-server-guide/image8.png
    :width: 1.91667in
    :height: 1.54306in

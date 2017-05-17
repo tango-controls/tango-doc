@@ -38,7 +38,9 @@ For example, one can request :term:`Tango Host` using Tango REST API:
 
 :command:`GET tango/rest/rc4/hosts/tango_host/10000`
 
-Here one uses Tango REST API implementation related to version RC4 [TODO link to the branch] this relates to tango/rest/rc4 part of the exmaple URL. `hosts` exports all the :term:`Tango Host`s accessible through this Tango REST API implementation. tango_host/10000 relates to TANGO_HOST=tango_host:10000.
+Here one uses Tango REST API implementation related to version RC4 [TODO link to the branch] this relates to
+tango/rest/rc4 part of the exmaple URL. `hosts` exports all the :term:<Tango Hosts `Tango Host`> accessible through
+this Tango REST API implementation. tango_host/10000 relates to TANGO_HOST=tango_host:10000.
 
 In the following example client requests for a device attribute:
 

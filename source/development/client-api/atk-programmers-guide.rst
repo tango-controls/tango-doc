@@ -1118,4 +1118,3 @@ to handle errors. So a viewer of command-results implements
 IResultListener interface and registers itself as a resultListener for
 the command it has to show the results.
 
-.. include:: footnotes.rst

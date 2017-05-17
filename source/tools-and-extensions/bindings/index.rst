@@ -7,8 +7,12 @@ Bindings Layout
 
 The available bindings are:
 
-* :doc:`C Langage <c-lang>`
-* :doc:`Matlab and Octave <matlab-and-octave>`
-* :doc:`LabVIEW <labVIEW>`
-* :doc:`Igor Pro <igor-pro>`
-* :doc:`Panorama <panorama>`
+.. toctree::
+   :name: bindingstoc
+   :maxdepth: 2
+
+   c-lang
+   matlab-and-octave
+   labVIEW
+   igor-pro
+   panorama

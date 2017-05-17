@@ -2,8 +2,6 @@
 
     \clearpage
 
-.. include:: substitutions.rst
-
 Bibliography
 ============
 

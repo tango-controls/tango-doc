@@ -166,7 +166,7 @@ operations called a special method implemented in the device root class
 - the *command\_handler* method. The *command\_handler* calls an
 *is\_allowed* method implemented in the device class before calling the
 command itself. The *is\_allowed* method is specific to each
-command [4]_. It checks to see whether the command to be executed is
+command [1]_. It checks to see whether the command to be executed is
 compatible with the present device state. The command function is
 executed only if the *is\_allowed* method allows it. Otherwise, an
 exception is sent to the client.
@@ -175,7 +175,7 @@ The TANGO attributes
 ~~~~~~~~~~~~~~~~~~~~
 
 In addition to commands, TANGO devices also support normalized data
-types called attributes [5]_. Commands are device specific and the data
+types called attributes [2]_. Commands are device specific and the data
 they transport are not normalized i.e. they can be any one of the TANGO
 data types with no restriction on what each byte means. This means that
 it is difficult to interpret the output of a command in terms of what
@@ -415,7 +415,7 @@ The database
 To achieve complete device independence, it is necessary however to
 supplement device classes with a possibility for configuring device
 dependencies at runtime. The utility which does this in the TDSOM is the
-**property database**. Properties [6]_ are identified by an ascii string
+**property database**. Properties [3]_ are identified by an ascii string
 and the device name. TANGO attributes are also configured using
 properties. This database is also used to store device network addresses
 (CORBA IOR’s), list of classes hosted by a device server process and
@@ -563,4 +563,13 @@ releases starting with Tango release 8.
 
 |image06|
 
-.. include:: footnotes.rst
+.. [1]
+   In contrary to the state\_handler method of the TACO device server
+   model which is not specific to each command.
+
+.. [2]
+   TANGO attributes were known as signals in the TACO device server
+   model
+
+.. [3]
+   Properties were known as resources in the TACO device server model

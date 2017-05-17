@@ -10,3 +10,4 @@ Device Servers
    introduction
    device-server-model
    device-server-writing
+   java/index

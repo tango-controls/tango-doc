@@ -324,7 +324,7 @@ The following eight event types have been implemented in TANGO :
    event\_period determines the highest frequency at which the periodic
    event is sent. Note if the event\_period is not an integral number of
    the polling period there will be a beating of the two
-   frequencies [7]_. Clients can reduce the frequency at which they
+   frequencies [1]_. Clients can reduce the frequency at which they
    receive periodic events by specifying a filter on the periodic event
    counter.
 
@@ -2305,3 +2305,7 @@ Compiling and linking a Tango client is similar to compiling and linking
 a Tango device server. Please, refer to chapter
 :ref:`Compiling and linking a C++ device server <compiling_device_server>`
 to get all the details.
+
+.. [1]
+   note: the polling is not synchronized is currently not synchronized
+   on the hour

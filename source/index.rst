@@ -21,7 +21,7 @@ The documentation is organized in the following categories (some of them overlap
   be directly interested in :doc:`The TANGO Control System Manual <manual/index>`.
 
 
-* :doc:`Tools and libraries </tools-and-extensions>`. Tango comes with lot of command line, graphical toolkits and programming tools for its management,
+* :doc:`Tools and libraries </tools-and-extensions/tools>`. Tango comes with lot of command line, graphical toolkits and programming tools for its management,
   developing graphical applications and connecting with other systems and applications.
 
 

@@ -86,7 +86,7 @@ used by the device pattern.
       class for each of these classes. It is an abstract class. A
       *execute* method must be defined in each sub-class. A
       *is\_allowed* method may also be re-defined in each class if the
-      default one does not fulfill all the needs [8]_. In our stepper
+      default one does not fulfill all the needs [1]_. In our stepper
       motor device server example, the DevReadPosition command follows
       this model.
 
@@ -286,7 +286,7 @@ This class implements all what is specific for a controlled object
 class. For instance, every device of the same class supports the same
 list of commands and therefore, this list of available commands is
 stored in this DeviceClass. The structure returned by the info operation
-contains a documentation URL [9]_. This documentation URL is the same
+contains a documentation URL [2]_. This documentation URL is the same
 for every device of the same class. Therefore, the documentation URL is
 a data member of this class. There should have only one instance of this
 class per device pattern implementation. The device list is also stored
@@ -670,7 +670,7 @@ This startup procedure is described in figure `6.2`_
 
 .. _`6.2`:
 
-.. figure:: ds_writing/startup.jpg
+.. figure:: device-server-writing/startup.jpg
    :alt: Device pattern startup sequence
    :align: center
 
@@ -2618,7 +2618,7 @@ input parameter type, the second template parameter is the command
 output parameter type. The second TemplCommandInOut class constructor
 parameter (set at line 13) is a pointer to the method to be executed
 when the command is requested. A casting is necessary to store this
-pointer as a pointer to a method of the DeviceImpl class [10]_. The
+pointer as a pointer to a method of the DeviceImpl class [3]_. The
 third TemplCommandInOut class constructor parameter (set at line 15) is
 a pointer to the method to be executed to check if the command is
 allowed. This is necessary only if the default behavior (command always
@@ -3078,7 +3078,7 @@ The constructors
 Three constructors are defined here. It is not mandatory to defined
 three constructors. But at least one is mandatory. The three
 constructors take a pointer to the StepperMotorClass instance as first
-parameter [11]_. The second parameter is the device name as a C++ string
+parameter [4]_. The second parameter is the device name as a C++ string
 or as a classical pointer to char array. The third parameter necessary
 only for the third form of constructor is the device description string
 passed as a classical pointer to a char array.
@@ -3237,7 +3237,7 @@ The methods used for the Position attribute
   Attribute object. Special care has been taken in order to minimize the
   number of data copy and allocation. The data passed to the Attribute
   object as attribute value is passed using pointers. It must be
-  allocated by the method [12]_ and the Attribute object will not free
+  allocated by the method [5]_ and the Attribute object will not free
   this memory. Data members called attr\_<Attribute\_name>\_read are
   foreseen for this usage. The *read\_attr\_hardware()* method receives
   a vector of long which are indexes into the main attributes vector of
@@ -4790,4 +4790,21 @@ the API reference documentation (in Tango WEB pages) to learn more on
 how you can insert data into a pipe and to know how data are organized
 within a pipe.
 
-.. include:: footnotes.rst
+.. [1]
+   The default is\_allowed method behavior is to always allows the
+   command
+
+.. [2]
+   URL stands for **U**\ niform **R**\ esource **L**\ ocator
+
+.. [3]
+   The StepperMotor class inherits from the DeviceImpl class and
+   therefore is a DeviceImpl
+
+.. [4]
+   The StepperMotorClass inherits from the DeviceClass and therefore is
+   a DeviceClass
+
+.. [5]
+   It can also be data declared as object data members or memory
+   declared as static
