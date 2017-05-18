@@ -1,3 +1,5 @@
+.. _astor_manual:
+
 Astor (TANGO Manager)
 =======================
 

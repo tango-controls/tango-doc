@@ -16,21 +16,25 @@ The documentation is organized in the following categories (some of them overlap
   an overview of Tango Controls concepts, procedures for installation and starting the system
   as well as *Getting started* tutorials.
 
-* :doc:`Tools and libraries </tools-and-extensions/tools>`. Tango comes with lot of command line, graphical toolkits and programming tools for its management,
-  developing graphical applications and connecting with other systems and applications.
+* :doc:`development/index` provide description of API and information for **Developers** needed for development
+  of :term:`Device Servers <device server>` and client applications.
 
+* :doc:`administration/index` section is important mainly for **System Administrators**. However, it may provide some
+  information for both **End Users** and **Developers**, too. It contains useful information on Tango Controls system
+  deployment, startup and maintenance.
 
-* :doc:`Tutorials <tutorials/index>` and :doc:`HOWTOs <how-to/index>` give step by step guidance and teach you how to work
+* :doc:`Tools and extensions <tools-and-extensions/tools>`. Tango comes with lot of command line, graphical toolkits
+  and programming tools for its management, developing graphical applications and connecting with other systems and
+  applications. All, **End Users**, **Developers** and **System Adminstrators** should look there for toolkits' manuals.
+
+* :doc:`Tutorials and HOWTOs <tutorials-and-howtos/index>` give step by step guidance and teach you how to work
   with Tango Controls.
 
-
-* :doc:`Advanced topics </advanced>` where you will find articles on some specific topics regarding system configuration
-  or internal details.
 
 * :doc:`Table of Contents <contents>` provides access to all documents.
 
 * If you want to contribute to the documentation please read the document
-  :doc:`How to work with Tango Controls documentation <documentation-guide>`.
+  :doc:`How to work with Tango Controls documentation <development/contribution/documentation-guide>`.
 
 
 Indices and tables

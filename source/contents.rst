@@ -6,6 +6,7 @@ Tango Documentation Contents
    :name: maintoc
    :maxdepth: 2
 
+   index
    overview/index
    getting-started/index
    development/index

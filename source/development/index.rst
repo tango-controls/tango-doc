@@ -14,4 +14,5 @@ follows:
    device-api/index
    advanced/index
    cpp-api/index
+   contributing/index
 

@@ -1,4 +1,4 @@
-.. Jive documentation
+.. _jive_manual:
 
 Jive
 ====

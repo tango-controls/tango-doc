@@ -1,3 +1,5 @@
+.. _jdraw_manual:
+
 Synoptic and JDraw
 ==================
 

@@ -1,3 +1,5 @@
+.. _pogo_manual:
+
 Pogo (Class Generator)
 ======================
 

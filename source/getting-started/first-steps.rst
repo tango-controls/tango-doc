@@ -3,10 +3,10 @@
 First steps with Tango Controls
 -------------------------------
 
-* In the :doc:`Overview <overview/index>` you will find basic information on Tango Controls. It will let you understand
+* In the :doc:`Overview </overview/index>` you will find basic information on Tango Controls. It will let you understand
   concepts of Tango Controls and help dancing it.
 
-* You may also start with :doc:`trying Tango Controls <how-to/how-to-try-tango>` either with a preconfigured virtual
+* You may also start with :ref:`trying Tango Controls <howto_try_tango>` either with a preconfigured virtual
   machine or installing basic setup on your own computer.
 
 * If you would like to install Tango Controls please look on :doc:`Installation guides <installation/index>`.
@@ -16,7 +16,7 @@ First steps with Tango Controls
     * browse `Device Classes Catalogue <http://www.tango-controls.org/resources/dsc/>`_ to find device servers
       for your equipment
 
-    * read :doc:`how to start a device server <how-to/how-to-start-device-server>`
+    * read :ref:`how to start a device server <howto_start_device_server>`
 
     * or read :doc:`first-device-class` and follow a guide
       :ref:`How to write your device class <how_to_write_first_device_class>` if your device is not yet
@@ -25,8 +25,8 @@ First steps with Tango Controls
 * To write your first C++ client see :doc:`first-client`.
 
 * At the beginning you may also be interested in how to use provided tools:
-  :doc:`Jive <tools/jive/index>`,
-  :doc:`Astor <tools/astor/index>`, :doc:`JDraw <tools/jdraw/index>` or :doc:`Pogo <tools/pogo/index>`.
+  :ref:`Jive <jive_manual>`,
+  :ref:`Astor <astor_manual>`, :ref:`JDraw <jdraw_manual>` or :ref:`Pogo <pogo_manual>`.
 
 
 

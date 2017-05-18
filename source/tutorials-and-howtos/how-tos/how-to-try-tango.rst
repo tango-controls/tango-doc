@@ -1,4 +1,4 @@
-.. How-To try
+.. _howto_try_tango:
 
 How to try Tango Controls
 =========================
