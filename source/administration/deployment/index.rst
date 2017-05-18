@@ -8,3 +8,4 @@ Deployment
    starting
    without-sql-db
    property-file
+   high-availability
