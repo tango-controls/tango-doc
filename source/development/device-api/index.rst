@@ -5,7 +5,7 @@ Device Servers
 
 .. toctree::
    :name: deviceapitoc
-   :maxdepth: 2
+   :maxdepth: 1
 
    introduction
    ds-guideline/index
@@ -18,3 +18,4 @@ Device Servers
    device-polling
    generating-events
    java/index
+   python/index

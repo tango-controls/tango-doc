@@ -9,3 +9,4 @@ Tango Client
 
    cpp-client-programmers-guide
    atk-programmers-guide
+   ../device-api/python/index
