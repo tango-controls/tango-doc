@@ -16,7 +16,7 @@ The documentation is organized in the following categories (some of them overlap
   an overview of Tango Controls concepts, procedures for installation and starting the system
   as well as *Getting started* tutorials.
 
-* :doc:`development/index` provide description of API and information for **Developers** needed for development
+* :doc:`development/index` provides description of API and information for **Developers** needed for development
   of :term:`Device Servers <device server>` and client applications.
 
 * :doc:`administration/index` section is important mainly for **System Administrators**. However, it may provide some
@@ -34,7 +34,7 @@ The documentation is organized in the following categories (some of them overlap
 * :doc:`Table of Contents <contents>` provides access to all documents.
 
 * If you want to contribute to the documentation please read the document
-  :doc:`How to work with Tango Controls documentation <development/contribution/documentation-guide>`.
+  :doc:`How to work with Tango Controls documentation <development/contributing/documentation-guide>`.
 
 
 Indices and tables
