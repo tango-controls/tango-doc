@@ -2,7 +2,7 @@
 
     \clearpage
 
-.. include:: substitutions.rst
+.. _starting_tango:
 
 Starting a Tango control system
 ===============================
