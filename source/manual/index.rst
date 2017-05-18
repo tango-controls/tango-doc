@@ -19,5 +19,5 @@ The TANGO Control System Manual
    :caption: Contents
    :name: manulatoc
 
-   F-property
+
    images

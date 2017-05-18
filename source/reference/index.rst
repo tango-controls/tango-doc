@@ -6,4 +6,5 @@ Reference
 
    glossary
    bibliography
-   genindex
+
+* :ref:`genindex`

@@ -2,7 +2,7 @@
 
     \clearpage
 
-.. include:: substitutions.rst
+.. _property_file:
 
 The property file syntax
 ========================

@@ -16,11 +16,6 @@ The documentation is organized in the following categories (some of them overlap
   an overview of Tango Controls concepts, procedures for installation and starting the system
   as well as *Getting started* tutorials.
 
-
-* :doc:`Reference </reference>` provides you with all details of Tango Controls **Core** or **Kernel**. You may
-  be directly interested in :doc:`The TANGO Control System Manual <manual/index>`.
-
-
 * :doc:`Tools and libraries </tools-and-extensions/tools>`. Tango comes with lot of command line, graphical toolkits and programming tools for its management,
   developing graphical applications and connecting with other systems and applications.
 
