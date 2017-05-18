@@ -2,7 +2,7 @@
 
     \clearpage
 
-.. include:: substitutions.rst
+.. _notifd2db:
 
 The notifd2db utility
 =====================

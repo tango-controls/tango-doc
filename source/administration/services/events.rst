@@ -7,7 +7,6 @@
 Event system
 ============
 
-
 Using multicast protocol to transfer events
 -------------------------------------------
 
@@ -120,3 +119,11 @@ transport tuning. These properties are:
    decremented. When it reaches 0, the packet is not transferred any
    more. In case this property is not defined, the Tango library uses a
    value of 5.
+
+Events in Tango releases lower than 8
+-------------------------------------
+
+.. toctree::
+   :maxdepth: 2
+
+   notifd2db
