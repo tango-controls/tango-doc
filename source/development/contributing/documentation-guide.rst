@@ -33,7 +33,7 @@ For the second option, the preferred way is to:
 * create your own local fix branch
 * when finished, send a pull request to the origin
 
-For details see :doc:`Documentation workflow tutorial <tutorials/documentation-workflow-tutorial>`.
+For details see :ref:`Documentation workflow tutorial <documentation_workflow_tutorial>`.
 
 Building/previewing documentation locally
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -101,15 +101,15 @@ Glossary
 ~~~~~~~~
 
 Glossary entries (definitions) may be provided as content of any document. However, there is
-a :file:`source/glossary.rst` file. Its purpose is to centralise short definitions of main concepts of Tango Controls.
+a :file:`source/reference/glossary.rst` file. Its purpose is to centralise short definitions of main concepts of Tango Controls.
 Entries defined there may be referenced as `\:term\:\`...\`` at any location in the documentation.
 
 Images
 ~~~~~~
 
 Fore each document, images should be stored in a sub-folder of the folder where the document is stored. As an example,
-please refer to :file:`source/tools/astor`. When a folder contains more than one document the images folder should
-be named as the document itself. See :file:`source/installation/tango-on-windows` as an example.
+please refer to :file:`source/tools-and-extensions/astor`. When a folder contains more than one document the images folder should
+be named as the document itself. See :file:`source/getting-started/installation/tango-on-windows` as an example.
 
 
 Configuration
@@ -122,7 +122,7 @@ info are defined there. Please refer to
 `conf.py documentation <http://www.sphinx-doc.org/en/stable/config.html#module-conf>`_.
 
 
-sources/requirements.txt
+requirements.txt
 ~~~~~~~~~~~~~~~~~~~~~~~~
 This is a standard :program:`pip` requirements file used to fix packages version. Currently it contains entries only
 for Sphinx and Breathe.

@@ -1,3 +1,5 @@
+.. _documentation_workflow_tutorial:
+
 Documentation workflow tutorial
 ===============================
 
