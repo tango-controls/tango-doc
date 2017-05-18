@@ -1,7 +1,0 @@
-     1	StringBuffer o = new StringBuffer("Command ");
-     2	o.append(command);
-     3	o.append(" not found");
-     4	
-     5	Except.throw_exception("API_CommandNotFound",
-     6			       o.toString(),
-     7			       "DeviceClass.command_handler");

@@ -8,6 +8,7 @@ Device Servers
    :maxdepth: 2
 
    introduction
+   ds-guideline/index
    device-server-model
    device-server-writing
    attribute-alarms

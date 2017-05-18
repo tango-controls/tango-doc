@@ -13,6 +13,5 @@ Tango Documentation Contents
    administration/index
    tutorials-and-howtos/index
    reference/index
-   ds-guide/index
    pytango/index
    documentation-guide
