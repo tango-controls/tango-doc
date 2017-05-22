@@ -1,9 +1,0 @@
-     1		DeviceAttribute da;
-     2	
-     3		bitset<DeviceAttribute::numFlags> bs = da.exceptions();
-     4		cout << "bs = " << bs << endl;
-     5			
-     6		da.set_exceptions(DeviceAttribute::wrongtype_flag);
-     7		bs = da.exceptions();
-     8			
-     9		cout << "bs = " << bs << endl;

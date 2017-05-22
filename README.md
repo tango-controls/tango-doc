@@ -21,13 +21,13 @@ They will be consequently corrected when found.
 How to contribute
 -----------------
 If you want to help us improve it, you can find an overview of how this documentation is
-organised [here](http://tango-controls.readthedocs.io/en/latest/documentation-guide.html).
+organised [here](http://tango-controls.readthedocs.io/en/latest/development/contribution/documentation-guide.html).
 There is also a tutorial with documentation contribution workflow which you can find
-[here](http://tango-controls.readthedocs.io/en/latest/tutorials/documentation-workflow-tutorial.html).
+[here](http://tango-controls.readthedocs.io/en/latest/tutorials-and-howtos/tutorials/documentation-workflow-tutorial.html).
 
 You can also find the aforementioned files in this repository under
-`source/documentation-guide.rst`
-and `source/tutorials/documentation-workflow-tutorial.rst`.
+`source/development/contribution/documentation-guide.rst`
+and `source/tutorials-and-howtos/tutorials/documentation-workflow-tutorial.rst`.
 
 
 Documentation is as important as code - your help will be appreciated by the Tango Community! 
