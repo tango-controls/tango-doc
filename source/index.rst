@@ -38,7 +38,7 @@ The documentation is organized in the following categories (some of them overlap
 
 
 Indices and tables
-==================
+------------------
 
 * :doc:`Table of Contents <contents>`
 * :ref:`genindex`
