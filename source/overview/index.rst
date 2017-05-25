@@ -17,6 +17,7 @@ Contents:
 
    overview
    SimplifiedTangoDatamodel
+   corba
 
 
 * :ref:`genindex`
