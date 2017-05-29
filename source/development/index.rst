@@ -12,6 +12,7 @@ follows:
    general-guidelines/index
    client-api/index
    device-api/index
+   debugging-and-testing/index
    advanced/index
    cpp-api/index
    contributing/index
