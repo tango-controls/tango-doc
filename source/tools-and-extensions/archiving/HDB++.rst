@@ -92,9 +92,9 @@ facility (srv-tango-srf.fcs.elettra.trieste.it:20000).
 More information is available
 `*here* <http://www.tango-controls.org/community/project-docs/hdbplusplus/hdbplusplus-doc/>`__.
 
-.. |image0| image:: HDB/image2.png
+.. |image0| image:: HDB-plus-plus/image2.png
    :width: 6.26772in
    :height: 3.37500in
-.. |image1| image:: HDB/image4.png
+.. |image1| image:: HDB-plus-plus/image4.png
    :width: 6.26772in
    :height: 3.62500in
