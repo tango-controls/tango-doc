@@ -11,7 +11,7 @@
 
 5.  Every object has a type which is defined with a language called IDL (Interface Definition Language)
 
-6.  An object has an interface and an implementation: this is the essence of CORBA because it allows **interoperability**.
+6.  An object has an interface and an implementation: this is the essence of CORBA because it allows *interoperability*.
 
 7.  CORBA allows an application to request an operation to be performed by a distributed object and for the results of the operation to be returned back to the application making the request.
 
