@@ -1,9 +1,0 @@
-     1	Tango::ConstDevString MyDev::dev_string(Tango::DevString argin)
-     2	{
-     3		Tango::ConstDevString	argout;
-     4	
-     5		cout << "the received string is " << argin << endl;
-     6		
-     7		argout = "Hello world";	
-     8		return argout;
-     9	}

@@ -7,4 +7,8 @@ before_install:
   - pip install -U setuptools
 
 script:
+  - sphinx-build -b linkcheck source build
   - sphinx-build source build
+
+after_failure:
+  - cat build/output.txt
