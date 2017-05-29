@@ -58,7 +58,7 @@ Here is an example of docker-compose.yml:
         depends_on:
     - tango-db
 
-Now to stast the whole stack execute :command:`docker-compose up`
+Now to start the whole stack execute :command:`docker-compose up`
 
 Once docker containers are up and running one can access mysql on localhost:9999 and the tango host on localhost:10000
 
