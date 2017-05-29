@@ -431,3 +431,10 @@ epub_exclude_files = ['search.html']
 intersphinx_mapping = {'http://docs.python.org/': None}
 
 
+# link checking options
+
+linkcheck_ignore = [
+                        r'http://localhost:\d+/*', r'https://localhost:\d+/*',
+                        r'http://localhost/*', r'https://localhost/*',
+                    ]
+
