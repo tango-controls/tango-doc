@@ -1,9 +1,0 @@
-#!/bin/bash
-
-FILES=`find . -name "*.lyx"`
-
-for i in $FILES
-do
-	echo "File name = $i"
-	sed -i '/#LyX/r license.add' $i
-done

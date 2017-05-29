@@ -1,2 +1,0 @@
-JDraw and Synoptic
-==================

@@ -1,9 +1,0 @@
-     1	class DevReadPositionCmd : public Command
-     2	{
-     3	public:
-     4		DevReadPositionCmd(const char *,Tango_CmdArgType, Tango_CmdArgType);
-     5		~DevReadPositionCmd() {};
-     6		
-     7		virtual bool is_allowed (DeviceImpl *, const CORBA_Any &);
-     8		virtual CORBA_Any *execute (DeviceImpl *, const CORBA_Any &);
-     9	};

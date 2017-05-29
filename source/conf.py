@@ -14,7 +14,7 @@
 
 import sys
 import os
-import breathe
+# import breathe
 import IPython.sphinxext
 
 # sys.path.insert(0, os.path.abspath('.'))
@@ -34,13 +34,13 @@ import IPython.sphinxext
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'breathe',
+#    'breathe',
     'sphinx.ext.autodoc',
     'sphinx.ext.doctest',
     'sphinx.ext.intersphinx',
     'sphinx.ext.todo',
     'sphinx.ext.coverage',
-    'sphinx.ext.pngmath',
+    'sphinx.ext.imgmath',
     'sphinx.ext.ifconfig',
     'sphinx.ext.viewcode',
     'IPython.sphinxext.ipython_console_highlighting',
@@ -49,9 +49,9 @@ extensions = [
 #    'sphinx.ext.autosectionlabel',
 ]
 
-breathe_projects = { "cppTango": "cpp-api/xml" }
+# breathe_projects = { "cppTango": "cpp-api/xml" }
 
-breathe_default_project = "cppTango"
+# breathe_default_project = "cppTango"
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -119,7 +119,7 @@ rst_epilog = """
 
 .. _`ATK Tutorial`: `Tango ATK Tutorial`_
 
-.. _`ZMQ home page`: http://www.zeromq.org
+.. _`ZMQ home page`: http://zeromq.org/
 
 .. _`Tango class development reference documentation`:
     http://www.esrf.eu/computing/cs/tango/tango_doc/kernel_doc/cpp_doc/index.html
@@ -179,9 +179,10 @@ pygments_style = 'sphinx'
 
 # -- Options for HTML output ----------------------------------------------
 
+
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-html_theme = 'tango-cs'
+html_theme = 'sphinx_rtd_theme'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -190,6 +191,21 @@ html_theme = 'tango-cs'
 
 # Add any paths that contain custom themes here, relative to this directory.
 html_theme_path = ['_theme']
+
+# on_rtd is whether we are on readthedocs.org, this line of code grabbed from docs.readthedocs.org
+on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
+
+if on_rtd:  #
+    # Override default css to get a larger width for ReadTheDoc build
+    html_context = {
+        'extra_css_files': [
+           # 'https://media.readthedocs.org/css/sphinx_rtd_theme.css',
+           # 'https://media.readthedocs.org/css/readthedocs-doc-embed.css',
+            '_static/tango_cs_theme.css',
+        ],
+    }
+
+
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
@@ -200,7 +216,7 @@ html_theme_path = ['_theme']
 
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
-html_logo = 'img/logo_tangocontrols.png'
+html_logo = 'img/logo_tangocontrols_white.png'
 
 # The name of an image file (within the static path) to use as favicon of the
 # docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
@@ -414,4 +430,11 @@ epub_exclude_files = ['search.html']
 # Example configuration for intersphinx: refer to the Python standard library.
 intersphinx_mapping = {'http://docs.python.org/': None}
 
+
+# link checking options
+
+linkcheck_ignore = [
+                        r'http://localhost:\d+/*', r'https://localhost:\d+/*',
+                        r'http://localhost/*', r'https://localhost/*',
+                    ]
 
