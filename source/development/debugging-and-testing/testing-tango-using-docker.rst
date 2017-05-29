@@ -21,7 +21,7 @@ These containers can be found in the corresponding repositories:
 https://github.com/tango-controls/docker-mysql
 
 
-https://github.com/tango-controls/tango-cs
+https://github.com/tango-controls/tango-cs-docker
 
 
 Tango docker stack
