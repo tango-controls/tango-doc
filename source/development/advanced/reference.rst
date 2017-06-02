@@ -950,6 +950,8 @@ in the *init\_device()* method must be freed in the *delete\_device()*
 method. The language device desctructor automatically calls the
 *delete\_device()* method.
 
+.. _dserver_class_device_commands:
+
 DServer class device commands
 -----------------------------
 
