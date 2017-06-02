@@ -1,4 +1,4 @@
-Tutorials nad How-Tos
+Tutorials and How-Tos
 =====================
 
 .. toctree::
