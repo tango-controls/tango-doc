@@ -16,4 +16,5 @@ follows:
    advanced/index
    cpp-api/index
    contributing/index
+   hdbpp/index
 

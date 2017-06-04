@@ -1,8 +1,46 @@
-=====
-HDB++
-=====
+.. HDB++ Design and implementation
 
-:Author: Lorenzo Pivetta
+HDB++ Contributions
+===================
+
+Author: *Lorenzo Pivetta*
+
+
+**Summary**
+
+The is a novel device server for Historical Data Base (HDB) archiving.
+It’s written in C++ and is fully event-driven.
+
+
+**Contributions**
+
+R. Bourtembourg, J.M. Chaize, F.Poncet, J.L. Pons, P.Verdier - ESRF
+C.Scafuri, G.Scalamera, G.Strangolino, L.Zambon - ELETTRA
+
+**Revisions**
+
++------------+---------+-----------+--------------------------------------------+
+| **Date**   | **Rev.**| **Author**|                                            |
++============+=========+===========+============================================+
+| 2012-12-04 | 1.0     | L.Pivetta | First release                              |
++------------+---------+-----------+--------------------------------------------+
+| 2013-01-29 | 1.1     | L.Pivetta | Merged suggestions from ESRF               |
++------------+---------+-----------+--------------------------------------------+
+| 2013-01-31 | 1.2     | L.Pivetta | Cleanup                                    |
++------------+---------+-----------+--------------------------------------------+
+| 2013-05-10 | 1.3     | L.Pivetta | Revision after HDB++ meeting on 2013.03.14 |
++------------+---------+-----------+--------------------------------------------+
+| 2014-01-30 | 1.4     | L.Pivetta | details + Extraction library               |
++------------+---------+-----------+--------------------------------------------+
+| 2014-03-07 | 1.5     | L.Pivetta | Database interface                         |
++------------+---------+-----------+--------------------------------------------+
+| 2014-05-05 | 1.6     | L.Pivetta | Cleanup, full ES and CM doc                |
++------------+---------+-----------+--------------------------------------------+
+| 2014-07-28 | 1.7     | L.Pivetta | Revision after HDB++ meeting on 2014.06.25 |
++------------+---------+-----------+--------------------------------------------+
+| 2016-08-12 | 1.8     | L.Pivetta | Revision after HDB++ meeting on 2016.05.10 |
++------------+---------+-----------+--------------------------------------------+
+
 
 .. role:: math(raw)
    :format: html latex
@@ -12,49 +50,7 @@ HDB++
    :depth: 3
 ..
 
-*Device Server Design Guidelines*
 
-| ****
-
-| **Design and implementation**
-
-| Revision
-
-**Summary**
-
-The is a novel device server for Historical Data Base (HDB) archiving.
-It’s written in C++ and is fully event-driven.
-
-**Keywords**
-
-Device Server, Historical Data Base, HDB, Archiving, C++
-
-**Notes**
-
-No notes so far.
-
-**Contributions**
-
-R. Bourtembourg, J.M. Chaize, F.Poncet, J.L. Pons, P.Verdier - ESRF
-C.Scafuri, G.Scalamera, G.Strangolino, L.Zambon - ELETTRA
-
-**Revisions**
-
-+-----------------------------------------------------------------------------+----+----+----+
-| **Date & **Rev. & **Author &                                                |    |    |    |
-| 2012-12-04 & 1.0 & L.Pivetta & First release                                |    |    |    |
-| 2013-01-29 & 1.1 & L.Pivetta & Merged suggestions from ESRF                 |    |    |    |
-| 2013-01-31 & 1.2 & L.Pivetta & Cleanup                                      |    |    |    |
-| 2013-05-10 & 1.3 & L.Pivetta & Revision after HDB++ meeting on 2013.03.14   |    |    |    |
-| 2014-01-30 & 1.4 & L.Pivetta & details + Extraction library                 |    |    |    |
-| 2014-03-07 & 1.5 & L.Pivetta & Database interface                           |    |    |    |
-| 2014-05-05 & 1.6 & L.Pivetta & Cleanup, full ES and CM doc                  |    |    |    |
-| 2014-07-28 & 1.7 & L.Pivetta & Revision after HDB++ meeting on 2014.06.25   |    |    |    |
-| 2016-08-12 & 1.8 & L.Pivetta & Revision after HDB++ meeting on 2016.05.10   |    |    |    |
-| ******                                                                      |    |    |    |
-+-----------------------------------------------------------------------------+----+----+----+
-
-[revisions]
 
 Historical Database
 ===================
@@ -64,7 +60,7 @@ Attributes into a database. The core implements an event-based interface
 to allow device servers to publish the data to be archived. The
 **archive** event can be triggered by two mechanisms:
 
--  delta\_change: the attribute value changed *significantly*
+-  delta_change: the attribute value changed *significantly*
 
 -  periodic: at a fixed periodic interval
 
@@ -76,8 +72,8 @@ the device server code.
 For additional information concerning the event subsystem please refer
 to *The Control System Manual* Version 9.2.
 
- Device Server
-==============
+HDB++ TANGO Device Server
+=========================
 
 The architecture is composed by several device servers. More in detail,
 at least one, but actually many, device server jointly with one device
@@ -154,7 +150,7 @@ marked as faulty (NOK).
 Stopping the archiving of an attribute does not persist after a restart,
 i.e. restarting an device server instance triggers the archiving of
 *all* configured attributes. A property can be setup not to start
-archiving at startup (see [es:classprop] and [es:devprop]).
+archiving at startup.
 
 One NULL value with time stamp is inserted whenever the archiving of an
 attribute is stopped, due to error or by a specific stop command.
@@ -170,21 +166,23 @@ Some of the attribute configuration parameters, such as *display-unit*,
 *format-string* and *label* will also be available in the and updated by
 means of the attribute configuration change event.
 
-| A mechanism to specify per-attribute archiving strategies, called
-  context, has been defined ad added to the . The syntax of the
-  AttributeList Property has been modified to support a *name=value*
-  syntax for the context, except for the Attribute name; fields are
-  separated by semicolon. Keeping the current syntax for the attribute
-  field allows for unchanged backwards compatibility:
+A mechanism to specify per-attribute archiving strategies, called
+context, has been defined ad added to the . The syntax of the
+AttributeList Property has been modified to support a *name=value*
+syntax for the context, except for the Attribute name; fields are
+separated by semicolon. Keeping the current syntax for the attribute
+field allows for unchanged backwards compatibility:
 
-tango://srv-tango-srf.fcs.elettra.trieste.it:20000/eos/climate/18b20\_eos.01/State;context=RUN\ :math:`|`\ SHUTDOWN
+.. code-block:: console
+   :linenos:
 
-| 
-| The labels for the context, implemented as enum, are defined in a free
-  property, and/or in the class property and/or in the device property,
-  with increasing priority. The defaults values, as well as the default
-  context, are pre-defined but can be modified by the user. The default
-  values are shown in table [es:contexts].
+   $ tango://srv-tango-srf.fcs.elettra.trieste.it:20000/eos/climate/18b20 eos.01/State;context=RUN|SHUTDOWN
+
+The labels for the context, implemented as enum, are defined in a free
+property, and/or in the class property and/or in the device property,
+with increasing priority. The defaults values, as well as the default
+context, are pre-defined but can be modified by the user. The default
+values are shown in table.
 
 +------------+---------+
 | label      | value   |
@@ -198,7 +196,7 @@ tango://srv-tango-srf.fcs.elettra.trieste.it:20000/eos/climate/18b20\_eos.01/Sta
 | SERVICE    | 3       |
 +------------+---------+
 
-Table: Context default labels.
+Table 1: Context default labels.
 
 Whenever not specified the default context is ALWAYS. A new memorized
 attribute, named **Context**, written by upper layer logic, tells the
@@ -237,11 +235,10 @@ The device server must maintain at least the following operating states:
 
 -  **OFF**: archiving stopped
 
- interface
-----------
+Event Subscriber interface
+--------------------------
 
-More in detail the device server interface is summarized in
-table [es:commands-table] and [es:attributes-table].
+More in detail the device server interface is summarized in table 2 and table 3.
 
 Commands
 ~~~~~~~~
@@ -272,7 +269,7 @@ Commands
 | ResetStatistics    | reset statistics                                                                                                            |
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------+
 
-Table:  Commands.
+Table 2: Event Subscriber Command.
 
 Attributes
 ~~~~~~~~~~
@@ -335,10 +332,10 @@ Attributes
 | StatisticsResetTime          | seconds elapsed since last statistics reset           |
 +------------------------------+-------------------------------------------------------+
 
-Table:  Attributes.
+Table 3: Event Subscriber Attributes.
 
 The class and device properties availabile for configuration are shown
-in table [es:classprop-table] and [es:devprop-table]. According to TANGO
+in table. According to TANGO
 device server design guidelines Device Properties, when defined,
 override Class properties. Please note that class and device Properties
 have changed since release of the TANGO device server.
@@ -364,11 +361,11 @@ Class properties
 | SubscribeRetryPeriod        | retry period for subscribe event, in seconds                     |
 +-----------------------------+------------------------------------------------------------------+
 
-Table:  Class properties.
+Table 4: Event Subscriber Class properties.
 
 The LibConfiguration property contains the following multi-line
 configuration parameters *host*, *user*, *password*, *dbname*, *port*.
-Table [es:libconfiguration-table-mysql] shows example configuration
+Table shows example configuration
 parameters for MySQL backend.
 
 +-------------------------------------------+
@@ -383,7 +380,7 @@ parameters for MySQL backend.
 | port=3306                                 |
 +-------------------------------------------+
 
-Table: LibConfiguration parameters for MySQL.
+Table 5: LibConfiguration parameters for MySQL.
 
 The HdbppContext property contains the enum specifying the possible
 user-defined operating contexts in the form *number:label*. The default
@@ -399,7 +396,7 @@ values are:
 | 3:SERVICE    |
 +--------------+
 
-Table: HdbppContext enum default values.
+Table 6: HdbppContext enum default values.
 
 Device properties
 ~~~~~~~~~~~~~~~~~
@@ -424,7 +421,7 @@ Device properties
 | SubscribeRetryPeriod        | retry period for subscribe event, in seconds                     |
 +-----------------------------+------------------------------------------------------------------+
 
-Table:  Device properties.
+Table 7: Event Subscriber Device properties.
 
 In addition to the already described Class properties, device Properties
 comprehend the AttributeList property which contains the list of
@@ -432,13 +429,18 @@ attributes in charge of the current device. The sintax is
 *fully-qualified-attribute-name;context=CONTEXT* where *CONTEXT* can be
 one or a combination of the defined contexts (logic OR). Whenever not
 specified the DefaultContext specified in the Class property or in the
-Device Property applies. Table [es:attribute-list] shows some examples:
+Device Property applies. Table shows some examples:
 
-| tango://srv-tango-srf.fcs.elettra.trieste.it:20000/eos/climate/18b20\_eos.01/State;context=RUN\ :math:`|`\ SHUTDOWN
-| tango://srv-tango-srf.fcs.elettra.trieste.it:20000/eos/climate/18b20\_eos.01/Temperature;context=RUN\ :math:`|`\ SHUTDOWN
-| tango://srv-tango-srf.fcs.elettra.trieste.it:20000/ctf/diagnostics/ccd\_ctf.01/State;context=RUN
-| tango://srv-tango-srf.fcs.elettra.trieste.it:20000/ctf/diagnostics/ccd\_ctf.01/HorProfile;context=RUN
-| tango://srv-tango-srf.fcs.elettra.trieste.it:20000/ctf/diagnostics/ccd\_ctf.01/VerProfile;context=RUN
+.. code-block:: console
+   :linenos:
+
+   $ tango://srv-tango-srf.fcs.elettra.trieste.it:20000/eos/climate/18b20 eos.01/State;context=RUN|SHUTDOWN
+   $ tango://srv-tango-srf.fcs.elettra.trieste.it:20000/eos/climate/18b20 eos.01/Temperature;context=RUN|SHUTDOWN
+   $ tango://srv-tango-srf.fcs.elettra.trieste.it:20000/ctf/diagnostics/ccd_ctf.01/State;context=RUN
+   $ tango://srv-tango-srf.fcs.elettra.trieste.it:20000/ctf/diagnostics/ccd_ctf.01/HorProfile;context=RUN
+   $ tango://srv-tango-srf.fcs.elettra.trieste.it:20000/ctf/diagnostics/ccd_ctf.01/VerProfile;context=RUN
+
+Table 8: AttributeList example
 
 The first two attributes will be archived in both RUN and SHUTDOWN
 contexts; the last three only when in RUN.
@@ -492,16 +494,15 @@ what is going on:
 These attributes could be themselves archived to enable a follow up
 versus time.
 
- interface
-----------
+Configuration Manager interface
+-------------------------------
 
 More in detail the device server exposes the following interface.
 
 Commands
 ~~~~~~~~
 
-The commands availabile in the are summarized in
-table [cm:commands-table].
+The commands availabile in the are summarized in commands-table.
 
 +------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | ArchiverAdd            | add a new instance to the archivers list; the instance must have been already created and configured via jive/astor and the device shall be running; as per release adding an device to an existing instance is not supported   |
@@ -533,10 +534,10 @@ table [cm:commands-table].
 | ResetStatistics        | reset statistics of and all                                                                                                                                                                                                     |
 +------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Table:  Commands.
+Table 9: Configuration Manager Commands.
 
 Note that the list of managed is stored into the ArchiverList device
-property (see [cm:devprop]) that is maintained via the ArchiverAdd,
+property that is maintained via the ArchiverAdd,
 ArchiverRemove and AttributeSetArchiver commands. Therefore in the
 archiving system the device server instances can also be configured by
 hand, if required, an run independently.
@@ -544,7 +545,7 @@ hand, if required, an run independently.
 Attributes
 ~~~~~~~~~~
 
-The attributes of the are summarized in table [cm:attributes-table].
+The attributes of the are summarized in attributes-table.
 
 +-------------------------------+-------------------------------------------------------------------+
 | ArchiverContext               | return archiver context                                           |
@@ -602,7 +603,7 @@ The attributes of the are summarized in table [cm:attributes-table].
 | SetTTL                        | set time-to-live for temporary storage; for archiving setup       |
 +-------------------------------+-------------------------------------------------------------------+
 
-Table:  Attributes.
+Table 10: Configuration Manager Attributes.
 
 The SetXxxYyy attributes are used for archive event and archiver
 instance configuration setup and must be filled before calling the
@@ -620,7 +621,7 @@ Class properties
 | MaxSearchSize      | max size for AttributeSearch result                    |
 +--------------------+--------------------------------------------------------+
 
-Table:  Class properties.
+Table 11: Event Subscriber Class properties.
 
 Device properties
 ~~~~~~~~~~~~~~~~~
@@ -633,21 +634,24 @@ Device properties
 | MaxSearchSize      | max size for AttributeSearch result                    |
 +--------------------+--------------------------------------------------------+
 
-Table:  device properties.
+Table 12: Configuration Manager device properties.
 
 Configuration and diagnostic tools
 ==================================
 
-| With all the statistics kept in the device servers and the device
-  server, the diagnostic tool can be straightforward to develop as a
-  simple QTango or ATK GUI. This GUI will also give read access to the
-  configuration data stored as attribute properties in the database to
-  display the attribute polling frequency of the involved device
-  servers, whenever available, and the archive event configuration. The
-  HDB++ Configurator GUI is available for archiving configuration,
-  management and diagnostics. It is written in Java. Refer to the
-  documentation page for any additional information:
-| http://www.esrf.eu/computing/cs/tango/tango_doc/tools_doc/hdb++-configurator/index.html
+With all the statistics kept in the device servers and the device
+server, the diagnostic tool can be straightforward to develop as a
+simple QTango or ATK GUI. This GUI will also give read access to the
+configuration data stored as attribute properties in the database to
+display the attribute polling frequency of the involved device
+servers, whenever available, and the archive event configuration. The
+HDB++ Configurator GUI is available for archiving configuration,
+management and diagnostics. It is written in Java. Refer to the
+documentation page for any additional information:
+
+`hdb++ configurator <http://www.esrf.eu/computing/cs/tango/tango_doc/tools_doc/hdb++-configurator/index.html>`_
+
+
 
 Database interface
 ==================
@@ -669,38 +673,38 @@ available to encapsulate database access decouple the :
 | *libhdbmysql*         | :   | legacy HDB table support, MySQL   |
 +-----------------------+-----+-----------------------------------+
 
-Table: Available database interfacement libraries.
+Table 13: Available database interfacement libraries.
 
 Additional libraries are foreseen to support different database engines,
 such as Oracle, Postgres or possibly noSQL implementations.
 
- database structure
--------------------
+database structure
+------------------
 
 The structure of the legacy HDB is based on three tables, (*adt*, *amt*,
-*apt*) shown in appendix [app:legacyhdb]. In addition, one table, named
-att\_xxxxx is created for each attribute or command to be archived. Many
+*apt*) shown in appendix. In addition, one table, named
+att_xxxxx is created for each attribute or command to be archived. Many
 of the columns in the lagacy tables are used for storing HDB archiving
 engine configuration parameters and are no more required.
 
 The new database structure, whose tables have been designed for the
 archiver, provides just the necessary columns and takes advantage of
-:math:`\mu`\ s resolution support for daytime. Three SQL scripts are
+microsecond resolution support for daytime. Three SQL scripts are
 provided to create the necessary database structure for MySQL or
 Cassandra backend:
 
 +--------------------------------+-----+---------------------------+
-| *create\_hdb\_mysql.sql*       | :   | legacy HDB MySQL schema   |
+| *create_hdb_mysql.sql*         | :   | legacy HDB MySQL schema   |
 +--------------------------------+-----+---------------------------+
-| *create\_hdb++\_mysql.sql*     | :   | MySQL schema              |
+| *create_hdb++_mysql.sql*       | :   | MySQL schema              |
 +--------------------------------+-----+---------------------------+
-| *create\_hdb\_cassandra.sql*   | :   | Cassandra schema          |
+| *create_hdb_cassandra.sql*     | :   | Cassandra schema          |
 +--------------------------------+-----+---------------------------+
 
-Table: Database setup scripts.
+Table 14: Database setup scripts.
 
-The *att\_conf* table associates the attribute name with a unique id and
-selects the data type; it’s worth notice that the *att\_name* raw always
+The *att_conf* table associates the attribute name with a unique id and
+selects the data type; it’s worth notice that the *att_name* raw always
 contains the complete FQDN, e.g. with the hostname and the domainname.
 
 ::
@@ -721,7 +725,7 @@ contains the complete FQDN, e.g. with the hostname and the domainname.
     +-----------------------+------------------+------+-----+---------+----------------+
         
 
-The *att\_conf\_data\_type* table creates an unique ID for each data
+The *att_conf_data_type* table creates an unique ID for each data
 type.
 
 ::
@@ -736,10 +740,10 @@ type.
     +-----------------------+------------------+------+-----+---------+----------------+
         
 
-The *att\_history* table stores the timestamps relevant for archiving
-diagnostics together with the *att\_history\_event*. The copmplete list
+The *att_history* table stores the timestamps relevant for archiving
+diagnostics together with the *att_history_event*. The copmplete list
 of supported TANGO data types is shown in table [db:datatypes]. As an
-example the table *att\_scalar\_devlong\_rw*, for archiving one value,
+example the table *att_scalar_devlong_rw*, for archiving one value,
 is also shown below. Three timestamp rows are currently supported: the
 datum timestamp, the receive time timestamp and the database insertion
 timestamp.
@@ -786,79 +790,79 @@ timestamp.
 +-------------------------------+------------------------------+
 | **scalar**                    | **vector**                   |
 +===============================+==============================+
-| att\_scalar\_devboolean\_ro   | att\_array\_devboolean\_ro   |
+| att_scalar_devboolean_ro      | att_array_devboolean_ro      |
 +-------------------------------+------------------------------+
-| att\_scalar\_devboolean\_rw   | att\_array\_devboolean\_rw   |
+| att_scalar_devboolean_rw      | att_array_devboolean_rw      |
 +-------------------------------+------------------------------+
-| att\_scalar\_devdouble\_ro    | att\_array\_devdouble\_ro    |
+| att_scalar_devdouble_ro       | att_array_devdouble_ro       |
 +-------------------------------+------------------------------+
-| att\_scalar\_devdouble\_rw    | att\_array\_devdouble\_rw    |
+| att_scalar_devdouble_rw       | att_array_devdouble_rw       |
 +-------------------------------+------------------------------+
-| att\_scalar\_devencoded\_ro   | att\_array\_devencoded\_ro   |
+| att_scalar_devencoded_ro      | att_array_devencoded_ro      |
 +-------------------------------+------------------------------+
-| att\_scalar\_devencoded\_rw   | att\_array\_devencoded\_rw   |
+| att_scalar_devencoded_rw      | att_array_devencoded_rw      |
 +-------------------------------+------------------------------+
-| att\_scalar\_devfloat\_ro     | att\_array\_devfloat\_ro     |
+| att_scalar_devfloat_ro        | att_array_devfloat_ro        |
 +-------------------------------+------------------------------+
-| att\_scalar\_devfloat\_rw     | att\_array\_devfloat\_rw     |
+| att_scalar_devfloat_rw        | att_array_devfloat_rw        |
 +-------------------------------+------------------------------+
-| att\_scalar\_devlong64\_ro    | att\_array\_devlong64\_ro    |
+| att_scalar_devlong64_ro       | att_array_devlong64_ro       |
 +-------------------------------+------------------------------+
-| att\_scalar\_devlong64\_rw    | att\_array\_devlong64\_rw    |
+| att_scalar_devlong64_rw       | att_array_devlong64_rw       |
 +-------------------------------+------------------------------+
-| att\_scalar\_devlong\_ro      | att\_array\_devlong\_ro      |
+| att_scalar_devlong_ro         | att_array_devlong_ro         |
 +-------------------------------+------------------------------+
-| att\_scalar\_devlong\_rw      | att\_array\_devlong\_rw      |
+| att_scalar_devlong_rw         | att_array_devlong_rw         |
 +-------------------------------+------------------------------+
-| att\_scalar\_devshort\_ro     | att\_array\_devshort\_ro     |
+| att_scalar_devshort_ro        | att_array_devshort_ro        |
 +-------------------------------+------------------------------+
-| att\_scalar\_devshort\_rw     | att\_array\_devshort\_rw     |
+| att_scalar_devshort_rw        | att_array_devshort_rw        |
 +-------------------------------+------------------------------+
-| att\_scalar\_devstate\_ro     | att\_array\_devstate\_ro     |
+| att_scalar_devstate_ro        | att_array_devstate_ro        |
 +-------------------------------+------------------------------+
-| att\_scalar\_devstate\_rw     | att\_array\_devstate\_rw     |
+| att_scalar_devstate_rw        | att_array_devstate_rw        |
 +-------------------------------+------------------------------+
-| att\_scalar\_devstring\_ro    | att\_array\_devstring\_ro    |
+| att_scalar_devstring_ro       | att_array_devstring_ro       |
 +-------------------------------+------------------------------+
-| att\_scalar\_devstring\_rw    | att\_array\_devstring\_rw    |
+| att_scalar_devstring_rw       | att_array_devstring_rw       |
 +-------------------------------+------------------------------+
-| att\_scalar\_devuchar\_ro     | att\_array\_devuchar\_ro     |
+| att_scalar_devuchar_ro        | att_array_devuchar_ro        |
 +-------------------------------+------------------------------+
-| att\_scalar\_devuchar\_rw     | att\_array\_devuchar\_rw     |
+| att_scalar_devuchar_rw        | att_array_devuchar_rw        |
 +-------------------------------+------------------------------+
-| att\_scalar\_devulong64\_ro   | att\_array\_devulong64\_ro   |
+| att_scalar_devulong64_ro      | att_array_devulong64_ro      |
 +-------------------------------+------------------------------+
-| att\_scalar\_devulong64\_rw   | att\_array\_devulong64\_rw   |
+| att_scalar_devulong64_rw      | att_array_devulong64_rw      |
 +-------------------------------+------------------------------+
-| att\_scalar\_devulong\_ro     | att\_array\_devulong\_ro     |
+| att_scalar_devulong_ro        | att_array_devulong_ro        |
 +-------------------------------+------------------------------+
-| att\_scalar\_devulong\_rw     | att\_array\_devulong\_rw     |
+| att_scalar_devulong_rw        | att_array_devulong_rw        |
 +-------------------------------+------------------------------+
-| att\_scalar\_devushort\_ro    | att\_array\_devushort\_ro    |
+| att_scalar_devushort_ro       | att_array_devushort_ro       |
 +-------------------------------+------------------------------+
-| att\_scalar\_devushort\_rw    | att\_array\_devushort\_rw    |
+| att_scalar_devushort_rw       | att_array_devushort_rw       |
 +-------------------------------+------------------------------+
-| att\_scalar\_double\_ro       | att\_array\_double\_ro       |
+| att_scalar_double_ro          | att_array_double_ro          |
 +-------------------------------+------------------------------+
-| att\_scalar\_double\_rw       | att\_array\_double\_rw       |
+| att_scalar_double_rw          | att_array_double_rw          |
 +-------------------------------+------------------------------+
-| att\_scalar\_string\_ro       | att\_array\_string\_ro       |
+| att_scalar_string_ro          | att_array_string_ro          |
 +-------------------------------+------------------------------+
-| att\_scalar\_string\_rw       | att\_array\_string\_rw       |
+| att_scalar_string_rw          | att_array_string_rw          |
 +-------------------------------+------------------------------+
 
-Table: Supported data types.
+Table 15: Supported data types.
 
-To support temporary storage of historical data the att\_ttl column has
-to be added to the att\_conf table. The att\_ttl defines the
+To support temporary storage of historical data the att_ttl column has
+to be added to the att_conf table. The att_ttl defines the
 time-to-live in hours on a per-attribute basis. Deleting expired data is
 delegated to the SQL backend; the basic machanism foreseen is a SQL
 script run by cron.
 
 The complete SQL source for all the tables is reported in
-appendix [app:hdb++sql]. The main points can be summarized as:
+appendix. The main points can be summarized as:
 
--  :math:`\mu`\ s timestamp resolution
+-  microsecond timestamp resolution
 
 -  no per-attribute additional tables; the number of tables used is
    fixed and does not depend on the number of archived attributes
@@ -915,15 +919,13 @@ select one of the following behaviours:
 -  return equal length data arrays for all rows, filling the gaps with
    the previous data value
 
-| A C++ native implementation, as well as a Java implementation,
-  exposing the same API, are foreseen and are currently available.
-  Please refer to the *hdbextractor* reference manual for the C++
-  implementation
-| https://sourceforge.net/p/tango-cs/code/HEAD/tree/archiving/hdb++/hdbextractor
-| and the *HDB++ Java Extraction Library* for Java
-| `http://www.tango-controls.org/community/project-docs/
-  hdbplusplus/hdbplusplus-doc/java-extraction-api <http://www.tango-controls.org/community/project-docs/
-  hdbplusplus/hdbplusplus-doc/java-extraction-api>`__
+A C++ native implementation, as well as a Java implementation,
+exposing the same API, are foreseen and are currently available.
+Please refer to the *hdbextractor* reference manual for the C++
+`implementation <https://sourceforge.net/p/tango-cs/code/HEAD/tree/archiving/hdb++/hdbextractor>`_
+
+and the *HDB++ Java Extraction Library* for Java
+`HDB++ java-extraction-api <http://www.tango-controls.org/community/project-docs/hdbplusplus/hdbplusplus-doc/java-extraction-api>`__
 
 General remarks
 ===============
@@ -934,12 +936,12 @@ already needed by the core.
 Project references and source code
 ==================================
 
-| The HDB++ project page is available on the Controls web site:
-| http://www.tango-controls.org/community/projects/hdbplus/
-| The HDB++ source code for the archiving engine as well as the
-  configuration tools, extraction libraries and GUI are available on
-  Sourceforge:
-| https://sourceforge.net/p/tango-cs/code/HEAD/tree/archiving/hdb++/
+The HDB++ project page is available on the Controls web site:
+`HDB++ <http://www.tango-controls.org/community/projects/hdbplus/>`_.
+The HDB++ source code for the archiving engine as well as the
+configuration tools, extraction libraries and GUI are available on
+
+`Sourceforge <https://sourceforge.net/p/tango-cs/code/HEAD/tree/archiving/hdb++/>`_
 
 Legacy HDB tables structure
 ===========================
@@ -1027,8 +1029,8 @@ Legacy HDB tables structure
     +---------------+--------------------------+------+-----+---------+-------+
         
 
- schema SQL source (MySQL)
-==========================
+schema SQL source (MySQL)
+=========================
 
 ::
 
@@ -1409,6 +1411,7 @@ Legacy HDB tables structure
 
     CREATE TABLE IF NOT EXISTS att_scalar_devulong_ro
     (
+    att_conf_id INT UNSIGNED NOT NULL,
     att_conf_id INT UNSIGNED NOT NULL,
     data_time TIMESTAMP(6) DEFAULT 0,
     recv_time TIMESTAMP(6) DEFAULT 0,
@@ -1872,8 +1875,8 @@ Legacy HDB tables structure
     ) ENGINE=MyISAM COMMENT='Array Encoded ReadWrite Values Table';
         
 
- schema CQL source (Cassandra)
-==============================
+schema CQL source (Cassandra)
+=============================
 
 ::
 
@@ -2849,8 +2852,3 @@ Legacy HDB tables structure
     WITH comment='Time Statistics Table';
         
 
- full documentation
-===================
-
- full documentation
-===================
