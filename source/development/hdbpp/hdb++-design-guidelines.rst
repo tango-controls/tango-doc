@@ -14,8 +14,9 @@ It’s written in C++ and is fully event-driven.
 
 **Contributions**
 
-R. Bourtembourg, J.M. Chaize, F.Poncet, J.L. Pons, P.Verdier - ESRF
-C.Scafuri, G.Scalamera, G.Strangolino, L.Zambon - ELETTRA
+| *R. Bourtembourg, J.M. Chaize, F.Poncet, J.L. Pons, P.Verdier* - ESRF
+| *C.Scafuri, G.Scalamera, G.Strangolino, L.Zambon* - ELETTRA
+| 
 
 **Revisions**
 
@@ -44,11 +45,11 @@ C.Scafuri, G.Scalamera, G.Strangolino, L.Zambon - ELETTRA
 
 .. role:: math(raw)
    :format: html latex
-..
+
 
 .. contents::
    :depth: 3
-..
+
 
 
 
