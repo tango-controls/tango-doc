@@ -1,7 +1,7 @@
-*HdbEventSubscriber Tango Cpp Class *
-=====================================
+HdbEventSubscriber Tango Cpp Class
+==================================
 
-     **Contents:**
+**Contents:**
 
 -  `Description <FullDocument.html#description>`__
 
@@ -109,29 +109,28 @@
 
 +--------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 |  **HdbEventSubscriber Class Identification:**                      |  **HdbEventSubscriber Class Inheritance:**                                                       |
-+====================================================================+==================================================================================================+
-| +---------------------+----------------------------------------+   | -  `Tango::DeviceImpl <http://www.esrf.eu/computing/cs/tango/tango_doc/kernel_doc/cpp_doc/>`__   |
-| | Contact             | : at elettra.eu - graziano.scalamera   |   |                                                                                                  |
-| +=====================+========================================+   |    -  HdbEventSubscriber                                                                         |
-| | Class Family        | : Miscellaneous                        |   |                                                                                                  |
-| +---------------------+----------------------------------------+   |                                                                                                  |
-| | Platform            | : Unix Like                            |   |                                                                                                  |
-| +---------------------+----------------------------------------+   |                                                                                                  |
-| | Bus                 | : Not Applicable                       |   |                                                                                                  |
-| +---------------------+----------------------------------------+   |                                                                                                  |
-| | Manufacturer        | : none                                 |   |                                                                                                  |
-| +---------------------+----------------------------------------+   |                                                                                                  |
-| | Manufacturer ref.   | :                                      |   |                                                                                                  |
-| +---------------------+----------------------------------------+   |                                                                                                  |
-+--------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
++=======================+============================================+==================================================================================================+
+|                       |                                            | -  `Tango::DeviceImpl <http://www.esrf.eu/computing/cs/tango/tango_doc/kernel_doc/cpp_doc/>`__   |
+|   Contact:            |   at elettra.eu - graziano.scalamera       |                                                                                                  |
++-----------------------+--------------------------------------------+    -  HdbEventSubscriber                                                                         |
+|   Class Family:       |   Miscellaneous                            |                                                                                                  |
++-----------------------+--------------------------------------------+                                                                                                  |
+|   Platform:           |   Unix Like                                |                                                                                                  |
++-----------------------+--------------------------------------------+                                                                                                  |
+|   Bus:                |   Not Applicable                           |                                                                                                  |
++-----------------------+--------------------------------------------+                                                                                                  |
+|   Manufacturer:       |   none                                     |                                                                                                  |
++-----------------------+--------------------------------------------+                                                                                                  |
+|   Manufacturer ref.:  |                                            |                                                                                                  |
+|                       |                                            |                                                                                                  |
++-----------------------+--------------------------------------------+--------------------------------------------------------------------------------------------------+
 
-     **HdbEventSubscriber Class Description:**
+**HdbEventSubscriber Class Description:**
 
-    This class is able to subscribe on archive events and store value in
-    Historical DB
+This class is able to subscribe on archive events and store value in Historical DB
 
 | 
-|  **HdbEventSubscriber Properties:**
+**HdbEventSubscriber Properties:**
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | **Class Properties**                                                                                                                                                                |
@@ -186,53 +185,53 @@
 +===========================================================+=======================+======================+==============+==================================================================================================================+
 | **Name**                                                  | **Input type**        | **Output type**      | **Level**    | **Description**                                                                                                  |
 +-----------------------------------------------------------+-----------------------+----------------------+--------------+------------------------------------------------------------------------------------------------------------------+
-| `State <CmdState.html>`__                                 | DEV\_VOID             | DEV\_STATE           | OPERATOR     | This command gets the device state (stored in its *device\_state* data member) and returns it to the caller.     |
+| `State <CmdState.html>`__                                 | DEV_VOID              | DEV_STATE            | OPERATOR     | This command gets the device state (stored in its *device_state* data member) and returns it to the caller.      |
 +-----------------------------------------------------------+-----------------------+----------------------+--------------+------------------------------------------------------------------------------------------------------------------+
-| `Status <CmdStatus.html>`__                               | DEV\_VOID             | CONST\_DEV\_STRING   | OPERATOR     | This command gets the device status (stored in its *device\_status* data member) and returns it to the caller.   |
+| `Status <CmdStatus.html>`__                               | DEV_VOID              | CONST_DEV_STRING     | OPERATOR     | This command gets the device status (stored in its *device_status* data member) and returns it to the caller.    |
 +-----------------------------------------------------------+-----------------------+----------------------+--------------+------------------------------------------------------------------------------------------------------------------+
-| `AttributeAdd <CmdAttributeAdd.html>`__                   | DEVVAR\_STRINGARRAY   | DEV\_VOID            | OPERATOR     | Add a new attribute to archive in HDB.                                                                           |
+| `AttributeAdd <CmdAttributeAdd.html>`__                   | DEVVAR_STRINGARRAY    | DEV_VOID             | OPERATOR     | Add a new attribute to archive in HDB.                                                                           |
 +-----------------------------------------------------------+-----------------------+----------------------+--------------+------------------------------------------------------------------------------------------------------------------+
-| `AttributeRemove <CmdAttributeRemove.html>`__             | DEV\_STRING           | DEV\_VOID            | OPERATOR     | Remove attribute from configuration.                                                                             |
+| `AttributeRemove <CmdAttributeRemove.html>`__             | DEV_STRING            | DEV_VOID             | OPERATOR     | Remove attribute from configuration.                                                                             |
 +-----------------------------------------------------------+-----------------------+----------------------+--------------+------------------------------------------------------------------------------------------------------------------+
-| `AttributeStatus <CmdAttributeStatus.html>`__             | DEV\_STRING           | DEV\_STRING          | OPERATOR     | Read a attribute status.                                                                                         |
+| `AttributeStatus <CmdAttributeStatus.html>`__             | DEV_STRING            | DEV_STRING           | OPERATOR     | Read a attribute status.                                                                                         |
 +-----------------------------------------------------------+-----------------------+----------------------+--------------+------------------------------------------------------------------------------------------------------------------+
-| `Start <CmdStart.html>`__                                 | DEV\_VOID             | DEV\_VOID            | OPERATOR     | Start archiving                                                                                                  |
+| `Start <CmdStart.html>`__                                 | DEV_VOID              | DEV_VOID             | OPERATOR     | Start archiving                                                                                                  |
 +-----------------------------------------------------------+-----------------------+----------------------+--------------+------------------------------------------------------------------------------------------------------------------+
-| `Stop <CmdStop.html>`__                                   | DEV\_VOID             | DEV\_VOID            | OPERATOR     | Stop archiving                                                                                                   |
+| `Stop <CmdStop.html>`__                                   | DEV_VOID              | DEV_VOID             | OPERATOR     | Stop archiving                                                                                                   |
 +-----------------------------------------------------------+-----------------------+----------------------+--------------+------------------------------------------------------------------------------------------------------------------+
-| `AttributeStart <CmdAttributeStart.html>`__               | DEV\_STRING           | DEV\_VOID            | OPERATOR     | Start archiving single attribute                                                                                 |
+| `AttributeStart <CmdAttributeStart.html>`__               | DEV_STRING            | DEV_VOID             | OPERATOR     | Start archiving single attribute                                                                                 |
 +-----------------------------------------------------------+-----------------------+----------------------+--------------+------------------------------------------------------------------------------------------------------------------+
-| `AttributeStop <CmdAttributeStop.html>`__                 | DEV\_STRING           | DEV\_VOID            | OPERATOR     | Stop archiving single attribute                                                                                  |
+| `AttributeStop <CmdAttributeStop.html>`__                 | DEV_STRING            | DEV_VOID             | OPERATOR     | Stop archiving single attribute                                                                                  |
 +-----------------------------------------------------------+-----------------------+----------------------+--------------+------------------------------------------------------------------------------------------------------------------+
-| `ResetStatistics <CmdResetStatistics.html>`__             | DEV\_VOID             | DEV\_VOID            | OPERATOR     | Reset statistic counters                                                                                         |
+| `ResetStatistics <CmdResetStatistics.html>`__             | DEV_VOID              | DEV_VOID             | OPERATOR     | Reset statistic counters                                                                                         |
 +-----------------------------------------------------------+-----------------------+----------------------+--------------+------------------------------------------------------------------------------------------------------------------+
-| `Pause <CmdPause.html>`__                                 | DEV\_VOID             | DEV\_VOID            | OPERATOR     | Pause archiving                                                                                                  |
+| `Pause <CmdPause.html>`__                                 | DEV_VOID              | DEV_VOID             | OPERATOR     | Pause archiving                                                                                                  |
 +-----------------------------------------------------------+-----------------------+----------------------+--------------+------------------------------------------------------------------------------------------------------------------+
-| `AttributePause <CmdAttributePause.html>`__               | DEV\_STRING           | DEV\_VOID            | OPERATOR     | Pause archiving single attribute                                                                                 |
+| `AttributePause <CmdAttributePause.html>`__               | DEV_STRING            | DEV_VOID             | OPERATOR     | Pause archiving single attribute                                                                                 |
 +-----------------------------------------------------------+-----------------------+----------------------+--------------+------------------------------------------------------------------------------------------------------------------+
-| `SetAttributeStrategy <CmdSetAttributeStrategy.html>`__   | DEVVAR\_STRINGARRAY   | DEV\_VOID            | OPERATOR     | Update strategy associated to an already archived attribute.                                                     |
+| `SetAttributeStrategy <CmdSetAttributeStrategy.html>`__   | DEVVAR_STRINGARRAY    | DEV_VOID             | OPERATOR     | Update strategy associated to an already archived attribute.                                                     |
 +-----------------------------------------------------------+-----------------------+----------------------+--------------+------------------------------------------------------------------------------------------------------------------+
-| `GetAttributeStrategy <CmdGetAttributeStrategy.html>`__   | DEV\_STRING           | DEV\_STRING          | OPERATOR     | Read a attribute contexts.                                                                                       |
+| `GetAttributeStrategy <CmdGetAttributeStrategy.html>`__   | DEV_STRING            | DEV_STRING           | OPERATOR     | Read a attribute contexts.                                                                                       |
 +-----------------------------------------------------------+-----------------------+----------------------+--------------+------------------------------------------------------------------------------------------------------------------+
-| `StopFaulty <CmdStopFaulty.html>`__                       | DEV\_VOID             | DEV\_VOID            | OPERATOR     | Stop archiving faulty attributes                                                                                 |
+| `StopFaulty <CmdStopFaulty.html>`__                       | DEV_VOID              | DEV_VOID             | OPERATOR     | Stop archiving faulty attributes                                                                                 |
 +-----------------------------------------------------------+-----------------------+----------------------+--------------+------------------------------------------------------------------------------------------------------------------+
-| `SetAttributeTTL <CmdSetAttributeTTL.html>`__             | DEVVAR\_STRINGARRAY   | DEV\_VOID            | OPERATOR     | Update TTL associated to an already archived attribute.                                                          |
+| `SetAttributeTTL <CmdSetAttributeTTL.html>`__             | DEVVAR_STRINGARRAY    | DEV_VOID             | OPERATOR     | Update TTL associated to an already archived attribute.                                                          |
 +-----------------------------------------------------------+-----------------------+----------------------+--------------+------------------------------------------------------------------------------------------------------------------+
-| `GetAttributeTTL <CmdGetAttributeTTL.html>`__             | DEV\_STRING           | DEV\_ULONG           | OPERATOR     | Read an attribute TTL.                                                                                           |
+| `GetAttributeTTL <CmdGetAttributeTTL.html>`__             | DEV_STRING            | DEV_ULONG            | OPERATOR     | Read an attribute TTL.                                                                                           |
 +-----------------------------------------------------------+-----------------------+----------------------+--------------+------------------------------------------------------------------------------------------------------------------+
 
 | 
-| **Command State:**
+**Command State:**
 
-    This command gets the device state (stored in its *device\_state*
-    data member) and returns it to the caller.
+This command gets the device state (stored in its *device_state*
+data member) and returns it to the caller.
 
 +--------------------------------------------------------------+
 | **State Definition**                                         |
 +=========================+=====================+==============+
-| Input Argument          | Tango::DEV\_VOID    | none.        |
+| Input Argument          | Tango::DEV_VOID     | none.        |
 +-------------------------+---------------------+--------------+
-| Output Argument         | Tango::DEV\_STATE   | State Code   |
+| Output Argument         | Tango::DEV_STATE    | State Code   |
 +-------------------------+---------------------+--------------+
 | DisplayLevel            | OPERATOR            | ..           |
 +-------------------------+---------------------+--------------+
@@ -248,17 +247,17 @@
 +-------------------------+---------------------+--------------+
 
 | 
-| **Command Status:**
+**Command Status:**
 
-    This command gets the device status (stored in its *device\_status*
-    data member) and returns it to the caller.
+This command gets the device status (stored in its *device_status*
+data member) and returns it to the caller.
 
 +-------------------------------------------------------------------------------+
 | **Status Definition**                                                         |
 +==========================+=============================+======================+
-| Input Argument           | Tango::DEV\_VOID            | none.                |
+| Input Argument           | Tango::DEV_VOID             | none.                |
 +--------------------------+-----------------------------+----------------------+
-| Output Argument          | Tango::CONST\_DEV\_STRING   | Status description   |
+| Output Argument          | Tango::CONST_DEV_STRING     | Status description   |
 +--------------------------+-----------------------------+----------------------+
 | DisplayLevel             | OPERATOR                    | ..                   |
 +--------------------------+-----------------------------+----------------------+
@@ -274,16 +273,16 @@
 +--------------------------+-----------------------------+----------------------+
 
 | 
-| **Command AttributeAdd:**
+**Command AttributeAdd:**
 
-    Add a new attribute to archive in HDB.
+Add a new attribute to archive in HDB.
 
 +--------------------------------------------------------------------------------------------+
 | **AttributeAdd Definition**                                                                |
 +================================+==============================+============================+
-| Input Argument                 | Tango::DEVVAR\_STRINGARRAY   | Attribute name, strategy   |
+| Input Argument                 | Tango::DEVVAR_STRINGARRAY    | Attribute name, strategy   |
 +--------------------------------+------------------------------+----------------------------+
-| Output Argument                | Tango::DEV\_VOID             |                            |
+| Output Argument                | Tango::DEV_VOID              |                            |
 +--------------------------------+------------------------------+----------------------------+
 | DisplayLevel                   | OPERATOR                     | ..                         |
 +--------------------------------+------------------------------+----------------------------+
@@ -299,16 +298,16 @@
 +--------------------------------+------------------------------+----------------------------+
 
 | 
-| **Command AttributeRemove:**
+**Command AttributeRemove:**
 
-    Remove attribute from configuration.
+Remove attribute from configuration.
 
 +-----------------------------------------------------------------------------+
 | **AttributeRemove Definition**                                              |
 +===================================+======================+==================+
-| Input Argument                    | Tango::DEV\_STRING   | Attribute name   |
+| Input Argument                    | Tango::DEV_STRING    | Attribute name   |
 +-----------------------------------+----------------------+------------------+
-| Output Argument                   | Tango::DEV\_VOID     |                  |
+| Output Argument                   | Tango::DEV_VOID      |                  |
 +-----------------------------------+----------------------+------------------+
 | DisplayLevel                      | OPERATOR             | ..               |
 +-----------------------------------+----------------------+------------------+
@@ -324,16 +323,16 @@
 +-----------------------------------+----------------------+------------------+
 
 | 
-| **Command AttributeStatus:**
+**Command AttributeStatus:**
 
-    Read a attribute status.
+Read a attribute status.
 
 +------------------------------------------------------------------------------------+
 | **AttributeStatus Definition**                                                     |
 +===================================+======================+=========================+
-| Input Argument                    | Tango::DEV\_STRING   | The attribute name      |
+| Input Argument                    | Tango::DEV_STRING    | The attribute name      |
 +-----------------------------------+----------------------+-------------------------+
-| Output Argument                   | Tango::DEV\_STRING   | The attribute status.   |
+| Output Argument                   | Tango::DEV_STRING    | The attribute status.   |
 +-----------------------------------+----------------------+-------------------------+
 | DisplayLevel                      | OPERATOR             | ..                      |
 +-----------------------------------+----------------------+-------------------------+
@@ -349,16 +348,16 @@
 +-----------------------------------+----------------------+-------------------------+
 
 | 
-| **Command Start:**
+**Command Start:**
 
-    Start archiving
+Start archiving
 
 +-----------------------------------------------------+
 | **Start Definition**                                |
 +=========================+====================+======+
-| Input Argument          | Tango::DEV\_VOID   |      |
+| Input Argument          | Tango::DEV_VOID    |      |
 +-------------------------+--------------------+------+
-| Output Argument         | Tango::DEV\_VOID   |      |
+| Output Argument         | Tango::DEV_VOID    |      |
 +-------------------------+--------------------+------+
 | DisplayLevel            | OPERATOR           | ..   |
 +-------------------------+--------------------+------+
@@ -374,16 +373,16 @@
 +-------------------------+--------------------+------+
 
 | 
-| **Command Stop:**
+**Command Stop:**
 
-    Stop archiving
+Stop archiving
 
 +----------------------------------------------------+
 | **Stop Definition**                                |
 +========================+====================+======+
-| Input Argument         | Tango::DEV\_VOID   |      |
+| Input Argument         | Tango::DEV_VOID    |      |
 +------------------------+--------------------+------+
-| Output Argument        | Tango::DEV\_VOID   |      |
+| Output Argument        | Tango::DEV_VOID    |      |
 +------------------------+--------------------+------+
 | DisplayLevel           | OPERATOR           | ..   |
 +------------------------+--------------------+------+
@@ -399,16 +398,16 @@
 +------------------------+--------------------+------+
 
 | 
-| **Command AttributeStart:**
+**Command AttributeStart:**
 
-    Start archiving single attribute
+Start archiving single attribute
 
 +----------------------------------------------------------------------------+
 | **AttributeStart Definition**                                              |
 +==================================+======================+==================+
-| Input Argument                   | Tango::DEV\_STRING   | Attribute name   |
+| Input Argument                   | Tango::DEV_STRING    | Attribute name   |
 +----------------------------------+----------------------+------------------+
-| Output Argument                  | Tango::DEV\_VOID     |                  |
+| Output Argument                  | Tango::DEV_VOID      |                  |
 +----------------------------------+----------------------+------------------+
 | DisplayLevel                     | OPERATOR             | ..               |
 +----------------------------------+----------------------+------------------+
@@ -424,16 +423,16 @@
 +----------------------------------+----------------------+------------------+
 
 | 
-| **Command AttributeStop:**
+**Command AttributeStop:**
 
-    Stop archiving single attribute
+Stop archiving single attribute
 
 +---------------------------------------------------------------------------+
 | **AttributeStop Definition**                                              |
 +=================================+======================+==================+
-| Input Argument                  | Tango::DEV\_STRING   | Attribute name   |
+| Input Argument                  | Tango::DEV_STRING    | Attribute name   |
 +---------------------------------+----------------------+------------------+
-| Output Argument                 | Tango::DEV\_VOID     |                  |
+| Output Argument                 | Tango::DEV_VOID      |                  |
 +---------------------------------+----------------------+------------------+
 | DisplayLevel                    | OPERATOR             | ..               |
 +---------------------------------+----------------------+------------------+
@@ -449,16 +448,16 @@
 +---------------------------------+----------------------+------------------+
 
 | 
-| **Command ResetStatistics:**
+**Command ResetStatistics:**
 
-    Reset statistic counters
+Reset statistic counters
 
 +---------------------------------------------------------------+
 | **ResetStatistics Definition**                                |
 +===================================+====================+======+
-| Input Argument                    | Tango::DEV\_VOID   |      |
+| Input Argument                    | Tango::DEV_VOID    |      |
 +-----------------------------------+--------------------+------+
-| Output Argument                   | Tango::DEV\_VOID   |      |
+| Output Argument                   | Tango::DEV_VOID    |      |
 +-----------------------------------+--------------------+------+
 | DisplayLevel                      | OPERATOR           | ..   |
 +-----------------------------------+--------------------+------+
@@ -474,16 +473,16 @@
 +-----------------------------------+--------------------+------+
 
 | 
-| **Command Pause:**
+**Command Pause:**
 
-    Pause archiving
+Pause archiving
 
 +-----------------------------------------------------+
 | **Pause Definition**                                |
 +=========================+====================+======+
-| Input Argument          | Tango::DEV\_VOID   |      |
+| Input Argument          | Tango::DEV_VOID    |      |
 +-------------------------+--------------------+------+
-| Output Argument         | Tango::DEV\_VOID   |      |
+| Output Argument         | Tango::DEV_VOID    |      |
 +-------------------------+--------------------+------+
 | DisplayLevel            | OPERATOR           | ..   |
 +-------------------------+--------------------+------+
@@ -499,16 +498,16 @@
 +-------------------------+--------------------+------+
 
 | 
-| **Command AttributePause:**
+**Command AttributePause:**
 
-    Pause archiving single attribute
+Pause archiving single attribute
 
 +----------------------------------------------------------------------------+
 | **AttributePause Definition**                                              |
 +==================================+======================+==================+
-| Input Argument                   | Tango::DEV\_STRING   | Attribute name   |
+| Input Argument                   | Tango::DEV_STRING    | Attribute name   |
 +----------------------------------+----------------------+------------------+
-| Output Argument                  | Tango::DEV\_VOID     |                  |
+| Output Argument                  | Tango::DEV_VOID      |                  |
 +----------------------------------+----------------------+------------------+
 | DisplayLevel                     | OPERATOR             | ..               |
 +----------------------------------+----------------------+------------------+
@@ -524,16 +523,16 @@
 +----------------------------------+----------------------+------------------+
 
 | 
-| **Command SetAttributeStrategy:**
+**Command SetAttributeStrategy:**
 
-    Update strategy associated to an already archived attribute.
+Update strategy associated to an already archived attribute.
 
 +----------------------------------------------------------------------------------------------------+
 | **SetAttributeStrategy Definition**                                                                |
 +========================================+==============================+============================+
-| Input Argument                         | Tango::DEVVAR\_STRINGARRAY   | Attribute name, strategy   |
+| Input Argument                         | Tango::DEVVAR_STRINGARRAY    | Attribute name, strategy   |
 +----------------------------------------+------------------------------+----------------------------+
-| Output Argument                        | Tango::DEV\_VOID             |                            |
+| Output Argument                        | Tango::DEV_VOID              |                            |
 +----------------------------------------+------------------------------+----------------------------+
 | DisplayLevel                           | OPERATOR                     | ..                         |
 +----------------------------------------+------------------------------+----------------------------+
@@ -549,16 +548,16 @@
 +----------------------------------------+------------------------------+----------------------------+
 
 | 
-| **Command GetAttributeStrategy:**
+**Command GetAttributeStrategy:**
 
-    Read a attribute contexts.
+Read a attribute contexts.
 
 +-------------------------------------------------------------------------------------------+
 | **GetAttributeStrategy Definition**                                                       |
 +========================================+======================+===========================+
-| Input Argument                         | Tango::DEV\_STRING   | The attribute name        |
+| Input Argument                         | Tango::DEV_STRING    | The attribute name        |
 +----------------------------------------+----------------------+---------------------------+
-| Output Argument                        | Tango::DEV\_STRING   | The attribute contexts.   |
+| Output Argument                        | Tango::DEV_STRING    | The attribute contexts.   |
 +----------------------------------------+----------------------+---------------------------+
 | DisplayLevel                           | OPERATOR             | ..                        |
 +----------------------------------------+----------------------+---------------------------+
@@ -574,16 +573,16 @@
 +----------------------------------------+----------------------+---------------------------+
 
 | 
-| **Command StopFaulty:**
+**Command StopFaulty:**
 
-    Stop archiving faulty attributes
+Stop archiving faulty attributes
 
 +----------------------------------------------------------+
 | **StopFaulty Definition**                                |
 +==============================+====================+======+
-| Input Argument               | Tango::DEV\_VOID   |      |
+| Input Argument               | Tango::DEV_VOID    |      |
 +------------------------------+--------------------+------+
-| Output Argument              | Tango::DEV\_VOID   |      |
+| Output Argument              | Tango::DEV_VOID    |      |
 +------------------------------+--------------------+------+
 | DisplayLevel                 | OPERATOR           | ..   |
 +------------------------------+--------------------+------+
@@ -599,16 +598,16 @@
 +------------------------------+--------------------+------+
 
 | 
-| **Command SetAttributeTTL:**
+**Command SetAttributeTTL:**
 
-    Update TTL associated to an already archived attribute.
+Update TTL associated to an already archived attribute.
 
 +------------------------------------------------------------------------------------------+
 | **SetAttributeTTL Definition**                                                           |
 +===================================+==============================+=======================+
-| Input Argument                    | Tango::DEVVAR\_STRINGARRAY   | Attribute name, TTL   |
+| Input Argument                    | Tango::DEVVAR_STRINGARRAY    | Attribute name, TTL   |
 +-----------------------------------+------------------------------+-----------------------+
-| Output Argument                   | Tango::DEV\_VOID             |                       |
+| Output Argument                   | Tango::DEV_VOID              |                       |
 +-----------------------------------+------------------------------+-----------------------+
 | DisplayLevel                      | OPERATOR                     | ..                    |
 +-----------------------------------+------------------------------+-----------------------+
@@ -624,16 +623,16 @@
 +-----------------------------------+------------------------------+-----------------------+
 
 | 
-| **Command GetAttributeTTL:**
+**Command GetAttributeTTL:**
 
-    Read an attribute TTL.
+Read an attribute TTL.
 
 +---------------------------------------------------------------------------------+
 | **GetAttributeTTL Definition**                                                  |
 +===================================+======================+======================+
-| Input Argument                    | Tango::DEV\_STRING   | The attribute name   |
+| Input Argument                    | Tango::DEV_STRING    | The attribute name   |
 +-----------------------------------+----------------------+----------------------+
-| Output Argument                   | Tango::DEV\_ULONG    | The attribute TTL.   |
+| Output Argument                   | Tango::DEV_ULONG     | The attribute TTL.   |
 +-----------------------------------+----------------------+----------------------+
 | DisplayLevel                      | OPERATOR             | ..                   |
 +-----------------------------------+----------------------+----------------------+
@@ -653,73 +652,73 @@
 +========================================================================+==================+=================+===================+=================+======================+==============+=============================================================+
 | **Name**                                                               | **Inherited**    | **Abstract**    | **Attr. type**    | **R/W type**    | **Data type**        | **Level**    | **Description**                                             |
 +------------------------------------------------------------------------+------------------+-----------------+-------------------+-----------------+----------------------+--------------+-------------------------------------------------------------+
-| `AttributeOkNumber <AttrAttributeOkNumber.html>`__                     | false            | false           | Scalar            | READ            | Tango::DEV\_LONG     | OPERATOR     | Number of archived attributes not in error                  |
+| `AttributeOkNumber <AttrAttributeOkNumber.html>`__                     | false            | false           | Scalar            | READ            | Tango::DEV_LONG      | OPERATOR     | Number of archived attributes not in error                  |
 +------------------------------------------------------------------------+------------------+-----------------+-------------------+-----------------+----------------------+--------------+-------------------------------------------------------------+
-| `AttributeNokNumber <AttrAttributeNokNumber.html>`__                   | false            | false           | Scalar            | READ            | Tango::DEV\_LONG     | OPERATOR     | Number of archived attributes in error                      |
+| `AttributeNokNumber <AttrAttributeNokNumber.html>`__                   | false            | false           | Scalar            | READ            | Tango::DEV_LONG      | OPERATOR     | Number of archived attributes in error                      |
 +------------------------------------------------------------------------+------------------+-----------------+-------------------+-----------------+----------------------+--------------+-------------------------------------------------------------+
-| `AttributePendingNumber <AttrAttributePendingNumber.html>`__           | false            | false           | Scalar            | READ            | Tango::DEV\_LONG     | OPERATOR     | Number of attributes waiting to be archived                 |
+| `AttributePendingNumber <AttrAttributePendingNumber.html>`__           | false            | false           | Scalar            | READ            | Tango::DEV_LONG      | OPERATOR     | Number of attributes waiting to be archived                 |
 +------------------------------------------------------------------------+------------------+-----------------+-------------------+-----------------+----------------------+--------------+-------------------------------------------------------------+
-| `AttributeNumber <AttrAttributeNumber.html>`__                         | false            | false           | Scalar            | READ            | Tango::DEV\_LONG     | OPERATOR     | Number of configured attributes                             |
+| `AttributeNumber <AttrAttributeNumber.html>`__                         | false            | false           | Scalar            | READ            | Tango::DEV_LONG      | OPERATOR     | Number of configured attributes                             |
 +------------------------------------------------------------------------+------------------+-----------------+-------------------+-----------------+----------------------+--------------+-------------------------------------------------------------+
-| `AttributeMaxStoreTime <AttrAttributeMaxStoreTime.html>`__             | false            | false           | Scalar            | READ            | Tango::DEV\_DOUBLE   | OPERATOR     | Maximum storing time                                        |
+| `AttributeMaxStoreTime <AttrAttributeMaxStoreTime.html>`__             | false            | false           | Scalar            | READ            | Tango::DEV_DOUBLE    | OPERATOR     | Maximum storing time                                        |
 +------------------------------------------------------------------------+------------------+-----------------+-------------------+-----------------+----------------------+--------------+-------------------------------------------------------------+
-| `AttributeMinStoreTime <AttrAttributeMinStoreTime.html>`__             | false            | false           | Scalar            | READ            | Tango::DEV\_DOUBLE   | OPERATOR     | Minimum storing time                                        |
+| `AttributeMinStoreTime <AttrAttributeMinStoreTime.html>`__             | false            | false           | Scalar            | READ            | Tango::DEV_DOUBLE    | OPERATOR     | Minimum storing time                                        |
 +------------------------------------------------------------------------+------------------+-----------------+-------------------+-----------------+----------------------+--------------+-------------------------------------------------------------+
-| `AttributeMaxProcessingTime <AttrAttributeMaxProcessingTime.html>`__   | false            | false           | Scalar            | READ            | Tango::DEV\_DOUBLE   | OPERATOR     | Maximum processing (from event reception to storage) time   |
+| `AttributeMaxProcessingTime <AttrAttributeMaxProcessingTime.html>`__   | false            | false           | Scalar            | READ            | Tango::DEV_DOUBLE    | OPERATOR     | Maximum processing (from event reception to storage) time   |
 +------------------------------------------------------------------------+------------------+-----------------+-------------------+-----------------+----------------------+--------------+-------------------------------------------------------------+
-| `AttributeMinProcessingTime <AttrAttributeMinProcessingTime.html>`__   | false            | false           | Scalar            | READ            | Tango::DEV\_DOUBLE   | OPERATOR     | Minimum processing (from event reception to storage) time   |
+| `AttributeMinProcessingTime <AttrAttributeMinProcessingTime.html>`__   | false            | false           | Scalar            | READ            | Tango::DEV_DOUBLE    | OPERATOR     | Minimum processing (from event reception to storage) time   |
 +------------------------------------------------------------------------+------------------+-----------------+-------------------+-----------------+----------------------+--------------+-------------------------------------------------------------+
-| `AttributeRecordFreq <AttrAttributeRecordFreq.html>`__                 | false            | false           | Scalar            | READ            | Tango::DEV\_DOUBLE   | OPERATOR     | Record frequency                                            |
+| `AttributeRecordFreq <AttrAttributeRecordFreq.html>`__                 | false            | false           | Scalar            | READ            | Tango::DEV_DOUBLE    | OPERATOR     | Record frequency                                            |
 +------------------------------------------------------------------------+------------------+-----------------+-------------------+-----------------+----------------------+--------------+-------------------------------------------------------------+
-| `AttributeFailureFreq <AttrAttributeFailureFreq.html>`__               | false            | false           | Scalar            | READ            | Tango::DEV\_DOUBLE   | OPERATOR     | Failure frequency                                           |
+| `AttributeFailureFreq <AttrAttributeFailureFreq.html>`__               | false            | false           | Scalar            | READ            | Tango::DEV_DOUBLE    | OPERATOR     | Failure frequency                                           |
 +------------------------------------------------------------------------+------------------+-----------------+-------------------+-----------------+----------------------+--------------+-------------------------------------------------------------+
-| `AttributeStartedNumber <AttrAttributeStartedNumber.html>`__           | false            | false           | Scalar            | READ            | Tango::DEV\_LONG     | OPERATOR     | Number of archived attributes started                       |
+| `AttributeStartedNumber <AttrAttributeStartedNumber.html>`__           | false            | false           | Scalar            | READ            | Tango::DEV_LONG      | OPERATOR     | Number of archived attributes started                       |
 +------------------------------------------------------------------------+------------------+-----------------+-------------------+-----------------+----------------------+--------------+-------------------------------------------------------------+
-| `AttributeStoppedNumber <AttrAttributeStoppedNumber.html>`__           | false            | false           | Scalar            | READ            | Tango::DEV\_LONG     | OPERATOR     | Number of archived attributes stopped                       |
+| `AttributeStoppedNumber <AttrAttributeStoppedNumber.html>`__           | false            | false           | Scalar            | READ            | Tango::DEV_LONG      | OPERATOR     | Number of archived attributes stopped                       |
 +------------------------------------------------------------------------+------------------+-----------------+-------------------+-----------------+----------------------+--------------+-------------------------------------------------------------+
-| `AttributeMaxPendingNumber <AttrAttributeMaxPendingNumber.html>`__     | false            | false           | Scalar            | READ            | Tango::DEV\_LONG     | OPERATOR     | Max number of attributes waiting to be archived             |
+| `AttributeMaxPendingNumber <AttrAttributeMaxPendingNumber.html>`__     | false            | false           | Scalar            | READ            | Tango::DEV_LONG      | OPERATOR     | Max number of attributes waiting to be archived             |
 +------------------------------------------------------------------------+------------------+-----------------+-------------------+-----------------+----------------------+--------------+-------------------------------------------------------------+
-| `StatisticsResetTime <AttrStatisticsResetTime.html>`__                 | false            | false           | Scalar            | READ            | Tango::DEV\_DOUBLE   | OPERATOR     | Seconds elapsed since the last statistics reset             |
+| `StatisticsResetTime <AttrStatisticsResetTime.html>`__                 | false            | false           | Scalar            | READ            | Tango::DEV_DOUBLE    | OPERATOR     | Seconds elapsed since the last statistics reset             |
 +------------------------------------------------------------------------+------------------+-----------------+-------------------+-----------------+----------------------+--------------+-------------------------------------------------------------+
-| `AttributePausedNumber <AttrAttributePausedNumber.html>`__             | false            | false           | Scalar            | READ            | Tango::DEV\_LONG     | OPERATOR     | Number of archived attributes paused                        |
+| `AttributePausedNumber <AttrAttributePausedNumber.html>`__             | false            | false           | Scalar            | READ            | Tango::DEV_LONG      | OPERATOR     | Number of archived attributes paused                        |
 +------------------------------------------------------------------------+------------------+-----------------+-------------------+-----------------+----------------------+--------------+-------------------------------------------------------------+
-| `Context <AttrContext.html>`__                                         | false            | false           | Scalar            | READ\_WRITE     | Tango::DEV\_STRING   | OPERATOR     |                                                             |
+| `Context <AttrContext.html>`__                                         | false            | false           | Scalar            | READ_WRITE      | Tango::DEV_STRING    | OPERATOR     |                                                             |
 +------------------------------------------------------------------------+------------------+-----------------+-------------------+-----------------+----------------------+--------------+-------------------------------------------------------------+
-| `AttributeList <AttrAttributeList.html>`__                             | false            | false           | Spectrum          | READ            | Tango::DEV\_STRING   | OPERATOR     | Returns the configured attribute list                       |
+| `AttributeList <AttrAttributeList.html>`__                             | false            | false           | Spectrum          | READ            | Tango::DEV_STRING    | OPERATOR     | Returns the configured attribute list                       |
 +------------------------------------------------------------------------+------------------+-----------------+-------------------+-----------------+----------------------+--------------+-------------------------------------------------------------+
-| `AttributeOkList <AttrAttributeOkList.html>`__                         | false            | false           | Spectrum          | READ            | Tango::DEV\_STRING   | OPERATOR     | Returns the attributes not on error list                    |
+| `AttributeOkList <AttrAttributeOkList.html>`__                         | false            | false           | Spectrum          | READ            | Tango::DEV_STRING    | OPERATOR     | Returns the attributes not on error list                    |
 +------------------------------------------------------------------------+------------------+-----------------+-------------------+-----------------+----------------------+--------------+-------------------------------------------------------------+
-| `AttributeNokList <AttrAttributeNokList.html>`__                       | false            | false           | Spectrum          | READ            | Tango::DEV\_STRING   | OPERATOR     | Returns the attributes on error list                        |
+| `AttributeNokList <AttrAttributeNokList.html>`__                       | false            | false           | Spectrum          | READ            | Tango::DEV_STRING    | OPERATOR     | Returns the attributes on error list                        |
 +------------------------------------------------------------------------+------------------+-----------------+-------------------+-----------------+----------------------+--------------+-------------------------------------------------------------+
-| `AttributePendingList <AttrAttributePendingList.html>`__               | false            | false           | Spectrum          | READ            | Tango::DEV\_STRING   | OPERATOR     | Returns the list attributes waiting to be archived          |
+| `AttributePendingList <AttrAttributePendingList.html>`__               | false            | false           | Spectrum          | READ            | Tango::DEV_STRING    | OPERATOR     | Returns the list attributes waiting to be archived          |
 +------------------------------------------------------------------------+------------------+-----------------+-------------------+-----------------+----------------------+--------------+-------------------------------------------------------------+
-| `AttributeRecordFreqList <AttrAttributeRecordFreqList.html>`__         | false            | false           | Spectrum          | READ            | Tango::DEV\_DOUBLE   | OPERATOR     | Returns the list of record frequencies                      |
+| `AttributeRecordFreqList <AttrAttributeRecordFreqList.html>`__         | false            | false           | Spectrum          | READ            | Tango::DEV_DOUBLE    | OPERATOR     | Returns the list of record frequencies                      |
 +------------------------------------------------------------------------+------------------+-----------------+-------------------+-----------------+----------------------+--------------+-------------------------------------------------------------+
-| `AttributeFailureFreqList <AttrAttributeFailureFreqList.html>`__       | false            | false           | Spectrum          | READ            | Tango::DEV\_DOUBLE   | OPERATOR     | Returns the list of failure frequencies                     |
+| `AttributeFailureFreqList <AttrAttributeFailureFreqList.html>`__       | false            | false           | Spectrum          | READ            | Tango::DEV_DOUBLE    | OPERATOR     | Returns the list of failure frequencies                     |
 +------------------------------------------------------------------------+------------------+-----------------+-------------------+-----------------+----------------------+--------------+-------------------------------------------------------------+
-| `AttributeStartedList <AttrAttributeStartedList.html>`__               | false            | false           | Spectrum          | READ            | Tango::DEV\_STRING   | OPERATOR     | Returns the attributes started list                         |
+| `AttributeStartedList <AttrAttributeStartedList.html>`__               | false            | false           | Spectrum          | READ            | Tango::DEV_STRING    | OPERATOR     | Returns the attributes started list                         |
 +------------------------------------------------------------------------+------------------+-----------------+-------------------+-----------------+----------------------+--------------+-------------------------------------------------------------+
-| `AttributeStoppedList <AttrAttributeStoppedList.html>`__               | false            | false           | Spectrum          | READ            | Tango::DEV\_STRING   | OPERATOR     | Returns the attributes stopped list                         |
+| `AttributeStoppedList <AttrAttributeStoppedList.html>`__               | false            | false           | Spectrum          | READ            | Tango::DEV_STRING    | OPERATOR     | Returns the attributes stopped list                         |
 +------------------------------------------------------------------------+------------------+-----------------+-------------------+-----------------+----------------------+--------------+-------------------------------------------------------------+
-| `AttributeEventNumberList <AttrAttributeEventNumberList.html>`__       | false            | false           | Spectrum          | READ            | Tango::DEV\_LONG     | OPERATOR     | Returns the list of numbers of events received              |
+| `AttributeEventNumberList <AttrAttributeEventNumberList.html>`__       | false            | false           | Spectrum          | READ            | Tango::DEV_LONG      | OPERATOR     | Returns the list of numbers of events received              |
 +------------------------------------------------------------------------+------------------+-----------------+-------------------+-----------------+----------------------+--------------+-------------------------------------------------------------+
-| `AttributeErrorList <AttrAttributeErrorList.html>`__                   | false            | false           | Spectrum          | READ            | Tango::DEV\_STRING   | OPERATOR     | Returns the list of attribute errors                        |
+| `AttributeErrorList <AttrAttributeErrorList.html>`__                   | false            | false           | Spectrum          | READ            | Tango::DEV_STRING    | OPERATOR     | Returns the list of attribute errors                        |
 +------------------------------------------------------------------------+------------------+-----------------+-------------------+-----------------+----------------------+--------------+-------------------------------------------------------------+
-| `AttributePausedList <AttrAttributePausedList.html>`__                 | false            | false           | Spectrum          | READ            | Tango::DEV\_STRING   | OPERATOR     | Returns the attributes stopped list                         |
+| `AttributePausedList <AttrAttributePausedList.html>`__                 | false            | false           | Spectrum          | READ            | Tango::DEV_STRING    | OPERATOR     | Returns the attributes stopped list                         |
 +------------------------------------------------------------------------+------------------+-----------------+-------------------+-----------------+----------------------+--------------+-------------------------------------------------------------+
-| `AttributeStrategyList <AttrAttributeStrategyList.html>`__             | false            | false           | Spectrum          | READ            | Tango::DEV\_STRING   | OPERATOR     | Returns the list of attribute strategy                      |
+| `AttributeStrategyList <AttrAttributeStrategyList.html>`__             | false            | false           | Spectrum          | READ            | Tango::DEV_STRING    | OPERATOR     | Returns the list of attribute strategy                      |
 +------------------------------------------------------------------------+------------------+-----------------+-------------------+-----------------+----------------------+--------------+-------------------------------------------------------------+
-| `ContextsList <AttrContextsList.html>`__                               | false            | false           | Spectrum          | READ            | Tango::DEV\_STRING   | OPERATOR     |                                                             |
+| `ContextsList <AttrContextsList.html>`__                               | false            | false           | Spectrum          | READ            | Tango::DEV_STRING    | OPERATOR     |                                                             |
 +------------------------------------------------------------------------+------------------+-----------------+-------------------+-----------------+----------------------+--------------+-------------------------------------------------------------+
-| `AttributeTTLList <AttrAttributeTTLList.html>`__                       | false            | false           | Spectrum          | READ            | Tango::DEV\_ULONG    | OPERATOR     | Returns the list of attribute strategy                      |
+| `AttributeTTLList <AttrAttributeTTLList.html>`__                       | false            | false           | Spectrum          | READ            | Tango::DEV_ULONG     | OPERATOR     | Returns the list of attribute strategy                      |
 +------------------------------------------------------------------------+------------------+-----------------+-------------------+-----------------+----------------------+--------------+-------------------------------------------------------------+
 
-**There is no dynamic attribute defined. **
+**There is no dynamic attribute defined.**
 
 | 
-| **Attribute AttributeOkNumber:**
+**Attribute AttributeOkNumber:**
 
-    Number of archived attributes not in error
+Number of archived attributes not in error
 
 +--------------------------------------------------------+----------------------------------------+-------------------------------------------------------+
 | +--------------------------------------------------+   | +----------------------------------+   | +-------------------------------------------------+   |
@@ -729,27 +728,27 @@
 | +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 | | R/W Type                    | READ               |   | | unit                        |    |   | | Relative Change                     | Not set   |   |
 | +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Data Type                   | Tango::DEV\_LONG   |   | | standard unit               |    |   | | Absolute Change                     | 1         |   |
+| | Data Type                   | Tango::DEV_LONG    |   | | standard unit               |    |   | | Absolute Change                     | 1         |   |
 | +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 | | Display Level               | OPERATOR           |   | | display unit                |    |   | |                                     |           |   |
 | +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 | | Inherited                   | false              |   | | format                      |    |   | | Archive Periodic                    | 3600000   |   |
 | +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Abstract                    | false              |   | | max\_value                  |    |   | | Archive Relative Change             | Not set   |   |
+| | Abstract                    | false              |   | | max_value                   |    |   | | Archive Relative Change             | Not set   |   |
 | +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Polling Period              | Not polled         |   | | min\_value                  |    |   | | Archive Absolute Change             | 1         |   |
+| | Polling Period              | Not polled         |   | | min_value                   |    |   | | Archive Absolute Change             | 1         |   |
 | +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Memorized                   | Not set            |   | | max\_alarm                  |    |   | |                                     |           |   |
+| | Memorized                   | Not set            |   | | max_alarm                   |    |   | |                                     |           |   |
 | +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| |                             |                    |   | | min\_alarm                  |    |   | | Push Change event by user code      | true      |   |
+| |                             |                    |   | | min_alarm                   |    |   | | Push Change event by user code      | true      |   |
 | +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Read allowed for            | All states         |   | | max\_warning                |    |   | |     Criteria checked by TANGO       | true      |   |
+| | Read allowed for            | All states         |   | | max_warning                 |    |   | |     Criteria checked by TANGO       | true      |   |
 | +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-|                                                        | | min\_warning                |    |   | |                                     |           |   |
+|                                                        | | min_warning                 |    |   | |                                     |           |   |
 |                                                        | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-|                                                        | | delta\_time                 |    |   | | Push Archive event by user code     | true      |   |
+|                                                        | | delta_time                  |    |   | | Push Archive event by user code     | true      |   |
 |                                                        | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-|                                                        | | delta\_val                  |    |   | |     Criteria checked by TANGO       | true      |   |
+|                                                        | | delta_val                   |    |   | |     Criteria checked by TANGO       | true      |   |
 |                                                        | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 |                                                        |                                        | |                                     |           |   |
 |                                                        |                                        | +-------------------------------------+-----------+   |
@@ -759,9 +758,9 @@
 +--------------------------------------------------------+----------------------------------------+-------------------------------------------------------+
 
 | 
-| **Attribute AttributeNokNumber:**
+**Attribute AttributeNokNumber:**
 
-    Number of archived attributes in error
+Number of archived attributes in error
 
 +--------------------------------------------------------+-----------------------------------------+-------------------------------------------------------+
 | +--------------------------------------------------+   | +-----------------------------------+   | +-------------------------------------------------+   |
@@ -771,27 +770,27 @@
 | +-----------------------------+--------------------+   | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
 | | R/W Type                    | READ               |   | | unit                        |     |   | | Relative Change                     | Not set   |   |
 | +-----------------------------+--------------------+   | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
-| | Data Type                   | Tango::DEV\_LONG   |   | | standard unit               |     |   | | Absolute Change                     | 1         |   |
+| | Data Type                   | Tango::DEV_LONG    |   | | standard unit               |     |   | | Absolute Change                     | 1         |   |
 | +-----------------------------+--------------------+   | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
 | | Display Level               | OPERATOR           |   | | display unit                |     |   | |                                     |           |   |
 | +-----------------------------+--------------------+   | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
 | | Inherited                   | false              |   | | format                      |     |   | | Archive Periodic                    | 3600000   |   |
 | +-----------------------------+--------------------+   | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
-| | Abstract                    | false              |   | | max\_value                  |     |   | | Archive Relative Change             | Not set   |   |
+| | Abstract                    | false              |   | | max_value                   |     |   | | Archive Relative Change             | Not set   |   |
 | +-----------------------------+--------------------+   | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
-| | Polling Period              | Not polled         |   | | min\_value                  |     |   | | Archive Absolute Change             | 1         |   |
+| | Polling Period              | Not polled         |   | | min_value                   |     |   | | Archive Absolute Change             | 1         |   |
 | +-----------------------------+--------------------+   | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
-| | Memorized                   | Not set            |   | | max\_alarm                  | 1   |   | |                                     |           |   |
+| | Memorized                   | Not set            |   | | max_alarm                   | 1   |   | |                                     |           |   |
 | +-----------------------------+--------------------+   | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
-| |                             |                    |   | | min\_alarm                  |     |   | | Push Change event by user code      | true      |   |
+| |                             |                    |   | | min_alarm                   |     |   | | Push Change event by user code      | true      |   |
 | +-----------------------------+--------------------+   | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
-| | Read allowed for            | All states         |   | | max\_warning                |     |   | |     Criteria checked by TANGO       | true      |   |
+| | Read allowed for            | All states         |   | | max_warning                 |     |   | |     Criteria checked by TANGO       | true      |   |
 | +-----------------------------+--------------------+   | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
-|                                                        | | min\_warning                |     |   | |                                     |           |   |
+|                                                        | | min_warning                 |     |   | |                                     |           |   |
 |                                                        | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
-|                                                        | | delta\_time                 |     |   | | Push Archive event by user code     | true      |   |
+|                                                        | | delta_time                  |     |   | | Push Archive event by user code     | true      |   |
 |                                                        | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
-|                                                        | | delta\_val                  |     |   | |     Criteria checked by TANGO       | true      |   |
+|                                                        | | delta_val                   |     |   | |     Criteria checked by TANGO       | true      |   |
 |                                                        | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
 |                                                        |                                         | |                                     |           |   |
 |                                                        |                                         | +-------------------------------------+-----------+   |
@@ -801,51 +800,9 @@
 +--------------------------------------------------------+-----------------------------------------+-------------------------------------------------------+
 
 | 
-| **Attribute AttributePendingNumber:**
+**Attribute AttributePendingNumber:**
 
-    Number of attributes waiting to be archived
-
-+--------------------------------------------------------+----------------------------------------+-------------------------------------------------------+
-| +--------------------------------------------------+   | +----------------------------------+   | +-------------------------------------------------+   |
-| | **Attribute Definition**                         |   | | **Attribute Properties**         |   | | **Attribute Event Criteria**                    |   |
-| +=============================+====================+   | +=============================+====+   | +=====================================+===========+   |
-| | Attribute Type              | Scalar             |   | | label                       |    |   | | Periodic                            | Not set   |   |
-| +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | R/W Type                    | READ               |   | | unit                        |    |   | | Relative Change                     | Not set   |   |
-| +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Data Type                   | Tango::DEV\_LONG   |   | | standard unit               |    |   | | Absolute Change                     | 2         |   |
-| +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Display Level               | OPERATOR           |   | | display unit                |    |   | |                                     |           |   |
-| +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Inherited                   | false              |   | | format                      |    |   | | Archive Periodic                    | 3600000   |   |
-| +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Abstract                    | false              |   | | max\_value                  |    |   | | Archive Relative Change             | Not set   |   |
-| +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Polling Period              | Not polled         |   | | min\_value                  |    |   | | Archive Absolute Change             | 2         |   |
-| +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Memorized                   | Not set            |   | | max\_alarm                  |    |   | |                                     |           |   |
-| +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| |                             |                    |   | | min\_alarm                  |    |   | | Push Change event by user code      | true      |   |
-| +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Read allowed for            | All states         |   | | max\_warning                |    |   | |     Criteria checked by TANGO       | true      |   |
-| +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-|                                                        | | min\_warning                |    |   | |                                     |           |   |
-|                                                        | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-|                                                        | | delta\_time                 |    |   | | Push Archive event by user code     | true      |   |
-|                                                        | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-|                                                        | | delta\_val                  |    |   | |     Criteria checked by TANGO       | true      |   |
-|                                                        | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-|                                                        |                                        | |                                     |           |   |
-|                                                        |                                        | +-------------------------------------+-----------+   |
-|                                                        |                                        | | Push DataReady event by user code   | false     |   |
-|                                                        |                                        | +-------------------------------------+-----------+   |
-+========================================================+========================================+=======================================================+
-+--------------------------------------------------------+----------------------------------------+-------------------------------------------------------+
-
-| 
-| **Attribute AttributeNumber:**
-
-    Number of configured attributes
+Number of attributes waiting to be archived
 
 +--------------------------------------------------------+----------------------------------------+-------------------------------------------------------+
 | +--------------------------------------------------+   | +----------------------------------+   | +-------------------------------------------------+   |
@@ -855,27 +812,27 @@
 | +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 | | R/W Type                    | READ               |   | | unit                        |    |   | | Relative Change                     | Not set   |   |
 | +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Data Type                   | Tango::DEV\_LONG   |   | | standard unit               |    |   | | Absolute Change                     | 1         |   |
+| | Data Type                   | Tango::DEV_LONG    |   | | standard unit               |    |   | | Absolute Change                     | 2         |   |
 | +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 | | Display Level               | OPERATOR           |   | | display unit                |    |   | |                                     |           |   |
 | +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 | | Inherited                   | false              |   | | format                      |    |   | | Archive Periodic                    | 3600000   |   |
 | +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Abstract                    | false              |   | | max\_value                  |    |   | | Archive Relative Change             | Not set   |   |
+| | Abstract                    | false              |   | | max_value                   |    |   | | Archive Relative Change             | Not set   |   |
 | +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Polling Period              | Not polled         |   | | min\_value                  |    |   | | Archive Absolute Change             | 1         |   |
+| | Polling Period              | Not polled         |   | | min_value                   |    |   | | Archive Absolute Change             | 2         |   |
 | +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Memorized                   | Not set            |   | | max\_alarm                  |    |   | |                                     |           |   |
+| | Memorized                   | Not set            |   | | max_alarm                   |    |   | |                                     |           |   |
 | +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| |                             |                    |   | | min\_alarm                  |    |   | | Push Change event by user code      | true      |   |
+| |                             |                    |   | | min_alarm                   |    |   | | Push Change event by user code      | true      |   |
 | +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Read allowed for            | All states         |   | | max\_warning                |    |   | |     Criteria checked by TANGO       | true      |   |
+| | Read allowed for            | All states         |   | | max_warning                 |    |   | |     Criteria checked by TANGO       | true      |   |
 | +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-|                                                        | | min\_warning                |    |   | |                                     |           |   |
+|                                                        | | min_warning                 |    |   | |                                     |           |   |
 |                                                        | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-|                                                        | | delta\_time                 |    |   | | Push Archive event by user code     | true      |   |
+|                                                        | | delta_time                  |    |   | | Push Archive event by user code     | true      |   |
 |                                                        | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-|                                                        | | delta\_val                  |    |   | |     Criteria checked by TANGO       | true      |   |
+|                                                        | | delta_val                   |    |   | |     Criteria checked by TANGO       | true      |   |
 |                                                        | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 |                                                        |                                        | |                                     |           |   |
 |                                                        |                                        | +-------------------------------------+-----------+   |
@@ -885,9 +842,51 @@
 +--------------------------------------------------------+----------------------------------------+-------------------------------------------------------+
 
 | 
-| **Attribute AttributeMaxStoreTime:**
+**Attribute AttributeNumber:**
 
-    Maximum storing time
+Number of configured attributes
+
++--------------------------------------------------------+----------------------------------------+-------------------------------------------------------+
+| +--------------------------------------------------+   | +----------------------------------+   | +-------------------------------------------------+   |
+| | **Attribute Definition**                         |   | | **Attribute Properties**         |   | | **Attribute Event Criteria**                    |   |
+| +=============================+====================+   | +=============================+====+   | +=====================================+===========+   |
+| | Attribute Type              | Scalar             |   | | label                       |    |   | | Periodic                            | Not set   |   |
+| +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
+| | R/W Type                    | READ               |   | | unit                        |    |   | | Relative Change                     | Not set   |   |
+| +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
+| | Data Type                   | Tango::DEV_LONG    |   | | standard unit               |    |   | | Absolute Change                     | 1         |   |
+| +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
+| | Display Level               | OPERATOR           |   | | display unit                |    |   | |                                     |           |   |
+| +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
+| | Inherited                   | false              |   | | format                      |    |   | | Archive Periodic                    | 3600000   |   |
+| +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
+| | Abstract                    | false              |   | | max_value                   |    |   | | Archive Relative Change             | Not set   |   |
+| +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
+| | Polling Period              | Not polled         |   | | min_value                   |    |   | | Archive Absolute Change             | 1         |   |
+| +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
+| | Memorized                   | Not set            |   | | max_alarm                   |    |   | |                                     |           |   |
+| +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
+| |                             |                    |   | | min_alarm                   |    |   | | Push Change event by user code      | true      |   |
+| +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
+| | Read allowed for            | All states         |   | | max_warning                 |    |   | |     Criteria checked by TANGO       | true      |   |
+| +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
+|                                                        | | min_warning                 |    |   | |                                     |           |   |
+|                                                        | +-----------------------------+----+   | +-------------------------------------+-----------+   |
+|                                                        | | delta_time                  |    |   | | Push Archive event by user code     | true      |   |
+|                                                        | +-----------------------------+----+   | +-------------------------------------+-----------+   |
+|                                                        | | delta_val                   |    |   | |     Criteria checked by TANGO       | true      |   |
+|                                                        | +-----------------------------+----+   | +-------------------------------------+-----------+   |
+|                                                        |                                        | |                                     |           |   |
+|                                                        |                                        | +-------------------------------------+-----------+   |
+|                                                        |                                        | | Push DataReady event by user code   | false     |   |
+|                                                        |                                        | +-------------------------------------+-----------+   |
++========================================================+========================================+=======================================================+
++--------------------------------------------------------+----------------------------------------+-------------------------------------------------------+
+
+| 
+**Attribute AttributeMaxStoreTime:**
+
+Maximum storing time
 
 +----------------------------------------------------------+-----------------------------------------+-------------------------------------------------------+
 | +----------------------------------------------------+   | +-----------------------------------+   | +-------------------------------------------------+   |
@@ -897,27 +896,27 @@
 | +-----------------------------+----------------------+   | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
 | | R/W Type                    | READ                 |   | | unit                        | s   |   | | Relative Change                     | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
-| | Data Type                   | Tango::DEV\_DOUBLE   |   | | standard unit               | 1   |   | | Absolute Change                     | 0.001     |   |
+| | Data Type                   | Tango::DEV_DOUBLE    |   | | standard unit               | 1   |   | | Absolute Change                     | 0.001     |   |
 | +-----------------------------+----------------------+   | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
 | | Display Level               | OPERATOR             |   | | display unit                | s   |   | |                                     |           |   |
 | +-----------------------------+----------------------+   | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
 | | Inherited                   | false                |   | | format                      |     |   | | Archive Periodic                    | 3600000   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
-| | Abstract                    | false                |   | | max\_value                  |     |   | | Archive Relative Change             | Not set   |   |
+| | Abstract                    | false                |   | | max_value                   |     |   | | Archive Relative Change             | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
-| | Polling Period              | Not polled           |   | | min\_value                  |     |   | | Archive Absolute Change             | 0.001     |   |
+| | Polling Period              | Not polled           |   | | min_value                   |     |   | | Archive Absolute Change             | 0.001     |   |
 | +-----------------------------+----------------------+   | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
-| | Memorized                   | Not set              |   | | max\_alarm                  |     |   | |                                     |           |   |
+| | Memorized                   | Not set              |   | | max_alarm                   |     |   | |                                     |           |   |
 | +-----------------------------+----------------------+   | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
-| |                             |                      |   | | min\_alarm                  |     |   | | Push Change event by user code      | true      |   |
+| |                             |                      |   | | min_alarm                   |     |   | | Push Change event by user code      | true      |   |
 | +-----------------------------+----------------------+   | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
-| | Read allowed for            | All states           |   | | max\_warning                |     |   | |     Criteria checked by TANGO       | true      |   |
+| | Read allowed for            | All states           |   | | max_warning                 |     |   | |     Criteria checked by TANGO       | true      |   |
 | +-----------------------------+----------------------+   | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
-|                                                          | | min\_warning                |     |   | |                                     |           |   |
+|                                                          | | min_warning                 |     |   | |                                     |           |   |
 |                                                          | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
-|                                                          | | delta\_time                 |     |   | | Push Archive event by user code     | true      |   |
+|                                                          | | delta_time                  |     |   | | Push Archive event by user code     | true      |   |
 |                                                          | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
-|                                                          | | delta\_val                  |     |   | |     Criteria checked by TANGO       | true      |   |
+|                                                          | | delta_val                   |     |   | |     Criteria checked by TANGO       | true      |   |
 |                                                          | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
 |                                                          |                                         | |                                     |           |   |
 |                                                          |                                         | +-------------------------------------+-----------+   |
@@ -927,9 +926,9 @@
 +----------------------------------------------------------+-----------------------------------------+-------------------------------------------------------+
 
 | 
-| **Attribute AttributeMinStoreTime:**
+**Attribute AttributeMinStoreTime:**
 
-    Minimum storing time
+Minimum storing time
 
 +----------------------------------------------------------+-----------------------------------------+-------------------------------------------------------+
 | +----------------------------------------------------+   | +-----------------------------------+   | +-------------------------------------------------+   |
@@ -939,27 +938,27 @@
 | +-----------------------------+----------------------+   | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
 | | R/W Type                    | READ                 |   | | unit                        | s   |   | | Relative Change                     | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
-| | Data Type                   | Tango::DEV\_DOUBLE   |   | | standard unit               | 1   |   | | Absolute Change                     | 0.00001   |   |
+| | Data Type                   | Tango::DEV_DOUBLE    |   | | standard unit               | 1   |   | | Absolute Change                     | 0.00001   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
 | | Display Level               | OPERATOR             |   | | display unit                | s   |   | |                                     |           |   |
 | +-----------------------------+----------------------+   | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
 | | Inherited                   | false                |   | | format                      |     |   | | Archive Periodic                    | 3600000   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
-| | Abstract                    | false                |   | | max\_value                  |     |   | | Archive Relative Change             | Not set   |   |
+| | Abstract                    | false                |   | | max_value                   |     |   | | Archive Relative Change             | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
-| | Polling Period              | Not polled           |   | | min\_value                  |     |   | | Archive Absolute Change             | 0.00001   |   |
+| | Polling Period              | Not polled           |   | | min_value                   |     |   | | Archive Absolute Change             | 0.00001   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
-| | Memorized                   | Not set              |   | | max\_alarm                  |     |   | |                                     |           |   |
+| | Memorized                   | Not set              |   | | max_alarm                   |     |   | |                                     |           |   |
 | +-----------------------------+----------------------+   | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
-| |                             |                      |   | | min\_alarm                  |     |   | | Push Change event by user code      | true      |   |
+| |                             |                      |   | | min_alarm                   |     |   | | Push Change event by user code      | true      |   |
 | +-----------------------------+----------------------+   | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
-| | Read allowed for            | All states           |   | | max\_warning                |     |   | |     Criteria checked by TANGO       | true      |   |
+| | Read allowed for            | All states           |   | | max_warning                 |     |   | |     Criteria checked by TANGO       | true      |   |
 | +-----------------------------+----------------------+   | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
-|                                                          | | min\_warning                |     |   | |                                     |           |   |
+|                                                          | | min_warning                 |     |   | |                                     |           |   |
 |                                                          | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
-|                                                          | | delta\_time                 |     |   | | Push Archive event by user code     | true      |   |
+|                                                          | | delta_time                  |     |   | | Push Archive event by user code     | true      |   |
 |                                                          | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
-|                                                          | | delta\_val                  |     |   | |     Criteria checked by TANGO       | true      |   |
+|                                                          | | delta_val                   |     |   | |     Criteria checked by TANGO       | true      |   |
 |                                                          | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
 |                                                          |                                         | |                                     |           |   |
 |                                                          |                                         | +-------------------------------------+-----------+   |
@@ -969,9 +968,9 @@
 +----------------------------------------------------------+-----------------------------------------+-------------------------------------------------------+
 
 | 
-| **Attribute AttributeMaxProcessingTime:**
+**Attribute AttributeMaxProcessingTime:**
 
-    Maximum processing (from event reception to storage) time
+Maximum processing (from event reception to storage) time
 
 +----------------------------------------------------------+-----------------------------------------+-------------------------------------------------------+
 | +----------------------------------------------------+   | +-----------------------------------+   | +-------------------------------------------------+   |
@@ -981,27 +980,27 @@
 | +-----------------------------+----------------------+   | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
 | | R/W Type                    | READ                 |   | | unit                        | s   |   | | Relative Change                     | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
-| | Data Type                   | Tango::DEV\_DOUBLE   |   | | standard unit               | 1   |   | | Absolute Change                     | 0.001     |   |
+| | Data Type                   | Tango::DEV_DOUBLE    |   | | standard unit               | 1   |   | | Absolute Change                     | 0.001     |   |
 | +-----------------------------+----------------------+   | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
 | | Display Level               | OPERATOR             |   | | display unit                | s   |   | |                                     |           |   |
 | +-----------------------------+----------------------+   | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
 | | Inherited                   | false                |   | | format                      |     |   | | Archive Periodic                    | 3600000   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
-| | Abstract                    | false                |   | | max\_value                  |     |   | | Archive Relative Change             | Not set   |   |
+| | Abstract                    | false                |   | | max_value                   |     |   | | Archive Relative Change             | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
-| | Polling Period              | Not polled           |   | | min\_value                  |     |   | | Archive Absolute Change             | 0.001     |   |
+| | Polling Period              | Not polled           |   | | min_value                   |     |   | | Archive Absolute Change             | 0.001     |   |
 | +-----------------------------+----------------------+   | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
-| | Memorized                   | Not set              |   | | max\_alarm                  |     |   | |                                     |           |   |
+| | Memorized                   | Not set              |   | | max_alarm                   |     |   | |                                     |           |   |
 | +-----------------------------+----------------------+   | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
-| |                             |                      |   | | min\_alarm                  |     |   | | Push Change event by user code      | true      |   |
+| |                             |                      |   | | min_alarm                   |     |   | | Push Change event by user code      | true      |   |
 | +-----------------------------+----------------------+   | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
-| | Read allowed for            | All states           |   | | max\_warning                |     |   | |     Criteria checked by TANGO       | true      |   |
+| | Read allowed for            | All states           |   | | max_warning                 |     |   | |     Criteria checked by TANGO       | true      |   |
 | +-----------------------------+----------------------+   | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
-|                                                          | | min\_warning                |     |   | |                                     |           |   |
+|                                                          | | min_warning                 |     |   | |                                     |           |   |
 |                                                          | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
-|                                                          | | delta\_time                 |     |   | | Push Archive event by user code     | true      |   |
+|                                                          | | delta_time                  |     |   | | Push Archive event by user code     | true      |   |
 |                                                          | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
-|                                                          | | delta\_val                  |     |   | |     Criteria checked by TANGO       | true      |   |
+|                                                          | | delta_val                   |     |   | |     Criteria checked by TANGO       | true      |   |
 |                                                          | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
 |                                                          |                                         | |                                     |           |   |
 |                                                          |                                         | +-------------------------------------+-----------+   |
@@ -1011,9 +1010,9 @@
 +----------------------------------------------------------+-----------------------------------------+-------------------------------------------------------+
 
 | 
-| **Attribute AttributeMinProcessingTime:**
+**Attribute AttributeMinProcessingTime:**
 
-    Minimum processing (from event reception to storage) time
+Minimum processing (from event reception to storage) time
 
 +----------------------------------------------------------+-----------------------------------------+-------------------------------------------------------+
 | +----------------------------------------------------+   | +-----------------------------------+   | +-------------------------------------------------+   |
@@ -1023,27 +1022,27 @@
 | +-----------------------------+----------------------+   | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
 | | R/W Type                    | READ                 |   | | unit                        | s   |   | | Relative Change                     | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
-| | Data Type                   | Tango::DEV\_DOUBLE   |   | | standard unit               | 1   |   | | Absolute Change                     | 0.00001   |   |
+| | Data Type                   | Tango::DEV_DOUBLE    |   | | standard unit               | 1   |   | | Absolute Change                     | 0.00001   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
 | | Display Level               | OPERATOR             |   | | display unit                | s   |   | |                                     |           |   |
 | +-----------------------------+----------------------+   | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
 | | Inherited                   | false                |   | | format                      |     |   | | Archive Periodic                    | 3600000   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
-| | Abstract                    | false                |   | | max\_value                  |     |   | | Archive Relative Change             | Not set   |   |
+| | Abstract                    | false                |   | | max_value                   |     |   | | Archive Relative Change             | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
-| | Polling Period              | Not polled           |   | | min\_value                  |     |   | | Archive Absolute Change             | 0.00001   |   |
+| | Polling Period              | Not polled           |   | | min_value                   |     |   | | Archive Absolute Change             | 0.00001   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
-| | Memorized                   | Not set              |   | | max\_alarm                  |     |   | |                                     |           |   |
+| | Memorized                   | Not set              |   | | max_alarm                   |     |   | |                                     |           |   |
 | +-----------------------------+----------------------+   | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
-| |                             |                      |   | | min\_alarm                  |     |   | | Push Change event by user code      | true      |   |
+| |                             |                      |   | | min_alarm                   |     |   | | Push Change event by user code      | true      |   |
 | +-----------------------------+----------------------+   | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
-| | Read allowed for            | All states           |   | | max\_warning                |     |   | |     Criteria checked by TANGO       | true      |   |
+| | Read allowed for            | All states           |   | | max_warning                 |     |   | |     Criteria checked by TANGO       | true      |   |
 | +-----------------------------+----------------------+   | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
-|                                                          | | min\_warning                |     |   | |                                     |           |   |
+|                                                          | | min_warning                 |     |   | |                                     |           |   |
 |                                                          | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
-|                                                          | | delta\_time                 |     |   | | Push Archive event by user code     | true      |   |
+|                                                          | | delta_time                  |     |   | | Push Archive event by user code     | true      |   |
 |                                                          | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
-|                                                          | | delta\_val                  |     |   | |     Criteria checked by TANGO       | true      |   |
+|                                                          | | delta_val                   |     |   | |     Criteria checked by TANGO       | true      |   |
 |                                                          | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
 |                                                          |                                         | |                                     |           |   |
 |                                                          |                                         | +-------------------------------------+-----------+   |
@@ -1053,9 +1052,9 @@
 +----------------------------------------------------------+-----------------------------------------+-------------------------------------------------------+
 
 | 
-| **Attribute AttributeRecordFreq:**
+**Attribute AttributeRecordFreq:**
 
-    Record frequency
+Record frequency
 
 +----------------------------------------------------------+-------------------------------------------------+-------------------------------------------------------+
 | +----------------------------------------------------+   | +-------------------------------------------+   | +-------------------------------------------------+   |
@@ -1065,27 +1064,27 @@
 | +-----------------------------+----------------------+   | +-----------------------------+-------------+   | +-------------------------------------+-----------+   |
 | | R/W Type                    | READ                 |   | | unit                        | ev/period   |   | | Relative Change                     | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+-------------+   | +-------------------------------------+-----------+   |
-| | Data Type                   | Tango::DEV\_DOUBLE   |   | | standard unit               | 1           |   | | Absolute Change                     | 1         |   |
+| | Data Type                   | Tango::DEV_DOUBLE    |   | | standard unit               | 1           |   | | Absolute Change                     | 1         |   |
 | +-----------------------------+----------------------+   | +-----------------------------+-------------+   | +-------------------------------------+-----------+   |
 | | Display Level               | OPERATOR             |   | | display unit                | ev/period   |   | |                                     |           |   |
 | +-----------------------------+----------------------+   | +-----------------------------+-------------+   | +-------------------------------------+-----------+   |
 | | Inherited                   | false                |   | | format                      |             |   | | Archive Periodic                    | 3600000   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+-------------+   | +-------------------------------------+-----------+   |
-| | Abstract                    | false                |   | | max\_value                  |             |   | | Archive Relative Change             | Not set   |   |
+| | Abstract                    | false                |   | | max_value                   |             |   | | Archive Relative Change             | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+-------------+   | +-------------------------------------+-----------+   |
-| | Polling Period              | Not polled           |   | | min\_value                  |             |   | | Archive Absolute Change             | 1         |   |
+| | Polling Period              | Not polled           |   | | min_value                   |             |   | | Archive Absolute Change             | 1         |   |
 | +-----------------------------+----------------------+   | +-----------------------------+-------------+   | +-------------------------------------+-----------+   |
-| | Memorized                   | Not set              |   | | max\_alarm                  |             |   | |                                     |           |   |
+| | Memorized                   | Not set              |   | | max_alarm                   |             |   | |                                     |           |   |
 | +-----------------------------+----------------------+   | +-----------------------------+-------------+   | +-------------------------------------+-----------+   |
-| |                             |                      |   | | min\_alarm                  |             |   | | Push Change event by user code      | true      |   |
+| |                             |                      |   | | min_alarm                   |             |   | | Push Change event by user code      | true      |   |
 | +-----------------------------+----------------------+   | +-----------------------------+-------------+   | +-------------------------------------+-----------+   |
-| | Read allowed for            | All states           |   | | max\_warning                |             |   | |     Criteria checked by TANGO       | true      |   |
+| | Read allowed for            | All states           |   | | max_warning                 |             |   | |     Criteria checked by TANGO       | true      |   |
 | +-----------------------------+----------------------+   | +-----------------------------+-------------+   | +-------------------------------------+-----------+   |
-|                                                          | | min\_warning                |             |   | |                                     |           |   |
+|                                                          | | min_warning                 |             |   | |                                     |           |   |
 |                                                          | +-----------------------------+-------------+   | +-------------------------------------+-----------+   |
-|                                                          | | delta\_time                 |             |   | | Push Archive event by user code     | true      |   |
+|                                                          | | delta_time                  |             |   | | Push Archive event by user code     | true      |   |
 |                                                          | +-----------------------------+-------------+   | +-------------------------------------+-----------+   |
-|                                                          | | delta\_val                  |             |   | |     Criteria checked by TANGO       | true      |   |
+|                                                          | | delta_val                   |             |   | |     Criteria checked by TANGO       | true      |   |
 |                                                          | +-----------------------------+-------------+   | +-------------------------------------+-----------+   |
 |                                                          |                                                 | |                                     |           |   |
 |                                                          |                                                 | +-------------------------------------+-----------+   |
@@ -1095,9 +1094,9 @@
 +----------------------------------------------------------+-------------------------------------------------+-------------------------------------------------------+
 
 | 
-| **Attribute AttributeFailureFreq:**
+**Attribute AttributeFailureFreq:**
 
-    Failure frequency
+Failure frequency
 
 +----------------------------------------------------------+-------------------------------------------------+-------------------------------------------------------+
 | +----------------------------------------------------+   | +-------------------------------------------+   | +-------------------------------------------------+   |
@@ -1107,27 +1106,27 @@
 | +-----------------------------+----------------------+   | +-----------------------------+-------------+   | +-------------------------------------+-----------+   |
 | | R/W Type                    | READ                 |   | | unit                        | ev/period   |   | | Relative Change                     | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+-------------+   | +-------------------------------------+-----------+   |
-| | Data Type                   | Tango::DEV\_DOUBLE   |   | | standard unit               | 1           |   | | Absolute Change                     | 1         |   |
+| | Data Type                   | Tango::DEV_DOUBLE    |   | | standard unit               | 1           |   | | Absolute Change                     | 1         |   |
 | +-----------------------------+----------------------+   | +-----------------------------+-------------+   | +-------------------------------------+-----------+   |
 | | Display Level               | OPERATOR             |   | | display unit                | ev/period   |   | |                                     |           |   |
 | +-----------------------------+----------------------+   | +-----------------------------+-------------+   | +-------------------------------------+-----------+   |
 | | Inherited                   | false                |   | | format                      |             |   | | Archive Periodic                    | 3600000   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+-------------+   | +-------------------------------------+-----------+   |
-| | Abstract                    | false                |   | | max\_value                  |             |   | | Archive Relative Change             | Not set   |   |
+| | Abstract                    | false                |   | | max_value                   |             |   | | Archive Relative Change             | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+-------------+   | +-------------------------------------+-----------+   |
-| | Polling Period              | Not polled           |   | | min\_value                  |             |   | | Archive Absolute Change             | 1         |   |
+| | Polling Period              | Not polled           |   | | min_value                   |             |   | | Archive Absolute Change             | 1         |   |
 | +-----------------------------+----------------------+   | +-----------------------------+-------------+   | +-------------------------------------+-----------+   |
-| | Memorized                   | Not set              |   | | max\_alarm                  |             |   | |                                     |           |   |
+| | Memorized                   | Not set              |   | | max_alarm                   |             |   | |                                     |           |   |
 | +-----------------------------+----------------------+   | +-----------------------------+-------------+   | +-------------------------------------+-----------+   |
-| |                             |                      |   | | min\_alarm                  |             |   | | Push Change event by user code      | true      |   |
+| |                             |                      |   | | min_alarm                   |             |   | | Push Change event by user code      | true      |   |
 | +-----------------------------+----------------------+   | +-----------------------------+-------------+   | +-------------------------------------+-----------+   |
-| | Read allowed for            | All states           |   | | max\_warning                |             |   | |     Criteria checked by TANGO       | true      |   |
+| | Read allowed for            | All states           |   | | max_warning                 |             |   | |     Criteria checked by TANGO       | true      |   |
 | +-----------------------------+----------------------+   | +-----------------------------+-------------+   | +-------------------------------------+-----------+   |
-|                                                          | | min\_warning                |             |   | |                                     |           |   |
+|                                                          | | min_warning                 |             |   | |                                     |           |   |
 |                                                          | +-----------------------------+-------------+   | +-------------------------------------+-----------+   |
-|                                                          | | delta\_time                 |             |   | | Push Archive event by user code     | true      |   |
+|                                                          | | delta_time                  |             |   | | Push Archive event by user code     | true      |   |
 |                                                          | +-----------------------------+-------------+   | +-------------------------------------+-----------+   |
-|                                                          | | delta\_val                  |             |   | |     Criteria checked by TANGO       | true      |   |
+|                                                          | | delta_val                   |             |   | |     Criteria checked by TANGO       | true      |   |
 |                                                          | +-----------------------------+-------------+   | +-------------------------------------+-----------+   |
 |                                                          |                                                 | |                                     |           |   |
 |                                                          |                                                 | +-------------------------------------+-----------+   |
@@ -1137,51 +1136,9 @@
 +----------------------------------------------------------+-------------------------------------------------+-------------------------------------------------------+
 
 | 
-| **Attribute AttributeStartedNumber:**
+**Attribute AttributeStartedNumber:**
 
-    Number of archived attributes started
-
-+--------------------------------------------------------+----------------------------------------+-------------------------------------------------------+
-| +--------------------------------------------------+   | +----------------------------------+   | +-------------------------------------------------+   |
-| | **Attribute Definition**                         |   | | **Attribute Properties**         |   | | **Attribute Event Criteria**                    |   |
-| +=============================+====================+   | +=============================+====+   | +=====================================+===========+   |
-| | Attribute Type              | Scalar             |   | | label                       |    |   | | Periodic                            | Not set   |   |
-| +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | R/W Type                    | READ               |   | | unit                        |    |   | | Relative Change                     | Not set   |   |
-| +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Data Type                   | Tango::DEV\_LONG   |   | | standard unit               |    |   | | Absolute Change                     | 1         |   |
-| +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Display Level               | OPERATOR           |   | | display unit                |    |   | |                                     |           |   |
-| +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Inherited                   | false              |   | | format                      |    |   | | Archive Periodic                    | 3600000   |   |
-| +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Abstract                    | false              |   | | max\_value                  |    |   | | Archive Relative Change             | Not set   |   |
-| +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Polling Period              | Not polled         |   | | min\_value                  |    |   | | Archive Absolute Change             | 1         |   |
-| +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Memorized                   | Not set            |   | | max\_alarm                  |    |   | |                                     |           |   |
-| +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| |                             |                    |   | | min\_alarm                  |    |   | | Push Change event by user code      | true      |   |
-| +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Read allowed for            | All states         |   | | max\_warning                |    |   | |     Criteria checked by TANGO       | true      |   |
-| +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-|                                                        | | min\_warning                |    |   | |                                     |           |   |
-|                                                        | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-|                                                        | | delta\_time                 |    |   | | Push Archive event by user code     | true      |   |
-|                                                        | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-|                                                        | | delta\_val                  |    |   | |     Criteria checked by TANGO       | true      |   |
-|                                                        | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-|                                                        |                                        | |                                     |           |   |
-|                                                        |                                        | +-------------------------------------+-----------+   |
-|                                                        |                                        | | Push DataReady event by user code   | false     |   |
-|                                                        |                                        | +-------------------------------------+-----------+   |
-+========================================================+========================================+=======================================================+
-+--------------------------------------------------------+----------------------------------------+-------------------------------------------------------+
-
-| 
-| **Attribute AttributeStoppedNumber:**
-
-    Number of archived attributes stopped
+Number of archived attributes started
 
 +--------------------------------------------------------+----------------------------------------+-------------------------------------------------------+
 | +--------------------------------------------------+   | +----------------------------------+   | +-------------------------------------------------+   |
@@ -1191,27 +1148,27 @@
 | +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 | | R/W Type                    | READ               |   | | unit                        |    |   | | Relative Change                     | Not set   |   |
 | +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Data Type                   | Tango::DEV\_LONG   |   | | standard unit               |    |   | | Absolute Change                     | 1         |   |
+| | Data Type                   | Tango::DEV_LONG    |   | | standard unit               |    |   | | Absolute Change                     | 1         |   |
 | +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 | | Display Level               | OPERATOR           |   | | display unit                |    |   | |                                     |           |   |
 | +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 | | Inherited                   | false              |   | | format                      |    |   | | Archive Periodic                    | 3600000   |   |
 | +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Abstract                    | false              |   | | max\_value                  |    |   | | Archive Relative Change             | Not set   |   |
+| | Abstract                    | false              |   | | max_value                   |    |   | | Archive Relative Change             | Not set   |   |
 | +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Polling Period              | Not polled         |   | | min\_value                  |    |   | | Archive Absolute Change             | 1         |   |
+| | Polling Period              | Not polled         |   | | min_value                   |    |   | | Archive Absolute Change             | 1         |   |
 | +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Memorized                   | Not set            |   | | max\_alarm                  |    |   | |                                     |           |   |
+| | Memorized                   | Not set            |   | | max_alarm                   |    |   | |                                     |           |   |
 | +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| |                             |                    |   | | min\_alarm                  |    |   | | Push Change event by user code      | true      |   |
+| |                             |                    |   | | min_alarm                   |    |   | | Push Change event by user code      | true      |   |
 | +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Read allowed for            | All states         |   | | max\_warning                |    |   | |     Criteria checked by TANGO       | true      |   |
+| | Read allowed for            | All states         |   | | max_warning                 |    |   | |     Criteria checked by TANGO       | true      |   |
 | +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-|                                                        | | min\_warning                |    |   | |                                     |           |   |
+|                                                        | | min_warning                 |    |   | |                                     |           |   |
 |                                                        | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-|                                                        | | delta\_time                 |    |   | | Push Archive event by user code     | true      |   |
+|                                                        | | delta_time                  |    |   | | Push Archive event by user code     | true      |   |
 |                                                        | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-|                                                        | | delta\_val                  |    |   | |     Criteria checked by TANGO       | true      |   |
+|                                                        | | delta_val                   |    |   | |     Criteria checked by TANGO       | true      |   |
 |                                                        | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 |                                                        |                                        | |                                     |           |   |
 |                                                        |                                        | +-------------------------------------+-----------+   |
@@ -1221,9 +1178,9 @@
 +--------------------------------------------------------+----------------------------------------+-------------------------------------------------------+
 
 | 
-| **Attribute AttributeMaxPendingNumber:**
+**Attribute AttributeStoppedNumber:**
 
-    Max number of attributes waiting to be archived
+Number of archived attributes stopped
 
 +--------------------------------------------------------+----------------------------------------+-------------------------------------------------------+
 | +--------------------------------------------------+   | +----------------------------------+   | +-------------------------------------------------+   |
@@ -1233,27 +1190,27 @@
 | +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 | | R/W Type                    | READ               |   | | unit                        |    |   | | Relative Change                     | Not set   |   |
 | +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Data Type                   | Tango::DEV\_LONG   |   | | standard unit               |    |   | | Absolute Change                     | 1         |   |
+| | Data Type                   | Tango::DEV_LONG    |   | | standard unit               |    |   | | Absolute Change                     | 1         |   |
 | +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 | | Display Level               | OPERATOR           |   | | display unit                |    |   | |                                     |           |   |
 | +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 | | Inherited                   | false              |   | | format                      |    |   | | Archive Periodic                    | 3600000   |   |
 | +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Abstract                    | false              |   | | max\_value                  |    |   | | Archive Relative Change             | Not set   |   |
+| | Abstract                    | false              |   | | max_value                   |    |   | | Archive Relative Change             | Not set   |   |
 | +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Polling Period              | Not polled         |   | | min\_value                  |    |   | | Archive Absolute Change             | 1         |   |
+| | Polling Period              | Not polled         |   | | min_value                   |    |   | | Archive Absolute Change             | 1         |   |
 | +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Memorized                   | Not set            |   | | max\_alarm                  |    |   | |                                     |           |   |
+| | Memorized                   | Not set            |   | | max_alarm                   |    |   | |                                     |           |   |
 | +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| |                             |                    |   | | min\_alarm                  |    |   | | Push Change event by user code      | true      |   |
+| |                             |                    |   | | min_alarm                   |    |   | | Push Change event by user code      | true      |   |
 | +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Read allowed for            | All states         |   | | max\_warning                |    |   | |     Criteria checked by TANGO       | true      |   |
+| | Read allowed for            | All states         |   | | max_warning                 |    |   | |     Criteria checked by TANGO       | true      |   |
 | +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-|                                                        | | min\_warning                |    |   | |                                     |           |   |
+|                                                        | | min_warning                 |    |   | |                                     |           |   |
 |                                                        | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-|                                                        | | delta\_time                 |    |   | | Push Archive event by user code     | true      |   |
+|                                                        | | delta_time                  |    |   | | Push Archive event by user code     | true      |   |
 |                                                        | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-|                                                        | | delta\_val                  |    |   | |     Criteria checked by TANGO       | true      |   |
+|                                                        | | delta_val                   |    |   | |     Criteria checked by TANGO       | true      |   |
 |                                                        | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 |                                                        |                                        | |                                     |           |   |
 |                                                        |                                        | +-------------------------------------+-----------+   |
@@ -1263,9 +1220,51 @@
 +--------------------------------------------------------+----------------------------------------+-------------------------------------------------------+
 
 | 
-| **Attribute StatisticsResetTime:**
+**Attribute AttributeMaxPendingNumber:**
 
-    Seconds elapsed since the last statistics reset
+Max number of attributes waiting to be archived
+
++--------------------------------------------------------+----------------------------------------+-------------------------------------------------------+
+| +--------------------------------------------------+   | +----------------------------------+   | +-------------------------------------------------+   |
+| | **Attribute Definition**                         |   | | **Attribute Properties**         |   | | **Attribute Event Criteria**                    |   |
+| +=============================+====================+   | +=============================+====+   | +=====================================+===========+   |
+| | Attribute Type              | Scalar             |   | | label                       |    |   | | Periodic                            | Not set   |   |
+| +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
+| | R/W Type                    | READ               |   | | unit                        |    |   | | Relative Change                     | Not set   |   |
+| +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
+| | Data Type                   | Tango::DEV_LONG    |   | | standard unit               |    |   | | Absolute Change                     | 1         |   |
+| +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
+| | Display Level               | OPERATOR           |   | | display unit                |    |   | |                                     |           |   |
+| +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
+| | Inherited                   | false              |   | | format                      |    |   | | Archive Periodic                    | 3600000   |   |
+| +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
+| | Abstract                    | false              |   | | max_value                   |    |   | | Archive Relative Change             | Not set   |   |
+| +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
+| | Polling Period              | Not polled         |   | | min_value                   |    |   | | Archive Absolute Change             | 1         |   |
+| +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
+| | Memorized                   | Not set            |   | | max_alarm                   |    |   | |                                     |           |   |
+| +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
+| |                             |                    |   | | min_alarm                   |    |   | | Push Change event by user code      | true      |   |
+| +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
+| | Read allowed for            | All states         |   | | max_warning                 |    |   | |     Criteria checked by TANGO       | true      |   |
+| +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
+|                                                        | | min_warning                 |    |   | |                                     |           |   |
+|                                                        | +-----------------------------+----+   | +-------------------------------------+-----------+   |
+|                                                        | | delta_time                  |    |   | | Push Archive event by user code     | true      |   |
+|                                                        | +-----------------------------+----+   | +-------------------------------------+-----------+   |
+|                                                        | | delta_val                   |    |   | |     Criteria checked by TANGO       | true      |   |
+|                                                        | +-----------------------------+----+   | +-------------------------------------+-----------+   |
+|                                                        |                                        | |                                     |           |   |
+|                                                        |                                        | +-------------------------------------+-----------+   |
+|                                                        |                                        | | Push DataReady event by user code   | false     |   |
+|                                                        |                                        | +-------------------------------------+-----------+   |
++========================================================+========================================+=======================================================+
++--------------------------------------------------------+----------------------------------------+-------------------------------------------------------+
+
+| 
+**Attribute StatisticsResetTime:**
+
+Seconds elapsed since the last statistics reset
 
 +----------------------------------------------------------+-----------------------------------------+-------------------------------------------------------+
 | +----------------------------------------------------+   | +-----------------------------------+   | +-------------------------------------------------+   |
@@ -1275,35 +1274,35 @@
 | +-----------------------------+----------------------+   | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
 | | R/W Type                    | READ                 |   | | unit                        | s   |   | | Relative Change                     | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
-| | Data Type                   | Tango::DEV\_DOUBLE   |   | | standard unit               | 1   |   | | Absolute Change                     | Not set   |   |
+| | Data Type                   | Tango::DEV_DOUBLE    |   | | standard unit               | 1   |   | | Absolute Change                     | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
 | | Display Level               | OPERATOR             |   | | display unit                | s   |   | |                                     |           |   |
 | +-----------------------------+----------------------+   | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
 | | Inherited                   | false                |   | | format                      |     |   | | Archive Periodic                    | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
-| | Abstract                    | false                |   | | max\_value                  |     |   | | Archive Relative Change             | Not set   |   |
+| | Abstract                    | false                |   | | max_value                   |     |   | | Archive Relative Change             | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
-| | Polling Period              | Not polled           |   | | min\_value                  |     |   | | Archive Absolute Change             | Not set   |   |
+| | Polling Period              | Not polled           |   | | min_value                   |     |   | | Archive Absolute Change             | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
-| | Memorized                   | Not set              |   | | max\_alarm                  |     |   | |                                     |           |   |
+| | Memorized                   | Not set              |   | | max_alarm                   |     |   | |                                     |           |   |
 | +-----------------------------+----------------------+   | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
-| |                             |                      |   | | min\_alarm                  |     |   | | Push Change event by user code      | false     |   |
+| |                             |                      |   | | min_alarm                   |     |   | | Push Change event by user code      | false     |   |
 | +-----------------------------+----------------------+   | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
-| | Read allowed for            | All states           |   | | max\_warning                |     |   | |                                     |           |   |
+| | Read allowed for            | All states           |   | | max_warning                 |     |   | |                                     |           |   |
 | +-----------------------------+----------------------+   | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
-|                                                          | | min\_warning                |     |   | | Push Archive event by user code     | false     |   |
+|                                                          | | min_warning                 |     |   | | Push Archive event by user code     | false     |   |
 |                                                          | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
-|                                                          | | delta\_time                 |     |   | |                                     |           |   |
+|                                                          | | delta_time                  |     |   | |                                     |           |   |
 |                                                          | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
-|                                                          | | delta\_val                  |     |   | | Push DataReady event by user code   | false     |   |
+|                                                          | | delta_val                   |     |   | | Push DataReady event by user code   | false     |   |
 |                                                          | +-----------------------------+-----+   | +-------------------------------------+-----------+   |
 +==========================================================+=========================================+=======================================================+
 +----------------------------------------------------------+-----------------------------------------+-------------------------------------------------------+
 
 | 
-| **Attribute AttributePausedNumber:**
+**Attribute AttributePausedNumber:**
 
-    Number of archived attributes paused
+Number of archived attributes paused
 
 +--------------------------------------------------------+----------------------------------------+-------------------------------------------------------+
 | +--------------------------------------------------+   | +----------------------------------+   | +-------------------------------------------------+   |
@@ -1313,27 +1312,27 @@
 | +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 | | R/W Type                    | READ               |   | | unit                        |    |   | | Relative Change                     | Not set   |   |
 | +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Data Type                   | Tango::DEV\_LONG   |   | | standard unit               |    |   | | Absolute Change                     | 1         |   |
+| | Data Type                   | Tango::DEV_LONG    |   | | standard unit               |    |   | | Absolute Change                     | 1         |   |
 | +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 | | Display Level               | OPERATOR           |   | | display unit                |    |   | |                                     |           |   |
 | +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 | | Inherited                   | false              |   | | format                      |    |   | | Archive Periodic                    | 3600000   |   |
 | +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Abstract                    | false              |   | | max\_value                  |    |   | | Archive Relative Change             | Not set   |   |
+| | Abstract                    | false              |   | | max_value                   |    |   | | Archive Relative Change             | Not set   |   |
 | +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Polling Period              | Not polled         |   | | min\_value                  |    |   | | Archive Absolute Change             | 1         |   |
+| | Polling Period              | Not polled         |   | | min_value                   |    |   | | Archive Absolute Change             | 1         |   |
 | +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Memorized                   | Not set            |   | | max\_alarm                  |    |   | |                                     |           |   |
+| | Memorized                   | Not set            |   | | max_alarm                   |    |   | |                                     |           |   |
 | +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| |                             |                    |   | | min\_alarm                  |    |   | | Push Change event by user code      | true      |   |
+| |                             |                    |   | | min_alarm                   |    |   | | Push Change event by user code      | true      |   |
 | +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Read allowed for            | All states         |   | | max\_warning                |    |   | |     Criteria checked by TANGO       | true      |   |
+| | Read allowed for            | All states         |   | | max_warning                 |    |   | |     Criteria checked by TANGO       | true      |   |
 | +-----------------------------+--------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-|                                                        | | min\_warning                |    |   | |                                     |           |   |
+|                                                        | | min_warning                 |    |   | |                                     |           |   |
 |                                                        | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-|                                                        | | delta\_time                 |    |   | | Push Archive event by user code     | true      |   |
+|                                                        | | delta_time                  |    |   | | Push Archive event by user code     | true      |   |
 |                                                        | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-|                                                        | | delta\_val                  |    |   | |     Criteria checked by TANGO       | true      |   |
+|                                                        | | delta_val                   |    |   | |     Criteria checked by TANGO       | true      |   |
 |                                                        | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 |                                                        |                                        | |                                     |           |   |
 |                                                        |                                        | +-------------------------------------+-----------+   |
@@ -1343,7 +1342,7 @@
 +--------------------------------------------------------+----------------------------------------+-------------------------------------------------------+
 
 | 
-| **Attribute Context:**
+**Attribute Context:**
 
 +----------------------------------------------------------+----------------------------------------+-------------------------------------------------------+
 | +----------------------------------------------------+   | +----------------------------------+   | +-------------------------------------------------+   |
@@ -1351,29 +1350,29 @@
 | +=============================+======================+   | +=============================+====+   | +=====================================+===========+   |
 | | Attribute Type              | Scalar               |   | | label                       |    |   | | Periodic                            | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | R/W Type                    | READ\_WRITE          |   | | unit                        |    |   | | Relative Change                     | Not set   |   |
+| | R/W Type                    | READ_WRITE           |   | | unit                        |    |   | | Relative Change                     | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Data Type                   | Tango::DEV\_STRING   |   | | standard unit               |    |   | | Absolute Change                     | Not set   |   |
+| | Data Type                   | Tango::DEV_STRING    |   | | standard unit               |    |   | | Absolute Change                     | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 | | Display Level               | OPERATOR             |   | | display unit                |    |   | |                                     |           |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 | | Inherited                   | false                |   | | format                      |    |   | | Archive Periodic                    | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Abstract                    | false                |   | | max\_value                  |    |   | | Archive Relative Change             | Not set   |   |
+| | Abstract                    | false                |   | | max_value                   |    |   | | Archive Relative Change             | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Polling Period              | Not polled           |   | | min\_value                  |    |   | | Archive Absolute Change             | Not set   |   |
+| | Polling Period              | Not polled           |   | | min_value                   |    |   | | Archive Absolute Change             | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Memorized                   | true                 |   | | max\_alarm                  |    |   | |                                     |           |   |
+| | Memorized                   | true                 |   | | max_alarm                   |    |   | |                                     |           |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Write hardware at init.     | true                 |   | | min\_alarm                  |    |   | | Push Change event by user code      | true      |   |
+| | Write hardware at init.     | true                 |   | | min_alarm                   |    |   | | Push Change event by user code      | true      |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| |                             |                      |   | | max\_warning                |    |   | |     Criteria checked by TANGO       | true      |   |
+| |                             |                      |   | | max_warning                 |    |   | |     Criteria checked by TANGO       | true      |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Read allowed for            | All states           |   | | min\_warning                |    |   | |                                     |           |   |
+| | Read allowed for            | All states           |   | | min_warning                 |    |   | |                                     |           |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Write allowed for           | All states           |   | | delta\_time                 |    |   | | Push Archive event by user code     | true      |   |
+| | Write allowed for           | All states           |   | | delta_time                  |    |   | | Push Archive event by user code     | true      |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-|                                                          | | delta\_val                  |    |   | |     Criteria checked by TANGO       | true      |   |
+|                                                          | | delta_val                   |    |   | |     Criteria checked by TANGO       | true      |   |
 |                                                          | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 |                                                          |                                        | |                                     |           |   |
 |                                                          |                                        | +-------------------------------------+-----------+   |
@@ -1383,9 +1382,9 @@
 +----------------------------------------------------------+----------------------------------------+-------------------------------------------------------+
 
 | 
-| **Attribute AttributeList:**
+**Attribute AttributeList:**
 
-    Returns the configured attribute list
+Returns the configured attribute list
 
 +----------------------------------------------------------+----------------------------------------+-------------------------------------------------------+
 | +----------------------------------------------------+   | +----------------------------------+   | +-------------------------------------------------+   |
@@ -1395,27 +1394,27 @@
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 | | R/W Type                    | READ                 |   | | unit                        |    |   | | Relative Change                     | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Data Type                   | Tango::DEV\_STRING   |   | | standard unit               |    |   | | Absolute Change                     | Not set   |   |
+| | Data Type                   | Tango::DEV_STRING    |   | | standard unit               |    |   | | Absolute Change                     | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 | | Display Level               | OPERATOR             |   | | display unit                |    |   | |                                     |           |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 | | Inherited                   | false                |   | | format                      |    |   | | Archive Periodic                    | 3600000   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Abstract                    | false                |   | | max\_value                  |    |   | | Archive Relative Change             | Not set   |   |
+| | Abstract                    | false                |   | | max_value                   |    |   | | Archive Relative Change             | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Polling Period              | Not polled           |   | | min\_value                  |    |   | | Archive Absolute Change             | Not set   |   |
+| | Polling Period              | Not polled           |   | | min_value                   |    |   | | Archive Absolute Change             | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Memorized                   | Not set              |   | | max\_alarm                  |    |   | |                                     |           |   |
+| | Memorized                   | Not set              |   | | max_alarm                   |    |   | |                                     |           |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| |                             |                      |   | | min\_alarm                  |    |   | | Push Change event by user code      | true      |   |
+| |                             |                      |   | | min_alarm                   |    |   | | Push Change event by user code      | true      |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Read allowed for            | All states           |   | | max\_warning                |    |   | |     Criteria checked by TANGO       | true      |   |
+| | Read allowed for            | All states           |   | | max_warning                 |    |   | |     Criteria checked by TANGO       | true      |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-|                                                          | | min\_warning                |    |   | |                                     |           |   |
+|                                                          | | min_warning                 |    |   | |                                     |           |   |
 |                                                          | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-|                                                          | | delta\_time                 |    |   | | Push Archive event by user code     | true      |   |
+|                                                          | | delta_time                  |    |   | | Push Archive event by user code     | true      |   |
 |                                                          | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-|                                                          | | delta\_val                  |    |   | |     Criteria checked by TANGO       | true      |   |
+|                                                          | | delta_val                   |    |   | |     Criteria checked by TANGO       | true      |   |
 |                                                          | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 |                                                          |                                        | |                                     |           |   |
 |                                                          |                                        | +-------------------------------------+-----------+   |
@@ -1425,9 +1424,9 @@
 +----------------------------------------------------------+----------------------------------------+-------------------------------------------------------+
 
 | 
-| **Attribute AttributeOkList:**
+**Attribute AttributeOkList:**
 
-    Returns the attributes not on error list
+Returns the attributes not on error list
 
 +----------------------------------------------------------+----------------------------------------+-------------------------------------------------------+
 | +----------------------------------------------------+   | +----------------------------------+   | +-------------------------------------------------+   |
@@ -1437,27 +1436,27 @@
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 | | R/W Type                    | READ                 |   | | unit                        |    |   | | Relative Change                     | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Data Type                   | Tango::DEV\_STRING   |   | | standard unit               |    |   | | Absolute Change                     | Not set   |   |
+| | Data Type                   | Tango::DEV_STRING    |   | | standard unit               |    |   | | Absolute Change                     | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 | | Display Level               | OPERATOR             |   | | display unit                |    |   | |                                     |           |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 | | Inherited                   | false                |   | | format                      |    |   | | Archive Periodic                    | 3600000   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Abstract                    | false                |   | | max\_value                  |    |   | | Archive Relative Change             | Not set   |   |
+| | Abstract                    | false                |   | | max_value                   |    |   | | Archive Relative Change             | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Polling Period              | Not polled           |   | | min\_value                  |    |   | | Archive Absolute Change             | Not set   |   |
+| | Polling Period              | Not polled           |   | | min_value                   |    |   | | Archive Absolute Change             | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Memorized                   | Not set              |   | | max\_alarm                  |    |   | |                                     |           |   |
+| | Memorized                   | Not set              |   | | max_alarm                   |    |   | |                                     |           |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| |                             |                      |   | | min\_alarm                  |    |   | | Push Change event by user code      | true      |   |
+| |                             |                      |   | | min_alarm                   |    |   | | Push Change event by user code      | true      |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Read allowed for            | All states           |   | | max\_warning                |    |   | |     Criteria checked by TANGO       | true      |   |
+| | Read allowed for            | All states           |   | | max_warning                 |    |   | |     Criteria checked by TANGO       | true      |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-|                                                          | | min\_warning                |    |   | |                                     |           |   |
+|                                                          | | min_warning                 |    |   | |                                     |           |   |
 |                                                          | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-|                                                          | | delta\_time                 |    |   | | Push Archive event by user code     | true      |   |
+|                                                          | | delta_time                  |    |   | | Push Archive event by user code     | true      |   |
 |                                                          | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-|                                                          | | delta\_val                  |    |   | |     Criteria checked by TANGO       | true      |   |
+|                                                          | | delta_val                   |    |   | |     Criteria checked by TANGO       | true      |   |
 |                                                          | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 |                                                          |                                        | |                                     |           |   |
 |                                                          |                                        | +-------------------------------------+-----------+   |
@@ -1467,9 +1466,9 @@
 +----------------------------------------------------------+----------------------------------------+-------------------------------------------------------+
 
 | 
-| **Attribute AttributeNokList:**
+**Attribute AttributeNokList:**
 
-    Returns the attributes on error list
+Returns the attributes on error list
 
 +----------------------------------------------------------+----------------------------------------+-------------------------------------------------------+
 | +----------------------------------------------------+   | +----------------------------------+   | +-------------------------------------------------+   |
@@ -1479,27 +1478,27 @@
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 | | R/W Type                    | READ                 |   | | unit                        |    |   | | Relative Change                     | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Data Type                   | Tango::DEV\_STRING   |   | | standard unit               |    |   | | Absolute Change                     | Not set   |   |
+| | Data Type                   | Tango::DEV_STRING    |   | | standard unit               |    |   | | Absolute Change                     | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 | | Display Level               | OPERATOR             |   | | display unit                |    |   | |                                     |           |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 | | Inherited                   | false                |   | | format                      |    |   | | Archive Periodic                    | 3600000   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Abstract                    | false                |   | | max\_value                  |    |   | | Archive Relative Change             | Not set   |   |
+| | Abstract                    | false                |   | | max_value                   |    |   | | Archive Relative Change             | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Polling Period              | Not polled           |   | | min\_value                  |    |   | | Archive Absolute Change             | Not set   |   |
+| | Polling Period              | Not polled           |   | | min_value                   |    |   | | Archive Absolute Change             | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Memorized                   | Not set              |   | | max\_alarm                  |    |   | |                                     |           |   |
+| | Memorized                   | Not set              |   | | max_alarm                   |    |   | |                                     |           |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| |                             |                      |   | | min\_alarm                  |    |   | | Push Change event by user code      | true      |   |
+| |                             |                      |   | | min_alarm                   |    |   | | Push Change event by user code      | true      |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Read allowed for            | All states           |   | | max\_warning                |    |   | |     Criteria checked by TANGO       | true      |   |
+| | Read allowed for            | All states           |   | | max_warning                 |    |   | |     Criteria checked by TANGO       | true      |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-|                                                          | | min\_warning                |    |   | |                                     |           |   |
+|                                                          | | min_warning                 |    |   | |                                     |           |   |
 |                                                          | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-|                                                          | | delta\_time                 |    |   | | Push Archive event by user code     | true      |   |
+|                                                          | | delta_time                  |    |   | | Push Archive event by user code     | true      |   |
 |                                                          | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-|                                                          | | delta\_val                  |    |   | |     Criteria checked by TANGO       | true      |   |
+|                                                          | | delta_val                   |    |   | |     Criteria checked by TANGO       | true      |   |
 |                                                          | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 |                                                          |                                        | |                                     |           |   |
 |                                                          |                                        | +-------------------------------------+-----------+   |
@@ -1509,9 +1508,9 @@
 +----------------------------------------------------------+----------------------------------------+-------------------------------------------------------+
 
 | 
-| **Attribute AttributePendingList:**
+**Attribute AttributePendingList:**
 
-    Returns the list attributes waiting to be archived
+Returns the list attributes waiting to be archived
 
 +----------------------------------------------------------+----------------------------------------+-------------------------------------------------------+
 | +----------------------------------------------------+   | +----------------------------------+   | +-------------------------------------------------+   |
@@ -1521,27 +1520,27 @@
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 | | R/W Type                    | READ                 |   | | unit                        |    |   | | Relative Change                     | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Data Type                   | Tango::DEV\_STRING   |   | | standard unit               |    |   | | Absolute Change                     | Not set   |   |
+| | Data Type                   | Tango::DEV_STRING    |   | | standard unit               |    |   | | Absolute Change                     | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 | | Display Level               | OPERATOR             |   | | display unit                |    |   | |                                     |           |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 | | Inherited                   | false                |   | | format                      |    |   | | Archive Periodic                    | 3600000   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Abstract                    | false                |   | | max\_value                  |    |   | | Archive Relative Change             | Not set   |   |
+| | Abstract                    | false                |   | | max_value                   |    |   | | Archive Relative Change             | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Polling Period              | Not polled           |   | | min\_value                  |    |   | | Archive Absolute Change             | Not set   |   |
+| | Polling Period              | Not polled           |   | | min_value                   |    |   | | Archive Absolute Change             | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Memorized                   | Not set              |   | | max\_alarm                  |    |   | |                                     |           |   |
+| | Memorized                   | Not set              |   | | max_alarm                   |    |   | |                                     |           |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| |                             |                      |   | | min\_alarm                  |    |   | | Push Change event by user code      | true      |   |
+| |                             |                      |   | | min_alarm                   |    |   | | Push Change event by user code      | true      |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Read allowed for            | All states           |   | | max\_warning                |    |   | |     Criteria checked by TANGO       | true      |   |
+| | Read allowed for            | All states           |   | | max_warning                 |    |   | |     Criteria checked by TANGO       | true      |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-|                                                          | | min\_warning                |    |   | |                                     |           |   |
+|                                                          | | min_warning                 |    |   | |                                     |           |   |
 |                                                          | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-|                                                          | | delta\_time                 |    |   | | Push Archive event by user code     | true      |   |
+|                                                          | | delta_time                  |    |   | | Push Archive event by user code     | true      |   |
 |                                                          | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-|                                                          | | delta\_val                  |    |   | |     Criteria checked by TANGO       | true      |   |
+|                                                          | | delta_val                   |    |   | |     Criteria checked by TANGO       | true      |   |
 |                                                          | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 |                                                          |                                        | |                                     |           |   |
 |                                                          |                                        | +-------------------------------------+-----------+   |
@@ -1551,9 +1550,9 @@
 +----------------------------------------------------------+----------------------------------------+-------------------------------------------------------+
 
 | 
-| **Attribute AttributeRecordFreqList:**
+**Attribute AttributeRecordFreqList:**
 
-    Returns the list of record frequencies
+Returns the list of record frequencies
 
 +----------------------------------------------------------+----------------------------------------+-------------------------------------------------------+
 | +----------------------------------------------------+   | +----------------------------------+   | +-------------------------------------------------+   |
@@ -1563,27 +1562,27 @@
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 | | R/W Type                    | READ                 |   | | unit                        |    |   | | Relative Change                     | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Data Type                   | Tango::DEV\_DOUBLE   |   | | standard unit               |    |   | | Absolute Change                     | 1         |   |
+| | Data Type                   | Tango::DEV_DOUBLE    |   | | standard unit               |    |   | | Absolute Change                     | 1         |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 | | Display Level               | OPERATOR             |   | | display unit                |    |   | |                                     |           |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 | | Inherited                   | false                |   | | format                      |    |   | | Archive Periodic                    | 3600000   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Abstract                    | false                |   | | max\_value                  |    |   | | Archive Relative Change             | Not set   |   |
+| | Abstract                    | false                |   | | max_value                   |    |   | | Archive Relative Change             | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Polling Period              | Not polled           |   | | min\_value                  |    |   | | Archive Absolute Change             | 1         |   |
+| | Polling Period              | Not polled           |   | | min_value                   |    |   | | Archive Absolute Change             | 1         |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Memorized                   | Not set              |   | | max\_alarm                  |    |   | |                                     |           |   |
+| | Memorized                   | Not set              |   | | max_alarm                   |    |   | |                                     |           |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| |                             |                      |   | | min\_alarm                  |    |   | | Push Change event by user code      | true      |   |
+| |                             |                      |   | | min_alarm                   |    |   | | Push Change event by user code      | true      |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Read allowed for            | All states           |   | | max\_warning                |    |   | |     Criteria checked by TANGO       | true      |   |
+| | Read allowed for            | All states           |   | | max_warning                 |    |   | |     Criteria checked by TANGO       | true      |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-|                                                          | | min\_warning                |    |   | |                                     |           |   |
+|                                                          | | min_warning                 |    |   | |                                     |           |   |
 |                                                          | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-|                                                          | | delta\_time                 |    |   | | Push Archive event by user code     | true      |   |
+|                                                          | | delta_time                  |    |   | | Push Archive event by user code     | true      |   |
 |                                                          | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-|                                                          | | delta\_val                  |    |   | |     Criteria checked by TANGO       | true      |   |
+|                                                          | | delta_val                   |    |   | |     Criteria checked by TANGO       | true      |   |
 |                                                          | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 |                                                          |                                        | |                                     |           |   |
 |                                                          |                                        | +-------------------------------------+-----------+   |
@@ -1593,9 +1592,9 @@
 +----------------------------------------------------------+----------------------------------------+-------------------------------------------------------+
 
 | 
-| **Attribute AttributeFailureFreqList:**
+**Attribute AttributeFailureFreqList:**
 
-    Returns the list of failure frequencies
+Returns the list of failure frequencies
 
 +----------------------------------------------------------+----------------------------------------+-------------------------------------------------------+
 | +----------------------------------------------------+   | +----------------------------------+   | +-------------------------------------------------+   |
@@ -1605,27 +1604,27 @@
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 | | R/W Type                    | READ                 |   | | unit                        |    |   | | Relative Change                     | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Data Type                   | Tango::DEV\_DOUBLE   |   | | standard unit               |    |   | | Absolute Change                     | 1         |   |
+| | Data Type                   | Tango::DEV_DOUBLE    |   | | standard unit               |    |   | | Absolute Change                     | 1         |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 | | Display Level               | OPERATOR             |   | | display unit                |    |   | |                                     |           |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 | | Inherited                   | false                |   | | format                      |    |   | | Archive Periodic                    | 3600000   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Abstract                    | false                |   | | max\_value                  |    |   | | Archive Relative Change             | Not set   |   |
+| | Abstract                    | false                |   | | max_value                   |    |   | | Archive Relative Change             | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Polling Period              | Not polled           |   | | min\_value                  |    |   | | Archive Absolute Change             | 1         |   |
+| | Polling Period              | Not polled           |   | | min_value                   |    |   | | Archive Absolute Change             | 1         |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Memorized                   | Not set              |   | | max\_alarm                  |    |   | |                                     |           |   |
+| | Memorized                   | Not set              |   | | max_alarm                   |    |   | |                                     |           |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| |                             |                      |   | | min\_alarm                  |    |   | | Push Change event by user code      | true      |   |
+| |                             |                      |   | | min_alarm                   |    |   | | Push Change event by user code      | true      |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Read allowed for            | All states           |   | | max\_warning                |    |   | |     Criteria checked by TANGO       | true      |   |
+| | Read allowed for            | All states           |   | | max_warning                 |    |   | |     Criteria checked by TANGO       | true      |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-|                                                          | | min\_warning                |    |   | |                                     |           |   |
+|                                                          | | min_warning                 |    |   | |                                     |           |   |
 |                                                          | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-|                                                          | | delta\_time                 |    |   | | Push Archive event by user code     | true      |   |
+|                                                          | | delta_time                  |    |   | | Push Archive event by user code     | true      |   |
 |                                                          | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-|                                                          | | delta\_val                  |    |   | |     Criteria checked by TANGO       | true      |   |
+|                                                          | | delta_val                   |    |   | |     Criteria checked by TANGO       | true      |   |
 |                                                          | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 |                                                          |                                        | |                                     |           |   |
 |                                                          |                                        | +-------------------------------------+-----------+   |
@@ -1635,9 +1634,9 @@
 +----------------------------------------------------------+----------------------------------------+-------------------------------------------------------+
 
 | 
-| **Attribute AttributeStartedList:**
+**Attribute AttributeStartedList:**
 
-    Returns the attributes started list
+Returns the attributes started list
 
 +----------------------------------------------------------+----------------------------------------+-------------------------------------------------------+
 | +----------------------------------------------------+   | +----------------------------------+   | +-------------------------------------------------+   |
@@ -1647,27 +1646,27 @@
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 | | R/W Type                    | READ                 |   | | unit                        |    |   | | Relative Change                     | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Data Type                   | Tango::DEV\_STRING   |   | | standard unit               |    |   | | Absolute Change                     | Not set   |   |
+| | Data Type                   | Tango::DEV_STRING    |   | | standard unit               |    |   | | Absolute Change                     | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 | | Display Level               | OPERATOR             |   | | display unit                |    |   | |                                     |           |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 | | Inherited                   | false                |   | | format                      |    |   | | Archive Periodic                    | 3600000   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Abstract                    | false                |   | | max\_value                  |    |   | | Archive Relative Change             | Not set   |   |
+| | Abstract                    | false                |   | | max_value                   |    |   | | Archive Relative Change             | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Polling Period              | Not polled           |   | | min\_value                  |    |   | | Archive Absolute Change             | Not set   |   |
+| | Polling Period              | Not polled           |   | | min_value                   |    |   | | Archive Absolute Change             | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Memorized                   | Not set              |   | | max\_alarm                  |    |   | |                                     |           |   |
+| | Memorized                   | Not set              |   | | max_alarm                   |    |   | |                                     |           |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| |                             |                      |   | | min\_alarm                  |    |   | | Push Change event by user code      | true      |   |
+| |                             |                      |   | | min_alarm                   |    |   | | Push Change event by user code      | true      |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Read allowed for            | All states           |   | | max\_warning                |    |   | |     Criteria checked by TANGO       | true      |   |
+| | Read allowed for            | All states           |   | | max_warning                 |    |   | |     Criteria checked by TANGO       | true      |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-|                                                          | | min\_warning                |    |   | |                                     |           |   |
+|                                                          | | min_warning                 |    |   | |                                     |           |   |
 |                                                          | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-|                                                          | | delta\_time                 |    |   | | Push Archive event by user code     | true      |   |
+|                                                          | | delta_time                  |    |   | | Push Archive event by user code     | true      |   |
 |                                                          | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-|                                                          | | delta\_val                  |    |   | |     Criteria checked by TANGO       | true      |   |
+|                                                          | | delta_val                   |    |   | |     Criteria checked by TANGO       | true      |   |
 |                                                          | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 |                                                          |                                        | |                                     |           |   |
 |                                                          |                                        | +-------------------------------------+-----------+   |
@@ -1677,9 +1676,9 @@
 +----------------------------------------------------------+----------------------------------------+-------------------------------------------------------+
 
 | 
-| **Attribute AttributeStoppedList:**
+**Attribute AttributeStoppedList:**
 
-    Returns the attributes stopped list
+Returns the attributes stopped list
 
 +----------------------------------------------------------+----------------------------------------+-------------------------------------------------------+
 | +----------------------------------------------------+   | +----------------------------------+   | +-------------------------------------------------+   |
@@ -1689,27 +1688,27 @@
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 | | R/W Type                    | READ                 |   | | unit                        |    |   | | Relative Change                     | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Data Type                   | Tango::DEV\_STRING   |   | | standard unit               |    |   | | Absolute Change                     | Not set   |   |
+| | Data Type                   | Tango::DEV_STRING    |   | | standard unit               |    |   | | Absolute Change                     | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 | | Display Level               | OPERATOR             |   | | display unit                |    |   | |                                     |           |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 | | Inherited                   | false                |   | | format                      |    |   | | Archive Periodic                    | 3600000   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Abstract                    | false                |   | | max\_value                  |    |   | | Archive Relative Change             | Not set   |   |
+| | Abstract                    | false                |   | | max_value                   |    |   | | Archive Relative Change             | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Polling Period              | Not polled           |   | | min\_value                  |    |   | | Archive Absolute Change             | Not set   |   |
+| | Polling Period              | Not polled           |   | | min_value                   |    |   | | Archive Absolute Change             | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Memorized                   | Not set              |   | | max\_alarm                  |    |   | |                                     |           |   |
+| | Memorized                   | Not set              |   | | max_alarm                   |    |   | |                                     |           |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| |                             |                      |   | | min\_alarm                  |    |   | | Push Change event by user code      | true      |   |
+| |                             |                      |   | | min_alarm                   |    |   | | Push Change event by user code      | true      |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Read allowed for            | All states           |   | | max\_warning                |    |   | |     Criteria checked by TANGO       | true      |   |
+| | Read allowed for            | All states           |   | | max_warning                 |    |   | |     Criteria checked by TANGO       | true      |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-|                                                          | | min\_warning                |    |   | |                                     |           |   |
+|                                                          | | min_warning                 |    |   | |                                     |           |   |
 |                                                          | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-|                                                          | | delta\_time                 |    |   | | Push Archive event by user code     | true      |   |
+|                                                          | | delta_time                  |    |   | | Push Archive event by user code     | true      |   |
 |                                                          | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-|                                                          | | delta\_val                  |    |   | |     Criteria checked by TANGO       | true      |   |
+|                                                          | | delta_val                   |    |   | |     Criteria checked by TANGO       | true      |   |
 |                                                          | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 |                                                          |                                        | |                                     |           |   |
 |                                                          |                                        | +-------------------------------------+-----------+   |
@@ -1719,9 +1718,9 @@
 +----------------------------------------------------------+----------------------------------------+-------------------------------------------------------+
 
 | 
-| **Attribute AttributeEventNumberList:**
+**Attribute AttributeEventNumberList:**
 
-    Returns the list of numbers of events received
+Returns the list of numbers of events received
 
 +----------------------------------------------------------+----------------------------------------+-------------------------------------------------------+
 | +----------------------------------------------------+   | +----------------------------------+   | +-------------------------------------------------+   |
@@ -1731,27 +1730,27 @@
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 | | R/W Type                    | READ                 |   | | unit                        |    |   | | Relative Change                     | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Data Type                   | Tango::DEV\_LONG     |   | | standard unit               |    |   | | Absolute Change                     | 1         |   |
+| | Data Type                   | Tango::DEV_LONG      |   | | standard unit               |    |   | | Absolute Change                     | 1         |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 | | Display Level               | OPERATOR             |   | | display unit                |    |   | |                                     |           |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 | | Inherited                   | false                |   | | format                      |    |   | | Archive Periodic                    | 3600000   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Abstract                    | false                |   | | max\_value                  |    |   | | Archive Relative Change             | Not set   |   |
+| | Abstract                    | false                |   | | max_value                   |    |   | | Archive Relative Change             | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Polling Period              | Not polled           |   | | min\_value                  |    |   | | Archive Absolute Change             | 1         |   |
+| | Polling Period              | Not polled           |   | | min_value                   |    |   | | Archive Absolute Change             | 1         |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Memorized                   | Not set              |   | | max\_alarm                  |    |   | |                                     |           |   |
+| | Memorized                   | Not set              |   | | max_alarm                   |    |   | |                                     |           |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| |                             |                      |   | | min\_alarm                  |    |   | | Push Change event by user code      | true      |   |
+| |                             |                      |   | | min_alarm                   |    |   | | Push Change event by user code      | true      |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Read allowed for            | All states           |   | | max\_warning                |    |   | |     Criteria checked by TANGO       | true      |   |
+| | Read allowed for            | All states           |   | | max_warning                 |    |   | |     Criteria checked by TANGO       | true      |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-|                                                          | | min\_warning                |    |   | |                                     |           |   |
+|                                                          | | min_warning                 |    |   | |                                     |           |   |
 |                                                          | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-|                                                          | | delta\_time                 |    |   | | Push Archive event by user code     | true      |   |
+|                                                          | | delta_time                  |    |   | | Push Archive event by user code     | true      |   |
 |                                                          | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-|                                                          | | delta\_val                  |    |   | |     Criteria checked by TANGO       | true      |   |
+|                                                          | | delta_val                   |    |   | |     Criteria checked by TANGO       | true      |   |
 |                                                          | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 |                                                          |                                        | |                                     |           |   |
 |                                                          |                                        | +-------------------------------------+-----------+   |
@@ -1761,9 +1760,9 @@
 +----------------------------------------------------------+----------------------------------------+-------------------------------------------------------+
 
 | 
-| **Attribute AttributeErrorList:**
+**Attribute AttributeErrorList:**
 
-    Returns the list of attribute errors
+Returns the list of attribute errors
 
 +----------------------------------------------------------+----------------------------------------+-------------------------------------------------------+
 | +----------------------------------------------------+   | +----------------------------------+   | +-------------------------------------------------+   |
@@ -1773,27 +1772,27 @@
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 | | R/W Type                    | READ                 |   | | unit                        |    |   | | Relative Change                     | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Data Type                   | Tango::DEV\_STRING   |   | | standard unit               |    |   | | Absolute Change                     | Not set   |   |
+| | Data Type                   | Tango::DEV_STRING    |   | | standard unit               |    |   | | Absolute Change                     | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 | | Display Level               | OPERATOR             |   | | display unit                |    |   | |                                     |           |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 | | Inherited                   | false                |   | | format                      |    |   | | Archive Periodic                    | 3600000   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Abstract                    | false                |   | | max\_value                  |    |   | | Archive Relative Change             | Not set   |   |
+| | Abstract                    | false                |   | | max_value                   |    |   | | Archive Relative Change             | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Polling Period              | Not polled           |   | | min\_value                  |    |   | | Archive Absolute Change             | Not set   |   |
+| | Polling Period              | Not polled           |   | | min_value                   |    |   | | Archive Absolute Change             | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Memorized                   | Not set              |   | | max\_alarm                  |    |   | |                                     |           |   |
+| | Memorized                   | Not set              |   | | max_alarm                   |    |   | |                                     |           |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| |                             |                      |   | | min\_alarm                  |    |   | | Push Change event by user code      | true      |   |
+| |                             |                      |   | | min_alarm                   |    |   | | Push Change event by user code      | true      |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Read allowed for            | All states           |   | | max\_warning                |    |   | |     Criteria checked by TANGO       | true      |   |
+| | Read allowed for            | All states           |   | | max_warning                 |    |   | |     Criteria checked by TANGO       | true      |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-|                                                          | | min\_warning                |    |   | |                                     |           |   |
+|                                                          | | min_warning                 |    |   | |                                     |           |   |
 |                                                          | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-|                                                          | | delta\_time                 |    |   | | Push Archive event by user code     | true      |   |
+|                                                          | | delta_time                  |    |   | | Push Archive event by user code     | true      |   |
 |                                                          | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-|                                                          | | delta\_val                  |    |   | |     Criteria checked by TANGO       | true      |   |
+|                                                          | | delta_val                   |    |   | |     Criteria checked by TANGO       | true      |   |
 |                                                          | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 |                                                          |                                        | |                                     |           |   |
 |                                                          |                                        | +-------------------------------------+-----------+   |
@@ -1803,9 +1802,9 @@
 +----------------------------------------------------------+----------------------------------------+-------------------------------------------------------+
 
 | 
-| **Attribute AttributePausedList:**
+**Attribute AttributePausedList:**
 
-    Returns the attributes stopped list
+Returns the attributes stopped list
 
 +----------------------------------------------------------+----------------------------------------+-------------------------------------------------------+
 | +----------------------------------------------------+   | +----------------------------------+   | +-------------------------------------------------+   |
@@ -1815,27 +1814,27 @@
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 | | R/W Type                    | READ                 |   | | unit                        |    |   | | Relative Change                     | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Data Type                   | Tango::DEV\_STRING   |   | | standard unit               |    |   | | Absolute Change                     | Not set   |   |
+| | Data Type                   | Tango::DEV_STRING    |   | | standard unit               |    |   | | Absolute Change                     | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 | | Display Level               | OPERATOR             |   | | display unit                |    |   | |                                     |           |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 | | Inherited                   | false                |   | | format                      |    |   | | Archive Periodic                    | 3600000   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Abstract                    | false                |   | | max\_value                  |    |   | | Archive Relative Change             | Not set   |   |
+| | Abstract                    | false                |   | | max_value                   |    |   | | Archive Relative Change             | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Polling Period              | Not polled           |   | | min\_value                  |    |   | | Archive Absolute Change             | Not set   |   |
+| | Polling Period              | Not polled           |   | | min_value                   |    |   | | Archive Absolute Change             | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Memorized                   | Not set              |   | | max\_alarm                  |    |   | |                                     |           |   |
+| | Memorized                   | Not set              |   | | max_alarm                   |    |   | |                                     |           |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| |                             |                      |   | | min\_alarm                  |    |   | | Push Change event by user code      | true      |   |
+| |                             |                      |   | | min_alarm                   |    |   | | Push Change event by user code      | true      |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Read allowed for            | All states           |   | | max\_warning                |    |   | |     Criteria checked by TANGO       | true      |   |
+| | Read allowed for            | All states           |   | | max_warning                 |    |   | |     Criteria checked by TANGO       | true      |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-|                                                          | | min\_warning                |    |   | |                                     |           |   |
+|                                                          | | min_warning                 |    |   | |                                     |           |   |
 |                                                          | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-|                                                          | | delta\_time                 |    |   | | Push Archive event by user code     | true      |   |
+|                                                          | | delta_time                  |    |   | | Push Archive event by user code     | true      |   |
 |                                                          | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-|                                                          | | delta\_val                  |    |   | |     Criteria checked by TANGO       | true      |   |
+|                                                          | | delta_val                   |    |   | |     Criteria checked by TANGO       | true      |   |
 |                                                          | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 |                                                          |                                        | |                                     |           |   |
 |                                                          |                                        | +-------------------------------------+-----------+   |
@@ -1845,9 +1844,9 @@
 +----------------------------------------------------------+----------------------------------------+-------------------------------------------------------+
 
 | 
-| **Attribute AttributeStrategyList:**
+**Attribute AttributeStrategyList:**
 
-    Returns the list of attribute strategy
+Returns the list of attribute strategy
 
 +----------------------------------------------------------+----------------------------------------+-------------------------------------------------------+
 | +----------------------------------------------------+   | +----------------------------------+   | +-------------------------------------------------+   |
@@ -1857,27 +1856,27 @@
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 | | R/W Type                    | READ                 |   | | unit                        |    |   | | Relative Change                     | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Data Type                   | Tango::DEV\_STRING   |   | | standard unit               |    |   | | Absolute Change                     | Not set   |   |
+| | Data Type                   | Tango::DEV_STRING    |   | | standard unit               |    |   | | Absolute Change                     | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 | | Display Level               | OPERATOR             |   | | display unit                |    |   | |                                     |           |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 | | Inherited                   | false                |   | | format                      |    |   | | Archive Periodic                    | 3600000   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Abstract                    | false                |   | | max\_value                  |    |   | | Archive Relative Change             | Not set   |   |
+| | Abstract                    | false                |   | | max_value                   |    |   | | Archive Relative Change             | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Polling Period              | Not polled           |   | | min\_value                  |    |   | | Archive Absolute Change             | Not set   |   |
+| | Polling Period              | Not polled           |   | | min_value                   |    |   | | Archive Absolute Change             | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Memorized                   | Not set              |   | | max\_alarm                  |    |   | |                                     |           |   |
+| | Memorized                   | Not set              |   | | max_alarm                   |    |   | |                                     |           |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| |                             |                      |   | | min\_alarm                  |    |   | | Push Change event by user code      | true      |   |
+| |                             |                      |   | | min_alarm                   |    |   | | Push Change event by user code      | true      |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Read allowed for            | All states           |   | | max\_warning                |    |   | |     Criteria checked by TANGO       | true      |   |
+| | Read allowed for            | All states           |   | | max_warning                 |    |   | |     Criteria checked by TANGO       | true      |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-|                                                          | | min\_warning                |    |   | |                                     |           |   |
+|                                                          | | min_warning                 |    |   | |                                     |           |   |
 |                                                          | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-|                                                          | | delta\_time                 |    |   | | Push Archive event by user code     | true      |   |
+|                                                          | | delta_time                  |    |   | | Push Archive event by user code     | true      |   |
 |                                                          | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-|                                                          | | delta\_val                  |    |   | |     Criteria checked by TANGO       | true      |   |
+|                                                          | | delta_val                   |    |   | |     Criteria checked by TANGO       | true      |   |
 |                                                          | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 |                                                          |                                        | |                                     |           |   |
 |                                                          |                                        | +-------------------------------------+-----------+   |
@@ -1887,7 +1886,7 @@
 +----------------------------------------------------------+----------------------------------------+-------------------------------------------------------+
 
 | 
-| **Attribute ContextsList:**
+**Attribute ContextsList:**
 
 +----------------------------------------------------------+----------------------------------------+-------------------------------------------------------+
 | +----------------------------------------------------+   | +----------------------------------+   | +-------------------------------------------------+   |
@@ -1897,35 +1896,35 @@
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 | | R/W Type                    | READ                 |   | | unit                        |    |   | | Relative Change                     | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Data Type                   | Tango::DEV\_STRING   |   | | standard unit               |    |   | | Absolute Change                     | Not set   |   |
+| | Data Type                   | Tango::DEV_STRING    |   | | standard unit               |    |   | | Absolute Change                     | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 | | Display Level               | OPERATOR             |   | | display unit                |    |   | |                                     |           |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 | | Inherited                   | false                |   | | format                      |    |   | | Archive Periodic                    | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Abstract                    | false                |   | | max\_value                  |    |   | | Archive Relative Change             | Not set   |   |
+| | Abstract                    | false                |   | | max_value                   |    |   | | Archive Relative Change             | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Polling Period              | Not polled           |   | | min\_value                  |    |   | | Archive Absolute Change             | Not set   |   |
+| | Polling Period              | Not polled           |   | | min_value                   |    |   | | Archive Absolute Change             | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Memorized                   | Not set              |   | | max\_alarm                  |    |   | |                                     |           |   |
+| | Memorized                   | Not set              |   | | max_alarm                   |    |   | |                                     |           |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| |                             |                      |   | | min\_alarm                  |    |   | | Push Change event by user code      | false     |   |
+| |                             |                      |   | | min_alarm                   |    |   | | Push Change event by user code      | false     |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Read allowed for            | All states           |   | | max\_warning                |    |   | |                                     |           |   |
+| | Read allowed for            | All states           |   | | max_warning                 |    |   | |                                     |           |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-|                                                          | | min\_warning                |    |   | | Push Archive event by user code     | false     |   |
+|                                                          | | min_warning                 |    |   | | Push Archive event by user code     | false     |   |
 |                                                          | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-|                                                          | | delta\_time                 |    |   | |                                     |           |   |
+|                                                          | | delta_time                  |    |   | |                                     |           |   |
 |                                                          | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-|                                                          | | delta\_val                  |    |   | | Push DataReady event by user code   | false     |   |
+|                                                          | | delta_val                   |    |   | | Push DataReady event by user code   | false     |   |
 |                                                          | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 +==========================================================+========================================+=======================================================+
 +----------------------------------------------------------+----------------------------------------+-------------------------------------------------------+
 
 | 
-| **Attribute AttributeTTLList:**
+**Attribute AttributeTTLList:**
 
-    Returns the list of attribute strategy
+Returns the list of attribute strategy
 
 +----------------------------------------------------------+----------------------------------------+-------------------------------------------------------+
 | +----------------------------------------------------+   | +----------------------------------+   | +-------------------------------------------------+   |
@@ -1935,27 +1934,27 @@
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 | | R/W Type                    | READ                 |   | | unit                        |    |   | | Relative Change                     | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Data Type                   | Tango::DEV\_ULONG    |   | | standard unit               |    |   | | Absolute Change                     | Not set   |   |
+| | Data Type                   | Tango::DEV_ULONG     |   | | standard unit               |    |   | | Absolute Change                     | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 | | Display Level               | OPERATOR             |   | | display unit                |    |   | |                                     |           |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 | | Inherited                   | false                |   | | format                      |    |   | | Archive Periodic                    | 3600000   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Abstract                    | false                |   | | max\_value                  |    |   | | Archive Relative Change             | Not set   |   |
+| | Abstract                    | false                |   | | max_value                   |    |   | | Archive Relative Change             | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Polling Period              | Not polled           |   | | min\_value                  |    |   | | Archive Absolute Change             | Not set   |   |
+| | Polling Period              | Not polled           |   | | min_value                   |    |   | | Archive Absolute Change             | Not set   |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Memorized                   | Not set              |   | | max\_alarm                  |    |   | |                                     |           |   |
+| | Memorized                   | Not set              |   | | max_alarm                   |    |   | |                                     |           |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| |                             |                      |   | | min\_alarm                  |    |   | | Push Change event by user code      | true      |   |
+| |                             |                      |   | | min_alarm                   |    |   | | Push Change event by user code      | true      |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-| | Read allowed for            | All states           |   | | max\_warning                |    |   | |     Criteria checked by TANGO       | true      |   |
+| | Read allowed for            | All states           |   | | max_warning                 |    |   | |     Criteria checked by TANGO       | true      |   |
 | +-----------------------------+----------------------+   | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-|                                                          | | min\_warning                |    |   | |                                     |           |   |
+|                                                          | | min_warning                 |    |   | |                                     |           |   |
 |                                                          | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-|                                                          | | delta\_time                 |    |   | | Push Archive event by user code     | true      |   |
+|                                                          | | delta_time                  |    |   | | Push Archive event by user code     | true      |   |
 |                                                          | +-----------------------------+----+   | +-------------------------------------+-----------+   |
-|                                                          | | delta\_val                  |    |   | |     Criteria checked by TANGO       | true      |   |
+|                                                          | | delta_val                   |    |   | |     Criteria checked by TANGO       | true      |   |
 |                                                          | +-----------------------------+----+   | +-------------------------------------+-----------+   |
 |                                                          |                                        | |                                     |           |   |
 |                                                          |                                        | +-------------------------------------+-----------+   |
