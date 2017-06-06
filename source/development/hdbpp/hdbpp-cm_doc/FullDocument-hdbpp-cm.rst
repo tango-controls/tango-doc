@@ -1,7 +1,7 @@
-*HdbConfigurationManager Tango Cpp Class *
-==========================================
+HdbConfigurationManager Tango Cpp Class
+=======================================
 
-    ***Contents : ***
+**Contents:**   
 
 -  `Description <FullDocument.html#description>`__
 
@@ -108,7 +108,7 @@
 -  `States <FullDocument.html#states>`__
 
 +--------------------------------------------------------+----------------------------------------+
-| ***HdbConfigurationManager Class Identification :***   |
+|  **HdbConfigurationManager Class Identification:**     |
 +========================================================+========================================+
 | Contact                                                | : at elettra.eu - graziano.scalamera   |
 +--------------------------------------------------------+----------------------------------------+
@@ -124,21 +124,21 @@
 +--------------------------------------------------------+----------------------------------------+
 
 +--------------------------------------------------------------------------------------------------+
-| ***HdbConfigurationManager Class Inheritance : ***                                               |
+|  **HdbConfigurationManager Class Inheritance:**                                                  |
 +==================================================================================================+
 | -  `Tango::DeviceImpl <http://www.esrf.eu/computing/cs/tango/tango_doc/kernel_doc/cpp_doc/>`__   |
 |                                                                                                  |
 |    -  HdbConfigurationManager                                                                    |
 +--------------------------------------------------------------------------------------------------+
 
-    ***HdbConfigurationManager Class Description : ***
+**HdbConfigurationManager Class Description:**   
 
-\ ***HdbConfigurationManager Properties :***
+**HdbConfigurationManager Properties:**  
 
 +-------------------------+---------------------------------+-------------+----------------------+
-| **Class Properties **   |
+| **Class Properties**    |
 +=========================+=================================+=============+======================+
-| **Name **               | **Description **                | **Type **   | **Default Value **   |
+| **Name**                | **Description**                 | **Type**    | **Default Value**    |
 +-------------------------+---------------------------------+-------------+----------------------+
 | MaxSearchSize           |                                 | int         | none                 |
 +-------------------------+---------------------------------+-------------+----------------------+
@@ -146,9 +146,9 @@
 +-------------------------+---------------------------------+-------------+----------------------+
 
 +--------------------------+---------------------------------+-------------+----------------------+
-| **Device Properties **   |
+| **Device Properties**    |
 +==========================+=================================+=============+======================+
-| **Name **                | **Description **                | **Type **   | **Default Value **   |
+| **Name**                 | **Description**                 | **Type**    | **Default Value**    |
 +--------------------------+---------------------------------+-------------+----------------------+
 | ArchiverList             |                                 | String[]    | none                 |
 +--------------------------+---------------------------------+-------------+----------------------+
@@ -158,59 +158,59 @@
 +--------------------------+---------------------------------+-------------+----------------------+
 
 +-----------------------------------------------------------+-----------------------+-----------------------+--------------+----------------------------------------------------------------------------------------------------------------+
-| **HdbConfigurationManager Class Commands **               |
+| **HdbConfigurationManager Class Commands**                |
 +===========================================================+=======================+=======================+==============+================================================================================================================+
-| **Name **                                                 | **Input type **       | **Output type **      | **Level **   | **Description **                                                                                               |
+| **Name**                                                  | **Input type**        | **Output type**       | **Level**    | **Description**                                                                                                |
 +-----------------------------------------------------------+-----------------------+-----------------------+--------------+----------------------------------------------------------------------------------------------------------------+
-| `State <CmdState.html>`__                                 | DEV\_VOID             | DEV\_STATE            | OPERATOR     | This command gets the device state (stored in its device\_state data member) and returns it to the caller.     |
+| `State <CmdState.html>`__                                 | DEV_VOID              | DEV_STATE             | OPERATOR     | This command gets the device state (stored in its device_state  data member) and returns it to the caller.     |
 +-----------------------------------------------------------+-----------------------+-----------------------+--------------+----------------------------------------------------------------------------------------------------------------+
-| `Status <CmdStatus.html>`__                               | DEV\_VOID             | CONST\_DEV\_STRING    | OPERATOR     | This command gets the device status (stored in its device\_status data member) and returns it to the caller.   |
+| `Status <CmdStatus.html>`__                               | DEV_VOID              | CONST_DEV_STRING      | OPERATOR     | This command gets the device status (stored in its device_status  data member) and returns it to the caller.   |
 +-----------------------------------------------------------+-----------------------+-----------------------+--------------+----------------------------------------------------------------------------------------------------------------+
-| `AttributeAdd <CmdAttributeAdd.html>`__                   | DEV\_VOID             | DEV\_VOID             | OPERATOR     | Add a new attribute to archive in HDB.                                                                         |
+| `AttributeAdd <CmdAttributeAdd.html>`__                   | DEV_VOID              | DEV_VOID              | OPERATOR     | Add a new attribute to archive in HDB.                                                                         |
 +-----------------------------------------------------------+-----------------------+-----------------------+--------------+----------------------------------------------------------------------------------------------------------------+
-| `AttributeRemove <CmdAttributeRemove.html>`__             | DEV\_STRING           | DEV\_VOID             | OPERATOR     | Remove attribute from configuration.                                                                           |
+| `AttributeRemove <CmdAttributeRemove.html>`__             | DEV_STRING            | DEV_VOID              | OPERATOR     | Remove attribute from configuration.                                                                           |
 +-----------------------------------------------------------+-----------------------+-----------------------+--------------+----------------------------------------------------------------------------------------------------------------+
-| `AttributeStart <CmdAttributeStart.html>`__               | DEV\_STRING           | DEV\_VOID             | OPERATOR     | Start archiving single attribute                                                                               |
+| `AttributeStart <CmdAttributeStart.html>`__               | DEV_STRING            | DEV_VOID              | OPERATOR     | Start archiving single attribute                                                                               |
 +-----------------------------------------------------------+-----------------------+-----------------------+--------------+----------------------------------------------------------------------------------------------------------------+
-| `AttributeStop <CmdAttributeStop.html>`__                 | DEV\_STRING           | DEV\_VOID             | OPERATOR     | Stop archiving single attribute                                                                                |
+| `AttributeStop <CmdAttributeStop.html>`__                 | DEV_STRING            | DEV_VOID              | OPERATOR     | Stop archiving single attribute                                                                                |
 +-----------------------------------------------------------+-----------------------+-----------------------+--------------+----------------------------------------------------------------------------------------------------------------+
-| `ArchiverAdd <CmdArchiverAdd.html>`__                     | DEV\_STRING           | DEV\_VOID             | OPERATOR     | Add a new archiver to archive in HDB.                                                                          |
+| `ArchiverAdd <CmdArchiverAdd.html>`__                     | DEV_STRING            | DEV_VOID              | OPERATOR     | Add a new archiver to archive in HDB.                                                                          |
 +-----------------------------------------------------------+-----------------------+-----------------------+--------------+----------------------------------------------------------------------------------------------------------------+
-| `AttributeAssign <CmdAttributeAssign.html>`__             | DEVVAR\_STRINGARRAY   | DEV\_VOID             | OPERATOR     | Assigne attribute to archiver.                                                                                 |
+| `AttributeAssign <CmdAttributeAssign.html>`__             | DEVVAR_STRINGARRAY    | DEV_VOID              | OPERATOR     | Assigne attribute to archiver.                                                                                 |
 |                                                           |                       |                       |              | If Strategy is not specified use DefaultStrategy of the target archiver.                                       |
 +-----------------------------------------------------------+-----------------------+-----------------------+--------------+----------------------------------------------------------------------------------------------------------------+
-| `AttributeStatus <CmdAttributeStatus.html>`__             | DEV\_STRING           | DEV\_STRING           | OPERATOR     | Read an attribute status                                                                                       |
+| `AttributeStatus <CmdAttributeStatus.html>`__             | DEV_STRING            | DEV_STRING            | OPERATOR     | Read an attribute status                                                                                       |
 +-----------------------------------------------------------+-----------------------+-----------------------+--------------+----------------------------------------------------------------------------------------------------------------+
-| `AttributeGetArchiver <CmdAttributeGetArchiver.html>`__   | DEV\_STRING           | DEV\_STRING           | OPERATOR     | Return archiver associated to attribute.                                                                       |
+| `AttributeGetArchiver <CmdAttributeGetArchiver.html>`__   | DEV_STRING            | DEV_STRING            | OPERATOR     | Return archiver associated to attribute.                                                                       |
 +-----------------------------------------------------------+-----------------------+-----------------------+--------------+----------------------------------------------------------------------------------------------------------------+
-| `AttributeSearch <CmdAttributeSearch.html>`__             | DEV\_STRING           | DEVVAR\_STRINGARRAY   | OPERATOR     | Return list of attributes containing input argument                                                            |
+| `AttributeSearch <CmdAttributeSearch.html>`__             | DEV_STRING            | DEVVAR_STRINGARRAY    | OPERATOR     | Return list of attributes containing input argument                                                            |
 +-----------------------------------------------------------+-----------------------+-----------------------+--------------+----------------------------------------------------------------------------------------------------------------+
-| `ArchiverRemove <CmdArchiverRemove.html>`__               | DEV\_STRING           | DEV\_VOID             | OPERATOR     | Remove archiver instance.                                                                                      |
+| `ArchiverRemove <CmdArchiverRemove.html>`__               | DEV_STRING            | DEV_VOID              | OPERATOR     | Remove archiver instance.                                                                                      |
 +-----------------------------------------------------------+-----------------------+-----------------------+--------------+----------------------------------------------------------------------------------------------------------------+
-| `ResetStatistics <CmdResetStatistics.html>`__             | DEV\_VOID             | DEV\_VOID             | OPERATOR     | Reset statistic counters                                                                                       |
+| `ResetStatistics <CmdResetStatistics.html>`__             | DEV_VOID              | DEV_VOID              | OPERATOR     | Reset statistic counters                                                                                       |
 +-----------------------------------------------------------+-----------------------+-----------------------+--------------+----------------------------------------------------------------------------------------------------------------+
-| `AttributePause <CmdAttributePause.html>`__               | DEV\_STRING           | DEV\_VOID             | OPERATOR     | Pause archiving single attribute                                                                               |
+| `AttributePause <CmdAttributePause.html>`__               | DEV_STRING            | DEV_VOID              | OPERATOR     | Pause archiving single attribute                                                                               |
 +-----------------------------------------------------------+-----------------------+-----------------------+--------------+----------------------------------------------------------------------------------------------------------------+
-| `SetAttributeStrategy <CmdSetAttributeStrategy.html>`__   | DEVVAR\_STRINGARRAY   | DEV\_VOID             | OPERATOR     | Update strategies for an already archived attribute.                                                           |
+| `SetAttributeStrategy <CmdSetAttributeStrategy.html>`__   | DEVVAR_STRINGARRAY    | DEV_VOID              | OPERATOR     | Update strategies for an already archived attribute.                                                           |
 +-----------------------------------------------------------+-----------------------+-----------------------+--------------+----------------------------------------------------------------------------------------------------------------+
-| `GetAttributeStrategy <CmdGetAttributeStrategy.html>`__   | DEV\_STRING           | DEV\_STRING           | OPERATOR     | None.                                                                                                          |
+| `GetAttributeStrategy <CmdGetAttributeStrategy.html>`__   | DEV_STRING            | DEV_STRING            | OPERATOR     | None.                                                                                                          |
 +-----------------------------------------------------------+-----------------------+-----------------------+--------------+----------------------------------------------------------------------------------------------------------------+
-| `SetAttributeTTL <CmdSetAttributeTTL.html>`__             | DEVVAR\_STRINGARRAY   | DEV\_VOID             | OPERATOR     | Update ttl for an already archived attribute.                                                                  |
+| `SetAttributeTTL <CmdSetAttributeTTL.html>`__             | DEVVAR_STRINGARRAY    | DEV_VOID              | OPERATOR     | Update ttl for an already archived attribute.                                                                  |
 +-----------------------------------------------------------+-----------------------+-----------------------+--------------+----------------------------------------------------------------------------------------------------------------+
-| `GetAttributeTTL <CmdGetAttributeTTL.html>`__             | DEV\_STRING           | DEV\_ULONG            | OPERATOR     | None.                                                                                                          |
+| `GetAttributeTTL <CmdGetAttributeTTL.html>`__             | DEV_STRING            | DEV_ULONG             | OPERATOR     | None.                                                                                                          |
 +-----------------------------------------------------------+-----------------------+-----------------------+--------------+----------------------------------------------------------------------------------------------------------------+
 
-\ ***Command State : ***
+**Command State:**   
 
-    This command gets the device state (stored in its device\_state data
+    This command gets the device state (stored in its device_state  data
     member) and returns it to the caller.
 
 +-------------------------+---------------------+----------------+
-| **State Definition **   |
+| **State Definition**    |
 +=========================+=====================+================+
-| Input Argument          | Tango::DEV\_VOID    | none           |
+| Input Argument          | Tango::DEV_VOID     | none           |
 +-------------------------+---------------------+----------------+
-| Output Argument         | Tango::DEV\_STATE   | Device state   |
+| Output Argument         | Tango::DEV_STATE    | Device state   |
 +-------------------------+---------------------+----------------+
 | DisplayLevel            | OPERATOR            | ..             |
 +-------------------------+---------------------+----------------+
@@ -225,17 +225,17 @@
 | Command allowed for     | All states          | ..             |
 +-------------------------+---------------------+----------------+
 
-\ ***Command Status : ***
+**Command Status:**   
 
-    This command gets the device status (stored in its device\_status
+    This command gets the device status (stored in its device_status 
     data member) and returns it to the caller.
 
 +--------------------------+-----------------------------+-----------------+
-| **Status Definition **   |
+| **Status Definition**    |
 +==========================+=============================+=================+
-| Input Argument           | Tango::DEV\_VOID            | none            |
+| Input Argument           | Tango::DEV_VOID             | none            |
 +--------------------------+-----------------------------+-----------------+
-| Output Argument          | Tango::CONST\_DEV\_STRING   | Device status   |
+| Output Argument          | Tango::CONST_DEV_STRING     | Device status   |
 +--------------------------+-----------------------------+-----------------+
 | DisplayLevel             | OPERATOR                    | ..              |
 +--------------------------+-----------------------------+-----------------+
@@ -250,16 +250,16 @@
 | Command allowed for      | All states                  | ..              |
 +--------------------------+-----------------------------+-----------------+
 
-\ ***Command AttributeAdd : ***
+**Command AttributeAdd:**   
 
     Add a new attribute to archive in HDB.
 
 +--------------------------------+--------------------+------+
-| **AttributeAdd Definition **   |
+| **AttributeAdd Definition**    |
 +================================+====================+======+
-| Input Argument                 | Tango::DEV\_VOID   |      |
+| Input Argument                 | Tango::DEV_VOID    |      |
 +--------------------------------+--------------------+------+
-| Output Argument                | Tango::DEV\_VOID   |      |
+| Output Argument                | Tango::DEV_VOID    |      |
 +--------------------------------+--------------------+------+
 | DisplayLevel                   | OPERATOR           | ..   |
 +--------------------------------+--------------------+------+
@@ -274,16 +274,16 @@
 | Command allowed for            | All states         | ..   |
 +--------------------------------+--------------------+------+
 
-\ ***Command AttributeRemove : ***
+**Command AttributeRemove:**   
 
     Remove attribute from configuration.
 
 +-----------------------------------+----------------------+------------------+
-| **AttributeRemove Definition **   |
+| **AttributeRemove Definition**    |
 +===================================+======================+==================+
-| Input Argument                    | Tango::DEV\_STRING   | Attribute name   |
+| Input Argument                    | Tango::DEV_STRING    | Attribute name   |
 +-----------------------------------+----------------------+------------------+
-| Output Argument                   | Tango::DEV\_VOID     |                  |
+| Output Argument                   | Tango::DEV_VOID      |                  |
 +-----------------------------------+----------------------+------------------+
 | DisplayLevel                      | OPERATOR             | ..               |
 +-----------------------------------+----------------------+------------------+
@@ -298,16 +298,16 @@
 | Command allowed for               | All states           | ..               |
 +-----------------------------------+----------------------+------------------+
 
-\ ***Command AttributeStart : ***
+**Command AttributeStart:**   
 
     Start archiving single attribute
 
 +----------------------------------+----------------------+------------------+
-| **AttributeStart Definition **   |
+| **AttributeStart Definition**    |
 +==================================+======================+==================+
-| Input Argument                   | Tango::DEV\_STRING   | Attribute name   |
+| Input Argument                   | Tango::DEV_STRING    | Attribute name   |
 +----------------------------------+----------------------+------------------+
-| Output Argument                  | Tango::DEV\_VOID     |                  |
+| Output Argument                  | Tango::DEV_VOID      |                  |
 +----------------------------------+----------------------+------------------+
 | DisplayLevel                     | OPERATOR             | ..               |
 +----------------------------------+----------------------+------------------+
@@ -322,16 +322,16 @@
 | Command allowed for              | All states           | ..               |
 +----------------------------------+----------------------+------------------+
 
-\ ***Command AttributeStop : ***
+**Command AttributeStop:**   
 
     Stop archiving single attribute
 
 +---------------------------------+----------------------+------------------+
-| **AttributeStop Definition **   |
+| **AttributeStop Definition**    |
 +=================================+======================+==================+
-| Input Argument                  | Tango::DEV\_STRING   | Attribute name   |
+| Input Argument                  | Tango::DEV_STRING    | Attribute name   |
 +---------------------------------+----------------------+------------------+
-| Output Argument                 | Tango::DEV\_VOID     |                  |
+| Output Argument                 | Tango::DEV_VOID      |                  |
 +---------------------------------+----------------------+------------------+
 | DisplayLevel                    | OPERATOR             | ..               |
 +---------------------------------+----------------------+------------------+
@@ -346,16 +346,16 @@
 | Command allowed for             | All states           | ..               |
 +---------------------------------+----------------------+------------------+
 
-\ ***Command ArchiverAdd : ***
+**Command ArchiverAdd:**   
 
     Add a new archiver to archive in HDB.
 
 +-------------------------------+----------------------+-----------------+
-| **ArchiverAdd Definition **   |
+| **ArchiverAdd Definition**    |
 +===============================+======================+=================+
-| Input Argument                | Tango::DEV\_STRING   | Archiver name   |
+| Input Argument                | Tango::DEV_STRING    | Archiver name   |
 +-------------------------------+----------------------+-----------------+
-| Output Argument               | Tango::DEV\_VOID     |                 |
+| Output Argument               | Tango::DEV_VOID      |                 |
 +-------------------------------+----------------------+-----------------+
 | DisplayLevel                  | OPERATOR             | ..              |
 +-------------------------------+----------------------+-----------------+
@@ -370,20 +370,20 @@
 | Command allowed for           | All states           | ..              |
 +-------------------------------+----------------------+-----------------+
 
-\ ***Command AttributeAssign : ***
+**Command AttributeAssign:**   
 
     | Assigne attribute to archiver.
     | If Strategy is not specified use DefaultStrategy of the target
       archiver.
 
 +-----------------------------------+------------------------------+---------------------------+
-| **AttributeAssign Definition **   |
+| **AttributeAssign Definition**    |
 +===================================+==============================+===========================+
-| Input Argument                    | Tango::DEVVAR\_STRINGARRAY   | [0]: Attribute name       |
+| Input Argument                    | Tango::DEVVAR_STRINGARRAY    | [0]: Attribute name       |
 |                                   |                              | [1]: Archiver name        |
 |                                   |                              | [2]: Attribute Strategy   |
 +-----------------------------------+------------------------------+---------------------------+
-| Output Argument                   | Tango::DEV\_VOID             |                           |
+| Output Argument                   | Tango::DEV_VOID              |                           |
 +-----------------------------------+------------------------------+---------------------------+
 | DisplayLevel                      | OPERATOR                     | ..                        |
 +-----------------------------------+------------------------------+---------------------------+
@@ -398,16 +398,16 @@
 | Command allowed for               | All states                   | ..                        |
 +-----------------------------------+------------------------------+---------------------------+
 
-\ ***Command AttributeStatus : ***
+**Command AttributeStatus:**   
 
     Read an attribute status
 
 +-----------------------------------+----------------------+---------------------------------------------+
-| **AttributeStatus Definition **   |
+| **AttributeStatus Definition**    |
 +===================================+======================+=============================================+
-| Input Argument                    | Tango::DEV\_STRING   | The attribute name                          |
+| Input Argument                    | Tango::DEV_STRING    | The attribute name                          |
 +-----------------------------------+----------------------+---------------------------------------------+
-| Output Argument                   | Tango::DEV\_STRING   | The attribute status. TODO: DevString OK?   |
+| Output Argument                   | Tango::DEV_STRING    | The attribute status. TODO: DevString OK?   |
 +-----------------------------------+----------------------+---------------------------------------------+
 | DisplayLevel                      | OPERATOR             | ..                                          |
 +-----------------------------------+----------------------+---------------------------------------------+
@@ -422,16 +422,16 @@
 | Command allowed for               | All states           | ..                                          |
 +-----------------------------------+----------------------+---------------------------------------------+
 
-\ ***Command AttributeGetArchiver : ***
+**Command AttributeGetArchiver:**   
 
     Return archiver associated to attribute.
 
 +----------------------------------------+----------------------+------------------+
-| **AttributeGetArchiver Definition **   |
+| **AttributeGetArchiver Definition**    |
 +========================================+======================+==================+
-| Input Argument                         | Tango::DEV\_STRING   | Attribute name   |
+| Input Argument                         | Tango::DEV_STRING    | Attribute name   |
 +----------------------------------------+----------------------+------------------+
-| Output Argument                        | Tango::DEV\_STRING   | Archiver name    |
+| Output Argument                        | Tango::DEV_STRING    | Archiver name    |
 +----------------------------------------+----------------------+------------------+
 | DisplayLevel                           | OPERATOR             | ..               |
 +----------------------------------------+----------------------+------------------+
@@ -446,16 +446,16 @@
 | Command allowed for                    | All states           | ..               |
 +----------------------------------------+----------------------+------------------+
 
-\ ***Command AttributeSearch : ***
+**Command AttributeSearch:**   
 
     Return list of attributes containing input argument
 
 +-----------------------------------+------------------------------+--------------------------------+
-| **AttributeSearch Definition **   |
+| **AttributeSearch Definition**    |
 +===================================+==============================+================================+
-| Input Argument                    | Tango::DEV\_STRING           | Attribute name or part of it   |
+| Input Argument                    | Tango::DEV_STRING            | Attribute name or part of it   |
 +-----------------------------------+------------------------------+--------------------------------+
-| Output Argument                   | Tango::DEVVAR\_STRINGARRAY   | Attribute list                 |
+| Output Argument                   | Tango::DEVVAR_STRINGARRAY    | Attribute list                 |
 +-----------------------------------+------------------------------+--------------------------------+
 | DisplayLevel                      | OPERATOR                     | ..                             |
 +-----------------------------------+------------------------------+--------------------------------+
@@ -470,16 +470,16 @@
 | Command allowed for               | All states                   | ..                             |
 +-----------------------------------+------------------------------+--------------------------------+
 
-\ ***Command ArchiverRemove : ***
+**Command ArchiverRemove:**   
 
     Remove archiver instance.
 
 +----------------------------------+----------------------+-----------------+
-| **ArchiverRemove Definition **   |
+| **ArchiverRemove Definition**    |
 +==================================+======================+=================+
-| Input Argument                   | Tango::DEV\_STRING   | Archiver name   |
+| Input Argument                   | Tango::DEV_STRING    | Archiver name   |
 +----------------------------------+----------------------+-----------------+
-| Output Argument                  | Tango::DEV\_VOID     |                 |
+| Output Argument                  | Tango::DEV_VOID      |                 |
 +----------------------------------+----------------------+-----------------+
 | DisplayLevel                     | OPERATOR             | ..              |
 +----------------------------------+----------------------+-----------------+
@@ -494,16 +494,16 @@
 | Command allowed for              | All states           | ..              |
 +----------------------------------+----------------------+-----------------+
 
-\ ***Command ResetStatistics : ***
+**Command ResetStatistics:**   
 
     Reset statistic counters
 
 +-----------------------------------+--------------------+------+
-| **ResetStatistics Definition **   |
+| **ResetStatistics Definition**    |
 +===================================+====================+======+
-| Input Argument                    | Tango::DEV\_VOID   |      |
+| Input Argument                    | Tango::DEV_VOID    |      |
 +-----------------------------------+--------------------+------+
-| Output Argument                   | Tango::DEV\_VOID   |      |
+| Output Argument                   | Tango::DEV_VOID    |      |
 +-----------------------------------+--------------------+------+
 | DisplayLevel                      | OPERATOR           | ..   |
 +-----------------------------------+--------------------+------+
@@ -518,16 +518,16 @@
 | Command allowed for               | All states         | ..   |
 +-----------------------------------+--------------------+------+
 
-\ ***Command AttributePause : ***
+**Command AttributePause:**   
 
     Pause archiving single attribute
 
 +----------------------------------+----------------------+------------------+
-| **AttributePause Definition **   |
+| **AttributePause Definition**    |
 +==================================+======================+==================+
-| Input Argument                   | Tango::DEV\_STRING   | Attribute name   |
+| Input Argument                   | Tango::DEV_STRING    | Attribute name   |
 +----------------------------------+----------------------+------------------+
-| Output Argument                  | Tango::DEV\_VOID     |                  |
+| Output Argument                  | Tango::DEV_VOID      |                  |
 +----------------------------------+----------------------+------------------+
 | DisplayLevel                     | OPERATOR             | ..               |
 +----------------------------------+----------------------+------------------+
@@ -542,16 +542,16 @@
 | Command allowed for              | All states           | ..               |
 +----------------------------------+----------------------+------------------+
 
-\ ***Command SetAttributeStrategy : ***
+**Command SetAttributeStrategy:**   
 
     Update strategies for an already archived attribute.
 
 +----------------------------------------+------------------------------+------------------------------+
-| **SetAttributeStrategy Definition **   |
+| **SetAttributeStrategy Definition**    |
 +========================================+==============================+==============================+
-| Input Argument                         | Tango::DEVVAR\_STRINGARRAY   | Attribute name, strategies   |
+| Input Argument                         | Tango::DEVVAR_STRINGARRAY    | Attribute name, strategies   |
 +----------------------------------------+------------------------------+------------------------------+
-| Output Argument                        | Tango::DEV\_VOID             |                              |
+| Output Argument                        | Tango::DEV_VOID              |                              |
 +----------------------------------------+------------------------------+------------------------------+
 | DisplayLevel                           | OPERATOR                     | ..                           |
 +----------------------------------------+------------------------------+------------------------------+
@@ -566,14 +566,14 @@
 | Command allowed for                    | All states                   | ..                           |
 +----------------------------------------+------------------------------+------------------------------+
 
-\ ***Command GetAttributeStrategy : ***
+**Command GetAttributeStrategy:**   
 
 +----------------------------------------+----------------------+------------------+
-| **GetAttributeStrategy Definition **   |
+| **GetAttributeStrategy Definition**    |
 +========================================+======================+==================+
-| Input Argument                         | Tango::DEV\_STRING   | Attribute name   |
+| Input Argument                         | Tango::DEV_STRING    | Attribute name   |
 +----------------------------------------+----------------------+------------------+
-| Output Argument                        | Tango::DEV\_STRING   | Strategy         |
+| Output Argument                        | Tango::DEV_STRING    | Strategy         |
 +----------------------------------------+----------------------+------------------+
 | DisplayLevel                           | OPERATOR             | ..               |
 +----------------------------------------+----------------------+------------------+
@@ -588,16 +588,16 @@
 | Command allowed for                    | All states           | ..               |
 +----------------------------------------+----------------------+------------------+
 
-\ ***Command SetAttributeTTL : ***
+**Command SetAttributeTTL:**   
 
     Update ttl for an already archived attribute.
 
 +-----------------------------------+------------------------------+-----------------------+
-| **SetAttributeTTL Definition **   |
+| **SetAttributeTTL Definition**    |
 +===================================+==============================+=======================+
-| Input Argument                    | Tango::DEVVAR\_STRINGARRAY   | Attribute name, ttl   |
+| Input Argument                    | Tango::DEVVAR_STRINGARRAY    | Attribute name, ttl   |
 +-----------------------------------+------------------------------+-----------------------+
-| Output Argument                   | Tango::DEV\_VOID             |                       |
+| Output Argument                   | Tango::DEV_VOID              |                       |
 +-----------------------------------+------------------------------+-----------------------+
 | DisplayLevel                      | OPERATOR                     | ..                    |
 +-----------------------------------+------------------------------+-----------------------+
@@ -612,14 +612,14 @@
 | Command allowed for               | All states                   | ..                    |
 +-----------------------------------+------------------------------+-----------------------+
 
-\ ***Command GetAttributeTTL : ***
+**Command GetAttributeTTL:**   
 
 +-----------------------------------+----------------------+------------------+
-| **GetAttributeTTL Definition **   |
+| **GetAttributeTTL Definition**    |
 +===================================+======================+==================+
-| Input Argument                    | Tango::DEV\_STRING   | Attribute name   |
+| Input Argument                    | Tango::DEV_STRING    | Attribute name   |
 +-----------------------------------+----------------------+------------------+
-| Output Argument                   | Tango::DEV\_ULONG    | TTL              |
+| Output Argument                   | Tango::DEV_ULONG     | TTL              |
 +-----------------------------------+----------------------+------------------+
 | DisplayLevel                      | OPERATOR             | ..               |
 +-----------------------------------+----------------------+------------------+
@@ -635,83 +635,83 @@
 +-----------------------------------+----------------------+------------------+
 
 +--------------------------------------------------------------------------+------------------+-----------------+-------------------+-----------------+-----------------------+--------------+-------------------------------------------------------------+
-| **HdbConfigurationManager Class Attributes **                            |
+| **HdbConfigurationManager Class Attributes**                             |
 +==========================================================================+==================+=================+===================+=================+=======================+==============+=============================================================+
-| **Name **                                                                | **Inherited **   | **Abstract **   | **Attr. type **   | **R/W type **   | **Data type **        | **Level **   | **Description **                                            |
+| **Name**                                                                 | **Inherited**    | **Abstract**    | **Attr. type**    | **R/W type**    | **Data type**         | **Level**    | **Description**                                             |
 +--------------------------------------------------------------------------+------------------+-----------------+-------------------+-----------------+-----------------------+--------------+-------------------------------------------------------------+
-| `AttributeOKNumber <AttrAttributeOKNumber.html>`__                       | false            | false           | Scalar            | READ            | Tango::DEV\_LONG      | OPERATOR     | Number of archived attributes not in error                  |
+| `AttributeOKNumber <AttrAttributeOKNumber.html>`__                       | false            | false           | Scalar            | READ            | Tango::DEV_LONG       | OPERATOR     | Number of archived attributes not in error                  |
 +--------------------------------------------------------------------------+------------------+-----------------+-------------------+-----------------+-----------------------+--------------+-------------------------------------------------------------+
-| `AttributeNokNumber <AttrAttributeNokNumber.html>`__                     | false            | false           | Scalar            | READ            | Tango::DEV\_LONG      | OPERATOR     | Number of archived attributes in error                      |
+| `AttributeNokNumber <AttrAttributeNokNumber.html>`__                     | false            | false           | Scalar            | READ            | Tango::DEV_LONG       | OPERATOR     | Number of archived attributes in error                      |
 +--------------------------------------------------------------------------+------------------+-----------------+-------------------+-----------------+-----------------------+--------------+-------------------------------------------------------------+
-| `AttributePendingNumber <AttrAttributePendingNumber.html>`__             | false            | false           | Scalar            | READ            | Tango::DEV\_LONG      | OPERATOR     | Number of attributes waiting to be archived                 |
+| `AttributePendingNumber <AttrAttributePendingNumber.html>`__             | false            | false           | Scalar            | READ            | Tango::DEV_LONG       | OPERATOR     | Number of attributes waiting to be archived                 |
 +--------------------------------------------------------------------------+------------------+-----------------+-------------------+-----------------+-----------------------+--------------+-------------------------------------------------------------+
-| `AttributeNumber <AttrAttributeNumber.html>`__                           | false            | false           | Scalar            | READ            | Tango::DEV\_LONG      | OPERATOR     | Number of configured attributes                             |
+| `AttributeNumber <AttrAttributeNumber.html>`__                           | false            | false           | Scalar            | READ            | Tango::DEV_LONG       | OPERATOR     | Number of configured attributes                             |
 +--------------------------------------------------------------------------+------------------+-----------------+-------------------+-----------------+-----------------------+--------------+-------------------------------------------------------------+
-| `SetAttributeName <AttrSetAttributeName.html>`__                         | false            | false           | Scalar            | READ\_WRITE     | Tango::DEV\_STRING    | OPERATOR     |                                                             |
+| `SetAttributeName <AttrSetAttributeName.html>`__                         | false            | false           | Scalar            | READ_WRITE      | Tango::DEV_STRING     | OPERATOR     |                                                             |
 +--------------------------------------------------------------------------+------------------+-----------------+-------------------+-----------------+-----------------------+--------------+-------------------------------------------------------------+
-| `SetPollingPeriod <AttrSetPollingPeriod.html>`__                         | false            | false           | Scalar            | READ\_WRITE     | Tango::DEV\_LONG      | OPERATOR     |                                                             |
+| `SetPollingPeriod <AttrSetPollingPeriod.html>`__                         | false            | false           | Scalar            | READ_WRITE      | Tango::DEV_LONG       | OPERATOR     |                                                             |
 +--------------------------------------------------------------------------+------------------+-----------------+-------------------+-----------------+-----------------------+--------------+-------------------------------------------------------------+
-| `SetAbsoluteEvent <AttrSetAbsoluteEvent.html>`__                         | false            | false           | Scalar            | READ\_WRITE     | Tango::DEV\_DOUBLE    | OPERATOR     |                                                             |
+| `SetAbsoluteEvent <AttrSetAbsoluteEvent.html>`__                         | false            | false           | Scalar            | READ_WRITE      | Tango::DEV_DOUBLE     | OPERATOR     |                                                             |
 +--------------------------------------------------------------------------+------------------+-----------------+-------------------+-----------------+-----------------------+--------------+-------------------------------------------------------------+
-| `SetRelativeEvent <AttrSetRelativeEvent.html>`__                         | false            | false           | Scalar            | READ\_WRITE     | Tango::DEV\_DOUBLE    | OPERATOR     |                                                             |
+| `SetRelativeEvent <AttrSetRelativeEvent.html>`__                         | false            | false           | Scalar            | READ_WRITE      | Tango::DEV_DOUBLE     | OPERATOR     |                                                             |
 +--------------------------------------------------------------------------+------------------+-----------------+-------------------+-----------------+-----------------------+--------------+-------------------------------------------------------------+
-| `SetPeriodEvent <AttrSetPeriodEvent.html>`__                             | false            | false           | Scalar            | READ\_WRITE     | Tango::DEV\_LONG      | OPERATOR     |                                                             |
+| `SetPeriodEvent <AttrSetPeriodEvent.html>`__                             | false            | false           | Scalar            | READ_WRITE      | Tango::DEV_LONG       | OPERATOR     |                                                             |
 +--------------------------------------------------------------------------+------------------+-----------------+-------------------+-----------------+-----------------------+--------------+-------------------------------------------------------------+
-| `SetCodePushedEvent <AttrSetCodePushedEvent.html>`__                     | false            | false           | Scalar            | READ\_WRITE     | Tango::DEV\_BOOLEAN   | OPERATOR     |                                                             |
+| `SetCodePushedEvent <AttrSetCodePushedEvent.html>`__                     | false            | false           | Scalar            | READ_WRITE      | Tango::DEV_BOOLEAN    | OPERATOR     |                                                             |
 +--------------------------------------------------------------------------+------------------+-----------------+-------------------+-----------------+-----------------------+--------------+-------------------------------------------------------------+
-| `SetArchiver <AttrSetArchiver.html>`__                                   | false            | false           | Scalar            | READ\_WRITE     | Tango::DEV\_STRING    | OPERATOR     |                                                             |
+| `SetArchiver <AttrSetArchiver.html>`__                                   | false            | false           | Scalar            | READ_WRITE      | Tango::DEV_STRING     | OPERATOR     |                                                             |
 +--------------------------------------------------------------------------+------------------+-----------------+-------------------+-----------------+-----------------------+--------------+-------------------------------------------------------------+
-| `AttributeMaxStoreTime <AttrAttributeMaxStoreTime.html>`__               | false            | false           | Scalar            | READ            | Tango::DEV\_DOUBLE    | OPERATOR     | Maximum storing time                                        |
+| `AttributeMaxStoreTime <AttrAttributeMaxStoreTime.html>`__               | false            | false           | Scalar            | READ            | Tango::DEV_DOUBLE     | OPERATOR     | Maximum storing time                                        |
 +--------------------------------------------------------------------------+------------------+-----------------+-------------------+-----------------+-----------------------+--------------+-------------------------------------------------------------+
-| `AttributeMinStoreTime <AttrAttributeMinStoreTime.html>`__               | false            | false           | Scalar            | READ            | Tango::DEV\_DOUBLE    | OPERATOR     | Minimum storing time                                        |
+| `AttributeMinStoreTime <AttrAttributeMinStoreTime.html>`__               | false            | false           | Scalar            | READ            | Tango::DEV_DOUBLE     | OPERATOR     | Minimum storing time                                        |
 +--------------------------------------------------------------------------+------------------+-----------------+-------------------+-----------------+-----------------------+--------------+-------------------------------------------------------------+
-| `AttributeMaxProcessingTime <AttrAttributeMaxProcessingTime.html>`__     | false            | false           | Scalar            | READ            | Tango::DEV\_DOUBLE    | OPERATOR     | Maximum processing (from event reception to storage) time   |
+| `AttributeMaxProcessingTime <AttrAttributeMaxProcessingTime.html>`__     | false            | false           | Scalar            | READ            | Tango::DEV_DOUBLE     | OPERATOR     | Maximum processing (from event reception to storage) time   |
 +--------------------------------------------------------------------------+------------------+-----------------+-------------------+-----------------+-----------------------+--------------+-------------------------------------------------------------+
-| `AttributeMinProcessingTime <AttrAttributeMinProcessingTime.html>`__     | false            | false           | Scalar            | READ            | Tango::DEV\_DOUBLE    | OPERATOR     | Minimum processing (from event reception to storage) time   |
+| `AttributeMinProcessingTime <AttrAttributeMinProcessingTime.html>`__     | false            | false           | Scalar            | READ            | Tango::DEV_DOUBLE     | OPERATOR     | Minimum processing (from event reception to storage) time   |
 +--------------------------------------------------------------------------+------------------+-----------------+-------------------+-----------------+-----------------------+--------------+-------------------------------------------------------------+
-| `AttributeRecordFreq <AttrAttributeRecordFreq.html>`__                   | false            | false           | Scalar            | READ            | Tango::DEV\_DOUBLE    | OPERATOR     | Record frequency                                            |
+| `AttributeRecordFreq <AttrAttributeRecordFreq.html>`__                   | false            | false           | Scalar            | READ            | Tango::DEV_DOUBLE     | OPERATOR     | Record frequency                                            |
 +--------------------------------------------------------------------------+------------------+-----------------+-------------------+-----------------+-----------------------+--------------+-------------------------------------------------------------+
-| `AttributeFailureFreq <AttrAttributeFailureFreq.html>`__                 | false            | false           | Scalar            | READ            | Tango::DEV\_DOUBLE    | OPERATOR     | Failure frequency                                           |
+| `AttributeFailureFreq <AttrAttributeFailureFreq.html>`__                 | false            | false           | Scalar            | READ            | Tango::DEV_DOUBLE     | OPERATOR     | Failure frequency                                           |
 +--------------------------------------------------------------------------+------------------+-----------------+-------------------+-----------------+-----------------------+--------------+-------------------------------------------------------------+
-| `AttributeStartedNumber <AttrAttributeStartedNumber.html>`__             | false            | false           | Scalar            | READ            | Tango::DEV\_LONG      | OPERATOR     | Number of archived attributes started                       |
+| `AttributeStartedNumber <AttrAttributeStartedNumber.html>`__             | false            | false           | Scalar            | READ            | Tango::DEV_LONG       | OPERATOR     | Number of archived attributes started                       |
 +--------------------------------------------------------------------------+------------------+-----------------+-------------------+-----------------+-----------------------+--------------+-------------------------------------------------------------+
-| `AttributeStoppedNumber <AttrAttributeStoppedNumber.html>`__             | false            | false           | Scalar            | READ            | Tango::DEV\_LONG      | OPERATOR     | Number of archived attributes stopped                       |
+| `AttributeStoppedNumber <AttrAttributeStoppedNumber.html>`__             | false            | false           | Scalar            | READ            | Tango::DEV_LONG       | OPERATOR     | Number of archived attributes stopped                       |
 +--------------------------------------------------------------------------+------------------+-----------------+-------------------+-----------------+-----------------------+--------------+-------------------------------------------------------------+
-| `AttributeMaxPendingNumber <AttrAttributeMaxPendingNumber.html>`__       | false            | false           | Scalar            | READ            | Tango::DEV\_LONG      | OPERATOR     | Max number of attributes waiting to be archived             |
+| `AttributeMaxPendingNumber <AttrAttributeMaxPendingNumber.html>`__       | false            | false           | Scalar            | READ            | Tango::DEV_LONG       | OPERATOR     | Max number of attributes waiting to be archived             |
 +--------------------------------------------------------------------------+------------------+-----------------+-------------------+-----------------+-----------------------+--------------+-------------------------------------------------------------+
-| `AttributePausedNumber <AttrAttributePausedNumber.html>`__               | false            | false           | Scalar            | READ            | Tango::DEV\_LONG      | OPERATOR     | Number of archived attributes paused                        |
+| `AttributePausedNumber <AttrAttributePausedNumber.html>`__               | false            | false           | Scalar            | READ            | Tango::DEV_LONG       | OPERATOR     | Number of archived attributes paused                        |
 +--------------------------------------------------------------------------+------------------+-----------------+-------------------+-----------------+-----------------------+--------------+-------------------------------------------------------------+
-| `SetTTL <AttrSetTTL.html>`__                                             | false            | false           | Scalar            | READ\_WRITE     | Tango::DEV\_ULONG     | OPERATOR     | Time To Live for temporary storage in hours                 |
+| `SetTTL <AttrSetTTL.html>`__                                             | false            | false           | Scalar            | READ_WRITE      | Tango::DEV_ULONG      | OPERATOR     | Time To Live for temporary storage in hours                 |
 +--------------------------------------------------------------------------+------------------+-----------------+-------------------+-----------------+-----------------------+--------------+-------------------------------------------------------------+
-| `SetStrategy <AttrSetStrategy.html>`__                                   | false            | false           | Scalar            | READ\_WRITE     | Tango::DEV\_STRING    | OPERATOR     | list of strategies separated with \|                        |
+| `SetStrategy <AttrSetStrategy.html>`__                                   | false            | false           | Scalar            | READ_WRITE      | Tango::DEV_STRING     | OPERATOR     | list of strategies separated with |                         |
 +--------------------------------------------------------------------------+------------------+-----------------+-------------------+-----------------+-----------------------+--------------+-------------------------------------------------------------+
-| `Context <AttrContext.html>`__                                           | false            | false           | Scalar            | WRITE           | Tango::DEV\_STRING    | EXPERT       |                                                             |
+| `Context <AttrContext.html>`__                                           | false            | false           | Scalar            | WRITE           | Tango::DEV_STRING     | EXPERT       |                                                             |
 +--------------------------------------------------------------------------+------------------+-----------------+-------------------+-----------------+-----------------------+--------------+-------------------------------------------------------------+
-| `ArchiverList <AttrArchiverList.html>`__                                 | false            | false           | Spectrum          | READ            | Tango::DEV\_STRING    | OPERATOR     |                                                             |
+| `ArchiverList <AttrArchiverList.html>`__                                 | false            | false           | Spectrum          | READ            | Tango::DEV_STRING     | OPERATOR     |                                                             |
 +--------------------------------------------------------------------------+------------------+-----------------+-------------------+-----------------+-----------------------+--------------+-------------------------------------------------------------+
-| `ArchiverStatus <AttrArchiverStatus.html>`__                             | false            | false           | Spectrum          | READ            | Tango::DEV\_STRING    | OPERATOR     |                                                             |
+| `ArchiverStatus <AttrArchiverStatus.html>`__                             | false            | false           | Spectrum          | READ            | Tango::DEV_STRING     | OPERATOR     |                                                             |
 +--------------------------------------------------------------------------+------------------+-----------------+-------------------+-----------------+-----------------------+--------------+-------------------------------------------------------------+
-| `ArchiverStatisticsResetTime <AttrArchiverStatisticsResetTime.html>`__   | false            | false           | Spectrum          | READ            | Tango::DEV\_DOUBLE    | OPERATOR     | Seconds elapsed since last statistics reset                 |
+| `ArchiverStatisticsResetTime <AttrArchiverStatisticsResetTime.html>`__   | false            | false           | Spectrum          | READ            | Tango::DEV_DOUBLE     | OPERATOR     | Seconds elapsed since last statistics reset                 |
 +--------------------------------------------------------------------------+------------------+-----------------+-------------------+-----------------+-----------------------+--------------+-------------------------------------------------------------+
-| `ArchiverContext <AttrArchiverContext.html>`__                           | false            | false           | Spectrum          | READ            | Tango::DEV\_STRING    | OPERATOR     | Archiver context                                            |
+| `ArchiverContext <AttrArchiverContext.html>`__                           | false            | false           | Spectrum          | READ            | Tango::DEV_STRING     | OPERATOR     | Archiver context                                            |
 +--------------------------------------------------------------------------+------------------+-----------------+-------------------+-----------------+-----------------------+--------------+-------------------------------------------------------------+
-| `ContextsList <AttrContextsList.html>`__                                 | false            | false           | Spectrum          | READ            | Tango::DEV\_STRING    | EXPERT       |                                                             |
+| `ContextsList <AttrContextsList.html>`__                                 | false            | false           | Spectrum          | READ            | Tango::DEV_STRING     | EXPERT       |                                                             |
 +--------------------------------------------------------------------------+------------------+-----------------+-------------------+-----------------+-----------------------+--------------+-------------------------------------------------------------+
 
-***There is no dynamic attribute defined. ***
+ **There is no dynamic attribute defined.  **
 
-\ ***Attribute AttributeOKNumber : ***
+**Attribute AttributeOKNumber:**   
 
     Number of archived attributes not in error
 
 +-----------------------------+--------------------+
-| **Attribute Definition **   |
+| **Attribute Definition**    |
 +=============================+====================+
 | Attribute Type              | Scalar             |
 +-----------------------------+--------------------+
 | R/W Type                    | READ               |
 +-----------------------------+--------------------+
-| Data Type                   | Tango::DEV\_LONG   |
+| Data Type                   | Tango::DEV_LONG    |
 +-----------------------------+--------------------+
 | Display Level               | OPERATOR           |
 +-----------------------------+--------------------+
@@ -729,7 +729,7 @@
 +-----------------------------+--------------------+
 
 +-----------------------------+----+
-| **Attribute Properties **   |
+| **Attribute Properties**    |
 +=============================+====+
 | label                       |    |
 +-----------------------------+----+
@@ -741,25 +741,25 @@
 +-----------------------------+----+
 | format                      |    |
 +-----------------------------+----+
-| max\_value                  |    |
+| max_value                   |    |
 +-----------------------------+----+
-| min\_value                  |    |
+| min_value                   |    |
 +-----------------------------+----+
-| max\_alarm                  |    |
+| max_alarm                   |    |
 +-----------------------------+----+
-| min\_alarm                  |    |
+| min_alarm                   |    |
 +-----------------------------+----+
-| max\_warning                |    |
+| max_warning                 |    |
 +-----------------------------+----+
-| min\_warning                |    |
+| min_warning                 |    |
 +-----------------------------+----+
-| delta\_time                 |    |
+| delta_time                  |    |
 +-----------------------------+----+
-| delta\_val                  |    |
+| delta_val                   |    |
 +-----------------------------+----+
 
 +-------------------------------------+-----------+
-| **Attribute Event Criteria **       |
+| **Attribute Event Criteria**        |
 +=====================================+===========+
 | Periodic                            | Not set   |
 +-------------------------------------+-----------+
@@ -788,18 +788,18 @@
 | Push DataReady event by user code   | false     |
 +-------------------------------------+-----------+
 
-\ ***Attribute AttributeNokNumber : ***
+**Attribute AttributeNokNumber:**   
 
     Number of archived attributes in error
 
 +-----------------------------+--------------------+
-| **Attribute Definition **   |
+| **Attribute Definition**    |
 +=============================+====================+
 | Attribute Type              | Scalar             |
 +-----------------------------+--------------------+
 | R/W Type                    | READ               |
 +-----------------------------+--------------------+
-| Data Type                   | Tango::DEV\_LONG   |
+| Data Type                   | Tango::DEV_LONG    |
 +-----------------------------+--------------------+
 | Display Level               | OPERATOR           |
 +-----------------------------+--------------------+
@@ -817,7 +817,7 @@
 +-----------------------------+--------------------+
 
 +-----------------------------+-----+
-| **Attribute Properties **   |
+| **Attribute Properties**    |
 +=============================+=====+
 | label                       |     |
 +-----------------------------+-----+
@@ -829,25 +829,25 @@
 +-----------------------------+-----+
 | format                      |     |
 +-----------------------------+-----+
-| max\_value                  |     |
+| max_value                   |     |
 +-----------------------------+-----+
-| min\_value                  |     |
+| min_value                   |     |
 +-----------------------------+-----+
-| max\_alarm                  | 1   |
+| max_alarm                   | 1   |
 +-----------------------------+-----+
-| min\_alarm                  |     |
+| min_alarm                   |     |
 +-----------------------------+-----+
-| max\_warning                |     |
+| max_warning                 |     |
 +-----------------------------+-----+
-| min\_warning                |     |
+| min_warning                 |     |
 +-----------------------------+-----+
-| delta\_time                 |     |
+| delta_time                  |     |
 +-----------------------------+-----+
-| delta\_val                  |     |
+| delta_val                   |     |
 +-----------------------------+-----+
 
 +-------------------------------------+-----------+
-| **Attribute Event Criteria **       |
+| **Attribute Event Criteria**        |
 +=====================================+===========+
 | Periodic                            | Not set   |
 +-------------------------------------+-----------+
@@ -876,18 +876,18 @@
 | Push DataReady event by user code   | false     |
 +-------------------------------------+-----------+
 
-\ ***Attribute AttributePendingNumber : ***
+**Attribute AttributePendingNumber:**   
 
     Number of attributes waiting to be archived
 
 +-----------------------------+--------------------+
-| **Attribute Definition **   |
+| **Attribute Definition**    |
 +=============================+====================+
 | Attribute Type              | Scalar             |
 +-----------------------------+--------------------+
 | R/W Type                    | READ               |
 +-----------------------------+--------------------+
-| Data Type                   | Tango::DEV\_LONG   |
+| Data Type                   | Tango::DEV_LONG    |
 +-----------------------------+--------------------+
 | Display Level               | OPERATOR           |
 +-----------------------------+--------------------+
@@ -905,7 +905,7 @@
 +-----------------------------+--------------------+
 
 +-----------------------------+----+
-| **Attribute Properties **   |
+| **Attribute Properties**    |
 +=============================+====+
 | label                       |    |
 +-----------------------------+----+
@@ -917,25 +917,25 @@
 +-----------------------------+----+
 | format                      |    |
 +-----------------------------+----+
-| max\_value                  |    |
+| max_value                   |    |
 +-----------------------------+----+
-| min\_value                  |    |
+| min_value                   |    |
 +-----------------------------+----+
-| max\_alarm                  |    |
+| max_alarm                   |    |
 +-----------------------------+----+
-| min\_alarm                  |    |
+| min_alarm                   |    |
 +-----------------------------+----+
-| max\_warning                |    |
+| max_warning                 |    |
 +-----------------------------+----+
-| min\_warning                |    |
+| min_warning                 |    |
 +-----------------------------+----+
-| delta\_time                 |    |
+| delta_time                  |    |
 +-----------------------------+----+
-| delta\_val                  |    |
+| delta_val                   |    |
 +-----------------------------+----+
 
 +-------------------------------------+-----------+
-| **Attribute Event Criteria **       |
+| **Attribute Event Criteria**        |
 +=====================================+===========+
 | Periodic                            | Not set   |
 +-------------------------------------+-----------+
@@ -964,18 +964,18 @@
 | Push DataReady event by user code   | false     |
 +-------------------------------------+-----------+
 
-\ ***Attribute AttributeNumber : ***
+**Attribute AttributeNumber:**   
 
     Number of configured attributes
 
 +-----------------------------+--------------------+
-| **Attribute Definition **   |
+| **Attribute Definition**    |
 +=============================+====================+
 | Attribute Type              | Scalar             |
 +-----------------------------+--------------------+
 | R/W Type                    | READ               |
 +-----------------------------+--------------------+
-| Data Type                   | Tango::DEV\_LONG   |
+| Data Type                   | Tango::DEV_LONG    |
 +-----------------------------+--------------------+
 | Display Level               | OPERATOR           |
 +-----------------------------+--------------------+
@@ -993,7 +993,7 @@
 +-----------------------------+--------------------+
 
 +-----------------------------+----+
-| **Attribute Properties **   |
+| **Attribute Properties**    |
 +=============================+====+
 | label                       |    |
 +-----------------------------+----+
@@ -1005,25 +1005,25 @@
 +-----------------------------+----+
 | format                      |    |
 +-----------------------------+----+
-| max\_value                  |    |
+| max_value                   |    |
 +-----------------------------+----+
-| min\_value                  |    |
+| min_value                   |    |
 +-----------------------------+----+
-| max\_alarm                  |    |
+| max_alarm                   |    |
 +-----------------------------+----+
-| min\_alarm                  |    |
+| min_alarm                   |    |
 +-----------------------------+----+
-| max\_warning                |    |
+| max_warning                 |    |
 +-----------------------------+----+
-| min\_warning                |    |
+| min_warning                 |    |
 +-----------------------------+----+
-| delta\_time                 |    |
+| delta_time                  |    |
 +-----------------------------+----+
-| delta\_val                  |    |
+| delta_val                   |    |
 +-----------------------------+----+
 
 +-------------------------------------+-----------+
-| **Attribute Event Criteria **       |
+| **Attribute Event Criteria**        |
 +=====================================+===========+
 | Periodic                            | Not set   |
 +-------------------------------------+-----------+
@@ -1052,16 +1052,16 @@
 | Push DataReady event by user code   | false     |
 +-------------------------------------+-----------+
 
-\ ***Attribute SetAttributeName : ***
+**Attribute SetAttributeName:**   
 
 +-----------------------------+----------------------+
-| **Attribute Definition **   |
+| **Attribute Definition**    |
 +=============================+======================+
 | Attribute Type              | Scalar               |
 +-----------------------------+----------------------+
-| R/W Type                    | READ\_WRITE          |
+| R/W Type                    | READ_WRITE           |
 +-----------------------------+----------------------+
-| Data Type                   | Tango::DEV\_STRING   |
+| Data Type                   | Tango::DEV_STRING    |
 +-----------------------------+----------------------+
 | Display Level               | OPERATOR             |
 +-----------------------------+----------------------+
@@ -1081,7 +1081,7 @@
 +-----------------------------+----------------------+
 
 +-----------------------------+----+
-| **Attribute Properties **   |
+| **Attribute Properties**    |
 +=============================+====+
 | label                       |    |
 +-----------------------------+----+
@@ -1093,25 +1093,25 @@
 +-----------------------------+----+
 | format                      |    |
 +-----------------------------+----+
-| max\_value                  |    |
+| max_value                   |    |
 +-----------------------------+----+
-| min\_value                  |    |
+| min_value                   |    |
 +-----------------------------+----+
-| max\_alarm                  |    |
+| max_alarm                   |    |
 +-----------------------------+----+
-| min\_alarm                  |    |
+| min_alarm                   |    |
 +-----------------------------+----+
-| max\_warning                |    |
+| max_warning                 |    |
 +-----------------------------+----+
-| min\_warning                |    |
+| min_warning                 |    |
 +-----------------------------+----+
-| delta\_time                 |    |
+| delta_time                  |    |
 +-----------------------------+----+
-| delta\_val                  |    |
+| delta_val                   |    |
 +-----------------------------+----+
 
 +-------------------------------------+-----------+
-| **Attribute Event Criteria **       |
+| **Attribute Event Criteria**        |
 +=====================================+===========+
 | Periodic                            | Not set   |
 +-------------------------------------+-----------+
@@ -1140,16 +1140,16 @@
 | Push DataReady event by user code   | false     |
 +-------------------------------------+-----------+
 
-\ ***Attribute SetPollingPeriod : ***
+**Attribute SetPollingPeriod:**   
 
 +-----------------------------+--------------------+
-| **Attribute Definition **   |
+| **Attribute Definition**    |
 +=============================+====================+
 | Attribute Type              | Scalar             |
 +-----------------------------+--------------------+
-| R/W Type                    | READ\_WRITE        |
+| R/W Type                    | READ_WRITE         |
 +-----------------------------+--------------------+
-| Data Type                   | Tango::DEV\_LONG   |
+| Data Type                   | Tango::DEV_LONG    |
 +-----------------------------+--------------------+
 | Display Level               | OPERATOR           |
 +-----------------------------+--------------------+
@@ -1169,7 +1169,7 @@
 +-----------------------------+--------------------+
 
 +-----------------------------+----+
-| **Attribute Properties **   |
+| **Attribute Properties**    |
 +=============================+====+
 | label                       |    |
 +-----------------------------+----+
@@ -1181,25 +1181,25 @@
 +-----------------------------+----+
 | format                      |    |
 +-----------------------------+----+
-| max\_value                  |    |
+| max_value                   |    |
 +-----------------------------+----+
-| min\_value                  |    |
+| min_value                   |    |
 +-----------------------------+----+
-| max\_alarm                  |    |
+| max_alarm                   |    |
 +-----------------------------+----+
-| min\_alarm                  |    |
+| min_alarm                   |    |
 +-----------------------------+----+
-| max\_warning                |    |
+| max_warning                 |    |
 +-----------------------------+----+
-| min\_warning                |    |
+| min_warning                 |    |
 +-----------------------------+----+
-| delta\_time                 |    |
+| delta_time                  |    |
 +-----------------------------+----+
-| delta\_val                  |    |
+| delta_val                   |    |
 +-----------------------------+----+
 
 +-------------------------------------+-----------+
-| **Attribute Event Criteria **       |
+| **Attribute Event Criteria**        |
 +=====================================+===========+
 | Periodic                            | Not set   |
 +-------------------------------------+-----------+
@@ -1228,16 +1228,16 @@
 | Push DataReady event by user code   | false     |
 +-------------------------------------+-----------+
 
-\ ***Attribute SetAbsoluteEvent : ***
+**Attribute SetAbsoluteEvent:**   
 
 +-----------------------------+----------------------+
-| **Attribute Definition **   |
+| **Attribute Definition**    |
 +=============================+======================+
 | Attribute Type              | Scalar               |
 +-----------------------------+----------------------+
-| R/W Type                    | READ\_WRITE          |
+| R/W Type                    | READ_WRITE           |
 +-----------------------------+----------------------+
-| Data Type                   | Tango::DEV\_DOUBLE   |
+| Data Type                   | Tango::DEV_DOUBLE    |
 +-----------------------------+----------------------+
 | Display Level               | OPERATOR             |
 +-----------------------------+----------------------+
@@ -1257,7 +1257,7 @@
 +-----------------------------+----------------------+
 
 +-----------------------------+----+
-| **Attribute Properties **   |
+| **Attribute Properties**    |
 +=============================+====+
 | label                       |    |
 +-----------------------------+----+
@@ -1269,25 +1269,25 @@
 +-----------------------------+----+
 | format                      |    |
 +-----------------------------+----+
-| max\_value                  |    |
+| max_value                   |    |
 +-----------------------------+----+
-| min\_value                  |    |
+| min_value                   |    |
 +-----------------------------+----+
-| max\_alarm                  |    |
+| max_alarm                   |    |
 +-----------------------------+----+
-| min\_alarm                  |    |
+| min_alarm                   |    |
 +-----------------------------+----+
-| max\_warning                |    |
+| max_warning                 |    |
 +-----------------------------+----+
-| min\_warning                |    |
+| min_warning                 |    |
 +-----------------------------+----+
-| delta\_time                 |    |
+| delta_time                  |    |
 +-----------------------------+----+
-| delta\_val                  |    |
+| delta_val                   |    |
 +-----------------------------+----+
 
 +-------------------------------------+-----------+
-| **Attribute Event Criteria **       |
+| **Attribute Event Criteria**        |
 +=====================================+===========+
 | Periodic                            | Not set   |
 +-------------------------------------+-----------+
@@ -1316,16 +1316,16 @@
 | Push DataReady event by user code   | false     |
 +-------------------------------------+-----------+
 
-\ ***Attribute SetRelativeEvent : ***
+**Attribute SetRelativeEvent:**   
 
 +-----------------------------+----------------------+
-| **Attribute Definition **   |
+| **Attribute Definition**    |
 +=============================+======================+
 | Attribute Type              | Scalar               |
 +-----------------------------+----------------------+
-| R/W Type                    | READ\_WRITE          |
+| R/W Type                    | READ_WRITE           |
 +-----------------------------+----------------------+
-| Data Type                   | Tango::DEV\_DOUBLE   |
+| Data Type                   | Tango::DEV_DOUBLE    |
 +-----------------------------+----------------------+
 | Display Level               | OPERATOR             |
 +-----------------------------+----------------------+
@@ -1345,7 +1345,7 @@
 +-----------------------------+----------------------+
 
 +-----------------------------+----+
-| **Attribute Properties **   |
+| **Attribute Properties**    |
 +=============================+====+
 | label                       |    |
 +-----------------------------+----+
@@ -1357,25 +1357,25 @@
 +-----------------------------+----+
 | format                      |    |
 +-----------------------------+----+
-| max\_value                  |    |
+| max_value                   |    |
 +-----------------------------+----+
-| min\_value                  |    |
+| min_value                   |    |
 +-----------------------------+----+
-| max\_alarm                  |    |
+| max_alarm                   |    |
 +-----------------------------+----+
-| min\_alarm                  |    |
+| min_alarm                   |    |
 +-----------------------------+----+
-| max\_warning                |    |
+| max_warning                 |    |
 +-----------------------------+----+
-| min\_warning                |    |
+| min_warning                 |    |
 +-----------------------------+----+
-| delta\_time                 |    |
+| delta_time                  |    |
 +-----------------------------+----+
-| delta\_val                  |    |
+| delta_val                   |    |
 +-----------------------------+----+
 
 +-------------------------------------+-----------+
-| **Attribute Event Criteria **       |
+| **Attribute Event Criteria**        |
 +=====================================+===========+
 | Periodic                            | Not set   |
 +-------------------------------------+-----------+
@@ -1404,16 +1404,16 @@
 | Push DataReady event by user code   | false     |
 +-------------------------------------+-----------+
 
-\ ***Attribute SetPeriodEvent : ***
+**Attribute SetPeriodEvent:**   
 
 +-----------------------------+--------------------+
-| **Attribute Definition **   |
+| **Attribute Definition**    |
 +=============================+====================+
 | Attribute Type              | Scalar             |
 +-----------------------------+--------------------+
-| R/W Type                    | READ\_WRITE        |
+| R/W Type                    | READ_WRITE         |
 +-----------------------------+--------------------+
-| Data Type                   | Tango::DEV\_LONG   |
+| Data Type                   | Tango::DEV_LONG    |
 +-----------------------------+--------------------+
 | Display Level               | OPERATOR           |
 +-----------------------------+--------------------+
@@ -1433,7 +1433,7 @@
 +-----------------------------+--------------------+
 
 +-----------------------------+----+
-| **Attribute Properties **   |
+| **Attribute Properties**    |
 +=============================+====+
 | label                       |    |
 +-----------------------------+----+
@@ -1445,25 +1445,25 @@
 +-----------------------------+----+
 | format                      |    |
 +-----------------------------+----+
-| max\_value                  |    |
+| max_value                   |    |
 +-----------------------------+----+
-| min\_value                  |    |
+| min_value                   |    |
 +-----------------------------+----+
-| max\_alarm                  |    |
+| max_alarm                   |    |
 +-----------------------------+----+
-| min\_alarm                  |    |
+| min_alarm                   |    |
 +-----------------------------+----+
-| max\_warning                |    |
+| max_warning                 |    |
 +-----------------------------+----+
-| min\_warning                |    |
+| min_warning                 |    |
 +-----------------------------+----+
-| delta\_time                 |    |
+| delta_time                  |    |
 +-----------------------------+----+
-| delta\_val                  |    |
+| delta_val                   |    |
 +-----------------------------+----+
 
 +-------------------------------------+-----------+
-| **Attribute Event Criteria **       |
+| **Attribute Event Criteria**        |
 +=====================================+===========+
 | Periodic                            | Not set   |
 +-------------------------------------+-----------+
@@ -1492,16 +1492,16 @@
 | Push DataReady event by user code   | false     |
 +-------------------------------------+-----------+
 
-\ ***Attribute SetCodePushedEvent : ***
+**Attribute SetCodePushedEvent:**   
 
 +-----------------------------+-----------------------+
-| **Attribute Definition **   |
+| **Attribute Definition**    |
 +=============================+=======================+
 | Attribute Type              | Scalar                |
 +-----------------------------+-----------------------+
-| R/W Type                    | READ\_WRITE           |
+| R/W Type                    | READ_WRITE            |
 +-----------------------------+-----------------------+
-| Data Type                   | Tango::DEV\_BOOLEAN   |
+| Data Type                   | Tango::DEV_BOOLEAN    |
 +-----------------------------+-----------------------+
 | Display Level               | OPERATOR              |
 +-----------------------------+-----------------------+
@@ -1521,7 +1521,7 @@
 +-----------------------------+-----------------------+
 
 +-----------------------------+----+
-| **Attribute Properties **   |
+| **Attribute Properties**    |
 +=============================+====+
 | label                       |    |
 +-----------------------------+----+
@@ -1533,25 +1533,25 @@
 +-----------------------------+----+
 | format                      |    |
 +-----------------------------+----+
-| max\_value                  |    |
+| max_value                   |    |
 +-----------------------------+----+
-| min\_value                  |    |
+| min_value                   |    |
 +-----------------------------+----+
-| max\_alarm                  |    |
+| max_alarm                   |    |
 +-----------------------------+----+
-| min\_alarm                  |    |
+| min_alarm                   |    |
 +-----------------------------+----+
-| max\_warning                |    |
+| max_warning                 |    |
 +-----------------------------+----+
-| min\_warning                |    |
+| min_warning                 |    |
 +-----------------------------+----+
-| delta\_time                 |    |
+| delta_time                  |    |
 +-----------------------------+----+
-| delta\_val                  |    |
+| delta_val                   |    |
 +-----------------------------+----+
 
 +-------------------------------------+-----------+
-| **Attribute Event Criteria **       |
+| **Attribute Event Criteria**        |
 +=====================================+===========+
 | Periodic                            | Not set   |
 +-------------------------------------+-----------+
@@ -1580,16 +1580,16 @@
 | Push DataReady event by user code   | false     |
 +-------------------------------------+-----------+
 
-\ ***Attribute SetArchiver : ***
+**Attribute SetArchiver:**   
 
 +-----------------------------+----------------------+
-| **Attribute Definition **   |
+| **Attribute Definition**    |
 +=============================+======================+
 | Attribute Type              | Scalar               |
 +-----------------------------+----------------------+
-| R/W Type                    | READ\_WRITE          |
+| R/W Type                    | READ_WRITE           |
 +-----------------------------+----------------------+
-| Data Type                   | Tango::DEV\_STRING   |
+| Data Type                   | Tango::DEV_STRING    |
 +-----------------------------+----------------------+
 | Display Level               | OPERATOR             |
 +-----------------------------+----------------------+
@@ -1609,7 +1609,7 @@
 +-----------------------------+----------------------+
 
 +-----------------------------+----+
-| **Attribute Properties **   |
+| **Attribute Properties**    |
 +=============================+====+
 | label                       |    |
 +-----------------------------+----+
@@ -1621,25 +1621,25 @@
 +-----------------------------+----+
 | format                      |    |
 +-----------------------------+----+
-| max\_value                  |    |
+| max_value                   |    |
 +-----------------------------+----+
-| min\_value                  |    |
+| min_value                   |    |
 +-----------------------------+----+
-| max\_alarm                  |    |
+| max_alarm                   |    |
 +-----------------------------+----+
-| min\_alarm                  |    |
+| min_alarm                   |    |
 +-----------------------------+----+
-| max\_warning                |    |
+| max_warning                 |    |
 +-----------------------------+----+
-| min\_warning                |    |
+| min_warning                 |    |
 +-----------------------------+----+
-| delta\_time                 |    |
+| delta_time                  |    |
 +-----------------------------+----+
-| delta\_val                  |    |
+| delta_val                   |    |
 +-----------------------------+----+
 
 +-------------------------------------+-----------+
-| **Attribute Event Criteria **       |
+| **Attribute Event Criteria**        |
 +=====================================+===========+
 | Periodic                            | Not set   |
 +-------------------------------------+-----------+
@@ -1668,18 +1668,18 @@
 | Push DataReady event by user code   | false     |
 +-------------------------------------+-----------+
 
-\ ***Attribute AttributeMaxStoreTime : ***
+**Attribute AttributeMaxStoreTime:**   
 
     Maximum storing time
 
 +-----------------------------+----------------------+
-| **Attribute Definition **   |
+| **Attribute Definition**    |
 +=============================+======================+
 | Attribute Type              | Scalar               |
 +-----------------------------+----------------------+
 | R/W Type                    | READ                 |
 +-----------------------------+----------------------+
-| Data Type                   | Tango::DEV\_DOUBLE   |
+| Data Type                   | Tango::DEV_DOUBLE    |
 +-----------------------------+----------------------+
 | Display Level               | OPERATOR             |
 +-----------------------------+----------------------+
@@ -1697,7 +1697,7 @@
 +-----------------------------+----------------------+
 
 +-----------------------------+-----+
-| **Attribute Properties **   |
+| **Attribute Properties**    |
 +=============================+=====+
 | label                       |     |
 +-----------------------------+-----+
@@ -1709,25 +1709,25 @@
 +-----------------------------+-----+
 | format                      |     |
 +-----------------------------+-----+
-| max\_value                  |     |
+| max_value                   |     |
 +-----------------------------+-----+
-| min\_value                  |     |
+| min_value                   |     |
 +-----------------------------+-----+
-| max\_alarm                  |     |
+| max_alarm                   |     |
 +-----------------------------+-----+
-| min\_alarm                  |     |
+| min_alarm                   |     |
 +-----------------------------+-----+
-| max\_warning                |     |
+| max_warning                 |     |
 +-----------------------------+-----+
-| min\_warning                |     |
+| min_warning                 |     |
 +-----------------------------+-----+
-| delta\_time                 |     |
+| delta_time                  |     |
 +-----------------------------+-----+
-| delta\_val                  |     |
+| delta_val                   |     |
 +-----------------------------+-----+
 
 +-------------------------------------+-----------+
-| **Attribute Event Criteria **       |
+| **Attribute Event Criteria**        |
 +=====================================+===========+
 | Periodic                            | Not set   |
 +-------------------------------------+-----------+
@@ -1756,18 +1756,18 @@
 | Push DataReady event by user code   | false     |
 +-------------------------------------+-----------+
 
-\ ***Attribute AttributeMinStoreTime : ***
+**Attribute AttributeMinStoreTime:**   
 
     Minimum storing time
 
 +-----------------------------+----------------------+
-| **Attribute Definition **   |
+| **Attribute Definition**    |
 +=============================+======================+
 | Attribute Type              | Scalar               |
 +-----------------------------+----------------------+
 | R/W Type                    | READ                 |
 +-----------------------------+----------------------+
-| Data Type                   | Tango::DEV\_DOUBLE   |
+| Data Type                   | Tango::DEV_DOUBLE    |
 +-----------------------------+----------------------+
 | Display Level               | OPERATOR             |
 +-----------------------------+----------------------+
@@ -1785,7 +1785,7 @@
 +-----------------------------+----------------------+
 
 +-----------------------------+-----+
-| **Attribute Properties **   |
+| **Attribute Properties**    |
 +=============================+=====+
 | label                       |     |
 +-----------------------------+-----+
@@ -1797,25 +1797,25 @@
 +-----------------------------+-----+
 | format                      |     |
 +-----------------------------+-----+
-| max\_value                  |     |
+| max_value                   |     |
 +-----------------------------+-----+
-| min\_value                  |     |
+| min_value                   |     |
 +-----------------------------+-----+
-| max\_alarm                  |     |
+| max_alarm                   |     |
 +-----------------------------+-----+
-| min\_alarm                  |     |
+| min_alarm                   |     |
 +-----------------------------+-----+
-| max\_warning                |     |
+| max_warning                 |     |
 +-----------------------------+-----+
-| min\_warning                |     |
+| min_warning                 |     |
 +-----------------------------+-----+
-| delta\_time                 |     |
+| delta_time                  |     |
 +-----------------------------+-----+
-| delta\_val                  |     |
+| delta_val                   |     |
 +-----------------------------+-----+
 
 +-------------------------------------+-----------+
-| **Attribute Event Criteria **       |
+| **Attribute Event Criteria**        |
 +=====================================+===========+
 | Periodic                            | Not set   |
 +-------------------------------------+-----------+
@@ -1844,18 +1844,18 @@
 | Push DataReady event by user code   | false     |
 +-------------------------------------+-----------+
 
-\ ***Attribute AttributeMaxProcessingTime : ***
+**Attribute AttributeMaxProcessingTime:**   
 
     Maximum processing (from event reception to storage) time
 
 +-----------------------------+----------------------+
-| **Attribute Definition **   |
+| **Attribute Definition**    |
 +=============================+======================+
 | Attribute Type              | Scalar               |
 +-----------------------------+----------------------+
 | R/W Type                    | READ                 |
 +-----------------------------+----------------------+
-| Data Type                   | Tango::DEV\_DOUBLE   |
+| Data Type                   | Tango::DEV_DOUBLE    |
 +-----------------------------+----------------------+
 | Display Level               | OPERATOR             |
 +-----------------------------+----------------------+
@@ -1873,7 +1873,7 @@
 +-----------------------------+----------------------+
 
 +-----------------------------+-----+
-| **Attribute Properties **   |
+| **Attribute Properties**    |
 +=============================+=====+
 | label                       |     |
 +-----------------------------+-----+
@@ -1885,25 +1885,25 @@
 +-----------------------------+-----+
 | format                      |     |
 +-----------------------------+-----+
-| max\_value                  |     |
+| max_value                   |     |
 +-----------------------------+-----+
-| min\_value                  |     |
+| min_value                   |     |
 +-----------------------------+-----+
-| max\_alarm                  |     |
+| max_alarm                   |     |
 +-----------------------------+-----+
-| min\_alarm                  |     |
+| min_alarm                   |     |
 +-----------------------------+-----+
-| max\_warning                |     |
+| max_warning                 |     |
 +-----------------------------+-----+
-| min\_warning                |     |
+| min_warning                 |     |
 +-----------------------------+-----+
-| delta\_time                 |     |
+| delta_time                  |     |
 +-----------------------------+-----+
-| delta\_val                  |     |
+| delta_val                   |     |
 +-----------------------------+-----+
 
 +-------------------------------------+-----------+
-| **Attribute Event Criteria **       |
+| **Attribute Event Criteria**        |
 +=====================================+===========+
 | Periodic                            | Not set   |
 +-------------------------------------+-----------+
@@ -1932,18 +1932,18 @@
 | Push DataReady event by user code   | false     |
 +-------------------------------------+-----------+
 
-\ ***Attribute AttributeMinProcessingTime : ***
+**Attribute AttributeMinProcessingTime:**   
 
     Minimum processing (from event reception to storage) time
 
 +-----------------------------+----------------------+
-| **Attribute Definition **   |
+| **Attribute Definition**    |
 +=============================+======================+
 | Attribute Type              | Scalar               |
 +-----------------------------+----------------------+
 | R/W Type                    | READ                 |
 +-----------------------------+----------------------+
-| Data Type                   | Tango::DEV\_DOUBLE   |
+| Data Type                   | Tango::DEV_DOUBLE    |
 +-----------------------------+----------------------+
 | Display Level               | OPERATOR             |
 +-----------------------------+----------------------+
@@ -1961,7 +1961,7 @@
 +-----------------------------+----------------------+
 
 +-----------------------------+-----+
-| **Attribute Properties **   |
+| **Attribute Properties**    |
 +=============================+=====+
 | label                       |     |
 +-----------------------------+-----+
@@ -1973,25 +1973,25 @@
 +-----------------------------+-----+
 | format                      |     |
 +-----------------------------+-----+
-| max\_value                  |     |
+| max_value                   |     |
 +-----------------------------+-----+
-| min\_value                  |     |
+| min_value                   |     |
 +-----------------------------+-----+
-| max\_alarm                  |     |
+| max_alarm                   |     |
 +-----------------------------+-----+
-| min\_alarm                  |     |
+| min_alarm                   |     |
 +-----------------------------+-----+
-| max\_warning                |     |
+| max_warning                 |     |
 +-----------------------------+-----+
-| min\_warning                |     |
+| min_warning                 |     |
 +-----------------------------+-----+
-| delta\_time                 |     |
+| delta_time                  |     |
 +-----------------------------+-----+
-| delta\_val                  |     |
+| delta_val                   |     |
 +-----------------------------+-----+
 
 +-------------------------------------+-----------+
-| **Attribute Event Criteria **       |
+| **Attribute Event Criteria**        |
 +=====================================+===========+
 | Periodic                            | Not set   |
 +-------------------------------------+-----------+
@@ -2020,18 +2020,18 @@
 | Push DataReady event by user code   | false     |
 +-------------------------------------+-----------+
 
-\ ***Attribute AttributeRecordFreq : ***
+**Attribute AttributeRecordFreq:**   
 
     Record frequency
 
 +-----------------------------+----------------------+
-| **Attribute Definition **   |
+| **Attribute Definition**    |
 +=============================+======================+
 | Attribute Type              | Scalar               |
 +-----------------------------+----------------------+
 | R/W Type                    | READ                 |
 +-----------------------------+----------------------+
-| Data Type                   | Tango::DEV\_DOUBLE   |
+| Data Type                   | Tango::DEV_DOUBLE    |
 +-----------------------------+----------------------+
 | Display Level               | OPERATOR             |
 +-----------------------------+----------------------+
@@ -2049,7 +2049,7 @@
 +-----------------------------+----------------------+
 
 +-----------------------------+-------------+
-| **Attribute Properties **   |
+| **Attribute Properties**    |
 +=============================+=============+
 | label                       |             |
 +-----------------------------+-------------+
@@ -2061,25 +2061,25 @@
 +-----------------------------+-------------+
 | format                      |             |
 +-----------------------------+-------------+
-| max\_value                  |             |
+| max_value                   |             |
 +-----------------------------+-------------+
-| min\_value                  |             |
+| min_value                   |             |
 +-----------------------------+-------------+
-| max\_alarm                  |             |
+| max_alarm                   |             |
 +-----------------------------+-------------+
-| min\_alarm                  |             |
+| min_alarm                   |             |
 +-----------------------------+-------------+
-| max\_warning                |             |
+| max_warning                 |             |
 +-----------------------------+-------------+
-| min\_warning                |             |
+| min_warning                 |             |
 +-----------------------------+-------------+
-| delta\_time                 |             |
+| delta_time                  |             |
 +-----------------------------+-------------+
-| delta\_val                  |             |
+| delta_val                   |             |
 +-----------------------------+-------------+
 
 +-------------------------------------+-----------+
-| **Attribute Event Criteria **       |
+| **Attribute Event Criteria**        |
 +=====================================+===========+
 | Periodic                            | Not set   |
 +-------------------------------------+-----------+
@@ -2108,18 +2108,18 @@
 | Push DataReady event by user code   | false     |
 +-------------------------------------+-----------+
 
-\ ***Attribute AttributeFailureFreq : ***
+**Attribute AttributeFailureFreq:**   
 
     Failure frequency
 
 +-----------------------------+----------------------+
-| **Attribute Definition **   |
+| **Attribute Definition**    |
 +=============================+======================+
 | Attribute Type              | Scalar               |
 +-----------------------------+----------------------+
 | R/W Type                    | READ                 |
 +-----------------------------+----------------------+
-| Data Type                   | Tango::DEV\_DOUBLE   |
+| Data Type                   | Tango::DEV_DOUBLE    |
 +-----------------------------+----------------------+
 | Display Level               | OPERATOR             |
 +-----------------------------+----------------------+
@@ -2137,7 +2137,7 @@
 +-----------------------------+----------------------+
 
 +-----------------------------+-------------+
-| **Attribute Properties **   |
+| **Attribute Properties**    |
 +=============================+=============+
 | label                       |             |
 +-----------------------------+-------------+
@@ -2149,25 +2149,25 @@
 +-----------------------------+-------------+
 | format                      |             |
 +-----------------------------+-------------+
-| max\_value                  |             |
+| max_value                   |             |
 +-----------------------------+-------------+
-| min\_value                  |             |
+| min_value                   |             |
 +-----------------------------+-------------+
-| max\_alarm                  |             |
+| max_alarm                   |             |
 +-----------------------------+-------------+
-| min\_alarm                  |             |
+| min_alarm                   |             |
 +-----------------------------+-------------+
-| max\_warning                |             |
+| max_warning                 |             |
 +-----------------------------+-------------+
-| min\_warning                |             |
+| min_warning                 |             |
 +-----------------------------+-------------+
-| delta\_time                 |             |
+| delta_time                  |             |
 +-----------------------------+-------------+
-| delta\_val                  |             |
+| delta_val                   |             |
 +-----------------------------+-------------+
 
 +-------------------------------------+-----------+
-| **Attribute Event Criteria **       |
+| **Attribute Event Criteria**        |
 +=====================================+===========+
 | Periodic                            | Not set   |
 +-------------------------------------+-----------+
@@ -2196,18 +2196,18 @@
 | Push DataReady event by user code   | false     |
 +-------------------------------------+-----------+
 
-\ ***Attribute AttributeStartedNumber : ***
+**Attribute AttributeStartedNumber:**   
 
     Number of archived attributes started
 
 +-----------------------------+--------------------+
-| **Attribute Definition **   |
+| **Attribute Definition**    |
 +=============================+====================+
 | Attribute Type              | Scalar             |
 +-----------------------------+--------------------+
 | R/W Type                    | READ               |
 +-----------------------------+--------------------+
-| Data Type                   | Tango::DEV\_LONG   |
+| Data Type                   | Tango::DEV_LONG    |
 +-----------------------------+--------------------+
 | Display Level               | OPERATOR           |
 +-----------------------------+--------------------+
@@ -2225,7 +2225,7 @@
 +-----------------------------+--------------------+
 
 +-----------------------------+----+
-| **Attribute Properties **   |
+| **Attribute Properties**    |
 +=============================+====+
 | label                       |    |
 +-----------------------------+----+
@@ -2237,25 +2237,25 @@
 +-----------------------------+----+
 | format                      |    |
 +-----------------------------+----+
-| max\_value                  |    |
+| max_value                   |    |
 +-----------------------------+----+
-| min\_value                  |    |
+| min_value                   |    |
 +-----------------------------+----+
-| max\_alarm                  |    |
+| max_alarm                   |    |
 +-----------------------------+----+
-| min\_alarm                  |    |
+| min_alarm                   |    |
 +-----------------------------+----+
-| max\_warning                |    |
+| max_warning                 |    |
 +-----------------------------+----+
-| min\_warning                |    |
+| min_warning                 |    |
 +-----------------------------+----+
-| delta\_time                 |    |
+| delta_time                  |    |
 +-----------------------------+----+
-| delta\_val                  |    |
+| delta_val                   |    |
 +-----------------------------+----+
 
 +-------------------------------------+-----------+
-| **Attribute Event Criteria **       |
+| **Attribute Event Criteria**        |
 +=====================================+===========+
 | Periodic                            | Not set   |
 +-------------------------------------+-----------+
@@ -2284,18 +2284,18 @@
 | Push DataReady event by user code   | false     |
 +-------------------------------------+-----------+
 
-\ ***Attribute AttributeStoppedNumber : ***
+**Attribute AttributeStoppedNumber:**   
 
     Number of archived attributes stopped
 
 +-----------------------------+--------------------+
-| **Attribute Definition **   |
+| **Attribute Definition**    |
 +=============================+====================+
 | Attribute Type              | Scalar             |
 +-----------------------------+--------------------+
 | R/W Type                    | READ               |
 +-----------------------------+--------------------+
-| Data Type                   | Tango::DEV\_LONG   |
+| Data Type                   | Tango::DEV_LONG    |
 +-----------------------------+--------------------+
 | Display Level               | OPERATOR           |
 +-----------------------------+--------------------+
@@ -2313,7 +2313,7 @@
 +-----------------------------+--------------------+
 
 +-----------------------------+----+
-| **Attribute Properties **   |
+| **Attribute Properties**    |
 +=============================+====+
 | label                       |    |
 +-----------------------------+----+
@@ -2325,25 +2325,25 @@
 +-----------------------------+----+
 | format                      |    |
 +-----------------------------+----+
-| max\_value                  |    |
+| max_value                   |    |
 +-----------------------------+----+
-| min\_value                  |    |
+| min_value                   |    |
 +-----------------------------+----+
-| max\_alarm                  |    |
+| max_alarm                   |    |
 +-----------------------------+----+
-| min\_alarm                  |    |
+| min_alarm                   |    |
 +-----------------------------+----+
-| max\_warning                |    |
+| max_warning                 |    |
 +-----------------------------+----+
-| min\_warning                |    |
+| min_warning                 |    |
 +-----------------------------+----+
-| delta\_time                 |    |
+| delta_time                  |    |
 +-----------------------------+----+
-| delta\_val                  |    |
+| delta_val                   |    |
 +-----------------------------+----+
 
 +-------------------------------------+-----------+
-| **Attribute Event Criteria **       |
+| **Attribute Event Criteria**        |
 +=====================================+===========+
 | Periodic                            | Not set   |
 +-------------------------------------+-----------+
@@ -2372,18 +2372,18 @@
 | Push DataReady event by user code   | false     |
 +-------------------------------------+-----------+
 
-\ ***Attribute AttributeMaxPendingNumber : ***
+**Attribute AttributeMaxPendingNumber:**   
 
     Max number of attributes waiting to be archived
 
 +-----------------------------+--------------------+
-| **Attribute Definition **   |
+| **Attribute Definition**    |
 +=============================+====================+
 | Attribute Type              | Scalar             |
 +-----------------------------+--------------------+
 | R/W Type                    | READ               |
 +-----------------------------+--------------------+
-| Data Type                   | Tango::DEV\_LONG   |
+| Data Type                   | Tango::DEV_LONG    |
 +-----------------------------+--------------------+
 | Display Level               | OPERATOR           |
 +-----------------------------+--------------------+
@@ -2401,13 +2401,13 @@
 +-----------------------------+--------------------+
 
 +-----------------------------+--------------------+
-| **Attribute Definition **   |
+| **Attribute Definition**    |
 +=============================+====================+
 | Attribute Type              | Scalar             |
 +-----------------------------+--------------------+
 | R/W Type                    | READ               |
 +-----------------------------+--------------------+
-| Data Type                   | Tango::DEV\_LONG   |
+| Data Type                   | Tango::DEV_LONG    |
 +-----------------------------+--------------------+
 | Display Level               | OPERATOR           |
 +-----------------------------+--------------------+
@@ -2425,7 +2425,7 @@
 +-----------------------------+--------------------+
 
 +-------------------------------------+-----------+
-| **Attribute Event Criteria **       |
+| **Attribute Event Criteria**        |
 +=====================================+===========+
 | Periodic                            | Not set   |
 +-------------------------------------+-----------+
@@ -2454,18 +2454,18 @@
 | Push DataReady event by user code   | false     |
 +-------------------------------------+-----------+
 
-\ ***Attribute AttributePausedNumber : ***
+**Attribute AttributePausedNumber:**   
 
     Number of archived attributes paused
 
 +-----------------------------+--------------------+
-| **Attribute Definition **   |
+| **Attribute Definition**    |
 +=============================+====================+
 | Attribute Type              | Scalar             |
 +-----------------------------+--------------------+
 | R/W Type                    | READ               |
 +-----------------------------+--------------------+
-| Data Type                   | Tango::DEV\_LONG   |
+| Data Type                   | Tango::DEV_LONG    |
 +-----------------------------+--------------------+
 | Display Level               | OPERATOR           |
 +-----------------------------+--------------------+
@@ -2483,7 +2483,7 @@
 +-----------------------------+--------------------+
 
 +-----------------------------+----+
-| **Attribute Properties **   |
+| **Attribute Properties**    |
 +=============================+====+
 | label                       |    |
 +-----------------------------+----+
@@ -2495,25 +2495,25 @@
 +-----------------------------+----+
 | format                      |    |
 +-----------------------------+----+
-| max\_value                  |    |
+| max_value                   |    |
 +-----------------------------+----+
-| min\_value                  |    |
+| min_value                   |    |
 +-----------------------------+----+
-| max\_alarm                  |    |
+| max_alarm                   |    |
 +-----------------------------+----+
-| min\_alarm                  |    |
+| min_alarm                   |    |
 +-----------------------------+----+
-| max\_warning                |    |
+| max_warning                 |    |
 +-----------------------------+----+
-| min\_warning                |    |
+| min_warning                 |    |
 +-----------------------------+----+
-| delta\_time                 |    |
+| delta_time                  |    |
 +-----------------------------+----+
-| delta\_val                  |    |
+| delta_val                   |    |
 +-----------------------------+----+
 
 +-------------------------------------+-----------+
-| **Attribute Event Criteria **       |
+| **Attribute Event Criteria**        |
 +=====================================+===========+
 | Periodic                            | Not set   |
 +-------------------------------------+-----------+
@@ -2542,18 +2542,18 @@
 | Push DataReady event by user code   | false     |
 +-------------------------------------+-----------+
 
-\ ***Attribute SetTTL : ***
+**Attribute SetTTL:**   
 
     Time To Live for temporary storage in hours
 
 +-----------------------------+---------------------+
-| **Attribute Definition **   |
+| **Attribute Definition**    |
 +=============================+=====================+
 | Attribute Type              | Scalar              |
 +-----------------------------+---------------------+
-| R/W Type                    | READ\_WRITE         |
+| R/W Type                    | READ_WRITE          |
 +-----------------------------+---------------------+
-| Data Type                   | Tango::DEV\_ULONG   |
+| Data Type                   | Tango::DEV_ULONG    |
 +-----------------------------+---------------------+
 | Display Level               | OPERATOR            |
 +-----------------------------+---------------------+
@@ -2573,7 +2573,7 @@
 +-----------------------------+---------------------+
 
 +-----------------------------+---------+
-| **Attribute Properties **   |
+| **Attribute Properties**    |
 +=============================+=========+
 | label                       |         |
 +-----------------------------+---------+
@@ -2585,25 +2585,25 @@
 +-----------------------------+---------+
 | format                      |         |
 +-----------------------------+---------+
-| max\_value                  |         |
+| max_value                   |         |
 +-----------------------------+---------+
-| min\_value                  |         |
+| min_value                   |         |
 +-----------------------------+---------+
-| max\_alarm                  |         |
+| max_alarm                   |         |
 +-----------------------------+---------+
-| min\_alarm                  |         |
+| min_alarm                   |         |
 +-----------------------------+---------+
-| max\_warning                |         |
+| max_warning                 |         |
 +-----------------------------+---------+
-| min\_warning                |         |
+| min_warning                 |         |
 +-----------------------------+---------+
-| delta\_time                 |         |
+| delta_time                  |         |
 +-----------------------------+---------+
-| delta\_val                  |         |
+| delta_val                   |         |
 +-----------------------------+---------+
 
 +-------------------------------------+-----------+
-| **Attribute Event Criteria **       |
+| **Attribute Event Criteria**        |
 +=====================================+===========+
 | Periodic                            | Not set   |
 +-------------------------------------+-----------+
@@ -2632,18 +2632,18 @@
 | Push DataReady event by user code   | false     |
 +-------------------------------------+-----------+
 
-\ ***Attribute SetStrategy : ***
+**Attribute SetStrategy:**   
 
-    list of strategies separated with \|
+    list of strategies separated with | 
 
 +-----------------------------+----------------------+
-| **Attribute Definition **   |
+| **Attribute Definition**    |
 +=============================+======================+
 | Attribute Type              | Scalar               |
 +-----------------------------+----------------------+
-| R/W Type                    | READ\_WRITE          |
+| R/W Type                    | READ_WRITE           |
 +-----------------------------+----------------------+
-| Data Type                   | Tango::DEV\_STRING   |
+| Data Type                   | Tango::DEV_STRING    |
 +-----------------------------+----------------------+
 | Display Level               | OPERATOR             |
 +-----------------------------+----------------------+
@@ -2663,13 +2663,13 @@
 +-----------------------------+----------------------+
 
 +-----------------------------+----------------------+
-| **Attribute Definition **   |
+| **Attribute Definition**    |
 +=============================+======================+
 | Attribute Type              | Scalar               |
 +-----------------------------+----------------------+
-| R/W Type                    | READ\_WRITE          |
+| R/W Type                    | READ_WRITE           |
 +-----------------------------+----------------------+
-| Data Type                   | Tango::DEV\_STRING   |
+| Data Type                   | Tango::DEV_STRING    |
 +-----------------------------+----------------------+
 | Display Level               | OPERATOR             |
 +-----------------------------+----------------------+
@@ -2689,7 +2689,7 @@
 +-----------------------------+----------------------+
 
 +-------------------------------------+-----------+
-| **Attribute Event Criteria **       |
+| **Attribute Event Criteria**        |
 +=====================================+===========+
 | Periodic                            | Not set   |
 +-------------------------------------+-----------+
@@ -2718,16 +2718,16 @@
 | Push DataReady event by user code   | false     |
 +-------------------------------------+-----------+
 
-\ ***Attribute Context : ***
+**Attribute Context:**   
 
 +-----------------------------+----------------------+
-| **Attribute Definition **   |
+| **Attribute Definition**    |
 +=============================+======================+
 | Attribute Type              | Scalar               |
 +-----------------------------+----------------------+
 | R/W Type                    | WRITE                |
 +-----------------------------+----------------------+
-| Data Type                   | Tango::DEV\_STRING   |
+| Data Type                   | Tango::DEV_STRING    |
 +-----------------------------+----------------------+
 | Display Level               | EXPERT               |
 +-----------------------------+----------------------+
@@ -2745,7 +2745,7 @@
 +-----------------------------+----------------------+
 
 +-----------------------------+----+
-| **Attribute Properties **   |
+| **Attribute Properties**    |
 +=============================+====+
 | label                       |    |
 +-----------------------------+----+
@@ -2757,25 +2757,25 @@
 +-----------------------------+----+
 | format                      |    |
 +-----------------------------+----+
-| max\_value                  |    |
+| max_value                   |    |
 +-----------------------------+----+
-| min\_value                  |    |
+| min_value                   |    |
 +-----------------------------+----+
-| max\_alarm                  |    |
+| max_alarm                   |    |
 +-----------------------------+----+
-| min\_alarm                  |    |
+| min_alarm                   |    |
 +-----------------------------+----+
-| max\_warning                |    |
+| max_warning                 |    |
 +-----------------------------+----+
-| min\_warning                |    |
+| min_warning                 |    |
 +-----------------------------+----+
-| delta\_time                 |    |
+| delta_time                  |    |
 +-----------------------------+----+
-| delta\_val                  |    |
+| delta_val                   |    |
 +-----------------------------+----+
 
 +-------------------------------------+-----------+
-| **Attribute Event Criteria **       |
+| **Attribute Event Criteria**        |
 +=====================================+===========+
 | Periodic                            | Not set   |
 +-------------------------------------+-----------+
@@ -2804,16 +2804,16 @@
 | Push DataReady event by user code   | false     |
 +-------------------------------------+-----------+
 
-\ ***Attribute ArchiverList : ***
+**Attribute ArchiverList:**   
 
 +-----------------------------+----------------------+
-| **Attribute Definition **   |
+| **Attribute Definition**    |
 +=============================+======================+
 | Attribute Type              | Spectrum ( 1000 )    |
 +-----------------------------+----------------------+
 | R/W Type                    | READ                 |
 +-----------------------------+----------------------+
-| Data Type                   | Tango::DEV\_STRING   |
+| Data Type                   | Tango::DEV_STRING    |
 +-----------------------------+----------------------+
 | Display Level               | OPERATOR             |
 +-----------------------------+----------------------+
@@ -2831,7 +2831,7 @@
 +-----------------------------+----------------------+
 
 +-----------------------------+----+
-| **Attribute Properties **   |
+| **Attribute Properties**    |
 +=============================+====+
 | label                       |    |
 +-----------------------------+----+
@@ -2843,25 +2843,25 @@
 +-----------------------------+----+
 | format                      |    |
 +-----------------------------+----+
-| max\_value                  |    |
+| max_value                   |    |
 +-----------------------------+----+
-| min\_value                  |    |
+| min_value                   |    |
 +-----------------------------+----+
-| max\_alarm                  |    |
+| max_alarm                   |    |
 +-----------------------------+----+
-| min\_alarm                  |    |
+| min_alarm                   |    |
 +-----------------------------+----+
-| max\_warning                |    |
+| max_warning                 |    |
 +-----------------------------+----+
-| min\_warning                |    |
+| min_warning                 |    |
 +-----------------------------+----+
-| delta\_time                 |    |
+| delta_time                  |    |
 +-----------------------------+----+
-| delta\_val                  |    |
+| delta_val                   |    |
 +-----------------------------+----+
 
 +-------------------------------------+-----------+
-| **Attribute Event Criteria **       |
+| **Attribute Event Criteria**        |
 +=====================================+===========+
 | Periodic                            | Not set   |
 +-------------------------------------+-----------+
@@ -2890,16 +2890,16 @@
 | Push DataReady event by user code   | false     |
 +-------------------------------------+-----------+
 
-\ ***Attribute ArchiverStatus : ***
+**Attribute ArchiverStatus:**   
 
 +-----------------------------+----------------------+
-| **Attribute Definition **   |
+| **Attribute Definition**    |
 +=============================+======================+
 | Attribute Type              | Spectrum ( 1000 )    |
 +-----------------------------+----------------------+
 | R/W Type                    | READ                 |
 +-----------------------------+----------------------+
-| Data Type                   | Tango::DEV\_STRING   |
+| Data Type                   | Tango::DEV_STRING    |
 +-----------------------------+----------------------+
 | Display Level               | OPERATOR             |
 +-----------------------------+----------------------+
@@ -2917,7 +2917,7 @@
 +-----------------------------+----------------------+
 
 +-----------------------------+----+
-| **Attribute Properties **   |
+| **Attribute Properties**    |
 +=============================+====+
 | label                       |    |
 +-----------------------------+----+
@@ -2929,25 +2929,25 @@
 +-----------------------------+----+
 | format                      |    |
 +-----------------------------+----+
-| max\_value                  |    |
+| max_value                   |    |
 +-----------------------------+----+
-| min\_value                  |    |
+| min_value                   |    |
 +-----------------------------+----+
-| max\_alarm                  |    |
+| max_alarm                   |    |
 +-----------------------------+----+
-| min\_alarm                  |    |
+| min_alarm                   |    |
 +-----------------------------+----+
-| max\_warning                |    |
+| max_warning                 |    |
 +-----------------------------+----+
-| min\_warning                |    |
+| min_warning                 |    |
 +-----------------------------+----+
-| delta\_time                 |    |
+| delta_time                  |    |
 +-----------------------------+----+
-| delta\_val                  |    |
+| delta_val                   |    |
 +-----------------------------+----+
 
 +-------------------------------------+-----------+
-| **Attribute Event Criteria **       |
+| **Attribute Event Criteria**        |
 +=====================================+===========+
 | Periodic                            | Not set   |
 +-------------------------------------+-----------+
@@ -2976,18 +2976,18 @@
 | Push DataReady event by user code   | false     |
 +-------------------------------------+-----------+
 
-\ ***Attribute ArchiverStatisticsResetTime : ***
+**Attribute ArchiverStatisticsResetTime:**   
 
     Seconds elapsed since last statistics reset
 
 +-----------------------------+----------------------+
-| **Attribute Definition **   |
+| **Attribute Definition**    |
 +=============================+======================+
 | Attribute Type              | Spectrum ( 1000 )    |
 +-----------------------------+----------------------+
 | R/W Type                    | READ                 |
 +-----------------------------+----------------------+
-| Data Type                   | Tango::DEV\_DOUBLE   |
+| Data Type                   | Tango::DEV_DOUBLE    |
 +-----------------------------+----------------------+
 | Display Level               | OPERATOR             |
 +-----------------------------+----------------------+
@@ -3005,7 +3005,7 @@
 +-----------------------------+----------------------+
 
 +-----------------------------+-----+
-| **Attribute Properties **   |
+| **Attribute Properties**    |
 +=============================+=====+
 | label                       |     |
 +-----------------------------+-----+
@@ -3017,25 +3017,25 @@
 +-----------------------------+-----+
 | format                      |     |
 +-----------------------------+-----+
-| max\_value                  |     |
+| max_value                   |     |
 +-----------------------------+-----+
-| min\_value                  |     |
+| min_value                   |     |
 +-----------------------------+-----+
-| max\_alarm                  |     |
+| max_alarm                   |     |
 +-----------------------------+-----+
-| min\_alarm                  |     |
+| min_alarm                   |     |
 +-----------------------------+-----+
-| max\_warning                |     |
+| max_warning                 |     |
 +-----------------------------+-----+
-| min\_warning                |     |
+| min_warning                 |     |
 +-----------------------------+-----+
-| delta\_time                 |     |
+| delta_time                  |     |
 +-----------------------------+-----+
-| delta\_val                  |     |
+| delta_val                   |     |
 +-----------------------------+-----+
 
 +-------------------------------------+-----------+
-| **Attribute Event Criteria **       |
+| **Attribute Event Criteria**        |
 +=====================================+===========+
 | Periodic                            | Not set   |
 +-------------------------------------+-----------+
@@ -3064,18 +3064,18 @@
 | Push DataReady event by user code   | false     |
 +-------------------------------------+-----------+
 
-\ ***Attribute ArchiverContext : ***
+**Attribute ArchiverContext:**   
 
     Archiver context
 
 +-----------------------------+----------------------+
-| **Attribute Definition **   |
+| **Attribute Definition**    |
 +=============================+======================+
 | Attribute Type              | Spectrum ( 1000 )    |
 +-----------------------------+----------------------+
 | R/W Type                    | READ                 |
 +-----------------------------+----------------------+
-| Data Type                   | Tango::DEV\_STRING   |
+| Data Type                   | Tango::DEV_STRING    |
 +-----------------------------+----------------------+
 | Display Level               | OPERATOR             |
 +-----------------------------+----------------------+
@@ -3093,7 +3093,7 @@
 +-----------------------------+----------------------+
 
 +-----------------------------+-----+
-| **Attribute Properties **   |
+| **Attribute Properties**    |
 +=============================+=====+
 | label                       |     |
 +-----------------------------+-----+
@@ -3105,25 +3105,25 @@
 +-----------------------------+-----+
 | format                      |     |
 +-----------------------------+-----+
-| max\_value                  |     |
+| max_value                   |     |
 +-----------------------------+-----+
-| min\_value                  |     |
+| min_value                   |     |
 +-----------------------------+-----+
-| max\_alarm                  |     |
+| max_alarm                   |     |
 +-----------------------------+-----+
-| min\_alarm                  |     |
+| min_alarm                   |     |
 +-----------------------------+-----+
-| max\_warning                |     |
+| max_warning                 |     |
 +-----------------------------+-----+
-| min\_warning                |     |
+| min_warning                 |     |
 +-----------------------------+-----+
-| delta\_time                 |     |
+| delta_time                  |     |
 +-----------------------------+-----+
-| delta\_val                  |     |
+| delta_val                   |     |
 +-----------------------------+-----+
 
 +-------------------------------------+-----------+
-| **Attribute Event Criteria **       |
+| **Attribute Event Criteria**        |
 +=====================================+===========+
 | Periodic                            | Not set   |
 +-------------------------------------+-----------+
@@ -3152,16 +3152,16 @@
 | Push DataReady event by user code   | false     |
 +-------------------------------------+-----------+
 
-\ ***Attribute ContextsList : ***
+**Attribute ContextsList:**   
 
 +-----------------------------+----------------------+
-| **Attribute Definition **   |
+| **Attribute Definition**    |
 +=============================+======================+
 | Attribute Type              | Spectrum ( 1000 )    |
 +-----------------------------+----------------------+
 | R/W Type                    | READ                 |
 +-----------------------------+----------------------+
-| Data Type                   | Tango::DEV\_STRING   |
+| Data Type                   | Tango::DEV_STRING    |
 +-----------------------------+----------------------+
 | Display Level               | EXPERT               |
 +-----------------------------+----------------------+
@@ -3179,7 +3179,7 @@
 +-----------------------------+----------------------+
 
 +-----------------------------+----+
-| **Attribute Properties **   |
+| **Attribute Properties**    |
 +=============================+====+
 | label                       |    |
 +-----------------------------+----+
@@ -3191,25 +3191,25 @@
 +-----------------------------+----+
 | format                      |    |
 +-----------------------------+----+
-| max\_value                  |    |
+| max_value                   |    |
 +-----------------------------+----+
-| min\_value                  |    |
+| min_value                   |    |
 +-----------------------------+----+
-| max\_alarm                  |    |
+| max_alarm                   |    |
 +-----------------------------+----+
-| min\_alarm                  |    |
+| min_alarm                   |    |
 +-----------------------------+----+
-| max\_warning                |    |
+| max_warning                 |    |
 +-----------------------------+----+
-| min\_warning                |    |
+| min_warning                 |    |
 +-----------------------------+----+
-| delta\_time                 |    |
+| delta_time                  |    |
 +-----------------------------+----+
-| delta\_val                  |    |
+| delta_val                   |    |
 +-----------------------------+----+
 
 +-------------------------------------+-----------+
-| **Attribute Event Criteria **       |
+| **Attribute Event Criteria**        |
 +=====================================+===========+
 | Periodic                            | Not set   |
 +-------------------------------------+-----------+
@@ -3239,9 +3239,9 @@
 +-------------------------------------+-----------+
 
 +---------------------------------------------+-------------------------------------+
-| **HdbConfigurationManager Class States **   |
+| **HdbConfigurationManager Class States**    |
 +=============================================+=====================================+
-| **Name **                                   | **Description **                    |
+| **Name**                                    | **Description**                     |
 +---------------------------------------------+-------------------------------------+
 | ON                                          |                                     |
 +---------------------------------------------+-------------------------------------+
