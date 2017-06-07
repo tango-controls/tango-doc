@@ -110,17 +110,17 @@ HdbConfigurationManager Tango Cpp Class
 +-------------------------------------------------------------------------------------------------+
 |  **HdbConfigurationManager Class Identification:**                                              |
 +========================================================+========================================+
-| Contact                                                | : at elettra.eu - graziano.scalamera   |
+| Contact                                                |   at elettra.eu - graziano.scalamera   |
 +--------------------------------------------------------+----------------------------------------+
-| Class Family                                           | : Miscellaneous                        |
+| Class Family                                           |   Miscellaneous                        |
 +--------------------------------------------------------+----------------------------------------+
-| Platform                                               | : Unix Like                            |
+| Platform                                               |   Unix Like                            |
 +--------------------------------------------------------+----------------------------------------+
-| Bus                                                    | : Not Applicable                       |
+| Bus                                                    |   Not Applicable                       |
 +--------------------------------------------------------+----------------------------------------+
-| Manufacturer                                           | : none                                 |
+| Manufacturer                                           |   none                                 |
 +--------------------------------------------------------+----------------------------------------+
-| Manufacturer ref.                                      | :                                      |
+| Manufacturer ref.                                      |                                        |
 +--------------------------------------------------------+----------------------------------------+
 
 +--------------------------------------------------------------------------------------------------+
@@ -202,8 +202,8 @@ HdbConfigurationManager Tango Cpp Class
 
 **Command State:**   
 
-    This command gets the device state (stored in its device_state  data
-    member) and returns it to the caller.
+This command gets the device state (stored in its device_state  data
+member) and returns it to the caller.
 
 +----------------------------------------------------------------+
 | **State Definition**                                           |
@@ -227,8 +227,8 @@ HdbConfigurationManager Tango Cpp Class
 
 **Command Status:**   
 
-    This command gets the device status (stored in its device_status 
-    data member) and returns it to the caller.
+This command gets the device status (stored in its device_status
+data member) and returns it to the caller.
 
 +--------------------------------------------------------------------------+
 | **Status Definition**                                                    |
@@ -276,7 +276,7 @@ HdbConfigurationManager Tango Cpp Class
 
 **Command AttributeRemove:**   
 
-    Remove attribute from configuration.
+Remove attribute from configuration.
 
 +-----------------------------------------------------------------------------+
 | **AttributeRemove Definition**                                              |
@@ -300,7 +300,7 @@ HdbConfigurationManager Tango Cpp Class
 
 **Command AttributeStart:**   
 
-    Start archiving single attribute
+Start archiving single attribute
 
 +----------------------------------------------------------------------------+
 | **AttributeStart Definition**                                              |
@@ -324,7 +324,7 @@ HdbConfigurationManager Tango Cpp Class
 
 **Command AttributeStop:**   
 
-    Stop archiving single attribute
+Stop archiving single attribute
 
 +---------------------------------------------------------------------------+
 | **AttributeStop Definition**                                              |
@@ -348,7 +348,7 @@ HdbConfigurationManager Tango Cpp Class
 
 **Command ArchiverAdd:**   
 
-    Add a new archiver to archive in HDB.
+Add a new archiver to archive in HDB.
 
 +------------------------------------------------------------------------+
 | **ArchiverAdd Definition**                                             |
@@ -372,9 +372,8 @@ HdbConfigurationManager Tango Cpp Class
 
 **Command AttributeAssign:**   
 
-    | Assigne attribute to archiver.
-    | If Strategy is not specified use DefaultStrategy of the target
-      archiver.
+Assigne attribute to archiver.
+If Strategy is not specified use DefaultStrategy of the target archiver.
 
 +----------------------------------------------------------------------------------------------+
 | **AttributeAssign Definition**                                                               |
@@ -400,7 +399,7 @@ HdbConfigurationManager Tango Cpp Class
 
 **Command AttributeStatus:**   
 
-    Read an attribute status
+Read an attribute status
 
 +--------------------------------------------------------------------------------------------------------+
 | **AttributeStatus Definition**                                                                         |
@@ -424,7 +423,7 @@ HdbConfigurationManager Tango Cpp Class
 
 **Command AttributeGetArchiver:**   
 
-    Return archiver associated to attribute.
+Return archiver associated to attribute.
 
 +----------------------------------------------------------------------------------+
 | **AttributeGetArchiver Definition**                                              |
@@ -448,7 +447,7 @@ HdbConfigurationManager Tango Cpp Class
 
 **Command AttributeSearch:**   
 
-    Return list of attributes containing input argument
+Return list of attributes containing input argument
 
 +---------------------------------------------------------------------------------------------------+
 | **AttributeSearch Definition**                                                                    |
@@ -472,7 +471,7 @@ HdbConfigurationManager Tango Cpp Class
 
 **Command ArchiverRemove:**   
 
-    Remove archiver instance.
+Remove archiver instance.
 
 +---------------------------------------------------------------------------+
 | **ArchiverRemove Definition**                                             |
@@ -496,7 +495,7 @@ HdbConfigurationManager Tango Cpp Class
 
 **Command ResetStatistics:**   
 
-    Reset statistic counters
+Reset statistic counters
 
 +---------------------------------------------------------------+
 | **ResetStatistics Definition**                                |
@@ -520,7 +519,7 @@ HdbConfigurationManager Tango Cpp Class
 
 **Command AttributePause:**   
 
-    Pause archiving single attribute
+Pause archiving single attribute
 
 +----------------------------------------------------------------------------+
 | **AttributePause Definition**                                              |
@@ -544,7 +543,7 @@ HdbConfigurationManager Tango Cpp Class
 
 **Command SetAttributeStrategy:**   
 
-    Update strategies for an already archived attribute.
+Update strategies for an already archived attribute.
 
 +------------------------------------------------------------------------------------------------------+
 | **SetAttributeStrategy Definition**                                                                  |
@@ -590,7 +589,7 @@ HdbConfigurationManager Tango Cpp Class
 
 **Command SetAttributeTTL:**   
 
-    Update ttl for an already archived attribute.
+Update ttl for an already archived attribute.
 
 +------------------------------------------------------------------------------------------+
 | **SetAttributeTTL Definition**                                                           |
@@ -698,11 +697,11 @@ HdbConfigurationManager Tango Cpp Class
 | `ContextsList <AttrContextsList.html>`__                                 | false            | false           | Spectrum          | READ            | Tango::DEV_STRING     | EXPERT       |                                                             |
 +--------------------------------------------------------------------------+------------------+-----------------+-------------------+-----------------+-----------------------+--------------+-------------------------------------------------------------+
 
- **There is no dynamic attribute defined.  **
+**There is no dynamic attribute defined.**
 
 **Attribute AttributeOKNumber:**   
 
-    Number of archived attributes not in error
+Number of archived attributes not in error
 
 +-----------------------------+--------------------+
 | **Attribute Definition**    |                    |
@@ -790,7 +789,7 @@ HdbConfigurationManager Tango Cpp Class
 
 **Attribute AttributeNokNumber:**   
 
-    Number of archived attributes in error
+Number of archived attributes in error
 
 +-----------------------------+--------------------+
 | **Attribute Definition**    |                    |
@@ -878,7 +877,7 @@ HdbConfigurationManager Tango Cpp Class
 
 **Attribute AttributePendingNumber:**   
 
-    Number of attributes waiting to be archived
+Number of attributes waiting to be archived
 
 +-----------------------------+--------------------+
 | **Attribute Definition**    |                    |
@@ -966,7 +965,7 @@ HdbConfigurationManager Tango Cpp Class
 
 **Attribute AttributeNumber:**   
 
-    Number of configured attributes
+Number of configured attributes
 
 +-----------------------------+--------------------+
 | **Attribute Definition**    |                    |
@@ -1670,7 +1669,7 @@ HdbConfigurationManager Tango Cpp Class
 
 **Attribute AttributeMaxStoreTime:**   
 
-    Maximum storing time
+Maximum storing time
 
 +-----------------------------+----------------------+
 | **Attribute Definition**    |                      |
@@ -1758,7 +1757,7 @@ HdbConfigurationManager Tango Cpp Class
 
 **Attribute AttributeMinStoreTime:**   
 
-    Minimum storing time
+Minimum storing time
 
 +-----------------------------+----------------------+
 | **Attribute Definition**    |                      |
@@ -1846,7 +1845,7 @@ HdbConfigurationManager Tango Cpp Class
 
 **Attribute AttributeMaxProcessingTime:**   
 
-    Maximum processing (from event reception to storage) time
+Maximum processing (from event reception to storage) time
 
 +-----------------------------+----------------------+
 | **Attribute Definition**    |                      |
@@ -1934,7 +1933,7 @@ HdbConfigurationManager Tango Cpp Class
 
 **Attribute AttributeMinProcessingTime:**   
 
-    Minimum processing (from event reception to storage) time
+Minimum processing (from event reception to storage) time
 
 +-----------------------------+----------------------+
 | **Attribute Definition**    |                      |
@@ -2022,7 +2021,7 @@ HdbConfigurationManager Tango Cpp Class
 
 **Attribute AttributeRecordFreq:**   
 
-    Record frequency
+Record frequency
 
 +-----------------------------+----------------------+
 | **Attribute Definition**    |                      |
@@ -2110,7 +2109,7 @@ HdbConfigurationManager Tango Cpp Class
 
 **Attribute AttributeFailureFreq:**   
 
-    Failure frequency
+Failure frequency
 
 +-----------------------------+----------------------+
 | **Attribute Definition**    |                      |
@@ -2198,7 +2197,7 @@ HdbConfigurationManager Tango Cpp Class
 
 **Attribute AttributeStartedNumber:**   
 
-    Number of archived attributes started
+Number of archived attributes started
 
 +-----------------------------+--------------------+
 | **Attribute Definition**    |                    |
@@ -2286,7 +2285,7 @@ HdbConfigurationManager Tango Cpp Class
 
 **Attribute AttributeStoppedNumber:**   
 
-    Number of archived attributes stopped
+Number of archived attributes stopped
 
 +-----------------------------+--------------------+
 | **Attribute Definition**    |                    |
@@ -2374,7 +2373,7 @@ HdbConfigurationManager Tango Cpp Class
 
 **Attribute AttributeMaxPendingNumber:**   
 
-    Max number of attributes waiting to be archived
+Max number of attributes waiting to be archived
 
 +-----------------------------+--------------------+
 | **Attribute Definition**    |                    |
@@ -2456,7 +2455,7 @@ HdbConfigurationManager Tango Cpp Class
 
 **Attribute AttributePausedNumber:**   
 
-    Number of archived attributes paused
+Number of archived attributes paused
 
 +-----------------------------+--------------------+
 | **Attribute Definition**    |                    |
@@ -2544,7 +2543,7 @@ HdbConfigurationManager Tango Cpp Class
 
 **Attribute SetTTL:**   
 
-    Time To Live for temporary storage in hours
+Time To Live for temporary storage in hours
 
 +-----------------------------+---------------------+
 | **Attribute Definition**    |                     |
@@ -2634,7 +2633,7 @@ HdbConfigurationManager Tango Cpp Class
 
 **Attribute SetStrategy:**   
 
-    list of strategies separated with | 
+list of strategies separated with |
 
 +-----------------------------+----------------------+
 | **Attribute Definition**    |                      |
@@ -2978,7 +2977,7 @@ HdbConfigurationManager Tango Cpp Class
 
 **Attribute ArchiverStatisticsResetTime:**   
 
-    Seconds elapsed since last statistics reset
+Seconds elapsed since last statistics reset
 
 +-----------------------------+----------------------+
 | **Attribute Definition**    |                      |
@@ -3066,7 +3065,7 @@ HdbConfigurationManager Tango Cpp Class
 
 **Attribute ArchiverContext:**   
 
-    Archiver context
+Archiver context
 
 +-----------------------------+----------------------+
 | **Attribute Definition**    |                      |
