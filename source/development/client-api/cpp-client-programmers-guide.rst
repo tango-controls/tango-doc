@@ -2048,7 +2048,7 @@ example of how you use them:
     DevicePipe dp = mydev.read_pipe("MyPipe");
 
     size_t nb_de = dp.get_data_elt_nb();
-    for (size_t loop = 0;loop < nb;loop++)
+    for (size_t loop = 0;loop < nb_de;loop++)
     {
        int data_type = dp.get_data_elt_type(loop);
        string de_name = dp.get_data_elt_name(loop);
