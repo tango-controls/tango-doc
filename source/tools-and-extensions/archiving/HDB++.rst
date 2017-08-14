@@ -1,3 +1,5 @@
+.. _hdbpp_manual:
+
 HDB++
 =====
 
@@ -89,8 +91,7 @@ ArchiverList Property of a ConfigurationManager device instance; in this
 case all the managed EventSubscriber devices belong to the same TANGO
 facility (srv-tango-srf.fcs.elettra.trieste.it:20000).
 
-More information is available
-`*here* <http://www.tango-controls.org/community/project-docs/hdbplusplus/hdbplusplus-doc/>`__.
+More information is available in :ref:`hdbpp_service`.
 
 .. |image0| image:: HDB-plus-plus/image2.png
    :width: 6.26772in
