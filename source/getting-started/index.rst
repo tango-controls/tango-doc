@@ -8,4 +8,5 @@ Getting Started
    first-client
    first-device-class
    installation/index
+   development/index
 

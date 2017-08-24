@@ -1,3 +1,5 @@
+.. _jtango_manual:
+
 .. highlight:: java
 
 Introduction
