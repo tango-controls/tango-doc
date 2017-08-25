@@ -1,7 +1,7 @@
-.. _getting_started_with_jtango:
+.. _getting_started_with_jtango_server:
 
-Getting started with JTango (Java implementation of Tango-Controls)
--------------------------------------------------------------------
+Developing your first Java TANGO device class
+=============================================
 
 In this section we describe how one can start developing Tango device server using Java.
 
@@ -18,7 +18,7 @@ Three methods will be described:
   - Tango-Controls environment (Tango Database aka Tango host is deployed)
 
 Using jtango-maven-archetype
-============================
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Perhaps the simplest way to start to develop your first Tango device server in Java is to use jtango-maven-archetype.
 
@@ -76,7 +76,7 @@ Assuming that Tango-Controls environment is set up properly (TODO ref) and MyDev
 Now using your favorite IDE open the newly generated project and develop your JTango server. Please read more :ref:`here  <jtango_manual>`
 
 Using POGO
-==========
+~~~~~~~~~~
 
 Starting from scratch
-=====================
+~~~~~~~~~~~~~~~~~~~~~

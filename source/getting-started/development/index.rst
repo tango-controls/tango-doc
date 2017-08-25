@@ -9,7 +9,6 @@ Here you will find recipies on how-to develop the Tango Controls on various syst
 .. toctree::
     :maxdepth: 2
 
-    jtango
-    cpp/first-client
-    cpp/first-device-class
+    java/index
+    cpp/index
     pytango
