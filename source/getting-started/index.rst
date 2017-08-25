@@ -3,11 +3,11 @@ Getting Started
 
 In this section we will guide you step-by-step to help you getting started with Tango-Controls.
 
-We assume that Tango-Controls has been installed already in your environment. Otherwise if you have to install Tango-Controls on your own please read the installation guide first: :ref:`getting_started_installation`
+We assume that Tango-Controls has been already installed in your environment. Otherwise, if you have to install Tango-Controls on your own, please, read the installation guide first: :ref:`getting_started_installation`
 
-Also these :ref:`first_steps` may be interesting to any one who want to get started with Tango-Controls.
+Also these :ref:`first_steps` may be interesting to anyone who want to get started with Tango-Controls.
 
-Next you need to identify yourself with one of the following roles:
+Next you need to identify yourself with one of the following roles.
 
 If you are mostly...
 
