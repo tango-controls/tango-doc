@@ -1,4 +1,4 @@
-.. _getting_started_development:
+.. _getting_started_as_developer:
 
 
 How to develop Tango Controls servers
