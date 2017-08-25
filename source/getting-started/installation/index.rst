@@ -1,3 +1,4 @@
+.. _getting_started_installation:
 
 How to install Tago Controls and its parts on various platforms
 ===============================================================
