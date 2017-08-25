@@ -17,9 +17,9 @@ Also these :ref:`first_steps` may be interesting to any one who want to get star
 
 If you are a developer please look through development guide: :ref:`getting_started_development`
 
-If you are a user please refer to user applications guide: TODO
+If you are a user please refer to user applications guide: :ref:`getting_started_as_user`
 
-If you are an administrator please refer to administration tools guide: TODO
+If you are an administrator please refer to administration tools guide: :ref:`getting_started_as_administrator`
 
 Below is the table of contents of this section:
 

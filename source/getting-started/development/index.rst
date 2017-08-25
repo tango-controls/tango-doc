@@ -11,4 +11,4 @@ Here you will find recipies on how-to develop the Tango Controls on various syst
 
     java/index
     cpp/index
-    pytango
+    python/index
