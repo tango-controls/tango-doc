@@ -32,8 +32,7 @@ Tango  package installation
     Some :program:`Tango Controls` tools require :program:`Java Runtime Environment (JRE) >=1.7`. Please install it first.
     You may find JRE on http://java.com .
 
-The simplest way to have Tango Controls running is to install it from a binary package. Binaries are available at
-http://www.tango-controls.org/downloads/binary/
+The simplest way to have Tango Controls running is to install it from :ref:`binary_package`.
 
 - Download the binary package with your favorite browser.
 

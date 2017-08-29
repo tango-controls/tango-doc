@@ -10,4 +10,5 @@ Here you will find recipies on how-to install the Tango Controls on various syst
 
     minimum-deployment
     tango-on-windows
+    tango-on-linux
     pytango-and-taurus-on-windows
