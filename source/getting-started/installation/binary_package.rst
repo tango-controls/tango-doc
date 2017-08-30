@@ -6,15 +6,11 @@ Binary packages
 
 
 
-.. topic:: Java library
-
 
 `JTango <https://bintray.com/tango-controls/maven/JTango/9.3.3>`_ - library for device servers and clients in Java.
 
 `TangORB <https://sourceforge.net/projects/tango-cs/files/tools/TangORB-8.3.5_jeromq_android.jar/download>`_ for Android -
 library for device servers and client in Java on Android
-
-.. topic:: Windows
 
 
 For Windows (7, Vista or XP), you can download a ready to use binary distribution. The distribution also contains the omniORB and zmq  libraries.
