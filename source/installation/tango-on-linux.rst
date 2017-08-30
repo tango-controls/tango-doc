@@ -13,9 +13,12 @@ Use apt-get to install them e.g. to install the TANGO database and test device s
 
 
 Python binaries can be installed from the official repositories
-.. code-block:: console
-apt-get python-pytango
 
 .. code-block:: console
-apt-get python3-pytango
+
+       $> apt-get python-pytango
+
+.. code-block:: console
+
+       $> apt-get python3-pytango
 

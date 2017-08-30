@@ -12,3 +12,5 @@ Here you will find recipies on how-to install the Tango Controls on various syst
     tango-on-windows
     tango-on-linux
     pytango-and-taurus-on-windows
+    source
+    patches

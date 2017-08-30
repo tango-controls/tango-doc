@@ -22,7 +22,6 @@ Below is the table of contents of this section:
    :name: gettingstartedtoc
 
    first-steps
-   installation/index
    end-user/index
    development/index
    administration/index

@@ -8,6 +8,7 @@ Tango Documentation Contents
 
    index
    overview/index
+   installation/index
    getting-started/index
    development/index
    tools-and-extensions/index

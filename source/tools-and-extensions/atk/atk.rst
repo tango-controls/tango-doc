@@ -1,5 +1,6 @@
+******************
 Tango ATK Tutorial
-==================
+******************
 
 This document is a practical guide for Tango ATK programmers and
 includes several trails with examples and demonstrations. Most of the
