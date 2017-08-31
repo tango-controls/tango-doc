@@ -695,6 +695,6 @@ Simplify changes by adding this line
 .. definitions
   ------------
 .. _official: http://pytango.readthedocs.io/en/latest
-.. _download: http://www.tango-controls.org/downloads/source
+.. _download: http://www.tango-controls.org/
 .. _PiPy: http://pypi.python.org/pypi/PyTango
 .. _PyTango: https://intranet.cells.es/Members/srubio/howto/HowToPyTango
