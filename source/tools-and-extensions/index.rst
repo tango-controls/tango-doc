@@ -27,6 +27,7 @@ Archiving
    :maxdepth: 2
    :name: archivingtoc
 
+   archiving/HDB
    archiving/HDB++
 
 
