@@ -11,6 +11,7 @@ Here you will find recipies on how-to install the Tango Controls on various syst
     minimum-deployment
     tango-on-windows
     tango-on-linux
+    amazon-cloud
     virtualmachine
     pytango-and-taurus-on-windows
     source
