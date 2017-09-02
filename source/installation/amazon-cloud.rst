@@ -16,7 +16,7 @@ You can find out how to do this `here <http://docs.aws.amazon.com/AWSEC2/latest/
 Launch VM with this image and you will have TANGO 9.2.5 + PyTango 9.2.0 up and
 running including the `TANGO REST API <http://tango-rest-api.readthedocs.io/en/latest/>`_ so you can access it from internet.
 
-*Note:* the TANGO_HOST is the private IP address of the VM.
+.. note::  the TANGO_HOST is the private IP address of the VM.
 
 This means the TANGO database and device servers are not accessible from the internet but only
 on the VM or set of VMs which share the same VPN. This can be seen as a security feature.
@@ -40,7 +40,8 @@ You can connect to the TangoWebApp as follows:
 
         http://ec2-35-157-86-137.eu-central-1.compute.amazonaws.com:8080/tango/rest
 
-    (*Note:* NO spaces before or after and no quotes)
+    .. note::  NO spaces before or after and no quotes
+
 
     5. set the TANGO_HOST to
 
@@ -48,12 +49,14 @@ You can connect to the TangoWebApp as follows:
 
         ip-172-31-29-94.eu-central-1.compute.internal:10000
 
-    (*Note:* NO spaces or quotes otherwise it won't work!)
+    .. note::  NO spaces or quotes otherwise it won't work!
+
 
     6. click on the refresh button to the right of the TANGO_HOST field
     7. login as user=tango-cs and pw=tango when prompted
 
-    (*Note:* if you do not get a new prompt for user name and pwd from the host *ec2-35-156-147-163.eu-central-1.compute.amazonaws.com* then the WebApp is down and it won't work)
+    .. note::  If you do not get a new prompt for user name and pwd from the host *ec2-35-156-147-163.eu-central-1.compute.amazonaws.com* then the WebApp is down and it won't work.
+
 
     8. expand the tree of devices at the top left of the application
 
