@@ -27,7 +27,7 @@
       </data>
     </node>
     <node id="n1">
-      <data key="d4"><![CDATA[http://tango-controls.readthedocs.io/en/latest/tools/astor/index.html]]></data>
+      <data key="d4"><![CDATA[http://tango-controls.readthedocs.io/en/latest/tools-and-extensions/astor/index.html]]></data>
       <data key="d5"><![CDATA[Astor's first goal is to know at a quick glance, if everything is OK in a control system,
 and otherwise to be able to diagnose a problem and solve it.
 The second goal is to configure the control system and its components. 
@@ -50,7 +50,7 @@ It is relying on the starter devices.]]></data>
       </data>
     </node>
     <node id="n2">
-      <data key="d4"><![CDATA[http://tango-controls.readthedocs.io/en/latest/manual/03-device-server-model.html#the-database]]></data>
+      <data key="d4"><![CDATA[http://tango-controls.readthedocs.io/en/latest/development/device-api/device-server-model.html#the-database]]></data>
       <data key="d5"><![CDATA[To achieve complete device independence, it is necessary however to supplement 
 device classes with a possibility for configuring device dependencies at runtime. 
 The utility which does this in the TDSOM is the property database. Properties 
@@ -96,7 +96,7 @@ all database commands e.g. get_device_property(), device_list(), info(), etc. ]]
       </data>
     </node>
     <node id="n4">
-      <data key="d4"><![CDATA[http://tango-controls.readthedocs.io/en/latest/manual/04-tango-client.html]]></data>
+      <data key="d4"><![CDATA[http://tango-controls.readthedocs.io/en/latest/development/client-api/index.html]]></data>
       <data key="d5"><![CDATA[TANGO devices and database are implemented using the TANGO device server model. 
 To access them the user has the CORBA interface e.g. command_inout(), 
 write_attributes() etc. defined by the idl file. These methods are very 
@@ -120,7 +120,7 @@ hides all CORBA aspects of TANGO.]]></data>
       </data>
     </node>
     <node id="n5">
-      <data key="d4"><![CDATA[http://tango-controls.readthedocs.io/en/latest/manual/03-device-server-model.html#the-tango-logging-service]]></data>
+      <data key="d4"><![CDATA[http://tango-controls.readthedocs.io/en/latest/development/device-api/device-server-model.html#the-tango-logging-service]]></data>
       <data key="d5"><![CDATA[The TANGO Logging Service (TLS) gives the user the control over how much 
 information is actually generated and to where it goes. In practice, the 
 TLS allows to select both the logging level and targets of any device within 
@@ -142,7 +142,7 @@ the control system. ]]></data>
       </data>
     </node>
     <node id="n6">
-      <data key="d4"><![CDATA[http://tango-controls.readthedocs.io/en/latest/manual/A-reference.html#tango-log-consumer]]></data>
+      <data key="d4"><![CDATA[http://tango-controls.readthedocs.io/en/latest/development/advanced/reference.html#tango-log-consumer]]></data>
       <data key="d5"><![CDATA[A Tango Log Consumer device is nothing but a tango device supporting the 
 following tango command: void log (Tango::DevVarStringArray details) ]]></data>
       <data key="d6">
@@ -162,7 +162,7 @@ following tango command: void log (Tango::DevVarStringArray details) ]]></data>
       </data>
     </node>
     <node id="n7">
-      <data key="d4"><![CDATA[http://tango-controls.readthedocs.io/en/latest/manual/A-reference.html#tango-log-consumer]]></data>
+      <data key="d4"><![CDATA[http://tango-controls.readthedocs.io/en/latest/development/advanced/reference.html#tango-log-consumer]]></data>
       <data key="d5"><![CDATA[One implementation of a log consumer associated to a graphical user interface is
  available within Tango. It is a standalone java application called LogViewer 
  based on the publicly available chainsaw application from the log4j package.]]></data>
@@ -183,7 +183,7 @@ following tango command: void log (Tango::DevVarStringArray details) ]]></data>
       </data>
     </node>
     <node id="n8">
-      <data key="d4"><![CDATA[http://tango-controls.readthedocs.io/en/latest/tools/jive/index.html]]></data>
+      <data key="d4"><![CDATA[http://tango-controls.readthedocs.io/en/latest/tools-and-extensions/jive/index.html]]></data>
       <data key="d5"><![CDATA[JIVE is a standalone JAVA application designed to browse and edit the TANGO database. 
 Jive also offers advanced search/selection features.
 ]]></data>
@@ -204,7 +204,7 @@ Jive also offers advanced search/selection features.
       </data>
     </node>
     <node id="n9">
-      <data key="d4"><![CDATA[http://tango-controls.readthedocs.io/en/latest/manual/06-device-server-writing.html]]></data>
+      <data key="d4"><![CDATA[http://tango-controls.readthedocs.io/en/latest/development/device-api/device-server-model.html#deviceservermodel]]></data>
       <data key="d5"><![CDATA[In order to simplify device server process administration, a device of the 
 DServer class is automatically added to each device server process. Thus, every 
 device server process supports the same set of administration commands. The 
@@ -228,7 +228,7 @@ dserver/device server executable name/device server instance name ]]></data>
       </data>
     </node>
     <node id="n10">
-      <data key="d4"><![CDATA[http://tango-controls.readthedocs.io/en/latest/manual/03-device-server-model.html#the-database]]></data>
+      <data key="d4"/>
       <data key="d5"><![CDATA[Clients access the database via TANGO commands requested on the database device. ]]></data>
       <data key="d6">
         <y:ShapeNode>
@@ -247,7 +247,7 @@ dserver/device server executable name/device server instance name ]]></data>
       </data>
     </node>
     <node id="n11">
-      <data key="d4"/>
+      <data key="d4"><![CDATA[http://tango-controls.readthedocs.io/en/latest/development/device-api/device-server-model.html#introduction-to-corba]]></data>
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="29.28000000000003" width="678.3132054627627" x="485.37553969198507" y="414.36395706146914"/>
@@ -265,7 +265,7 @@ dserver/device server executable name/device server instance name ]]></data>
       </data>
     </node>
     <node id="n12">
-      <data key="d4"><![CDATA[http://www.tango-controls.org/resources/howto/how-fandango/]]></data>
+      <data key="d4"><![CDATA[http://tango-controls.readthedocs.io/en/latest/tutorials-and-howtos/how-tos/how-to-fandango.html]]></data>
       <data key="d5"><![CDATA[Fandango (previously called PyTango_utils) is a Python module created to simplify the configuration of big control systems;
 implementing the behavior of Jive (configuration) and/or Astor (deployment) tools in methods that could be called from scripts using regexp and wildcards.
 It has been later extended with methods commonly used in some of our python API's (archiving, CCDB, alarms, vacca) or generic devices (composers, simulators, facades).
@@ -275,7 +275,7 @@ It has been later extended with methods commonly used in some of our python API'
           <y:Geometry height="29.28000000000003" width="432.37941535111224" x="485.37553969198507" y="203.6439570614692"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="14" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="21.1513671875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="66.9931640625" x="182.69312564430606" y="4.064316406249986">fandango<y:LabelModel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="14" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="21.1513671875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="66.9931640625" x="182.69312564430606" y="4.064316406250015">fandango<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
             </y:LabelModel>
             <y:ModelParameter>
@@ -296,7 +296,7 @@ used for automatically registering devices in the Tango Database.]]></data>
           <y:Geometry height="29.28000000000003" width="246.43897815126115" x="671.1579059601379" y="249.0039570614692"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="14" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="21.1513671875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="89.572265625" x="78.43335626313058" y="4.064316406249986">CSV Updater<y:LabelModel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="14" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="21.1513671875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="89.572265625" x="78.43335626313058" y="4.064316406250015">CSV Updater<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
             </y:LabelModel>
             <y:ModelParameter>
