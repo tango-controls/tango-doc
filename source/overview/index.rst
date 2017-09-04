@@ -16,6 +16,7 @@ Contents:
    introduction
    overview
    SimplifiedTangoDatamodel
+   history
    corba
 
 
