@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:java="http://www.yworks.com/xml/yfiles-common/1.0/java" xmlns:sys="http://www.yworks.com/xml/yfiles-common/markup/primitives/2.0" xmlns:x="http://www.yworks.com/xml/yfiles-common/markup/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:y="http://www.yworks.com/xml/graphml" xmlns:yed="http://www.yworks.com/xml/yed/3" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://www.yworks.com/xml/schema/graphml/1.1/ygraphml.xsd">
+  <!--Created by yEd 3.17-->
+  <key attr.name="Description" attr.type="string" for="graph" id="d0"/>
+  <key for="port" id="d1" yfiles.type="portgraphics"/>
+  <key for="port" id="d2" yfiles.type="portgeometry"/>
+  <key for="port" id="d3" yfiles.type="portuserdata"/>
+  <key attr.name="url" attr.type="string" for="node" id="d4"/>
+  <key attr.name="description" attr.type="string" for="node" id="d5"/>
+  <key for="node" id="d6" yfiles.type="nodegraphics"/>
+  <key for="graphml" id="d7" yfiles.type="resources"/>
+  <key attr.name="url" attr.type="string" for="edge" id="d8"/>
+  <key attr.name="description" attr.type="string" for="edge" id="d9"/>
+  <key for="edge" id="d10" yfiles.type="edgegraphics"/>
+  <graph edgedefault="directed" id="G">
+    <data key="d0"/>
+    <node id="n0">
+      <data key="d4"/>
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="478.2730967938929" width="506.4248500763359" x="26.03515344008423" y="-61.57410186484384"/>
+          <y:Fill hasColor="false" transparent="false"/>
+          <y:BorderStyle color="#000000" type="dashed" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="14" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="21.1513671875" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="tl" textColor="#000000" verticalTextPosition="bottom" visible="true" width="68.5654296875" x="4.0" y="4.0">Archiving</y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n1">
+      <data key="d4"><![CDATA[http://tango-controls.readthedocs.io/en/latest/administration/services/hdbpp/hdb++-design-guidelines.html#hdb-tango-device-server]]></data>
+      <data key="d5"><![CDATA[SnapArchiver: Records the attributes values picture in the SNAP database.
+SnapManager: Manages the snapshots configuration and send the request to the archiver
+SnapExtractor: Provides database extraction methods based on various criteria]]></data>
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="29.28000000000003" width="108.34534351145055" x="38.03077658197998" y="274.41490821149256"/>
+          <y:Fill color="#CC3300" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="14" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="21.1513671875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#FFFFFF" verticalTextPosition="bottom" visible="true" width="105.9443359375" x="1.2005037869752755" y="4.064316406250043">HDB++ devices<y:LabelModel>
+              <y:SmartNodeLabelModel distance="4.0"/>
+            </y:LabelModel>
+            <y:ModelParameter>
+              <y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
+            </y:ModelParameter>
+          </y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n2">
+      <data key="d4"><![CDATA[http://tango-controls.readthedocs.io/en/latest/tutorials-and-howtos/how-tos/how-to-pytangoarchiving.html]]></data>
+      <data key="d5"><![CDATA[Python API for the Tango Archiving system
+This package allows to:
+Integrate Hdb and Snap archiving with other python/PyTango tools.
+Start/Stop Archiving devices in the appropiated order.
+Increase the capabilities of configuration and diagnostic.
+Import/Export .csv and .xml files between the archiving and the database.
+NOTE: It access directly the MySql database. http://www.tango-controls.org/Events/meetings/May-2010/ArchivingWorkshopConclusion.pdf]]></data>
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="29.28000000000003" width="358.680701978211" x="160.77612009343017" y="49.77490821149274"/>
+          <y:Fill color="#FFCC00" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="14" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="21.1513671875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="127.6826171875" x="115.4990423953555" y="4.064316406250015">PyTangoArchiving<y:LabelModel>
+              <y:SmartNodeLabelModel distance="4.0"/>
+            </y:LabelModel>
+            <y:ModelParameter>
+              <y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
+            </y:ModelParameter>
+          </y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n3">
+      <data key="d4"><![CDATA[http://plone.tango-controls.org/download/e-giga]]></data>
+      <data key="d5"><![CDATA[E-Giga displays the data stored by the Tango archiving system within your 
+favorite WEB browser.
+(PHP, Javascript)]]></data>
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="29.28000000000003" width="235.935358466761" x="283.5214636048801" y="95.13490821149264"/>
+          <y:Fill color="#CC0099" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="14" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="21.1513671875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#FFFFFF" verticalTextPosition="bottom" visible="true" width="49.1171875" x="93.40908548338047" y="4.064316406250015">E-Giga<y:LabelModel>
+              <y:SmartNodeLabelModel distance="4.0"/>
+            </y:LabelModel>
+            <y:ModelParameter>
+              <y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
+            </y:ModelParameter>
+          </y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n4">
+      <data key="d4"/>
+      <data key="d5"><![CDATA[The GUI named SGAD generates scripts to create MySql databases.]]></data>
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="29.28000000000003" width="358.680701978211" x="160.77612009343017" y="332.97490821149245"/>
+          <y:Fill color="#D4D4D4" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="14" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="21.1513671875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="44.4482421875" x="157.1162298953555" y="4.064316406249986">SGAD<y:LabelModel>
+              <y:SmartNodeLabelModel distance="4.0"/>
+            </y:LabelModel>
+            <y:ModelParameter>
+              <y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
+            </y:ModelParameter>
+          </y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n5">
+      <data key="d4"><![CDATA[https://www.google.fr/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&cad=rja&uact=8&ved=0ahUKEwi9tZ3CvtPTAhVI7hoKHV3CBKEQFgguMAE&url=http%3A%2F%2Fplone.tango-controls.org%2Ftools%2Farchiving-system-2%2Fdocumentation%2FArchiving%2520Devices%2520Properties_v2.doc&usg=AFQjCNGTvLIKN5n1IZ2fauXWC-5FM0IEwQ]]></data>
+      <data key="d5"><![CDATA[SnapArchiver: Records the attributes values picture in the SNAP database.
+SnapManager: Manages the snapshots configuration and send the request to the archiver
+SnapExtractor: Provides database extraction methods based on various criteria]]></data>
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="29.28000000000003" width="108.34534351145055" x="160.77612009343005" y="274.41490821149256"/>
+          <y:Fill color="#00FFCC" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="14" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="21.1513671875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="98.158203125" x="5.0935701932252755" y="4.064316406250043">SNAP devices<y:LabelModel>
+              <y:SmartNodeLabelModel distance="4.0"/>
+            </y:LabelModel>
+            <y:ModelParameter>
+              <y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
+            </y:ModelParameter>
+          </y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n6">
+      <data key="d4"><![CDATA[https://www.google.fr/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&cad=rja&uact=8&ved=0ahUKEwi9tZ3CvtPTAhVI7hoKHV3CBKEQFgguMAE&url=http%3A%2F%2Fplone.tango-controls.org%2Ftools%2Farchiving-system-2%2Fdocumentation%2FArchiving%2520Devices%2520Properties_v2.doc&usg=AFQjCNGTvLIKN5n1IZ2fauXWC-5FM0IEwQ]]></data>
+      <data key="d5"><![CDATA[TdbArchiver: Records the attributes values in the TDB database
+ArchivingManager: Allows to start / stop the attributes archiving without GUI 
+(use load-balancing). The same device is used to manage the HDB and TDB archivers.
+TdbExtractor: Provides database extraction methods based on various criteria
+TdbArchivingWatcher: Controls the global archiving status and issue periodically 
+refreshed reports]]></data>
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="29.28000000000003" width="113.19001495531086" x="406.2668071163303" y="274.4149082114926"/>
+          <y:Fill color="#00FFCC" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="14" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="21.1513671875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="88.0341796875" x="12.577917633905429" y="4.064316406249986">TDB devices<y:LabelModel>
+              <y:SmartNodeLabelModel distance="4.0"/>
+            </y:LabelModel>
+            <y:ModelParameter>
+              <y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
+            </y:ModelParameter>
+          </y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n7">
+      <data key="d4"><![CDATA[https://www.google.fr/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&cad=rja&uact=8&ved=0ahUKEwi9tZ3CvtPTAhVI7hoKHV3CBKEQFgguMAE&url=http%3A%2F%2Fplone.tango-controls.org%2Ftools%2Farchiving-system-2%2Fdocumentation%2FArchiving%2520Devices%2520Properties_v2.doc&usg=AFQjCNGTvLIKN5n1IZ2fauXWC-5FM0IEwQ]]></data>
+      <data key="d5"><![CDATA[HdbArchiver: Records the attributes values in the HDB database.
+ArchivingManager: Allows to start / stop the attributes archiving without GUI 
+(use load-balancing). The same device is used to manage the HDB and TDB archivers.
+HdbExtractor: Provides database extraction methods based on various criteria
+HdbArchivingWatcher: Controls the global archiving status and issue periodically 
+refreshed reports]]></data>
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="29.28000000000003" width="108.34534351145055" x="283.5214636048801" y="274.41490821149256"/>
+          <y:Fill color="#00FFCC" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="14" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="21.1513671875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="89.5927734375" x="9.376285036975275" y="4.064316406250043">HDB devices<y:LabelModel>
+              <y:SmartNodeLabelModel distance="4.0"/>
+            </y:LabelModel>
+            <y:ModelParameter>
+              <y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
+            </y:ModelParameter>
+          </y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n8">
+      <data key="d4"><![CDATA[http://tango-controls.readthedocs.io/en/latest/administration/services/hdbpp/index.html]]></data>
+      <data key="d5"><![CDATA[The HDB++ is a novel TANGO device server for Historical Data Base (HDB) archiving.
+It’s written in C++ and is fully event-driven]]></data>
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="29.28000000000003" width="108.34534351145055" x="38.03077658197998" y="303.69490821149253"/>
+          <y:Fill color="#0099CCE6" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="14" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="21.1513671875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#FFFFFF" verticalTextPosition="bottom" visible="true" width="50.6826171875" x="28.831363161975275" y="4.064316406250043">HDB++<y:LabelModel>
+              <y:SmartNodeLabelModel distance="4.0"/>
+            </y:LabelModel>
+            <y:ModelParameter>
+              <y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
+            </y:ModelParameter>
+          </y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n9">
+      <data key="d4"><![CDATA[https://www.google.fr/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&cad=rja&uact=8&ved=0ahUKEwi9tZ3CvtPTAhVI7hoKHV3CBKEQFgguMAE&url=http%3A%2F%2Fplone.tango-controls.org%2Ftools%2Farchiving-system-2%2Fdocumentation%2FArchiving%2520Devices%2520Properties_v2.doc&usg=AFQjCNGTvLIKN5n1IZ2fauXWC-5FM0IEwQ]]></data>
+      <data key="d5"><![CDATA[Historical DataBase - HDB : Persistent storage of attributes values which are 
+scanned at a minimal period of 10 seconds.]]></data>
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="29.28000000000003" width="108.34534351145055" x="283.5214636048801" y="303.69490821149253"/>
+          <y:Fill color="#0099CCE6" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="14" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="21.1513671875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#FFFFFF" verticalTextPosition="bottom" visible="true" width="34.3310546875" x="37.007144411975275" y="4.064316406250043">HDB<y:LabelModel>
+              <y:SmartNodeLabelModel distance="4.0"/>
+            </y:LabelModel>
+            <y:ModelParameter>
+              <y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
+            </y:ModelParameter>
+          </y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n10">
+      <data key="d4"><![CDATA[https://www.google.fr/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&cad=rja&uact=8&ved=0ahUKEwi9tZ3CvtPTAhVI7hoKHV3CBKEQFgguMAE&url=http%3A%2F%2Fplone.tango-controls.org%2Ftools%2Farchiving-system-2%2Fdocumentation%2FArchiving%2520Devices%2520Properties_v2.doc&usg=AFQjCNGTvLIKN5n1IZ2fauXWC-5FM0IEwQ]]></data>
+      <data key="d5"><![CDATA[Temporary DataBase - TDB : Volatile storage of attributes values which are 
+scanned at a minimal period of 100 milliseconds. 
+The data are kept 3 days in the database.]]></data>
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="29.28000000000003" width="113.19001495531086" x="406.2668071163303" y="303.6949082114926"/>
+          <y:Fill color="#0099CCE6" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="14" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="21.1513671875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#FFFFFF" verticalTextPosition="bottom" visible="true" width="32.7724609375" x="40.20877700890543" y="4.064316406249986">TDB<y:LabelModel>
+              <y:SmartNodeLabelModel distance="4.0"/>
+            </y:LabelModel>
+            <y:ModelParameter>
+              <y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
+            </y:ModelParameter>
+          </y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n11">
+      <data key="d4"><![CDATA[https://www.google.fr/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&cad=rja&uact=8&ved=0ahUKEwi9tZ3CvtPTAhVI7hoKHV3CBKEQFgguMAE&url=http%3A%2F%2Fplone.tango-controls.org%2Ftools%2Farchiving-system-2%2Fdocumentation%2FArchiving%2520Devices%2520Properties_v2.doc&usg=AFQjCNGTvLIKN5n1IZ2fauXWC-5FM0IEwQ]]></data>
+      <data key="d5"><![CDATA[Snapshots – SNAP: Persistent storage allowed taking a picture of a set of 
+attributes values. ]]></data>
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="29.28000000000003" width="108.34534351145055" x="160.77612009343005" y="303.69490821149253"/>
+          <y:Fill color="#0099CCE6" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="14" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="21.1513671875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#FFFFFF" verticalTextPosition="bottom" visible="true" width="42.896484375" x="32.724429568225275" y="4.064316406250043">SNAP<y:LabelModel>
+              <y:SmartNodeLabelModel distance="4.0"/>
+            </y:LabelModel>
+            <y:ModelParameter>
+              <y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
+            </y:ModelParameter>
+          </y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n12">
+      <data key="d4"><![CDATA[http://plone.tango-controls.org/tools/archiving-system-2/documentation/Mambo_Manual_v2_2.doc]]></data>
+      <data key="d5"><![CDATA[The HDB and TDB archiving is managed thanks to the GUI named Mambo.]]></data>
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="29.28000000000003" width="235.935358466761" x="283.5214636048801" y="140.49490821149266"/>
+          <y:Fill color="#00FFCC" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="14" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="21.1513671875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="53.0" x="91.46767923338047" y="4.064316406250015">Mambo<y:LabelModel>
+              <y:SmartNodeLabelModel distance="4.0"/>
+            </y:LabelModel>
+            <y:ModelParameter>
+              <y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
+            </y:ModelParameter>
+          </y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n13">
+      <data key="d4"><![CDATA[http://manualzilla.com/doc/5713108/bensikin-manual---the-tango-controls-website]]></data>
+      <data key="d5"><![CDATA[The SNAP archiving is managed thanks to the GUI named Bensikin.]]></data>
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="29.28000000000003" width="108.34534351145055" x="160.77612009343005" y="140.4949082114926"/>
+          <y:Fill color="#00FFCC" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="14" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="21.1513671875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="62.3515625" x="22.996890505725275" y="4.064316406250015">Bensikin<y:LabelModel>
+              <y:SmartNodeLabelModel distance="4.0"/>
+            </y:LabelModel>
+            <y:ModelParameter>
+              <y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
+            </y:ModelParameter>
+          </y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n14">
+      <data key="d4"><![CDATA[http://tango-controls.readthedocs.io/en/latest/development/device-api/device-server-model.html#introduction-to-corba]]></data>
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="29.28000000000003" width="481.42604548966085" x="38.03077658198026" y="215.13490821149264"/>
+          <y:Fill color="#0099CCE6" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="14" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="21.1513671875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#FFFFFF" verticalTextPosition="bottom" visible="true" width="258.3447265625" x="111.54065946358043" y="4.064316406250015">Communication Layer (CORBA / ZMQ)<y:LabelModel>
+              <y:SmartNodeLabelModel distance="4.0"/>
+            </y:LabelModel>
+            <y:ModelParameter>
+              <y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
+            </y:ModelParameter>
+          </y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n15">
+      <data key="d4"><![CDATA[http://tango-controls.readthedocs.io/en/latest/development/device-api/device-server-model.html#deviceservermodel]]></data>
+      <data key="d5"><![CDATA[In order to simplify device server process administration, a device of the 
+DServer class is automatically added to each device server process. Thus, every 
+device server process supports the same set of administration commands. The 
+implementation of this DServer class follows the device pattern and therefore, 
+its device behaves like any other devices. The device name is: 
+dserver/device server executable name/device server instance name ]]></data>
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="29.28000000000003" width="481.42604548966085" x="38.03077658198026" y="244.41490821149273"/>
+          <y:Fill color="#0099CCE6" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="14" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="21.1513671875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#FFFFFF" underlinedText="true" verticalTextPosition="bottom" visible="true" width="123.84765625" x="178.78919461983043" y="4.064316406249986">DServer Device(s)<y:LabelModel>
+              <y:SmartNodeLabelModel distance="4.0"/>
+            </y:LabelModel>
+            <y:ModelParameter>
+              <y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
+            </y:ModelParameter>
+          </y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n16">
+      <data key="d4"><![CDATA[http://tango-controls.readthedocs.io/en/latest/development/client-api/index.html]]></data>
+      <data key="d5"><![CDATA[TANGO devices and database are implemented using the TANGO device server model. 
+To access them the user has the CORBA interface e.g. command_inout(), 
+write_attributes() etc. defined by the idl file. These methods are very 
+low-level and assume a good working knowledge of CORBA. In order to simplify 
+this access, high-level api in C++, Python and Java have been implemented which 
+hides all CORBA aspects of TANGO.]]></data>
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="29.28000000000003" width="481.42604548966085" x="38.03077658198026" y="185.85490821149256"/>
+          <y:Fill color="#0099CCE6" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="14" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="21.1513671875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#FFFFFF" verticalTextPosition="bottom" visible="true" width="221.8681640625" x="129.77894071358043" y="4.064316406250015">Device API (C++, Java, PyTango)<y:LabelModel>
+              <y:SmartNodeLabelModel distance="4.0"/>
+            </y:LabelModel>
+            <y:ModelParameter>
+              <y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
+            </y:ModelParameter>
+          </y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+  </graph>
+  <data key="d7">
+    <y:Resources/>
+  </data>
+</graphml>
