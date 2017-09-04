@@ -16,8 +16,8 @@ Contents:
    introduction
    overview
    SimplifiedTangoDatamodel
+   ecosystem
    history
-   corba
 
 
 
