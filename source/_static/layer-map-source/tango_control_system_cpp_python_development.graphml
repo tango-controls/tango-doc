@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:java="http://www.yworks.com/xml/yfiles-common/1.0/java" xmlns:sys="http://www.yworks.com/xml/yfiles-common/markup/primitives/2.0" xmlns:x="http://www.yworks.com/xml/yfiles-common/markup/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:y="http://www.yworks.com/xml/graphml" xmlns:yed="http://www.yworks.com/xml/yed/3" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://www.yworks.com/xml/schema/graphml/1.1/ygraphml.xsd">
+  <!--Created by yEd 3.17-->
+  <key attr.name="Description" attr.type="string" for="graph" id="d0"/>
+  <key for="port" id="d1" yfiles.type="portgraphics"/>
+  <key for="port" id="d2" yfiles.type="portgeometry"/>
+  <key for="port" id="d3" yfiles.type="portuserdata"/>
+  <key attr.name="url" attr.type="string" for="node" id="d4"/>
+  <key attr.name="description" attr.type="string" for="node" id="d5"/>
+  <key for="node" id="d6" yfiles.type="nodegraphics"/>
+  <key for="graphml" id="d7" yfiles.type="resources"/>
+  <key attr.name="url" attr.type="string" for="edge" id="d8"/>
+  <key attr.name="description" attr.type="string" for="edge" id="d9"/>
+  <key for="edge" id="d10" yfiles.type="edgegraphics"/>
+  <graph edgedefault="directed" id="G">
+    <data key="d0"/>
+    <node id="n0">
+      <data key="d4"/>
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="478.7143804580157" width="558.4026243210978" x="1319.0498774370153" y="645.9387504991221"/>
+          <y:Fill hasColor="false" transparent="false"/>
+          <y:BorderStyle color="#000000" type="dashed" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="14" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="21.1513671875" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="tl" textColor="#000000" verticalTextPosition="bottom" visible="true" width="280.9443359375" x="4.0" y="4.0">Control System C++/Python Development</y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n1">
+      <data key="d4"><![CDATA[http://tango-controls.readthedocs.io/en/latest/development/client-api/index.html]]></data>
+      <data key="d5"><![CDATA[A device is an abstract concept defined by the TDSOM. In reality, it can be a 
+piece of hardware (an interlock bit) a collection of hardware (a screen attached 
+to a stepper motor) a logical device (a taper) or a combination of all these (an
+accelerator). Each device has a unique name in the control system and eventually
+ one alias. Within Tango, a four field name space has been adopted consisting of
+[//FACILITY/]DOMAIN/CLASS/MEMBER ]]></data>
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="29.28000000000003" width="537.9943320610678" x="1330.914097419095" y="982.3690442395812"/>
+          <y:Fill color="#0099CC" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="14" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="21.1513671875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#FFFFFF" verticalTextPosition="bottom" visible="true" width="190.7509765625" x="173.6216777492839" y="4.064316406249986">Devices (C++, Java, Python)<y:LabelModel>
+              <y:SmartNodeLabelModel distance="4.0"/>
+            </y:LabelModel>
+            <y:ModelParameter>
+              <y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
+            </y:ModelParameter>
+          </y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n2">
+      <data key="d4"><![CDATA[http://tango-controls.readthedocs.io/en/latest/development/device-api/device-server-model.html#deviceservermodel]]></data>
+      <data key="d5"><![CDATA[A java web application that provides Tango REST API implementation. Basically it is a bridge from "http://" to "tango://". For more information please refer to this page ...]]></data>
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="29.28000000000003" width="537.9943320610678" x="1330.914097419095" y="952.3690442395814"/>
+          <y:Fill color="#0099CCE6" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="14" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="21.1513671875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#FFFFFF" verticalTextPosition="bottom" visible="true" width="123.84765625" x="207.0733379055339" y="4.064316406249986">DServer Device(s)<y:LabelModel>
+              <y:SmartNodeLabelModel distance="4.0"/>
+            </y:LabelModel>
+            <y:ModelParameter>
+              <y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
+            </y:ModelParameter>
+          </y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n3">
+      <data key="d4"><![CDATA[http://tango-controls.readthedocs.io/en/latest/tools-and-extensions/pogo/index.html]]></data>
+      <data key="d5"><![CDATA[Pogo helps you creating/updating Tango device class in any of the three 
+supported languages (C++, Python or Java)]]></data>
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="26.700888870081723" width="558.4026243210978" x="1319.0498774370153" y="1142.2533472854568"/>
+          <y:Fill color="#00FFCC" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="14" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="21.1513671875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="46.0068359375" x="256.1978941917989" y="2.7747608412907994">POGO<y:LabelModel>
+              <y:SmartNodeLabelModel distance="4.0"/>
+            </y:LabelModel>
+            <y:ModelParameter>
+              <y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
+            </y:ModelParameter>
+          </y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n4">
+      <data key="d4"><![CDATA[http://tango-controls.readthedocs.io/en/latest/development/device-api/device-server-model.html#introduction-to-corba]]></data>
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="29.28000000000003" width="537.9943320610669" x="1330.914097419095" y="923.0890442395813"/>
+          <y:Fill color="#0099CCE6" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="14" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="21.1513671875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#FFFFFF" verticalTextPosition="bottom" visible="true" width="258.3447265625" x="139.82480274928344" y="4.064316406249986">Communication Layer (CORBA / ZMQ)<y:LabelModel>
+              <y:SmartNodeLabelModel distance="4.0"/>
+            </y:LabelModel>
+            <y:ModelParameter>
+              <y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
+            </y:ModelParameter>
+          </y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n5">
+      <data key="d4"><![CDATA[https://pypi.python.org/pypi/Vacca]]></data>
+      <data key="d5"><![CDATA[Vacca is a synoptic-oriented Taurus gui. It is highly customizable, using python 
+files to setup the devices/attributes/icons/commands to be displayed in several 
+grid/tree/profile/synoptic widgets.]]></data>
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="39.99999999999983" width="59.96250625954269" x="1393.7714384877968" y="763.0890442395814"/>
+          <y:Fill color="#FFCC00" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="14" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="21.1513671875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="44.482421875" x="7.740042192271403" y="9.424316406249886">Vacca<y:LabelModel>
+              <y:SmartNodeLabelModel distance="4.0"/>
+            </y:LabelModel>
+            <y:ModelParameter>
+              <y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
+            </y:ModelParameter>
+          </y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n6">
+      <data key="d4"><![CDATA[http://www.tango-controls.org/resources/documentation/guis/canone/]]></data>
+      <data key="d5"><![CDATA[Canone will allow you to create your own WEB panels to interface Tango device(s)
+(PHP)]]></data>
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="34.362395847327264" width="88.24816653728419" x="1602.4887539076435" y="842.8617250334744"/>
+          <y:Fill color="#CC0099" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="14" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="21.1513671875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#FFFFFF" verticalTextPosition="bottom" visible="true" width="55.337890625" x="16.455137956142153" y="6.605514329913603">Canone<y:LabelModel>
+              <y:SmartNodeLabelModel distance="4.0"/>
+            </y:LabelModel>
+            <y:ModelParameter>
+              <y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
+            </y:ModelParameter>
+          </y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n7">
+      <data key="d4"><![CDATA[http://tango-controls.readthedocs.io/en/latest/tools-and-extensions/taurus/index.html]]></data>
+      <data key="d5"><![CDATA[Taurus is a Python framework for control and data acquisition CLIs and GUIs in scientific/industrial environments.]]></data>
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="39.77268079389302" width="122.81984732824492" x="1330.9140974190946" y="803.0890442395813"/>
+          <y:Fill color="#FFCC00" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="14" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="21.1513671875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="74.0068359375" x="24.406505695372516" y="9.31065680319648">TaurusGui<y:LabelModel>
+              <y:SmartNodeLabelModel distance="4.0"/>
+            </y:LabelModel>
+            <y:ModelParameter>
+              <y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
+            </y:ModelParameter>
+          </y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n8">
+      <data key="d4"><![CDATA[http://tango-controls.readthedocs.io/en/latest/tools-and-extensions/taurus/index.html]]></data>
+      <data key="d5"><![CDATA[Taurus is a Python framework for control and data acquisition CLIs and GUIs in scientific/industrial environments.]]></data>
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="34.362395847327264" width="258.6071755725194" x="1330.9140974190946" y="842.8617250334744"/>
+          <y:Fill color="#FFCC00" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="14" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="21.1513671875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="50.67578125" x="103.96569716125964" y="6.605514329913603">Taurus<y:LabelModel>
+              <y:SmartNodeLabelModel distance="4.0"/>
+            </y:LabelModel>
+            <y:ModelParameter>
+              <y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
+            </y:ModelParameter>
+          </y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n9">
+      <data key="d4"><![CDATA[http://www.sardana-controls.org/en/latest/docs.html]]></data>
+      <data key="d5"><![CDATA[Sardana is a software suite for Supervision, Control and Data Acquisition in scientific installations]]></data>
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="39.77268079389302" width="122.81984732824492" x="1466.7014256633688" y="803.0890442395813"/>
+          <y:Fill color="#FFCC00" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="14" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="21.1513671875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="59.248046875" x="31.785900226622516" y="9.31065680319648">Sardana<y:LabelModel>
+              <y:SmartNodeLabelModel distance="4.0"/>
+            </y:LabelModel>
+            <y:ModelParameter>
+              <y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
+            </y:ModelParameter>
+          </y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n10">
+      <data key="d4"><![CDATA[http://tango-controls.readthedocs.io/en/latest/development/device-api/python/index.html]]></data>
+      <data key="d5"><![CDATA[TANGO devices and database are implemented using the TANGO device server model. 
+To access them the user has the CORBA interface e.g. command_inout(), 
+write_attributes() etc. defined by the idl file. These methods are very 
+low-level and assume a good working knowledge of CORBA. In order to simplify 
+this access, high-level api in C++, Python and Java have been implemented which 
+hides all CORBA aspects of TANGO.]]></data>
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="29.28000000000003" width="359.8228230258328" x="1330.914097419095" y="893.0890442395814"/>
+          <y:Fill color="#FFCC00" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="14" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="21.1513671875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="139.37890625" x="110.2219583879164" y="4.064316406249986">PyTango Device API<y:LabelModel>
+              <y:SmartNodeLabelModel distance="4.0"/>
+            </y:LabelModel>
+            <y:ModelParameter>
+              <y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
+            </y:ModelParameter>
+          </y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n11">
+      <data key="d4"><![CDATA[http://tango-controls.readthedocs.io/en/latest/development/client-api/index.html]]></data>
+      <data key="d5"><![CDATA[TANGO devices and database are implemented using the TANGO device server model. 
+To access them the user has the CORBA interface e.g. command_inout(), 
+write_attributes() etc. defined by the idl file. These methods are very 
+low-level and assume a good working knowledge of CORBA. In order to simplify 
+this access, high-level api in C++, Python and Java have been implemented which 
+hides all CORBA aspects of TANGO.]]></data>
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="29.28000000000003" width="165.20402811920394" x="1703.704401360958" y="893.0890442395814"/>
+          <y:Fill color="#CC3300" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="14" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="21.1513671875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#FFFFFF" verticalTextPosition="bottom" visible="true" width="106.7236328125" x="29.24019765335197" y="4.064316406249986">C++ Device API<y:LabelModel>
+              <y:SmartNodeLabelModel distance="4.0"/>
+            </y:LabelModel>
+            <y:ModelParameter>
+              <y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
+            </y:ModelParameter>
+          </y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n12">
+      <data key="d4"><![CDATA[http://www.tango-controls.org/downloads/guis/]]></data>
+      <data key="d5"><![CDATA[It is an online design tool that allows easy development of QTango based 
+graphical user interfaces, made up of Qt4 and QTango widgets.]]></data>
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="39.77268079389313" width="165.20402811920383" x="1703.704401360958" y="803.0890442395812"/>
+          <y:Fill color="#CC3300" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="14" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="21.1513671875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#FFFFFF" verticalTextPosition="bottom" visible="true" width="49.103515625" x="58.05025624710197" y="9.310656803196594">Mango<y:LabelModel>
+              <y:SmartNodeLabelModel distance="4.0"/>
+            </y:LabelModel>
+            <y:ModelParameter>
+              <y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
+            </y:ModelParameter>
+          </y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n13">
+      <data key="d4"><![CDATA[http://www.tango-controls.org/resources/documentation/guis/qtango/]]></data>
+      <data key="d5"><![CDATA[QTango is a framework. It consists of classes and widgets that interact with the 
+Tango control system, while providing an easy API to the programmer and full 
+integration with the Qt4 designer.]]></data>
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="34.362395847327264" width="165.2040281192052" x="1703.704401360958" y="842.8617250334744"/>
+          <y:Fill color="#CC3300" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="14" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="21.1513671875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#FFFFFF" verticalTextPosition="bottom" visible="true" width="56.8828125" x="54.16060780960265" y="6.605514329913603">QTango<y:LabelModel>
+              <y:SmartNodeLabelModel distance="4.0"/>
+            </y:LabelModel>
+            <y:ModelParameter>
+              <y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
+            </y:ModelParameter>
+          </y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+  </graph>
+  <data key="d7">
+    <y:Resources/>
+  </data>
+</graphml>
