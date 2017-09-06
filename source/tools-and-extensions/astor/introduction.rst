@@ -107,11 +107,11 @@ Host Control
 |image9|
 
 
+Source
+~~~~~~~~~
 
 
-
-
-
+You can download the project `here <https://bintray.com/tango-controls/maven/Astor/_latestVersion>`_
 
 
 .. definitions

@@ -17,7 +17,9 @@ These tools are delivered as a part of Tango Controls core package.
    pogo/index
    jdraw/jdraw
    atk/index
-
+   logviewer/index
+   qtango/qtango
+   canone
 
 Archiving
 ---------
@@ -26,6 +28,7 @@ Archiving
    :maxdepth: 2
    :name: archivingtoc
 
+   archiving/HDB
    archiving/HDB++
 
 
@@ -44,11 +47,22 @@ These are libraries for creating GUI applications.
 Bindings
 --------
 
+..  raw:: html
+
+    <embed width="100%" height="526px" style="overflow:hidden" type="text/html" src="../_static/layer-map-source/tango_bindings_map.html">
+
+
 .. toctree::
    :name: bindingstoc
    :maxdepth: 1
 
-   bindings/index
+   bindings/c-lang
+   bindings/matlab-and-octave
+   bindings/labVIEW
+   bindings/igor-pro
+   bindings/panorama
+   ../development/advanced/rest-api
+
 
 
 Other tools

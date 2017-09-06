@@ -21,5 +21,10 @@ Introduction
 
 * The code generation part is based on EMF_ (Eclipse Model Framework) associated with  Xtext_ and Xtend_  classes.
 
-* Requirement : This tool needs java 1.7 or higher to be able to run.
+* Requirement: This tool needs java 1.7 or higher to be able to run.
 
+* Source:
+
+        project: https://github.com/tango-controls/pogo
+
+        download: https://bintray.com/tango-controls/maven/pogo/_latestVersion

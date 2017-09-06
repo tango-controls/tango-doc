@@ -3,7 +3,7 @@ Server TANGO versions
 
 On a host you can have an overview of TANGO version for servers
 
-(See `TANGO releases history <http://www.tango-controls.org/about-us/history/>`_)
+(See `TANGO releases history <http://www.tango-controls.org/about-us/>`_)
 
    |image0|
 

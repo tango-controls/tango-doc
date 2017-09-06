@@ -1,3 +1,5 @@
+.. _jtango_manual:
+
 .. highlight:: java
 
 Introduction
@@ -7,18 +9,14 @@ This paper is a documentation intended for developers. It described how
 to build a Java Tango Device. A background in the Java language is
 strongly recommended. The pre-requisites are:
 
--  The Tango concepts: attribute, command, device property… Please read
-   the Tango reference manual : *http://www.tango-controls.org/,
-   http://www.tango-controls.org/Documents/tango-kernel/*
-
 -  The Java language Standard Edition :
-   `*http://www.oracle.com/technetwork/java/javase/documentation/index.html* <http://www.oracle.com/technetwork/java/javase/documentation/index.html>`__
+   `http://www.oracle.com/technetwork/java/javase/documentation/index.html <http://www.oracle.com/technetwork/java/javase/documentation/index.html>`__
 
 -  The concept of annotations introduced in Java version 5:
-   `*https://docs.oracle.com/javase/tutorial/java/annotations/* <https://docs.oracle.com/javase/tutorial/java/annotations/>`__
+   `https://docs.oracle.com/javase/tutorial/java/annotations/ <https://docs.oracle.com/javase/tutorial/java/annotations/>`__
 
 -  Java beans :
-   `*http://en.wikipedia.org/wiki/JavaBeans* <http://en.wikipedia.org/wiki/JavaBeans>`__
+   `http://en.wikipedia.org/wiki/JavaBeans <http://en.wikipedia.org/wiki/JavaBeans>`__
 
 A first device
 ==============

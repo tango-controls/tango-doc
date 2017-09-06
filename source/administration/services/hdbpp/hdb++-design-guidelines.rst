@@ -926,7 +926,7 @@ Please refer to the *hdbextractor* reference manual for the C++
 `implementation <https://sourceforge.net/p/tango-cs/code/HEAD/tree/archiving/hdb++/hdbextractor>`_
 
 and the *HDB++ Java Extraction Library* for Java
-`HDB++ java-extraction-api <http://www.tango-controls.org/community/project-docs/hdbplusplus/hdbplusplus-doc/java-extraction-api>`__
+`HDB++ java-extraction-api <http://www.esrf.eu/computing/cs/tango/tango_doc/hdb_javadoc/index.html>`__
 
 General remarks
 ===============
@@ -937,8 +937,8 @@ already needed by the core.
 Project references and source code
 ==================================
 
-The HDB++ project page is available on the Controls web site:
-`HDB++ <http://www.tango-controls.org/community/projects/hdbplus/>`_.
+The HDB++ project page is available on `GitHub <https://github.com/tango-controls>`_.
+
 The HDB++ source code for the archiving engine as well as the
 configuration tools, extraction libraries and GUI are available on
 

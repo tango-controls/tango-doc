@@ -1,7 +1,7 @@
 .. _documentation_workflow_tutorial:
 
-Documentation workflow tutorial
-===============================
+Documentation, how to contribute
+================================
 
 Prerequisites
 -------------

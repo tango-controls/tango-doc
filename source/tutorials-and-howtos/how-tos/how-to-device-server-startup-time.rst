@@ -1,8 +1,8 @@
 
 .. How-To try
 
-Database reconnection at device server startup time
-===================================================
+How to reconnect Database at device server startup time
+=======================================================
 
 This HowTo is a CPP example of how you can program a Tango DS in order
 that it can be started before the Tango's database and which will wait
