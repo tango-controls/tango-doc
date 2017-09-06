@@ -1,8 +1,8 @@
 .. _getting_started_as_developer:
 
 
-How to develop Tango Controls servers
-=====================================
+How to develop for Tango Controls
+=================================
 
 Here you will find recipies on how-to develop the Tango Controls on various systems.
 

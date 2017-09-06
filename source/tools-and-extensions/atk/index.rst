@@ -1,3 +1,5 @@
+.. _atk_documentation:
+
 Tango Application Toolkit “ATK”
 ===============================
 
@@ -22,6 +24,7 @@ Contents:
 
    atk
    atk_java_doc
+   atkpanel
 
 
 
