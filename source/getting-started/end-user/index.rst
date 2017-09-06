@@ -15,7 +15,7 @@ It is a tool used to configure components of the Tango Controls and browse a sta
 ATKPanel
 ~~~~~~~~
 ATKPanel is a simple application which shows (and allows to modify or invoke) device :term:`state`,
-:term:`attributes<attribute>` and :term:`commands<command>`. Thus it allows for test and control all devices in the system.
+:term:`attributes<attribute>` and :term:`commands<command>`. Thus it allows to test and control all devices in the system.
 The tool is delivered together with Tango Controls. It may be opened as a stand-alone application or invoked from Jive.
 See :ref:`ATKPanel Manual <atkpanel_manual>`.
 
