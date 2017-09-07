@@ -7,6 +7,7 @@ Administration
    :name: administrationtoc
    :maxdepth: 2
 
+   overview
    deployment/index
    services/index
    maintenance/index

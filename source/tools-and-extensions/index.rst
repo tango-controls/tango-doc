@@ -27,7 +27,8 @@ Archiving
 .. toctree::
    :maxdepth: 2
    :name: archivingtoc
-
+   
+   archiving/overview
    archiving/HDB
    archiving/HDB++
 
@@ -56,6 +57,7 @@ Bindings
    :name: bindingstoc
    :maxdepth: 1
 
+   bindings/overview
    bindings/c-lang
    bindings/matlab-and-octave
    bindings/labVIEW

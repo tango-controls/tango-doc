@@ -1,51 +1,23 @@
-Tango Ecosystem
-================
+Ecosystem
+==========
 
-The Tango ecosystem has developed over a decade now and offers a rich ecosystem for developers and clients
-alike.
+The Tango ecosystem offers a rich ecosystem for developers and clients alike.
 The ecosystem is best appreciated via these maps which show what exists and where it is situated in the software stack.
-Use the :ref:`key` to understand the colour code used.
+Use the :ref:`map key <map_key>` to understand the colour code used.
 
-Developers Tools
------------------
-Tango is a developers toolkit. There are many libraries and tools for implemented device clients and servers.
+Tango is a developers toolkit. There are many libraries and tools for implemented device 
+clients and servers.
+Refer to the :ref:`developers guide map <developers_overview>` for a quick overview.
 
-..  raw:: html
-
-    <embed width="200%" height="600px" type="text/html" src="../_static/layer-map-source/tango_control_system_development.html">
-
-Administrating Tools
----------------------
-Tango is designed to run smal and large systems. In order to facilitate managing large systems a number
+Tango is designed to run small and large systems. In order to facilitate managing large systems a number
 of administrative tools are provided.
+Refer to the :ref:`administrators map <administrators_overview>` for a quick overview.
 
-..  raw:: html
-
-    <embed width="110%" height="600px" type="text/html" src="../_static/layer-map-source/tango_administration_map.html">
-
-Archiving Tools
-----------------
 All control systems need to be able archive data so they can look back at past data. Tango comes with a number
 of archiving solutions.
+Refer to the :ref:`archiving map <archiving_overview>` for a quick overview.
 
-..  raw:: html
-
-    <embed width="100%" height="600px" type="text/html" src="../_static/layer-map-source/tango_archiving_map.html">
-
-Bindings
----------
-Tango offers a wide range of bindings to different languages.
-
-..  raw:: html
-
-    <embed width="100%" height="600px" type="text/html" src="../_static/layer-map-source/tango_bindings_map.html">
-
-.. _Key:
-
-Key
-----
-The key to the colour codes of the layered maps.
-
-..  raw:: html
-
-    <embed width="100%" height="650px" type="text/html" src="../_static/layer-map-source/tango_key.html">
+In addition to the rich Python, C++ and Java api's for Tango a number of other languages
+can be used with the help of one of the many bindings for Tango.
+Refer to the :ref:`bindings map <bindings_overview>` for a quick overview of the 
+known bindings.
