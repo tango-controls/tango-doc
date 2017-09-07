@@ -5239,7 +5239,7 @@ div[class^='highlight'] pre {
   padding: 0.4045em 1.618em;
   display: block;
   position: relative;
-  font-size: 90%;
+  font-size: 95%;
   color: #b3b3b3;
 }
 .wy-menu-vertical a:hover {
@@ -5571,6 +5571,14 @@ footer span.commit code, footer span.commit .rst-content tt, .rst-content footer
     margin-left: 0;
   }
 }
+code, .rst-content tt, .rst-content code {
+  font-size: 85%;
+}
+
+div[class^='highlight'] pre {
+  font-size: 90%;
+}
+
 .rst-versions {
   position: fixed;
   bottom: 0;
