@@ -8,6 +8,7 @@ The section is organized as follows:
    :name: developersguidetoc
    :maxdepth: 2
 
+   overview
    general-guidelines/index
    corba
    client-api/index

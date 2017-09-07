@@ -3,9 +3,8 @@
 .. image:: ../img/logo_tangocontrols.png
     :align: center
 
-Tango Overview
-==============
-
+Overview
+=========
 
 Contents:
 
