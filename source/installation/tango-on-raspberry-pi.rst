@@ -1,10 +1,10 @@
 
 .. How-To try
+ 
+Raspberry Pi
+==============
 
-How To Install TANGO On Raspberry PI In One Line Command
-========================================================
-
-.. figure:: how-to-install-tango-on-raspberry-pi/raspberry_pi_200x200.jpg
+.. figure:: tango-on-raspberry-pi/raspberry_pi_200x200.jpg
     :width: 200px
     :align: center
     :height: 200px
@@ -13,16 +13,12 @@ How To Install TANGO On Raspberry PI In One Line Command
 
     By Olivier Taché
 
-Installing Tango on Raspberry is very simple with a just one line
-command
-
-This is a summary of all the already published tips on forum or
-mailinglist.
+Installing Tango on a Raspberry is very simple -  just one line command.
 
 Installation without database
 -----------------------------
 
-On raspberry 2 and 3, it is better to wait for the network on booting.
+On Raspberry 2 and 3, it is better to wait for the network on booting.
 
 (Raspberry PI Preference menu, wait on boot, check "wait for network")
 
@@ -48,7 +44,7 @@ and installing
 Installation with database
 --------------------------
 
-If you need the local database, process this installation **before **
+If you need the local database, process this installation **before**
 
 .. code-block:: console
    :linenos:

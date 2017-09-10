@@ -1,7 +1,7 @@
 .. Guide on how-to install Tango Controls on Windows
 
-Tango on Windows
-================
+Windows
+=========
 
 This guide provides step by step guide on installation of Tango Controls under Windows operating systems.
 

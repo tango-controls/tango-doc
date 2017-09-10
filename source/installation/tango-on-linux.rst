@@ -1,7 +1,7 @@
 .. Guide on how-to install Tango Controls on Linux
 
-Tango on Linux
-==============
+Linux
+=======
 
 Binary packages are available for Debian based systems in the official repositories.
 Use apt-get to install them e.g. to install the TANGO database and test device server:

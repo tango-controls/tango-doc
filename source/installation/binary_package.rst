@@ -4,8 +4,10 @@
 Binary packages
 ---------------
 
+Binary packages for Tango are maintained to make it easier for developers to
+install the latest builds of Tango without have to compile them. 
 
-
+Here is a list of the available binary packages.
 
 `JTango <https://bintray.com/tango-controls/maven/JTango/9.3.3>`_ - library for device servers and clients in Java.
 
