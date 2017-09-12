@@ -1,9 +1,9 @@
 .. _getting_started_installation:
 
-How to install Tango-Controls and its parts on various platforms
-================================================================
+Installation
+=============
 
-Here you will find recipies on how-to install the Tango Controls on various systems.
+Here you will find recipes on how-to install the Tango Controls on various systems.
 
 .. toctree::
     :maxdepth: 2
