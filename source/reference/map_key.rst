@@ -28,6 +28,6 @@ A simplified workflow can be described as follows:
 * Save the changes, then select File->Export to export the changes. Export the graph as a "HTML ImageMap".
 * You will be prompted with the "HTML Map Export" dialog. Ensure the image format is PNG on the Image tab. There should be no need to change any other settings.
 
-The result of the above will be both a HTML file and a PNG file that can be embedded in the documentation.
+The result of the above will be both a HTML file and a PNG file that can be embedded in the documentation. The HTML file is embedded directly using the raw keyword, and it will load the PNG file when rendered.
 
 
