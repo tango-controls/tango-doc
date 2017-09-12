@@ -2,7 +2,7 @@
 
 
 Patches
-=======
+========
 
 To apply any patches downloaded from this page, first go to the directory where Tango source distribution has been extracted
 e.g. *cd ~/tango-9.2.2*, then type the command :
@@ -12,8 +12,7 @@ e.g. *cd ~/tango-9.2.2*, then type the command :
        patch -p1 <"patch_file"
 
 
-Version 9.2.5 source patches
-----------------------------
+**Version 9.2.5 source patches**
 
 omniORB 4.2 bug (described in `bug 794 <https://sourceforge.net/p/tango-cs/bugs/794/>`_) is fixed if you apply
 `this patch file <ftp.esrf.fr/pub/cs/tango/Patches/dii_race.patch>`_ to omniORB 4.2.
@@ -25,8 +24,7 @@ To apply this patch, copy the patch file to the directory where you extracted om
        patch -p0 < dii_race.patch
 
 
-Version 9.2.2 source patches
-----------------------------
+**Version 9.2.2 source patches**
 
 `Bug 787 <https://sourceforge.net/p/tango-cs/bugs/787/>`_,
 `Bug 788 <https://sourceforge.net/p/tango-cs/bugs/788/>`_,
@@ -38,8 +36,7 @@ Version 9.2.2 source patches
 Then go to your build directory and run *make* followed by *make install*.
 
 
-Version 9.1.0 source patches
-----------------------------
+**Version 9.1.0 source patches**
 
 `Bug 745 <https://sourceforge.net/p/tango-cs/bugs/745/>`_,
 `Bug 748 <https://sourceforge.net/p/tango-cs/bugs/748/>`_,
@@ -55,8 +52,7 @@ As usual, this patch assumes the previous patch(es) for the Tango release has be
 Then go to your build directory and run *make* followed by *make install*.
 
 
-Version 8.1.2 source patches
-----------------------------
+**Version 8.1.2 source patches**
 
 `Bug 662 <https://sourceforge.net/p/tango-cs/bugs/662/>`_,
 `Bug 663 <https://sourceforge.net/p/tango-cs/bugs/663/>`_:
@@ -83,8 +79,7 @@ These 2 bugs are all fixed if you apply `this patch file <ftp.esrf.fr/pub/cs/tan
 Then go to your build directory and run *make* followed by *make install*.
 
 
-Version 8.0.5 source patches
-----------------------------
+**Version 8.0.5 source patches**
 
 `Bug 528 <https://sourceforge.net/p/tango-cs/bugs/528/>`_,
 `Bug 530 <https://sourceforge.net/p/tango-cs/bugs/530/>`_,
