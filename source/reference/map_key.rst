@@ -19,7 +19,7 @@ formatted for this document by Stuart James (ESRF).
 Making Modifications
 --------------------
 
-The layer map graph is maintained and modified using yEd Graph Editor. yEd exports the graph as a HTML/PNG file combo. This tool can be found at <https://github.com/curl/curl.git>. 
+The layer map graph is maintained and modified using yEd Graph Editor. yEd exports the graph as a HTML/PNG file combo. This tool can be found at <https://www.yworks.com/products/yed>. 
 
 A simplified workflow can be described as follows:
 
