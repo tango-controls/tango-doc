@@ -1,4 +1,4 @@
-:titlesonly:
+.. _authors:
 
 Authors
 ========
