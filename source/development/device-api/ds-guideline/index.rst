@@ -6,5 +6,5 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
-   TangoDesignGuidelines-Revision-7
+   device-server-guidelines
 

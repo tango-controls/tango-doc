@@ -4,10 +4,23 @@
 Binary packages
 ---------------
 
+Binary packages for Tango are maintained to make it easier for developers to
+install the latest builds of Tango without have to compile them. 
 
+Here is a list of the available binary packages.
 
+.. `JTango <https://bintray.com/tango-controls/maven/JTango/_latestVersion>`_ - library for device servers and clients in Java.
 
-`JTango <https://bintray.com/tango-controls/maven/JTango/9.3.3>`_ - library for device servers and clients in Java.
+.. raw:: html
+
+   <p>
+   <a href='https://bintray.com/tango-controls/maven/JTango/_latestVersion'>JTango</a>
+   <a href='https://bintray.com/tango-controls/maven/JTango/_latestVersion'>
+    <img src='https://api.bintray.com/packages/tango-controls/maven/JTango/images/download.svg' style='vertical-align: middle;'>
+   </a>
+   - library for device servers and clients in Java
+   </p>
+
 
 `TangORB <https://sourceforge.net/projects/tango-cs/files/tools/TangORB-8.3.5_jeromq_android.jar/download>`_ for Android -
 library for device servers and client in Java on Android
