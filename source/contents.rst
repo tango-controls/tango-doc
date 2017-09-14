@@ -5,8 +5,10 @@ Tango Documentation Contents
    :glob:
    :name: maintoc
    :maxdepth: 2
+   :titlesonly:
 
    index
+   authors
    overview/index
    installation/index
    getting-started/index
