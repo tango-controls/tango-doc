@@ -18,7 +18,8 @@ The following people have contributed to the Tango documentation over the years:
   advantages of using Sphinx
 * **Piotr Goryl** - for reformatting the documentation into Sphinx and acting as main
   documentation master
-* **Igor Khokhrakiov** - for writing the new version of JTango documentation, REST api, Amazon cloud etc
+* **Gwenaelle Abeille** - for writing the new version of JTango documentation 
+* **Igor Khokhrakiov** - for writing REST api, Amazon cloud etc
 * **Olga Merkulova** - for re-organising the documentation and writing getting started
 * **Matteo di Carlo** - for drawing the Device Server system model
 * **Lukasz Zytniak** - for converting many documents to Sphinx
