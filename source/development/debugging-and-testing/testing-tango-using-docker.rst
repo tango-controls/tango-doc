@@ -73,6 +73,7 @@ https://bitbucket.org/hzgwpn/mtangorest.docker
 The following docker-compose.yml assembles the whole stack:
 
 .. code-block:: yaml
+
     version: '2'
     services:
       tango-db:
