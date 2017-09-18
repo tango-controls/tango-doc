@@ -11,8 +11,6 @@ Raspberry Pi
     :alt: alternate text
     :figclass: align-center
 
-    By Olivier Taché
-
 Installing Tango on a Raspberry is very simple -  just one line command.
 
 Installation without database

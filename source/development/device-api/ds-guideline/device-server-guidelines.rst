@@ -1,3 +1,4 @@
+.. _ds_guidelines:
 
 Guidelines
 =====================
@@ -25,14 +26,6 @@ To this aim the document is divided in 3 main chapters:
 1. Tango concepts
 2. DeviceServers design consideration
 3. Implementation good practices
-
-Authors
--------
-
-The following people have contributed to this document : Alain Buteau
-(SOLEIL), Jens Meyer (ESRF), J-M.Chaize (ESRF), E.Taurel (ESRF), P.
-Verdier (ESRF), N.Leclerq (SOLEIL), M.Lindberg (NEXEYA), S.Gara
-(NEXEYA), S. Minolli (NEXEYA), and A. Götz (ESRF).
 
 About this document
 -------------------
