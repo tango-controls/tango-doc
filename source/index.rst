@@ -40,7 +40,6 @@ The documentation is organized in the following categories (some of them overlap
   :doc:`How to work with Tango Controls documentation <development/contributing/documentation-guide>` and the
   :doc:`Documentation workflow tutorial <tutorials-and-howtos/tutorials/documentation-workflow-tutorial>` .
 
-
 Indices and tables
 ------------------
 
