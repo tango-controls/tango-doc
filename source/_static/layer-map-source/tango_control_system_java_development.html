@@ -1,0 +1,135 @@
+<html>
+<head><title>Image map created by yEd</title>
+<style type="text/css">
+.tooltip {
+  font-size:10pt;
+  background-color:#FFFFCC;
+  border:1px solid black;
+  padding:2px
+}
+</style>
+<style type="text/css">
+.tooltip {
+  position:absolute;
+  display:none
+}
+</style>
+</head>
+<body>
+
+<script type="text/javascript">
+tooltip = null;
+document.onmousemove = updateTooltip;
+function updateTooltip(e) {
+try {
+if (document.all) {
+if (document.documentElement && document.documentElement.scrollTop) { // Explorer 6 Strict
+x = document.documentElement.scrollLeft + window.event.x;
+y = document.documentElement.scrollTop + window.event.y;
+}
+else { // all other Explorers
+x = document.body.scrollLeft + window.event.x;
+y = document.body.scrollTop + window.event.y;
+}
+}
+else {
+x = e.pageX;
+y = e.pageY;
+}
+if (tooltip != null) {
+o = 20;
+var sx, sy;
+if (self.pageYOffset) { // all except Explorer
+sx = self.pageXOffset;
+sy = self.pageYOffset;
+}
+else if (document.documentElement && document.documentElement.scrollTop) { // Explorer 6 Strict
+sx = document.documentElement.scrollLeft;
+sy = document.documentElement.scrollTop;
+}
+else if (document.body) { // all other Explorers
+sx = document.body.scrollLeft;
+sy = document.body.scrollTop;
+}
+t = y + o + tooltip.offsetHeight;
+w = sy + document.body.clientHeight;
+if (t > w) {
+y = y - o - tooltip.offsetHeight;
+}
+else {
+y = y + o;
+}
+t = x + o + tooltip.offsetWidth;
+w = sx + document.body.clientWidth;
+if (t > w) {
+x = x - o - tooltip.offsetWidth;
+}
+else {
+x = x + o;
+}
+if ((tooltip.style.top == '' || tooltip.style.top == 0) && (tooltip.style.left == '' || tooltip.style.left == 0))
+{
+tooltip.style.width = tooltip.offsetWidth + 'px';
+tooltip.style.height = tooltip.offsetHeight + 'px';
+}
+tooltip.style.left = x + "px";
+tooltip.style.top = y + "px";
+}
+} catch (error) { error = null; }
+}
+function showTooltip(id) {
+try {
+tooltip = document.getElementById(id);
+tooltip.style.display = "block";
+} catch (error) { error = null; }
+}
+function hideTooltip() {
+try {
+tooltip.style.display = "none";
+} catch (error) { error = null; }
+}
+</script>
+
+<div class="tooltip" id="n0">Control System Java Development</div>
+<div class="tooltip" id="n1">JDraw is an editor to draw your synoptic(s) to control Tango devices.</div>
+<div class="tooltip" id="n2">TANGO devices and database are implemented using the TANGO device server model. <br>To access them the user has the CORBA interface e.g. command_inout(), <br>write_attributes() etc. defined by the idl file. These methods are very <br>low-level and assume a good working knowledge of CORBA. In order to simplify <br>this access, high-level api in C++, Python and Java have been implemented which <br>hides all CORBA aspects of TANGO.</div>
+<div class="tooltip" id="n3">A device is an abstract concept defined by the TDSOM. In reality, it can be a <br>piece of hardware (an interlock bit) a collection of hardware (a screen attached <br>to a stepper motor) a logical device (a taper) or a combination of all these (an<br>accelerator). Each device has a unique name in the control system and eventually<br> one alias. Within Tango, a four field name space has been adopted consisting of<br>[//FACILITY/]DOMAIN/CLASS/MEMBER </div>
+<div class="tooltip" id="n4">A java web application that provides Tango REST API implementation. Basically it is a bridge from "http://" to "tango://". For more information please refer to this page ...</div>
+<div class="tooltip" id="n5">Pogo helps you creating/updating Tango device class in any of the three <br>supported languages (C++, Python or Java)</div>
+<div class="tooltip" id="n6">Tango Application Toolkit also called "ATK" is a client framework for building<br>applications based on Java Swing in a Tango control system.</div>
+<div class="tooltip" id="n7">ATKPanel is a generic ATK-based application which displays panels allowing you <br>to execute any device commands or to read/write any device attributes.</div>
+<div class="tooltip" id="n8">Communication Layer (CORBA / ZMQ)</div>
+<div class="tooltip" id="n9">It is a generic class to view and to animate the synoptics made with JDraw.</div>
+<div class="tooltip" id="n10">DeviceTree is a generic application that you configure to display attributes <br>value or to execute commands on any set of devices.</div>
+<div class="tooltip" id="n11">A java web application that provides Tango REST API implementation. Basically it is a bridge from "http://" to "tango://". For more information please refer to this page ...</div>
+<div class="tooltip" id="n12">mTangoSDK (mobile Tango Software Development Kit)'s main goal is to give developers tools for rapid development of web/mobile tango applications.</div>
+<div class="tooltip" id="n13">TangoJS - a complete solution for creating web-based TANGO Controls client applications.</div>
+<div class="tooltip" id="n14">JYSE</div>
+
+<map name="image1_1">
+  <area shape="rect" coords="217,168,272,207" href="https://www.ict.inaf.it/indico/event/514/session/10/contribution/26/material/slides/0.pdf" alt="" onmouseover="showTooltip('n14')" onmouseout="hideTooltip()" target="_blank"/>
+  <area shape="rect" coords="129,168,207,207" href="https://tangojs.github.io/" alt="" onmouseover="showTooltip('n13')" onmouseout="hideTooltip()" target="_blank"/>
+  <area shape="rect" coords="31,168,120,207" href="https://bitbucket.org/hzgwpn/mtango/wiki/Home" alt="" onmouseover="showTooltip('n12')" onmouseout="hideTooltip()" target="_blank"/>
+  <area shape="rect" coords="31,207,272,247" href="https://bitbucket.org/hzgwpn/mtango/wiki/Home" alt="" onmouseover="showTooltip('n11')" onmouseout="hideTooltip()" target="_blank"/>
+  <area shape="rect" coords="383,173,471,212" href="http://tango-controls.readthedocs.io/en/latest/tools-and-extensions/jive/filtering.html?highlight=device%20tree" alt="" onmouseover="showTooltip('n10')" onmouseout="hideTooltip()" target="_blank"/>
+  <area shape="rect" coords="480,133,596,173" href="http://tango-controls.readthedocs.io/en/latest/tools-and-extensions/jdraw/jdraw.html" alt="" onmouseover="showTooltip('n9')" onmouseout="hideTooltip()" target="_blank"/>
+  <area shape="rect" coords="31,293,596,322" href="http://tango-controls.readthedocs.io/en/latest/development/device-api/device-server-model.html#introduction-to-corba" alt="" onmouseover="showTooltip('n8')" onmouseout="hideTooltip()" target="_blank"/>
+  <area shape="rect" coords="285,173,373,212" alt="" onmouseover="showTooltip('n7')" onmouseout="hideTooltip()"/>
+  <area shape="rect" coords="285,212,596,247" href="http://tango-controls.readthedocs.io/en/latest/development/client-api/atk-programmers-guide.html?highlight=atkpanel" alt="" onmouseover="showTooltip('n6')" onmouseout="hideTooltip()" target="_blank"/>
+  <area shape="rect" coords="15,512,611,538" href="http://tango-controls.readthedocs.io/en/latest/tools-and-extensions/pogo/index.html" alt="" onmouseover="showTooltip('n5')" onmouseout="hideTooltip()" target="_blank"/>
+  <area shape="rect" coords="31,322,596,351" href="http://tango-controls.readthedocs.io/en/latest/development/device-api/device-server-model.html#deviceservermodel" alt="" onmouseover="showTooltip('n4')" onmouseout="hideTooltip()" target="_blank"/>
+  <area shape="rect" coords="31,352,596,381" href="http://tango-controls.readthedocs.io/en/latest/development/client-api/index.html" alt="" onmouseover="showTooltip('n3')" onmouseout="hideTooltip()" target="_blank"/>
+  <area shape="rect" coords="31,263,596,293" href="http://tango-controls.readthedocs.io/en/latest/development/device-api/java/index.html" alt="" onmouseover="showTooltip('n2')" onmouseout="hideTooltip()" target="_blank"/>
+  <area shape="rect" coords="480,173,596,212" href="http://tango-controls.readthedocs.io/en/latest/tools-and-extensions/jdraw/jdraw.html" alt="" onmouseover="showTooltip('n1')" onmouseout="hideTooltip()" target="_blank"/>
+  <area shape="rect" coords="15,15,611,494" alt="" onmouseover="showTooltip('n0')" onmouseout="hideTooltip()"/>
+</map>
+
+
+    <table class="yimagetable" cellspacing="0" cellpadding="0" border="0">
+      <tr>
+        <td><img class="yimage" src="tango_control_system_java_development1_1.png" usemap="#image1_1" border="0" alt=""/></td>
+      </tr>
+    </table>
+
+</body>
+</html>

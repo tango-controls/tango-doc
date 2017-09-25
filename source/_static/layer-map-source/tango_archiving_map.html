@@ -1,0 +1,139 @@
+<html>
+<head><title>Image map created by yEd</title>
+<style type="text/css">
+.tooltip {
+  font-size:10pt;
+  background-color:#FFFFCC;
+  border:1px solid black;
+  padding:2px
+}
+</style>
+<style type="text/css">
+.tooltip {
+  position:absolute;
+  display:none
+}
+</style>
+</head>
+<body>
+
+<script type="text/javascript">
+tooltip = null;
+document.onmousemove = updateTooltip;
+function updateTooltip(e) {
+try {
+if (document.all) {
+if (document.documentElement && document.documentElement.scrollTop) { // Explorer 6 Strict
+x = document.documentElement.scrollLeft + window.event.x;
+y = document.documentElement.scrollTop + window.event.y;
+}
+else { // all other Explorers
+x = document.body.scrollLeft + window.event.x;
+y = document.body.scrollTop + window.event.y;
+}
+}
+else {
+x = e.pageX;
+y = e.pageY;
+}
+if (tooltip != null) {
+o = 20;
+var sx, sy;
+if (self.pageYOffset) { // all except Explorer
+sx = self.pageXOffset;
+sy = self.pageYOffset;
+}
+else if (document.documentElement && document.documentElement.scrollTop) { // Explorer 6 Strict
+sx = document.documentElement.scrollLeft;
+sy = document.documentElement.scrollTop;
+}
+else if (document.body) { // all other Explorers
+sx = document.body.scrollLeft;
+sy = document.body.scrollTop;
+}
+t = y + o + tooltip.offsetHeight;
+w = sy + document.body.clientHeight;
+if (t > w) {
+y = y - o - tooltip.offsetHeight;
+}
+else {
+y = y + o;
+}
+t = x + o + tooltip.offsetWidth;
+w = sx + document.body.clientWidth;
+if (t > w) {
+x = x - o - tooltip.offsetWidth;
+}
+else {
+x = x + o;
+}
+if ((tooltip.style.top == '' || tooltip.style.top == 0) && (tooltip.style.left == '' || tooltip.style.left == 0))
+{
+tooltip.style.width = tooltip.offsetWidth + 'px';
+tooltip.style.height = tooltip.offsetHeight + 'px';
+}
+tooltip.style.left = x + "px";
+tooltip.style.top = y + "px";
+}
+} catch (error) { error = null; }
+}
+function showTooltip(id) {
+try {
+tooltip = document.getElementById(id);
+tooltip.style.display = "block";
+} catch (error) { error = null; }
+}
+function hideTooltip() {
+try {
+tooltip.style.display = "none";
+} catch (error) { error = null; }
+}
+</script>
+
+<div class="tooltip" id="n0">Archiving</div>
+<div class="tooltip" id="n1">SnapArchiver: Records the attributes values picture in the SNAP database.<br>SnapManager: Manages the snapshots configuration and send the request to the archiver<br>SnapExtractor: Provides database extraction methods based on various criteria</div>
+<div class="tooltip" id="n2">Python API for the Tango Archiving system<br>This package allows to:<br>Integrate Hdb and Snap archiving with other python/PyTango tools.<br>Start/Stop Archiving devices in the appropiated order.<br>Increase the capabilities of configuration and diagnostic.<br>Import/Export .csv and .xml files between the archiving and the database.<br>NOTE: It access directly the MySql database. http://www.tango-controls.org/Events/meetings/May-2010/ArchivingWorkshopConclusion.pdf</div>
+<div class="tooltip" id="n3">E-Giga displays the data stored by the Tango archiving system within your <br>favorite WEB browser.<br>(PHP, Javascript)</div>
+<div class="tooltip" id="n4">The GUI named SGAD generates scripts to create MySql databases.</div>
+<div class="tooltip" id="n5">SnapArchiver: Records the attributes values picture in the SNAP database.<br>SnapManager: Manages the snapshots configuration and send the request to the archiver<br>SnapExtractor: Provides database extraction methods based on various criteria</div>
+<div class="tooltip" id="n6">TdbArchiver: Records the attributes values in the TDB database<br>ArchivingManager: Allows to start / stop the attributes archiving without GUI <br>(use load-balancing). The same device is used to manage the HDB and TDB archivers.<br>TdbExtractor: Provides database extraction methods based on various criteria<br>TdbArchivingWatcher: Controls the global archiving status and issue periodically <br>refreshed reports</div>
+<div class="tooltip" id="n7">HdbArchiver: Records the attributes values in the HDB database.<br>ArchivingManager: Allows to start / stop the attributes archiving without GUI <br>(use load-balancing). The same device is used to manage the HDB and TDB archivers.<br>HdbExtractor: Provides database extraction methods based on various criteria<br>HdbArchivingWatcher: Controls the global archiving status and issue periodically <br>refreshed reports</div>
+<div class="tooltip" id="n8">The HDB++ is a novel TANGO device server for Historical Data Base (HDB) archiving.<br>It’s written in C++ and is fully event-driven</div>
+<div class="tooltip" id="n9">Historical DataBase - HDB : Persistent storage of attributes values which are <br>scanned at a minimal period of 10 seconds.</div>
+<div class="tooltip" id="n10">Temporary DataBase - TDB : Volatile storage of attributes values which are <br>scanned at a minimal period of 100 milliseconds. <br>The data are kept 3 days in the database.</div>
+<div class="tooltip" id="n11">Snapshots – SNAP: Persistent storage allowed taking a picture of a set of <br>attributes values. </div>
+<div class="tooltip" id="n12">The HDB and TDB archiving is managed thanks to the GUI named Mambo.</div>
+<div class="tooltip" id="n13">The SNAP archiving is managed thanks to the GUI named Bensikin.</div>
+<div class="tooltip" id="n14">Communication Layer (CORBA / ZMQ)</div>
+<div class="tooltip" id="n15">In order to simplify device server process administration, a device of the <br>DServer class is automatically added to each device server process. Thus, every <br>device server process supports the same set of administration commands. The <br>implementation of this DServer class follows the device pattern and therefore, <br>its device behaves like any other devices. The device name is: <br>dserver/device server executable name/device server instance name </div>
+<div class="tooltip" id="n16">TANGO devices and database are implemented using the TANGO device server model. <br>To access them the user has the CORBA interface e.g. command_inout(), <br>write_attributes() etc. defined by the idl file. These methods are very <br>low-level and assume a good working knowledge of CORBA. In order to simplify <br>this access, high-level api in C++, Python and Java have been implemented which <br>hides all CORBA aspects of TANGO.</div>
+
+<map name="image1_1">
+  <area shape="rect" coords="27,262,508,292" href="http://tango-controls.readthedocs.io/en/latest/development/client-api/index.html" alt="" onmouseover="showTooltip('n16')" onmouseout="hideTooltip()" target="_blank"/>
+  <area shape="rect" coords="27,321,508,350" href="http://tango-controls.readthedocs.io/en/latest/development/device-api/device-server-model.html#deviceservermodel" alt="" onmouseover="showTooltip('n15')" onmouseout="hideTooltip()" target="_blank"/>
+  <area shape="rect" coords="27,292,508,321" href="http://tango-controls.readthedocs.io/en/latest/development/device-api/device-server-model.html#introduction-to-corba" alt="" onmouseover="showTooltip('n14')" onmouseout="hideTooltip()" target="_blank"/>
+  <area shape="rect" coords="149,217,258,246" href="http://manualzilla.com/doc/5713108/bensikin-manual---the-tango-controls-website" alt="" onmouseover="showTooltip('n13')" onmouseout="hideTooltip()" target="_blank"/>
+  <area shape="rect" coords="272,217,508,246" href="http://plone.tango-controls.org/tools/archiving-system-2/documentation/Mambo_Manual_v2_2.doc" alt="" onmouseover="showTooltip('n12')" onmouseout="hideTooltip()" target="_blank"/>
+  <area shape="rect" coords="149,380,258,409" href="https://www.google.fr/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&cad=rja&uact=8&ved=0ahUKEwi9tZ3CvtPTAhVI7hoKHV3CBKEQFgguMAE&url=http%3A%2F%2Fplone.tango-controls.org%2Ftools%2Farchiving-system-2%2Fdocumentation%2FArchiving%2520Devices%2520Properties_v2.doc&usg=AFQjCNGTvLIKN5n1IZ2fauXWC-5FM0IEwQ" alt="" onmouseover="showTooltip('n11')" onmouseout="hideTooltip()" target="_blank"/>
+  <area shape="rect" coords="395,380,508,409" href="https://www.google.fr/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&cad=rja&uact=8&ved=0ahUKEwi9tZ3CvtPTAhVI7hoKHV3CBKEQFgguMAE&url=http%3A%2F%2Fplone.tango-controls.org%2Ftools%2Farchiving-system-2%2Fdocumentation%2FArchiving%2520Devices%2520Properties_v2.doc&usg=AFQjCNGTvLIKN5n1IZ2fauXWC-5FM0IEwQ" alt="" onmouseover="showTooltip('n10')" onmouseout="hideTooltip()" target="_blank"/>
+  <area shape="rect" coords="272,380,380,409" href="https://www.google.fr/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&cad=rja&uact=8&ved=0ahUKEwi9tZ3CvtPTAhVI7hoKHV3CBKEQFgguMAE&url=http%3A%2F%2Fplone.tango-controls.org%2Ftools%2Farchiving-system-2%2Fdocumentation%2FArchiving%2520Devices%2520Properties_v2.doc&usg=AFQjCNGTvLIKN5n1IZ2fauXWC-5FM0IEwQ" alt="" onmouseover="showTooltip('n9')" onmouseout="hideTooltip()" target="_blank"/>
+  <area shape="rect" coords="27,380,135,409" href="http://tango-controls.readthedocs.io/en/latest/administration/services/hdbpp/index.html" alt="" onmouseover="showTooltip('n8')" onmouseout="hideTooltip()" target="_blank"/>
+  <area shape="rect" coords="272,351,380,380" href="https://www.google.fr/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&cad=rja&uact=8&ved=0ahUKEwi9tZ3CvtPTAhVI7hoKHV3CBKEQFgguMAE&url=http%3A%2F%2Fplone.tango-controls.org%2Ftools%2Farchiving-system-2%2Fdocumentation%2FArchiving%2520Devices%2520Properties_v2.doc&usg=AFQjCNGTvLIKN5n1IZ2fauXWC-5FM0IEwQ" alt="" onmouseover="showTooltip('n7')" onmouseout="hideTooltip()" target="_blank"/>
+  <area shape="rect" coords="395,351,508,380" href="https://www.google.fr/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&cad=rja&uact=8&ved=0ahUKEwi9tZ3CvtPTAhVI7hoKHV3CBKEQFgguMAE&url=http%3A%2F%2Fplone.tango-controls.org%2Ftools%2Farchiving-system-2%2Fdocumentation%2FArchiving%2520Devices%2520Properties_v2.doc&usg=AFQjCNGTvLIKN5n1IZ2fauXWC-5FM0IEwQ" alt="" onmouseover="showTooltip('n6')" onmouseout="hideTooltip()" target="_blank"/>
+  <area shape="rect" coords="149,351,258,380" href="https://www.google.fr/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&cad=rja&uact=8&ved=0ahUKEwi9tZ3CvtPTAhVI7hoKHV3CBKEQFgguMAE&url=http%3A%2F%2Fplone.tango-controls.org%2Ftools%2Farchiving-system-2%2Fdocumentation%2FArchiving%2520Devices%2520Properties_v2.doc&usg=AFQjCNGTvLIKN5n1IZ2fauXWC-5FM0IEwQ" alt="" onmouseover="showTooltip('n5')" onmouseout="hideTooltip()" target="_blank"/>
+  <area shape="rect" coords="149,409,508,439" alt="" onmouseover="showTooltip('n4')" onmouseout="hideTooltip()"/>
+  <area shape="rect" coords="272,172,508,201" href="http://plone.tango-controls.org/download/e-giga" alt="" onmouseover="showTooltip('n3')" onmouseout="hideTooltip()" target="_blank"/>
+  <area shape="rect" coords="149,126,508,156" href="http://tango-controls.readthedocs.io/en/latest/tutorials-and-howtos/how-tos/how-to-pytangoarchiving.html" alt="" onmouseover="showTooltip('n2')" onmouseout="hideTooltip()" target="_blank"/>
+  <area shape="rect" coords="27,351,135,380" href="http://tango-controls.readthedocs.io/en/latest/administration/services/hdbpp/hdb++-design-guidelines.html#hdb-tango-device-server" alt="" onmouseover="showTooltip('n1')" onmouseout="hideTooltip()" target="_blank"/>
+  <area shape="rect" coords="15,15,521,493" alt="" onmouseover="showTooltip('n0')" onmouseout="hideTooltip()"/>
+</map>
+
+
+    <table class="yimagetable" cellspacing="0" cellpadding="0" border="0">
+      <tr>
+        <td><img class="yimage" src="tango_archiving_map1_1.png" usemap="#image1_1" border="0" alt=""/></td>
+      </tr>
+    </table>
+
+</body>
+</html>

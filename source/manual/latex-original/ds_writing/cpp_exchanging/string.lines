@@ -1,7 +1,0 @@
-     1	   Tango_DevString str = CORBA_string_alloc(5);
-     2	   strcpy(str,"TANGO");
-     3	
-     4	   Tango_DevString str1 = CORBA_string_dup("Do you want to danse TANGO with me?");
-     5	
-     6	   CORBA_string_free(str);
-     7	   CORBA_string_free(str1);

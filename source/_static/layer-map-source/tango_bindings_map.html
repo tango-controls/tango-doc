@@ -1,0 +1,131 @@
+<html>
+<head><title>Image map created by yEd</title>
+<style type="text/css">
+.tooltip {
+  font-size:10pt;
+  background-color:#FFFFCC;
+  border:1px solid black;
+  padding:2px
+}
+</style>
+<style type="text/css">
+.tooltip {
+  position:absolute;
+  display:none
+}
+</style>
+</head>
+<body>
+
+<script type="text/javascript">
+tooltip = null;
+document.onmousemove = updateTooltip;
+function updateTooltip(e) {
+try {
+if (document.all) {
+if (document.documentElement && document.documentElement.scrollTop) { // Explorer 6 Strict
+x = document.documentElement.scrollLeft + window.event.x;
+y = document.documentElement.scrollTop + window.event.y;
+}
+else { // all other Explorers
+x = document.body.scrollLeft + window.event.x;
+y = document.body.scrollTop + window.event.y;
+}
+}
+else {
+x = e.pageX;
+y = e.pageY;
+}
+if (tooltip != null) {
+o = 20;
+var sx, sy;
+if (self.pageYOffset) { // all except Explorer
+sx = self.pageXOffset;
+sy = self.pageYOffset;
+}
+else if (document.documentElement && document.documentElement.scrollTop) { // Explorer 6 Strict
+sx = document.documentElement.scrollLeft;
+sy = document.documentElement.scrollTop;
+}
+else if (document.body) { // all other Explorers
+sx = document.body.scrollLeft;
+sy = document.body.scrollTop;
+}
+t = y + o + tooltip.offsetHeight;
+w = sy + document.body.clientHeight;
+if (t > w) {
+y = y - o - tooltip.offsetHeight;
+}
+else {
+y = y + o;
+}
+t = x + o + tooltip.offsetWidth;
+w = sx + document.body.clientWidth;
+if (t > w) {
+x = x - o - tooltip.offsetWidth;
+}
+else {
+x = x + o;
+}
+if ((tooltip.style.top == '' || tooltip.style.top == 0) && (tooltip.style.left == '' || tooltip.style.left == 0))
+{
+tooltip.style.width = tooltip.offsetWidth + 'px';
+tooltip.style.height = tooltip.offsetHeight + 'px';
+}
+tooltip.style.left = x + "px";
+tooltip.style.top = y + "px";
+}
+} catch (error) { error = null; }
+}
+function showTooltip(id) {
+try {
+tooltip = document.getElementById(id);
+tooltip.style.display = "block";
+} catch (error) { error = null; }
+}
+function hideTooltip() {
+try {
+tooltip.style.display = "none";
+} catch (error) { error = null; }
+}
+</script>
+
+<div class="tooltip" id="n0">Bindings</div>
+<div class="tooltip" id="n1">TANGO devices and database are implemented using the TANGO device server model. <br>To access them the user has the CORBA interface e.g. command_inout(), <br>write_attributes() etc. defined by the idl file. These methods are very <br>low-level and assume a good working knowledge of CORBA. In order to simplify <br>this access, high-level api in C++, Python and Java have been implemented which <br>hides all CORBA aspects of TANGO.</div>
+<div class="tooltip" id="n2">In order to simplify device server process administration, a device of the <br>DServer class is automatically added to each device server process. Thus, every <br>device server process supports the same set of administration commands. The <br>implementation of this DServer class follows the device pattern and therefore, <br>its device behaves like any other devices. The device name is: <br>dserver/device server executable name/device server instance name </div>
+<div class="tooltip" id="n3">Communication Layer (CORBA / ZMQ)</div>
+<div class="tooltip" id="n4">LabView Device</div>
+<div class="tooltip" id="n5">LabView API</div>
+<div class="tooltip" id="n6">LabView Connector</div>
+<div class="tooltip" id="n7">LabView GUI</div>
+<div class="tooltip" id="n8">Matlab</div>
+<div class="tooltip" id="n9">Octave</div>
+<div class="tooltip" id="n10">Igor Pro</div>
+<div class="tooltip" id="n11">Panorama</div>
+<div class="tooltip" id="n12">REST API</div>
+
+<map name="image1_1">
+  <area shape="rect" coords="555,218,663,247" href="http://tango-rest-api.readthedocs.io/en/latest/" alt="" onmouseover="showTooltip('n12')" onmouseout="hideTooltip()" target="_blank"/>
+  <area shape="rect" coords="472,218,544,247" href="http://tango-controls.readthedocs.io/en/latest/tools-and-extensions/bindings/panorama.html" alt="" onmouseover="showTooltip('n11')" onmouseout="hideTooltip()" target="_blank"/>
+  <area shape="rect" coords="389,218,461,247" href="http://tango-controls.readthedocs.io/en/latest/tools-and-extensions/bindings/igor-pro.html" alt="" onmouseover="showTooltip('n10')" onmouseout="hideTooltip()" target="_blank"/>
+  <area shape="rect" coords="306,218,378,247" href="http://tango-controls.readthedocs.io/en/latest/tools-and-extensions/bindings/matlab-and-octave.html" alt="" onmouseover="showTooltip('n9')" onmouseout="hideTooltip()" target="_blank"/>
+  <area shape="rect" coords="215,218,295,247" href="http://tango-controls.readthedocs.io/en/latest/tools-and-extensions/bindings/matlab-and-octave.html" alt="" onmouseover="showTooltip('n8')" onmouseout="hideTooltip()" target="_blank"/>
+  <area shape="rect" coords="28,188,205,218" href="http://tango-controls.readthedocs.io/en/latest/tools-and-extensions/bindings/labVIEW.html" alt="" onmouseover="showTooltip('n7')" onmouseout="hideTooltip()" target="_blank"/>
+  <area shape="rect" coords="28,218,205,247" href="http://tango-controls.readthedocs.io/en/latest/tools-and-extensions/bindings/labVIEW.html" alt="" onmouseover="showTooltip('n6')" onmouseout="hideTooltip()" target="_blank"/>
+  <area shape="rect" coords="28,391,205,420" href="http://tango-controls.readthedocs.io/en/latest/tools-and-extensions/bindings/labVIEW.html" alt="" onmouseover="showTooltip('n5')" onmouseout="hideTooltip()" target="_blank"/>
+  <area shape="rect" coords="28,362,205,391" href="http://tango-controls.readthedocs.io/en/latest/tools-and-extensions/bindings/labVIEW.html" alt="" onmouseover="showTooltip('n4')" onmouseout="hideTooltip()" target="_blank"/>
+  <area shape="rect" coords="28,292,663,322" href="http://tango-controls.readthedocs.io/en/latest/development/device-api/device-server-model.html#introduction-to-corba" alt="" onmouseover="showTooltip('n3')" onmouseout="hideTooltip()" target="_blank"/>
+  <area shape="rect" coords="28,322,663,351" href="http://tango-controls.readthedocs.io/en/latest/development/device-api/device-server-model.html#deviceservermodel" alt="" onmouseover="showTooltip('n2')" onmouseout="hideTooltip()" target="_blank"/>
+  <area shape="rect" coords="28,263,663,292" href="http://tango-controls.readthedocs.io/en/latest/development/client-api/index.html" alt="" onmouseover="showTooltip('n1')" onmouseout="hideTooltip()" target="_blank"/>
+  <area shape="rect" coords="15,15,676,494" alt="" onmouseover="showTooltip('n0')" onmouseout="hideTooltip()"/>
+</map>
+
+
+    <table class="yimagetable" cellspacing="0" cellpadding="0" border="0">
+      <tr>
+        <td><img class="yimage" src="tango_bindings_map1_1.png" usemap="#image1_1" border="0" alt=""/></td>
+      </tr>
+    </table>
+
+</body>
+</html>

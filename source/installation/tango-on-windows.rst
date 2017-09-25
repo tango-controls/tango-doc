@@ -1,7 +1,7 @@
 .. Guide on how-to install Tango Controls on Windows
 
-Tango on Windows
-================
+Windows
+=========
 
 This guide provides step by step guide on installation of Tango Controls under Windows operating systems.
 
@@ -27,13 +27,22 @@ Your Windows computer may perform all above roles simultaneously.
 Tango  package installation
 ---------------------------
 
+The following video (by Mohamed Cherif Areour, in French with English sub-titles) will help you to install TANGO on Windows.
+
+..  raw:: html
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/ofRfrfIepQM?rel=0" frameborder="0" allowfullscreen></iframe>
+
+|
+|
+
 .. topic:: Prerequisite
 
     Some :program:`Tango Controls` tools require :program:`Java Runtime Environment (JRE) >=1.7`. Please install it first.
     You may find JRE on http://java.com .
 
-The simplest way to have Tango Controls running is to install it from a binary package. Binaries are available at
-http://www.tango-controls.org/downloads/binary/
+
+The simplest way to have Tango Controls running is to install it from :ref:`binary_package`.
 
 - Download the binary package with your favorite browser.
 

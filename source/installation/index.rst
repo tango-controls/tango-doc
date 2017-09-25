@@ -1,12 +1,20 @@
+.. _getting_started_installation:
 
-How to install Tago Controls and its parts on various platforms
-===============================================================
+Installation
+=============
 
-Here you will find recipies on how-to install the Tango Controls on various systems.
+Here you will find recipes on how to install the Tango Controls on various platforms.
 
 .. toctree::
     :maxdepth: 2
 
     minimum-deployment
+    tango-on-linux
     tango-on-windows
+    tango-on-raspberry-pi
+    amazon-cloud
+    virtualmachine
     pytango-and-taurus-on-windows
+    source
+    binary_package
+    patches

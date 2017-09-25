@@ -1,0 +1,133 @@
+<html>
+<head><title>Image map created by yEd</title>
+<style type="text/css">
+.tooltip {
+  font-size:10pt;
+  background-color:#FFFFCC;
+  border:1px solid black;
+  padding:2px
+}
+</style>
+<style type="text/css">
+.tooltip {
+  position:absolute;
+  display:none
+}
+</style>
+</head>
+<body>
+
+<script type="text/javascript">
+tooltip = null;
+document.onmousemove = updateTooltip;
+function updateTooltip(e) {
+try {
+if (document.all) {
+if (document.documentElement && document.documentElement.scrollTop) { // Explorer 6 Strict
+x = document.documentElement.scrollLeft + window.event.x;
+y = document.documentElement.scrollTop + window.event.y;
+}
+else { // all other Explorers
+x = document.body.scrollLeft + window.event.x;
+y = document.body.scrollTop + window.event.y;
+}
+}
+else {
+x = e.pageX;
+y = e.pageY;
+}
+if (tooltip != null) {
+o = 20;
+var sx, sy;
+if (self.pageYOffset) { // all except Explorer
+sx = self.pageXOffset;
+sy = self.pageYOffset;
+}
+else if (document.documentElement && document.documentElement.scrollTop) { // Explorer 6 Strict
+sx = document.documentElement.scrollLeft;
+sy = document.documentElement.scrollTop;
+}
+else if (document.body) { // all other Explorers
+sx = document.body.scrollLeft;
+sy = document.body.scrollTop;
+}
+t = y + o + tooltip.offsetHeight;
+w = sy + document.body.clientHeight;
+if (t > w) {
+y = y - o - tooltip.offsetHeight;
+}
+else {
+y = y + o;
+}
+t = x + o + tooltip.offsetWidth;
+w = sx + document.body.clientWidth;
+if (t > w) {
+x = x - o - tooltip.offsetWidth;
+}
+else {
+x = x + o;
+}
+if ((tooltip.style.top == '' || tooltip.style.top == 0) && (tooltip.style.left == '' || tooltip.style.left == 0))
+{
+tooltip.style.width = tooltip.offsetWidth + 'px';
+tooltip.style.height = tooltip.offsetHeight + 'px';
+}
+tooltip.style.left = x + "px";
+tooltip.style.top = y + "px";
+}
+} catch (error) { error = null; }
+}
+function showTooltip(id) {
+try {
+tooltip = document.getElementById(id);
+tooltip.style.display = "block";
+} catch (error) { error = null; }
+}
+function hideTooltip() {
+try {
+tooltip.style.display = "none";
+} catch (error) { error = null; }
+}
+</script>
+
+<div class="tooltip" id="n0">Control System C++/Python Development</div>
+<div class="tooltip" id="n1">A device is an abstract concept defined by the TDSOM. In reality, it can be a <br>piece of hardware (an interlock bit) a collection of hardware (a screen attached <br>to a stepper motor) a logical device (a taper) or a combination of all these (an<br>accelerator). Each device has a unique name in the control system and eventually<br> one alias. Within Tango, a four field name space has been adopted consisting of<br>[//FACILITY/]DOMAIN/CLASS/MEMBER </div>
+<div class="tooltip" id="n2">A java web application that provides Tango REST API implementation. Basically it is a bridge from "http://" to "tango://". For more information please refer to this page ...</div>
+<div class="tooltip" id="n3">Pogo helps you creating/updating Tango device class in any of the three <br>supported languages (C++, Python or Java)</div>
+<div class="tooltip" id="n4">Communication Layer (CORBA / ZMQ)</div>
+<div class="tooltip" id="n5">Vacca is a synoptic-oriented Taurus gui. It is highly customizable, using python <br>files to setup the devices/attributes/icons/commands to be displayed in several <br>grid/tree/profile/synoptic widgets.</div>
+<div class="tooltip" id="n6">Canone will allow you to create your own WEB panels to interface Tango device(s)<br>(PHP)</div>
+<div class="tooltip" id="n7">Taurus is a Python framework for control and data acquisition CLIs and GUIs in scientific/industrial environments.</div>
+<div class="tooltip" id="n8">Taurus is a Python framework for control and data acquisition CLIs and GUIs in scientific/industrial environments.</div>
+<div class="tooltip" id="n9">Sardana is a software suite for Supervision, Control and Data Acquisition in scientific installations</div>
+<div class="tooltip" id="n10">TANGO devices and database are implemented using the TANGO device server model. <br>To access them the user has the CORBA interface e.g. command_inout(), <br>write_attributes() etc. defined by the idl file. These methods are very <br>low-level and assume a good working knowledge of CORBA. In order to simplify <br>this access, high-level api in C++, Python and Java have been implemented which <br>hides all CORBA aspects of TANGO.</div>
+<div class="tooltip" id="n11">TANGO devices and database are implemented using the TANGO device server model. <br>To access them the user has the CORBA interface e.g. command_inout(), <br>write_attributes() etc. defined by the idl file. These methods are very <br>low-level and assume a good working knowledge of CORBA. In order to simplify <br>this access, high-level api in C++, Python and Java have been implemented which <br>hides all CORBA aspects of TANGO.</div>
+<div class="tooltip" id="n12">It is an online design tool that allows easy development of QTango based <br>graphical user interfaces, made up of Qt4 and QTango widgets.</div>
+<div class="tooltip" id="n13">QTango is a framework. It consists of classes and widgets that interact with the <br>Tango control system, while providing an easy API to the programmer and full <br>integration with the Qt4 designer.</div>
+
+<map name="image1_1">
+  <area shape="rect" coords="399,212,564,247" href="http://www.tango-controls.org/resources/documentation/guis/qtango/" alt="" onmouseover="showTooltip('n13')" onmouseout="hideTooltip()" target="_blank"/>
+  <area shape="rect" coords="399,173,564,212" href="http://www.tango-controls.org/downloads/guis/" alt="" onmouseover="showTooltip('n12')" onmouseout="hideTooltip()" target="_blank"/>
+  <area shape="rect" coords="399,263,564,292" href="http://tango-controls.readthedocs.io/en/latest/development/client-api/index.html" alt="" onmouseover="showTooltip('n11')" onmouseout="hideTooltip()" target="_blank"/>
+  <area shape="rect" coords="26,263,386,292" href="http://tango-controls.readthedocs.io/en/latest/development/device-api/python/index.html" alt="" onmouseover="showTooltip('n10')" onmouseout="hideTooltip()" target="_blank"/>
+  <area shape="rect" coords="162,173,285,212" href="http://www.sardana-controls.org/en/latest/docs.html" alt="" onmouseover="showTooltip('n9')" onmouseout="hideTooltip()" target="_blank"/>
+  <area shape="rect" coords="26,212,285,247" href="http://tango-controls.readthedocs.io/en/latest/tools-and-extensions/taurus/index.html" alt="" onmouseover="showTooltip('n8')" onmouseout="hideTooltip()" target="_blank"/>
+  <area shape="rect" coords="26,173,149,212" href="http://tango-controls.readthedocs.io/en/latest/tools-and-extensions/taurus/index.html" alt="" onmouseover="showTooltip('n7')" onmouseout="hideTooltip()" target="_blank"/>
+  <area shape="rect" coords="298,212,386,247" href="http://www.tango-controls.org/resources/documentation/guis/canone/" alt="" onmouseover="showTooltip('n6')" onmouseout="hideTooltip()" target="_blank"/>
+  <area shape="rect" coords="89,133,149,173" href="https://pypi.python.org/pypi/Vacca" alt="" onmouseover="showTooltip('n5')" onmouseout="hideTooltip()" target="_blank"/>
+  <area shape="rect" coords="26,293,564,322" href="http://tango-controls.readthedocs.io/en/latest/development/device-api/device-server-model.html#introduction-to-corba" alt="" onmouseover="showTooltip('n4')" onmouseout="hideTooltip()" target="_blank"/>
+  <area shape="rect" coords="15,512,573,538" href="http://tango-controls.readthedocs.io/en/latest/tools-and-extensions/pogo/index.html" alt="" onmouseover="showTooltip('n3')" onmouseout="hideTooltip()" target="_blank"/>
+  <area shape="rect" coords="26,322,564,351" href="http://tango-controls.readthedocs.io/en/latest/development/device-api/device-server-model.html#deviceservermodel" alt="" onmouseover="showTooltip('n2')" onmouseout="hideTooltip()" target="_blank"/>
+  <area shape="rect" coords="26,352,564,381" href="http://tango-controls.readthedocs.io/en/latest/development/client-api/index.html" alt="" onmouseover="showTooltip('n1')" onmouseout="hideTooltip()" target="_blank"/>
+  <area shape="rect" coords="15,15,573,494" alt="" onmouseover="showTooltip('n0')" onmouseout="hideTooltip()"/>
+</map>
+
+
+    <table class="yimagetable" cellspacing="0" cellpadding="0" border="0">
+      <tr>
+        <td><img class="yimage" src="tango_control_system_cpp_python_development1_1.png" usemap="#image1_1" border="0" alt=""/></td>
+      </tr>
+    </table>
+
+</body>
+</html>
