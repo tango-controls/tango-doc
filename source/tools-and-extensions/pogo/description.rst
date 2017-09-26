@@ -27,4 +27,4 @@ Introduction
 
         project: https://github.com/tango-controls/pogo
 
-        download: https://bintray.com/tango-controls/maven/pogo/_latestVersion
+        download: https://bintray.com/tango-controls/maven/Pogo/_latestVersion
