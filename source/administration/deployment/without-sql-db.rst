@@ -146,6 +146,10 @@ is
 
 mycomputer:1234/a/b/c#dbase=no
 
+Some clients like atkpanel require *tango://* prefix:
+
+tango://mycomputer:1234/a/b/c#dbase=no
+
 See appendix [DeviceNaming] for all details about Tango object naming.
 
 Multiple database servers within a Tango control system
