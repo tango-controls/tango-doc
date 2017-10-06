@@ -8,7 +8,7 @@ configured to start up at boot time. The image is public and can be found under 
 
 .. code-block:: console
 
-    AMI-ID: ami-a0e02ccf
+    AMI-ID: ami-d503cfba
     region=EU-Frankfurt
 
 You can find out how to do this `here <http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html#finding-an-ami-console>`_.
