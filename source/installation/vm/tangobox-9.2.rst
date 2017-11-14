@@ -28,21 +28,21 @@ on for being explored, see :ref:`Switching containers on and off <container_swit
 * QTango
 * iTango
 * Tango Access
-* JupyTango
+* :ref:`JupyTango <jupytango>`
 * PANIC
-* Bensikin
-* Mambo
+* :ref:`Bensikin <hdb_tdb_snap>`
+* :ref:`Mambo <hdb_tdb_snap>`
 * Docker
-* Linac system simulation (as docker container tangobox-sim)
-* HDB/TDB, SNAP DS (as docker container tangobox-archiving)
-* HDB++ (as docker container tangobox-hdbpp)
+* :ref:`Linac system simulation <jlinac>` (as docker container tangobox-sim)
+* :ref:`HDB/TDB, SNAP DS <hdb_tdb_snap>` (as docker container tangobox-archiving)
+* :ref:`HDB++ <hdbpp>` (as docker container tangobox-hdbpp)
 * SerialLine, Modbus and PyPLC device server (as docker container tangobox-com)
-* mTango + restAPI, TangoWebApp (as docker container tangobox-web)
-* E-giga (as docker container tangobox-egiga)
+* :ref:`mTango + restAPI <rest_api>`, :ref:`Tango WebApp <webapp>` (as docker container tangobox-web)
+* :ref:`e-giga` (as docker container tangobox-egiga)
 * PyAlarm DS on each container
 * PyCharm
 * Visual Studio Code
-* ModbusPal to simulate Modbus
+* :ref:`ModbusPal to simulate Modbus <Modbus>`
 
 First steps
 -----------
@@ -147,6 +147,8 @@ start/stop particular DS according to your needs, use **Tango Manager (Astor)** 
 Example applications
 --------------------
 
+.. _Modbus:
+
 Modbus simulation
 ~~~~~~~~~~~~~~~~~
 
@@ -166,6 +168,8 @@ To monitor changes, use ATKPanel started from Jive. Both ModbusComposer and PyPL
 .. figure:: tangobox-9.2//modbus.png
 
    View on a ModbusComposer device and configured ModbusPal simulator.
+
+.. _jupytango:
 
 JupyTango
 ~~~~~~~~~
@@ -210,6 +214,8 @@ Supported options:
 
 You can try to kill the monitored device will the JupyTango monitor is running to see how errors are handled.
 
+.. _jlinac:
+
 JLinac and Elinac simulation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -222,6 +228,7 @@ Don't worry about warnings during Elinac's initialization.
 
    JLinac simulation running.
 
+.. _hdb_tdb_snap:
 
 HDB/TDB/SNAP Archiving (Mambo, Bensikin)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -240,6 +247,7 @@ Then, you may start :program:`Mambo` or :program:`Bensikin` by clicking icons on
 
    Please take note of a green bulb of the `tangobox-archiving` node in the Astor window.
 
+.. _hdbpp:
 
 HDB++ Archiving
 ~~~~~~~~~~~~~~~
@@ -252,14 +260,70 @@ the  **tangobox-hdbpp** container and related device servers are running:
 
 Then, you may start :program:`HDB Configurator` or :program:`HDB Viewer` by clicking icons on the desktop.
 
+.. _e-giga:
 
 E-giga
 ~~~~~~
 
+:program:`E-giga` is a web application for archiving data visualization (HDB/TDB and HDB++). The TangoBox deployment
+uses HDB/TDB.
+
+.. figure:: tangobox-9.2/e-giga.png
+
+   E-giga in a web browser window
+
 To use e-giga following conditions must be fulfilled:
 
-* tangobox-archive container must be started and DS must be up
-* use i.e. **Mambo** to enable data archiving for HDB database
+* `tangobox-archive` and `tangobox-web` containers must be started and archiving device servers must be running
+* use i.e. **Mambo** to enable data archiving for HDB database. It is required. If you do not see any attributes in
+  `E-giga` it is probably due to archiving being disabled. Check with :program:`Astor` if the tangobox-archive LED
+  is green and with :program:`Mambo` if there are any attributes configured to be archivied.
+
+To open browser with :program:`E-giga` click on the relate desktop icon.
+
+.. note::
+
+   Please keep in mind that you should not rebuild **tangobox-web** image because its configuration is not included in Dockerfile
+   (it requires in-container config).
+
+.. _webapp:
+
+Tango WebApp
+~~~~~~~~~~~~
+
+Tango may be available through a web browser. `Tango WebApp` is a general purpose Tango web application. You may try it
+on the TangoBox.
+
+.. figure:: tangobox-9.2/webapp-2.png
+
+   A screenshot of Tango WebApp in a browser
+
+To play with :program:`Tango WebApp` make sure that the 'tangobox-web` container is running
+(use :command:`docker start tangobox-web` to start it from a terminal). Then, you may open a browser with a related
+desktop icon. Use username `tango-cs` and  password `tango` to log-in.
+
+
+.. _rest_api:
+
+REST API
+~~~~~~~~
+
+Tango Controls specifies REST API interface and provides its reference implementation. For details see
+:ref:`REST API documentation <tango_rest_api>`
+
+The **TangoBox** comes with REST API installed. The `tangobox-web` container must be started to play with it. Invoke
+:command:`docker start tangobox-web`.
+
+Related deskto icon opens a web browser pointing to REST API interface. The REST server requires authentication.
+User is `tango-cs` and password is `tango`.
+
+.. figure:: tangobox-9.2/rest-api.png
+
+   A web browser window presenting JSON response of the Tango REST server
+
+
+If you would like to play with it with other tools (Python, curl) it is avaialabe at the following
+address: `http://tangobox-web:8080/tango/rest/rc4/hosts/tangobox-vm/10000`.
 
 
 .. note::
