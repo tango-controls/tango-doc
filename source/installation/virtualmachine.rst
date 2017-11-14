@@ -13,15 +13,27 @@ proof-of-concepts and even production ready systems.
 
 This way, out of this virtual box, another great, sophisticated control system for the real world can be born!
 
-Download 64 bit `Ubuntu virtual machine with TANGO 9.1.0 <ftp.esrf.fr/pub/cs/tango/tango9-vm.zip>`_.
+TangoBox 9.2
+------------
 
-Click `here <https://sourceforge.net/projects/tango-cs/files/Tango9_VM.pdf/download>`_ to read the documentation
-to install and run the virtual machine on your desktop.
+**A new machine with Tango Controls 9.2 will be released, soon.** You may already try its preview:
 
-.. note::  Use 7z to unzip it on Linux or unzip on Windows.
+* Download 64 bit `Ubuntu virtual machine with TANGO 9.2 RC10 <https://1drv.ms/u/s!AlUXhMBn4oAfjalcXPNMSJjjqwHELg>`_.
 
+* Please read :doc:`Tango Controls demo VM's documentation <vm/tangobox-9.2>`.
+
+Previous versions
+-----------------
 
 Previous versions are available below.
+
+
+    * Download 64 bit `Ubuntu virtual machine with TANGO 9.1.0 <ftp.esrf.fr/pub/cs/tango/tango9-vm.zip>`_.
+    .. note::
+
+       * Click `here <https://sourceforge.net/projects/tango-cs/files/Tango9_VM.pdf/download>`_ to read the documentation
+         to install and run the virtual machine on your desktop.
+       * Use 7z to unzip it on Linux or unzip on Windows.
 
     * `download <https://sourceforge.net/projects/tango-cs/files/tango_vbox_3_0rc5.7z/download>`_ the 32 bit version running TANGO 7 on Ubuntu 11
     * a preconfigured `TANGO 8.1.2 64b ubuntu vdi <http://dl.free.fr/dWfRMq6Xe>`_ (1.4 GB, for 64 virtual machine)
