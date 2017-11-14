@@ -3,8 +3,8 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to TangoBox 9.2 - a Tango Controls demo VM's documentation!
-===================================================================
+TangoBox 9.2
+============
 
 TangoBox is a VM image running Tango Controls system and its various tools.
 It is intended to be used for demonstration and training.
@@ -16,7 +16,7 @@ It also simulates distributed deployment by using Docker.
    :caption: Contents:
 
 What is installed
-=================
+-----------------
 
 Below there is list of provide packages/features. Please note that some of them
 are installed as docker container and maybe switched off (stopped) and requires to be switched
@@ -45,7 +45,7 @@ on for being explored, see :ref:`Switching containers on and off <container_swit
 * ModbusPal to simulate Modbus
 
 First steps
-===========
+-----------
 
 * First of all you have to download latest release of VirtualBox. It can be downloaded from `here <https://www.virtualbox.org/>`_ .
   Simply install it and start the program.
@@ -79,7 +79,7 @@ You may explore the Tango Controls feature by clicking related shortcuts on the 
 .. _container_switch_on_off:
 
 Switching containers on and off
-===============================
+-------------------------------
 
 Some of the features of Tango are provided inside pre-build docker containers.
 These can be switched on and off by starting or stopping related containers.
@@ -105,10 +105,10 @@ To see which containers are running please, call :command:`docker ps`
 
 
 Deployment structure
-====================
+--------------------
 
 Network
--------
+~~~~~~~
 
 Containers are created withing their own subnet: `172.18.0.0/16`. The network is called `tango_nw`
 The subnet was created with the following docker command:
@@ -123,7 +123,7 @@ Containers are assigned static IPs. List of the IPs assignment maybe seen in :fi
 :command:`cat /etc/hosts` to see its contents.
 
 Containers and images dependency
---------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Each container is based on its image. All images are already build but, if neccessary, *Dockerfiles* are stored in :file:`home/Dockerfiles`
 directory. Below is the list of all containers and corresponding images:
@@ -145,10 +145,10 @@ Some device servers may be stopped when launching containers. It is so to get be
 start/stop particular DS according to your needs, use **Tango Manager (Astor)** to it.
 
 Example applications
-====================
+--------------------
 
 Modbus simulation
------------------
+~~~~~~~~~~~~~~~~~
 
 To simulate Modbus, we suggest to use *ModbusPal*. To do so, use **ModbusPal (simulation)** desktop shortcut. Once it is started, declare
 new *modbus slave* by clicking **ADD**. Choose 1 and name it **10.0.2.15**. Now click "eye" button in modbus slaves section and add at least
@@ -168,7 +168,7 @@ To monitor changes, use ATKPanel started from Jive. Both ModbusComposer and PyPL
    View on a ModbusComposer device and configured ModbusPal simulator.
 
 JupyTango
----------
+~~~~~~~~~
 
 **In case you want to try it, here's the procedure:**
 
@@ -211,7 +211,7 @@ Supported options:
 You can try to kill the monitored device will the JupyTango monitor is running to see how errors are handled.
 
 JLinac and Elinac simulation
-----------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To start simulation, you need to run **tangobox-sim** container. It is also important to make sure that all DS are started and are
 running (the easiest way to do it is to check it in Astor).
@@ -224,7 +224,7 @@ Don't worry about warnings during Elinac's initialization.
 
 
 HDB/TDB/SNAP Archiving (Mambo, Bensikin)
-----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Prior to use `HDB/TDB` (:guilabel:`Mambo`) or `SNAP` (:guilabel:`Bensikin`) you need to make sure that
 the  **tangobox-archiving** container and related device servers are running:
@@ -242,7 +242,7 @@ Then, you may start :program:`Mambo` or :program:`Bensikin` by clicking icons on
 
 
 HDB++ Archiving
----------------
+~~~~~~~~~~~~~~~
 
 To use `HDB++` and its tools ( :guilabel:`HDB Configurator` and :guilabel:`HDB Viewer`) please make sure that
 the  **tangobox-hdbpp** container and related device servers are running:
@@ -253,9 +253,8 @@ the  **tangobox-hdbpp** container and related device servers are running:
 Then, you may start :program:`HDB Configurator` or :program:`HDB Viewer` by clicking icons on the desktop.
 
 
-
 E-giga
-------
+~~~~~~
 
 To use e-giga following conditions must be fulfilled:
 
@@ -268,10 +267,3 @@ To use e-giga following conditions must be fulfilled:
    Please keep in mind that you should not rebuild **tangobox-web** image because its configuration is not included in Dockerfile
    (it requires in-container config).
 
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
