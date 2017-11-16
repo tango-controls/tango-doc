@@ -174,10 +174,18 @@ To monitor changes, use ATKPanel started from Jive. Both ModbusComposer and PyPL
 JupyTango
 ~~~~~~~~~
 
+JupyTango is a `Jupyter <http://jupyter.org/>` featuring Tango related kernels. With JupyterLab you may interact
+and do scripting for Tango through a web browser.
+
+.. figure:: tangobox-9.2/jupytango.png
+
+   Browser window with JupyTango in action
+
 **In case you want to try it, here's the procedure:**
 
 1. start jupyterlab using our dedicated script: `jupytango`
-2. a new browser tab is automagically opened with the right URL: :file:`localhost:8888/lab?`
+2. a new browser tab is automagically opened with the right URL: :file:`localhost:8888/lab?`. Please be patient, it may
+   take a while on VM.
 3. the very first connection to the service requires a 'token' which is printed in the jupytango console
 4. once in jupyterlab, click the JupyTango icon to open a notebook with the appropriate kernel
 5. enjoy!
