@@ -43,6 +43,7 @@ on for being explored, see :ref:`Switching containers on and off <container_swit
 * PyCharm
 * Visual Studio Code
 * :ref:`ModbusPal to simulate Modbus <Modbus>`
+* :ref:`Sardana 2.3.2 <sardana>`
 
 First steps
 -----------
@@ -137,6 +138,7 @@ tangobox-archiving   archive              -
 tangobox-hdbpp       hdbpp               -
 tangobox-web         web                 -
 tangobox-egiga       egiga               -
+tangobox-sardana     sardana
       -              base         Base container
       -              ubuntu       Ubuntu image to build others
 ================== =========== ===============================
@@ -165,7 +167,7 @@ To monitor changes, use ATKPanel started from Jive. Both ModbusComposer and PyPL
 * ModbusComposer: Temperature uses **4th**; Pressure uses **5th** register in ModbusPal
 * PyPLC: Voltage uses **6th**; Flow uses **7th** register in ModbusPal
 
-.. figure:: tangobox-9.2//modbus.png
+.. figure:: tangobox-9.2/modbus.png
 
    View on a ModbusComposer device and configured ModbusPal simulator.
 
@@ -174,7 +176,7 @@ To monitor changes, use ATKPanel started from Jive. Both ModbusComposer and PyPL
 JupyTango
 ~~~~~~~~~
 
-JupyTango is a `Jupyter <http://jupyter.org/>` featuring Tango related kernels. With JupyterLab you may interact
+JupyTango is a `Jupyter <http://jupyter.org/>`_ featuring Tango related kernels. With JupyterLab you may interact
 and do scripting for Tango through a web browser.
 
 .. figure:: tangobox-9.2/jupytango.png
@@ -227,8 +229,9 @@ You can try to kill the monitored device will the JupyTango monitor is running t
 JLinac and Elinac simulation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To start simulation, you need to run **tangobox-sim** container. It is also important to make sure that all DS are started and are
-running (the easiest way to do it is to check it in Astor).
+To start simulation, you need to run **tangobox-sim** container (use :command:`docker start tangobox-sim` to start it
+from a terminal). It is also important to make sure that all related device servers are running.
+The easiest way to do it is to check it in Astor - a bulb next to `tangobox-sim` should be green.
 
 Don't worry about warnings during Elinac's initialization.
 
@@ -244,8 +247,8 @@ HDB/TDB/SNAP Archiving (Mambo, Bensikin)
 Prior to use `HDB/TDB` (:guilabel:`Mambo`) or `SNAP` (:guilabel:`Bensikin`) you need to make sure that
 the  **tangobox-archiving** container and related device servers are running:
 
-* Call :command:`docker start tangobox-archiving` on a terminal.
-* Start :program:`Astor` and check if the `tangobox-archiving` node is green.
+* Call :command:`docker start tangobox-archive` on a terminal.
+* Start :program:`Astor` and check if the `tangobox-archive` node is green.
 
 Then, you may start :program:`Mambo` or :program:`Bensikin` by clicking icons on the desktop.
 
@@ -253,7 +256,8 @@ Then, you may start :program:`Mambo` or :program:`Bensikin` by clicking icons on
 
    Screen of running Mambo
 
-   Please take note of a green bulb of the `tangobox-archiving` node in the Astor window.
+   Please take note of a green bulb of the `tangobox-archive` node in the Astor window.
+
 
 .. _hdbpp:
 
@@ -339,3 +343,19 @@ address: `http://tangobox-web:8080/tango/rest/rc4/hosts/tangobox-vm/10000`.
    Please keep in mind that you should not rebuild **tangobox-web** image because its configuration is not included in Dockerfile
    (it requires in-container config).
 
+.. _sardana:
+
+Sardana
+~~~~~~~
+
+Sardana is a software suite for Supervision, Control and Data Acquisition in scientific installations. I
+t aims to reduce cost and time of design, development and support of the control and data acquisition systems.
+For more information about it please refer to `Sardana documentation <http://www.sardana-controls.org>`_.
+
+.. figure:: tangobox-9.2/sardana.png
+
+   SardanaGUI in action
+
+To play with Sardana the **tangobox-sardana** container has to be started. Open a terminal and call
+:command:`docker start tangobox-sardana`. Then, you may double-click the :guilabel:`SardanaGUI` icon on
+the desktop or run it from a terminal (type :command:`SardanaGUI`).
