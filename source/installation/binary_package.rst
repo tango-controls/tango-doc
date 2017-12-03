@@ -9,16 +9,11 @@ install the latest builds of Tango without have to compile them.
 
 Here is a list of the available binary packages.
 
-.. `JTango <https://bintray.com/tango-controls/maven/JTango/_latestVersion>`_ - library for device servers and clients in Java.
-
 .. raw:: html
 
    <p>
-   <a href='https://bintray.com/tango-controls/maven/JTango/_latestVersion'>JTango</a>
-   <a href='https://bintray.com/tango-controls/maven/JTango/_latestVersion'>
-    <img src='https://api.bintray.com/packages/tango-controls/maven/JTango/images/download.svg' style='vertical-align: middle;'>
-   </a>
-   - library for device servers and clients in Java
+   <a href='https://bintray.com/tango-controls/generic/JTango-9-LTS/_latestVersion'>JTango-9-LTS</a> - a library for device servers and clients in Java (Tango v9 LTS)
+   <a href='https://bintray.com/tango-controls/generic/JTango-9-LTS/_latestVersion'><img src='https://api.bintray.com/packages/tango-controls/generic/JTango-9-LTS/images/download.svg'></a>   
    </p>
 
 
