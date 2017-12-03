@@ -12,7 +12,7 @@ Here is a list of the available binary packages.
 .. raw:: html
 
    <p>
-   JTango-9-LTS -- a library for device servers and clients in Java (Tango v9 LTS)
+   <a href='https://bintray.com/tango-controls/generic/JTango-9-LTS/_latestVersion'>JTango-9-LTS</a> - a library for device servers and clients in Java (Tango v9 LTS)
    <a href='https://bintray.com/tango-controls/generic/JTango-9-LTS/_latestVersion'><img src='https://api.bintray.com/packages/tango-controls/generic/JTango-9-LTS/images/download.svg'></a>   
    </p>
 
