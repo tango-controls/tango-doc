@@ -65,4 +65,4 @@ You should be able to play with the TangoTest device *sys/tg_test/1*
 
 .. image:: amazon-cloud/amazonCloudTango.jpg
 
-To see the running DEMO, please, follow `the link <http://ec2-35-156-104-8.eu-central-1.compute.amazonaws.com:8080/TangoWebapp/>`_.
+To see the running DEMO, please, follow `the link <http://ec2-35-156-104-8.eu-central-1.compute.amazonaws.com:8080/TangoWebapp/>`_. Use *tango-cs/tango* to login
