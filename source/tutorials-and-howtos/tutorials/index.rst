@@ -12,5 +12,6 @@ Tutorials
    scada_introduction
    snapshots-from-lab-at-ESRF
    documentation-workflow-tutorial
+   install-tango-webapp
 
 
