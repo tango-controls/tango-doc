@@ -37,7 +37,7 @@ TangoWebapp installation tutorial (Windows)
 
 8. Go to $Tango_home/bin and launch with a command line "TangoAccessControl.exe 1"
 
-9. Go to C://apache-tomcat-8/webapp and launch with a command line "java -jar -DTANGO_HOST=127.0.0.1:20000 mtango.server-rc4-0.4.jar test"
+9. Go to C://apache-tomcat-8/webapp and launch with a command line :code:`java -jar -DTANGO_HOST=127.0.0.1:20000 mtango.server-rc4-0.4.jar test`
 
 10. Open Jive, then open an atk panel on TangoControlAccess DS, then test device, and execute the AddDeviceForUser command with "["tango-cs","sys/database/2", "write"]" as parameter. Also, add a new environment variable name SUPER_TANGO with the value true. Then go on Astor, tool and open AccessControl HMI. Add *.*.*.* as allowed address for the user tango-cs.
 
