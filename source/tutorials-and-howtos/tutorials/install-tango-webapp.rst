@@ -3,7 +3,7 @@ TangoWebapp installation tutorial (Windows)
 
 1. Download Apache Tomcat 8 and install it to *C:/apache-tomcat-8*. To verify that it got installed successfully, try to go to :code:`http://127.0.0.1:8080`
 
-2. Download latest `mtangorest.server.jar <https://bitbucket.org/hzgwpn/mtangorest.server/downloads/>`_ and put it in *C:/apache-tomcat-8/webapps*
+2. Download the latest `mtangorest.server.jar <https://bitbucket.org/hzgwpn/mtangorest.server/downloads/>`_ and put it in *C:/apache-tomcat-8/webapps*
 
 3. Follow the .jar installation on `mtangorest.server Wiki <https://bitbucket.org/hzgwpn/mtangorest.server/wiki/Home>`_ (it is assumed below tango host is on localhost i.e. 127.0.0.1)
 
@@ -25,7 +25,7 @@ TangoWebapp installation tutorial (Windows)
 
 5. On jive, click on edit, then create free property named "CtrlSystem". Then go to property (last tab), click on CtrlSystem, add a new property named "Services" with the value **AccessControl/tango:sys/access_control/1**
 
-6. Download latest `TangoWebapp.war <https://github.com/tango-controls/tango-webapp/releases>`_ on  then put it to *C://apache-tomcat-8/webapp* (When TomCat starts it creates a TangoWebapp folder).
+6. Download the latest `TangoWebapp.war <https://github.com/tango-controls/tango-webapp/releases>`_ on  then put it to *C://apache-tomcat-8/webapp* (When TomCat starts it creates a TangoWebapp folder).
 
 7. define a tomcat user in *C://apache-tomcat-8/conf*:
 
