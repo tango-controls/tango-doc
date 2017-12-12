@@ -5,7 +5,7 @@ TangoWebapp installation tutorial (Windows)
 
 2. Download latest `mtangorest.server.jar <https://bitbucket.org/hzgwpn/mtangorest.server/downloads/>`_ and put it in C:/apache-tomcat-8/webapps
 
-3. Follow the installation on : https://bitbucket.org/hzgwpn/mtangorest.server/wiki/Home. (for .jar). (For information my tango host is on local)
+3. Follow the .jar installation on `mtangorest.server Wiki <https://bitbucket.org/hzgwpn/mtangorest.server/wiki/Home>`_ (it is assumed below tango host is on localhost i.e. 127.0.0.1)
 
 .. code-block:: console
         
@@ -41,8 +41,8 @@ TangoWebapp installation tutorial (Windows)
 
 10. Open Jive, then open an atk panel on TangoControlAccess DS, then test device, and execute the AddDeviceForUser command with "["tango-cs","sys/database/2", "write"]" as parameter. Also, add a new environment variable name SUPER_TANGO with the value true. Then go on Astor, tool and open AccessControl HMI. Add *.*.*.* as allowed address for the user tango-cs.
 
-11. Try your mtango server instance by the URL : http://127.0.0.1:8844/tango/rest (enter username: tango-cs, password : tango if necessary).
+11. Try your mtango server instance by the URL : :code:`http://127.0.0.1:8844/tango/rest` (enter username: tango-cs, password : tango if necessary).
 
-12. Time to try the tango webapp. try to go to the URL : http://127.0.0.1:8080/TangoWebapp. Get logged, then at the top enter as rest host : http://127.0.0.1:8844. (http:// is important), and as host : $Tango_host. Then refresh the page via f5. You should have an access to the device tree.
+12. Time to try the tango webapp. try to go to the URL : :code:`http://127.0.0.1:8080/TangoWebapp`. Get logged, then at the top enter as rest host : :code:`http://127.0.0.1:8844` (:code:`http://` is important), and as host : $Tango_host. Then refresh the page via `CTRL+F5`. You should have an access to the device tree.
 
 Contributed by `Florian Pourchayre <http://www.tango-controls.org/account/sign-in/?next=/community/members/fpourchayre>`_
