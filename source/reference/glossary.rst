@@ -76,7 +76,7 @@ Glossary
         A :term:`device` may be in a certain state determined at runtime. State of a :term:`device` may reflect state of
         a piece of equipment it interfaces with or be determined in other way. The behaviour is defined by the
         :term:`device class` which implements a :term:`state machine`. The state may define attributes', commands' and
-        pipes' operations available at the moment. Tango Controls limits a set of states the device may be in to 11:
+        pipes' operations available at the moment. Tango Controls limits a set of states the device may be in to 14:
         ON, OFF, CLOSE, OPEN, INSERT, EXTRACT, MOVING, STANDBY, FAULT, INIT, RUNNING, ALARM, DISABLE, and UNKNOWN.
 
     state machine
