@@ -7,6 +7,8 @@
 Starting a Tango control system
 ===============================
 
+:audition:`all`
+
 Without database
 ----------------
 

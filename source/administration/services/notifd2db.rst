@@ -7,6 +7,8 @@
 The notifd2db utility
 =====================
 
+:audition:`administrators, developers`
+
 The notifd2db utility usage (For Tango releases lower than 8)
 -------------------------------------------------------------
 

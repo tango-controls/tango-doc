@@ -7,6 +7,8 @@
 The property file syntax
 ========================
 
+:audition:`administrators, developers`
+
 Property file usage
 -------------------
 

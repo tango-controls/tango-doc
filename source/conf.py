@@ -46,6 +46,7 @@ extensions = [
     'IPython.sphinxext.ipython_console_highlighting',
     'IPython.sphinxext.ipython_directive',
     'sphinx.ext.intersphinx',
+    'tangocontrib.metalabels',
 #    'sphinx.ext.autosectionlabel',
 ]
 
@@ -438,3 +439,19 @@ linkcheck_ignore = [
                         r'http://localhost/*', r'https://localhost/*',
                     ]
 
+# metalabels
+
+meta_labels = {
+    'audition': {
+        'allowed_values': ['administrators', 'developers', 'users', 'beginner'],
+        'visible': True,
+        'pre_text': 'Intended audition: ',
+        'post_text': '',
+    },
+    'lang': {
+        'allowed_values': ['administrators', 'developers', 'users', 'beginner'],
+        'visible': True,
+        'pre_text': 'Programming language: ',
+        'post_text': '',
+    },
+}

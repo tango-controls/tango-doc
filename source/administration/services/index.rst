@@ -1,6 +1,7 @@
 Services
 ========
 
+:audition:`administrators`
 
 .. toctree::
    :name: servicestoc
