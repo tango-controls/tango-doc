@@ -5,6 +5,8 @@ When used with C++, Tango used omniORB as underlying ORB. This CORBA
 implementation is a threaded implementation and therefore a C++ Tango
 device server or client are multi-threaded processes.
 
+.. _device_server_process:
+
 Device server process
 ---------------------
 

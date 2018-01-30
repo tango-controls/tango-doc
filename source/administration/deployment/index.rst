@@ -9,4 +9,6 @@ Deployment
 
    starting
    without-sql-db
+   multiple-sql-dbs
    property-file
+   high-availability
