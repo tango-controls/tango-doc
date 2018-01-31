@@ -93,6 +93,8 @@ rst_epilog = """
 
 .. _`Tango webpage`: `Tango home page`_
 
+.. _`Tango Controls web page`: `Tango home page`_
+
 .. _`ALBA home page`: http://www.cells.es
 
 .. _`Soleil home page`: http://www.synchrotron-soleil.fr

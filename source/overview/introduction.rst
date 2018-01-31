@@ -41,6 +41,7 @@ Please, look through the following presentations to get a first overview of **th
 
     * :download:`TANGO basics, technical overview <introduction/tango_basics.pdf>`
 
+Please, also, look on the `Tango Controls web page`_
 
 
 
