@@ -4,6 +4,8 @@
 Binary packages
 ---------------
 
+:audience:`users, developers, administrators`
+
 Binary packages for Tango are maintained to make it easier for developers to
 install the latest builds of Tango without have to compile them. 
 

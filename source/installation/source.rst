@@ -1,6 +1,9 @@
+.. _sources:
 
 Source
 ======
+
+:audience:`administrators, developers`
 
 TANGO is available for download as source code or as pre-compiled binaries.
 

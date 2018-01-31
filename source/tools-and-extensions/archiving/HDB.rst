@@ -2,6 +2,8 @@
 HDB
 ====
 
+:audience:`administrators, developers`
+
 Archiving - the TANGO archiving system implemented in Java.
 
 This is a previous version of HDB++.

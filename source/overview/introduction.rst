@@ -5,6 +5,8 @@
 Introduction
 ============
 
+:audience:`beginners, developers, administrators, users`, :lang:`all`
+
 Tango Controls is a toolkit for building distributed object based control systems.
 Distributed objects are an implementation of the `Actor model <https://en.wikipedia.org/wiki/Actor_model>`_.
 Actors are primitives of concurrent computation which were proposed in the 70s

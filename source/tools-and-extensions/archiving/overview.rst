@@ -3,6 +3,8 @@
 Overview
 =========
 
+:audience:`beginners, developers, administrators, users`
+
 Tango has two main archiving solutions - the original one (HDB) and a new one (HDB++). 
 The difference between the two is in the features.
 HDB supports Oracle and MySQL databases.
