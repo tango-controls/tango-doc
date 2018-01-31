@@ -59,7 +59,7 @@ TANGO is based on the 21 century technologies :
 Tango Community
 ---------------
 
-Over the last 17 years that Tango exists over 40 small and large sites (see http://www.tango-controls.org/community/institutions/) 
+Over the last 17 years that Tango exists over 40 small and large sites (see http://www.tango-controls.org/partners/)
 have adopted Tango for their control system.
 Tango is now used to control not only accelerators but also experimental lasers (`ELI <https://eli-laser.eu/>`_), 
 wind tunnels (`Onera <http://www.onera.fr/en>`_), and most recently has been adopted by the world's largest

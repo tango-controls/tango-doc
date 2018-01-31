@@ -12,7 +12,7 @@ What is Tango Controls
 
 Tango Controls is an object oriented, distributed control system. It is a framework for building custom SCADA systems.
 It defines communication protocol and API. It provides libraries, set of GUI tools and drivers (so called
-:term:`Device Servers`) for variety of standard and specific control equipment. For more information see:
+:term:`Device Servers <device server>`) for variety of standard and specific control equipment. For more information see:
 http://www.tango-controls.org/what-is-tango-controls/
 
 .. image:: /img/logo_tangocontrols.png
@@ -167,7 +167,7 @@ Assuming you have downloaded it and copied to the Tango bin folder please follow
         To let your device servers start with :program:`Starter` service their executables have to be in a path without
         spaces. This is a limitation of the current :program:`Starter` implementation.
 
-    - Create a directory for :term:`Device Servers`. Let it be :file:`C:\\DeviceServers\\bin`
+    - Create a directory for :term:`Device Servers <Device Server>`. Let it be :file:`C:\\DeviceServers\\bin`
       with :command:`mkdir c:\DeviceServers\bin`
 
     - Change to the Tango bin directory with command (:command:`cd "%TANGO_ROOT%\bin"`)
@@ -222,7 +222,7 @@ Assuming you have downloaded it and copied to the Tango bin folder please follow
     - When you click :guilabel:`OK` it should start the server. After a while you should see:
 
         .. image:: tango-on-windows/device-server-05.png
-- Running your :term:`Device Servers`:
+- Running your :term:`Device Servers <device server>`:
     - You need to copy an executable to the folder configured for :program:`Starter`. In our example it is
       :file:`C:\DeviceServers\bin`.
     - Then use :program:`Astor`. After opening :guilabel:`Control panel` for your computer (double clicking on a label)
