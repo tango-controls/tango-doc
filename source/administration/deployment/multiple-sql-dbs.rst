@@ -1,3 +1,5 @@
+:audience:`administrators`
+
 .. _multiple_sql_dbs:
 
 Multiple database servers within a Tango control system

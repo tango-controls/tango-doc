@@ -5,6 +5,8 @@
 Reference part
 ==============
 
+:audience:`developers`, :lang:`all`
+
 **This chapter is only part of the TANGO device server reference guide.
 To get reference documentation about the C++ library classes, see
 [TangoRefMan]_ . To get reference documentation about

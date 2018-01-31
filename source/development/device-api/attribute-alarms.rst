@@ -1,6 +1,8 @@
 Attribute alarms
 ================
 
+:audience:`users, developers`
+
 Each Tango attribute two several alarms. These alarms are :
 
 -  A four thresholds level alarm

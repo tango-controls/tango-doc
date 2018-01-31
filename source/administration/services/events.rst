@@ -1,4 +1,4 @@
-:audition:`administrators, developers`
+:audience:`administrators, developers`
 
 .. |image19| image:: events/jive_simpl.jpg
 

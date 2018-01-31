@@ -1,4 +1,5 @@
-:audition:`administrators, users`
+:audience:`administrators, users`
+
 .. |image21| image:: access-control/control.png
 
 .. _access_control:

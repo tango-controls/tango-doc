@@ -6,6 +6,8 @@
 Tango REST API
 ==============
 
+:audience:`developers`, :lang:`all`
+
 Tango provides REST API specification. This can be used to implement integrations of Tango with 3rd party products using http protocol instead of tango protocol.
 
 Simple example of such 3rd product can be a mobile client application for monitoring Tango.

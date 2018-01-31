@@ -1,4 +1,4 @@
-:audition:`administrators`
+:audience:`administrators`
 
 Maintenance
 ===========

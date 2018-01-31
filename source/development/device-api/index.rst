@@ -3,6 +3,8 @@
 Device Servers
 ==============
 
+:audience:`developers`, :lang:`all`
+
 .. toctree::
    :name: deviceapitoc
    :maxdepth: 1

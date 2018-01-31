@@ -5,6 +5,8 @@
 Device polling
 ==============
 
+:audience:`developers`, :lang:`cpp, all`
+
 Introduction
 ------------
 

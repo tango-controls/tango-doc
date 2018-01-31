@@ -3,6 +3,8 @@
 Device server with user defined event loop
 ==========================================
 
+:audience:`developers`, :lang:`c++`
+
 Sometimes, it could be usefull to write your own process event handling
 loop. For instance, this feature can be used in a device server process
 where the ORB is only one of several components that must perform event

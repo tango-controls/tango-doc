@@ -3,6 +3,8 @@
 High Availability
 =================
 
+:audience:`administrators`
+
 Availability refers to the ability of a system to mask or repair faults
 such that the cumulative service outage period does not exceed a
 required value over a specific time interval. Improve availability means

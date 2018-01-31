@@ -1,6 +1,8 @@
 Introduction to device server
 =============================
 
+:audience:`developers`, :lang:`all`
+
 Device servers were first developed at the European Synchrotron
 radiation Facility (ESRF) for controlling the 6 Gev synchrotron
 radiation source. This document is a Programmer’s Manual on how to write

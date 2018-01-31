@@ -1,6 +1,8 @@
 How to work with Tango Controls documentation
 =============================================
 
+:audience:`developers`
+
 When writing or improving the Tango Controls documentation it is worth to follow these guidelines.
 This will help in keeping it as consistent as possible. It is also important to know how the contents
 and the sources are structured to make your effort efficient. You will find necessary information below.

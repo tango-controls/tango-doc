@@ -7,7 +7,7 @@
 The property file syntax
 ========================
 
-:audition:`administrators, developers`
+:audience:`administrators, developers`
 
 Property file usage
 -------------------

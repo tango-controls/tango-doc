@@ -1,5 +1,9 @@
+from docutils import nodes
+from docutils.parsers.rst.roles import set_classes
+import pprint
+
 def metalabel_role(name, rawtext, text, lineno, inliner, options={}, content=[]):
-    """Meta label role
+    """Meta-label role
 
     Returns 2 part tuple containing list of nodes to insert into the
     document and a list of system messages.  Both are allowed to be
@@ -14,26 +18,49 @@ def metalabel_role(name, rawtext, text, lineno, inliner, options={}, content=[])
     :param content: The directive content for customization.
     """
     try:
-        issue_num = int(text)
-        if issue_num <= 0:
-            raise ValueError
-    except ValueError:
+
+        meta_labels = inliner.document.settings.env.app.config.meta_labels
+        assert isinstance(meta_labels, dict)
+
+        label_config = meta_labels.get(name)
+        assert isinstance(label_config, dict)
+        set_classes(options)
+
+        node1 = nodes.strong()
+        node1 += nodes.emphasis(raw=rawtext, text=label_config.get('label', name), **options)
+        node2 = nodes.emphasis(rawtext=rawtext, text=text, **options)
+
+    except AssertionError :
         msg = inliner.reporter.error(
-            'BitBucket issue number must be a number greater than or equal to 1; '
-            '"%s" is invalid.' % text, line=lineno)
+            'Cannot create meta-label "%s: %s". '
+            'Please check "meta_labels" in conf.py.' % (name, text), line=lineno)
         prb = inliner.problematic(rawtext, rawtext, msg)
         return [prb], [msg]
-    app = inliner.document.settings.env.app
-    node = make_link_node(rawtext, app, 'issue', str(issue_num), options)
-    return [node], []
+
+    return [node1, node2 ], []
+
 
 def setup(app):
     """Install the plugin.
 
     :param app: Sphinx application context.
     """
-    app.add_role('bbissue', bbissue_role)
-    app.add_role('bbchangeset', bbchangeset_role)
+
+    print "Registering meta-labels..."
+
     app.add_config_value('meta_labels', None, 'env')
 
-    return
+    #pprint.PrettyPrinter(indent=2).pprint(app.config.__dict__)
+
+    meta_labels = app.config._raw_config.get('meta_labels', {})
+    print meta_labels
+
+    assert isinstance(meta_labels, dict)
+
+    for key in meta_labels.keys():
+        print 'registering %s ' % key
+        app.add_role(key, metalabel_role)
+
+    print "... meta-labels registered."
+
+    return {'varsion':'0.1'}
