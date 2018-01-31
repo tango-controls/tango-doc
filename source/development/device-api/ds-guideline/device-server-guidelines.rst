@@ -194,14 +194,15 @@ device, device server and Tango class.
 *  **Device**: An instance of a Device class giving access to the services of
    the DeviceClass class.
 *  **Device Server**: process in which one or more Tango classes are
-   executed.
+   executed (:term:`Device Server`).
 
 .. note::
    DeviceClass class is only used in C++ device classes
 
-**These four concepts are closely related, and they express very
-important concepts of Tango. 
-Take time to clearly understand them!**
+.. hint::
+   These four concepts are closely related, and they express very
+   important concepts of Tango.
+   Take time to clearly understand them!**
 
 The diagrams below illustrate these concepts:
 
@@ -219,13 +220,12 @@ or software interface, it is not
 always possible to run several instances of a Device class within the
 same Device Server:
 
-*  Case of a DLL’s use: some DLLs can’t be used by two threads of the
-       same process.
+- Case of a DLL’s use: some DLLs can’t be used by two threads of the same process.
 
 In other cases, it is useful to have multiple devices running in the
 same Device Server:
 
-*  Case of motors: a single axis controller for 4 motors.
+- Case of motors: a single axis controller for 4 motors.
 
 Device
 ~~~~~~
@@ -248,7 +248,7 @@ clients**. In all cases, reactivity must be ensured (i.e. the
 response time of the device, must be minimized).
 
 A Device has an interface composed of commands and attributes, which
-provides the service of the device. It also has “\ *properties*\ ”,
+provides the service of the device. It also has :term:`properties <property>`,
 stored in the relational database, which are generally used as
 configuration settings. These concepts are explained later in this
 document.
