@@ -94,3 +94,12 @@ Glossary
         A database providing configuration and some runtime information about Tango Controls components in so called
         Tango System instance or deployment. It is used by *Databaseds* device server and constitutes :term:`Tango Host`.
 
+    property
+        A configuration parameter stored in the :term:`Tango Database`. Properties can be assigned to
+        a :term:`device class`, :term:`device` or elements of device interface (:term:`attributes <attribute>`,
+        :term:`commands <command>`, :term:`pipes <pipe>`). Properties can be also not related to :term:`device` - such
+        properties are called `free properties`. Property values are often used
+        by elements of :term:`Tango Controls` system during its startup. These usually provides information required
+        to configure things like connections to hardware or to adjust to user preferences.
+
+
