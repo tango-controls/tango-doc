@@ -9,6 +9,7 @@
 Introduction
 ===============
 
+:audience:`developers`, :lang:`c++, java, python`
 
 * Pogo is the TANGO_ code generator written in Java swing.
 * This graphical interface allows to define a TANGO_ class model.

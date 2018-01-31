@@ -9,6 +9,8 @@
 Filtering the nodes in trees
 ****************************
 
+:audience:`administrators, developers, users`
+
 .. figure:: filter_menu.jpg
    :align:   left
 

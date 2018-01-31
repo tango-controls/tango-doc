@@ -1,6 +1,7 @@
 Preferences
 -----------
 
+:audience:`developers`, :lang:`c++, java, python`
 
 Programmer Preferences
 ~~~~~~~~~~~~~~~~~~~~~~

@@ -1,6 +1,8 @@
 Add a new controlled host
 -------------------------
 
+:audience:`administrators, developers`
+
     * Use the :guilabel:`Add a New Host` in :guilabel:`Command` menu.
     * Or clone an existing one using host popup menu. And fill the fields of following window:
 

@@ -3,6 +3,8 @@
 Tools and Extensions
 ====================
 
+:audience:`all`
+
 Built-in tools
 --------------
 

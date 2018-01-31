@@ -2,6 +2,8 @@
 Tango ATK Tutorial
 ******************
 
+:audience:`developers`, :lang:`java`
+
 This document is a practical guide for Tango ATK programmers and
 includes several trails with examples and demonstrations. Most of the
 examples and demonstrations are provided as Macromedia Flash documents.

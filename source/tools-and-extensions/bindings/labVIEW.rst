@@ -1,6 +1,8 @@
 LabVIEW
 =======
 
+:audience:`developers`
+
 * Client and server API for `LabVIEW <http://www.ni.com/de-de/shop/labview.html>`_
 * Runs on Windows and Linux
 * Provides 32 and 64 bits support on both platforms

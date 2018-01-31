@@ -11,6 +11,8 @@
 Starting with Pogo
 ===================
 
+:audience:`beginners, developers`, :lang:`c++, java, python`
+
 TANGO class creation
 ----------------------
 Pogo will start as follow.

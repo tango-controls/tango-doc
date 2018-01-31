@@ -1,6 +1,8 @@
 Multi Servers Start/Stop
 ------------------------
 
+:audience:`administrators, developers, users`
+
 -  You can start or stop:
 
    -  All servers on a host by clicking on :guilabel:`Start All` or :guilabel:`Stop All`

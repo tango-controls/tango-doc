@@ -1,6 +1,8 @@
 Multiple C++ Classes Manager
 ----------------------------
 
+:audience:`developers`, :lang:`c++, java, python`
+
 * Since :program:`Pogo-7.2` on **Linux**, :program:`Pogo` allows you to create multiple
        C++ classes server project.
 * Use the :guilabel:`tools` menu (or :command:`pogo -multi` shell command) to launch
