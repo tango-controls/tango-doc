@@ -3,6 +3,8 @@
 Documentation, how to contribute
 ================================
 
+:audience:`developers`
+
 Prerequisites
 -------------
 

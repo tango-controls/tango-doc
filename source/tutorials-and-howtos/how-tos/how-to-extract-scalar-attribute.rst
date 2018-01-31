@@ -4,6 +4,8 @@
 How to extract read and set values from a scalar attribute
 ==========================================================
 
+:audience:`developers`, :lang:`c++`
+
 
 The following example will show how you can extract the read and set values from a scalar attribute.
 In the example, the attribute is a *Tango::DevDouble*.

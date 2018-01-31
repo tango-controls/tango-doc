@@ -1,6 +1,8 @@
 TangoWebapp installation tutorial (Windows)
 ===========================================
 
+:audience:`developers, administrators`, :lang:`java`
+
 1. Download Apache Tomcat 8 and install it to *C:/apache-tomcat-8*. To verify that it got installed successfully, try to go to :code:`http://127.0.0.1:8080`
 
 2. Download the latest `mtangorest.server.jar <https://bitbucket.org/hzgwpn/mtangorest.server/downloads/>`_ and put it in *C:/apache-tomcat-8/webapps*

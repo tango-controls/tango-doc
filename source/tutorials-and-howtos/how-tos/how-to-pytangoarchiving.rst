@@ -4,6 +4,8 @@
 PyTangoArchiving Recipes
 ========================
 
+:audience:`developers`, :lang:`python`
+
 *by Sergi Rubio*
 
 **PyTangoArchiving** is the python API for Tango Archiving_.

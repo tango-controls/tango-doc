@@ -1,6 +1,8 @@
 How to run device servers on Windows XP with IPv6
 =================================================
 
+:audience:`administrators, developers`
+
 This HowTo gives some advices about running Tango device server on Windows XP when IPv6 protocol stack is installed.
 
 The ORB (CORBA Object Request Broker) used by Tango is omniORB.

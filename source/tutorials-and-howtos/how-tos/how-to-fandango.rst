@@ -4,6 +4,8 @@
 How to Fandango
 ===============
 
+:audience:`developers`, :lang:`python`
+
 by *Sergi Rubio*
 
 fun4tango, functional programming for Tango

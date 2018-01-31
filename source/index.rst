@@ -7,6 +7,8 @@
 Welcome to Tango Controls documentation!
 ========================================
 
+:audience:`all`
+
 How this documentation is organized
 -----------------------------------
 
