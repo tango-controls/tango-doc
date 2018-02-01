@@ -69,7 +69,7 @@ master_doc = 'contents'
 
 # General information about the project.
 project = u'Tango Controls'
-copyright = u'2017, Tango Community, Creative Commons Attribution 4.0 International (CC BY 4.0)'
+copyright = u'2017-2018, Tango Community, Creative Commons Attribution 4.0 International (CC BY 4.0)'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -373,7 +373,7 @@ texinfo_documents = [
 epub_title = u'Tango Controls Documentation'
 epub_author = u'Tango Community'
 epub_publisher = u'Tango Community'
-epub_copyright = u'2017, Tango Community, CC BY 4.0'
+epub_copyright = u'2017-2018, Tango Community, CC BY 4.0'
 
 # The basename for the epub file. It defaults to the project name.
 #epub_basename = u'Tango Controls Documentation'
