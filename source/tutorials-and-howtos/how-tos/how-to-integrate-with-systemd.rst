@@ -3,6 +3,8 @@
 Tango with systemd integration
 ==============================
 
+:audience:`administrators`
+
 This recipe shows how to set up Tango environment using systemd, for instance on a developer's box
 
 At first systemd entities must be defined for common Tango devices (db, tango-accesscontrol, tango-test etc):

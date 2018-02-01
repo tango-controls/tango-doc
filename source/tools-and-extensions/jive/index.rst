@@ -3,6 +3,8 @@
 Jive
 ====
 
+:audience:`administrators, developers, users`
+
 .. rubric:: Welcome to Jive documentation!
 
 

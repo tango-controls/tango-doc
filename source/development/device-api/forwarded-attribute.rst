@@ -1,6 +1,8 @@
 Forwarded attribute
 ===================
 
+:audience:`developers`, :lang:`c++`
+
 Definition
 ----------
 

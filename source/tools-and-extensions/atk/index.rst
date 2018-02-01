@@ -3,6 +3,8 @@
 Tango Application Toolkit “ATK”
 ===============================
 
+:audience:`developers`, :lang:`java`
+
 Tango Application ToolKit, (ATK) is a TANGO client framework for building GUIs based on Java Swing.
 
 Speeding up the development and standardizing look and feels ATK provides several swing based components

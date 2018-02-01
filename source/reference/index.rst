@@ -1,6 +1,8 @@
 Reference
 =========
 
+:audience:`all`
+
 .. toctree::
    :name: referencetoc
 

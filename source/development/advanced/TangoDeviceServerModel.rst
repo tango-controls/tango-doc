@@ -3,10 +3,8 @@
 Tango Device Server Model
 =========================
 
-Target
-------
+:audience:`advanced, developers`, :lang:`all`
 
-This document is directed to advanced developer.
 
 Primary Presentation
 --------------------

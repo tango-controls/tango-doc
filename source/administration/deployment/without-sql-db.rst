@@ -3,6 +3,8 @@
 Running a device server without SQL database
 ============================================
 
+:audience:`administrators, developers`
+
 Device server using file as database
 ------------------------------------
 

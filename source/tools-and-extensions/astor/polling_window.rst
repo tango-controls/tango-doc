@@ -1,6 +1,8 @@
 Polling Management
 ------------------
 
+:audience:`administrators, developers`
+
 A Tango device attribute can be polled periodically. To configure this polling,
 a diagnostic tool is available. It displays when each attribute has been polled
 the last four times (see following figure) and how much time was required to read

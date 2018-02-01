@@ -1,6 +1,8 @@
 Pogo-6 Compatibility
 ----------------------
 
+:audience:`developers`, :lang:`c++, java, python`
+
 This application is supposed to be able to re-load a class generated with a :program:`Pogo-6.x` application.
 If :program:`Pogo-6.x` can load it, :program:`Pogo` is also able to load it. :guilabel:`Open` the :file:`XXXX.h` file.
 

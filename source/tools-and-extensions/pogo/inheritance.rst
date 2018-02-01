@@ -1,6 +1,8 @@
 Inheritance Management
 ----------------------
 
+:audience:`developers`, :lang:`c++, java, python`
+
 * A TANGO device class inherite from a DeviceImpl class. It could also inherite from another TANGO device class.
 * To inherite from another TANGO device class, use **Add Inheritance Class** in class creation window.
 * Inheritance is not simply used as template.

@@ -3,6 +3,8 @@
 Windows
 =========
 
+:audience:`developers, administrators`
+
 This guide provides step by step guide on installation of Tango Controls under Windows operating systems.
 
 What is Tango Controls

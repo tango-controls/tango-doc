@@ -1,6 +1,8 @@
 QTango
 ======
 
+:audience:`developers`, :lang:`c++`
+
 QTango - based on C++ and Qt. Favourite amongst C++ developers.
 
 QTango is a framework built on top of QTangoCore and QtControls.

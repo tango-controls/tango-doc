@@ -5,6 +5,8 @@
 The TANGO IDL file : Module Tango
 =================================
 
+:audience:`developers`, :lang:`all`
+
 The fundamental idea of a device as a network object which has methods
 and data has been retained for TANGO. In TANGO objects are real C++/Java
 objects which can be instantiated and accessed via their methods and

@@ -1,6 +1,8 @@
 Tango Server Packaging
 ----------------------
 
+:audience:`developers`, :lang:`c++, java, python`
+
 Since :program:`Pogo-8.3.0` on **Linux**, :program:`Pogo` allows you to create packaging
 files to be used with autotools
 

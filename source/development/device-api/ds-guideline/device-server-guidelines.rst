@@ -3,6 +3,8 @@
 Guidelines
 =====================
 
+:audience:`developers`, :lang:`all`
+
 This chapter describes Guidelines for developing Device Servers.
 The purpose of this document is not to rewrite the Tango documentation
 but to propose the community an interpretation of Tango device

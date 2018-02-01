@@ -1,6 +1,8 @@
 History
 -------
 
+:audience:`all`
+
 The concept of using device servers to access devices was first proposed at the `ESRF <https://www.esrf.eu>`_ 
 in 1989. 
 It has been successfully used as the heart of the ESRF Control System of the institute accelerator complex. 

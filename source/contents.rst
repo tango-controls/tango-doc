@@ -1,6 +1,8 @@
 Tango Documentation Contents
 ============================
 
+:audience:`all`
+
 .. toctree::
    :glob:
    :name: maintoc

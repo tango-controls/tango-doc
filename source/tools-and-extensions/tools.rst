@@ -1,6 +1,8 @@
 The most popular tools
 ======================
 
+:audience:`beginners, all`
+
 Tango Controls provides various tools. You may refer to :doc:`Index of tools <index>` for a detailed list
 of available tools, applications and libraries or look below for the most used ones.
 

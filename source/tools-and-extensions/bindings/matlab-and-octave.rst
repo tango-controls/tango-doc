@@ -1,6 +1,8 @@
 Matlab & Octave
 ===============
 
+:audience:`developers, users`
+
 * Client API for `Matlab <https://www.mathworks.com/>`_ and `Octave <https://www.gnu.org/software/octave/>`_
 * Release 2.0.6 for Matlab >= R2009b or Octave >= 3.6.2
 * Runs on Windows and Linux

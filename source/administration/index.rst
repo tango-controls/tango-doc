@@ -3,6 +3,8 @@
 Administration
 ==============
 
+:audience:`administrators`
+
 .. toctree::
    :name: administrationtoc
    :maxdepth: 2

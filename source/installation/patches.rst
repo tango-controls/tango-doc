@@ -1,8 +1,9 @@
-
-
+.. _patches:
 
 Patches
 =======
+
+:audience:`developers, administrators`
 
 To apply any patches downloaded from this page, first go to the directory where Tango source distribution has been extracted
 e.g. *cd ~/tango-9.2.2*, then type the command :

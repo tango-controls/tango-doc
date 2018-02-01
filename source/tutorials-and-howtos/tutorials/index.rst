@@ -1,6 +1,8 @@
 Tutorials
 =========
 
+:audience:`all`
+
 .. toctree::
    :name: tutorialstoc
    :maxdepth: 1

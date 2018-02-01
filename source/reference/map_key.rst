@@ -3,6 +3,8 @@
 Map Key
 =========
 
+:audience:`beginners, developers, administrators, users`
+
 The color coded key for the clickable maps of the Tango ecosystem.
 
 ..  raw:: html

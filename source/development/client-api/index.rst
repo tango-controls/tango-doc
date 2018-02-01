@@ -3,6 +3,8 @@
 Tango Client
 ============
 
+:audience:`developers`, :lang:`all`
+
 .. toctree::
    :name: clientapitoc
    :maxdepth: 2

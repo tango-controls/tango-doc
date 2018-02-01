@@ -5,6 +5,8 @@
 Writing your first C++ TANGO client
 ===================================
 
+:audience:`beginer developers`, :lang:`c++`
+
 The quickest way of getting started is by studying this example :
 
 .. code:: cpp

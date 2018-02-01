@@ -6,6 +6,8 @@
 TangoBox 9.2
 ============
 
+:audience:`beginner users, beginner developers, beginner administrators`
+
 TangoBox is a VM image running Tango Controls system and its various tools.
 It is intended to be used for demonstration and training.
 It also simulates distributed deployment by using Docker.

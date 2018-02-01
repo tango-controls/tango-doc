@@ -1,6 +1,8 @@
 Dynamic Attributes
 ------------------
 
+:audience:`developers`, :lang:`c++, java, python`
+
 :program:`Pogo` allows you to create and manage dynamic attributes
 You can create a dynamic attribute like a static one.
 

@@ -3,6 +3,8 @@
 Authors
 ========
 
+:audience:`all`
+
 Good documentation needs dedicated authors who spend lots of time writing and reading
 text instead of code. This labour of love is only rarely appreciated
 by readers. This section lists the numerous contributors to the Tango

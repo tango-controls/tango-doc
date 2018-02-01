@@ -3,6 +3,8 @@
 End-user applications guide
 ===========================
 
+:audience:`user`
+
 If you are end-user you are probably interested in documentation for
 :ref:`tools delivered with Tango Controls <tools_index>`. Below, you will find a list of tools a beginner user
 usually needs to know.

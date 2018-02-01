@@ -2,6 +2,8 @@
 Introduction to Astor
 ---------------------
 
+:audience:`administrators, developers, users`
+
 Goal
 ~~~~
 

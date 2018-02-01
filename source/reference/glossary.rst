@@ -4,6 +4,8 @@
 Glossary
 ========
 
+:audience:`all`
+
 .. glossary::
 
     Tango Controls

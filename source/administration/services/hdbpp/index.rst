@@ -1,3 +1,5 @@
+:audience:`all`
+
 .. _hdbpp_service:
 
 HDB++ - an archiving/historian service

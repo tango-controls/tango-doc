@@ -9,6 +9,8 @@
 Advanced Editing
 ****************
 
+:audience:`administrators, developers`
+
 Multiple Editing
 ================
 

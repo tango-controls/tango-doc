@@ -1,6 +1,8 @@
 Panorama
 ========
 
+:audience:`developers`
+
 The `Panorama <uk.codra.net/panorama/>`_ binding is available thanks to `CEA <http://www.cea.fr/>`_
 
 * Release 1.2 for Tango 7.2.1 and Panorama E2 4.0 SP1 (or above)

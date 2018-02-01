@@ -1,6 +1,8 @@
 Event Manager
 -------------
 
+:audience:`administrators, developers`
+
 Astor proposes to browse by server, by device or by alias.
 It could be usefull for:
 

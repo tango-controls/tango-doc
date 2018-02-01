@@ -1,6 +1,8 @@
 Amazon Cloud
 ============
 
+:audience:`beginner users, beginner developers, beginner administrators`
+
 The latest version of TANGO 9.2.5a is available on the cloud.
 
 An Amazon image running Ubuntu 16.04 with TANGO 9.2.5a is pre-installed and

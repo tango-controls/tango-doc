@@ -3,6 +3,8 @@
 Astor (TANGO Manager)
 =======================
 
+:audience:`administrators, developers, users`
+
 .. toctree::
    :maxdepth: 2
    :name: astortoc

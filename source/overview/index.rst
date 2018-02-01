@@ -6,6 +6,8 @@
 Overview
 =========
 
+:audience:`beginners, all`
+
 Contents:
 
 .. toctree::
