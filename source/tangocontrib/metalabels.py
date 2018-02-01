@@ -26,9 +26,16 @@ def metalabel_role(name, rawtext, text, lineno, inliner, options={}, content=[])
         assert isinstance(label_config, dict)
         set_classes(options)
 
-        node1 = nodes.strong()
-        node1 += nodes.emphasis(raw=rawtext, text=label_config.get('label', name), **options)
+        node = nodes.emphasis(rawtext='', text='', **options)
+        node['classes'].append('meta-label')
+
+        node1 = nodes.strong(raw=rawtext, text=label_config.get('label', name), **options)
+        node1['classes'].append('label')
+
         node2 = nodes.emphasis(rawtext=rawtext, text=text, **options)
+
+        node += node1
+        node += node2
 
     except AssertionError :
         msg = inliner.reporter.error(
@@ -37,7 +44,7 @@ def metalabel_role(name, rawtext, text, lineno, inliner, options={}, content=[])
         prb = inliner.problematic(rawtext, rawtext, msg)
         return [prb], [msg]
 
-    return [node1, node2 ], []
+    return [node, ], []
 
 
 def setup(app):
