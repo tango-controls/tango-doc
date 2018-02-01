@@ -60,9 +60,6 @@ Our hope is (*as all writers*) to have as many readers as possible!!
 
 The present document refers to the Tango 8 or higher versions features.
 
-**Licence**: This work is licensed under the **Creative Commons
-Attribution 4.0 International License**. To view a copy of this license,
-see http://creativecommons.org/licenses/by/4.0/.
 
 Tango Concepts  
 ===============
@@ -89,7 +86,7 @@ events, logging, data archiving…).
 Device concept
 ---------------
 
-The “device” is the core concept of Tango. This concept can be directly
+The :term:`device` is the core concept of Tango. This concept can be directly
 linked to the notion of microservice: **1 device = 1 microservice**
 
 A device can represent:
@@ -156,7 +153,7 @@ initiated by the client may be done by 2 mechanisms:
 
    1. the **synchronous** mechanism where the client waits (and is blocked) for the server to send the answer or until the timeout is reached
 
-   2. the **asynchronous** mechanism where the clients send the request and immediately returns. 
+   2. the **asynchronous** mechanism where the clients send the request and immediately returns.
       It is not blocked. It is free to do whatever it
       has to do like updating a graphical user interface. The client has
       the choice to retrieve the server answer by checking if the reply is
@@ -200,7 +197,7 @@ device, device server and Tango class.
    DeviceClass class is only used in C++ device classes
 
 .. hint::
-   These four concepts are closely related, and they express very
+   **These four concepts are closely related, and they express very
    important concepts of Tango.
    Take time to clearly understand them!**
 
@@ -220,19 +217,19 @@ or software interface, it is not
 always possible to run several instances of a Device class within the
 same Device Server:
 
-- Case of a DLL’s use: some DLLs can’t be used by two threads of the same process.
+- **Case of a DLL’s use:** some DLLs can’t be used by two threads of the same process.
 
 In other cases, it is useful to have multiple devices running in the
 same Device Server:
 
-- Case of motors: a single axis controller for 4 motors.
+- ***Case of motors:** a single axis controller for 4 motors.
 
 Device
 ~~~~~~
 
 .. note::
    This is the basic entity of the control system. In the Tango world,
-   everything is a **Device**.
+   everything is a :term:`Device`.
 
 A Tango Device must be “self-consistent”. In case it represents a subset
 of the control system, it must enable the access to all the associated
@@ -247,7 +244,8 @@ clients. Its implementation and/or behaviour must not make
 clients**. In all cases, reactivity must be ensured (i.e. the
 response time of the device, must be minimized).
 
-A Device has an interface composed of commands and attributes, which
+A Device has an interface composed of :term:`commands <command>`
+and :term:`attributes <attribute>`, which
 provides the service of the device. It also has :term:`properties <property>`,
 stored in the relational database, which are generally used as
 configuration settings. These concepts are explained later in this
@@ -510,23 +508,23 @@ interface allowing the developer to select the expected behaviour.
 .. note::
    **BE CAREFUL:** this mechanism has the following **behaviour**:
 
-*  The writing of the memorized attributes is carried out after the
-   function “init\_device”, executed by the Tango layer, and not by the
-   Tango DeviceServer code. In case  an error occurs during the
-   “init\_device” it cannot be caught by the Tango DeviceServer
-   programmer.
+    *  The writing of the memorized attributes is carried out after the
+       function “init\_device”, executed by the Tango layer, and not by the
+       Tango DeviceServer code. In case  an error occurs during the
+       “init\_device” it cannot be caught by the Tango DeviceServer
+       programmer.
 
-*  If in the init\_device method an error occurs that causes a change of
-   state in which the writing of an attribute is impossible, this error
-   will prohibit the restoration of the memorized value of the
-   attribute.
+    *  If in the init\_device method an error occurs that causes a change of
+       state in which the writing of an attribute is impossible, this error
+       will prohibit the restoration of the memorized value of the
+       attribute.
 
-*  The order of reloading is deterministic but complex (*order of
-   ClassFactory then device definition in database then attribute
-   definition in Pogo*). Therefore relying on this order might have some
-   side effects particularly in case attributes are modified through
-   Pogo when attributes values are linked (*eg: sampling frequency and
-   number of samples*).
+    *  The order of reloading is deterministic but complex (*order of
+       ClassFactory then device definition in database then attribute
+       definition in Pogo*). Therefore relying on this order might have some
+       side effects particularly in case attributes are modified through
+       Pogo when attributes values are linked (*eg: sampling frequency and
+       number of samples*).
 
 .. warning::
  
@@ -546,8 +544,8 @@ interface allowing the developer to select the expected behaviour.
 Device commands
 ~~~~~~~~~~~~~~~
 
-**A command is associated with an action. *On, Off, Start, Stop* are
-commons examples.**
+A :term:`command` is associated with an action. *On, Off, Start, Stop* are
+commons examples.
 
 A Tango command has, optionally, ONE input argument and ONE output
 argument.
@@ -650,7 +648,7 @@ Concepts
 ^^^^^^^^
 
 By default Tango is based on a relational database (MySQL) to store
-configuration information for devices namely the *properties*.
+configuration information for devices namely the :term:`properties <property>`.
 
 The properties are used to configure a device without changing the
 Tango class code. Taking an axis controller as example, the controller
@@ -769,22 +767,23 @@ It is necessary to:
 -  Design the device as reusable/extensible as possible because it may
    interest the others developers in the community.
 
-    As such, the device must be:
+.. topic:: As such, the device must be:
+   :class: hint
 
--  Configurable: (e.g.: no port number “hard coded”, but use of a
-   parameter via a property),
+    -  Configurable: (e.g.: no port number “hard coded”, but use of a
+       parameter via a property),
 
--  Self-supporting: the device must be usable outside the private
-   programming environment (eg: all the necessary elements to use the
-   device (compile, link) must be provided to the community). The use of
-   the GPL should be considered, and the use of proprietary libraries
-   should be avoided if possible
+    -  Self-supporting: the device must be usable outside the private
+       programming environment (eg: all the necessary elements to use the
+       device (compile, link) must be provided to the community). The use of
+       the GPL should be considered, and the use of proprietary libraries
+       should be avoided if possible
 
--  Portable: the device code must be (as much as possible) independent
-   of the target platform unless it depends on platform specific
-   drivers,
+    -  Portable: the device code must be (as much as possible) independent
+       of the target platform unless it depends on platform specific
+       drivers,
 
--  Documentation in English
+    -  Documentation in English
 
 Generic interface programming
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
