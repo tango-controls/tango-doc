@@ -1,7 +1,7 @@
 .. _ds_guidelines:
 
 Guidelines
-=====================
+==========
 
 :audience:`developers`, :lang:`all`
 
@@ -62,13 +62,13 @@ The present document refers to the Tango 8 or higher versions features.
 
 
 Tango Concepts  
-===============
+==============
 
 The following explanations are from the :ref:`Tango Device
 Server Model <deviceservermodel>`.
 
 Tango Control system
----------------------
+--------------------
 
 The Tango control system is an abstract concept which represents a set
 of “microservices” based on a common technology: Tango. Tango is itself a
@@ -84,7 +84,7 @@ programmer, while adding specific control system features (alarms,
 events, logging, data archiving…).
 
 Device concept
----------------
+--------------
 
 The :term:`device` is the core concept of Tango. This concept can be directly
 linked to the notion of microservice: **1 device = 1 microservice**
@@ -103,7 +103,7 @@ provides the user with a model which speaks their languages e.g. physical
 or engineering parameters.
 
 Hierarchy
-----------
+---------
 
 A Tango control system can be hierarchically organized.
 
@@ -136,7 +136,7 @@ The following diagram illustrates the concept of hierarchy of devices:
    Hierarchical view of devices
 
 Communication paradigms
-------------------------
+-----------------------
 
 Tango offers three communication paradigm: synchronous, asynchronous
 and publish-subscribe calls. 
@@ -261,9 +261,9 @@ Attributes correspond to physical quantities carried by the device. Any
 value that you want available on the Tango bus is an attribute. For
 example:
 
-*  A device associated with a motor **has** a *position* attribute
+*  A device associated with a motor **has** a :samp:`{position}` attribute
    expressed in mm.
-*  A device associated with a thermocouple **has** a *temperature*
+*  A device associated with a thermocouple **has** a :samp:`{temperature}`
    attribute expressed in Celsius (or any another suitable unit).
 
 .. note:: 
@@ -281,7 +281,7 @@ example:
    attributes.
 
 Attribute Properties
-^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
 
 A Tango attribute has a group of settings that describe it.
 
@@ -308,22 +308,25 @@ All these metadata are hosted in the class itself and can be set by the
 programmer or by a configuration in the Tango database.
 
 Static attribute Properties
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-*  **name**: the attribute name
+*  :samp:`{name}`: the attribute name
 
    *  Type: string e.g : OutCurrent, InCurrent…
-*  **data\_type**: the attribute data type
+
+*  :samp:`{data_type}`: the attribute data type
 
    *  Identifier of the Tango numeric type associated to the attribute:
       *DevBoolean, DevUChar, Dev[U]Short, Dev[U]Long, Dev[U]Long64,
       DevFloat, DevDouble, DevString, DevEncoded*
    *  Note: *Tango::DevEncoded* is the Tango type that encapsulates
       client data.
-*  **data\_format**: describes the dimension of the data.
+
+*  :samp:`{data_format}`: describes the dimension of the data.
 
    *  Type: scalar (value), spectrum (1D array), image (2D array)
-*  **writable**: defines 4 possible types of access. In practical, we
+
+*  :samp:`{writable}`: defines 4 possible types of access. In practical, we
    can say that only 2 are really useful and answer to practically all
    the cases.
 
@@ -335,7 +338,8 @@ Static attribute Properties
       common case) e.g. The current of a powersupply, The position of an
       axis…
    *  READ\_WITH\_WRITE (deprecated, do not use)
-*  **max\_dim\_x** : this property is valid only for data\_format
+
+*  :samp:`{max_dim_x}`: this property is valid only for data\_format
    spectrum or image. It gives the maximum number of element in the
    dimension X. e.g. the max length of a spectrum or the maximum number
    of rows of an image. This property is used to reserve memory space to
@@ -344,14 +348,15 @@ Static attribute Properties
    
    *  e.g. 0 for a scalar, n for a spectrum of max n elements, n for an
       image of max n rows
-*  **max\_dim\_y** : this property is valid only for data\_format
+*  :samp:`{max_dim_y}`: this property is valid only for data\_format
    image. It gives the maximum number of element in the dimension Y.
    e.g. the maximum number of columns of an image. This property is used
    to reserve memory space to host the data. Nothing prevent to have a
    real length much shorter that this maximum.
 
    *  0 for a scalar or a spectrum, n for an image of max n columns
-*  **display\_level** : enables to hide the attribute regarding the
+
+*  :samp:`{display_level}`: enables to hide the attribute regarding the
    client mode (expert or not)
 
    *  Tango::OPERATOR or Tango::EXPERT
@@ -372,19 +377,19 @@ knows the unit of the data and is able to describe it. Feeling the
 attribute property at the development stage will allow all generic
 clients to display the data in the best manner
 
-*  **description**: describes the attribute
+*  :samp:`{description}`: describes the attribute
 
    *  Type: string e.g. “The powersupply output current”
 
-*  **label**: label used on the GUIs
+*  :samp:`{label}`: label used on the GUIs
 
    *  Type: string e.g. “Output Current”, “Input Current”
 
-*  **unit**: attribute unit to be displayed in the client viewer
+*  :samp:`{unit}`: attribute unit to be displayed in the client viewer
 
    *  Type: string (eg “mA”, “mm”...)
 
-*  **standard\_unit**: conversion factor to get attribute value into
+*  :samp:`{standard_unit}`: conversion factor to get attribute value into
    S.I (M.K.S.A)\_unit. Be careful this information is intended to be
    used ONLY by the client (.e.g ATKPanel uses it, but jive->test device
    does not)
@@ -393,7 +398,7 @@ clients to display the data in the best manner
       device attribute gives the current in mA, we have to divide by
       1000 to obtain it in Amp. Then we will set this property to 1E-03
 
-*  **display\_unit**: used by the GUIs to display the attribute into a
+*  :samp:`{display_unit}`: used by the GUIs to display the attribute into a
    unit more appropriate for the user. Be careful this information is
    intended to be used ONLY by the client (e.g ATKPanel uses it, but
    JiveTest device does not).
@@ -403,14 +408,14 @@ clients to display the data in the best manner
       microA, then we have to multiply by 1000 to obtain it in microAmp.
       Then we will set this property to 1000.0.
 
-*  **format**: specifies how a numeric attribute value should be
+*  :samp:`{format}`: specifies how a numeric attribute value should be
    presented
 
    *  Type: string : e.g. « %6.3f »
 
    *  Note: we use a “printf” like syntax 
 
-*  **min\_value** and **max\_value**: minimum and maximum allowable
+*  :samp:`{min_value}` and :samp:`{max_value}`: minimum and maximum allowable
    value. These properties are automatically checked at each execution
    of a write attribute. If the value requested is not between the
    min\_value and the max\_value, an exception will be returned to the
@@ -422,19 +427,19 @@ clients to display the data in the best manner
    *  Note: these properties are valid only for writable attributes
 
 Attributes properties for ALARM configuration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Tango provides an automatic way of defining alarms. An alarm
 condition will switch the attribute quality factor to alarm and the
 device state will automatically switched to ALARM in certain
 conditions.  Four properties are available for alarm purpose.
 
-*  **min\_alarm** and **max\_alarm**: Define the range outside which
+*  :samp:`{min_alarm}` and :samp:`{max_alarm}`: Define the range outside which
    the attribute is considered in alarm. If the value of the attribute
    is > max\_alarm or < min\_alarm, then the attribute quality factor
    will be switched to ALARM.
 
-*  **Delta\_val** and **delta\_t**: (*could also be called maximum
+*  :samp:`{Delta_val}` and :samp:`{delta_t}`: (*could also be called maximum
    noise and time constant*) Valid for a writeable attribute. Define a
    maximum difference between the set\_value and the read\_value of an
    attribute after a standard time.
@@ -473,7 +478,7 @@ conditions.  Four properties are available for alarm purpose.
    for WARNING (deprecated since version 8)
 
 Attributes properties related to Events configuration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 These settings are used for tuning the events related to the attribute.
 
@@ -490,7 +495,7 @@ These settings are used for tuning the events related to the attribute.
 *  *Archive\_period*: period between two consecutives events.
 
 Particular case of a memorized attribute 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. note::
    Memorised attributes are only possible with an attribute with WRITE or READ\_WRITE mode and
@@ -509,12 +514,12 @@ interface allowing the developer to select the expected behaviour.
    **BE CAREFUL:** this mechanism has the following **behaviour**:
 
     *  The writing of the memorized attributes is carried out after the
-       function “init\_device”, executed by the Tango layer, and not by the
+       function ``init_device``, executed by the Tango layer, and not by the
        Tango DeviceServer code. In case  an error occurs during the
-       “init\_device” it cannot be caught by the Tango DeviceServer
+       ``init_device`` it cannot be caught by the Tango DeviceServer
        programmer.
 
-    *  If in the init\_device method an error occurs that causes a change of
+    *  If in the ``init_device`` method an error occurs that causes a change of
        state in which the writing of an attribute is impossible, this error
        will prohibit the restoration of the memorized value of the
        attribute.
@@ -598,8 +603,9 @@ only, use this information to determine the internal state of a system.
 
 The available states are limited to:
 
--  ON, OFF, CLOSE, OPEN, INSERT, EXTRACT, MOVING, STANDBY, FAULT, INIT,
-   RUNNING, ALARM, DISABLE, UNKNOWN
+-  ``ON``, ``OFF``, ``CLOSE``, ``OPEN``, ``INSERT``, ``EXTRACT``, 
+   ``MOVING``, ``STANDBY``, ``FAULT``, ``INIT``,
+   ``RUNNING``, ``ALARM``, ``DISABLE``, ``UNKNOWN``
 
 The main thing is to ensure a predictable behaviour of the device
 regarding the state transitions.
@@ -607,7 +613,7 @@ regarding the state transitions.
 For example:
 
 -  Consider the case of a motor system. The client knows the motor state
-   (*STANDBY, MOVING, FAULT,)* with a *polling* mechanism (periodic
+   (:samp:`{STANDBY}, {MOVING}, {FAULT},`)* with a *polling* mechanism (periodic
    reading of the state attribute of the motor – instead of using the
    Tango event system).
 
@@ -615,12 +621,12 @@ For example:
     inappropriate management of the state.
 
     A typical example is to launch an axis movement through the writing
-    of the position attribute then the client is pending on the MOVING
+    of the position attribute then the client is pending on the ``MOVING``
     state (the motor is supposed to make a transition *STANDBY MOVING*).
     Such a method will only work if the writing of the position
-    attribute switches the device state to MOVING *before* the return of
+    attribute switches the device state to ``MOVING`` *before* the return of
     the writing request of the position attribute. Otherwise, the client
-    can read (non-zero probability) the STANDBY state, and interpret it
+    can read (non-zero probability) the ``STANDBY`` state, and interpret it
     as “movement ended” while this one had not even started!
 
     This behaviour is described in figure 4 below.
@@ -794,19 +800,19 @@ its interface should
 -  Reflect the service rather its underlying implementation. For
    example, a command named “WriteRead” reflects the communication
    service of a bus (type: message exchange), while a command named
-   “NI488\_Send” reflects a specific implementation of the supplier.
+   ``NI488_Send`` reflects a specific implementation of the supplier.
 
 -  Show the general characteristics (attributes and commands) of a
    common type of equipment that it represents. For example, a command
-   ”On” reflects the action of powering on a PowerSupply , while a
-   command named “BruckerPSON” reflects a specific implementation which
+   ``On`` reflects the action of powering on a PowerSupply , while a
+   command named ``BruckerPSON`` reflects a specific implementation which
    must be avoided.
 
 The device interface must be service oriented, and not implementation
 oriented.
 
 Abstract interfaces 
-~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
 
 Singleton device
 ~~~~~~~~~~~~~~~~
@@ -820,7 +826,7 @@ it in the device design phase (add for example a static variable
 counting device instances or other) to detect this misconfiguration. For
 example, it can authorize the creation of a second instance (within the
 meaning of the device creation) but systematically put the state to
-FAULT (in the method init\_device) and indicate the problem in the
+FAULT (in the method ``init_device``) and indicate the problem in the
 Status.
 
 In the case where technical constraints prohibit the deployment of
@@ -849,7 +855,7 @@ Device interface definition
 ---------------------------
 
 The first step in designing a device is to define the commands and the
-attributes via Pogo (use Pogo to define the Tango interface).
+attributes via Pogo (use :program:`Pogo` to define the Tango interface).
 
 Except in (very) particular cases, always use an attribute to expose the
 data produced by the device. The command concept exists 
@@ -1012,7 +1018,7 @@ Types
 ~~~~~
 
 The types used for the device interface definition are Tango types
-(Tango::DevDouble, Tango::DevFloat …). These types are presented by Pogo
+(``Tango::DevDouble``, ``Tango::DevFloat`` …). These types are presented by Pogo
 and are not modifiable.
 
 The types used by the developer in its own code are left free to choose,
@@ -1020,7 +1026,7 @@ as long as they are not platform specific. Standard types of the
 language used (Boolean, int, double …), Tango types or types from a
 common library (Yat, Yat4Tango for C++) can potentially be used.
 
-Direct conversions from the C++ type long to Tango::DevLong are only
+Direct conversions from the C++ type long to ``Tango::DevLong`` are only
 supported on 32-bit platforms and should be avoided.
 
 Generated code
@@ -1033,7 +1039,7 @@ The developer must include its own code in the “PROTECTED REGION”
 specified parts.
 
 Device interface 
------------------
+----------------
 
 .. _naming_rules:
 
@@ -1456,14 +1462,14 @@ use the “MOVING” state when the equipment is in “movement” toward his
 set point.
 
 Semantics of non-nominal states 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Although the developer is free to choose the device states, we must
 define a common error state for all the devices.
 
 In general, any dysfunction is associated with the state :samp:`{Tango::FAULT}`.
 
-The use of the :samp:`{Tango::ALARM}`state should be reserved for very special
+The use of the :samp:`{Tango::ALARM}` state should be reserved for very special
 cases where it is necessary to define an intermediate state between
 normal operation and fault. Its use must be documented via Pogo in order
 to define the semantics.
@@ -1576,7 +1582,7 @@ bug research and the user understanding of the device operations.
 The device developer must always use the facilities offered by the
 *Tango Logging Service* to produce “Runtime” messages, facilitating the
 understanding of the device operations. Implementations classes can
-inherit *Tango::LogAdaptater* to redirect the logs to the common
+inherit ``Tango::LogAdaptater`` to redirect the logs to the common
 service.
 
 The rules to follow are:
@@ -1592,15 +1598,15 @@ The rules to follow are:
 
 Recommendations of use:
 
--  DEBUG\_STREAM : developer information (route trace)
+-  ``DEBUG_STREAM`` : developer information (route trace)
 
--  INFO\_STREAM : user information (measure, start/stop of a process)
+-  ``INFO_STREAM`` : user information (measure, start/stop of a process)
 
--  WARN\_STREAM : warning (eg deprecated operation)
+-  ``WARN_STREAM`` : warning (eg deprecated operation)
 
--  ERROR\_STREAM : general error
+-  ``ERROR_STREAM`` : general error
 
--  FATAL\_STREAM : fatal error, shutdown
+-  ``FATAL_STREAM`` : fatal error, shutdown
 
 It is important to use these *streams* early in the development. They
 allow an easier debugging.
@@ -1631,7 +1637,7 @@ It is not mandatory, but highly recommended to add an attribute named
 “log” in the device interface, strings spectrum type, which tracks all
 the internal activity of the device (as defined in Tango Logging).
 
--  In C++, the class *Yat4Tango::InnerAppender* implements this
+-  In C++, the class :cpp:class:`Yat4Tango::InnerAppender` implements this
    functionality based on a dynamic attribute (no need to use Pogo).
 
 -  This system facilitates the recovery of errors and therefore the
@@ -1653,9 +1659,9 @@ explanations:
 
 In the source code of the device
 
--  init\_device method: initialization of the “innerAppender”
+-  ``init_device`` method: initialization of the “innerAppender”
 
--  delete\_device method: deletion of the “innerAppender”
+-  ``delete_device`` method: deletion of the “innerAppender”
 
 .. figure:: media/image14.png
 
@@ -1679,7 +1685,7 @@ Typical cases to avoid:
 
 -  A device doesn’t behave as expected but there is no indication why.
 
--  The device is in FAULT state but the *Status* (the attribute) gives
+-  The device is in :samp:`{FAULT}` state but the :samp:`{Status}` (the attribute) gives
    no indication on the problem nature, or worse, a bad indication (thus
    guiding the users in a wrong trail, with a loss of time and energy).
 
@@ -1689,17 +1695,17 @@ Typical cases to avoid:
 The developer has to ensure:
 
 -  That any exception is caught, completed (Tango allows it) and spread
-   (use of the rethrow\_exception method),
+   (use of the ``rethrow_exception`` method),
 
 -  If an error occur it must be logged using the Tango Logging Service
 
 -  That the return code of a function is always analyzed,
 
--  That the device *Status* is always coherent with the *State,*
+-  That the device :samp:`{Status}` is always coherent with the :samp:`{State}`,
 
 -  That the error messages are understandable for the final user and
    that they are supplemented by *logs* (*ERROR level, use of the
-   error\_stream macro*). The *Status* is the indicator that will help
+   error\_stream macro*). The :samp:`{Status}` is the indicator that will help
    the user to find the error reason.
 
 -  **Ignore the “ideal situation”:** In operation, the ideal setting is
@@ -1707,7 +1713,7 @@ The developer has to ensure:
 
    -  Eg: use of communication sockets: anticipate all the common
       communication problems: cable not connected, equipment off,
-      sub-devices not started or in FAULT.
+      sub-devices not started or in :samp:`{FAULT}`.
 
 Implementation
 ~~~~~~~~~~~~~~
@@ -1717,7 +1723,7 @@ identifier for discriminating exceptions. In the code, it isn’t possible
 to distinguish two exceptions without having knowledge of the text (as
 string) conveyed by the said exception.
 
-All exceptions are of type *Tango::DevFailed*. A DevFailed exception
+All exceptions are of type ``Tango::DevFailed``. A DevFailed exception
 consists of these fields:
 
 -  Reason: string, defining the error type
@@ -1797,10 +1803,10 @@ Example of an exception message:
 
     **Reason**: DATA\_OUT\_OF\_RANGE
 
-    **Description**: AxisMotionAccuracy must be at least of 1 motor
+    **Description**: :samp:`{AxisMotionAccuracy}` must be at least of 1 motor
     step!
 
-    **Origin**: GalilAxis::write\_attr\_hardware
+    **Origin**: ``GalilAxis::write_attr_hardware``
 
 The exception hierarchy defined by Tango has been thought only for
 internal use (Tango core), the developer can’t inherit and define its
@@ -1814,23 +1820,25 @@ If there is a succession of exceptions, the logic dictates that the
 first exception has possibly generated all the others. By resolving the
 first exception, the others can disappear.
 
-**Exception handling in init\_device method:**
+**Exception handling in** ``init_device`` **method:**
 
-- no exceptions should be propagated from the method *MyDevice::init\_device*\ **.** Otherwise, **the device quits.** The device should be kept alive regardless of any failure.
+- no exceptions should be propagated from the method ``MyDevice::init_device``. Otherwise, **the device quits.** The device should be kept alive regardless of any failure.
 
 - The code for this method must contain a try / catch block, which guarantees that no exception is propagated in this context
 
-- If an exception is thrown, the developer must set the device state to FAULT and update the Status to indicate the error nature. (*The goal is to understand easily why the device failed to initialize properly, while still allowing the operator to adjust this or these problems*)
+- If an exception is thrown, the developer must set the device state to :samp:`{FAULT}` and update the :samp:`{Status}` to indicate the error nature. (*The goal is to understand easily why the device failed to initialize properly, while still allowing the operator to adjust this or these problems*)
 
-**Examples of error handling in C++:**
 
--  If an error occurs, always log it
+.. hint::
+    **Examples of error handling in C++:**
 
--  Always update *State* **AND** *Status*
+    -  If an error occurs, always log it
 
--  Manage the return code for function that have one
+    -  Always update *State* **AND** *Status*
 
--  Manage the exceptions for methods which can throw some
+    -  Manage the return code for function that have one
+
+    -  Manage the exceptions for methods which can throw some
 
 .. figure:: media/image16.png
 
@@ -1838,11 +1846,11 @@ Details for an attribute
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 Although Tango supports the notion of quality on an attribute value
-(*Tango::VALID*, *Tango::INVALID*, ...), only few clients use this
+(:samp:`{Tango::VALID}`, :samp:`{Tango::INVALID}`, ...), only few clients use this
 information to judge the validity of the data returned (which is a
 shame). So it is best to not make assumptions on the use that would be
 made (client side) to report an invalid value to the client. In other
-words, **forcing the attribute quality to *Tango::INVALID* is necessary
+words, **forcing the attribute quality to :samp:`{Tango::INVALID}` is necessary
 but not sufficient.**
 
 For float values, it is possible to set the value to “NaN”, but there is
@@ -1863,14 +1871,14 @@ Details for the properties
 Properties reading during device initialization
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-As it stands, the code generated by Pogo doesn’t wrap in a try / catch
+As it stands, the code generated by :program:`Pogo` doesn’t wrap in a try / catch
 block the method which ensures the properties reading in the Tango
-database (see *MyDevice::init\_device*). However, it may fail and cause
+database (see ``MyDevice::init_device``). However, it may fail and cause
 the generation of an exception. As mentioned above, the developer must
-ensure that any exception thrown in the *init\_device* method (or a
+ensure that any exception thrown in the ``init_device`` method (or a
 method called from it) is catch and not spread.
 
-In case of Tango exception on the *properties* reading, the developer
+In case of Tango exception on the :term:`properties <property>` reading, the developer
 should systematically:
 
 1. detect the error (catch).
@@ -1886,12 +1894,12 @@ Example in C++ :
 .. figure:: media/image17.png
 
 As a reminder, the default value for a property is defined with Pogo,
-the value is stored in the database via the *put\_property()* method.
+the value is stored in the database via the ``put_property()`` method.
 
 Properties without default values
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Pogo allows defining a default value for a *property* not present in the
+:program:`Pogo` allows defining a default value for a :term:`property` not present in the
 Tango database.
 
     For mandatory properties that have no default values, the developer
@@ -1909,19 +1917,10 @@ Tango database.
 Appendices
 ==========
 
-Appendix 1 –Code Quality Checklist
-----------------------------------
-
-The following checklist defines the conformity level of a source code
-for a Tango device development with the recommendations detailed in this
-document.
-
-Appendix 2 – Full code samples
+Appendix 1 – Full code samples
 ------------------------------
 
-Example C++ « AttributeSequenceWriter » :
+Example C++:
+`AttributeSequenceWriter <http://www.tango-controls.org/developers/dsc/ds/1390/>`_
 
-Example C++ « NITC01 » :
-
-.. [1] http://www.Tango-controls.org
 
