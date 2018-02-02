@@ -13,7 +13,7 @@ the C++ string class. In the CORBA IDL to C++ mapping standard, the IDL
 string data type maps to classical C string. This means that you have to
 deal with
 
-#. The pointer to the memory where the string is stored (char *)
+#. The pointer to the memory where the string is stored (char \*)
 #. The memory where the the string character are stored
 
 This adds one level of complexity and you have to take care about memory
@@ -42,7 +42,7 @@ Within Pogo, for a correct management of this type of attribute, do not
 click the "allocate" toggle button when you define the attribute. The
 pointer to the character area is defined as one of the device data
 member in the file MyDev.h. The Tango data type DevString is simply a
-typedef for a good old "char *" pointer.
+typedef for a good old "char \*" pointer.
 
 .. code-block:: cpp
     :linenos:
@@ -93,10 +93,10 @@ The attribute related code in the file MyDev.cpp looks like
 
 The pointer *the_str* defined as a device data member is initialized to
 a statically allocated string. The argument of the
-Attribute::set_value() method is of type "char **" which is coherent
+Attribute::set_value() method is of type "char \*\*" which is coherent
 with the definition of the Tango::DevString type. Nevertheless, the
 definition of statically allocated string in C / C++ is a "const char
-*". This is why we need a const_cast during the pointer
+\*". This is why we need a const_cast during the pointer
 initialization.
 
 Note that the use of the Pogo generated data member (named
@@ -263,9 +263,9 @@ The attribute related code in the file MyDev.cpp looks like
         /*----- PROTECTED REGION END -----*/    // MyDev::read_StringAttr
     }
 
-The array *the_str*_*array* defined as a device data member is
+The array :samp:`{the_str_array}` defined as a device data member is
 initialized to statically allocated strings. The argument of the
-Attribute::set_value() method is of type "char **" which is coherent
+Attribute::set_value() method is of type "char \*\*" which is coherent
 with the definition of the Tango::DevString type. Nevertheless, the
 definition of statically allocated string in C / C++ is a "const char
 *". This is why we need a const_cast during the pointer
