@@ -9,6 +9,8 @@
 Generated files
 =================
 
+:audience:`developers`, :lang:`c++, java, python`
+
 .. Note:
 
 -  The source code will not be read when you re-open your project.

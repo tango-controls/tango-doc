@@ -4,6 +4,8 @@
 How to develop for Tango Controls
 =================================
 
+:audience:`developers`, :lang:`all`
+
 Here you will find recipies on how-to develop the Tango Controls on various systems.
 
 .. toctree::

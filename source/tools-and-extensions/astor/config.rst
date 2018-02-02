@@ -1,6 +1,8 @@
 Astor Configuration
 -------------------
 
+:audience:`administrators, developers`
+
 Astor can be configured using the following window.
 Click on :menuselection:`File --> Ctrl System Preferences` menu to open
 

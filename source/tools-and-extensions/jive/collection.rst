@@ -9,6 +9,7 @@
 Displaying collection
 *********************
 
+:audience:`administrators, developers`
 
 .. figure:: collection_view.jpg
    :align:   left

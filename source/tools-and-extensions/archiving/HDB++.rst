@@ -3,6 +3,8 @@
 HDB++
 =====
 
+:audience:`developers, administrators`
+
 Target
 ------
 

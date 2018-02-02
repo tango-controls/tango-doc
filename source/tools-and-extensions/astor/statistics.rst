@@ -1,6 +1,8 @@
 Server Statistics
 -----------------
 
+:audience:`administrators, developers`
+
 When a server, started by the Starter, is stopped by another way than
 a command on the Starter (kill signal, core dump, ...), this event is logged in a file.
 

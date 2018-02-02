@@ -1,6 +1,8 @@
 Tango Access Control (TAC) Configuration
 ----------------------------------------
 
+:audience:`administrators, developers`
+
 TANGO provides an access control (see :doc:`kernel documentation <../../manual/index>` 
 chapter Advanced Features)
 

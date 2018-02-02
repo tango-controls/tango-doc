@@ -1,6 +1,8 @@
 Start a new server with Astor
 -----------------------------
 
+:audience:`administrators, developers`
+
 If the server is already defined in database
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

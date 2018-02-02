@@ -3,6 +3,8 @@
 Installation
 =============
 
+:audience:`administrators, developers, users`
+
 Here you will find recipes on how to install the Tango Controls on various platforms.
 
 .. toctree::

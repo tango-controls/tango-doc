@@ -9,6 +9,8 @@
 Command line
 ************
 
+:audience:`administrators, developers`
+
 Dependencies (CLASSPATH)
 ------------------------
 

@@ -9,6 +9,8 @@
 Manage Servers
 **************
 
+:audience:`developers, administrators`
+
 Creating a Tango server
 =======================
 

@@ -5,6 +5,8 @@
 Tango object naming (device, attribute and property)
 ====================================================
 
+:audience:`developers, users, administrators`, :lang:`all`
+
 Device name
 -----------
 

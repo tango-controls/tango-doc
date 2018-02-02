@@ -1,6 +1,8 @@
 Host Status Window
 ------------------
 
+:audience:`administrators, developers, users`
+
 -  When a host window has been opened, all servers controlled on this
    host are displayed.
 -  The color of the srver define its state:

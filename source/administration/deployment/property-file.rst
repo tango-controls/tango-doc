@@ -7,6 +7,8 @@
 The property file syntax
 ========================
 
+:audience:`administrators, developers`
+
 Property file usage
 -------------------
 

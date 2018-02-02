@@ -1,6 +1,8 @@
 Advanced
 ========
 
+:audience:`developers`
+
 There you will find articles on advanced topics.
 
 .. rubric:: Contents:

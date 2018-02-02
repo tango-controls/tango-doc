@@ -3,6 +3,8 @@
 How to deal with string Tango attribute (C++)
 =============================================
 
+:audience:`developers`, :lang:`c++`
+
 This HowTo gives example on howthe code for string attribute could be written.
 This is only for C++ Tango device class.
 

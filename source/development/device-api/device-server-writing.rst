@@ -11,6 +11,8 @@
 Writing a TANGO device server
 =============================
 
+:audience:`developers`, :lang:`c++`
+
 The device server framework
 ---------------------------
 

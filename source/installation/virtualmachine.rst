@@ -1,6 +1,8 @@
 Virtual Machine
 ===============
 
+:audience:`developers, administrators, users`
+
 The purpose of the **TANGO Box Virtual Machine** is to give you a fast,
 out-of-the-box experience of a working TANGO system.
 There is a set of shortcuts to all essential TANGO tools on the virtual machine desktop.

@@ -1,6 +1,8 @@
 TANGO as CS course in Uni
 =========================
 
+:audience:`all`
+
 This is a technical course based upon Tango in order to share "best practices" in software development ...
 First session took place in Aïn Oussera - Algeria in Octobre 2014.
 

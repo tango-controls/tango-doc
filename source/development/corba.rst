@@ -1,6 +1,8 @@
 10 things you should know about CORBA
 =====================================
 
+:audience:`developers`, :lang:`all`
+
 1.  **You don’t need to know CORBA to work with TANGO**
 
 2.  CORBA is the acronym for **C**\ ommon **O**\ bject **R**\ equest **B**\ roker **A**\ rchitecture and it is a standard defined by the `Object Management Group (OMG) <http://www.omg.org>`_

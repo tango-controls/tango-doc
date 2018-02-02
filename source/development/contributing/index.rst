@@ -3,6 +3,7 @@
 Contributing
 ============
 
+:audience:`developers`
 
 .. toctree::
    :name: contributingtoc

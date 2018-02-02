@@ -3,6 +3,8 @@
 Integrate Java Tango servers with Astor
 =======================================
 
+:audience:`developers, administrators`, :lang:`java`
+
 Problem overview
 ----------------
 

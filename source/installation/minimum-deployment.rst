@@ -3,6 +3,8 @@
 Overview
 =========
 
+:audience:`administrators, developers`
+
 Tango installation can be very simple running on a single machine for managing a few devices
 or it can be a fully blown installation managing tens of thousands of devices and
 multiple Tango control systems.

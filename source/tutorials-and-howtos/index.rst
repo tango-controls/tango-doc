@@ -1,6 +1,8 @@
 Tutorials and How-Tos
 =====================
 
+:audience:`all`
+
 .. toctree::
    :name: tutorialsandhowtostoc
    :maxdepth: 2

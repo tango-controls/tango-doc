@@ -7,6 +7,8 @@
 Writing a TANGO client using TANGO C++ APIs
 ===========================================
 
+:audience:`developers`, :lang:`c++`
+
 Introduction
 ------------
 

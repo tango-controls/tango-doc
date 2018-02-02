@@ -1,8 +1,7 @@
-level: advanced; target: Tango developer
-
-
 Using Tango docker containers
 =============================
+
+:audience:`advanced developers`, :lang:`all`
 
 In this section we describe how one can test newly developed tango device server using `docker https://www.docker.com/`_ containers.
 

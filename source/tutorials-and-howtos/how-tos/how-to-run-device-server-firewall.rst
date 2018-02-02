@@ -4,6 +4,7 @@
 How to run a device server with an active Windows firewall
 ==========================================================
 
+:audience:`administrators, developers`
 
 When running Tango device servers on a Windows PC with active firewall
 you might find some problems when trying to reconnect to a restarted

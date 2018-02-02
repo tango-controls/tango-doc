@@ -1,6 +1,8 @@
 Canone
 ======
 
+:audience:`developers, administrators, users`
+
 Introduction
 ------------
 

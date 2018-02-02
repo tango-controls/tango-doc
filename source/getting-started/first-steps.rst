@@ -3,6 +3,8 @@
 First steps with Tango Controls
 -------------------------------
 
+:audience:`all`, :lang:`all`
+
 * In the :doc:`Overview </overview/index>` you will find basic information on Tango Controls. It will let you understand
   concepts of Tango Controls and help dancing it.
 

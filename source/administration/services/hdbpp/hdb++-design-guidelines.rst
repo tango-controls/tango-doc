@@ -1,3 +1,5 @@
+:audience:`administrators, developers`, :lang:`C++`
+
 .. HDB++ Design and implementation
 
 HDB++ Contributions

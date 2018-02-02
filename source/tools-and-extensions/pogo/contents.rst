@@ -1,5 +1,8 @@
 Pogo
 (Code Generator)
+
+:audience:`developers`, :lang:`c++, java, python`
+
 `Description <Description.html>`__
 `Pogo Startup <Startup.html>`__
 `Generated code <GeneratedCode.html>`__

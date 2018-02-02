@@ -3,6 +3,8 @@
 Developing your first Java TANGO device class
 =============================================
 
+:audience:`beginner developers`, :lang:`java`
+
 In this section we describe how one can start developing Tango device server using Java.
 
 Three methods will be described:

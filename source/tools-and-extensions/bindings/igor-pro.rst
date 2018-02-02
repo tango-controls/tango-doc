@@ -1,6 +1,8 @@
 Igor Pro
 ========
 
+:audience:`developers, users`
+
 * Client API for `Igor Pro <http://wavemetrics.com/>`_
 * Release 3.0.0 for Igor Pro 7.x
     * Runs on Windows x64 [no more official support for x86]

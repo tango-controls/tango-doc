@@ -9,6 +9,8 @@
 Manage Properties
 *****************
 
+:audience:`administrators, developers`
+
 Creating a Property
 ===================
 

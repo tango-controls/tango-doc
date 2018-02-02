@@ -1,6 +1,8 @@
 Developer's Guide
 =================
 
+:audience:`developers`, :lang:`all`
+
 In this section the process of how to write Tango device servers and clients (applications).
 The section is organized as follows:
 
