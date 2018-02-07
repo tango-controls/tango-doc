@@ -90,18 +90,18 @@ Application’s description and goals
 Application’s goals
 ~~~~~~~~~~~~~~~~~~~
 
-    Bensikin allows the user to define contexts and snapshots. Snapshots
-    be saved as files and modified.
+Bensikin allows the user to define contexts and snapshots. Snapshots
+be saved as files and modified.
 
-    Bensikin v1.0 is ready for multi-user functioning, which has for
-    consequence the need to define profiles. A profile is a way to map a
-    user with a working directory. An important conséquence of this is,
-    that **2 different user must** **not use the same working
-    directory**, or you may encounter crashes. A profile has a name and
-    a path to a working directory.
+Bensikin v1.0 is ready for multi-user functioning, which has for
+consequence the need to define profiles. A profile is a way to map a
+user with a working directory. An important conséquence of this is,
+that **2 different user must** **not use the same working
+directory**, or you may encounter crashes. A profile has a name and
+a path to a working directory.
 
-    Bensikin is thus naturally divided (both in functionalities and
-    display) in three parts:
+Bensikin is thus naturally divided (both in functionalities and
+display) in three parts:
 
 -  The profile part, that is an introduction to the rest of the
        application
@@ -126,7 +126,7 @@ A first look to Bensikin
     Figure 2: Bensikin Main Panel
 
 
--  The Bensikin Profile Manager is here to manage profiles which means :
+-  The Bensikin Profile Manager is here to manage profiles which means:
 
    - Creating a new profile
 
@@ -174,7 +174,6 @@ To create a new profile, click on the button |image7| (At the bottom
 left of the panel). A new diaalog will appear, as following :
 
 .. _bensikin_fig_3:
-
 .. figure:: bensikin/image10.jpeg
 
    Figure 3: Creating a new profile
@@ -199,7 +198,6 @@ To delete an existing profile, first select the profile in the
 Profile Selection Combo Box, as following :
 
 .. _bensikin_fig_4:
-
 .. figure:: bensikin/image15.jpeg
 
    Figure 4: Profile Selection
@@ -265,7 +263,6 @@ The expected behaviour is the following:
 Context Management
 ------------------
 
-
 This section describes how to control contexts with Bensikin. A context
 is a list of attributes on which you can make a snapshot. A context has
 an ID and a creation date, both defined by the database. A context also
@@ -274,278 +271,233 @@ describes why the context was created (example: because of an incident
 or in order to set some equipments), whereas the description is here to
 have an idea of what kind of attributes you will find in this context.
 
-Contexts are managed in the context control panel :
+Contexts are managed in the context control panel:
 
-**Figure 7: Context Control Panel**
+.. _bensikin_fig_7:
+.. figure:: bensikin/image21.png
 
-|image19|
+   Figure 7: Context Control Panel
 
-**Context List sub panel**
+Creating a new context
+~~~~~~~~~~~~~~~~~~~~~~
 
-**Context Details sub panel**
-
-    **“Reference”** **Last Update : 8 February 2007** **Page 8/26**
-
-    \ **Synchrotron Soleil** **Bensikin Manuel**
-
-    ***5.1. Creating a new context***
-
-|image20|
-
-    To create a new context, click on the “new” icon in toolbar (
-    |image21| ), or choose he option to make a new context from “File”
-    menu or “Contexts” menu :
+To create a new context, click on the :guilabel:`new` icon in toolbar (
+|image21| ), or choose he option to make a new context from “File”
+menu or “Contexts” menu:
 
 |image22|
 
-    You also are ready to make a new context at application first start
-    or by clicking on the “reset” icon (|image23|) :
+You also are ready to make a new context at application first start
+or by clicking on the :guilabel:`reset` icon (|image23|):
 
-|image24|
+.. _bensikin_fig_8:
+.. figure:: bensikin/image28.jpeg
 
-**Figure 8: Application first start**
+   Figure 8: Application first start
 
-|image25|
 
-    The difference between the “reset” icon(\ |image26|) and the “new”
-    icon( |image27| ) is, that the “reset” icon will clear every panel,
-    whereas the “new” icon will only clear the snapshot list and the
-    Context Details sub panel.
+The difference between the :guilabel:`reset` icon(|image26|) and the :guilabel:`new`
+icon( |image27| ) is, that the :guilabel:`reset` icon will clear every panel,
+whereas the :guilabel:`new` icon will only clear the snapshot list and the
+Context Details sub panel.
 
-    **“Reference”** **Last Update : 8 February 2007** **Page 9/26**
+Classic way (tree)
+^^^^^^^^^^^^^^^^^^
 
-    \ **Synchrotron Soleil** **Bensikin Manuel**
+The tree on the left side of the Context Details sub panel allows
+you to check for available attributes. The one on the right side
+represents your context attributes.
 
-    **5.1.1. Classic way (tree)**
+To add attributes in your context browse the left tree, select
+attributes (represented by the icon |image29| ), and click on the
+arrow (|image30|) to transfer them to the right tree.
 
-    The tree on the left side of the Context Details sub panel allows
-    you to check for available attributes. The one on the right side
-    represents your context attributes.
+To remove attribues from your context, select them in the right tree
+and click on the cross (|image32|).
 
-|image28|
+Finally, fill the context meta data (Name, Author, Reason and
+Description) in the corresponding fields (Note
+that filling the fields activates the “register” button |image33|).
 
-    To add attributes in your context browse the left tree, select
-    attributes (represented by the icon |image29| ), and click on the
-    arrow (|image30|) to transfer them to the right tree.
+Then, you can save your context in database by clicking on the
+“register” button |image34|.
 
-|image31|
+Doing so will deactivate the “register” button and activate the
+“launch snapshot” button |image35|.
 
-    To remove attribues from your context, select them in the right tree
-    and click on the cross (|image32|).
+You can save your context in a file using the “save”icon |image37|.
 
-    Finally, fill the context meta data (Name, Author, Reason and
-    Description) in the corresponding fields (Note
+Alternate way (table)
+^^^^^^^^^^^^^^^^^^^^^
 
-    that filling the fields activates the “register” button\ |image33|).
+To select this alternate way, go to :guilabel:`tools` menu and select
+:guilabel:`options` |image38|.
 
-    Then, you can save your context in database by clicking on the
-    “register” button |image34|.
+Then select the :guilabel:`context` tab and click on the :guilabel:`table` radio button.
 
-    Doing so will deactivate the “register” button and activate the
-    “launch snapshot” button |image35|.
+.. _bensikin_fig_9:
+.. figure:: bensikin/image42.jpeg
 
-|image36|
+   Figure 9: Options - Context Tab
 
-    You can save your context in a file using the “save”icon |image37| .
+Click on the :guilabel:`ok` button. The context panel now has the “table
+selection mode”.
 
-**“Reference”** **Last Update : 8 February 2007** **Page 10/26**
+.. _bensikin_fig_10:
+.. figure:: bensikin/image43.png
 
-    \ **Synchrotron Soleil** **Bensikin Manuel**
+   Figure 10: Bensikin with Context Table Selection Mode (new Context)
 
-    **5.1.2. Alternate way (table)**
-
-    To select this alternate way, go to “tools” menu and select
-    “options”\ |image38|.
-
-    Then select the “context” tab and click on the “table” radio button.
-
-**Figure 9: Options - Context Tab**
-
-|image39|
-
-    Click on the “ok” button. The context panel now has the “table
-    selection mode”.
-
-    **“Reference”** **Last Update : 8 February 2007** **Page 11/26**
-
-    \ **Synchrotron Soleil** **Bensikin Manuel**
-
-**Figure 10: Bensikin with Context Table Selection Mode (new Context)**
-
-|image40|
-
-    ***Attributes filtering box***
-
-    ***Line-level selection buttons***
-
-***List of Context attributes***
-
-***(new attributes are light red)***
 
 -  Attribute selection and automatic attributes adding:
 
-o. Choose a Domain. This refreshes the list of possible Device classes
-       for this Domain.
+   - Choose a Domain. This refreshes the list of possible Device classes
+     for this Domain.
 
-o. Choose a Device class. This refreshes the list of possible Attributes
-       for this Domain and Device
+   - Choose a Device class. This refreshes the list of possible Attributes
+     for this Domain and Device class.
 
-    class.
+   - Choose an Attribute and press :guilabel:`OK`:
 
-o. Choose an Attribute and press OK : o All Attributes
+   - All Attributes
 
-   -  with the selected name
+     - with the selected name
+       **AND**
+     - belonging to any Device of the selected Class and Domain
 
-    ***AND***
+     are added to the current Context’s list of attributes.
 
--  belonging to any Device of the selected Class and Domain are added to
-       the current Context’s list of attributes.
-
-    All new attributes are light red until the Context is registered.
+   All new attributes are light red until the Context is registered.
 
 -  Line level sub-selection of loaded attributes:
+   Each attributes is initially checked, but this check can be removed
+   by the user. When the user clicks on :guilabel:`validate`, all unchecked
+   attributes will be removed from the current Context.
 
-    Each attributes is initially checked, but this check can be removed
-    by the user. When the user clicks on “validate”, all unchecked
-    attributes will be removed from the current Context.
-
-o. Click “All” to select all lines o Click “None” to select no lines
-
-    o Highlight lines in the list (CTRL and SHIFT are usable), then
-    click “Reverse highlighted” to reverse the checked/unchecked status
-    of all highlighted lines.
+   - Click :guilabel:`All` to select all lines
+   - Click :guilabel:`None` to select no lines
+   - Highlight lines in the list (CTRL and SHIFT are usable), then
+     click :guilabel:`Reverse highlighted` to reverse the checked/unchecked status
+     of all highlighted lines.
 
 As for the classic way, you will have to fill the meta data fields and
-register your context in database by clicking on
+register your context in database by clicking on the :guilabel:`register` button |image41|.
 
-the “register” button |image41|.
+Modifying an existing context
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    **“Reference”** **Last Update : 8 February 2007** **Page 12/26**
+As a matter of fact, you can not really “modify” a context. What you
+can do is to create a new context with its informations (attributes
+and meta data) based on another one.
 
-    \ **Synchrotron Soleil** **Bensikin Manuel**
+The very difference is in alternate mode, where former attribute are
+in white and new ones in light red:
 
-    ***5.2. Modifying an existing context***
+.. _bensikin_fig_11:
+.. figure:: bensikin/image45.jpeg
 
-    As a matter of fact, you can not really “modify” a context. What you
-    can do is to create a new context with its informations (attributes
-    and meta data) based on another one.
+   Figure 11: Bensikin with Context Table Selection Mode (modified Context)
 
-    The very difference is in alternate mode, where former attribute are
-    in white and new ones in light red :
+The “register” button changed a little too: its text is “Register
+this context” instead of “Register this new context”, as you can see
+on the figure above.
 
-**Figure 11: Bensikin with Context Table Selection Mode (modified
-Context)**
+Loading a context
+~~~~~~~~~~~~~~~~~
 
-|image42|
-
-    The “register” button changed a little too : its text is “Register
-    this context” instead of “Register this new context”, as you can see
-    on the figure above.
-
-    **“Reference”** **Last Update : 8 February 2007** **Page 13/26**
-
-    \ **Synchrotron Soleil** **Bensikin Manuel**
-
-    ***5.3. Loading a context***
-
-    There are 2 ways to load a context :
+There are 2 ways to load a context:
 
 -  Load it from the database
-
 -  Load it from a file
 
-    In both cases, loading a context will apply a quick filter on the
-    snapshot list, so you can see the snapshots about this context that
-    have been created this day (the day when you load the context).
+In both cases, loading a context will apply a quick filter on the
+snapshot list, so you can see the snapshots about this context that
+have been created this day (the day when you load the context).
 
-    **5.3.1. Loading a context from database**
+Loading a context from database
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-    In the “Contexts” menu, choose “load” then select “DB”:
+In the :guilabel:`Contexts` menu, choose :guilabel:`load` then select :guilabel:`DB`:
 
 |image43|
 
-    A dialog will then appear to allow you to filter the list of
-    contexts in database following different criteria :
+A dialog will then appear to allow you to filter the list of
+contexts in database following different criteria:
 
-**Figure 12: Database Context Filter Dialog**
+.. _besikin_fig_12:
+.. figure:: bensikin/image47.jpeg
 
-|image44|
+   Figure 12: Database Context Filter Dialog
 
-    Select no criterion to search for all contexts present in database.
-    Click on the |image45| button to apply the filter. The list of
-    corresponding contexts will then appear in the Context List sub
-    panel, as shown in *Figure 7:* *Context Control Panel*. Double click
-    on a context in table to load it and see its details in the Context
-    Details sub panel (See *Figure 7: Context Control Panel*).
+Select no criterion to search for all contexts present in database.
+Click on the |image45| button to apply the filter. The list of
+corresponding contexts will then appear in the :guilabel:`Context List` sub
+panel, as shown in :ref:`Figure 7: Context Control Panel <bensikin_fig_7>`. Double click
+on a context in table to load it and see its details in the
+:guilabel:`Context Details` sub panel
+(See :ref:`Figure 7: Context Control Panel <bensikin_fig_7>`).
 
-    If there are too many contexts in the list, you can remove some
-    contexts from list (not from database) by selecting them in list and
-    clicking on the cross on the top right corner of the list
-    (|image46|).
+If there are too many contexts in the list, you can remove some
+contexts from list (not from database) by selecting them in list and
+clicking on the cross on the top right corner of the list
+(|image46|).
 
-    **5.3.2. Loading a context from file**
+Loading a context from file
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-    In the “Contexts” menu, choose “load” then select “File”, or in
-    “File” menu choose “load” then select “Context”:
+In the :guilabel:`Contexts` menu, choose :guilabel:`load` then select :guilabel:`File`, or in
+:guilabel:`File menu choose :guilabel:`load` then select :guilabel:`Contexts`:
 
 |image47|
 
-    A classic file browser will appear. Search for your “.ctx” file and
-    select it to load the corresponding context in the Context Details
-    sub panel (See *Figure 7: Context Control Panel*).
+A classic file browser will appear. Search for your “.ctx” file and
+select it to load the corresponding context in the :guilabel:`Context Details`
+sub panel (See :ref:`Figure 7: Context Control Panel <bensikin_fig_7>`).
 
-    **“Reference”** **Last Update : 8 February 2007** **Page 14/26**
 
-    \ **Synchrotron Soleil** **Bensikin Manuel**
+Printing a context
+~~~~~~~~~~~~~~~~~~
 
-    ***5.4. Printing a context***
-
-|image48|
-
-    Once you have context ready, click on the “print” icon (|image49| )
-    and select “context”:
-
-|image50|
-
-    The classic print dialog will then appear. Validate your print
-    configuration to print an xml representation of your context.
-
-    ***5.5. Saving a context***
+Once you have context ready, click on the :guilabel:`print` icon (|image49|)
+and select :guilabel:`context`:
 
 |image51|
 
-    Once you have context ready, click on the “save” icon ( |image52| )
-    and select “context”:
+The classic print dialog will then appear. Validate your print
+configuration to print an xml representation of your context.
+
+5.5. Saving a context
+~~~~~~~~~~~~~~~~~~~~~
+
+Once you have context ready, click on the :guilabel:`save` icon (|image52|)
+and select :guilabel:`context`:
 
 |image53|
 
-    You also can go to menu “Contexts” and click on “save”, or go to
-    menu “File”, select “Save” and click on “Context”.
+You also can go to menu :guilabel:`Contexts` and click on :guilable:`save`, or go to
+menu :guilabel:`File`, select :guilabel:`Save` and click on :guilabel:`Context`.
 
 |image54|
 
-    Then, the behaviour is “Word-like”. This means that if this is the
-    first time you save this context, you will see the classic file
-    browser to choose where to save your context, whith which file name.
-    However, if not, it will automaticly save in the corresponding file.
-    If you want to save in another file, you have to go to “File” menu,
-    select “Save As” and click on “Context” , or go to “Contexts” menu
-    and click on “Save As”
+Then, the behaviour is “Word-like”. This means that if this is the
+first time you save this context, you will see the classic file
+browser to choose where to save your context, whith which file name.
+However, if not, it will automaticly save in the corresponding file.
+If you want to save in another file, you have to go to :guilabel:`File` menu,
+select :guilabel:`Save As` and click on :guilabel:`Context` , or go to :guilabel:`Contexts` menu
+and click on :guilabel:`Save As`
 
 |image55|
 
-**“Reference”** **Last Update : 8 February 2007** **Page 15/26**
-
-    \ **Synchrotron Soleil** **Bensikin Manuel**
-
-**6. Snapshot Management**
+Snapshot Management
+-------------------
 
 This section describes how to control snapshots with Bensikin. A
 Snapshot is a view of your equipment at a precise date, view based on a
 context. A Snapshot has an ID, a creation date (Time), and a comment to
 describe it (which can be left empty).
 
-Snapshots are managed in the snapshot control panel :
+Snapshots are managed in the snapshot control panel:
 
 **Figure 13: Snapshot Control Panel**
 
