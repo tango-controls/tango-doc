@@ -1,11 +1,12 @@
 |image0|
 
-ICA Group
+.. rubric:: ICA Group
 
-**P**
 
 Bensikin User Manual
 ====================
+
+:audience:`users, administrators`
 
 +----------------------+--------------+---------------+----------------+------------------+------------------------------------------------+-------------+
 | **Diffusion date**   | **Writer**   | **Auditor**   | **Approver**   | **Approver’s**   | **Modifications**                              | **Index**   |
@@ -29,52 +30,51 @@ Diffusion: For information
 
 Receivers: Any archiving user
 
-**Figure Index**
+Figure Index
+-----------
 
-`*Figure 1: Bensikin Account Manager* 6 <#_Toc488423172>`__
+- :ref:`Figure 1: Bensikin Account Manager <bensikin_fig_1>`
 
-`*Figure 2: Bensikin main panel* 7 <#_Toc488423173>`__
+- :ref:`Figure 2: Bensikin main panel <bensikin_fig_2>`
 
-`*Figure 3: Creating a new account* 7 <#_Toc488423174>`__
+- :ref:`Figure 3: Creating a new account <bensikin_fig_3>`
 
-`*Figure 4: Account selection* 8 <#_Toc488423175>`__
+- :ref:`Figure 4: Account selection <bensikin_fig_4>`
 
-`*Figure 5: Show account path* 8 <#_Toc488423176>`__
+- :ref:`Figure 5: Show account path <bensikin_fig_5>`
 
-`*Figure 6: Context control panel* 9 <#_Toc488423177>`__
+- :ref:`Figure 6: Context control panel <bensikin_fig_6>`
 
-`*Figure 7: Application first start* 10 <#_Toc488423178>`__
+- :ref:`Figure 7: Application first start <bensikin_fig_7>`
 
-`*Figure 8: Option –context tab* 13 <#_Toc488423179>`__
+- :ref:`Figure 8: Option –context tab <bensikin_fig_8>`
 
-`*Figure 9: Bensikin with context table selection mode (new context)*
-14 <#_Toc488423180>`__
+- :ref:`Figure 9: Bensikin with context table selection mode (new context) <bensikin_fig_9>`
 
-`*Figure 10: Bensikin with context table selection mode (modified
-context)* 15 <#_Toc488423181>`__
+- :ref:`Figure 10: Bensikin with context table selection mode (modified context) <bensikin_fig_10>`
 
-`*Figure 11: Data base Context filter dialog* 16 <#_Toc488423182>`__
+- :ref:`Figure 11: Data base Context filter dialog <bensikin_fig_11>`
 
-`*Figure 12: Snapshot control panel* 18 <#_Toc488423183>`__
+- :ref:`Figure 12: Snapshot control panel <bensikin_fig_12>`
 
-`*Figure 13: Modified snapshot* 20 <#_Toc488423184>`__
+- :ref:`Figure 13: Modified snapshot <bensikin_fig_13>`
 
-`*Figure 14: Snapshot comparison - full table* 21 <#_Toc488423185>`__
+- :ref:`Figure 14: Snapshot comparison - full table <bensikin_fig_14>`
 
-`*Figure 15: Snapshot edit clipboard dialog* 22 <#_Toc488423186>`__
+- :ref:`Figure 15: Snapshot edit clipboard dialog <bensikin_fig_15>`
 
-`*Figure 16: Save option* 24 <#_Toc488423187>`__
+- :ref:`Figure 16: Save option <bensikin_fig_16>`
 
-`*Figure 17: Snapshot options* 25 <#_Toc488423188>`__
+- :ref:`Figure 17: Snapshot options <bensikin_fig_17>`
 
-`*Figure 18: Print option* 26 <#_Toc488423189>`__
+- :ref:`Figure 18: Print option <bensikin_fig_18>`
 
-`*Figure 19: Bensikin toolbar* 28 <#_Toc488423190>`__
+- :ref:`Figure 19: Bensikin toolbar <bensikin_fig_19>`
 
 Introduction
 ============
 
-This document is an end-user guide to using the Bensikin application,
+This document is an end-user guide to using the :program:`Bensikin` application,
 and a brief developer-oriented presentation of the application’s
 architecture.
 
@@ -95,24 +95,24 @@ configuration of a set of equipment’s, to be able in the future to reset
 them to the values of this snapshot (*for example, reposition all
 Insertion devices to their parking position after a beam loss*).
 
-1. .. rubric:: Application’s description and goals
-      :name: applications-description-and-goals
+Application’s description and goals
+-----------------------------------
 
-   1. .. rubric:: Application’s goals
-         :name: applications-goals
+Application’s goals
+~~~~~~~~~~~~~~~~~~~
 
-    Bensikin allows the user to define contexts and take snapshots.
-    Snapshots can be saved as files and modified.
+:program:`Bensikin` allows the user to define contexts and take snapshots.
+Snapshots can be saved as files and modified.
 
-    Bensikin is ready for multi-user use, which has for consequence the
-    need to define accounts. An account is a way to map a user with a
-    working directory. An important consequence of this is that **2
-    different users must not use the same working directory**, or you
-    may encounter application misbehaviors. An account has a name and a
-    path to a working directory.
+Bensikin is ready for multi-user use, which has for consequence the
+need to define accounts. An account is a way to map a user with a
+working directory. An important consequence of this is that **2
+different users must not use the same working directory**, or you
+may encounter application misbehaviors. An account has a name and a
+path to a working directory.
 
-    Bensikin is thus naturally divided (both in functionalities and
-    display) in three parts:
+Bensikin is thus naturally divided (both in functionalities and
+display) in three parts:
 
 -  The account part, which is an introduction to the rest of the
        application
@@ -121,11 +121,11 @@ Insertion devices to their parking position after a beam loss*).
 
 -  The snapshot part
 
-   1. .. rubric:: A first look to Bensikin
-         :name: a-first-look-to-bensikin
+A first look to Bensikin
+~~~~~~~~~~~~~~~~~~~~~~~~
 
-    The Bensikin Account Manager is here to manage accounts, which
-    means:
+The Bensikin Account Manager is here to manage accounts, which
+means:
 
 -  Creating a new account
 
@@ -133,40 +133,42 @@ Insertion devices to their parking position after a beam loss*).
 
 -  Launching application with an account chosen in a list
 
-    |image1|
+   .. _bensikin_fig_1:
+   .. figure:: bensikin/image5.png
 
-    Figure 1: Bensikin Account Manager
+      Figure 1: Bensikin Account Manager
 
-The Context Control Panel is where user can manage contexts, which means
+The :guilabel:`Context Control Panel` is where user can manage contexts, which means
 creating, loading and modifying contexts, and launching snapshots based
 on the defined contexts.
 
-The Snapshot Control Panel is where user can manage snapshots, which
+The :guilabel:`Snapshot Control` Panel is where user can manage snapshots, which
 means saving snapshots in files, loading snapshots from database and
 files, temporary modify snapshots attributes values and set equipment
 with defined snapshots (with or without modifying snapshots) or a
 subpart of them.
 
-The application’s logs panel displays the application information and
+The application’s :guilabel:`logs panel` displays the application information and
 error messages (like database interaction, encountered problems, etc.)
 
-The Menu and the Tool bar are for actions shortcuts and application’s
+The :guilabel:`Menu` and the :guilabel:`Tool bar` are for actions shortcuts and application’s
 options.
 
-|image2|
+.. _bensikin_fig_2:
+.. figure:: bensikin/image6.png
 
-Figure 2: Bensikin main panel
+   Figure 2: Bensikin main panel
 
 Account Manager
 ===============
 
-The *Figure 1: Bensikin Account Manager* presents the account Manager
+The :ref:`Figure 1: Bensikin Account Manager <bensikin_fig_1>` presents the account Manager
 Interface, on application start. With this manager, you can create a new
 account, or delete or use an existing one.
 
 To quit the application, simply click on |image3| or |image4| button.
 
-Existing accounts are listed in the account Selection Combo Box, which
+Existing accounts are listed in the account :guilabel:`Selection Combo Box`, which
 you can reload by clicking on |image5| button (if you think that someone
 could have modified it by creating a new account or deleting an existing
 one, for example).
@@ -174,57 +176,61 @@ one, for example).
 Creating a new account
 ----------------------
 
-    To create a new account, click on the button |image6| (at the bottom
-    left of the panel). A new dialog will appear, as following.
+To create a new account, click on the button |image6| (at the bottom
+left of the panel). A new dialog will appear, as following.
 
-    |image7|
+.. _bensikin_fig_3:
+.. figure:: bensikin/image11.png
 
-    Figure 3: Creating a new account
+   Figure 3: Creating a new account
 
-    In this new dialog, you will have to enter the name of your new
-    account and the path of the application working directory for this
-    account. If you prefer, you can browse for the path by clicking on
-    the |image8| button. Then, a classic browsing dialog will be
-    displayed, in which you can choose the directory. When both fields
-    (“Name” and “Path”) are fulfilled, click on |image9| button to
-    validate your new account, which will be automatically added in the
-    list of existing accounts. If you click on |image10| or |image11|
-    button, you go back to the first dialog, as presented in *Figure 1:
-    Bensikin Account Manager*, and nothing is done.
+In this new dialog, you will have to enter the name of your new
+account and the path of the application working directory for this
+account. If you prefer, you can browse for the path by clicking on
+the |image8| button. Then, a classic browsing dialog will be
+displayed, in which you can choose the directory. When both fields
+(:guilabel:`Name` and :guilabel:`Path`) are fulfilled, click on |image9| button to
+validate your new account, which will be automatically added in the
+list of existing accounts. If you click on |image10| or |image11|
+button, you go back to the first dialog, as presented in
+:ref:`Figure 1: Bensikin Account Manager <bensikin_fig_1>`,
+and nothing is done.
 
 Deleting an existing Account
 ----------------------------
 
-    To delete an existing account, first select the account in the
-    account selection combo box, as following:
+To delete an existing account, first select the account in the
+account selection combo box, as following:
 
-    |image12|
+.. _bensikin_fig_4:
+.. figure:: bensikin/image15.png
 
-    Figure 4: Account selection
+   Figure 4: Account selection
 
-    When the account is selected, click on |image13| button to delete
-    it. If you do it, you won’t be able to use this account any more
-    (and no other user either), because the account is definitely
-    removed from list. The account deletion doesn’t involve the
-    corresponding directory (neither its content) deletion.
+When the account is selected, click on :guilabel:`Delete` button to delete
+it. If you do it, you won’t be able to use this account any more
+(and no other user either), because the account is definitely
+removed from list. The account deletion doesn’t involve the
+corresponding directory (neither its content) deletion.
 
-    If you want to see your account path, you can check “Show account
-    path”.
+If you want to see your account path, you can check :guilabel:`Show account
+path`.
 
-    |image14|
+.. _bensikin_fig_5:
+.. figure:: bensikin/image5.png
 
-Figure 5: Show account path
+   Figure 5: Show account path
 
 Launching application with an existing account
 ----------------------------------------------
 
-    To launch application with an existing account, first select the
-    account in the account selection combo box, as presented in *Figure
-    4: Account selection*.
+To launch application with an existing account, first select the
+account in the account selection combo box, as presented in
+:ref:`Figure 4: Account selection <bensikin_fig_4>`.
 
-    Then, click on |image15|\ button, and you will reach the application
-    main panel configured with this account (the account name is
-    displayed in frame title).
+Then, click on :guilabel:`Ok` button, and you will reach the application
+main panel configured with this account (the account name is
+displayed in frame title).
 
 Contexts Management
 ===================
@@ -239,30 +245,31 @@ have an idea of what kind of attributes you will find in this context.
 
 Contexts are managed in the context control panel:
 
-|image16|
+.. _bensikin_fig_6:
+.. figure:: bensikin/image16.png
 
-Figure 6: Context control panel
+   Figure 6: Context control panel
 
 Creating a new context
 ----------------------
 
-    To create a new context, click on the “new” icon in toolbar
-    (|image17|), or choose option to make a new context from “File” menu
-    or “Contexts” menu:
+To create a new context, click on the :guilabel:`new` icon in toolbar
+(|image17|), or choose option to make a new context from :guilabel:`File` menu
+or :guilabel:`Contexts` menu:
 
-    |image18| |image19|
+|image18| |image19|
 
-    You also are ready to make a new context at application first start
-    or by clicking on the “reset” icon (|image20|):
+You also are ready to make a new context at application first start
+or by clicking on the “reset” icon (|image20|):
 
-    |image21|
+|image21|
 
-    Figure 7: Application first start
+Figure 7: Application first start
 
-    The difference between the “reset” icon(\ |image22|) and the “new”
-    icon(\ |image23|) is, that the “reset” icon will clear every panel,
-    whereas the “new” icon will only clear the snapshot list and the
-    Context Details sub panel.
+The difference between the “reset” icon(\ |image22|) and the “new”
+icon(\ |image23|) is, that the “reset” icon will clear every panel,
+whereas the “new” icon will only clear the snapshot list and the
+Context Details sub panel.
 
 Classic way (tree)
 ~~~~~~~~~~~~~~~~~~
