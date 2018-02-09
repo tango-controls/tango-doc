@@ -257,83 +257,84 @@ To create a new context, click on the :guilabel:`new` icon in toolbar
 (|image17|), or choose option to make a new context from :guilabel:`File` menu
 or :guilabel:`Contexts` menu:
 
-|image18| |image19|
+|image18|\ |image19|
 
 You also are ready to make a new context at application first start
-or by clicking on the “reset” icon (|image20|):
+or by clicking on the :guilabel:`reset` icon (|image20|):
 
-|image21|
+.. _bensikin_fig_7:
+.. figure:: bensikin/image21.png
 
-Figure 7: Application first start
+   Figure 7: Application first start
 
-The difference between the “reset” icon(\ |image22|) and the “new”
-icon(\ |image23|) is, that the “reset” icon will clear every panel,
+The difference between the :guilabel:`reset` icon(|image22|) and the :guilabel:`new`
+icon(|image23|) is, that the “reset” icon will clear every panel,
 whereas the “new” icon will only clear the snapshot list and the
 Context Details sub panel.
 
 Classic way (tree)
 ~~~~~~~~~~~~~~~~~~
 
-    The tree on the left side of the Context Details sub panel allows
-    you to check for available attributes. The one on the right side
-    represents your context attributes.
+The tree on the left side of the :guilabel:`Context Details` sub panel allows
+you to check for available attributes. The one on the right side
+represents your context attributes.
 
-    To add attributes in your context browse the left tree, select
-    attributes (represented by the icon |image24| ), and click on the
-    arrow |image25| to transfer them to the right tree.
+To add attributes in your context browse the left tree, select
+attributes (represented by the icon |image24|), and click on the
+arrow |image25| to transfer them to the right tree.
 
-    To remove attributes from your context, select them in the right
-    tree and click on the cross |image26|.
+To remove attributes from your context, select them in the right
+tree and click on the cross |image26|.
 
-    Finally, fill the context Meta data (Name, Author, Reason and
-    Description) in the corresponding fields (Note that filling the
-    fields activates the “register” button\ |image27|).
+Finally, fill the context Meta data (Name, Author, Reason and
+Description) in the corresponding fields (Note that filling the
+fields activates the :guilabel:`register` button |image27|).
 
-    Then, you can save your context in database by clicking on the
-    “register” button\ |image28|.
+Then, you can save your context in database by clicking on the
+:guilabel:`register` button |image28|.
 
-    Doing so will deactivate the “register” button and activate the
-    “launch snapshot” button\ |image29|.
+Doing so will deactivate the :guilabel:`register` button and activate the
+:guilabel:`launch snapshot` button |image29|.
 
-    You can save your context in a file using the “save”
-    icon\ |image30|.
+You can save your context in a file using the :guilabel:`save`
+icon |image30|.
 
 Alternate way (table)
 ~~~~~~~~~~~~~~~~~~~~~
 
-    To select this alternate way, go to “tools” menu and select
-    “options”
+To select this alternate way, go to :guilabel:`tools` menu and select
+:guilabel:`options`.
 
-    |image31|.
+Then select the :guilabel:`context` tab and click on the :guilabel:`table` radio button.
 
-    Then select the “context” tab and click on the “table” radio button.
+.. _bensikin_fig_8:
+.. figure:: bensikin/image28.png
 
-    |image32|
+   Figure 8: Option –context tab
 
-    Figure 8: Option –context tab
+Click on the :guilabel:`ok` button. The context panel now has the “table
+selection mode”.
 
-    Click on the “ok” button. The context panel now has the “table
-    selection mode”.
+.. _bensikin_fig_9:
+.. figure:: bensikin/image29.png
 
-    |image33|
-
-    Figure 9: Bensikin with context table selection mode (new context)
+   Figure 9: Bensikin with context table selection mode (new context)
 
 -  Attribute selection and automatic attributes adding:
 
    -  Choose a Domain. This refreshes the list of possible Device
-          classes for this Domain.
+      classes for this Domain.
 
    -  Choose a Device class. This refreshes the list of possible
-          Attributes for this Domain and Device class.
+      Attributes for this Domain and Device class.
 
-   -  Choose an Attribute and press OK :
+   -  Choose an Attribute and press :guilabel:`OK`:
 
-    All Attributes with the selected name ***AND*** belonging to any
-    Device of the selected Class and Domain are added to the current
-    Context’s list of attributes.
+      All Attributes with the selected name ***AND*** belonging to any
+      Device of the selected Class and Domain are added to the current
+      Context’s list of attributes.
 
-    All new attributes are light red until the Context is registered.
+   All new attributes are light red until the Context is registered.
 
 -  Line level sub-selection of loaded attributes:
 
