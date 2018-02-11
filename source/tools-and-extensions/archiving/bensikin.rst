@@ -316,7 +316,7 @@ Click on the :guilabel:`ok` button. The context panel now has the “table
 selection mode”.
 
 .. _bensikin_fig_9:
-.. figure:: bensikin/image29.png
+.. figure:: bensikin/image80.png
 
    Figure 9: Bensikin with context table selection mode (new context)
 
@@ -330,7 +330,7 @@ selection mode”.
 
    -  Choose an Attribute and press :guilabel:`OK`:
 
-      All Attributes with the selected name ***AND*** belonging to any
+      All Attributes with the selected name **AND** belonging to any
       Device of the selected Class and Domain are added to the current
       Context’s list of attributes.
 
@@ -338,127 +338,129 @@ selection mode”.
 
 -  Line level sub-selection of loaded attributes:
 
-    Each attributes are initially checked, but this check can be removed
-    by the user. When the user clicks on “validate”, all unchecked
-    attributes will be removed from the current Context.
+   Each attributes are initially checked, but this check can be removed
+   by the user. When the user clicks on :guilabel:`validate`, all unchecked
+   attributes will be removed from the current Context.
 
--  Click “All” to select all lines
+   -  Click :guilabel:`All` to select all lines
 
--  Click “None” to select no lines
+   -  Click :guilabel:`None` to select no lines
 
--  Highlight lines in the list (CTRL and SHIFT are usable), then click
-       “Reverse highlighted” to reverse the checked/unchecked status of
-       all highlighted lines.
+   -  Highlight lines in the list (CTRL and SHIFT are usable), then click
+      :guilabel:`Reverse highlighted` to reverse the checked/unchecked status of
+      all highlighted lines.
 
-    As for the classic way, you will have to fill the Meta data fields
-    and register your context in database by clicking on the “register”
-    button |image34|
+As for the classic way, you will have to fill the Meta data fields
+and register your context in database by clicking on the :guilabel:`register`
+button |image34|
 
 MODIFYING AN EXISTING CONTEXT
 -----------------------------
 
-    As a matter of fact, you can’t really “modify” a context. What you
-    can do is to create a new context with its information (attributes
-    and Meta data) based on another one.
+As a matter of fact, you can’t really “modify” a context. What you
+can do is to create a new context with its information (attributes
+and Meta data) based on another one.
 
-    The very difference is in alternate mode, where former attributes
-    are in white and new ones in light red:
+The very difference is in alternate mode, where former attributes
+are in white and new ones in light red:
 
-    |image35|
+.. _bensikin_fig_10:
+.. figure:: bensikin/image81.png
 
-    Figure 10: Bensikin with context table selection mode (modified
-    context)
+   Figure 10: Bensikin with context table selection mode (modified
+   context)
 
-    The “register” button changed a little too: its text is “Register
-    this context” instead of “Register this new context”, as you can see
-    on the figure above.
+The “register” button changed a little too: its text is :guilabel:`Register this context`
+instead of “Register this new context”, as you can see
+on the figure above.
 
 Loading a context
 -----------------
 
-    There are 2 ways to load a context:
+There are 2 ways to load a context:
 
 -  Load it from the database
 
 -  Load it from a file
 
-    In both cases, loading a context will apply a quick filter on the
-    snapshot list, so you can see the snapshots about this context that
-    have been created this day (the day when you load the context).
+In both cases, loading a context will apply a quick filter on the
+snapshot list, so you can see the snapshots about this context that
+have been created this day (the day when you load the context).
 
 Loading a context from database
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    In the “Contexts” menu, choose “load” then select “DB”:
+In the :guilabel:`Contexts` menu, choose :guilabel:`load` then select :guilabel:`DB`:
 
-    |image36|
+|image36|
 
-    A dialog will then appear to allow you to filter the list of
-    contexts in database following different criteria:
+A dialog will then appear to allow you to filter the list of
+contexts in database following different criteria:
 
-    |image37|
+.. _bensikin_fig_11:
+.. figure:: bensikin/image32.PNG
 
-    Figure 11: Data base Context filter dialog
+   Figure 11: Data base Context filter dialog
 
-    Select no criterion to search for all contexts present in database.
-    Click on the |image38| button to apply the filter. The list of
-    corresponding contexts will then appear in the Context List sub
-    panel, as shown in *Figure 6: Context control panel*. Double click
-    on a context in table to load it and see its details in the Context
-    Details sub panel (See *Figure 6: Context control panel*).
+Select no criterion to search for all contexts present in database.
+Click on the |image38| button to apply the filter. The list of
+corresponding contexts will then appear in the Context List sub
+panel, as shown in :ref:`Figure 6: Context control panel <bensikin_fig_6>`. Double click
+on a context in table to load it and see its details in the Context
+Details sub panel (See :ref:`Figure 6: Context control panel <bensikin_fig_6>`).
 
-    If there are too many contexts in the list, you can remove some
-    contexts from list (not from database) by selecting them in list and
-    clicking on the cross on the top right corner of the list
-    (|image39|).
+If there are too many contexts in the list, you can remove some
+contexts from list (not from database) by selecting them in list and
+clicking on the cross on the top right corner of the list
+(|image39|).
 
 Loading a context from file
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    In the “Contexts” menu, choose “load” then select “File”, or in
-    “File” menu choose “load” then select “Context”:
+In the :guilabel:`Contexts` menu, choose :guilabel:`load` then select :guilabel:`File`, or in
+:guilabel:`File` menu choose :guilabel:`load` then select :guilabel:`Context`:
 
-    |image40| |image41|
+|image40| |image41|
 
-    A classic file browser will appear. Search for your “.ctx” file and
-    select it to load the corresponding context in the Context Details
-    sub panel (See *Figure 6: Context control panel*).
+A classic file browser will appear. Search for your “.ctx” file and
+select it to load the corresponding context in the :guilabel:`Context Details`
+sub panel (See :ref:`Figure 6: Context control panel <bensikin_fig_6>`).
 
 Printing a context
 ------------------
 
-    Once you have context ready, click on the “print” icon (|image42|)
-    and select “context”:
+Once you have context ready, click on the :guilabel:`print` icon (|image42|)
+and select :guilabel:`context`:
 
-    |image43|
+|image43|
 
-    The classic print dialog will then appear. Validate your print
-    configuration to print an xml representation of your context.
+The classic print dialog will then appear. Validate your print
+configuration to print an xml representation of your context.
 
-    User can also print context by pressing the button |image44|
+User can also print context by pressing the button |image44|
 
 Saving a context
 ----------------
 
-    Once you have context ready, click on the “save” icon (|image45|)
-    and select “context”:
+Once you have context ready, click on the :guilabel:`save` icon (|image45|)
+and select :guilabel:`context`:
 
-    |image46|
+|image46|
 
-    You can also go to menu “Contexts” and click on “save”, or go to
-    menu “File”, select “Save” and click on “Context”.
+You can also go to menu :guilabel:`Contexts` and click on :guilabel:`save`, or go to
+menu :guilabel:`File`, select :guilabel:`Save` and click on :guilabel:`Context`.
 
-    |image47| |image48|
+|image47| |image48|
 
-    Then, the behavior is “Word-like”. This means that if this is the
-    first time you save this context, you will see the classic file
-    browser to choose where to save your context, with file name.
-    However, else, it will automatically save in the corresponding file.
-    If you want to save in another file, you have to go to “File” menu,
-    select “Save As” and click on “Context” or go to “Contexts” menu and
-    click on “Save As”
+Then, the behavior is “Word-like”. This means that if this is the
+first time you save this context, you will see the classic file
+browser to choose where to save your context, with file name.
+However, else, it will automatically save in the corresponding file.
+If you want to save in another file, you have to go to :guilabel:`File` menu,
+select :guilabel:`Save As` and click on :guilabel:`Context` or go to :guilabel:`Contexts` menu and
+click on :guilabel:`Save As`
 
-    |image49| |image50|
+|image49| |image50|
 
 Snapshot Management
 ===================
@@ -470,43 +472,44 @@ describe it (which can be left empty).
 
 Snapshots are managed in the snapshot control panel:
 
-|image51|
+.. _bensikin_fig_12:
+.. figure:: bensikin/image45.png
 
-Figure 12: Snapshot control panel
+   Figure 12: Snapshot control panel
 
 Creating a new snapshot
 -----------------------
 
-    To create a new snapshot, first select a valid context in the
-    context control panel (see *Figure 6: Context control panel*). Then
-    click on the button\ |image52|. The corresponding snapshot is added
-    in the list of snapshots in the Snapshot List sub panel.
+To create a new snapshot, first select a valid context in the
+context control panel (see :ref:`Figure 6: Context control panel <bensikin_fig_6>`). Then
+click on the button |image52|. The corresponding snapshot is added
+in the list of snapshots in the Snapshot List sub panel.
 
 Loading a snapshot
 ------------------
 
-    There are 2 ways to load a snapshot:
+There are 2 ways to load a snapshot:
 
 -  Load it from the database
 
 -  Load it from a file
 
-   1. .. rubric:: Loading a snapshot from database
-         :name: loading-a-snapshot-from-database
+Loading a snapshot from database
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    Loading a snapshot from database consists in adding this snapshot in
-    the list of snapshots in the Snapshot List sub panel.
+Loading a snapshot from database consists in adding this snapshot in
+the list of snapshots in the Snapshot List sub panel.
 
-    As you can see in *Figure 12: Snapshot control panel*, the Snapshot
-    List sub panel allows you to filter snapshots from database to find
-    the snapshot you want to load. However, have in mind that this
-    filter is “context dependent”, which means that the snapshots which
-    will appear in the list by clicking on the “filter” button
-    (|image53|) are the one that correspond to your filter criteria
-    **AND** the selected context in the Context Control Panel. If the
-    filter is cleared (which you can obtain by clicking on the
-    button\ |image54|), you will search for all the snapshots in
-    database that correspond to the selected context.
+As you can see in *Figure 12: Snapshot control panel*, the Snapshot
+List sub panel allows you to filter snapshots from database to find
+the snapshot you want to load. However, have in mind that this
+filter is “context dependent”, which means that the snapshots which
+will appear in the list by clicking on the “filter” button
+(|image53|) are the one that correspond to your filter criteria
+**AND** the selected context in the Context Control Panel. If the
+filter is cleared (which you can obtain by clicking on the
+button\ |image54|), you will search for all the snapshots in
+database that correspond to the selected context.
 
 Loading a snapshot from file
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
