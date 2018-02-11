@@ -31,7 +31,7 @@ Diffusion: For information
 Receivers: Any archiving user
 
 Figure Index
------------
+------------
 
 - :ref:`Figure 1: Bensikin Account Manager <bensikin_fig_1>`
 
@@ -78,8 +78,8 @@ This document is an end-user guide to using the :program:`Bensikin` application,
 and a brief developer-oriented presentation of the application’s
 architecture.
 
-Application’s context: Contexts and Snapshots. 
-===============================================
+Application’s context: Contexts and Snapshots
+=============================================
 
 A snapshot is, as said in the name, a “picture” of a list of equipment’s
 “settings” (*more precisely of their Tango attributes value*\ s) taken
@@ -477,6 +477,8 @@ Snapshots are managed in the snapshot control panel:
 
    Figure 12: Snapshot control panel
 
+.. _creating_a_new_snapshot:
+
 Creating a new snapshot
 -----------------------
 
@@ -606,56 +608,55 @@ There are 2 ways to compare snapshots:
 Snapshot Details copy
 ~~~~~~~~~~~~~~~~~~~~~
 
-    As you can see in :ref:`Figure 12: Snapshot control panel <bensikin_fig_12>`,
-    snapshots are detailed in a table. You can copy this table to clipboard as a
-    text-CSV formatted table by clicking on |image71| or |image72|
-    button. If you want to see this text result and may be filter it
-    (like removing lines), click on |image73| button. You will see the
-    text appear in a dialog.
+As you can see in :ref:`Figure 12: Snapshot control panel <bensikin_fig_12>`,
+snapshots are detailed in a table. You can copy this table to clipboard as a
+text-CSV formatted table by clicking on |image71| or |image72|
+button. If you want to see this text result and may be filter it
+(like removing lines), click on |image73| button. You will see the
+text appear in a dialog.
 
-    |image74|
+.. _bensikin_fig_15:
+.. figure:: bensikin/image59.png
 
-    Figure 15: Snapshot edit clipboard dialog
+   Figure 15: Snapshot edit clipboard dialog
 
 Modifying a snapshot comment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    Once your snapshot details are loaded, click on |image75| button to
-    modify its comment (and save it in database or file).
+Once your snapshot details are loaded, click on |image75| button to
+modify its comment (and save it in database or file).
 
 Printing a snapshot
 -------------------
 
-    Once you have context ready, click on the “print” icon (|image76|)
-    and select “snapshot”:
+Once you have context ready, click on the :guilabel:`print` icon (|image76|)
+and select :guilabel:`snapshot`:
 
-    |image77|
+|image77|
 
-    The classic print dialog will then appear. Validate your print
-    configuration to print an xml representation of your snapshot.
+The classic print dialog will then appear. Validate your print
+configuration to print an xml representation of your snapshot.
 
 Saving a snapshot
 -----------------
 
-    Once you have context ready, click on the “save” icon (|image78|)
-    and select “snapshot”:
+Once you have context ready, click on the :guilabel:`save` icon (|image78|)
+and select :guilabel:`snapshot`:
 
-    |image79|
+|image79|
 
-    You can also go to menu “Context” and click on “Save”, or go to menu
-    “File”, select “Save” and click on “Snapshot”.
+You can also go to menu :guilabel:`Context` and click on :guilabel:`Save`, or go to menu
+:guilabel:`File -> Save -> Snapshot`.
 
-    |image80| |image81|
+Then, the behavior is “Word-like”. This means that if this is the
+first time you save this snapshot, you will see the classic file
+browser to choose where to save your snapshot, with file name.
+However, if not, it will automatically save in the corresponding
+file. If you want to save in another file, you have to go to :guilabel:`File`
+menu, select :guilabel:`Save As` and click on :guilabel:`Snapshot`, or go to :guilabel:`Snapshots`
+menu and click on :guilabel:`Save As`.
 
-    Then, the behavior is “Word-like”. This means that if this is the
-    first time you save this snapshot, you will see the classic file
-    browser to choose where to save your snapshot, with file name.
-    However, if not, it will automatically save in the corresponding
-    file. If you want to save in another file, you have to go to “File”
-    menu, select “Save As” and click on “Snapshot”, or go to “Snapshots”
-    menu and click on “Save As”.
-
-    |image82| |image83|
+|image82| |image83|
 
 Favorites
 =========
@@ -667,103 +668,95 @@ loaded on startup.
 Adding a context to favorites
 -----------------------------
 
-    To add a context to your favorites, have your context ready by
-    creating or loading it. Then go to “Favorites” menu and click on
-    “Add selected context”.
+To add a context to your favorites, have your context ready by
+creating or loading it. Then go to :guilabel:`Favorites` menu and click on
+:guilabel:`Add selected context`.
 
-    |image84|
+|image84|
 
 Switching to a context in favorites
 -----------------------------------
 
-    To switch to a context in favorites, which means to load it from
-    favorites, go to “Favorites” menu, select “contexts”, and click on
-    the context you want to load.
+To switch to a context in favorites, which means to load it from
+favorites, go to “Favorites” menu, select “contexts”, and click on
+the context you want to load.
 
-    |image85|
+|image85|
 
 Options
 =======
 
 Bensikin manages global options. Those options are saved at application
 shutdown, and loaded on startup. The Options menu is located in the Menu
-bar: ToolsOptions.
-
-|image86|
+bar: :guilabel:`Tools -> Options`.
 
 Application’s history save/load Options
 ---------------------------------------
 
-    Define whether Bensikin has a history, i.e. a persistent state when
-    closed/reopened.
+Define whether Bensikin has a history, i.e. a persistent state when
+closed/reopened.
 
-    If yes is checked, a XML History file will be saved in Bensikin’s
-    workspace, and on next startup the current Context and Snapshot will
-    be loaded.
+If yes is checked, a XML History file will be saved in Bensikin’s
+workspace, and on next startup the current Context and Snapshot will
+be loaded.
 
-    |image87|
+.. _bensikin_fig_16:
+.. figure:: bensikin/image69.png
 
-Figure 16: Save option
+   Figure 16: Save option
 
 Snapshot Options
 ----------------
 
-    These are the Bensikin Snapshot Options:
+These are the Bensikin Snapshot Options:
 
-|image88|
+.. _bensikin_fig_17:
+.. figure:: bensikin/image70.png
 
-Figure 17: Snapshot options
+   Figure 17: Snapshot options
 
 -  In the Comment Panel, you can choose to automatically set or not a
    value to a new snapshot comment. This means, when you click on
    |image89| button, the newly created snapshot will or will not have a
    pre-defined comment.
 
--  In the Comparison Panel, you can choose which columns you want to
+-  In the :guilabel:`Comparison Panel`, you can choose which columns you want to
    show/hide for every block in the Snapshot Comparison table. You can
-   choose to show/hide the Difference block too (See *Figure 14:
-   Snapshot comparison - full table*)
+   choose to show/hide the Difference block too (See
+   :ref:`Figure 14: Snapshot comparison - full table <bensikin_fig_14>`)
 
--  In the Export Panel, you can choose the column separator for your
-   text-CSV formatted tables (See *Figure 15: Snapshot edit clipboard
-   dialog*), and which columns to export.
+-  In the :guilabel:`Export Panel`, you can choose the column separator for your
+   text-CSV formatted tables
+   (See :ref:`Figure 15: Snapshot edit clipboard dialog <bensikin_fig_15>`),
+   and which columns to export.
 
-   1. .. rubric:: Context Options
-         :name: context-options
+Context Options
+---------------
 
-    Context options allow you to select which way you want to edit your
-    contexts, see *Figure 8: Option –context tab* and the “\ *5.1
-    Creating a new context*\ ” section.
+Context options allow you to select which way you want to edit your
+contexts, see :ref:`Figure 8: Option –context tab <bensikin_fig_8>`
+and the :ref:`Creating a new snapshot <creating_a_new_snapshot>` section.
 
 Print Options
 -------------
 
-    The Print option allows you to print text or table in the Snapshots
-    or in the Contexts.
+The Print option allows you to print text or table in the Snapshots
+or in the Contexts.
 
-    |image90|
+.. _bensikin_fig_18:
+.. figure:: bensikin/image71.PNG
 
-Figure 18: Print option
+   Figure 18: Print option
 
-    When you check\ |image91|, you adapt the size of your print to the
-    size of your page.
+When you check |image91|, you adapt the size of your print to the
+size of your page.
 
-    When you check\ |image92|, you cut the length of your print on
-    several parts and the width of your print takes the width of your
-    page.
+When you check |image92|, you cut the length of your print on
+several parts and the width of your print takes the width of your
+page.
 
-    When you check\ |image93|, the length and the width of your print
-    are cut on several parts.
-
-    Example with a context table (black rectangles represent pages):
-
-    |image94| : |image95|:
-
-    |image96|\ |image97|
-
-    |image98|:
-
-    |image99|
+When you check |image93|, the length and the width of your print
+are cut on several parts.
 
 The Bensikin toolbar
 ====================
@@ -771,9 +764,10 @@ The Bensikin toolbar
 The toolbar is located under the menu bar, and consists mainly of a set
 of shortcuts to often used functionalities.
 
-|image100|
+.. _bensikin_fig_19:
+.. figure:: bensikin/image84.png
 
-Figure 19: Bensikin toolbar
+   Figure 19: Bensikin toolbar
 
 -  |image101| is a shortcut to creating a new Context
 
@@ -788,6 +782,7 @@ Figure 19: Bensikin toolbar
 
 -  |image105| is a shortcut to removing all opened Contexts and
    Snapshots from display
+
 
 .. |image0| image:: bensikin/image4.png
    :width: 1.50000in
@@ -1025,7 +1020,7 @@ Figure 19: Bensikin toolbar
 .. |image78| image:: bensikin/image26.png
    :width: 0.20833in
    :height: 0.20833in
-.. |image79| image:: bensikin/image62.png
+.. |image79| image:: bensikin/image82.png
    :width: 1.10417in
    :height: 1.16667in
 .. |image80| image:: bensikin/image63.png
@@ -1055,7 +1050,7 @@ Figure 19: Bensikin toolbar
 .. |image88| image:: bensikin/image70.png
    :width: 4.89583in
    :height: 6.98958in
-.. |image89| image:: bensikin/image46.png
+.. |image89| image:: bensikin/image83.png
    :width: 1.14583in
    :height: 0.23958in
 .. |image90| image:: bensikin/image71.PNG
