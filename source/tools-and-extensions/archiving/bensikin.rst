@@ -72,14 +72,14 @@ Figure Index
 - :ref:`Figure 19: Bensikin toolbar <bensikin_fig_19>`
 
 Introduction
-============
+------------
 
 This document is an end-user guide to using the :program:`Bensikin` application,
 and a brief developer-oriented presentation of the application’s
 architecture.
 
 Application’s context: Contexts and Snapshots
-=============================================
+---------------------------------------------
 
 A snapshot is, as said in the name, a “picture” of a list of equipment’s
 “settings” (*more precisely of their Tango attributes value*\ s) taken
@@ -160,7 +160,7 @@ options.
    Figure 2: Bensikin main panel
 
 Account Manager
-===============
+---------------
 
 The :ref:`Figure 1: Bensikin Account Manager <bensikin_fig_1>` presents the account Manager
 Interface, on application start. With this manager, you can create a new
@@ -174,7 +174,7 @@ could have modified it by creating a new account or deleting an existing
 one, for example).
 
 Creating a new account
-----------------------
+~~~~~~~~~~~~~~~~~~~~~~
 
 To create a new account, click on the button |image6| (at the bottom
 left of the panel). A new dialog will appear, as following.
@@ -197,7 +197,7 @@ button, you go back to the first dialog, as presented in
 and nothing is done.
 
 Deleting an existing Account
-----------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To delete an existing account, first select the account in the
 account selection combo box, as following:
@@ -222,7 +222,7 @@ path`.
    Figure 5: Show account path
 
 Launching application with an existing account
-----------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To launch application with an existing account, first select the
 account in the account selection combo box, as presented in
@@ -233,7 +233,7 @@ main panel configured with this account (the account name is
 displayed in frame title).
 
 Contexts Management
-===================
+-------------------
 
 This section describes how to control contexts with Bensikin. A context
 is a list of attributes for which you can make a snapshot. A context has
@@ -251,7 +251,7 @@ Contexts are managed in the context control panel:
    Figure 6: Context control panel
 
 Creating a new context
-----------------------
+~~~~~~~~~~~~~~~~~~~~~~
 
 To create a new context, click on the :guilabel:`new` icon in toolbar
 (|image17|), or choose option to make a new context from :guilabel:`File` menu
@@ -273,7 +273,7 @@ whereas the “new” icon will only clear the snapshot list and the
 Context Details sub panel.
 
 Classic way (tree)
-~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^
 
 The tree on the left side of the :guilabel:`Context Details` sub panel allows
 you to check for available attributes. The one on the right side
@@ -300,7 +300,7 @@ You can save your context in a file using the :guilabel:`save`
 icon |image30|.
 
 Alternate way (table)
-~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^
 
 To select this alternate way, go to :guilabel:`tools` menu and select
 :guilabel:`options`.
@@ -354,8 +354,8 @@ As for the classic way, you will have to fill the Meta data fields
 and register your context in database by clicking on the :guilabel:`register`
 button |image34|
 
-MODIFYING AN EXISTING CONTEXT
------------------------------
+Modifying an existing context
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 As a matter of fact, you can’t really “modify” a context. What you
 can do is to create a new context with its information (attributes
@@ -375,7 +375,7 @@ instead of “Register this new context”, as you can see
 on the figure above.
 
 Loading a context
------------------
+~~~~~~~~~~~~~~~~~
 
 There are 2 ways to load a context:
 
@@ -388,7 +388,7 @@ snapshot list, so you can see the snapshots about this context that
 have been created this day (the day when you load the context).
 
 Loading a context from database
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In the :guilabel:`Contexts` menu, choose :guilabel:`load` then select :guilabel:`DB`:
 
@@ -415,7 +415,7 @@ clicking on the cross on the top right corner of the list
 (|image39|).
 
 Loading a context from file
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In the :guilabel:`Contexts` menu, choose :guilabel:`load` then select :guilabel:`File`, or in
 :guilabel:`File` menu choose :guilabel:`load` then select :guilabel:`Context`:
@@ -427,7 +427,7 @@ select it to load the corresponding context in the :guilabel:`Context Details`
 sub panel (See :ref:`Figure 6: Context control panel <bensikin_fig_6>`).
 
 Printing a context
-------------------
+~~~~~~~~~~~~~~~~~~
 
 Once you have context ready, click on the :guilabel:`print` icon (|image42|)
 and select :guilabel:`context`:
@@ -440,7 +440,7 @@ configuration to print an xml representation of your context.
 User can also print context by pressing the button |image44|
 
 Saving a context
-----------------
+~~~~~~~~~~~~~~~~
 
 Once you have context ready, click on the :guilabel:`save` icon (|image45|)
 and select :guilabel:`context`:
@@ -463,7 +463,7 @@ click on :guilabel:`Save As`
 |image49| |image50|
 
 Snapshot Management
-===================
+-------------------
 
 This section describes how to control snapshots with Bensikin. A
 Snapshot is a view of your equipment at a precise date, view based on a
@@ -480,7 +480,7 @@ Snapshots are managed in the snapshot control panel:
 .. _creating_a_new_snapshot:
 
 Creating a new snapshot
------------------------
+~~~~~~~~~~~~~~~~~~~~~~~
 
 To create a new snapshot, first select a valid context in the
 context control panel (see :ref:`Figure 6: Context control panel <bensikin_fig_6>`). Then
@@ -488,7 +488,7 @@ click on the button |image52|. The corresponding snapshot is added
 in the list of snapshots in the Snapshot List sub panel.
 
 Loading a snapshot
-------------------
+~~~~~~~~~~~~~~~~~~
 
 There are 2 ways to load a snapshot:
 
@@ -497,7 +497,7 @@ There are 2 ways to load a snapshot:
 -  Load it from a file
 
 Loading a snapshot from database
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Loading a snapshot from database consists in adding this snapshot in
 the list of snapshots in the Snapshot List sub panel.
@@ -514,7 +514,7 @@ button |image54|), you will search for all the snapshots in
 database that correspond to the selected context.
 
 Loading a snapshot from file
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In the :guilabel:`Snapshots` menu, choose :guilabel:`load` then select :guilabel:`File`, or in
 :guilabel:`File` menu choose :guilabel:`load` then select :guilabel:`Snapshot`:
@@ -526,7 +526,7 @@ select it to load the corresponding snapshot in the Snapshot Details
 sub panel (See :ref:`Figure 12: Snapshot control panel <bensikin_fig_12>`)
 
 Editing a snapshot
-------------------
+~~~~~~~~~~~~~~~~~~
 
 To edit a snapshot, double click on the snapshot you want to edit in
 the snapshot list (in the :guilabel:`Snapshot List` sub panel). This will open a
@@ -627,7 +627,7 @@ Once your snapshot details are loaded, click on |image75| button to
 modify its comment (and save it in database or file).
 
 Printing a snapshot
--------------------
+~~~~~~~~~~~~~~~~~~~
 
 Once you have context ready, click on the :guilabel:`print` icon (|image76|)
 and select :guilabel:`snapshot`:
@@ -638,7 +638,7 @@ The classic print dialog will then appear. Validate your print
 configuration to print an xml representation of your snapshot.
 
 Saving a snapshot
------------------
+~~~~~~~~~~~~~~~~~
 
 Once you have context ready, click on the :guilabel:`save` icon (|image78|)
 and select :guilabel:`snapshot`:
@@ -659,14 +659,14 @@ menu and click on :guilabel:`Save As`.
 |image82| |image83|
 
 Favorites
-=========
+---------
 
 Bensikin manages a list of favorite context, so you can quickly switch
 to anyone of them. Those favorites are saved at application shutdown and
 loaded on startup.
 
 Adding a context to favorites
------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To add a context to your favorites, have your context ready by
 creating or loading it. Then go to :guilabel:`Favorites` menu and click on
@@ -675,7 +675,7 @@ creating or loading it. Then go to :guilabel:`Favorites` menu and click on
 |image84|
 
 Switching to a context in favorites
------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To switch to a context in favorites, which means to load it from
 favorites, go to “Favorites” menu, select “contexts”, and click on
@@ -684,14 +684,14 @@ the context you want to load.
 |image85|
 
 Options
-=======
+-------
 
 Bensikin manages global options. Those options are saved at application
 shutdown, and loaded on startup. The Options menu is located in the Menu
 bar: :guilabel:`Tools -> Options`.
 
 Application’s history save/load Options
----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Define whether Bensikin has a history, i.e. a persistent state when
 closed/reopened.
@@ -706,7 +706,7 @@ be loaded.
    Figure 16: Save option
 
 Snapshot Options
-----------------
+~~~~~~~~~~~~~~~~
 
 These are the Bensikin Snapshot Options:
 
@@ -731,14 +731,14 @@ These are the Bensikin Snapshot Options:
    and which columns to export.
 
 Context Options
----------------
+~~~~~~~~~~~~~~~
 
 Context options allow you to select which way you want to edit your
 contexts, see :ref:`Figure 8: Option –context tab <bensikin_fig_8>`
 and the :ref:`Creating a new snapshot <creating_a_new_snapshot>` section.
 
 Print Options
--------------
+~~~~~~~~~~~~~
 
 The Print option allows you to print text or table in the Snapshots
 or in the Contexts.
@@ -759,7 +759,7 @@ When you check |image93|, the length and the width of your print
 are cut on several parts.
 
 The Bensikin toolbar
-====================
+--------------------
 
 The toolbar is located under the menu bar, and consists mainly of a set
 of shortcuts to often used functionalities.
