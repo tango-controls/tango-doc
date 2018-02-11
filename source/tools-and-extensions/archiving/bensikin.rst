@@ -500,110 +500,114 @@ Loading a snapshot from database
 Loading a snapshot from database consists in adding this snapshot in
 the list of snapshots in the Snapshot List sub panel.
 
-As you can see in *Figure 12: Snapshot control panel*, the Snapshot
-List sub panel allows you to filter snapshots from database to find
+As you can see in :ref:`Figure 12: Snapshot control panel <bensikin_fig_12>`,
+the :guilabel:`Snapshot List` sub panel allows you to filter snapshots from database to find
 the snapshot you want to load. However, have in mind that this
 filter is “context dependent”, which means that the snapshots which
-will appear in the list by clicking on the “filter” button
+will appear in the list by clicking on the :guilabel:`filter` button
 (|image53|) are the one that correspond to your filter criteria
-**AND** the selected context in the Context Control Panel. If the
+**AND** the selected context in the :guilabel:`Context Control Panel`. If the
 filter is cleared (which you can obtain by clicking on the
-button\ |image54|), you will search for all the snapshots in
+button |image54|), you will search for all the snapshots in
 database that correspond to the selected context.
 
 Loading a snapshot from file
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    In the “Snapshots” menu, choose “load” then select “File”, or in
-    “File” menu choose “load” then select “Snapshot”:
+In the :guilabel:`Snapshots` menu, choose :guilabel:`load` then select :guilabel:`File`, or in
+:guilabel:`File` menu choose :guilabel:`load` then select :guilabel:`Snapshot`:
 
-    |image55| |image56|
+|image55| |image56|
 
-    A classic file browser will appear. Search for your “.snap” file and
-    select it to load the corresponding snapshot in the Snapshot Details
-    sub panel (See *Figure 12: Snapshot control panel*)
+A classic file browser will appear. Search for your “.snap” file and
+select it to load the corresponding snapshot in the Snapshot Details
+sub panel (See :ref:`Figure 12: Snapshot control panel <bensikin_fig_12>`)
 
 Editing a snapshot
 ------------------
 
-    To edit a snapshot, double click on the snapshot you want to edit in
-    the snapshot list (in the Snapshot List sub panel). This will open a
-    new tab about this snapshot in the Snapshot Details sub panel, tab
-    named by this snapshot ID. If you load a snapshot from file, the
-    name of the tab is the name of the file. To differentiate snapshots
-    loaded from file and the ones loaded from database, the snapshot
-    loaded from file tabs have the icon |image57|.
+To edit a snapshot, double click on the snapshot you want to edit in
+the snapshot list (in the :guilabel:`Snapshot List` sub panel). This will open a
+new tab about this snapshot in the Snapshot Details sub panel, tab
+named by this snapshot ID. If you load a snapshot from file, the
+name of the tab is the name of the file. To differentiate snapshots
+loaded from file and the ones loaded from database, the snapshot
+loaded from file tabs have the icon |image57|.
 
 Setting equipment with a snapshot
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    A snapshot allows you to set equipment with its attributes write
-    values. You can choose which attributes will set equipment, and
-    which not, by selecting or unselecting the corresponding check box
-    in the column “Can Set Equipment” (See *Figure 12: Snapshot control
-    panel*). By default, every attribute is selected. If you unselect
-    some attributes, an icon |image58| will appear in tab title to
-    notify you that these attributes will not set equipments. You can
-    quick select/unselect all the attributes by clicking on |image59|
-    and |image60| buttons. When you are ready to set equipment with the
-    selected write values, click on the button\ |image61|.
+A snapshot allows you to set equipment with its attributes write
+values. You can choose which attributes will set equipment, and
+which not, by selecting or unselecting the corresponding check box
+in the column :guilabel:`Can Set Equipment`
+(See :ref:`Figure 12: Snapshot control panel <bensikin_fig_12>`).
+By default, every attribute is selected. If you unselect
+some attributes, an icon |image58| will appear in tab title to
+notify you that these attributes will not set equipments. You can
+quick select/unselect all the attributes by clicking on |image59|
+and |image60| buttons. When you are ready to set equipment with the
+selected write values, click on the button |image61|.
 
-    You can also modify the write value before setting equipment by
-    editing it in the table. If you do so, the value becomes red and an
-    |image62| icon appears to warn you about the fact that you made
-    modifications in this snapshot (these modifications will not be
-    saved in database, they are just here to set equipment).
+You can also modify the write value before setting equipment by
+editing it in the table. If you do so, the value becomes red and an
+|image62| icon appears to warn you about the fact that you made
+modifications in this snapshot (these modifications will not be
+saved in database, they are just here to set equipment).
 
-|image63|
+.. _bensikin_fig_13:
+.. figure:: bensikin/image54.png
 
-Figure 13: Modified snapshot
+   Figure 13: Modified snapshot
 
 Snapshot comparison
 ~~~~~~~~~~~~~~~~~~~
 
-    There are 2 ways to compare snapshots:
+There are 2 ways to compare snapshots:
 
 -  Compare a snapshot with another one:
 
-    To do so, select a tab in Snapshot Details sub panel (See *Figure
-    12: Snapshot control panel*). Click on button\ |image64|. You will
-    see the tab title of this attribute appear in the field
-    “1\ :sup:`st` snapshot”. Select another tab and click again on
-    |image65| button to put this attribute tab title in the field
-    “2\ :sup:`nd` snapshot”. Click then on |image66| button to see the
-    comparison between these 2 snapshots.
+   To do so, select a tab in Snapshot Details sub panel
+   (:ref:`Figure 12: Snapshot control panel <bensikin_fig_12>`).
+   Click on button |image64|. You will
+   see the tab title of this attribute appear in the field
+   “1 :sup:`st` snapshot”. Select another tab and click again on
+   |image65| button to put this attribute tab title in the field
+   “2 :sup:`nd` snapshot”. Click then on |image66| button to see the
+   comparison between these 2 snapshots.
 
-    If user wants to see only the first line of comparison, he must
-    check filter\ |image67|
+   If user wants to see only the first line of comparison, he must
+   check filter |image67|
 
-    Else if he/she wants to see all the details of the comparison,
-    he/she must check |image68|
+   Else if he/she wants to see all the details of the comparison,
+   he/she must check |image68|
 
-|image69|
+   .. _bensikin_fig_14:
+   .. figure:: bensikin/image57.png
 
-Figure 14: Snapshot comparison - full table
+      Figure 14: Snapshot comparison - full table
 
-    To print this comparison table, click on “Print “button.
+   To print this comparison table, click on :guilabel:`Print` button.
 
 -  Compare a snapshot with current state:
 
-    To compare a snapshot with current state, set this snapshot as
-    “1\ :sup:`st` snapshot”, as explained above, and leave the
-    “2\ :sup:`nd` snapshot” empty. Note that once the “1\ :sup:`st`
-    snapshot is selected, you only can update the “2\ :sup:`nd` snapshot
-    or clear the comparison selection. To do so, click on the
-    button\ |image70|. What is hidden behind this is a creation of a
-    snapshot, named “BENSIKIN\_AUTOMATIC\_SNAPSHOT”, and you compare
-    this snapshot with your snapshot. Have in mind that this automatic
-    snapshot is registered in database. So, in the comparison table, the
-    current state will appear as the second snapshot with the name
-    “Current state” (red block in the comparison table).
+   To compare a snapshot with current state, set this snapshot as
+   “1 :sup:`st` snapshot”, as explained above, and leave the
+   “2 :sup:`nd` snapshot” empty. Note that once the “1 :sup:`st`
+   snapshot is selected, you only can update the “2 :sup:`nd` snapshot
+   or clear the comparison selection. To do so, click on the
+   button |image70|. What is hidden behind this is a creation of a
+   snapshot, named “BENSIKIN\_AUTOMATIC\_SNAPSHOT”, and you compare
+   this snapshot with your snapshot. Have in mind that this automatic
+   snapshot is registered in database. So, in the comparison table, the
+   current state will appear as the second snapshot with the name
+   “Current state” (red block in the comparison table).
 
 Snapshot Details copy
 ~~~~~~~~~~~~~~~~~~~~~
 
-    As you can see in *Figure 12: Snapshot control panel*, snapshots are
-    detailed in a table. You can copy this table to clipboard as a
+    As you can see in :ref:`Figure 12: Snapshot control panel <bensikin_fig_12>`,
+    snapshots are detailed in a table. You can copy this table to clipboard as a
     text-CSV formatted table by clicking on |image71| or |image72|
     button. If you want to see this text result and may be filter it
     (like removing lines), click on |image73| button. You will see the
