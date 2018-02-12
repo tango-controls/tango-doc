@@ -547,8 +547,8 @@ in the column :guilabel:`Can Set Equipment`
 By default, every attribute is selected. If you unselect
 some attributes, an icon |image58| will appear in tab title to
 notify you that these attributes will not set equipments. You can
-quick select/unselect all the attributes by clicking on |image59|
-and |image60| buttons. When you are ready to set equipment with the
+quick select/unselect all the attributes by clicking on :guilabel:`All`
+and :guilabel:`None` buttons. When you are ready to set equipment with the
 selected write values, click on the button |image61|.
 
 You can also modify the write value before setting equipment by
@@ -892,7 +892,7 @@ of shortcuts to often used functionalities.
 .. |image35| image:: bensikin/image30.png
    :width: 4.91791in
    :height: 5.25113in
-.. |image36| image:: bensikin/image31.png
+.. |image36| image:: bensikin/image85.png
    :width: 2.12500in
    :height: 1.50000in
 .. |image37| image:: bensikin/image32.PNG
@@ -904,55 +904,51 @@ of shortcuts to often used functionalities.
 .. |image39| image:: bensikin/image34.png
    :width: 0.12500in
    :height: 0.14583in
-.. |image40| image:: bensikin/image35.png
-   :width: 1.47917in
-   :height: 1.67708in
-.. |image41| image:: bensikin/image36.png
-   :width: 2.27083in
-   :height: 1.66667in
+.. |image40| image:: bensikin/image86.png
+   :height: 1.7in
+
+.. |image41| image:: bensikin/image87.png
+   :height: 1.7in
+
 .. |image42| image:: bensikin/image37.png
    :width: 0.20833in
    :height: 0.20833in
-.. |image43| image:: bensikin/image38.png
+.. |image43| image:: bensikin/image88.png
    :width: 2.25000in
    :height: 1.40625in
+
 .. |image44| image:: bensikin/image39.PNG
    :width: 0.28129in
    :height: 0.23962in
 .. |image45| image:: bensikin/image26.png
    :width: 0.20833in
    :height: 0.20833in
-.. |image46| image:: bensikin/image40.png
-   :width: 1.20833in
-   :height: 1.32292in
-.. |image47| image:: bensikin/image41.png
-   :width: 1.45833in
-   :height: 1.66667in
-.. |image48| image:: bensikin/image42.png
-   :width: 1.62500in
-   :height: 1.66667in
-.. |image49| image:: bensikin/image43.png
-   :width: 1.48958in
-   :height: 1.65625in
-.. |image50| image:: bensikin/image44.png
-   :width: 1.66667in
-   :height: 1.58333in
+.. |image46| image:: bensikin/image89.png
+   :height: 1.3in
+.. |image47| image:: bensikin/image90.png
+   :height: 1.6in
+.. |image48| image:: bensikin/image91.png
+   :height: 1.6in
+.. |image49| image:: bensikin/image92.png
+   :height: 1.6in
+.. |image50| image:: bensikin/image93.png
+   :height: 1.6in
 .. |image51| image:: bensikin/image45.png
    :width: 6.87008in
    :height: 5.22917in
-.. |image52| image:: bensikin/image46.png
+.. |image52| image:: bensikin/image83.png
    :width: 1.14583in
    :height: 0.23958in
-.. |image53| image:: bensikin/image47.png
+.. |image53| image:: bensikin/image94.png
    :width: 0.51042in
    :height: 0.25000in
-.. |image54| image:: bensikin/image47.png
+.. |image54| image:: bensikin/image95.png
    :width: 1.29167in
    :height: 0.22917in
-.. |image55| image:: bensikin/image48.png
+.. |image55| image:: bensikin/image96.png
    :width: 1.67708in
    :height: 1.90625in
-.. |image56| image:: bensikin/image49.png
+.. |image56| image:: bensikin/image97.png
    :width: 3.05208in
    :height: 1.91667in
 .. |image57| image:: bensikin/image50.png
@@ -966,7 +962,7 @@ of shortcuts to often used functionalities.
 .. |image60| image:: bensikin/image52.png
    :width: 0.33333in
    :height: 0.19792in
-.. |image61| image:: bensikin/image45.png
+.. |image61| image:: bensikin/image98.png
    :width: 1.09375in
    :height: 0.28125in
 .. |image62| image:: bensikin/image53.png
@@ -975,13 +971,13 @@ of shortcuts to often used functionalities.
 .. |image63| image:: bensikin/image54.png
    :width: 6.74627in
    :height: 3.65423in
-.. |image64| image:: bensikin/image52.png
+.. |image64| image:: bensikin/image99.png
    :width: 0.94792in
    :height: 0.20833in
-.. |image65| image:: bensikin/image52.png
+.. |image65| image:: bensikin/image99.png
    :width: 0.94792in
    :height: 0.20833in
-.. |image66| image:: bensikin/image52.png
+.. |image66| image:: bensikin/image100.png
    :width: 0.70833in
    :height: 0.20833in
 .. |image67| image:: bensikin/image55.PNG
@@ -993,36 +989,30 @@ of shortcuts to often used functionalities.
 .. |image69| image:: bensikin/image57.png
    :width: 6.30000in
    :height: 2.61319in
-.. |image70| image:: bensikin/image52.png
+.. |image70| image:: bensikin/image101.png
    :width: 1.29167in
    :height: 0.25000in
-.. |image71| image:: bensikin/image52.png
-   :width: 0.32292in
-   :height: 0.19792in
+.. |image71| image:: bensikin/image102.png
+   :height: 0.3in
 .. |image72| image:: bensikin/image58.PNG
-   :width: 1.11474in
-   :height: 0.30213in
-.. |image73| image:: bensikin/image52.png
-   :width: 0.52083in
-   :height: 0.18750in
+   :height: 0.3in
+.. |image73| image:: bensikin/image104.png
+   :height: 0.3in
 .. |image74| image:: bensikin/image59.png
    :width: 5.31324in
    :height: 2.19822in
-.. |image75| image:: bensikin/image60.png
-   :width: 0.78125in
-   :height: 0.22917in
+.. |image75| image:: bensikin/image105.png
+   :height: 0.3in
 .. |image76| image:: bensikin/image37.png
    :width: 0.20833in
    :height: 0.20833in
 .. |image77| image:: bensikin/image61.png
-   :width: 1.87500in
    :height: 1.33333in
 .. |image78| image:: bensikin/image26.png
    :width: 0.20833in
    :height: 0.20833in
 .. |image79| image:: bensikin/image82.png
-   :width: 1.10417in
-   :height: 1.16667in
+   :height: 1.3in
 .. |image80| image:: bensikin/image63.png
    :width: 1.45833in
    :height: 1.64583in
