@@ -1,75 +1,13 @@
-|image0|
-
-.. rubric:: ICA Group
-
-
+.. _bensikin_manual:
 Bensikin User Manual
 ====================
 
 :audience:`users, administrators`
 
-+----------------------+--------------+---------------+----------------+------------------+------------------------------------------------+-------------+
-| **Diffusion date**   | **Writer**   | **Auditor**   | **Approver**   | **Approver’s**   | **Modifications**                              | **Index**   |
-|                      |              |               |                |                  |                                                |             |
-|                      |              |               |                | **stamp**        |                                                |             |
-+======================+==============+===============+================+==================+================================================+=============+
-| 2005/11/17           | R.Girardot   | M.Ounsy       | A.Buteau       | A.B.             | Creation                                       | 1.0         |
-+----------------------+--------------+---------------+----------------+------------------+------------------------------------------------+-------------+
-| 2017/07/24           | M.Thiam      | R.Girardot    | A.Buteau       | A.B.             | -  New SOLEIL documentation standard applied   | 2.0         |
-|                      |              |               |                |                  |                                                |             |
-|                      |              |               |                |                  | -  Screenshots updated                         |             |
-|                      |              |               |                |                  |                                                |             |
-|                      |              |               |                |                  | -  Text reviewed                               |             |
-|                      |              |               |                |                  |                                                |             |
-|                      |              |               |                |                  | -  Missing functionalities description added   |             |
-|                      |              |               |                |                  |                                                |             |
-|                      |              |               |                |                  | -  Minor modifications for final approval      |             |
-+----------------------+--------------+---------------+----------------+------------------+------------------------------------------------+-------------+
+.. rubric:: Authors:
 
-Diffusion: For information
-
-Receivers: Any archiving user
-
-Figure Index
-------------
-
-- :ref:`Figure 1: Bensikin Account Manager <bensikin_fig_1>`
-
-- :ref:`Figure 2: Bensikin main panel <bensikin_fig_2>`
-
-- :ref:`Figure 3: Creating a new account <bensikin_fig_3>`
-
-- :ref:`Figure 4: Account selection <bensikin_fig_4>`
-
-- :ref:`Figure 5: Show account path <bensikin_fig_5>`
-
-- :ref:`Figure 6: Context control panel <bensikin_fig_6>`
-
-- :ref:`Figure 7: Application first start <bensikin_fig_7>`
-
-- :ref:`Figure 8: Option –context tab <bensikin_fig_8>`
-
-- :ref:`Figure 9: Bensikin with context table selection mode (new context) <bensikin_fig_9>`
-
-- :ref:`Figure 10: Bensikin with context table selection mode (modified context) <bensikin_fig_10>`
-
-- :ref:`Figure 11: Data base Context filter dialog <bensikin_fig_11>`
-
-- :ref:`Figure 12: Snapshot control panel <bensikin_fig_12>`
-
-- :ref:`Figure 13: Modified snapshot <bensikin_fig_13>`
-
-- :ref:`Figure 14: Snapshot comparison - full table <bensikin_fig_14>`
-
-- :ref:`Figure 15: Snapshot edit clipboard dialog <bensikin_fig_15>`
-
-- :ref:`Figure 16: Save option <bensikin_fig_16>`
-
-- :ref:`Figure 17: Snapshot options <bensikin_fig_17>`
-
-- :ref:`Figure 18: Print option <bensikin_fig_18>`
-
-- :ref:`Figure 19: Bensikin toolbar <bensikin_fig_19>`
+*R.Girardot, M.Ounsy, A.Buteau, M.Thiam* -
+`Soleil <https://www.synchrotron-soleil.fr/en>`_
 
 Introduction
 ------------
