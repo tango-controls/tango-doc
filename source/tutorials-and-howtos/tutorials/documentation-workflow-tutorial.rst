@@ -35,9 +35,9 @@ If you have prerequisites installed, you need to install Sphinx tools:
 
    :command:`pip install sphinx`
 
-#. Install Breathe (a module to deal with Doxygen C++ API documentation):
+#. Install IPtyhon (to make all how-tos build correctly):
 
-   :command:`pip install breathe`
+   :command:`pip install ipython`
 
 Get documentation sources
 -------------------------
@@ -92,9 +92,9 @@ Committing changes
 
 #. Add modifications to a commit list. For example:
 
-   :command:`git add source/tutorials/example.rst`
+   :command:`git add source/tutorials-and-howtos/tutorials/example.rst`
 
-   :command:`git add source/tutorials/index.rst`
+   :command:`git add source/tutorials-and-howtos/tutorials/index.rst`
 
 #. Commit the changes providing some meaningful message. For example:
 
