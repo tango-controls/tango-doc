@@ -1,7 +1,7 @@
 .. _archiving_overview:
 
 Overview
-=========
+========
 
 :audience:`beginners, developers, administrators, users`
 

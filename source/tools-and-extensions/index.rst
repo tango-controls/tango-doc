@@ -33,6 +33,7 @@ Archiving
    archiving/overview
    archiving/HDB
    archiving/HDB++
+   archiving/SNAP
 
 
 GUI building
