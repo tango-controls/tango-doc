@@ -37,7 +37,7 @@ If you have prerequisites installed, you need to install Sphinx tools:
 
 #. Install IPtyhon (to make all how-tos build correctly):
 
-   :command:`pip install python`
+   :command:`pip install ipython`
 
 Get documentation sources
 -------------------------
