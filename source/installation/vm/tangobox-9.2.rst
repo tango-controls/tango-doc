@@ -11,7 +11,10 @@ TangoBox 9.2
 TangoBox is a VM image running Tango Controls system and its various tools.
 It is intended to be used for demonstration and training.
 It also simulates distributed deployment by using Docker.
-It can be downloaded from here: http://ftp.esrf.fr/pub/cs/tango/TangoBox-9.2_RC11.ova
+
+Download
+--------
+The latest version (RC11) of the TangoBox 9.2 can be downloaded from `here <http://ftp.esrf.fr/pub/cs/tango/TangoBox-9.2_RC11.ova>`.
 
 
 .. toctree::
