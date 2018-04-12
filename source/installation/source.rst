@@ -1,7 +1,7 @@
-.. _sources:
+.. _source_code_install:
 
-Source
-======
+Source Code
+===========
 
 :audience:`administrators, developers`
 
