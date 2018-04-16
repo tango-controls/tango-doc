@@ -53,21 +53,21 @@ def setup(app):
     :param app: Sphinx application context.
     """
 
-    print "Registering meta-labels..."
+    print ("Registering meta-labels...")
 
     app.add_config_value('meta_labels', None, 'env')
 
     #pprint.PrettyPrinter(indent=2).pprint(app.config.__dict__)
 
     meta_labels = app.config._raw_config.get('meta_labels', {})
-    print meta_labels
+    print (meta_labels)
 
     assert isinstance(meta_labels, dict)
 
     for key in meta_labels.keys():
-        print 'registering %s ' % key
+        print ('registering %s ' % key)
         app.add_role(key, metalabel_role)
 
-    print "... meta-labels registered."
+    print ("... meta-labels registered.")
 
     return {'varsion':'0.1'}
