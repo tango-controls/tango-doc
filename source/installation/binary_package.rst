@@ -9,12 +9,15 @@ Binary packages
 Binary packages for Tango are maintained to make it easier for developers to
 install the latest builds of Tango without have to compile them. 
 
-Here is a list of the available binary packages.
+Here is a list of the available binary packages (Tango v9 LTS).
 
 .. raw:: html
 
    <p>
-   <a href='https://bintray.com/tango-controls/generic/JTango-9-LTS/_latestVersion'>JTango-9-LTS</a> - a library for device servers and clients in Java (Tango v9 LTS)
+   <a href='https://github.com/tango-controls/cppTango/releases/latest'>cppTango-9-LTS</a> - a library for device servers and clients in C++
+   <a href='https://github.com/tango-controls/cppTango/releases/latest'><img src='https://img.shields.io/github/release/tango-controls/cppTango.svg?style=flat'></a>
+   <p>
+   <a href='https://bintray.com/tango-controls/generic/JTango-9-LTS/_latestVersion'>JTango-9-LTS</a> - a library for device servers and clients in Java 
    <a href='https://bintray.com/tango-controls/generic/JTango-9-LTS/_latestVersion'><img src='https://api.bintray.com/packages/tango-controls/generic/JTango-9-LTS/images/download.svg'></a>   
    </p>
 
