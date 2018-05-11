@@ -1,5 +1,17 @@
 :audience:`administrators, developers`, :lang:`C++`
 
+
+HDB++ Design and implementation
+++++++++++++++++++++++++++++++++
+
+
+Below, details on deployment and configuration of the :term:`HDB++` service are provided.
+For overview, see :ref:`hdbpp_manual` of :ref:`tools_index` section.
+
+
+.. contents::
+   :depth: 4
+
 .. HDB++ Design and implementation
 
 HDB++ Contributions
@@ -43,15 +55,6 @@ It’s written in C++ and is fully event-driven.
 +------------+---------+-----------+--------------------------------------------+
 | 2016-08-12 | 1.8     | L.Pivetta | Revision after HDB++ meeting on 2016.05.10 |
 +------------+---------+-----------+--------------------------------------------+
-
-
-.. role:: math(raw)
-   :format: html latex
-
-
-.. contents::
-   :depth: 3
-
 
 
 
@@ -248,7 +251,7 @@ Commands
 
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------+
 | AttributeAdd       | add an attribute to archiving; the complete FQDN has to be specified otherwise it is completed by the using getaddrinfo()   |
-+====================+=============================================================================================================================+
++--------------------+-----------------------------------------------------------------------------------------------------------------------------+
 | AttributeContext   | read the specified attribute current context                                                                                |
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------+
 | AttributePause     | pause archiving specified attribute but do not unsubscribe archive event                                                    |
@@ -279,7 +282,7 @@ Attributes
 
 +------------------------------+-------------------------------------------------------+
 | AttributeContextList         | return the list of attribute contexts                 |
-+==============================+=======================================================+
++------------------------------+-------------------------------------------------------+
 | AttributeErrorList           | return the list of attribute errors                   |
 +------------------------------+-------------------------------------------------------+
 | AttributeEventNumberList     | number of events received for each attribute          |
@@ -348,7 +351,7 @@ Class properties
 
 +-----------------------------+------------------------------------------------------------------+
 | CheckPeriodicTimeoutDelay   | delay before timeout when checking periodic events, in seconds   |
-+=============================+==================================================================+
++-----------------------------+------------------------------------------------------------------+
 | PollingThreadPeriod         | default period for polling thread, in seconds                    |
 +-----------------------------+------------------------------------------------------------------+
 | LibConfiguration            | configuration parameters for backend support library             |
@@ -366,10 +369,9 @@ Class properties
 
 Table 4: Event Subscriber Class properties.
 
-The LibConfiguration property contains the following multi-line
-configuration parameters *host*, *user*, *password*, *dbname*, *port*.
-Table shows example configuration
-parameters for MySQL backend.
+The **LibConfiguration** property contains the following multi-line
+configuration parameters *host*, *user*, *password*, *dbname*, *libname*, *port*.
+Table shows example configuration parameters for backend:
 
 +-------------------------------------------+
 | host=srv-log-srf.fcs.elettra.trieste.it   |
@@ -380,12 +382,33 @@ parameters for MySQL backend.
 +-------------------------------------------+
 | dbname=hdbpp                              |
 +-------------------------------------------+
+| libname=dependOnDatabase (see below)      |
++-------------------------------------------+
 | port=3306                                 |
 +-------------------------------------------+
 
-Table 5: LibConfiguration parameters for MySQL.
+Table 5: LibConfiguration parameters for database.
 
-The HdbppContext property contains the enum specifying the possible
+.. note::
+    *libename* should be set to one of the following values:
+
+    libname=libhdb++mysql.so      if you intend to use HDB++ with the MySQL backend
+    libname=libhdbmysql.so        if you intend to use HDB++ with the MySQL Legacy backend
+    libname=libhdb++cassandra.so  if you intend to use HDB++ with the Cassandra backend
+
+    This library specified in LibConfiguration->libname is loaded dynamically by *hdb++-cm-srv device server*.
+    You will need to have your LD_LIBRARY_PATH environment variable correctly set (including the directory
+    where the library you intend to use is located) to have the hdb++-cm-srv working as expected.
+
+    libhdb++mysql and libhdb++cassandra are just implementations of the classes defined in libhdb++ library.
+    The user can decide which implementation to use by specifying this LibConfiguration -> libname device property config parameter.
+
+    The device server will load dynamically (using dlopen()) during the device server initialization the library configured by the user.
+    See `Database interface`_ section for more information.
+
+
+
+The **HdbppContext property** contains the enum specifying the possible
 user-defined operating contexts in the form *number:label*. The default
 values are:
 
@@ -406,7 +429,7 @@ Device properties
 
 +-----------------------------+------------------------------------------------------------------+
 | AttributeList               | list of configured attributes                                    |
-+=============================+==================================================================+
++-----------------------------+------------------------------------------------------------------+
 | CheckPeriodicTimeoutDelay   | delay before timeout when checking periodic events, in seconds   |
 +-----------------------------+------------------------------------------------------------------+
 | PollingThreadPeriod         | default period for polling thread, in seconds                    |
@@ -509,7 +532,7 @@ The commands availabile in the are summarized in commands-table.
 
 +------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | ArchiverAdd            | add a new instance to the archivers list; the instance must have been already created and configured via jive/astor and the device shall be running; as per release adding an device to an existing instance is not supported   |
-+========================+=================================================================================================================================================================================================================================+
++------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | ArchiverRemove         | remove an from the list; neither the device instance nor the attributes configured are removed from the database                                                                                                                |
 +------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | AttributeAdd           | add an attribute to archiving                                                                                                                                                                                                   |
@@ -552,7 +575,7 @@ The attributes of the are summarized in attributes-table.
 
 +-------------------------------+-------------------------------------------------------------------+
 | ArchiverContext               | return archiver context                                           |
-+===============================+===================================================================+
++-------------------------------+-------------------------------------------------------------------+
 | ArchiverList                  | return list of managed archivers                                  |
 +-------------------------------+-------------------------------------------------------------------+
 | ArchiverStatisticsResetTime   | seconds elapsed since last statistics reset                       |
@@ -620,7 +643,7 @@ Class properties
 
 +--------------------+--------------------------------------------------------+
 | LibConfiguration   | configuration parameters for backend support library   |
-+====================+========================================================+
++--------------------+--------------------------------------------------------+
 | MaxSearchSize      | max size for AttributeSearch result                    |
 +--------------------+--------------------------------------------------------+
 
@@ -631,7 +654,7 @@ Device properties
 
 +--------------------+--------------------------------------------------------+
 | ArchiverList       | list of existing archivers                             |
-+====================+========================================================+
++--------------------+--------------------------------------------------------+
 | LibConfiguration   | configuration parameters for backend support library   |
 +--------------------+--------------------------------------------------------+
 | MaxSearchSize      | max size for AttributeSearch result                    |
@@ -680,6 +703,13 @@ Table 13: Available database interfacement libraries.
 
 Additional libraries are foreseen to support different database engines,
 such as Oracle, Postgres or possibly noSQL implementations.
+
+.. note::
+    The Cassandra Error: "All connections on all I/O threads are busy" is connected with incorrect name of Data Center.
+    For example, the correct name is "datacenter1" but libhdbpp-cassandra have default value "DC1".
+    To change this value you should add to LibConfiguration property: *local_dc*=datacenter1
+
+
 
 database structure
 ------------------
@@ -873,6 +903,13 @@ appendix. The main points can be summarized as:
 -  specific data type support
 
 -  temporary storage support
+
+
+.. note::
+    There are some special OS settings to tune for Cassandra to work as expected, in particular, it is recommended to disable the SWAP and
+    to change the resource limits on Linux, as described in this documentation page:
+    `Recommended production settings for Linux <http://docs.datastax.com/en/archived/cassandra/2.2/cassandra/install/installRecommendSettings.html/>`_.
+
 
 Deployment best practices
 =========================
@@ -2853,5 +2890,3 @@ schema CQL source (Cassandra)
     PRIMARY KEY ((att_conf_id ,period),data_time,data_time_us)
     )
     WITH comment='Time Statistics Table';
-        
-
