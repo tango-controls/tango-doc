@@ -95,7 +95,7 @@ Event Subscriber Device Server (Archiver)
 *****************************************
 
 Also referenced as archiver, is in charge of gathering the values from the Tango devices and storing them into the historical database. To address the requirements coming from large systems the need to distribute the workload over a number of archivers shows up.
-The EventSubscriber Tango device server is the coreof the HDB++ archiving system. It subscribes to archive events for the specified Attributes list, stored into a Property in the Tango database,
+The EventSubscriber Tango device server is the core of the HDB++ archiving system. It subscribes to archive events for the specified Attributes list, stored into a Property in the Tango database,
 as well as a number of additional parameters, such as the hostname and port number where the back-end is running, the name of the database and the username and password to be used. It subscribes to Tango archive events, which are ZeroMQ events in the latest Tango releases,
 and stores the received events in the historical database. It provides diagnostics data as well.
 
@@ -164,6 +164,9 @@ written in Java, has been used for the *HdbViewer* GUI and is a native choice fo
 The HdbViewer Java framework, in addition to the legacy ESRF historical database support,
 allows retrieving the data from the new Cassandra back-end as well as managing the Cassandra
 partitioning period.
+
+.. note::
+    The C++ extraction library currently supports only the MySQL back-end.
 
 The *HdbExtractor++ multithread library* allows fetching the data from the legacy HDB and the new HDB++ MySQL schema in a simple Object Oriented way. An additional module provides a Qt interface to the HdbExtractor++ and a dedicated GUI, exploiting the MathGL framework, aimed
 at displaying mono and bidimensional data over time.
@@ -239,10 +242,15 @@ The latest versions of *hdbpp-es* and *hdbpp-cm* are now loading dynamically (us
 
 
 .. note::
-    You can use "-v5" argument to see the error as "-v5" sets the logging level of the device to DEBUG. By doing this, DEBUG level logs will be printed on your terminal.
+    -v5 can be used to see the DEBUG messages coming from the Tango library itself too. It also sets the logging level of the device to DEBUG.
+    -v4 can be used to see the DEBUG messages coming from the Tango devices themselves.
+    By doing this, DEBUG level logs will be printed on your terminal.
     For example, command on terminal: ./hdb++es-srv 01 -v5
 
-
+.. note::
+    In recent versions of *libhdb++cassandra* library, there are some configuration parameters to adjust libhdb++cassandra library log level and the cassandra driver log level.
+    These configuration parameters are parameters of LibConfiguration Tango class or device property.
+    These parameters are named differently depending on the version of the library used (logging_enabled or logging_level and cassandra_driver_log_level)
 
 
 Rationale
