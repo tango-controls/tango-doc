@@ -1,4 +1,6 @@
 
+.. _hdb_archiving:
+
 HDB
 ====
 
