@@ -75,7 +75,7 @@ Updating documentation
    :command:`git checkout -b "TD-66-step-by-step-demo"`
 
 #. Edit a file (or create it if it doesn't exist) you would like to change. If you are following this tutorial for learning
-   please use this file: :file:`source/tutorials/example.rst`
+   please use this file: :file:`source/tutorials-and-howtos/tutorials/example.rst`
 
 #. Make sure that the file appears in a relevant toc-tree (in some :file:`index.rst` file or
    in :file:`source/contents.rst`). If you are now learning please check :file:`source/tutorials/index.rst`
