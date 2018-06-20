@@ -32,7 +32,7 @@ To install this binary package do the following:
 .. code-block:: console
 
     curl -O https://people.debian.org/~picca/libtango-java_9.2.5a-1_all.deb
-    sudo -i ./libtango-java_9.2.5a-1_all.deb
+    sudo dpkg -i ./libtango-java_9.2.5a-1_all.deb
 
 You will then have the Tango Java tools installed in /usr/bin e.g. /usr/bin/jive
 
