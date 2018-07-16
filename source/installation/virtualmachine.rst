@@ -18,7 +18,7 @@ This way, out of this virtual box, another great, sophisticated control system f
 TangoBox 9.2
 ------------
 
-**A new machine with Tango Controls 9.2 will be released, soon.** You may already try its preview:
+**A new machine with Tango Controls 9.2 is released.** You may try it:
 
 * Download 64 bit `Ubuntu virtual machine with TANGO 9.2 RC11 <http://ftp.esrf.fr/pub/cs/tango/TangoBox-9.2_RC11.ova>`_.
 
