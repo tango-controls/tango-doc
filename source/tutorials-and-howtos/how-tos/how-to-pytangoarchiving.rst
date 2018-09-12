@@ -1,4 +1,4 @@
-
+..  _how-to-pytangoarchiving:
 .. How-To try
 
 PyTangoArchiving Recipes

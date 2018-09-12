@@ -103,7 +103,7 @@ rst_epilog = """
 
 .. _`MySQL home page`: http://www.mysql.com
 
-.. _`Tango classes on-line documentation`: http://www.tango-controls.org/resources/dsc
+.. _`Tango classes on-line documentation`: http://www.tango-controls.org/developers/dsc
 
 .. _`omniORB home page`: http://omniorb.sourceforge.net
 
