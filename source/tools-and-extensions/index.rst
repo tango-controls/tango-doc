@@ -19,7 +19,7 @@ These tools are delivered as a part of Tango Controls core package.
    pogo/index
    jdraw/jdraw
    atk/index
-   logviewer/index
+   logviewer/logviewer
    qtango/qtango
    canone
 
