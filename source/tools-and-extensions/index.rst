@@ -68,3 +68,8 @@ Bindings
 Other tools
 -----------
 
+.. toctree::
+   :name: othertoolstoc
+   :maxdepth: 1
+
+   alarm/panic

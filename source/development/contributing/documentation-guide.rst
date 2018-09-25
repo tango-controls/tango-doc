@@ -56,7 +56,7 @@ There are references to doxygen C++ API documentation. You need to install
 After having Sphinx and Breathe installed you will be able to build the documentation:
 
 * go to (:command:`cd`) folder where you have cloned the repository
-* call :command:`spinhx-build source/ build`
+* call :command:`spinhx-build source build`
 
 This will build HTML output in the :file:`build` folder.Then you may use any web browser to view the documentation.
 

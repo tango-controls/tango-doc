@@ -675,8 +675,8 @@ HDB++ Configurator GUI is available for archiving configuration,
 management and diagnostics. It is written in Java. Refer to the
 documentation page for any additional information:
 
-`hdb++ configurator <http://www.esrf.eu/computing/cs/tango/tango_doc/tools_doc/hdb++-configurator/index.html>`_
-
+`HDB++ Configuration GUI documentation <http://www.esrf.eu/computing/cs/tango/tango_doc/tools_doc/hdb++-configurator/index.html>`_
+`Download GUI jar file <https://sourceforge.net/projects/tango-cs/files/tools/HDB%2B%2B/hdb_configurator-1.5a.jar/download>`_
 
 
 Database interface
@@ -2890,3 +2890,18 @@ schema CQL source (Cassandra)
     PRIMARY KEY ((att_conf_id ,period),data_time,data_time_us)
     )
     WITH comment='Time Statistics Table';
+
+
+Event Subscriber full documentation
+===================================
+
+Please, refer to the :download:`HDB++ Design and implementation .pdf file (page 42) <hdb-design-guidelines-18.pdf>`
+
+
+Configuration Manager full documentation
+========================================
+
+Please, refer to the :download:`HDB++ Design and implementation .pdf file (page 72) <hdb-design-guidelines-18.pdf>`
+
+
+

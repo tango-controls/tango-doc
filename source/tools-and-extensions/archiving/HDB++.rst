@@ -177,7 +177,7 @@ These libraries, written in C++, are addressed to the EventSubscriber Tango devi
 their main purpose is to provide *an abstraction layer*. Actually, some shared objects are available
 implementing the abstraction layer and the specific interface:
 
-|image2|
+|libs|
 
 Figure 3: HDB++ Device Servers design
 
@@ -298,7 +298,19 @@ ArchiverList Property of a ConfigurationManager device instance; in this
 case all the managed EventSubscriber devices belong to the same TANGO
 facility (srv-tango-srf.fcs.elettra.trieste.it:20000).
 
-More information is available in :ref:`hdbpp_service`.
+
+Presentations and papers
+--------------------------------------
+
+
+* :download:`HDB++ Meeting minute 2016-05-10 <HDB-plus-plus/20160510-hdb-meeting.pdf>`
+* :download:`HDB++: a new archiving system for TANGO (Proceedings of ICALEPCS2015) <HDB-plus-plus/proceedings_ICALEPCS2015.pdf>`
+* :download:`How Cassandra improves performances and availability of HDB++ Tango Archiving System (Proceedings of ICALEPCS2015) <HDB-plus-plus/proceedings_ICALEPCS2015_cassandra.pdf>`
+* :download:`HDB++: High availability with Cassandra - presentation from the 29th TANGO collaboration meeting <HDB-plus-plus/hdb_-_high_availability_with_cassandra.pptx>`
+* :download:`HDB++ Cassandra presentation at the ICALEPCS 2015 Tango workshop <HDB-plus-plus/hdbcassandra-tango-workshop.pptx>`
+
+
+More information is available in Administration -> Services section of this documentation under :ref:`hdbpp_service`.
 
 .. |image0| image:: HDB-plus-plus/image2.png
    :width: 6.26772in
@@ -306,6 +318,6 @@ More information is available in :ref:`hdbpp_service`.
 .. |image1| image:: HDB-plus-plus/image4.png
    :width: 6.26772in
    :height: 3.62500in
-.. |image2| image:: HDB-plus-plus/libs.png
+.. |libs| image:: HDB-plus-plus/libs.png
    :width: 6.26772in
    :height: 3.62500in
