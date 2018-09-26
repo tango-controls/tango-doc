@@ -17,7 +17,7 @@ Version 9.2.5 source patches
 ----------------------------
 
 omniORB 4.2 bug (described in `bug 794 <https://sourceforge.net/p/tango-cs/bugs/794/>`_) is fixed if you apply
-`this patch file <ftp.esrf.fr/pub/cs/tango/Patches/dii_race.patch>`_ to omniORB 4.2.
+`this patch file <http://ftp.esrf.fr/pub/cs/tango/Patches/dii_race.patch>`_ to omniORB 4.2.
 
 To apply this patch, copy the patch file to the directory where you extracted omniORB e.g. ~/omniORB-4.2.1, then type the command:
 

@@ -17,6 +17,11 @@ It also simulates distributed deployment by using Docker.
    :maxdepth: 2
    :caption: Contents:
 
+Download
+--------
+
+The latest version (RC11) of the TangoBox 9.2 can be downloaded from `here <http://ftp.esrf.fr/pub/cs/tango/TangoBox-9.2_RC11.ova>`_.
+
 What is installed
 -----------------
 

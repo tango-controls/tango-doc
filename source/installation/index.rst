@@ -11,6 +11,7 @@ Here you will find recipes on how to install the Tango Controls on various platf
     :maxdepth: 2
 
     minimum-deployment
+    source
     tango-on-linux
     tango-on-windows
     tango-on-raspberry-pi
@@ -18,6 +19,5 @@ Here you will find recipes on how to install the Tango Controls on various platf
     virtualmachine
     vm/tangobox-9.2
     pytango-and-taurus-on-windows
-    source
     binary_package
     patches

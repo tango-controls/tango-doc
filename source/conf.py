@@ -103,7 +103,7 @@ rst_epilog = """
 
 .. _`MySQL home page`: http://www.mysql.com
 
-.. _`Tango classes on-line documentation`: http://www.tango-controls.org/resources/dsc
+.. _`Tango classes on-line documentation`: http://www.tango-controls.org/developers/dsc
 
 .. _`omniORB home page`: http://omniorb.sourceforge.net
 
@@ -212,8 +212,8 @@ if True:  #
         'extra_css_files': [
            # 'https://media.readthedocs.org/css/sphinx_rtd_theme.css',
            # 'https://media.readthedocs.org/css/readthedocs-doc-embed.css',
-            '_static/tango_cs_theme.css',
-            '_static/meta_label_tango.css'
+            '_static/css/tango_cs_theme.css',
+            '_static/css/meta_label_tango.css'
         ],
     }
 

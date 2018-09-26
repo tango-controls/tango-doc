@@ -1,12 +1,14 @@
-.. Guide on how-to install Tango Controls on Linux
+.. How to install Tango on Linux
 
 Linux
 =======
 
 :audience:`administrators, developers`
 
+Debian + Ubuntu
+---------------
 Binary packages are available for Debian based systems in the official repositories.
-Use apt-get to install them e.g. to install the TANGO database and test device server:
+Use apt-get to install them e.g. to install the Tango database and test device server:
 
 .. code-block:: console
 
@@ -14,18 +16,41 @@ Use apt-get to install them e.g. to install the TANGO database and test device s
           sudo apt-get install tango-db tango-test
 
 
-Python binaries can be installed from the official repositories
+The above packages install the Tango core C++ libraries, database and TangoTest server. 
+You will also need the Java based tools like jive, astor etc.
+These are available with the :ref:`source code installation<source_code_install>`. 
+
+Another option is to install the latest binary Java debian package for Tango 9.2.5 
+(assuming you have installed Tango 9.2.5) from here: 
 
 .. code-block:: console
 
-       $> apt-get python-pytango
+    https://people.debian.org/~picca/libtango-java_9.2.5a-1_all.deb
+
+To install this binary package do the following:
+
+.. code-block:: console
+
+    curl -O https://people.debian.org/~picca/libtango-java_9.2.5a-1_all.deb
+    sudo dpkg -i ./libtango-java_9.2.5a-1_all.deb
+
+You will then have the Tango Java tools installed in /usr/bin e.g. /usr/bin/jive
+
+You might also want PyTango. Python binaries can be installed from the official repositories
 
 .. code-block:: console
 
        $> apt-get python3-pytango
 
+.. code-block:: console
 
-The following video will help you to install TANGO on Ubuntu and LinuxMint (by Mohamed Cherif Areour, in French with English sub-titles).
+       $> apt-get python-pytango
+
+
+Video
+-----
+
+The following video (by Mohamed Cherif Areour, in French with English sub-titles) shows you how to install Tango on Ubuntu and LinuxMint.
 
 ..  raw:: html
 
@@ -34,6 +59,8 @@ The following video will help you to install TANGO on Ubuntu and LinuxMint (by M
 |
 |
 
+Testing
+-------
 **How to test that everything was correctly installed**
 
 
@@ -46,9 +73,9 @@ For example:
        /usr/lib/tango/TangoTest test
 
 
-You will have "Ready to accept request".
+You should see "Ready to accept request".
 
-After you may go to JIVE and choose the following (see the img below):
+After you may go to :ref:`Jive<jive_manual>` and choose the following (see the image below):
 
 TangoTest (it is a :term:`server <device server>`)-> test (it is an :term:`instance <device server instance>`) -> TangoTest (it is a :term:`class <device class>`) -> sys/tg-test/1 (it is a :term:`device <device>`)
 

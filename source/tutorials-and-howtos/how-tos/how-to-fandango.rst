@@ -482,7 +482,7 @@ Krikun - Shell-like_ data processing ).**
 .. definitions
   ------------
 .. _github: https://github.com/tango-controls/fandango/tree/documentation/doc/recipes
-.. _PyTangoArchiving: http://www.tango-controls.org/resources/howto/pytangoarchiving
+.. _PyTangoArchiving: how-to-pytangoarchiving.html
 .. _PyPLC: http://plone.tango-controls.org/Members/srubio/pyplc-device-server
 .. _SimulatorDS: https://github.com/tango-controls/simulatords
 .. _PANIC: https://github.com/tango-controls/PANIC
