@@ -4,128 +4,26 @@
    contain the root `toctree` directive.
 
 .. _mambo_manual:
-Welcome to Mambo's documentation!
-=================================
+Mambo User Manual
+=================
 
+:audience:`users, administrators`
 Contents:
 
-.. toctree::
-   :maxdepth: 2
+.. rubric:: Authors:
 
-
-
-|image0|
-
-ICA Group
-
-
-**Mambo User Manual**
-
-+----------------------+---------------+---------------+----------------+------------------+--------------------------------------+-------------+
-| **Diffusion date**   | **Writer**    | **Auditor**   | **Approver**   | **Approver’s**   | **Modifications**                    | **Index**   |
-|                      |               |               |                |                  |                                      |             |
-|                      |               |               |                | **stamp**        |                                      |             |
-+======================+===============+===============+================+==================+======================================+=============+
-| 2005/10/26           | L.Claisse     | M.Ounsy       | A.Buteau       | A.B.             | Creation                             | 1.0         |
-+----------------------+---------------+---------------+----------------+------------------+--------------------------------------+-------------+
-| 2005/11/17           | L.Claisse     | M.Ounsy       | A.Buteau       | A.B.             | Added multi-AC/VC and file system    | 1.1         |
-+----------------------+---------------+---------------+----------------+------------------+--------------------------------------+-------------+
-| 2006/11/17           | R.Girardot    | M.Ounsy       | A.Buteau       | A.B.             | Screenshots updated                  | 1.2         |
-+----------------------+---------------+---------------+----------------+------------------+--------------------------------------+-------------+
-| 2012/02/15           | A. Fourneau   | G.Abeillé     | A.Buteau       | A.B.             | Added tdb long term                  | 2.1         |
-+----------------------+---------------+---------------+----------------+------------------+--------------------------------------+-------------+
-| 2018/02/08           | M.Thiam       | R.Girardot    | A.Buteau       | A.B.             | -  Document template updated         | 3.0         |
-|                      |               |               |                |                  |                                      |             |
-|                      |               |               |                |                  | -  Screenshots updated               |             |
-|                      |               |               |                |                  |                                      |             |
-|                      |               |               |                |                  | -  Added some missing descriptions   |             |
-+----------------------+---------------+---------------+----------------+------------------+--------------------------------------+-------------+
-|                      |               |               |                |                  |                                      |             |
-+----------------------+---------------+---------------+----------------+------------------+--------------------------------------+-------------+
-
-Diffusion: for information
-
-Receivers: Any archiving User
-
-Table of content:
-
-`1. Introduction <#introduction>`__
-
-`2. Application’s context: Historic and Temporary archiving <#applications-context-historic-and-temporary-archiving>`__
-
-`3. Application’s description and goals <#applications-description-and-goals>`__
-
-`3.1 Application’s goals <#applications-goals>`__
-
-`3.2 A first look at Mambo <#a-first-look-at-mambo>`__
-
-`4 Account manager <#account-manager>`__
-
-`4.1 Creating a new account <#creating-a-new-account>`__
-
-`4.2 Deleting an existing Account <#deleting-an-existing-account>`__
-
-`4.3 Launching application with an existing account <#launching-application-with-an-existing-account>`__
-
-`5 Control archiving <#control-archiving>`__
-
-`5.1 Creating/modifying an AC <#creating-modifying-an-ac>`__
-
-`5.2 The opened ACs menu <#the-opened-acs-menu>`__
-
-`5.3 Starting/Stopping archiving <#starting-stopping-archiving>`__
-
-`5.3.1 The Current Archiving Configuration detail panel <#the-current-archiving-configuration-detail-panel>`__
-
-`5.3.2 Starting/Stopping archiving on an AC <#starting-stopping-archiving-on-an-ac>`__
-
-`5.4 Displaying an AC <#displaying-an-ac>`__
-
-`5.4.1 The Current Archiving Configuration <#the-current-archiving-configuration>`__
-
-`5.4.2 The Archiving assessment window <#the-archiving-assessment-window>`__
-
-`5.5 Saving/Loading an AC <#saving-loading-an-ac>`__
-
-`5.5.1 Saving an individual AC <#saving-an-individual-ac>`__
-
-`5.5.2 Saving all opened ACs <#saving-all-opened-acs>`__
-
-`5.6 Transfer to VC <#transfer-to-vc>`__
-
-`6 Exploit archived data <#exploit-archived-data>`__
-
-`6.1 Creating/modifying a VC <#creating-modifying-a-vc>`__
-
-`6.2 The opened VCs menu <#the-opened-vcs-menu>`__
-
-`6.3 Displaying a VC <#displaying-a-vc>`__
-
-`6.4 Saving/Loading a VC <#saving-loading-a-vc>`__
-
-`6.5 Using the Variations functionality <#using-the-variations-functionality>`__
-
-`7 Options <#options>`__
-
-`7.1 Application’s history save/load options <#applications-history-save-load-options>`__
-
-`7.2 AC options <#ac-options>`__
-
-`7.3 VC options <#vc-options>`__
-
-`7.4 General options <#general-options>`__
-
-`8 The Mambo toolbar <#the-mambo-toolbar>`__
+*L.Claisse, R.Girardot, M.Ounsy, A.Buteau, M.Thiam, A. Fourneau, G.Abeillé* -
+`Soleil <https://www.synchrotron-soleil.fr/en>`_
 
 
 Introduction
-============
+------------
 
 This document is an end-user guide to using the Mambo application, and a
 brief developer-oriented presentation of the application’s architecture.
 
 Application’s context: Historic and Temporary archiving
-=======================================================
+-------------------------------------------------------
 
     The goal is the automatic archiving of the values of a set of Tango
     Attributes, in a given time range.
@@ -166,10 +64,10 @@ Application’s context: Historic and Temporary archiving
     HDB/TDB to be displayed and saved in a file
 
 Application’s description and goals
-===================================
+-----------------------------------
 
 Application’s goals
--------------------
+~~~~~~~~~~~~~~~~~~~
 
     Mambo allows the user to define *configurations* that describe the
     archiving and exploitation for a group of attributes. Those
@@ -185,7 +83,7 @@ Application’s goals
 
 
 A first look at Mambo
----------------------
+~~~~~~~~~~~~~~~~~~~~~
 
     |image1|
 
@@ -221,7 +119,7 @@ A first look at Mambo
 
 
 Account manager
-===============
+---------------
 
     The Mambo Account Manager is here to manage accounts, which means:
 
@@ -252,7 +150,7 @@ users to have their own application configuration and history.
     or deleting an existing one, for example).
 
 Creating a new account
-----------------------
+~~~~~~~~~~~~~~~~~~~~~~
 
     To create a new account, click on the |image6| button (at the bottom
     left of the panel). A new dialog will appear, as following.
@@ -273,7 +171,7 @@ Creating a new account
     nothing is done.
 
 Deleting an existing Account
-----------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     To delete an existing account, first select the account in the
     account Selection Combo Box, as following:
@@ -296,7 +194,7 @@ Deleting an existing Account
     Figure :Show account path
 
 Launching application with an existing account
-----------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     To launch application with an existing account, first select the
     account in the account Selection Combo Box, as presented in *Figure 4: Account selection*.
@@ -308,7 +206,7 @@ Launching application with an existing account
 
 
 Control archiving
-=================
+-----------------
 
     This section deals with controlling archiving of Tango attributes
     through **Archiving Configurations** (henceforth **AC**).
@@ -331,7 +229,7 @@ Control archiving
 
 
 Creating/modifying an AC
-------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~
 
     The creation or modification of an AC is done the same way, using
     the New/Modify button respectively. We will see how to load an AC
@@ -510,7 +408,7 @@ Creating/modifying an AC
 
 
 The opened ACs menu
--------------------
+~~~~~~~~~~~~~~~~~~~
 
     Mambo can have several opened ACs at once, even if only one is
     displayed on screen at a time. A drop-down menu allows the user to
@@ -546,10 +444,10 @@ The opened ACs menu
 
 
 Starting/Stopping archiving
----------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The Current Archiving Configuration detail panel
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
     Attributes are displayed differently in selection trees, with
     respect to their current archiving status. The display shows their
@@ -568,7 +466,7 @@ The Current Archiving Configuration detail panel
        on, bicolor bulbs:\ |image25|
 
 Starting/Stopping archiving on an AC
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
     *Starting archiving*:
 
@@ -590,10 +488,10 @@ Starting/Stopping archiving on an AC
 
 
 Displaying an AC
-----------------
+~~~~~~~~~~~~~~~~
 
 The Current Archiving Configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 |image26|
 
@@ -611,7 +509,7 @@ Figure 12: Detail of the current AC
     command.
 
 The Archiving assessment window
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 |image27|
 
@@ -625,10 +523,10 @@ Figure 13: Global view of all the modes of an AC
     compared to the modes values found in HDB (resp. TDB).
 
 Saving/Loading an AC
---------------------
+~~~~~~~~~~~~~~~~~~~~
 
 Saving an individual AC
-~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^
 
     Archiving Configurations are saved /loaded as XML files, with the
     .ac file extension.
@@ -656,7 +554,7 @@ Saving an individual AC
     log panel.
 
 Saving all opened ACs
-~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^
 
     It is possible to save all opened ACs. Only modified ACs will be
     saved (i.e. the ACs that has a “red star”).
@@ -678,7 +576,7 @@ Saving all opened ACs
     the same thing for opened VCs.
 
 Transfer to VC
---------------
+~~~~~~~~~~~~~~
 
     This functionality is used to quickly create a VC on the same
     attributes as a given AC (for example, when the user wants to
@@ -701,7 +599,7 @@ Transfer to VC
 
 
 Exploit archived data
-=====================
+---------------------
 
     This section deals with controlling exploitation of archived
     attributes (HDB/TDB) through **View Configurations** (henceforth
@@ -729,7 +627,7 @@ Figure 14: The VC panel
 
 
 Creating/modifying a VC
------------------------
+~~~~~~~~~~~~~~~~~~~~~~~
 
     Creation or modification of a VC is done the same way, using the
     New/Modify button respectively. We will see how to load a VC later.
@@ -851,7 +749,7 @@ When the validation is over, the VC is displayed in the application’s VC
 panel.
 
 The opened VCs menu
--------------------
+~~~~~~~~~~~~~~~~~~~
 
     The VCs menu opens in the same way as the ACs menu.
 
@@ -860,7 +758,7 @@ The opened VCs menu
 
 
 Displaying a VC
----------------
+~~~~~~~~~~~~~~~
 
 |image35|
 
@@ -900,7 +798,7 @@ This panel shows the results of the Extraction of Boolean spectra.
 
 
 Saving/Loading a VC
--------------------
+~~~~~~~~~~~~~~~~~~~
 
     The user does the same thing as in ACs to save or load VC.
 
@@ -908,7 +806,7 @@ Saving/Loading a VC
 
 
 Using the Variations functionality
-----------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     The Variations functionality is a filter which comes between a VC
     and the final plot display.
@@ -939,7 +837,7 @@ Figure 25: The "variations" attributes selection window
 Figure 26: The View selected attributes
 
 Options
-=======
+-------
 
 Mambo manages global options. Those options are saved on application
 shutdown, and loaded on startup.
@@ -947,7 +845,7 @@ shutdown, and loaded on startup.
 The Options menu is located in the Menu bar: ToolsOptions.
 
 Application’s history save/load options
----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     These options define whether Mambo has a history, i.e. a persistent
     state when closed/reopened.
@@ -963,7 +861,7 @@ Figure : The history options
 
 
 AC options
-----------
+~~~~~~~~~~
 
     Options for all Archiving Configurations, the user can define:
 
@@ -990,7 +888,7 @@ Figure : The AC options
 
 
 VC options
-----------
+~~~~~~~~~~
 
     These are the options for all View Configurations. The user can
     define:
@@ -1011,7 +909,7 @@ Figure : The VC options
 
 
 General options
----------------
+~~~~~~~~~~~~~~~
 
     The user can define:
 
@@ -1026,7 +924,7 @@ Figure : General options
 
 
 The Mambo toolbar
-=================
+-----------------
 
     The toolbar is located under the menu bar, and consists mainly of a
     set of shortcuts to often used functionalities.
@@ -1056,20 +954,20 @@ Figure 31: The Mambo toolbar
 
 
 Appendices
-==========
+----------
 
 
 Lexicon
--------
+~~~~~~~
 
 Archiving
-~~~~~~~~~
+^^^^^^^^^
 
 The action of storing in database the values of Tango attributes in a
 time range, each value being associated with a time stamp.
 
 Archiving mode
-~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^
 
 An archiving mode is a rule defining when an attribute has to be
 archived.
@@ -1082,7 +980,7 @@ archiving when the attribute’s value meets certain conditions, but they
 can only be used in association with the Periodic archiving mode.
 
 AC
-~~
+^^
 
 Short for an Archiving Configuration
 
@@ -1090,7 +988,7 @@ Describes archiving for a set of attributes, by associating a set of
 archiving modes to each of its attributes.
 
 VC
-~~
+^^
 
 Short for a View Configuration.
 
@@ -1098,14 +996,14 @@ Describes plot properties for a set of attributes, by associating a set
 of plot properties to each of its attributes.
 
 HDB
-~~~
+^^^
 
 Short for the Historic Database.
 
 Attributes values archived in HDB are stored forever.
 
 TDB
-~~~
+^^^
 
 Short for the Temporary Database.
 
@@ -1116,7 +1014,7 @@ The TDB is regularly purged and the Interval of the purge is defined by
 the data base administrator and the system administrator.
 
 Quick Save/Quick load
-~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^
 
 The action of saving (resp. loading) to a default file is Called “quick”
 because no user interaction to choose a directory/file name is required.
