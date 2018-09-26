@@ -25,10 +25,10 @@ brief developer-oriented presentation of the application’s architecture.
 Application’s context: Historic and Temporary archiving
 -------------------------------------------------------
 
-    The goal is the automatic archiving of the values of a set of Tango
-    Attributes, in a given time range.
+The goal is the automatic archiving of the values of a set of Tango
+Attributes, in a given time range.
 
-    In this time range, the value of an attribute is archived:
+In this time range, the value of an attribute is archived:
 
 -  Every [*given time interval*]
 
@@ -36,32 +36,32 @@ Application’s context: Historic and Temporary archiving
 
 -  When the attribute’s value meets [*given condition on attribute’s value*],
 
-    where [*given time interval*] and [*given condition on attribute’s value*] are user-defined for each attribute (individually or for a
-    group of attributes).
+where [*given time interval*] and [*given condition on attribute’s value*] are user-defined for each attribute (individually or for a
+group of attributes).
 
-    Each attribute value is associated with a time stamp, representing
-    the time when the attribute value was read. This time stamp is
-    archived as well.
+Each attribute value is associated with a time stamp, representing
+the time when the attribute value was read. This time stamp is
+archived as well.
 
-    Attributes can be archived in two distinct databases:
+Attributes can be archived in two distinct databases:
 
 -  The Historical Data Base (**HDB** henceforth): attributes values
-       are stored forever.
+   are stored forever.
 
 -  The Temporary Data Base (**TDB** henceforth): every [*given deletion time*], the oldest attributes values records are
-       deleted. The TDB is regularly purged. The Interval of this purge
-       is defined by the data base administrator and the system
-       administrator.
+   deleted. The TDB is regularly purged. The Interval of this purge
+   is defined by the data base administrator and the system
+   administrator.
 
-    When an attribute is “being **archived**\ ”, it means that every
-    [*base time unit*], the archiving device tests whether the current
-    value of the attribute has to be stored in HDB (resp. TDB).
+When an attribute is “being **archived**\ ”, it means that every
+[*base time unit*], the archiving device tests whether the current
+value of the attribute has to be stored in HDB (resp. TDB).
 
-    If the test is positive, a record is added in the table for this
-    attribute.
+If the test is positive, a record is added in the table for this
+attribute.
 
-    Later, those values can be **exploited**. It can be selected from
-    HDB/TDB to be displayed and saved in a file
+Later, those values can be **exploited**. It can be selected from
+HDB/TDB to be displayed and saved in a file
 
 Application’s description and goals
 -----------------------------------
@@ -69,12 +69,12 @@ Application’s description and goals
 Application’s goals
 ~~~~~~~~~~~~~~~~~~~
 
-    Mambo allows the user to define *configurations* that describe the
-    archiving and exploitation for a group of attributes. Those
-    *configurations* can be saved as files and modified.
+Mambo allows the user to define *configurations* that describe the
+archiving and exploitation for a group of attributes. Those
+*configurations* can be saved as files and modified.
 
-    Mambo is thus naturally divided (both in functionalities and
-    display) in two parts:
+Mambo is thus naturally divided (both in functionalities and
+display) in two parts:
 
 -  The archiving control part.
 
@@ -90,38 +90,37 @@ A first look at Mambo
     Figure 1: General view of Mambo
 
 -  The Archiving Control panel is where the user controls the archiving
-       of Tango attributes in HDB/TDB.
+   of Tango attributes in HDB/TDB.
 
-    To do so, the user can create/modify archiving configurations, and
-    Start/Stop those configurations.
+   To do so, the user can create/modify archiving configurations, and
+   Start/Stop those configurations.
 
-    An **Archiving Configuration** is a list of attributes to be
-    archived, with a list of archiving parameters for each attribute.
+   An **Archiving Configuration** is a list of attributes to be
+   archived, with a list of archiving parameters for each attribute.
 
-    Users can also start/stop the archiving of some attributes in the
-    configuration, (see 5.3.2 *Starting/Stopping archiving on an AC*).
+   Users can also start/stop the archiving of some attributes in the
+   configuration, (see 5.3.2 *Starting/Stopping archiving on an AC*).
 
 -  The Data Exploitation panel is where the user exploits the previously
-       stored data, mainly displaying curves and extracting raw data
-       from HDB/TDB.
+   stored data, mainly displaying curves and extracting raw data
+   from HDB/TDB.
 
-    He does so by creating/modifying **View Configurations**, and
-    calling **View** **Stop** on those configurations.
+   He does so by creating/modifying **View Configurations**, and
+   calling **View** **Stop** on those configurations.
 
-    A **View Configuration** is a list of attributes to be displayed,
-    with a list of displaying parameters for each attribute.
+   A **View Configuration** is a list of attributes to be displayed,
+   with a list of displaying parameters for each attribute.
 
 -  The Menu and the Tool bar are for actions shortcuts and application’s
-       options.
+   options.
 
-    Each panel will be detailed in its own subsection.
-
+   Each panel will be detailed in its own subsection.
 
 
 Account manager
 ---------------
 
-    The Mambo Account Manager is here to manage accounts, which means:
+The Mambo Account Manager is here to manage accounts, which means:
 
 -  Creating a new account.
 
@@ -137,57 +136,57 @@ users to have their own application configuration and history.
 
     Figure 2: Mambo Account Manager
 
-    The above figure presents the account Manager Interface, at
-    application start. With this manager, user can create a new account,
-    or delete or use an existing one.
+The above figure presents the account Manager Interface, at
+application start. With this manager, user can create a new account,
+or delete or use an existing one.
 
-    To quit the application, simply click on |image3| or |image4|
-    button.
+To quit the application, simply click on |image3| or |image4|
+button.
 
-    Existing accounts are listed in the account Selection Combo Box,
-    which you can be reloaded by clicking on |image5| button (if you
-    think that someone could have modified it by creating a new account
-    or deleting an existing one, for example).
+Existing accounts are listed in the account Selection Combo Box,
+which you can be reloaded by clicking on :guilabel:`Reload account list` button (if you
+think that someone could have modified it by creating a new account
+or deleting an existing one, for example).
 
 Creating a new account
 ~~~~~~~~~~~~~~~~~~~~~~
 
-    To create a new account, click on the |image6| button (at the bottom
-    left of the panel). A new dialog will appear, as following.
+To create a new account, click on the :guilabel:`New Account` button (at the bottom
+left of the panel). A new dialog will appear, as following.
 
     |image7|
 
     Figure 3: Creating a new account
 
-    In this new dialog, you will have to enter the name of your new
-    account and the path of the application working directory for this
-    account. If you prefer, you can browse for the path by clicking on
-    the |image8| button. Then, a classic browsing dialog will be
-    displayed, in which you can choose the directory. When both fields
-    (“Name” and “Path”) are fulfilled, click on |image9| button to
-    validate your new account, which will be automatically added in the
-    list of existing accounts. If you click on |image10| or |image11|
-    button, you go back to the first dialog, as presented in, and
-    nothing is done.
+In this new dialog, you will have to enter the name of your new
+account and the path of the application working directory for this
+account. If you prefer, you can browse for the path by clicking on
+the :guilabel:`Browse..`button. Then, a classic browsing dialog will be
+displayed, in which you can choose the directory. When both fields
+(“Name” and “Path”) are fulfilled, click on :guilabel:`Ok` button to
+validate your new account, which will be automatically added in the
+list of existing accounts. If you click on |image10| or |image11|
+button, you go back to the first dialog, as presented in, and
+nothing is done.
 
 Deleting an existing Account
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    To delete an existing account, first select the account in the
-    account Selection Combo Box, as following:
+To delete an existing account, first select the account in the
+account Selection Combo Box, as following:
 
     |image12|
 
     Figure 4: Account selection
 
-    When the account is selected, click on |image13| button to delete
-    it. If you do it, you won’t be able to use this account any more
-    (and no other user either), because the account is definitely
-    removed from list. The account deletion doesn’t involve the
-    corresponding directory (neither its content) deletion.
+When the account is selected, click on |image13| button to delete
+it. If you do it, you won’t be able to use this account any more
+(and no other user either), because the account is definitely
+removed from list. The account deletion doesn’t involve the
+corresponding directory (neither its content) deletion.
 
-    If you want to see your account path, you can check “Show account
-    path”.
+If you want to see your account path, you can check :guilabel:`Show account
+path`.
 
     |image14|
 
@@ -196,23 +195,23 @@ Deleting an existing Account
 Launching application with an existing account
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    To launch application with an existing account, first select the
-    account in the account Selection Combo Box, as presented in *Figure 4: Account selection*.
+To launch application with an existing account, first select the
+account in the account Selection Combo Box, as presented in *Figure 4: Account selection*.
 
-    Then, click on |image15| button, and you will reach the application
-    main panel configured with this account (the account name is
-    displayed in frame title).
+Then, click on :guilabel:`Ok` button, and you will reach the application
+main panel configured with this account (the account name is
+displayed in frame title).
 
 
 
 Control archiving
 -----------------
 
-    This section deals with controlling archiving of Tango attributes
-    through **Archiving Configurations** (henceforth **AC**).
+This section deals with controlling archiving of Tango attributes
+through **Archiving Configurations** (henceforth **AC**).
 
-    An AC describes which attributes to archive and how, and consists
-    of:
+An AC describes which attributes to archive and how, and consists
+of:
 
 -  General information (when the AC was created …).
 
@@ -220,7 +219,7 @@ Control archiving
 
 -  For each attribute, a set of HDB/TDB archiving modes.
 
-    ACs is accessed/used in the AC panel:
+ACs is accessed/used in the AC panel:
 
     |image16|
 
