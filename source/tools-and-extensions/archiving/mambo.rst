@@ -45,15 +45,15 @@ archived as well.
 
 Attributes can be archived in two distinct databases:
 
--  The Historical Data Base (**HDB** henceforth): attributes values
+-  The Historical Data Base (:term:`HDB` henceforth): attributes values
    are stored forever.
 
--  The Temporary Data Base (**TDB** henceforth): every [*given deletion time*], the oldest attributes values records are
+-  The Temporary Data Base (:term:`TDB` henceforth): every [*given deletion time*], the oldest attributes values records are
    deleted. The TDB is regularly purged. The Interval of this purge
    is defined by the data base administrator and the system
    administrator.
 
-When an attribute is “being **archived**\ ”, it means that every
+When an attribute is “being **archived**”, it means that every
 [*base time unit*], the archiving device tests whether the current
 value of the attribute has to be stored in HDB (resp. TDB).
 
@@ -85,9 +85,9 @@ display) in two parts:
 A first look at Mambo
 ~~~~~~~~~~~~~~~~~~~~~
 
-    |image1|
+|image1|
 
-    Figure 1: General view of Mambo
+Figure 1: General view of Mambo
 
 -  The Archiving Control panel is where the user controls the archiving
    of Tango attributes in HDB/TDB.
@@ -95,7 +95,7 @@ A first look at Mambo
    To do so, the user can create/modify archiving configurations, and
    Start/Stop those configurations.
 
-   An **Archiving Configuration** is a list of attributes to be
+   An **Archiving Configuration** (:term:`AC`) is a list of attributes to be
    archived, with a list of archiving parameters for each attribute.
 
    Users can also start/stop the archiving of some attributes in the
@@ -105,7 +105,7 @@ A first look at Mambo
    stored data, mainly displaying curves and extracting raw data
    from HDB/TDB.
 
-   He does so by creating/modifying **View Configurations**, and
+   He does so by creating/modifying **View Configurations** (:term:`VC`), and
    calling **View** **Stop** on those configurations.
 
    A **View Configuration** is a list of attributes to be displayed,
@@ -114,7 +114,7 @@ A first look at Mambo
 -  The Menu and the Tool bar are for actions shortcuts and application’s
    options.
 
-   Each panel will be detailed in its own subsection.
+Each panel will be detailed in its own subsection.
 
 
 Account manager
@@ -132,9 +132,9 @@ An account is associated with a directory, in which are stored
 application setup and history. Having various accounts allows different
 users to have their own application configuration and history.
 
-    |image2|
+|image2|
 
-    Figure 2: Mambo Account Manager
+Figure 2: Mambo Account Manager
 
 The above figure presents the account Manager Interface, at
 application start. With this manager, user can create a new account,
@@ -154,9 +154,9 @@ Creating a new account
 To create a new account, click on the :guilabel:`New Account` button (at the bottom
 left of the panel). A new dialog will appear, as following.
 
-    |image7|
+|image7|
 
-    Figure 3: Creating a new account
+Figure 3: Creating a new account
 
 In this new dialog, you will have to enter the name of your new
 account and the path of the application working directory for this
@@ -175,9 +175,9 @@ Deleting an existing Account
 To delete an existing account, first select the account in the
 account Selection Combo Box, as following:
 
-    |image12|
+|image12|
 
-    Figure 4: Account selection
+Figure 4: Account selection
 
 When the account is selected, click on |image13| button to delete
 it. If you do it, you won’t be able to use this account any more
@@ -188,9 +188,9 @@ corresponding directory (neither its content) deletion.
 If you want to see your account path, you can check :guilabel:`Show account
 path`.
 
-    |image14|
+|image14|
 
-    Figure :Show account path
+Figure :Show account path
 
 Launching application with an existing account
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -221,11 +221,11 @@ of:
 
 ACs is accessed/used in the AC panel:
 
-    |image16|
+|image16|
 
-    Figure 6: The AC panel
+Figure 6: The AC panel
 
-
+.. _creating_modifying_an_ac:
 
 Creating/modifying an AC
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -234,15 +234,16 @@ The creation or modification of an AC is done the same way, using
 the :guilabel:`New`/:guilabel:`Modify` button respectively. We will see how to load an AC
 later.
 
-*Step 1: AC general properties*
+Step 1: AC general properties
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 -  Click the New/Modify button in the AC actions panel
 
 -  The following dialog appears
 
-    |image17|
+   |image17|
 
-    Figure : Step1, general properties
+   Figure 7: Step1, general properties
 
 -  You can choose a name for the AC. This field isn’t mandatory but it
    is recommended to fill it, to better identify your different ACs
@@ -251,43 +252,44 @@ later.
 -  The creation and update dates are filled or modified automatically
    upon saving an AC. Click next
 
-*Step 2: Select the AC attributes*
+Step 2: Select the AC attributes
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 There are 2 ways to select the AC attributes. The user can choose a
 selection method in the Options.
 
 *Step 2, method 1:*
 
-    |image18|
+|image18|
 
-    Figure 8: Step 2, select AC attributes (standard method)
+Figure 8: Step 2, select AC attributes (standard method)
 
 -  The left tree lists the Tango attributes. The right tree represents
    the current attributes of the edited AC. Both trees have the same
    structure of TANGO\_HOST/Domains/Families/Members/Attributes.
 
-.. warning:: The left tree listing the Tango attributes is initially
-   only loaded up to Members level to avoid overloading. The attributes
-   are loaded upon user selection of a Member (device) node.
+   .. warning:: The left tree listing the Tango attributes is initially
+      only loaded up to Members level to avoid overloading. The attributes
+      are loaded upon user selection of a Member (device) node.
 
 -  Adding attributes to the current AC:
 
    -  Select a tree node to expand it.
 
    -  Select attributes in the left tree then press the right arrow to
-          add them to the current AC.
+      add them to the current AC.
 
    -  Select a node in the left tree then press the right arrow to add
-          all attributes under this node to the current AC (only works
-          if those attributes were loaded).
+      all attributes under this node to the current AC (only works
+      if those attributes were loaded).
 
 -  Removing attributes from the current AC:
 
    -  Select attributes in the right tree then press the red X to remove
-          them from the current AC.
+      them from the current AC.
 
    -  Select a node in the right tree then press the red X to remove all
-          attributes under this node from the current AC.
+      attributes under this node from the current AC.
 
 -  Using “Match” to filter attributes:
 
@@ -302,9 +304,9 @@ selection method in the Options.
 
 *Step 2, method 2:*
 
-   |image19|
+|image19|
 
-   Figure 9: Step 2, select AC attributes (alternate method)
+Figure 9: Step 2, select AC attributes (alternate method)
 
 -  Attribute selection and automatic attributes adding:
 
@@ -341,11 +343,12 @@ selection method in the Options.
    :guilabel:`Reverse for selected lines` to reverse the checked/unchecked
    status of all selected lines.
 
-*Step 3: Set the AC attributes properties*
+Step 3: Set the AC attributes properties
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-   |image20|
+|image20|
 
-   Figure 10: Step 3, selecting archiving modes
+Figure 10: Step 3, selecting archiving modes
 
 -  A general description of the properties setting process:
 
@@ -404,6 +407,7 @@ selection method in the Options.
    When the validation is over, the AC is displayed in the
    application’s AC panel.
 
+.. _the_opened_ac_menu:
 
 The opened ACs menu
 ~~~~~~~~~~~~~~~~~~~
@@ -517,6 +521,8 @@ This window sums up the current Archiving Configuration in two tabs
 For each attribute contained in the current AC, its archiving modes
 are detailed, and if the attribute is being archived, can be
 compared to the modes values found in HDB (resp. TDB).
+
+.. _saving_loading_an_ac:
 
 Saving/Loading an AC
 ~~~~~~~~~~~~~~~~~~~~
@@ -693,7 +699,7 @@ Figure 17: Step 1, Y1 axis properties
 
 |image32|
 
-Figure : Step 1, Y2 axis properties
+Figure 18: Step 1, Y2 axis properties
 
 -  The user can define the right vertical axis properties (title, scale,
    …).
@@ -710,16 +716,16 @@ selection, except for two differences:
 
    |image33|
 
-   Figure : Step 2, selecting attributes
+   Figure 19: Step 2, selecting attributes
 
 -  The left tree lists the HDB (resp. TDB) attributes. The right tree
    represents the current attributes of the edited VC. Both trees have
    the same structure of HDB (resp.
    TDB)/Domains/Families/Members/Attributes.
 
-    .. warning:: Unlike AC trees, VC trees are initially loaded to the
-       Attributes level since archived attributes are a small subset of all
-       Tango attributes.
+   .. warning:: Unlike AC trees, VC trees are initially loaded to the
+      Attributes level since archived attributes are a small subset of all
+      Tango attributes.
 
 -  Consequently, the match functionality works up to attributes names:
    one can use a D/F/M/A criterion.
@@ -727,14 +733,14 @@ selection, except for two differences:
 Step 3: Set the VC attributes properties
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  General flow
+**General flow**
 
-   To set the VC attributes, user can refer to the ACs, it’s the same
-   process.
+To set the VC attributes, user can refer to the ACs, it’s the same
+process.
 
-   |image34|
+|image34|
 
-   Figure 20: Set the vc attributes
+Figure 20: Set the vc attributes
 
 Step 4: Controls upon VC validation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -752,7 +758,7 @@ The opened VCs menu
 
 The VCs menu opens in the same way as the ACs menu.
 
-See 5.2 *The opened ACs menu*
+See :ref:`The opened ACs menu <the_opened_ac_menu>`
 
 Displaying a VC
 ~~~~~~~~~~~~~~~
@@ -761,24 +767,24 @@ Displaying a VC
 
 Figure 21: The current VC panel
 
-    This panel represents the current View Configuration; a tree lists
-    all the VC’s attributes.
+This panel represents the current View Configuration; a tree lists
+all the VC’s attributes.
 
-    To view specific parameters, the user must use the “Modify” button.
+To view specific parameters, the user must use the “Modify” button.
 
-    Thanks to the docking, users can see two generals information.
+Thanks to the docking, users can see two generals information.
 
 |image36|
 
 Figure 22: Extraction of Number and Boolean Scalars
 
-    This panel shows the attribute’s extractions.
+This panel shows the attribute’s extractions.
 
-    If the user wants to extract attributes, he must select his time
-    range then press to the button refresh\ |image37|.
+If the user wants to extract attributes, he must select his time
+range then press to the button refresh |image37|.
 
-    If he wants to stop the refreshing he will press to the button
-    cancel\ |image38|.
+If he wants to stop the refreshing he will press to the button
+cancel |image38|.
 
 |image39|
 
@@ -793,41 +799,40 @@ Figure 24: Extraction of Boolean Spectra
 This panel shows the results of the Extraction of Boolean spectra.
 
 
-
 Saving/Loading a VC
 ~~~~~~~~~~~~~~~~~~~
 
-    The user does the same thing as in ACs to save or load VC.
+The user does the same thing as in ACs to save or load VC.
 
-    See 5.5 *Saving/Loading an AC*.
+See :ref:`Saving/Loading an AC<saving_loading_an_ac>`.
 
 
 Using the Variations functionality
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    The Variations functionality is a filter which comes between a VC
-    and the final plot display.
+The Variations functionality is a filter which comes between a VC
+and the final plot display.
 
 |image41|
 
 Figure 25: The "variations" attributes selection window
 
-    The Variations window lists the VC attributes and their “variation”,
-    which is defined as the difference between the min and max values in
-    the VC’s date range.
+The Variations window lists the VC attributes and their “variation”,
+which is defined as the difference between the min and max values in
+the VC’s date range.
 
-    The user can then select attributes which variations that seem
-    abnormal or interesting, and only plot those attributes.
+The user can then select attributes which variations that seem
+abnormal or interesting, and only plot those attributes.
 
-    The Variations window is made of two different tables:
+The Variations window is made of two different tables:
 
 -  The first one shows for every attribute its minimum and maximum
-       values, and its variation.
+   values, and its variation.
 
 -  The second one gives every attribute and its balanced variation.
 
-    Select lines in the left table, and press “View Selected Attributes”
-    to display the filtered plot.
+Select lines in the left table, and press :guilabel:`View Selected Attributes`
+to display the filtered plot.
 
 |image42|
 
@@ -839,42 +844,41 @@ Options
 Mambo manages global options. Those options are saved on application
 shutdown, and loaded on startup.
 
-The Options menu is located in the Menu bar: ToolsOptions.
+The Options menu is located in the Menu bar: :guilabel:`ToolsOptions`.
 
 Application’s history save/load options
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    These options define whether Mambo has a history, i.e. a persistent
-    state when closed/reopened.
+These options define whether Mambo has a history, i.e. a persistent
+state when closed/reopened.
 
-    If “Yes” is checked, a XML History file will be saved in Mambo’s
-    workspace, and on next start up the current AC and VC will be
-    loaded.
+If :guilabel:`Yes` is checked, a XML History file will be saved in Mambo’s
+workspace, and on next start up the current AC and VC will be
+loaded.
 
-    |image43|
+|image43|
 
 Figure : The history options
-
 
 
 AC options
 ~~~~~~~~~~
 
-    Options for all Archiving Configurations, the user can define:
+Options for all Archiving Configurations, the user can define:
 
 -  An attribute selection mechanism for AC edition (see 5 *Control archiving*).
 
--  Default modes selection and values for HDB and TDB archiving (see 5.1
-       *Creating/modifying an AC*).
+-  Default modes selection and values for HDB and TDB archiving
+   (see :ref:`Creating/modifying an AC<creating_modifying_an_ac>`).
 
    -  The selected modes and values will be preset for all unset
-          attributes.
+      attributes.
 
    -  The default values can be saved to /loaded from an Archiving
-          Configurations Defaults file (.acd extension).
+      Configurations Defaults file (.acd extension).
 
    -  The “Restore defaults” button reloads the defaults with non
-          user-modifiable predefined values.
+      user-modifiable predefined values.
 
 -  The size of the “AC stack”, that is the maximum number of opened ACs.
 
@@ -883,15 +887,14 @@ AC options
 Figure : The AC options
 
 
-
 VC options
 ~~~~~~~~~~
 
-    These are the options for all View Configurations. The user can
-    define:
+These are the options for all View Configurations. The user can
+define:
 
 -  Whether he wants to display the Read value of attributes only, the
-       Write value only, or both.
+   Write value only, or both.
 
 -  The size of the “VC stack”, that is the maximum number of opened VCs.
 
@@ -904,11 +907,10 @@ VC options
 Figure : The VC options
 
 
-
 General options
 ~~~~~~~~~~~~~~~
 
-    The user can define:
+The user can define:
 
 -  The column separator for the tables
 
@@ -919,14 +921,13 @@ General options
 Figure : General options
 
 
-
 The Mambo toolbar
 -----------------
 
-    The toolbar is located under the menu bar, and consists mainly of a
-    set of shortcuts to often used functionalities.
+The toolbar is located under the menu bar, and consists mainly of a
+set of shortcuts to often used functionalities.
 
-    |image47|
+|image47|
 
 Figure 31: The Mambo toolbar
 
@@ -949,7 +950,6 @@ Figure 31: The Mambo toolbar
    configuration.
 
 
-
 Appendices
 ----------
 
@@ -957,64 +957,52 @@ Appendices
 Lexicon
 ~~~~~~~
 
-Archiving
-^^^^^^^^^
+.. glossary::
 
-The action of storing in database the values of Tango attributes in a
-time range, each value being associated with a time stamp.
+    Archiving
+        The action of storing in database the values of Tango attributes in a
+        time range, each value being associated with a time stamp.
 
-Archiving mode
-^^^^^^^^^^^^^^
+    Archiving mode
+        An archiving mode is a rule defining when an attribute has to be
+        archived.
 
-An archiving mode is a rule defining when an attribute has to be
-archived.
+        The most basic archiving mode is the Periodic archiving mode, where an
+        attribute is archived every N milliseconds.
 
-The most basic archiving mode is the Periodic archiving mode, where an
-attribute is archived every N milliseconds.
+        More elaborate archiving modes like the Threshold archiving mode ask for
+        archiving when the attribute’s value meets certain conditions, but they
+        can only be used in association with the Periodic archiving mode.
 
-More elaborate archiving modes like the Threshold archiving mode ask for
-archiving when the attribute’s value meets certain conditions, but they
-can only be used in association with the Periodic archiving mode.
+    AC
+        Short for an Archiving Configuration
 
-AC
-^^
+        Describes archiving for a set of attributes, by associating a set of
+        archiving modes to each of its attributes.
 
-Short for an Archiving Configuration
+    VC
+        Short for a View Configuration.
 
-Describes archiving for a set of attributes, by associating a set of
-archiving modes to each of its attributes.
+        Describes plot properties for a set of attributes, by associating a set
+        of plot properties to each of its attributes.
 
-VC
-^^
+    HDB
+        Short for the Historic Database.
 
-Short for a View Configuration.
+        Attributes values archived in HDB are stored forever.
 
-Describes plot properties for a set of attributes, by associating a set
-of plot properties to each of its attributes.
+    TDB
+        Short for the Temporary Database.
 
-HDB
-^^^
+        Attributes values archived in TDB are deleted every [given deletion
+        time].
 
-Short for the Historic Database.
+        The TDB is regularly purged and the Interval of the purge is defined by
+        the data base administrator and the system administrator.
 
-Attributes values archived in HDB are stored forever.
-
-TDB
-^^^
-
-Short for the Temporary Database.
-
-Attributes values archived in TDB are deleted every [given deletion
-time].
-
-The TDB is regularly purged and the Interval of the purge is defined by
-the data base administrator and the system administrator.
-
-Quick Save/Quick load
-^^^^^^^^^^^^^^^^^^^^^
-
-The action of saving (resp. loading) to a default file is Called “quick”
-because no user interaction to choose a directory/file name is required.
+    Quick Save/Quick load
+        The action of saving (resp. loading) to a default file is Called “quick”
+        because no user interaction to choose a directory/file name is required.
 
 .. |image0| image:: mambo/image5.png
    :width: 1.68750in
