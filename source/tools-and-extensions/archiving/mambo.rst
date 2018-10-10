@@ -628,7 +628,8 @@ Creating/modifying a VC
 Creation or modification of a VC is done the same way, using the
 :guilabel:`New`/:guilabel:`Modify` button respectively. We will see how to load a VC later.
 
-*Step 1: VC general properties*
+Step 1: VC general properties
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Those properties don’t depend on a specific attribute. They are
 common to all VC attributes or describe the VC.
@@ -648,9 +649,9 @@ Figure 15: Step 1, general properties
 -  The creation and update dates are filled automatically upon saving
    the VC.
 
--  The user must define a date *range* (Start/End dates\ *)* to extract
-   data from. This can be done either manually, or by selecting a “Since
-   xxx” item in the “Date range” drop-down menu.
+-  The user must define a date *range* (Start/End dates) to extract
+   data from. This can be done either manually, or by selecting
+   a :guilabel:`Since xxx` item in the “Date range” drop-down menu.
 
    In the latter case, the user can check the “Dynamic date range”.
    What this option does is recalculate the Start/End dates at each
@@ -661,14 +662,14 @@ Figure 15: Step 1, general properties
 
    The date range will be [08:00-09:00].
 
-   If the VC is then edited at 11:00, and “Dynamic date range” was
+   If the VC is then edited at 11:00, and :guilabel:`Dynamic date range` was
    checked, the date range will be [10:00-11:00]; otherwise it will
    still be [08:00-09:00].
 
--  If the “Historic” checkbox is checked, VC attributes will be chosen
+-  If the :guilabel:`Historic` checkbox is checked, VC attributes will be chosen
    among HDB attributes (otherwise, TDB).
 
--  If the “History” checkbox is not checked, you are in TDB mode so you
+-  If the :guilabel:`History` checkbox is not checked, you are in TDB mode so you
    can import long term snapshot. In this case you can’t modify start
    and end date because the snapshot configures it himself.
 
@@ -676,7 +677,7 @@ Figure 15: Step 1, general properties
 
 -  The user can define global chart properties (title, background …).
 
-    |image30|
+|image30|
 
 Figure 16: Step 1, general chart properties
 
@@ -686,8 +687,7 @@ Figure 16: Step 1, general chart properties
 
 Figure 17: Step 1, Y1 axis properties
 
--  The user can define the left vertical axis properties (title, scale,
-   …).
+-  The user can define the left vertical axis properties (title, scale, …).
 
 *Step 1.4: Y2 axis properties*
 
@@ -698,43 +698,46 @@ Figure : Step 1, Y2 axis properties
 -  The user can define the right vertical axis properties (title, scale,
    …).
 
-    *Step 2: Select the VC attributes*
+Step 2: Select the VC attributes
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-    The attributes selection works the same way as an AC attributes
-    selection, except for two differences:
+The attributes selection works the same way as an AC attributes
+selection, except for two differences:
 
 -  The only available selection mechanism is the tree selection
 
-    The trees are initially loaded to the attributes level.
+   The trees are initially loaded to the attributes level.
 
-|image33|
+   |image33|
 
-Figure : Step 2, selecting attributes
+   Figure : Step 2, selecting attributes
 
 -  The left tree lists the HDB (resp. TDB) attributes. The right tree
    represents the current attributes of the edited VC. Both trees have
    the same structure of HDB (resp.
    TDB)/Domains/Families/Members/Attributes.
 
-    *WARNING* Unlike AC trees, VC trees are initially loaded to the
-    Attributes level since archived attributes are a small subset of all
-    Tango attributes.
+    .. warning:: Unlike AC trees, VC trees are initially loaded to the
+       Attributes level since archived attributes are a small subset of all
+       Tango attributes.
 
 -  Consequently, the match functionality works up to attributes names:
    one can use a D/F/M/A criterion.
 
-*Step 3: Set the VC attributes properties*
+Step 3: Set the VC attributes properties
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 -  General flow
 
-    To set the VC attributes, user can refer to the ACs, it’s the same
-    process.
+   To set the VC attributes, user can refer to the ACs, it’s the same
+   process.
 
-    |image34|
+   |image34|
 
-Figure 20: Set the vc attributes
+   Figure 20: Set the vc attributes
 
-*Step 4: Controls upon VC validation*
+Step 4: Controls upon VC validation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 -  Any unset attribute will be removed from the VC; the user is prompted
    to continue editing the VC, or ignore them.
@@ -747,11 +750,9 @@ panel.
 The opened VCs menu
 ~~~~~~~~~~~~~~~~~~~
 
-    The VCs menu opens in the same way as the ACs menu.
+The VCs menu opens in the same way as the ACs menu.
 
-    See 5.2 *The opened ACs menu*
-
-
+See 5.2 *The opened ACs menu*
 
 Displaying a VC
 ~~~~~~~~~~~~~~~
