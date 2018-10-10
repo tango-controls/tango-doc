@@ -161,7 +161,7 @@ left of the panel). A new dialog will appear, as following.
 In this new dialog, you will have to enter the name of your new
 account and the path of the application working directory for this
 account. If you prefer, you can browse for the path by clicking on
-the :guilabel:`Browse..`button. Then, a classic browsing dialog will be
+the :guilabel:`Browse...` button. Then, a classic browsing dialog will be
 displayed, in which you can choose the directory. When both fields
 (“Name” and “Path”) are fulfilled, click on :guilabel:`Ok` button to
 validate your new account, which will be automatically added in the
@@ -230,11 +230,11 @@ ACs is accessed/used in the AC panel:
 Creating/modifying an AC
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-    The creation or modification of an AC is done the same way, using
-    the New/Modify button respectively. We will see how to load an AC
-    later.
+The creation or modification of an AC is done the same way, using
+the :guilabel:`New`/:guilabel:`Modify` button respectively. We will see how to load an AC
+later.
 
-    *Step 1: AC general properties*
+*Step 1: AC general properties*
 
 -  Click the New/Modify button in the AC actions panel
 
@@ -245,30 +245,30 @@ Creating/modifying an AC
     Figure : Step1, general properties
 
 -  You can choose a name for the AC. This field isn’t mandatory but it
-       is recommended to fill it, to better identify your different ACs
-       later.
+   is recommended to fill it, to better identify your different ACs
+   later.
 
 -  The creation and update dates are filled or modified automatically
-       upon saving an AC. Click next
+   upon saving an AC. Click next
 
-    *Step 2: Select the AC attributes*
+*Step 2: Select the AC attributes*
 
-    There are 2 ways to select the AC attributes. The user can choose a
-    selection method in the Options.
+There are 2 ways to select the AC attributes. The user can choose a
+selection method in the Options.
 
-    *Step 2, method 1:*
+*Step 2, method 1:*
 
     |image18|
 
     Figure 8: Step 2, select AC attributes (standard method)
 
 -  The left tree lists the Tango attributes. The right tree represents
-       the current attributes of the edited AC. Both trees have the same
-       structure of TANGO\_HOST/Domains/Families/Members/Attributes.
+   the current attributes of the edited AC. Both trees have the same
+   structure of TANGO\_HOST/Domains/Families/Members/Attributes.
 
-    *WARNING* The left tree listing the Tango attributes is initially
-    only loaded up to Members level to avoid overloading. The attributes
-    are loaded upon user selection of a Member (device) node.
+.. warning:: The left tree listing the Tango attributes is initially
+   only loaded up to Members level to avoid overloading. The attributes
+   are loaded upon user selection of a Member (device) node.
 
 -  Adding attributes to the current AC:
 
@@ -291,20 +291,20 @@ Creating/modifying an AC
 
 -  Using “Match” to filter attributes:
 
-    The user can enter an expression of the form D/F/M and click match
-    to filter attributes in the left and right trees.
+   The user can enter an expression of the form D/F/M and click match
+   to filter attributes in the left and right trees.
 
-    D represents the Domains; F represents the Families, and M the
-    Members. All trees can contain the joker character ‘\*’.
+   D represents the Domains; F represents the Families, and M the
+   Members. All trees can contain the joker character ‘\*’.
 
-    Since the tree loading is initially only up to Member level, it’s
-    not possible to filter up to Attributes level.
+   Since the tree loading is initially only up to Member level, it’s
+   not possible to filter up to Attributes level.
 
-    *Step 2, method 2:*
+*Step 2, method 2:*
 
-    |image19|
+   |image19|
 
-    Figure 9: Step 2, select AC attributes (alternate method)
+   Figure 9: Step 2, select AC attributes (alternate method)
 
 -  Attribute selection and automatic attributes adding:
 
@@ -320,32 +320,32 @@ Creating/modifying an AC
 
       -  with the selected name
 
-    **AND**
+      **AND**
 
--  belonging to any Device of the selected Class and Domain are added to
+      -  belonging to any Device of the selected Class and Domain are added to
        the current AC’s list of attributes.
 
     All new attributes are red until the AC is saved.
 
 -  Line level sub-selection of loaded attributes:
 
-    Each attribute is initially checked, but this check can be removed
-    by the user. When the user clicks on next, all unchecked attributes
-    will be removed from the current AC.
+   Each attribute is initially checked, but this check can be removed
+   by the user. When the user clicks on next, all unchecked attributes
+   will be removed from the current AC.
 
--  Click “Select All” to select all lines.
+-  Click :guilabel:`Select All` to select all lines.
 
--  Click “Select None” to select no line.
+-  Click :guilabel:`Select None` to select no line.
 
 -  Select lines in the list (CTRL and SHIFT are usable), then click
-       “Reverse for selected lines” to reverse the checked/unchecked
-       status of all selected lines.
+   :guilabel:`Reverse for selected lines` to reverse the checked/unchecked
+   status of all selected lines.
 
-    *Step 3: Set the AC attributes properties*
+*Step 3: Set the AC attributes properties*
 
-    |image20|
+   |image20|
 
-    Figure 10: Step 3, selecting archiving modes
+   Figure 10: Step 3, selecting archiving modes
 
 -  A general description of the properties setting process:
 
@@ -356,18 +356,18 @@ Creating/modifying an AC
 -  Edit HDB/TDB modes.
 
 -  Call “Set” for the current group of attributes: the currently
-       displayed modes are applied to all attributes of the selection.
+   displayed modes are applied to all attributes of the selection.
 
 -  Repeat with next group of attributes.
 
--  End edition by clicking “Finish”.
+-  End edition by clicking :guilabel:`Finish`.
 
 -  Attributes selection
 
-    The setting up of archiving modes can be “factorized” for a
-    selection of attributes. All attributes of the selection will be set
-    up with the currently displayed properties when the user presses
-    “Set”.
+   The setting up of archiving modes can be “factorized” for a
+   selection of attributes. All attributes of the selection will be set
+   up with the currently displayed properties when the user presses
+   :guilabel:`Set`.
 
     The multiple selections can consist of:
 
@@ -380,66 +380,64 @@ Creating/modifying an AC
 
 -  Unset attributes and default values
 
-    Attributes which haven’t received any Mode yet (unset) are displayed
-    in *Italic*. Attributes which have (set) are displayed in **Bold.**
+   Attributes which haven’t received any Mode yet (unset) are displayed
+   in *Italic*. Attributes which have (set) are displayed in **Bold.**
 
-    Clicking on a set attribute displays its archiving modes.
+   Clicking on a set attribute displays its archiving modes.
 
-    Clicking on an unset attribute displays default archiving modes.
+   Clicking on an unset attribute displays default archiving modes.
 
 -  Controls upon AC validation.
 
-    The user can not choose any and all combination of modes, nor any
-    and all numeric values for each mode. Thus, controls are performed
-    upon call to “Finish”:
+   The user can not choose any and all combination of modes, nor any
+   and all numeric values for each mode. Thus, controls are performed
+   upon call to “Finish”:
 
 -  If any HDB (resp. TDB) mode is chosen for a given attribute, it must
-       also have the basic HDB (resp. TDB) Periodic mode.
+   also have the basic HDB (resp. TDB) Periodic mode.
 
 -  Any unset attribute will be removed from the AC; the user is prompted
-       to continue editing the AC, or ignore them.
+   to continue editing the AC, or ignore them.
 
 -  Numeric values are controlled for each mode.
 
-    When the validation is over, the AC is displayed in the
-    application’s AC panel.
-
+   When the validation is over, the AC is displayed in the
+   application’s AC panel.
 
 
 The opened ACs menu
 ~~~~~~~~~~~~~~~~~~~
 
-    Mambo can have several opened ACs at once, even if only one is
-    displayed on screen at a time. A drop-down menu allows the user to
-    choose an AC in the list of opened ACs:
+Mambo can have several opened ACs at once, even if only one is
+displayed on screen at a time. A drop-down menu allows the user to
+choose an AC in the list of opened ACs:
 
 -  Each time the user loads an AC, it’s added to the top of the opened
-       ACs list (the older ACs are shifted downwards in the opened ACs
-       list)
+   ACs list (the older ACs are shifted downwards in the opened ACs
+   list)
 
 -  The list identifies ACs by their name and date of last update. When
-       the user selects an AC, it becomes the current AC, and its
-       general information and attributes are displayed.
+   the user selects an AC, it becomes the current AC, and its
+   general information and attributes are displayed.
 
 -  To remove an AC from the list, push the red X button (this will do
-       nothing if the list is empty or only has 1 element). The next AC
-       in the reduced list (i.e. the one that was added to the list the
-       most recently) is automatically displayed.
+   nothing if the list is empty or only has 1 element). The next AC
+   in the reduced list (i.e. the one that was added to the list the
+   most recently) is automatically displayed.
 
 -  The list can hold no more than *[MAX\_NUMBER]* ACs, this number can
-       be defined in the AC tab of the options panel (default=5). If the
-       list’s length reaches *MAX\_NUMBER,* the oldest AC will be
-       removed from the list when needed.
+   be defined in the AC tab of the options panel (default=5). If the
+   list’s length reaches *MAX\_NUMBER,* the oldest AC will be
+   removed from the list when needed.
 
 -  ACs that have unsaved modifications are identified by a red star.
 
-    If Mambo has the “History save” option turned on, the list of opened
-    ACs will be saved at shutdown, and loaded at startup.
+   If Mambo has the :guilabel:`History save` option turned on, the list of opened
+   ACs will be saved at shutdown, and loaded at startup.
 
-    |image21|
+   |image21|
 
-    Figure 11: Acs menu
-
+   Figure 11: Acs menu
 
 
 Starting/Stopping archiving
@@ -448,42 +446,41 @@ Starting/Stopping archiving
 The Current Archiving Configuration detail panel
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-    Attributes are displayed differently in selection trees, with
-    respect to their current archiving status. The display shows their
-    current status in DB, not their archiving modes in the current AC.
+Attributes are displayed differently in selection trees, with
+respect to their current archiving status. The display shows their
+current status in DB, not their archiving modes in the current AC.
 
 -  Attributes which aren’t being archived are displayed as off bulbs:
-       |image22|
+   |image22|
 
 -  Attributes which are being archived only in HDB are displayed as on,
-       yellow bulbs: |image23|
+   yellow bulbs: |image23|
 
 -  Attributes which are being archived only in TDB are displayed as on,
-       brown bulbs: |image24|
+   brown bulbs: |image24|
 
 -  Attributes which are being archived in HDB and TDB are displayed as
-       on, bicolor bulbs:\ |image25|
+   on, bicolor bulbs:\ |image25|
 
 Starting/Stopping archiving on an AC
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-    *Starting archiving*:
+*Starting archiving*:
 
 -  Create/Load an AC or just use the current AC. The AC that will be
-       used is the one displayed in the application’s AC panel.
+   used is the one displayed in the application’s AC panel.
 
 -  Call Start to start archiving each attribute by all its modes.
 
-    *Stopping archiving:*
+*Stopping archiving:*
 
 -  Create/Load an AC or just use the current AC. The AC that will be
-       used is the one displayed in the application’s AC panel.
+   used is the one displayed in the application’s AC panel.
 
 -  Call Stop to stop archiving of each attribute. All archiving modes
-       will be stopped.
+   will be stopped.
 
-    In both cases, a success/failure message confirms the action.
-
+In both cases, a success/failure message confirms the action.
 
 
 Displaying an AC
@@ -496,16 +493,16 @@ The Current Archiving Configuration
 
 Figure 12: Detail of the current AC
 
-    This panel represents the current Archiving Configuration.
+This panel represents the current Archiving Configuration.
 
-    On the left, a tree lists all of the AC’s attributes.
+On the left, a tree lists all of the AC’s attributes.
 
-    When the user selects a given attribute on this tree, its HDB and
-    TDB modes are displayed on the right sub-panel.
+When the user selects a given attribute on this tree, its HDB and
+TDB modes are displayed on the right sub-panel.
 
-    This displays the attributes modes individually. To get a global
-    view of the AC’s Archiving Modes, use the “Archiving assessment”
-    command.
+This displays the attributes modes individually. To get a global
+view of the AC’s Archiving Modes, use the “Archiving assessment”
+command.
 
 The Archiving assessment window
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -514,12 +511,12 @@ The Archiving assessment window
 
 Figure 13: Global view of all the modes of an AC
 
-    This window sums up the current Archiving Configuration in two tabs
-    (one for HDB, one for TDB).
+This window sums up the current Archiving Configuration in two tabs
+(one for HDB, one for TDB).
 
-    For each attribute contained in the current AC, its archiving modes
-    are detailed, and if the attribute is being archived, can be
-    compared to the modes values found in HDB (resp. TDB).
+For each attribute contained in the current AC, its archiving modes
+are detailed, and if the attribute is being archived, can be
+compared to the modes values found in HDB (resp. TDB).
 
 Saving/Loading an AC
 ~~~~~~~~~~~~~~~~~~~~
@@ -527,102 +524,102 @@ Saving/Loading an AC
 Saving an individual AC
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-    Archiving Configurations are saved /loaded as XML files, with the
-    .ac file extension.
+Archiving Configurations are saved /loaded as XML files, with the
+.ac file extension.
 
-    In the menu, select “ACs/Save” or “File/Save/Archiving
-    configuration”:
+In the menu, select :menuselection:`ACs --> Save` or
+:menuselection:`File --> Save --> Archiving configuration`:
 
-    Saved operations work like they do with Word (for example):
+Saved operations work like they do with Word (for example):
 
 -  The first time a file is saved, the user is prompted to choose a path
-       and file name. Initially the file chooser dialog is in the “ac”
-       subdirectory of the Mambo working directory. The “.ac” file
-       extension is automatically added if the user doesn’t.
+   and file name. Initially the file chooser dialog is in the “ac”
+   subdirectory of the Mambo working directory. The “.ac” file
+   extension is automatically added if the user doesn’t.
 
 -  If a file was already saved, it will automatically be saved in the
-       same file the next time the “Save” menu is selected.
+   same file the next time the “Save” menu is selected.
 
--  The user can still specify a different file, by using the “ACs /Save
-       as” menu (or “File/Save As/Archiving configuration”).
+-  The user can still specify a different file, by using the
+   :menuselection:`ACs --> Save
+   as` menu (or :menuselection:`File --> Save As --> Archiving configuration`).
 
-    When an AC is loaded, it becomes the current Archiving Configuration
-    and it is added to the list of opened ACs.
+When an AC is loaded, it becomes the current Archiving Configuration
+and it is added to the list of opened ACs.
 
-    In both cases, a success/failure message confirms the action in the
-    log panel.
+In both cases, a success/failure message confirms the action in the
+log panel.
 
 Saving all opened ACs
 ^^^^^^^^^^^^^^^^^^^^^
 
-    It is possible to save all opened ACs. Only modified ACs will be
-    saved (i.e. the ACs that has a “red star”).
+It is possible to save all opened ACs. Only modified ACs will be
+saved (i.e. the ACs that has a “red star”).
 
-    In the menu, select “ACs/Save All”:
+In the menu, select :menuselection:`ACs --> Save All`:
 
-    For each modified AC, the save operation will follow the same rules
-    as an individual save:
+For each modified AC, the save operation will follow the same rules
+as an individual save:
 
 -  If the file has already been saved before, it will be saved silently.
 
 -  Otherwise, the user will be prompted to choose a directory and file.
 
-    In this case, the ACs that are being saved are successively selected
-    before each file chooser prompt (so that the user knows which AC
-    he’s choosing a path for).
+   In this case, the ACs that are being saved are successively selected
+   before each file chooser prompt (so that the user knows which AC
+   he’s choosing a path for).
 
-    The generic “Save All” menu item in “File/ Save All” does this and
-    the same thing for opened VCs.
+The generic :menuselection:`Save All` menu item in :menuselection:`File --> Save All` does this and
+the same thing for opened VCs.
 
 Transfer to VC
 ~~~~~~~~~~~~~~
 
-    This functionality is used to quickly create a VC on the same
-    attributes as a given AC (for example, when the user wants to
-    monitor the values of attributes after starting archiving on an AC).
+This functionality is used to quickly create a VC on the same
+attributes as a given AC (for example, when the user wants to
+monitor the values of attributes after starting archiving on an AC).
 
-    It will create a VC automatically, with the following properties:
+It will create a VC automatically, with the following properties:
 
 -  Its attributes list is the same as the AC the “Transfer to VC”
-       functionality is used on
+   functionality is used on
 
 -  The attributes values are all extracted from HDB, even if some of the
-       AC’s attributes were only archived in TDB (obviously, the display
-       for such an attribute will be empty).
+   AC’s attributes were only archived in TDB (obviously, the display
+   for such an attribute will be empty).
 
 -  The date range of a one-hour range ends when the VC is created
 
 -  Every Attribute has an automatically determined color (if there are
-       more attributes than colors to choose from, different attributes
-       will have the same color).
+   more attributes than colors to choose from, different attributes
+   will have the same color).
 
 
 Exploit archived data
 ---------------------
 
-    This section deals with controlling exploitation of archived
-    attributes (HDB/TDB) through **View Configurations** (henceforth
-    **VC**).
+This section deals with controlling exploitation of archived
+attributes (HDB/TDB) through **View Configurations** (henceforth
+**VC**).
 
-    A VC describes which attributes to display and how, and consists of:
+A VC describes which attributes to display and how, and consists of:
 
 -  General information (when the VC was created, the date range to
-       extract …).
+    extract …).
 
 -  A list of attributes to display.
 
 -  For each attribute, a set of display properties.
 
-    The archived attributes of a VC either all come from HDB or all come
-    from TDB, since it wouldn’t make sense to display HDB and TDB
-    attributes in a common plot,
+  The archived attributes of a VC either all come from HDB or all come
+  from TDB, since it wouldn’t make sense to display HDB and TDB
+  attributes in a common plot,
 
-    VCs are accessed and used in the VC panel:
+  VCs are accessed and used in the VC panel:
 
 |image28|
 
 Figure 14: The VC panel
-
 
 
 Creating/modifying a VC
