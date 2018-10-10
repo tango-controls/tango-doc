@@ -309,10 +309,10 @@ selection method in the Options.
 -  Attribute selection and automatic attributes adding:
 
    -  Choose a Domain. This refreshes the list of possible Device
-          classes for this Domain.
+      classes for this Domain.
 
    -  Choose a Device class. This refreshes the list of possible
-          Attributes for this Domain and Device class.
+      Attributes for this Domain and Device class.
 
    -  Choose an Attribute and press Add attribute:
 
@@ -325,7 +325,7 @@ selection method in the Options.
       -  belonging to any Device of the selected Class and Domain are added to
        the current AC’s list of attributes.
 
-    All new attributes are red until the AC is saved.
+   All new attributes are red until the AC is saved.
 
 -  Line level sub-selection of loaded attributes:
 
@@ -349,18 +349,18 @@ selection method in the Options.
 
 -  A general description of the properties setting process:
 
-    The way you set up archiving modes for each attribute is as follows:
+   The way you set up archiving modes for each attribute is as follows:
 
--  Select a group of attributes.
+   -  Select a group of attributes.
 
--  Edit HDB/TDB modes.
+   -  Edit HDB/TDB modes.
 
--  Call “Set” for the current group of attributes: the currently
-   displayed modes are applied to all attributes of the selection.
+   -  Call :guilabel:`Set` for the current group of attributes: the currently
+      displayed modes are applied to all attributes of the selection.
 
--  Repeat with next group of attributes.
+   -  Repeat with next group of attributes.
 
--  End edition by clicking :guilabel:`Finish`.
+   -  End edition by clicking :guilabel:`Finish`.
 
 -  Attributes selection
 
@@ -369,14 +369,14 @@ selection method in the Options.
    up with the currently displayed properties when the user presses
    :guilabel:`Set`.
 
-    The multiple selections can consist of:
+   The multiple selections can consist of:
 
--  A manual select at Attributes level (CTRL and SHIFT are usable).
+   -  A manual select at Attributes level (CTRL and SHIFT are usable).
 
--  Selection of an upper node level: all Attributes nodes under this
-       node will be set up.
+   -  Selection of an upper node level: all Attributes nodes under this
+      node will be set up.
 
--  A combination of the two.
+   -  A combination of the two.
 
 -  Unset attributes and default values
 
@@ -460,19 +460,19 @@ current status in DB, not their archiving modes in the current AC.
    brown bulbs: |image24|
 
 -  Attributes which are being archived in HDB and TDB are displayed as
-   on, bicolor bulbs:\ |image25|
+   on, bicolor bulbs: |image25|
 
-Starting/Stopping archiving on an AC
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-*Starting archiving*:
+Starting archiving
+^^^^^^^^^^^^^^^^^^
 
 -  Create/Load an AC or just use the current AC. The AC that will be
    used is the one displayed in the application’s AC panel.
 
 -  Call Start to start archiving each attribute by all its modes.
 
-*Stopping archiving:*
+Stopping archiving
+^^^^^^^^^^^^^^^^^^
 
 -  Create/Load an AC or just use the current AC. The AC that will be
    used is the one displayed in the application’s AC panel.
@@ -541,8 +541,8 @@ Saved operations work like they do with Word (for example):
    same file the next time the “Save” menu is selected.
 
 -  The user can still specify a different file, by using the
-   :menuselection:`ACs --> Save
-   as` menu (or :menuselection:`File --> Save As --> Archiving configuration`).
+   :menuselection:`ACs --> Save as` menu
+   (or :menuselection:`File --> Save As --> Archiving configuration`).
 
 When an AC is loaded, it becomes the current Archiving Configuration
 and it is added to the list of opened ACs.
@@ -611,11 +611,11 @@ A VC describes which attributes to display and how, and consists of:
 
 -  For each attribute, a set of display properties.
 
-  The archived attributes of a VC either all come from HDB or all come
-  from TDB, since it wouldn’t make sense to display HDB and TDB
-  attributes in a common plot,
+The archived attributes of a VC either all come from HDB or all come
+from TDB, since it wouldn’t make sense to display HDB and TDB
+attributes in a common plot,
 
-  VCs are accessed and used in the VC panel:
+VCs are accessed and used in the VC panel:
 
 |image28|
 
@@ -625,16 +625,16 @@ Figure 14: The VC panel
 Creating/modifying a VC
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-    Creation or modification of a VC is done the same way, using the
-    New/Modify button respectively. We will see how to load a VC later.
+Creation or modification of a VC is done the same way, using the
+:guilabel:`New`/:guilabel:`Modify` button respectively. We will see how to load a VC later.
 
-    *Step 1: VC general properties*
+*Step 1: VC general properties*
 
-    Those properties don’t depend on a specific attribute. They are
-    common to all VC attributes or describe the VC.
+Those properties don’t depend on a specific attribute. They are
+common to all VC attributes or describe the VC.
 
-    Click the New/Modify button in the VC actions panel, the following
-    dialog appears:
+Click the :guilabel:`New`/:guilabel:`Modify` button in the VC actions panel, the following
+dialog appears:
 
 |image29|
 
@@ -652,18 +652,18 @@ Figure 15: Step 1, general properties
    data from. This can be done either manually, or by selecting a “Since
    xxx” item in the “Date range” drop-down menu.
 
-    In the latter case, the user can check the “Dynamic date range”.
-    What this option does is recalculate the Start/End dates at each
-    edition or refreshing the VC (see 6.3 *Displaying a VC*).
+   In the latter case, the user can check the “Dynamic date range”.
+   What this option does is recalculate the Start/End dates at each
+   edition or refreshing the VC (see 6.3 *Displaying a VC*).
 
-    Example: At 09:00 the user chose “Last 1 hour” as the “since
-    option”.
+   Example: At 09:00 the user chose “Last 1 hour” as the “since
+   option”.
 
-    The date range will be [08:00-09:00].
+   The date range will be [08:00-09:00].
 
-    If the VC is then edited at 11:00, and “Dynamic date range” was
-    checked, the date range will be [10:00-11:00]; otherwise it will
-    still be [08:00-09:00].
+   If the VC is then edited at 11:00, and “Dynamic date range” was
+   checked, the date range will be [10:00-11:00]; otherwise it will
+   still be [08:00-09:00].
 
 -  If the “Historic” checkbox is checked, VC attributes will be chosen
    among HDB attributes (otherwise, TDB).
