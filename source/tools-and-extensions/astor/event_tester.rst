@@ -4,7 +4,7 @@ Event Manager
 :audience:`administrators, developers`
 
 Astor proposes to browse by server, by device or by alias.
-It could be usefull for:
+It could be useful for:
 
 -  :ref:`to see information <info>`
 -  :ref:`to configure events <config>`
