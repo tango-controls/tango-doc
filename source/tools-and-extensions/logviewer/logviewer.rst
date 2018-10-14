@@ -53,6 +53,15 @@ Alternatively, you can add device with log level already set with
 
    Add and set logging level
 
+Add colocated devices
+---------------------
+
+The *Add Colocated* option adds all devices, running on the same device server
+instance, as logging sources. For example, if you have a :code:`TangoTest/test`
+instance with :code:`sys/tg_test/1` and :code:`sys/tg_test/2` devices, choosing
+*Add Colocated* on any of these devices will add both of them. The same applies
+for *Remove Colocated* and *Set Logging Level (colocated)* options.
+
 
 Actions menu
 ============
