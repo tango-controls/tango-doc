@@ -26,10 +26,11 @@ filter them by several properties to find what you need.
 
    | 1 - Menu bar
    | 2 - Filter settings
-   | 3 - Pause button
-   | 4 - Device tree
-   | 5 - Logs
-   | 6 - History of actions
+   | 3 - Clear button - clears the logs window
+   | 4 - Pause button
+   | 5 - Device tree
+   | 6 - Logs
+   | 7 - History of actions
 
 
 Adding devices
