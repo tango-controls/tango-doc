@@ -4,7 +4,7 @@
 ATKPanel Manual
 ***************
 
-:audience:`developers, users`
+:audience:`all`
 
 .. toctree::
    :maxdepth: 2
