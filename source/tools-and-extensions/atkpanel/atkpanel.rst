@@ -69,9 +69,9 @@ list.
 Device testing
 ==============
 
-By selecting *View > Test device* from the menu you can open the device testing
-panel. In this panel you can check how the device is reponding to different
-commands and attribute values and how much time the requests take.
+By selecting :guilabel:`View > Test device` from the menu you can open the
+device testing panel. In this panel you can check how the device is reponding
+to different commands and attribute values and how much time the requests take.
 
 .. figure:: atkpanel/test-commands.png
    :alt: Test commands view
@@ -93,15 +93,16 @@ commands and attribute values and how much time the requests take.
 
    Test admin view
 
-On the *Admin* tab of *Test Device* window you can set the device's
-administrative configuration such as value source, timeout, etc.
+On the :guilabel:`Admin` tab of :guilabel:`Test Device` window you can set the
+device's administrative configuration such as value source, timeout, etc.
 
 
 Trends
 ======
 
-By choosing *View > Numeric & State Trend* or *View > Boolean Trend* you can
-see the numeric & state or boolean trend of selected attributes.
+By choosing :guilabel:`View > Numeric & State Trend` or
+:guilabel:`View > Boolean Trend` you can see the numeric & state or boolean
+trend of selected attributes.
 
 .. figure:: atkpanel/trend.png
    :alt: Numeric & State trend
@@ -120,8 +121,8 @@ selecting the desired axis. You can plot the data on X and two Y axes.
 Error History
 =============
 
-The *View > Error history* menu option opens the list of recent Tango errors
-that occured with the device.
+The :guilabel:`View > Error history` menu option opens the list of recent Tango
+errors that occured with the device.
 
 .. figure:: atkpanel/error-history.png
    :alt: Error history
@@ -131,9 +132,9 @@ that occured with the device.
 Diagnostics
 ===========
 
-The *View > Diagnostic* menu option provides an overview on device diagnostic
-information. You can check the device interface version, events and polling
-statistics and command execution counts.
+The :guilabel:`View > Diagnostic` menu option provides an overview on device
+diagnostic information. You can check the device interface version, events and
+polling statistics and command execution counts.
 
 .. figure:: atkpanel/diagnostic-device.png
    :alt: Device diagnostics
@@ -158,9 +159,10 @@ statistics and command execution counts.
 Preferences
 ===========
 
-From the *Preferences* menu you can tweak AtkPanel refreshing, set the timeout
-and switch between **Operator View** and **Expert View**. In **Expert View**
-you can see the attributes that have display level set to `EXPERT`.
+From the :guilabel:`Preferences` menu you can tweak AtkPanel refreshing, set
+the timeout and switch between :guilabel:`Operator View` and
+:guilabel:`Expert View`. In :guilabel:`Expert View` you can see the attributes
+that have display level set to :code:`EXPERT`.
 
 .. figure:: atkpanel/preferences-menu.png
    :alt: AtkPanel Preferences
