@@ -81,3 +81,11 @@ The actions menu provides access to some useful functions:
   window
 * :guilabel:`Remove All Logging Source` - remove all devices from source list
 * :guilabel:`Clear history` - clear history window
+
+
+Loading files
+=============
+
+With the :guilabel:`File > Load file` menu option you can load an XML file into
+the LogViewer application. The exact format and purpose of these files remains
+unknown.
