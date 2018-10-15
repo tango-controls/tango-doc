@@ -16,6 +16,7 @@ These tools are delivered as a part of Tango Controls core package.
 
    astor/index
    jive/index
+   atkpanel/atkpanel
    pogo/index
    jdraw/jdraw
    atk/index

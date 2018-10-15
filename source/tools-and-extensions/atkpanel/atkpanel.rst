@@ -1,8 +1,8 @@
 .. _atkpanel_manual:
 
-***************
-ATKPanel Manual
-***************
+********
+ATKPanel
+********
 
 :audience:`all`
 
