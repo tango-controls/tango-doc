@@ -1,8 +1,8 @@
 .. _logviewer_manual:
 
-****************
-LogViewer Manual
-****************
+*********
+LogViewer
+*********
 
 :audience:`all`
 
@@ -38,8 +38,8 @@ Adding devices
 
 To add logs from device to the viewer you need to right click on the device in
 the device tree and click add. Then you need to set which level logs from that
-device should be visible. You can do this with *Set Logging Level* options in
-the device context menu.
+device should be visible. You can do this with :guilabel:`Set Logging Level`
+options in the device context menu.
 
 .. figure:: logviewer/add.png
    :alt: Add logs from device
@@ -47,7 +47,7 @@ the device context menu.
    Add logs from device
 
 Alternatively, you can add device with log level already set with
-*Add/Set Logging Level* context menu option.
+:guilabel:`Add/Set Logging Level` context menu option.
 
 .. figure:: logviewer/log-level.png
    :alt: Add and set logging level
@@ -57,11 +57,13 @@ Alternatively, you can add device with log level already set with
 Add colocated devices
 ---------------------
 
-The *Add Colocated* option adds all devices, running on the same device server
-instance, as logging sources. For example, if you have a :code:`TangoTest/test`
-instance with :code:`sys/tg_test/1` and :code:`sys/tg_test/2` devices, choosing
-*Add Colocated* on any of these devices will add both of them. The same applies
-for *Remove Colocated* and *Set Logging Level (colocated)* options.
+The :guilabel:`Add Colocated` option adds all devices, running on the same
+device server instance, as logging sources. For example, if you have a
+:code:`TangoTest/test` instance with :code:`sys/tg_test/1` and
+:code:`sys/tg_test/2` devices, choosing :guilabel:`Add Colocated` on any of
+these devices will add both of them. The same applies for
+:guilabel:`Remove Colocated` and :guilabel:`Set Logging Level (colocated)`
+options.
 
 
 Actions menu
@@ -74,7 +76,8 @@ The actions menu provides access to some useful functions:
 
    Actions menu
 
-* *Refresh Device Tree* - refresh devices
-* *Logging Source List* - list all added devices in the history window
-* *Remove All Logging Source* - remove all devices from source list
-* *Clear history* - clear history window
+* :guilabel:`Refresh Device Tree` - refresh devices
+* :guilabel:`Logging Source List` - list all added devices in the history
+  window
+* :guilabel:`Remove All Logging Source` - remove all devices from source list
+* :guilabel:`Clear history` - clear history window
