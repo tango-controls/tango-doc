@@ -18,25 +18,25 @@ Goal
 Principle
 ~~~~~~~~~
 
-    - On each host to be controlled, a device server (called Starter_)
-      takes care of all device servers running (or supposed to) on this computer.
-    - The controlled server list is read from the TANGO database.
-    - A graphical client (called Astor) is connected to all Starter servers and is able to:
-    - Display the control system status and component status using
-      coloured icons.
-    - Execute actions on components (start, stop, test, configure,
-      display information, ....
-    - Execute diagnostics on components.
-    - Execute global analysis on a large number of crates or database.
+- On each host to be controlled, a device server (called Starter_)
+  takes care of all device servers running (or supposed to) on this computer.
+- The controlled server list is read from the TANGO database.
+- A graphical client (called Astor) is connected to all Starter servers and is able to:
 
-|image0|
+  - Display the control system status and component status using
+    coloured icons.
+  - Execute actions on components (start, stop, test, configure,
+    display information, ....
+  - Execute diagnostics on components.
+  - Execute global analysis on a large number of crates or database.
 
-    -  To control a host in remote, the TANGO device server Starter_ must be running on it.
+  |image0|
 
-   .. warning::
+To control a host in remote, the TANGO device server Starter_ must be running on it.
 
-      The starter device must have a specific name to be recognized by
-      astor. This name must be **tango/admin/{hostname}** (e.g. *tango/admin/hal*).
+.. warning::
+   The starter device must have a specific name to be recognized by
+   astor. This name must be **tango/admin/{hostname}** (e.g. *tango/admin/hal*).
 
 
 
@@ -61,9 +61,6 @@ Running Astor
    +---------------+-----------------------------------------------------------------------------+
 
 
-  
-   
- |  
    
 Display
 ~~~~~~~
@@ -74,34 +71,33 @@ Display
 -  The icon of the leaf depends on the controlled device servers status
    as the following definition:
 
-    +-------------------------------------------------------------------------+
-    | For Hosts                                                               |
-    +=========================================================================+
-    | |image1| All controlled servers are running.                            |
-    +-------------------------------------------------------------------------+
-    | |image2| Starter is starting  server(s).                                |
-    +-------------------------------------------------------------------------+
-    | |image3| At least, one controlled server is stopped and one is running. |
-    +-------------------------------------------------------------------------+
-    | |image4| All controlled servers are stopped.                            |
-    +-------------------------------------------------------------------------+
-    | |image5| Starter is not running on host.                                |
-    +-------------------------------------------------------------------------+
+   +-------------------------------------------------------------------------+
+   | For Hosts                                                               |
+   +=========================================================================+
+   | |image1| All controlled servers are running.                            |
+   +-------------------------------------------------------------------------+
+   | |image2| Starter is starting  server(s).                                |
+   +-------------------------------------------------------------------------+
+   | |image3| At least, one controlled server is stopped and one is running. |
+   +-------------------------------------------------------------------------+
+   | |image4| All controlled servers are stopped.                            |
+   +-------------------------------------------------------------------------+
+   | |image5| Starter is not running on host.                                |
+   +-------------------------------------------------------------------------+
     
-    |
+   |
 
-    +--------------------------------------------------------+
-    | For Servers                                            |
-    +========================================================+
-    | |image6| Server is running                             |
-    +--------------------------------------------------------+
-    | |image7| Server is running but not alive (Starting ?)  |
-    +--------------------------------------------------------+
-    | |image8| Server is not running.                        |
-    +--------------------------------------------------------+
+   +--------------------------------------------------------+
+   | For Servers                                            |
+   +========================================================+
+   | |image6| Server is running                             |
+   +--------------------------------------------------------+
+   | |image7| Server is running but not alive (Starting ?)  |
+   +--------------------------------------------------------+
+   | |image8| Server is not running.                        |
+   +--------------------------------------------------------+
 
 
-|
 
 Host Control
 ~~~~~~~~~~~~

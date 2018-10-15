@@ -5,7 +5,8 @@ Host Status Window
 
 -  When a host window has been opened, all servers controlled on this
    host are displayed.
--  The color of the srver define its state:
+-  The color of the server define its state:
+
     +--------------------------------------------------------+
     | |image6| Server is running                             |
     +--------------------------------------------------------+
@@ -24,8 +25,8 @@ Host Status Window
 
 .. note::
 
-    * It is possible to display not controlled servers if any.
-    * These servers are not taken in account to compute host state.
+    * It is possible to display "Not Controlled" servers if any.
+    * These servers are not taken into account to compute host state.
 
    
    
