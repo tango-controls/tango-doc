@@ -12,10 +12,10 @@ Multi Servers Start/Stop
    -  All servers on all hosts of the control system by using
       :guilabel:`Command` menu in main window.
 
-   The servers will started in ascending order of startup level and
+   The servers will be started in ascending order of startup level and
    stopped in descending order.
 
-   For each level a confirm dialog will be popuped.
+   For each level a confirmation dialogbox will be popuped.
 
    |image0|
 
