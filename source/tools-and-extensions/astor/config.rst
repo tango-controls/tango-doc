@@ -79,10 +79,10 @@ Additional java Tools
 
 The property *Tools* give the possibility to add java class to tools
 menu.
-These additional tools could be specific for one controle system
+These additional tools could be specific for one control system
 This is a string array property.
 
-One tool (java class) is define by two strings:
+One tool (java class) is defined by two strings:
 
 -  The first line is the message displayed in tools menu.
 -  The second one is the class (and package) to be instancied.
@@ -98,7 +98,7 @@ system for TACO HDB:
 
     -  The tools java classes need to have a constructor with a *JFrame*
        parameter as parent.
-    -  It need also to not exit if it has been instancied from a parent
+    -  It needs also to not to exit if it has been instancied from a parent
        application.
     -  The tools class or jar file needs to be found in :envvar:`$CLASSPATH` of
        :program:`Astor` startup.
@@ -110,7 +110,7 @@ KnownTangoHosts
 ~~~~~~~~~~~~~~~
 
 This property give a list of :envvar:`TANGO_HOST` to be controlled by Astor.
-The :envvar:`TANGO_HOST` can be change by typing a new name but the specified list will be available in a combo box.
+The :envvar:`TANGO_HOST` can be changed by typing a new name but the specified list will be available in a combo box.
 
 
 .. _`remote_logging`:
@@ -118,7 +118,7 @@ The :envvar:`TANGO_HOST` can be change by typing a new name but the specified li
 RloginCmd
 ~~~~~~~~~
 
-This property give the possibility change the default remote loggin command.
+This property give the possibility to change the default remote loggin command.
 The default command is :command:`telnet` (or :command:`rlogin` if :guilabel:`RloginUser` is defined).
 
 
@@ -127,7 +127,7 @@ The default command is :command:`telnet` (or :command:`rlogin` if :guilabel:`Rlo
 RloginUser
 ~~~~~~~~~~
 
-This property give the possibility set the remote loggin to the specified user.
+This property gives the possibility to set the remote loggin to the specified user.
 
 
 .. _`jive_mode`:
@@ -144,9 +144,9 @@ If the property is not set or false, :program:`Jive` is in READ_WRITE mode.
 Starter starts servers at startup
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This boolean property allows the starter to starts the device servers when it starts.
+This boolean property allows the starter to start the device servers when it starts.
 
-If it is false, when the starter will be started, it will not start any server.
+If it is false, the starter will not start any server when it will be launched.
 
 It could be useful when a large control system is re-started (e.g. after an electrical power cut)
 to do not overload the Tango database.
