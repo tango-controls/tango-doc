@@ -26,7 +26,6 @@ Contents:
 
    atk
    atk_java_doc
-   atkpanel
 
 
 
