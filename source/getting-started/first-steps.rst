@@ -27,7 +27,7 @@ First steps with Tango Controls
 * To write your first C++ client see :doc:`development/cpp/first-client`.
 
 * At the beginning you may also be interested in how to use provided tools:
-  :ref:`Jive <jive_manual>`,
+  :ref:`Jive <jive_manual>`, :ref:`ATKPanel <atkpanel_manual>`,
   :ref:`Astor <astor_manual>`, :ref:`JDraw <jdraw_manual>` or :ref:`Pogo <pogo_manual>`.
 
 * You may be also interested in the content of `Tango Controls web page`_
