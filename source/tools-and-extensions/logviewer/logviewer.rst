@@ -32,6 +32,14 @@ filter them by several properties to find what you need.
    | 6 - Logs
    | 7 - History of actions
 
+Tango Logging
+-------------
+
+Tango provides a logging service for devices. It is configured by several
+device properties, and support sending logs to various targets, such as files,
+log consumer devices or the console. For more information you can check out
+:ref:`more details about logging service <the-device-logging>`.
+
 
 Adding devices
 ==============
