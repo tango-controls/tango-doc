@@ -261,21 +261,24 @@ which provides a specific event for archiving, this is the **archive
 event**. The archive events are configured with three attributes
 properties:
 
--  **archive\_abs\_change:** a Property of up to 2 values, positive and
+-  **archive\_abs\_change:**
+       a Property of up to 2 values, positive and
        negative delta, that specifies the absolute change with respect
        to the previous Attribute value, which triggered the event. If
        only one value is specified it is used for both positive and
        negative change. If no thresholds are specified then the relative
        change is used.
 
--  **archive\_rel\_change**: a Property of up to 2 values, positive and
+-  **archive\_rel\_change:**
+       a Property of up to 2 values, positive and
        negative delta, that specifies the relative change with respect
        to the previous Attribute value, which triggered the event. If
        only one value is specified it is used for both positive and
        negative change. If no thresholds are specified archive events
        are not sent on value change.
 
--  **archive\_period**: the time between which periodic archive events
+-  **archive\_period:**
+       the time between which periodic archive events
        are sent, in milliseconds. If no period is specified no periodic
        archive events are sent.
 
