@@ -81,16 +81,16 @@ to *The Control System Manual* Version 9.2.
 HDB++ TANGO Device Server
 =========================
 
-The architecture is composed by several device servers. More in detail,
-at least one, but actually many, device server jointly with one device
-server and one or more device servers for each domain are foreseen.
+The architecture is composed by several TANGO devices. More in detail,
+at least one, but actually many, EventSubscriber TANGO device jointly with one ConfigurationManager device
+TANGO and one or more DataExtraction TANGO device for each domain are foreseen.
 
-The device server, also called archiver device server, will subscribe to
-archive events on request by the . The will be able to start archiving
-all the already configured events even if the is not running. The device
-server must have the following characteristics:
+The EventSubscriber device, also called archiver device, will subscribe to
+archive events on request by the ConfigurationManager. The EventSubscriber will be able to start archiving
+all the already configured events even if the ConfigurationManager is not running. The EventSubscriber device
+must have the following characteristics:
 
-#. the archiving mechanism is event-based, thus the device server tries
+#. the archiving mechanism is event-based, thus the EventSubscriber device tries
    to subscribe to the event; an error means a fault. A transparent
    re-subscription to the faulty event is required.
 
@@ -99,13 +99,13 @@ server must have the following characteristics:
    complete data of the received events in a FIFO queue; the thread and
    the callback must be able to handle an *arbitrary* number of events,
    possibly limited just by the available memory and/or the required
-   performances; moreover, a high-mark threshold must be setup on the
+   performance; moreover, a high-mark threshold must be setup on the
    FIFO in order to alert for an overloaded Event Subscriber
 
 #. one additional thread, acting as consumer of the FIFO, is in charge
-   of pushing the data into the database, preserving the event data time
-   stamp too; the code to access the database engine shall be structured
-   to allow the use of different (MySQL, Oracle, etc...)
+   of pushing the data into the database back-end, preserving the event data
+   time-stamp; the code to access the database engine shall be structured
+   to allow the use of different back-ends (MySQL, Oracle, etc...)
 
 #. the device server methods, commands and attributes, must allow to
    perform the following operations:
@@ -138,15 +138,15 @@ server must have the following characteristics:
 
    -  read the list of attributes pending in the FIFO
 
-The list of attributes in charge of each Event Subscriber is stored in
-the database as property of the device server.
+The list of attributes in charge of each EventSubscriber is stored in
+the database as property of the device.
 
-The device server must be able to run and report on the working/faulty
+The EventSubscriber device must be able to run and report on the working/faulty
 attributes/events by means of the standard API (commands and/or
 attributes) without the need of a graphical interface.
 
 The diagnostics of faults could also be stored in the general info about
-each attribute; the diagnostics are used by the Device Server itself to
+each attribute; the diagnostics are used by the EventSubscriber device itself to
 detect that some data is not being stored as requested. Moreover,
 whenever the archive event period for a given Attribute has been
 configured, the device server checks that at least the one archive
@@ -154,9 +154,13 @@ event/period is received; if not, a error is raised and the Attribute
 marked as faulty (NOK).
 
 Stopping the archiving of an attribute does not persist after a restart,
-i.e. restarting an device server instance triggers the archiving of
+i.e. restarting an EventSubscriber device instance triggers the archiving of
 *all* configured attributes. A property can be setup not to start
 archiving at startup.
+
+*Note: A new Context based mechanism has been introduced to label
+and automatically start/stop archiving for groups of attributes depending on
+the specified archiving strategy. See Context description below.*
 
 One NULL value with time stamp is inserted whenever the archiving of an
 attribute is stopped, due to error or by a specific stop command.
@@ -164,16 +168,16 @@ Moreover, if an error occurred, the corresponding attribute is marked as
 faulty in the archiving engine and the error description stored. In case
 the archiving was suspended due to error, it is automatically resumed
 when good data is available again. The quality factor of the attribute
-is also stored into the historical database. One or more alarms could be
+is also stored into the historical database. One or more alarms can be
 configured in the Alarm System to asynchronously inform about the status
-of the archiving device server.
+of the archiving devices.
 
 Some of the attribute configuration parameters, such as *display-unit*,
-*format-string* and *label* will also be available in the and updated by
-means of the attribute configuration change event.
+*format-string* and *label* will also be available in the archive back-end
+and updated by means of the attribute configuration change event.
 
 A mechanism to specify per-attribute archiving strategies, called
-context, has been defined ad added to the . The syntax of the
+context, has been defined ad added to the EventSubscriber. The syntax of the
 AttributeList Property has been modified to support a *name=value*
 syntax for the context, except for the Attribute name; fields are
 separated by semicolon. Keeping the current syntax for the attribute
@@ -182,7 +186,7 @@ field allows for unchanged backwards compatibility:
 .. code-block:: console
    :linenos:
 
-   $ tango://srv-tango-srf.fcs.elettra.trieste.it:20000/eos/climate/18b20 eos.01/State;context=RUN|SHUTDOWN
+   $ tango://srv-tango-srf.fcs.elettra.trieste.it:20000/eos/climate/18b20 eos.01/State;strategy=RUN|SHUTDOWN
 
 The labels for the context, implemented as enum, are defined in a free
 property, and/or in the class property and/or in the device property,
@@ -208,6 +212,11 @@ Whenever not specified the default context is ALWAYS. A new memorized
 attribute, named **Context**, written by upper layer logic, tells the
 archiver about the current context status or rather the required context
 transition.
+Being a memorized Attribute, the **Context** attribute needs to be written
+at least once before the EventSubscriber device actually starting archiving.
+This means that, once the device has been deployed, and the AttributeList
+pupulated with the relevant attributes to be archived, complete with the
+strategy, the appropriate label has to be written in **Context**.
 
 The device server shall also expose some additional figures of merit
 such as:
@@ -223,7 +232,7 @@ such as:
 -  for each attribute, time stamp of last record
 
 The system can sum these numbers in a counter which can be reset every
-to rank each attribute in term of data rate, error rate etc. This allows
+period to rank each attribute in term of data rate, error rate etc. This allows
 preventive maintenance and fine tuning, detecting, for instance, when an
 attribute is too verbose (e.g. variation threshold below the noise
 level). These statistics are a key element for qualifying the health of
