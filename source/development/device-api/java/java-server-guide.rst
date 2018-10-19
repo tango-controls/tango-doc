@@ -599,7 +599,7 @@ devices. If set to true, each times a client request the state or the
 status of the device, all attributes are read to check if some
 attributes are in ALARM or WARNING quality. If alarms are detected, the
 state and the status will be updated consequently. The default value of
-this property is false. WARNING: if some attributes requests are slow,
+this property is **true**. WARNING: if some attributes requests are slow,
 it could lead to performance issues.
 
 Status
