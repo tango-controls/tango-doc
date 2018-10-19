@@ -4,6 +4,7 @@
 HDB++ Design and implementation
 ++++++++++++++++++++++++++++++++
 
+Author: *Lorenzo Pivetta*
 
 Below, details on deployment and configuration of the :term:`HDB++` service are provided.
 For overview, see :ref:`hdbpp_manual` of :ref:`tools_index` section.
@@ -16,8 +17,6 @@ For overview, see :ref:`hdbpp_manual` of :ref:`tools_index` section.
 
 HDB++ Contributions
 ===================
-
-Author: *Lorenzo Pivetta*
 
 
 **Summary**
@@ -83,7 +82,7 @@ HDB++ TANGO Device Server
 
 The architecture is composed by several TANGO devices. More in detail,
 at least one, but actually many, EventSubscriber TANGO device jointly with one ConfigurationManager device
-TANGO and one or more DataExtraction TANGO device for each domain are foreseen.
+TANGO and one or more DataExtraction TANGO device are foreseen in a TANGO facility.
 
 The EventSubscriber device, also called archiver device, will subscribe to
 archive events on request by the ConfigurationManager. The EventSubscriber will be able to start archiving
@@ -399,20 +398,20 @@ Table shows example configuration parameters for backend:
 Table 5: LibConfiguration parameters for database.
 
 .. note::
-    *libename* should be set to one of the following values:
+    *libname* should be set to one of the following values:
 
     libname=libhdb++mysql.so      if you intend to use HDB++ with the MySQL backend
     libname=libhdbmysql.so        if you intend to use HDB++ with the MySQL Legacy backend
     libname=libhdb++cassandra.so  if you intend to use HDB++ with the Cassandra backend
 
-    This library specified in LibConfiguration->libname is loaded dynamically by *hdb++-cm-srv device server*.
-    You will need to have your LD_LIBRARY_PATH environment variable correctly set (including the directory
-    where the library you intend to use is located) to have the hdb++-cm-srv working as expected.
+    The library specified in LibConfiguration->libname is loaded dynamically by the EventSubscriber device (e.g. *hdb++-es-srv*).
+    You need to have your LD_LIBRARY_PATH environment variable correctly set (including the directory
+    where the library you intend to use is located).
 
     libhdb++mysql and libhdb++cassandra are just implementations of the classes defined in libhdb++ library.
     The user can decide which implementation to use by specifying this LibConfiguration -> libname device property config parameter.
 
-    The device server will load dynamically (using dlopen()) during the device server initialization the library configured by the user.
+    The device dynamically laods the configured library configured (using dlopen()) during the device initialization.
     See `Database interface`_ section for more information.
 
 
