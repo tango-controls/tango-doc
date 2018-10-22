@@ -120,6 +120,8 @@ polling thread. These properties are :
 You don’t have to change these properties values by yourself. They are
 automatically created/modified/deleted by Tango core classes.
 
+.. _the-device-logging:
+
 The device logging
 ~~~~~~~~~~~~~~~~~~
 
