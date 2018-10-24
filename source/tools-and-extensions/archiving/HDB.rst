@@ -14,6 +14,6 @@ You can download source and documentation `here <https://sourceforge.net/project
 
 .. toctree::
    :maxdepth: 2
-   :name: snaptoc
+   :name: hdbtoc
 
    mambo
