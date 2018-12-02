@@ -1,3 +1,5 @@
+.. _tutorials-list:
+
 Tutorials
 =========
 
@@ -15,5 +17,3 @@ Tutorials
    snapshots-from-lab-at-ESRF
    documentation-workflow-tutorial
    install-tango-webapp
-
-
