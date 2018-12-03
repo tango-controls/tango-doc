@@ -1,7 +1,8 @@
-HOW-TOs
-=======
+.. _how-tos-for-developers:
 
-:audience:`all`
+HOW-TOs for developers
+======================
+:audience:`developers`
 
 .. toctree::
    :glob:
@@ -16,10 +17,7 @@ HOW-TOs
    how-to-dynamic-attributes-device-class
    how-to-extract-scalar-attribute
    how-to-fandango
-   how-to-first-device-class
-   how-to-import-classes-to-catalogue
    how-to-integrate-java-server-with-astor
-   how-to-integrate-with-systemd
    how-to-pytango
    how-to-pytangoarchiving
    how-to-run-device-server-firewall
