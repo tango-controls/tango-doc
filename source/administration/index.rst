@@ -3,7 +3,7 @@
 Administration
 ==============
 
-For more information you can see useful :ref:`tutorials-only-for-all` and :ref:`how-tos-for-administrators`.
+In addtion to the articles listed below you may find :ref:`tutorials-only-for-all` and :ref:`how-tos-for-administrators` interesting.
 
 :audience:`administrators`
 
