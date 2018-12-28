@@ -105,6 +105,8 @@ will be asked to select the startup level of the new server.
 Other options
 =============
 
-You can use the ``tango_admin`` utility to register server from scripts or
+You can use the tango_admin_ utility to register server from scripts or
 command line. There are also some device servers (e.g. Sardana) that can
 register themselves upon starting.
+
+.. _tango_admin: https://github.com/tango-controls/tango_admin
