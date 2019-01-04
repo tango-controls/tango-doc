@@ -11,6 +11,8 @@ How to start a device server
 
    how-to-start-device-server
 
+While reading this how-to please refer to manuals of :ref:`Jive <jive_manual>` and :ref:`Astor <astro_manual>` tools. 
+
 Starting device servers with Jive
 =================================
 
@@ -81,6 +83,7 @@ Starting device servers with Astor
 
 .. note:: To configure device servers with Astor, you will need Starter
 	installed and running on the host you want to start your device server on.
+	Device server should be available in paths configured for the Starter. 
 
 In Astor go to the host control panel and click :guilabel:`Start New` button in
 the top left corner. If you want just to start an existing device server
