@@ -24,14 +24,13 @@ the device and access diagnostic data.
 
    AtkPanel 5.5 main window
 
-   | 1 - Menu bar
-   | 2 - Device state
-   | 3 - Device name
-   | 4 - Commands drop-down
-   | 5 - Device status
-   | 6 - Device attributes
-   | 7 - Attribute switcher
-
+#. Menu bar
+#. Device state
+#. Device name
+#. Commands drop-down
+#. Device status
+#. Device attributes
+#. Attribute switcher
 
 By default AtkPanel opens the scalar attribute view. If your device has
 attributes of non-scalar types, they will appear on the attribute switcher on
