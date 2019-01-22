@@ -23,6 +23,7 @@ These tools are delivered as a part of Tango Controls core package.
    logviewer/logviewer
    qtango/qtango
    canone
+   waltz
 
 Archiving
 ---------
