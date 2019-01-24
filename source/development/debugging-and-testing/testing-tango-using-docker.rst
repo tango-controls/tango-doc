@@ -1,3 +1,4 @@
+.. _tango_using_docker:
 Using Tango docker containers
 =============================
 

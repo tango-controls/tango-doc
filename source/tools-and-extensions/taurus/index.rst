@@ -1,3 +1,5 @@
+.. _taurus:
+
 |image0|
 
 Taurus (Python GUI library)

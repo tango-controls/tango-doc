@@ -1,3 +1,5 @@
+.. _astor_new_host:
+
 Add a new controlled host
 -------------------------
 
