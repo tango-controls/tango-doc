@@ -64,6 +64,7 @@ list.
 
    Command drop-down list
 
+.. _device_testing:
 
 Device testing
 ==============

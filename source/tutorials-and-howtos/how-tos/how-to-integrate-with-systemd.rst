@@ -1,4 +1,4 @@
-.. How-To administration
+.. _systemd_integration:
 
 Tango with systemd integration
 ==============================

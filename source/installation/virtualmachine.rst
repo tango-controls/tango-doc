@@ -1,3 +1,5 @@
+.. _vm:
+
 Virtual Machine
 ===============
 

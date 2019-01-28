@@ -1,5 +1,4 @@
-.. How to install Tango on Linux
-
+.. _tango_on_linux:
 Linux
 =======
 

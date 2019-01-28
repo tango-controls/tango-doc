@@ -1,3 +1,5 @@
+.. _astor_new_server:
+
 Start a new server with Astor
 -----------------------------
 
