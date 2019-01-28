@@ -9,7 +9,7 @@ There are several ways to try the Tango Controls System.
 For the first quick look, you can download and run the :ref:`TangoBox Virtual Machine<vm>`.
 Also, it is a possibility to build the system from :ref:`source code<source_code_install>`.
 
-If you have installed and configure Tango, you can skip to: :ref:`using_tango`.
+If you have installed and configured Tango, you can skip to: :ref:`using_tango`.
 
 Installation notes on Linux base distribution OS
 ------------------------------------------------
@@ -37,10 +37,10 @@ You can install this library from source:
 
 .. note::
 
-    Remember that Tango needs the header files (.h) in the compilation process so is need
+    Remember that Tango needs the header files (.h) in the compilation process so is a need
     to install developers version of these libraries.
 
-Also, a lot of elements of the Tango ecosystem and the Control System itself requires the **MariaDB**
+Also, many elements of the Tango ecosystem and the Control System itself requires the **MariaDB**
 or **MySQL** database. You can easily install it using yum or apt-get:
 
 .. code-block:: console
@@ -58,7 +58,7 @@ extract the archive file by the command:
     tar -xvf tango-9.2.5a.tar.gz
 
 In this directory, a good practice is to create the build folder, to don't mix
-configuration/compile file with the source.
+a configuration/compile file with the source.
 
 .. code-block:: console
 
@@ -67,7 +67,7 @@ configuration/compile file with the source.
 
 Compile and installation notes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-To full configure TANGO installation you can tell where is the omniORB, ZMQ library and where you want to install
+To fully configure TANGO installation you can tell where is the omniORB, ZMQ library and where you want to install
 Tango Controls System. Also, you need to configure the connection with the database and
 show where is the mysqlclient-lib.
 
@@ -102,15 +102,14 @@ Now compile and install TANGO by the command:
 Running the Tango System
 ------------------------
 
-It is important to correctly run the Tango elements, to better maintain and automation of the process starting
+It is essential to correctly run the Tango elements, to better maintain and automate the process starting
 the necessary part of the Tango Control System. For this purpose, it is recommended to create the system services.
 
-In the case when the system is installed from the .deb package or is running in the docker container
-this is not the problem (because the process of creating the service is done automatically).
-But in the approach described in the upper paragraph creating the services and daemon have to be done manually.
+In the case when the system is installed from a .deb package or is running in a docker container the package or the image provides services.
+However, in the approach described in the above paragraph creating the services and daemon have to be done manually.
 
 So the process of starting the two main server-side elements of the tango environment
-(:term:`Tango Database` and Tango Starter) can be optimized..
+(:term:`Tango Database` and Tango Starter) can be optimized.
 
 For creating the **Tango DB services** make in your `/lib/systemd/system directory`, file named tango-db.service,
 containing :ref:`tango_db.service<tango_db_service>`.
@@ -122,14 +121,14 @@ In this service system start the mariadb database process, so for the mysql data
     Requires=mysqld.service
     After=mysqld.service
 
-There are two main EnvormentFile use in this service. One containing the :term:`Tango Host`
+There are two main environment files usde in this service. One containing the :term:`Tango Host`
 address in file `/etc/tangorc`:
 
 .. code-block:: console
 
     TANGO_HOST=address:port
 
-The second file is with the database credentials, automatic creating by Tango in the `/etc/sysconfig/tango-db`.
+The second file is providing the database credentials. Tango automatically creates it in the `/etc/sysconfig/tango-db`.
 This file contains the database setting e.q:
 
 .. code-block:: console
@@ -140,7 +139,7 @@ This file contains the database setting e.q:
 To proper setup the **Tango Starter daemon**, create the file in the `/etc/init.d/tango-starter`,
 containing :ref:`tango_starter<tango_starter_daemon>`. Starter daemon similar like the Tango DB service
 uses the TANGO_HOST variables to create a connection with a database. The second setting equals the system user,
-used to start the daemon. The variables informing about this user are setup in the `/etc/sysconfig/tango-starter` file:
+used to start the daemon. The variables informing about this user are configured in the `/etc/sysconfig/tango-starter` file:
 
 .. code-block:: console
 
@@ -169,17 +168,17 @@ See more: :ref:`systemd_integration`
 Installation on CentOS
 ----------------------
 
-CentOS base on RPM Package Manager and used YUM as the main tool to packages management and update the libraries by the
+CentOS base on RPM Package Manager and used YUM as the primary tool to packages management and update the libraries by the
 system command line interfaces.  Thanks **MAX IV Laboratory** that provides the public RPM repository
-with Tango packages now process of installation the Tango Control System can be also simplified.
-It is enough that it will be added to the system as a new repository:
+with Tango packages now process of installation the Tango Control System can also be simplified.
+It is enough that it is added to the system as a new repository:
 
 .. code-block:: console
 
     yum-config-manager --add-repo http://pubrepo.maxiv.lu.se/rpm/el7/x86_64/
 
-This command creates a new repository and file in /etc/yum.repos.d containing all basic information about it.
-Now you can simply install Tango Starter or Tango Database by the command:
+This command creates a new repository and file in /etc/yum.repos.d containing all necessary information about it.
+Now you can install Tango Starter or Tango Database by the command:
 
 .. code-block:: console
 
