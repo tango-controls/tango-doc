@@ -121,7 +121,7 @@ In this service system start the mariadb database process, so for the mysql data
     Requires=mysqld.service
     After=mysqld.service
 
-There are two main environment files usde in this service. One containing the :term:`Tango Host`
+There are two main environment files used in this service. One containing the :term:`Tango Host`
 address in file `/etc/tangorc`:
 
 .. code-block:: console
