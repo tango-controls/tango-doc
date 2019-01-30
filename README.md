@@ -3,7 +3,7 @@
 Tango Controls Documentation
 ============================
 
-[![Documentation Status](https://readthedocs.org/projects/tango-controls/badge/?version=latest)](http://tango-controls.readthedocs.io/en/latest/?badge=latest)
+[![Documentation Status](https://readthedocs.org/projects/tango-controls/badge/?version=dev)](http://tango-controls.readthedocs.io/en/dev/?badge=dev)
 [![Build Status](https://travis-ci.org/tango-controls/tango-doc.svg)](https://travis-ci.org/tango-controls/tango-doc)
 
 This repository contains the official documentation of the Tango Controls project.
