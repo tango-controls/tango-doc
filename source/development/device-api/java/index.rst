@@ -1,11 +1,6 @@
 Tango Device in Java
 ====================
 
-Contents:
-
-.. toctree::
-   :maxdepth: 2
-
-   java-server-guide
-
-
+For instructions on how to use JTango, the Java binding for Tango Controls,
+please refer to the
+`JTango documentation <https://jtango.readthedocs.io/en/latest/>`_.
