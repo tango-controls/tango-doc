@@ -8,14 +8,15 @@ Administrators docs
 .. toctree::
    :glob:
    :name: indexforadmin
-   :maxdepth: 2
+   :maxdepth: 3
    :metalabel: {"audience": ["administrators", "all"]}
 
-   administration/*
+   administration/index
    getting-started/administration/*
    installation/index
-   overview/*
+   overview/index
    tutorials-and-howtos/how-tos-for-administrators
    tutorials-and-howtos/tutorials/tutorials-for-administrators
-   tools-and-extensions/*
+   tools-and-extensions/index
+   reference/index
    
