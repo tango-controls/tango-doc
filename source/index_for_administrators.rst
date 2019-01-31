@@ -9,14 +9,13 @@ Administrators docs
    :glob:
    :name: indexforadmin
    :maxdepth: 2
-   :metalabel: {"audience": ["administrators"]}
+   :metalabel: {"audience": ["administrators", "all"]}
 
-   tutorials-and-howtos/how-tos-for-administrators
-   tutorials-and-howtos/tutorials/tutorials-for-administrators
    administration/*
    getting-started/administration/*
-   installation/*
+   installation/index
    overview/*
-   reference/*
+   tutorials-and-howtos/how-tos-for-administrators
+   tutorials-and-howtos/tutorials/tutorials-for-administrators
    tools-and-extensions/*
    
