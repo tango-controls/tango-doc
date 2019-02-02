@@ -1,22 +1,26 @@
 .. _administrators_docs:
 
-Administrators docs
-===================
+Contents for administrators
+===========================
 
-:audience:`all`
+:audience:`administrators`
 
 .. toctree::
    :glob:
+   :titlesonly:
    :name: indexforadmin
-   :maxdepth: 3
+   :maxdepth: 2
    :metalabel: {"audience": ["administrators", "all"]}
 
-   administration/index
-   getting-started/administration/*
-   installation/index
    overview/index
-   tutorials-and-howtos/how-tos-for-administrators
-   tutorials-and-howtos/tutorials/tutorials-for-administrators
+   installation/index
+   getting-started/index
+   development/index
    tools-and-extensions/index
+   administration/index
+   tutorials-and-howtos/tutorials/index
+   tutorials-and-howtos/how-tos/index
    reference/index
+
+
    

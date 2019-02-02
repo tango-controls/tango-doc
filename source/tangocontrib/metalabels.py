@@ -8,7 +8,7 @@ from sphinx.directives.other import TocTree, int_or_nothing
 from docutils import nodes
 from docutils.parsers.rst import directives
 from sphinx import addnodes
-
+from copy import deepcopy
 
 def metalabel_role(name, rawtext, text, lineno, inliner, options={}, content=[]):
     """Meta-label role
@@ -108,6 +108,12 @@ class FilteredTree(TocTree):
 
         env.tocs_metalabel[env.docname] = ast.literal_eval(self.options["metalabel"])
 
+        # add metalabel filter settings to toctree subnode
+        for node in ret:
+            if hasattr(node, 'traverse'):
+                for toctree_node in node.traverse(addnodes.toctree, include_self=True, siblings=True):
+                    toctree_node['metalabel'] = ast.literal_eval(self.options["metalabel"])
+
         return ret
 
 
@@ -150,8 +156,13 @@ def filtered_process(app, doctree, docname):
     """
 
     env = app.builder.env
+    builder = app.builder
+    if not hasattr(env, 'tocs'):
+        return
+
     if not hasattr(env, 'tocs_metalabel'):
         return
+
 
     def _filer_all_toctrees():
         """"
@@ -172,10 +183,14 @@ def filtered_process(app, doctree, docname):
         :param _filter: the configuration dict use to filtering
         :return:
         """
+
         entries = toctree["entries"]
         parsed_entries = []
+
         for ent in entries:
+
             ent_name = ent[1]
+
             if ent_name in env.doc_metalabels:
                 ent_metalabels = env.doc_metalabels[ent_name]
 
@@ -214,11 +229,36 @@ def filtered_process(app, doctree, docname):
         # The first parse the toctrees entries,
         # prevent errors with rendering the sidebar menu
         _filer_all_toctrees()
+
     elif docname in env.tocs_metalabel.keys():
-        toctrees = doctree.traverse(addnodes.toctree)
-        # Base parse all toctrees in the resolved document
-        for toctree in toctrees:
-            _filter_the_toctree(toctree, env.tocs_metalabel[docname])
+
+        # make backup of already parsed ToC, before we modify it
+        tocs_origin = deepcopy(env.tocs)
+
+        # process toctrees in the doc
+        for toctree in doctree.traverse(addnodes.toctree):
+
+            # filter this toctree and all ist subtrees.
+            _filter_the_toctree(toctree, toctree['metalabel'])
+            for subtoctree in toctree.traverse(addnodes.toctree, include_self=False, siblings=True):
+                _filter_the_toctree(subtoctree, toctree['metalabel'])
+
+            # filter all other tocs entries
+            for doc, toc in env.tocs.items():
+                for subtoctree in toc.traverse(addnodes.toctree, include_self=False, siblings=True):
+                    _filter_the_toctree(subtoctree, toctree['metalabel'])
+
+            # resolve toctree to bullet list and replace it to avoid default processing
+            result = env.resolve_toctree(docname, builder, toctree)
+            if result is None:
+                toctree.replace_self([])
+            else:
+                toctree.replace_self(result)
+                # tocs_origin[docname] = result
+
+        # revert ToC from backup
+        env.tocs = tocs_origin
+
 
 
 def setup(app):

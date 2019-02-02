@@ -1,23 +1,24 @@
 .. _developers_docs:
 
-Developers docs
-===============
+Contents for developers
+=======================
 
-:audience:`all`
+:audience:`developers`
 
 .. toctree::
-   :glob:
    :name: indexfordevelopers
+   :titlesonly:
    :maxdepth: 2
-   :metalabel: {"audience": ["developers", "advanced developers"]}
+   :metalabel: {"audience": ["developers", "advanced developers", "all"]}
 
-   tutorials-and-howtos/how-tos-for-developers
-   tutorials-and-howtos/tutorials/index
-   development/*
-   getting-started/development/*
-   installation/*
-   overview/*
-   reference/*
-   tools-and-extensions/*
+   development/index
+   overview/index
+   getting-started/index
+   installation/index
+   tools-and-extensions/index
+   administration/index
+   tutorials-and-howtos/turotials/index
+   tutorials-and-howtos/how-tos/index
+   reference/index
    
    
