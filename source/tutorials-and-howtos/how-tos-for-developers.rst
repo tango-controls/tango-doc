@@ -8,6 +8,6 @@ HOW-TOs for developers
    :glob:
    :name: howtotocfordevelopers
    :maxdepth: 1
-   :metalabel: {"audience": ["developers", "advanced developers"]}
+   :metalabel: {"audience": ["developers", "advanced developers", "all"]}
 
    how-tos/*
