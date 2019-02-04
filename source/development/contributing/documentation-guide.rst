@@ -23,26 +23,29 @@ be consequently corrected when found.
 
 Updating the documentation
 --------------------------
+
 If you find that some useful information is missing, misleading or you can think about any potential improvements
 please do either:
 
 * send a request through the github project: https://github.com/tango-controls/tango-doc/issues
-* or do correction by yourself
+* or do correction by yourself.
 
-For the second option, the preferred way is to:
+If you decide to contribute by writing, the preferred way is to:
 
-* clone or fork the repository
-* create your own local fix branch
-* when finished, send a pull request to the origin
+* clone or fork the repository,
+* create your own local fix branch,
+* when finished, send a pull request to the `origin/dev` branch.
 
-For details see :ref:`Documentation workflow tutorial <documentation_workflow_tutorial>`.
+.. note::
 
-.. note::Using GitHub online editing feature
+   .. rubric:: GitHub online edit
 
    For small fixes, you may use GitHub online editing feature.
    It is a good practice to avoid direct commits to 'dev' nor to 'master' branch.
    Please select :guilabel:`Create a new branch and start pull request` before sending
    the change.
+
+For details see :ref:`Documentation workflow tutorial <documentation_workflow_tutorial>`.
 
 Building/previewing documentation locally
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
