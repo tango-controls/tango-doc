@@ -37,14 +37,21 @@ For the second option, the preferred way is to:
 
 For details see :ref:`Documentation workflow tutorial <documentation_workflow_tutorial>`.
 
+.. note::Using GitHub online editing feature
+
+   For small fixes, you may use GitHub online editing feature.
+   It is a good practice to avoid direct commits to 'dev' nor to 'master' branch.
+   Please select :guilabel:`Create a new branch and start pull request` before sending
+   the change.
+
 Building/previewing documentation locally
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To build the documentation you will need Sphinx environment which is a Python package.
 Please consult `Sphinx webpage`_ for details on how to install it.
 
-There are references to doxygen C++ API documentation. You need to install
-`Breathe <https://breathe.readthedocs.io>`_, too. It is a tool for referencing doxygen documentation from the Sphinx.
+.. There are references to doxygen C++ API documentation. You need to install
+   `Breathe <https://breathe.readthedocs.io>`_, too. It is a tool for referencing doxygen documentation from the Sphinx.
 
 .. warning::
 
@@ -127,7 +134,7 @@ info are defined there. Please refer to
 requirements.txt
 ~~~~~~~~~~~~~~~~~~~~~~~~
 This is a standard :program:`pip` requirements file used to fix packages version. Currently it contains entries only
-for Sphinx and Breathe.
+for Sphinx and ipython.
 
 
 readthedocs.yml
