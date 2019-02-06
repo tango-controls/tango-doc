@@ -7,7 +7,6 @@ Tango Documentation Contents
    :glob:
    :name: maintoc
    :maxdepth: 2
-   :titlesonly:
 
    index
    authors
