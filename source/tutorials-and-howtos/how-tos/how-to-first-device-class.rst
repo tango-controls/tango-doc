@@ -9,7 +9,7 @@ This HowTo explains how to create your first Device Class regardless of the lang
 
 Prerequisite : Tango Environment.
 
-Start :ref:`Pogo <pogo_manual>` Generator
+Start Pogo Generator
 -----------------------------------------
 Now you can create a new Class. Click on |image| and New.
 
@@ -20,7 +20,7 @@ The Device Class identification on the left part and the description on the righ
 
 |image0|
 
-You will see an empty :ref:`Pogo <pogo_manual>` interface.
+You will see an empty Pogo interface.
 
 |image1|
 
@@ -37,7 +37,7 @@ Choose your folder's path and files you want to create. For example, on linux OS
 
 |image4|
 
-You can now see :ref:`Pogo <pogo_manual>` 's files in your folder. :ref:`Pogo <pogo_manual>` had create skeleton files with your Properties, Commands and Attributes.
+You can now see :program:`Pogo`'s files in your folder. :program:`Pogo` had create skeleton files with your Properties, Commands and Attributes.
 
 |image5|
 
@@ -47,17 +47,19 @@ You can have some informations about how to getting properly start :ref:`here <g
 
 You can have more informations about device server usage :ref:`here <device_api>`.
 
+
+How to fill your device in :ref:`Cpp <cpp_client_programmers_guide>`, :ref:`Java <getting_started_with_jtango_server>` and :ref:`Python <getting_started_pytango>`
+
+
 Compile And Run 
 ---------------
 
-Now you can compile and Run_ your Class.
+Now you can compile and :ref:`Run <howto_start_device_server>` your Class.
 
 
 
 .. definitions
    --------------
-
-.. _Run:    http://www.esrf.fr/computing/cs/tango/tango_doc/ds_doc/tango-ds/System/starter/index.html
 
 .. |image| image:: img/PogoFileImage.png   
 .. |image0| image:: img/PogoFirstConfiguration.png
