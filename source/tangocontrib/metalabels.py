@@ -301,4 +301,4 @@ def setup(app):
     app.connect("env-purge-doc", env_purge_metalabel)
     app.connect("doctree-resolved", filtered_process)
 
-    return {'version': '0.2'}
+    return {'version': '0.2.1'}
