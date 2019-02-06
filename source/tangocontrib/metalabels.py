@@ -10,6 +10,12 @@ from docutils.parsers.rst import directives
 from sphinx import addnodes
 from copy import deepcopy
 
+# Add support to all version of python
+# and have the same behavior
+_iter = (lambda d: d.iteritems()) if hasattr(dict, 'iteritems') \
+         else (lambda d: iter(d.items()))
+
+
 def metalabel_role(name, rawtext, text, lineno, inliner, options={}, content=[]):
     """Meta-label role
 
@@ -141,13 +147,13 @@ def env_purge_metalabel(app, env, docname):
     # delete it too from doc_metalabels.
     # metalable[0] - this is a key for doc_metalabels dict
     env.doc_metalabels = dict(filter(lambda metalabel: metalabel[0] != docname,
-                                     env.doc_metalabels.iteritems()))
+                                     _iter(env.doc_metalabels)))
 
     if not hasattr(env, 'tocs_metalabel'):
         return
 
     env.tocs_metalabel = dict(filter(lambda metalabel: metalabel[0] != docname,
-                                     env.tocs_metalabel.iteritems()))
+                                     _iter(env.tocs_metalabel)))
 
 
 def filtered_process(app, doctree, docname):
@@ -252,8 +258,10 @@ def filtered_process(app, doctree, docname):
                 _filter_the_toctree(subtoctree, toctree['metalabel'])
 
             # filter all other tocs entries
-            for doc, toc in env.tocs.items():
-                for subtoctree in toc.traverse(addnodes.toctree, include_self=False, siblings=True):
+            for doc, toc in _iter(env.tocs):
+                for subtoctree in toc.traverse(addnodes.toctree,
+                                               include_self=False,
+                                               siblings=True):
                     _filter_the_toctree(subtoctree, toctree['metalabel'])
 
             # resolve toctree to bullet list and replace it
