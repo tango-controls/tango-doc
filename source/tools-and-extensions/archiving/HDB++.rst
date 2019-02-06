@@ -136,6 +136,11 @@ It was developed just to simplify the task of configurating dynamically several 
 At the ESRF, it is used to configure/add automatically some dynamic attributes into HDB++. There are some cases where the same device will create some dynamic attributes at
 startup depending on its configuration (device properties), if the configuration changes, different attributes might be created.
 In this specific case, we have the requirement to ensure these dynamic attributes are archived. So the device server will configure them via the HdbConfigurator device server.
+
+|HdbConfiguratorServer|
+
+Figure 3: HDB++ and HdbConfiguratorServer
+
 To be more concrete, for the people working in a synchrotron, we have a device, controlling the insertion devices used by a given beamline.
 Dynamic attributes are created for each undulator which can be controlled by this beamline.
 During a shutdown period, the undulator might have been replaced, so there will be new attributes created for the new undulators and
@@ -179,7 +184,7 @@ implementing the abstraction layer and the specific interface:
 
 |libs|
 
-Figure 3: HDB++ Device Servers design
+Figure 4: HDB++ Device Servers design
 
 
 * **libhdb++**: database abstraction layer, decouples the interface to the database back-end from the implementation.
@@ -296,10 +301,7 @@ ArchiverRemove and AttributeSetArchiver commands. The list is stored in
 the ArchiverList device Property of the ConfigurationManager device
 using the FQDN syntax. This tells the ConfigurationManager everything
 which is needed to connect to the managed EventSubscribers: protocol,
-host, port and device name. Figure 5 shows a screenshot of the
-ArchiverList Property of a ConfigurationManager device instance; in this
-case all the managed EventSubscriber devices belong to the same TANGO
-facility (srv-tango-srf.fcs.elettra.trieste.it:20000).
+host, port and device name.
 
 
 Presentations and papers
