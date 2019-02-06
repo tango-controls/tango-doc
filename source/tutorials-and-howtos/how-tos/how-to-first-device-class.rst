@@ -61,11 +61,11 @@ Now you can compile and :ref:`Run <howto_start_device_server>` your Class.
 .. definitions
    --------------
 
-.. |image| image:: img/PogoFileImage.png   
-.. |image0| image:: img/PogoFirstConfiguration.png
-.. |image1| image:: img/PogoEmptyImage.png
-.. |image2| image:: img/PogoFilled.png
-.. |image3| image:: img/PogoGenerateButton.png
-.. |image4| image:: img/PogoGenerate.png
-.. |image5| image:: img/PogoFilesGenerated.png
+.. |image| image:: how-to-first-device-class/PogoFileImage.png   
+.. |image0| image:: how-to-first-device-class/PogoFirstConfiguration.png
+.. |image1| image:: how-to-first-device-class/PogoEmptyImage.png
+.. |image2| image:: how-to-first-device-class/PogoFilled.png
+.. |image3| image:: how-to-first-device-class/PogoGenerateButton.png
+.. |image4| image:: how-to-first-device-class/PogoGenerate.png
+.. |image5| image:: how-to-first-device-class/PogoFilesGenerated.png
 
