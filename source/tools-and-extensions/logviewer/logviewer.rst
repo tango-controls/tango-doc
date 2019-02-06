@@ -9,7 +9,7 @@ LogViewer
 .. toctree::
    :maxdepth: 2
 
-   logviewer
+   self
 
 
 Overview
