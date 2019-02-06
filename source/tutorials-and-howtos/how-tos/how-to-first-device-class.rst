@@ -9,7 +9,7 @@ This HowTo explains how to create your first Device Class regardless of the lang
 
 Prerequisite : Tango Environment.
 
-Start Pogo Generator
+Start :ref:`Pogo <pogo_manual>` Generator
 -----------------------------------------
 Now you can create a new Class. Click on |image| and New.
 
@@ -25,7 +25,7 @@ You will see an empty Pogo interface.
 |image1|
 
 You can add some Properties, Commands and Attributes, by double-clicking on each one.
-There are different possible configuraton. You can see more details in :ref:`Pogo <pogo_manual>` description.
+There are different possible configuraton.
 
 |image2|
 
@@ -43,7 +43,7 @@ You can now see :program:`Pogo`'s files in your folder. :program:`Pogo` had crea
 
 Now you have a basic server who's make nothing. You can provide contents or fill it with different needs.
 
-You can have some informations about how to getting properly start :ref:`here <getting_started_as_developer>`
+You can have some informations about how to start :ref:`here <getting_started_as_developer>`
 
 You can have more informations about device server usage :ref:`here <device_api>`.
 
