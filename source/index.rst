@@ -20,6 +20,20 @@ Welcome to Tango Controls documentation!
 How this documentation is organized
 -----------------------------------
 
+
+    Please, identify yourself with one of the following roles.
+
+    +-------------------+----------------------------------+----------------------------------------+
+    | **End user**      | :ref:`Index<users_docs>`         | :ref:`getting_started_as_user`         |
+    +-------------------+----------------------------------+----------------------------------------+
+    | **Beginner**      | :ref:`Index<gettingstartedtoc>`  | :ref:`first_steps`                     |
+    +-------------------+----------------------------------+----------------------------------------+
+    | **Developer**     | :ref:`Index<developers_docs>`    | :ref:`getting_started_as_developer`    |
+    +-------------------+----------------------------------+----------------------------------------+
+    | **Administrator** | :ref:`Index<administrators_docs>`| :ref:`getting_started_as_administrator`|
+    +-------------------+----------------------------------+----------------------------------------+
+
+
 The documentation is organized in the following categories (some of them overlap):
 
 * :doc:`Overview <overview/index>` will give you a quick overview of what Tango Controls is, its origins
