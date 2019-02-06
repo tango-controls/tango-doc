@@ -713,9 +713,10 @@ Additional libraries are foreseen to support different database engines,
 such as Oracle, Postgres or possibly noSQL implementations.
 
 .. note::
-    The Cassandra Error: "All connections on all I/O threads are busy" is connected with incorrect name of Data Center.
-    For example, the correct name is "datacenter1" but libhdbpp-cassandra have default value "DC1".
-    To change this value you should add to LibConfiguration property: *local_dc*=datacenter1
+
+   The Cassandra Error: "All connections on all I/O threads are busy" is connected with incorrect name of Data Center.
+   For example, the correct name is "datacenter1" but libhdbpp-cassandra have default value "DC1".
+   To change this value you should add to LibConfiguration property: *local_dc* =datacenter1
 
 
 
