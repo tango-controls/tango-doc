@@ -50,7 +50,7 @@ You can have more informations about device server usage :ref:`here <device_api>
 Compile And Run 
 ---------------
 
-Now you can compile and Run_ your Class.
+Now you can compile and :ref:`Run <howto_start_device_server>` your Class.
 
 
 
