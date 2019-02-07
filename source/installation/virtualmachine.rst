@@ -33,11 +33,12 @@ Previous versions are available below.
 
 
     * Download 64 bit `Ubuntu virtual machine with TANGO 9.1.0 <ftp.esrf.fr/pub/cs/tango/tango9-vm.zip>`_.
-    .. note::
 
-       * Click `here <https://sourceforge.net/projects/tango-cs/files/Tango9_VM.pdf/download>`_ to read the documentation
-         to install and run the virtual machine on your desktop.
-       * Use 7z to unzip it on Linux or unzip on Windows.
+      .. note::
+
+         * Click `here <https://sourceforge.net/projects/tango-cs/files/Tango9_VM.pdf/download>`_ to read the documentation
+           to install and run the virtual machine on your desktop.
+         * Use 7z to unzip it on Linux or unzip on Windows.
 
     * `download <https://sourceforge.net/projects/tango-cs/files/tango_vbox_3_0rc5.7z/download>`_ the 32 bit version running TANGO 7 on Ubuntu 11
     * a preconfigured `TANGO 8.1.2 64b ubuntu vdi <http://dl.free.fr/dWfRMq6Xe>`_ (1.4 GB, for 64 virtual machine)
