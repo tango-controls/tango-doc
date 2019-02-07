@@ -21,7 +21,7 @@ How this documentation is organized
 -----------------------------------
 
 
-    Please, identify yourself with one of the following roles.
+    If you identify yourself with one of the following roles you may directly use related links:
 
     +-------------------+----------------------------------+----------------------------------------+
     | **End user**      | :ref:`Index<users_docs>`         | :ref:`getting_started_as_user`         |
