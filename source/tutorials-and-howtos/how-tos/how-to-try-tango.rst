@@ -43,12 +43,16 @@ You can install this library from source:
    to install developers version of these libraries.
 
 Also, many elements of the Tango ecosystem and the Control System itself requires the **MariaDB**
-or **MySQL** database. You can easily install it using yum or apt-get:
+or **MySQL** database. You can easily install it using apt or yum:
 
 .. code-block:: console
 
-    apt-get install mysql-server/mariadb-server
-    or
+    apt install mysql-server/mariadb-server
+
+or
+
+.. code-block:: console
+
     yum install mysql-server/mariadb-server
 
 After downloading the source of Tango Control System
