@@ -56,7 +56,7 @@ are:
      to restart all the computers of a big control system in a very
      short period of time without overloading the Tango database).
    - *Blue:* At least one device server is starting or stopping.
-   |
+
    One best practice is to use a different software system monitor
    (like Nagios) in order to monitor the status of the
    applications or resources (e.g. processor usage, disk load) and

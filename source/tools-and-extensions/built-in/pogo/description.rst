@@ -4,7 +4,7 @@
 .. _TANGO:      http://www.tango-controls.org/
 .. _EMF:        http://www.eclipse.org/
 .. _XText:      http://www.eclipse.org/Xtext
-.. XTend:       http://www.eclipse.org/Xtend
+.. _XTend:       http://www.eclipse.org/Xtend
 
 Introduction
 ===============

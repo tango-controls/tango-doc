@@ -9,7 +9,7 @@ ATKPanel
 .. toctree::
    :maxdepth: 2
 
-   atkpanel
+   self
 
 Overview
 ========

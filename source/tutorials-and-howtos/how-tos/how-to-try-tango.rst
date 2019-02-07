@@ -24,12 +24,14 @@ SHORTCUTS
 
 If you want to use Debian/Ubuntu or Docker solution to try Tango you can skip
 this article and go to:
-    * :ref:`How to install Tango on Debian/Ubuntu<tango_on_linux>`
-    * :ref:`Using Tango docker containers<tango_using_docker>`
+
+* :ref:`How to install Tango on Debian/Ubuntu<tango_on_linux>`
+* :ref:`Using Tango docker containers<tango_using_docker>`
 
 Tango requires:
-    * omniORB - CORBA implementation
-    * zeroMQ - event system
+
+* omniORB - CORBA implementation
+* zeroMQ - event system
 
 You can install this library from source:
 `omniORB <https://sourceforge.net/projects/omniorb/files/omniORB/omniORB-4.2.2/omniORB-4.2.2.tar.bz2/download>`_,
@@ -37,8 +39,8 @@ You can install this library from source:
 
 .. note::
 
-    Remember that Tango needs the header files (.h) in the compilation process so is a need
-    to install developers version of these libraries.
+   Remember that Tango needs the header files (.h) in the compilation process so is a need
+   to install developers version of these libraries.
 
 Also, many elements of the Tango ecosystem and the Control System itself requires the **MariaDB**
 or **MySQL** database. You can easily install it using yum or apt-get:

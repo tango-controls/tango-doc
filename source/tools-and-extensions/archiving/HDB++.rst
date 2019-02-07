@@ -88,6 +88,7 @@ The Configuration Manager also exposes some Attributes to keep trace of the glob
 * total number of working/faulty attributes;
 * total number of events per second;
 * overall minimum and maximum processing and storing time.
+
 These attributes could be themselves archived to enable a follow up versus time.
 
 
@@ -122,6 +123,7 @@ The EventSubscriber Tango device server also exposes some additional figures of 
 * for each Attribute, number of records per time;
 * for each Attribute, number of failures per time;
 * for each Attribute, time stamp of last record.
+
 These numbers can sum up in a counter, which can be reset every hours/days/weeks, to rank each Attribute in term of data rate, error rate etc. This allows preventive maintenance and fine tuning, detecting, for instance, when an Attribute configuration is wrong because the variation threshold is
 lower than the noise level. These statistics are a key element for qualifying the health of the system. All these Attributes are archived themselves to enable a follow-up versus time. For each Attribute, the EventSubscriber Tango device server also computes the minimum and maximum processing and storing times, which helps to discover possible bottlenecks.
 There may be several EventSubscriber device servers.
@@ -186,6 +188,7 @@ Figure 3: HDB++ Device Servers design
 * **libhdbmysql**: legacy HDB schema support for MySQL back-end
 * **libhdb++mysql**: HDB++ schema support for MySQL back-end
 * **libhdb++cassandra**: methods from libhdb++ for Cassandra back-end
+
 These libraries allow reusing the EventSubscriber, the ConfigurationManager and the GUIs without changes.
 
 

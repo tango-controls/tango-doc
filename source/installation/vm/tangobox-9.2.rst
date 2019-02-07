@@ -55,7 +55,7 @@ on for being explored, see :ref:`Switching containers on and off <container_swit
 First steps
 -----------
 
-* First of all you have to download latest release of VirtualBox. It can be downloaded from `here <https://www.virtualbox.org/>`_ .
+* First of all you have to download latest release of VirtualBox. It can be downloaded from `www.virtualbox.org <https://www.virtualbox.org/>`_ .
   Simply install it and start the program.
 * TangoBox is released in **.ova** extension so it can be easily imported.
 * Select *import* and choose downloaded TangoBox file
