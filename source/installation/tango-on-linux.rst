@@ -27,7 +27,7 @@ If you want to install in non-interactive way, here are the steps you need to fo
 
 .. code-block:: console
 
-    sudo apt install --assume-yes debconf 
+    $> sudo apt install --assume-yes debconf 
 
 
 - setting root password for MariaDB package installation
@@ -44,32 +44,32 @@ where :envvar:`${DB_ROOT_PASSWORD}` is your MariaDB database root password you w
 
 .. code-block:: console
 
-    sudo apt install --assume-yes mariadb-client mariadb-server
+    $> sudo apt install --assume-yes mariadb-client mariadb-server
 
 
 - answering to the mysql_secure_installation questions:
 
 .. code-block:: console
 
-    sudo apt install --assume-yes expect\
-    SECURE_MYSQL=$(sudo expect -c "
-        set timeout 10
-        spawn mysql_secure_installation
-        expect \"Enter current password for root (enter for none):\"
-        send \"${DB_ROOT_PASSWORD}\r\"
-        expect \"Change the root password?\"
-        send \"n\r\"
-        expect \"Remove anonymous users?\"
-        send \"y\r\"
-        expect \"Disallow root login remotely?\"
-        send \"y\r\"
-        expect \"Remove test database and access to it?\"
-        send \"y\r\"
-        expect \"Reload privilege tables now?\"
-        send \"y\r\"
-        expect eof
-        ")\
-    echo "${SECURE_MYSQL}"
+    $> sudo apt install --assume-yes expect\
+       SECURE_MYSQL=$(sudo expect -c "
+          set timeout 10
+          spawn mysql_secure_installation
+          expect \"Enter current password for root (enter for none):\"
+          send \"${DB_ROOT_PASSWORD}\r\"
+          expect \"Change the root password?\"
+          send \"n\r\"
+          expect \"Remove anonymous users?\"
+          send \"y\r\"
+          expect \"Disallow root login remotely?\"
+          send \"y\r\"
+          expect \"Remove test database and access to it?\"
+          send \"y\r\"
+          expect \"Reload privilege tables now?\"
+          send \"y\r\"
+          expect eof
+          ")\
+      echo "${SECURE_MYSQL}"
 
 
 - setting parameters for tango-db package installation:
@@ -77,8 +77,8 @@ where :envvar:`${DB_ROOT_PASSWORD}` is your MariaDB database root password you w
 .. code-block:: console
 
     $> echo "tango-common tango-common/tango-host string ${TANGOSERVER}:${TANGOPORT}" | sudo debconf-set-selections\
-       echo 'tango-db tango-db/dbconfig-install boolean true' | sudo debconf-set-selections
-       echo "tango-db tango-db/mysql/admin-pass string ${DB_ROOT_PASSWORD}"  | sudo debconf-set-selections
+       echo 'tango-db tango-db/dbconfig-install boolean true' | sudo debconf-set-selections\
+       echo "tango-db tango-db/mysql/admin-pass string ${DB_ROOT_PASSWORD}"  | sudo debconf-set-selections\
        echo "tango-db tango-db/mysql/app-pass password ${DB_TANGO_PASSWORD}" | sudo debconf-set-selections
 
 where :envvar:`${TANGOSERVER}` is the Tango Host name, 
@@ -110,19 +110,15 @@ You will also need the Java based tools like jive, astor etc.
 These are available with the :ref:`source code installation<source_code_install>`. 
 
 Another option is to install the latest binary Java debian package for Tango 9.2.5 
-(assuming you have installed Tango 9.2.5) from here: 
-
-.. code-block:: console
-
-    https://people.debian.org/~picca/libtango-java_9.2.5a-1_all.deb
+(assuming you have installed Tango 9.2.5) from ``https://people.debian.org/~picca/libtango-java_9.2.5a-1_all.deb``
 
 To install this binary package do the following:
 
 .. code-block:: console
 
-    sudo apt install --assume-yes wget
-    wget -c https://people.debian.org/~picca/libtango-java_9.2.5a-1_all.deb
-    sudo dpkg -i ./libtango-java_9.2.5a-1_all.deb
+    $> sudo apt install --assume-yes wget\
+       wget -c https://people.debian.org/~picca/libtango-java_9.2.5a-1_all.deb\
+       sudo dpkg -i ./libtango-java_9.2.5a-1_all.deb
 
 You will then have the Tango Java tools installed in /usr/bin e.g. /usr/bin/jive
 
@@ -162,7 +158,7 @@ For example:
 
 .. code-block:: console
 
-       /usr/lib/tango/TangoTest test
+       $> /usr/lib/tango/TangoTest test
 
 
 Console should display "Ready to accept request".
