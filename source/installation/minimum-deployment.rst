@@ -106,7 +106,7 @@ Whatever the role, every computer needs:
 - the liblog4j package for logging
 - to set an environment variable :envvar:`TANGO_HOST` to the Tango Host and the port, for example
 
-  .. code-block:: bash
+  .. code-block:: console
 
      TANGO_HOST=mycomputer:10000
 
