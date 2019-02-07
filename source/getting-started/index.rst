@@ -25,6 +25,7 @@ Table of contents of this section:
    :name: gettingstartedtoc
 
    first-steps
+   cpp-quick-start
    end-user/index
    development/index
    administration/index
