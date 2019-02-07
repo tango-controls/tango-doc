@@ -120,6 +120,8 @@ polling thread. These properties are :
 You don’t have to change these properties values by yourself. They are
 automatically created/modified/deleted by Tango core classes.
 
+.. _the-device-logging:
+
 The device logging
 ~~~~~~~~~~~~~~~~~~
 
@@ -1956,16 +1958,16 @@ is
 TANGO\_HOST=<host>:<port>
 
 host is the name of the computer where the database server is running
-and port is th eport number on which it is litenning. If you want to
-have a Tango control system which has several database servers (but only
-one database) in order to survive a database server crashes, use the
-following syntax
+and port is the port number on which it is listening. <host> should be a
+FQDN (Fully Qualified Domain Name). If you want to have a Tango control
+system which has several database servers (but only one database) in
+order to survive a database server crash, use the following syntax
 
 TANGO\_HOST=<host\_1>:<port\_1>,<host\_2>:<port\_2>,<host\_3>:<port\_3>
 
 Obviously, host\_1 is the name of the computer where the first database
 server is running, port\_1 is the port number on which this server is
-listenning. host\_2 is the name of the computer where the second
+listening. host\_2 is the name of the computer where the second
 database server is running and port\_2 is its port number. All access to
 database will automatically switch from one server to another one in the
 list if the one which was used has died.

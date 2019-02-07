@@ -62,7 +62,7 @@ templates_path = ['_templates']
 source_suffix = '.rst'
 
 # The encoding of source files.
-#source_encoding = 'utf-8-sig'
+# source_encoding = 'utf-8-sig'
 
 # The master toctree document.
 master_doc = 'contents'
@@ -103,7 +103,7 @@ rst_epilog = """
 
 .. _`MySQL home page`: http://www.mysql.com
 
-.. _`Tango classes on-line documentation`: http://www.tango-controls.org/resources/dsc
+.. _`Tango classes on-line documentation`: http://www.tango-controls.org/developers/dsc
 
 .. _`omniORB home page`: http://omniorb.sourceforge.net
 
@@ -159,9 +159,9 @@ language = 'en'
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 exclude_patterns = [
-			'_build', 
+			'_build',
 			'_templates',
-		    ]
+]
 
 # The reST default role (used for this markup: `text`) to use for all
 # documents.
@@ -198,7 +198,10 @@ html_theme = 'sphinx_rtd_theme'
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
-#html_theme_options = {}
+html_theme_options = {
+    "sticky_navigation": True,
+    "collapse_navigation": False
+}
 
 # Add any paths that contain custom themes here, relative to this directory.
 html_theme_path = ['_theme']
@@ -212,8 +215,8 @@ if True:  #
         'extra_css_files': [
            # 'https://media.readthedocs.org/css/sphinx_rtd_theme.css',
            # 'https://media.readthedocs.org/css/readthedocs-doc-embed.css',
-            '_static/tango_cs_theme.css',
-            '_static/meta_label_tango.css'
+            '_static/css/tango_cs_theme.css',
+            '_static/css/meta_label_tango.css'
         ],
     }
 

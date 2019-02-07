@@ -23,17 +23,27 @@ be consequently corrected when found.
 
 Updating the documentation
 --------------------------
+
 If you find that some useful information is missing, misleading or you can think about any potential improvements
 please do either:
 
 * send a request through the github project: https://github.com/tango-controls/tango-doc/issues
-* or do correction by yourself
+* or do correction by yourself.
 
-For the second option, the preferred way is to:
+If you decide to contribute by writing, the preferred way is to:
 
-* clone or fork the repository
-* create your own local fix branch
-* when finished, send a pull request to the origin
+* clone or fork the repository,
+* create your own local fix branch,
+* when finished, send a pull request to the `origin/dev` branch.
+
+.. note::
+
+   .. rubric:: GitHub online edit
+
+   For small fixes, you may use GitHub online editing feature.
+   It is a good practice to avoid direct commits to 'dev' nor to 'master' branch.
+   Please select :guilabel:`Create a new branch and start pull request` before sending
+   the change.
 
 For details see :ref:`Documentation workflow tutorial <documentation_workflow_tutorial>`.
 
@@ -43,8 +53,8 @@ Building/previewing documentation locally
 To build the documentation you will need Sphinx environment which is a Python package.
 Please consult `Sphinx webpage`_ for details on how to install it.
 
-There are references to doxygen C++ API documentation. You need to install
-`Breathe <https://breathe.readthedocs.io>`_, too. It is a tool for referencing doxygen documentation from the Sphinx.
+.. There are references to doxygen C++ API documentation. You need to install
+   `Breathe <https://breathe.readthedocs.io>`_, too. It is a tool for referencing doxygen documentation from the Sphinx.
 
 .. warning::
 
@@ -56,7 +66,7 @@ There are references to doxygen C++ API documentation. You need to install
 After having Sphinx and Breathe installed you will be able to build the documentation:
 
 * go to (:command:`cd`) folder where you have cloned the repository
-* call :command:`spinhx-build source/ build`
+* call :command:`spinhx-build source build`
 
 This will build HTML output in the :file:`build` folder.Then you may use any web browser to view the documentation.
 
@@ -127,7 +137,7 @@ info are defined there. Please refer to
 requirements.txt
 ~~~~~~~~~~~~~~~~~~~~~~~~
 This is a standard :program:`pip` requirements file used to fix packages version. Currently it contains entries only
-for Sphinx and Breathe.
+for Sphinx and ipython.
 
 
 readthedocs.yml

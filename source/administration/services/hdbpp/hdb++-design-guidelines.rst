@@ -1,11 +1,22 @@
 :audience:`administrators, developers`, :lang:`C++`
 
+
+HDB++ Design and implementation
+++++++++++++++++++++++++++++++++
+
+Author: *Lorenzo Pivetta*
+
+Below, details on deployment and configuration of the :term:`HDB++` service are provided.
+For overview, see :ref:`hdbpp_manual` of :ref:`tools_index` section.
+
+
+.. contents::
+   :depth: 4
+
 .. HDB++ Design and implementation
 
 HDB++ Contributions
 ===================
-
-Author: *Lorenzo Pivetta*
 
 
 **Summary**
@@ -45,15 +56,6 @@ It’s written in C++ and is fully event-driven.
 +------------+---------+-----------+--------------------------------------------+
 
 
-.. role:: math(raw)
-   :format: html latex
-
-
-.. contents::
-   :depth: 3
-
-
-
 
 Historical Database
 ===================
@@ -78,16 +80,16 @@ to *The Control System Manual* Version 9.2.
 HDB++ TANGO Device Server
 =========================
 
-The architecture is composed by several device servers. More in detail,
-at least one, but actually many, device server jointly with one device
-server and one or more device servers for each domain are foreseen.
+The architecture is composed by several TANGO devices. More in detail,
+at least one, but actually many, EventSubscriber TANGO device jointly with one ConfigurationManager device
+TANGO and one or more DataExtraction TANGO device are foreseen in a TANGO facility.
 
-The device server, also called archiver device server, will subscribe to
-archive events on request by the . The will be able to start archiving
-all the already configured events even if the is not running. The device
-server must have the following characteristics:
+The EventSubscriber device, also called archiver device, will subscribe to
+archive events on request by the ConfigurationManager. The EventSubscriber will be able to start archiving
+all the already configured events even if the ConfigurationManager is not running. The EventSubscriber device
+must have the following characteristics:
 
-#. the archiving mechanism is event-based, thus the device server tries
+#. the archiving mechanism is event-based, thus the EventSubscriber device tries
    to subscribe to the event; an error means a fault. A transparent
    re-subscription to the faulty event is required.
 
@@ -96,13 +98,13 @@ server must have the following characteristics:
    complete data of the received events in a FIFO queue; the thread and
    the callback must be able to handle an *arbitrary* number of events,
    possibly limited just by the available memory and/or the required
-   performances; moreover, a high-mark threshold must be setup on the
+   performance; moreover, a high-mark threshold must be setup on the
    FIFO in order to alert for an overloaded Event Subscriber
 
 #. one additional thread, acting as consumer of the FIFO, is in charge
-   of pushing the data into the database, preserving the event data time
-   stamp too; the code to access the database engine shall be structured
-   to allow the use of different (MySQL, Oracle, etc...)
+   of pushing the data into the database back-end, preserving the event data
+   time-stamp; the code to access the database engine shall be structured
+   to allow the use of different back-ends (MySQL, Oracle, etc...)
 
 #. the device server methods, commands and attributes, must allow to
    perform the following operations:
@@ -135,15 +137,15 @@ server must have the following characteristics:
 
    -  read the list of attributes pending in the FIFO
 
-The list of attributes in charge of each Event Subscriber is stored in
-the database as property of the device server.
+The list of attributes in charge of each EventSubscriber is stored in
+the database as property of the device.
 
-The device server must be able to run and report on the working/faulty
+The EventSubscriber device must be able to run and report on the working/faulty
 attributes/events by means of the standard API (commands and/or
 attributes) without the need of a graphical interface.
 
 The diagnostics of faults could also be stored in the general info about
-each attribute; the diagnostics are used by the Device Server itself to
+each attribute; the diagnostics are used by the EventSubscriber device itself to
 detect that some data is not being stored as requested. Moreover,
 whenever the archive event period for a given Attribute has been
 configured, the device server checks that at least the one archive
@@ -151,9 +153,13 @@ event/period is received; if not, a error is raised and the Attribute
 marked as faulty (NOK).
 
 Stopping the archiving of an attribute does not persist after a restart,
-i.e. restarting an device server instance triggers the archiving of
+i.e. restarting an EventSubscriber device instance triggers the archiving of
 *all* configured attributes. A property can be setup not to start
 archiving at startup.
+
+*Note: A new Context based mechanism has been introduced to label
+and automatically start/stop archiving for groups of attributes depending on
+the specified archiving strategy. See Context description below.*
 
 One NULL value with time stamp is inserted whenever the archiving of an
 attribute is stopped, due to error or by a specific stop command.
@@ -161,16 +167,16 @@ Moreover, if an error occurred, the corresponding attribute is marked as
 faulty in the archiving engine and the error description stored. In case
 the archiving was suspended due to error, it is automatically resumed
 when good data is available again. The quality factor of the attribute
-is also stored into the historical database. One or more alarms could be
+is also stored into the historical database. One or more alarms can be
 configured in the Alarm System to asynchronously inform about the status
-of the archiving device server.
+of the archiving devices.
 
 Some of the attribute configuration parameters, such as *display-unit*,
-*format-string* and *label* will also be available in the and updated by
-means of the attribute configuration change event.
+*format-string* and *label* will also be available in the archive back-end
+and updated by means of the attribute configuration change event.
 
 A mechanism to specify per-attribute archiving strategies, called
-context, has been defined ad added to the . The syntax of the
+context, has been defined ad added to the EventSubscriber. The syntax of the
 AttributeList Property has been modified to support a *name=value*
 syntax for the context, except for the Attribute name; fields are
 separated by semicolon. Keeping the current syntax for the attribute
@@ -179,7 +185,7 @@ field allows for unchanged backwards compatibility:
 .. code-block:: console
    :linenos:
 
-   $ tango://srv-tango-srf.fcs.elettra.trieste.it:20000/eos/climate/18b20 eos.01/State;context=RUN|SHUTDOWN
+   $ tango://srv-tango-srf.fcs.elettra.trieste.it:20000/eos/climate/18b20 eos.01/State;strategy=RUN|SHUTDOWN
 
 The labels for the context, implemented as enum, are defined in a free
 property, and/or in the class property and/or in the device property,
@@ -205,6 +211,11 @@ Whenever not specified the default context is ALWAYS. A new memorized
 attribute, named **Context**, written by upper layer logic, tells the
 archiver about the current context status or rather the required context
 transition.
+Being a memorized Attribute, the **Context** attribute needs to be written
+at least once before the EventSubscriber device actually starting archiving.
+This means that, once the device has been deployed, and the AttributeList
+pupulated with the relevant attributes to be archived, complete with the
+strategy, the appropriate label has to be written in **Context**.
 
 The device server shall also expose some additional figures of merit
 such as:
@@ -220,7 +231,7 @@ such as:
 -  for each attribute, time stamp of last record
 
 The system can sum these numbers in a counter which can be reset every
-to rank each attribute in term of data rate, error rate etc. This allows
+period to rank each attribute in term of data rate, error rate etc. This allows
 preventive maintenance and fine tuning, detecting, for instance, when an
 attribute is too verbose (e.g. variation threshold below the noise
 level). These statistics are a key element for qualifying the health of
@@ -248,7 +259,7 @@ Commands
 
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------+
 | AttributeAdd       | add an attribute to archiving; the complete FQDN has to be specified otherwise it is completed by the using getaddrinfo()   |
-+====================+=============================================================================================================================+
++--------------------+-----------------------------------------------------------------------------------------------------------------------------+
 | AttributeContext   | read the specified attribute current context                                                                                |
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------+
 | AttributePause     | pause archiving specified attribute but do not unsubscribe archive event                                                    |
@@ -279,7 +290,7 @@ Attributes
 
 +------------------------------+-------------------------------------------------------+
 | AttributeContextList         | return the list of attribute contexts                 |
-+==============================+=======================================================+
++------------------------------+-------------------------------------------------------+
 | AttributeErrorList           | return the list of attribute errors                   |
 +------------------------------+-------------------------------------------------------+
 | AttributeEventNumberList     | number of events received for each attribute          |
@@ -348,7 +359,7 @@ Class properties
 
 +-----------------------------+------------------------------------------------------------------+
 | CheckPeriodicTimeoutDelay   | delay before timeout when checking periodic events, in seconds   |
-+=============================+==================================================================+
++-----------------------------+------------------------------------------------------------------+
 | PollingThreadPeriod         | default period for polling thread, in seconds                    |
 +-----------------------------+------------------------------------------------------------------+
 | LibConfiguration            | configuration parameters for backend support library             |
@@ -366,10 +377,9 @@ Class properties
 
 Table 4: Event Subscriber Class properties.
 
-The LibConfiguration property contains the following multi-line
-configuration parameters *host*, *user*, *password*, *dbname*, *port*.
-Table shows example configuration
-parameters for MySQL backend.
+The **LibConfiguration** property contains the following multi-line
+configuration parameters *host*, *user*, *password*, *dbname*, *libname*, *port*.
+Table shows example configuration parameters for backend:
 
 +-------------------------------------------+
 | host=srv-log-srf.fcs.elettra.trieste.it   |
@@ -380,12 +390,33 @@ parameters for MySQL backend.
 +-------------------------------------------+
 | dbname=hdbpp                              |
 +-------------------------------------------+
+| libname=dependOnDatabase (see below)      |
++-------------------------------------------+
 | port=3306                                 |
 +-------------------------------------------+
 
-Table 5: LibConfiguration parameters for MySQL.
+Table 5: LibConfiguration parameters for database.
 
-The HdbppContext property contains the enum specifying the possible
+.. note::
+    *libname* should be set to one of the following values:
+
+    libname=libhdb++mysql.so      if you intend to use HDB++ with the MySQL backend
+    libname=libhdbmysql.so        if you intend to use HDB++ with the MySQL Legacy backend
+    libname=libhdb++cassandra.so  if you intend to use HDB++ with the Cassandra backend
+
+    The library specified in LibConfiguration->libname is loaded dynamically by the EventSubscriber device (e.g. *hdb++-es-srv*).
+    You need to have your LD_LIBRARY_PATH environment variable correctly set (including the directory
+    where the library you intend to use is located).
+
+    libhdb++mysql and libhdb++cassandra are just implementations of the classes defined in libhdb++ library.
+    The user can decide which implementation to use by specifying this LibConfiguration -> libname device property config parameter.
+
+    The device dynamically laods the configured library configured (using dlopen()) during the device initialization.
+    See `Database interface`_ section for more information.
+
+
+
+The **HdbppContext property** contains the enum specifying the possible
 user-defined operating contexts in the form *number:label*. The default
 values are:
 
@@ -406,7 +437,7 @@ Device properties
 
 +-----------------------------+------------------------------------------------------------------+
 | AttributeList               | list of configured attributes                                    |
-+=============================+==================================================================+
++-----------------------------+------------------------------------------------------------------+
 | CheckPeriodicTimeoutDelay   | delay before timeout when checking periodic events, in seconds   |
 +-----------------------------+------------------------------------------------------------------+
 | PollingThreadPeriod         | default period for polling thread, in seconds                    |
@@ -509,7 +540,7 @@ The commands availabile in the are summarized in commands-table.
 
 +------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | ArchiverAdd            | add a new instance to the archivers list; the instance must have been already created and configured via jive/astor and the device shall be running; as per release adding an device to an existing instance is not supported   |
-+========================+=================================================================================================================================================================================================================================+
++------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | ArchiverRemove         | remove an from the list; neither the device instance nor the attributes configured are removed from the database                                                                                                                |
 +------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | AttributeAdd           | add an attribute to archiving                                                                                                                                                                                                   |
@@ -552,7 +583,7 @@ The attributes of the are summarized in attributes-table.
 
 +-------------------------------+-------------------------------------------------------------------+
 | ArchiverContext               | return archiver context                                           |
-+===============================+===================================================================+
++-------------------------------+-------------------------------------------------------------------+
 | ArchiverList                  | return list of managed archivers                                  |
 +-------------------------------+-------------------------------------------------------------------+
 | ArchiverStatisticsResetTime   | seconds elapsed since last statistics reset                       |
@@ -620,7 +651,7 @@ Class properties
 
 +--------------------+--------------------------------------------------------+
 | LibConfiguration   | configuration parameters for backend support library   |
-+====================+========================================================+
++--------------------+--------------------------------------------------------+
 | MaxSearchSize      | max size for AttributeSearch result                    |
 +--------------------+--------------------------------------------------------+
 
@@ -631,7 +662,7 @@ Device properties
 
 +--------------------+--------------------------------------------------------+
 | ArchiverList       | list of existing archivers                             |
-+====================+========================================================+
++--------------------+--------------------------------------------------------+
 | LibConfiguration   | configuration parameters for backend support library   |
 +--------------------+--------------------------------------------------------+
 | MaxSearchSize      | max size for AttributeSearch result                    |
@@ -652,8 +683,8 @@ HDB++ Configurator GUI is available for archiving configuration,
 management and diagnostics. It is written in Java. Refer to the
 documentation page for any additional information:
 
-`hdb++ configurator <http://www.esrf.eu/computing/cs/tango/tango_doc/tools_doc/hdb++-configurator/index.html>`_
-
+`HDB++ Configuration GUI documentation <http://www.esrf.eu/computing/cs/tango/tango_doc/tools_doc/hdb++-configurator/index.html>`_
+`Download GUI jar file <https://sourceforge.net/projects/tango-cs/files/tools/HDB%2B%2B/hdb_configurator-1.5a.jar/download>`_
 
 
 Database interface
@@ -680,6 +711,13 @@ Table 13: Available database interfacement libraries.
 
 Additional libraries are foreseen to support different database engines,
 such as Oracle, Postgres or possibly noSQL implementations.
+
+.. note::
+    The Cassandra Error: "All connections on all I/O threads are busy" is connected with incorrect name of Data Center.
+    For example, the correct name is "datacenter1" but libhdbpp-cassandra have default value "DC1".
+    To change this value you should add to LibConfiguration property: *local_dc*=datacenter1
+
+
 
 database structure
 ------------------
@@ -873,6 +911,13 @@ appendix. The main points can be summarized as:
 -  specific data type support
 
 -  temporary storage support
+
+
+.. note::
+    There are some special OS settings to tune for Cassandra to work as expected, in particular, it is recommended to disable the SWAP and
+    to change the resource limits on Linux, as described in this documentation page:
+    `Recommended production settings for Linux <http://docs.datastax.com/en/archived/cassandra/2.2/cassandra/install/installRecommendSettings.html/>`_.
+
 
 Deployment best practices
 =========================
@@ -2853,5 +2898,18 @@ schema CQL source (Cassandra)
     PRIMARY KEY ((att_conf_id ,period),data_time,data_time_us)
     )
     WITH comment='Time Statistics Table';
-        
+
+
+Event Subscriber full documentation
+===================================
+
+Please, refer to the :download:`HDB++ Design and implementation .pdf file (page 42) <hdb-design-guidelines-18.pdf>`
+
+
+Configuration Manager full documentation
+========================================
+
+Please, refer to the :download:`HDB++ Design and implementation .pdf file (page 72) <hdb-design-guidelines-18.pdf>`
+
+
 

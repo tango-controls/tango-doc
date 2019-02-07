@@ -82,10 +82,18 @@ Now you can goto to the project folder and build it:
 
 Assuming that Tango-Controls environment is set up properly (TODO ref) and MyDevice/development (TODO ref) server is defined in the Tango Database the later command will start the device server.
 
-Now using your favorite IDE open the newly generated project and develop your JTango server. Please read more :ref:`here  <jtango_manual>`
+Now using your favorite IDE open the newly generated project and develop your JTango server. Please read more in `JTango documentation`_.
 
 Using POGO
 ~~~~~~~~~~
 
+See :doc:`POGO documentation <../../../tools-and-extensions/pogo/index>`.
+
 Starting from scratch
 ~~~~~~~~~~~~~~~~~~~~~
+
+Example Java device and detailed documentation can be found in the
+`JTango documentation`_.
+
+
+.. _JTango documentation: https://jtango.readthedocs.io/en/latest/

@@ -3,7 +3,7 @@
 Overview
 =========
 
-:audience:`all`
+:audience:`all, administrators`
 
 As soon as a Tango system grows to over a few devices and servers it needs to be administered.
 A number of tools have been developed to administer a Tango control system.
