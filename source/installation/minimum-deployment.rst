@@ -49,7 +49,7 @@ Tango Host Role
 ~~~~~~~~~~~~~~~
 
 The central role of a Tango control system is Tango Host role, it is created by running the :program:`DataBaseds` device server. 
-This device server requires MySQL database in its most common application. 
+This device server requires MariaDB or MySQL database in its most common application. 
 
 The recommended way of running device servers is to use :program:`Starter` service. 
 
@@ -57,7 +57,8 @@ The recommended way of running device servers is to use :program:`Starter` servi
 
 .. warning::
 
-  root password for MySQL can be different from the computer root password. This password should not be empty. tango database password for MySQL tango database can be empty. 
+  root password for database can be different from the computer root password. 
+  This password should not be empty. tango database password for tango database can be empty. 
 
 
 - an official Oracle Java JRE (Java Runtime Environment) >= 1.7
