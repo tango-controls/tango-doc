@@ -20,12 +20,12 @@ The Device Class identification on the left part and the description on the righ
 
 |image0|
 
-You will see an empty :ref:`Pogo <pogo_manual>` interface.
+You will see an empty Pogo interface.
 
 |image1|
 
 You can add some Properties, Commands and Attributes, by double-clicking on each one.
-There are different possible configuraton. You can see more details in :ref:`Pogo <pogo_manual>` description.
+There are different possible configuraton.
 
 |image2|
 
@@ -37,33 +37,35 @@ Choose your folder's path and files you want to create. For example, on linux OS
 
 |image4|
 
-You can now see :ref:`Pogo <pogo_manual>` 's files in your folder. :ref:`Pogo <pogo_manual>` had create skeleton files with your Properties, Commands and Attributes.
+You can now see :program:`Pogo`'s files in your folder. :program:`Pogo` had create skeleton files with your Properties, Commands and Attributes.
 
 |image5|
 
 Now you have a basic server who's make nothing. You can provide contents or fill it with different needs.
 
-You can have some informations about how to getting properly start :ref:`here <getting_started_as_developer>`
+You can have some informations about how to start :ref:`here <getting_started_as_developer>`
 
 You can have more informations about device server usage :ref:`here <device_api>`.
+
+
+How to fill your device in :ref:`Cpp <cpp_client_programmers_guide>`, :ref:`Java <getting_started_with_jtango_server>` and :ref:`Python <getting_started_pytango>`
+
 
 Compile And Run 
 ---------------
 
-Now you can compile and Run_ your Class.
+Now you can compile and :ref:`Run <howto_start_device_server>` your Class.
 
 
 
 .. definitions
    --------------
 
-.. _Run:    http://www.esrf.fr/computing/cs/tango/tango_doc/ds_doc/tango-ds/System/starter/index.html
-
-.. |image| image:: img/PogoFileImage.png   
-.. |image0| image:: img/PogoFirstConfiguration.png
-.. |image1| image:: img/PogoEmptyImage.png
-.. |image2| image:: img/PogoFilled.png
-.. |image3| image:: img/PogoGenerateButton.png
-.. |image4| image:: img/PogoGenerate.png
-.. |image5| image:: img/PogoFilesGenerated.png
+.. |image| image:: how-to-first-device-class/PogoFileImage.png   
+.. |image0| image:: how-to-first-device-class/PogoFirstConfiguration.png
+.. |image1| image:: how-to-first-device-class/PogoEmptyImage.png
+.. |image2| image:: how-to-first-device-class/PogoFilled.png
+.. |image3| image:: how-to-first-device-class/PogoGenerateButton.png
+.. |image4| image:: how-to-first-device-class/PogoGenerate.png
+.. |image5| image:: how-to-first-device-class/PogoFilesGenerated.png
 
