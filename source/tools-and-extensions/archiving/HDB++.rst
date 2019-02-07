@@ -137,7 +137,7 @@ At the ESRF, it is used to configure/add automatically some dynamic attributes i
 startup depending on its configuration (device properties), if the configuration changes, different attributes might be created.
 In this specific case, we have the requirement to ensure these dynamic attributes are archived. So the device server will configure them via the HdbConfigurator device server.
 
-|HdbConfiguratorServer|
+|image2|
 
 Figure 3: HDB++ and HdbConfiguratorServer
 
@@ -320,9 +320,15 @@ More information is available in Administration -> Services section of this docu
 .. |image0| image:: HDB-plus-plus/image2.png
    :width: 6.26772in
    :height: 3.37500in
+
 .. |image1| image:: HDB-plus-plus/image4.png
    :width: 6.26772in
    :height: 3.62500in
+
+.. |image2| image:: HDB-plus-plus/HdbConfiguratorServer.png
+   :width: 6.26772in
+   :height: 3.62500in
+
 .. |libs| image:: HDB-plus-plus/libs.png
    :width: 6.26772in
    :height: 3.62500in
