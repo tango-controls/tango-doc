@@ -20,17 +20,18 @@ If you have prerequisites installed, you need to install Sphinx tools:
 
 #. Install virtual environments support for Python:
 
-   :command:`pip install virtualenv`
+   :command:`python3 -m venv tango-doc`
 
-   .. note::
-      If you're using a Unix-based system, you might need to use :command:`sudo pip install virtualenv`.
-
-#. Create an environment for sphinx tools:
-
-   :command:`virtualenv doc-env`
 #. Activate the environment:
 
-   :command:`source doc-env/bin/activate`
+   On GNU/Linux:
+
+   :command:`source tango-doc/bin/activate`
+
+   On Windows:
+
+   :command:`tutorial-env\Scripts\activate.bat`
+
 #. Install Sphinx:
 
    :command:`pip install sphinx`
