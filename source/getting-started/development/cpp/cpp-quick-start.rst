@@ -1,3 +1,5 @@
+.. _cpp_quick_start:
+
 TANGO C++ Quick start
 =====================
 

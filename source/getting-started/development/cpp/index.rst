@@ -7,4 +7,5 @@ Getting started with cppTango (C++ implementation of Tango-Controls)
    :name: gettingstartedtoc
 
    first-client
+   cpp-quick-start
    first-device-class
