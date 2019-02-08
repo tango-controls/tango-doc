@@ -55,7 +55,8 @@ A special TANGO device server called the `TANGO Database Server` will act as a n
 Step 1: installation
 --------------------
 
-This chapter assumes that you have already installed Tango in your local computer or in your network. If you need to install TANGO, please reference to the documentation. 
+This chapter assumes that you have already installed Tango in your local computer or in your network. If you need to
+install TANGO, please reference to :ref:`the documentation<getting_started_installation>`.
 
 Step 2: create a device class
 -----------------------------
