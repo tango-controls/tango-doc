@@ -2068,7 +2068,7 @@ sub-chapters, the command and attributes classes (*DevReadPositionCmd*,
 *DevReadDirectionCmd*, *PositionAttr*, *SetPositionAttr* and
 *DirectionAttr*) are very simple classes. A tool called **Pogo** has
 been developped to automatically generate/maintain these classes and to
-write part of the code needed in the remaining one. See xx to know more
+write part of the code needed in the remaining one. See :ref:`Pogo manual<pogo_manual>` to know more
 on this Pogo tool.
 
 In order to also gives an example of how the database objects part of
@@ -4313,6 +4313,8 @@ log4tango.lib and zmq.lib libraries.
 during project creation generates one include file called *Stdafx.h*. If
 this file itself includes windows.h file, you have to add the
 preprocessor macro \_WIN32\_WINNT and set it to 0x0500.
+
+.. _running-cpp-device-server:
 
 Running a C++ device server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~

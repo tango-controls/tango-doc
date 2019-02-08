@@ -118,15 +118,19 @@ Finally Tango REST API implementation should use Tango Access Control to validat
 Further steps
 -------------
 
-Install Tango REST API server localy or using docker [reference].
+Install Tango REST API server localy or using docker.
 
-Develop your REST client or use 3rd party frameworks (`mTangoSDK <http://bitbucket.org/hzgwpn/mtango>`_, `tangojs <https://tangojs.github.io/>`_).
+Develop your REST client or use 3rd party frameworks (:ref:`see Tango web tools<webtoolstoc>`).
 
-Deploy everything in the local network or in the cloud [reference].
+Deploy everything in the local network or in the cloud.
 
 References
 ----------
 
 [1] `Tango REST API specification <http://tango-rest-api.readthedocs.io/en/latest>`_
+
 [2] `Tango REST API specification on GitHub <https://github.com/tango-controls/rest-api>`_
-[3] `mtangorest.server -- Tango REST API implementation <https://bitbucket.org/hzgwpn/mtangorest.server>`_
+
+[3] :ref:`REST API installation tutorial, full stack<install_tango_webapp>`
+
+[4] `Tango REST Server wiki <https://github.com/tango-controls/rest-server/wiki>`_

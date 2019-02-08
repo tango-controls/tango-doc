@@ -1,3 +1,5 @@
+.. _install_tango_webapp:
+
 TangoWebapp installation tutorial (Windows)
 ===========================================
 
