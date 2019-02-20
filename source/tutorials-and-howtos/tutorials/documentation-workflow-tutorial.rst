@@ -18,8 +18,11 @@ Sphinx installation
 
 Once installed the prerequisites, you can use Sphinx through two options:
 
+- using Python3 venv way, or
+- using virtualenv way.
 
-- Using Python3 venv way:
+Using Python3 venv way
+~~~~~~~~~~~~~~~~~~~~~~
 
 If you have prerequisites installed, you need to install Sphinx tools:
 
@@ -45,8 +48,8 @@ If you have prerequisites installed, you need to install Sphinx tools:
 
    :command:`pip install ipython`
 
-
-- Using virtualenv way:
+Using virtualenv way
+~~~~~~~~~~~~~~~~~~~~
 
 #. Install virtual environments support for Python:
 
