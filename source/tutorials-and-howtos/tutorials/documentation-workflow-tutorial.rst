@@ -16,7 +16,40 @@ To work with documentation, first you need to have the following programs instal
 Sphinx installation
 -------------------
 
+Once installed the prerequisites, you can use Sphinx through two options:
+
+- using Python3 venv way, or
+- using virtualenv way.
+
+Using Python3 venv way
+~~~~~~~~~~~~~~~~~~~~~~
+
 If you have prerequisites installed, you need to install Sphinx tools:
+
+#. Install virtual environments support for Python:
+
+   :command:`python3 -m venv doc-env`
+
+#. Activate the environment:
+
+    * On GNU/Linux:
+
+   :command:`source doc-env/bin/activate`
+
+    * On Windows:
+
+   :command:`doc-env\Scripts\activate.bat`
+
+#. Install Sphinx:
+
+   :command:`pip install sphinx`
+
+#. Install IPtyhon (to make all how-tos build correctly):
+
+   :command:`pip install ipython`
+
+Using virtualenv way
+~~~~~~~~~~~~~~~~~~~~
 
 #. Install virtual environments support for Python:
 
@@ -28,9 +61,17 @@ If you have prerequisites installed, you need to install Sphinx tools:
 #. Create an environment for sphinx tools:
 
    :command:`virtualenv doc-env`
+
 #. Activate the environment:
 
+    * On GNU/Linux:
+
    :command:`source doc-env/bin/activate`
+
+    * On Windows:
+
+   :command:`doc-env\Scripts\activate.bat`
+
 #. Install Sphinx:
 
    :command:`pip install sphinx`
