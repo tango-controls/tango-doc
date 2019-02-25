@@ -170,7 +170,7 @@ Assuming you have downloaded it and copied to the Tango bin folder please follow
     - Create a directory for :term:`Device Servers <Device Server>`. Let it be :file:`C:\\DeviceServers\\bin`
       with :command:`mkdir c:\\DeviceServers\\bin`
 
-    - Change to the Tango bin directory with command (:command:`cd "%TANGO_ROOT%\bin"`)
+    - Change to the Tango bin directory with command (:command:`cd "%TANGO_ROOT%\\bin"`)
     - Copy :program:`TangoTest` :term:`Device Server` to the newly crated folder:
       :command:`copy TangoTest.exe c:\\DeviceServers\\bin`
 
