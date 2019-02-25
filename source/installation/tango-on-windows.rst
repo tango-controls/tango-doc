@@ -78,7 +78,7 @@ To make a computer become a Tango Host you need to:
 
 - Setup environment variables providing credentials to access MySQL:
     - Open :guilabel:`Command Line`.
-    - Invoke command: :command:`%TANGO_ROOT%\bin\dbconfig.exe`.
+    - Invoke command: :command:`%TANGO_ROOT%\\bin\\dbconfig.exe`.
 
         .. note::
             This lets you setup two environment variables
@@ -91,17 +91,17 @@ To make a computer become a Tango Host you need to:
 - Populate database with an initial Tango configuration:
     - Open a command line.
     - Add MySQL client to be available in the PATH. For MySQL version 5.7 the command should be:
-      :command:`set PATH=%PATH%;"C:\Program Files\MySQL\MySQL Server 5.7\bin"`
+      :command:`set PATH=%PATH%;"C:\\Program Files\\MySQL\\MySQL Server 5.7\\bin"`
 
       .. note::
          Adjust the path according to your MySQL version and the path where it is installed.
 
-    - Invoke :command:`cd "%TANGO_ROOT%\share\tango\db\"`.
+    - Invoke :command:`cd "%TANGO_ROOT%\\share\\tango\\db\\"`.
     - Call :program:`create_db.bat`.
 
 - Start a :program:`DataBaseds` :term:`Device Server`:
     - Open a new command line window.
-    - In the command line call :command:`"%TANGO_ROOT%\bin\start-db.bat"`.
+    - In the command line call :command:`"%TANGO_ROOT%\\bin\\start-db.bat"`.
 
         .. note::
             To make your Tango installation operational you have to have this :program:`DataBaseds` running permanently.
@@ -114,9 +114,9 @@ To make a computer become a Tango Host you need to:
 
     - Download NSSM from http://nssm.cc/.
     - Unpack the file to some convinient location. It is suggested to copy proper (32bit or 64bit) version to the
-      Tango bin folder ``%TANGO_ROOT%\bin\``.
+      Tango bin folder ``%TANGO_ROOT%\\bin\\``.
     - Open :guilabel:`Command Line` as Administrator.
-    - Change current path to where the :program:`nssm` is unpacked or copied, eg. :command:`cd "%TANGO_ROOT%\bin"`.
+    - Change current path to where the :program:`nssm` is unpacked or copied, eg. :command:`cd "%TANGO_ROOT%\\bin"`.
     - Invoke :command:`nssm.exe install Tango-DataBaseds`. This will open a window where you can define service parameters.
         - In the Application tab provide information as follows (adjust if your installation path is different).
             .. image:: tango-on-windows/databaseds-as-service-01.png
@@ -125,7 +125,7 @@ To make a computer become a Tango Host you need to:
         - Click :guilabel:`Install Service`.
     - Invoke :command:`nssm.exe start Tango-DataBaseds` to start the service.
     - Test if everything is ok. Use :guilabel:`Start` menu to run Jive or in command line call
-      :command:`"%TANGO_ROOT%\bin\start-jive.bat"`.
+      :command:`"%TANGO_ROOT%\\bin\\start-jive.bat"`.
 
 
 
@@ -144,11 +144,11 @@ Assuming you have downloaded it and copied to the Tango bin folder please follow
         spaces. This is a limitation of the current :program:`Starter` implementation.
 
     - Create a directory for :term:`Device Servers <Device Server>`. Let it be :file:`C:\\DeviceServers\\bin`
-      with :command:`mkdir c:\DeviceServers\bin`
+      with :command:`mkdir c:\\DeviceServers\\bin`
 
-    - Change to the Tango bin directory with command (:command:`cd "%TANGO_ROOT%\bin"`)
+    - Change to the Tango bin directory with command (:command:`cd "%TANGO_ROOT%\\bin"`)
     - Copy :program:`TangoTest` :term:`Device Server` to the newly crated folder:
-      :command:`copy TangoTest.exe c:\DeviceServers\bin`
+      :command:`copy TangoTest.exe c:\\DeviceServers\\bin`
 
 - Add entry about the Starter device server you will start on your computer:
     - Start a tool called :program:`Astor`. You may use either Windows :guilabel:`Start` menu or
@@ -200,7 +200,7 @@ Assuming you have downloaded it and copied to the Tango bin folder please follow
         .. image:: tango-on-windows/device-server-05.png
 - Running your :term:`Device Servers <device server>`:
     - You need to copy an executable to the folder configured for :program:`Starter`. In our example it is
-      :file:`C:\DeviceServers\bin`.
+      :file:`C:\\DeviceServers\\bin`.
     - Then use :program:`Astor`. After opening :guilabel:`Control panel` for your computer (double clicking on a label)
       and selection :guilabel:`Start New`...
     - Select :guilabel:`Create New Server` and follow a wizard.
