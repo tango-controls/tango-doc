@@ -4,6 +4,7 @@
    contain the root `toctree` directive.
 
 .. _mambo_manual:
+
 Mambo User Manual
 =================
 
@@ -325,7 +326,7 @@ Figure 9: Step 2, select AC attributes (alternate method)
       **AND**
 
       -  belonging to any Device of the selected Class and Domain are added to
-       the current AC’s list of attributes.
+         the current AC’s list of attributes.
 
    All new attributes are red until the AC is saved.
 

@@ -268,7 +268,7 @@ initialized to statically allocated strings. The argument of the
 Attribute::set_value() method is of type "char \*\*" which is coherent
 with the definition of the Tango::DevString type. Nevertheless, the
 definition of statically allocated string in C / C++ is a "const char
-*". This is why we need a const_cast during the pointer
+\*". This is why we need a const_cast during the pointer
 initialization.
 
 Note that the use of the Pogo generated data member (named

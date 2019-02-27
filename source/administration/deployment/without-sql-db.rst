@@ -41,7 +41,7 @@ giop:tcp::<port number>
 
 to start your device server. The device name passed to the client
 application must also be modified in order to refect the non-database
-usage. See [DeviceNaming] to learn about Tango device name syntax.
+usage. See :ref:`device naming <tango_object_naming>` to learn about Tango device name syntax.
 Nevertheless, using this Tango feature prevents some other features to
 be used :
 
@@ -51,6 +51,8 @@ be used :
 
 -  In case of several device servers running on the same host, the user
    must manually manage a list of already used network port.
+
+.. _device_server_without_database:
 
 Device server without database
 ------------------------------
@@ -152,6 +154,6 @@ Some clients like atkpanel require *tango://* prefix:
 
 tango://mycomputer:1234/a/b/c#dbase=no
 
-See appendix [DeviceNaming] for all details about Tango object naming.
+See :ref:`device naming <tango_object_naming>` for all details about Tango object naming.
 
 

@@ -1,3 +1,4 @@
+.. _tango_object_naming:
 .. raw:: latex
 
     \clearpage

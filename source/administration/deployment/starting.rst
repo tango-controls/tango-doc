@@ -14,8 +14,8 @@ Without database
 
 When used without database, there is no additional process to start.
 Simply starts device server using the -nodb option (and eventually the
--dlist option) on specific port. See [sec:Device-server-without] to find
-informations on how to start/write Tango device server not using the
+-dlist option) on specific port. See :ref:`without_sql_db` to find
+information on how to start/write Tango device server not using the
 database.
 
 With database
@@ -24,7 +24,7 @@ With database
 Starting the Tango control system simply means starting its database
 device server on a well defined host using a well defined port. Use the
 host name and the port number to build the TANGO\_HOST environment
-variable. See [Env variable] to find how starting a device server on a
+variable. See :ref:`environment variable<running-cpp-device-server>` to find how starting a device server on a
 specific host. Obviously, the underlying database software (MySQL) must
 be started before the Tango database device server. The Tango database
 server connects to MySQL using a default logging name set to root. You
@@ -101,7 +101,7 @@ With file used as database
 
 When used with database on file, there is no additional process to
 start. Simply starts device server using the -file option specifying
-file name port. See [sec:Device-server-file] to find informations on how
+file name port. See :ref:`Device server using file as database<without_sql_db>` to find information on how
 to start Tango device server using database on file.
 
 With file used as database and event

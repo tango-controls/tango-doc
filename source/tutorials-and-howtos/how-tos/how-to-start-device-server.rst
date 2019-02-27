@@ -9,7 +9,7 @@ How to start a device server
 .. toctree::
    :maxdepth: 2
 
-   how-to-start-device-server
+   self
 
 While reading this how-to please refer to manuals of :ref:`Jive <jive_manual>` and :ref:`Astor <astro_manual>` tools. 
 
