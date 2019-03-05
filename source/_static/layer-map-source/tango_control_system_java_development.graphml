@@ -27,7 +27,7 @@
       </data>
     </node>
     <node id="n1">
-      <data key="d4"><![CDATA[http://tango-controls.readthedocs.io/en/latest/getting-started/development/java/jtango-client.html]]></data>
+      <data key="d4"><![CDATA[http://tango-controls.readthedocs.io/en/dev/getting-started/development/java/jtango-client.html]]></data>
       <data key="d5"><![CDATA[TANGO devices and database are implemented using the TANGO device server model. 
 To access them the user has the CORBA interface e.g. command_inout(), 
 write_attributes() etc. defined by the idl file. These methods are very 
@@ -51,7 +51,7 @@ hides all CORBA aspects of TANGO.]]></data>
       </data>
     </node>
     <node id="n2">
-      <data key="d4"><![CDATA[http://tango-controls.readthedocs.io/en/latest/development/device-api/index.html]]></data>
+      <data key="d4"><![CDATA[http://tango-controls.readthedocs.io/en/dev/development/device-api/index.html]]></data>
       <data key="d5"><![CDATA[A device is an abstract concept defined by the TDSOM. In reality, it can be a 
 piece of hardware (an interlock bit) a collection of hardware (a screen attached 
 to a stepper motor) a logical device (a taper) or a combination of all these (an
@@ -75,7 +75,7 @@ accelerator). Each device has a unique name in the control system and eventually
       </data>
     </node>
     <node id="n3">
-      <data key="d4"><![CDATA[http://tango-controls.readthedocs.io/en/latest/development/device-api/device-server-model.html#deviceservermodel]]></data>
+      <data key="d4"><![CDATA[http://tango-controls.readthedocs.io/en/dev/development/device-api/device-server-model.html#deviceservermodel]]></data>
       <data key="d5"><![CDATA[A java web application that provides Tango REST API implementation. Basically it is a bridge from "http://" to "tango://". For more information please refer to this page ...]]></data>
       <data key="d6">
         <y:ShapeNode>
@@ -94,7 +94,7 @@ accelerator). Each device has a unique name in the control system and eventually
       </data>
     </node>
     <node id="n4">
-      <data key="d4"><![CDATA[http://tango-controls.readthedocs.io/en/latest/tools-and-extensions/pogo/index.html]]></data>
+      <data key="d4"><![CDATA[http://tango-controls.readthedocs.io/en/dev/tools-and-extensions/pogo/index.html]]></data>
       <data key="d5"><![CDATA[Pogo helps you creating/updating Tango device class in any of the three 
 supported languages (C++, Python or Java)]]></data>
       <data key="d6">
@@ -134,7 +134,7 @@ to execute any device commands or to read/write any device attributes.]]></data>
       </data>
     </node>
     <node id="n6">
-      <data key="d4"><![CDATA[http://tango-controls.readthedocs.io/en/latest/development/device-api/device-server-model.html#introduction-to-corba]]></data>
+      <data key="d4"><![CDATA[http://tango-controls.readthedocs.io/en/dev/development/device-api/device-server-model.html#introduction-to-corba]]></data>
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="29.28000000000003" width="565.0864292660176" x="777.9124009775051" y="948.0890442395813"/>
@@ -227,7 +227,7 @@ to execute any device commands or to read/write any device attributes.]]></data>
       </data>
     </node>
     <node id="n11">
-      <data key="d4"><![CDATA[http://tango-controls.readthedocs.io/en/latest/development/client-api/atk-programmers-guide.html?highlight=atkpanel]]></data>
+      <data key="d4"><![CDATA[http://tango-controls.readthedocs.io/en/dev/development/client-api/atk-programmers-guide.html?highlight=atkpanel]]></data>
       <data key="d5"><![CDATA[Tango Application Toolkit also called "ATK" is a client framework for building
 applications based on Java Swing in a Tango control system.]]></data>
       <data key="d6">
@@ -247,7 +247,7 @@ applications based on Java Swing in a Tango control system.]]></data>
       </data>
     </node>
     <node id="n12">
-      <data key="d4"><![CDATA[http://tango-controls.readthedocs.io/en/latest/tools-and-extensions/jdraw/jdraw.html]]></data>
+      <data key="d4"><![CDATA[http://tango-controls.readthedocs.io/en/dev/tools-and-extensions/jdraw/jdraw.html]]></data>
       <data key="d5"><![CDATA[It is a generic class to view and to animate the synoptics made with JDraw.]]></data>
       <data key="d6">
         <y:ShapeNode>
@@ -266,7 +266,7 @@ applications based on Java Swing in a Tango control system.]]></data>
       </data>
     </node>
     <node id="n13">
-      <data key="d4"><![CDATA[http://tango-controls.readthedocs.io/en/latest/tools-and-extensions/jdraw/jdraw.html]]></data>
+      <data key="d4"><![CDATA[http://tango-controls.readthedocs.io/en/dev/tools-and-extensions/jdraw/jdraw.html]]></data>
       <data key="d5"><![CDATA[JDraw is an editor to draw your synoptic(s) to control Tango devices.]]></data>
       <data key="d6">
         <y:ShapeNode>

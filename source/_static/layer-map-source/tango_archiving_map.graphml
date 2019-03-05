@@ -27,7 +27,7 @@
       </data>
     </node>
     <node id="n1">
-      <data key="d4"><![CDATA[http://tango-controls.readthedocs.io/en/latest/administration/services/hdbpp/hdb++-design-guidelines.html#hdb-tango-device-server]]></data>
+      <data key="d4"><![CDATA[http://tango-controls.readthedocs.io/en/dev/administration/services/hdbpp/hdb++-design-guidelines.html#hdb-tango-device-server]]></data>
       <data key="d5"><![CDATA[SnapArchiver: Records the attributes values picture in the SNAP database.
 SnapManager: Manages the snapshots configuration and send the request to the archiver
 SnapExtractor: Provides database extraction methods based on various criteria]]></data>
@@ -48,7 +48,7 @@ SnapExtractor: Provides database extraction methods based on various criteria]]>
       </data>
     </node>
     <node id="n2">
-      <data key="d4"><![CDATA[http://tango-controls.readthedocs.io/en/latest/tutorials-and-howtos/how-tos/how-to-pytangoarchiving.html]]></data>
+      <data key="d4"><![CDATA[http://tango-controls.readthedocs.io/en/dev/tutorials-and-howtos/how-tos/how-to-pytangoarchiving.html]]></data>
       <data key="d5"><![CDATA[Python API for the Tango Archiving system
 This package allows to:
 Integrate Hdb and Snap archiving with other python/PyTango tools.
@@ -182,7 +182,7 @@ refreshed reports]]></data>
       </data>
     </node>
     <node id="n8">
-      <data key="d4"><![CDATA[http://tango-controls.readthedocs.io/en/latest/administration/services/hdbpp/index.html]]></data>
+      <data key="d4"><![CDATA[http://tango-controls.readthedocs.io/en/dev/administration/services/hdbpp/index.html]]></data>
       <data key="d5"><![CDATA[The HDB++ is a novel TANGO device server for Historical Data Base (HDB) archiving.
 It’s written in C++ and is fully event-driven]]></data>
       <data key="d6">
@@ -301,7 +301,7 @@ attributes values. ]]></data>
       </data>
     </node>
     <node id="n14">
-      <data key="d4"><![CDATA[http://tango-controls.readthedocs.io/en/latest/development/device-api/device-server-model.html#introduction-to-corba]]></data>
+      <data key="d4"><![CDATA[http://tango-controls.readthedocs.io/en/dev/development/device-api/device-server-model.html#introduction-to-corba]]></data>
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="29.28000000000003" width="481.42604548966085" x="38.03077658198026" y="215.13490821149264"/>
@@ -319,7 +319,7 @@ attributes values. ]]></data>
       </data>
     </node>
     <node id="n15">
-      <data key="d4"><![CDATA[http://tango-controls.readthedocs.io/en/latest/development/device-api/device-server-model.html#deviceservermodel]]></data>
+      <data key="d4"><![CDATA[http://tango-controls.readthedocs.io/en/dev/development/device-api/device-server-model.html#deviceservermodel]]></data>
       <data key="d5"><![CDATA[In order to simplify device server process administration, a device of the 
 DServer class is automatically added to each device server process. Thus, every 
 device server process supports the same set of administration commands. The 
@@ -343,7 +343,7 @@ dserver/device server executable name/device server instance name ]]></data>
       </data>
     </node>
     <node id="n16">
-      <data key="d4"><![CDATA[http://tango-controls.readthedocs.io/en/latest/development/client-api/index.html]]></data>
+      <data key="d4"><![CDATA[http://tango-controls.readthedocs.io/en/dev/development/client-api/index.html]]></data>
       <data key="d5"><![CDATA[TANGO devices and database are implemented using the TANGO device server model. 
 To access them the user has the CORBA interface e.g. command_inout(), 
 write_attributes() etc. defined by the idl file. These methods are very 
