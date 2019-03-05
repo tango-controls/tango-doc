@@ -3,7 +3,7 @@
 Waltz (ex. TangoWebapp) installation tutorial (Windows)
 =======================================================
 
-:audience:`developers, administrators`, :lang:`java`,`javascript`
+:audience:`developers, administrators`, :lang:`java, javascript`
 
 Contributed by `Florian Pourchayre <http://www.tango-controls.org/community/members/fpourchayre>`_
 
