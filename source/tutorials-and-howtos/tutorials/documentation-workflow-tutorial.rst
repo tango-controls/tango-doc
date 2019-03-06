@@ -107,13 +107,13 @@ Updating documentation
    .. note::
 
       The following command creates a branch based on the current branch you are on. If you've just started the tutorial
-      it is `dev`. If you would like to contribute to another branch, e.g. directly to `9.2.5`, you need to check it
+      it is `master`. If you would like to contribute to another branch, e.g. directly to `9.2.5`, you need to check it
       out first: :command:`git checkout origin/9.2.5`
 
       To see what what branch is the current one use: :command:`git branch -a`. The current branch is marked
       with an asterisk (\*).
 
-   :command:`git checkout origin/dev`
+   :command:`git checkout origin/master`
    :command:`git checkout -b "TD-66-step-by-step-demo"`
 
 #. Edit a file (or create it if it doesn't exist) you would like to change. If you are following this tutorial for learning
