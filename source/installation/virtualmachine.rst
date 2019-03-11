@@ -20,11 +20,20 @@ This way, out of this virtual box, another great, sophisticated control system f
 TangoBox 9.2
 ------------
 
-**A new machine with Tango Controls 9.2 is released.** You may try it:
+**A machine with Tango Controls 9.2 is released.** You may try it:
 
 * Download 64 bit `Ubuntu virtual machine with TANGO 9.2 RC11 <http://ftp.esrf.fr/pub/cs/tango/TangoBox-9.2_RC11.ova>`_.
 
 * Please read :doc:`Tango Controls demo VM's documentation <vm/tangobox-9.2>`.
+
+TangoBox 9.3 beta
+-----------------
+
+**A new machine with Tango Controls 9.3 is availabel for beta tests.** See: `a release note <https://github.com/tango-controls/tangobox/releases/tag/v9.3-beta>`_ and `README <https://github.com/tango-controls/tangobox/blob/develop/README.md>`_.
+
+You may try it:
+
+* Download 64 bit `Ubuntu virtual machine with TANGO 9.3-beta  <https://1drv.ms/f/s!AlUXhMBn4oAfj-cyWmmZUMIwtniSiw>`_.
 
 Previous versions
 -----------------
