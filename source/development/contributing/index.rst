@@ -10,3 +10,4 @@ Contributing
    :maxdepth: 2
 
    documentation-guide
+   cpptango-contribution
