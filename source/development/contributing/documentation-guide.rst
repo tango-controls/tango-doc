@@ -1,3 +1,6 @@
+.. _documentation-guide:
+
+
 How to work with Tango Controls documentation
 =============================================
 
