@@ -1170,15 +1170,15 @@ Strings
 
 Strings are mapped to **char \***. The use of *new* and *delete* for
 dynamic allocation of strings is not portable. Instead, you must use
-helper functions defined by CORBA (in the CORBA namespace). These
+helper functions defined by CORBA (in the CORBA namespace) and Tango. These
 functions are :
 
 .. code:: cpp
   :number-lines:
 
         char *CORBA::string_alloc(unsigned long len);
-        char *CORBA::string_dup(const char *);
-        void CORBA::string_free(char *);
+        char *Tango::string_dup(const char *);
+        void Tango::string_free(char *);
 
 These functions handle dynamic memory for strings. The *string\_alloc*
 function allocates one more byte than requested by the len parameter
@@ -1186,8 +1186,9 @@ function allocates one more byte than requested by the len parameter
 and copy. Both *string\_alloc* and *string\_dup* return a null pointer
 if allocation fails. The *string\_free* function must be used to free
 memory allocated with *string\_alloc* and *string\_dup*. Calling
-*string\_free* for a null pointer is safe and does nothing. The
-following code fragment is an example of the Tango::DevString type usage
+*string\_free* for a null pointer is safe and does nothing. *Tango::string\_free* is available only since cppTango 9.3.3.
+*Tango::string\_dup* is available only since Tango 9. If you are using an older version of the Tango C++ library, you should use *CORBA::string\_free* and *CORBA::string\_dup* instead.
+The following code fragment is an example of the Tango::DevString type usage :
 
 .. code:: cpp
   :number-lines:
@@ -1195,15 +1196,15 @@ following code fragment is an example of the Tango::DevString type usage
        Tango::DevString str = CORBA::string_alloc(5);
        strcpy(str,"TANGO");
 
-       Tango::DevString str1 = CORBA::string_dup("Do you want to danse TANGO?");
+       Tango::DevString str1 = Tango::string_dup("Do you want to danse TANGO?");
 
-       CORBA::string_free(str);
-       CORBA::string_free(str1);
+       Tango::string_free(str);
+       Tango::string_free(str1);
 
 Line 1-2 : TANGO is a five letters string. The CORBA::string\_alloc
 function parameter is 5 but the function allocates 6 bytes
 
-Line 4 : Example of the CORBA::string\_dup function
+Line 4 : Example of the Tango::string\_dup function
 
 Line 6-7 : Memory deallocation
 
@@ -1298,10 +1299,10 @@ Another example for the Tango::DevVarStringArray type is given
        Tango::DevVarStringArray mystrseq(4);
        mystrseq.length(4);
 
-       mystrseq[0] = CORBA::string_dup("Rock and Roll");
-       mystrseq[1] = CORBA::string_dup("Bossa Nova");
-       mystrseq[2] = CORBA::string_dup("Waltz");
-       mystrseq[3] = CORBA::string_dup("Tango");
+       mystrseq[0] = Tango::string_dup("Rock and Roll");
+       mystrseq[1] = Tango::string_dup("Bossa Nova");
+       mystrseq[2] = Tango::string_dup("Waltz");
+       mystrseq[3] = Tango::string_dup("Tango");
 
        CORBA::Long nb_elt = mystrseq.length();
 
@@ -1430,7 +1431,7 @@ Inserting/Extracting TANGO strings
 ''''''''''''''''''''''''''''''''''
 
 The <<= operator is overloaded for const char \* and always makes a deep
-copy. This deep copy is done using the CORBA::\ *string\_dup* function.
+copy. This deep copy is done using the Tango::\ *string\_dup* function.
 The extraction of strings uses the >>= overloaded operator. The main
 point is that the Any object retains ownership of the string, so the
 returned pointer points at memory inside the Any. This means that you
@@ -1482,8 +1483,8 @@ This is identical to inserting/extracting basic types
       s <<= str1;
       s >>= str2;
 
-    //   CORBA::string_free(str2);
-    //   a <<= CORBA::string_dup("Oups");
+    //   Tango::string_free(str2);
+    //   a <<= Tango::string_dup("Oups");
 
       CORBA::Any seq;
       Tango::DevVarFloatArray fl_arr1;
@@ -1734,15 +1735,15 @@ just below
        Tango::DevVarStringArray *argout  = new Tango::DevVarStringArray();
 
        argout->length(3);
-       (*argout)[0] = CORBA::string_dup("Rumba");
-       (*argout)[1] = CORBA::string_dup("Waltz");
+       (*argout)[0] = Tango::string_dup("Rumba");
+       (*argout)[1] = Tango::string_dup("Waltz");
        string str("Jerck");
-       (*argout)[2] = CORBA::string_dup(str.c_str());
+       (*argout)[2] = Tango::string_dup(str.c_str());
        return argout;
     }
 
 Memory is allocated at line 3 and 5. Then, the sequence is populated at
-lines 6,7 and 9. The usage of the *CORBA::string\_dup* function also
+lines 6,7 and 9. The usage of the *Tango::string\_dup* function also
 allocates memory. The sequence is created and returned using pointer.
 The *Command::insert()* method will insert the sequence into the
 CORBA::Any object using this pointer. Therefore, the CORBA::Any object
@@ -1750,7 +1751,7 @@ will take ownership of the allocated memory. It will free it when it
 will be destroyed by the CORBA ORB after the data have been sent away.
 For portability reason, the ORB uses the *CORBA::string\_free* function
 to free the memory allocated for each string. This is why the
-corresponding *CORBA::string\_du*\ p or *CORBA::string\_alloc* function
+corresponding *Tango::string\_dup* or *CORBA::string\_alloc* function
 must be used to reserve this memory.It is also possible to use a
 statically allocated memory and to avoid copying in the sequence used to
 returned the data. This is explained in the following example assuming a
