@@ -474,7 +474,7 @@ Error management has also been removed.
         time_t when = time(NULL);
 
         DevString *ptr = new DevString [1];
-        ptr = CORBA::string_dup("Attr history data");
+        ptr = Tango::string_dup("Attr history data");
 
         TimedAttrData<DevString> tad(ptr,Tango::ATTR_VALID,true,when);
         ahs.push(tad);
