@@ -19,6 +19,14 @@ Creating a Property
 
 Go in the device tree and select the Properties node, then click on the "New property" button. This will prompt an input dialog where you can enter the property name.
 
+.. tip::
+
+   | Since cppTango 9.3.3, you can use the keywords *NaN*, *-NaN*, *inf*, *-inf* and *+inf* when writing double or float
+     scalar and array properties from jive to represent *Not A Number* and *infinite* values.
+   | This might not work (yet) for a Java device server.
+   | It is not case sensitive, so *nan*, *-NAN*, *nAn*, *iNF*, *-Inf* and *+INF* are also supported for instance.
+   | A negative *NaN* is extracted as *NaN*.
+
 Rename a Property
 =================
 
