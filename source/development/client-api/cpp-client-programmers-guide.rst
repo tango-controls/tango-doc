@@ -653,11 +653,12 @@ TANGO asynchronous call. This is as follows for events :
        .
        .
        .
-       virtual push_event(Tango::EventData *);
-       virtual push_event(Tango::AttrConfEventData *);
-       virtual push_event(Tango::DataReadyEventData *);
-       virtual push_event(Tango::DevIntrChangeEventData *);
-       virtual push_event(Tango::PipeEventData *);
+       public:
+       void push_event(Tango::EventData *);
+       void push_event(Tango::AttrConfEventData *);
+       void push_event(Tango::DataReadyEventData *);
+       void push_event(Tango::DevIntrChangeEventData *);
+       void push_event(Tango::PipeEventData *);
     }
 
 where EventData is defined as follows :
