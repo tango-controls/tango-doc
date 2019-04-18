@@ -58,20 +58,14 @@ Here client executes tango://tango_host:10000/sys/tg_test/1/DevDouble with the i
 
 The full reference can be found following this `link <http://tango-rest-api.readthedocs.io/en/latest>`_
 
-Real life example of getting beam current value from ESRF:
-
-https://mstatus.esrf.fr/tango/rest/rc4/hosts/tangorest01.esrf.fr/10000/devices/sys/mcs/facade/attributes/current/value
-
-Use tango-cs/tango when prompted.
-
 Tango REST API implementations
 ------------------------------
 
 Since Tango REST API itself is only a specification one needs an actual implementation running some where.
 
-Known implementations are:
+Known implementations are listed in the Tango REST API readme:
 
-`mtangorest.server <https://bitbucket.org/hzgwpn/mtangorest.server>`_
+`link <https://github.com/tango-controls/rest-api#known-server-implementations>`_
 
 Please refer to the corresponding implementation documentation on how to install and use it.
 
