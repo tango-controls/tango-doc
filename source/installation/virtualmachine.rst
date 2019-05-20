@@ -17,31 +17,35 @@ proof-of-concepts and even production ready systems.
 
 This way, out of this virtual box, another great, sophisticated control system for the real world can be born!
 
-TangoBox 9.2
+TangoBox 9.3
 ------------
 
-**A machine with Tango Controls 9.2 is released.** You may try it:
+The latest release of TangoBox is based on Tango Controls v9.3.3 installed on 64 bit Ubuntu 18.04.
 
-* Download 64 bit `Ubuntu virtual machine with TANGO 9.2 RC11 <http://ftp.esrf.fr/pub/cs/tango/TangoBox-9.2_RC11.ova>`_.
+* You may download it from
+  `here <https://s2innovation.sharepoint.com/:f:/s/Developers/EovD2IBwhppAp-ZLXtawQ6gB9F6aXPPs2msr2hgPGTO-FQ?e=Ii3tnr>`_.
+* Please read :doc:`Tango Controls demo VM’s documentation <vm/tangobox-9.3>`.
+* See also `a release note <https://github.com/tango-controls/tangobox/releases/tag/v9.3.3>`_
+  and `README <https://github.com/tango-controls/tangobox/blob/develop/README.md>`_.
 
-* Please read :doc:`Tango Controls demo VM's documentation <vm/tangobox-9.2>`.
 
-TangoBox 9.3 beta
------------------
-
-**A new machine with Tango Controls 9.3 is availabel for beta tests.** See: `a release note <https://github.com/tango-controls/tangobox/releases/tag/v9.3-beta>`_ and `README <https://github.com/tango-controls/tangobox/blob/develop/README.md>`_.
-
-You may try it:
-
-* Download 64 bit `Ubuntu virtual machine with TANGO 9.3-beta  <https://1drv.ms/f/s!AlUXhMBn4oAfj-cyWmmZUMIwtniSiw>`_.
 
 Previous versions
 -----------------
 
 Previous versions are available below.
 
+TangoBox 9.2
+~~~~~~~~~~~~
 
-    * Download 64 bit `Ubuntu virtual machine with TANGO 9.1.0 <ftp.esrf.fr/pub/cs/tango/tango9-vm.zip>`_.
+    * Download 64 bit `Ubuntu virtual machine with TANGO 9.2 RC11 <http://ftp.esrf.fr/pub/cs/tango/TangoBox-9.2_RC11.ova>`_.
+
+    * Please read :doc:`TangoBox 9.2 documentation <vm/tangobox-9.2>`.
+
+Elder versions
+~~~~~~~~~~~~~~
+
+    * Download 64 bit `Ubuntu virtual machine with TANGO 9.1.0 <https://sourceforge.net/projects/tango-cs/files/vm/>`_.
 
       .. note::
 
@@ -61,3 +65,11 @@ We recommend the following videos about TANGO which will help you learn more abo
 
         <iframe src="https://player.vimeo.com/video/79554181" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
         <p><a href="https://vimeo.com/79554181">TangoBoxVM Intro Movie</a> from <a href="https://vimeo.com/user9935158">Tango Controls</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+
+   vm/*
+
+
