@@ -20,7 +20,8 @@ It also simulates distributed deployment by using Docker.
 Download
 --------
 
-The latest version (RC11) of the TangoBox 9.2 can be downloaded from `here <http://ftp.esrf.fr/pub/cs/tango/TangoBox-9.2_RC11.ova>`_.
+The latest version of the TangoBox 9.3 can be downloaded from
+`here <https://s2innovation.sharepoint.com/:f:/s/Developers/EovD2IBwhppAp-ZLXtawQ6gB9F6aXPPs2msr2hgPGTO-FQ?e=Ii3tnr>`_.
 
 What is installed
 -----------------
@@ -30,27 +31,27 @@ are installed as docker container and maybe switched off (stopped) and requires 
 on for being explored, see :ref:`Switching containers on and off <container_switch_on_off>`
 
 * Tango 9.3.3
-* PyTango 9.2.2
-* Taurus 4.2.2
+* Tango Access Control
+* PyTango 9.3.3
+* Taurus 4.5.1
 * QTango
-* iTango
-* Tango Access
-* :ref:`JupyTango <jupytango>`
-* PANIC
+* Cumbia
+* ITango
+* Sardana 2.5.0
+* PANIC/PyAlarm
 * :ref:`Bensikin <hdb_tdb_snap>`
 * :ref:`Mambo <hdb_tdb_snap>`
 * Docker
 * :ref:`Linac system simulation <jlinac>` (as docker container tangobox-sim)
 * :ref:`HDB/TDB, SNAP DS <hdb_tdb_snap>` (as docker container tangobox-archiving)
 * :ref:`HDB++ <hdbpp>` (as docker container tangobox-hdbpp)
+* :ref:`JupyTango <jupytango>` (as docker container tangobox-jupytango)
 * SerialLine, Modbus and PyPLC device server (as docker container tangobox-com)
 * :ref:`mTango + restAPI <rest_api>`, :ref:`Tango WebApp <webapp>` (as docker container tangobox-web)
 * :ref:`e-giga` (as docker container tangobox-egiga)
-* PyAlarm DS on each container
 * PyCharm
 * Visual Studio Code
 * :ref:`ModbusPal to simulate Modbus <Modbus>`
-* :ref:`Sardana 2.3.2 <sardana>`
 
 First steps
 -----------
@@ -61,7 +62,7 @@ First steps
 * Select *import* and choose downloaded TangoBox file
 * If you want, you can change VM's configuration (i.e graphics, RAM). **It is highly recommended to increase default RAM size**
 
-   .. figure:: tangobox-9.2/import-2.png
+   .. figure:: tangobox/import-2.png
 
       A virtual machine settings window.
 
@@ -145,7 +146,7 @@ tangobox-archiving   archive              -
 tangobox-hdbpp       hdbpp               -
 tangobox-web         web                 -
 tangobox-egiga       egiga               -
-tangobox-sardana     sardana
+tangobox-jupytango   sardana
       -              base         Base container
       -              ubuntu       Ubuntu image to build others
 ================== =========== ===============================
@@ -174,7 +175,7 @@ To monitor changes, use ATKPanel started from Jive. Both ModbusComposer and PyPL
 * ModbusComposer: Temperature uses **4th**; Pressure uses **5th** register in ModbusPal
 * PyPLC: Voltage uses **6th**; Flow uses **7th** register in ModbusPal
 
-.. figure:: tangobox-9.2/modbus.png
+.. figure:: tangobox/modbus.png
 
    View on a ModbusComposer device and configured ModbusPal simulator.
 
@@ -186,7 +187,7 @@ JupyTango
 JupyTango is a `Jupyter <http://jupyter.org/>`_ featuring Tango related kernels. With JupyterLab you may interact
 and do scripting for Tango through a web browser.
 
-.. figure:: tangobox-9.2/jupytango.png
+.. figure:: tangobox/jupytango.png
 
    Browser window with JupyTango in action
 
@@ -195,9 +196,7 @@ and do scripting for Tango through a web browser.
 1. start jupyterlab using our dedicated script: `jupytango`
 2. a new browser tab is automagically opened with the right URL: :file:`localhost:8888/lab?`. Please be patient, it may
    take a while on VM.
-3. the very first connection to the service requires a 'token' which is printed in the jupytango console
-4. once in jupyterlab, click the JupyTango icon to open a notebook with the appropriate kernel
-5. enjoy!
+3. enjoy!
 
 **Here are the JupyTango additions to itango:**
 
@@ -242,7 +241,7 @@ The easiest way to do it is to check it in Astor - a bulb next to `tangobox-sim`
 
 Don't worry about warnings during Elinac's initialization.
 
-.. figure:: tangobox-9.2/jlinac.png
+.. figure:: tangobox/jlinac.png
 
    JLinac simulation running.
 
@@ -259,7 +258,7 @@ the  **tangobox-archiving** container and related device servers are running:
 
 Then, you may start :program:`Mambo` or :program:`Bensikin` by clicking icons on the desktop.
 
-.. figure:: tangobox-9.2/mambo.png
+.. figure:: tangobox/mambo.png
 
    Screen of running Mambo
 
@@ -287,7 +286,7 @@ E-giga
 :program:`E-giga` is a web application for archiving data visualization (HDB/TDB and HDB++). The TangoBox deployment
 uses HDB/TDB.
 
-.. figure:: tangobox-9.2/e-giga.png
+.. figure:: tangobox/e-giga.png
 
    E-giga in a web browser window
 
@@ -313,7 +312,7 @@ Tango WebApp
 Tango may be available through a web browser. `Tango WebApp` is a general purpose Tango web application. You may try it
 on the TangoBox.
 
-.. figure:: tangobox-9.2/webapp-2.png
+.. figure:: tangobox/webapp-2.png
 
    A screenshot of Tango WebApp in a browser
 

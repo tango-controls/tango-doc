@@ -84,7 +84,7 @@ You may explore the Tango Controls feature by clicking related shortcuts on the 
    See the following section.
 
 
-.. _container_switch_on_off:
+.. _tb9_2_container_switch_on_off:
 
 Switching containers on and off
 -------------------------------
@@ -156,7 +156,7 @@ start/stop particular DS according to your needs, use **Tango Manager (Astor)** 
 Example applications
 --------------------
 
-.. _Modbus:
+.. _tb9_2_Modbus:
 
 Modbus simulation
 ~~~~~~~~~~~~~~~~~
@@ -178,7 +178,7 @@ To monitor changes, use ATKPanel started from Jive. Both ModbusComposer and PyPL
 
    View on a ModbusComposer device and configured ModbusPal simulator.
 
-.. _jupytango:
+.. _tb9_2_jupytango:
 
 JupyTango
 ~~~~~~~~~
@@ -231,7 +231,7 @@ Supported options:
 
 You can try to kill the monitored device will the JupyTango monitor is running to see how errors are handled.
 
-.. _jlinac:
+.. _tb9_2_jlinac:
 
 JLinac and Elinac simulation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -246,7 +246,7 @@ Don't worry about warnings during Elinac's initialization.
 
    JLinac simulation running.
 
-.. _hdb_tdb_snap:
+.. _tb9_2_hdb_tdb_snap:
 
 HDB/TDB/SNAP Archiving (Mambo, Bensikin)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -266,7 +266,7 @@ Then, you may start :program:`Mambo` or :program:`Bensikin` by clicking icons on
    Please take note of a green bulb of the `tangobox-archive` node in the Astor window.
 
 
-.. _hdbpp:
+.. _tb9_2_hdbpp:
 
 HDB++ Archiving
 ~~~~~~~~~~~~~~~
@@ -279,7 +279,7 @@ the  **tangobox-hdbpp** container and related device servers are running:
 
 Then, you may start :program:`HDB Configurator` or :program:`HDB Viewer` by clicking icons on the desktop.
 
-.. _e-giga:
+.. _tb9_2_e-giga:
 
 E-giga
 ~~~~~~
@@ -305,7 +305,7 @@ To open browser with :program:`E-giga` click on the relate desktop icon.
    Please keep in mind that you should not rebuild **tangobox-web** image because its configuration is not included in Dockerfile
    (it requires in-container config).
 
-.. _webapp:
+.. _tb9_2_webapp:
 
 Tango WebApp
 ~~~~~~~~~~~~
@@ -322,7 +322,7 @@ To play with :program:`Tango WebApp` make sure that the 'tangobox-web` container
 desktop icon. Use username `tango-cs` and  password `tango` to log-in.
 
 
-.. _rest_api:
+.. _tb9_2_rest_api:
 
 REST API
 ~~~~~~~~
@@ -350,7 +350,7 @@ address: `http://tangobox-web:8080/tango/rest/rc4/hosts/tangobox-vm/10000`.
    Please keep in mind that you should not rebuild **tangobox-web** image because its configuration is not included in Dockerfile
    (it requires in-container config).
 
-.. _sardana:
+.. _tb9_2_sardana:
 
 Sardana
 ~~~~~~~

@@ -24,7 +24,7 @@ The latest release of TangoBox is based on Tango Controls v9.3.3 installed on 64
 
 * You may download it from
   `here <https://s2innovation.sharepoint.com/:f:/s/Developers/EovD2IBwhppAp-ZLXtawQ6gB9F6aXPPs2msr2hgPGTO-FQ?e=Ii3tnr>`_.
-* Please read :doc:`Tango Controls demo VM’s documentation <vm/tangobox-9.3>`.
+* Please read :doc:`Tango Controls demo VM’s documentation <vm/tangobox>`.
 * See also `a release note <https://github.com/tango-controls/tangobox/releases/tag/v9.3.3>`_
   and `README <https://github.com/tango-controls/tangobox/blob/develop/README.md>`_.
 
@@ -67,6 +67,7 @@ We recommend the following videos about TANGO which will help you learn more abo
         <p><a href="https://vimeo.com/79554181">TangoBoxVM Intro Movie</a> from <a href="https://vimeo.com/user9935158">Tango Controls</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 
 .. toctree::
+   :glob:
    :maxdepth: 1
    :hidden:
 
