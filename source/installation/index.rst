@@ -17,7 +17,6 @@ Here you will find recipes on how to install the Tango Controls on various platf
     tango-on-raspberry-pi
     amazon-cloud
     virtualmachine
-    vm/tangobox-9.2
     pytango-and-taurus-on-windows
     binary_package
     patches

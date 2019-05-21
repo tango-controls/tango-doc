@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-TangoBox 9.2
+TangoBox 9.3
 ============
 
 :audience:`beginner users, beginner developers, beginner administrators`
@@ -20,7 +20,8 @@ It also simulates distributed deployment by using Docker.
 Download
 --------
 
-The latest version (RC11) of the TangoBox 9.2 can be downloaded from `here <http://ftp.esrf.fr/pub/cs/tango/TangoBox-9.2_RC11.ova>`_.
+The latest version of the TangoBox 9.3 can be downloaded from
+`here <https://s2innovation.sharepoint.com/:f:/s/Developers/EovD2IBwhppAp-ZLXtawQ6gB9F6aXPPs2msr2hgPGTO-FQ?e=Ii3tnr>`_.
 
 What is installed
 -----------------
@@ -29,39 +30,38 @@ Below there is list of provide packages/features. Please note that some of them
 are installed as docker container and maybe switched off (stopped) and requires to be switched
 on for being explored, see :ref:`Switching containers on and off <container_switch_on_off>`
 
-* Tango 9.2.5
-* PyTango 9.2.2
-* Taurus 4.2.2
+* Tango 9.3.3
+* Tango Access Control
+* PyTango 9.3.3
+* Taurus 4.5.1
 * QTango
-* iTango
-* Tango Access
-* :ref:`JupyTango <jupytango>`
-* PANIC
+* :ref:`Cumbia <cumbia>`
+* ITango
+* :ref:`Sardana 2.7.0 <sardana>`
+* :ref:`PANIC/PyAlarm <panic>`
 * :ref:`Bensikin <hdb_tdb_snap>`
 * :ref:`Mambo <hdb_tdb_snap>`
 * Docker
 * :ref:`Linac system simulation <jlinac>` (as docker container tangobox-sim)
 * :ref:`HDB/TDB, SNAP DS <hdb_tdb_snap>` (as docker container tangobox-archiving)
 * :ref:`HDB++ <hdbpp>` (as docker container tangobox-hdbpp)
+* :ref:`JupyTango <jupytango>` (as docker container tangobox-jupytango)
 * SerialLine, Modbus and PyPLC device server (as docker container tangobox-com)
 * :ref:`mTango + restAPI <rest_api>`, :ref:`Tango WebApp <webapp>` (as docker container tangobox-web)
 * :ref:`e-giga` (as docker container tangobox-egiga)
-* PyAlarm DS on each container
 * PyCharm
-* Visual Studio Code
 * :ref:`ModbusPal to simulate Modbus <Modbus>`
-* :ref:`Sardana 2.3.2 <sardana>`
 
 First steps
 -----------
 
 * First of all you have to download latest release of VirtualBox. It can be downloaded from `www.virtualbox.org <https://www.virtualbox.org/>`_ .
   Simply install it and start the program.
-* TangoBox is released in **.ova** extension so it can be easily imported.
+* TangoBox is released as an **.ova** package so it can be easily imported.
 * Select *import* and choose downloaded TangoBox file
 * If you want, you can change VM's configuration (i.e graphics, RAM). **It is highly recommended to increase default RAM size**
 
-   .. figure:: tangobox-9.2/import-2.png
+   .. figure:: tangobox/import-2.png
 
       A virtual machine settings window.
 
@@ -74,7 +74,7 @@ After importing the VM image to VirtualBox you may start it.
 * Username is: `tango-cs`
 * Password is: `tango`
 
-`tango-cs` user has sudo rights, so he may invoke commands as superuser with command :command:`sudo`.
+`tango-cs` user has sudo privileges, so he may invoke commands as superuser with command :command:`sudo`.
 
 You may explore the Tango Controls feature by clicking related shortcuts on the Desktop.
 
@@ -84,7 +84,7 @@ You may explore the Tango Controls feature by clicking related shortcuts on the 
    See the following section.
 
 
-.. _tb9_2_container_switch_on_off:
+.. _container_switch_on_off:
 
 Switching containers on and off
 -------------------------------
@@ -136,19 +136,21 @@ Containers and images dependency
 Each container is based on its image. All images are already build but, if neccessary, *Dockerfiles* are stored in :file:`home/Dockerfiles`
 directory. Below is the list of all containers and corresponding images:
 
-================== =========== ===============================
-Container            Image             Remarks
-================== =========== ===============================
-tangobox-com         com                 -
-tangobox-sim         sim                 -
-tangobox-archiving   archive              -
-tangobox-hdbpp       hdbpp               -
-tangobox-web         web                 -
-tangobox-egiga       egiga               -
-tangobox-sardana     sardana
-      -              base         Base container
-      -              ubuntu       Ubuntu image to build others
-================== =========== ===============================
+================== =============================== ===============================
+Container            Image                           Remarks
+================== =============================== ===============================
+tangobox-com         *registry*/tangobox-com         \-
+tangobox-sim         *registry*/tangobox-sim         \-
+tangobox-archiving   *registry*/tangobox-archive     \-
+tangobox-hdbpp       *registry*/tangobox-hdbpp       \-
+tangobox-web         *registry*/tangobox-web         \-
+tangobox-egiga       *registry*/tangobox-egiga       \-
+tangobox-jupytango   *registry*/tangobox-jupytango   \-
+     \-              *registry*/tangobox-base        Base container
+     \-              ubuntu                          Ubuntu image to build others
+================== =============================== ===============================
+
+Currently images are stored in `registry.gitlab.com/s2innovation/tangobox-docker` registry.
 
 Some device servers may be stopped when launching containers. It is so to get better performance (high cpu and ram usage). To control and
 start/stop particular DS according to your needs, use **Tango Manager (Astor)** to it.
@@ -156,7 +158,7 @@ start/stop particular DS according to your needs, use **Tango Manager (Astor)** 
 Example applications
 --------------------
 
-.. _tb9_2_Modbus:
+.. _Modbus:
 
 Modbus simulation
 ~~~~~~~~~~~~~~~~~
@@ -174,11 +176,11 @@ To monitor changes, use ATKPanel started from Jive. Both ModbusComposer and PyPL
 * ModbusComposer: Temperature uses **4th**; Pressure uses **5th** register in ModbusPal
 * PyPLC: Voltage uses **6th**; Flow uses **7th** register in ModbusPal
 
-.. figure:: tangobox-9.2/modbus.png
+.. figure:: tangobox/modbus.png
 
    View on a ModbusComposer device and configured ModbusPal simulator.
 
-.. _tb9_2_jupytango:
+.. _jupytango:
 
 JupyTango
 ~~~~~~~~~
@@ -186,18 +188,15 @@ JupyTango
 JupyTango is a `Jupyter <http://jupyter.org/>`_ featuring Tango related kernels. With JupyterLab you may interact
 and do scripting for Tango through a web browser.
 
-.. figure:: tangobox-9.2/jupytango.png
+.. figure:: tangobox/jupytango.png
 
    Browser window with JupyTango in action
 
 **In case you want to try it, here's the procedure:**
 
-1. start jupyterlab using our dedicated script: `jupytango`
-2. a new browser tab is automagically opened with the right URL: :file:`localhost:8888/lab?`. Please be patient, it may
-   take a while on VM.
-3. the very first connection to the service requires a 'token' which is printed in the jupytango console
-4. once in jupyterlab, click the JupyTango icon to open a notebook with the appropriate kernel
-5. enjoy!
+1. start jupyterlab (it is started by default): :code:`docker start tangobox-jupytango`
+2. open a new browser window and go to http://tangobox-jupytango:8888/lab
+3. enjoy!
 
 **Here are the JupyTango additions to itango:**
 
@@ -231,22 +230,20 @@ Supported options:
 
 You can try to kill the monitored device will the JupyTango monitor is running to see how errors are handled.
 
-.. _tb9_2_jlinac:
+.. _jlinac:
 
-JLinac and Elinac simulation
+JLinac simulation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To start simulation, you need to run **tangobox-sim** container (use :command:`docker start tangobox-sim` to start it
 from a terminal). It is also important to make sure that all related device servers are running.
 The easiest way to do it is to check it in Astor - a bulb next to `tangobox-sim` should be green.
 
-Don't worry about warnings during Elinac's initialization.
-
-.. figure:: tangobox-9.2/jlinac.png
+.. figure:: tangobox/jlinac.png
 
    JLinac simulation running.
 
-.. _tb9_2_hdb_tdb_snap:
+.. _hdb_tdb_snap:
 
 HDB/TDB/SNAP Archiving (Mambo, Bensikin)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -259,14 +256,14 @@ the  **tangobox-archiving** container and related device servers are running:
 
 Then, you may start :program:`Mambo` or :program:`Bensikin` by clicking icons on the desktop.
 
-.. figure:: tangobox-9.2/mambo.png
+.. figure:: tangobox/mambo.png
 
    Screen of running Mambo
 
    Please take note of a green bulb of the `tangobox-archive` node in the Astor window.
 
 
-.. _tb9_2_hdbpp:
+.. _hdbpp:
 
 HDB++ Archiving
 ~~~~~~~~~~~~~~~
@@ -279,7 +276,11 @@ the  **tangobox-hdbpp** container and related device servers are running:
 
 Then, you may start :program:`HDB Configurator` or :program:`HDB Viewer` by clicking icons on the desktop.
 
-.. _tb9_2_e-giga:
+.. figure:: tangobox/hdbpp.png
+
+   HDB Configurator and HDB Viewer
+
+.. _e-giga:
 
 E-giga
 ~~~~~~
@@ -287,7 +288,7 @@ E-giga
 :program:`E-giga` is a web application for archiving data visualization (HDB/TDB and HDB++). The TangoBox deployment
 uses HDB/TDB.
 
-.. figure:: tangobox-9.2/e-giga.png
+.. figure:: tangobox/e-giga.png
 
    E-giga in a web browser window
 
@@ -300,12 +301,7 @@ To use e-giga following conditions must be fulfilled:
 
 To open browser with :program:`E-giga` click on the relate desktop icon.
 
-.. note::
-
-   Please keep in mind that you should not rebuild **tangobox-web** image because its configuration is not included in Dockerfile
-   (it requires in-container config).
-
-.. _tb9_2_webapp:
+.. _webapp:
 
 Tango WebApp
 ~~~~~~~~~~~~
@@ -313,7 +309,7 @@ Tango WebApp
 Tango may be available through a web browser. `Tango WebApp` is a general purpose Tango web application. You may try it
 on the TangoBox.
 
-.. figure:: tangobox-9.2/webapp-2.png
+.. figure:: tangobox/webapp-2.png
 
    A screenshot of Tango WebApp in a browser
 
@@ -322,7 +318,7 @@ To play with :program:`Tango WebApp` make sure that the 'tangobox-web` container
 desktop icon. Use username `tango-cs` and  password `tango` to log-in.
 
 
-.. _tb9_2_rest_api:
+.. _rest_api:
 
 REST API
 ~~~~~~~~
@@ -330,27 +326,19 @@ REST API
 Tango Controls specifies REST API interface and provides its reference implementation. For details see
 :ref:`REST API documentation <tango_rest_api>`
 
-The **TangoBox** comes with REST API installed. The `tangobox-web` container must be started to play with it. Invoke
-:command:`docker start tangobox-web`.
-
-Related deskto icon opens a web browser pointing to REST API interface. The REST server requires authentication.
+The **TangoBox** comes with REST API installed.
+Related desktop icon opens a web browser pointing to REST API interface. The REST server requires authentication.
 User is `tango-cs` and password is `tango`.
 
-.. figure:: tangobox-9.2/rest-api.png
+.. figure:: tangobox/rest-api.png
 
    A web browser window presenting JSON response of the Tango REST server
 
 
 If you would like to play with it with other tools (Python, curl) it is avaialabe at the following
-address: `http://tangobox-web:8080/tango/rest/rc4/hosts/tangobox-vm/10000`.
+address: `http://localhost:10001/tango/rest/rc4/hosts/tangobox/10000`.
 
-
-.. note::
-
-   Please keep in mind that you should not rebuild **tangobox-web** image because its configuration is not included in Dockerfile
-   (it requires in-container config).
-
-.. _tb9_2_sardana:
+.. _sardana:
 
 Sardana
 ~~~~~~~
@@ -359,10 +347,47 @@ Sardana is a software suite for Supervision, Control and Data Acquisition in sci
 t aims to reduce cost and time of design, development and support of the control and data acquisition systems.
 For more information about it please refer to `Sardana documentation <http://www.sardana-controls.org>`_.
 
-.. figure:: tangobox-9.2/sardana.png
+.. figure:: tangobox/sardana.png
 
    SardanaGUI in action
 
-To play with Sardana the **tangobox-sardana** container has to be started. Open a terminal and call
-:command:`docker start tangobox-sardana`. Then, you may double-click the :guilabel:`SardanaGUI` icon on
+To play with Sardana you may double-click the :guilabel:`SardanaGUI` icon on
 the desktop or run it from a terminal (type :command:`SardanaGUI`).
+
+.. _cumbia:
+
+Cumbia
+~~~~~~
+
+  Cumbia is a new library that offers a carefree approach to multi-threaded application design and implementation. Written from scratch, it can be seen as the evolution of the QTango library, because it offers a more flexible and object oriented multi-threaded programming style.
+
+For more details please check Cumbia `webpage <https://elettra-sincrotronetrieste.github.io/cumbia-libs/>`_
+and `source repository <https://github.com/ELETTRA-SincrotroneTrieste/cumbia-libs>`_.
+
+Cumbia is installed in :file:`/usr/local/cumbia-libs`. This directory is added to :code:`ld`'s default search path.
+
+To see an example Cumbia application, please run below command or use desktop shortcut :guilabel:`CumbiaClientDemo`:
+
+.. code-block:: bash
+
+  cumbia client sys/tg_test/1/double_scalar
+
+.. figure:: tangobox/cumbia.png
+
+   Cumbia demo application
+
+.. _panic:
+
+PANIC/PyAlarm
+~~~~~~~~~~~~~
+
+  PANIC Alarm System is a set of tools (api, Tango device server, user interface) that provides: Periodic evaluation of a set of conditions, Notification (email, sms, pop-up, speakers), Notification (email, sms, pop-up, speakers), Keep a log of what happened. (files, Tango Snapshots), Taking automated actions (Tango commands / attributes), Tools for configuration/visualization.
+
+  The Panic package contains the python AlarmAPI for managing the PyAlarm device servers from a client application or a python shell. The panic module is used by PyAlarm, Panic Toolbar and Panic GUI.
+
+To launch PANIC GUI, use desktop shortcut :guilabel:`PANIC`.
+
+
+.. figure:: tangobox/panic.png
+
+   PANIC GUI application
