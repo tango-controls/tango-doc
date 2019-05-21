@@ -35,10 +35,10 @@ on for being explored, see :ref:`Switching containers on and off <container_swit
 * PyTango 9.3.3
 * Taurus 4.5.1
 * QTango
-* Cumbia
+* :ref:`Cumbia <cumbia>`
 * ITango
-* Sardana 2.5.0
-* PANIC/PyAlarm
+* :ref:`Sardana 2.7.0 <sardana>`
+* :ref:`PANIC/PyAlarm <panic>`
 * :ref:`Bensikin <hdb_tdb_snap>`
 * :ref:`Mambo <hdb_tdb_snap>`
 * Docker
@@ -50,7 +50,6 @@ on for being explored, see :ref:`Switching containers on and off <container_swit
 * :ref:`mTango + restAPI <rest_api>`, :ref:`Tango WebApp <webapp>` (as docker container tangobox-web)
 * :ref:`e-giga` (as docker container tangobox-egiga)
 * PyCharm
-* Visual Studio Code
 * :ref:`ModbusPal to simulate Modbus <Modbus>`
 
 First steps
@@ -58,7 +57,7 @@ First steps
 
 * First of all you have to download latest release of VirtualBox. It can be downloaded from `www.virtualbox.org <https://www.virtualbox.org/>`_ .
   Simply install it and start the program.
-* TangoBox is released in **.ova** extension so it can be easily imported.
+* TangoBox is released as an **.ova** package so it can be easily imported.
 * Select *import* and choose downloaded TangoBox file
 * If you want, you can change VM's configuration (i.e graphics, RAM). **It is highly recommended to increase default RAM size**
 
@@ -75,7 +74,7 @@ After importing the VM image to VirtualBox you may start it.
 * Username is: `tango-cs`
 * Password is: `tango`
 
-`tango-cs` user has sudo rights, so he may invoke commands as superuser with command :command:`sudo`.
+`tango-cs` user has sudo privileges, so he may invoke commands as superuser with command :command:`sudo`.
 
 You may explore the Tango Controls feature by clicking related shortcuts on the Desktop.
 
@@ -137,19 +136,21 @@ Containers and images dependency
 Each container is based on its image. All images are already build but, if neccessary, *Dockerfiles* are stored in :file:`home/Dockerfiles`
 directory. Below is the list of all containers and corresponding images:
 
-================== =========== ===============================
-Container            Image             Remarks
-================== =========== ===============================
-tangobox-com         com                 -
-tangobox-sim         sim                 -
-tangobox-archiving   archive              -
-tangobox-hdbpp       hdbpp               -
-tangobox-web         web                 -
-tangobox-egiga       egiga               -
-tangobox-jupytango   sardana
-      -              base         Base container
-      -              ubuntu       Ubuntu image to build others
-================== =========== ===============================
+================== =============================== ===============================
+Container            Image                           Remarks
+================== =============================== ===============================
+tangobox-com         *registry*/tangobox-com         \-
+tangobox-sim         *registry*/tangobox-sim         \-
+tangobox-archiving   *registry*/tangobox-archive     \-
+tangobox-hdbpp       *registry*/tangobox-hdbpp       \-
+tangobox-web         *registry*/tangobox-web         \-
+tangobox-egiga       *registry*/tangobox-egiga       \-
+tangobox-jupytango   *registry*/tangobox-jupytango   \-
+     \-              *registry*/tangobox-base        Base container
+     \-              ubuntu                          Ubuntu image to build others
+================== =============================== ===============================
+
+Currently images are stored in `registry.gitlab.com/s2innovation/tangobox-docker` registry.
 
 Some device servers may be stopped when launching containers. It is so to get better performance (high cpu and ram usage). To control and
 start/stop particular DS according to your needs, use **Tango Manager (Astor)** to it.
@@ -193,9 +194,8 @@ and do scripting for Tango through a web browser.
 
 **In case you want to try it, here's the procedure:**
 
-1. start jupyterlab using our dedicated script: `jupytango`
-2. a new browser tab is automagically opened with the right URL: :file:`localhost:8888/lab?`. Please be patient, it may
-   take a while on VM.
+1. start jupyterlab (it is started by default): :code:`docker start tangobox-jupytango`
+2. open a new browser window and go to http://tangobox-jupytango:8888/lab
 3. enjoy!
 
 **Here are the JupyTango additions to itango:**
@@ -232,14 +232,12 @@ You can try to kill the monitored device will the JupyTango monitor is running t
 
 .. _jlinac:
 
-JLinac and Elinac simulation
+JLinac simulation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To start simulation, you need to run **tangobox-sim** container (use :command:`docker start tangobox-sim` to start it
 from a terminal). It is also important to make sure that all related device servers are running.
 The easiest way to do it is to check it in Astor - a bulb next to `tangobox-sim` should be green.
-
-Don't worry about warnings during Elinac's initialization.
 
 .. figure:: tangobox/jlinac.png
 
@@ -278,6 +276,10 @@ the  **tangobox-hdbpp** container and related device servers are running:
 
 Then, you may start :program:`HDB Configurator` or :program:`HDB Viewer` by clicking icons on the desktop.
 
+.. figure:: tangobox/hdbpp.png
+
+   HDB Configurator and HDB Viewer
+
 .. _e-giga:
 
 E-giga
@@ -298,11 +300,6 @@ To use e-giga following conditions must be fulfilled:
   is green and with :program:`Mambo` if there are any attributes configured to be archivied.
 
 To open browser with :program:`E-giga` click on the relate desktop icon.
-
-.. note::
-
-   Please keep in mind that you should not rebuild **tangobox-web** image because its configuration is not included in Dockerfile
-   (it requires in-container config).
 
 .. _webapp:
 
@@ -329,25 +326,17 @@ REST API
 Tango Controls specifies REST API interface and provides its reference implementation. For details see
 :ref:`REST API documentation <tango_rest_api>`
 
-The **TangoBox** comes with REST API installed. The `tangobox-web` container must be started to play with it. Invoke
-:command:`docker start tangobox-web`.
-
-Related deskto icon opens a web browser pointing to REST API interface. The REST server requires authentication.
+The **TangoBox** comes with REST API installed.
+Related desktop icon opens a web browser pointing to REST API interface. The REST server requires authentication.
 User is `tango-cs` and password is `tango`.
 
-.. figure:: tangobox-9.2/rest-api.png
+.. figure:: tangobox/rest-api.png
 
    A web browser window presenting JSON response of the Tango REST server
 
 
 If you would like to play with it with other tools (Python, curl) it is avaialabe at the following
-address: `http://tangobox-web:8080/tango/rest/rc4/hosts/tangobox-vm/10000`.
-
-
-.. note::
-
-   Please keep in mind that you should not rebuild **tangobox-web** image because its configuration is not included in Dockerfile
-   (it requires in-container config).
+address: `http://localhost:10001/tango/rest/rc4/hosts/tangobox/10000`.
 
 .. _sardana:
 
@@ -358,10 +347,47 @@ Sardana is a software suite for Supervision, Control and Data Acquisition in sci
 t aims to reduce cost and time of design, development and support of the control and data acquisition systems.
 For more information about it please refer to `Sardana documentation <http://www.sardana-controls.org>`_.
 
-.. figure:: tangobox-9.2/sardana.png
+.. figure:: tangobox/sardana.png
 
    SardanaGUI in action
 
-To play with Sardana the **tangobox-sardana** container has to be started. Open a terminal and call
-:command:`docker start tangobox-sardana`. Then, you may double-click the :guilabel:`SardanaGUI` icon on
+To play with Sardana you may double-click the :guilabel:`SardanaGUI` icon on
 the desktop or run it from a terminal (type :command:`SardanaGUI`).
+
+.. _cumbia:
+
+Cumbia
+~~~~~~
+
+  Cumbia is a new library that offers a carefree approach to multi-threaded application design and implementation. Written from scratch, it can be seen as the evolution of the QTango library, because it offers a more flexible and object oriented multi-threaded programming style.
+
+For more details please check Cumbia `webpage <https://elettra-sincrotronetrieste.github.io/cumbia-libs/>`_
+and `source repository <https://github.com/ELETTRA-SincrotroneTrieste/cumbia-libs>`_.
+
+Cumbia is installed in :file:`/usr/local/cumbia-libs`. This directory is added to :code:`ld`'s default search path.
+
+To see an example Cumbia application, please run below command or use desktop shortcut :guilabel:`CumbiaClientDemo`:
+
+.. code-block:: bash
+
+  cumbia client sys/tg_test/1/double_scalar
+
+.. figure:: tangobox/cumbia.png
+
+   Cumbia demo application
+
+.. _panic:
+
+PANIC/PyAlarm
+~~~~~~~~~~~~~
+
+  PANIC Alarm System is a set of tools (api, Tango device server, user interface) that provides: Periodic evaluation of a set of conditions, Notification (email, sms, pop-up, speakers), Notification (email, sms, pop-up, speakers), Keep a log of what happened. (files, Tango Snapshots), Taking automated actions (Tango commands / attributes), Tools for configuration/visualization.
+
+  The Panic package contains the python AlarmAPI for managing the PyAlarm device servers from a client application or a python shell. The panic module is used by PyAlarm, Panic Toolbar and Panic GUI.
+
+To launch PANIC GUI, use desktop shortcut :guilabel:`PANIC`.
+
+
+.. figure:: tangobox/panic.png
+
+   PANIC GUI application
