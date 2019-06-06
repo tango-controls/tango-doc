@@ -4126,13 +4126,12 @@ Linking
 ''''''''
 
 To build a running device server process, you need to link your code
-with several libraries. Nine of them are always the same whatever the
-operating system used is. These nine libraries are:
+with several libraries:
 
--  The Tango libraries (called **libtango** and **liblog4tango**)
+-  The Tango library (called **libtango**)
 
 -  Three omniORB package libraries (called **libomniORB4**,
-   **libomniDynamic4** and **libCOS4)**
+   **libomniDynamic4** and **libCOS4**)
 
 -  The omniORB threading library (called **libomnithread**)
 
@@ -4141,25 +4140,25 @@ operating system used is. These nine libraries are:
 On top of that, you need additional libraries depending on the operating
 system :
 
--  For Linux, add the posix thread library (**libpthread**)
+-  For Linux, add the POSIX thread library (**libpthread**)
 
 The following table summarizes the necessary options to compile a Tango
 C++ device server. Please, note that starting with Tango 8 and for gcc
 release 4.3 and later, some C++11 code has been used. This requires the
-compiler option -std=c++0x. Obviously, the options -I and -L must be
+compiler option -std=c++0x (or better). Obviously, the options -I and -L must be
 updated to reflect your file system organization.
 
 .. csv-table::
    :header-rows: 1
 
    "Operating system", "Compiling option", "Linking option"
-   "Linux gcc", "-D\_REENTRANT -std=c++0x -I..","-L.. -ltango -llog4tango
+   "Linux gcc", "-D\_REENTRANT -std=c++0x -I..","-L.. -ltango
    -lomniORB4 -lomniDynamic4 -lCOS4 -lomnithread -lzmq -lpthread"
 
 The following is an example of a Makefile for Linux. Obviously, all the
 paths are set to the ESRF file system structure.
 
-.. code:: cpp
+.. code:: makefile
   :number-lines:
 
    #
@@ -4178,7 +4177,6 @@ paths are set to the ESRF file system structure.
 
    CXXFLAGS = -D_REENTRANT -std=c++0x $(INCLUDE_DIRS)
    LFLAGS = $(LIB_DIRS) -ltango \
-                        -llog4tango \
                         -lomniORB4 \
                         -lomniDynamic4 \
                         -lCOS4 \
@@ -4272,8 +4270,8 @@ To build a running device server process, you need to link your code
 with several libraries on top of the Windows libraries. These libraries
 are:
 
--  The Tango libraries (called **tango.lib** and **log4tango.lib** or
-   **tangod.lib** and **log4tangod.lib** for debug mode)
+-  The Tango library (called **tango.lib** or
+   **tangod.lib** for debug mode)
 
 -  | The omniORB package libraries (see next table)
 
@@ -4305,10 +4303,10 @@ The “Win32 Debug” or “Win32 Release” configuration that you change
 within the Configuration Manager window changes the /M switch compiler.
 For instance, if you select a “Win32 Debug” configuration in a non-DLL
 project, use the omniORB4d.lib, omniDynamic4d.lib and omnithreadd.lib
-libraries plus the tangod.lib, log4tangod.lib and zmqd.lib libraries. If
+libraries plus the tangod.lib and zmqd.lib libraries. If
 you select the “Win32 Release” configuration, use the omniORB4.lib,
-omniDynamic4.lib and omnithread.lib libraries plus the tango.lib,
-log4tango.lib and zmq.lib libraries.
+omniDynamic4.lib and omnithread.lib libraries plus the tango.lib
+and zmq.lib libraries.
 
 **WARNING**: In some cases, the Microsoft Visual Studio wizard used
 during project creation generates one include file called *Stdafx.h*. If
