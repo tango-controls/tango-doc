@@ -7,7 +7,7 @@ Source Code
 
 Tango Controls for C++ and Java is available for download as source code or as pre-compiled binaries.
 
-`The latest source code release is 9.3.3-rc1 <https://github.com/tango-controls/TangoSourceDistribution/releases/tag/9.3.3-rc1>`_.
+`The latest source code release is 9.3.3 <https://github.com/tango-controls/TangoSourceDistribution/releases/tag/9.3.3>`_.
 
    * `Tango 9.3.3 C++ library release notes <https://github.com/tango-controls/cppTango/releases/tag/9.3.3>`_
 
