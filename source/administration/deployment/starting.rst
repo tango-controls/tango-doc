@@ -33,7 +33,7 @@ environment variables. Define them before starting the database server.
 
 If you are using the Tango administration graphical tool called
 **Astor**, you also need to start a specific Tango device server called
-**Starter** on each host where Tango device server(s) are running. See
+:ref:`Starter<Starter>` on each host where Tango device server(s) are running. See
 [ASTOR]_ for Astor documentation. This starter
 device server is able to start even before the Tango database device
 server is started. In this case, it will enter a loop in which it

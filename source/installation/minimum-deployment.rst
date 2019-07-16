@@ -51,7 +51,7 @@ Tango Host Role
 The central role of a Tango control system is Tango Host role, it is created by running the :program:`DataBaseds` device server. 
 This device server requires MariaDB or MySQL database in its most common application. 
 
-The recommended way of running device servers is to use :program:`Starter` service. 
+The recommended way of running device servers is to use the :ref:`Starter<Starter>` service.
 
 - a Database server (MariaDB or MySQL)
 
