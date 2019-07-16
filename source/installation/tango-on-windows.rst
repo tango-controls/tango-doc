@@ -132,7 +132,7 @@ To make a computer become a Tango Host you need to:
 Running :term:`Device Servers`
 ------------------------------
 
-The recommended way of running device servers is to use :program:`Starter` service. 
+The recommended way of running device servers is to use :ref:`Starter<Starter>` service. 
 Then you may use :program:`NSSM` as for :program:`DataBaseds`.
 Assuming you have downloaded it and copied to the Tango bin folder please follow:
 
@@ -158,6 +158,8 @@ Assuming you have downloaded it and copied to the Tango bin folder please follow
         .. image:: tango-on-windows/starter-01.png
     - Accept with :guilabel:`Create`
     - Go back to :program:`Command Line`
+
+.. _windows_starter_nssm:
 
 - Install Starter service:
     - Invoke :command:`nssm.exe install Tango-DataBaseds`.
