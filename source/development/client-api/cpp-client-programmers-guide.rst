@@ -1058,6 +1058,63 @@ alive.
         std::cout << "at least one dead/busy/locked/... device" << std::endl;
     }
 
+Enabling and disabling group members
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Devices belonging to a group can be temporarily excluded from all operations
+performed on the group using the *Group::disable* and *Group::enable* calls.
+
+Device name passed to the *disable* (*enable*) methods can contain
+wildcards (``*``).
+Note that only the first matching device will be disabled (enabled).
+The search algorithm is breadth-first search. All group elements are searched
+(in the insertion order) for a match before descending recursively to
+sub-groups. Recursive search can be disabled with the *forward* flag
+(see a :ref:`section dedicated to the forwarding <group_forward_or_not_forward>`).
+
+During group operations like attribute read or command calls,
+entries for disabled elements will be included in the result set,
+however they will not have any value and will be marked as disabled
+(*GroupReply::group_element_enabled* will be false).
+
+Note that if :ref:`exceptions are enabled <group_error_handling>`, any attempt
+to access the result (e.g. via *get_data()*) from a disabled device will raise ``Tango::DevFailed``.
+Otherwise an empty value will be returned.
+
+Below is an example using the gauges group:
+
+.. code-block:: cpp
+    :linenos:
+
+    // will disable: inst-c01/vac-gauge/penning-01
+    gauges->disable("inst-c01/*/penn");
+
+    // will disable nothing
+    const bool forwarded = true;
+    gauges->disable("inst-c01/vac-gauge/pirani-01", not forwarded);
+
+    // will disable: inst-c01/vac-gauge/pirani-01
+    gauge_family->disable("inst-c01/vac-gauge/pirani-01");
+
+    // will enable: inst-c01/vac-gauge/penning-01
+    gauges->enable("inst-c01/*");
+
+    auto states = gauges->command_inout("State");
+    for (auto& state : states)
+    {
+        if (state.group_element_enabled())
+        {
+            // it's safe to access the value
+            std::cout << state.dev_name() << ": " << state.get_data() << "\n";
+        }
+        else
+        {
+            std::cout << state.dev_name() << ": is disabled\n";
+        }
+    }
+
+.. _group_forward_or_not_forward:
+
 Forward or not forward?
 ~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -1208,6 +1265,8 @@ device gave error).
     }
 
 Now, we have to process each individual response in the list.
+
+.. _group_error_handling:
 
 A few words on error handling and data extraction
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
