@@ -587,8 +587,8 @@ client has to choose the event reception mode to use.
 
 **Push model**:
 
-.. code:: cpp
-  :number-lines:
+.. code-block:: cpp
+    :linenos:
 
     int DeviceProxy::subscribe_event(
                  const string &attribute,
@@ -604,8 +604,8 @@ parameter for event filtering is also available.
 
 **Pull model**:
 
-.. code:: cpp
-  :number-lines:
+.. code-block:: cpp
+    :linenos:
 
     int DeviceProxy::subscribe_event(
                  const string &attribute,
@@ -645,8 +645,8 @@ CallBack class and pass this to the *DeviceProxy::subscribe\_event()*
 method. The CallBack class is the same class as the one proposed for the
 TANGO asynchronous call. This is as follows for events :
 
-.. code:: cpp
-  :number-lines:
+.. code-block:: cpp
+    :linenos:
 
     class MyCallback : public Tango::CallBack
     {
@@ -663,8 +663,8 @@ TANGO asynchronous call. This is as follows for events :
 
 where EventData is defined as follows :
 
-.. code:: cpp
-  :number-lines:
+.. code-block:: cpp
+    :linenos:
 
     class EventData
     {
@@ -678,8 +678,8 @@ where EventData is defined as follows :
 
 AttrConfEventData is defined as follows :
 
-.. code:: cpp
-  :number-lines:
+.. code-block:: cpp
+    :linenos:
 
     class AttrConfEventData
     {
@@ -693,8 +693,8 @@ AttrConfEventData is defined as follows :
 
 DataReadyEventData is defined as follows :
 
-.. code:: cpp
-  :number-lines:
+.. code-block:: cpp
+    :linenos:
 
     class DataReadyEventData
     {
@@ -709,8 +709,8 @@ DataReadyEventData is defined as follows :
 
 DevIntrChangeEventData is defined as follows :
 
-.. code:: cpp
-  :number-lines:
+.. code-block:: cpp
+    :linenos:
 
     class DevIntrChangeEventData
     {
@@ -726,8 +726,8 @@ DevIntrChangeEventData is defined as follows :
 
 and PipeEventData is defined as follows :
 
-.. code:: cpp
-  :number-lines:
+.. code-block:: cpp
+    :linenos:
 
     class PipeEventData
     {
@@ -751,8 +751,8 @@ Unsubscribing from an event
 Unsubscribe a client from receiving the event specified by *event\_id*
 is done by calling the *DeviceProxy::unsubscribe\_event()* method :
 
-.. code:: cpp
-  :number-lines:
+.. code-block:: cpp
+    :linenos:
 
     void DeviceProxy::unsubscribe_event(int event_id);
 
@@ -764,8 +764,8 @@ received event data can be extracted with *DeviceProxy::get\_events().*
 Two possibilities are available for data extraction. Either a callback
 method can be executed for every event in the buffer when using
 
-.. code:: cpp
-  :number-lines:
+.. code-block:: cpp
+    :linenos:
 
     int DeviceProxy::get_events(
                  int event_id,
@@ -775,8 +775,8 @@ Or all the event data can be directly extracted as EventDataList,
 AttrConfEventDataList , DataReadyEventDataList,
 DevIntrChangeEventDataList or PipeEventDataList when using
 
-.. code:: cpp
-  :number-lines:
+.. code-block:: cpp
+    :linenos:
 
     int DeviceProxy::get_events(
                  int event_id,
@@ -802,8 +802,8 @@ The event data lists are vectors of EventData, AttrConfEventData,
 DataReadyEventData or PipeEventData pointers with special destructor and
 clean-up methods to ease the memory handling.
 
-.. code:: cpp
-  :number-lines:
+.. code-block:: cpp
+    :linenos:
 
     class EventDataList:public vector<EventData *>
     class AttrConfEventDataList:public vector<AttrConfEventData *>
@@ -817,8 +817,8 @@ Example
 Here is a typical code example of a client to register and receive
 events. First, you have to define a callback method as follows:
 
-.. code:: cpp
-  :number-lines:
+.. code-block:: cpp
+    :linenos:
 
     class DoubleEventCallBack : public Tango::CallBack
     {
@@ -860,8 +860,8 @@ the pull model for event reception.
 
 **Push model**:
 
-.. code:: cpp
-  :number-lines:
+.. code-block:: cpp
+    :linenos:
 
     DoubleEventCallBack *double_callback = new DoubleEventCallBack;
 
@@ -884,8 +884,8 @@ the pull model for event reception.
 
 **Pull model**:
 
-.. code:: cpp
-  :number-lines:
+.. code-block:: cpp
+    :linenos:
 
     DoubleEventCallBack *double_callback = new DoubleEventCallBack;
     int event_queue_size = 100; // keep the last 100 events
@@ -947,8 +947,8 @@ are quite straightforward to obtain.
 Reading the description of the problem, the device hierarchy becomes
 obvious. Our gauges group will have the following structure:
 
-.. code:: cpp
-  :number-lines:
+.. code-block:: cpp
+    :linenos:
 
     -> gauges
       |  -> cell-01
@@ -976,8 +976,8 @@ obvious. Our gauges group will have the following structure:
 
 In the C++, such a hierarchy can be build as follows (basic version):
 
-.. code:: cpp
-  :number-lines:
+.. code-block:: cpp
+    :linenos:
 
     //- step0: create the root group
     Tango::Group *gauges = new Tango::Group("gauges");
@@ -1045,8 +1045,8 @@ We can now perform any action on any element of our gauges group. For
 instance, let’s ping the whole hierarchy to be sure that all devices are
 alive.
 
-.. code:: cpp
-  :number-lines:
+.. code-block:: cpp
+    :linenos:
 
     //- ping the whole hierarchy
     if (gauges->ping() == true)
@@ -1057,6 +1057,63 @@ alive.
     {
         std::cout << "at least one dead/busy/locked/... device" << std::endl;
     }
+
+Enabling and disabling group members
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Devices belonging to a group can be temporarily excluded from all operations
+performed on the group using the *Group::disable* and *Group::enable* calls.
+
+Device name passed to the *disable* (*enable*) methods can contain
+wildcards (``*``).
+Note that only the first matching device will be disabled (enabled).
+The search algorithm is breadth-first search. All group elements are searched
+(in the insertion order) for a match before descending recursively to
+sub-groups. Recursive search can be disabled with the *forward* flag
+(see a :ref:`section dedicated to the forwarding <group_forward_or_not_forward>`).
+
+During group operations like attribute read or command calls,
+entries for disabled elements will be included in the result set,
+however they will not have any value and will be marked as disabled
+(*GroupReply::group_element_enabled* will be false).
+
+Note that if :ref:`exceptions are enabled <group_error_handling>`, any attempt
+to access the result (e.g. via *get_data()*) from a disabled device will raise ``Tango::DevFailed``.
+Otherwise an empty value will be returned.
+
+Below is an example using the gauges group:
+
+.. code-block:: cpp
+    :linenos:
+
+    // will disable: inst-c01/vac-gauge/penning-01
+    gauges->disable("inst-c01/*/penn");
+
+    // will disable nothing
+    const bool forwarded = true;
+    gauges->disable("inst-c01/vac-gauge/pirani-01", not forwarded);
+
+    // will disable: inst-c01/vac-gauge/pirani-01
+    gauge_family->disable("inst-c01/vac-gauge/pirani-01");
+
+    // will enable: inst-c01/vac-gauge/penning-01
+    gauges->enable("inst-c01/*");
+
+    auto states = gauges->command_inout("State");
+    for (auto& state : states)
+    {
+        if (state.group_element_enabled())
+        {
+            // it's safe to access the value
+            std::cout << state.dev_name() << ": " << state.get_data() << "\n";
+        }
+        else
+        {
+            std::cout << state.dev_name() << ": is disabled\n";
+        }
+    }
+
+.. _group_forward_or_not_forward:
 
 Forward or not forward?
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -1095,8 +1152,8 @@ that the command results are returned in the order in which its elements
 were attached to the group. For instance, if g1 is a group containing
 three devices attached in the following order:
 
-.. code:: cpp
-  :number-lines:
+.. code-block:: cpp
+    :linenos:
 
     g1->add("my/device/01");
     g1->add("my/device/03");
@@ -1104,8 +1161,8 @@ three devices attached in the following order:
 
 the results of
 
-.. code:: cpp
-  :number-lines:
+.. code-block:: cpp
+    :linenos:
 
     Tango::GroupCmdReplyList crl = g1->command_inout("Status");
 
@@ -1117,8 +1174,8 @@ will be organized as follows:
 
 Things get more complicated if sub-groups are added between devices.
 
-.. code:: cpp
-  :number-lines:
+.. code-block:: cpp
+    :linenos:
 
     g2->add("my/device/04");
     g2->add("my/device/05");
@@ -1143,8 +1200,8 @@ The result order in the Tango::GroupCmdReplyList depends on the value of
 the forward option. If set to *true*, the results will be organized as
 follows:
 
-.. code:: cpp
-  :number-lines:
+.. code-block:: cpp
+    :linenos:
 
     Tango::GroupCmdReplyList crl = g1->command_inout("Status", true);
 
@@ -1160,8 +1217,8 @@ follows:
 
 If the forward option is set to *false*, the results are:
 
-.. code:: cpp
-  :number-lines:
+.. code-block:: cpp
+    :linenos:
 
     Tango::GroupCmdReplyList crl = g1->command_inout("Status", false);
 
@@ -1184,8 +1241,8 @@ Case 1: a command, no argument
 As an example, we execute the Status command on the whole hierarchy
 synchronously.
 
-.. code:: cpp
-  :number-lines:
+.. code-block:: cpp
+    :linenos:
 
     Tango::GroupCmdReplyList crl = gauges->command_inout("Status");
 
@@ -1195,8 +1252,8 @@ GroupCmdReplyList. If it is set to true, it means that at least one
 error occurred during the execution of the command (i.e. at least one
 device gave error).
 
-.. code:: cpp
-  :number-lines:
+.. code-block:: cpp
+    :linenos:
 
     if (crl.has_failed())
     {
@@ -1208,6 +1265,8 @@ device gave error).
     }
 
 Now, we have to process each individual response in the list.
+
+.. _group_error_handling:
 
 A few words on error handling and data extraction
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1230,8 +1289,8 @@ DevVarLongStringArray and DevVarDoubleStringArray types to std::vectors.
 
 Error and data handling C++ example:
 
-.. code:: cpp
-  :number-lines:
+.. code-block:: cpp
+    :linenos:
 
     //-------------------------------------------------------
     //- synch. group command example with exception enabled
@@ -1328,8 +1387,8 @@ Error and data handling C++ example:
 
 Now execute the same command asynchronously. C++ example:
 
-.. code:: cpp
-  :number-lines:
+.. code-block:: cpp
+    :linenos:
 
     //-------------------------------------------------------
     //- asynch. group command example (C++ example)
@@ -1361,8 +1420,8 @@ all devices in the group (or its sub-groups).
 
 In C++:
 
-.. code:: cpp
-  :number-lines:
+.. code-block:: cpp
+    :linenos:
 
     //- the argument value
     double d = 0.1;
@@ -1381,8 +1440,8 @@ since we never try to extract data from the replies.
 
 In C++ we should have something like:
 
-.. code:: cpp
-  :number-lines:
+.. code-block:: cpp
+    :linenos:
 
     //- no need to process the results if no error occurred (Dev_Void command)
     if (crl.has_failed())
@@ -1427,8 +1486,8 @@ be executed on group cell-01 (and its sub-groups) as follows:
 
 Remember, cell-01 has the following internal structure:
 
-.. code:: cpp
-  :number-lines:
+.. code-block:: cpp
+    :linenos:
 
     -> gauges
        | -> cell-01
@@ -1445,8 +1504,8 @@ Remember, cell-01 has the following internal structure:
 
 Passing a specific argument to each device in C++:
 
-.. code:: cpp
-  :number-lines:
+.. code-block:: cpp
+    :linenos:
 
     //- get a reference to the target group
     Tango::Group *g = gauges->get_group("cell-01");
@@ -1485,8 +1544,8 @@ Passing a specific argument to each device in C++:
 If we want to execute the command locally on cell-01 (i.e. not on its
 sub-groups), we should write the following C++ code:
 
-.. code:: cpp
-  :number-lines:
+.. code-block:: cpp
+    :linenos:
 
     //- get a reference to the target group
     Tango::Group *g = gauges->get_group("cell-01");
@@ -1521,8 +1580,8 @@ sub-groups), we should write the following C++ code:
 Note: if we want to execute the command locally on cell-01 (i.e. not on
 its sub-groups), we should write the following code:
 
-.. code:: cpp
-  :number-lines:
+.. code-block:: cpp
+    :linenos:
 
     //- get a reference to the target group
     Group g = gauges.get_group("cell-01");
@@ -1614,8 +1673,8 @@ Reading an attribute is very similar to executing a command.
 
 Reading an attribute in C++:
 
-.. code:: cpp
-  :number-lines:
+.. code-block:: cpp
+    :linenos:
 
     //-----------------------------------------------------------------
     //- synch. read "vacuum" attribute on each device in the hierarchy
@@ -1662,8 +1721,8 @@ Reading an attribute in C++:
 
 In C++, an asynchronous version of the previous example could be:
 
-.. code:: cpp
-  :number-lines:
+.. code-block:: cpp
+    :linenos:
 
     //- read the attribute asynchronously
     long request_id = gauges->read_attribute_asynch("vacuum");
@@ -1721,8 +1780,8 @@ be disabled.
 
 Writing an attribute in C++:
 
-.. code:: cpp
-  :number-lines:
+.. code-block:: cpp
+    :linenos:
 
     //-----------------------------------------------------------------
     //- synch. write "dummy" attribute on each device in the hierarchy
@@ -1766,8 +1825,8 @@ Writing an attribute in C++:
 
 Here is a C++ asynchronous version:
 
-.. code:: cpp
-  :number-lines:
+.. code-block:: cpp
+    :linenos:
 
     //- insert the value to be written into a generic container
     Tango::DeviceAttribute value(std::string("dummy"), 3.14159);
@@ -1808,8 +1867,8 @@ written as follows on group cell-01 (and its sub-groups) as follows:
 
 Remember, cell-01 has the following internal structure:
 
-.. code:: cpp
-  :number-lines:
+.. code-block:: cpp
+    :linenos:
 
     -> gauges
         | -> cell-01
@@ -1826,8 +1885,8 @@ Remember, cell-01 has the following internal structure:
 
 C++ version:
 
-.. code:: cpp
-  :number-lines:
+.. code-block:: cpp
+    :linenos:
 
     //- get a reference to the target group
     Tango::Group *g = gauges->get_group("cell-01");
@@ -1866,8 +1925,8 @@ C++ version:
 Note: if we want to execute the command locally on cell-01 (i.e. not on
 its sub-groups), we should write the following code
 
-.. code:: cpp
-  :number-lines:
+.. code-block:: cpp
+    :linenos:
 
     //- get a reference to the target group
     Tango::Group *g = gauges->get_group("cell-01");
@@ -1979,8 +2038,8 @@ with a Tango long, an array of double and finally an array of unsigned
 short. The code you need to extract these data is (Without error case
 treatment detailed in a next sub-chapter)
 
-.. code:: cpp
-  :number-lines:
+.. code-block:: cpp
+   :linenos:
 
    DevicePipe dp = mydev.read_pipe("MyPipe");
 
@@ -2011,8 +2070,8 @@ allows you to retrieve/set data element name. The following code is how
 you can extract pipe data and retrieve data element name (same pipe then
 previously)
 
-.. code:: cpp
-  :number-lines:
+.. code-block:: cpp
+   :linenos:
 
    DevicePipe dp = mydev.read_pipe("MyPipe");
 
@@ -2045,8 +2104,8 @@ operator >>. These methods belong to the DevicePipeBlob class but they
 also exist on the DevicePipe class for its root blob. Here is one
 example of how you use them:
 
-.. code:: cpp
-  :number-lines:
+.. code-block:: cpp
+    :linenos:
 
     DevicePipe dp = mydev.read_pipe("MyPipe");
 
@@ -2071,9 +2130,9 @@ example of how you use them:
           }
           break;
           ....
-      }
-      ...
-   }
+       }
+       ...
+    }
 
 The number of data element in the pipe root blob is retrieve at line 3.
 Then a loop for each data element is coded. For each data element, its
@@ -2114,8 +2173,8 @@ data from a pipe. The main method is the insertion operator <<. Let’s
 have a look at a first example if you want to write a pipe with a Tango
 long, a vector of double and finally an array of unsigned short.
 
-.. code:: cpp
-  :number-lines:
+.. code-block:: cpp
+    :linenos:
 
     DevicePipe dp("MyPipe");
 
@@ -2127,16 +2186,16 @@ long, a vector of double and finally an array of unsigned short.
     unsigned short *array = new unsigned short [100];
     DevVarUShortArray *dvush = create_DevVarUShortArray(array,100);
 
-   try
-   {
-      dp << dl << v_db << dvush;
-      mydev.write_pipe(dp);
-   }
-   catch (DevFailed &e)
-   {
-      cout << "DevicePipeBlob insertion failed" << endl;
-      ....
-   }
+    try
+    {
+       dp << dl << v_db << dvush;
+       mydev.write_pipe(dp);
+    }
+    catch (DevFailed &e)
+    {
+       cout << "DevicePipeBlob insertion failed" << endl;
+       ....
+    }
 
 Insertion into the DevicePipe is done at line 12 with the insert
 operators. The main difference with extracting data from the pipe is at
@@ -2152,29 +2211,29 @@ It’s also possible to use DataElement class instances to set the pipe
 data element. Here is the previous example modified to use DataElement
 class.
 
-.. code:: cpp
-  :number-lines:
+.. code-block:: cpp
+    :linenos:
 
     DevicePipe dp("MyPipe");
 
     DataElement<DevLong> de_dl("FirstElt",666);
     vector<double>  v_db {1.11,2.22};
-    DataElement<vector<double> > de_v_db("SecondElt,v_db);
+    DataElement<vector<double> > de_v_db("SecondElt,v_db");
 
     unsigned short *array = new unsigned short [100];
     DevVarUShortArray *dvush = create_DevVarUShortArray(array,100);
     DataElement<DevVarUShortArray *> de_dvush("ThirdDE",array);
 
-   try
-   {
-      dp << de_dl << de_v_db << de_dvush;
-      mydev.write_pipe(dp);
-   }
-   catch (DevFailed &e)
-   {
-      cout << "DevicePipeBlob insertion failed" << endl;
-      ....
-   }
+    try
+    {
+       dp << de_dl << de_v_db << de_dvush;
+       mydev.write_pipe(dp);
+    }
+    catch (DevFailed &e)
+    {
+       cout << "DevicePipeBlob insertion failed" << endl;
+       ....
+    }
 
 The population of the array used for the third pipe data element is not
 represented here. Finally, there is a third way to insert data into a
@@ -2184,8 +2243,8 @@ insert data into the data element in any order using the operator
 overwritten for the DevicePipe and DevicePipeBlob classes. Look at the
 following example:
 
-.. code:: cpp
-  :number-lines:
+.. code-block:: cpp
+    :linenos:
 
     DevicePipe dp("MyPipe");
 
@@ -2197,9 +2256,9 @@ following example:
     unsigned short *array = new unsigned short [100];
     DevVarUShortArray *dvush = create_DevVarUShortArray(array,100);
 
-   dp["SecondDE"] << v_db;
-   dp["FirstDE"] << dl;
-   dp["ThirdDE"] << dvush;
+    dp["SecondDE"] << v_db;
+    dp["FirstDE"] << dl;
+    dp["ThirdDE"] << dvush;
 
 Insertion into the device pipe is now done at lines 11 to 13. The
 population of the array used for the third pipe data element is not

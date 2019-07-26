@@ -7,12 +7,11 @@ Tango with systemd integration
 
 This recipe shows how to set up Tango environment using systemd, for instance on a developer's box
 
-At first systemd entities must be defined for common Tango devices (db, tango-accesscontrol, tango-test etc):
+At first systemd units must be defined for common Tango device servers (db, tango-accesscontrol, tango-test etc):
 
-.. code-block:: console
-    :linenos:
+.. code-block:: ini
 
-        #/etc/systemd/system/tango-db.service
+        # /etc/systemd/system/tango-db.service
         [Unit]
         Description = Tango DB
         Requires=mysql.service
@@ -27,10 +26,9 @@ At first systemd entities must be defined for common Tango devices (db, tango-ac
         [Install]
         WantedBy=tango.target
 
-.. code-block:: console
-    :linenos:
+.. code-block:: ini
 
-        #/ect/systemd/system/tango-accesscontrol.timer
+        # /ect/systemd/system/tango-accesscontrol.timer
         [Timer]
         OnActiveSec=3
 
@@ -40,10 +38,9 @@ At first systemd entities must be defined for common Tango devices (db, tango-ac
 
 timer is needed because we have to wait before database is ready to accept requests
 
-.. code-block:: console
-    :linenos:
+.. code-block:: ini
 
-        #/etc/systemd/system/tango-accesscontrol.service
+        # /etc/systemd/system/tango-accesscontrol.service
         [Unit]
         Description=TangoAccessControl device server
         Wants=tango-db
@@ -54,16 +51,33 @@ timer is needed because we have to wait before database is ready to accept reque
         Environment=TANGO_HOST=localhost:10000
         ExecStart=/opt/tango-9.2.2/bin/TangoAccessControl 1
 
+A service unit for Starter device server can also be defined:
+
+.. code-block:: ini
+
+    # /etc/systemd/system/tango-starter.service
+    [Unit]
+    Description=Starter device server
+    After=tango-accesscontrol.service
+    Requires=tango-db.service
+    Requires=tango-accesscontrol.service
+
+    [Service]
+    Restart=always
+    RestartSec=10
+    User=tango
+    Environment=TANGO_HOST=localhost:10000
+    ExecStart=/usr/local/bin/Starter tangobox
 
 Finally combine everything into a single target:
 
-.. code-block:: console
-    :linenos:
+.. code-block:: ini
 
-        #/etc/systemd/system/tango.target
+        # /etc/systemd/system/tango.target
         [Unit]
         Description=Tango development environment target
-        Requires=tango-db
+        Requires=tango-db.service
+        Requires=tango-starter.service
         Requires=tango-accesscontrol.timer
         Requires=tango-test.timer
 

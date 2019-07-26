@@ -144,7 +144,7 @@ If the property is not set or false, :program:`Jive` is in READ_WRITE mode.
 Starter starts servers at startup
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This boolean property allows the starter to start the device servers when it starts.
+This boolean property allows the :ref:`Starter<Starter>` to start the device servers when it starts.
 
 If it is false, the starter will not start any server when it will be launched.
 

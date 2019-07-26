@@ -1,3 +1,4 @@
+.. _Introduction to Astor:
 
 Introduction to Astor
 ---------------------
@@ -18,7 +19,7 @@ Goal
 Principle
 ~~~~~~~~~
 
-- On each host to be controlled, a device server (called Starter_)
+- On each host to be controlled, a device server (called :ref:`Starter<Starter>`)
   takes care of all device servers running (or supposed to) on this computer.
 - The controlled server list is read from the TANGO database.
 - A graphical client (called Astor) is connected to all Starter servers and is able to:
@@ -32,7 +33,7 @@ Principle
 
   |image0|
 
-To control a host in remote, the TANGO device server Starter_ must be running on it.
+To control a host in remote, the TANGO device server Starter must be running on it.
 
 .. warning::
    The starter device must have a specific name to be recognized by
@@ -115,9 +116,6 @@ You can download the project `here <https://bintray.com/tango-controls/maven/Ast
 .. definitions
    --------------
 
-.. _Starter:    http://www.esrf.fr/computing/cs/tango/tango_doc/ds_doc/tango-ds/System/starter/index.html
-   
-   
 .. |image0| image:: img/Astor-Starter.gif
 .. |image1| image:: img/greenbal.gif
 .. |image2| image:: img/blueball.gif

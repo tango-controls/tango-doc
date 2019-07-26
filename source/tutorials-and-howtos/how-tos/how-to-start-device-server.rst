@@ -81,7 +81,7 @@ configured devices.
 Starting device servers with Astor
 ==================================
 
-.. note:: To configure device servers with Astor, you will need Starter
+.. note:: To configure device servers with Astor, you will need :ref:`Starter<Starter>`
 	installed and running on the host you want to start your device server on.
 	Device server should be available in paths configured for the Starter. 
 
