@@ -33,4 +33,5 @@ Contents
    filtering
    collection
    command
+   alias
 
