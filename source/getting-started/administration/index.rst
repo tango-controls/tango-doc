@@ -3,6 +3,8 @@
 Administration applications guide
 =================================
 
+:audience:`beginners, administrators`
+
 Starting as Administrator for Tango Controls you should look on the following tools and topics:
 
 Astor

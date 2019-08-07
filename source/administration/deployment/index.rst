@@ -1,3 +1,5 @@
+:audience:`administrators`
+
 Deployment
 ==========
 
@@ -6,5 +8,8 @@ Deployment
    :maxdepth: 2
 
    starting
+   starter
    without-sql-db
+   multiple-sql-dbs
    property-file
+   high-availability

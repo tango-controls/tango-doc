@@ -3,6 +3,8 @@
 How to distinguish clients on the server side
 =============================================
 
+:audience:`advanced developers`, :lang:`c++`
+
 Problem overview
 ----------------
 

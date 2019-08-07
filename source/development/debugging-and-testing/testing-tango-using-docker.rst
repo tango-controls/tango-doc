@@ -1,14 +1,15 @@
-level: advanced; target: Tango developer
-
+.. _tango_using_docker:
 
 Using Tango docker containers
 =============================
 
-In this section we describe how one can test newly developed tango device server using `docker https://www.docker.com/`_ containers.
+:audience:`advanced developers`, :lang:`all`
+
+In this section we describe how one can test newly developed tango device server using `docker <https://www.docker.com/>`_ containers.
 
 Tango docker containers provide a lightweight solution for deploying tango.
 
-To get info on how to install docker on your machine please refer to the docker `documentation https://docs.docker.com/engine/installation/`_.
+To get info on how to install docker on your machine please refer to the docker `documentation <https://docs.docker.com/engine/installation/>`_.
 
 Once docker is installed one can pull docker images with pre-installed tango.
 

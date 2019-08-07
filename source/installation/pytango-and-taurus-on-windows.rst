@@ -3,5 +3,7 @@
 PyTango and Taurus on Windows
 =============================
 
+:audience:`administrators, developers`
+
 .. todo::
     Write the section

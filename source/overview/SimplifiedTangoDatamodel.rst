@@ -3,6 +3,8 @@
 Simplified Tango Device Server Model
 ====================================
 
+:audience:`beginners, developers, administrators, users`
+
 This document is directed to beginner developer.
 
 Primary Presentation

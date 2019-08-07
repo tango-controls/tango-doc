@@ -1,11 +1,12 @@
 Tango Documentation Contents
 ============================
 
+:audience:`all`
+
 .. toctree::
    :glob:
    :name: maintoc
    :maxdepth: 2
-   :titlesonly:
 
    index
    authors

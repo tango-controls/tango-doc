@@ -5,6 +5,8 @@
 Bibliography
 ============
 
+:audience:`all`
+
 .. [OMG] `OMG home page`_
 
 .. [Henning] Advanced CORBA programming with C++ by M.Henning and S.Vinosky (Addison-Wesley 1999)

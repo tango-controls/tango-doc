@@ -3,6 +3,8 @@
 C Language
 ==========
 
+:audience:`developers`
+
 C is supported for clients written in old style C (like `SPEC <https://certif.com/>`_). The C binding does  not support all features of TANGO.
 Clients are encouraged to use the C++ api if they need access to all features of TANGO.
 

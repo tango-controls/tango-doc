@@ -4,6 +4,8 @@
 Glossary
 ========
 
+:audience:`all`
+
 .. glossary::
 
     Tango Controls
@@ -76,8 +78,8 @@ Glossary
         A :term:`device` may be in a certain state determined at runtime. State of a :term:`device` may reflect state of
         a piece of equipment it interfaces with or be determined in other way. The behaviour is defined by the
         :term:`device class` which implements a :term:`state machine`. The state may define attributes', commands' and
-        pipes' operations available at the moment. Tango Controls limits a set of states the device may be in to 11:
-        ON, OFF, RUNNING, OPEN, CLOSE, INSERT, EXTRACT, INIT, ALARM, FAULT and UNKNOWN.
+        pipes' operations available at the moment. Tango Controls limits a set of states the device may be in to 14:
+        ON, OFF, CLOSE, OPEN, INSERT, EXTRACT, MOVING, STANDBY, FAULT, INIT, RUNNING, ALARM, DISABLE, and UNKNOWN.
 
     state machine
        A state machine for a :term:`device class` defines operations (commands', attributes' and pipes' access) available
@@ -93,4 +95,13 @@ Glossary
     Tango Database
         A database providing configuration and some runtime information about Tango Controls components in so called
         Tango System instance or deployment. It is used by *Databaseds* device server and constitutes :term:`Tango Host`.
+
+    property
+        A configuration parameter stored in the :term:`Tango Database`. Properties can be assigned to
+        a :term:`device class`, :term:`device` or elements of device interface (:term:`attributes <attribute>`,
+        :term:`commands <command>`, :term:`pipes <pipe>`). Properties can be also not related to :term:`device` - such
+        properties are called `free properties`. Property values are often used
+        by elements of :term:`Tango Controls` system during its startup. These usually provides information required
+        to configure things like connections to hardware or to adjust to user preferences.
+
 

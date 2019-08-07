@@ -1,7 +1,9 @@
 .. _ds_guidelines:
 
 Guidelines
-=====================
+==========
+
+:audience:`developers`, :lang:`all`
 
 This chapter describes Guidelines for developing Device Servers.
 The purpose of this document is not to rewrite the Tango documentation
@@ -58,18 +60,15 @@ Our hope is (*as all writers*) to have as many readers as possible!!
 
 The present document refers to the Tango 8 or higher versions features.
 
-**Licence**: This work is licensed under the **Creative Commons
-Attribution 4.0 International License**. To view a copy of this license,
-see http://creativecommons.org/licenses/by/4.0/.
 
 Tango Concepts  
-===============
+==============
 
 The following explanations are from the :ref:`Tango Device
 Server Model <deviceservermodel>`.
 
 Tango Control system
----------------------
+--------------------
 
 The Tango control system is an abstract concept which represents a set
 of “microservices” based on a common technology: Tango. Tango is itself a
@@ -85,9 +84,9 @@ programmer, while adding specific control system features (alarms,
 events, logging, data archiving…).
 
 Device concept
----------------
+--------------
 
-The “device” is the core concept of Tango. This concept can be directly
+The :term:`device` is the core concept of Tango. This concept can be directly
 linked to the notion of microservice: **1 device = 1 microservice**
 
 A device can represent:
@@ -104,7 +103,7 @@ provides the user with a model which speaks their languages e.g. physical
 or engineering parameters.
 
 Hierarchy
-----------
+---------
 
 A Tango control system can be hierarchically organized.
 
@@ -137,7 +136,7 @@ The following diagram illustrates the concept of hierarchy of devices:
    Hierarchical view of devices
 
 Communication paradigms
-------------------------
+-----------------------
 
 Tango offers three communication paradigm: synchronous, asynchronous
 and publish-subscribe calls. 
@@ -154,7 +153,7 @@ initiated by the client may be done by 2 mechanisms:
 
    1. the **synchronous** mechanism where the client waits (and is blocked) for the server to send the answer or until the timeout is reached
 
-   2. the **asynchronous** mechanism where the clients send the request and immediately returns. 
+   2. the **asynchronous** mechanism where the clients send the request and immediately returns.
       It is not blocked. It is free to do whatever it
       has to do like updating a graphical user interface. The client has
       the choice to retrieve the server answer by checking if the reply is
@@ -192,14 +191,15 @@ device, device server and Tango class.
 *  **Device**: An instance of a Device class giving access to the services of
    the DeviceClass class.
 *  **Device Server**: process in which one or more Tango classes are
-   executed.
+   executed (:term:`Device Server`).
 
 .. note::
    DeviceClass class is only used in C++ device classes
 
-**These four concepts are closely related, and they express very
-important concepts of Tango. 
-Take time to clearly understand them!**
+.. hint::
+   **These four concepts are closely related, and they express very
+   important concepts of Tango.
+   Take time to clearly understand them!**
 
 The diagrams below illustrate these concepts:
 
@@ -217,20 +217,19 @@ or software interface, it is not
 always possible to run several instances of a Device class within the
 same Device Server:
 
-*  Case of a DLL’s use: some DLLs can’t be used by two threads of the
-       same process.
+- **Case of a DLL’s use:** some DLLs can’t be used by two threads of the same process.
 
 In other cases, it is useful to have multiple devices running in the
 same Device Server:
 
-*  Case of motors: a single axis controller for 4 motors.
+- ***Case of motors:** a single axis controller for 4 motors.
 
 Device
 ~~~~~~
 
 .. note::
    This is the basic entity of the control system. In the Tango world,
-   everything is a **Device**.
+   everything is a :term:`Device`.
 
 A Tango Device must be “self-consistent”. In case it represents a subset
 of the control system, it must enable the access to all the associated
@@ -245,8 +244,9 @@ clients. Its implementation and/or behaviour must not make
 clients**. In all cases, reactivity must be ensured (i.e. the
 response time of the device, must be minimized).
 
-A Device has an interface composed of commands and attributes, which
-provides the service of the device. It also has “\ *properties*\ ”,
+A Device has an interface composed of :term:`commands <command>`
+and :term:`attributes <attribute>`, which
+provides the service of the device. It also has :term:`properties <property>`,
 stored in the relational database, which are generally used as
 configuration settings. These concepts are explained later in this
 document.
@@ -261,9 +261,9 @@ Attributes correspond to physical quantities carried by the device. Any
 value that you want available on the Tango bus is an attribute. For
 example:
 
-*  A device associated with a motor **has** a *position* attribute
+*  A device associated with a motor **has** a :samp:`{position}` attribute
    expressed in mm.
-*  A device associated with a thermocouple **has** a *temperature*
+*  A device associated with a thermocouple **has** a :samp:`{temperature}`
    attribute expressed in Celsius (or any another suitable unit).
 
 .. note:: 
@@ -281,7 +281,7 @@ example:
    attributes.
 
 Attribute Properties
-^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
 
 A Tango attribute has a group of settings that describe it.
 
@@ -308,22 +308,25 @@ All these metadata are hosted in the class itself and can be set by the
 programmer or by a configuration in the Tango database.
 
 Static attribute Properties
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-*  **name**: the attribute name
+*  :samp:`{name}`: the attribute name
 
    *  Type: string e.g : OutCurrent, InCurrent…
-*  **data\_type**: the attribute data type
+
+*  :samp:`{data_type}`: the attribute data type
 
    *  Identifier of the Tango numeric type associated to the attribute:
       *DevBoolean, DevUChar, Dev[U]Short, Dev[U]Long, Dev[U]Long64,
       DevFloat, DevDouble, DevString, DevEncoded*
    *  Note: *Tango::DevEncoded* is the Tango type that encapsulates
       client data.
-*  **data\_format**: describes the dimension of the data.
+
+*  :samp:`{data_format}`: describes the dimension of the data.
 
    *  Type: scalar (value), spectrum (1D array), image (2D array)
-*  **writable**: defines 4 possible types of access. In practical, we
+
+*  :samp:`{writable}`: defines 4 possible types of access. In practical, we
    can say that only 2 are really useful and answer to practically all
    the cases.
 
@@ -335,7 +338,8 @@ Static attribute Properties
       common case) e.g. The current of a powersupply, The position of an
       axis…
    *  READ\_WITH\_WRITE (deprecated, do not use)
-*  **max\_dim\_x** : this property is valid only for data\_format
+
+*  :samp:`{max_dim_x}`: this property is valid only for data\_format
    spectrum or image. It gives the maximum number of element in the
    dimension X. e.g. the max length of a spectrum or the maximum number
    of rows of an image. This property is used to reserve memory space to
@@ -344,14 +348,15 @@ Static attribute Properties
    
    *  e.g. 0 for a scalar, n for a spectrum of max n elements, n for an
       image of max n rows
-*  **max\_dim\_y** : this property is valid only for data\_format
+*  :samp:`{max_dim_y}`: this property is valid only for data\_format
    image. It gives the maximum number of element in the dimension Y.
    e.g. the maximum number of columns of an image. This property is used
    to reserve memory space to host the data. Nothing prevent to have a
    real length much shorter that this maximum.
 
    *  0 for a scalar or a spectrum, n for an image of max n columns
-*  **display\_level** : enables to hide the attribute regarding the
+
+*  :samp:`{display_level}`: enables to hide the attribute regarding the
    client mode (expert or not)
 
    *  Tango::OPERATOR or Tango::EXPERT
@@ -372,19 +377,19 @@ knows the unit of the data and is able to describe it. Feeling the
 attribute property at the development stage will allow all generic
 clients to display the data in the best manner
 
-*  **description**: describes the attribute
+*  :samp:`{description}`: describes the attribute
 
    *  Type: string e.g. “The powersupply output current”
 
-*  **label**: label used on the GUIs
+*  :samp:`{label}`: label used on the GUIs
 
    *  Type: string e.g. “Output Current”, “Input Current”
 
-*  **unit**: attribute unit to be displayed in the client viewer
+*  :samp:`{unit}`: attribute unit to be displayed in the client viewer
 
    *  Type: string (eg “mA”, “mm”...)
 
-*  **standard\_unit**: conversion factor to get attribute value into
+*  :samp:`{standard_unit}`: conversion factor to get attribute value into
    S.I (M.K.S.A)\_unit. Be careful this information is intended to be
    used ONLY by the client (.e.g ATKPanel uses it, but jive->test device
    does not)
@@ -393,7 +398,7 @@ clients to display the data in the best manner
       device attribute gives the current in mA, we have to divide by
       1000 to obtain it in Amp. Then we will set this property to 1E-03
 
-*  **display\_unit**: used by the GUIs to display the attribute into a
+*  :samp:`{display_unit}`: used by the GUIs to display the attribute into a
    unit more appropriate for the user. Be careful this information is
    intended to be used ONLY by the client (e.g ATKPanel uses it, but
    JiveTest device does not).
@@ -403,14 +408,14 @@ clients to display the data in the best manner
       microA, then we have to multiply by 1000 to obtain it in microAmp.
       Then we will set this property to 1000.0.
 
-*  **format**: specifies how a numeric attribute value should be
+*  :samp:`{format}`: specifies how a numeric attribute value should be
    presented
 
    *  Type: string : e.g. « %6.3f »
 
    *  Note: we use a “printf” like syntax 
 
-*  **min\_value** and **max\_value**: minimum and maximum allowable
+*  :samp:`{min_value}` and :samp:`{max_value}`: minimum and maximum allowable
    value. These properties are automatically checked at each execution
    of a write attribute. If the value requested is not between the
    min\_value and the max\_value, an exception will be returned to the
@@ -422,19 +427,19 @@ clients to display the data in the best manner
    *  Note: these properties are valid only for writable attributes
 
 Attributes properties for ALARM configuration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Tango provides an automatic way of defining alarms. An alarm
 condition will switch the attribute quality factor to alarm and the
 device state will automatically switched to ALARM in certain
 conditions.  Four properties are available for alarm purpose.
 
-*  **min\_alarm** and **max\_alarm**: Define the range outside which
+*  :samp:`{min_alarm}` and :samp:`{max_alarm}`: Define the range outside which
    the attribute is considered in alarm. If the value of the attribute
    is > max\_alarm or < min\_alarm, then the attribute quality factor
    will be switched to ALARM.
 
-*  **Delta\_val** and **delta\_t**: (*could also be called maximum
+*  :samp:`{Delta_val}` and :samp:`{delta_t}`: (*could also be called maximum
    noise and time constant*) Valid for a writeable attribute. Define a
    maximum difference between the set\_value and the read\_value of an
    attribute after a standard time.
@@ -473,7 +478,7 @@ conditions.  Four properties are available for alarm purpose.
    for WARNING (deprecated since version 8)
 
 Attributes properties related to Events configuration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 These settings are used for tuning the events related to the attribute.
 
@@ -490,7 +495,7 @@ These settings are used for tuning the events related to the attribute.
 *  *Archive\_period*: period between two consecutives events.
 
 Particular case of a memorized attribute 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. note::
    Memorised attributes are only possible with an attribute with WRITE or READ\_WRITE mode and
@@ -508,23 +513,23 @@ interface allowing the developer to select the expected behaviour.
 .. note::
    **BE CAREFUL:** this mechanism has the following **behaviour**:
 
-*  The writing of the memorized attributes is carried out after the
-   function “init\_device”, executed by the Tango layer, and not by the
-   Tango DeviceServer code. In case  an error occurs during the
-   “init\_device” it cannot be caught by the Tango DeviceServer
-   programmer.
+    *  The writing of the memorized attributes is carried out after the
+       function ``init_device``, executed by the Tango layer, and not by the
+       Tango DeviceServer code. In case  an error occurs during the
+       ``init_device`` it cannot be caught by the Tango DeviceServer
+       programmer.
 
-*  If in the init\_device method an error occurs that causes a change of
-   state in which the writing of an attribute is impossible, this error
-   will prohibit the restoration of the memorized value of the
-   attribute.
+    *  If in the ``init_device`` method an error occurs that causes a change of
+       state in which the writing of an attribute is impossible, this error
+       will prohibit the restoration of the memorized value of the
+       attribute.
 
-*  The order of reloading is deterministic but complex (*order of
-   ClassFactory then device definition in database then attribute
-   definition in Pogo*). Therefore relying on this order might have some
-   side effects particularly in case attributes are modified through
-   Pogo when attributes values are linked (*eg: sampling frequency and
-   number of samples*).
+    *  The order of reloading is deterministic but complex (*order of
+       ClassFactory then device definition in database then attribute
+       definition in Pogo*). Therefore relying on this order might have some
+       side effects particularly in case attributes are modified through
+       Pogo when attributes values are linked (*eg: sampling frequency and
+       number of samples*).
 
 .. warning::
  
@@ -544,8 +549,8 @@ interface allowing the developer to select the expected behaviour.
 Device commands
 ~~~~~~~~~~~~~~~
 
-**A command is associated with an action. *On, Off, Start, Stop* are
-commons examples.**
+A :term:`command` is associated with an action. *On, Off, Start, Stop* are
+commons examples.
 
 A Tango command has, optionally, ONE input argument and ONE output
 argument.
@@ -598,8 +603,9 @@ only, use this information to determine the internal state of a system.
 
 The available states are limited to:
 
--  ON, OFF, CLOSE, OPEN, INSERT, EXTRACT, MOVING, STANDBY, FAULT, INIT,
-   RUNNING, ALARM, DISABLE, UNKNOWN
+-  ``ON``, ``OFF``, ``CLOSE``, ``OPEN``, ``INSERT``, ``EXTRACT``, 
+   ``MOVING``, ``STANDBY``, ``FAULT``, ``INIT``,
+   ``RUNNING``, ``ALARM``, ``DISABLE``, ``UNKNOWN``
 
 The main thing is to ensure a predictable behaviour of the device
 regarding the state transitions.
@@ -607,7 +613,7 @@ regarding the state transitions.
 For example:
 
 -  Consider the case of a motor system. The client knows the motor state
-   (*STANDBY, MOVING, FAULT,)* with a *polling* mechanism (periodic
+   (:samp:`{STANDBY}, {MOVING}, {FAULT},`)* with a *polling* mechanism (periodic
    reading of the state attribute of the motor – instead of using the
    Tango event system).
 
@@ -615,12 +621,12 @@ For example:
     inappropriate management of the state.
 
     A typical example is to launch an axis movement through the writing
-    of the position attribute then the client is pending on the MOVING
+    of the position attribute then the client is pending on the ``MOVING``
     state (the motor is supposed to make a transition *STANDBY MOVING*).
     Such a method will only work if the writing of the position
-    attribute switches the device state to MOVING *before* the return of
+    attribute switches the device state to ``MOVING`` *before* the return of
     the writing request of the position attribute. Otherwise, the client
-    can read (non-zero probability) the STANDBY state, and interpret it
+    can read (non-zero probability) the ``STANDBY`` state, and interpret it
     as “movement ended” while this one had not even started!
 
     This behaviour is described in figure 4 below.
@@ -648,7 +654,7 @@ Concepts
 ^^^^^^^^
 
 By default Tango is based on a relational database (MySQL) to store
-configuration information for devices namely the *properties*.
+configuration information for devices namely the :term:`properties <property>`.
 
 The properties are used to configure a device without changing the
 Tango class code. Taking an axis controller as example, the controller
@@ -767,22 +773,23 @@ It is necessary to:
 -  Design the device as reusable/extensible as possible because it may
    interest the others developers in the community.
 
-    As such, the device must be:
+.. topic:: As such, the device must be:
+   :class: hint
 
--  Configurable: (e.g.: no port number “hard coded”, but use of a
-   parameter via a property),
+    -  Configurable: (e.g.: no port number “hard coded”, but use of a
+       parameter via a property),
 
--  Self-supporting: the device must be usable outside the private
-   programming environment (eg: all the necessary elements to use the
-   device (compile, link) must be provided to the community). The use of
-   the GPL should be considered, and the use of proprietary libraries
-   should be avoided if possible
+    -  Self-supporting: the device must be usable outside the private
+       programming environment (eg: all the necessary elements to use the
+       device (compile, link) must be provided to the community). The use of
+       the GPL should be considered, and the use of proprietary libraries
+       should be avoided if possible
 
--  Portable: the device code must be (as much as possible) independent
-   of the target platform unless it depends on platform specific
-   drivers,
+    -  Portable: the device code must be (as much as possible) independent
+       of the target platform unless it depends on platform specific
+       drivers,
 
--  Documentation in English
+    -  Documentation in English
 
 Generic interface programming
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -793,19 +800,19 @@ its interface should
 -  Reflect the service rather its underlying implementation. For
    example, a command named “WriteRead” reflects the communication
    service of a bus (type: message exchange), while a command named
-   “NI488\_Send” reflects a specific implementation of the supplier.
+   ``NI488_Send`` reflects a specific implementation of the supplier.
 
 -  Show the general characteristics (attributes and commands) of a
    common type of equipment that it represents. For example, a command
-   ”On” reflects the action of powering on a PowerSupply , while a
-   command named “BruckerPSON” reflects a specific implementation which
+   ``On`` reflects the action of powering on a PowerSupply , while a
+   command named ``BruckerPSON`` reflects a specific implementation which
    must be avoided.
 
 The device interface must be service oriented, and not implementation
 oriented.
 
 Abstract interfaces 
-~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
 
 Singleton device
 ~~~~~~~~~~~~~~~~
@@ -819,7 +826,7 @@ it in the device design phase (add for example a static variable
 counting device instances or other) to detect this misconfiguration. For
 example, it can authorize the creation of a second instance (within the
 meaning of the device creation) but systematically put the state to
-FAULT (in the method init\_device) and indicate the problem in the
+FAULT (in the method ``init_device``) and indicate the problem in the
 Status.
 
 In the case where technical constraints prohibit the deployment of
@@ -848,7 +855,7 @@ Device interface definition
 ---------------------------
 
 The first step in designing a device is to define the commands and the
-attributes via Pogo (use Pogo to define the Tango interface).
+attributes via Pogo (use :program:`Pogo` to define the Tango interface).
 
 Except in (very) particular cases, always use an attribute to expose the
 data produced by the device. The command concept exists 
@@ -894,10 +901,10 @@ ensure service availability:
 -  Use a threading mechanism, managed by the developer.
 
 Tango polling mechanism
-~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------
 
 Polling interest
-^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~
 
 The polling mechanism is detailed in the Tango documentation 
 :ref:`Device Polling <device_polling>`.
@@ -909,7 +916,7 @@ is usually one to two orders of magnitude higher than the performance of
 the Tango code executed by a client request.
 
 Polling limitations
-^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~
 
 From the perspective of the device activity, the polling is in direct
 competition with client requests. The client load is therefore competing
@@ -1011,7 +1018,7 @@ Types
 ~~~~~
 
 The types used for the device interface definition are Tango types
-(Tango::DevDouble, Tango::DevFloat …). These types are presented by Pogo
+(``Tango::DevDouble``, ``Tango::DevFloat`` …). These types are presented by Pogo
 and are not modifiable.
 
 The types used by the developer in its own code are left free to choose,
@@ -1019,7 +1026,7 @@ as long as they are not platform specific. Standard types of the
 language used (Boolean, int, double …), Tango types or types from a
 common library (Yat, Yat4Tango for C++) can potentially be used.
 
-Direct conversions from the C++ type long to Tango::DevLong are only
+Direct conversions from the C++ type long to ``Tango::DevLong`` are only
 supported on 32-bit platforms and should be avoided.
 
 Generated code
@@ -1032,7 +1039,7 @@ The developer must include its own code in the “PROTECTED REGION”
 specified parts.
 
 Device interface 
------------------
+----------------
 
 .. _naming_rules:
 
@@ -1052,7 +1059,7 @@ Class name
 The Tango class name is obtained by concatenating the fields that
 compose it – each field beginning with a capital letter:
 
-Eg : MyDeviceClass
+Eg : :samp:`MyDeviceClass`
 
 Device attributes
 ^^^^^^^^^^^^^^^^^
@@ -1060,23 +1067,24 @@ Device attributes
 The device command and attributes names must be explicit and should
 enable to quickly understand the nature of the attribute or the command.
 
--  Eg: for a power supply, you will have an attribute “outputCurrent”
-   (not OC1) or a command “ActivateOutput1” (not ActO1).
+-  Eg: for a power supply, you will have an attribute :samp:`{outputCurrent}`
+   (not OC1) or a command :samp:`{ActivateOutput1}` (not ActO1).
 
 The nomenclature recommendations are in the section :ref:`Naming Rules <naming_rules>`.
 
-**The attribute naming recommendations are**:
+.. topic:: **The attribute naming recommendations are**:
+   :class: hint
 
--  Name composed of at least two characters,
+    -  Name composed of at least two characters,
 
--  Only alphanumeric characters are allowed (no underscore, no dashes),
+    -  Only alphanumeric characters are allowed (no underscore, no dashes),
 
--  Start with a **lowercase** letter,
+    -  Start with a **lowercase** letter,
 
--  In case of a composite name, each sub-words must be capitalized
-   (except the first letter),
+    -  In case of a composite name, each sub-words must be capitalized
+       (except the first letter),
 
--  Prohibit any use of vague terms (eg: readValue).
+    -  Prohibit any use of vague terms (eg: readValue).
 
 .. _device_commands:
 
@@ -1085,34 +1093,36 @@ Device Commands
 
 The recommendations are the same as those proposed for an attribute, except for the first letter of the name.
 
-**The command naming recommendations are:**
+.. topic:: **The command naming recommendations are:**
+   :class: hint
 
--  Name composed of at least two characters,
+    -  Name composed of at least two characters,
 
--  Only alphanumeric characters are allowed (no underscore, no dashes),
+    -  Only alphanumeric characters are allowed (no underscore, no dashes),
 
--  Start with a **uppercase** letter,
+    -  Start with a **uppercase** letter,
 
--  In case of a composite name, each sub-words must be capitalized,
+    -  In case of a composite name, each sub-words must be capitalized,
 
--  Prohibit any use of vague terms (eg: Control).
+    -  Prohibit any use of vague terms (eg: Control).
 
 Device properties
 ^^^^^^^^^^^^^^^^^
 
 The recommendations are the same as those proposed for a command.
 
-**The property naming recommendations are:**
+.. topic:: **The property naming recommendations are:**
+    :class: hint
 
--  Name composed of at least two characters,
+    -  Name composed of at least two characters,
 
--  Only alphanumeric characters are allowed (no underscore, no dashes),
+    -  Only alphanumeric characters are allowed (no underscore, no dashes),
 
--  Start with a **uppercase** letter,
+    -  Start with a **uppercase** letter,
 
--  In case of a composite name, each sub-words must be capitalized,
+    -  In case of a composite name, each sub-words must be capitalized,
 
--  Prohibit any use of vague terms (eg: Prop1).
+    -  Prohibit any use of vague terms (eg: Prop1).
 
 Device attributes nomenclature
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1121,8 +1131,8 @@ It is a good practice that a particular signal type is always named in a
 similar way in various DeviceServers.
 
 For example the intensity of a current should always be name
-“\ ***intensity***\ ” (and not “\ ***intens***\ ”,
-“\ ***intensity***\ ”, “\ ***current***\ ”,”\ ***I***\ ” depending on
+:samp:`{intensity}` (and not “\ **intens**\ ”,
+“\ **intensity**\ ”, “\ **current**\ ”,”\ **I**\ ” depending on
 the DeviceServers).
 
 This allow the user to quickly make the link between the software
@@ -1185,10 +1195,10 @@ In fact:
 
 -  In operation, this documentation will be the reference for
    understanding the device behaviour. Remember that the operator will
-   have this information with the generic tools (like “\ *Test
-   Device*\ ” from “\ *Jive*\ ”).
+   have this information with the generic tools (like :guilabel:`Test
+   Device` from :program:`Jive`).
 
--  The html documentations generated by Pogo can also be accessed from a
+-  The html documentations generated by :program:`Pogo` can also be accessed from a
    local server (peculiar to the institute).
 
 -  Consider also filling in the alarm values.
@@ -1227,7 +1237,7 @@ generated methods will be only a few lines of code long.
 In practice, it is necessary to avoid mixing the generated code by Pogo
 and the developer’s one.
 
-The Tango sub-class inherited from *Tango::DeviceImpl[\_X]* instantiates
+The Tango sub-class inherited from ``Tango::DeviceImpl[_X]`` instantiates
 a class derived from the model object implementing the system, and
 ensure the replacement between the external requests (clients) and the
 implementation class(es).
@@ -1251,12 +1261,12 @@ possible consequences of implementing these two methods on the device
 behaviour (remember that they are initially just empty shells generated
 by Pogo).
 
--  *Always\_executed\_hook()* method is called before each command
+-  ``Always_executed_hook()`` method is called before each command
    execution or each reading/writing of an attribute (*but it is called
    only once when reading several attributes: see calling sequence
    below*)
 
--  *Read\_attr\_hardware()* is called before each reading of
+-  ``Read_attr_hardware()`` is called before each reading of
    attribute(s)( *but it is called only once when reading several
    attributes: see calling sequence below)*. This method aims to
    optimize (minimize) the equipment access in case of simultaneous
@@ -1266,63 +1276,63 @@ Reminder about the calling sequence of these methods:
 
 -  *Command execution*
 
-   -  1 – always\_executed\_hook()
+   -  1 – ``always_executed_hook()``
 
-   -  2 – is\_MyCmd\_allowed()
+   -  2 – ``is_MyCmd_allowed()``
 
-   -  3 – MyCmd()
+   -  3 – ``MyCmd()``
 
 -  *Attribute reading*
 
-   -  1 – always\_executed\_hook()
+   -  1 – ``always_executed_hook()``
 
-   -  2 – read\_attr\_hardware()
+   -  2 – ``read_attr_hardware()``
 
-   -  3 – is\_MyAttr\_allowed()
+   -  3 – ``is_MyAttr_allowed()``
 
-   -  4 – read\_MyAttr()
+   -  4 – ``read_MyAttr()``
 
 -  *Attribute writing*
 
-   -  1 – always\_executed\_hook()
+   -  1 – ``always_executed_hook()``
 
-   -  2 – is\_MyAttr\_allowed()
+   -  2 – ``is_MyAttr_allowed()``
 
-   -  3 – write\_MyAttr()
+   -  3 – ``write_MyAttr()``
 
 -  *Attributes reading*
 
-   -  1 – always\_executed\_hook()
+   -  1 – ``always_executed_hook()``
 
-   -  2 – read\_attr\_hardware()
+   -  2 – ``read_attr_hardware()``
 
-   -  3 – is\_MyAttr\_allowed()
+   -  3 – ``is_MyAttr_allowed()``
 
-   -  4 – read\_MyAttr()
+   -  4 – ``read_MyAttr()``
 
 -  *Attributes writing*
 
-   -  1 – always\_executed\_hook()
+   -  1 – ``always_executed_hook()``
 
-   -  2 – is\_MyAttr\_allowed()
+   -  2 – ``is_MyAttr_allowed()``
 
-   -  3 – write\_MyAttr()
+   -  3 – ``write_MyAttr()``
 
 When reading the sequence above, we understand why the mastery of these
 concepts is important. Particularly, having “slow code” in the
-*MyDevice::always\_executed\_hook* method can have serious consequences
+``MyDevice::always_executed_hook`` method can have serious consequences
 on the device performance.
 
 .. warning::
 
-   There is no obligation to use the *read\_attr\_hardware*
+   There is no obligation to use the ``read_attr_hardware``
    method; it depends on the equipment to drive and its communication
    channel (Ethernet, GPIB, DLL). You can have a call to the equipment in
    the code of each attribute reading method.
 
     Example: For an attribute “temperature”, of READ type, we can insert
     the call to the equipment in the generated attribute reading method
-    “\ *read\_Temperature*\ ” instead of “\ *read\_attr\_hardware*\ ”.
+    ``read_Temperature`` instead of ``read_attr_hardware``.
 
 Static database as persistent data storage
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1365,39 +1375,6 @@ representing the state of equipment.
 +-----------+--------------------+--------------------------------------------------------------------------+
 | State     | Colour             | Meaning                                                                  |
 +===========+====================+==========================================================================+
-| UNKNOWN   | grey               | | The device cannot retrieve its state. It is the case when there is a   |
-|           |                    | | communication problem to the hardware (network cut, broken cable etc…).|
-|           |                    | | It could also represent an incoherent situation                        |
-+-----------+--------------------+--------------------------------------------------------------------------+
-| INIT      | beige              | | This state is reserved to the starting phase of the device server.     |
-|           |                    | | It means that the software is not fully operational and that the user  |
-|           |                    | | must wait                                                              |
-+-----------+--------------------+--------------------------------------------------------------------------+
-| FAULT     | red                | | The device has a major failure that prevents it to work. For instance, |
-|           |                    | | A powersupply has stopped due to over temperature A motor cannot move  |
-|           |                    | | because it has fault conditions. Usually we cannot get out from this   |
-|           |                    | | state without an intervention on the hardware or a reset command.      |
-+-----------+--------------------+--------------------------------------------------------------------------+
-| DISABLE   | magenta            | | The device cannot be switched ON for an external reason. e.g. the      |
-|           |                    | | powersupply has it’s door open, the safety conditions are not          |
-|           |                    | | satisfactory to allow the device to operate                            |
-+-----------+--------------------+--------------------------------------------------------------------------+
-| OFF       | white              | | The device is in normal condition but is not active. e.g the           |
-|           |                    | | powersupply main circuit breaker is open; the RF transmitter has no    |
-|           |                    | | power etc…                                                             |
-+-----------+--------------------+--------------------------------------------------------------------------+
-| STANDBY   | yellow             | | The device is not fully active but is ready to operate. This state does|
-|           |                    | | not exist in many devices but may be useful when the device has an     |
-|           |                    | | intermediate state between OFF and ON. E.g the main circuit breaker is |
-|           |                    | | closed but there is no output current. Usually Standby is used when it |
-|           |                    | | can be immediately switched ON. While OFF is used when a certain time  |
-|           |                    | | is necessary before switching ON.                                      |
-+-----------+--------------------+--------------------------------------------------------------------------+
-| MOVING    | light blue         | | The device is in a transitory state. It is the case of a device moving |
-|           |                    | | from one state to another.( E.g a motor moving from one position to    |
-|           |                    | | another, a big instrument is executing a sequence of operation, a      |
-|           |                    | | macro command is being executed.)                                      |
-+-----------+--------------------+--------------------------------------------------------------------------+
 | ON        | green              | | This state could have been called OK or OPERATIONAL. It means that the |
 |           |                    | | device is in its operational state. (E.g. the powersupply is giving its|
 |           |                    | | nominal current, the motor is ON and ready to move, the instrument is  |
@@ -1406,12 +1383,48 @@ representing the state of equipment.
 |           |                    | | attribute has it’s quality factor to ALARM, then the state is modified |
 |           |                    | | to ALARM                                                               |
 +-----------+--------------------+--------------------------------------------------------------------------+
-| ALARM     | orange             | | The device is operating but one of this attribute is out of range.     |
-|           |                    | | It can be linked to alarm conditions set by attribute properties or a  |
-|           |                    | | specific case. (E.g. temperature alarm on a stepper motor, end switch  |
-|           |                    | | pressed on a steppermotor, up water level in a tank, etc…) In alarm,   |
-|           |                    | | usually the device does it’s job but the operator has to perform an    |
-|           |                    | | action to avoid a bigger problem that may switch the state to FAULT.   |
+| OFF       | white              | | The device is in normal condition but is not active. e.g the           |
+|           |                    | | powersupply main circuit breaker is open; the RF transmitter has no    |
+|           |                    | | power etc…                                                             |
++-----------+--------------------+--------------------------------------------------------------------------+
+| CLOSE     | white              | | Synonym of OFF state. Can be used when OFF is not adequate for the     |
+|           |                    | | device e.g case of a valve, a door, a relay, a switch.                 |
++-----------+--------------------+--------------------------------------------------------------------------+
+| OPEN      | green              | | Synonym of ON state. Can be used when ON is not adequate for the device|
+|           |                    | | e.g case of a valve, a door, a relay, a switch.                        |
++-----------+--------------------+--------------------------------------------------------------------------+
+| INSERT    | white              | | Synonym of OFF state. Can be used when OFF is not adequate for the     |
+|           |                    | | device. Case of insertable/extractable equipment, absorbers, etc…      |
+|           |                    | |                                                                        |
+|           |                    | | This state is here for compatibility reason we recommend to use OFF or |
+|           |                    | | CLOSE when possible.                                                   |
++-----------+--------------------+--------------------------------------------------------------------------+
+| EXTRACT   | green              | | Synonym of ON state. Can be used when ON is not adequate for the device|
+|           |                    | | Case of insertable/extractable equipment, absorbers, etc…              |
+|           |                    | |                                                                        |
+|           |                    | | This state is here for compatibility reason we recommend to use ON or  |
+|           |                    | | OPEN when possible.                                                    |
++-----------+--------------------+--------------------------------------------------------------------------+
+| MOVING    | light blue         | | The device is in a transitory state. It is the case of a device moving |
+|           |                    | | from one state to another.( E.g a motor moving from one position to    |
+|           |                    | | another, a big instrument is executing a sequence of operation, a      |
+|           |                    | | macro command is being executed.)                                      |
++-----------+--------------------+--------------------------------------------------------------------------+
+| STANDBY   | yellow             | | The device is not fully active but is ready to operate. This state does|
+|           |                    | | not exist in many devices but may be useful when the device has an     |
+|           |                    | | intermediate state between OFF and ON. E.g the main circuit breaker is |
+|           |                    | | closed but there is no output current. Usually Standby is used when it |
+|           |                    | | can be immediately switched ON. While OFF is used when a certain time  |
+|           |                    | | is necessary before switching ON.                                      |
++-----------+--------------------+--------------------------------------------------------------------------+
+| FAULT     | red                | | The device has a major failure that prevents it to work. For instance, |
+|           |                    | | A powersupply has stopped due to over temperature A motor cannot move  |
+|           |                    | | because it has fault conditions. Usually we cannot get out from this   |
+|           |                    | | state without an intervention on the hardware or a reset command.      |
++-----------+--------------------+--------------------------------------------------------------------------+
+| INIT      | beige              | | This state is reserved to the starting phase of the device server.     |
+|           |                    | | It means that the software is not fully operational and that the user  |
+|           |                    | | must wait                                                              |
 +-----------+--------------------+--------------------------------------------------------------------------+
 | RUNNING   | dark green         | | This state does not exist in many devices but may be useful when the   |
 |           |                    | | device has a specific state above the ON state. (E.g. the detector     |
@@ -1420,23 +1433,20 @@ representing the state of equipment.
 |           |                    | | transitory situation and may be a normal operating state above the ON  |
 |           |                    | | state.                                                                 |
 +-----------+--------------------+--------------------------------------------------------------------------+
-| OPEN      | green              | | Synonym of ON state. Can be used when ON is not adequate for the device|
-|           |                    | | e.g case of a valve, a door, a relay, a switch.                        |
+| ALARM     | orange             | | The device is operating but one of this attribute is out of range.     |
+|           |                    | | It can be linked to alarm conditions set by attribute properties or a  |
+|           |                    | | specific case. (E.g. temperature alarm on a stepper motor, end switch  |
+|           |                    | | pressed on a steppermotor, up water level in a tank, etc…) In alarm,   |
+|           |                    | | usually the device does it’s job but the operator has to perform an    |
+|           |                    | | action to avoid a bigger problem that may switch the state to FAULT.   |
 +-----------+--------------------+--------------------------------------------------------------------------+
-| CLOSE     | white              | | Synonym of OFF state. Can be used when OFF is not adequate for the     |
-|           |                    | | device e.g case of a valve, a door, a relay, a switch.                 |
+| DISABLE   | magenta            | | The device cannot be switched ON for an external reason. e.g. the      |
+|           |                    | | powersupply has it’s door open, the safety conditions are not          |
+|           |                    | | satisfactory to allow the device to operate                            |
 +-----------+--------------------+--------------------------------------------------------------------------+
-| EXTRACT   | green              | | Synonym of ON state. Can be used when ON is not adequate for the device|
-|           |                    | | Case of insertable/extractable equipment, absorbers, etc…              |
-|           |                    | |                                                                        |
-|           |                    | | This state is here for compatibility reason we recommend to use ON or  |
-|           |                    | | OPEN when possible.                                                    |
-+-----------+--------------------+--------------------------------------------------------------------------+
-| INSERT    | white              | | Synonym of OFF state. Can be used when OFF is not adequate for the     |
-|           |                    | | device. Case of insertable/extractable equipment, absorbers, etc…      |
-|           |                    | |                                                                        |
-|           |                    | | This state is here for compatibility reason we recommend to use OFF or |
-|           |                    | | CLOSE when possible.                                                   |
+| UNKNOWN   | grey               | | The device cannot retrieve its state. It is the case when there is a   |
+|           |                    | | communication problem to the hardware (network cut, broken cable etc…).|
+|           |                    | | It could also represent an incoherent situation                        |
 +-----------+--------------------+--------------------------------------------------------------------------+
 
 Unless strictly specified, the developer is free to use the Tango
@@ -1452,41 +1462,41 @@ use the “MOVING” state when the equipment is in “movement” toward his
 set point.
 
 Semantics of non-nominal states 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Although the developer is free to choose the device states, we must
 define a common error state for all the devices.
 
-In general, any dysfunction is associated with the state *Tango::FAULT*.
+In general, any dysfunction is associated with the state :samp:`{Tango::FAULT}`.
 
-The use of the *Tango::ALARM* state should be reserved for very special
+The use of the :samp:`{Tango::ALARM}` state should be reserved for very special
 cases where it is necessary to define an intermediate state between
 normal operation and fault. Its use must be documented via Pogo in order
 to define the semantics.
 
 In the case of a problem occurring at initialization, it is recommended
-to set the device state to FAULT.
+to set the device state to :samp:`{FAULT}`.
 
-For the init\_device method, we recommend:
+For the ``init_device`` method, we recommend:
 
 - If the initialization method is long, thread it.
 - The device state INIT must be used only in the start-up of the device.
 
 The device states changes when the init execution is over.
 
-Semantics recommended for FAULT and ALARM states is as follows:
+Semantics recommended for :samp:`{FAULT}` and :samp:`{ALARM}` states is as follows:
 
-* UNKNOWN (grey): communication problem with the equipment or the “sub”-devices which prevents the device to really know his real state
-* FAULT (red): A problem which prevents the normal functioning (including during the initialization). Getting out from a FAULT state is possible only by repairing the cause of the problem and/or executing a Reset command.
-* ALARM (orange): the device is functional but one element is out of range (bad parameters but not preventing the functioning, limit switch of a motor). An attribute is out of range.
+* :samp:`{UNKNOWN}` (grey): communication problem with the equipment or the “sub”-devices which prevents the device to really know his real state
+* :samp:`{FAULT}` (red): A problem which prevents the normal functioning (including during the initialization). Getting out from a FAULT state is possible only by repairing the cause of the problem and/or executing a Reset command.
+* :samp:`{ALARM}` (orange): the device is functional but one element is out of range (bad parameters but not preventing the functioning, limit switch of a motor). An attribute is out of range.
 
 State machine management
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 Pogo or developer code 
-^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^
 
-Tango has a basic management of its state machine. *Is\_allowed* methods
+Tango has a basic management of its state machine. ``Is_allowed`` methods
 filter the external request depending on the current device state. The
 developer must define the device behaviour (regarding its internal
 state) via Pogo.
@@ -1497,7 +1507,7 @@ authorized whatever the current device state is.
 The example below illustrates two ways for the state machine management
 of a device (here NITC01) in C++:
 
--  Managing the “On” command via Pogo
+-  Managing the “On” command via :program:`Pogo`
 
 -  Managing the reading of the attribute “temperature” directly in the
    code
@@ -1507,18 +1517,18 @@ of a device (here NITC01) in C++:
 .. figure:: media/image11.png
 
 However, the Pogo implementation is “basic”. If, for example, the
-execution of the “On” command on a power supply is prohibited when the
-current state is “\ *Tango::ON*\ ”, then the Tango layer, generated by
+execution of the ``On`` command on a power supply is prohibited when the
+current state is :samp:`{Tango::ON}`, then the Tango layer, generated by
 Pogo, will systematically trigger an exception to the client. From the
 operator perspective, this may surprise.
 
 In such a case, it is recommended to authorize the command but to ignore
-it
+it.
 
 Particular case : FAULT state
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**The *Tango::FAULT* state shouldn’t prohibit everything.** The
+**The** :samp:`{Tango::FAULT}` **state shouldn’t prohibit everything.** The
 attributes and/or commands that are valid and/or allows the device to
 get out of the *Tango::FAULT* state must remain accessible.
 
@@ -1528,22 +1538,22 @@ one of them is in “FAULT”, we must be able to execute commands on others
 elementary devices, and, in all cases, have a command to get out of this
 state.
 
-The transition to a “FAULT” state needs reflection and a clear
+The transition to a :samp:`{FAULT}` state needs reflection and a clear
 definition of the device management in this state and the output
 conditions of this state.
 
 Init and error acknowledgement
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-A common mistake is to associate the generic command MyDevice::Init to
+A common mistake is to associate the generic command ``MyDevice::Init`` to
 an acknowledgement mechanism for the current defect.
 
-**The execution of the *Init* command must be reserved to the device
+**The execution of the** ``Init`` **command must be reserved to the device
 re-initialization** (hardware reconnection after a reboot or
 reconfiguration following a property modification).
 
 Any device that requires an acknowledgement mechanism must have a
-dedicated command (like *Reset* or *AcknowledgeError*).
+dedicated command (like ``Reset`` or ``AcknowledgeError``).
 
 Other implementations
 ^^^^^^^^^^^^^^^^^^^^^
@@ -1555,7 +1565,7 @@ an internal state machine (with a design pattern “state” for example)
 then do a mapping with the existing Tango states to determine the device
 state.
 
-The developer also has the ability to override the *State* and *Status*
+The developer also has the ability to override the :samp:`{State}` and :samp:`{Status}`
 methods in order to centralize, in a unique method, the management of
 the internal device state, which simplifies the update of this
 fundamental information.
@@ -1572,7 +1582,7 @@ bug research and the user understanding of the device operations.
 The device developer must always use the facilities offered by the
 *Tango Logging Service* to produce “Runtime” messages, facilitating the
 understanding of the device operations. Implementations classes can
-inherit *Tango::LogAdaptater* to redirect the logs to the common
+inherit ``Tango::LogAdaptater`` to redirect the logs to the common
 service.
 
 The rules to follow are:
@@ -1588,15 +1598,15 @@ The rules to follow are:
 
 Recommendations of use:
 
--  DEBUG\_STREAM : developer information (route trace)
+-  ``DEBUG_STREAM`` : developer information (route trace)
 
--  INFO\_STREAM : user information (measure, start/stop of a process)
+-  ``INFO_STREAM`` : user information (measure, start/stop of a process)
 
--  WARN\_STREAM : warning (eg deprecated operation)
+-  ``WARN_STREAM`` : warning (eg deprecated operation)
 
--  ERROR\_STREAM : general error
+-  ``ERROR_STREAM`` : general error
 
--  FATAL\_STREAM : fatal error, shutdown
+-  ``FATAL_STREAM`` : fatal error, shutdown
 
 It is important to use these *streams* early in the development. They
 allow an easier debugging.
@@ -1627,7 +1637,7 @@ It is not mandatory, but highly recommended to add an attribute named
 “log” in the device interface, strings spectrum type, which tracks all
 the internal activity of the device (as defined in Tango Logging).
 
--  In C++, the class *Yat4Tango::InnerAppender* implements this
+-  In C++, the class :cpp:class:`Yat4Tango::InnerAppender` implements this
    functionality based on a dynamic attribute (no need to use Pogo).
 
 -  This system facilitates the recovery of errors and therefore the
@@ -1649,9 +1659,9 @@ explanations:
 
 In the source code of the device
 
--  init\_device method: initialization of the “innerAppender”
+-  ``init_device`` method: initialization of the “innerAppender”
 
--  delete\_device method: deletion of the “innerAppender”
+-  ``delete_device`` method: deletion of the “innerAppender”
 
 .. figure:: media/image14.png
 
@@ -1675,7 +1685,7 @@ Typical cases to avoid:
 
 -  A device doesn’t behave as expected but there is no indication why.
 
--  The device is in FAULT state but the *Status* (the attribute) gives
+-  The device is in :samp:`{FAULT}` state but the :samp:`{Status}` (the attribute) gives
    no indication on the problem nature, or worse, a bad indication (thus
    guiding the users in a wrong trail, with a loss of time and energy).
 
@@ -1685,17 +1695,17 @@ Typical cases to avoid:
 The developer has to ensure:
 
 -  That any exception is caught, completed (Tango allows it) and spread
-   (use of the rethrow\_exception method),
+   (use of the ``rethrow_exception`` method),
 
 -  If an error occur it must be logged using the Tango Logging Service
 
 -  That the return code of a function is always analyzed,
 
--  That the device *Status* is always coherent with the *State,*
+-  That the device :samp:`{Status}` is always coherent with the :samp:`{State}`,
 
 -  That the error messages are understandable for the final user and
    that they are supplemented by *logs* (*ERROR level, use of the
-   error\_stream macro*). The *Status* is the indicator that will help
+   error\_stream macro*). The :samp:`{Status}` is the indicator that will help
    the user to find the error reason.
 
 -  **Ignore the “ideal situation”:** In operation, the ideal setting is
@@ -1703,7 +1713,7 @@ The developer has to ensure:
 
    -  Eg: use of communication sockets: anticipate all the common
       communication problems: cable not connected, equipment off,
-      sub-devices not started or in FAULT.
+      sub-devices not started or in :samp:`{FAULT}`.
 
 Implementation
 ~~~~~~~~~~~~~~
@@ -1713,7 +1723,7 @@ identifier for discriminating exceptions. In the code, it isn’t possible
 to distinguish two exceptions without having knowledge of the text (as
 string) conveyed by the said exception.
 
-All exceptions are of type *Tango::DevFailed*. A DevFailed exception
+All exceptions are of type ``Tango::DevFailed``. A DevFailed exception
 consists of these fields:
 
 -  Reason: string, defining the error type
@@ -1793,10 +1803,10 @@ Example of an exception message:
 
     **Reason**: DATA\_OUT\_OF\_RANGE
 
-    **Description**: AxisMotionAccuracy must be at least of 1 motor
+    **Description**: :samp:`{AxisMotionAccuracy}` must be at least of 1 motor
     step!
 
-    **Origin**: GalilAxis::write\_attr\_hardware
+    **Origin**: ``GalilAxis::write_attr_hardware``
 
 The exception hierarchy defined by Tango has been thought only for
 internal use (Tango core), the developer can’t inherit and define its
@@ -1810,23 +1820,25 @@ If there is a succession of exceptions, the logic dictates that the
 first exception has possibly generated all the others. By resolving the
 first exception, the others can disappear.
 
-**Exception handling in init\_device method:**
+**Exception handling in** ``init_device`` **method:**
 
-- no exceptions should be propagated from the method *MyDevice::init\_device*\ **.** Otherwise, **the device quits.** The device should be kept alive regardless of any failure.
+- no exceptions should be propagated from the method ``MyDevice::init_device``. Otherwise, **the device quits.** The device should be kept alive regardless of any failure.
 
 - The code for this method must contain a try / catch block, which guarantees that no exception is propagated in this context
 
-- If an exception is thrown, the developer must set the device state to FAULT and update the Status to indicate the error nature. (*The goal is to understand easily why the device failed to initialize properly, while still allowing the operator to adjust this or these problems*)
+- If an exception is thrown, the developer must set the device state to :samp:`{FAULT}` and update the :samp:`{Status}` to indicate the error nature. (*The goal is to understand easily why the device failed to initialize properly, while still allowing the operator to adjust this or these problems*)
 
-**Examples of error handling in C++:**
 
--  If an error occurs, always log it
+.. hint::
+    **Examples of error handling in C++:**
 
--  Always update *State* **AND** *Status*
+    -  If an error occurs, always log it
 
--  Manage the return code for function that have one
+    -  Always update *State* **AND** *Status*
 
--  Manage the exceptions for methods which can throw some
+    -  Manage the return code for function that have one
+
+    -  Manage the exceptions for methods which can throw some
 
 .. figure:: media/image16.png
 
@@ -1834,11 +1846,11 @@ Details for an attribute
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 Although Tango supports the notion of quality on an attribute value
-(*Tango::VALID*, *Tango::INVALID*, ...), only few clients use this
+(:samp:`{Tango::VALID}`, :samp:`{Tango::INVALID}`, ...), only few clients use this
 information to judge the validity of the data returned (which is a
 shame). So it is best to not make assumptions on the use that would be
 made (client side) to report an invalid value to the client. In other
-words, **forcing the attribute quality to *Tango::INVALID* is necessary
+words, **forcing the attribute quality to :samp:`{Tango::INVALID}` is necessary
 but not sufficient.**
 
 For float values, it is possible to set the value to “NaN”, but there is
@@ -1859,14 +1871,14 @@ Details for the properties
 Properties reading during device initialization
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-As it stands, the code generated by Pogo doesn’t wrap in a try / catch
+As it stands, the code generated by :program:`Pogo` doesn’t wrap in a try / catch
 block the method which ensures the properties reading in the Tango
-database (see *MyDevice::init\_device*). However, it may fail and cause
+database (see ``MyDevice::init_device``). However, it may fail and cause
 the generation of an exception. As mentioned above, the developer must
-ensure that any exception thrown in the *init\_device* method (or a
+ensure that any exception thrown in the ``init_device`` method (or a
 method called from it) is catch and not spread.
 
-In case of Tango exception on the *properties* reading, the developer
+In case of Tango exception on the :term:`properties <property>` reading, the developer
 should systematically:
 
 1. detect the error (catch).
@@ -1882,12 +1894,12 @@ Example in C++ :
 .. figure:: media/image17.png
 
 As a reminder, the default value for a property is defined with Pogo,
-the value is stored in the database via the *put\_property()* method.
+the value is stored in the database via the ``put_property()`` method.
 
 Properties without default values
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Pogo allows defining a default value for a *property* not present in the
+:program:`Pogo` allows defining a default value for a :term:`property` not present in the
 Tango database.
 
     For mandatory properties that have no default values, the developer
@@ -1905,19 +1917,10 @@ Tango database.
 Appendices
 ==========
 
-Appendix 1 –Code Quality Checklist
-----------------------------------
-
-The following checklist defines the conformity level of a source code
-for a Tango device development with the recommendations detailed in this
-document.
-
-Appendix 2 – Full code samples
+Appendix 1 – Full code samples
 ------------------------------
 
-Example C++ « AttributeSequenceWriter » :
+Example C++:
+`AttributeSequenceWriter <http://www.tango-controls.org/developers/dsc/ds/1390/>`_
 
-Example C++ « NITC01 » :
-
-.. [1] http://www.Tango-controls.org
 

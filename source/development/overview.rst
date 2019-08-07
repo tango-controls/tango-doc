@@ -3,6 +3,8 @@
 Overview
 =========
 
+:audience:`developers`, :lang:`all`
+
 Tango is a developers toolkit. There are many libraries and tools for implemented device clients and servers.
 
 C++ and Python

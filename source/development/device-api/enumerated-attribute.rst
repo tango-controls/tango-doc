@@ -1,6 +1,8 @@
 Enumerated attribute
 ====================
 
+:audience:`developers`, :lang:`c++`
+
 Since Tango release 9, enumerated attribute is supported using the new
 data type DevEnum. This data type is not a real C++ enumeration because:
 

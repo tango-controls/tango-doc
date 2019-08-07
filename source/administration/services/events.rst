@@ -1,3 +1,5 @@
+:audience:`administrators, developers`
+
 .. |image19| image:: events/jive_simpl.jpg
 
 .. |image20| image:: events/jive_sophis.jpg

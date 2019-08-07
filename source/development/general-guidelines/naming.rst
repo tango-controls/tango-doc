@@ -1,9 +1,12 @@
+.. _tango_object_naming:
 .. raw:: latex
 
     \clearpage
 
 Tango object naming (device, attribute and property)
 ====================================================
+
+:audience:`developers, users, administrators`, :lang:`all`
 
 Device name
 -----------

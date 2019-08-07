@@ -3,6 +3,8 @@
 Using Tango servers without DB for unit testing
 ===============================================
 
+:audience:`advanced developers`, :lang:`java`
+
 Problem overview
 ----------------
 
@@ -16,7 +18,7 @@ Useful for benchmarking. Testing without setting up the whole Tango infrastructu
 Solution overview
 -----------------
 
-It is possible to start Tango server without db: see 9.10 in the Tango book
+It is possible to start Tango server without db: see :ref:`device_server_without_database`
 
 Java:
 -----

@@ -15,6 +15,8 @@
 The TANGO device server model
 =============================
 
+:audience:`developers`, :lang:`all`
+
 This chapter will present the TANGO device server object model hereafter
 referred as TDSOM. First, it will introduce CORBA. Then, it will
 describe each of the basic features of the TDSOM and their function. The

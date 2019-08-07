@@ -4,6 +4,8 @@
 How to add dynamic attributes to a device class
 ===============================================
 
+:audience:`advanced developers`, :lang:`c++`
+
 Creating new attributes at Startup
 ----------------------------------
 

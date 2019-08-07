@@ -3,6 +3,8 @@
 Documentation, how to contribute
 ================================
 
+:audience:`developers`
+
 Prerequisites
 -------------
 
@@ -14,7 +16,40 @@ To work with documentation, first you need to have the following programs instal
 Sphinx installation
 -------------------
 
+Once installed the prerequisites, you can use Sphinx through two options:
+
+- using Python3 venv way, or
+- using virtualenv way.
+
+Using Python3 venv way
+~~~~~~~~~~~~~~~~~~~~~~
+
 If you have prerequisites installed, you need to install Sphinx tools:
+
+#. Install virtual environments support for Python:
+
+   :command:`python3 -m venv doc-env`
+
+#. Activate the environment:
+
+    * On GNU/Linux:
+
+   :command:`source doc-env/bin/activate`
+
+    * On Windows:
+
+   :command:`doc-env\Scripts\activate.bat`
+
+#. Install Sphinx:
+
+   :command:`pip install sphinx`
+
+#. Install IPtyhon (to make all how-tos build correctly):
+
+   :command:`pip install ipython`
+
+Using virtualenv way
+~~~~~~~~~~~~~~~~~~~~
 
 #. Install virtual environments support for Python:
 
@@ -26,16 +61,24 @@ If you have prerequisites installed, you need to install Sphinx tools:
 #. Create an environment for sphinx tools:
 
    :command:`virtualenv doc-env`
+
 #. Activate the environment:
 
+    * On GNU/Linux:
+
    :command:`source doc-env/bin/activate`
+
+    * On Windows:
+
+   :command:`doc-env\Scripts\activate.bat`
+
 #. Install Sphinx:
 
    :command:`pip install sphinx`
 
-#. Install Breathe (a module to deal with Doxygen C++ API documentation):
+#. Install IPtyhon (to make all how-tos build correctly):
 
-   :command:`pip install breathe`
+   :command:`pip install ipython`
 
 Get documentation sources
 -------------------------
@@ -70,10 +113,11 @@ Updating documentation
       To see what what branch is the current one use: :command:`git branch -a`. The current branch is marked
       with an asterisk (\*).
 
+   :command:`git checkout origin/master`
    :command:`git checkout -b "TD-66-step-by-step-demo"`
 
 #. Edit a file (or create it if it doesn't exist) you would like to change. If you are following this tutorial for learning
-   please use this file: :file:`source/tutorials/example.rst`
+   please use this file: :file:`source/tutorials-and-howtos/tutorials/example.rst`
 
 #. Make sure that the file appears in a relevant toc-tree (in some :file:`index.rst` file or
    in :file:`source/contents.rst`). If you are now learning please check :file:`source/tutorials/index.rst`
@@ -90,9 +134,9 @@ Committing changes
 
 #. Add modifications to a commit list. For example:
 
-   :command:`git add source/tutorials/example.rst`
+   :command:`git add source/tutorials-and-howtos/tutorials/example.rst`
 
-   :command:`git add source/tutorials/index.rst`
+   :command:`git add source/tutorials-and-howtos/tutorials/index.rst`
 
 #. Commit the changes providing some meaningful message. For example:
 

@@ -4,6 +4,7 @@
 How to cross compile omniORB
 ============================
 
+:audience:`advanced developers`, :lang:`c++`
 
 This HowTo gives details on how you can cross compile omniORB.
 

@@ -3,6 +3,8 @@
 Developing your first Java TANGO device class
 =============================================
 
+:audience:`beginner developers`, :lang:`java`
+
 In this section we describe how one can start developing Tango device server using Java.
 
 Three methods will be described:
@@ -37,7 +39,7 @@ So to start execute the following command:
    $> mvn archetype:generate \
          -DarchetypeGroupId=org.tango-controls \
          -DarchetypeArtifactId=jtango-maven-archetype \
-         -DarchetypeVersion=1.1
+         -DarchetypeVersion=1.4
 
 This command generates skeleton project using special Maven artifact that defines the template of the project. While generating new project you have to define several properties:
 
@@ -54,6 +56,13 @@ This command generates skeleton project using special Maven artifact that define
 - **platform** -- Windows, MacOS, Unix/Linux etc. Typically Java projects will have *All* in this property
 - **family** -- as in POGO. Typically Java high level projects will have *SoftwareSystem* in this property
 - **bus** -- bus to the device (underlying hardware) e.g. *Serial*. For Java this might be *NA* if there is no real hardware associated with this Tango server.
+- **jtango-version** -- a version of JTango dependency or *LATEST* if you are know what are you doing. 
+
+Latest version of JTango is 
+
+.. image:: https://api.bintray.com/packages/tango-controls/jtango/JTango/images/download.svg
+   :target: https://bintray.com/tango-controls/jtango/JTango/_latestVersion
+   :alt: JTango latest version
 
 The following output indicates that project has been successfully generated:
 
@@ -73,10 +82,18 @@ Now you can goto to the project folder and build it:
 
 Assuming that Tango-Controls environment is set up properly (TODO ref) and MyDevice/development (TODO ref) server is defined in the Tango Database the later command will start the device server.
 
-Now using your favorite IDE open the newly generated project and develop your JTango server. Please read more :ref:`here  <jtango_manual>`
+Now using your favorite IDE open the newly generated project and develop your JTango server. Please read more in `JTango documentation`_.
 
 Using POGO
 ~~~~~~~~~~
 
+See :doc:`POGO documentation <../../../tools-and-extensions/pogo/index>`.
+
 Starting from scratch
 ~~~~~~~~~~~~~~~~~~~~~
+
+Example Java device and detailed documentation can be found in the
+`JTango documentation`_.
+
+
+.. _JTango documentation: https://jtango.readthedocs.io/en/latest/

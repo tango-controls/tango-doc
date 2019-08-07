@@ -4,9 +4,9 @@
 How to PyTango
 ==============
 
+:audience:`developers`, :lang:`python`
+
 My list of short recipes for common tasks ... please check official_ documentation first!
-
-
 
 
 Before anything else

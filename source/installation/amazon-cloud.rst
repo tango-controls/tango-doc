@@ -1,6 +1,8 @@
 Amazon Cloud
 ============
 
+:audience:`beginner users, beginner developers, beginner administrators`
+
 The latest version of TANGO 9.2.5a is available on the cloud.
 
 An Amazon image running Ubuntu 16.04 with TANGO 9.2.5a is pre-installed and
@@ -8,7 +10,7 @@ configured to start up at boot time. The image is public and can be found under 
 
 .. code-block:: console
 
-    AMI-ID: ami-a0e02ccf
+    AMI-ID: ami-d503cfba
     region=EU-Frankfurt
 
 You can find out how to do this `here <http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html#finding-an-ami-console>`_.
@@ -65,4 +67,4 @@ You should be able to play with the TangoTest device *sys/tg_test/1*
 
 .. image:: amazon-cloud/amazonCloudTango.jpg
 
-To see the running DEMO, please, follow `the link <http://ec2-52-59-200-167.eu-central-1.compute.amazonaws.com:8080/TangoWebapp/>`_.
+To see the running DEMO, please, follow `the link <http://ec2-35-156-104-8.eu-central-1.compute.amazonaws.com:8080/TangoWebapp/>`_. Use *tango-cs/tango* to login

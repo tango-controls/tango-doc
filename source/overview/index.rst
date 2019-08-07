@@ -2,9 +2,12 @@
 
 .. image:: ../img/logo_tangocontrols.png
     :align: center
+    :target: http://www.tango-controls.org
 
 Overview
 =========
+
+:audience:`beginners, all`
 
 Contents:
 

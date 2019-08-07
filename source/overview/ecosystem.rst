@@ -1,6 +1,8 @@
 Ecosystem
 ==========
 
+:audience:`beginners, all`
+
 The Tango ecosystem offers a rich ecosystem for developers and clients alike.
 The ecosystem is best appreciated via these maps which show what exists and where it is situated in the software stack.
 Use the :ref:`map key <map_key>` to understand the colour code used.
