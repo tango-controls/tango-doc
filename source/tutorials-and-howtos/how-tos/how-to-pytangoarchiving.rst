@@ -190,13 +190,13 @@ attributes with its archiving config:
 
     import PyTangoArchiving
     hdb = PyTangoArchiving.ArchivingAPI('hdb')
-    attrs = ['['expchan/eh_emet03_ctrl/3/value','expchan/eh_emet03_ctrl/4/value']
+    attrs = ['expchan/eh_emet03_ctrl/3/value','expchan/eh_emet03_ctrl/4/value']
 
     #Archive every 15 seconds if change> +/-1.0, else every 300 seconds 
     modes = {'MODE_A': [15000.0, 1.0, 1.0], 'MODE_P': [300000.0]} 
 
     #If you omit the modes argument then archiving will be every 60s
-    hdb.start_archiving(attrs,modes) 
+    hdb.start_archiving(attrs, modes) 
 
     hdb.load_last_values(attrs)
     {'expchan/eh_emet02_ctrl/3/value': [[datetime.datetime(2013, 3, 20, 11, 38, 9),
