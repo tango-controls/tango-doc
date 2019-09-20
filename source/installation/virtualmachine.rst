@@ -28,7 +28,16 @@ The latest release of TangoBox is based on Tango Controls v9.3.3 installed on 64
 * See also `a release note <https://github.com/tango-controls/tangobox/releases/tag/v9.3.3>`_
   and `README <https://github.com/tango-controls/tangobox/blob/develop/README.md>`_.
 
+TangoBox 9.3 on the Amazon cloud
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+The TangoBox 9.3 release is also available as an AMI image on the AWS. The related AMI-ID is:
+
+.. code-block:: console
+
+   ami-0a2e0cddaa68be39f
+
+Please refer to :doc:`Amazon Cloud <amazon-cloud>`.
 
 Previous versions
 -----------------
