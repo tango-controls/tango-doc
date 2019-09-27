@@ -41,6 +41,10 @@ The following people have contributed to the Tango documentation over the years:
   Piotr Goryl, Olga Merkulova, Lukasz Zytniak, Lukasz Dudek, Matteo di Carlo,
   Matteo Canzari, Igor Khokhrakiov, Reynald Bourtembourg, Jean-Michel Chaize, 
   Stuart James and Andy Götz
+* **Second Write-the-Doc Team** - the following people participated in the second Write-the-Doc camp:
+  Reynald Bourtembourg, Thomas Braun, Sébastien Gara, Philippe Gauron,
+  Andrew Götz, Piotr Goryl, Anton Joubert, Krystian Kędroń, Igor Khokhrakiov,
+  Grzegorz Kowalski, Olga Merkulova, Guillaume Mugerin, Lorenzo Pivetta and Sergi Rubio
 * **Emmanuel Taurel** - for writing the first Tango documentation (*The Book*) single handedly!
 * **Pascal Verdier** - for writing the Pogo and Astor documentation
 * **Lukasz Zytniak** - for converting many documents to Sphinx
