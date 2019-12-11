@@ -23,13 +23,13 @@ Installation notes 
 The new PyTango, is now available to download from the Tango download_ page or PiPy_
 
 
-If you have already installed PyTango with *easy_install* you can
+If you have already installed PyTango with *pip* you can
 simply update your PyTango version by doing:
 
 .. code-block:: console
    :linenos:
 
-   $ easy_install -U PyTango
+   $ pip -U PyTango
 
 .. code-block:: console
    :linenos:
