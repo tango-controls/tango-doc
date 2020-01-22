@@ -268,4 +268,3 @@ you can use the :ref:`Tango Archiving System <hdbpp_manual>`.
    :glob:
    
    how-to-try-tango/*
-   
