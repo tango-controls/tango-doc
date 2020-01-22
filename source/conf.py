@@ -15,6 +15,8 @@
 import sys
 import os
 
+import sys; sys.setrecursionlimit(1500)
+
 # import breathe
 import IPython.sphinxext
 
@@ -200,11 +202,12 @@ html_theme = 'sphinx_rtd_theme'
 # documentation.
 html_theme_options = {
     "sticky_navigation": True,
-    "collapse_navigation": False
+    "collapse_navigation": False,
+    'includehidden': False,
 }
 
 # Add any paths that contain custom themes here, relative to this directory.
-html_theme_path = ['_theme']
+# html_theme_path = ['_theme']
 
 # on_rtd is whether we are on readthedocs.org, this line of code grabbed from docs.readthedocs.org
 on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
