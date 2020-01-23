@@ -88,6 +88,7 @@ The Configuration Manager also exposes some Attributes to keep trace of the glob
 * total number of working/faulty attributes;
 * total number of events per second;
 * overall minimum and maximum processing and storing time.
+
 These attributes could be themselves archived to enable a follow up versus time.
 
 
@@ -122,6 +123,7 @@ The EventSubscriber Tango device server also exposes some additional figures of 
 * for each Attribute, number of records per time;
 * for each Attribute, number of failures per time;
 * for each Attribute, time stamp of last record.
+
 These numbers can sum up in a counter, which can be reset every hours/days/weeks, to rank each Attribute in term of data rate, error rate etc. This allows preventive maintenance and fine tuning, detecting, for instance, when an Attribute configuration is wrong because the variation threshold is
 lower than the noise level. These statistics are a key element for qualifying the health of the system. All these Attributes are archived themselves to enable a follow-up versus time. For each Attribute, the EventSubscriber Tango device server also computes the minimum and maximum processing and storing times, which helps to discover possible bottlenecks.
 There may be several EventSubscriber device servers.
@@ -136,6 +138,11 @@ It was developed just to simplify the task of configurating dynamically several 
 At the ESRF, it is used to configure/add automatically some dynamic attributes into HDB++. There are some cases where the same device will create some dynamic attributes at
 startup depending on its configuration (device properties), if the configuration changes, different attributes might be created.
 In this specific case, we have the requirement to ensure these dynamic attributes are archived. So the device server will configure them via the HdbConfigurator device server.
+
+|image2|
+
+Figure 3: HDB++ and HdbConfiguratorServer
+
 To be more concrete, for the people working in a synchrotron, we have a device, controlling the insertion devices used by a given beamline.
 Dynamic attributes are created for each undulator which can be controlled by this beamline.
 During a shutdown period, the undulator might have been replaced, so there will be new attributes created for the new undulators and
@@ -146,7 +153,7 @@ It will help to configure several attributes in parallel. If one would like to d
 one would need to lock the device, set many attributes, send the addAttribute command and finally release the lock of the device.
 The HdbConfigurator Server is doing that for you in the same way as the HDB++ Configuration Manager GUI is doing it.
 
-THe HdbConfigurator Server is indeed using the same classes as the HDB++ Configuration GUI but its source code is actually currently available on tango-ds Sourceforge.
+The HdbConfigurator Server is indeed using the same classes as the HDB++ Configuration GUI but its source code is actually currently available on tango-ds Sourceforge.
 It is listed in the Tango classes catalog:
 http://www.tango-controls.org/developers/dsc/ds/274/
 
@@ -179,13 +186,14 @@ implementing the abstraction layer and the specific interface:
 
 |libs|
 
-Figure 3: HDB++ Device Servers design
+Figure 4: HDB++ Device Servers design
 
 
 * **libhdb++**: database abstraction layer, decouples the interface to the database back-end from the implementation.
 * **libhdbmysql**: legacy HDB schema support for MySQL back-end
 * **libhdb++mysql**: HDB++ schema support for MySQL back-end
 * **libhdb++cassandra**: methods from libhdb++ for Cassandra back-end
+
 These libraries allow reusing the EventSubscriber, the ConfigurationManager and the GUIs without changes.
 
 
@@ -296,10 +304,7 @@ ArchiverRemove and AttributeSetArchiver commands. The list is stored in
 the ArchiverList device Property of the ConfigurationManager device
 using the FQDN syntax. This tells the ConfigurationManager everything
 which is needed to connect to the managed EventSubscribers: protocol,
-host, port and device name. Figure 5 shows a screenshot of the
-ArchiverList Property of a ConfigurationManager device instance; in this
-case all the managed EventSubscriber devices belong to the same TANGO
-facility (srv-tango-srf.fcs.elettra.trieste.it:20000).
+host, port and device name.
 
 
 Presentations and papers
@@ -318,9 +323,15 @@ More information is available in Administration -> Services section of this docu
 .. |image0| image:: HDB-plus-plus/image2.png
    :width: 6.26772in
    :height: 3.37500in
+
 .. |image1| image:: HDB-plus-plus/image4.png
    :width: 6.26772in
    :height: 3.62500in
+
+.. |image2| image:: HDB-plus-plus/HdbConfiguratorServer.png
+   :width: 6.26772in
+   :height: 3.62500in
+
 .. |libs| image:: HDB-plus-plus/libs.png
    :width: 6.26772in
    :height: 3.62500in

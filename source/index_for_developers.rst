@@ -17,7 +17,7 @@ Contents for developers
    installation/index
    tools-and-extensions/index
    administration/index
-   tutorials-and-howtos/turotials/index
+   tutorials-and-howtos/tutorials/index
    tutorials-and-howtos/how-tos/index
    reference/index
    

@@ -58,20 +58,12 @@ Here client executes tango://tango_host:10000/sys/tg_test/1/DevDouble with the i
 
 The full reference can be found following this `link <http://tango-rest-api.readthedocs.io/en/latest>`_
 
-Real life example of getting beam current value from ESRF:
-
-https://mstatus.esrf.fr/tango/rest/rc4/hosts/tangorest01.esrf.fr/10000/devices/sys/mcs/facade/attributes/current/value
-
-Use tango-cs/tango when prompted.
-
 Tango REST API implementations
 ------------------------------
 
 Since Tango REST API itself is only a specification one needs an actual implementation running some where.
 
-Known implementations are:
-
-`mtangorest.server <https://bitbucket.org/hzgwpn/mtangorest.server>`_
+Known implementations are listed in the Tango REST API `readme <https://github.com/tango-controls/rest-api#known-server-implementations>`_.
 
 Please refer to the corresponding implementation documentation on how to install and use it.
 
@@ -118,15 +110,19 @@ Finally Tango REST API implementation should use Tango Access Control to validat
 Further steps
 -------------
 
-Install Tango REST API server localy or using docker [reference].
+Install Tango REST API server localy or using docker.
 
-Develop your REST client or use 3rd party frameworks (`mTangoSDK <http://bitbucket.org/hzgwpn/mtango>`_, `tangojs <https://tangojs.github.io/>`_).
+Develop your REST client or use 3rd party frameworks (:ref:`see Tango web tools<webtoolstoc>`).
 
-Deploy everything in the local network or in the cloud [reference].
+Deploy everything in the local network or in the cloud.
 
 References
 ----------
 
 [1] `Tango REST API specification <http://tango-rest-api.readthedocs.io/en/latest>`_
+
 [2] `Tango REST API specification on GitHub <https://github.com/tango-controls/rest-api>`_
-[3] `mtangorest.server -- Tango REST API implementation <https://bitbucket.org/hzgwpn/mtangorest.server>`_
+
+[3] :ref:`REST API installation tutorial, full stack<install_tango_webapp>`
+
+[4] `Tango REST Server wiki <https://github.com/tango-controls/rest-server/wiki>`_

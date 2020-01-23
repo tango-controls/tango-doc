@@ -1,4 +1,4 @@
-Snapshots form TANGO labs at the ESRF
+Snapshots from TANGO labs at the ESRF
 =====================================
 
 :audience:`all`

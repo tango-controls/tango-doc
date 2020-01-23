@@ -34,8 +34,8 @@ Full release of the latest stable version 9.22 for C++ and Java :
 
 Previous versions:
 
-   * `TANGO 8.1.2 <https://sourceforge.net/projects/tango-cs/files/Previous_Releases/Tango8/TangoSetup-8.1.2b_win32.exe/download>`_ for Windows 32 bit contains the libraries for Visual Studio 2008 (VC9) and was tested under Windows 7 and XP.
-   * `TANGO 8.1.2 <https://sourceforge.net/projects/tango-cs/files/Previous_Releases/Tango8/TangoSetup-8.1.2b_win64.exe/download>`_ for Windows 64 bit contains the libraries for Visual Studio 2010 (VC10) and was tested under Windows 7 and XP.
+   * `TANGO 8.1.2 win32  <https://sourceforge.net/projects/tango-cs/files/Previous_Releases/Tango8/TangoSetup-8.1.2b_win32.exe/download>`_ for Windows 32 bit contains the libraries for Visual Studio 2008 (VC9) and was tested under Windows 7 and XP.
+   * `TANGO 8.1.2 win64 <https://sourceforge.net/projects/tango-cs/files/Previous_Releases/Tango8/TangoSetup-8.1.2b_win64.exe/download>`_ for Windows 64 bit contains the libraries for Visual Studio 2010 (VC10) and was tested under Windows 7 and XP.
 
 Developers release with only the required libraries (omniORB, log4tango, zmq and tango) to build Tango clients or servers
 
@@ -52,8 +52,8 @@ Previous releases:
 
 Python Windows binaries:
 
-   * Python 2.6 (`msi <pypi.python.org/packages/2.6/P/PyTango/PyTango-8.0.2.win32-py2.6.msi>`_ or `exe <pypi.python.org/packages/2.6/P/PyTango/PyTango-8.0.2.win32-py2.6.exe>`_)
-   * Python 2.7 (`msi <pypi.python.org/packages/2.7/P/PyTango/PyTango-8.0.2.win32-py2.7.msi>`_ or `exe <pypi.python.org/packages/2.7/P/PyTango/PyTango-8.0.2.win32-py2.7.exe>`_)
-   * Python 3.1 (`msi <pypi.python.org/packages/3.1/P/PyTango/PyTango-8.0.2.win32-py3.1.msi>`_ or `exe <pypi.python.org/packages/3.1/P/PyTango/PyTango-8.0.2.win32-py3.1.exe>`_)
-   * Python 3.2 (`msi <pypi.python.org/packages/3.2/P/PyTango/PyTango-8.0.2.win32-py3.2.msi>`_ or `exe <pypi.python.org/packages/3.2/P/PyTango/PyTango-8.0.2.win32-py3.2.exe>`_)
+   * Python 2.6 (`PyTango-8.0.2.win32-py2.6.msi <pypi.python.org/packages/2.6/P/PyTango/PyTango-8.0.2.win32-py2.6.msi>`_ or `PyTango-8.0.2.win32-py2.6.exe <pypi.python.org/packages/2.6/P/PyTango/PyTango-8.0.2.win32-py2.6.exe>`_)
+   * Python 2.7 (`PyTango-8.0.2.win32-py2.7.msi <pypi.python.org/packages/2.7/P/PyTango/PyTango-8.0.2.win32-py2.7.msi>`_ or `PyTango-8.0.2.win32-py2.7.exe <pypi.python.org/packages/2.7/P/PyTango/PyTango-8.0.2.win32-py2.7.exe>`_)
+   * Python 3.1 (`PyTango-8.0.2.win32-py3.1.msi <pypi.python.org/packages/3.1/P/PyTango/PyTango-8.0.2.win32-py3.1.msi>`_ or `PyTango-8.0.2.win32-py3.1.exe <pypi.python.org/packages/3.1/P/PyTango/PyTango-8.0.2.win32-py3.1.exe>`_)
+   * Python 3.2 (`PyTango-8.0.2.win32-py3.2.msi <pypi.python.org/packages/3.2/P/PyTango/PyTango-8.0.2.win32-py3.2.msi>`_ or `PyTango-8.0.2.win32-py3.2.exe <pypi.python.org/packages/3.2/P/PyTango/PyTango-8.0.2.win32-py3.2.exe>`_)
 

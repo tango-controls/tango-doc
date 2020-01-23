@@ -10,3 +10,6 @@ Getting started with JTango (Java implementation of Tango-Controls)
 
    jtango-client
    jtango-server
+
+For a more complete guide on JTango please refer to the
+`JTango documentation <https://jtango.readthedocs.io/en/latest/>`_.

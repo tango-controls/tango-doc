@@ -1170,15 +1170,15 @@ Strings
 
 Strings are mapped to **char \***. The use of *new* and *delete* for
 dynamic allocation of strings is not portable. Instead, you must use
-helper functions defined by CORBA (in the CORBA namespace). These
+helper functions defined by CORBA (in the CORBA namespace) and Tango. These
 functions are :
 
 .. code:: cpp
   :number-lines:
 
         char *CORBA::string_alloc(unsigned long len);
-        char *CORBA::string_dup(const char *);
-        void CORBA::string_free(char *);
+        char *Tango::string_dup(const char *);
+        void Tango::string_free(char *);
 
 These functions handle dynamic memory for strings. The *string\_alloc*
 function allocates one more byte than requested by the len parameter
@@ -1186,8 +1186,9 @@ function allocates one more byte than requested by the len parameter
 and copy. Both *string\_alloc* and *string\_dup* return a null pointer
 if allocation fails. The *string\_free* function must be used to free
 memory allocated with *string\_alloc* and *string\_dup*. Calling
-*string\_free* for a null pointer is safe and does nothing. The
-following code fragment is an example of the Tango::DevString type usage
+*string\_free* for a null pointer is safe and does nothing. *Tango::string\_free* is available only since cppTango 9.3.3.
+*Tango::string\_dup* is available only since Tango 9. If you are using an older version of the Tango C++ library, you should use *CORBA::string\_free* and *CORBA::string\_dup* instead.
+The following code fragment is an example of the Tango::DevString type usage :
 
 .. code:: cpp
   :number-lines:
@@ -1195,15 +1196,15 @@ following code fragment is an example of the Tango::DevString type usage
        Tango::DevString str = CORBA::string_alloc(5);
        strcpy(str,"TANGO");
 
-       Tango::DevString str1 = CORBA::string_dup("Do you want to danse TANGO?");
+       Tango::DevString str1 = Tango::string_dup("Do you want to danse TANGO?");
 
-       CORBA::string_free(str);
-       CORBA::string_free(str1);
+       Tango::string_free(str);
+       Tango::string_free(str1);
 
 Line 1-2 : TANGO is a five letters string. The CORBA::string\_alloc
 function parameter is 5 but the function allocates 6 bytes
 
-Line 4 : Example of the CORBA::string\_dup function
+Line 4 : Example of the Tango::string\_dup function
 
 Line 6-7 : Memory deallocation
 
@@ -1298,10 +1299,10 @@ Another example for the Tango::DevVarStringArray type is given
        Tango::DevVarStringArray mystrseq(4);
        mystrseq.length(4);
 
-       mystrseq[0] = CORBA::string_dup("Rock and Roll");
-       mystrseq[1] = CORBA::string_dup("Bossa Nova");
-       mystrseq[2] = CORBA::string_dup("Waltz");
-       mystrseq[3] = CORBA::string_dup("Tango");
+       mystrseq[0] = Tango::string_dup("Rock and Roll");
+       mystrseq[1] = Tango::string_dup("Bossa Nova");
+       mystrseq[2] = Tango::string_dup("Waltz");
+       mystrseq[3] = Tango::string_dup("Tango");
 
        CORBA::Long nb_elt = mystrseq.length();
 
@@ -1430,7 +1431,7 @@ Inserting/Extracting TANGO strings
 ''''''''''''''''''''''''''''''''''
 
 The <<= operator is overloaded for const char \* and always makes a deep
-copy. This deep copy is done using the CORBA::\ *string\_dup* function.
+copy. This deep copy is done using the Tango::\ *string\_dup* function.
 The extraction of strings uses the >>= overloaded operator. The main
 point is that the Any object retains ownership of the string, so the
 returned pointer points at memory inside the Any. This means that you
@@ -1482,8 +1483,8 @@ This is identical to inserting/extracting basic types
       s <<= str1;
       s >>= str2;
 
-    //   CORBA::string_free(str2);
-    //   a <<= CORBA::string_dup("Oups");
+    //   Tango::string_free(str2);
+    //   a <<= Tango::string_dup("Oups");
 
       CORBA::Any seq;
       Tango::DevVarFloatArray fl_arr1;
@@ -1734,15 +1735,15 @@ just below
        Tango::DevVarStringArray *argout  = new Tango::DevVarStringArray();
 
        argout->length(3);
-       (*argout)[0] = CORBA::string_dup("Rumba");
-       (*argout)[1] = CORBA::string_dup("Waltz");
+       (*argout)[0] = Tango::string_dup("Rumba");
+       (*argout)[1] = Tango::string_dup("Waltz");
        string str("Jerck");
-       (*argout)[2] = CORBA::string_dup(str.c_str());
+       (*argout)[2] = Tango::string_dup(str.c_str());
        return argout;
     }
 
 Memory is allocated at line 3 and 5. Then, the sequence is populated at
-lines 6,7 and 9. The usage of the *CORBA::string\_dup* function also
+lines 6,7 and 9. The usage of the *Tango::string\_dup* function also
 allocates memory. The sequence is created and returned using pointer.
 The *Command::insert()* method will insert the sequence into the
 CORBA::Any object using this pointer. Therefore, the CORBA::Any object
@@ -1750,7 +1751,7 @@ will take ownership of the allocated memory. It will free it when it
 will be destroyed by the CORBA ORB after the data have been sent away.
 For portability reason, the ORB uses the *CORBA::string\_free* function
 to free the memory allocated for each string. This is why the
-corresponding *CORBA::string\_du*\ p or *CORBA::string\_alloc* function
+corresponding *Tango::string\_dup* or *CORBA::string\_alloc* function
 must be used to reserve this memory.It is also possible to use a
 statically allocated memory and to avoid copying in the sequence used to
 returned the data. This is explained in the following example assuming a
@@ -2068,7 +2069,7 @@ sub-chapters, the command and attributes classes (*DevReadPositionCmd*,
 *DevReadDirectionCmd*, *PositionAttr*, *SetPositionAttr* and
 *DirectionAttr*) are very simple classes. A tool called **Pogo** has
 been developped to automatically generate/maintain these classes and to
-write part of the code needed in the remaining one. See xx to know more
+write part of the code needed in the remaining one. See :ref:`Pogo manual<pogo_manual>` to know more
 on this Pogo tool.
 
 In order to also gives an example of how the database objects part of
@@ -4125,13 +4126,12 @@ Linking
 ''''''''
 
 To build a running device server process, you need to link your code
-with several libraries. Nine of them are always the same whatever the
-operating system used is. These nine libraries are:
+with several libraries:
 
--  The Tango libraries (called **libtango** and **liblog4tango**)
+-  The Tango library (called **libtango**)
 
 -  Three omniORB package libraries (called **libomniORB4**,
-   **libomniDynamic4** and **libCOS4)**
+   **libomniDynamic4** and **libCOS4**)
 
 -  The omniORB threading library (called **libomnithread**)
 
@@ -4140,25 +4140,25 @@ operating system used is. These nine libraries are:
 On top of that, you need additional libraries depending on the operating
 system :
 
--  For Linux, add the posix thread library (**libpthread**)
+-  For Linux, add the POSIX thread library (**libpthread**)
 
 The following table summarizes the necessary options to compile a Tango
 C++ device server. Please, note that starting with Tango 8 and for gcc
 release 4.3 and later, some C++11 code has been used. This requires the
-compiler option -std=c++0x. Obviously, the options -I and -L must be
+compiler option -std=c++0x (or better). Obviously, the options -I and -L must be
 updated to reflect your file system organization.
 
 .. csv-table::
    :header-rows: 1
 
    "Operating system", "Compiling option", "Linking option"
-   "Linux gcc", "-D\_REENTRANT -std=c++0x -I..","-L.. -ltango -llog4tango
+   "Linux gcc", "-D\_REENTRANT -std=c++0x -I..","-L.. -ltango
    -lomniORB4 -lomniDynamic4 -lCOS4 -lomnithread -lzmq -lpthread"
 
 The following is an example of a Makefile for Linux. Obviously, all the
 paths are set to the ESRF file system structure.
 
-.. code:: cpp
+.. code:: makefile
   :number-lines:
 
    #
@@ -4177,7 +4177,6 @@ paths are set to the ESRF file system structure.
 
    CXXFLAGS = -D_REENTRANT -std=c++0x $(INCLUDE_DIRS)
    LFLAGS = $(LIB_DIRS) -ltango \
-                        -llog4tango \
                         -lomniORB4 \
                         -lomniDynamic4 \
                         -lCOS4 \
@@ -4271,8 +4270,8 @@ To build a running device server process, you need to link your code
 with several libraries on top of the Windows libraries. These libraries
 are:
 
--  The Tango libraries (called **tango.lib** and **log4tango.lib** or
-   **tangod.lib** and **log4tangod.lib** for debug mode)
+-  The Tango library (called **tango.lib** or
+   **tangod.lib** for debug mode)
 
 -  | The omniORB package libraries (see next table)
 
@@ -4304,15 +4303,17 @@ The “Win32 Debug” or “Win32 Release” configuration that you change
 within the Configuration Manager window changes the /M switch compiler.
 For instance, if you select a “Win32 Debug” configuration in a non-DLL
 project, use the omniORB4d.lib, omniDynamic4d.lib and omnithreadd.lib
-libraries plus the tangod.lib, log4tangod.lib and zmqd.lib libraries. If
+libraries plus the tangod.lib and zmqd.lib libraries. If
 you select the “Win32 Release” configuration, use the omniORB4.lib,
-omniDynamic4.lib and omnithread.lib libraries plus the tango.lib,
-log4tango.lib and zmq.lib libraries.
+omniDynamic4.lib and omnithread.lib libraries plus the tango.lib
+and zmq.lib libraries.
 
 **WARNING**: In some cases, the Microsoft Visual Studio wizard used
 during project creation generates one include file called *Stdafx.h*. If
 this file itself includes windows.h file, you have to add the
 preprocessor macro \_WIN32\_WINNT and set it to 0x0500.
+
+.. _running-cpp-device-server:
 
 Running a C++ device server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~

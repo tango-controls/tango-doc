@@ -15,6 +15,8 @@
 import sys
 import os
 
+import sys; sys.setrecursionlimit(1500)
+
 # import breathe
 import IPython.sphinxext
 
@@ -69,16 +71,16 @@ master_doc = 'contents'
 
 # General information about the project.
 project = u'Tango Controls'
-copyright = u'2017-2018, Tango Community, Creative Commons Attribution 4.0 International (CC BY 4.0)'
+copyright = u'2017-2019, Tango Community, Creative Commons Attribution 4.0 International (CC BY 4.0)'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
 # built documents.
 #
 # The short X.Y version.
-version = '9.2'
+version = '9.3'
 # The full version, including alpha/beta/rc tags.
-release = '9.2.5'
+release = '9.3.3'
 
 # rst_epilog is added at the end of each rst file. Here it will contain typical substitutions
 rst_epilog = """
@@ -200,11 +202,12 @@ html_theme = 'sphinx_rtd_theme'
 # documentation.
 html_theme_options = {
     "sticky_navigation": True,
-    "collapse_navigation": False
+    "collapse_navigation": False,
+    'includehidden': False,
 }
 
 # Add any paths that contain custom themes here, relative to this directory.
-html_theme_path = ['_theme']
+# html_theme_path = ['_theme']
 
 # on_rtd is whether we are on readthedocs.org, this line of code grabbed from docs.readthedocs.org
 on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
@@ -378,7 +381,7 @@ texinfo_documents = [
 epub_title = u'Tango Controls Documentation'
 epub_author = u'Tango Community'
 epub_publisher = u'Tango Community'
-epub_copyright = u'2017-2018, Tango Community, CC BY 4.0'
+epub_copyright = u'2017-2019, Tango Community, CC BY 4.0'
 
 # The basename for the epub file. It defaults to the project name.
 #epub_basename = u'Tango Controls Documentation'

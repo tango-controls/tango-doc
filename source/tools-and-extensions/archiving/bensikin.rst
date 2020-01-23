@@ -1,4 +1,5 @@
 .. _bensikin_manual:
+
 Bensikin User Manual
 ====================
 

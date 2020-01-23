@@ -24,12 +24,14 @@ SHORTCUTS
 
 If you want to use Debian/Ubuntu or Docker solution to try Tango you can skip
 this article and go to:
-    * :ref:`How to install Tango on Debian/Ubuntu<tango_on_linux>`
-    * :ref:`Using Tango docker containers<tango_using_docker>`
+
+* :ref:`How to install Tango on Debian/Ubuntu<tango_on_linux>`
+* :ref:`Using Tango docker containers<tango_using_docker>`
 
 Tango requires:
-    * omniORB - CORBA implementation
-    * zeroMQ - event system
+
+* omniORB - CORBA implementation
+* zeroMQ - event system
 
 You can install this library from source:
 `omniORB <https://sourceforge.net/projects/omniorb/files/omniORB/omniORB-4.2.2/omniORB-4.2.2.tar.bz2/download>`_,
@@ -37,16 +39,20 @@ You can install this library from source:
 
 .. note::
 
-    Remember that Tango needs the header files (.h) in the compilation process so is a need
-    to install developers version of these libraries.
+   Remember that Tango needs the header files (.h) in the compilation process so is a need
+   to install developers version of these libraries.
 
 Also, many elements of the Tango ecosystem and the Control System itself requires the **MariaDB**
-or **MySQL** database. You can easily install it using yum or apt-get:
+or **MySQL** database. You can easily install it using apt or yum:
 
 .. code-block:: console
 
-    apt-get install mysql-server/mariadb-server
-    or
+    apt install mysql-server/mariadb-server
+
+or
+
+.. code-block:: console
+
     yum install mysql-server/mariadb-server
 
 After downloading the source of Tango Control System
@@ -109,7 +115,7 @@ In the case when the system is installed from a .deb package or is running in a 
 However, in the approach described in the above paragraph creating the services and daemon have to be done manually.
 
 So the process of starting the two main server-side elements of the tango environment
-(:term:`Tango Database` and Tango Starter) can be optimized.
+(:term:`Tango Database` and :ref:`Tango Starter<Starter>`) can be optimized.
 
 For creating the **Tango DB services** make in your `/lib/systemd/system directory`, file named tango-db.service,
 containing :ref:`tango_db.service<tango_db_service>`.
@@ -135,6 +141,8 @@ This file contains the database setting e.q:
 
     MYSQL_USER=tango
     MYSQL_PASSWORD=tango
+
+.. _howto_sysv_init:
 
 To proper setup the **Tango Starter daemon**, create the file in the `/etc/init.d/tango-starter`,
 containing :ref:`tango_starter<tango_starter_daemon>`. Starter daemon similar like the Tango DB service
@@ -253,3 +261,10 @@ To see custom Taurus device panel (similar like atkpanel) run the different comm
 
 To storage the longtime history of changes of the attributes,
 you can use the :ref:`Tango Archiving System <hdbpp_manual>`.
+
+.. toctree::
+   :hidden:
+   :maxdepth: 1
+   :glob:
+   
+   how-to-try-tango/*

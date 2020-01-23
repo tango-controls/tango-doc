@@ -169,7 +169,7 @@ The init_device() and delete_device() method looks like:
     {
         /*----- PROTECTED REGION ID(MyDev::delete_device) ENABLED START -----*/
 
-        CORBA::string_free(*attr_StringAttr_read);
+        Tango::string_free(*attr_StringAttr_read);
 
         /*----- PROTECTED REGION END -----*/    // MyDev::delete_device
         delete[] attr_StringAttr_read;
@@ -178,8 +178,7 @@ The init_device() and delete_device() method looks like:
 
 The pointer for the characters array is allocated in the init_device()
 and initialized to NULL. In the delete_device() method, the character
-array memory is freed with the CORBA::string_free() method which is not
-wrapped to Tango!!
+array memory is freed with the Tango::string_free() method. If you are using a Tango C++ library version older than v9.3.3, you have to use CORBA::string_free() method instead of Tango::string_free().
 
 .. code-block:: cpp
     :linenos:
@@ -190,7 +189,7 @@ wrapped to Tango!!
         
         /*----- PROTECTED REGION ID(MyDev::read_StringAttr) ENABLED START -----*/
         //  Set the attribute value
-        CORBA::string_free(*attr_StringAttr_read);
+        Tango::string_free(*attr_StringAttr_read);
         *attr_StringAttr_read = Tango::string_dup("Bonjour Paris");
         attr.set_value(attr_StringAttr_read);
 
@@ -268,7 +267,7 @@ initialized to statically allocated strings. The argument of the
 Attribute::set_value() method is of type "char \*\*" which is coherent
 with the definition of the Tango::DevString type. Nevertheless, the
 definition of statically allocated string in C / C++ is a "const char
-*". This is why we need a const_cast during the pointer
+\*". This is why we need a const_cast during the pointer
 initialization.
 
 Note that the use of the Pogo generated data member (named

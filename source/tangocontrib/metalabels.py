@@ -10,6 +10,12 @@ from docutils.parsers.rst import directives
 from sphinx import addnodes
 from copy import deepcopy
 
+# Add support to all version of python
+# and have the same behavior
+_iter = (lambda d: d.iteritems()) if hasattr(dict, 'iteritems') \
+         else (lambda d: iter(d.items()))
+
+
 def metalabel_role(name, rawtext, text, lineno, inliner, options={}, content=[]):
     """Meta-label role
 
@@ -36,7 +42,8 @@ def metalabel_role(name, rawtext, text, lineno, inliner, options={}, content=[])
         node = nodes.emphasis(rawtext='', text='', **options)
         node['classes'].append('meta-label')
 
-        node1 = nodes.strong(raw=rawtext, text=label_config.get('label', name), **options)
+        node1 = nodes.strong(raw=rawtext, text=label_config.get('label', name),
+                             **options)
         node1['classes'].append('label')
 
         node2 = nodes.emphasis(rawtext=rawtext, text=text, **options)
@@ -59,12 +66,13 @@ def metalabel_role(name, rawtext, text, lineno, inliner, options={}, content=[])
             env.doc_metalabels[env.docname] = dict()
 
         # Create a list if one metalabel have a lot of values (split by ',')
-        env.doc_metalabels[env.docname][name] = [text.strip() for text in text.split(",")]
+        env.doc_metalabels[env.docname][name] = [text.strip() for text
+                                                 in text.split(",")]
 
     except AssertionError:
         msg = inliner.reporter.error(
             'Cannot create meta-label "%s: %s". '
-            'Please check "meta_labels" in conf.py.' % (name, text), line=lineno)
+            'Please check "meta_labels" in conf.py' % (name, text), line=lineno)
         prb = inliner.problematic(rawtext, rawtext, msg)
         return [prb], [msg]
 
@@ -106,13 +114,17 @@ class FilteredTree(TocTree):
         if not hasattr(env, 'tocs_metalabel'):
             env.tocs_metalabel = dict()
 
-        env.tocs_metalabel[env.docname] = ast.literal_eval(self.options["metalabel"])
+        toc_metalabel = ast.literal_eval(self.options["metalabel"])
+        env.tocs_metalabel[env.docname] = toc_metalabel
 
         # add metalabel filter settings to toctree subnode
         for node in ret:
             if hasattr(node, 'traverse'):
-                for toctree_node in node.traverse(addnodes.toctree, include_self=True, siblings=True):
-                    toctree_node['metalabel'] = ast.literal_eval(self.options["metalabel"])
+                for toctree_node in node.traverse(addnodes.toctree,
+                                                  include_self=True,
+                                                  siblings=True):
+
+                    toctree_node['metalabel'] = toc_metalabel
 
         return ret
 
@@ -135,13 +147,13 @@ def env_purge_metalabel(app, env, docname):
     # delete it too from doc_metalabels.
     # metalable[0] - this is a key for doc_metalabels dict
     env.doc_metalabels = dict(filter(lambda metalabel: metalabel[0] != docname,
-                                     env.doc_metalabels.iteritems()))
+                                     _iter(env.doc_metalabels)))
 
     if not hasattr(env, 'tocs_metalabel'):
         return
 
     env.tocs_metalabel = dict(filter(lambda metalabel: metalabel[0] != docname,
-                                     env.tocs_metalabel.iteritems()))
+                                     _iter(env.tocs_metalabel)))
 
 
 def filtered_process(app, doctree, docname):
@@ -163,14 +175,13 @@ def filtered_process(app, doctree, docname):
     if not hasattr(env, 'tocs_metalabel'):
         return
 
-
     def _filer_all_toctrees():
         """"
         Method used to filter all toctrees
         that use FilteredTree features
 
         """
-        for tosc_name, _filter in env.tocs_metalabel.iteritems():
+        for tosc_name, _filter in _iter(env.tocs_metalabel):
             # extract toctree from listitem,  buletlist, toctrees list
             toctree = env.tocs[tosc_name][0][1][0]
             _filter_the_toctree(toctree, _filter)
@@ -198,8 +209,8 @@ def filtered_process(app, doctree, docname):
                 index = 0
                 # base filtering - parse all values in toctree filter.
                 # The entry metalabes must have the same value in the metalabels
-                # and in the toctree filter e.q  'audience', 'lang' role must have
-                # the same value in the entries and filter toctree
+                # and in the toctree filter e.q  'audience', 'lang' role must
+                # have the same value in the entries and filter toctree
                 for key in _filter.keys():
                     filter_values = _filter[key]
                     if type(filter_values) is not list:
@@ -207,10 +218,11 @@ def filtered_process(app, doctree, docname):
 
                     for filter_value in filter_values:
                         # Checking the metalabels value, not all document in the
-                        # entry must have the same values in the meta labels filters,
-                        # only one value from metalabels must be correct
-                        # in the current filter e.q (one value from the list
-                        # ['developers', 'all'] must be in the 'entry' meta label)
+                        # entry must have the same values in the meta labels
+                        # filters, only one value from metalabels must be
+                        # correct in the current filter e.q (one value from
+                        # the list ['developers', 'all'] must be
+                        # in the 'entry' meta label)
                         try:
                             if filter_value in ent_metalabels[key]:
                                 _add[index] = True
@@ -240,15 +252,20 @@ def filtered_process(app, doctree, docname):
 
             # filter this toctree and all ist subtrees.
             _filter_the_toctree(toctree, toctree['metalabel'])
-            for subtoctree in toctree.traverse(addnodes.toctree, include_self=False, siblings=True):
+            for subtoctree in toctree.traverse(addnodes.toctree,
+                                               include_self=False,
+                                               siblings=True):
                 _filter_the_toctree(subtoctree, toctree['metalabel'])
 
             # filter all other tocs entries
-            for doc, toc in env.tocs.items():
-                for subtoctree in toc.traverse(addnodes.toctree, include_self=False, siblings=True):
+            for doc, toc in _iter(env.tocs):
+                for subtoctree in toc.traverse(addnodes.toctree,
+                                               include_self=False,
+                                               siblings=True):
                     _filter_the_toctree(subtoctree, toctree['metalabel'])
 
-            # resolve toctree to bullet list and replace it to avoid default processing
+            # resolve toctree to bullet list and replace it
+            # to avoid default processing
             result = env.resolve_toctree(docname, builder, toctree)
             if result is None:
                 toctree.replace_self([])
@@ -258,7 +275,6 @@ def filtered_process(app, doctree, docname):
 
         # revert ToC from backup
         env.tocs = tocs_origin
-
 
 
 def setup(app):
@@ -277,7 +293,7 @@ def setup(app):
         print ('registering %s ' % key)
         app.add_role(key, metalabel_role)
 
-    print ("... meta-labels registered.")
+    print("... meta-labels registered.")
 
     # register toctree directive
     # and event used to do filter feature
@@ -285,4 +301,4 @@ def setup(app):
     app.connect("env-purge-doc", env_purge_metalabel)
     app.connect("doctree-resolved", filtered_process)
 
-    return {'version': '0.2'}
+    return {'version': '0.2.1'}

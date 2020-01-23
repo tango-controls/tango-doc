@@ -9,3 +9,11 @@ Tutorials and How-Tos
 
    tutorials/index
    how-tos/index
+
+.. toctree::
+   :hidden:
+
+   tutorials-for-administrators
+   how-tos-for-administrators
+   how-tos-for-developers
+   

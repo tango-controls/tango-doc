@@ -181,17 +181,17 @@ this command is the following:
             //      Add your own code to control device here
 
             argout->length(3);
-            (*argout)[0] = CORBA::string_dup("Rumba");
-            (*argout)[1] = CORBA::string_dup("Waltz");
+            (*argout)[0] = Tango::string_dup("Rumba");
+            (*argout)[1] = Tango::string_dup("Waltz");
             string str("Jerck");
-            (*argout)[2] = CORBA::string_dup(str.c_str());
+            (*argout)[2] = Tango::string_dup(str.c_str());
             return argout;
     }
 
 The argout data array is created at line 8. Its length is set at line
 14. The array is populated at line 15,16 and 18. The last array element
 is initialized from a standard C++ string created at line 17. Note the
-usage of the *string\_dup* function of the CORBA namespace. This is
+usage of the *string\_dup* function of the Tango namespace. This is
 necessary for strings array due to the CORBA memory allocation schema.
 
 The DevStruct command
@@ -224,9 +224,9 @@ executed by this command is the following:
             argout->dvalue[2] = 22.22;
 
             argout->svalue.length(2);
-            argout->svalue[0] = CORBA::string_dup("Be Bop");
+            argout->svalue[0] = Tango::string_dup("Be Bop");
             string str("Smurf");
-            argout->svalue[1] = CORBA::string_dup(str.c_str());
+            argout->svalue[1] = Tango::string_dup(str.c_str());
 
             return argout;
     }
@@ -239,7 +239,7 @@ lines 20 an 22 from a hard-coded string and from a standard C++ string.
 This method allocates memory for the argout data. This memory is freed
 by the Tango core classes after the data have been sent to the caller
 (no delete is needed). Note the usage of the *string\_dup* function of
-the CORBA namespace. This is necessary for strings array due to the
+the Tango namespace. This is necessary for strings array due to the
 CORBA memory allocation schema.
 
 The three attributes
@@ -336,7 +336,7 @@ will be executed when the LongWrAttr attribute is read (after the
 *read\_attr\_hardware()* method). The attribute value is set at line 29.
 In the same manner, the method called *read\_StrAttr()* will be executed
 when the attribute StrAttr is read. Its value is initialized in this
-method at line 44 and 45 with the *string\_dup* Tango function. There
+method at line 44 and 45. There
 are several ways to code spectrum or image attribute of the DevString
 data type. A HowTo related to this topic is available on the Tango
 control system Web site. The *write\_LongWrAttr()* method is executed

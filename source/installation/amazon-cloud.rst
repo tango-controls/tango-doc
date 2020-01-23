@@ -3,7 +3,69 @@ Amazon Cloud
 
 :audience:`beginner users, beginner developers, beginner administrators`
 
-The latest version of TANGO 9.2.5a is available on the cloud.
+
+TangoBox 9.3 AMI
+----------------
+
+The 9.3 release is also available as an AMI image on the AWS. The related AMI-ID is:
+
+.. code-block:: console
+
+   ami-0a2e0cddaa68be39f
+
+The image contains all the features of the original TangoBox. It requires at least 2 vCPUs and 4GB of memory,
+which corresponds to `t2.medium` instance type. The running costs apply according to AWS pricing.
+
+An instance may be accessed with both `SSH access`_ or `Remote Desktop`_.
+
+SSH access
+~~~~~~~~~~
+
+For security reason, the SSH does not accept password authentication. To SSH login to your instance, you
+need a key-pair configured. The AWS web console asks for the key-pair during the launch process.
+You may either select exiting or create a new key-par:
+
+.. image:: amazon-cloud/key-pair.png
+    :width: 500px
+    :align: center
+
+Then, you can use the web console :guilabel:`Connect` feature. Please provide the username `tango-cs`:
+
+.. image:: amazon-cloud/connect.png
+    :width: 500px
+    :align: center
+
+Remote Desktop
+~~~~~~~~~~~~~~
+
+There is also xRDP server installed to enable a desktop connection.
+So, you can connect to the instance with, for example a windows `Remote Desktop` client.
+For this feature, the instance `Security Group` settings shall allow for connecting to 3389 port.
+
+.. warning::
+
+   Before enabling the 3389 port, it is recommended to change the default tango-cs user password:
+
+   - connect to the instance with the AWS web console :guilabel:`Connect`, as described above.
+   - call `passwd` and change the password from the default. When prompted for the current password use `tango`.
+
+
+After enabling the RDP port and connecting with a remote desktop client,  you are greeted with the following screen:
+
+.. image:: amazon-cloud/rdp.png
+    :width: 250px
+    :align: center
+
+After providing the username `tango-cs` and the valid password, you connect to the desktop:
+
+.. image:: amazon-cloud/desktop.png
+    :align: center
+
+
+Previous version
+----------------
+
+The version of TANGO 9.2.5a is also available on the cloud.
 
 An Amazon image running Ubuntu 16.04 with TANGO 9.2.5a is pre-installed and
 configured to start up at boot time. The image is public and can be found under this id and region:
