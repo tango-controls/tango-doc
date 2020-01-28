@@ -130,7 +130,7 @@ To make a computer become a Tango Host you need to:
 
 
 Running :term:`Device Servers<Device Server>`
-------------------------------
+---------------------------------------------
 
 The recommended way of running device servers is to use :ref:`Starter<Starter>` service. 
 Then you may use :program:`NSSM` as for :program:`DataBaseds`.
