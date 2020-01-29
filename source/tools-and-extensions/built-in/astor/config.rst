@@ -20,7 +20,7 @@ Click on :menuselection:`File --> Ctrl System Preferences` menu to open
 
 .. note::
 
-   To disable the :guilabel:`Preference` menu, start Astor with :option:`-DNO\_PREF=true`.
+   To disable the :guilabel:`Preference` menu, start Astor with `-DNO\_PREF=true`.
 
 
 .. _`name`:
