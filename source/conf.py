@@ -15,7 +15,7 @@
 import sys
 import os
 
-import sys; sys.setrecursionlimit(1500)
+# import sys; sys.setrecursionlimit(1500)
 
 # import breathe
 import IPython.sphinxext
@@ -471,5 +471,4 @@ meta_labels = {
         'post_label': '',
     },
 }
-
 
