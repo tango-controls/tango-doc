@@ -285,16 +285,16 @@ file to load:
     sfv.setToolTipMode(TangoSynopticHandler.TOOL_TIP_NAME);
     sfv.setAutoZoom(true);
     InputStreamReader   inStrReader=null;
-    InputStream   jdFileInStream = this.getClass().getResourceAsStream("/mypakcage/file.jdw”);
+    InputStream   jdFileInStream = this.getClass().getResourceAsStream("/mypakcage/file.jdw");
     if (jdFileInStream!=null)
         inStrReader = new InputStreamReader(jdFileInStream);
     if (inStrReader!=null)
     {
-         Try
+        try
         {
            sfv .loadSynopticFromStream(inStrReader);
         }
-        Catch (Exception ex) {}
+        catch (Exception ex) {}
     }
 
 

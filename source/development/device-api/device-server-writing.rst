@@ -549,17 +549,17 @@ Definition
     class StepperMotorClass : public DeviceClass
     {
       public:
-        static StepperMotorClass \*init(const char \*);
-        static StepperMotorClass \*instance();
-        ~StepperMotorClass() {\_instance = NULL;}
+        static StepperMotorClass *init(const char *);
+        static StepperMotorClass *instance();
+        ~StepperMotorClass() {_instance = NULL;}
 
       protected:
         StepperMotorClass(string &);
-        static StepperMotorClass \*\_instance;
-        void command\_factory();
+        static StepperMotorClass *_instance;
+        void command_factory();
 
       private:
-        void device\_factory(Tango\_DevVarStringArray \*);
+        void device_factory(Tango_DevVarStringArray *);
     };
 
 Line 1 : This class is a sub-class of the DeviceClass class

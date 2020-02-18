@@ -79,7 +79,7 @@ This will build HTML output in the :file:`build` folder.Then you may use any web
    are inevitable.
 
 For more details and step-by-step guidance pleas refer to
-:doc:`Documentation workflow tutorial <tutorials/documentation-workflow-tutorial>`.
+:ref:`Documentation workflow tutorial <documentation_workflow_tutorial>`.
 
 Sources structure
 -----------------

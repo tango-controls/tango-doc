@@ -58,7 +58,7 @@ Elder versions
 
       .. note::
 
-         * Click `here <https://sourceforge.net/projects/tango-cs/files/Tango9_VM.pdf/download>`_ to read the documentation
+         * Use `this link <https://sourceforge.net/projects/tango-cs/files/Tango9_VM.pdf/download>`_ to download and read the documentation
            to install and run the virtual machine on your desktop.
          * Use 7z to unzip it on Linux or unzip on Windows.
 

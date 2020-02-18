@@ -5,6 +5,12 @@ Tools and Extensions
 
 :audience:`all`
 
+.. toctree::
+   :hidden:
+   :maxdepth: 1
+   
+   tools
+
 Built-in tools
 --------------
 

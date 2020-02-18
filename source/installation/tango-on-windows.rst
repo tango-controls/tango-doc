@@ -129,15 +129,15 @@ To make a computer become a Tango Host you need to:
 
 
 
-Running :term:`Device Servers`
-------------------------------
+Running :term:`Device Servers<Device Server>`
+---------------------------------------------
 
 The recommended way of running device servers is to use :ref:`Starter<Starter>` service. 
 Then you may use :program:`NSSM` as for :program:`DataBaseds`.
 Assuming you have downloaded it and copied to the Tango bin folder please follow:
 
 - Open Command Line as Administrator (if it is not yet open).
-- Prepare folder for :term:`Device Servers` executable:
+- Prepare folder for :term:`Device Servers<Device Server>` executable:
 
     .. note::
         To let your device servers start with :program:`Starter` service their executables have to be in a path without

@@ -63,9 +63,7 @@ Tango REST API implementations
 
 Since Tango REST API itself is only a specification one needs an actual implementation running some where.
 
-Known implementations are listed in the Tango REST API readme:
-
-`link <https://github.com/tango-controls/rest-api#known-server-implementations>`_
+Known implementations are listed in the Tango REST API `readme <https://github.com/tango-controls/rest-api#known-server-implementations>`_.
 
 Please refer to the corresponding implementation documentation on how to install and use it.
 

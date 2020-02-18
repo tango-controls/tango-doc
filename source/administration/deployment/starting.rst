@@ -63,12 +63,12 @@ value of only 2 Mybtes for thread stack. The Unix command line ulimit -s
 Example of starting and registering a Notification Service daemon on a
 UNIX like operating system
 
-.. code:: cpp
-  :number-lines:
+.. code:: bash
+   :number-lines:
 
-    ulimit -s 2048
-    notifd -n -DDeadFilterInterval=300 &
-    notifd2db
+   ulimit -s 2048
+   notifd -n -DDeadFilterInterval=300 &
+   notifd2db
 
 The Notification Service daemon is started at line 2. Its
 -DDeadFilterInterval option is used to specify some internal cleaning of
@@ -79,11 +79,11 @@ daemon in the Tango database is done at line 2.
 
 It differs on a Windows computer
 
-.. code:: cpp
-  :number-lines:
+.. code:: bash
+   :number-lines:
 
-    notifd -n -DDeadFilterInterval=300 -DFactoryIORFileName=C:\Temp\evfact.ior &
-    notifd2db C:\Temp\evfact.ior
+   notifd -n -DDeadFilterInterval=300 -DFactoryIORFileName=C:\Temp\evfact.ior &
+   notifd2db C:\Temp\evfact.ior
 
 For release 8 and above
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -134,11 +134,11 @@ the CORBA notification service to store its channel factory IOR must be
 specified using its -D command line option. This file name has also to
 be passed to the notifd2db command.
 
-.. code:: cpp
-  :number-lines:
+.. code:: bash
+   :number-lines:
 
-    notifd -n -DDeadFilterInterval=300 -DFactoryIORFileName=C:\Temp\evfact.ior &
-    notifd2db C:\Temp\evfact.ior -o C:\Temp\myfile.res
+   notifd -n -DDeadFilterInterval=300 -DFactoryIORFileName=C:\Temp\evfact.ior &
+   notifd2db C:\Temp\evfact.ior -o C:\Temp\myfile.res
 
 For release 8 and above
 ~~~~~~~~~~~~~~~~~~~~~~~

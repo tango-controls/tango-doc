@@ -4,7 +4,8 @@ Developer's Guide
 :audience:`developers`, :lang:`all`
 
 In this section the process of how to write Tango device servers and clients (applications).
-In addtion to articles listed below you may be interested in :ref:`tutorials-list` and :ref:`how-tos-for-developers`.
+In addtion to articles listed below you may be interested in :ref:`tutorials-list` and :ref:`how-tos-for-developers` 
+or browse :ref:`all documents marked for developers<developers_docs>`.
 
 The section is organized as follows:
 
@@ -21,3 +22,4 @@ The section is organized as follows:
    advanced/index
    cpp-api/index
    contributing/index
+

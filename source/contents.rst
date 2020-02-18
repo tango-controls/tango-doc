@@ -18,3 +18,12 @@ Tango Documentation Contents
    administration/index
    tutorials-and-howtos/index
    reference/index
+
+.. toctree::
+   :hidden:
+   :maxdepth: 1
+
+   index_for_administrators
+   index_for_developers
+   index_for_users
+
