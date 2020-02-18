@@ -6,7 +6,7 @@ HDB++ Design and implementation
 
 Author: *Lorenzo Pivetta*
 
-Below, details on deployment and configuration of the :term:`HDB++` service are provided.
+Below, details on deployment and configuration of the `HDB++` service are provided.
 For overview, see :ref:`hdbpp_manual` of :ref:`tools_index` section.
 
 

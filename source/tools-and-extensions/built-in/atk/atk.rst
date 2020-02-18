@@ -1,3 +1,5 @@
+.. highlight:: java
+
 ******************
 Tango ATK Tutorial
 ******************
@@ -511,19 +513,19 @@ ScalarListViewer and set it’s model to this attributeList with one
 single attribute inside. See the code sample below:
 
 .. code-block:: java
-    :linenos:
+   :linenos:
 
-    AttributeList attl = new AttributeList;
-    Try
-    {
-        attl.add(“my/test/device/onescalaratt”);
-        ScalarListViewer slv = new ScalarListViewer();
-        sv.setModel(attl);
-    }
-    catch ()
-    {
-
-    }
+   AttributeList attl = new AttributeList;
+   try
+   {
+       attl.add("my/test/device/onescalaratt");
+       ScalarListViewer slv = new ScalarListViewer();
+       slv.setModel(attl);
+   }
+   catch ()
+   {
+       
+   }
 
 
 
@@ -574,9 +576,9 @@ or setters.
     :linenos:
 
     AttributeList attl = new AttributeList;
-    Try
+    try
     {
-        INumberScalar ins = (InumberScalar) attl.add(“my/test/device/oneNumberScalarAtt”);
+        INumberScalar ins = (InumberScalar) attl.add("my/test/device/oneNumberScalarAtt");
         SimpleScalarViewer ssv = new SimpleScalarViewer();
         slv.setModel(ins);
     }
@@ -600,9 +602,9 @@ read value of the attribute we want to set the setPoint value of it.
     :linenos:
 
     AttributeList attl = new AttributeList;
-    Try
+    try
     {
-        INumberScalar ins = (InumberScalar) attl.add(“my/test/device/oneNumberScalarAtt”);
+        INumberScalar ins = (InumberScalar) attl.add("my/test/device/oneNumberScalarAtt");
         NumberScalarWheelEditor nswe = new NumberScalarWheelEditor();
         nswe.setModel(ins);
     }
@@ -962,9 +964,9 @@ viewer following the code sample below:
     :linenos:
 
     AttributeList attl = new AttributeList;
-    Try
+    try
     {
-        INumberSpectrum spect = (InumberSpectrum) attl.add(“my/test/device/onespectrumatt”);
+        INumberSpectrum spect = (InumberSpectrum) attl.add("my/test/device/onespectrumatt");
         NumberSpectrumViewer nsv = new NumberSpectrumViewer();
         nsv.setModel(spect);
     }
@@ -1049,13 +1051,13 @@ NumberSpectrum attributes: "*jlp/test/1/att_spectrum*",
     INumberSpectrum ins;
     AttributeList attl = new AttributeList();
     MultiNumberSpectrumViewer mnsv = new MultiNumberSpectrumViewer();
-    Try{
+    try{
         ins = (INumberSpectrum) attl.add("jlp/test/1/att_spectrum");
         mnsv.addNumberSpectrumModel(ins);
         ins = (INumberSpectrum) attl.add("jlp/test/2/att_spectrum");
         mnsv.addNumberSpectrumModel(ins);
 
-    …. You can continue adding other spectrum attributes
+    // …. You can continue adding other spectrum attributes
 
     }catch (Exception ex)
     {
@@ -1479,7 +1481,7 @@ to perform to handle errors :
 
         attl.add(att_one);
         attl.add(att_two);
-        …..
+        // ...
 
 *  Connect to the commands by adding them to the command list:
 
@@ -1488,7 +1490,7 @@ to perform to handle errors :
 
         cmdl.add(cmd_one);
         cmdll.add(cmt_two);
-        …..
+        // ...
 
 *  Start the attribute list refresher:
 
@@ -1496,7 +1498,7 @@ to perform to handle errors :
         :linenos:
 
         attl.startRefresher();
-        …..
+        // ...
 
 The error viewers are registered as error listeners of the attribute
 list and the command list. This way they will be registered as the error

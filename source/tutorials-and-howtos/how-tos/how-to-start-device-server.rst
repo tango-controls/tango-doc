@@ -11,7 +11,7 @@ How to start a device server
 
    self
 
-While reading this how-to please refer to manuals of :ref:`Jive <jive_manual>` and :ref:`Astor <astro_manual>` tools. 
+While reading this how-to please refer to manuals of :ref:`Jive <jive_manual>` and :ref:`Astor <astor_manual>` tools. 
 
 Starting device servers with Jive
 =================================

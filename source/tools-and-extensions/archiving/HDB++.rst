@@ -153,7 +153,7 @@ It will help to configure several attributes in parallel. If one would like to d
 one would need to lock the device, set many attributes, send the addAttribute command and finally release the lock of the device.
 The HdbConfigurator Server is doing that for you in the same way as the HDB++ Configuration Manager GUI is doing it.
 
-THe HdbConfigurator Server is indeed using the same classes as the HDB++ Configuration GUI but its source code is actually currently available on tango-ds Sourceforge.
+The HdbConfigurator Server is indeed using the same classes as the HDB++ Configuration GUI but its source code is actually currently available on tango-ds Sourceforge.
 It is listed in the Tango classes catalog:
 http://www.tango-controls.org/developers/dsc/ds/274/
 

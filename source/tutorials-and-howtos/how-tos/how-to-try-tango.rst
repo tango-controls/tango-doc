@@ -261,3 +261,10 @@ To see custom Taurus device panel (similar like atkpanel) run the different comm
 
 To storage the longtime history of changes of the attributes,
 you can use the :ref:`Tango Archiving System <hdbpp_manual>`.
+
+.. toctree::
+   :hidden:
+   :maxdepth: 1
+   :glob:
+   
+   how-to-try-tango/*

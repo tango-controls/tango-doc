@@ -56,6 +56,10 @@ Glossary
         metadata like :term:`attribute quality`, timestamp or configuration properties. For a complete list please refer to the manual.
         A list of attributes available for a certain device is defined by its :term:`class`.
 
+    attribute quality
+        A value returned by an :term:`attribute` has a runtime quality facotr which is an enumeration describing 
+        the state of the read value (one of VALID, INVALID, ALARM, CHANGING, WARNING).
+
     dynamic attribute
         A :term:`device` may create attributes which configration is determined during device initialization or even at
         runtime. This kind of attributes is called *dynamic*.
