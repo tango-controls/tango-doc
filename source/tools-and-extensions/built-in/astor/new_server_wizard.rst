@@ -3,7 +3,6 @@ New Server Wizard
 
 :audience:`administrators, developers`
 
-.. raw:: html
+..  raw:: html
 
-   <embed src="../../_static/astor_new_server_wizard.swf" style="width:744px;height:647px;" />
-
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/AAxOO0yySnM" frameborder="0" allowfullscreen></iframe>
