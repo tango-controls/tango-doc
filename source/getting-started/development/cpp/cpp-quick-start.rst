@@ -34,19 +34,19 @@ LAB/PowerSupply/01
 
 Each device has a series of `attributes`, `pipes`, `properties` and `commands`.
 
-An `attribute` is identified by a name in a device and represents the data fields a Device wants clients to Read or Write or receive Events. It has a value that can be read or can also be changed (read-write attributes). Each attribute has a well known, fixed data type.
+An :term:`attribute` is identified by a name in a device and represents the data fields a Device wants clients to Read or Write or receive Events. It has a value that can be read or can also be changed (read-write attributes). Each attribute has a well known, fixed data type.
 
-A `pipe` is a kind of attribute and it consists in a data stream or channel for exchanging a stream of any Tango data type. Data types can be sent individually or grouped together in a Blob
+A :term:`pipe` is a kind of attribute and it consists in a data stream or channel for exchanging a stream of any Tango data type. Data types can be sent individually or grouped together in a Blob
 
-A `property` is identified by a name in a device. It consists in a data stored in the database and used to configure Devices at startup.
+A :term:`property` is identified by a name in a device. It consists in a data stored in the database and used to configure Devices at startup.
 
-A `command` is also identified by a name and is the action of a device the clients needs to execute. A command may or not receive a parameter and may or not return a value when it is executed.
+A :term:`command` is also identified by a name and is the action of a device the clients needs to execute. A command may or not receive a parameter and may or not return a value when it is executed.
 
 Any device has at least a `State` and `Status` attributes and State, Status and `Init` commands. Reading the State or Status attributes has the same effect as executing the State or Status commands.
 
 Devices belong to a `Device Class` and are hosted in a `Device Server`.
 
-The `Device Class` implements a generic Device behaviour. Properties are used to configure the specific Device. Device Classes can be implemented in `Python`, `C++` or `Java`.
+The :term:`Device Class` implements a generic Device behaviour. Properties are used to configure the specific Device. Device Classes can be implemented in `Python`, `C++` or `Java`.
 
 TANGO devices live inside a operating system process called `TANGO Device Server`. This server acts as a container of devices. A device server can host multiple devices of multiple TANGO classes. Devices are, therefore, only accessible when the corresponding TANGO Device Server is running.
 
@@ -61,7 +61,7 @@ install TANGO, please reference to :ref:`the documentation<getting_started_insta
 Step 2: create a device class
 -----------------------------
 
-A useful tool to create a TANGO Class skeleton is `POGO`. POGO is a tool that permits you the generate code and the documentation of a class model in the different programming languages (c++, Java and Python). 
+A useful tool to create a TANGO Class skeleton is :program:`POGO`. POGO is a tool that permits you the generate code and the documentation of a class model in the different programming languages (c++, Java and Python). 
 
 .. image:: cpp-quick-start/imagePogo.png
 
@@ -74,9 +74,10 @@ In order to compile properly the class, you need to add the packaging. Into POGO
 
 .. image:: cpp-quick-start/imagePackaging.png
 
-Once you created a skeleton and added the header, you can add your code into the class and compile it. In this section you can fine a complete guide to how create a c++ device class. 
+Once you created a skeleton and added the header, you can add your code into the class and compile it. 
+In :ref:`this section<first_cpp_device_class_implementation>` you can find a guide how to implement a c++ device class. You may find more on device API :ref:`here<device_api>`. 
 
-In this link you can find the POGO guide. 
+In :ref:`this link <pogo_manual>` you can find the POGO guide. 
 
 Step 3: compile the device class
 --------------------------------
@@ -143,7 +144,6 @@ Step 6: explore the device
 When finish, you can explore your device using Jive.
 
 .. image:: cpp-quick-start/imageExploreDevice.png
-
 
 
 
