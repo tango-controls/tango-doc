@@ -50,13 +50,6 @@ Tango Controls versions in use
 * PyTango versions: 9.2.x
 * OS: *nix/Windows
 
-**S2I**:
-
-* Tango Controls versions: 8.1.x
-* PyTango versions: 9.2.x
-* JTango versions: 9.3.x
-* OS: *nix/Windows
-
 **SKA Organisation**:
 
 * Tango Controls versions: 9.3.3
