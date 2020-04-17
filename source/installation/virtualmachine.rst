@@ -28,10 +28,10 @@ The latest release of TangoBox is based on Tango Controls v9.3.3 installed on 64
 * See also `a release note <https://github.com/tango-controls/tangobox/releases/tag/v9.3.3>`_
   and `README <https://github.com/tango-controls/tangobox/blob/develop/README.md>`_.
 
-Minimal Requirements
+Minimum Requirements
 ~~~~~~~~~~~~~~~~~~~~
   * 2vCPU
-  * 2GB (preffered 4GB) RAM
+  * 2GB (preferred 4GB) RAM
   * 30GB of disk space
 
 TangoBox 9.3 on the Amazon cloud
