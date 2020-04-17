@@ -23,6 +23,8 @@ with Tango Controls.
 
 Tango Database
 ~~~~~~~~~~~~~~
+:ref:`Tango Admin <tango_admin>` is a command-line interface for Tango Database management.
+
 
 Installation
 ~~~~~~~~~~~~
