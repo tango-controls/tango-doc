@@ -307,6 +307,7 @@ latex_elements = {
 
 # Additional stuff for the LaTeX preamble.
 #'preamble': '',
+'figure_align': 'H',
 }
 
 # Grouping the document tree into LaTeX files. List of tuples
