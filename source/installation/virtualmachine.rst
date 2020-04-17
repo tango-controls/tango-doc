@@ -28,10 +28,16 @@ The latest release of TangoBox is based on Tango Controls v9.3.3 installed on 64
 * See also `a release note <https://github.com/tango-controls/tangobox/releases/tag/v9.3.3>`_
   and `README <https://github.com/tango-controls/tangobox/blob/develop/README.md>`_.
 
+Minimum Requirements
+~~~~~~~~~~~~~~~~~~~~
+  * 2vCPU
+  * 2GB (preferred 4GB) RAM
+  * 30GB of disk space
+
 TangoBox 9.3 on the Amazon cloud
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The TangoBox 9.3 release is also available as an AMI image on the AWS. The related AMI-ID is:
+The TangoBox 9.3 release is also available as an AMI image on the AWS (Ireland region). The related AMI-ID is:
 
 .. code-block:: console
 
@@ -81,5 +87,4 @@ We recommend the following videos about TANGO which will help you learn more abo
    :hidden:
 
    vm/*
-
 
