@@ -142,7 +142,7 @@ Search for device attribute/properties matching a regular expression
 Obtain all information from a device
 ************************************
 
-.. sourcecode:: ipython
+.. sourcecode:: python
 
     In [59]: fandango.tango.get_device_info('sr/vc/gll')
     Out[59]: fandango.Struct({
@@ -288,7 +288,7 @@ attribute names (replacing them by its values). It is part of
 **fandango.device** module.
 The result of each evaluation is stored in te.result.
 
-.. sourcecode:: ipython
+.. sourcecode:: python
 
     In [14]: from fandango import TangoEval
     In [15]: te = TangoEval('(s01/vc/gauge-01/pressure + s01/vc/gauge-01/pressure) / 2.')
@@ -307,7 +307,7 @@ Use CSVArray to turn a .csv into a dictionary
             C       3
 
 
-.. sourcecode:: ipython
+.. sourcecode:: python
 
     In [16]: csv = fandango.arrays.CSVArray('tmp/tree_test.csv')
     In [17]: csv.expandAll()
@@ -333,7 +333,7 @@ Fast property update
 ReversibleDict
 **************
 
-.. sourcecode:: ipython
+.. sourcecode:: python
 
     In [133]: ch = fandango.dicts.ReversibleDict()
 
