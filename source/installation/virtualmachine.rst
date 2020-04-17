@@ -37,7 +37,7 @@ Minimum Requirements
 TangoBox 9.3 on the Amazon cloud
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The TangoBox 9.3 release is also available as an AMI image on the AWS (Ireland region) The related AMI-ID is:
+The TangoBox 9.3 release is also available as an AMI image on the AWS (Ireland region). The related AMI-ID is:
 
 .. code-block:: console
 
@@ -87,5 +87,4 @@ We recommend the following videos about TANGO which will help you learn more abo
    :hidden:
 
    vm/*
-
 
