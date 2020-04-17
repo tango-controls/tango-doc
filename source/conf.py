@@ -18,7 +18,6 @@ import os
 # import sys; sys.setrecursionlimit(1500)
 
 # import breathe
-import IPython.sphinxext
 
 sys.path.append(os.path.abspath('.'))
 # sys.path.append( "/home/tango/workspace/breathe")
@@ -46,8 +45,6 @@ extensions = [
     'sphinx.ext.imgmath',
     'sphinx.ext.ifconfig',
     'sphinx.ext.viewcode',
-    'IPython.sphinxext.ipython_console_highlighting',
-    'IPython.sphinxext.ipython_directive',
     'sphinx.ext.intersphinx',
     'tangocontrib.metalabels',
 #    'sphinx.ext.autosectionlabel',

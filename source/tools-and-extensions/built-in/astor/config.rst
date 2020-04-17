@@ -14,7 +14,7 @@ Click on :menuselection:`File --> Ctrl System Preferences` menu to open
 |                                      | -  :ref:`Multi Tango Host. <known_hosts>`                    |
 |                                      | -  :ref:`Host remote loggin command. <remote_logging>`       |
 |                                      | -  :ref:`Host remote loggin user. <remote_user>`             |
-|                                      | -  :ref:`Jive in READ_ONLY mode. <jive_mode>`                 |
+|                                      | -  :ref:`Jive in READ_ONLY mode. <jive_mode>`                |
 |                                      | -  :ref:`Starter starts servers at startup <starter_start>`  |
 +--------------------------------------+--------------------------------------------------------------+
 
