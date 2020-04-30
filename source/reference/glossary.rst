@@ -25,7 +25,7 @@ Glossary
     device server
         A Device Server is a program (executable) which is able to create :term:`devices <device>` of certain classes. A Device
         Server may implement one or multiple classes and instantiate one or more devices. A running device server
-        is called a :term:`Device Server instance`.
+        is called a :term:`device server instance`.
 
     instance
     device server instance

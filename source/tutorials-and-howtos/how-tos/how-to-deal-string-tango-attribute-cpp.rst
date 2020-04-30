@@ -44,12 +44,13 @@ pointer to the character area is defined as one of the device data
 member in the file MyDev.h. The Tango data type DevString is simply a
 typedef for a good old "char \*" pointer.
 
-.. code-block:: none
+.. code-block:: cpp
     :linenos:
 
     class MyDev : public Tango::Device_4Impl
     {
         /*----- PROTECTED REGION ID(MyDev::Data Members) ENABLED START -----*/
+        
         // Add your own data members
     public:
         Tango::DevString the_str;
@@ -59,7 +60,7 @@ typedef for a good old "char \*" pointer.
 In the init_device method (file MyDev.cpp), you have to initialize the
 attribute data member created for you by Pogo
 
-.. code-block:: none
+.. code-block:: cpp
     :linenos:
 
     void MyDev::init_device()
@@ -75,7 +76,7 @@ attribute data member created for you by Pogo
 
 The attribute related code in the file MyDev.cpp looks like
 
-.. code-block:: none
+.. code-block:: cpp
     :linenos:
 
     void MyDev::read_StringAttr(Tango::Attribute &attr)
@@ -116,7 +117,7 @@ this case, we do not need to define anything as device data member.
 
 The attribute related code in the file MyDev.cpp looks like
 
-.. code-block:: none
+.. code-block:: cpp
     :linenos:
 
     void MyDev::read_StringAttr(Tango::Attribute &attr)
@@ -148,7 +149,7 @@ button was active when the attribute was defined.
 
 The init_device() and delete_device() method looks like:
 
-.. code-block:: none
+.. code-block:: cpp
     :linenos:
 
     void MyDev::init_device()
@@ -179,7 +180,7 @@ The pointer for the characters array is allocated in the init_device()
 and initialized to NULL. In the delete_device() method, the character
 array memory is freed with the Tango::string_free() method. If you are using a Tango C++ library version older than v9.3.3, you have to use CORBA::string_free() method instead of Tango::string_free().
 
-.. code-block:: none
+.. code-block:: cpp
     :linenos:
 
     void MyDev::read_StringAttr(Tango::Attribute &attr)
@@ -214,7 +215,7 @@ The code needed in this case is very similar to the scalar case. We also
 need pointers to the character areas. They are defined as device data
 member in the file MyDev.h.
 
-.. code-block:: none
+.. code-block:: cpp
     :linenos:
 
     class MyDev : public Tango::Device_4Impl
@@ -230,7 +231,7 @@ member in the file MyDev.h.
 In the init_device method (file MyDev.cpp), you have to initialize the
 attribute data member created for you by Pogo
 
-.. code-block:: none
+.. code-block:: cpp
     :linenos:
 
     void MyDev::init_device()
@@ -246,7 +247,7 @@ attribute data member created for you by Pogo
 
 The attribute related code in the file MyDev.cpp looks like
 
-.. code-block:: none
+.. code-block:: cpp
     :linenos:
 
     void MyDev::read_StringAttr(Tango::Attribute &attr)
@@ -283,7 +284,7 @@ Something similar can be done using a vector of C++ strings if:
 
 The code looks like
 
-.. code-block:: none
+.. code-block:: cpp
     :linenos:
 
     void MyDev::read_StringAttr(Tango::Attribute &attr)
@@ -310,7 +311,7 @@ this case, we do not need to define anything as device data member.
 
 The attribute related code in the file MyDev.cpp looks like
 
-.. code-block:: none
+.. code-block:: cpp
     :linenos:
 
     void MyDev::read_StringAttr(Tango::Attribute &attr)
