@@ -61,7 +61,7 @@ at the file beginning:
 
 Then, we change the HighLevelClass inheritance declaration:
 
-.. code-block::
+.. code-block:: none
    :linenos:
 
    //

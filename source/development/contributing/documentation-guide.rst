@@ -139,8 +139,7 @@ info are defined there. Please refer to
 
 requirements.txt
 ~~~~~~~~~~~~~~~~~~~~~~~~
-This is a standard :program:`pip` requirements file used to fix packages version. Currently it contains entries only
-for Sphinx and ipython.
+This is a standard :program:`pip` requirements file used to fix packages version. Currently it contains Sphinx only.
 
 
 readthedocs.yml

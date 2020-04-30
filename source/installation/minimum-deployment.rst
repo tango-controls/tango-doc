@@ -31,8 +31,8 @@ Your computer may perform all above roles simultaneously.
 
 .. sidebar:: Tango Host, DataBaseds
 
-    Each Tango Controls system/deployment has to have at least one running DataBaseds :term:`Device Server`. 
-    The machine on which the :term:`Device Server` is running has a role of so called :term:`Tango Host`. 
+    Each Tango Controls system/deployment has to have at least one running DataBaseds :term:`device server`. 
+    The machine on which the :term:`device server` is running has a role of so called :term:`Tango Host`. 
     DataBaseds is a device server providing configuration information to all other components of the system as well as a runtime catalog of the components/devices. 
     It allows (among others) client applications to find devices in distributed environment.
 

@@ -191,7 +191,7 @@ device, device server and Tango class.
 *  **Device**: An instance of a Device class giving access to the services of
    the DeviceClass class.
 *  **Device Server**: process in which one or more Tango classes are
-   executed (:term:`Device Server`).
+   executed (:term:`device server`).
 
 .. note::
    DeviceClass class is only used in C++ device classes
@@ -229,7 +229,7 @@ Device
 
 .. note::
    This is the basic entity of the control system. In the Tango world,
-   everything is a :term:`Device`.
+   everything is a :term:`device`.
 
 A Tango Device must be “self-consistent”. In case it represents a subset
 of the control system, it must enable the access to all the associated

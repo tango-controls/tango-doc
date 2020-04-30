@@ -18,7 +18,6 @@ import os
 # import sys; sys.setrecursionlimit(1500)
 
 # import breathe
-import IPython.sphinxext
 
 sys.path.append(os.path.abspath('.'))
 # sys.path.append( "/home/tango/workspace/breathe")
@@ -46,8 +45,6 @@ extensions = [
     'sphinx.ext.imgmath',
     'sphinx.ext.ifconfig',
     'sphinx.ext.viewcode',
-    'IPython.sphinxext.ipython_console_highlighting',
-    'IPython.sphinxext.ipython_directive',
     'sphinx.ext.intersphinx',
     'tangocontrib.metalabels',
 #    'sphinx.ext.autosectionlabel',
@@ -219,7 +216,8 @@ if True:  #
            # 'https://media.readthedocs.org/css/sphinx_rtd_theme.css',
            # 'https://media.readthedocs.org/css/readthedocs-doc-embed.css',
             '_static/css/tango_cs_theme.css',
-            '_static/css/meta_label_tango.css'
+            '_static/css/meta_label_tango.css',
+            '_static/css/theme_overrides.css'
         ],
     }
 
@@ -307,6 +305,7 @@ latex_elements = {
 
 # Additional stuff for the LaTeX preamble.
 #'preamble': '',
+'figure_align': 'H',
 }
 
 # Grouping the document tree into LaTeX files. List of tuples

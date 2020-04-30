@@ -2,9 +2,6 @@
 
    <br />
 
-.. |clearfloat|  raw:: html
-
-    <div class="clearer"></div>
 
 Command line
 ************

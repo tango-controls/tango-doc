@@ -99,7 +99,7 @@ To make a computer become a Tango Host you need to:
     - Invoke :command:`cd "%TANGO_ROOT%\\share\\tango\\db\\"`.
     - Call :program:`create_db.bat`.
 
-- Start a :program:`DataBaseds` :term:`Device Server`:
+- Start a :program:`DataBaseds` :term:`device server`:
     - Open a new command line window.
     - In the command line call :command:`"%TANGO_ROOT%\\bin\\start-db.bat"`.
 
@@ -129,7 +129,7 @@ To make a computer become a Tango Host you need to:
 
 
 
-Running :term:`Device Servers<Device Server>`
+Running :term:`Device Servers<device server>`
 ---------------------------------------------
 
 The recommended way of running device servers is to use :ref:`Starter<Starter>` service. 
@@ -137,17 +137,17 @@ Then you may use :program:`NSSM` as for :program:`DataBaseds`.
 Assuming you have downloaded it and copied to the Tango bin folder please follow:
 
 - Open Command Line as Administrator (if it is not yet open).
-- Prepare folder for :term:`Device Servers<Device Server>` executable:
+- Prepare folder for :term:`Device Servers<device server>` executable:
 
     .. note::
         To let your device servers start with :program:`Starter` service their executables have to be in a path without
         spaces. This is a limitation of the current :program:`Starter` implementation.
 
-    - Create a directory for :term:`Device Servers <Device Server>`. Let it be :file:`C:\\DeviceServers\\bin`
+    - Create a directory for :term:`Device Servers <device server>`. Let it be :file:`C:\\DeviceServers\\bin`
       with :command:`mkdir c:\\DeviceServers\\bin`
 
     - Change to the Tango bin directory with command (:command:`cd "%TANGO_ROOT%\\bin"`)
-    - Copy :program:`TangoTest` :term:`Device Server` to the newly crated folder:
+    - Copy :program:`TangoTest` :term:`device server` to the newly crated folder:
       :command:`copy TangoTest.exe c:\\DeviceServers\\bin`
 
 - Add entry about the Starter device server you will start on your computer:
