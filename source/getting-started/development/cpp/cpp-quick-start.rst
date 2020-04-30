@@ -46,7 +46,7 @@ Any device has at least a `State` and `Status` attributes and State, Status and 
 
 Devices belong to a `Device Class` and are hosted in a `Device Server`.
 
-The :term:`Device Class` implements a generic Device behaviour. Properties are used to configure the specific Device. Device Classes can be implemented in `Python`, `C++` or `Java`.
+The :term:`device class` implements a generic Device behaviour. Properties are used to configure the specific Device. Device Classes can be implemented in `Python`, `C++` or `Java`.
 
 TANGO devices live inside a operating system process called `TANGO Device Server`. This server acts as a container of devices. A device server can host multiple devices of multiple TANGO classes. Devices are, therefore, only accessible when the corresponding TANGO Device Server is running.
 

@@ -2,7 +2,7 @@
 
     \clearpage
 
-.. _first_cpp_device_class_implementation
+.. _first_cpp_device_class_implementation:
 
 Your first C++ TANGO device class
 =================================

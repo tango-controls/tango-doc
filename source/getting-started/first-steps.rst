@@ -22,7 +22,7 @@ First steps with Tango Controls
 
     * or read :doc:`development/cpp/first-device-class` and follow a guide
       :ref:`How to write your device class <how_to_write_first_device_class>` if your device is not yet
-      supported by any existing :term:`Device Server`.
+      supported by any existing :term:`device server`.
 
 * To write your first C++ client see :doc:`development/cpp/first-client`.
 

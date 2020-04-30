@@ -49,13 +49,13 @@ typedef for a good old "char \*" pointer.
 
     class MyDev : public Tango::Device_4Impl
     {
-       /*----- PROTECTED REGION ID(MyDev::Data Members) ENABLED START -----*/
-       
-      //        Add your own data members
-    public:
-       Tango::DevString  the_str;
+        /*----- PROTECTED REGION ID(MyDev::Data Members) ENABLED START -----*/
         
-       /*----- PROTECTED REGION END -----*/ // MyDev::Data Members
+        // Add your own data members
+    public:
+        Tango::DevString the_str;
+        /*----- PROTECTED REGION END -----*/ // MyDev::Data Members
+    }
 
 In the init_device method (file MyDev.cpp), you have to initialize the
 attribute data member created for you by Pogo
