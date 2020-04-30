@@ -81,7 +81,7 @@ In our example, in this method we have to:
 
 The code of the DynAttr::add_dynamic_attributes() method looks like
 
-.. code-block:: cpp
+.. code-block:: none
     :linenos:
 
     void DynAttr::add_dynamic_attributes()
@@ -131,7 +131,7 @@ The definition of the DoubleDynAttr attribute is simply to return when
 read, the last value which has been written. The code for the
 DoubleDynAttr reading/writing is the following
 
-.. code-block:: cpp
+.. code-block:: none
     :linenos:
 
     void DynAttr::read_DoubleDynAttr(Tango::Attribute &attr)
@@ -179,7 +179,7 @@ have to call different method accessing the hardware.
 
 The code for reading/writing the LongDynAttr attribute is given below:
 
-.. code-block:: cpp
+.. code-block:: none
     :linenos:
 
     void DynAttr::read_LongDynAttr(Tango::Attribute &attr)
