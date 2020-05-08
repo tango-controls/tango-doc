@@ -143,7 +143,7 @@ Use yum to install them e.g. to install the TANGO database and test device serve
 .. code-block:: console
 
    $> sudo yum install mariadb\
-      sudo apt install libtango9 tango-db tango-test
+      sudo yum install libtango9 tango-db tango-test
 
 
 The above packages install the Tango core C++ libraries, database and TangoTest server.
