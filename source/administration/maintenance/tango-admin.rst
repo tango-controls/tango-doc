@@ -17,8 +17,8 @@ This means:
 * create a property in DB
 * delete a property from DB
 
-Using Tango Admin
------
+Using tango_admin
+-----------------
 
 .. sourcecode:: console
 
