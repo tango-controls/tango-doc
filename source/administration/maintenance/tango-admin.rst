@@ -5,9 +5,7 @@ Tango Admin utility
 
 :audience:`administrators`
 
-The Tango Database can also be maintained using a command-line interface. Using this utility, not all the database features are interfaced. Only the features needed for the Debian packaging have been implemented.
-
-This means:
+The Tango Database can be maintained using a command-line interface with :program:`tango_admin` tool. The following features are available:
 
 * ping the database server
 * check if a device is defined in DB
