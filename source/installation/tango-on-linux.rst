@@ -135,6 +135,19 @@ or if you need specifically Python2
        $> apt-get python-pytango
 
 
+CentOS
+------
+RPM packages are available for RedHat based systems in `the MAX-IV's repository <http://pubrepo.maxiv.lu.se/rpm/el7/x86_64/>`_.
+Use yum to install them e.g. to install the TANGO database and test device server:
+
+.. code-block:: console
+
+   $> sudo yum install mariadb\
+      sudo yum install libtango9 tango-db tango-test
+
+
+The above packages install the Tango core C++ libraries, database and TangoTest server.
+
 Video
 -----
 
