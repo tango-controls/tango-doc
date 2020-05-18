@@ -1,7 +1,7 @@
 .. _tango_admin:
 
-Tango admin
-=================
+Tango Admin utility
+===================
 
 :audience:`administrators`
 
