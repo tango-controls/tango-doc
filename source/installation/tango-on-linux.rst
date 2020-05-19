@@ -230,7 +230,7 @@ For example:
 
     $> sudo yum install tango-starter tango-test
 
--  start and enable TANGO database:
+-  start and enable Starter:
 
 .. code-block:: console
 
