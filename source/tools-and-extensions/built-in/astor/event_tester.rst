@@ -49,7 +49,7 @@ displayed with event information.
 
 .. |image0| image:: img/start_event_manager.jpg
 .. |image1| image:: img/dev_browser_1.jpg
-.. |image2| image:: img/configure_event.jpg
+.. |image2| image:: img/configure_event.png
 .. |image3| image:: img/dev_browser_3.jpg
 .. |image4| image:: img/event_tester.jpg
 
