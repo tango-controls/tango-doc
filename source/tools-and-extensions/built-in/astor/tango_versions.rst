@@ -10,4 +10,4 @@ On a host you can have an overview of TANGO version for servers
    |image0|
 
 
-.. |image0| image:: img/tango_versions.gif
+.. |image0| image:: img/tango_versions.png

@@ -153,5 +153,5 @@ to do not overload the Tango database.
 
 .. |image0| image:: img/preferences.jpg
 .. |image1| image:: img/html_pages.jpg
-.. |image2| image:: img/add-tools.jpg
+.. |image2| image:: img/add-tools.png
 

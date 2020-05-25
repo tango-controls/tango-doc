@@ -35,7 +35,7 @@ Host Status Window
    ------------------------
 
 .. |image0| image:: img/host_window.jpg
-.. |image1| image:: img/host_window2.jpg
+.. |image1| image:: img/host_window2.png
 
 .. |image6| image:: img/greenbal.gif
 .. |image7| image:: img/blueball.gif
