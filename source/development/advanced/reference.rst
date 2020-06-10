@@ -1958,9 +1958,11 @@ TANGO\_HOST=<host>:<port>
 
 host is the name of the computer where the database server is running
 and port is the port number on which it is listening. <host> should be a
-FQDN (Fully Qualified Domain Name). If you want to have a Tango control
-system which has several database servers (but only one database) in
-order to survive a database server crash, use the following syntax
+FQDN (Fully Qualified Domain Name).
+
+If you want to have a Tango control system which has several database 
+servers (but only one database) in order to survive a database server 
+crash, use the following syntax:
 
 TANGO\_HOST=<host\_1>:<port\_1>,<host\_2>:<port\_2>,<host\_3>:<port\_3>
 
@@ -1970,6 +1972,14 @@ listening. host\_2 is the name of the computer where the second
 database server is running and port\_2 is its port number. All access to
 database will automatically switch from one server to another one in the
 list if the one which was used has died.
+
+Finally, if you want to define a TANGO\_HOST variable that explicitly 
+does not access the Tango database, you can add a \#dbase=no suffix:
+
+TANGO\_HOST=<host\_1>:<port\_1>\#dbase=no
+
+In this case, the host\_1 and port\_1 must refer to the device server 
+you are addressing.
 
 Tango Logging Service (TANGO\_LOG\_PATH)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
