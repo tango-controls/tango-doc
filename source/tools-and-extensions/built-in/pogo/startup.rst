@@ -46,7 +46,7 @@ You are now able to compile the generated code and if the server is defined in d
 Using templates
 ----------------
 
-If you define an evironment variable **TEMPLATES_PATH** to a directory containing :file:`xmi` files,
+If you define an environment variable **TEMPLATES_PATH** to a directory containing :file:`xmi` files,
  you will be able to use these  :file:`xmi` files as templates.
 
  **e.g.: export TEMPLATES_PATH=$TANGO_HOME/templates/pogo**
