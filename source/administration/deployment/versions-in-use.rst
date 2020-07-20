@@ -70,3 +70,9 @@ Tango Controls versions in use
 * JTango versions: 9.5.x
 * OS: \*nix
 
+**IJCLab (ThomX)**:
+
+* Tango Controls versions: 9.2.5
+* PyTango versions: 9.2.0
+* JTango versions: 9.2.5
+* OS: \*nix
