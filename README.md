@@ -21,7 +21,7 @@ They will be consequently corrected when found.
 How to contribute
 -----------------
 If you want to help us improve it, you can find an overview of how this documentation is
-organised [here](http://tango-controls.readthedocs.io/en/latest/development/contribution/documentation-guide.html).
+organised [here](https://tango-controls.readthedocs.io/en/latest/development/contributing/documentation-guide.html).
 There is also a tutorial with documentation contribution workflow which you can find
 [here](http://tango-controls.readthedocs.io/en/latest/tutorials-and-howtos/tutorials/documentation-workflow-tutorial.html).
 
