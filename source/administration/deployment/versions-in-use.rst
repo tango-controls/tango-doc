@@ -52,8 +52,8 @@ Tango Controls versions in use
 
 **SKA Organisation**:
 
-* Tango Controls versions: 9.3.3
-* PyTango versions: 9.3.1
+* Tango Controls versions: 9.3.4-rc4
+* PyTango versions: 9.3.2
 * OS: \*nix
 
 **SOLEIL**:
