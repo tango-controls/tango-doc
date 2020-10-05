@@ -15,9 +15,5 @@ PANIC is a set of tools (api, Tango device server, user interface) that provides
 All the information connected to the project can be found visiting the following links:
 
 * `PANIC on github <https://github.com/tango-controls/PANIC>`_
-* `PANIC Recipes on github <https://github.com/tango-controls/PANIC/tree/documentation/doc/recipes>`_
 * `PANIC presentation at PCAPAC&#39;14 <https://github.com/tango-controls/PANIC/blob/documentation/doc/PANIC_at_PCAPAC_2014_FCO206_TALK.pdf>`_
-* `Python API for PANIC Alarm System <https://github.com/tango-controls/PANIC/blob/documentation/doc/recipes/PanicAPI.rst>`_
-* `The PyAlarm User Guide <https://github.com/tango-controls/PANIC/blob/documentation/doc/PyAlarmUserGuide.rst>`_
-* `The PANIC 0.x UI manual <http://plone.tango-controls.org/Members/srubio/panic/panicdoc.html>`_
-
+* `PANIC documentatnion <https://tango-controls.readthedocs.io/projects/panic/en/latest/>`_
