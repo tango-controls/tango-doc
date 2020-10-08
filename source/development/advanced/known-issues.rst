@@ -60,6 +60,26 @@ Cells in red means likely Event_Timeout issues:
 .. image:: tango_alias_and_fqdn.png
   :width: 600
   :alt: Network alias and fqdn hostnames
+  
+Passing ZMQ events through firewalls, specific rules
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In ZMQ it is not possible to pass Tango events through an specific port, but
+specific firewall rules can be setup if each device server uses a different IP.
+
+- **known workaround**: it is possible to setup each device on a machine to use
+an specific IP address (to run servers on different IP addresses he server host 
+must have multiple interfaces, tipically virtual ones).
+
+.. code:: 
+
+  #To use an pecific IP launch the device server with arguments like:
+  
+  ./MyDeviceServer $InstanceName -ORBendPoint giop:tcp:$IPADDRESS:$PORT
+  ./MyDeviceServer 1 -ORBendPoint giop:tcp:127.0.0.1:30001
+  
+  #Or set an environment variable in your python code
+  os.environ["ORBendPoint"] = "giop:tcp:127.0.0.1:30001"
 
 Tango 8
 -------
