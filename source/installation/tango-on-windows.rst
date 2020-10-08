@@ -66,7 +66,7 @@ Tango Host role
 To make a computer become a Tango Host you need to:
 
 - Install MySQL server.
-    You may use community version available from http://dev.mysql.com/downloads/mysql/ . It is suggested to use
+    You may use community version available from https://dev.mysql.com/downloads/mysql/5.7.html . It is suggested to use
     :program:`MySQL Installer` with all tools included. You may read more on MySQL installation topic here:
     http://dev.mysql.com/doc/refman/5.7/en/windows-installation.html
 
@@ -76,14 +76,16 @@ To make a computer become a Tango Host you need to:
 
         .. image:: tango-on-windows/mysql-user-02.png
 
-- Setup environment variables providing credentials to access MySQL:
+- Set up environment variables providing credentials to access MySQL:
     - Open :guilabel:`Command Line`.
     - Invoke command: :command:`%TANGO_ROOT%\\bin\\dbconfig.exe`.
 
         .. note::
-            This lets you setup two environment variables
-            :envvar:`MYSQL_USER` and :envvar:`MYSQL_PASSWORD` used to access the MySQL server. You may use ``root`` credentials
-            provided upon MySQL installation if it is your development workstation. For production environment it is
+            This lets you set up two environment variables
+            :envvar:`MYSQL_USER` and :envvar:`MYSQL_PASSWORD` used to access the MySQL server. You can check if variables
+            were set correctly, if not you can set it manually. It's recommended to restart computer after operation.
+            You may use ``root`` credentials provided upon MySQL installation if it is your development workstation. 
+            For production environment it is
             suggested to create an additional user with ``DB Admin`` privileges. On Windows you may use :program:`MySQL Installer`
             from :guilabel:`Start` menu and select the option :guilabel:`Reconfigure` for MySQL Server.
             Please refer to: http://dev.mysql.com/doc/refman/5.7/en/adding-users.html
@@ -115,14 +117,20 @@ To make a computer become a Tango Host you need to:
     - Download NSSM from http://nssm.cc/.
     - Unpack the file to some convinient location. It is suggested to copy proper (32bit or 64bit) version to the
       Tango bin folder ``%TANGO_ROOT%\\bin\\``.
-    - Open :guilabel:`Command Line` as Administrator.
+    - Open :guilabel:`Command Line` as ``Administrator``.
     - Change current path to where the :program:`nssm` is unpacked or copied, eg. :command:`cd "%TANGO_ROOT%\\bin"`.
     - Invoke :command:`nssm.exe install Tango-DataBaseds`. This will open a window where you can define service parameters.
+
         - In the Application tab provide information as follows (adjust if your installation path is different).
+
             .. image:: tango-on-windows/databaseds-as-service-01.png
+
         - In the Environment tab provide variables with credentials used for accessing the MySQL, like:
+
             .. image:: tango-on-windows/databaseds-as-service-02.png
+
         - Click :guilabel:`Install Service`.
+
     - Invoke :command:`nssm.exe start Tango-DataBaseds` to start the service.
     - Test if everything is ok. Use :guilabel:`Start` menu to run Jive or in command line call
       :command:`"%TANGO_ROOT%\\bin\\start-jive.bat"`.
@@ -155,6 +163,7 @@ Assuming you have downloaded it and copied to the Tango bin folder please follow
       call :command:`tango-astor.bat`
     - In :guilabel:`Astor` window select menu :menuselection:`&Command --> Add a New Host`
     - In the form that appears provide your :guilabel:`Host name` and :guilabel:`Device Servers PATH`.
+    
         .. image:: tango-on-windows/starter-01.png
     - Accept with :guilabel:`Create`
     - Go back to :program:`Command Line`
@@ -214,5 +223,11 @@ What's next
 
 Typical issues
 --------------
-    .. todo::
-        Implement
+- Error when running a command with TANGO_ROOT variable:
+    - Check if environment variable is set correctly.
+    - `C:\Program is not recognized as an internal or external command,
+      operable program or batch file.`
+
+        - Check if you don't forget about the quotation mark in command.
+        - Alternatively, install Tango outside of the :file:`C:\\Program Files`.
+

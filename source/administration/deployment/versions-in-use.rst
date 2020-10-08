@@ -32,9 +32,9 @@ Tango Controls versions in use
 
 **ESRF accelerator**:
 
-* Tango Controls versions: 9.3.4-rc4a
-* PyTango versions: 9.3.1
-* JTango versions: 9.5.18-SNAPSHOT
+* Tango Controls versions: 9.3.4-rc6
+* PyTango versions: 9.3.2
+* JTango versions: 9.6.1
 * OS: \*nix
 
 **MAX IV Laboratory**:
@@ -52,8 +52,8 @@ Tango Controls versions in use
 
 **SKA Organisation**:
 
-* Tango Controls versions: 9.3.3
-* PyTango versions: 9.3.1
+* Tango Controls versions: 9.3.4-rc4
+* PyTango versions: 9.3.2
 * OS: \*nix
 
 **SOLEIL**:
@@ -70,3 +70,9 @@ Tango Controls versions in use
 * JTango versions: 9.5.x
 * OS: \*nix
 
+**IJCLab (ThomX)**:
+
+* Tango Controls versions: 9.2.5
+* PyTango versions: 9.2.0
+* JTango versions: 9.2.5
+* OS: \*nix
