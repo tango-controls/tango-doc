@@ -45,8 +45,43 @@ Pushing attributes within other attributes `read_attribute` methods may cause de
 
 - **known workaround**: Push events for commands or own `read_attribute` method only.
 
+Using Network alias for TANGO_HOST and effect of FQDN names
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This issues affect to Tango systems whenever a network alias is used for the
+Tango Database together with fully qualified names (host.domain.suff).
+
+T7 server with no domain and client with domain trigger memory leaks in notifd
+
+In Tango 9 and server with domain, clients MUST use the FQDN; in opposite case you may loose events.
+
+Cells in red means likely Event_Timeout issues:
+
+.. image:: tango_alias_and_fqdn.png
+  :width: 600
+  :alt: Network alias and fqdn hostnames
+
 Tango 8
 -------
 
-  ...
+Memory leaks on push state event
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The API of push change event for state/status attributes is different, it does 
+not allow to pass the value like in other attributes.
+
+.. code::
+
+    Wrong way (memory leak):
+        push_change_event('State', PyTango.DevState.RUNNING)
+    Right way:
+        set_state(PyTango.DevState.RUNNING)
+        push_change_event('State')
+
+
+Writing on Numpy arrays
+~~~~~~~~~~~~~~~~~~~~~~~
+
+    To write a position value of a motor group (numpy array) the Macroserver writes 
+    two values and the Pool reads zeros. It happens at claess with the energy pseudomotor.
 
