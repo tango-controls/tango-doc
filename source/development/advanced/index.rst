@@ -19,3 +19,4 @@ There you will find articles on advanced topics.
    rest-api
    IDL
    reference
+   known-issues

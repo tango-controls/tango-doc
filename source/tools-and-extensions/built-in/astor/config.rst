@@ -14,13 +14,13 @@ Click on :menuselection:`File --> Ctrl System Preferences` menu to open
 |                                      | -  :ref:`Multi Tango Host. <known_hosts>`                    |
 |                                      | -  :ref:`Host remote loggin command. <remote_logging>`       |
 |                                      | -  :ref:`Host remote loggin user. <remote_user>`             |
-|                                      | -  :ref:`Jive in RAD_ONLY mode. <jive_mode>`                 |
+|                                      | -  :ref:`Jive in READ_ONLY mode. <jive_mode>`                |
 |                                      | -  :ref:`Starter starts servers at startup <starter_start>`  |
 +--------------------------------------+--------------------------------------------------------------+
 
 .. note::
 
-   To disable the :guilabel:`Preference` menu, start Astor with :option:`-DNO\_PREF=true`.
+   To disable the :guilabel:`Preference` menu, start Astor with `-DNO\_PREF=true`.
 
 
 .. _`name`:
@@ -153,5 +153,5 @@ to do not overload the Tango database.
 
 .. |image0| image:: img/preferences.jpg
 .. |image1| image:: img/html_pages.jpg
-.. |image2| image:: img/add-tools.jpg
+.. |image2| image:: img/add-tools.png
 

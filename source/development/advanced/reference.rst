@@ -1853,9 +1853,10 @@ in the following table
 For command which do not take input parameter, the type code
 Tango::DEV\_VOID (value = 0) has been defined.
 
-A strings array called **Tango::CmdArgTypeName** can be used to get the
-data type as a string. Use the Tango data type code as index into the
-array to get the correct string.
+Use **Tango::data_type_to_string** to convert the tango data type to a string.
+For older tango versions without that function a strings array called
+**Tango::CmdArgTypeName** can be used to get the data type as a string. Use the
+Tango data type code as index into the array to get the correct string.
 
 Tango command display level
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~

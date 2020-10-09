@@ -13,7 +13,7 @@ Astor
 
 Jive
 ~~~~
-It is a tool used to configure components of the Tango Controls and browse a static :term:`Tango database`. See
+It is a tool used to configure components of the Tango Controls and browse a static :term:`Tango Database`. See
 :ref:`Jive Manual <jive_manual>`.
 
 LogViewer
@@ -23,6 +23,8 @@ with Tango Controls.
 
 Tango Database
 ~~~~~~~~~~~~~~
+:ref:`Tango Admin <tango_admin>` is a command-line interface for Tango Database management.
+
 
 Installation
 ~~~~~~~~~~~~

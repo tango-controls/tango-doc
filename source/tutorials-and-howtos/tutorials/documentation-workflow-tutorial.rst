@@ -44,9 +44,6 @@ If you have prerequisites installed, you need to install Sphinx tools:
 
    :command:`pip install sphinx`
 
-#. Install IPtyhon (to make all how-tos build correctly):
-
-   :command:`pip install ipython`
 
 Using virtualenv way
 ~~~~~~~~~~~~~~~~~~~~
@@ -66,19 +63,17 @@ Using virtualenv way
 
     * On GNU/Linux:
 
-   :command:`source doc-env/bin/activate`
+         :command:`source doc-env/bin/activate`
 
     * On Windows:
 
-   :command:`doc-env\Scripts\activate.bat`
+         :command:`doc-env\\Scripts\\activate.bat`
+
 
 #. Install Sphinx:
 
    :command:`pip install sphinx`
 
-#. Install IPtyhon (to make all how-tos build correctly):
-
-   :command:`pip install ipython`
 
 Get documentation sources
 -------------------------

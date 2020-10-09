@@ -27,9 +27,11 @@ Workflow
 
   * ``git fetch upstream``
   * ``git rebase upstream/tango-9-lts``
-OR
+
+  OR
 
   * ``git pull --rebase upstream/tango-9-lts``
+
 * Create pull request
 
 * Pull requests should be ALWAYS made to tango-9-lts branch, not to a master branch, unless they are related to Tango V10 development.
@@ -84,6 +86,7 @@ Create an issue in Github
 Bump the version on tango-9-lts branch
   * Update the following lines at the beginning of CMakeLists.txt to match the new release number
   * For cppTango 9.3.3, you will get:
+
   ::
 
     #need to define the version of the library
@@ -113,10 +116,10 @@ Edit the changelog
 Edit the release notes
   * Create a Pull Request to edit RELEASE_NOTES.md file.
   * We took the slack release notes as inspiration for the first cppTango 9.3 release notes.
-    According to slack team::
+    According to slack team:
 
-   *They should take the basic facts, reduce jargon, put them into words people could relate to; words that might be
-   lightly poetic and slightly absurd, but stopped short of grating, and…nothing less than informative.*
+    *They should take the basic facts, reduce jargon, put them into words people could relate to; words that might be
+    lightly poetic and slightly absurd, but stopped short of grating, and…nothing less than informative.*
 
   * You can refer to `slack: a little thing about release notes <https://slackhq.com/a-little-thing-about-release-notes>`_ for more details.
   * Get these changes reviewed before proceeding.

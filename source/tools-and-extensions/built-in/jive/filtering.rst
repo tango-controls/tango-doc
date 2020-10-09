@@ -2,9 +2,6 @@
 
    <br />
 
-.. |clearfloat|  raw:: html
-
-    <div class="clearer"></div>
 
 Filtering the nodes in trees
 ****************************
@@ -12,11 +9,9 @@ Filtering the nodes in trees
 :audience:`administrators, developers, users`
 
 .. figure:: filter_menu.jpg
-   :align:   left
+   :align:   center
 
 It is possible to filter some nodes in selection trees. Select which tree you want to be filtered then enter a filter (using wildcard) in the input dialog.
-
-|clearfloat|
 
 .. figure:: filter_select.jpg
    :align:   center

@@ -25,7 +25,7 @@ Glossary
     device server
         A Device Server is a program (executable) which is able to create :term:`devices <device>` of certain classes. A Device
         Server may implement one or multiple classes and instantiate one or more devices. A running device server
-        is called a :term:`Device Server instance`.
+        is called a :term:`device server instance`.
 
     instance
     device server instance
@@ -55,6 +55,10 @@ Glossary
         programmer-defined access. The values may have different data types. In addition, an attribute provides some
         metadata like :term:`attribute quality`, timestamp or configuration properties. For a complete list please refer to the manual.
         A list of attributes available for a certain device is defined by its :term:`class`.
+
+    attribute quality
+        A value returned by an :term:`attribute` has a runtime quality facotr which is an enumeration describing 
+        the state of the read value (one of VALID, INVALID, ALARM, CHANGING, WARNING).
 
     dynamic attribute
         A :term:`device` may create attributes which configration is determined during device initialization or even at

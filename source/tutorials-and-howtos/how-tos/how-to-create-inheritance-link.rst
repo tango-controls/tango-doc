@@ -61,24 +61,26 @@ at the file beginning:
 
 Then, we change the HighLevelClass inheritance declaration:
 
-.. code-block:: cpp
-    :linenos:
+.. code-block:: none
+   :linenos:
 
-    //
-    // The HighLevelClass singleton definition
-    //
+   //
+   // The HighLevelClass singleton definition
+   //
 
-    class
-    #ifdef WIN32
-        __declspec(dllexport)
-    #endif
-        HighLevelClass : public LowLevel_ns::LowLevelClass
-    {
-    public:
-    //  properties member data
+   class
+   #ifdef WIN32
+       __declspec(dllexport)
+   #endif
+   HighLevelClass : public LowLevel_ns::LowLevelClass
+   {
+   public:
+   //  properties member data
 
-    //  add your own data members here
-    //------------------------------------
+   //  add your own data members here
+   //------------------------------------
+  
+    
 
 The HighLevelClass.cpp file
 ---------------------------

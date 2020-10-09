@@ -166,7 +166,7 @@ Get archived values for an attribute
 
 The reader object provides a fast access to archived values
 
-.. sourcecode:: ipython
+.. sourcecode:: python
 
     In [9]: import PyTangoArchiving
     In [10]: rd = PyTangoArchiving.Reader('hdb')
@@ -327,7 +327,7 @@ Start/Stop of an small (<10) list of attributes
 Checking if a list of attributes is archived
 --------------------------------------------
 
-.. sourcecode:: ipython
+.. sourcecode:: python
 
     In [16]: hdb = PyTangoArchiving.api('hdb')
     In [17]: sorted([(a,hdb.load_last_values(a)) for a in hdb if a.startswith('bl04')])

@@ -11,7 +11,7 @@ First steps with Tango Controls
 * You may also start with :ref:`trying Tango Controls <howto_try_tango>` either with a preconfigured virtual
   machine or installing basic setup on your own computer.
 
-* If you would like to install Tango Controls please look on :doc:`Installation guides <intsallation/index>`.
+* If you would like to install Tango Controls please look on :ref:`Installation guides <getting_started_installation>`.
 
 * To start connecting your devices to Tango Controls you should probably:
 
@@ -22,7 +22,7 @@ First steps with Tango Controls
 
     * or read :doc:`development/cpp/first-device-class` and follow a guide
       :ref:`How to write your device class <how_to_write_first_device_class>` if your device is not yet
-      supported by any existing :term:`Device Server`.
+      supported by any existing :term:`device server`.
 
 * To write your first C++ client see :doc:`development/cpp/first-client`.
 

@@ -121,7 +121,7 @@ Configuring an event
 
     #From the client side
     #subscribe_event(attr_name, event_type, cb_or_queuesize, filters=[], stateless=False, extract_as=PyTango._PyTango.ExtractAs.Numpy)
-    event_id = PyTango.DeviceProxy.subscribe_event(attributeName,PyTango.EventType.CHANGE,callback_function,[],True)
+    event_id = PyTango.DeviceProxy.subscribe_event(attributeName,PyTango.EventType.CHANGE_EVENT,callback_function,[],True)
 
     #From inside the device server
     self.set_change_event('State',True,True) 

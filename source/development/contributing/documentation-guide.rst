@@ -79,7 +79,7 @@ This will build HTML output in the :file:`build` folder.Then you may use any web
    are inevitable.
 
 For more details and step-by-step guidance pleas refer to
-:doc:`Documentation workflow tutorial <tutorials/documentation-workflow-tutorial>`.
+:ref:`Documentation workflow tutorial <documentation_workflow_tutorial>`.
 
 Sources structure
 -----------------
@@ -139,8 +139,7 @@ info are defined there. Please refer to
 
 requirements.txt
 ~~~~~~~~~~~~~~~~~~~~~~~~
-This is a standard :program:`pip` requirements file used to fix packages version. Currently it contains entries only
-for Sphinx and ipython.
+This is a standard :program:`pip` requirements file used to fix packages version. Currently it contains Sphinx only.
 
 
 readthedocs.yml

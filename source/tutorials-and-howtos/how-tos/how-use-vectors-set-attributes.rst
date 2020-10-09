@@ -39,7 +39,7 @@ Examples for a vector of short and a vector of string:
     }
 
 
-.. code-block:: python
+.. code-block:: cpp
     :linenos:
 
     void MyClass::read_StringSpectrum(Tango::Attribute &attr)

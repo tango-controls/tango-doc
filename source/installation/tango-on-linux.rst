@@ -135,6 +135,120 @@ or if you need specifically Python2
        $> apt-get python-pytango
 
 
+CentOS
+------
+RPM packages are available for RedHat based systems in `the MAX-IV's repository <http://pubrepo.maxiv.lu.se/rpm/el7/x86_64/>`_.
+Use yum to install them e.g. to install the TANGO database and test device server:
+
+.. code-block:: console
+
+   $> sudo yum install mariadb mariadb-server
+      sudo yum install libtango9 tango-db tango-test
+
+
+The above packages install the Tango core C++ libraries, database and TangoTest server.
+
+Installation
+~~~~~~~~~~~~
+
+If you want to install TANGO on CentOS, here are the steps you should follow:
+
+-  add and enable MAX-IV's repository:
+
+.. code-block:: console
+
+    $> sudo yum-config-manager --add-repo http://pubrepo.maxiv.lu.se/rpm/el7/x86_64/
+       sudo yum-config-manager --enable http://pubrepo.maxiv.lu.se/rpm/el7/x86_64/
+       sudo yum makecache
+
+-  install MariaDB:
+
+.. code-block:: console
+
+    $> sudo yum install mariadb-server mariadb
+
+-  run  mysql_secure_installation script:
+
+.. code-block:: console
+
+    $> sudo mysql_secure_installation
+
+-  install  TANGO library:
+
+.. code-block:: console
+
+    $> sudo yum install libtango9 libtango9-devel
+
+-  install  tango-db and tango-common packages:
+
+.. code-block:: console
+
+    $> sudo yum install tango-db tango-common
+
+-  create TANGO database:
+
+.. code-block:: console
+
+    $> cd /usr/share/tango-db/
+       sudo ./create_db.sh
+
+-  set up TANGO environment:
+
+.. code-block:: console
+
+    $> sudo nano /etc/tangorc
+
+For example:
+
+.. code-block:: console
+
+    TANGO_HOST=tangobox:10000
+
+-  set up environment variables:
+
+.. code-block:: console
+
+    $> sudo nano /etc/profile.d/tango.sh
+
+For example:
+
+.. code-block:: console
+
+    . /etc/tangorc
+    export TANGO_HOST
+
+-  start and enable TANGO database:
+
+.. code-block:: console
+
+    $> sudo systemctl start tango-db
+       sudo systemctl enable tango-db
+
+-  install  Starter and TangoTest:
+
+.. code-block:: console
+
+    $> sudo yum install tango-starter tango-test
+
+-  start and enable Starter:
+
+.. code-block:: console
+
+    $> sudo systemctl start tango-starter
+       sudo systemctl enable tango-starter
+
+-  install Java based tools:
+
+.. code-block:: console
+
+    $> sudo yum install tango-java
+
+-  install PyTango:
+
+.. code-block:: console
+
+    $> sudo yum install python-pytango
+
 Video
 -----
 

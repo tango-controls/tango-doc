@@ -125,5 +125,5 @@ You can download the project `here <https://bintray.com/tango-controls/maven/Ast
 .. |image6| image:: img/greenbal.gif
 .. |image7| image:: img/blueball.gif
 .. |image8| image:: img/redball.gif
-.. |image9| image:: img/Astor.jpg
+.. |image9| image:: img/Astor.png
 
