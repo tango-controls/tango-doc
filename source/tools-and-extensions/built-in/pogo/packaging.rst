@@ -28,7 +28,7 @@ You can use :program:`autotools` commands (:command:`autogen`, :command:`configu
 
 |image2|
 
-.. |image0| image:: img/PogoPackaging.gif
+.. |image0| image:: img/Pogo-packaging.png
 
 .. |image1| image:: img/configure1.gif
 
