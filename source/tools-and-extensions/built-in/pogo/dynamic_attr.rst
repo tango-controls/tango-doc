@@ -17,6 +17,6 @@ For instance during a command execution or with an external trig.
 
 |image1|
 
-.. |image0| image:: img/DynamicAttr.jpg
+.. |image0| image:: img/DynamicAttr.png
 
 .. |image1| image:: img/DynamicAttr-3.jpg
