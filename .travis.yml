@@ -8,7 +8,7 @@ before_install:
 
 script:
   # - sphinx-build -b linkcheck source build
-  - sphinx-build source build
+  - sh build-documentation.sh
 
 after_failure:
   - cat build/output.txt
