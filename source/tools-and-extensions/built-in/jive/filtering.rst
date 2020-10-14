@@ -18,6 +18,6 @@ It is possible to filter some nodes in selection trees. Select which tree you wa
 
 Then the device tree will be displayed as below:
 
-.. figure:: filter_result.jpg
+.. figure:: filtr_result.jpg
    :align:   center
 
