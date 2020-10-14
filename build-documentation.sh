@@ -1,3 +1,5 @@
+#!/bin/sh
+
 rm -f sphinx-output.log
 
 sphinx-build -q -w sphinx-output.log ./source build
@@ -10,6 +12,4 @@ then
   exit 1
 fi
 
-# handle cases where we are called with plain sh
-# which does not know about functions
 exit 0
