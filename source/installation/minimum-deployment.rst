@@ -16,7 +16,7 @@ It provides libraries, set of GUI tools and drivers (so called
 :term:`Device Servers <device server>`) for variety of standard and specific control equipment. For more information see:
 http://www.tango-controls.org/what-is-tango-controls/
 
-.. image:: /img/logo_tangocontrols.png
+.. image:: ../img/logo_tangocontrols.png
     :align: center
 
 Your computer may have different (one or more) roles in the Tango CS system. 
