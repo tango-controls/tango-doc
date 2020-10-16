@@ -32,9 +32,9 @@ Tango Controls versions in use
 
 **ESRF accelerator**:
 
-* Tango Controls versions: 9.3.4-rc6
+* Tango Controls versions: 9.3.4
 * PyTango versions: 9.3.2
-* JTango versions: 9.6.1
+* JTango versions: 9.6.6
 * OS: \*nix
 
 **MAX IV Laboratory**:
