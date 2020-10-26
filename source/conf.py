@@ -77,7 +77,7 @@ copyright = u'2017-2020, Tango Community, Creative Commons Attribution 4.0 Inter
 # The short X.Y version.
 version = '9.3'
 # The full version, including alpha/beta/rc tags.
-release = '9.3.3'
+release = '9.3.4'
 
 # rst_epilog is added at the end of each rst file. Here it will contain typical substitutions
 rst_epilog = """
