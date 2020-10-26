@@ -45,7 +45,7 @@ Version 9.1.0 source patches
 `Bug 749 <https://sourceforge.net/p/tango-cs/bugs/748/>`_,
 `Bug 752 <https://sourceforge.net/p/tango-cs/bugs/752/>`_ and
 `Bug 753 <https://sourceforge.net/p/tango-cs/bugs/753/>`_
-are all fixed if you apply `p910_2.diff patch file <ftp.esrf.fr/pub/cs/tango/Patches/p910_2.diff>`_.
+are all fixed if you apply `p910_2.diff patch file <http://ftp.esrf.fr/pub/cs/tango/Patches/p910_2.diff>`_.
 
 Then go to your build directory and run *make* followed by *make install*.
 As usual, this patch assumes the previous patch(es) for the Tango release has been already applied.
