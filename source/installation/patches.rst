@@ -6,22 +6,30 @@ Patches
 :audience:`developers, administrators`
 
 To apply any patches downloaded from this page, first go to the directory where Tango source distribution has been extracted
-e.g. *cd ~/tango-9.2.2*, then type the command :
+e.g. *cd ~/tango-9.3.4*, then type the command :
 
 .. code-block:: console
 
-       patch -p1 <"patch_file"
+       patch -p1 < "patch_file"
 
-Version 9.3.3 and 9.2.5 source patches
---------------------------------------
 
-omniORB 4.2 bug (described in `bug 794 <https://sourceforge.net/p/tango-cs/bugs/794/>`_) is fixed in omniORB >= 4.2.2 or if you apply `dii_race.patch patch file <http://ftp.esrf.fr/pub/cs/tango/Patches/dii_race.patch>`_ to omniORB < 4.2.2.
+omniORB patches
+---------------
+
+omniORB 4.2 bug (described in `bug 794 <https://sourceforge.net/p/tango-cs/bugs/794/>`_) is fixed in omniORB >= 4.2.2
+or if you apply `dii_race.patch patch file <http://ftp.esrf.fr/pub/cs/tango/Patches/dii_race.patch>`_ to omniORB < 4.2.2.
 
 To apply this patch, copy the patch file to the directory where you extracted omniORB e.g. ~/omniORB-4.2.1, then type the command:
 
 .. code-block:: console
 
        patch -p0 < dii_race.patch
+
+
+Version 9.3.4 source patches
+----------------------------
+
+None yet.
 
 
 Version 9.2.2 source patches
