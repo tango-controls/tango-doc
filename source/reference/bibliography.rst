@@ -43,9 +43,6 @@ Bibliography
     .. [JavaPro] Java Pro - June 1999 : Plugging memory leak by Tony Leung
 
 ..
-    .. [CVS] `CVS WEB page`_
-
-..
     .. [POGO] `POGO home page`_
 
 ..

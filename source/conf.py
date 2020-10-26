@@ -106,8 +106,6 @@ rst_epilog = """
 
 .. _`omniORB home page`: http://omniorb.sourceforge.net
 
-.. _`CVS WEB page`: http://www.cyclic.com
-
 .. _`POGO home page`: http://www.esrf.eu/computing/cs/tango/tango_doc/tools_doc/pogo_doc/index.html
 
 .. _`JacORB home page`: http://www.jacorb.org
