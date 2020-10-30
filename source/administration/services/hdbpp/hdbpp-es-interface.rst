@@ -108,8 +108,8 @@ Attributes
 Table 2: Event Subscriber Attributes.
 
 The class and device properties availabile for configuration are shown
-in table. According to TANGO
-device server design guidelines Device Properties, when defined,
+in table 3. According to TANGO
+device server design guidelines, Device Properties, when defined,
 override Class properties. Please note that class and device Properties
 have changed since release of the TANGO device server.
 
