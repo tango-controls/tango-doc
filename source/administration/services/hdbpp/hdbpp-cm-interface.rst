@@ -11,46 +11,94 @@ Configuration Manager interface
 
 .. Configuration Manager interface
 
+In order to address large archiving systems the need to distribute the
+workload over a large number of event subscriber shows up.
+The configuration manager device server will assist in
+the operations of adding, editing, moving, deleting an attribute the
+archiving system. All the configuration parameters, such as polling
+period, variation thresholds etc., are kept in the database as
+properties of the archived attribute. In order to be managed by the
+device server each instance has to added to the pool using the
+ArchiverAdd command.
+
+The configuration manager shall be able to perform the following operations on
+the managed pool:
+
+#. manage the request of archiving a new attribute
+
+    -  setup the attribute’s archive event configuration
+
+    -  assign the new attribute to one of the device servers
+
+        -  following some rules of load balancing
+
+        -  to the specified device server
+
+#. move an attribute from an device server to another one
+
+#. keep trace of which attribute is assigned to which
+
+#. start/stop the archiving of an attribute at runtime
+
+#. remove an attribute from archiving
+
+The configuration shall be possible via the device server API as well as
+via a dedicated GUI interface; the GUI just use the provided API.
+
+The may also expose a certain number of attributes to give the status of
+what is going on:
+
+-  total number of
+
+-  total number of working attributes
+
+-  total number of faulty attributes
+
+-  total number of calls per second
+
+These attributes could be themselves archived to enable a follow up
+versus time.
+
 More in detail the device server exposes the following interface.
 
 Commands
 ~~~~~~~~
 
-The commands availabile in the are summarized in commands-table.
+The available commands are summarized in commands-table.
 
-+------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| ArchiverAdd            | add a new instance to the archivers list; the instance must have been already created and configured via jive/astor and the device shall be running; as per release adding an device to an existing instance is not supported   |
-+------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| ArchiverRemove         | remove an from the list; neither the device instance nor the attributes configured are removed from the database                                                                                                                |
-+------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| AttributeAdd           | add an attribute to archiving                                                                                                                                                                                                   |
-+------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| AttributeAssign        | assign attribute to                                                                                                                                                                                                             |
-+------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| AttributeGetArchiver   | return in charge of attribute                                                                                                                                                                                                   |
-+------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| AttributePause         | pause archiving specified attribute                                                                                                                                                                                             |
-+------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| AttributeRemove        | remove an attribute from archiving; the archived data and the attribute archive event configuration are left untouched                                                                                                          |
-+------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| AttributeSearch        | return list of attributes containing input pattern                                                                                                                                                                              |
-+------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| AttributeStart         | start archiving an attribute                                                                                                                                                                                                    |
-+------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| AttributeStatus        | read attribute archiving status                                                                                                                                                                                                 |
-+------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| AttributeStop          | stop archiving an attribute                                                                                                                                                                                                     |
-+------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| AttributeUpdate        | update context of an already archived attribute                                                                                                                                                                                 |
-+------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Context                | set context to all managed archivers                                                                                                                                                                                            |
-+------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| ResetStatistics        | reset statistics of and all                                                                                                                                                                                                     |
-+------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ArchiverAdd            | add a new archiver instance to the archivers list; the instance must have been already created and configured via jive/astor and the device shall be running; as per release adding a device to an existing instance is not supported    |
++------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ArchiverRemove         | remove an archiver from the list; neither the device instance nor the attributes configured are removed from the database                                                                                                                |
++------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| AttributeAdd           | add an attribute to archiving                                                                                                                                                                                                            |
++------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| AttributeAssign        | assign attribute to an archiver                                                                                                                                                                                                          |
++------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| AttributeGetArchiver   | return the archiver in charge of attribute                                                                                                                                                                                               |
++------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| AttributePause         | pause archiving specified attribute                                                                                                                                                                                                      |
++------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| AttributeRemove        | remove an attribute from archiving; the archived data and the attribute archive event configuration are left untouched                                                                                                                   |
++------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| AttributeSearch        | return list of attributes containing input pattern                                                                                                                                                                                       |
++------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| AttributeStart         | start archiving an attribute                                                                                                                                                                                                             |
++------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| AttributeStatus        | read attribute archiving status                                                                                                                                                                                                          |
++------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| AttributeStop          | stop archiving an attribute                                                                                                                                                                                                              |
++------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| AttributeUpdate        | update context of an already archived attribute                                                                                                                                                                                          |
++------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Context                | set context to all managed archivers                                                                                                                                                                                                     |
++------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ResetStatistics        | reset statistics the configuration manager of and all archivers                                                                                                                                                                          |
++------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Table 1: Configuration Manager Commands.
 
-Note that the list of managed is stored into the ArchiverList device
+Note that the list of managed archivers is stored into the ArchiverList device
 property that is maintained via the ArchiverAdd,
 ArchiverRemove and AttributeSetArchiver commands. Therefore in the
 archiving system the device server instances can also be configured by
@@ -59,7 +107,7 @@ hand, if required, an run independently.
 Attributes
 ~~~~~~~~~~
 
-The attributes of the are summarized in attributes-table.
+The attributes of the configuration manager are summarized in attributes-table.
 
 +-------------------------------+-------------------------------------------------------------------+
 | ArchiverContext               | return archiver context                                           |

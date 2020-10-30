@@ -155,9 +155,8 @@ Table shows example configuration parameters for backend:
 Table 4: LibConfiguration parameters for database.
 
 .. note::
-    .. deprecated:: 2
-    
-    **This is information is no longer relevant as the EventSubscriber is directly linked towards the necessary backend.**
+    **The event subscriber can be built directly against a specific backend or the dynamic libhdbpp.**
+    **In case of direct linking, this information is not relevant.**
 
     *libname* should be set to one of the following values:
 
@@ -173,7 +172,7 @@ Table 4: LibConfiguration parameters for database.
     libhdb++mysql and libhdb++cassandra are just implementations of the classes defined in libhdb++ library.
     The user can decide which implementation to use by specifying this LibConfiguration -> libname device property config parameter.
 
-    The device dynamically laods the configured library configured (using dlopen()) during the device initialization.
+    The device dynamically loads the configured library configured (using dlopen()) during the device initialization.
     See :ref:`database-interface` section for more information.
 
 
@@ -223,50 +222,4 @@ Table 6: AttributeList example
 The first two attributes will be archived in both RUN and SHUTDOWN
 contexts; the last three only when in RUN.
 
-In order to address large archiving systems the need to distribute the
-workload over a large number of event subscriber shows up. A device server will assist in
-the operations of adding, editing, moving, deleting an attribute the
-archiving system. All the configuration parameters, such as polling
-period, variation thresholds etc., are kept in the database as
-properties of the archived attribute. In order to be managed by the
-device server each instance has to added to the pool using the
-ArchiverAdd command.
-
-The device server shall be able to perform the following operations on
-the managed pool:
-
-#. manage the request of archiving a new attribute
-
-   -  setup the attribute’s archive event configuration
-
-   -  assign the new attribute to one of the device servers
-
-      -  following some rules of load balancing
-
-      -  to the specified device server
-
-#. move an attribute from an device server to another one
-
-#. keep trace of which attribute is assigned to which
-
-#. start/stop the archiving of an attribute at runtime
-
-#. remove an attribute from archiving
-
-The configuration shall be possible via the device server API as well as
-via a dedicated GUI interface; the GUI just use the provided API.
-
-The may also expose a certain number of attributes to give the status of
-what is going on:
-
--  total number of
-
--  total number of working attributes
-
--  total number of faulty attributes
-
--  total number of calls per second
-
-These attributes could be themselves archived to enable a follow up
-versus time.
 
