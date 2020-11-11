@@ -68,7 +68,7 @@ master_doc = 'contents'
 
 # General information about the project.
 project = u'Tango Controls'
-copyright = u'2017-2019, Tango Community, Creative Commons Attribution 4.0 International (CC BY 4.0)'
+copyright = u'2017-2020, Tango Community, Creative Commons Attribution 4.0 International (CC BY 4.0)'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -77,7 +77,7 @@ copyright = u'2017-2019, Tango Community, Creative Commons Attribution 4.0 Inter
 # The short X.Y version.
 version = '9.3'
 # The full version, including alpha/beta/rc tags.
-release = '9.3.3'
+release = '9.3.4'
 
 # rst_epilog is added at the end of each rst file. Here it will contain typical substitutions
 rst_epilog = """
@@ -105,8 +105,6 @@ rst_epilog = """
 .. _`Tango classes on-line documentation`: http://www.tango-controls.org/developers/dsc
 
 .. _`omniORB home page`: http://omniorb.sourceforge.net
-
-.. _`CVS WEB page`: http://www.cyclic.com
 
 .. _`POGO home page`: http://www.esrf.eu/computing/cs/tango/tango_doc/tools_doc/pogo_doc/index.html
 
@@ -380,7 +378,7 @@ texinfo_documents = [
 epub_title = u'Tango Controls Documentation'
 epub_author = u'Tango Community'
 epub_publisher = u'Tango Community'
-epub_copyright = u'2017-2019, Tango Community, CC BY 4.0'
+epub_copyright = u'2017-2020, Tango Community, CC BY 4.0'
 
 # The basename for the epub file. It defaults to the project name.
 #epub_basename = u'Tango Controls Documentation'

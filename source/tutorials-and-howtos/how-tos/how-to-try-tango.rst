@@ -34,7 +34,7 @@ Tango requires:
 * zeroMQ - event system
 
 You can install this library from source:
-`omniORB <https://sourceforge.net/projects/omniorb/files/omniORB/omniORB-4.2.2/omniORB-4.2.2.tar.bz2/download>`_,
+`omniORB <https://sourceforge.net/projects/omniorb/files/omniORB/omniORB-4.2.3/omniORB-4.2.3.tar.bz2/download>`_,
 `zeroMQ <http://zeromq.org/intro:get-the-software>`_ or by you package-management tools like yum or apt-get.
 
 .. note::
@@ -55,34 +55,34 @@ or
 
     yum install mysql-server/mariadb-server
 
-After downloading the source of Tango Control System
-from `Sourceforge <https://sourceforge.net/projects/tango-cs/files/tango-9.2.5a.tar.gz/download>`_,
-extract the archive file by the command:
+Download the source of the Tango Control System
 
 .. code-block:: console
 
-    tar -xvf tango-9.2.5a.tar.gz
+   wget -L https://github.com/tango-controls/TangoSourceDistribution/releases/download/9.3.4/tango-9.3.4.tar.gz
+   tar xzf tango-9.3.4.tar.gz
 
 In this directory, a good practice is to create the build folder, to don't mix
 a configuration/compile file with the source.
 
 .. code-block:: console
 
-    cd tango-9.2.5a
+    cd tango-9.3.4
     mkdir build
 
 Compile and installation notes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 To fully configure TANGO installation you can tell where is the omniORB, ZMQ library and where you want to install
 Tango Controls System. Also, you need to configure the connection with the database and
 show where is the mysqlclient-lib.
 
 .. code-block:: console
 
-   ../configure
-        --prefix=/usr/install_dir_linux \
-        --with-omni=/usr/update \
-        --with-zmq=/usr/update \
+   ../configure                                 \
+        --prefix=/usr/install_dir_linux         \
+        --with-omni=/usr/update                 \
+        --with-zmq=/usr/update                  \
         --with-mysqlclient-lib=/usr/lib64/mysql
 
 If the configuration of the system ends successfully, you should see this output:
@@ -266,5 +266,5 @@ you can use the :ref:`Tango Archiving System <hdbpp_manual>`.
    :hidden:
    :maxdepth: 1
    :glob:
-   
+
    how-to-try-tango/*
