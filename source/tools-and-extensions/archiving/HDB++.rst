@@ -215,6 +215,7 @@ The source code is available on GitHub in the following repositories:
 .. _libhdbpp-timescale: https://github.com/tango-controls-hdbpp/libhdbpp-timescale
 .. _libhdbpp-postgresql: https://github.com/tango-controls-hdbpp/libhdbpp-postgresql
 .. _libhdbpp-elk: https://github.com/tango-controls-hdbpp/libhdbpp-elk
+.. _hdbpp-benchmark: https://github.com/tango-controls-hdbpp/hdbpp-benchmark
 .. _CassandraMonitor: https://github.com/tango-controls-hdbpp/CassandraMonitor
 .. _hdbpp-configurator: https://github.com/tango-controls-hdbpp/hdbpp-configurator
 .. _hdbpp-viewer: https://github.com/tango-controls-hdbpp/hdbpp-viewer
@@ -234,6 +235,7 @@ The source code is available on GitHub in the following repositories:
 * libhdbpp-timescale_: the HDB++ insertion library for Timescaledb backend
 * libhdbpp-postgresql_: the HDB++ insertion library for Postgrsql backend
 * libhdbpp-elk_: the HDB++ insertion library for ElasticSearch backend
+* hdbpp-benchmark_: A project to compare performances of different HDB++ backends using docker images
 * CassandraMonitor_: A Java client/server to monitor cassandra nodes using jmx calls.
 * hdbpp-configurator_: the HDB++ Configuration GUI (in Java).
 * hdbpp-viewer_: the HDB++ Viewer GUI (in Java)
