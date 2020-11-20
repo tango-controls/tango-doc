@@ -14,7 +14,7 @@ Configuration Manager interface
 In order to address large archiving systems the need to distribute the
 workload over a large number of event subscriber shows up.
 The configuration manager device server will assist in
-the operations of adding, editing, moving, deleting an attribute the
+the operations of adding, editing, moving, deleting an attribute from the
 archiving system. All the configuration parameters, such as polling
 period, variation thresholds etc., are kept in the database as
 properties of the archived attribute. In order to be managed by the
@@ -34,7 +34,7 @@ the managed pool:
 
         -  to the specified device server
 
-#. move an attribute from an device server to another one
+#. move an attribute from a device server to another one
 
 #. keep trace of which attribute is assigned to which
 
@@ -45,10 +45,10 @@ the managed pool:
 The configuration shall be possible via the device server API as well as
 via a dedicated GUI interface; the GUI just use the provided API.
 
-The may also expose a certain number of attributes to give the status of
-what is going on:
+The ConfigurationManager may also expose a certain number of attributes
+to give the status of what is going on:
 
--  total number of
+-  total number of Archivers
 
 -  total number of working attributes
 
