@@ -87,6 +87,9 @@ Get documentation sources
 #. Change current folder to the documentation folder:
 
    :command:`cd tango-doc`
+#. Install extra requirements (like sphinx theme):
+
+   :command:`pip install -r requirements.txt`
 #. Try to build the documentation:
 
    :command:`sphinx-build source build`
