@@ -87,6 +87,9 @@ Get documentation sources
 #. Change current folder to the documentation folder:
 
    :command:`cd tango-doc`
+#. Install extra requirements (like sphinx theme):
+
+   :command:`pip install -r requirements.txt`
 #. Try to build the documentation:
 
    :command:`sphinx-build source build`
@@ -101,15 +104,14 @@ Updating documentation
 
    .. note::
 
-      The following command creates a branch based on the current branch you are on. If you've just started the tutorial
-      it is `master`. If you would like to contribute to another branch, e.g. directly to `9.2.5`, you need to check it
-      out first: :command:`git checkout origin/9.2.5`
+      The following command creates a branch based on `origin/master`.
+      If you would like to contribute to another branch, e.g. directly to `9.2.5`, you need to use:
+      :command:`git checkout -b "TD-66-step-by-step-demo" origin/9.2.5`
 
       To see what what branch is the current one use: :command:`git branch -a`. The current branch is marked
       with an asterisk (\*).
 
-   :command:`git checkout origin/master`
-   :command:`git checkout -b "TD-66-step-by-step-demo"`
+   :command:`git checkout -b "TD-66-step-by-step-demo" origin/master`
 
 #. Edit a file (or create it if it doesn't exist) you would like to change. If you are following this tutorial for learning
    please use this file: :file:`source/tutorials-and-howtos/tutorials/example.rst`

@@ -37,7 +37,7 @@ If you decide to contribute by writing, the preferred way is to:
 
 * clone or fork the repository,
 * create your own local fix branch,
-* when finished, send a pull request to the `origin/dev` branch.
+* when finished, send a pull request to the `origin/master` branch.
 
 .. note::
 
@@ -69,7 +69,7 @@ Please consult `Sphinx webpage`_ for details on how to install it.
 After having Sphinx and Breathe installed you will be able to build the documentation:
 
 * go to (:command:`cd`) folder where you have cloned the repository
-* call :command:`spinhx-build source build`
+* call :command:`sphinx-build source build`
 
 This will build HTML output in the :file:`build` folder.Then you may use any web browser to view the documentation.
 
