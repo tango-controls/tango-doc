@@ -142,8 +142,8 @@ Use yum to install them e.g. to install the TANGO database and test device serve
 
 .. code-block:: console
 
-   $> sudo yum install mariadb mariadb-server
-      sudo yum install libtango9 tango-db tango-test
+   $> sudo yum install -y mariadb mariadb-server
+      sudo yum install -y libtango9 tango-db tango-test
 
 
 The above packages install the Tango core C++ libraries, database and TangoTest server.
@@ -153,19 +153,32 @@ Installation
 
 If you want to install TANGO on CentOS, here are the steps you should follow:
 
--  add and enable MAX-IV's repository:
+-  add the EPEL repository:
 
 .. code-block:: console
 
-    $> sudo yum-config-manager --add-repo http://pubrepo.maxiv.lu.se/rpm/el7/x86_64/
-       sudo yum-config-manager --enable http://pubrepo.maxiv.lu.se/rpm/el7/x86_64/
-       sudo yum makecache
+    $> sudo yum install -y epel-release
 
--  install MariaDB:
+-  add the MAX-IV's public repository by creating the following file:
 
 .. code-block:: console
 
-    $> sudo yum install mariadb-server mariadb
+    $> sudo nano /etc/yum.repos.d/maxiv.repo
+    [maxiv-public]
+    name=MAX IV public RPM Packages - $basearch
+    baseurl=http://pubrepo.maxiv.lu.se/rpm/el$releasever/$basearch
+    gpgcheck=0
+    enabled=1
+
+    $> sudo yum makecache
+
+-  install and start MariaDB:
+
+.. code-block:: console
+
+    $> sudo yum install -y mariadb-server mariadb
+       sudo systemctl start mariadb
+       sudo systemctl enable mariadb
 
 -  run  mysql_secure_installation script:
 
@@ -177,13 +190,13 @@ If you want to install TANGO on CentOS, here are the steps you should follow:
 
 .. code-block:: console
 
-    $> sudo yum install libtango9 libtango9-devel
+    $> sudo yum install -y libtango9 libtango9-devel
 
 -  install  tango-db and tango-common packages:
 
 .. code-block:: console
 
-    $> sudo yum install tango-db tango-common
+    $> sudo yum install -y tango-db tango-common
 
 -  create TANGO database:
 
@@ -193,6 +206,11 @@ If you want to install TANGO on CentOS, here are the steps you should follow:
        sudo ./create_db.sh
 
 -  set up TANGO environment:
+
+   .. note::
+
+      You should not use `localhost` as your TANGO_HOST.
+      You can set the machine hostname using :command:`sudo hostnamectl set-hostname tangobox`
 
 .. code-block:: console
 
@@ -228,7 +246,7 @@ For example:
 
 .. code-block:: console
 
-    $> sudo yum install tango-starter tango-test
+    $> sudo yum install -y tango-starter tango-test
 
 -  start and enable Starter:
 
@@ -241,13 +259,13 @@ For example:
 
 .. code-block:: console
 
-    $> sudo yum install tango-java
+    $> sudo yum install -y tango-java
 
 -  install PyTango:
 
 .. code-block:: console
 
-    $> sudo yum install python-pytango
+    $> sudo yum install -y python-pytango
 
 Video
 -----
