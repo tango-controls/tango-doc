@@ -25,7 +25,7 @@ Widely used by the Python and other communities.
 Download taurus from `PyPi <https://pypi.python.org/pypi/taurus>`_.
 Source code is on `GitHub <https://github.com/taurus-org/taurus>`_.
 
-You can find its full documentation `here <http://taurus-scada.org/en/latest/>`_.
+You can find its full documentation `here <https://taurus-scada.org/>`_.
 
 
 .. definitions
