@@ -30,4 +30,4 @@ You can also find the aforementioned files in this repository under
 and `source/tutorials-and-howtos/tutorials/documentation-workflow-tutorial.rst`.
 
 
-Documentation is as important as code - your help will be appreciated by the Tango Community! 
+Documentation is as important as code - your help will be appreciated by the Tango Community!
