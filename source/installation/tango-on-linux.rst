@@ -267,6 +267,12 @@ For example:
 
     $> sudo yum install -y python-pytango
 
+Arch
+----
+An AUR package exists `here <https://aur.archlinux.org/packages/tango/>`_
+
+Download and install it from there, or use your favourite AUR helper application to do the work for you.
+
 Video
 -----
 
