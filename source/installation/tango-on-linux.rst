@@ -137,7 +137,13 @@ or if you need specifically Python2
 
 CentOS
 ------
-RPM packages are available for RedHat based systems in `the MAX-IV's repository <http://pubrepo.maxiv.lu.se/rpm/el7/x86_64/>`_.
+
+RPM packages for RedHat based systems are built from the `tango-spec <https://gitlab.com/tango-controls/tango-spec>`_ repository
+using `Copr <https://copr.fedorainfracloud.org/>`_.
+Copr can be used as a repository but only the latest build is kept forever.
+To install the packages directly from Copr, please refer to the `tango-spec README <https://gitlab.com/tango-controls/tango-spec/-/blob/main/README.md#installing-the-rpms>`_.
+
+RPM packages from Copr are also available in the `MAX-IV's repository <http://pubrepo.maxiv.lu.se/rpm/el7/x86_64/>`_.
 Use yum to install them e.g. to install the TANGO database and test device server:
 
 .. code-block:: console
