@@ -41,7 +41,7 @@ Elements
 +--------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | HDB++ Diagnostic         | Standalone JAVA application that visualizes both the status of all the archiver device servers and the overall archiving system                                                                                                                                                                                                                                                                                                     |
 +--------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Archiving DB             | Specific Database devoted to storing attribute values. It can be either Mysql or Cassandra for the moment.                                                                                                                                                                                                                                                                                                                          |
+| Archiving DB             | Specific Database devoted to storing attribute values. The currently supported backend are Mysql, Cassandra (support has been dropped), PostgreSQL, ElasticSearch or Timescaledb.                                                                                                                                                                                                                                                   |
 +--------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Tango Configuration DB   | Tango database where every property and configuration of the Tango control framework is stored                                                                                                                                                                                                                                                                                                                                      |
 +--------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -58,12 +58,34 @@ Elements
 
 
 
-HDB++ inherits the database structure from the existing Tango Historical Data Base (:ref:`hdb_archiving`) and introduces new storage architecture possibilities, better internal diagnostic capabilities and an optimized API. Its design allows storing data into traditional database management systems such as MySQL or into NoSQL database such as Apache Cassandra.
+HDB++ inherits the database structure from the existing Tango Historical Data Base (:ref:`hdb_archiving`) and introduces new storage architecture possibilities, better internal diagnostic capabilities and an optimized API. Different backends to store the data can be implemented through an unified interface, currently Timescaledb, MySQL, Postgresql, ElasticSearch and Apache Cassandra (support for Cassandra has been dropped) are supported.
 
 The HDB++ archiving system must fully comply to the Tango device server model, with two immediate benefits. First, all the required configuration parameters are stored to and retrieved from the Tango database; some of these parameters are, for user convenience, duplicated into a dedicated table of the HDB++ schema by a mechanism that guarantees the consistency of the copy. Second, the HDB++ archiving system inherits the Tango scaling capability: any number of EventSubscriber instances  can be deployed according to the desired architecture and overall performance.
 
 The HDB++ architecture is fully event based; therefore, a part of HDB++ setup consists of conveniently configure Tango device servers to send events as required.
 
+Backend support
+***************
+
+A C++ interface *libhdb++* offers an interface for any backend to implement for data storage.
+These libraries, written in C++, are addressed to the EventSubscriber Tango device server and
+their main purpose is to provide *an abstraction layer*. Actually, some shared objects are available
+implementing the abstraction layer and the specific interface:
+
+|libs|
+
+Figure 4: HDB++ Device Servers design
+
+
+* **libhdb++**: database abstraction layer, decouples the interface to the database back-end from the implementation.
+* **libhdbmysql**: legacy HDB schema support for MySQL back-end
+* **libhdb++mysql**: HDB++ schema support for MySQL back-end
+* **libhdb++cassandra**: Cassandra back-end implementation of libhdb++
+* **libhdb++timescale**: Timescaledb back-end implementation of libhdb++
+* **libhdb++postgres**: Postgresql back-end implementation of libhdb++
+* **hdb++ELK**: ElasticSearch back-end implementation of libhdb++
+
+These libraries allow reusing the EventSubscriber, the ConfigurationManager and the GUIs without changes.
 
 
 Configuration Manager Device Server
@@ -74,7 +96,6 @@ Configuration Manager Tango device server will assist in the operations of addin
 The ConfigurationManager device server is able to perform the following operations on the managed EventSubscriber pool:
 
 * handle the request of archiving a new Attribute;
-* create an entry in the database if not existing;
 * setup the Attribute archive event configuration;
 * assign the new Attribute to one of the archivers;
 * move an Attribute from one archiver to another;
@@ -165,36 +186,16 @@ HdbViewer
 *********
 It visualizes the data stored in the historical database.
 
-Two libraries have been developed to the *historical data extraction*: the first, written in C++
-is dedicated *Qt/Qtango* based GUIs or to C++ Tango device servers; the second,
-written in Java, has been used for the *HdbViewer* GUI and is a native choice for Java device servers.
-The HdbViewer Java framework, in addition to the legacy ESRF historical database support,
-allows retrieving the data from the new Cassandra back-end as well as managing the Cassandra
-partitioning period.
+Two libraries have been developed to the *historical data extraction*:
 
-.. note::
+* A java implementation, *libhdbpp-extraction-java*, has been used for the *HdbViewer* GUI and is a native choice for Java device servers. The HdbViewer Java framework, supports both legacy HDB archiving system, and the new HDB++ design.
+* A C++ implementation, dedicated *Qt/Qtango* based GUIs or to C++ Tango device servers.
+  The *HdbExtractor++ multithread library* allows fetching the data from the legacy HDB and the new HDB++ MySQL schema in a simple Object Oriented way. An additional module provides a Qt interface to the HdbExtractor++ and a dedicated GUI, exploiting the MathGL framework, aimed at displaying mono and bidimensional data over time.
+
+ .. note::
     The C++ extraction library currently supports only the MySQL back-end.
 
-The *HdbExtractor++ multithread library* allows fetching the data from the legacy HDB and the new HDB++ MySQL schema in a simple Object Oriented way. An additional module provides a Qt interface to the HdbExtractor++ and a dedicated GUI, exploiting the MathGL framework, aimed
-at displaying mono and bidimensional data over time.
 
-
-Some shared libraries provide the methods for writing to the database back-end.
-These libraries, written in C++, are addressed to the EventSubscriber Tango device server and
-their main purpose is to provide *an abstraction layer*. Actually, some shared objects are available
-implementing the abstraction layer and the specific interface:
-
-|libs|
-
-Figure 4: HDB++ Device Servers design
-
-
-* **libhdb++**: database abstraction layer, decouples the interface to the database back-end from the implementation.
-* **libhdbmysql**: legacy HDB schema support for MySQL back-end
-* **libhdb++mysql**: HDB++ schema support for MySQL back-end
-* **libhdb++cassandra**: methods from libhdb++ for Cassandra back-end
-
-These libraries allow reusing the EventSubscriber, the ConfigurationManager and the GUIs without changes.
 
 
 Source code
@@ -202,6 +203,8 @@ Source code
 
 The source code is available on GitHub in the following repositories:
 
+.. _hdbpp-timescale-project: https://github.com/tango-controls-hdbpp/hdbpp-timescale-project
+.. _hdbpp-mysql-project: https://github.com/tango-controls-hdbpp/hdbpp-mysql-project
 .. _hdbpp-cm: https://github.com/tango-controls-hdbpp/hdbpp-cm
 .. _hdbpp-es: https://github.com/tango-controls-hdbpp/hdbpp-es
 .. _hdbpp-cm-es: https://github.com/tango-controls-hdbpp/hdbpp-cm-es
@@ -209,6 +212,10 @@ The source code is available on GitHub in the following repositories:
 .. _libhdbpp-mysql: https://github.com/tango-controls-hdbpp/libhdbpp-mysql
 .. _libhdbpp-mysql-legacy: https://github.com/tango-controls-hdbpp/libhdbpp-mysql-legacy
 .. _libhdbpp-cassandra: https://github.com/tango-controls-hdbpp/libhdbpp-cassandra
+.. _libhdbpp-timescale: https://github.com/tango-controls-hdbpp/libhdbpp-timescale
+.. _libhdbpp-postgresql: https://github.com/tango-controls-hdbpp/libhdbpp-postgresql
+.. _libhdbpp-elk: https://github.com/tango-controls-hdbpp/libhdbpp-elk
+.. _hdbpp-benchmark: https://github.com/tango-controls-hdbpp/hdbpp-benchmark
 .. _CassandraMonitor: https://github.com/tango-controls-hdbpp/CassandraMonitor
 .. _hdbpp-configurator: https://github.com/tango-controls-hdbpp/hdbpp-configurator
 .. _hdbpp-viewer: https://github.com/tango-controls-hdbpp/hdbpp-viewer
@@ -216,6 +223,8 @@ The source code is available on GitHub in the following repositories:
 .. _libhdbpp-extraction-cpp: https://github.com/tango-controls-hdbpp/libhdbpp-extraction-cpp
 .. _eGiga2m: https://github.com/luciozambon/eGiga2m
 
+* hdbpp-timescale-project_: A project to centralize and build all the needed components of a full HDB++ setup with the Timescaledb backend.
+* hdbpp-mysql-project_: A project to centralize and build all the needed components of a full HDB++ setup with the Mysql backend.
 * hdbpp-cm_ : the HDB++ Configuration Manager device server
 * hdbpp-es_: the HDB++ Event Subscriber device server
 * hdbpp-cm-es_: Device server able to export HDB++ Event Subscriber and Configuration Manager devices in the same device server. It is a multiclass Tango device server capable of both CongigurationManager and EventSubscriber devices. Can be used in place of hdbpp-cm and hdbpp-es devices.
@@ -223,6 +232,10 @@ The source code is available on GitHub in the following repositories:
 * libhdbpp-mysql_: the HDB++ insertion library for MySQL backend
 * libhdbpp-mysql-legacy_: the HDB++ insertion library for MySQL backend using the old Tango HDB database schema
 * libhdbpp-cassandra_: the HDB++ insertion library for Cassandra backend
+* libhdbpp-timescale_: the HDB++ insertion library for Timescaledb backend
+* libhdbpp-postgresql_: the HDB++ insertion library for Postgrsql backend
+* libhdbpp-elk_: the HDB++ insertion library for ElasticSearch backend
+* hdbpp-benchmark_: A project to compare performances of different HDB++ backends using docker images
 * CassandraMonitor_: A Java client/server to monitor cassandra nodes using jmx calls.
 * hdbpp-configurator_: the HDB++ Configuration GUI (in Java).
 * hdbpp-viewer_: the HDB++ Viewer GUI (in Java)
@@ -243,11 +256,8 @@ different git repositories from https://github.com/tango-controls-hdbpp Github o
 
 
 Please, have a look at the README files from the different git repositories
-(For instance: https://github.com/tango-controls-hdbpp/hdbpp-cm-es).
+(For instance: https://github.com/tango-controls-hdbpp/hdbpp-timescale-project).
 They explain how to install the HDB++ libraries as well as the device servers.
-
-The latest versions of *hdbpp-es* and *hdbpp-cm* are now loading dynamically (using dlopen) the HDB++ library used for MySQL/legacy HDB schema, MySQL HDB++ schema, Cassandra.
-
 
 .. note::
     -v5 can be used to see the DEBUG messages coming from the Tango library itself too. It also sets the logging level of the device to DEBUG.

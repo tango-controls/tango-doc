@@ -9,4 +9,4 @@ Services
 
    events
    access-control
-   hdbpp/index
+   hdbpp
